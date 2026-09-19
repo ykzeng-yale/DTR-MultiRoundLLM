@@ -6,3 +6,10 @@ __pycache__/
 .DS_Store
 *.gguf
 *.egg-info/
+
+*.py[cod]
+*.aux
+*.log
+*.out
+*.toc
+experiments/runs/

@@ -14,9 +14,9 @@ open questions between workstreams.
   new *in this setting*.
 * Attach assumptions to every mathematical claim, and say which of them hold
   **by construction of a design** versus which are **assumed**.
-* Positivity is the crux here: the action space is natural language, so
-  point-treatment positivity fails. Any identification claim must say how it
-  avoids that, not assume it away.
+* Positivity is the crux here: language actions can have absent or practically
+  negligible support. Formal positive probability for a string does not ensure
+  useful finite-sample overlap. Define the supported intervention explicitly.
 * Distinguish, in every document: synthetic simulation, pilot, confirmatory
   result, and planned-but-not-run. A proposed extension is not an experiment.
 * Report null and negative results plainly. "H1 not supported" is a result.
@@ -75,3 +75,19 @@ estimated readiness of the **full project** for a paper submission, the change
 since the previous checkpoint, and the largest remaining milestones —
 distinguishing reported from independently validated results. A finished local
 task is not full-project readiness.
+
+## Theory-package integration rules (Codex, 2026-09-19)
+
+
+This project studies **user-side prompt/feedback interventions** in repeated interaction with a fixed receiver LLM. Model routing is a separate project.
+
+1. Read `README.md`, `docs/theory.md`, `docs/experiment_protocol.md`, and the assigned GitHub issue before editing. Claim the issue with a comment that states scope, branch, compute budget, and expected outputs. An unclaimed issue is a handoff, not evidence that another agent has started.
+2. Preserve the initial scientific target, original task, receiver version, candidate-generator version, continuation policy, and measurement rules. Changes require a new manifest and a clearly labeled estimand.
+3. Keep established results, newly proved propositions, numerical checks, synthetic simulations, feasibility pilots, prospective validation, and unsupported conjectures separate. Never fabricate readiness or results.
+4. A literal individual treatment effect is not identified from one observed conversation. A supported history-conditional mean contrast is the primary personalization target.
+5. Candidate generation precedes randomized selection. Log the whole slate and all selection probabilities. Selection propensities do not identify the value of an arbitrary changed generator. Semantic embeddings are not automatically causally sufficient.
+6. STOP is an absorbing intervention; missing logs, service failures, and user dropout are separate events. Account for all assigned trajectories. Hidden final evaluation answers are never policy inputs.
+7. Split training, tuning, and testing by root task/family. All branches of a root task remain together. Audit state restoration and independence before causal branch comparisons.
+8. Use a branch and pull request for experiment implementation. Preserve immutable raw logs and checksums, pin code/config/model/data versions, and return scripts plus results, not only narrative. Do not overwrite baselines or force-push other agents' changes.
+9. Run the relevant tests and budget checks. No paid API, cloud purchase, or unbounded GPU run is authorized by the supplied default protocol. The local reference budget is $0. Record actual calls, tokens, and runtime.
+10. Report failed runs, overlap failures, missing outcomes, uncertainty limitations, and negative results. Do not choose a policy on its confirmatory test set.
