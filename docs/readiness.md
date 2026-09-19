@@ -76,3 +76,28 @@ independent lines of evidence that were produced without sight of each other. Th
 a better position to be in than an unexamined large claim, but it does mean
 components 2 and 7 will need redefining against `docs/positioning.md` before they can
 be earned.
+
+### 2026-09-19, checkpoint 3 — **37%** (+18 since checkpoint 2)
+
+| # | Component | Credit | Δ | Basis |
+|---|---|---|---|---|
+| 1 | Positioning / literature | 0.85 | — | unchanged |
+| 2 | Theory | 0.40 | +0.25 | a 92,000-character synthesis with 22 numbered assumptions and 32 results exists, has been adversarially reviewed by five independent reviewers (90 findings, 20 fatal), and is being repaired section by section against a binding spec. Not higher because the repaired document does not exist yet and several results will be withdrawn. |
+| 3 | Design / pre-registration | 0.55 | +0.30 | 9-class taxonomy merged with provable per-class information caps and script-checkable audit gates; six design specs with numeric parameters; harness architecture, cost model and audit gate specified; audits A1–A4 complete; the task pool is settled at 230 by three independent routes. Not higher because nothing is frozen and the pilot has just invalidated two cost claims. |
+| 4 | Harness | 0.35 | +0.20 | sandbox, hidden-test verifier, integrity gates, assertion-level scoring, four audit scripts, the E0 code, and a hashed inference-build manifest. No episode runner, intervener or branch store yet. |
+| 5 | Simulation study | 0.70 | +0.55 | E0 promoted to first-class code, exact dynamic program verified against a 2,000,000-episode Monte Carlo to 0.00 MC SE, four pre-registered failure cells implemented, and the 17-cell grid running at the pre-registered R = 1000. |
+| 6 | Real-model experiments | 0.10 | +0.05 | pilots only, but they are informative: the first real measurement of the headline content contrast, plus a corrected throughput figure. |
+| 7 | Critic / policy | 0.00 | — | not started |
+| 8 | Manuscript | 0.00 | — | not started |
+
+**Largest remaining milestones:** the theory repair landing; the Program phase folding
+the adversarial findings into a single experimental program; the freeze; then the
+confirmatory runs.
+
+**Risks that grew this checkpoint.** The content contrast measured −0.044
+(95% CI [−0.114, +0.026]) in the first real pilot, so the effect the project was built
+around may be null. Detecting 0.05 needs 273 states against a pool of 230. Common
+random numbers deliver 25% rather than the order of magnitude the branch-tree cost
+assumed, and multi-turn calls cost 2.4× the planning figure. None of these is fatal, and
+all of them argue for the same reframing the premise checks and the literature audit
+already pointed at.
