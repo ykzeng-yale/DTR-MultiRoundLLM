@@ -1,0 +1,7 @@
+{
+  "exact_mean_terminal_weight": 1.0000000000000002,
+  "exact_second_moment_terminal_weight": 3.3165335766331903,
+  "maximum_terminal_weight_on_enumerated_support": 10.625000000000005,
+  "iid_trajectory_ess_fraction_diagnostic_only": 0.30151963696238504,
+  "note": "This weight ESS is not the independent task count and is not used for confidence intervals."
+}

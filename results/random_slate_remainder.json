@@ -1,0 +1,199 @@
+{
+  "check_name": "random_slate_exact_longitudinal_dr_remainder",
+  "configuration": {
+    "changed_target_generator_p_c1": "0.48 if s=1 else 0.58",
+    "horizon": 2,
+    "initial_state_probability": 0.4,
+    "logging_generator_density_included_in_denominator": true,
+    "logging_generator_p_c1": "0.65 if s=1 else 0.35",
+    "logging_selector_p_j1": "0.25 + 0.20*c + 0.15*s",
+    "monte_carlo_sampling": false,
+    "q_truth_method": "exact_backward_recursion",
+    "receiver_p_next_state1": "0.12 + 0.38*j + 0.18*c + 0.13*s",
+    "target_generator_density_included_in_numerator": true,
+    "target_selector_p_j1": "0.70 - 0.25*c + 0.05*s",
+    "terminal_reward": "final binary receiver state",
+    "tolerance": 1e-12,
+    "turn_reward": "-0.06*j - 0.02*c",
+    "wrong_q": "0.39 + 0.14*c - 0.07*j + 0.08*s",
+    "wrong_selector_p_j1": "0.70 - 0.20*c"
+  },
+  "evidence_type": "exact_finite_state_enumeration",
+  "generated_at_utc": "2026-09-19T21:39:20.596096+00:00",
+  "limitations": [
+    "No real receiver or language data were used.",
+    "Nuisances are fixed correct or misspecified functions, not fitted neural models.",
+    "Numerical enumeration checks an algebra identity, not real-data identification assumptions.",
+    "No conditional confidence-interval coverage or neural convergence rate is established."
+  ],
+  "results": [
+    {
+      "absolute_identity_error": 5.551115123125783e-17,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [
+        1,
+        2
+      ],
+      "bias": -5.551115123125783e-17,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.40899349999999984,
+      "generator": "same_generator",
+      "identity_error": -5.551115123125783e-17,
+      "nuisance_case": "all_assignment_correct",
+      "oracle_value": 0.4089934999999999,
+      "q_correct_stages": [],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 1.6653345369377348e-16,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [],
+      "bias": 1.6653345369377348e-16,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.40899350000000007,
+      "generator": "same_generator",
+      "identity_error": 1.6653345369377348e-16,
+      "nuisance_case": "all_q_correct",
+      "oracle_value": 0.4089934999999999,
+      "q_correct_stages": [
+        1,
+        2
+      ],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 1.1102230246251565e-16,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [
+        1
+      ],
+      "bias": -1.1102230246251565e-16,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.4089934999999998,
+      "generator": "same_generator",
+      "identity_error": -1.1102230246251565e-16,
+      "nuisance_case": "mixed_stage_correct",
+      "oracle_value": 0.4089934999999999,
+      "q_correct_stages": [
+        2
+      ],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 2.498001805406602e-16,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [],
+      "bias": -0.09116749016750025,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": -0.0911674901675,
+      "expected_dr_score": 0.31782600983249965,
+      "generator": "same_generator",
+      "identity_error": -2.498001805406602e-16,
+      "nuisance_case": "both_wrong",
+      "oracle_value": 0.4089934999999999,
+      "q_correct_stages": [],
+      "stagewise_robustness_condition_holds": false
+    },
+    {
+      "absolute_identity_error": 1.1102230246251565e-16,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [
+        1,
+        2
+      ],
+      "bias": -1.1102230246251565e-16,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.4123269999999999,
+      "generator": "changed_generator",
+      "identity_error": -1.1102230246251565e-16,
+      "nuisance_case": "all_assignment_correct",
+      "oracle_value": 0.412327,
+      "q_correct_stages": [],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 5.551115123125783e-17,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [],
+      "bias": -5.551115123125783e-17,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.41232699999999994,
+      "generator": "changed_generator",
+      "identity_error": -5.551115123125783e-17,
+      "nuisance_case": "all_q_correct",
+      "oracle_value": 0.412327,
+      "q_correct_stages": [
+        1,
+        2
+      ],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 0.0,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [
+        1
+      ],
+      "bias": 0.0,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": 0.0,
+      "expected_dr_score": 0.412327,
+      "generator": "changed_generator",
+      "identity_error": 0.0,
+      "nuisance_case": "mixed_stage_correct",
+      "oracle_value": 0.412327,
+      "q_correct_stages": [
+        2
+      ],
+      "stagewise_robustness_condition_holds": true
+    },
+    {
+      "absolute_identity_error": 1.8041124150158794e-16,
+      "all_assertions_passed": true,
+      "assignment_correct_stages": [],
+      "bias": -0.07530589986805697,
+      "enumerated_logging_probability": 0.9999999999999999,
+      "enumerated_trajectories": 128,
+      "exact_remainder": -0.07530589986805715,
+      "expected_dr_score": 0.33702110013194303,
+      "generator": "changed_generator",
+      "identity_error": 1.8041124150158794e-16,
+      "nuisance_case": "both_wrong",
+      "oracle_value": 0.412327,
+      "q_correct_stages": [],
+      "stagewise_robustness_condition_holds": false
+    }
+  ],
+  "schema_version": "1.0",
+  "source": {
+    "executed_arguments": [
+      "--output",
+      "results/random_slate_remainder.json"
+    ],
+    "path": "scripts/check_random_slate_remainder.py",
+    "python_version": "3.14.4",
+    "reproduction_command": "python3 scripts/check_random_slate_remainder.py --output results/random_slate_remainder_rerun.json",
+    "sha256": "53b344ccf9e87b66c9f572e0bdd5059de4c06fa902a7ef18c6db2c98e2b4fcca"
+  },
+  "summary": {
+    "all_assertions_passed": true,
+    "case_count": 8,
+    "elapsed_seconds": 0.0025515826418995857,
+    "maximum_absolute_identity_error": 2.498001805406602e-16,
+    "model_calls": 0,
+    "model_tokens": 0,
+    "paid_api_cost_usd": 0
+  }
+}

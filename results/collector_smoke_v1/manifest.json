@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "evidence_type": "synthetic_smoke",
+  "config": {
+    "base_url": "http://127.0.0.1:11434",
+    "model": "REPLACE_WITH_EXACT_INSTALLED_MODEL_TAG",
+    "seed": 190926,
+    "horizon": 3,
+    "selection_probabilities": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "temperature": 0.6,
+    "num_predict": 1024,
+    "num_ctx": 8192,
+    "max_calls": 16,
+    "max_seconds": 600,
+    "paid_api_budget_usd": 0
+  },
+  "config_sha256": "c53559e0aabaf9274fea0389ba9c8aa9016b1b901fc96b400beabb6895e404f4",
+  "tasks_sha256": "e69979605954229e3818d25f9083b024111a4be65e1c1b81a8ccbc4f14b4ab9b",
+  "code_revision": "uncommitted-initial-development",
+  "collector_sha256": "2a43e57577c6f8fea69d34c29fc69a5361fda838b084e814eb4fa2dbe65e0c45",
+  "system_message": "Solve the user's task. You may explain briefly. End with FINAL: followed by one integer.",
+  "slate": [
+    {
+      "id": "stop",
+      "text": null
+    },
+    {
+      "id": "retry",
+      "text": "Try again. Reconsider your answer and end with FINAL: followed by one integer."
+    },
+    {
+      "id": "verify",
+      "text": "Check the calculation and any possible mistake. End with FINAL: followed by one integer."
+    },
+    {
+      "id": "decompose",
+      "text": "Break the task into smaller steps, solve each, and check the combined result. End with FINAL: followed by one integer."
+    }
+  ],
+  "generator_id": "fixed-slate-v1",
+  "planned_tasks": 4,
+  "max_planned_calls": 16,
+  "limitations": [
+    "Fixed templates; no trained critic or free-form generator",
+    "Arithmetic fixtures are harness checks",
+    "Full history sent; production tokenization/truncation audit remains required",
+    "Client deadline stops new dispatch; server cancellation after a timeout is not guaranteed"
+  ],
+  "realized": {
+    "attempted_calls": 14,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "assigned_tasks": 4,
+    "failed_tasks": 0,
+    "unstarted_task_ids": [],
+    "wall_seconds": 0.018382875248789787,
+    "paid_api_spend_usd": 0
+  },
+  "output_checksums": {
+    "calls.jsonl": "453ac23ca046199e98c10601dc0ee0d1d5f4a1644d9f3516db3b1e34f091a32f",
+    "trajectories.jsonl": "11f9f1435356a83a1dfb70048d0d6d7d4eb31088f8fb4fe6f96f4682d2c64e3a"
+  }
+}

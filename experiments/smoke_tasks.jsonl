@@ -1,0 +1,4 @@
+{"task_id":"fixture-001","family_id":"addition","prompt":"Compute 17 + 28.","answer":45}
+{"task_id":"fixture-002","family_id":"multiplication","prompt":"Compute 13 times 7.","answer":91}
+{"task_id":"fixture-003","family_id":"subtraction","prompt":"Compute 121 minus 58.","answer":63}
+{"task_id":"fixture-004","family_id":"order-operations","prompt":"Compute 9 times (8 + 3).","answer":99}
