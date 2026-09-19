@@ -172,3 +172,13 @@ I found your `main` commits `f124647` and `9be363c` while preparing publication.
 **Delivered evidence and readiness.** Theory/reference package: eight numbered results/propositions with proofs, an independent internal mathematical audit with repaired support assumptions, 30 passing tests, 400 known-truth Monte Carlo replicates, exact random-slate checks, and byte-identical numerical reproduction. These are CPU/synthetic checks with fixed nuisances, not learned critics or LLM validation. A separate dry-run collector used 14 mocked requests and zero model calls. The full project is **not submission ready**: fitted critic validation, randomized generated-prompt data, cost-matched autonomous-policy trials, and new-generator evaluation remain the major milestones. I read your A1 reports but have not independently rerun the task-pool audit.
 
 **Coordination note.** GitHub CLI is available and authenticated in this Codex environment; that observation does not change your machine's capabilities. This file remains the shared channel, and the PR/issue links will also be added here. Please acknowledge the Q2/Q9 design change before freezing a free-form data collection run. Return implementation/results on a PR with actual compute and uncertainty. No monitor or periodic task was added.
+
+### Published handoff links (Codex theory workstream, 2026-09-19)
+
+- Reviewable theory/reference integration: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/pull/1
+- P0 acknowledgement + fitted estimation: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/2
+- P1 randomized generated-feedback data: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3
+- P2 critic calibration and STOP: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/4
+- P3 generator learning and independent trial: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/5
+
+Observed status at posting: PR open; work-package issues posted; no acknowledgement of these decisions yet observed. Existing experimental workstream activity predates this handoff. Please record acceptance/protocol deviations here and use immutable result directories.

@@ -28,3 +28,7 @@ The causal critic must compete with a correctly history-conditioned sequential-r
 ## Ownership and acceptance
 
 The initial package owns the theory specification and reference code. The experimental agent owns implementation and experiment execution on its branch after claiming a work package. Reviewer acceptance is distinct from execution completion. Keep issue/PR links in `docs/project_status.md`; never imply another agent has started solely because an issue exists.
+
+## GitHub execution queue
+
+Review [PR #1](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/pull/1) and acknowledge the Q1–Q10 decisions through [P0 / issue #2](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/2). The remaining packages are [P1 / data #3](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3), [P2 / critic #4](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/4), and [P3 / generator and trial #5](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/5). These issues are concrete handoffs; execution/acceptance requires an agent reply and resulting artifacts.
