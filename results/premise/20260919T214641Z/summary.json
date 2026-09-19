@@ -1,0 +1,81 @@
+{
+  "n_per_rep": 3000,
+  "reps": 40,
+  "seed": 20260919,
+  "truth": {
+    "optimal_regime": {
+      "t1,x0,easy": "L",
+      "t1,x0,hard": "L",
+      "t1,x1,easy": "V",
+      "t1,x1,hard": "V",
+      "t2,x0,easy": "L",
+      "t2,x0,hard": "L",
+      "t2,x1,easy": "V",
+      "t2,x1,hard": "V"
+    },
+    "V_optimal": 0.75098,
+    "V_fixed": {
+      "U": 0.526265,
+      "L": 0.650825,
+      "V": 0.6306049999999999
+    },
+    "V_behaviour_policy": 0.6611538499999999,
+    "blip_t2_vs_U": {
+      "x0,easy,L": 0.30000000000000004,
+      "x0,easy,V": 0.1,
+      "x0,hard,L": 0.19999999999999998,
+      "x0,hard,V": 0.04999999999999999,
+      "x1,easy,L": -0.06000000000000005,
+      "x1,easy,V": 0.04999999999999993,
+      "x1,hard,L": -0.06000000000000005,
+      "x1,hard,V": 0.05999999999999994
+    }
+  },
+  "C1_marginal_reverses_ordering": {
+    "true_blip_L_vs_U_when_wrong_easy": 0.30000000000000004,
+    "true_blip_L_vs_U_when_wrong_hard": 0.19999999999999998,
+    "mean_naive_EY_given_A2": {
+      "U": 0.8127548879692952,
+      "L": 0.46849499354787094,
+      "V": 0.6477489259084674
+    },
+    "reps_in_which_naive_says_L_beats_U": 0,
+    "verdict": "REVERSED"
+  },
+  "C2_conditioning_on_mediator": {
+    "true_blip_t1_L_vs_U_given_optimal_future_wrong_easy": 0.15600000000000003,
+    "true_blip_t1_L_vs_U_given_optimal_future_wrong_hard": 0.132,
+    "mean_naive_conditioned_EY_by_A1": {
+      "U": 0.6577688988719435,
+      "L": 0.6610441170782417,
+      "V": 0.6628707212364363
+    }
+  },
+  "C3_correlational_critic": {
+    "reps_in_which_critic_regime_equals_optimal": 39,
+    "mean_true_value_of_critic_regime": 0.74999,
+    "V_optimal": 0.75098,
+    "mean_regret": 0.0009899999999999354,
+    "modal_critic_regime": "{\"x0,easy\": \"L\", \"x0,hard\": \"L\", \"x1,easy\": \"V\", \"x1,hard\": \"V\"}"
+  },
+  "C4_causal_estimators": {
+    "V_optimal_truth": 0.75098,
+    "ipw": {
+      "mean": 0.7475424108876506,
+      "bias": -0.0034375891123493707,
+      "sd": 0.02325498394809103
+    },
+    "gcomp": {
+      "mean": 0.7513000316475669,
+      "bias": 0.0003200316475668874,
+      "sd": 0.011209580701760112
+    },
+    "dr": {
+      "mean": 0.7503242476221225,
+      "bias": -0.0006557523778775165,
+      "sd": 0.01973783546695626,
+      "mean_se": 0.018426647133128672,
+      "coverage_95": 0.9
+    }
+  }
+}
