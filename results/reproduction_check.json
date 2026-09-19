@@ -1,0 +1,40 @@
+{
+  "check": "Independent invocation of canonical 400-replicate simulation",
+  "date": "2026-09-19",
+  "excluded": "runtime.json contains timestamp and elapsed time",
+  "numerical_and_config_files": {
+    "overlap_diagnostics.json": {
+      "byte_identical": true,
+      "sha256": "3764dfa724cdec1b621746bbe8e77768194ccbfa599c2b1ee91a33f58f64673f"
+    },
+    "monte_carlo_summary.csv": {
+      "byte_identical": true,
+      "sha256": "367146bd193ea6d657c573adbef409a4731b485c5d749af1a747939344da7e14"
+    },
+    "REPORT.md": {
+      "byte_identical": true,
+      "sha256": "a7df494de9355ca343f8c2bfb3dcb794fc5d2d923594bd310a0ed7d6b4fc9612"
+    },
+    "config.json": {
+      "byte_identical": true,
+      "sha256": "93d44791b10dc4bce865aa74290fad6156000ae2c70e21cb6add2258a6907b2d"
+    },
+    "exact_policy_values.csv": {
+      "byte_identical": true,
+      "sha256": "7c0b32cbea42c58e4df72e8c61cee5a33ac108bf9b716bfccb628b6061259a56"
+    },
+    "confounding_reversal.csv": {
+      "byte_identical": true,
+      "sha256": "c958af36f1b37b262cc2d52112b0ad11d49922f0149d514d51961cbcc03f77d2"
+    },
+    "replicate_estimates.csv": {
+      "byte_identical": true,
+      "sha256": "0565f9d0d13a6b23fa4c9a81e3d788a6616d8deab0e1e8d6a1b8b8255660bf00"
+    },
+    "conditional_prompt_values.csv": {
+      "byte_identical": true,
+      "sha256": "50e1242b86d8377d5b05dfe8e10ae061682503689e038571d91feb448b8fcc62"
+    }
+  },
+  "command": "uv run --extra dev python scripts/run_synthetic.py --output work/independent_reproduction"
+}

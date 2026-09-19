@@ -1,0 +1,34 @@
+{
+  "study_status": "executed synthetic fixed-nuisance diagnostic; no LLM calls or learned models",
+  "horizon": 3,
+  "cost_penalty": 0.035,
+  "replicates": 400,
+  "tasks_per_replicate": 800,
+  "episodes_per_task": 2,
+  "root_seed": 20260919,
+  "bit_generator": "numpy.PCG64",
+  "seed_strategy": "SeedSequence(root_seed).spawn(replicates)",
+  "target": "adaptive_policy",
+  "behavior": "behavior_policy",
+  "wrong_propensity": "uniform_policy",
+  "wrong_q": "FinitePromptProcess.wrong_q",
+  "truth": 0.798749719853125,
+  "task_sampling": "iid baseline H1; independent continuations share H1 within task",
+  "outcome": "terminal binary answer quality minus cost_penalty * cumulative cost units",
+  "costs": {
+    "RETRY": 1,
+    "CORRECT": 2,
+    "STOP": 0
+  },
+  "candidate_generator": "fixed slate [RETRY, CORRECT, STOP]",
+  "currency_cost_usd": 0,
+  "external_model_calls": 0,
+  "confidence_intervals": "normal 1.96 * SE of independent task means; finite-Monte-Carlo coverage is diagnostic",
+  "source_sha256": {
+    "src/dtr_multiround/__init__.py": "614fd5321f29b031380945c398e6485097374666e445adb744483dacc5446dbc",
+    "src/dtr_multiround/candidates.py": "5520dfba2af00fad882e4f47aa7e4cc54f6da4b31c8be94ca1307bc01daf8c1b",
+    "src/dtr_multiround/estimators.py": "d5471457fac55b4cc91e8744968f54138624b49d29b2ff9e10f8870e8508d1e3",
+    "src/dtr_multiround/simulator.py": "19e67c2128ca9e0e2255d86836469a600a229bca022b9fd504b17b8d7497874b"
+  },
+  "script_sha256": "1cc622664428b52b7df4c60f7d1195003440b4e244306733409567ebed2f83f1"
+}
