@@ -65,6 +65,16 @@ wall-clock on the 3B, or about **18 hours** on the 7B. Any design that needs
 substantially more than 10,000–20,000 nodes is not affordable here and must be cut
 before it is frozen, not after.
 
+## SUPERSEDED for multi-turn work (2026-09-19, later the same day)
+
+The per-call figures above were read from a sibling log dominated by **first**
+attempts with short prompts. A pilot on this project's own multi-turn workload
+measured **3.96 s per 3B call (909 calls/hour)** and **5.82 s per 7B call (619
+calls/hour)** at four slots under foreign load, with median prompts of ~275 tokens and
+completions of ~130-175 tokens. Use those for anything multi-turn; the 2,150
+calls/hour figure applies only to single-attempt work and makes multi-turn designs look
+about 2.4x cheaper than they are. See `docs/pilot_findings.md`.
+
 ## Open measurements still needed
 
 * **First-attempt success rate on the 590-task pool, per model.** Required for
