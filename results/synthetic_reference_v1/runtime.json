@@ -1,0 +1,8 @@
+{
+  "completed_at_utc": "2026-09-19T21:35:20.205705+00:00",
+  "elapsed_seconds": 0.20501062460243702,
+  "python": "3.14.4",
+  "numpy": "2.5.3",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "enumerated_behavior_trajectories": 340
+}
