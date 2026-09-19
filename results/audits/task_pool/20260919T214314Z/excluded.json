@@ -1,0 +1,10 @@
+[
+  {
+    "uid": "mbpp/794",
+    "benchmark": "mbpp",
+    "reference_passes_full": true,
+    "reference_passes_hidden": true,
+    "stub_passes_hidden": true,
+    "reference_full_stderr_tail": ""
+  }
+]
