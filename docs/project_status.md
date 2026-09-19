@@ -39,3 +39,16 @@ The experiments workstream seeded main and committed a task-pool audit while the
 ## Usage ledger (this theory/reference workstream only)
 
 Actual paid API spend: **$0**. Actual LLM inference calls: **0**. Training GPU hours: **0**. Synthetic reference runs used local CPU. Literature retrieval and repository communication are separate from model-evaluation usage. No cloud purchase or unbounded run was launched.
+
+## Published review and execution queue
+
+The theory/reference package is on branch `theory/causal-prompt-package` in [PR #1](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/pull/1), pending integration into main. Direct coordination answers are appended to `COORDINATION.md` in that PR.
+
+| Work package | Issue | Observed state at publication |
+|---|---|---|
+| P0 theory acknowledgement and fitted estimation | [#2](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/2) | Posted; acknowledgement pending |
+| P1 randomized generated-feedback data | [#3](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3) | Posted; new collection not verified |
+| P2 critic calibration and stopping | [#4](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/4) | Posted; training not executed by theory workstream |
+| P3 generator and locked prospective trial | [#5](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/5) | Posted; trial pending dependencies |
+
+The experiment agent's already committed benchmark audit is distinct from acknowledgement or execution of this new queue. This status describes observed publication state, not a promise that another agent has started each issue.
