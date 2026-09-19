@@ -114,3 +114,70 @@ So the experimental program leads with the **stopping and horizon** question, ke
 **identification and honest effect reporting** as the methodological contribution,
 and treats "causal correction of a confounded log improves decisions" as a scoped
 secondary claim that the evidence so far does not support strongly.
+
+---
+
+## Correction to A1, and what it does and does not do to A2 and A3 (2026-09-19, later the same day)
+
+A design review of the audits found that **A1's discrimination check (S5) was far
+too weak**, and the correction is load-bearing enough to record here rather than
+quietly amend the table above.
+
+**What was wrong.** A1 tested discrimination with a single `return None` stub and
+found one task (`mbpp/794`) satisfied by it. A proper battery of trivial stubs raises
+that to **22 tasks**. Worse, a candidate that defines a universal equality dunder —
+`__eq__` returning `True`, and five variants of the same idea — passes the hidden
+tests of **555–557 of 591 tasks (0.939–0.942)**, reproduced in 59 s. The verifier
+inherited from the sibling repository records such code in `hack_flags` but does not
+act on it, so as written the outcome was exploitable in principle.
+
+**The fix, measured.** Two independent defences now live in
+`experiments/common/integrity.py`:
+
+| defence | effect | false positives on the 591 references |
+|---|---|---|
+| `canary_block` — one hidden assertion re-issued with a corrupted expected value, which a correct solution must fail | the `__eq__` family drops from 555–557 to **0–2 of 591** | **0 / 591** (all references still pass) |
+| `hack_gate` — static AST gate: no dunder redefinition, no module-attribute patching, no module-scope builtin rebinding | stops 9 / 9 attack variants tried, including a dunder-free module-patch route | **0 / 591** |
+
+Neither suffices alone: the canary is not constructible on 27 MBPP tasks whose
+assertions use `math.isclose`, and the gate only stops routes that were enumerated.
+Both must run on every graded candidate. A naive builtin-rebinding rule was rejected
+because it produces 19 false positives — references idiomatically write `sum = 0`
+inside a function body — so the rule applies at module scope only, with a carve-out
+for a task whose own entry point is named `sum`.
+
+**What this does to A2 and A3 — measured, not assumed.** Those rates were read from
+the sibling project's log, graded with the unfixed verifier, so the natural worry is
+that they are biased upward. They are not, and this is checkable rather than
+arguable: `hack_flags` is present as a list in **all 4,488 episodes** and is
+**non-empty in none of them** (0 / 4,488 episodes, 0 / 6,063 decision records), and
+the flagger demonstrably fires on a known-bad string. No real model output in that
+run attempted any flagged route. **The upper bound on the upward bias in A2's
+0.600 / 0.708 first-attempt rates and in A3's 0.239 repair, 0.162 degradation and
++4.6-point stopping headroom is therefore 0.0000.**
+
+**But the gate is still mandatory here, for a reason that does not apply to that
+run.** Nothing in the sibling experiment was optimizing against the grader. This
+project will train a policy whose objective *is* the graded outcome, and
+reward hacking appears precisely under that pressure. An exploit rate of zero under
+no optimization pressure is no evidence at all about the rate under optimization.
+
+**Independent confirmation of the effective pool size.** Excluding references that
+fail, tasks passed by the trivial-stub battery, and tasks whose mutation kill rate is
+0.00 gives **564 tasks**; intersecting with the informative difficulty band gives
+**230** (155 MBPP, 75 HumanEval). A2 estimated ~230 by a completely different route
+(a beta-binomial fit to per-task success counts). Two independent routes to the same
+number is the strongest evidence available that the effective sample is ~230 tasks.
+
+**New: the hidden tests do not always discriminate.** Seven AST mutations of each
+reference, 1,965 mutants over 562 tasks, 35 s: overall kill rate **0.8656**,
+task-clustered 95% CI [0.8490, 0.8820]. 184 of 562 tasks have a kill rate below 1.0,
+**47 are at or below 0.50**, and 2 are at 0.00. Argument-swap mutants survive 30.9% of
+the time. This is a property of the benchmark, not of our harness, and it caps how
+finely any outcome defined on these tests can resolve a change in behaviour.
+
+Scripts: `experiments/audits/data_evaluator/audit_{reward_hacking,discrimination,
+sentinel_evasion,pool_and_psuite}.py`; outputs in
+`results/audits/data_evaluator/`. The A1 run directories above are **not** amended —
+they record what was measured at the time — and `results/audits/task_pool/NOTES.md`
+now points here.
