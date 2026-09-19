@@ -53,3 +53,26 @@ anchor randomized experiment.
 the sibling projects contend for the only GPU; and the decision-level version of the
 project's central claim is currently unsupported (`docs/premise_findings.md`), so
 component 7 may have to be redefined before it can be earned.
+
+### 2026-09-19, checkpoint 2 — **19%** (+6 since checkpoint 1)
+
+Component 1 (positioning and verified literature) rises from 0.25 to **0.85**: 141
+citations verified with live lookups, 96 prior-art items swept and adjudicated, the
+closest prior art tabulated with what each has and lacks, a novelty claim written
+that survived an adversarial area-chair review, and a concession table naming what we
+give up and to whom (`docs/literature_audit.md`, `docs/positioning.md`). Not 1.0
+because three verification verdicts remain UNCLEAR, and because the design-novelty
+claim rests on a negative search that must be re-run before submission.
+
+No other component moved: the identification document is still in synthesis and the
+six design specs are still being drafted.
+
+**What this checkpoint changed about the project, not just its readiness.** The
+brief's novelty claim did not survive, so the paper is smaller than planned. The
+surviving contribution — prospective sequential randomization with logged
+propensities, coarsening as the identification argument, branch-sampled validation,
+and spending the effects on when to intervene — is now supported by three
+independent lines of evidence that were produced without sight of each other. That is
+a better position to be in than an unexamined large claim, but it does mean
+components 2 and 7 will need redefining against `docs/positioning.md` before they can
+be earned.
