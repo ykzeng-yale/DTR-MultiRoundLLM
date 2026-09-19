@@ -1,0 +1,77 @@
+{
+  "audit": "A2_difficulty",
+  "created_utc": "20260919T215634Z",
+  "source_episodes": "/Users/yukangzengcmac/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "source_episode_count": 4488,
+  "source_tasks_sha256": [
+    "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce"
+  ],
+  "our_tasks_sha256_matches": true,
+  "models": [
+    "qwen2.5-3b-instruct",
+    "qwen2.5-7b-instruct"
+  ],
+  "per_model": {
+    "qwen2.5-3b-instruct": {
+      "success_count_distribution": {
+        "0/4": 135,
+        "1/4": 61,
+        "2/4": 55,
+        "3/4": 63,
+        "4/4": 246
+      },
+      "difficulty_distribution": {
+        "beta_binomial_alpha": 0.34752476858041464,
+        "beta_binomial_beta": 0.23012942149344,
+        "implied_mean_success": 0.6016138626744535,
+        "implied_mass_above_0.95": 0.3335236598881586,
+        "implied_mass_below_0.05": 0.15598252308802463,
+        "implied_mass_in_0.1_to_0.9": 0.4056696742204319,
+        "nll": 795.1806475020835,
+        "note": "fitted to per-task (successes, draws); deconvolves sampling noise from true spread in difficulty. A U-shaped fit (both parameters < 1) means the pool is genuinely split into solved and unsolved tasks rather than concentrated in an informative middle."
+      },
+      "tasks_with_data": 560,
+      "median_episodes_per_task": 4,
+      "mean_first_attempt_success": 0.6,
+      "tasks_at_ceiling_rate_1.0": 246,
+      "tasks_at_floor_rate_0.0": 135,
+      "tasks_in_0.1_to_0.9": 179
+    },
+    "qwen2.5-7b-instruct": {
+      "success_count_distribution": {
+        "0/4": 126,
+        "1/4": 20,
+        "2/4": 28,
+        "3/4": 34,
+        "4/4": 352
+      },
+      "difficulty_distribution": {
+        "beta_binomial_alpha": 0.17004405176755136,
+        "beta_binomial_beta": 0.07120657790109812,
+        "implied_mean_success": 0.7048439707747158,
+        "implied_mass_above_0.95": 0.5808290110926997,
+        "implied_mass_below_0.05": 0.18163121426266782,
+        "implied_mass_in_0.1_to_0.9": 0.1821391224672023,
+        "nll": 598.8447289855086,
+        "note": "fitted to per-task (successes, draws); deconvolves sampling noise from true spread in difficulty. A U-shaped fit (both parameters < 1) means the pool is genuinely split into solved and unsolved tasks rather than concentrated in an informative middle."
+      },
+      "tasks_with_data": 560,
+      "median_episodes_per_task": 4,
+      "mean_first_attempt_success": 0.7080357142857143,
+      "tasks_at_ceiling_rate_1.0": 352,
+      "tasks_at_floor_rate_0.0": 126,
+      "tasks_in_0.1_to_0.9": 82
+    }
+  },
+  "tasks_with_any_data": 560,
+  "bands_pooled": {
+    "ceiling (>=0.95)": 229,
+    "informative (0.05-0.95)": 240,
+    "floor (<=0.05)": 91
+  },
+  "candidate_pools": {
+    "hard_excl_floor_rate_le_0.5": 106,
+    "hard_incl_floor_rate_le_0.5": 197,
+    "informative_0.1_to_0.9": 240
+  }
+}
