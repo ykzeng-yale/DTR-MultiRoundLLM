@@ -1,0 +1,93 @@
+{
+  "n_per_rep": 4000,
+  "reps": 20,
+  "seed": 20260919,
+  "truth": {
+    "V_optimal_seeing_latent_Z": 0.559494533125,
+    "V_optimal_X_only": 0.559494533125,
+    "ceiling_cost_of_not_seeing_Z": 0.0,
+    "optimal_X_only_rule": {
+      "t1": [
+        "S",
+        "L",
+        "V"
+      ],
+      "t2": [
+        "L",
+        "L",
+        "V"
+      ]
+    },
+    "myopic_X_only_rule": {
+      "0": "L",
+      "1": "L",
+      "2": "V"
+    },
+    "V_of_myopic_rule": 0.548009914375,
+    "F2_myopia_gap": 0.011484618749999953,
+    "F2_myopic_differs_from_optimal": [
+      0
+    ],
+    "V_fixed_class": {
+      "U": 0.3640501253125001,
+      "L": 0.4994278746875,
+      "V": 0.37247890968750014,
+      "S": 0.29384145312500004
+    }
+  },
+  "conditions": {
+    "OBS": {
+      "value": {
+        "terminal_Xonly": 0.5468908267968748,
+        "terminal_XZ": 0.5412665216406248,
+        "myopic_Xonly": 0.5480099143749999,
+        "qlearn_Xonly": 0.5524335609374998,
+        "qlearn_XZ": 0.552262399046875
+      },
+      "regret_vs_X_only_ceiling": {
+        "terminal_Xonly": 0.01260370632812513,
+        "myopic_Xonly": 0.011484618750000064,
+        "qlearn_Xonly": 0.007060972187500125
+      },
+      "regret_vs_full_ceiling": {
+        "terminal_XZ": 0.01822801148437514,
+        "qlearn_XZ": 0.007232134078124952
+      },
+      "mean_marginal_EY_by_A2": {
+        "U": 0.6367727931911135,
+        "L": 0.4352317323783727,
+        "V": 0.43690562284958495,
+        "S": 0.1859759791890711
+      }
+    },
+    "RCT": {
+      "value": {
+        "terminal_Xonly": 0.5446526516406249,
+        "terminal_XZ": 0.5426356266718748,
+        "myopic_Xonly": 0.5480099143749999,
+        "qlearn_Xonly": 0.5552253342968749,
+        "qlearn_XZ": 0.553939217046875
+      },
+      "regret_vs_X_only_ceiling": {
+        "terminal_Xonly": 0.014841881484375041,
+        "myopic_Xonly": 0.011484618750000064,
+        "qlearn_Xonly": 0.004269198828125043
+      },
+      "regret_vs_full_ceiling": {
+        "terminal_XZ": 0.016858906453125155,
+        "qlearn_XZ": 0.005555316078124983
+      },
+      "mean_marginal_EY_by_A2": {
+        "U": 0.3733885981803697,
+        "L": 0.47083118976189436,
+        "V": 0.39229428715826886,
+        "S": 0.30951115621455527
+      }
+    }
+  },
+  "findings": {
+    "F1_state_insufficiency": "regret of the X-only terminal critic: OBS 0.0126 vs RCT 0.0148",
+    "F1_randomization_repairs_it": "under RCT the same X-only critic reaches within 0.0148 of the X-only ceiling",
+    "F2_myopia": "myopic rule loses 0.0115 against the X-only optimum; it differs at states [0]"
+  }
+}

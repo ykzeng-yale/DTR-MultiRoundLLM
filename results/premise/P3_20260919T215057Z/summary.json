@@ -1,0 +1,575 @@
+{
+  "n_per_rep": 6000,
+  "reps": 15,
+  "seed": 20260919,
+  "truth": {
+    "optimal_X_only_rule": {
+      "t1": [
+        "S",
+        "S",
+        "V"
+      ],
+      "t2": [
+        "L",
+        "L",
+        "V"
+      ]
+    },
+    "V_optimal_X_only": 0.6593535,
+    "V_fixed_class": {
+      "U": 0.42782300000000006,
+      "L": 0.58052725,
+      "V": 0.44240524999999997,
+      "S": 0.48824449999999997
+    },
+    "true_P_right_next_step": {
+      "x0,U,Z=0": 0.15,
+      "x0,U,Z=1": 0.08,
+      "x0,L,Z=0": 0.35,
+      "x0,L,Z=1": 0.1,
+      "x0,V,Z=0": 0.08,
+      "x0,V,Z=1": 0.06,
+      "x0,S,Z=0": 0.12,
+      "x0,S,Z=1": 0.36,
+      "x1,U,Z=0": 0.28,
+      "x1,U,Z=1": 0.16,
+      "x1,L,Z=0": 0.67,
+      "x1,L,Z=1": 0.18,
+      "x1,V,Z=0": 0.35,
+      "x1,V,Z=1": 0.18,
+      "x1,S,Z=0": 0.3,
+      "x1,S,Z=1": 0.62
+    },
+    "population_avg_P_right_from_x0": {
+      "U": 0.1255,
+      "L": 0.2625,
+      "V": 0.073,
+      "S": 0.204
+    }
+  },
+  "rows": [
+    {
+      "gamma": 0.0,
+      "condition": "OBS",
+      "terminal": {
+        "mean_value": 0.6177914,
+        "regret": 0.041562100000000046,
+        "modal_rule_t1": [
+          "L",
+          "S",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6177914,
+        "regret": 0.041562100000000046,
+        "modal_rule_t1": [
+          "L",
+          "S",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6488565333333334,
+        "regret": 0.010496966666666663,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.0,
+      "condition": "RCT",
+      "terminal": {
+        "mean_value": 0.6456068666666668,
+        "regret": 0.013746633333333258,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6456068666666668,
+        "regret": 0.013746633333333258,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6470816166666669,
+        "regret": 0.012271883333333178,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.25,
+      "condition": "OBS",
+      "terminal": {
+        "mean_value": 0.6135079999999999,
+        "regret": 0.045845500000000095,
+        "modal_rule_t1": [
+          "S",
+          "S",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6264240000000002,
+        "regret": 0.032929499999999834,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6166636166666667,
+        "regret": 0.042689883333333345,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.25,
+      "condition": "RCT",
+      "terminal": {
+        "mean_value": 0.6437389500000001,
+        "regret": 0.015614549999999894,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6437389500000001,
+        "regret": 0.015614549999999894,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6473399833333335,
+        "regret": 0.012013516666666502,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.5,
+      "condition": "OBS",
+      "terminal": {
+        "mean_value": 0.63150525,
+        "regret": 0.02784825000000002,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6312769000000001,
+        "regret": 0.028076599999999896,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.61766885,
+        "regret": 0.04168464999999999,
+        "modal_rule_t1": [
+          "S",
+          "S",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "S",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.5,
+      "condition": "RCT",
+      "terminal": {
+        "mean_value": 0.6456068666666669,
+        "regret": 0.013746633333333147,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6456068666666669,
+        "regret": 0.013746633333333147,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6475082333333335,
+        "regret": 0.01184526666666652,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.75,
+      "condition": "OBS",
+      "terminal": {
+        "mean_value": 0.642462466666667,
+        "regret": 0.016891033333333083,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6405945500000002,
+        "regret": 0.01875894999999983,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6318646166666668,
+        "regret": 0.027488883333333214,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 0.75,
+      "condition": "RCT",
+      "terminal": {
+        "mean_value": 0.6466550000000002,
+        "regret": 0.012698499999999835,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6466550000000002,
+        "regret": 0.012698499999999835,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6466550000000002,
+        "regret": 0.012698499999999835,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 1.0,
+      "condition": "OBS",
+      "terminal": {
+        "mean_value": 0.6382699333333336,
+        "regret": 0.021083566666666442,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6416426833333335,
+        "regret": 0.017710816666666518,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6412948833333337,
+        "regret": 0.018058616666666305,
+        "modal_rule_t1": [
+          "S",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "S",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    },
+    {
+      "gamma": 1.0,
+      "condition": "RCT",
+      "terminal": {
+        "mean_value": 0.6426908166666668,
+        "regret": 0.016662683333333206,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "ipw": {
+        "mean_value": 0.6426908166666668,
+        "regret": 0.016662683333333206,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      },
+      "qlearn": {
+        "mean_value": 0.6460370666666669,
+        "regret": 0.0133164333333331,
+        "modal_rule_t1": [
+          "L",
+          "L",
+          "V"
+        ],
+        "modal_rule_t2": [
+          "L",
+          "L",
+          "V"
+        ],
+        "frac_reps_recovering_optimal": 0.0
+      }
+    }
+  ],
+  "findings": {
+    "gammas_where_logged_correlational_critic_fails_to_recover_optimum": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "randomized_critic_always_recovers_optimum": false,
+    "max_regret_gap_obs_minus_rct_for_terminal": 0.0302309500000002,
+    "does_known_propensity_ipw_repair_the_logged_case": {
+      "0.0": {
+        "terminal_regret": 0.041562100000000046,
+        "ipw_regret": 0.041562100000000046
+      },
+      "0.25": {
+        "terminal_regret": 0.045845500000000095,
+        "ipw_regret": 0.032929499999999834
+      },
+      "0.5": {
+        "terminal_regret": 0.02784825000000002,
+        "ipw_regret": 0.028076599999999896
+      },
+      "0.75": {
+        "terminal_regret": 0.016891033333333083,
+        "ipw_regret": 0.01875894999999983
+      },
+      "1.0": {
+        "terminal_regret": 0.021083566666666442,
+        "ipw_regret": 0.017710816666666518
+      }
+    }
+  }
+}
