@@ -1,0 +1,19 @@
+[project]
+name = "dtr-multiround-llm"
+version = "0.1.0"
+description = "Multi-round human-LLM interaction as a dynamic treatment regime"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.1",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "requests>=2.32",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
