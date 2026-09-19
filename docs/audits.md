@@ -181,3 +181,58 @@ sentinel_evasion,pool_and_psuite}.py`; outputs in
 `results/audits/data_evaluator/`. The A1 run directories above are **not** amended —
 they record what was measured at the time — and `results/audits/task_pool/NOTES.md`
 now points here.
+
+---
+
+## A4 — assertion-level visible/hidden split, and the final pool (2026-09-19)
+
+A harness review found a second defect in the split, and it blocked more of the
+design than the stub check did: `verify.split_tests` treated HumanEval's `check`
+function as one opaque unit, so **all 164 HumanEval tasks had no
+intervener-observable verdict and a hidden-assertion count of 1**. Every design that
+conditions on an observed verdict — which is all of them, because an intervention
+round with no external evidence is closed off by the self-correction literature —
+was therefore undefined on 28% of the pool. Only 76 of 164 prompts carry a `>>>`
+doctest from which a verdict could be scavenged, so the obvious remedy was to
+exclude the other 88.
+
+**A better fix, measured.** `experiments/common/scoring.py` splits `check` at
+assertion level, making the two benchmarks structurally identical instead of
+excluding anything: parse the assertions out of `check`, drop any assertion whose
+inputs the prompt's own docstring already displays, then hold out the first of the
+remainder as visible and grade on the rest — exactly MBPP's arrangement.
+
+Audit A4 (`experiments/audits/audit_scoring_split.py`, CPU only, all rules pass):
+
+| | MBPP | HumanEval |
+|---|---|---|
+| tasks | 427 | 164 |
+| `check` splittable into assertions | n/a | **158** |
+| **usable** (one visible assertion **and** ≥ 1 graded assertion) | **427** | **156** |
+| hidden assertions per task (mean / median / min / max) | 2.1 / 2 / 2 / 6 | 5.15 / 4 / 1 / 25 |
+| tasks with prompt-revealed assertions removed from grading | 0 | **76** |
+| assertions removed from grading because the prompt reveals them | 0 | **193** |
+| references still passing the hidden-only program | 427 / 427 | 156 / 156 |
+
+So the split recovers **156 of 164** HumanEval tasks rather than the 76 an exclusion
+rule would have kept, and it removes 193 assertions that would otherwise have been
+graded as hidden while the prompt displayed their inputs. The 8 it cannot use are
+`humaneval/{32,34,35,38,44,50,53,129}`: six wrap their assertions in a `for` loop and
+are indivisible, and two have nothing left after the revealed assertions are removed.
+
+### The final pool: 230 tasks, by three independent routes
+
+| gate | tasks |
+|---|---|
+| A1, usable under the (too weak) single-stub check | 590 |
+| POOL A — after the trivial-stub battery, the integrity gates and the mutation-kill exclusion | 564 |
+| A4 — scoring-usable (visible verdict and ≥ 1 graded assertion) | 583 |
+| POOL A ∩ scoring-usable | **561** |
+| ∩ informative difficulty band | **230** (155 MBPP, 75 HumanEval) |
+
+The scoring rule costs only 3 tasks beyond POOL A
+(`humaneval/{44,53,129}`). And 230 is now the third independent route to the same
+number: A2 reached it by fitting a beta-binomial to per-task success counts, the
+integrity/mutation route reached it through POOL A, and the scoring route reaches it
+again. `results/audits/final_pool.json` holds the list; it is the pool the
+experiments use, and any future gate can only shrink it.
