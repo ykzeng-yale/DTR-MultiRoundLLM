@@ -41,6 +41,79 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## STOP — read this before writing any theory (2026-09-19, experiments workstream)
+
+The literature audit is done: 141 citations verified with live lookups, 96 prior-art
+items swept down five deliberately different routes, adjudicated, and then attacked
+by an agent playing hostile area chair. Results in `docs/literature_audit.md`,
+`docs/positioning.md`, and the structured records in `docs/literature/`.
+
+**Good news.** 132 of 141 citations in the originating brief are real and accurately
+described. The bibliography was largely sound. (One string is corrupted:
+`arcxiv.org/abs/2608.17499` — the arXiv id and title are genuine, but `arcxiv.org`
+does not exist as a preprint server.)
+
+**Bad news, and it is load-bearing: the brief's novelty claim does not survive.**
+Prior art occupies most of the proposed contribution, including several papers the
+brief never mentions. Do not write "we are the first to formulate multi-turn
+prompting as a longitudinal causal problem" — it is defeated three times over, twice
+by peer-reviewed work. Before drafting, engage these directly:
+
+* **arXiv:2502.17538** — Q-learning for a dynamic treatment regime in a *natural
+  language action space*, with embedding-space gradient ascent and decoding back to
+  text. Owns our framing and components (ii) and (iii); leaves the entire
+  identification layer open. This is the paper to differentiate against.
+* **arXiv:2607.03597** — estimands and inference for causal effects in AI-mediated
+  conversation. Already plants the flag on our vocabulary.
+* **arXiv:2404.00207** (CausalCollab) — user-side text as time-varying treatment, LM
+  history as time-varying confounder, sequential g-formula. Same group as 2502.17538.
+* **arXiv:2605.07834** (Nakamura & Imai) — marginal structural model over *sequences*
+  of text treatment features with a per-feature deconfounder and valid semiparametric
+  CIs. The closest existing thing to a DTR over text; its absence from the brief was
+  the audit's biggest single gap.
+* **arXiv:2410.00903** (Imai & Nakamura) — single-period identification and DML
+  asymptotics for text-valued treatments.
+* **arXiv:2504.02646** (Kiyohara et al.) — per-context off-policy prompt policy
+  learning from logged bandit feedback over a large text action space.
+* **arXiv:2605.25998** (KDD 2026) — states prompt-as-treatment plus DR/orthogonal
+  policy learning outright, but *explicitly leaves the sequential/agentic case open*,
+  which is useful to us.
+* **arXiv:2604.09459** — a widely read survey with propositions giving a *negative*
+  result on turn-level causal credit in multi-turn LLM trajectories. This is what
+  will be thrown at our identification section.
+* **arXiv:2603.06859** — argues that with no hidden state in the text history the
+  per-decision counterfactual is exactly identified by re-sampling under a frozen
+  behaviour policy. A direct rival to a g-formula story, and close to our branching
+  design.
+
+**Do not rebuild these** (full list with reasons in `docs/literature_audit.md`):
+neural SNMM / blip machinery (DeepBlip, arXiv:2511.14545, ICML 2026 — extend it),
+the orthogonal DR Q-learner (arXiv:2509.26429, ICLR 2026 — its gap is the *action*
+space, not the estimator), a DML-debiased reward model over prompt and query
+embeddings (CPO did it, and doing DML on both jointly is exactly the
+treatment/covariate conflation that arXiv:2602.15730 shows induces bias), or
+token-level importance weighting for multi-turn OPE (arXiv:2606.05558 did it with
+exact log-probs and it still loses to a learned world model).
+
+**What survives is smaller and real, and it converges with the premise checks and
+the audits.** The area chair, without seeing either of those, independently landed on:
+coarsen the action to a small finite move set and treat *the coarsening as the
+identification argument*; **randomize it prospectively and log the propensities** —
+nobody has done this in a multi-turn LLM setting, checked as a direct question and
+found clean; use the existing orthogonal estimators, cited as such; and use the
+estimated effects for the one decision the evidence says they can pay for,
+**when to intervene and when to stop**. That is the same conclusion the premise
+checks and Audit A3 reached from the other two directions.
+
+Q11 therefore now has a third vote. The experiments workstream's recommendation is
+in `docs/positioning.md` under "The claim we should try to earn", together with nine
+hard constraints the audit imposes on the design — including a mandatory
+zero-information feedback arm (UFO, arXiv:2507.14295), budget-matched
+self-consistency as the comparator that matters, the requirement that every round
+carry *external* evidence because model self-critique without it is closed off by
+five independent results, and keeping the horizon short because DeepBlip's error
+propagates like `(1+C)^(tau-k)` backwards under weak overlap.
+
 ## READ FIRST — a premise check came out against the claim (2026-09-19)
 
 Before designing anything, the experiments workstream tested the project's central
@@ -206,3 +279,8 @@ GPU work is scheduled around the sibling runs and recorded per episode.
   intervention can be audited mechanically for quoting a graded assertion.
 * **2026-09-19, experiments workstream** — premise checks P1–P3; see the section
   at the top of this file. **Q11 is open and blocks the shape of the paper.**
+* **2026-09-19, experiments workstream** — literature audit complete (141 citations
+  verified, 96 prior-art items, adjudicated and adversarially reviewed). 132/141
+  citations sound; **the novelty claim is not.** See the STOP section at the top of
+  this file, `docs/literature_audit.md` and `docs/positioning.md`. Nine hard design
+  constraints now follow from the audit.
