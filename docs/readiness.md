@@ -101,3 +101,26 @@ random numbers deliver 25% rather than the order of magnitude the branch-tree co
 assumed, and multi-turn calls cost 2.4× the planning figure. None of these is fatal, and
 all of them argue for the same reframing the premise checks and the literature audit
 already pointed at.
+
+### 2026-09-19, checkpoint 4 — **45%** (+8 since checkpoint 3)
+
+| # | Component | Credit | Δ | Basis |
+|---|---|---|---|---|
+| 1 | Positioning / literature | 0.85 | — | unchanged |
+| 2 | Theory | 0.55 | +0.15 | 17 of 18 repair agents complete, all repaired sections on disk against a binding cross-cutting spec; errata outstanding |
+| 3 | Design / pre-registration | 0.70 | +0.15 | the full program exists: 27 arms in four gates, 12 kill criteria including a no-wriggle clause, a freeze checklist, and 10 named theory blockers. Still not frozen. |
+| 4 | Harness | 0.40 | +0.05 | G0e's analysis code added; still no episode runner, intervener or tree store |
+| 5 | Simulation study | 0.90 | +0.20 | E0 executed at the pre-registered R = 1000 across all 17 cells, written up, failure cells failing exactly as designed |
+| 6 | Real-model experiments | 0.15 | +0.05 | K1 tested and fired at zero GPU cost on existing data — a gate cleared in the sense that matters, by being failed early |
+| 7 | Critic / policy | 0.00 | — | and its target has changed: selection and stopping, not message generation |
+| 8 | Manuscript | 0.00 | — | not started |
+
+**The finding that moved this checkpoint is negative.** Kill criterion K1 fired: adaptive
+best-of-N beats the multi-turn loop at lower cost on both receivers. That is progress —
+the cheapest possible test of the project's most dangerous comparator ran before any
+confirmatory budget was spent, and it redirected the programme rather than embarrassing it
+later. Readiness rose because the programme is better specified and better evidenced, not
+because the original hypothesis survived.
+
+**Largest remaining milestones:** assemble the repaired theory; re-scope Gate 1 around
+selection and stopping; answer the 10 theory blockers; freeze; then Gate 1's GPU work.
