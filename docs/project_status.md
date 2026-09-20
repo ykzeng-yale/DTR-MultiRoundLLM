@@ -6,6 +6,10 @@
 
 The [monitoring checkpoint](monitoring_checkpoint.md) records the live schedule and next steps. New work adds [landmark prompt theory](landmark_prompt_theory.md), seven exact check groups, 1,200 known-truth train/test datasets with 2,400 nested evaluations, a bounded collector/offline analyzer and a [reviewable protocol](landmark_experiment_protocol.md). These are theory, simulation and mock-tested software, not a frozen real-model trial. No new model calls, candidate-code execution or external spend occurred. The project remains below submission readiness. PR #1 is merged; PR #6 carries the current continuation and remains subject to review/integration. Historical release statements below are retained as such.
 
+The 22:24 UTC continuation adds a [24-task family/specification audit](landmark_family_audit_20260920.md), an independently reviewed inference correction, an exact small-sample counterexample and a [manuscript methods supplement](../manuscript/landmark_methods_20260920.md). Seven tasks remain only for further contract review. The private grader's containment launch checks failed on this host, so no benchmark reference or candidate was executed and no endpoint was validated empirically. See [grading validation](landmark_grading_validation_20260920.md). Preparation advanced; real prompt-policy efficacy and submission readiness remain unestablished.
+
+Final integrated validation: 121 tests and two subtests passed. Host evidence comprises 31 controlled launch attempts and zero observed Python payload starts; runtime containment remains unvalidated. No real receiver, benchmark candidate or reference was executed in this hourly continuation.
+
 ## Historical initial release — 19 September 2026
 
 The remaining sections preserve the initial theory and experimental-development release. Counts and publication states below describe that release; use the current checkpoint above for present status.

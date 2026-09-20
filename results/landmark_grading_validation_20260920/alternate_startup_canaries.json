@@ -1,0 +1,77 @@
+[
+  {
+    "python": "/usr/bin/python3",
+    "profile_sha256": "da7f77dc339a9be5119c755b523784b7e7cf5e9496f90e7f10b3ad0bf81d5ff0",
+    "payload_started": false,
+    "result": {
+      "passed": false,
+      "returncode": -6,
+      "stdout": "",
+      "stderr": "",
+      "stdout_tail": "",
+      "timed_out": false,
+      "seconds": 0.013054083101451397,
+      "executed": true,
+      "pid": 25994,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "da7f77dc339a9be5119c755b523784b7e7cf5e9496f90e7f10b3ad0bf81d5ff0",
+      "rendered_profile_sha256": "3e1dba7edda7488fc82afd32c8b7540c3ac640817915790a34bd6255526d7538",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 4096,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "python": "/opt/homebrew/Cellar/python@3.12/3.12.10/Frameworks/Python.framework/Versions/3.12/bin/python3.12",
+    "profile_sha256": "0d57d5c6554ab67aa67205cb52d188dd4c2a476af7852329ed5c9b517be09f79",
+    "payload_started": false,
+    "result": {
+      "passed": false,
+      "returncode": -6,
+      "stdout": "",
+      "stderr": "",
+      "stdout_tail": "",
+      "timed_out": false,
+      "seconds": 0.012384708970785141,
+      "executed": true,
+      "pid": 25995,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "0d57d5c6554ab67aa67205cb52d188dd4c2a476af7852329ed5c9b517be09f79",
+      "rendered_profile_sha256": "b1eca1b51ae8f8a786dc1b3b431e3f3a2a536519be6a2b7c2a0d0676d49699e8",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 4096,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "python": "/opt/homebrew/Cellar/python@3.13/3.13.11/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "profile_sha256": "8e49c5bafb30ced28a6a7b82832418654693bfdc2bcb77ea2e6c18732d5f6c90",
+    "payload_started": false,
+    "result": {
+      "passed": false,
+      "returncode": -6,
+      "stdout": "",
+      "stderr": "",
+      "stdout_tail": "",
+      "timed_out": false,
+      "seconds": 0.012221417389810085,
+      "executed": true,
+      "pid": 25996,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "8e49c5bafb30ced28a6a7b82832418654693bfdc2bcb77ea2e6c18732d5f6c90",
+      "rendered_profile_sha256": "dca8f6ce60c6b73a73f7eee75d6b0e8b623fd4562f409d5575ed1f9f090cbc9d",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 4096,
+        "memory": "best_effort"
+      }
+    }
+  }
+]

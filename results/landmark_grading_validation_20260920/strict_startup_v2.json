@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "returncode": -6,
+  "stdout": "",
+  "stderr": "",
+  "stdout_tail": "",
+  "timed_out": false,
+  "seconds": 0.020480167120695114,
+  "executed": true,
+  "pid": 25760,
+  "sandbox_kind": "seatbelt",
+  "profile_sha256": "a1632584c0be7b3ca03567468e41af935da44b52bf3031a1b4cde2a91560730a",
+  "rendered_profile_sha256": "85e66dd353a0438bfcf1a688bab535eb51588fd74f1928f823b3ce217d32b9a5",
+  "limits_applied": {
+    "cpu_seconds": 1,
+    "nproc": 1,
+    "file_bytes": 4096,
+    "memory": "best_effort"
+  }
+}

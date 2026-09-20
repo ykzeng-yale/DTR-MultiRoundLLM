@@ -1,6 +1,6 @@
 # DTR-MultiRoundLLM
 
-> **Hourly continuation:** [landmark prompt theory](docs/landmark_prompt_theory.md), [personalization simulation](docs/landmark_premise_results_20260920.md), [next experiment protocol](docs/landmark_experiment_protocol.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
+> **Hourly continuation:** [family/specification audit](docs/landmark_family_audit_20260920.md), [inference review](docs/landmark_inference_review_20260920.md), [grading validation](docs/landmark_grading_validation_20260920.md), [manuscript methods](manuscript/landmark_methods_20260920.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
 
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
@@ -16,11 +16,13 @@ The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_The
 
 ## Latest continuation — 20 September 2026
 
-Read the [scientific judgment](docs/scientific_judgment_20260920.md) and [hourly checkpoint](docs/monitoring_checkpoint.md) first. The latest addition is a rigorous [landmark design](docs/landmark_prompt_theory.md) with seven exact check groups, a known-truth personalization study with 1,200 datasets and 2,400 nested evaluations, and a bounded mock-tested collector/offline analyzer. **82 tests pass.** A zero average arm contrast does not rule out personalized benefit; a best-observed-branch gain does not establish deployable benefit.
+Read the [scientific judgment](docs/scientific_judgment_20260920.md) and [hourly checkpoint](docs/monitoring_checkpoint.md) first. The [landmark design](docs/landmark_prompt_theory.md), seven exact check groups, 1,200-dataset known-truth personalization study and bounded collector remain available. The latest continuation adds source-family curation, a private grading adapter and finite-sample inference safeguards. A specific 24-root law exposes 91.28% coverage for the earlier nominal 95% normal interval; conservative bounds now state their fixed-weight independent-family assumptions and multiplicity scope. A zero average arm contrast still does not rule out personalized benefit; a best-observed-branch gain does not establish deployable benefit.
 
-The [task-source audit](docs/landmark_task_source_candidates_20260920.md) identifies 544 candidate MBPP IDs after known prior-description exclusions, including 242 official-test IDs. These are not yet a validated fresh family-separated evaluation set. No new receiver calls or candidate-code executions occurred. The [prior continuation report](docs/continuation_report_20260920.md) and immutable diagnostics remain available; the previously highlighted 7B +2.85-point split is exploratory and split-sensitive.
+The [task-source audit](docs/landmark_task_source_candidates_20260920.md) identifies 544 candidate MBPP IDs after known prior-description exclusions, including 242 official-test IDs. A fixed 24-task manual review retained seven for further contract review, excluded seven probable old-family variants, and held ten for specification defects, without replacements. None is a validated fresh evaluation task. Host isolation startup checks failed, so benchmark execution remains blocked. No new receiver calls or benchmark-code executions occurred. The [prior continuation report](docs/continuation_report_20260920.md) and immutable diagnostics remain available; the previously highlighted 7B +2.85-point split is exploratory and split-sensitive.
 
 **Still required:** audited task families and evaluator, pinned live receiver, frozen collection contract, actual prompt-intervention data and independent policy validation. The full project is not submission-ready. Larger generator development remains conditional on the prompt-choice premise.
+
+Validation at this checkpoint: **121 tests and two subtests pass**. These include mocked grading and exact inference checks; the 31 failed controlled startup attempts do not validate runtime containment or benchmark outcomes.
 
 ## Start here
 

@@ -1,0 +1,357 @@
+{
+  "reviewer": "Codex evidence subagent; manual source review, with separately disclosed root cross-review",
+  "selection_seed": "landmark-development-20260920-v1",
+  "outcomes_examined": false,
+  "task_code_executed": false,
+  "replacement_policy": "none",
+  "adjudication_scope": "Development-source curation only; strong family exclusions are conservative prior-family decisions, not universal semantic-equivalence proofs.",
+  "adjudications": [
+    {
+      "task_id": 13,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "word_frequency_ranking",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/88",
+        "mbpp/130"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Description says dictionary; reference/tests consume a sequence of words and return top four (word,count) pairs. Four, ordering and tie behavior are absent. Frequency/mode prior tasks share ingredients, but this is not an established identical endpoint.",
+      "required_contract_resolution": "Specify sequence input, top-four ordered output and ties as a versioned repaired task; preserve original exclusion.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 34,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_same_family_variant",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Sorted missing-number search is close to old627 and selected371/189, with a one-based single-gap variant. Missing range/gap assumptions are unspecified. Third original test gives N=5 for six elements; N cannot silently be labeled array length.",
+      "required_contract_resolution": "Resolve domain and N semantics; cannot call this an unseen family even after specification repair.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 39,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "adjacent_distinct_rearrangement",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "description_endpoint_conflict",
+      "manual_rationale": "Prompt asks whether rearrangement is possible; reference constructs a string and tests demand one exact ordering. Multiple valid rearrangements may be rejected by the literal grader.",
+      "required_contract_resolution": "Choose feasibility Boolean or constructed arrangement; if construction, grade its properties rather than a single arbitrary reference ordering. Requires new endpoint version.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 43,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "regex_lowercase_underscore",
+      "prior_relationship": "strong_near_duplicate",
+      "related_prior_roots": [
+        "mbpp/16"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Same lowercase-underscore regex predicate as old16. Original-source function AST matches after identifier erasure; sanitized old16 returns Boolean while selected43 expects two magic strings absent from the prompt.",
+      "required_contract_resolution": "Exclude from a prospective unseen-family claim. Any repaired return convention requires a new public specification.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 44,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "regex_word_at_start",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/643",
+        "mbpp/454"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Regex tasks about z share a coding idiom but have different predicates. Selected44 expects exact magic success/failure strings without specifying them, and word-character convention is unstated.",
+      "required_contract_resolution": "Specify Boolean or exact output convention and word definition; this repairs the public target.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 52,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "parallelogram_area",
+      "prior_relationship": "related_operation_and_same_arithmetic_shape",
+      "related_prior_roots": [
+        "mbpp/458"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "Rectangle-area prior458 has the same two-input multiplication shape, but geometry differs. Treat as a potential broad geometry family, not proof of duplicate task identity or independent family. Formula and interface are otherwise conventional.",
+      "required_contract_resolution": "Define base and perpendicular height and allowed numeric domain; root/family partition must not assume this arithmetic shape is independent.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 112,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "cylinder_perimeter",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/276",
+        "mbpp/574",
+        "mbpp/233"
+      ],
+      "specification_status": "undefined_geometric_target",
+      "manual_rationale": "Cylinder perimeter is not a unique geometric quantity. Reference computes twice diameter plus height, compatible with a particular rectangular cross-section, not a defined perimeter of a solid.",
+      "required_contract_resolution": "Replace with an explicit cross-section quantity or withdraw; doing so creates a revised task.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 157,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "run_length_encoding",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "material_output_underspecification",
+      "manual_rationale": "Run-length encoding is recognizable but prompt does not specify pairs as [count,value], run order, or list versus string handling; tests rely on that representation.",
+      "required_contract_resolution": "Publish an explicit run encoding/output schema before generation; version the repaired target.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 159,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "calendar_season",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/762",
+        "mbpp/455"
+      ],
+      "specification_status": "material_convention_underspecification",
+      "manual_rationale": "Month-length classification is a related calendar operation rather than the same task. Season boundaries and hemisphere/convention are unspecified; wording says print while tests expect a return value.",
+      "required_contract_resolution": "Fix calendar convention, boundaries, input spelling/domain and return behavior in a revised public contract.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 189,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_same_family_variant",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "interface_domain_clarification",
+      "manual_rationale": "First missing positive in an unsorted array generalizes the same missing-integer family as old627 and selected34/371, although algorithm, ordering and zero handling differ. Extra n and input mutation are not explained by prose.",
+      "required_contract_resolution": "Resolve n/domain/mutation semantics; do not present as an unseen task family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 202,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "alternating_character_selection",
+      "prior_relationship": "strong_semantic_duplicate",
+      "related_prior_roots": [
+        "mbpp/226",
+        "mbpp/437"
+      ],
+      "specification_status": "index_convention_underspecification",
+      "manual_rationale": "Selected202 retains zero-based even indices, exactly the operation old226 describes; old437 is the complementary alternating selection. Even characters is ambiguous without indexing convention.",
+      "required_contract_resolution": "Exclude due to prior operation identity; retain provenance even if repaired.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 220,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "punctuation_to_colon_substitution",
+      "prior_relationship": "strong_parameterized_family_variant",
+      "related_prior_roots": [
+        "mbpp/732"
+      ],
+      "specification_status": "boundary_semantics_conflict",
+      "manual_rationale": "Same punctuation substitution as old732 with a count parameter. Python re.sub count=0 replaces all, conflicting with a literal maximum of zero occurrences unless n is restricted to positive integers.",
+      "required_contract_resolution": "Specify positive count or repair zero-count behavior; prospective family remains previously represented.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 289,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "cumulative_calendar_odd_days",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "description_endpoint_conflict",
+      "manual_rationale": "Given year suggests one calendar year, whereas source counts excess weekdays accumulated over N years using leap/century corrections. The time interval and origin are absent.",
+      "required_contract_resolution": "State cumulative interval/calendar convention or change reference/evaluator; cannot silently infer target from solution.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 336,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "month_day_count_classification",
+      "prior_relationship": "strong_parameterized_family_variant",
+      "related_prior_roots": [
+        "mbpp/455",
+        "mbpp/762"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Same month-length classification family with 28 replacing 30/31 and names replacing numbers. Every month contains at least28 days; reference instead selects February, without leap-year semantics.",
+      "required_contract_resolution": "Specify exactly28 in a nonleap calendar and input convention if repairing; still a represented family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 357,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "flattened_tuple_maximum",
+      "prior_relationship": "related_operation_or_name_collision_only",
+      "related_prior_roots": [
+        "mbpp/753",
+        "humaneval/158"
+      ],
+      "specification_status": "domain_clarification_required",
+      "manual_rationale": "Tuple-record top-k and word unique-letter maximum are different targets; shared find_max name is not a duplicate. Source casts each item to int, so arbitrary numeric inputs would not implement their true maximum. Tests use integer tuples.",
+      "required_contract_resolution": "Explicitly constrain to nonempty tuple records of integers or repair source/evaluator. Retention is conditional and does not certify original prose for broader inputs.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 365,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "integer_decimal_digit_count",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/764",
+        "mbpp/224"
+      ],
+      "specification_status": "reference_boundary_defect_under_unrestricted_prompt",
+      "manual_rationale": "Counting decimal digits of an integer differs from counting digit characters in mixed text (old764). Source returns zero for0 and repeated floor division of negative integers never reaches0. This is a static control-flow finding, not an executed failure.",
+      "required_contract_resolution": "Restrict to strictly positive integers explicitly or repair zero/negative handling and evaluator; preserve version distinction.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 371,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_near_duplicate",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "universe_and_interface_underspecification",
+      "manual_rationale": "Both locate first missing nonnegative integer in a sorted sequence by index-based search. Selected left/right arguments and nonnegative zero-origin universe are absent from prose.",
+      "required_contract_resolution": "Exclude prior family; clarify sorted distinct nonnegative domain and search bounds for any revised version.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 373,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "cuboid_volume",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/234",
+        "mbpp/14"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "Cube and triangular-prism volume tasks are related elementary geometry but have different parameterizations/formulas. No exact task identity established; broad geometry transfer remains possible.",
+      "required_contract_resolution": "Define length,width,height and admissible units/numeric domain; do not equate a distinct solid with a proven independent family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 378,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "right_rotate_list_one",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/625",
+        "mbpp/591",
+        "humaneval/65"
+      ],
+      "specification_status": "minor_interface_clarification",
+      "manual_rationale": "Moving final element to front differs from swapping endpoints (old625/591). Digit circular-shift HE65 is related but includes integer/string-specific behavior and arbitrary shifts.",
+      "required_contract_resolution": "Specify returned list and empty-list behavior; count as development only pending semantic review and scorer validation.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 386,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "minimum_bracket_balance_swaps",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/595",
+        "mbpp/771",
+        "humaneval/61"
+      ],
+      "specification_status": "material_cost_model_underspecification",
+      "manual_rationale": "Minimum swaps depends on adjacent-only versus arbitrary swaps, absent from prose. Source accumulates adjacent distances. Balance recognition and binary-string transformation prior tasks are related, not identical optimization endpoints.",
+      "required_contract_resolution": "Specify adjacent swap cost, bracket alphabet, and equal-count/feasibility assumptions before scoring.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 402,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "binomial_modulus",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/274",
+        "mbpp/592"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "nCr modulo p is recognizable. Other binomial-sum tasks share mathematical ingredients but compute different functions. Source uses dynamic programming and does not require prime p.",
+      "required_contract_resolution": "Specify integers n>=0,0<=r<=n,p>0; do not unnecessarily restrict p to primes. Validate evaluator separately.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 488,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "regular_pentagon_area",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/171"
+      ],
+      "specification_status": "geometry_and_numeric_judging_underspecification",
+      "manual_rationale": "Area is determined from one side only for a regular pentagon, unstated. Original assertions compare floating-point outputs by exact equality; mathematically valid equivalent formulas may round differently. Perimeter prior171 is related but a different target.",
+      "required_contract_resolution": "State regularity and side length; freeze justified numeric tolerance and negative controls before grading. This changes the original literal endpoint.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 489,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "frequency_of_maximum",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/168",
+        "mbpp/88"
+      ],
+      "specification_status": "interface_domain_clarification",
+      "manual_rationale": "Counting a supplied target value (old168) differs from finding maximum then counting its occurrences. This is a related composition, not established semantic duplicate; source extra n must be documented.",
+      "required_contract_resolution": "Specify nonempty numeric sequence and n=len(arr), return count, and mutation behavior; no family-independence certificate.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 509,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "positive_odd_prefix_mean",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/807",
+        "mbpp/412"
+      ],
+      "specification_status": "domain_clarification_required",
+      "manual_rationale": "Mean of positive odd integers through n is different from filtering/selecting odd list values. Positive-odd domain is conventional but not explicit; negative odd inputs yield zero-count division by static inspection.",
+      "required_contract_resolution": "Explicitly restrict n to positive odd integers; do not claim an unrestricted integer target. Retained as a plausible domain clarification, not as a validated task.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    }
+  ]
+}

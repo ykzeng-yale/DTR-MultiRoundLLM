@@ -1,0 +1,894 @@
+{
+  "evidence_type": "exact_finite_law_inference_checks",
+  "all_assertions_passed": true,
+  "source_sha256": {
+    "scripts/check_landmark_inference.py": "b3edaecaf13b1df042e8c5c3ec1595157ac6c3ff9be0dfc2b04307f5f6050723",
+    "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+    "experiments/landmark/collect.py": "822e50c8b72b70a50fdee90ab6c436ca402934a4ef633a2e0f8542972e278c27"
+  },
+  "source_state": "Executed working-tree sources; recorded hashes are authoritative even when files are not committed.",
+  "git_head_for_context": "1e544e4745eeb2f5224eedde9796e3f574ed4afa",
+  "python": "3.14.4",
+  "dependencies": "Python standard library only",
+  "model_calls": 0,
+  "paid_spend_usd": 0,
+  "checks": {
+    "binomial_coverage": {
+      "independent_families": 24,
+      "positive_contrast_probability": {
+        "fraction": "9/10",
+        "decimal": 0.9
+      },
+      "true_expected_contrast": {
+        "fraction": "4/5",
+        "decimal": 0.8
+      },
+      "complete_count_enumeration": 25,
+      "total_probability": {
+        "fraction": "1",
+        "decimal": 1.0
+      },
+      "all_positive_failure_event_probability": {
+        "fraction": "79766443076872509863361/1000000000000000000000000",
+        "decimal": 0.07976644307687251
+      },
+      "coverage": {
+        "exploratory_normal_95": {
+          "fraction": "456388704992432208248433/500000000000000000000000",
+          "decimal": 0.9127774099848645
+        },
+        "bounded_single_endpoint_95": {
+          "fraction": "99994793844681165885561/100000000000000000000000",
+          "decimal": 0.9999479384468116
+        },
+        "bounded_endpoint_bonferroni_10": {
+          "fraction": "499996402846637352923313/500000000000000000000000",
+          "decimal": 0.9999928056932748
+        },
+        "bounded_globally_dependent_missingness_95": {
+          "fraction": "1",
+          "decimal": 1.0
+        }
+      },
+      "multiplicity_note": "The .005 endpoint calculation checks its marginal coverage; simultaneous ten-endpoint validity follows by union bound, not from assuming endpoint independence.",
+      "count_results": [
+        {
+          "number_of_positive_contrasts": 0,
+          "probability": {
+            "fraction": "1/1000000000000000000000000",
+            "decimal": 1e-24
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -1.0,
+              -1.0
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.44555737792251093
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              -0.29339635419918864
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 1,
+          "probability": {
+            "fraction": "27/125000000000000000000000",
+            "decimal": 2.16e-22
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -1.08,
+              -0.7533333333333333
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.36222404458917756
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              -0.21006302086585527
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 2,
+          "probability": {
+            "fraction": "5589/250000000000000000000000",
+            "decimal": 2.2356e-20
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -1.0592442644373208,
+              -0.607422402229346
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.2788907112558443
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              -0.126729687532522
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 3,
+          "probability": {
+            "fraction": "184437/125000000000000000000000",
+            "decimal": 1.475496e-18
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -1.0203218693400116,
+              -0.47967813065998843
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.19555737792251093
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              -0.043396354199188636
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 4,
+          "probability": {
+            "fraction": "34858593/500000000000000000000000",
+            "decimal": 6.9717186e-17
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.9712849040251691,
+              -0.36204842930816417
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.11222404458917756
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              0.039936979134144734
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 5,
+          "probability": {
+            "fraction": "313727337/125000000000000000000000",
+            "decimal": 2.509818696e-15
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.915283361584633,
+              -0.2513833050820337
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              -0.028890711255844304
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              0.123270312467478
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 6,
+          "probability": {
+            "fraction": "17882458209/250000000000000000000000",
+            "decimal": 7.1529832836e-14
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.8539344080721614,
+              -0.14606559192783858
+            ],
+            "bounded_single_endpoint_95": [
+              -1,
+              0.05444262207748907
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              0.20660364580081136
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 7,
+          "probability": {
+            "fraction": "206925587847/125000000000000000000000",
+            "decimal": 1.655404702776e-12
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.7881885400677613,
+              -0.045144793265572136
+            ],
+            "bounded_single_endpoint_95": [
+              -0.9711092887441557,
+              0.13777595541082238
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              0.2899369791341447
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 8,
+          "probability": {
+            "fraction": "31659614940591/1000000000000000000000000",
+            "decimal": 3.1659614940591e-11
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.7186483120847977,
+              0.05198164541813116
+            ],
+            "bounded_single_endpoint_95": [
+              -0.8877759554108224,
+              0.22110928874415575
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -1,
+              0.37327031246747805
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 9,
+          "probability": {
+            "fraction": "31659614940591/62500000000000000000000",
+            "decimal": 5.06553839049456e-10
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.6457106980127516,
+              0.1457106980127516
+            ],
+            "bounded_single_endpoint_95": [
+              -0.8044426220774891,
+              0.30444262207748907
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.9566036458008114,
+              0.45660364580081136
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 10,
+          "probability": {
+            "fraction": "854809603395957/125000000000000000000000",
+            "decimal": 6.838476827167656e-09
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.569638717099388,
+              0.23630538376605462
+            ],
+            "bounded_single_endpoint_95": [
+              -0.7211092887441557,
+              0.38777595541082244
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.873270312467478,
+              0.5399369791341447
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 11,
+          "probability": {
+            "fraction": "4895727728540481/62500000000000000000000",
+            "decimal": 7.83316436566477e-08
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.49060005622495284,
+              0.3239333895582862
+            ],
+            "bounded_single_endpoint_95": [
+              -0.6377759554108224,
+              0.47110928874415575
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.7899369791341447,
+              0.623270312467478
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 12,
+          "probability": {
+            "fraction": "190933381413078759/250000000000000000000000",
+            "decimal": 7.637335256523151e-07
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.40868825155186655,
+              0.40868825155186655
+            ],
+            "bounded_single_endpoint_95": [
+              -0.5544426220774891,
+              0.5544426220774891
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.7066036458008114,
+              0.7066036458008114
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 13,
+          "probability": {
+            "fraction": "396553946011778961/62500000000000000000000",
+            "decimal": 6.344863136188463e-06
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.3239333895582862,
+              0.49060005622495284
+            ],
+            "bounded_single_endpoint_95": [
+              -0.47110928874415575,
+              0.6377759554108224
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.623270312467478,
+              0.7899369791341447
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": false,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 14,
+          "probability": {
+            "fraction": "5608405807880873877/125000000000000000000000",
+            "decimal": 4.486724646304699e-05
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.23630538376605462,
+              0.569638717099388
+            ],
+            "bounded_single_endpoint_95": [
+              -0.38777595541082244,
+              0.7211092887441557
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.5399369791341447,
+              0.873270312467478
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": false,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 15,
+          "probability": {
+            "fraction": "16825217423642621631/62500000000000000000000",
+            "decimal": 0.00026920347877828197
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.1457106980127516,
+              0.6457106980127516
+            ],
+            "bounded_single_endpoint_95": [
+              -0.30444262207748907,
+              0.8044426220774891
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.45660364580081136,
+              0.9566036458008114
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 16,
+          "probability": {
+            "fraction": "1362842611315052352111/1000000000000000000000000",
+            "decimal": 0.0013628426113150524
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              -0.05198164541813116,
+              0.7186483120847977
+            ],
+            "bounded_single_endpoint_95": [
+              -0.22110928874415575,
+              0.8877759554108224
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.37327031246747805,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 17,
+          "probability": {
+            "fraction": "721504911872674774647/125000000000000000000000",
+            "decimal": 0.005772039294981398
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.045144793265572136,
+              0.7881885400677613
+            ],
+            "bounded_single_endpoint_95": [
+              -0.13777595541082238,
+              0.9711092887441557
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.2899369791341447,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 18,
+          "probability": {
+            "fraction": "5050534383108723422529/250000000000000000000000",
+            "decimal": 0.020202137532434893
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.14606559192783858,
+              0.8539344080721614
+            ],
+            "bounded_single_endpoint_95": [
+              -0.05444262207748907,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.20660364580081136,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 19,
+          "probability": {
+            "fraction": "7177075175996606968857/125000000000000000000000",
+            "decimal": 0.057416601407972855
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.2513833050820337,
+              0.915283361584633
+            ],
+            "bounded_single_endpoint_95": [
+              0.028890711255844304,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.123270312467478,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 20,
+          "probability": {
+            "fraction": "64593676583969462719713/500000000000000000000000",
+            "decimal": 0.12918735316793892
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.36204842930816417,
+              0.9712849040251691
+            ],
+            "bounded_single_endpoint_95": [
+              0.11222404458917756,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              -0.039936979134144734,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 21,
+          "probability": {
+            "fraction": "27683004250272626879877/125000000000000000000000",
+            "decimal": 0.221464034002181
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.47967813065998843,
+              1.0203218693400116
+            ],
+            "bounded_single_endpoint_95": [
+              0.19555737792251093,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              0.043396354199188636,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 22,
+          "probability": {
+            "fraction": "67949192250669175068789/250000000000000000000000",
+            "decimal": 0.2717967690026767
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.607422402229346,
+              1.0592442644373208
+            ],
+            "bounded_single_endpoint_95": [
+              0.2788907112558443,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              0.126729687532522,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 23,
+          "probability": {
+            "fraction": "26588814358957503287787/125000000000000000000000",
+            "decimal": 0.21271051487166004
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              0.7533333333333333,
+              1.08
+            ],
+            "bounded_single_endpoint_95": [
+              0.36222404458917756,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              0.21006302086585527,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              -1,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": true,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        },
+        {
+          "number_of_positive_contrasts": 24,
+          "probability": {
+            "fraction": "79766443076872509863361/1000000000000000000000000",
+            "decimal": 0.07976644307687251
+          },
+          "intervals": {
+            "exploratory_normal_95": [
+              1.0,
+              1.0
+            ],
+            "bounded_single_endpoint_95": [
+              0.44555737792251093,
+              1
+            ],
+            "bounded_endpoint_bonferroni_10": [
+              0.29339635419918864,
+              1
+            ],
+            "bounded_globally_dependent_missingness_95": [
+              0.44555737792251093,
+              1
+            ]
+          },
+          "covers_truth": {
+            "exploratory_normal_95": false,
+            "bounded_single_endpoint_95": true,
+            "bounded_endpoint_bonferroni_10": true,
+            "bounded_globally_dependent_missingness_95": true
+          }
+        }
+      ]
+    },
+    "weights_and_missingness": {
+      "unequal_family_sizes": [
+        9,
+        1
+      ],
+      "equal_root_observed_mean": 0.8,
+      "equal_family_observed_mean": 0.0,
+      "unequal_weight_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.05,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 2.459626456343901,
+        "effective_families": 1.2195121951219512,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      },
+      "equal_24_family_quality_radius": 0.27722131103874453,
+      "equal_24_family_contrast_radius": 0.5544426220774891,
+      "duplicating_all_roots_five_times_within_family_preserves_radius": true,
+      "all_missing_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.05,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 0.5544426220774891,
+        "effective_families": 24.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      },
+      "no_roots_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.05,
+        "interval": null,
+        "radius": null,
+        "effective_families": null,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": "No assigned roots or receiver/collection identity gate failed"
+      },
+      "failed_identity_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.05,
+        "interval": null,
+        "radius": 1.3581015157406195,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": "No assigned roots or receiver/collection identity gate failed"
+      }
+    }
+  }
+}

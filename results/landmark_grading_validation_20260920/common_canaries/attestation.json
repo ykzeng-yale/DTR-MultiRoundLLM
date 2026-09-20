@@ -1,0 +1,225 @@
+{
+  "schema_version": "landmark-containment-v1",
+  "checked_at": "2026-09-20T22:28:11.559885+00:00",
+  "binding": {
+    "sandbox_sha256": "b04a662c2790b04e9a3dc35abad6aa357b3fa2e5a657bf6e59e7c5a4e3b5e352",
+    "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819",
+    "python": "/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14",
+    "python_sha256": "5c3ea934d18a7979253ca08ff16151db78a896be29dbc37fd9bf7e7c549593b8",
+    "host_sha256": "0ab370c227648fb7f631733fc4a1689a44d8a4ead50a69264561a96fbea83905",
+    "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+    "sandbox_kind": "seatbelt"
+  },
+  "checks": [
+    {
+      "name": "own_run_read_write",
+      "passed": false,
+      "executed": true,
+      "program": "from pathlib import Path\np=Path('owned');p.write_text('ok');assert p.read_text()=='ok'\nprint('OK',flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008829750120639801,
+        "executed": true,
+        "flags": [],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "home_read",
+      "passed": false,
+      "executed": true,
+      "program": "try:\n    open('/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/work/landmark_canary_3mdb53fd/read_fixture').read()\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.00848187506198883,
+        "executed": true,
+        "flags": [
+          "open_abs_path"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "home_write",
+      "passed": false,
+      "executed": true,
+      "program": "try:\n    open('/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/work/landmark_canary_3mdb53fd/write_marker', 'w').write('controlled marker')\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008379500359296799,
+        "executed": true,
+        "flags": [
+          "open_abs_path"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "peer_run_read",
+      "passed": false,
+      "executed": true,
+      "program": "try:\n    open('/private/var/folders/36/0v652_p11r7fv5f1n0h8vcv00000gn/T/dtrmr_sbx/audit_peer__2_ydfch/read_fixture').read()\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008426542393863201,
+        "executed": true,
+        "flags": [
+          "open_abs_path"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "outside_home_tmp_write",
+      "passed": false,
+      "executed": true,
+      "program": "try:\n    open('/Users/Shared/landmark_canary_1ka_5ciy/write_marker', 'w').write('controlled marker')\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008294249884784222,
+        "executed": true,
+        "flags": [
+          "open_abs_path"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "loopback_network",
+      "passed": false,
+      "executed": true,
+      "program": "import socket\ns=socket.socket();s.settimeout(0.2)\ntry:\n    s.connect(('127.0.0.1',61993))\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008231000043451786,
+        "executed": true,
+        "flags": [
+          "socket"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "system_subprocess",
+      "passed": false,
+      "executed": true,
+      "program": "import subprocess\ntry:\n    subprocess.run(['/bin/echo','controlled'],check=True)\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008383458480238914,
+        "executed": true,
+        "flags": [
+          "subprocess"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "fork_creation",
+      "passed": false,
+      "executed": true,
+      "program": "import os\ntry:\n    pid=os.fork()\nexcept OSError:\n    print('BLOCKED',flush=True)\nelse:\n    if pid==0: os._exit(0)\n    os.waitpid(pid,0)\n    print('ALLOWED',flush=True)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008310583420097828,
+        "executed": true,
+        "flags": [
+          "os.system",
+          "sys.exit"
+        ],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      }
+    },
+    {
+      "name": "timeout_and_process_cleanup",
+      "passed": false,
+      "executed": true,
+      "program": "import os,time\nprint('PID',os.getpid(),flush=True)\ntime.sleep(3)\n",
+      "result": {
+        "passed": false,
+        "returncode": 71,
+        "stdout": "",
+        "stderr": "sandbox-exec: execvp() of '/opt/homebrew/Cellar/python@3.14/3.14.4/Frameworks/Python.framework/Versions/3.14/bin/python3.14' failed: Operation not permitted\n",
+        "stdout_tail": "",
+        "timed_out": false,
+        "seconds": 0.008455583825707436,
+        "executed": true,
+        "flags": [],
+        "limits_applied": "RLIMIT_CPU=1,RLIMIT_NPROC=64",
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "030319dcf0805723204fe0bb6c9ca3d1ad95d3b332b6772cce08d8d3576cb819"
+      },
+      "executed_process_pid": null,
+      "alive_after_runner_return": null
+    }
+  ],
+  "passed": false,
+  "script_sha256": "a517e0048c10943cfd40f3363f143bbadd49681263faefe253266fbc6a61a4bb",
+  "benchmark_executions": 0,
+  "model_calls": 0,
+  "sandbox_executions": 9,
+  "sandbox_seconds": 0.07579254359006882,
+  "wall_seconds": 0.08474562503397465,
+  "limitations": [
+    "Controlled containment checks, not an adversarial escape proof",
+    "Only fork/subprocess attempts tested; descendants were not permitted in the passing configuration",
+    "Timeout check verifies launched process reaped; no independently created descendant was available to test cleanup",
+    "No general denial-of-service, kernel isolation, or grade-integrity guarantee"
+  ]
+}

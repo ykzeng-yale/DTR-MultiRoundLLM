@@ -1,0 +1,24 @@
+{
+  "change": "CLI fail-before-write guard only; original script archived",
+  "tests_passed": 8,
+  "original_screening_rerun": false,
+  "original_results_unchanged": {
+    "manifest.json": "df5aa907807b2abee01bba6ca0dd03bf7101dd872c43e5a2592db3a65f202838",
+    "all_candidate_screen.json": "4dc22b313797119522c9cdb65881ed9ba6446e64e4caafb15a3942dc35b9c440"
+  },
+  "archived_script_sha256": "e351fa391ba6c028ff83cab1ac055f7535b1f2ea6ac5d075408826af553d553e",
+  "current_files": {
+    "scripts/audit_landmark_families.py": {
+      "sha256": "f5aea5221eecc14da1c8e0b6d194c7db376e900f8b822e4074f061b6e4cff4bc",
+      "bytes": 12194
+    },
+    "tests/test_landmark_families.py": {
+      "sha256": "8ff13b9498c6ba2678c9999e022c11192ea6ae0c39d1da502644301322aec467",
+      "bytes": 4336
+    },
+    "docs/landmark_family_audit_20260920.md": {
+      "sha256": "89f26fd50f2c37cbb907c062df9e845fee7b050987fd5977d167f0c88e6d393d",
+      "bytes": 19380
+    }
+  }
+}

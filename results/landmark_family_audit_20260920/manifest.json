@@ -1,0 +1,2717 @@
+{
+  "status": "source_only_development_curation_not_confirmatory_independence",
+  "source_hashes": {
+    "full_mbpp": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "canonical_tasks": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce",
+    "source_audit": "87aa26bd6cc7153b2e2db1ec426424b9dcab9b6202428800291a680f93e610e4",
+    "screening_script": "e351fa391ba6c028ff83cab1ac055f7535b1f2ea6ac5d075408826af553d553e"
+  },
+  "selection": {
+    "seed": "landmark-development-20260920-v1",
+    "rule": "ascending SHA256 UTF8(seed + ':' + decimal_id), then ID; take 24",
+    "candidate_count": 242,
+    "candidate_ids": [
+      13,
+      15,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      60,
+      73,
+      76,
+      78,
+      81,
+      107,
+      110,
+      112,
+      114,
+      121,
+      122,
+      134,
+      136,
+      144,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      169,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      218,
+      219,
+      220,
+      221,
+      225,
+      231,
+      236,
+      241,
+      243,
+      254,
+      258,
+      263,
+      275,
+      288,
+      289,
+      298,
+      302,
+      303,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348,
+      349,
+      350,
+      351,
+      352,
+      353,
+      354,
+      355,
+      356,
+      357,
+      358,
+      359,
+      360,
+      361,
+      362,
+      363,
+      364,
+      365,
+      366,
+      367,
+      368,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      379,
+      380,
+      381,
+      382,
+      383,
+      384,
+      385,
+      386,
+      387,
+      402,
+      403,
+      416,
+      423,
+      449,
+      466,
+      467,
+      469,
+      480,
+      481,
+      482,
+      483,
+      484,
+      485,
+      486,
+      487,
+      488,
+      489,
+      490,
+      491,
+      492,
+      493,
+      494,
+      495,
+      496,
+      497,
+      498,
+      499,
+      500,
+      501,
+      502,
+      503,
+      504,
+      505,
+      506,
+      507,
+      508,
+      509,
+      510
+    ],
+    "selected_rank_order": [
+      289,
+      402,
+      357,
+      373,
+      39,
+      378,
+      159,
+      34,
+      157,
+      52,
+      509,
+      336,
+      43,
+      488,
+      489,
+      44,
+      202,
+      220,
+      386,
+      365,
+      189,
+      371,
+      13,
+      112
+    ],
+    "replacement_policy": "none",
+    "outcomes_used": false
+  },
+  "screening": {
+    "old_roots": 591,
+    "old_description_variants": 1018,
+    "lexical": "TF count times IDF, cosine; explicit STOP terms in script; top 8 unique old roots; retains list/string/number tokens",
+    "structural": "identifier-erased function AST exact hash plus AST node-bigram cosine; constants retained; shared function names; best structural flag across source variants may differ from best lexical variant",
+    "threshold": ">=0.60 cosine prompts review only; never auto-certifies/excludes a family",
+    "limitations": "Lexical and AST similarities neither prove semantic equivalence nor certify independence. Structural similarity loses binding details. No task code executed."
+  },
+  "selected_screen": [
+    {
+      "task_id": 289,
+      "public_description_sha256": "a04f4d463a1c8f7a3daad9a4bd0e6509b4a7a56fa81d7c7df9c10a52a0e11135",
+      "normalized_description_sha256": "a6d56603a73e6775ee7245a1e100050014b188b3dbc1909e03f3d9027673c061",
+      "reference_source_sha256": "59c684fe2ce83bb1903f674fa5b101dc97ce444f8fc9969e9c59f4ed8c3f0a79",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/762",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.28395977,
+          "structural_node_bigram_cosine": 0.17994911,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/455",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.27507533,
+          "structural_node_bigram_cosine": 0.17273592,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/807",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.27036495,
+          "structural_node_bigram_cosine": 0.37623691,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/775",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.22282511,
+          "structural_node_bigram_cosine": 0.47429543,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/784",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.21334357,
+          "structural_node_bigram_cosine": 0.45300301,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/594",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.21245833,
+          "structural_node_bigram_cosine": 0.47996747,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/406",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20666564,
+          "structural_node_bigram_cosine": 0.62214984,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/412",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.19961295,
+          "structural_node_bigram_cosine": 0.35312126,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "odd_Days",
+      "public_signature_candidate": "def odd_Days(N):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 402,
+      "public_description_sha256": "855e373e328b28fede8e68c6ad20f10b18ce5f8114aff02e79a9724e5ff60291",
+      "normalized_description_sha256": "da8980a0260a6f68b67da99c159a8788bc2ccf9fa3205ae1637b41fe2e9b8fed",
+      "reference_source_sha256": "d82fd7d5ba1f8d00063729e60f949c0505de1c2b91f65519fc10b7ab6ac2d41c",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/398",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.30440206,
+          "structural_node_bigram_cosine": 0.60632713,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/623",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.2616167,
+          "structural_node_bigram_cosine": 0.56641813,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/305",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.21227002,
+          "structural_node_bigram_cosine": 0.49953896,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/94",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20878776,
+          "structural_node_bigram_cosine": 0.48300614,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/475",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.17928446,
+          "structural_node_bigram_cosine": 0.61529199,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/269",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.15849278,
+          "structural_node_bigram_cosine": 0.56796183,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/476",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.15486003,
+          "structural_node_bigram_cosine": 0.67231236,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/294",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.15456334,
+          "structural_node_bigram_cosine": 0.73732716,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "ncr_modp",
+      "public_signature_candidate": "def ncr_modp(n, r, p):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 357,
+      "public_description_sha256": "c7fd23b03cf4d24402e950daa2c229316c4d6b0c67d31fe629722814cd349b53",
+      "normalized_description_sha256": "6c86ee4033a92e938a1f63a3a0da2bd7c89e740dfda3afaa8cb96d7fc5c7fa90",
+      "reference_source_sha256": "5ff8e1ce8994384072c0b79057f6640c4fd3db098cc2925011542156349dd33a",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/753",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.54808519,
+          "structural_node_bigram_cosine": 0.44743737,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/272",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.37200137,
+          "structural_node_bigram_cosine": 0.41666667,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/250",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.35000619,
+          "structural_node_bigram_cosine": 0.54484628,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/418",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.32909245,
+          "structural_node_bigram_cosine": 0.61111111,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/809",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.30697154,
+          "structural_node_bigram_cosine": 0.72029658,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/237",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.30613626,
+          "structural_node_bigram_cosine": 0.78138231,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/417",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.30104752,
+          "structural_node_bigram_cosine": 0.55942168,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/278",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.3009905,
+          "structural_node_bigram_cosine": 0.78508102,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [
+        {
+          "prior_uid": "humaneval/158",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.06734292,
+          "structural_node_bigram_cosine": 0.40128618,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": [
+            "find_max"
+          ]
+        }
+      ],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "find_max",
+      "public_signature_candidate": "def find_max(test_list):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 373,
+      "public_description_sha256": "1ce808b899ebb575f0a92ae81bfcf99f64f0cc87e4fc58d58ec656fd2080f934",
+      "normalized_description_sha256": "718042f1a9aa3beef8b62c728674516ffe8b99f7c76ee61c997997253b9bdd5c",
+      "reference_source_sha256": "ff46c074ba32b51e5fd6e8aace7e39e6d93a072df2b65c4cc582b6f5b8ae8acc",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/234",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.45582003,
+          "structural_node_bigram_cosine": 0.92847669,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/276",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.43956382,
+          "structural_node_bigram_cosine": 0.85478752,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/312",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.42843088,
+          "structural_node_bigram_cosine": 0.66584514,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/82",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.42155309,
+          "structural_node_bigram_cosine": 0.62594257,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/14",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.3259652,
+          "structural_node_bigram_cosine": 0.70564229,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/0",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.38078866,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/1",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.36051834,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/10",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.29065918,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "volume_cuboid",
+      "public_signature_candidate": "def volume_cuboid(l, w, h):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 39,
+      "public_description_sha256": "03156674ebbd1448b5a2171f84631b53cabcc48786fd3297fdfa04060a0c23d7",
+      "normalized_description_sha256": "4b6f5a29ab7f2ebda4cdf1a0b21f4d8ece892c391c1b76fcfb20a7730e3f8adb",
+      "reference_source_sha256": "5a2b442cc74d08c85d1f45d7dbed1b5a828a0b29971dccd2a75f322617634bab",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/310",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.19157141,
+          "structural_node_bigram_cosine": 0.56656849,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/474",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.19058672,
+          "structural_node_bigram_cosine": 0.70728723,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/726",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.18626404,
+          "structural_node_bigram_cosine": 0.63406983,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/437",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.18259342,
+          "structural_node_bigram_cosine": 0.64308499,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/456",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.17533569,
+          "structural_node_bigram_cosine": 0.293315,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/242",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.1677706,
+          "structural_node_bigram_cosine": 0.32888143,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/72",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.1639995,
+          "structural_node_bigram_cosine": 0.06917807,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/565",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.15709779,
+          "structural_node_bigram_cosine": 0.19969988,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "rearange_string",
+      "public_signature_candidate": "def rearange_string(S):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 378,
+      "public_description_sha256": "e19cf79b74f93024f72b47c31c9c1885982a7f36bc2d154432218cc6953f2bd2",
+      "normalized_description_sha256": "eb52f6581822561f789132e16c255b5c4df4ae19015dc26f066054d0bb1ec05c",
+      "reference_source_sha256": "3c61be1232c97cec319ff889cbf4be1df2db499683a166eeb775061b3b96ab70",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/793",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.58040608,
+          "structural_node_bigram_cosine": 0.24652521,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/625",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.47902976,
+          "structural_node_bigram_cosine": 0.3486035,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/65",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.38145242,
+          "structural_node_bigram_cosine": 0.41525662,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/240",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.36989782,
+          "structural_node_bigram_cosine": 0.36854869,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/591",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.36781726,
+          "structural_node_bigram_cosine": 0.3486035,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/417",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.33204938,
+          "structural_node_bigram_cosine": 0.36863272,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/280",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.2895473,
+          "structural_node_bigram_cosine": 0.26784484,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/11",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.28634814,
+          "structural_node_bigram_cosine": 0.51710524,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "move_first",
+      "public_signature_candidate": "def move_first(test_list):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 159,
+      "public_description_sha256": "c9d696eb4d2a8cdbb9c70b3fe07e8f09c6daad3e61f69f9793c306f91f38ecbc",
+      "normalized_description_sha256": "0c535df8206cec12090ed7c0c9c58a429ce4a94c03b9233b5a8a81d798bdfdb1",
+      "reference_source_sha256": "2a49063d8b9a49c0d4b69b6fa2d146a1fabd0b4847e6160192b61fe8b731cf21",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/436",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.31159205,
+          "structural_node_bigram_cosine": 0.1879753,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/762",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.21274711,
+          "structural_node_bigram_cosine": 0.52144371,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/455",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20609075,
+          "structural_node_bigram_cosine": 0.52176938,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/419",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.17466734,
+          "structural_node_bigram_cosine": 0.22167297,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/159",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.02898356,
+          "structural_node_bigram_cosine": 0.23792483,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/124",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.02503222,
+          "structural_node_bigram_cosine": 0.529072,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/0",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.33645023,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/1",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.40665275,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "month_season",
+      "public_signature_candidate": "def month_season(month, days):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 34,
+      "public_description_sha256": "5d1f902aa90df524dda7165134ab93ee2fe234d58d91cbad3ed0fd27cbbd1ec2",
+      "normalized_description_sha256": "54b56c0bfdd74ab6816f816212e60d78bd70fa8011c3684846013af8167d78ee",
+      "reference_source_sha256": "c5c8977b45c85eab6af7be2a65e51f60e23eb39293d900c768194d06771cdbb1",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/627",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.73055347,
+          "structural_node_bigram_cosine": 0.84446089,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/733",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.41842378,
+          "structural_node_bigram_cosine": 0.83208175,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/793",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.36526001,
+          "structural_node_bigram_cosine": 0.88384201,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/223",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.36445946,
+          "structural_node_bigram_cosine": 0.85401039,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/802",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.3372729,
+          "structural_node_bigram_cosine": 0.7677957,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/119",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.29539643,
+          "structural_node_bigram_cosine": 0.72653844,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/168",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.29260628,
+          "structural_node_bigram_cosine": 0.46169026,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/798",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.27940103,
+          "structural_node_bigram_cosine": 0.53530338,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "find_missing",
+      "public_signature_candidate": "def find_missing(ar, N):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 157,
+      "public_description_sha256": "754dcf1e2f84550f254a827b99ec7f0092d3c2684c56a4f95d5e650e6b6344d2",
+      "normalized_description_sha256": "2bd66192b3e3082da24b9f15449e22c5dcbf04e87d590709542858dfa5604c26",
+      "reference_source_sha256": "bc59389919dd5ec6078be8513df9a417c13f927dfb3e9adb800f2d907461455f",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/806",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.30129633,
+          "structural_node_bigram_cosine": 0.61071893,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/393",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.26100473,
+          "structural_node_bigram_cosine": 0.66551226,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/290",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.24244833,
+          "structural_node_bigram_cosine": 0.66055157,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/95",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.23216067,
+          "structural_node_bigram_cosine": 0.62874432,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/418",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.17312133,
+          "structural_node_bigram_cosine": 0.57166195,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/98",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.17088132,
+          "structural_node_bigram_cosine": 0.5535093,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/562",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.14937142,
+          "structural_node_bigram_cosine": 0.62874432,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/90",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.13631073,
+          "structural_node_bigram_cosine": 0.70960574,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "encode_list",
+      "public_signature_candidate": "def encode_list(list1):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 52,
+      "public_description_sha256": "ce09daa0a3b50453e84ba21e2d42cda7fc0303726266600587e350d53a8bcb86",
+      "normalized_description_sha256": "4512165cd5dd28a3c1e83438d2edd7292c8351ad2f7828e6fe707dba4f64c6e3",
+      "reference_source_sha256": "011c1febedef987f2ab2d777ebb537d52fa679b6e3e259da4b6abfaa10e0e297",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/742",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.56243599,
+          "structural_node_bigram_cosine": 0.67733401,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/458",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.24537829,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": true,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/746",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.23316558,
+          "structural_node_bigram_cosine": 0.54029547,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/441",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.21843882,
+          "structural_node_bigram_cosine": 0.75377836,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/574",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.21232979,
+          "structural_node_bigram_cosine": 0.48038446,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/85",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20539106,
+          "structural_node_bigram_cosine": 0.54997194,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/640",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.20001442,
+          "structural_node_bigram_cosine": 0.28867513,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/266",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.18132162,
+          "structural_node_bigram_cosine": 0.77777778,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [
+        {
+          "prior_uid": "mbpp/458",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.24537829,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": true,
+          "shared_function_names": []
+        }
+      ],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "parallelogram_area",
+      "public_signature_candidate": "def parallelogram_area(b, h):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 509,
+      "public_description_sha256": "9ecc7b3161fc7c4d537305cf963a37836d20a9897dc4ba0bf8aedbf61bf7a4e2",
+      "normalized_description_sha256": "b31c2941ce5a1e2396d959547980c38b98b8a0d57d0b0ccf9ce6423034f70487",
+      "reference_source_sha256": "ce3ac5995f5117698da502f72ac48b3e21b0c3345e6c3f8ae4807616a98114e8",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/807",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.52960933,
+          "structural_node_bigram_cosine": 0.35309393,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/412",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.46639029,
+          "structural_node_bigram_cosine": 0.29234229,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/775",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.46347225,
+          "structural_node_bigram_cosine": 0.52899606,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/426",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.42274838,
+          "structural_node_bigram_cosine": 0.31782086,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/554",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.3868307,
+          "structural_node_bigram_cosine": 0.27874734,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/615",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.35112144,
+          "structural_node_bigram_cosine": 0.46426557,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/784",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.33747652,
+          "structural_node_bigram_cosine": 0.44411739,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/594",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.33607619,
+          "structural_node_bigram_cosine": 0.45234179,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "average_Odd",
+      "public_signature_candidate": "def average_Odd(n):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 336,
+      "public_description_sha256": "316b904d79aa181586839cec323b955e1d02c4277066ddc79fc309f5e9752027",
+      "normalized_description_sha256": "fd21eb10bb28b69fd96e393f02ba50b8edff4519629bfeb1fdbc799b290a3e41",
+      "reference_source_sha256": "c3abc68a174f64a9a7c0ea7cbd4c38f208d8d5386faaa7d2a38729b9c34a9889",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/762",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.6544342,
+          "structural_node_bigram_cosine": 0.46776428,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/455",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.63395847,
+          "structural_node_bigram_cosine": 0.37374127,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/69",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.36181294,
+          "structural_node_bigram_cosine": 0.06811866,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/472",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.33869013,
+          "structural_node_bigram_cosine": 0.12712835,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/760",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.2710249,
+          "structural_node_bigram_cosine": 0.49441323,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/600",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.25082262,
+          "structural_node_bigram_cosine": 0.55048188,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/19",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20852776,
+          "structural_node_bigram_cosine": 0.07302967,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/741",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.20606462,
+          "structural_node_bigram_cosine": 0.11694107,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "check_monthnum",
+      "public_signature_candidate": "def check_monthnum(monthname1):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 43,
+      "public_description_sha256": "fd16f6f6c74a4875271a3085a23ca294cc62bfa5a53653749f91e40e7c7dbf5f",
+      "normalized_description_sha256": "345091e535df5ce9b0cdeef769ccf4705f7b1326d6b72b46287e284d6464b209",
+      "reference_source_sha256": "de0bc81be06796b456d4d3b489531f8a2ffa59ca75ca02d207e11daa56592899",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/16",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.93828012,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": true,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/631",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.297684,
+          "structural_node_bigram_cosine": 0.48435948,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/478",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.22620326,
+          "structural_node_bigram_cosine": 0.60984958,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/748",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.22347982,
+          "structural_node_bigram_cosine": 0.60984958,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/451",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.17202773,
+          "structural_node_bigram_cosine": 0.60984958,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/459",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.15975449,
+          "structural_node_bigram_cosine": 0.60984958,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/737",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.15061102,
+          "structural_node_bigram_cosine": 0.70967742,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/27",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.145962,
+          "structural_node_bigram_cosine": 0.21780342,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [
+        {
+          "prior_uid": "mbpp/16",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.93828012,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": true,
+          "shared_function_names": []
+        }
+      ],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "text_match",
+      "public_signature_candidate": "def text_match(text):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 488,
+      "public_description_sha256": "65ed69aaf2600d23730bb6f061693237f2866caba26e78ae7860a50208e687b1",
+      "normalized_description_sha256": "3ff57ff967afacaefbfd5f0918b8713bfb81adf9494c6a5d4982720f4367c876",
+      "reference_source_sha256": "410ab6e9aca83d48b2a506c8a25fdadfa214e62fc20de9565a386b27cd3f3907",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/171",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.60600318,
+          "structural_node_bigram_cosine": 0.6032506,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/458",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.33122032,
+          "structural_node_bigram_cosine": 0.47894747,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/746",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.31473517,
+          "structural_node_bigram_cosine": 0.4880711,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/441",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.29485646,
+          "structural_node_bigram_cosine": 0.54153036,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/574",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.28661029,
+          "structural_node_bigram_cosine": 0.38825818,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/85",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.27724413,
+          "structural_node_bigram_cosine": 0.55033388,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/640",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.26998656,
+          "structural_node_bigram_cosine": 0.54439964,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/742",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.24587404,
+          "structural_node_bigram_cosine": 0.68429689,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "area_pentagon",
+      "public_signature_candidate": "def area_pentagon(a):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 489,
+      "public_description_sha256": "4f0919b43ef3ad69c797a176a6556808a5a8c77df6038867f201a65c95da5d5e",
+      "normalized_description_sha256": "9f790447b5815e8ef293af0fb9cdaa5bd8a1ca23a716253683a798b2a672dec3",
+      "reference_source_sha256": "8f120362093551905a10336e17a0856a6a77bf7a2cd62968cce4566d66195185",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/168",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.67022709,
+          "structural_node_bigram_cosine": 0.61058622,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/476",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.61484004,
+          "structural_node_bigram_cosine": 0.63068538,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/588",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.52007259,
+          "structural_node_bigram_cosine": 0.63068538,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/97",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.41123322,
+          "structural_node_bigram_cosine": 0.74750479,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/88",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.38305191,
+          "structural_node_bigram_cosine": 0.44563193,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/130",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.34782207,
+          "structural_node_bigram_cosine": 0.68623817,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/286",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.32885591,
+          "structural_node_bigram_cosine": 0.78153176,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/559",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.3192681,
+          "structural_node_bigram_cosine": 0.86773011,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "frequency_Of_Largest",
+      "public_signature_candidate": "def frequency_Of_Largest(n, arr):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 44,
+      "public_description_sha256": "80b7054fd25c0763afe42322256fbad74ff6e10e0caef2911a1393a44d89fc82",
+      "normalized_description_sha256": "282ada0ebd72811f08ef0f36820729ab3c826dec3207374ab1789dc762be6d72",
+      "reference_source_sha256": "9fd3ad6401034aadb6dea137da57045d676544633b2f24f1e83c2a201b967920",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/643",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.5293283,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/390",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.50385494,
+          "structural_node_bigram_cosine": 0.41935484,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/454",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.44685199,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/787",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.28367771,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/90",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.27501553,
+          "structural_node_bigram_cosine": 0.46566713,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/285",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.27329832,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/756",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.2577161,
+          "structural_node_bigram_cosine": 1.0,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/79",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.25598691,
+          "structural_node_bigram_cosine": 0.40263812,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "text_match_string",
+      "public_signature_candidate": "def text_match_string(text):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 202,
+      "public_description_sha256": "1bf8231a8b7350f5ffc267731a035e874f5d7f0721977948b8f42a6ac57df57f",
+      "normalized_description_sha256": "18f1315ed0231a68af4a93553a4a9b0288a7253e5e91a76e3e578d33253e1378",
+      "reference_source_sha256": "73800dd4cfb74183d14e60cfdf01ecc6b68695106b719696aafc077f5a6414c2",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/437",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.72392779,
+          "structural_node_bigram_cosine": 0.97619048,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/18",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.55768926,
+          "structural_node_bigram_cosine": 0.72012987,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/226",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.5117129,
+          "structural_node_bigram_cosine": 0.87157579,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/310",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.43441316,
+          "structural_node_bigram_cosine": 0.48991363,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/474",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.43218024,
+          "structural_node_bigram_cosine": 0.5179324,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/451",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.39222789,
+          "structural_node_bigram_cosine": 0.39694209,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/800",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.39222789,
+          "structural_node_bigram_cosine": 0.39694209,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/242",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.38044171,
+          "structural_node_bigram_cosine": 0.56876969,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "remove_even",
+      "public_signature_candidate": "def remove_even(str1):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 220,
+      "public_description_sha256": "76e9384473fc6ae21260952c05fb842f9b6e3f528360034aa8c53389ce0b2899",
+      "normalized_description_sha256": "2a3481bd7b67f13dd887ff815aaef5c42f4e0dd9a19421b7c57d66260a213ac9",
+      "reference_source_sha256": "1aa723a663d88980bf6fe3a984482092d924d1bb567ef2a9250935ded06bfeb6",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/732",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.9219156,
+          "structural_node_bigram_cosine": 0.95130299,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/628",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.35237073,
+          "structural_node_bigram_cosine": 0.65044364,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/230",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.2946945,
+          "structural_node_bigram_cosine": 0.50174521,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/307",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.29118043,
+          "structural_node_bigram_cosine": 0.68138514,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/474",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.25684838,
+          "structural_node_bigram_cosine": 0.5728919,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/168",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.25009511,
+          "structural_node_bigram_cosine": 0.35805744,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/240",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.17359493,
+          "structural_node_bigram_cosine": 0.50245943,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/309",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.17090913,
+          "structural_node_bigram_cosine": 0.58834841,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "replace_max_specialchar",
+      "public_signature_candidate": "def replace_max_specialchar(text, n):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 386,
+      "public_description_sha256": "66c6705be84ac005ec056cc9436e88dfe78c06fd0c79b5d29dad61a34a6afc37",
+      "normalized_description_sha256": "687cdfd8b7c72e6d625a9f9588eafbd737993165f1ae723063ae2d08e3828db1",
+      "reference_source_sha256": "e547fb439a1682b88d254ab150620ea0b6452d76345a0866080bd16e8056ae92",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/595",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.43169639,
+          "structural_node_bigram_cosine": 0.72431216,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/9",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.30909077,
+          "structural_node_bigram_cosine": 0.59314392,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/404",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.20829784,
+          "structural_node_bigram_cosine": 0.41836623,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/637",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.19018033,
+          "structural_node_bigram_cosine": 0.18477395,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/227",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.18468328,
+          "structural_node_bigram_cosine": 0.48273027,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/95",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.1670639,
+          "structural_node_bigram_cosine": 0.53389511,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/802",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.15526673,
+          "structural_node_bigram_cosine": 0.58985532,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/394",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.15283812,
+          "structural_node_bigram_cosine": 0.68660656,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "swap_count",
+      "public_signature_candidate": "def swap_count(s):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 365,
+      "public_description_sha256": "508830c9f3bb87a4bc4a91b25f8d9c4d2ab9e75ff51510f2d39b50f7f27dff5d",
+      "normalized_description_sha256": "fcde632d2084a94c0eadaae549c36d0f42bb29e2be0548e60958d8a1d937ea32",
+      "reference_source_sha256": "a65f47b2cf05803836159859b384833c696eb6385ec3d9761950f3288b9565cc",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/764",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.87784265,
+          "structural_node_bigram_cosine": 0.41602515,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/224",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.59288906,
+          "structural_node_bigram_cosine": 0.59658305,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/168",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.55186444,
+          "structural_node_bigram_cosine": 0.55205245,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/61",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.50463739,
+          "structural_node_bigram_cosine": 0.45718866,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/131",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.49171508,
+          "structural_node_bigram_cosine": 0.50421504,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/792",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.49000183,
+          "structural_node_bigram_cosine": 0.25197632,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/66",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.44577352,
+          "structural_node_bigram_cosine": 0.60714286,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/398",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.44565354,
+          "structural_node_bigram_cosine": 0.22143052,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "count_Digit",
+      "public_signature_candidate": "def count_Digit(n):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 189,
+      "public_description_sha256": "693d6b961e8dd880ce0c702955c6b5c1ee56622ecb5025cab7290e7647bf2548",
+      "normalized_description_sha256": "74ed616ff83c26fcd039a4d2fdf91b7e12b204f2c9abad758ede80db65324566",
+      "reference_source_sha256": "ba1ed6f233ce2bc864ee4663061cc1827174b115cc3cabc12621bcbb3d87b8a0",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/627",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.57111041,
+          "structural_node_bigram_cosine": 0.88130978,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/66",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.40733962,
+          "structural_node_bigram_cosine": 0.31742269,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/594",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.32940787,
+          "structural_node_bigram_cosine": 0.56730863,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/479",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.31553415,
+          "structural_node_bigram_cosine": 0.53605627,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/807",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.3024626,
+          "structural_node_bigram_cosine": 0.4590909,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/784",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.23867166,
+          "structural_node_bigram_cosine": 0.56730863,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/83",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.23427769,
+          "structural_node_bigram_cosine": 0.11281557,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/442",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.23253599,
+          "structural_node_bigram_cosine": 0.58656364,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "first_Missing_Positive",
+      "public_signature_candidate": "def first_Missing_Positive(arr, n):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 371,
+      "public_description_sha256": "61e1dec64cce1718683e6058ac833e262eeeb9940e7f22803d3864b62bbd4104",
+      "normalized_description_sha256": "525700da36f0afb8fd46d3a91823a3f9404e032803c4dd023b18dc727f0fe6ff",
+      "reference_source_sha256": "5c1ad9b0ccd805b3dd620684efa90bbb381720f4a593d2d36ca62604b68a66f1",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/627",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.80240303,
+          "structural_node_bigram_cosine": 0.93742584,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/793",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.43651959,
+          "structural_node_bigram_cosine": 0.8274774,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/223",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.43556287,
+          "structural_node_bigram_cosine": 0.90039947,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/408",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.37818017,
+          "structural_node_bigram_cosine": 0.86018526,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/62",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.37605804,
+          "structural_node_bigram_cosine": 0.45654336,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/476",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.36395001,
+          "structural_node_bigram_cosine": 0.73599832,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/119",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.35302613,
+          "structural_node_bigram_cosine": 0.74909344,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/588",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.30785312,
+          "structural_node_bigram_cosine": 0.73599832,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": true,
+      "reference_parse_error": false,
+      "entry_point": "smallest_missing",
+      "public_signature_candidate": "def smallest_missing(A, left_element, right_element):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 13,
+      "public_description_sha256": "4bc0f3b80a2c1703fef20cc9972f0585798b279fb3db4473712df88c73e54bb7",
+      "normalized_description_sha256": "815b0f0ebc2fe99da4a57ff5dbfdb43672ac4e46566052bc8bb055b0e41fd7c9",
+      "reference_source_sha256": "0923f880026981486a1ec954ea2cde79de7e238a3cd0113521f9bf8604986aa5",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/128",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.30865955,
+          "structural_node_bigram_cosine": 0.61155181,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/305",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.2970784,
+          "structural_node_bigram_cosine": 0.58344823,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/417",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.29685508,
+          "structural_node_bigram_cosine": 0.57752459,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/604",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.27790592,
+          "structural_node_bigram_cosine": 0.36989772,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/582",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.27577415,
+          "structural_node_bigram_cosine": 0.22798038,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/111",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.27505874,
+          "structural_node_bigram_cosine": 0.72717925,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/475",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.26172835,
+          "structural_node_bigram_cosine": 0.95899409,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/126",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.2599391,
+          "structural_node_bigram_cosine": 0.53717154,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "count_common",
+      "public_signature_candidate": "def count_common(words):",
+      "interface_flags": []
+    },
+    {
+      "task_id": 112,
+      "public_description_sha256": "bce77ae602ca4ca49169e59f57a60039698c2d5f103b81a38a0e8e82b8baa9e5",
+      "normalized_description_sha256": "f193a05532b555b24d7106d76c141d483c88048b4bdb6673191486163a85f444",
+      "reference_source_sha256": "f7ce56583b3dbaa54805b62d9a46010b30006fe927940e0c2868528caee4ddb0",
+      "top_lexical_prior_roots": [
+        {
+          "prior_uid": "mbpp/17",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.54527955,
+          "structural_node_bigram_cosine": 0.5,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/276",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.51470987,
+          "structural_node_bigram_cosine": 0.43937478,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/171",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.4831216,
+          "structural_node_bigram_cosine": 0.33407655,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/574",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.45668817,
+          "structural_node_bigram_cosine": 0.27235239,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "mbpp/233",
+          "prior_variant": "full_original",
+          "lexical_cosine": 0.38238071,
+          "structural_node_bigram_cosine": 0.40406102,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/0",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.22677868,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/1",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.23719978,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        },
+        {
+          "prior_uid": "humaneval/10",
+          "prior_variant": "canonical",
+          "lexical_cosine": 0.0,
+          "structural_node_bigram_cosine": 0.19920477,
+          "identifier_erased_function_shape_match": false,
+          "shared_function_names": []
+        }
+      ],
+      "structural_or_name_prior_flags": [],
+      "lexical_review_flag": false,
+      "reference_parse_error": false,
+      "entry_point": "perimeter",
+      "public_signature_candidate": "def perimeter(diameter, height):",
+      "interface_flags": []
+    }
+  ],
+  "adjudications": [
+    {
+      "task_id": 13,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "word_frequency_ranking",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/88",
+        "mbpp/130"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Description says dictionary; reference/tests consume a sequence of words and return top four (word,count) pairs. Four, ordering and tie behavior are absent. Frequency/mode prior tasks share ingredients, but this is not an established identical endpoint.",
+      "required_contract_resolution": "Specify sequence input, top-four ordered output and ties as a versioned repaired task; preserve original exclusion.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 34,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_same_family_variant",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Sorted missing-number search is close to old627 and selected371/189, with a one-based single-gap variant. Missing range/gap assumptions are unspecified. Third original test gives N=5 for six elements; N cannot silently be labeled array length.",
+      "required_contract_resolution": "Resolve domain and N semantics; cannot call this an unseen family even after specification repair.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 39,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "adjacent_distinct_rearrangement",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "description_endpoint_conflict",
+      "manual_rationale": "Prompt asks whether rearrangement is possible; reference constructs a string and tests demand one exact ordering. Multiple valid rearrangements may be rejected by the literal grader.",
+      "required_contract_resolution": "Choose feasibility Boolean or constructed arrangement; if construction, grade its properties rather than a single arbitrary reference ordering. Requires new endpoint version.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 43,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "regex_lowercase_underscore",
+      "prior_relationship": "strong_near_duplicate",
+      "related_prior_roots": [
+        "mbpp/16"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Same lowercase-underscore regex predicate as old16. Original-source function AST matches after identifier erasure; sanitized old16 returns Boolean while selected43 expects two magic strings absent from the prompt.",
+      "required_contract_resolution": "Exclude from a prospective unseen-family claim. Any repaired return convention requires a new public specification.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 44,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "regex_word_at_start",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/643",
+        "mbpp/454"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Regex tasks about z share a coding idiom but have different predicates. Selected44 expects exact magic success/failure strings without specifying them, and word-character convention is unstated.",
+      "required_contract_resolution": "Specify Boolean or exact output convention and word definition; this repairs the public target.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 52,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "parallelogram_area",
+      "prior_relationship": "related_operation_and_same_arithmetic_shape",
+      "related_prior_roots": [
+        "mbpp/458"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "Rectangle-area prior458 has the same two-input multiplication shape, but geometry differs. Treat as a potential broad geometry family, not proof of duplicate task identity or independent family. Formula and interface are otherwise conventional.",
+      "required_contract_resolution": "Define base and perpendicular height and allowed numeric domain; root/family partition must not assume this arithmetic shape is independent.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 112,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "cylinder_perimeter",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/276",
+        "mbpp/574",
+        "mbpp/233"
+      ],
+      "specification_status": "undefined_geometric_target",
+      "manual_rationale": "Cylinder perimeter is not a unique geometric quantity. Reference computes twice diameter plus height, compatible with a particular rectangular cross-section, not a defined perimeter of a solid.",
+      "required_contract_resolution": "Replace with an explicit cross-section quantity or withdraw; doing so creates a revised task.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 157,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "run_length_encoding",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "material_output_underspecification",
+      "manual_rationale": "Run-length encoding is recognizable but prompt does not specify pairs as [count,value], run order, or list versus string handling; tests rely on that representation.",
+      "required_contract_resolution": "Publish an explicit run encoding/output schema before generation; version the repaired target.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 159,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "calendar_season",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/762",
+        "mbpp/455"
+      ],
+      "specification_status": "material_convention_underspecification",
+      "manual_rationale": "Month-length classification is a related calendar operation rather than the same task. Season boundaries and hemisphere/convention are unspecified; wording says print while tests expect a return value.",
+      "required_contract_resolution": "Fix calendar convention, boundaries, input spelling/domain and return behavior in a revised public contract.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 189,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_same_family_variant",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "interface_domain_clarification",
+      "manual_rationale": "First missing positive in an unsorted array generalizes the same missing-integer family as old627 and selected34/371, although algorithm, ordering and zero handling differ. Extra n and input mutation are not explained by prose.",
+      "required_contract_resolution": "Resolve n/domain/mutation semantics; do not present as an unseen task family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 202,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "alternating_character_selection",
+      "prior_relationship": "strong_semantic_duplicate",
+      "related_prior_roots": [
+        "mbpp/226",
+        "mbpp/437"
+      ],
+      "specification_status": "index_convention_underspecification",
+      "manual_rationale": "Selected202 retains zero-based even indices, exactly the operation old226 describes; old437 is the complementary alternating selection. Even characters is ambiguous without indexing convention.",
+      "required_contract_resolution": "Exclude due to prior operation identity; retain provenance even if repaired.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 220,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "punctuation_to_colon_substitution",
+      "prior_relationship": "strong_parameterized_family_variant",
+      "related_prior_roots": [
+        "mbpp/732"
+      ],
+      "specification_status": "boundary_semantics_conflict",
+      "manual_rationale": "Same punctuation substitution as old732 with a count parameter. Python re.sub count=0 replaces all, conflicting with a literal maximum of zero occurrences unless n is restricted to positive integers.",
+      "required_contract_resolution": "Specify positive count or repair zero-count behavior; prospective family remains previously represented.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 289,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "cumulative_calendar_odd_days",
+      "prior_relationship": "no_strong_match_found_in_bounded_review",
+      "related_prior_roots": [],
+      "specification_status": "description_endpoint_conflict",
+      "manual_rationale": "Given year suggests one calendar year, whereas source counts excess weekdays accumulated over N years using leap/century corrections. The time interval and origin are absent.",
+      "required_contract_resolution": "State cumulative interval/calendar convention or change reference/evaluator; cannot silently infer target from solution.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 336,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "month_day_count_classification",
+      "prior_relationship": "strong_parameterized_family_variant",
+      "related_prior_roots": [
+        "mbpp/455",
+        "mbpp/762"
+      ],
+      "specification_status": "material_underspecification",
+      "manual_rationale": "Same month-length classification family with 28 replacing 30/31 and names replacing numbers. Every month contains at least28 days; reference instead selects February, without leap-year semantics.",
+      "required_contract_resolution": "Specify exactly28 in a nonleap calendar and input convention if repairing; still a represented family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 357,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "flattened_tuple_maximum",
+      "prior_relationship": "related_operation_or_name_collision_only",
+      "related_prior_roots": [
+        "mbpp/753",
+        "humaneval/158"
+      ],
+      "specification_status": "domain_clarification_required",
+      "manual_rationale": "Tuple-record top-k and word unique-letter maximum are different targets; shared find_max name is not a duplicate. Source casts each item to int, so arbitrary numeric inputs would not implement their true maximum. Tests use integer tuples.",
+      "required_contract_resolution": "Explicitly constrain to nonempty tuple records of integers or repair source/evaluator. Retention is conditional and does not certify original prose for broader inputs.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 365,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "integer_decimal_digit_count",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/764",
+        "mbpp/224"
+      ],
+      "specification_status": "reference_boundary_defect_under_unrestricted_prompt",
+      "manual_rationale": "Counting decimal digits of an integer differs from counting digit characters in mixed text (old764). Source returns zero for0 and repeated floor division of negative integers never reaches0. This is a static control-flow finding, not an executed failure.",
+      "required_contract_resolution": "Restrict to strictly positive integers explicitly or repair zero/negative handling and evaluator; preserve version distinction.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 371,
+      "decision": "exclude_probable_prior_family",
+      "provisional_family": "missing_integer_search",
+      "prior_relationship": "strong_near_duplicate",
+      "related_prior_roots": [
+        "mbpp/627"
+      ],
+      "specification_status": "universe_and_interface_underspecification",
+      "manual_rationale": "Both locate first missing nonnegative integer in a sorted sequence by index-based search. Selected left/right arguments and nonnegative zero-origin universe are absent from prose.",
+      "required_contract_resolution": "Exclude prior family; clarify sorted distinct nonnegative domain and search bounds for any revised version.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 373,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "cuboid_volume",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/234",
+        "mbpp/14"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "Cube and triangular-prism volume tasks are related elementary geometry but have different parameterizations/formulas. No exact task identity established; broad geometry transfer remains possible.",
+      "required_contract_resolution": "Define length,width,height and admissible units/numeric domain; do not equate a distinct solid with a proven independent family.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 378,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "right_rotate_list_one",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/625",
+        "mbpp/591",
+        "humaneval/65"
+      ],
+      "specification_status": "minor_interface_clarification",
+      "manual_rationale": "Moving final element to front differs from swapping endpoints (old625/591). Digit circular-shift HE65 is related but includes integer/string-specific behavior and arbitrary shifts.",
+      "required_contract_resolution": "Specify returned list and empty-list behavior; count as development only pending semantic review and scorer validation.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 386,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "minimum_bracket_balance_swaps",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/595",
+        "mbpp/771",
+        "humaneval/61"
+      ],
+      "specification_status": "material_cost_model_underspecification",
+      "manual_rationale": "Minimum swaps depends on adjacent-only versus arbitrary swaps, absent from prose. Source accumulates adjacent distances. Balance recognition and binary-string transformation prior tasks are related, not identical optimization endpoints.",
+      "required_contract_resolution": "Specify adjacent swap cost, bracket alphabet, and equal-count/feasibility assumptions before scoring.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 402,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "binomial_modulus",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/274",
+        "mbpp/592"
+      ],
+      "specification_status": "conventional_domain_clarification",
+      "manual_rationale": "nCr modulo p is recognizable. Other binomial-sum tasks share mathematical ingredients but compute different functions. Source uses dynamic programming and does not require prime p.",
+      "required_contract_resolution": "Specify integers n>=0,0<=r<=n,p>0; do not unnecessarily restrict p to primes. Validate evaluator separately.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 488,
+      "decision": "exclude_specification_pending_repair",
+      "provisional_family": "regular_pentagon_area",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/171"
+      ],
+      "specification_status": "geometry_and_numeric_judging_underspecification",
+      "manual_rationale": "Area is determined from one side only for a regular pentagon, unstated. Original assertions compare floating-point outputs by exact equality; mathematically valid equivalent formulas may round differently. Perimeter prior171 is related but a different target.",
+      "required_contract_resolution": "State regularity and side length; freeze justified numeric tolerance and negative controls before grading. This changes the original literal endpoint.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 489,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "frequency_of_maximum",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/168",
+        "mbpp/88"
+      ],
+      "specification_status": "interface_domain_clarification",
+      "manual_rationale": "Counting a supplied target value (old168) differs from finding maximum then counting its occurrences. This is a related composition, not established semantic duplicate; source extra n must be documented.",
+      "required_contract_resolution": "Specify nonempty numeric sequence and n=len(arr), return count, and mutation behavior; no family-independence certificate.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    },
+    {
+      "task_id": 509,
+      "decision": "retain_for_contract_review",
+      "provisional_family": "positive_odd_prefix_mean",
+      "prior_relationship": "related_operation_only",
+      "related_prior_roots": [
+        "mbpp/807",
+        "mbpp/412"
+      ],
+      "specification_status": "domain_clarification_required",
+      "manual_rationale": "Mean of positive odd integers through n is different from filtering/selecting odd list values. Positive-odd domain is conventional but not explicit; negative odd inputs yield zero-count division by static inspection.",
+      "required_contract_resolution": "Explicitly restrict n to positive odd integers; do not claim an unrestricted integer target. Retained as a plausible domain clarification, not as a validated task.",
+      "runnable": false,
+      "confirmatory_freshness_certified": false
+    }
+  ],
+  "provisional_family_groups": {
+    "word_frequency_ranking": {
+      "selected_task_ids": [
+        13
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "missing_integer_search": {
+      "selected_task_ids": [
+        34,
+        189,
+        371
+      ],
+      "strongly_related_prior_roots": [
+        "mbpp/627"
+      ],
+      "independence_certified": false
+    },
+    "adjacent_distinct_rearrangement": {
+      "selected_task_ids": [
+        39
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "regex_lowercase_underscore": {
+      "selected_task_ids": [
+        43
+      ],
+      "strongly_related_prior_roots": [
+        "mbpp/16"
+      ],
+      "independence_certified": false
+    },
+    "regex_word_at_start": {
+      "selected_task_ids": [
+        44
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "parallelogram_area": {
+      "selected_task_ids": [
+        52
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "cylinder_perimeter": {
+      "selected_task_ids": [
+        112
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "run_length_encoding": {
+      "selected_task_ids": [
+        157
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "calendar_season": {
+      "selected_task_ids": [
+        159
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "alternating_character_selection": {
+      "selected_task_ids": [
+        202
+      ],
+      "strongly_related_prior_roots": [
+        "mbpp/226",
+        "mbpp/437"
+      ],
+      "independence_certified": false
+    },
+    "punctuation_to_colon_substitution": {
+      "selected_task_ids": [
+        220
+      ],
+      "strongly_related_prior_roots": [
+        "mbpp/732"
+      ],
+      "independence_certified": false
+    },
+    "cumulative_calendar_odd_days": {
+      "selected_task_ids": [
+        289
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "month_day_count_classification": {
+      "selected_task_ids": [
+        336
+      ],
+      "strongly_related_prior_roots": [
+        "mbpp/455",
+        "mbpp/762"
+      ],
+      "independence_certified": false
+    },
+    "flattened_tuple_maximum": {
+      "selected_task_ids": [
+        357
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "integer_decimal_digit_count": {
+      "selected_task_ids": [
+        365
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "cuboid_volume": {
+      "selected_task_ids": [
+        373
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "right_rotate_list_one": {
+      "selected_task_ids": [
+        378
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "minimum_bracket_balance_swaps": {
+      "selected_task_ids": [
+        386
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "binomial_modulus": {
+      "selected_task_ids": [
+        402
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "regular_pentagon_area": {
+      "selected_task_ids": [
+        488
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "frequency_of_maximum": {
+      "selected_task_ids": [
+        489
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    },
+    "positive_odd_prefix_mean": {
+      "selected_task_ids": [
+        509
+      ],
+      "strongly_related_prior_roots": [],
+      "independence_certified": false
+    }
+  },
+  "adjudications_sha256": "8ec2b57352a770a5d5ad2c834a30184c53fd129fc4595ec7a9dd6319a54f001d"
+}

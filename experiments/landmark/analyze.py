@@ -21,6 +21,38 @@ CONTRASTS = (("history_specific_repair", "generic_repair"),
              ("generic_repair", "independent_restart"),
              ("history_specific_repair", "independent_restart"),
              *((arm, "stop") for arm in ARMS))
+REPORTED_ENDPOINTS = len(ALL_ARMS) + len(CONTRASTS)
+
+
+def bounded_family_interval(lower, upper, families, support, alpha=.05, allow=True):
+    """Hoeffding reference interval for a fixed-weight independent-family target.
+
+    Bounds enclose each complete-data root outcome, including missing slots.
+    Independence is required across the TRUE families; it is not verified by IDs.
+    Within-family dependence and missingness may be arbitrary. Family sizes and
+    weights must be fixed before outcomes. This is not a random-size population
+    ratio interval or a distribution-free certificate of benchmark generalization.
+    """
+    if not 0 < alpha < 1 or len(lower) != len(upper) or len(lower) != len(families):
+        raise ValueError("Invalid confidence level or family-bound dimensions")
+    lo, hi = support
+    if not math.isfinite(lo) or not math.isfinite(hi) or lo >= hi:
+        raise ValueError("Invalid bounded-outcome support")
+    if any(not math.isfinite(l) or not math.isfinite(u) or not lo <= l <= u <= hi
+           for l, u in zip(lower, upper)):
+        raise ValueError("Completion bounds must lie in the declared support")
+    counts = Counter(families)
+    n = len(lower)
+    sum_weights_squared = sum((size/n)**2 for size in counts.values()) if n else None
+    radius = ((hi-lo) * math.sqrt(.5 * sum_weights_squared * math.log(2/alpha))) if n else None
+    interval = None if not n or not allow else [max(lo, sum(lower)/n-radius), min(hi, sum(upper)/n+radius)]
+    return {"method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+            "alpha": alpha, "interval": interval, "radius": radius,
+            "effective_families": None if not n else 1/sum_weights_squared,
+            "target": "Expected equal-root mean for these prespecified family sizes and weights",
+            "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+            "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+            "suppression_reason": None if interval is not None else "No assigned roots or receiver/collection identity gate failed"}
 
 
 def paired_summary(values, families, allow_ci=True):
@@ -36,7 +68,7 @@ def paired_summary(values, families, allow_ci=True):
     se = math.sqrt(g / (g - 1) * sum(x*x for x in clusters.values())) if g >= 2 and allow_ci else None
     return {"n_roots": n, "n_families": g, "mean": mean, "se": se,
             "ci95": None if se is None else [mean - 1.96*se, mean + 1.96*se],
-            "interval_note": "Unadjusted normal family-cluster approximation; small-cluster coverage is not guaranteed" if se is not None else "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"}
+            "interval_note": "Exploratory unadjusted normal family-cluster approximation; small-cluster coverage is not guaranteed, including when the estimated SE is zero" if se is not None else "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"}
 
 
 def analyze(run_dir, grade_path=None, split="all"):
@@ -101,12 +133,15 @@ def analyze(run_dir, grade_path=None, split="all"):
     chosen = [r for r in eligible.values() if split == "all" or r["split"] == split]
     gate = completion["model_metadata"].get("digest_unchanged") is True and completion["fatal_error"] is None
     # Mock intervals are arithmetic checks only, and never empirical inference.
-    report = {"evidence_type": manifest["evidence_type"], "config_sha256": manifest["config_sha256"],
+    report = {"analysis_version": "landmark-analysis-v2", "evidence_type": manifest["evidence_type"], "config_sha256": manifest["config_sha256"],
         "collection_manifest_sha256": file_sha(run_dir / "manifest.json"),
         "grades_sha256": file_sha(grade_path) if grade_path is not None else None,
         "split": split, "assigned_roots": len(chosen), "excluded_roots": sum(r["excluded"] for r in rows),
         "receiver_identity_gate": gate, "quality": {}, "contrasts": {}, "realized_cost": {},
-        "interpretation": "Frozen finite-prompt landmark comparison; no learned policy or full DTR-value claim. Complete-case estimates select a population when outcomes are missing. Bounds retain all assigned roots. Mock outcomes are not empirical evidence."}
+        "interpretation": "Frozen finite-prompt landmark comparison; no learned policy or full DTR-value claim. Complete-case estimates select a population when outcomes are missing. Completion bounds concern this realized run, not population confidence. Mock outcomes are not empirical evidence.",
+        "finite_sample_reference_family": {"overall_alpha": .05, "number_of_fixed_endpoints": REPORTED_ENDPOINTS,
+            "per_endpoint_alpha": .05/REPORTED_ENDPOINTS,
+            "scope": "Bonferroni simultaneous reference intervals across these four arms and six contrasts only, under each stated fixed-weight independent-family model; repeated looks, selected policies and changed endpoints are not covered"}}
 
     def outcomes(row, arm):
         return [grades.get((row["root_id"], arm, a["replicate"]), {}).get("outcome") for a in row["arms"][arm]]
@@ -120,6 +155,11 @@ def analyze(run_dir, grade_path=None, split="all"):
         known_sum = sum(v for v in values if v is not None)
         return known_sum/len(values), (known_sum+sum(v is None for v in values))/len(values)
 
+    def reference_interval(root_bounds, support):
+        return bounded_family_interval([v[0] for v in root_bounds], [v[1] for v in root_bounds],
+                                       [r["family_id"] for r in chosen], support,
+                                       alpha=.05/REPORTED_ENDPOINTS, allow=gate)
+
     for arm in ALL_ARMS:
         observed = [r for r in chosen if outcome(r, arm) is not None]
         missing = Counter()
@@ -131,7 +171,9 @@ def analyze(run_dir, grade_path=None, split="all"):
                     missing[reason] += 1
         n = len(chosen)
         report["quality"][arm] = {"observed": paired_summary([outcome(r, arm) for r in observed], [r["family_id"] for r in observed], gate and len(observed) == len(chosen)),
-            "missing_replicate_reasons": dict(missing), "all_assigned_mean_bounds": None if n == 0 else [sum(bounds(r, arm)[k] for r in chosen)/n for k in (0, 1)]}
+            "missing_replicate_reasons": dict(missing), "all_assigned_mean_bounds": None if n == 0 else [sum(bounds(r, arm)[k] for r in chosen)/n for k in (0, 1)],
+            "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root mean; not a population confidence interval",
+            "finite_sample_reference": reference_interval([bounds(r, arm) for r in chosen], (0, 1))}
         costs = []
         for row in chosen:
             initial, replicates = row["initial"], row["arms"][arm]
@@ -150,13 +192,17 @@ def analyze(run_dir, grade_path=None, split="all"):
         complete = [r for r in chosen if outcome(r, a) is not None and outcome(r, b) is not None]
         values = [outcome(r, a)-outcome(r, b) for r in complete]
         lower = upper = 0
+        root_bounds = []
         for r in chosen:
             la, ua = bounds(r, a)
             lb, ub = bounds(r, b)
             lower += la-ub
             upper += ua-lb
+            root_bounds.append((la-ub, ua-lb))
         report["contrasts"][a + "_minus_" + b] = {"complete_pairs": paired_summary(values, [r["family_id"] for r in complete], gate and len(complete) == len(chosen)),
-             "missing_pair_roots": len(chosen)-len(complete), "all_assigned_mean_bounds": None if not chosen else [lower/len(chosen), upper/len(chosen)]}
+             "missing_pair_roots": len(chosen)-len(complete), "all_assigned_mean_bounds": None if not chosen else [lower/len(chosen), upper/len(chosen)],
+             "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+             "finite_sample_reference": reference_interval(root_bounds, (-1, 1))}
     report["actual_collection_cost"] = {k: completion[k] for k in ("attempted_calls", "reserved_completion_tokens", "measured_prompt_tokens", "measured_completion_tokens", "attempted_calls_with_unknown_usage", "wall_seconds", "paid_api_spend_usd")}
     return report
 

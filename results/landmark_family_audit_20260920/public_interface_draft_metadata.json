@@ -1,0 +1,36 @@
+{
+  "status": "REVIEW_DRAFT_NOT_FROZEN_OR_RUNNABLE",
+  "draft_task_ids": [
+    52,
+    357,
+    373,
+    378,
+    402,
+    489,
+    509
+  ],
+  "relative_path": "work/landmark_family_audit_20260920/public_interface_review_draft.jsonl",
+  "file_sha256": "772f0a3639f04b66de0a1cd494c6fe6a9f888585a21f72a81bc97edfd27521eb",
+  "public_task_sha256": {
+    "mbpp/52": "d2f2be6d3be82b1a11dce341dfd18db7f7ed42f8667e38feee5dda3c7ae1089d",
+    "mbpp/357": "0bdb76a526dcf9481341685d7c448fd59fb5868ea4a6dd7025be7d55323f5bdf",
+    "mbpp/373": "2aeef13955c553ff4421722fdb3971d4e414755047b33d378a5c376f6e05a98e",
+    "mbpp/378": "e5fdca1b834b58436304deee0cae897ebfcc08e85db56625fed99f22211462cd",
+    "mbpp/402": "37e5fbd07d7193df28ff55c6d3301c8fece7cb392afb2d9e1cd2c1f5aca41120",
+    "mbpp/489": "c2fc97b373819877bf79ac92b50c11d5cfa59658d0595b7978bf189d24f6147c",
+    "mbpp/509": "d4f18e5dc1449309b8024a84aabd5771467fc1201f5610b6c77829e050d5b1c9"
+  },
+  "hash_convention": "collect.digest: JSON sort_keys=True,ensure_ascii=False,separators=(comma,colon),UTF8 SHA256",
+  "family_id_policy": "Shared unresolved placeholder; not a claim of one true family or seven independent families. Must be reviewed before partitioning.",
+  "clarifications_applied": false,
+  "contains_reference_body_or_assertions": false,
+  "resolution_notes": {
+    "mbpp/52": "Define base and perpendicular height and allowed numeric domain; root/family partition must not assume this arithmetic shape is independent.",
+    "mbpp/357": "Explicitly constrain to nonempty tuple records of integers or repair source/evaluator. Retention is conditional and does not certify original prose for broader inputs.",
+    "mbpp/373": "Define length,width,height and admissible units/numeric domain; do not equate a distinct solid with a proven independent family.",
+    "mbpp/378": "Specify returned list and empty-list behavior; count as development only pending semantic review and scorer validation.",
+    "mbpp/402": "Specify integers n>=0,0<=r<=n,p>0; do not unnecessarily restrict p to primes. Validate evaluator separately.",
+    "mbpp/489": "Specify nonempty numeric sequence and n=len(arr), return count, and mutation behavior; no family-independence certificate.",
+    "mbpp/509": "Explicitly restrict n to positive odd integers; do not claim an unrestricted integer target. Retained as a plausible domain clarification, not as a validated task."
+  }
+}

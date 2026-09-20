@@ -1,0 +1,43 @@
+{
+  "test_command": "python3 -m unittest discover -s tests -p test_landmark_families.py -v",
+  "tests_passed": 7,
+  "benchmark_code_executed": false,
+  "model_calls": 0,
+  "full_project_suite_run": false,
+  "old_canonical_reference_ast_parse_errors": 0,
+  "all_candidate_count": 242,
+  "lexical_review_flags": 70,
+  "selected_lexical_review_flags": 9,
+  "all_candidate_shape_or_name_flags": 25,
+  "files": {
+    "scripts/audit_landmark_families.py": {
+      "sha256": "e351fa391ba6c028ff83cab1ac055f7535b1f2ea6ac5d075408826af553d553e",
+      "bytes": 11963
+    },
+    "tests/test_landmark_families.py": {
+      "sha256": "cabc10226a263c30bb33f8247b3223665b7e95dc694a8faf9762efa8548493a3",
+      "bytes": 3051
+    },
+    "docs/landmark_family_audit_20260920.md": {
+      "sha256": "85f46a33e1471e9434fd05966fb0f10112433c9f6d9a54bf4766b63d7e792a93",
+      "bytes": 18109
+    },
+    "results/landmark_family_audit_20260920/adjudications.json": {
+      "sha256": "8ec2b57352a770a5d5ad2c834a30184c53fd129fc4595ec7a9dd6319a54f001d",
+      "bytes": 19879
+    },
+    "results/landmark_family_audit_20260920/manifest.json": {
+      "sha256": "df5aa907807b2abee01bba6ca0dd03bf7101dd872c43e5a2592db3a65f202838",
+      "bytes": 99674
+    },
+    "results/landmark_family_audit_20260920/all_candidate_screen.json": {
+      "sha256": "4dc22b313797119522c9cdb65881ed9ba6446e64e4caafb15a3942dc35b9c440",
+      "bytes": 686213
+    },
+    "results/landmark_family_audit_20260920/public_interface_draft_metadata.json": {
+      "sha256": "cdbf4314b1adcffa82d487cfd3c67cd89952b86e8ca82f84f44de9d22f44a669",
+      "bytes": 2409
+    }
+  },
+  "root_cross_review": "Root independently read all24 source tasks and agreed with seven retention/seven family exclusion/ten specification hold decisions before finalization; not blinded validation."
+}

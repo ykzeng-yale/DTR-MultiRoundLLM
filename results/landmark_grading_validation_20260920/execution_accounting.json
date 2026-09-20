@@ -1,0 +1,47 @@
+{
+  "runs": [
+    {
+      "run": "common_canaries",
+      "launch_attempts": 9,
+      "payload_starts": 0,
+      "seconds": 0.07579254359006882
+    },
+    {
+      "run": "strict_canaries_v1",
+      "launch_attempts": 9,
+      "payload_starts": 0,
+      "seconds": 0.16382375173270702
+    },
+    {
+      "run": "strict_canaries_v2",
+      "launch_attempts": 9,
+      "payload_starts": 0,
+      "seconds": 0.12318433355540037
+    },
+    {
+      "run": "strict_startup_v2",
+      "launch_attempts": 1,
+      "payload_starts": 0,
+      "seconds": 0.020480167120695114
+    },
+    {
+      "run": "alternate_interpreters",
+      "launch_attempts": 3,
+      "payload_starts": 0,
+      "seconds": 0.03766020946204662
+    }
+  ],
+  "total_launch_attempts": 31,
+  "total_payload_starts": 0,
+  "total_runner_wall_seconds": 0.42094100546091795,
+  "reference_executions": 0,
+  "candidate_executions": 0,
+  "external_model_calls": 0,
+  "external_spend_usd": 0,
+  "final_source_hashes": {
+    "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/experiments/landmark/grade.py": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
+    "experiments/landmark/sandbox.py": "8e9954c7d6eeac0b24271de1084f6a2a00e6faf757e368bd4469df3f121ee7d0",
+    "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+    "tests/test_landmark_grader.py": "d5188bcd8985bc1b6413ee0c7247cb357eb2391a55c2a96fd3f5ba17bbf776de"
+  }
+}

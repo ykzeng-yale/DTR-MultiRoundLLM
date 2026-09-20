@@ -1,0 +1,109 @@
+{
+  "schema_version": "landmark-v1",
+  "evidence_type": "mock_transport_only",
+  "config": {
+    "schema_version": "landmark-v1",
+    "protocol_version": "MOCK-SCAFFOLD-v1",
+    "freeze_commit": "HEAD",
+    "model": "MOCK",
+    "model_digest": "MOCK",
+    "server_build": "MOCK",
+    "base_url": "http://127.0.0.1:11434",
+    "seed": 20260920,
+    "split_seed": 731,
+    "split_fractions": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "prior_seen_root_ids": [],
+    "prior_seen_family_ids": [],
+    "branch_replicates": 1,
+    "max_calls": 14,
+    "max_completion_tokens": 448,
+    "max_tokens_per_call": 32,
+    "max_seconds": 30,
+    "request_timeout_seconds": 10,
+    "max_request_bytes": 16384,
+    "decoding": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "num_ctx": 8192
+    },
+    "dataset_sha256": "REQUIRED_FOR_REAL",
+    "source_code_sha256": "REQUIRED_FOR_REAL",
+    "grading_contract_sha256": "c75e0230779bd4d64a254b3abad074925b0d737917d80105b57c6b290d35c4b8",
+    "dataset_source": "synthetic transport fixtures",
+    "dataset_license": "repository test fixtures",
+    "paid_api_budget_usd": 0
+  },
+  "config_sha256": "1b42ec135baa5c0372198646707b38bd74acb34869d837c885ea03392c625a2c",
+  "dataset_sha256": "347849f5cbc903367c4ec079a8fcd62d6063bb2ac50e9859ebb258851c0dc678",
+  "source_hashes": {
+    "__init__.py": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+    "analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+    "collect.py": "822e50c8b72b70a50fdee90ab6c436ca402934a4ef633a2e0f8542972e278c27",
+    "grade.py": "0673bd16a5c8dc1146013b47713ba81f1085db070959a1fab5d3191fb7a82b2a",
+    "sandbox.py": "8e9954c7d6eeac0b24271de1084f6a2a00e6faf757e368bd4469df3f121ee7d0"
+  },
+  "source_code_sha256": "020a040be2306b4f5cf9a76366deb62f4158628c90fa3eaa4d6d336922d24534",
+  "freeze": {
+    "resolved_commit": null,
+    "status": "mock_not_frozen"
+  },
+  "tasks": [
+    {
+      "root_id": "grading-transport-1",
+      "family_id": "synthetic-fixture",
+      "prompt": "Implement f(x).",
+      "public_context": "The interface has one input. This is a synthetic transport fixture."
+    }
+  ],
+  "assignment_table": [
+    {
+      "root_id": "grading-transport-1",
+      "family_id": "synthetic-fixture",
+      "split": "train",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "independent_restart",
+          "replicate": 0
+        },
+        {
+          "arm": "generic_repair",
+          "replicate": 0
+        },
+        {
+          "arm": "history_specific_repair",
+          "replicate": 0
+        }
+      ],
+      "seeds": {
+        "initial": 1126772261,
+        "generic_repair:0": 1886979498,
+        "history_specific_repair:0": 1168410534,
+        "independent_restart:0": 374774985
+      }
+    }
+  ],
+  "assignment_table_sha256": "289acb7446baa7ccfb589b19141992b3934594692368f3e183308ce8ec6c3222",
+  "planned_calls": 4,
+  "design": "All three branches are collected; inclusion probability one. Order is randomized, not treatment assignment.",
+  "system": "Complete the public task. Use only the information supplied in this conversation.",
+  "generic_renderer": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+  "targeted_renderer": {
+    "loop": "Review the iteration boundaries and empty-input behavior of your previous answer against the original task and public information. Return your best complete answer.",
+    "division": "Review division, rounding, and zero-denominator behavior in your previous answer against the original task and public information. Return your best complete answer.",
+    "fallback": "Check whether your previous answer satisfies each requirement in the original task and public information. Resolve any discrepancy and return your best complete answer."
+  },
+  "limits": [
+    "No hidden grades or candidate execution in collector",
+    "Syntactic feedback scaffold, not validated semantic personalization",
+    "Completion-token reservation is hard; input tokens are measured separately",
+    "No tokenizer/truncation certification; real feasibility must audit context handling",
+    "Client deadline prevents dispatch; timed-out server computation may continue",
+    "Branch noise independence and server statelessness require audit"
+  ]
+}

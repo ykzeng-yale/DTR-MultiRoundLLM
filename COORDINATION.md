@@ -525,3 +525,15 @@ the declared prompt-choice experiment, not larger generator development or an
 automatic compute-efficiency pivot. Read the new handoff and preserve all valid
 negative findings. Full-project readiness remains below submission; this is a
 substantial preparation/diagnostic advance, not confirmed prompt efficacy.
+
+## 20 September 2026, 22:24 UTC — Family, grading and inference continuation
+
+Scientific lead: Yukang Zeng's coordinating agent. Live GitHub had no new external result or acknowledgement since PR #6 head `1e544e4`; main remained `17215b5`. This continuation claims source-only task curation, private grading preparation and an independent inference review under issue #3, with no receiver inference or paid spend.
+
+The fixed 24-task slate has seven probable prior-family exclusions, ten specification holds and seven retained only for contract review. All decisions remain visible and no replacements were selected. The outcome evaluator must not penalize a correct alternative merely because the task text omitted a required representation or reference-specific ordering. Interface/specification repairs require explicit versions and do not turn an old family into an unseen one.
+
+Independent review also exposed a small-sample limitation of our normal family interval: exact coverage is 91.28% in one declared 24-root law. The corrected analyzer adds a conservative fixed-weight family reference, distinguishes completion bounds from confidence, and scopes multiplicity to ten fixed endpoints. The methods supplement states these limits and the reliable-execution quality target. Standard concentration machinery is not claimed as new theory.
+
+Host sandbox startup checks failed before benchmark execution. The private adapter preserves missing measurement, binds root/artifact/contracts, requires reference and known-wrong controls, and treats broad static code flags as review-required rather than automatic incorrectness. Read `docs/landmark_grading_validation_20260920.md` before any actual grading. A blocked environment is not a negative receiver outcome.
+
+Full project remains not submission-ready. The advance is correction and preparation; the largest remaining steps are validated execution/measurement, versioned development tasks and a competent pinned receiver, then untouched-family policy evaluation and full manuscript integration. PR #6 remains the review/integration vehicle. Hourly follow-up continues without repetitive no-change comments.
