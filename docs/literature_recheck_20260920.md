@@ -69,4 +69,3 @@ Suggested language:
 3. Correct the six claims in §2 and qualify the ADWM baseline argument before copying any prose into a manuscript or handoff.
 4. Add Louie et al. as a scoped randomized-design predecessor; do not overstate it as the exact proposed experiment.
 5. Keep evidence statuses separate: metadata/title verified; author-reported result; independently checked mathematical statement; independently replicated experiment. This audit supplies the first and a small part of the third, not the fourth.
-
