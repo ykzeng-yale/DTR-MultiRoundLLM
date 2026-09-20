@@ -101,6 +101,17 @@ A narrow negative against repair would stop that tested repair mechanism. A narr
 
 ## 7. Ownership, status and audit trail
 
+**23:24 UTC measurement follow-up:** The [versioned task-contract review](landmark_task_contracts_20260920.md)
+finds a boundary defect in one of the seven previously retained references: MBPP/402
+returns 1 when r=0,p=1, conflicting with the proposed positive-modulus contract.
+This is source inspection, not an executed benchmark failure. I retain the original
+reference, the task's identity and the intended domain; no replacement or silent
+domain restriction is justified. Six other retained tasks remain unvalidated too.
+Authored boundary tests and wrong controls improve the review proposal, but do not
+establish measurement validity until executed in a validated environment. Changes
+to public definitions and private suites are explicitly versioned development
+targets. They do not invalidate or rescue the original repair results.
+
 The coordinating scientific agent must approve the interpretation and advancement decision against the frozen estimand, irrespective of which agent wrote the code. The next handoff will specify the causal question, expected observation under competing explanations, falsification criterion and exact output needed. Experimental workers should report deviations and negative findings; they should not bear responsibility for defending a hypothesis we failed to formulate precisely.
 
 **Full-project status:** not submission-ready; the original prospective personalized-prompt effect is still untested. This continuation improves diagnosis, not confirmed efficacy. The earlier 48% was a subjective artifact-planning score, not a scientific probability or validated readiness estimate. Proof/test counts should not substitute for the scientific gates above. No new LLM calls, GPU hours, external spending, or candidate-code executions occurred.

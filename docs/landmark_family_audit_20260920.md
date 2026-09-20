@@ -65,6 +65,14 @@ The ten specification exclusions are **13,39,44,112,157,159,289,365,386,488**. T
 
 The retained development candidates are **52,357,373,378,402,489,509**. Each remains conditional on a public contract and validated grading. In particular:52 needs base/perpendicular-height definitions;357 needs nonempty integer tuple records or a repair to its integer coercion;373 needs dimension conventions;378 needs return/empty-list behavior;402 needs integer n,r and positive modulus with 0<=r<=n, without imposing an unnecessary primality restriction;489 needs nonempty input and n semantics;509 needs an explicit positive-odd domain. These proposed domain clarifications do not silently alter the original benchmark. If adopted, record a new task-specification version and preserve the original disposition.
 
+**Subsequent contract review, 23:24 UTC:** [The versioned proposal](landmark_task_contracts_20260920.md)
+now records a static reference defect for402 at r=0,p=1. Thus the retained review
+set contains six awaiting execution validation and one additional reference hold;
+the historical seven-task disposition and fixed 24-task selection remain intact.
+No replacement or domain narrowing was made. The current private schema also
+requires `negative_controls`; the historical proposed schema listed below predates
+that mandatory field. Use `experiments/landmark/grade.py` as the schema authority.
+
 All 24 selected references have a single top-level function with no defaults, annotations or decorators. The script exports **interface metadata only** (function name and arguments), never a body. Defaults, annotations or decorators in other candidates block automatic signature export pending leakage and semantic review. Names and arguments themselves remain part of the declared intervention environment; they must be frozen with the public prompt.
 
 The implementation agent's proposed private grader row has `root_id`, `public_task_sha256`, `entry_point`, `public_assertions`, `private_assertions`, `preamble`, and `reference_code`; the public task hash binds the exact public row. This audit does not instantiate or approve a test split. Original tests and any later repaired tests remain outside collector access unless explicitly assigned to the public partition. No public assertion is counted again in the private score. Semantic leakage, discriminative power, sandbox containment and the receiver contract are separate gates still open.

@@ -1,0 +1,24 @@
+{
+  "evidence_class": "software and source-only validation, not benchmark execution",
+  "command": "uv run --extra dev pytest -q",
+  "passed": 131,
+  "subtests_passed": 2,
+  "pytest_reported_seconds": 1.42,
+  "affected_tests": 10,
+  "files_sha256": {
+    "scripts/build_landmark_task_contracts.py": "4b6f0035072b68258e6bfa279549522621903a8f487b1c1c439366bfd763236e",
+    "experiments/landmark/task_contracts_v1.json": "340bc411d0c0c68771c992ebec5e7e21f06ab74bda22a51f0e734b3773e05762",
+    "tests/test_landmark_task_contracts.py": "f85e5073aad7e8c8ca81cee71bbdf315eb35519ba7ddeb8baef7212cb241ddad",
+    "results/landmark_task_contracts_20260920/manifest.json": "86c78fe1f632d756fb02b988c324de2a25f8620827a236be0f40608257261ddb"
+  },
+  "source_export_roots": 7,
+  "original_assertions": 21,
+  "authored_boundary_assertions": 22,
+  "wrong_controls_not_executed": 14,
+  "receiver_calls": 0,
+  "receiver_tokens": 0,
+  "sandbox_attempts": 0,
+  "reference_control_candidate_executions": 0,
+  "external_spend_usd": 0,
+  "ready_for_collection": false
+}

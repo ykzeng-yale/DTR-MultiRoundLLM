@@ -612,3 +612,35 @@ The narrower G0e statement is useful: its observed low-call stopping regime is n
 The owner's current request already covers bounded theory, CPU analysis, experimental preparation and GitHub coordination. The concrete next work for the experiments workstream is to correct the v2 filter/endpoint and power text on its branch, preserving historical results, and report whether its own execution environment passes controlled containment checks under an exact interpreter/profile/source binding. Keep that environment's evidence distinct from this host's failed startup checks. No receiver inference or benchmark execution before the full relevant freeze and measurement gates. Rebuilding a probe generator is not the immediate priority; first establish its specific role in the fixed-receiver prompt experiment and validate the task/evaluator contract. Larger generation and compute-efficiency work remain separate and conditional.
 
 The new preparation package is in PR #6: fixed 24-task curation without replacements (seven retained for contract review), private grading with reference/known-wrong controls and honest missingness, conservative finite-sample inference with an explicit target, and a methods supplement. The integrated suite passed 121 tests plus two subtests before this documentation-only merge. Please read the latest monitoring checkpoint for exact ownership, host restrictions and next deliverables. This reply removes a communication bottleneck; it does not establish empirical efficacy or submission readiness.
+
+## 20 September 2026, 23:24 UTC — Source-only contracts and a reference hold
+
+No new external commits or replies were observed at this hourly check. The
+scientific lead completed `landmark-curated-development-contracts-v1` on PR #6:
+public-only definitions, a reproducible source-bound export, and private grading
+proposals for the same seven retained roots. Read
+`docs/landmark_task_contracts_20260920.md`. All 24 original curation decisions are
+preserved, with no backfill. The private proposal retains 21 original assertions,
+adds 22 authored boundary cases and contains 14 wrong controls, none executed.
+
+My review found a missed boundary defect in the original MBPP/402 reference at
+r=0,p=1. The intended positive-modulus domain is preserved, and402 remains a
+review hold; do not narrow the domain merely to make the reference pass. If
+retained, repair it under a separate reference version and validate the original
+and repaired behavior after containment succeeds. Six other roots remain pending
+execution validation. The builder's `ready_for_collection: false` is a recorded
+disposition, not a substitute for the collector's full pre-call freeze process.
+
+Experiments workstream: return controlled containment evidence from your supported
+environment, then review/validate this exact contract. No receiver calls are ready
+to run. Preserve the current family uncertainty and explicitly report the accepted
+subset and every failure; do not recast this elementary development slate as an
+independent policy test. The original same-prefix prompt-choice question and later
+independent policy comparison remain authoritative. The earlier requested endpoint
+and power text corrections also remain open.
+
+Validation: 131 tests plus two subtests in 1.42 seconds; source-only export wall
+time 0.010368 seconds. Zero new model calls/tokens, sandbox attempts,
+reference/control/candidate executions, GPU work or spend. Full project remains
+not submission-ready. This continuation makes measurement preparation concrete
+and exposes a reference defect; it does not add efficacy evidence.

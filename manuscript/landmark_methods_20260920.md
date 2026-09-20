@@ -16,6 +16,19 @@ The public task file contains only the task, a reviewed interface description an
 
 Benchmark assertions withheld from the current receiver prompt are held-out evaluation material, not necessarily secret or previously unseen model-training material. Their absence from the public payload addresses one leakage route but does not establish freedom from memorization. Likewise, an unused task ID is not an independent family. Development-task selection, related-family screening and exclusions are recorded before receiver outcomes; the entire selected curation slate is retained, including rejected tasks. Any eventual efficacy claim must name the resulting eligible population rather than generalize automatically to the uncurated benchmark.
 
+The source-only development curation illustrates why this review precedes outcome
+collection. A fixed 24-task slate retained seven for contract review, without
+replacement. A closer review then found that one retained reference returns an
+unreduced value when the binomial coefficient's lower index is zero and its
+modulus is one. The proposed contract explicitly permits that input. We preserve
+the original reference and intended domain, record the discrepancy as a hold, and
+require separate versioned validation of any correction. No benchmark execution
+or receiver outcome supports this finding; it follows from source control flow.
+The [contract proposal](../docs/landmark_task_contracts_20260920.md) clarifies public
+definitions and adds private boundaries, defining a new development endpoint.
+It does not retroactively alter historical scores or establish that this defect
+explains the earlier repair findings. All seven tasks remain unvalidated.
+
 The target endpoint is binary evaluator-defined quality for each prespecified continuation under reliable execution of the fixed receiver/decoding law. A produced malformed or empty answer is a failure under the frozen parser; a substantive test rejection is an observed zero. Infrastructure loss or evaluator failure leaves the intended score missing. The target is not quality conditional on observing an artifact, and the current implementation does not recode service failures as zeros in a deployment-success composite. All assigned slots remain in accounting. The bounded complete-data interpretation requires that this intended receiver outcome law be well-defined and preserved by the observed executions; it does not infer a score for an inherently undefined intervention. This distinction prevents a missing grade, an unattempted call or an empty test set from masquerading as an observed outcome. Passing execution-isolation checks and passing measurement controls are separate requirements: isolation concerns effects on the host, while measurement concerns what a recorded score means.
 
 ## Estimation and uncertainty

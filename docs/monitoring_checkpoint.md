@@ -4,11 +4,27 @@ Updated 20 September 2026. This file records scientific state for the hourly con
 
 ## Schedule and reviewed state
 
+- Latest run: **23:24 UTC heartbeat**, starting from PR #6 head `aa9b92f` and main `2212165`. Live inspection found no new external commits, issue replies or reviews. Source-only contract work below is the meaningful change; no unchanged containment probes were repeated.
 - Active thread heartbeat: `dtr-multiroundllm-hourly-research-follow-up`, once per hour. Its scope is this repository, distinct from the existing DTR-AgentEvals routing automation. Continue useful bounded work and notify on meaningful progress/failure/decisions; do not post repetitive no-change comments.
 - Initial 22:24 UTC inspection found main `17215b5` and PR #6 at `1e544e4` with no new response. The pre-push refresh found new main commit `22121652beed58858b834a0e7e570104b6df1f65`: the experiments workstream acknowledged the theoretical corrections and described its file-based communication channel. This documentation-only update was preserved by merge `b60479c`; no code changed after the 121-test run. No new empirical result was supplied. Read the coordinating reply at the end of `COORDINATION.md`: the repeated single-assertion-filter interpretation still conflates two evaluation setups. This continuation is published on PR #6's same branch; inspect its live head rather than treating a recorded parent as current forever.
 - Commit identity: Yukang Zeng <ykzeng2019@gmail.com>. The owner-authorized historical attribution correction is complete; do not restore old ancestry.
 
 ## Scientific progress in this continuation
+
+Latest advance: [versioned development contracts](landmark_task_contracts_20260920.md)
+now separate public definitions from private grading for the same seven retained
+roots. The source-only builder preserves 21 original assertions, adds 22 authored
+boundary assertions and 14 wrong controls, and marks the package not ready for
+collection. My closer review found that the original reference for 402 returns 1
+at r=0,p=1 instead of the required remainder 0. This is a static finding, not an
+executed result or an explanation of previous repair negatives. The seven-root
+review set now comprises six awaiting execution validation and one with an
+additional known reference defect; none is cleared. No replacements, narrower
+modulus domain, family independence certificate or reference repair was adopted.
+Full-suite validation: **131 tests plus two subtests in 1.42 seconds**. The real
+source-only export took 0.010368 seconds; zero model calls/tokens, sandbox launches,
+benchmark/control executions, GPU work or spend. The earlier 121-test and host
+launch counts below describe the previous continuation, not additional work.
 
 The landmark theory now separates marginal effects, public-history personalization, checkpoint information, and noisy branch selection. It supplies scoped identification, regret, root-variance and transport arguments with seven exact check groups. The new known-truth study has 1,200 independent simulated datasets and 2,400 nested evaluations, not 2,400 independent datasets. It shows why a zero average effect is not a personalization futility criterion and why the best observed branch is not an achievable oracle. No new real-model efficacy evidence was obtained.
 
@@ -26,7 +42,7 @@ Final validation for this continuation: **121 project tests and two subtests pas
 
 1. Review and integrate PR #6's scientific corrections and new landmark work; resolve any reviewer findings against the declared estimand. Do not repeat completed synthetic runs unless a change or discrepancy warrants it.
 2. Resolve host sandbox startup with harmless checks in a supported environment, without weakening containment to obtain a pass. Preserve failed attempts and rebind the interpreter/profile/source evidence after any change. Do not run benchmark references or candidates until containment is demonstrated. The installed Docker client did not return daemon/version or image inventory within two five-second read-only probes; no alternate container runtime was established or started.
-3. Review/version public specifications and private grading controls for the retained seven development candidates. Preserve all 24 curation decisions and do not backfill excluded tasks. Finalize family labels conservatively; the public draft uses a shared unresolved-family placeholder and is not a real-run task file. A larger untouched confirmatory cohort requires a new prespecified sampling/curation design.
+3. Review the new `landmark-curated-development-contracts-v1` package and resolve the 402 reference defect using a separately versioned, validated repair if retaining that task. The source-only export is complete; actual reference/control execution is pending. Preserve all 24 curation decisions and do not backfill excluded tasks. Family labels remain a shared unresolved placeholder; these are not real-run task files. A larger untouched confirmatory cohort requires a new prespecified sampling/curation design.
 4. Complete reference/negative-control validation and pin a competent receiver/service, then freeze a bounded development batch. The earlier host inventory verified only 0.5B/1.5B Ollama artifacts, not the historical 3B/7B runtime; this hourly continuation did not start or claim a live receiver. The protocol ceiling remains 24 roots, two continuations per non-STOP arm, 168 calls, 512 completion tokens per call, 20 minutes, $0, and must be reduced to the actual frozen slate. A seven-root slate would require at most 49 receiver calls. The current strict exclusion mode cannot silently reuse known old families.
 5. Learn/tune on development roots, then evaluate a frozen selector and competent comparator on untouched roots/families with justified useful-gain/precision rules. Only then consider generator expansion or a separately declared compute-efficiency application.
 

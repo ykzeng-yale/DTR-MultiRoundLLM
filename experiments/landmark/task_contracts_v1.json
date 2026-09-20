@@ -1,0 +1,252 @@
+{
+  "version": "landmark-curated-development-contracts-v1",
+  "source_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "source_url": "https://github.com/google-research/google-research/blob/4700efb9afa54286b0e04473ba80a13e8461e25f/mbpp/mbpp.jsonl",
+  "dataset_license": "CC-BY-4.0",
+  "family_id": "unresolved_development_family",
+  "format_instruction": "Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.",
+  "public_assertions": [],
+  "tasks": [
+    {
+      "source_task_id": 52,
+      "entry_point": "parallelogram_area",
+      "arguments": [
+        "b",
+        "h"
+      ],
+      "prompt": "Return the area of a parallelogram with base b and perpendicular height h. Both inputs are positive integers; return the exact integer area.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, 1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[7, 1]",
+          "expected_literal": "7"
+        },
+        {
+          "args_literal": "[2, 11]",
+          "expected_literal": "22"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def parallelogram_area(b, h):\n    return b+h\n",
+          "rationale": "Adds dimensions instead of computing area."
+        },
+        {
+          "code": "def parallelogram_area(b, h):\n    return 0\n",
+          "rationale": "Constant zero is wrong for positive dimensions."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 357,
+      "entry_point": "find_max",
+      "arguments": [
+        "test_list"
+      ],
+      "prompt": "Return the largest integer among all elements of test_list, a nonempty list of nonempty tuples of integers. Integers can be negative, zero or positive; tuple lengths can differ. Return an integer.",
+      "boundary_cases": [
+        {
+          "args_literal": "[[(-8, -3), (-5,)]]",
+          "expected_literal": "-3"
+        },
+        {
+          "args_literal": "[[(0,)]]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[[(9,), (-2, 4, 8)]]",
+          "expected_literal": "9"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def find_max(test_list):\n    return min(j for row in test_list for j in row)\n",
+          "rationale": "Returns the minimum rather than the maximum."
+        },
+        {
+          "code": "def find_max(test_list):\n    return max(test_list[0])\n",
+          "rationale": "Ignores every tuple after the first."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 373,
+      "entry_point": "volume_cuboid",
+      "arguments": [
+        "l",
+        "w",
+        "h"
+      ],
+      "prompt": "Return the volume of a cuboid whose perpendicular edge lengths are l, w and h. All three inputs are positive integers; return the exact integer volume.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, 1, 1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[2, 3, 4]",
+          "expected_literal": "24"
+        },
+        {
+          "args_literal": "[1, 7, 8]",
+          "expected_literal": "56"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def volume_cuboid(l, w, h):\n    return l+w+h\n",
+          "rationale": "Adds edge lengths instead of computing volume."
+        },
+        {
+          "code": "def volume_cuboid(l, w, h):\n    return l*l*l\n",
+          "rationale": "Assumes all edge lengths equal the first input."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 378,
+      "entry_point": "move_first",
+      "arguments": [
+        "test_list"
+      ],
+      "prompt": "Return a list formed by moving the last element of test_list to the front and keeping the other elements in their original relative order. The input is a list of integers and can be empty or contain repeated values. For an empty list return an empty list; for a one-element list return a list with that element. Only the returned value is scored; input mutation and output object identity are not scored.",
+      "boundary_cases": [
+        {
+          "args_literal": "[[]]",
+          "expected_literal": "[]"
+        },
+        {
+          "args_literal": "[[6]]",
+          "expected_literal": "[6]"
+        },
+        {
+          "args_literal": "[[2, 2, 5]]",
+          "expected_literal": "[5, 2, 2]"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def move_first(test_list):\n    return test_list\n",
+          "rationale": "Leaves a nontrivial list unchanged."
+        },
+        {
+          "code": "def move_first(test_list):\n    return test_list[1:]+test_list[:1]\n",
+          "rationale": "Rotates in the opposite direction."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 402,
+      "entry_point": "ncr_modp",
+      "arguments": [
+        "n",
+        "r",
+        "p"
+      ],
+      "prompt": "Return the binomial coefficient n choose r, reduced modulo p, as an integer in the range from 0 through p-1. Inputs n, r and p are integers with 0 <= r <= n and p >= 1. The modulus need not be prime.",
+      "boundary_cases": [
+        {
+          "args_literal": "[0, 0, 1]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[4, 0, 1]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[0, 0, 7]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[6, 3, 4]",
+          "expected_literal": "0"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "import math\ndef ncr_modp(n, r, p):\n    return math.comb(n,r)\n",
+          "rationale": "Omits modular reduction."
+        },
+        {
+          "code": "def ncr_modp(n, r, p):\n    return 0\n",
+          "rationale": "Constant zero fails cases with a nonzero remainder."
+        }
+      ],
+      "status": "known_reference_boundary_defect"
+    },
+    {
+      "source_task_id": 489,
+      "entry_point": "frequency_Of_Largest",
+      "arguments": [
+        "n",
+        "arr"
+      ],
+      "prompt": "Return the number of occurrences of the largest integer in arr. arr is a nonempty list of integers, which can be negative, zero or positive; n is an integer equal to len(arr). Return the count as an integer.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, [-8]]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[4, [-2, -2, -5, -2]]",
+          "expected_literal": "3"
+        },
+        {
+          "args_literal": "[3, [0, 0, 0]]",
+          "expected_literal": "3"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def frequency_Of_Largest(n, arr):\n    return max(arr)\n",
+          "rationale": "Returns the maximum value rather than its frequency."
+        },
+        {
+          "code": "def frequency_Of_Largest(n, arr):\n    return arr.count(arr[0])\n",
+          "rationale": "Counts the first value even when it is not the maximum."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 509,
+      "entry_point": "average_Odd",
+      "arguments": [
+        "n"
+      ],
+      "prompt": "Return the arithmetic mean of all positive odd integers from 1 through n, including n. n is a positive odd integer. This mean is an integer; return that exact integer value. Behavior for even, zero or negative n is outside this task contract.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[3]",
+          "expected_literal": "2"
+        },
+        {
+          "args_literal": "[101]",
+          "expected_literal": "51"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def average_Odd(n):\n    return n\n",
+          "rationale": "Returns the last value rather than the mean."
+        },
+        {
+          "code": "def average_Odd(n):\n    return n//2\n",
+          "rationale": "Rounds half of n down, one below the required mean."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    }
+  ]
+}
