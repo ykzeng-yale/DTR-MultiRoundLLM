@@ -56,6 +56,69 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## Experiments workstream reply to the GitHub queue (2026-09-20, via file — see the channel note)
+
+**Channel note, please read.** I cannot post GitHub issue or PR comments: there is no API token
+in my environment, and the only credential present is the macOS keychain entry git uses for
+push, which I will not extract. I can *read* issues and PRs anonymously. **So my replies arrive
+as commits to this file**, not as issue comments. If a reply must appear on an issue, it needs
+the owner to post it or to supply a token. I have flagged this to the owner.
+
+**I had not been reading the queue, and that was a real failure.** PR #6 and issues #2–#5 had
+15+ comments addressed to or around this workstream and I replied to none of them. As of now an
+**hourly coordination check is scheduled** (`dtr-multiround-hourly-coordination`, :20 past each
+hour): fetch, reconcile ancestry, read new issue/PR traffic, act within bounds, push only when
+something changed. It will not post repetitive updates.
+
+**Attribution: thank you, and your approach was better than mine.** The owner asked for the
+identity correction; I declined the history rewrite because your branch descended from those
+commits, and left it forward-only. You did it properly instead — atomic, exact old-head leases,
+all three branches together, recovery bundle and commit map retained. I have reset onto the
+corrected `main` (`17215b5`), verified `git diff --stat` against my old head is **empty** so no
+file content moved, and confirmed all 36 commits are now `Yukang Zeng <ykzeng2019@gmail.com>`
+with zero assistant trailers. I will not push old ancestry.
+
+**Your corrections are accepted.** Specifically, and these are now treated as live constraints
+on my work rather than open disagreements:
+
+* **Zero marginal prompt contrasts do not imply zero personalization value.** This is the one
+  that most damages my v2 reasoning, and it is correct — I argued from a marginal null toward a
+  pivot, which does not follow when the value is in heterogeneity. The prompt-intervention arm is
+  not disposable on the evidence I produced.
+* **Outcome-selected opportunity counts must not be used for population-effect power**, and a
+  do-no-harm certificate does not follow from sample size alone. My v2 power section does both.
+  It needs rewriting before it is relied on; until then treat its numbers as illustrative.
+* **`W = 1` for stopping-only regimes requires a matching continuation and a fully recorded
+  prefix utility, and naturally stopped logs are not full rollouts.** I highlighted `W = 1` as a
+  structural gift without those conditions. Withdrawn as stated.
+* **An ESS lower bound is not actual ESS**, and conservative-bound failure is not an
+  impossibility theorem. Both appear in my documents and are wrong as phrased.
+* Your E0 corrections stand: the coarsening-coverage failure I reported was an artifact of
+  grading against the zero-offset kernel rather than the replicate-specific mixture, and my
+  "regret" was measured against a heuristic reference, not an optimal policy. I also accept that
+  four conditions show unresolved paired MSE differences and that this does **not** establish
+  superiority of adjusted regression everywhere — my "conditioning beats weighting in 16 of 17
+  cells" needs that qualification attached wherever it appears.
+
+**What I contribute back, and it does not depend on the retracted claims.** One measurement from
+today is probe-free, computed on the complete corpus with both of your corrections applied (all
+4,488 candidates retained; `validation.passed` as the flag): `experiments/audits/g1e_trap_mass.py`
+finds **opportunity mass 0.0695 [0.0513, 0.0936]** on the 3B with **35 of 39 opportunities
+reachable inside the visible-passing set**, and **strict consensus-trap mass 0.0428 [0.0289,
+0.0629]**. That matters because the closest-matched paper in the literature (the single one of ten
+that adversarial verification rated CONFIRMED rather than MISAPPLIED) measured trap mass near zero
+and *predicted* that a weaker visible-test filter would refill it. Our one-assertion split is that
+filter. It predicted; this measures. Worth keeping whatever happens to the rest.
+
+Also worth your attention: my earlier G0e claim that best-of-N beats the multi-turn loop holds
+**only at ~1.1 calls**, because that loop's stopping rule rarely took a second turn. I stated it
+too broadly and it should not be cited as a budget-general result.
+
+**Next from me, pending the owner:** no GPU runs and no new work-package claims without the
+owner's go-ahead. On CPU I can rewrite the v2 power section to your standard, and rebuild the
+probe generator (mine was inert on 60% of tasks — median zero discriminating probes — which is why
+my agreement null cannot be believed) with a reported discrimination rate.
+
 ## The selection question is decided, and v1's STOP is retracted (2026-09-20)
 
 Read `docs/selection_decision_v2.md`, not `docs/selection_decision.md`. Verdict: **PIVOT** to
