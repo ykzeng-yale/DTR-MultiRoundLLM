@@ -1,0 +1,127 @@
+{
+  "audit": "G1e_trap_mass",
+  "created_utc": "20260920T200850Z",
+  "episodes": 4488,
+  "episodes_switched_retained": 624,
+  "flag_disagreements": 6,
+  "receivers": {
+    "qwen2.5-3b-instruct": {
+      "n_tasks": 561,
+      "correct_only_OUTSIDE_visible_set": {
+        "count": 4,
+        "frac": 0.0071301247771836,
+        "wilson95": [
+          0.002776113294634481,
+          0.018188348246441815
+        ]
+      },
+      "reachable_within_visible_set": {
+        "count": 35,
+        "frac": 0.062388591800356503,
+        "wilson95": [
+          0.045197997259900716,
+          0.08553175069067516
+        ]
+      },
+      "OPPORTUNITY_first_visible_rule": {
+        "count": 39,
+        "frac": 0.06951871657754011,
+        "wilson95": [
+          0.05126837109976584,
+          0.0936246396133261
+        ]
+      },
+      "OPPORTUNITY_uniform_visible_rule": {
+        "count": 71,
+        "frac": 0.1265597147950089,
+        "wilson95": [
+          0.10156282976308639,
+          0.15663628305013416
+        ]
+      },
+      "STRICT_consensus_trap": {
+        "count": 24,
+        "frac": 0.0427807486631016,
+        "wilson95": [
+          0.02891444211696042,
+          0.06286633323669624
+        ]
+      },
+      "everything_correct_and_passing": {
+        "count": 232,
+        "frac": 0.41354723707664887,
+        "wilson95": [
+          0.3735173328914243,
+          0.4547531061130683
+        ]
+      },
+      "no_correct_candidate_anywhere": {
+        "count": 135,
+        "frac": 0.24064171122994651,
+        "wilson95": [
+          0.20710811103604487,
+          0.27770320597743287
+        ]
+      }
+    },
+    "qwen2.5-7b-instruct": {
+      "n_tasks": 561,
+      "correct_only_OUTSIDE_visible_set": {
+        "count": 3,
+        "frac": 0.0053475935828877,
+        "wilson95": [
+          0.0018202633207249283,
+          0.015603382529722345
+        ]
+      },
+      "reachable_within_visible_set": {
+        "count": 17,
+        "frac": 0.030303030303030304,
+        "wilson95": [
+          0.01900420957160775,
+          0.04799085594764579
+        ]
+      },
+      "OPPORTUNITY_first_visible_rule": {
+        "count": 20,
+        "frac": 0.035650623885918005,
+        "wilson95": [
+          0.02319476638750241,
+          0.054422746203638184
+        ]
+      },
+      "OPPORTUNITY_uniform_visible_rule": {
+        "count": 35,
+        "frac": 0.062388591800356503,
+        "wilson95": [
+          0.045197997259900716,
+          0.08553175069067516
+        ]
+      },
+      "STRICT_consensus_trap": {
+        "count": 7,
+        "frac": 0.012477718360071301,
+        "wilson95": [
+          0.00605699470368669,
+          0.025529913909276662
+        ]
+      },
+      "everything_correct_and_passing": {
+        "count": 338,
+        "frac": 0.6024955436720143,
+        "wilson95": [
+          0.5614334074279135,
+          0.6421634947832551
+        ]
+      },
+      "no_correct_candidate_anywhere": {
+        "count": 126,
+        "frac": 0.22459893048128343,
+        "wilson95": [
+          0.19200510491471728,
+          0.26093887088309936
+        ]
+      }
+    }
+  }
+}
