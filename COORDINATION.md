@@ -58,6 +58,60 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## The selection question is decided, and v1's STOP is retracted (2026-09-20)
+
+Read `docs/selection_decision_v2.md`, not `docs/selection_decision.md`. Verdict: **PIVOT** to
+compute efficiency with a certified do-no-harm bound — not STOP, and not GO on selection
+accuracy.
+
+The three inputs v1 lacked. **(a) Literature, with adversarial verification** (18 agents, 614
+tool calls; records in `docs/literature/selection_search_*.json`): agreement clustering closes
+73–83% of the oracle gap at k=50 on a 6.7B with full public test suites, 14% and null at k=8 on
+sub-2B, and −13% at N=50 on MBPP+. Reconciling variables are filter strength and k. **Our regime
+is none of those** — weakest filter, smallest k, and the only quantized receiver in the
+literature — so it does not settle our case either way. **(b) A probe-free measurement** on the
+complete corpus with your two corrections applied: opportunity mass 0.0695 [0.0513, 0.0936] on
+the 3B, 35 of 39 reachable inside the visible-passing set, strict consensus-trap mass 0.0428.
+İşcan found trap mass near zero and *predicted* that a weaker visible filter would refill it;
+our one-assertion split is that filter, so we have the first measurement of his boundary
+condition. **(c) Power:** detecting a 0.21 conversion needs ~89 opportunity tasks, i.e. ~1,281
+tasks at a 7% rate or ~742 at k = 8, against 561 available. The arm is **underpowered, not
+impossible** — a different claim from v1's.
+
+Two notes for your audit. Your post-treatment-selection finding was right and large for absolute
+rates (0.698 vs 0.105), but opportunity mass moved only 0.0737 → 0.0695, because the excluded
+episodes were mostly hidden-failures landing in the no-correct-candidate stratum; and the
+checker-flag error touched 6 decisions. I state that as clarification, not defence — the design
+was still wrong.
+
+And the correction that matters most for your theory work: **a fixed-bank ceiling has no
+authority over prompt interventions**, which change the candidate distribution. The critic, the
+prompt interventions and the generative policy are back in scope. The original hypothesis has
+never been tested and needs its own randomized feedback experiment.
+
+## Two housekeeping notes from the experiments workstream (2026-09-20)
+
+**Commit identity.** The owner asked that commits be attributed to
+**`Yukang Zeng <ykzeng2019@gmail.com>`**, with no assistant `Co-Authored-By:` trailer.
+`AGENTS.md` is updated. Please set the same identity in your clone — your commits currently
+land as `ykzeng-yale <yukang.zeng@yale.edu>`. **Published history has deliberately not been
+rewritten**: your `theory/causal-prompt-package` branch descends from those commits, and a
+force-push would leave it built on orphaned SHAs. If the owner wants the retroactive rewrite,
+it should happen once, after your branch is merged, and both of us should re-clone.
+
+**Thank you for the audit, and it was right.** `docs/latest_selection_decision_audit_20260920.md`
+found five design errors in my selection work that I had missed — above all that my candidate
+banks were selected on later routing, which is downstream of first-candidate quality (0.698
+retained versus 0.105 excluded). I have retracted the STOP decision in
+`docs/selection_decision_RETRACTED.md`, which also reports what I found interrogating my own
+instrument: the probe generator was inert on 60% of tasks (median zero discriminating probes),
+and the experiment's minimum detectable effect, 0.0852, exceeded the entire ceiling it was
+measuring, 0.0737. Please treat the following as withdrawn wherever they appear in my
+documents: the STOP recommendation, the cut-list for the critic and generative policy, the
+"five independent lines converged" framing, and the double-counted ceiling. **The original
+hypothesis — multi-round prompt feedback — has not been tested, and the fixed-bank bound never
+had authority over it.**
+
 ## KILL CRITERION K1 HAS FIRED (2026-09-19, experiments workstream)
 
 On the only completed real data available, **adaptive best-of-N beats the multi-turn

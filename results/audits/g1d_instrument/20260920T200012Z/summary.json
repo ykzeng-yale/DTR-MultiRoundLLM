@@ -1,0 +1,150 @@
+{
+  "audit": "G1d_instrument_check",
+  "created_utc": "20260920T200012Z",
+  "receivers": {
+    "qwen2.5-3b-instruct": {
+      "check1_probe_degeneracy": {
+        "probe_slots": 2568,
+        "all_candidates_errored": 97,
+        "all_candidates_identical": 1715,
+        "discriminating": 756,
+        "frac_all_err": 0.03777258566978193,
+        "frac_all_same": 0.6678348909657321,
+        "frac_discriminating": 0.29439252336448596,
+        "tasks_with_zero_discriminating_probe": 251,
+        "tasks_total": 420,
+        "median_discriminating_probes_per_task": 0.0,
+        "agreement_contrast_all_tasks": {
+          "n": 420,
+          "delta": 0.009523809523809525,
+          "se": 0.006726309278866975,
+          "ci95": [
+            -0.003659756662769747,
+            0.022707375710388798
+          ]
+        },
+        "agreement_contrast_probes_work": {
+          "n": 141,
+          "delta": 0.02127659574468085,
+          "se": 0.018745036780141375,
+          "ci95": [
+            -0.015463676344396247,
+            0.05801686783375795
+          ]
+        },
+        "agreement_contrast_harvestable_only": {
+          "n": 31,
+          "delta": 0.1935483870967742,
+          "se": 0.07213122508063839,
+          "ci95": [
+            0.05217118593872294,
+            0.33492558825482543
+          ]
+        },
+        "agreement_contrast_harvestable_and_probes_work": {
+          "n": 24,
+          "delta": 0.20833333333333334,
+          "se": 0.0846811296559438,
+          "ci95": [
+            0.042358319207683515,
+            0.37430834745898317
+          ]
+        }
+      },
+      "check2_power": {
+        "n_harvestable": 31,
+        "n_all_tasks": 420,
+        "ceiling_as_frac_of_all_tasks": 0.07380952380952381,
+        "MDE_on_harvestable_subset_80pct": 0.35580167850220346,
+        "MDE_on_all_tasks_80pct": 0.08524828066060343,
+        "note": "An effect confined to the harvestable subset is diluted by n_harvestable/n_all when measured over all tasks. The MDE that matters is the all-task MDE divided by that dilution factor.",
+        "effect_over_all_tasks_needed_to_detect": 0.08524828066060343,
+        "implied_within_harvestable_effect_needed": 1.1549767057243046
+      },
+      "check3_stratum_conflation": {
+        "n_all_draws_wrong": 80,
+        "of_those_final_outcome_correct_after_feedback": 1,
+        "frac_rescued_by_feedback": 0.0125,
+        "wilson95": [
+          0.002209918618306224,
+          0.06746432423965451
+        ],
+        "mean_calls_in_that_stratum": 1.134375,
+        "n_mixed": 90,
+        "note": "These tasks were called hopeless by the selection decomposition. For SELECTION they are: resampling the first attempt never succeeds. But they are exactly the stratum FEEDBACK targets, and this project is about feedback."
+      }
+    },
+    "qwen2.5-7b-instruct": {
+      "check1_probe_degeneracy": {
+        "probe_slots": 2752,
+        "all_candidates_errored": 116,
+        "all_candidates_identical": 2264,
+        "discriminating": 372,
+        "frac_all_err": 0.04215116279069767,
+        "frac_all_same": 0.8226744186046512,
+        "frac_discriminating": 0.13517441860465115,
+        "tasks_with_zero_discriminating_probe": 356,
+        "tasks_total": 450,
+        "median_discriminating_probes_per_task": 0.0,
+        "agreement_contrast_all_tasks": {
+          "n": 450,
+          "delta": 0.0044444444444444444,
+          "se": 0.005445330695661027,
+          "ci95": [
+            -0.006228403719051169,
+            0.015117292607940057
+          ]
+        },
+        "agreement_contrast_probes_work": {
+          "n": 77,
+          "delta": 0.025974025974025976,
+          "se": 0.03188124095698931,
+          "ci95": [
+            -0.036513206301673075,
+            0.08846125824972503
+          ]
+        },
+        "agreement_contrast_harvestable_only": {
+          "n": 16,
+          "delta": 0.25,
+          "se": 0.11180339887498948,
+          "ci95": [
+            0.03086533820502063,
+            0.46913466179497937
+          ]
+        },
+        "agreement_contrast_harvestable_and_probes_work": {
+          "n": 14,
+          "delta": 0.2857142857142857,
+          "se": 0.12529400275814703,
+          "ci95": [
+            0.040138040308317524,
+            0.5312905311202538
+          ]
+        }
+      },
+      "check2_power": {
+        "n_harvestable": 16,
+        "n_all_tasks": 450,
+        "ceiling_as_frac_of_all_tasks": 0.035555555555555556,
+        "MDE_on_harvestable_subset_80pct": 0.4952549764499182,
+        "MDE_on_all_tasks_80pct": 0.07501843241867853,
+        "note": "An effect confined to the harvestable subset is diluted by n_harvestable/n_all when measured over all tasks. The MDE that matters is the all-task MDE divided by that dilution factor.",
+        "effect_over_all_tasks_needed_to_detect": 0.07501843241867853,
+        "implied_within_harvestable_effect_needed": 2.109893411775334
+      },
+      "check3_stratum_conflation": {
+        "n_all_draws_wrong": 75,
+        "of_those_final_outcome_correct_after_feedback": 3,
+        "frac_rescued_by_feedback": 0.04,
+        "wilson95": [
+          0.013695816001486477,
+          0.11113168623083756
+        ],
+        "mean_calls_in_that_stratum": 1.118888888888889,
+        "n_mixed": 47,
+        "note": "These tasks were called hopeless by the selection decomposition. For SELECTION they are: resampling the first attempt never succeeds. But they are exactly the stratum FEEDBACK targets, and this project is about feedback."
+      }
+    }
+  }
+}

@@ -1,3 +1,21 @@
+> # ⚠ RETRACTED, 2026-09-20
+>
+> **The STOP conclusion in this document is withdrawn.** Its candidate banks were selected
+> on a variable downstream of the outcome (first-candidate success 0.698 retained vs 0.105
+> excluded), its probe generator was inert on 60% of tasks (median 0 discriminating probes),
+> its minimum detectable effect (0.085) exceeded the entire ceiling it was trying to measure
+> (0.074), it double-counted that ceiling, and it applied a fixed-bank bound to prompt
+> interventions the bound does not cover. Restricted to where the instrument works and where
+> an opportunity exists, the agreement result reverses sign and excludes zero.
+>
+> See **`docs/selection_decision_RETRACTED.md`** for the full retraction, and
+> `docs/latest_selection_decision_audit_20260920.md` for the theory workstream's independent
+> audit, which found the design errors I missed.
+>
+> The document is preserved unaltered below as the record of what was concluded and why.
+
+---
+
 # Deciding the selection question end to end
 
 > **Historical decision from `0ee7666`; not an accepted research-wide stopping rule.** The [independent source audit](latest_selection_decision_audit_20260920.md) identifies future-routing/failure selection, probe provenance, picker-specification and unmatched-cost problems. The [theory reconciliation, section 6](theory_reconciliation_20260920.md) proves the fixed-bank ceiling but corrects the effective-sample and impossibility claims. The [new selector pilot](selection_corrected_results_20260920.md) has a different four-call target and needs fresh validation. Preserve these scope distinctions.
