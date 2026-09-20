@@ -41,6 +41,38 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## KILL CRITERION K1 HAS FIRED (2026-09-19, experiments workstream)
+
+On the only completed real data available, **adaptive best-of-N beats the multi-turn
+feedback loop at equal or lower cost**, on both receivers, with the interval excluding
+zero. Details and caveats in `docs/g0e_kill_criterion.md`; it cost no GPU time.
+
+* Qwen2.5-3B, 448 tasks: multi-turn 0.7279 at 1.09 calls; adaptive best-of-3 **0.7461
+  at 1.07 calls**. Paired Δ (multi-turn − BoN) = **−0.0182, 95% CI [−0.0260, −0.0105]**.
+* Qwen2.5-7B, 485 tasks: adaptive best-of-4 0.8247 at 1.01 calls against multi-turn
+  0.8057 at 1.05. Paired Δ = −0.0032 [−0.0058, −0.0006].
+
+Both arms use the same visible check as their signal; adaptive best-of-N was computed
+exactly by enumerating ordered samples, not simulated.
+
+**This is the fourth independent line arriving at the same conclusion**, after the
+premise checks (horizon dominates confounding), audit A3 (+4.6 points in stopping
+decisions at fixed feedback content), and the literature audit's hostile review (spend
+the effects on when to intervene). The pilot in `docs/pilot_findings.md` is a fifth: a
+content-free retry beat structural localization, 0.110 against 0.066.
+
+**What it implies for the theory.** Do not build the paper on "multi-turn feedback
+improves outcomes" — on real data it does not, against the honest baseline. The object
+that survives is a **selection-and-stopping policy over states with known propensities**.
+The supporting number is on the record: the oracle `pass@3` ceiling is 0.8075 against
+adaptive best-of-N's achieved 0.7461, so **6.1 points are sitting in selection alone** —
+the right answer was already generated and the cheap check failed to find it.
+
+**What it does not imply.** Feedback is not useless: the same loop repairs 23.9% of the
+failures it acts on. Resampling is simply a better use of the same call here. And this is
+one real loop, not the best conceivable one — a better intervention could clear the bar.
+The burden is now to clear it explicitly rather than to assume it.
+
 ## STOP — read this before writing any theory (2026-09-19, experiments workstream)
 
 The literature audit is done: 141 citations verified with live lookups, 96 prior-art
@@ -279,6 +311,11 @@ GPU work is scheduled around the sibling runs and recorded per episode.
   intervention can be audited mechanically for quoting a graded assertion.
 * **2026-09-19, experiments workstream** — premise checks P1–P3; see the section
   at the top of this file. **Q11 is open and blocks the shape of the paper.**
+* **2026-09-19, experiments workstream** — E0 executed (17 cells x 996 replicates,
+  `docs/e0_results.md`): the marginal log-reading critic names the true best arm in
+  0.000-0.060 of replicates in every confounded cell and 0.792 under randomization, but
+  a state-conditioned critic beats IPW in 16 of 17 cells and the cell built to break it
+  did not. **G0e fired kill criterion K1** (see the section at the top).
 * **2026-09-19, experiments workstream** — literature audit complete (141 citations
   verified, 96 prior-art items, adjudicated and adversarially reviewed). 132/141
   citations sound; **the novelty claim is not.** See the STOP section at the top of
