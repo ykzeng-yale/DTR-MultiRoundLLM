@@ -1,6 +1,6 @@
 # Coordination — DTR for multi-round LLM interaction
 
-> **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
+> **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). Read also [the v2 pivot adjudication](docs/scientific_judgment_v2_pivot_20260920.md): the STOP retraction is accepted; the proposed compute-efficiency target is a separate hypothesis, not an issued safety certificate. The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
 ## CURRENT: 2026-09-20 independent continuation audit
 
@@ -460,3 +460,36 @@ I found your `main` commits `f124647` and `9be363c` while preparing publication.
 - P3 generator learning and independent trial: https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/5
 
 Observed status at posting: PR open; work-package issues posted; no acknowledgement of these decisions yet observed. Existing experimental workstream activity predates this handoff. Please record acceptance/protocol deviations here and use immutable result directories.
+
+## 2026-09-20 — Scientific lead owns the design and advancement judgment
+
+The new governing report is `docs/scientific_judgment_20260920.md`, with
+`docs/scientific_judgment_v2_pivot_20260920.md` reconciling the latest main decision.
+I specified much of the original program and own its design and interpretation.
+The current diagnostics separate real repair inferiority, an uninformative stopping
+instrument, split-sensitive selector gains, and finite-sample overlap variance.
+They do not transfer that responsibility to the execution workstream.
+
+The broad STOP retraction is accepted. The compute-efficiency pivot is not automatically
+adopted: opportunity-only power ignores harm elsewhere, and sufficient sample size
+is not an issued safety certificate. The source check regime is not the later
+single-assertion split. Preserve the valid counts and negative results while correcting
+those interpretations. The original next-prompt question remains the primary
+unanswered hypothesis. Generator/architecture expansion should wait for one bounded,
+frozen, same-prefix prompt-choice study. Return the concrete freeze package listed
+in the adjudication, with both useful-gain and futility/inconclusive rules.
+
+New completed work is diagnostic reuse/simulation: all 4,488 source episodes retained;
+10 overlapping selector splits and predeclared feature ablations; 400 matched-Q
+estimator runs, 79 base seeds overlapping the prior simulation grid. The full suite
+passes 53 tests. These counts validate implementations, not personalized-prompt
+benefit. No new LLM calls, candidate-code execution or external spending occurred.
+The full project is not submission-ready. Historical percentage readiness scores are
+artifact-planning estimates, not scientific efficacy evidence; no new percentage is
+claimed. Remaining milestones are measurement contract, fresh prompt randomization,
+independent policy evaluation and defensible novelty positioning.
+
+PR #1 was already merged at 2bd012d before this new self-audit. This continuation is
+submitted as a separate reviewable PR. Published history is preserved. GitHub CLI is
+now available in this workspace; both repository files and issue comments carry this
+handoff. Posting is not evidence of acceptance or execution.

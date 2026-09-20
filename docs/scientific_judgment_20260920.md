@@ -4,6 +4,8 @@
 
 **Current decision:** keep the original personalized next-prompt question open, but pause generator training and expansion of the autonomous prompting system. The practical premise has not been established. Conduct one affordable, frozen experiment that can distinguish useful prompt choice from extra sampling, stopping and evaluator quality. Do not expand the program merely because its mathematical formulation is valid, and do not change targets until a positive result appears.
 
+**New main reconciliation:** the experiments workstream has retracted its blanket STOP recommendation and proposed a compute-efficiency pivot. [Our adjudication](scientific_judgment_v2_pivot_20260920.md) accepts the retraction but finds that its power and certification arguments do not justify replacing the original question. The fixed-bank evidence remains descriptive; no harm certificate has been issued.
+
 ## 1. What is wrong, unsupported, or genuinely negative?
 
 | Layer | Scientific diagnosis | Consequence |

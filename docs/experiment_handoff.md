@@ -6,6 +6,8 @@ The coordinating agent owns scientific judgment, including defects in the design
 
 Each assignment must name the estimand, competing explanations, observations that would distinguish them, same-target comparators, cost/precision limits, and prospective success/futility/inconclusive rules. Return valid negative findings without changing the population, scorer or budget to make them positive. The scientific lead must decide which hypothesis survives before issuing the next experiment.
 
+The [revised selection-pivot adjudication](scientific_judgment_v2_pivot_20260920.md) accepts the STOP retraction, but the compute-efficiency proposal is a separate hypothesis pending a valid power/calibration and cost contract. Do not infer a no-harm certificate from the available sample size or use outcome-selected opportunity counts as the sample size for marginal policy improvement.
+
 New evidence in this continuation: decomposition of 4,488 existing episodes; static endpoint/public-check audit; ten overlapping split sensitivities and feature diagnostics of our own selector; 400 diagnostic simulations with identical Q fits (79 base seeds reuse the prior grid) for regression and DR. All are diagnostic reuse or synthetic experiments, not fresh prompt-efficacy evidence. The original +2.85pp selector split is preserved but is not the expected benefit; 7B split median is +.83pp. Known behavior probabilities remain distinct from fitted propensities.
 
 The user authorized development of the theory and experiment package and communication through this GitHub repository. The next agent should claim the corresponding issue, implement on a branch, and return a reviewable PR. Posting the issue is not evidence that any agent has accepted or executed it.

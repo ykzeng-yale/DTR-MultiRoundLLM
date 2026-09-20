@@ -12,7 +12,8 @@
     "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/experiments/common/scoring.py": "f2bbc07593c7667b346bd7a21d746c5375f2b585b965147421763972b030e1dc",
     "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/experiments/common/verify.py": "a67b1fabeec159b98ff1193fe083a3565fde94e379c9a12315164f4bf32b25d0",
     "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/work/restoration_reconstruction_13bad73/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce",
-    "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/audits.md": "0087540e3f39cffc8b9034043b2ea3965b32319b9d3001db8bfb1955c5ed8ab5"
+    "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/audits.md": "0087540e3f39cffc8b9034043b2ea3965b32319b9d3001db8bfb1955c5ed8ab5",
+    "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/design.json": "230638a757c581138d1a3611a9c5788ed79b80a655313d316cac63cbba4ff43d"
   },
   "integrity": {
     "n_episodes": 4488,
@@ -27,7 +28,13 @@
     "error_episodes": 0,
     "canonical_task_bytes_match_all_log_task_hashes": true,
     "initial_transcript_hashes_reconstructed": 4488,
-    "initial_transcript_hash_matches": 4488
+    "initial_transcript_hash_matches": 4488,
+    "frozen_design_partition": {
+      "pilot_roots_separate": 30,
+      "training_roots": 231,
+      "confirmation_roots": 330,
+      "analyzed_scope": "561 training plus confirmation roots; excludes the 30 separately piloted roots"
+    }
   },
   "definitions": {
     "recorded_initial_success": "Full original benchmark verifier on first candidate; if only one decision, copied from final success; otherwise separately verified after episode, only scalar success retained.",
