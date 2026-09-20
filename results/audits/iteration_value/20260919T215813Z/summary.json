@@ -1,0 +1,79 @@
+{
+  "audit": "A3_iteration_value",
+  "created_utc": "20260919T215813Z",
+  "source": "/Users/yukangzengcmac/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "source_episodes": 4488,
+  "source_tasks_sha256": [
+    "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce"
+  ],
+  "cells": {
+    "first_correct_and_iterated": {
+      "n": 111,
+      "ended_wrong": 18
+    },
+    "first_correct_and_stopped": {
+      "n": 2826,
+      "ended_wrong": 0
+    },
+    "first_wrong_and_iterated": {
+      "n": 770,
+      "ended_correct": 184
+    },
+    "first_wrong_and_stopped": {
+      "n": 781,
+      "ended_correct": 0
+    }
+  },
+  "rates": {
+    "repair_rate_given_wrong_and_iterated": {
+      "estimate": 0.23896103896103896,
+      "k": 184,
+      "n": 770,
+      "wilson95": [
+        0.21018227160656736,
+        0.2703315699858206
+      ]
+    },
+    "degradation_rate_given_correct_and_iterated": {
+      "estimate": 0.16216216216216217,
+      "k": 18,
+      "n": 111,
+      "wilson95": [
+        0.10510689256844916,
+        0.2418196566959289
+      ]
+    },
+    "fraction_of_failures_stopped_after_one_turn": {
+      "estimate": 0.5035460992907801,
+      "k": 781,
+      "n": 1551,
+      "wilson95": [
+        0.4786847221292728,
+        0.5283899535161433
+      ]
+    },
+    "fraction_of_episodes_taking_more_than_one_turn": 0.196301247771836
+  },
+  "headroom_from_stopping_decisions_only": {
+    "observed_final_success_rate": 0.6913992869875223,
+    "if_no_failure_were_stopped_early_and_no_correct_answer_were_disturbed": 0.7369938884644767,
+    "absolute_gain": 0.04559460147695438,
+    "components": {
+      "successes_recoverable_from_prematurely_stopped_failures": 186.62857142857143,
+      "successes_preserved_by_not_iterating_on_correct_answers": 18
+    },
+    "assumptions": [
+      "prematurely stopped failures would repair at the same rate as the failures that were iterated, which is optimistic if the self-check stopped precisely on the cases that look easy but are not",
+      "stopping when already correct is only available to an oracle; a real rule must infer correctness",
+      "feedback content is held fixed at the source project's repair prompt"
+    ]
+  },
+  "stop_reason_breakdown": {
+    "correct|stopped|validated": 2826,
+    "wrong|stopped|validated": 781,
+    "wrong|iterated|horizon": 537,
+    "wrong|iterated|validated": 233,
+    "correct|iterated|validated": 62,
+    "correct|iterated|horizon": 49
+  }
+}

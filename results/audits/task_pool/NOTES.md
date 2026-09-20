@@ -29,3 +29,13 @@ defect stated.
   HumanEval 0.08), and no task exceeds 0.60.
 
 **Usable pool: 590 tasks** (`usable_uids.json` in the authoritative run).
+
+## Superseded by a later correction (2026-09-19)
+
+A1's discrimination check S5 used a single `return None` stub and is **too weak**. A
+trivial-stub battery finds 22 such tasks rather than 1, and a universal-equality-dunder
+candidate passes 555–557 of 591. See the correction section at the end of
+`docs/audits.md` and `experiments/common/integrity.py`. The run directories here are
+left unamended because they record what was measured at the time; the usable pool of
+590 stated above is superseded by POOL A = 564, and by 230 after intersecting with the
+informative difficulty band.
