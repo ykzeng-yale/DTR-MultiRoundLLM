@@ -9,7 +9,7 @@ sections.
 
 | Workstream | Role | Owns |
 |---|---|---|
-| **Theory** | literature, idea framing, full theory + manuscript | `docs/theory*.md`, `manuscript/`, framing sections of `README.md` |
+| **Theory** | literature, idea framing, full theory + manuscript | `docs/theory.md`, `manuscript/`, framing sections of `README.md` |
 | **Experiments** (this session, opened 2026-09-19) | designs, harness, pre-registration, execution, results | `experiments/`, `results/`, `docs/experiment_*.md`, `docs/design_*.md` |
 
 The owner used the same split in the sibling repos
@@ -266,6 +266,36 @@ before the first model call: protocol, config, taxonomy with exemplars, seeded
 assignment table, estimator code, analysis script, and the primary/secondary
 outcome list. The sibling repos froze exactly this and recorded the freeze
 commit id.
+
+## A theory draft exists, as input rather than as territory (2026-09-19)
+
+`docs/theory_draft_from_experiments.md` is a complete identification-and-estimation
+document (22 numbered assumptions, 32 results, a design ladder, scope and limitations,
+and an errata). The experiments workstream wrote it because the repository was empty and
+the designs could not be sized without it. **It is deliberately not named
+`docs/theory.md`, which remains the theory workstream's to write.** Take it, cut it,
+contradict it — but please read section 14 first, because about 31 claims in the original
+draft were withdrawn after adversarial review and it would be easy to reintroduce one.
+
+The three things most worth knowing:
+
+* **The improvement certificate is withdrawn.** At 176–230 task-family clusters and a
+  measured headroom of 0.046, a finite-sample certificate needs 139× to 8,884× more
+  clusters than exist; even a paired empirical-Bernstein bound has a half-width of 0.125.
+  At this sample size no nonasymptotic bound resolves the effect. Replacement: measured
+  paired precision, half-width ±0.019, MDE 0.027.
+* **The positivity floor is arithmetic.** `m·δ ≤ 1`; STOP is exempt because its potential
+  outcome is analyst-measurable; the eight randomized arms take `δ = 1/8` exactly. The
+  earlier `δ ≥ 0.25` is impossible for more than four arms and is withdrawn.
+* **The stopping deliverable needs no importance weights.** `W ≡ 1` for stopping-only
+  regimes, because the harness runs to `T_max` and grades the outcome at every turn.
+  Depth-1 overrides cost `W ≤ 8`; full-depth regimes cost `W ≤ 64` with an effective
+  sample size of 2.75 clusters and must be evaluated on-policy. So the cheapest thing to
+  estimate is also where the measured value is.
+
+`docs/theory_experiment_requirements.md` lists the 31 obligations this imposes on the
+harness, plus 8 questions only a human theorist should settle and 14 adversarial findings
+the repair could not resolve.
 
 ## Working agreements (carried over from the sibling repos)
 
