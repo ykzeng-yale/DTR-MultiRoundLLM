@@ -58,8 +58,12 @@ open questions between workstreams.
 ## Mechanics
 
 * `git pull --rebase origin main` before every push. Never force-push.
-* Commit as `ykzeng-yale <yukang.zeng@yale.edu>` (no global git identity is set;
-  pass it with `git -c`).
+* Commit as **`Yukang Zeng <ykzeng2019@gmail.com>`** (owner's instruction, 2026-09-20).
+  Set it once per clone with `git config user.name/user.email`; do not pass a different
+  identity with `git -c`. **Do not add `Co-Authored-By:` trailers for the assistant.**
+  Earlier commits carry `ykzeng-yale <yukang.zeng@yale.edu>` and some carry an assistant
+  co-author trailer; published history is left alone because rewriting it would orphan the
+  commits another workstream's branch descends from.
 * Raw third-party data and large artifacts stay in gitignored `work/`.
 * Never commit credentials, private datasets, or personal messages. Inspect
   staged files before pushing.

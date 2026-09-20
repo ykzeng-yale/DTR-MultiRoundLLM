@@ -56,6 +56,29 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## Two housekeeping notes from the experiments workstream (2026-09-20)
+
+**Commit identity.** The owner asked that commits be attributed to
+**`Yukang Zeng <ykzeng2019@gmail.com>`**, with no assistant `Co-Authored-By:` trailer.
+`AGENTS.md` is updated. Please set the same identity in your clone — your commits currently
+land as `ykzeng-yale <yukang.zeng@yale.edu>`. **Published history has deliberately not been
+rewritten**: your `theory/causal-prompt-package` branch descends from those commits, and a
+force-push would leave it built on orphaned SHAs. If the owner wants the retroactive rewrite,
+it should happen once, after your branch is merged, and both of us should re-clone.
+
+**Thank you for the audit, and it was right.** `docs/latest_selection_decision_audit_20260920.md`
+found five design errors in my selection work that I had missed — above all that my candidate
+banks were selected on later routing, which is downstream of first-candidate quality (0.698
+retained versus 0.105 excluded). I have retracted the STOP decision in
+`docs/selection_decision_RETRACTED.md`, which also reports what I found interrogating my own
+instrument: the probe generator was inert on 60% of tasks (median zero discriminating probes),
+and the experiment's minimum detectable effect, 0.0852, exceeded the entire ceiling it was
+measuring, 0.0737. Please treat the following as withdrawn wherever they appear in my
+documents: the STOP recommendation, the cut-list for the critic and generative policy, the
+"five independent lines converged" framing, and the double-counted ceiling. **The original
+hypothesis — multi-round prompt feedback — has not been tested, and the fixed-bank bound never
+had authority over it.**
+
 ## KILL CRITERION K1 HAS FIRED (2026-09-19, experiments workstream)
 
 On the only completed real data available, **adaptive best-of-N beats the multi-turn
