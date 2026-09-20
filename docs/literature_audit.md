@@ -1,5 +1,7 @@
 # Literature audit — verified citations, prior art, and a much smaller surviving claim
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 **Method.** Ten parallel verification agents checked every citation in the
 originating brief plus the backbone references the experiments workstream intended
 to build on, with live web lookups (141 citation records, 586 tool calls). Five

@@ -1,0 +1,204 @@
+{
+  "models": {
+    "qwen2.5-3b-instruct": {
+      "gbm": {
+        "n_training_tasks": 336,
+        "n_evaluation_tasks": 225,
+        "learned": {
+          "mean": 0.67,
+          "task_se": 0.031358146203711294,
+          "exploratory_task_ci95": [
+            0.6082052933711161,
+            0.731794706628884
+          ]
+        },
+        "visible": {
+          "mean": 0.6674074074074073,
+          "task_se": 0.029373750447695843,
+          "exploratory_task_ci95": [
+            0.6095231728064925,
+            0.7252916420083222
+          ]
+        },
+        "random": {
+          "mean": 0.5644444444444444,
+          "task_se": 0.027706853900910867,
+          "exploratory_task_ci95": [
+            0.5098450144496477,
+            0.6190438744392411
+          ]
+        },
+        "oracle": {
+          "mean": 0.7377777777777778,
+          "task_se": 0.029388236257643925,
+          "exploratory_task_ci95": [
+            0.6798649972809987,
+            0.7956905582745568
+          ]
+        },
+        "learned_minus_visible": {
+          "mean": 0.0025925925925925943,
+          "task_se": 0.011041337360457155,
+          "exploratory_task_ci95": [
+            -0.019165587835153316,
+            0.024350773020338504
+          ]
+        },
+        "generation_calls_per_task": 4,
+        "mean_completion_tokens": 298.67555555555555,
+        "mean_prompt_tokens": 491.3955555555556
+      },
+      "logit": {
+        "n_training_tasks": 336,
+        "n_evaluation_tasks": 225,
+        "learned": {
+          "mean": 0.6666666666666666,
+          "task_se": 0.031497039417435604,
+          "exploratory_task_ci95": [
+            0.6045982555483949,
+            0.7287350777849384
+          ]
+        },
+        "visible": {
+          "mean": 0.6674074074074073,
+          "task_se": 0.029373750447695843,
+          "exploratory_task_ci95": [
+            0.6095231728064925,
+            0.7252916420083222
+          ]
+        },
+        "random": {
+          "mean": 0.5644444444444444,
+          "task_se": 0.027706853900910867,
+          "exploratory_task_ci95": [
+            0.5098450144496477,
+            0.6190438744392411
+          ]
+        },
+        "oracle": {
+          "mean": 0.7377777777777778,
+          "task_se": 0.029388236257643925,
+          "exploratory_task_ci95": [
+            0.6798649972809987,
+            0.7956905582745568
+          ]
+        },
+        "learned_minus_visible": {
+          "mean": -0.0007407407407407391,
+          "task_se": 0.012232489274336471,
+          "exploratory_task_ci95": [
+            -0.02484621818631529,
+            0.02336473670483381
+          ]
+        },
+        "generation_calls_per_task": 4,
+        "mean_completion_tokens": 298.67555555555555,
+        "mean_prompt_tokens": 491.3955555555556
+      }
+    },
+    "qwen2.5-7b-instruct": {
+      "gbm": {
+        "n_training_tasks": 336,
+        "n_evaluation_tasks": 225,
+        "learned": {
+          "mean": 0.7122222222222222,
+          "task_se": 0.03010526798575005,
+          "exploratory_task_ci95": [
+            0.6528964511425791,
+            0.7715479933018653
+          ]
+        },
+        "visible": {
+          "mean": 0.7092592592592591,
+          "task_se": 0.02895858841914558,
+          "exploratory_task_ci95": [
+            0.652193147502439,
+            0.7663253710160793
+          ]
+        },
+        "random": {
+          "mean": 0.6588888888888889,
+          "task_se": 0.028783959316483563,
+          "exploratory_task_ci95": [
+            0.6021669031559018,
+            0.7156108746218759
+          ]
+        },
+        "oracle": {
+          "mean": 0.7466666666666667,
+          "task_se": 0.029059326290271154,
+          "exploratory_task_ci95": [
+            0.6894020397568082,
+            0.8039312935765252
+          ]
+        },
+        "learned_minus_visible": {
+          "mean": 0.002962962962962964,
+          "task_se": 0.009591780521692916,
+          "exploratory_task_ci95": [
+            -0.015938704869573245,
+            0.02186463079549917
+          ]
+        },
+        "generation_calls_per_task": 4,
+        "mean_completion_tokens": 331.8977777777778,
+        "mean_prompt_tokens": 491.3955555555556
+      },
+      "logit": {
+        "n_training_tasks": 336,
+        "n_evaluation_tasks": 225,
+        "learned": {
+          "mean": 0.7377777777777778,
+          "task_se": 0.029388236257643925,
+          "exploratory_task_ci95": [
+            0.6798649972809987,
+            0.7956905582745568
+          ]
+        },
+        "visible": {
+          "mean": 0.7092592592592591,
+          "task_se": 0.02895858841914558,
+          "exploratory_task_ci95": [
+            0.652193147502439,
+            0.7663253710160793
+          ]
+        },
+        "random": {
+          "mean": 0.6588888888888889,
+          "task_se": 0.028783959316483563,
+          "exploratory_task_ci95": [
+            0.6021669031559018,
+            0.7156108746218759
+          ]
+        },
+        "oracle": {
+          "mean": 0.7466666666666667,
+          "task_se": 0.029059326290271154,
+          "exploratory_task_ci95": [
+            0.6894020397568082,
+            0.8039312935765252
+          ]
+        },
+        "learned_minus_visible": {
+          "mean": 0.02851851851851852,
+          "task_se": 0.008453571137772693,
+          "exploratory_task_ci95": [
+            0.011859818573965071,
+            0.04517721846307197
+          ]
+        },
+        "generation_calls_per_task": 4,
+        "mean_completion_tokens": 331.8977777777778,
+        "mean_prompt_tokens": 491.3955555555556
+      }
+    }
+  },
+  "limitations": [
+    "All labels are from an already analysed source; this is not confirmatory.",
+    "Intervals are conditional-training task-level diagnostics, assuming independent task roots. Family dependence is unaudited.",
+    "All selectors pay four generation calls. Adaptive best-of-N is a different cost comparator.",
+    "Outcome is recorded full-test success, not independently rescored hidden-only success.",
+    "No claim of no possible learnable signal follows from these two algorithms.",
+    "Generation token costs match by construction; scoring and selector CPU costs are not measured."
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "status": "bounded independent CPU recheck; small-R coverage exploratory",
+  "nuisances": "Q genuinely fitted tabular and task-cross-fitted; assignment probabilities supplied by simulator, never fitted",
+  "current_code_sha256": "5159f2c48756a0ce6293d796e041f986ea47e8d54b10052d73687b0030e9ddda",
+  "cells": {
+    "base": {
+      "config": {
+        "n_tasks": 230,
+        "runs": 40,
+        "T": 3,
+        "kappa": 1.0,
+        "floor": 0.1,
+        "cmult": 1.0,
+        "gz": 0.0,
+        "mislabel": 0.0,
+        "template_sd": 0.0
+      },
+      "n_reps": 24,
+      "mean_bias_actual": 4.577274421633156e-05,
+      "coverage_actual": 0.875,
+      "coverage_mcse": 0.06750771560841522,
+      "coverage_nominal": 0.875,
+      "actual_truth_range": [
+        0.6459770061744536,
+        0.6459770061744536
+      ],
+      "nominal_truth": 0.6459770061744536,
+      "exact_first_stage_blip_limits": [
+        {
+          "arm": "RETRY",
+          "uniform_continuation_truth": 0.2212276986633956,
+          "conditional_raw_Y_limit_behavior_continuation": 0.21485837272547678,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.22122769866339556
+        },
+        {
+          "arm": "RESET",
+          "uniform_continuation_truth": 0.28931410851325434,
+          "conditional_raw_Y_limit_behavior_continuation": 0.28041858953615934,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.2893141085132543
+        },
+        {
+          "arm": "LOCAL",
+          "uniform_continuation_truth": 0.32617323792487596,
+          "conditional_raw_Y_limit_behavior_continuation": 0.3181740106776772,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.32617323792487596
+        },
+        {
+          "arm": "DIVERT",
+          "uniform_continuation_truth": 0.17212654096050217,
+          "conditional_raw_Y_limit_behavior_continuation": 0.16905956151059376,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.17212654096050212
+        }
+      ]
+    },
+    "FAIL_latent": {
+      "config": {
+        "n_tasks": 230,
+        "runs": 40,
+        "T": 3,
+        "kappa": 1.0,
+        "floor": 0.1,
+        "cmult": 1.0,
+        "gz": 2.0,
+        "mislabel": 0.0,
+        "template_sd": 0.0
+      },
+      "n_reps": 24,
+      "mean_bias_actual": -0.003986584252519049,
+      "coverage_actual": 0.9583333333333334,
+      "coverage_mcse": 0.04078937543219002,
+      "coverage_nominal": 0.9583333333333334,
+      "actual_truth_range": [
+        0.6459770061744536,
+        0.6459770061744536
+      ],
+      "nominal_truth": 0.6459770061744536,
+      "exact_first_stage_blip_limits": [
+        {
+          "arm": "RETRY",
+          "uniform_continuation_truth": 0.2212276986633956,
+          "conditional_raw_Y_limit_behavior_continuation": 0.25812674217187637,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.22124795527643307
+        },
+        {
+          "arm": "RESET",
+          "uniform_continuation_truth": 0.28931410851325434,
+          "conditional_raw_Y_limit_behavior_continuation": 0.33758591661313536,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.30634616087483
+        },
+        {
+          "arm": "LOCAL",
+          "uniform_continuation_truth": 0.32617323792487596,
+          "conditional_raw_Y_limit_behavior_continuation": 0.4041677383073798,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.36484243309353576
+        },
+        {
+          "arm": "DIVERT",
+          "uniform_continuation_truth": 0.17212654096050217,
+          "conditional_raw_Y_limit_behavior_continuation": 0.20728528161693865,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.17214022331485623
+        }
+      ]
+    },
+    "FAIL_coarsening": {
+      "config": {
+        "n_tasks": 230,
+        "runs": 40,
+        "T": 3,
+        "kappa": 1.0,
+        "floor": 0.1,
+        "cmult": 1.0,
+        "gz": 0.0,
+        "mislabel": 0.0,
+        "template_sd": 0.28
+      },
+      "n_reps": 24,
+      "mean_bias_actual": 0.00040613339028009826,
+      "coverage_actual": 0.9583333333333334,
+      "coverage_mcse": 0.04078937543219002,
+      "coverage_nominal": 0.9583333333333334,
+      "actual_truth_range": [
+        0.630971366862671,
+        0.6654609096861624
+      ],
+      "nominal_truth": 0.6459770061744536,
+      "exact_first_stage_blip_limits": [
+        {
+          "arm": "RETRY",
+          "uniform_continuation_truth": 0.2212276986633956,
+          "conditional_raw_Y_limit_behavior_continuation": 0.21485837272547678,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.22122769866339556
+        },
+        {
+          "arm": "RESET",
+          "uniform_continuation_truth": 0.28931410851325434,
+          "conditional_raw_Y_limit_behavior_continuation": 0.28041858953615934,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.2893141085132543
+        },
+        {
+          "arm": "LOCAL",
+          "uniform_continuation_truth": 0.32617323792487596,
+          "conditional_raw_Y_limit_behavior_continuation": 0.3181740106776772,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.32617323792487596
+        },
+        {
+          "arm": "DIVERT",
+          "uniform_continuation_truth": 0.17212654096050217,
+          "conditional_raw_Y_limit_behavior_continuation": 0.16905956151059376,
+          "implemented_blip_ipw_limit_missing_stage1_weight": 0.17212654096050212
+        }
+      ]
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # Requirements the theory imposes on the experimental design
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 Extracted from the repaired theory document (`docs/theory_draft_from_experiments.md`,
 section 14 and the repair spec). These are **executable obligations**, not advice: each
 one is something the harness must do, freeze, record, or refuse to do, and each names the

@@ -1,0 +1,102 @@
+{
+  "all_assertions_passed": true,
+  "command": "python3 scripts/check_stopping_identities.py --output work/stopping_identities_rerun.json",
+  "configuration": {
+    "changed_action_p1": "0.9 if latest_visible0 else0.8",
+    "continuation_decisions": 2,
+    "initial_hidden_p1": "0.2+0.5*task",
+    "initial_task_p1": 0.4,
+    "logger_action_p1": "0.25+0.50*latest_visible",
+    "next_hidden_p1": "0.12+0.55*action+0.18*latest_hidden",
+    "paid_spend_usd": 0,
+    "prefix_utility": "latest_hidden-0.03*step-0.01*sum(actions)",
+    "root_model_calls": 0,
+    "tolerance": 1e-12,
+    "visible_p1": "0.85 if hidden1 else0.35",
+    "visible_stop_rule": "stop at first visible1 or administrative cap"
+  },
+  "created_utc": "2026-09-20T19:40:45.642196+00:00",
+  "evidence_type": "exact_finite_law_identity_and_counterexample_checks",
+  "executed_arguments": [
+    "--output",
+    "results/stopping_identities_20260920.json"
+  ],
+  "limitations": "Synthetic algebra only; no real-model, neural-learning, independence, or completeness assumption is verified.",
+  "python_version": "3.14.4",
+  "results": {
+    "censoring": {
+      "complete_case_value": 0.7400000000000001,
+      "inverse_observation_weighted_value": 0.5,
+      "truth": 0.5
+    },
+    "certificate_impossibility_counterexample": {
+      "n": 176,
+      "null_upper_tail_probability": 1.044048714879764e-53
+    },
+    "changed_cap_stop": {
+      "absolute_identity_error": 3.3306690738754696e-16,
+      "complete_path_count": 512,
+      "direct_target_value": 0.61913275,
+      "expected_stopped_weight": 0.9999999999999999,
+      "naive_replay_bias": -0.18344649999999996,
+      "total_probability": 1.0000000000000013,
+      "unweighted_replay_value": 0.43568625000000005,
+      "weighted_replay_value": 0.6191327499999997
+    },
+    "changed_visible_stop": {
+      "absolute_identity_error": 2.220446049250313e-16,
+      "complete_path_count": 512,
+      "direct_target_value": 0.66029695,
+      "expected_stopped_weight": 1.0000000000000007,
+      "naive_replay_bias": -0.1722664124999998,
+      "total_probability": 1.0000000000000013,
+      "unweighted_replay_value": 0.4880305375000002,
+      "weighted_replay_value": 0.6602969500000002
+    },
+    "diagnostic_branch_filtering": {
+      "admissible_target_value": 0.5,
+      "unweighted_filtered_value": 0.1,
+      "weighted_filtered_value": 0.5
+    },
+    "ess_lower_bound_is_not_actual_ess": {
+      "actual_population_ess": 175.4381488021721,
+      "actual_second_moment": 1.00320256,
+      "n": 176,
+      "overlap_max_bound": 64,
+      "population_ess_lower_bound": 2.75
+    },
+    "hidden_label_information_gap": {
+      "best_public_value": 0.5,
+      "future_prophet": 0.75,
+      "privileged_current_grade_rule": 0.75
+    },
+    "matching_cap_stop": {
+      "absolute_identity_error": 1.1102230246251565e-16,
+      "complete_path_count": 512,
+      "direct_target_value": 0.43568624999999994,
+      "expected_stopped_weight": 1.0000000000000013,
+      "naive_replay_bias": 1.1102230246251565e-16,
+      "total_probability": 1.0000000000000013,
+      "unweighted_replay_value": 0.43568625000000005,
+      "weighted_replay_value": 0.43568625000000005
+    },
+    "matching_visible_stop": {
+      "absolute_identity_error": 2.220446049250313e-16,
+      "complete_path_count": 512,
+      "direct_target_value": 0.4880305375,
+      "expected_stopped_weight": 1.0000000000000013,
+      "naive_replay_bias": 2.220446049250313e-16,
+      "total_probability": 1.0000000000000013,
+      "unweighted_replay_value": 0.4880305375000002,
+      "weighted_replay_value": 0.4880305375000002
+    },
+    "stop_side_effect_counterexample": {
+      "actual_stop_rewrite_value": 0.0,
+      "recorded_prefix_value": 1.0
+    }
+  },
+  "runtime_seconds": 0.015033041127026081,
+  "schema_version": "1.0",
+  "source_path": "scripts/check_stopping_identities.py",
+  "source_sha256": "cb6273aa3d4be4461a66cdd5290bbbb2227bbac4113363858b3615b897040a1b"
+}

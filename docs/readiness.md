@@ -147,3 +147,20 @@ better off knowing both now.
 recover the 3.5–7.4 points of selection headroom? It is well-posed, it has a measured
 ceiling, it has a known-strong published comparator, and it requires probe-input
 generation inside Gate 1. Everything else is downstream of the answer.
+
+### 2026-09-20, checkpoint 6 — **48%** (−1 since the historical 49%)
+
+This is a subjective work-planning estimate under the same weights, rounded from 48.0%; it is not an empirical probability of readiness or acceptance. The previous narrative overcredited flawed simulation targets and selected-cohort gates. The new proofs, corrected studies and audited selector pilot earn separate progress without treating them as prospective validation.
+
+| Component | Credit | Weighted contribution | Basis |
+|---|---:|---:|---|
+| Literature | .80 | 8% | Ten key sources rechecked; materially incorrect novelty/possibility interpretations corrected; broader audit still needs integration |
+| Theory | .75 | 15% | Original proofs plus ten scoped stopping/selection results, 14 reconciliations and exact checks; broader draft not fully independently validated |
+| Design/freeze | .40 | 6% | Concrete protocols and handoff exist; conflicting intervention schemes and updated estimands still require one committed collection freeze |
+| Harness | .50 | 5% | Fixed-slate collector, sandbox tooling and 51 tests; full generated-slate branch runner/measurement contract remains incomplete |
+| Confirmatory simulation | .50 | 5% | 1,360 corrected diagnostic replications plus independent checks; final MC precision and fair fitted baselines pending |
+| Real-model experiments | .20 | 3% | Existing 4,488-episode source independently audited; no new randomized prompt study |
+| Critic/policy | .30 | 3% | Two fixed-bank learners evaluated on separate roots with a promising exploratory 7B signal; fresh matched-cost confirmation pending |
+| Manuscript | .30 | 3% | Theory/research PDF and update report exist; final integrated evidence-backed manuscript absent |
+
+The largest milestones are acceptance/integration of the corrections, one frozen intervention design, family/test-leakage audits, fresh selection validation, actual randomized prompt effects with named continuation, and an integrated manuscript with defensible novelty. The original personalized-prompt research goal is not replaced by a completed candidate-bank selection study.

@@ -1,5 +1,7 @@
 # BINDING REPAIR SPECIFICATION — theory document, cross-cutting decisions
 
+> This historical repair specification itself required repairs. The [2026-09-20 reconciliation](../theory_reconciliation_20260920.md) and [proved addendum](../theory_addendum_20260920.md) control stopping, ESS, certificates, hidden-state and information-set claims.
+
 **Status: binding.** Eighteen section agents apply this. Where this spec and the existing section text conflict, this spec wins. Where this spec and `docs/audits.md`, `docs/measured_calibration.md`, `docs/design_e3_critic_policy.md`, `docs/positioning.md` or `docs/premise_findings.md` conflict, **those documents win and you must report the conflict rather than resolve it yourself**. Do not add a claim that is not either (i) already in the document, (ii) written verbatim here, or (iii) a measured number from those docs.
 
 **Withdrawal convention (mandatory).** A retired result keeps its number and its position, and is rewritten as:

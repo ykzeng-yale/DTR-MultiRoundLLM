@@ -1,5 +1,7 @@
 # G0e — kill criterion K1 has **fired**: adaptive best-of-N beats the multi-turn loop
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 **Executed 2026-09-19, zero GPU cost.** `experiments/audits/g0e_adaptive_bon.py`;
 output `results/audits/g0e/20260920T003221Z/`.
 

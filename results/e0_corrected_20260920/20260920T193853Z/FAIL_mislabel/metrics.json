@@ -1,0 +1,313 @@
+{
+  "n_reps": 80,
+  "truth": {
+    "V_uniform5_mean": 0.6459770061744535,
+    "V_uniform5_range": [
+      0.6459770061744536,
+      0.6459770061744536
+    ],
+    "V_heuristic_reference_mean": 0.7939928181453723
+  },
+  "target_note": "IPW targets uniform continuation. Naive conditional targets logging association; its uniform-target error includes target mismatch.",
+  "ordering": {
+    "s0": {
+      "naive_cond": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.4458333333333334,
+        "P_top_arm_correct": 0.6625,
+        "bias": {
+          "RETRY": 0.010517321816625656,
+          "RESET": 0.007036843726424075,
+          "LOCAL": 0.005636210595397489,
+          "DIVERT": 0.007048775731054502
+        },
+        "rmse": {
+          "RETRY": 0.019927788315395278,
+          "RESET": 0.0162065168666101,
+          "LOCAL": 0.017319136602779648,
+          "DIVERT": 0.02091772560658746
+        },
+        "n_usable_reps": 80,
+        "bias_against_own_logging_target": {
+          "RETRY": 0.003919410981123128,
+          "RESET": 0.0025241436915213454,
+          "LOCAL": -0.0004791762611711767,
+          "DIVERT": -8.893801669364096e-05
+        }
+      },
+      "mediator": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.6041666666666667,
+        "P_top_arm_correct": 0.7625,
+        "bias": {
+          "RETRY": 0.11645501484163631,
+          "RESET": 0.2500416716343806,
+          "LOCAL": 0.1165972362387108,
+          "DIVERT": 0.037771363434272516
+        },
+        "rmse": {
+          "RETRY": 0.16327946486831013,
+          "RESET": 0.2625598885567407,
+          "LOCAL": 0.15441445953239216,
+          "DIVERT": 0.08880417192921537
+        },
+        "n_usable_reps": 80
+      },
+      "ipw": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.4541666666666667,
+        "P_top_arm_correct": 0.6375,
+        "bias": {
+          "RETRY": 0.0030725217050645735,
+          "RESET": 0.0022027017457962018,
+          "LOCAL": -0.0015251194606341466,
+          "DIVERT": -0.0002837474422510015
+        },
+        "rmse": {
+          "RETRY": 0.018643419463874038,
+          "RESET": 0.018952677232954542,
+          "LOCAL": 0.01812743677446551,
+          "DIVERT": 0.02129341498597321
+        },
+        "n_usable_reps": 80
+      }
+    },
+    "s1": {
+      "naive_cond": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.8958333333333334,
+        "P_top_arm_correct": 0.8625,
+        "bias": {
+          "RETRY": 0.0031767267302242374,
+          "RESET": -0.010543482831095838,
+          "LOCAL": -0.00623562879335881,
+          "DIVERT": -0.0051319684349322835
+        },
+        "rmse": {
+          "RETRY": 0.028297071568274712,
+          "RESET": 0.029246240444603826,
+          "LOCAL": 0.034925234007961166,
+          "DIVERT": 0.02912751131780157
+        },
+        "n_usable_reps": 80,
+        "bias_against_own_logging_target": {
+          "RETRY": 0.009546052668142933,
+          "RESET": -0.001647963854000888,
+          "LOCAL": 0.0017635984538400043,
+          "DIVERT": -0.0020649889850238414
+        }
+      },
+      "mediator": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": -0.06666666666666668,
+        "P_top_arm_correct": 0.275,
+        "bias": {
+          "RETRY": 0.1250529971945304,
+          "RESET": 0.05594910166486613,
+          "LOCAL": 0.025348714599140648,
+          "DIVERT": 0.18457829895039032
+        },
+        "rmse": {
+          "RETRY": 0.12735080159145415,
+          "RESET": 0.0591581946580321,
+          "LOCAL": 0.0350119949538332,
+          "DIVERT": 0.18813459966039064
+        },
+        "n_usable_reps": 80
+      },
+      "ipw": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.85,
+        "P_top_arm_correct": 0.6875,
+        "bias": {
+          "RETRY": 0.005880894547783634,
+          "RESET": 0.00043805702871367277,
+          "LOCAL": -0.00860069526623606,
+          "DIVERT": -0.0070317505972362524
+        },
+        "rmse": {
+          "RETRY": 0.03603969290704345,
+          "RESET": 0.03568691383408278,
+          "LOCAL": 0.041205676234576924,
+          "DIVERT": 0.0372833449323348
+        },
+        "n_usable_reps": 80
+      }
+    },
+    "s2": {
+      "naive_cond": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.6864108866146911,
+        "P_top_arm_correct": 0.8125,
+        "bias": {
+          "RETRY": -0.015185461358779129,
+          "RESET": -0.013029005538843213,
+          "LOCAL": -0.008954741811724055,
+          "DIVERT": -0.018117559862830222
+        },
+        "rmse": {
+          "RETRY": 0.033609237163973925,
+          "RESET": 0.03404827129670771,
+          "LOCAL": 0.02866538063009509,
+          "DIVERT": 0.035460995360511255
+        },
+        "n_usable_reps": 80,
+        "bias_against_own_logging_target": {
+          "RETRY": -0.0034941210131152443,
+          "RESET": -0.0027618468143609616,
+          "LOCAL": -0.0011584749274018333,
+          "DIVERT": -0.005330966815569675
+        }
+      },
+      "mediator": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": -0.01666666666666667,
+        "P_top_arm_correct": 0.225,
+        "bias": {
+          "RETRY": -0.09046634953395687,
+          "RESET": -0.11434235859291939,
+          "LOCAL": -0.14966759797046905,
+          "DIVERT": -0.06138011182444754
+        },
+        "rmse": {
+          "RETRY": 0.09253378920129761,
+          "RESET": 0.11676945392317215,
+          "LOCAL": 0.15097966844138136,
+          "DIVERT": 0.06476513519807156
+        },
+        "n_usable_reps": 80
+      },
+      "ipw": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.5958333333333334,
+        "P_top_arm_correct": 0.6625,
+        "bias": {
+          "RETRY": -0.005255053651810492,
+          "RESET": -0.003858686527239131,
+          "LOCAL": -0.004818571269043112,
+          "DIVERT": -0.007568651066965228
+        },
+        "rmse": {
+          "RETRY": 0.03798897926251003,
+          "RESET": 0.04185715492845127,
+          "LOCAL": 0.0348791121198444,
+          "DIVERT": 0.04107188827916483
+        },
+        "n_usable_reps": 80
+      }
+    },
+    "s3": {
+      "naive_cond": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.8166666666666668,
+        "P_top_arm_correct": 0.7,
+        "bias": {
+          "RETRY": 0.03192709359078386,
+          "RESET": 0.02198637061611336,
+          "LOCAL": 0.03135339914354737,
+          "DIVERT": 0.03402295075785328
+        },
+        "rmse": {
+          "RETRY": 0.03318240435546835,
+          "RESET": 0.02520622450802455,
+          "LOCAL": 0.03273717650688065,
+          "DIVERT": 0.03544229281179595
+        },
+        "n_usable_reps": 80,
+        "bias_against_own_logging_target": {
+          "RETRY": -0.000473391428794169,
+          "RESET": 0.00025692579620623655,
+          "LOCAL": 0.0016553133322706123,
+          "DIVERT": 0.00021768658314974266
+        }
+      },
+      "mediator": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.4250000000000001,
+        "P_top_arm_correct": 0.5,
+        "bias": {
+          "RETRY": -0.4281424947084235,
+          "RESET": -0.4605023893609871,
+          "LOCAL": -0.4636983538704129,
+          "DIVERT": -0.4137728703900976
+        },
+        "rmse": {
+          "RETRY": 0.4380436125539692,
+          "RESET": 0.46245037149056145,
+          "LOCAL": 0.46987634377636517,
+          "DIVERT": 0.42475626510179926
+        },
+        "n_usable_reps": 80
+      },
+      "ipw": {
+        "target": "uniform_continuation",
+        "mean_kendall_tau": 0.6625000000000001,
+        "P_top_arm_correct": 0.5375,
+        "bias": {
+          "RETRY": -0.00027011789806781483,
+          "RESET": -0.0009314194975733436,
+          "LOCAL": 0.0005206942021894381,
+          "DIVERT": 0.00027481513740932467
+        },
+        "rmse": {
+          "RETRY": 0.015084038993454297,
+          "RESET": 0.018481632725697295,
+          "LOCAL": 0.016126009823150742,
+          "DIVERT": 0.01703741289478817
+        },
+        "n_usable_reps": 80
+      }
+    }
+  },
+  "value": {
+    "gcomp": {
+      "mean": 0.6446916958869509,
+      "bias": -0.001285310287502693,
+      "bias_mcse": 0.0016862704307442887,
+      "rmse": 0.015042910350652233,
+      "sd": 0.015082461246368323
+    },
+    "ipw": {
+      "mean": 0.6448756693077771,
+      "bias": -0.0011013368666765015,
+      "bias_mcse": 0.001864558477140766,
+      "rmse": 0.016609112852690924,
+      "sd": 0.016677118011640964,
+      "mean_se": 0.017238650815125618,
+      "coverage_95": 0.9625,
+      "coverage_mcse": 0.02124080683495803
+    },
+    "dr": {
+      "mean": 0.6461556234762713,
+      "bias": 0.00017861730181770313,
+      "bias_mcse": 0.0016629520691019948,
+      "rmse": 0.014781720511727535,
+      "sd": 0.014873895479343953,
+      "mean_se": 0.014692682298946862,
+      "coverage_95": 0.9125,
+      "coverage_mcse": 0.031591879890250286
+    }
+  },
+  "decision": {
+    "reference_is_optimal": false,
+    "mean_V_of_learned_rule": 0.7889206310813417,
+    "mean_V_heuristic_reference": 0.7939928181453723,
+    "mean_learned_minus_reference": -0.005072187064030513,
+    "note": "Exact value of fitted compressed-state heuristic, not regret to an optimum."
+  },
+  "n_mislabelled_mean": 174.1625,
+  "elapsed_seconds": 6.2,
+  "seconds_per_rep": 0.0776,
+  "cell": "FAIL_mislabel",
+  "config": {
+    "n_tasks": 230,
+    "runs": 40,
+    "T": 3,
+    "kappa": 1.0,
+    "floor": 0.1,
+    "cmult": 1.0,
+    "gz": 0.0,
+    "mislabel": 0.15,
+    "template_sd": 0.0
+  }
+}

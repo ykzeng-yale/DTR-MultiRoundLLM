@@ -1,5 +1,7 @@
 # Gate 1, re-scoped after K1 fired
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 **Written by the experiments workstream, 2026-09-19, as a decision memo.** It changes
 what Gate 1 spends its first GPU hours on. It does not change any frozen artifact,
 because nothing is frozen yet — which is the point of having tested K1 first.

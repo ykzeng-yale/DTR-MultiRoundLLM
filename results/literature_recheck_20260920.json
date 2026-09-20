@@ -1,0 +1,293 @@
+{
+  "audit_date": "2026-09-20",
+  "scope": "Ten newly load-bearing identifiers, novelty claims, and one omitted MRT predecessor; not an exhaustive review or experimental replication.",
+  "all_ten_identities_verified": true,
+  "records": [
+    {
+      "arxiv_id": "2502.17538",
+      "title": "Policy Learning with a Natural Language Action Space: A Causal Approach",
+      "first_submitted": "2025-02-24",
+      "inspected_version": "v1",
+      "status": "preprint",
+      "authors": [
+        "Bohan Zhang",
+        "Yixin Wang",
+        "Paramveer S. Dhillon"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "EXPLICIT_ESTIMAND_PRESENT",
+        "LANGUAGE_ACTION_DTR_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2502.17538",
+        "https://arxiv.org/html/2502.17538v1"
+      ]
+    },
+    {
+      "arxiv_id": "2607.03597",
+      "title": "What is the Causal Effect of a Conversation? Estimands and Inference in AI Mediated Conversations",
+      "first_submitted": "2026-07-03",
+      "inspected_version": "v1",
+      "status": "preprint",
+      "authors": [
+        "Adriane Fresh",
+        "Aiden Shin"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "CONVERSATION_ESTIMAND_PRECEDENT",
+        "MESSAGE_RANDOMIZATION_DESIGN_DISCUSSION"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2607.03597",
+        "https://arxiv.org/html/2607.03597v1"
+      ]
+    },
+    {
+      "arxiv_id": "2404.00207",
+      "title": "Causal Inference for Human-Language Model Collaboration",
+      "first_submitted": "2024-03-30",
+      "inspected_version": "v1",
+      "status": "NAACL_2024_MAIN_PRIMARY_PROCEEDINGS_VERIFIED",
+      "authors": [
+        "Bohan Zhang",
+        "Yixin Wang",
+        "Paramveer Dhillon"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "LONGITUDINAL_HUMAN_LM_IDENTIFICATION_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2404.00207",
+        "https://arxiv.org/html/2404.00207v1",
+        "https://aclanthology.org/2024.naacl-long.91/"
+      ]
+    },
+    {
+      "arxiv_id": "2605.07834",
+      "title": "GenAI Powered Dynamic Causal Inference with Unstructured Data",
+      "first_submitted": "2026-05-08",
+      "inspected_version": "v2",
+      "version_date": "2026-09-15",
+      "status": "preprint",
+      "authors": [
+        "Kentaro Nakamura",
+        "Kosuke Imai"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "DYNAMIC_STOCHASTIC_TEXT_FEATURE_INTERVENTION_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2605.07834",
+        "https://arxiv.org/html/2605.07834v2"
+      ]
+    },
+    {
+      "arxiv_id": "2410.00903",
+      "title": "Causal Inference with Generative Artificial Intelligence: Application to Texts as Treatments",
+      "first_submitted": "2024-10-01",
+      "inspected_version": "v5",
+      "version_date": "2026-06-11",
+      "status": "preprint",
+      "authors": [
+        "Kosuke Imai",
+        "Kentaro Nakamura"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "POINT_TREATMENT_GENERATOR_REPRESENTATION_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2410.00903",
+        "https://arxiv.org/html/2410.00903v5"
+      ]
+    },
+    {
+      "arxiv_id": "2504.02646",
+      "title": "Prompt Optimization with Logged Bandit Data",
+      "first_submitted": "2025-04-03",
+      "inspected_version": "v1",
+      "status": "preprint",
+      "authors": [
+        "Haruka Kiyohara",
+        "Daniel Yiming Cao",
+        "Yuta Saito",
+        "Thorsten Joachims"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "CONTEXTUAL_OFF_POLICY_PROMPT_OPTIMIZATION_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2504.02646",
+        "https://arxiv.org/html/2504.02646v1"
+      ]
+    },
+    {
+      "arxiv_id": "2605.25998",
+      "title": "Causal methods for LLM development and evaluation",
+      "first_submitted": "2026-05-25",
+      "inspected_version": "v1",
+      "status": "KDD_2026_STATED_IN_AUTHOR_MANUSCRIPT_PUBLISHER_NOT_FETCHED",
+      "authors_short": "Dennis Frauen et al.",
+      "doi": "10.1145/3770855.3818647",
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "PERSPECTIVE_NOT_VALIDATED_SEQUENTIAL_ESTIMATOR"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2605.25998",
+        "https://arxiv.org/html/2605.25998v1"
+      ]
+    },
+    {
+      "arxiv_id": "2604.09459",
+      "title": "From Reasoning to Agentic: Credit Assignment in Reinforcement Learning for Large Language Models",
+      "first_submitted": "2026-04-10",
+      "inspected_version": "v3",
+      "version_date": "2026-08-09",
+      "status": "preprint",
+      "authors": [
+        "Chenchen Zhang"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "SUFFICIENT_STATE_CAVEAT_NOT_UNIVERSAL_IMPOSSIBILITY"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2604.09459",
+        "https://arxiv.org/html/2604.09459v3"
+      ]
+    },
+    {
+      "arxiv_id": "2603.06859",
+      "title": "Exact Is Easier: Credit Assignment for Cooperative LLM Agents",
+      "first_submitted": "2026-03-06",
+      "inspected_version": "v2",
+      "version_date": "2026-05-08",
+      "status": "preprint",
+      "authors_short": "Yanjun Chen et al.",
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "RESTORED_HISTORY_BRANCHING_PRECEDENT"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2603.06859",
+        "https://arxiv.org/html/2603.06859v2"
+      ]
+    },
+    {
+      "arxiv_id": "2606.05558",
+      "title": "Autoregressive Diffusion World Models for Off-Policy Evaluation of LLM Agents",
+      "first_submitted": "2026-06-04",
+      "inspected_version": "v2",
+      "version_date": "2026-07-20",
+      "status": "preprint",
+      "authors": [
+        "Kaixuan Liu",
+        "Guojun Xiong",
+        "Weinan Zhang",
+        "Shengpu Tang"
+      ],
+      "findings": [
+        "ID_TITLE_CONFIRMED",
+        "EMPIRICAL_FAILURE_NOT_GENERAL_IMPOSSIBILITY",
+        "TEACHER_FORCED_PROBABILITY_VS_DECODING_LAW_CONCERN",
+        "EQ2_EXACT_RECOVERY_COUNTEREXAMPLE"
+      ],
+      "primary_urls": [
+        "https://arxiv.org/abs/2606.05558",
+        "https://arxiv.org/pdf/2606.05558v2"
+      ]
+    }
+  ],
+  "additional_prior_art": [
+    {
+      "title": "Micro-Randomized Trial of an AI-Simulated Practice Tool for Therapeutic Skills",
+      "authors": [
+        "Ryan Louie",
+        "Ellen Converse",
+        "Diyi Yang",
+        "Emma Brunskill"
+      ],
+      "date": "2026-06-28",
+      "venue": "Proceedings of the Impactful and Responsible AI Systems for Education Workshop",
+      "volume": "PMLR 339",
+      "pages": "43-69",
+      "status": "PRIMARY_PROCEEDINGS_VERIFIED",
+      "url": "https://proceedings.mlr.press/v339/louie26a.html",
+      "finding": "REPEATED_RANDOMIZED_LLM_SYSTEM_PRECEDENT_NOT_WITHIN_CONVERSATION_PROMPT_SELECTOR"
+    }
+  ],
+  "corrections": [
+    {
+      "claim": "No stochastic interventions involving text exist",
+      "verdict": "FALSE_AS_BROADLY_STATED",
+      "evidence": "2605.07834v2 section 3.3"
+    },
+    {
+      "claim": "2502.17538 has no estimand",
+      "verdict": "FALSE",
+      "evidence": "2502.17538v1 section 3.1"
+    },
+    {
+      "claim": "String action support has no definition",
+      "verdict": "MATHEMATICALLY_FALSE",
+      "evidence": "Countable finite strings admit conditional mass functions and absolute continuity"
+    },
+    {
+      "claim": "Any pre-action history embedding contains current treatment",
+      "verdict": "MATHEMATICALLY_FALSE",
+      "evidence": "Correct temporal definition H_t precedes A_t"
+    },
+    {
+      "claim": "Coarsening automatically restores identification and positivity",
+      "verdict": "FALSE_WITHOUT_ADDITIONAL_ASSUMPTIONS",
+      "evidence": "Version-generating intervention, sequential exchangeability, and conditional support remain necessary"
+    },
+    {
+      "claim": "Geometric mean token ratios preserve the original policy value",
+      "verdict": "FALSE_IN_GENERAL",
+      "evidence": "Likelihood ratio is a product, not its length-normalized root"
+    },
+    {
+      "claim": "ADWM establishes token OPE is foreclosed",
+      "verdict": "UNSUPPORTED_GENERALIZATION",
+      "evidence": "Specific empirical design plus assignment probability concerns"
+    },
+    {
+      "claim": "First prospectively randomized multi-round LLM deployment",
+      "verdict": "UNSUPPORTED_PRIORITY_CLAIM",
+      "evidence": "Louie et al. MRT precedes broad claim; exact narrowed conjunction unresolved"
+    }
+  ],
+  "independent_counterexample": {
+    "source": "2606.05558v2 PDF p5 section4.1 equation2",
+    "behavior": [
+      0.9,
+      0.1
+    ],
+    "target": [
+      0.5,
+      0.5
+    ],
+    "p_theta": "behavior",
+    "alpha": 1,
+    "displayed_tilt_normalized": [
+      0.9,
+      0.1
+    ],
+    "target_value_for_indicator_action1": 0.5,
+    "tilted_value_for_indicator_action1": 0.1,
+    "scope": "Refutes displayed exact-recovery claim, not all world-model methods"
+  },
+  "status_boundary": {
+    "metadata_verified": true,
+    "full_experimental_replication": false,
+    "novelty_exhaustively_established": false,
+    "submission_readiness_established": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "status": "all saved summaries reproduced from raw replicate records",
+  "cells": [
+    {
+      "cell": "FAIL_coarsening",
+      "replicates": 80,
+      "raw_sha256": "74a1c8df38eb60c02b1ef3b746e189fc3616a4c35c50c61650303199b57a6ee5",
+      "summary_matches": true
+    },
+    {
+      "cell": "FAIL_latent",
+      "replicates": 80,
+      "raw_sha256": "d26365868b49107b5f1d8ee6e262b5e9345de398553b29e62161336ab125eb4e",
+      "summary_matches": true
+    },
+    {
+      "cell": "base",
+      "replicates": 80,
+      "raw_sha256": "0e2fa005ddb4428463847a760757c792b25d958a9c1a72705c7bc7947fb9f403",
+      "summary_matches": true
+    },
+    {
+      "cell": "kappa0",
+      "replicates": 80,
+      "raw_sha256": "701d6cae45b4233d669063a3f1a64cb7112548b974c362937d398a9dd39e388a",
+      "summary_matches": true
+    },
+    {
+      "cell": "FAIL_mislabel",
+      "replicates": 80,
+      "raw_sha256": "7745352d6b9508bd5dcef5503bf703dab9b774c03b77ec22331d14d4ba1fff89",
+      "summary_matches": true
+    },
+    {
+      "cell": "FAIL_positivity",
+      "replicates": 80,
+      "raw_sha256": "f130fc33e4e24093a3638a509afb17c3b10765e0e38261505843192c46616964",
+      "summary_matches": true
+    },
+    {
+      "cell": "T2",
+      "replicates": 80,
+      "raw_sha256": "9e66a014c7863f309423aac157e992ecf02e7d75d7a4d460c4674a9f11ce6851",
+      "summary_matches": true
+    },
+    {
+      "cell": "T5",
+      "replicates": 80,
+      "raw_sha256": "85879a1740fdc4733cd97798a2d95274eb79379397375dec69ae72774a2a8c75",
+      "summary_matches": true
+    },
+    {
+      "cell": "floor0.02",
+      "replicates": 80,
+      "raw_sha256": "cd548ed3db7dfd65cdb349d5e9a9493849c1e36cc2171c10f06c9723cf17ce11",
+      "summary_matches": true
+    },
+    {
+      "cell": "floor0.05",
+      "replicates": 80,
+      "raw_sha256": "2422034a282b32c1a9033babba4e27e3e951693ff884ab3f97c3b519f8415881",
+      "summary_matches": true
+    },
+    {
+      "cell": "half_effect",
+      "replicates": 80,
+      "raw_sha256": "742ab7a12507989b2c8247f95b39ade2a7b38b6c8f3fccd398478176dad1e9ae",
+      "summary_matches": true
+    },
+    {
+      "cell": "kappa0.5",
+      "replicates": 80,
+      "raw_sha256": "4595d9d78030cfefd5b79fa26d3f1d01dd7b1faa44206c41276f4d9e365ee7a0",
+      "summary_matches": true
+    },
+    {
+      "cell": "kappa2",
+      "replicates": 80,
+      "raw_sha256": "0fac59398ded911422ea0a27b4d4531faa40ad4d597fb2fb77ff35a0984a9b21",
+      "summary_matches": true
+    },
+    {
+      "cell": "latent_track",
+      "replicates": 80,
+      "raw_sha256": "b306f52964c434fb58bd70159b05d2a951400adff35e64835dc54460634246ba",
+      "summary_matches": true
+    },
+    {
+      "cell": "n590",
+      "replicates": 80,
+      "raw_sha256": "3af3e4a551bfda0fe7e7c8f4e9e0a6854e12580edf8e7c6e7b59446a8262db79",
+      "summary_matches": true
+    },
+    {
+      "cell": "runs10",
+      "replicates": 80,
+      "raw_sha256": "24c89fc4983aaac8ade14baf22dd9d80b2bb73df787a999cea72287a9eb7295c",
+      "summary_matches": true
+    },
+    {
+      "cell": "runs160",
+      "replicates": 80,
+      "raw_sha256": "8f52adf69584358bbd1cbfafb31dffde9bc0a5e1aca470054f8b7959ccce6806",
+      "summary_matches": true
+    }
+  ],
+  "total_replicates": 1360,
+  "note": "Current driver handles JSON integer-key conversion and null undefined tau; numerical results match preserved run summaries."
+}

@@ -1,5 +1,20 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## CURRENT: 2026-09-20 independent continuation audit
+
+**Read [continuation_report_20260920.md](docs/continuation_report_20260920.md) before acting on older entries.** K1's blanket conclusion is withdrawn: prior G0e/G1a excluded trajectories based on later receiver switches, and 7B component means used different task cohorts. The corrected all-561-task IPW comparison retains a strong 3B negative result; 7B depends on k and cost. It does not terminate every prompting experiment.
+
+E0 was repaired and all 17 cells rerun at 80 replicates (1,360 total); results and MCSE are in the corrected report. No false optimum/regret or template-mixture failure claim should be propagated. The known behavior score includes latent-informed assignment information in gz cells.
+
+**Q11 resolved:** lead with identification and honest evaluation of supported language interventions, with stopping/selection as an application. The [new addendum](docs/theory_addendum_20260920.md) and [reconciliation](docs/theory_reconciliation_20260920.md) replace the incorrect W=1, ESS, certificate and information-set claims. Candidate-first randomized slates and class-first generated interventions must still be reconciled before the collection freeze.
+
+The corrected fixed-bank selector pilot has an exploratory 7B logistic gain of +2.85pp [1.19,4.52] on 225 evaluation roots (336 training). Read the complete result before using it: all 4 generation calls charged, reused corpus, family dependence unresolved, no prospective or next-prompt effect claim. Preserve all four fits and freeze any follow-up on fresh roots; do not silently tune the discovered feature-category mismatch.
+
+The later `0ee7666` selection-decision update was also audited: see [latest selection audit](docs/latest_selection_decision_audit_20260920.md) and the added oracle-bound proof in the reconciliation. Preserve it as historical exploratory evidence; it has not established a research-wide impossibility.
+
+Handoff priorities remain issues #2–#5: accept corrections; finish comparable fitted-estimator baselines; validate fixed-bank selection afresh; collect actual randomized user-prompt interventions. Full-project readiness remains below submission; the rubric estimate is 48%, superseding 49% with corrected evidence. No new GPU/model calls were made in this continuation.
+
+
 Two Claude agents work this repository in parallel, at the owner's direction
 (`ykzeng-yale`, yukang.zeng@yale.edu). This file is the shared channel: read it
 before your first commit, append to it rather than rewriting it, and sign your

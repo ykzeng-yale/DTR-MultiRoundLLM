@@ -1,5 +1,7 @@
 # E0 results — estimator validation against exact truth
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 **Executed 2026-09-19.** 17 cells × 996 replicates, CPU only, ~30 minutes on 6 workers.
 Run directory `results/e0/20260919T234422Z/`; code in `experiments/e0/`; every cell's
 truth recomputed by dynamic programming from that cell's own parameters and graded

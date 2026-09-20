@@ -19,6 +19,7 @@ DOCS = [
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--update", action="store_true", help="Build the Sept 20 audited continuation")
     args = parser.parse_args()
     work = ROOT / "work" / "report"
     work.mkdir(parents=True, exist_ok=True)
@@ -49,10 +50,22 @@ This package develops supported history-conditional prompt effects and policy va
 
 The maintained repository, complete literature audit, proof-review record, code, raw synthetic results, and work-package issues are available at [DTR-MultiRoundLLM](https://github.com/ykzeng-yale/DTR-MultiRoundLLM). This PDF is a dated development snapshot.
 """
-    for name in DOCS:
+    if args.update:
+        text = text[:text.index(r'\newpage')]
+        text = text.replace('toc-depth: 2', 'toc-depth: 1')
+        text = text.replace('19 September 2026', '20 September 2026').replace(
+            'Theory, statistical reference, and experimental-agent protocol',
+            'Audited theory, corrected experiments, and remaining validation')
+    documents = (["docs/continuation_report_20260920.md", "docs/theory.md",
+                  "docs/theory_addendum_20260920.md", "docs/e0_corrected_results_20260920.md",
+                  "docs/selection_corrected_results_20260920.md"] if args.update else DOCS)
+    for name in documents:
         source = ROOT / name
         content = source.read_text().replace("∎", r"$\square$")
         content = re.sub(r"(?m)^(uv run .{100,})$", lambda m: m.group(0).replace(" --", " \\\n  --"), content)
+        if args.update:
+            content = re.sub(r"`(uv run [^`]{90,})`", lambda m: "\n\n```bash\n" + m.group(1).replace(" --", " \\\n  --") + "\n```\n", content)
+            content = re.sub(r"`([^`\n]*\\[A-Za-z][^`\n]*)`", lambda m: "$" + m.group(1) + "$", content)
         def link(match):
             label, target = match.groups()
             if target.startswith(("http:", "https:", "#")):

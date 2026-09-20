@@ -1,0 +1,82 @@
+{
+  "review_date": "2026-09-20",
+  "reviewer": "Codex independent review subagent /root/evidence",
+  "review_type": "Read-only source inspection and independent reconstruction; no new fitting or split tuning",
+  "reviewed_output_directory": "results/selection_corrected_20260920_v2",
+  "source_path": "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "source_sha256": "e643ee44c7ef658fff65efb5e17763ee78c990d21184d060f5823025a100414e",
+  "script_path": "scripts/recheck_selection.py",
+  "script_sha256": "9eb15e52993f42717cd99ab0272b7268d44e96f79fabe94fa471ac671f075de6",
+  "source_and_script_hashes_match_manifest": true,
+  "output_sha256": {
+    "manifest.json": "f220ad7a11efdb87fd74ed17c4f18525beab5d8c5eefbb26fbf60aeff35cbfd9",
+    "per_task.json": "a51823254123b283aa833923bf5deb333130f94155d250e6c21a8dd5a6a1f128",
+    "summary.json": "57463813c89fe630a16579a29252affedf69133da98587b8a680babcca8e6936"
+  },
+  "data_integrity": {
+    "source_episodes": 4488,
+    "unique_episode_ids": 4488,
+    "task_roots": 561,
+    "receivers": 2,
+    "task_receiver_cells": 1122,
+    "first_candidates_per_cell": 4,
+    "source_mock_episodes": 0,
+    "source_error_episodes": 0,
+    "unfinished_first_candidates": 0,
+    "empty_first_candidate_code": 0,
+    "training_task_roots": 336,
+    "evaluation_task_roots": 225,
+    "shared_split_across_receivers": true
+  },
+  "independently_checked": {
+    "per_task_rows": 900,
+    "outcome_vectors_match_raw_source": true,
+    "evaluation_membership": true,
+    "uniform_learned_score_tie_expectations": true,
+    "uniform_visible_pass_tie_expectations": true,
+    "visible_fallback_uniform_when_no_passes": true,
+    "random_candidate_means": true,
+    "oracle_any_success": true,
+    "prompt_token_totals": true,
+    "completion_token_totals": true,
+    "paired_gain_means": true,
+    "paired_task_standard_errors": true,
+    "paired_student_t_intervals": true
+  },
+  "leakage_review": {
+    "direct_recorded_outcome_feature_leakage_found": false,
+    "future_routing_conditioning_in_candidate_inclusion": false,
+    "task_level_train_evaluation_separation": true,
+    "scaler_fit_training_only": true,
+    "qualification": "Source inspection and raw-row checks found no direct leakage. Task-family overlap, benchmark pretraining contamination, and reuse of earlier analyzed labels remain unresolved and prevent a confirmatory claim."
+  },
+  "failure_class_schema": {
+    "source_counts": {
+      "none": 3607,
+      "assertion": 691,
+      "exception": 190
+    },
+    "feature_declares": "fc_assert",
+    "source_emits": "assertion",
+    "consequence": "fc_assert is zero for assertion failures; other failure features retain information. This is a nonblocking feature-schema limitation, not leakage or an arithmetic error. Preserve the completed v2 analysis; any repair should be separately specified and labeled."
+  },
+  "cost_scope": "All selectors receive and pay the same four generated initial candidates; prompt and completion totals match. Validation/selector CPU and training costs are unmeasured. No claim of matched total compute against adaptive best-of-N follows.",
+  "result_interpretation": "The 7B logistic selector shows +0.0285185185 recorded full-test success versus the permutation-averaged visible selector, with exploratory task-level 95% interval [0.0118598186,0.0451772185]. This is a post-generation four-candidate selection result on a reused corpus, not confirmation of dynamic-regime improvement, causal prompt effects, DR/OPE validity, or population-level individual effects. Four algorithm/receiver comparisons and unaudited task-family dependence limit inference.",
+  "e0_read_only_review": {
+    "blocking_mathematical_error_found_in_reviewed_repairs": false,
+    "scope": "Inspected run_grid.py, simulator.py, estimators.py and repair-test source. This is not an exhaustive proof or independent rerun of the grid.",
+    "caveats": [
+      "In latent-tracking cells, recorded true B supplies oracle latent-informed assignment probabilities; recovery is not identification under unknown unmeasured confounding.",
+      "FAIL_positivity has a positive .02 floor: low overlap, not structural zero support.",
+      "The fitted state-only rule is a heuristic, not a proven state-only optimum."
+    ]
+  },
+  "tests": {
+    "pytest_tests_executed": false,
+    "attempted_command": "python3 -m pytest tests/test_e0_repairs.py -q",
+    "reason": "Local python3 has no pytest module; invocation failed before collection.",
+    "independent_row_reconstruction_executed": true,
+    "new_model_or_candidate_code_execution": false
+  },
+  "disposition": "No blocking error found for the explicitly exploratory fixed-bank selection result. Retain limitations and the immutable v2 output."
+}
