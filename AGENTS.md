@@ -72,7 +72,9 @@ The current governing judgment is `docs/scientific_judgment_20260920.md`.
 
 ## Mechanics
 
-* `git pull --rebase origin main` before every push. Never force-push.
+* Fetch `origin` before every push and inspect both the destination branch and
+  `main`. Integrate new main commits with a merge when needed; do not rebase
+  already published commits. Preserve published ancestry and never force-push.
 * Commit as **`Yukang Zeng <ykzeng2019@gmail.com>`** (owner's instruction, 2026-09-20).
   Set it once per clone with `git config user.name/user.email`; do not pass a different
   identity with `git -c`. **Do not add `Co-Authored-By:` trailers for the assistant.**
