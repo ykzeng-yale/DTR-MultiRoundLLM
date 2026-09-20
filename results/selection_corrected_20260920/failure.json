@@ -1,0 +1,1 @@
+{"status":"failed before fitting", "reason":"validator expected boolean but recorded binary outcome has integer type; corrected validator accepts strict 0/1 integers", "model_calls":0}

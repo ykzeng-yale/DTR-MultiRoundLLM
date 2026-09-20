@@ -1,0 +1,156 @@
+{
+  "created_utc": "20260920T193853Z",
+  "reps_per_cell": 80,
+  "seed_base": 20260920,
+  "workers": 4,
+  "code_sha256": "2df4cebdec178455c769ebf6767b3771262f2341ae44a89fcd8c1b85eb90c570",
+  "python": "3.14.4",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "cells": {
+    "kappa0.5": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 0.5,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "kappa2": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 2.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "floor0.05": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.05,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "floor0.02": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.02,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "T2": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 2,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "T5": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 5,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "n590": {
+      "n_tasks": 590,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "runs10": {
+      "n_tasks": 230,
+      "runs": 10,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "runs160": {
+      "n_tasks": 230,
+      "runs": 160,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "half_effect": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 0.5,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "latent_track": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 1.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_positivity": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 2.5,
+      "floor": 0.02,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_mislabel": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.15,
+      "template_sd": 0.0
+    }
+  },
+  "schema": "corrected-e0-v2",
+  "note": "Actual replicate template mixture truth; known behavior scores; compressed-state fitted Q. Original E0 results preserved."
+}

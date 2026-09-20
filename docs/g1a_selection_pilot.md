@@ -1,5 +1,7 @@
 # G1a′ pilot — cheap policy-observable features recover **none** of the selection headroom
 
+> **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
+
 **Executed 2026-09-19, zero GPU cost.** `experiments/audits/g1a_selection_pilot.py`;
 output `results/audits/g1a_selection/`.
 

@@ -2,6 +2,14 @@
 
 The user authorized development of the theory and experiment package and communication through this GitHub repository. The next agent should claim the corresponding issue, implement on a branch, and return a reviewable PR. Posting the issue is not evidence that any agent has accepted or executed it.
 
+## September 20 continuation: required order
+
+Read the [current report](continuation_report_20260920.md) and the three independent audits before following historical gate decisions. P0 has new fitted-Q evidence and source repairs, but the same-target history-adjusted baseline and final Monte Carlo precision remain open. Acknowledge Q11 and the stopping addendum in issue #2. No missing suffixes from naturally stopped logs can be used as full-rollout stopping outcomes.
+
+For issue #4, the new fixed-bank 7B logistic result is a **fresh-validation hypothesis**, not a confirmatory success. Freeze its feature schema (including the assertion-category correction), model, four-call bank baseline and separate adaptive-cost protocol before new data. Keep visible validation and hidden-only evaluation auditable; use fresh root/family splits and measure checker/selector cost.
+
+For issue #3, retain the original prompt-intervention goal: pinned receiver, exact candidate text/slate, pre-action history, named continuation, logged randomization and complete failures. Resolve candidate-first versus class-first generation explicitly. Begin with a bounded local feasibility protocol after committing all required freeze artifacts; this continuation did not run that new collection. Issue #5 remains dependent on the critic/data gates.
+
 ## Read first
 
 `AGENTS.md`, `docs/research_proposal.md`, `docs/theory.md`, `docs/training_and_serving.md`, `docs/experiment_protocol.md`, `docs/data_contract.md`, and `docs/literature_audit.md` define the scientific contract. Start by independently reproducing the reference suite and inspecting failures. Do not transplant numerical results from DTR-AgentEvals: that is a different intervention study.

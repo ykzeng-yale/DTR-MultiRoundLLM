@@ -1,0 +1,57 @@
+{
+  "created_utc": "20260920T193602Z",
+  "reps_per_cell": 80,
+  "seed_base": 20260920,
+  "workers": 4,
+  "code_sha256": "2df4cebdec178455c769ebf6767b3771262f2341ae44a89fcd8c1b85eb90c570",
+  "python": "3.14.4",
+  "platform": "macOS-26.6-arm64-arm-64bit-Mach-O",
+  "cells": {
+    "base": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "kappa0": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 0.0,
+      "floor": 0.2,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_latent": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 2.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_coarsening": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.28
+    }
+  },
+  "schema": "corrected-e0-v2",
+  "note": "Actual replicate template mixture truth; known behavior scores; compressed-state fitted Q. Original E0 results preserved."
+}

@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Current checkpoint — 20 September 2026
+
+The [continuation report](continuation_report_20260920.md) is the current evidence ledger. Fifty-one tests pass; 1,360 corrected fitted-Q E0 replications and 72 independent audit replications ran; ten stopping identities passed; existing real-model logs were reanalysed; a fixed-bank selector pilot found an exploratory 7B logistic gain. Zero new model calls/GPU hours or external spend. No prospective prompt-treatment experiment or submission-ready package is claimed. The original statements below describe the initial Sept 19 release and remain historical where superseded.
+
 Updated 2026-09-19. This is an initial theory and experimental-development release.
 
 ## Delivered and checked

@@ -1,5 +1,7 @@
 # E0 — reference simulator and estimator validation
 
+> **Corrected 2026-09-20.** The [corrected E0 report](../../docs/e0_corrected_results_20260920.md) supersedes historical target/optimality/failure interpretations below. The current code includes first-action weighting, replicate-specific mixture truth, explicit logging-versus-target comparisons, a heuristic reference, exact seed counts and saved replicate records. Executed run sources are snapshotted with each dated result.
+
 CPU only, no model calls. This is the work that proceeds while the GPU is held by a
 sibling project, and it is the gate every estimator must pass before it is trusted on
 real data.

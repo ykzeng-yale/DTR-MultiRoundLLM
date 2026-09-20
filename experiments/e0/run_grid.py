@@ -24,7 +24,8 @@ ROOT = HERE.parents[1]
 sys.path.insert(0, str(HERE))
 
 from simulator import (ARMS, K, NS, UNIF5, kernel, make_beh, simulate,          # noqa: E402
-                       true_blips_posterior, true_value, optimal_rule, Vtab, P_E, P_Z, p_s1, NE)
+                       true_blips_posterior, true_value, reference_state_rule, template_kernel,
+                       true_logging_conditional_blips, P_E, P_Z, p_s1, NE)
 from estimators import (blip_ipw, blip_mediator, blip_naive_conditional,        # noqa: E402
                         blip_naive_marginal, learned_rule, value_dr, value_gcomp, value_ipw)
 
@@ -83,7 +84,18 @@ def one_rep(args):
     d = simulate(cfg['n_tasks'], cfg['runs'], cfg['T'], Kk, beh, rng,
                  mislabel=cfg['mislabel'], template_sd=cfg['template_sd'],
                  cmult=cfg['cmult'])
-    out = {'blip': {}, 'marg': blip_naive_marginal(d)}
+    # Truth follows the actual replicate's frozen template mixture.
+    actual_kernel = template_kernel(cfg['cmult'], d['template_offsets'])
+    tp = true_blips_posterior(actual_kernel, cfg['T'])
+    assoc = true_logging_conditional_blips(actual_kernel, cfg['T'], beh)
+    ref = reference_state_rule(actual_kernel, cfg['T'])
+    out = {'seed': seed, 'blip': {}, 'marg': blip_naive_marginal(d),
+           'template_offsets': d['template_offsets'],
+           'truth': {'value': true_value(actual_kernel, UNIF5, cfg['T']),
+                     'uniform_blips': {str(s): {a: tp[s, a] for a in ARMS} for s in range(NS)},
+                     'logging_association': {str(s): {a: assoc[s, a] for a in ARMS} for s in range(NS)},
+                     'reference_rule_value': rule_value(actual_kernel, {(t-1,s): a for (t,s),a in ref.items()}, cfg['T'])}}
+
     for s in range(NS):
         out['blip'][s] = {
             'naive_cond': blip_naive_conditional(d, s),
@@ -94,6 +106,7 @@ def one_rep(args):
     out['v_ipw'] = value_ipw(d, cfg['T'])
     out['v_dr'] = value_dr(d, cfg['T'], rng=rng)
     out['rule'] = {'%d,%d' % k: v for k, v in learned_rule(d, cfg['T']).items()}
+    out['learned_rule_value'] = rule_value(actual_kernel, out['rule'], cfg['T'])
     out['n_mislabelled'] = d['n_mislabelled']
     return out
 
@@ -121,68 +134,60 @@ def rule_value(Kk, rule: dict, T: int) -> float:
 
 
 def metrics(reps, cfg) -> dict:
-    Kk = kernel(cfg['cmult'])
-    T = cfg['T']
-    tp = true_blips_posterior(Kk, T)
-    v_true = true_value(Kk, UNIF5, T)
-    opt = optimal_rule(Kk, T)
-    v_opt = rule_value(Kk, {'%d,%d' % (t, s): opt[(t + 1, s)] for t in range(T) for s in range(NS)}, T)
-
-    m = {'n_reps': len(reps), 'truth': {'V_uniform5': v_true, 'V_state_only_optimal': v_opt,
-                                        'blip_posterior': {'s%d' % s: {a: tp[(s, a)] for a in CORR}
-                                                           for s in range(NS)}}}
-    # --- P1: ordering recovery in the repair strata -------------------------
-    m['ordering'] = {}
-    for s in (0, 1, 2, 3):
-        truth = np.array([tp[(s, a)] for a in CORR])
-        top_true = CORR[int(np.argmax(truth))]
+    truths = np.array([r['truth']['value'] for r in reps])
+    refs = np.array([r['truth']['reference_rule_value'] for r in reps])
+    m = {'n_reps': len(reps), 'truth': {'V_uniform5_mean': float(truths.mean()),
+          'V_uniform5_range': [float(truths.min()), float(truths.max())],
+          'V_heuristic_reference_mean': float(refs.mean())},
+          'target_note': 'IPW targets uniform continuation. Naive conditional targets logging association; its uniform-target error includes target mismatch.',
+          'ordering': {}}
+    for s in range(NS):
+        target = np.array([[r['truth']['uniform_blips'][str(s)][a] for a in CORR] for r in reps])
         cell = {}
         for nm in ('naive_cond', 'mediator', 'ipw'):
-            M = np.array([[r['blip'][s][nm][a] for a in CORR] for r in reps], float)
-            ok = ~np.isnan(M).any(1)
-            M = M[ok]
-            if not len(M):
+            M = np.array([[r['blip'].get(s, r['blip'].get(str(s)))[nm][a] for a in CORR] for r in reps])
+            ok = np.isfinite(M).all(axis=1)
+            if not ok.any():
                 continue
-            taus = [kendalltau(truth, row).statistic for row in M]
-            cell[nm] = {'mean_kendall_tau': float(np.mean(taus)),
-                        'P_tau_gt_0': float(np.mean(np.array(taus) > 0)),
-                        'P_top_arm_correct': float(np.mean([CORR[int(np.argmax(r))] == top_true for r in M])),
-                        'bias': {a: float(M.mean(0)[i] - truth[i]) for i, a in enumerate(CORR)},
-                        'rmse': {a: float(np.sqrt(((M[:, i] - truth[i]) ** 2).mean())) for i, a in enumerate(CORR)},
-                        'n_usable_reps': int(len(M))}
-        # the marginal critic has no state, so its ordering is compared at every s
-        Mm = np.array([[r['marg'][a] for a in CORR] for r in reps], float)
-        ok = ~np.isnan(Mm).any(1)
-        Mm = Mm[ok]
-        taus = [kendalltau(truth, row).statistic for row in Mm]
-        cell['naive_marginal'] = {'mean_kendall_tau': float(np.mean(taus)),
-                                  'P_tau_gt_0': float(np.mean(np.array(taus) > 0)),
-                                  'P_top_arm_correct': float(np.mean([CORR[int(np.argmax(r))] == top_true for r in Mm])),
-                                  'n_usable_reps': int(len(Mm))}
+            error = M[ok] - target[ok]
+            taus = np.array([kendalltau(t, row).statistic for t, row in zip(target[ok], M[ok])])
+            cell[nm] = {'target': 'uniform_continuation',
+                'mean_kendall_tau': float(np.nanmean(taus)) if np.isfinite(taus).any() else None,
+                'P_top_arm_correct': float(np.mean(M[ok].argmax(1) == target[ok].argmax(1))),
+                'bias': dict(zip(CORR, error.mean(0).tolist())),
+                'rmse': dict(zip(CORR, np.sqrt((error**2).mean(0)).tolist())),
+                'n_usable_reps': int(ok.sum())}
+            if nm == 'naive_cond':
+                own = np.array([[r['truth']['logging_association'][str(s)][a] for a in CORR] for r in reps])
+                cell[nm]['bias_against_own_logging_target'] = dict(zip(CORR, (M[ok]-own[ok]).mean(0).tolist()))
         m['ordering']['s%d' % s] = cell
-    # --- P2: value estimation and coverage ----------------------------------
-    m['value'] = {'truth': v_true}
+    m['value'] = {}
     for nm, key in (('gcomp', 'v_gcomp'), ('ipw', 'v_ipw'), ('dr', 'v_dr')):
-        if key == 'v_gcomp':
-            est = np.array([r[key] for r in reps], float)
-            m['value'][nm] = {'mean': float(est.mean()), 'bias': float(est.mean() - v_true),
-                              'sd': float(est.std(ddof=1))}
-        else:
-            est = np.array([r[key][0] for r in reps], float)
-            lo = np.array([r[key][2] for r in reps], float)
-            hi = np.array([r[key][3] for r in reps], float)
-            m['value'][nm] = {'mean': float(est.mean()), 'bias': float(est.mean() - v_true),
-                              'sd': float(est.std(ddof=1)),
-                              'mean_se': float(np.mean([r[key][1] for r in reps])),
-                              'coverage_95': float(np.mean((lo <= v_true) & (v_true <= hi)))}
-    # --- P3: decision quality ----------------------------------------------
-    vals = [rule_value(Kk, r['rule'], T) for r in reps]
-    m['decision'] = {'V_state_only_optimal': v_opt,
-                     'mean_V_of_learned_rule': float(np.mean(vals)),
-                     'mean_regret': float(v_opt - np.mean(vals)),
-                     'P_learned_rule_optimal': float(np.mean([abs(v - v_opt) < 1e-12 for v in vals]))}
+        est = np.array([r[key] if nm == 'gcomp' else r[key][0] for r in reps])
+        err = est - truths
+        mm = {'mean': float(est.mean()), 'bias': float(err.mean()),
+              'bias_mcse': float(err.std(ddof=1)/np.sqrt(len(reps))),
+              'rmse': float(np.sqrt((err**2).mean())), 'sd': float(est.std(ddof=1))}
+        if nm != 'gcomp':
+            coverage = np.mean([r[key][2] <= r['truth']['value'] <= r[key][3] for r in reps])
+            mm.update(mean_se=float(np.mean([r[key][1] for r in reps])),
+                      coverage_95=float(coverage), coverage_mcse=float(np.sqrt(coverage*(1-coverage)/len(reps))))
+        m['value'][nm] = mm
+    vals = np.array([r['learned_rule_value'] for r in reps])
+    m['decision'] = {'reference_is_optimal': False,
+        'mean_V_of_learned_rule': float(vals.mean()),
+        'mean_V_heuristic_reference': float(refs.mean()),
+        'mean_learned_minus_reference': float((vals-refs).mean()),
+        'note': 'Exact value of fitted compressed-state heuristic, not regret to an optimum.'}
     m['n_mislabelled_mean'] = float(np.mean([r['n_mislabelled'] for r in reps]))
     return m
+
+
+def seed_jobs(reps, workers, base):
+    """Exactly reps distinct seeds, independent of worker count."""
+    if reps < 2 or workers < 1:
+        raise ValueError('require reps >= 2 and workers >= 1')
+    return np.array_split(np.arange(base, base+reps), min(workers, reps))
 
 
 def main() -> int:
@@ -201,26 +206,25 @@ def main() -> int:
     names = a.cell or list(CELLS)
     stamp = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
     root = Path(a.out) / stamp
-    root.mkdir(parents=True, exist_ok=True)
+    root.mkdir(parents=True, exist_ok=False)
     (root / 'grid_manifest.json').write_text(json.dumps({
         'created_utc': stamp, 'reps_per_cell': a.reps, 'seed_base': a.seed_base,
         'workers': a.workers, 'code_sha256': code_sha256(),
         'python': sys.version.split()[0], 'platform': platform.platform(),
         'cells': {n: CELLS[n] for n in names},
-        'note': ('Exact truth is recomputed per cell from the cell own cmult and T. '
-                 'Blips are graded against the POSTERIOR-weighted truth, because an '
-                 'estimator that conditions on the observed state targets that object, '
-                 'not the prior-weighted one.'),
+        'schema': 'corrected-e0-v2',
+        'note': 'Actual replicate template mixture truth; known behavior scores; compressed-state fitted Q. Original E0 results preserved.',
     }, indent=2))
     for ci, name in enumerate(names):
         cfg = CELLS[name]
         outdir = root / name
         outdir.mkdir(exist_ok=True)
-        per = max(1, a.reps // a.workers)
-        jobs = [(a.seed_base + 1_000_000 * ci + 10_000 * w, per, cfg) for w in range(a.workers)]
+        cell_base = a.seed_base + 1_000_000 * list(CELLS).index(name)
+        jobs = [(int(seeds[0]), len(seeds), cfg) for seeds in seed_jobs(a.reps, a.workers, cell_base)]
         t0 = time.time()
         with ProcessPoolExecutor(max_workers=a.workers) as ex:
             reps = [r for c in ex.map(chunk, jobs) for r in c]
+        (outdir / 'replicates.json').write_text(json.dumps(reps, indent=2))
         el = time.time() - t0
         mm = metrics(reps, cfg)
         mm['elapsed_seconds'] = round(el, 1)
@@ -228,14 +232,9 @@ def main() -> int:
         mm['cell'] = name
         mm['config'] = cfg
         (outdir / 'metrics.json').write_text(json.dumps(mm, indent=2))
-        o1 = mm['ordering']['s1']
-        print('%-18s R=%4d %6.1fs  s=1 tau: marg %+.3f  cond %+.3f  ipw %+.3f | '
-              'P(top) marg %.3f ipw %.3f | DR bias %+.4f cov %.3f | regret %.4f'
-              % (name, len(reps), el,
-                 o1['naive_marginal']['mean_kendall_tau'], o1['naive_cond']['mean_kendall_tau'],
-                 o1['ipw']['mean_kendall_tau'], o1['naive_marginal']['P_top_arm_correct'],
-                 o1['ipw']['P_top_arm_correct'], mm['value']['dr']['bias'],
-                 mm['value']['dr']['coverage_95'], mm['decision']['mean_regret']))
+        print('%-18s R=%4d %6.1fs | DR bias %+.4f cov %.3f | learned-reference %+.4f'
+              % (name, len(reps), el, mm['value']['dr']['bias'],
+                 mm['value']['dr']['coverage_95'], mm['decision']['mean_learned_minus_reference']), flush=True)
     print('\nwrote', root)
     return 0
 

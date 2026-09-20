@@ -1,30 +1,12 @@
-"""Estimators compared in E0, including the naive comparators the project must beat.
+"""Fitted estimators for the corrected E0 diagnostic grid.
 
-Six objects are compared, and three of them are meant to fail:
-
-  blip_naive_marginal   mean outcome by arm with NO conditioning. This is how a
-                        turn-level feedback comparison read straight off a log
-                        behaves, and it is the target of the project's strongest
-                        negative claim.
-  blip_naive_conditional E[Y | S_1 = s, A_1 = a] - same with STOP. Correct whenever
-                        the observed state blocks all confounding -- which is the
-                        case in this simulator with kappa alone, and is the reason
-                        premise check P1's C3 came out AGAINST the project's original
-                        claim. It fails only once the logging policy tracks the
-                        latent Z (gz > 0).
-  blip_mediator         E[Y | S_2, A_1] averaged over S_2: conditioning on the
-                        intermediate state when valuing the FIRST arm. S_2 is a
-                        mediator of A_1, so this blocks the path being measured. It
-                        is expected to get WORSE with more data, because it converges
-                        to the wrong number.
-  blip_ipw              per-decision inverse-probability weighting with the KNOWN
-                        logging probabilities, continuation fixed to uniform.
-  value_gcomp           iterated-Q g-computation for the value of a fixed regime.
-  value_dr              cross-fitted sequential doubly robust value, with intervals
-                        from task-clustered means.
-
-Every interval is computed over TASK means, never over episodes: episodes of one task
-share its latents, so an episode-level interval would be anticonservative.
+Naive conditional regression estimates logging-continuation association, not the
+uniform-continuation intervention blip. IPW includes the initial inverse assignment
+factor and subsequent target/logging ratios. Sequential Q is fitted on compressed
+(state,time); known recorded logging probabilities supply the DR correction.
+Persistent latents can invalidate a Markov interpretation of that Q. Intervals are
+calculated from equal task means, not treated as independent episodes. Read the
+2026-09-20 corrected report for estimand and precision limits.
 """
 from __future__ import annotations
 
@@ -79,7 +61,9 @@ def blip_mediator(d, s: int) -> dict:
 def blip_ipw(d, s: int, T: int, continuation: np.ndarray = UNIF5) -> dict:
     """Hajek per-decision IPW for gamma_1(s, a, STOP) with a fixed continuation."""
     m0 = d['elig'][:, 0] & (d['S'][:, 0] == s)
-    W = np.ones(len(d['Y']))
+    # Within (S_1, A_1), inverse first-action propensity restores P(E,Z|S_1).
+    # Omitting this factor is valid only when b_1 is constant in that stratum.
+    W = 1.0 / d['B'][:, 0]
     for t in range(1, T):
         el = d['elig'][:, t]
         W[el] *= continuation[d['A'][el, t]] / d['B'][el, t]

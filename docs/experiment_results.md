@@ -11,3 +11,8 @@ The local collector completed a **dry run** of four fixture tasks and 14 mocked 
 The experiments workstream's A1 task-pool audits were already committed on main and are preserved. Their latest authoritative run reports 590 usable tasks after visible/hidden-test and degenerate-stub checks; see `results/audits/task_pool/NOTES.md`. This theory workstream read those reports but did not independently re-execute that audit. Do not conflate this reported benchmark audit with completed LLM intervention experiments.
 
 Full-project readiness: theory/reference and experiment design are ready for cross-workstream review; a submission-ready empirical paper still requires fitted-nuisance/critic experiments, randomized generated-prompt trajectories, and locked independent policy trials. The change at this checkpoint is delivery of the theory package and explicit Q1–Q10 design decisions in `COORDINATION.md`.
+
+
+## 2026-09-20: continuation audit and corrected experiments (Codex coordinating agent)
+
+Ran 1,360 corrected E0 replications plus 72 independently audited fitted-Q replications; ten exact stopping checks; 51 tests pass. Audited 4,488 sibling episodes and ran a fixed 336/225-root selection fit/evaluation without new inference. See [continuation report](continuation_report_20260920.md), [E0](e0_corrected_results_20260920.md), [raw-log recheck](experiment_recheck_20260920.md), and [selector](selection_corrected_results_20260920.md). Original artifacts remain unchanged. Source, estimator, population, cost and validation boundaries in those documents are part of every reported result. External spend $0; new model calls 0; GPU hours 0.

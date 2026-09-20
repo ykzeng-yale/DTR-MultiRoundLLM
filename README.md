@@ -10,6 +10,14 @@ Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and
 
 The [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
+## Latest continuation — 20 September 2026
+
+Read the [continuation report](docs/continuation_report_20260920.md) first. It supersedes earlier blanket “kill criterion fired,” “no learnable feature signal,” and unqualified stopping/ESS claims. The Sept 19 PDF remains a historical snapshot.
+
+**Completed:** ten additional scoped theory results, 1,360 corrected simulation replications, an independent audit of 4,488 existing episodes, a corrected fixed-bank selector pilot, and 51 passing tests. The 7B logistic selector shows an exploratory +2.85 percentage-point gain on a reused task split; this is not a confirmed prompt-treatment or adaptive-cost improvement. No new model inference was used.
+
+**Still required:** a frozen design, new family-separated validation, and actual randomized next-prompt/continuation experiments. The original goal of personalized causal prompt evaluation remains distinct from choosing among initial answers. See [status](docs/project_status.md), [new theory](docs/theory_addendum_20260920.md), [corrected simulations](docs/e0_corrected_results_20260920.md), and [selection results](docs/selection_corrected_results_20260920.md).
+
 ## Start here
 
 | Document | Purpose |
@@ -43,7 +51,7 @@ Free-form candidates are allowed. Randomized selection identifies supported comp
 
 ## Run the reference checks
 
-Python 3.10+ and `uv` are recommended. No paid model calls are used by these commands.
+Python 3.12+ and `uv` are recommended. No paid model calls are used by these commands.
 
 ```bash
 uv run --extra dev pytest -q
