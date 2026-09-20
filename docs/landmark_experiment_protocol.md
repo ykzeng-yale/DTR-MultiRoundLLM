@@ -1,0 +1,52 @@
+# Landmark prompt-choice experiment: reviewable collection contract
+
+20 September 2026. This implements the next scientific step in the [governing judgment](scientific_judgment_20260920.md). **Status: protocol and harness development; not a frozen real-model trial.** The receiver, fresh task source and evaluator contract must be completed before a real-run manifest can pass. The available benchmark roots are reused development material.
+
+## Question and scope
+
+For a fixed receiver and a declared distribution of initial conversation histories, can a policy using public history choose a supported next prompt that improves expected final quality over a competent fixed prompt at the same continuation horizon? This is a conditional mean decision problem, not identification of the realized effect for one conversation. The first experiment ends after one additional receiver response. It cannot establish the value of a long autonomous regime under the different histories that regime would induce.
+
+There are two separate stages. A bounded development batch validates the observation and intervention contract and estimates feasibility/variance. A later locked policy comparison requires an untouched root/family evaluation set. Collecting new responses to already inspected tasks is new interaction data on reused tasks, not fresh out-of-task confirmation.
+
+## Intervention contract and competing explanations
+
+Generate one initial answer from a pinned system message and public task. Preserve that complete prefix, exact messages and hashes. The development harness evaluates each named continuation on independent restored branches, in randomized order with separately recorded seed streams. All three arms are evaluated: branch inclusion probability is one, not a fabricated one-third treatment propensity. Randomized order is a scheduling design and its probability has a different meaning. A later single-action logger must explicitly use and log its actual assignment probabilities.
+
+| Arm | Permitted input and operation | Question it addresses |
+|---|---|---|
+| Generic repair | Exact initial prefix plus a frozen generic revision instruction | Does another attempt retaining the first answer help? |
+| History-specific repair | The same prefix and public information plus a deterministic, frozen instruction derived from it | Does this specified history-dependent wording help beyond generic revision? |
+| Independent restart | Same original task/public information and receiver, without the initial assistant answer | Is retained answer/context better than spending the call on an independent draw? |
+| STOP | Accept the existing initial answer; no further generation | Is another call worthwhile? |
+
+Restart deliberately changes the receiver context; it is a different continuation strategy, not a clean comparison of wording alone. Both repair arms must have identical answer-relevant public evidence. If a public check is run after the initial answer, both receive the same raw check result before their different instructions. Do not provide a hidden failure trace, reference answer, or selected grading input to any arm. Hidden outcomes enter only the offline grader. A simple format/structure-derived prompt is a limited intervention and must not be described as a trained semantic critic.
+
+Run two independent continuation seeds per arm in the proposed development batch. This gives a first indication of receiver noise; it does not provide accurate pointwise confidence intervals or a new pair of independent tasks. Evaluate all frozen arms irrespective of initial hidden correctness or public-pass status. A checker pass does not terminate the mechanism comparison; public-check absence is recorded as absence, not success. This all-branch design is distinct from a deployment stopping policy.
+
+## Measurement and immutable records
+
+The public task file is strictly separated from a private grading file. Freeze their versions/hashes and root mapping; verify that hidden scores cannot enter requests, prompt rendering, action selection or public logs. A usable scoring contract needs reference acceptance, deliberately wrong/control rejection, split provenance, and sandbox isolation; syntactic nonoverlap alone does not establish semantic isolation. Preserve the old full-benchmark labels as a different endpoint.
+
+Store every assigned root and arm/replicate slot, requests/responses, exact prompts, common-prefix identity, randomized execution order, seeds, model and service identity, decoding/context limits, input/output usage, timing, source hashes, failures and missing grading. No successful-output filtering. A service failure can be a zero under a declared deployment-success endpoint; an absent evaluator result remains missing. The current analyzer must report bounds or suppress an efficacy estimate when its required outcome is missing; never silently drop incomplete pairs.
+
+Before actual collection, the environment adapter must show that restored branches do not share mutable conversation, tool or cache state that changes their outcome law. Passing the same client messages is a necessary record, not sufficient proof of server independence. A model digest and server/template version must be independently verified, not merely copied from a user-supplied label. Avoid silent context truncation and record the tokenization/context contract.
+
+## Analysis and advancement
+
+Average repetitions within each root before forming paired arm or policy contrasts. Split training, development and evaluation at the root/family level. A selector is frozen using training/development only and may access only deployment-available inputs. The fixed comparator is selected on training data, never retrospectively on evaluation outcomes. Report both repair contrasts and restart/STOP context; do not pick the favorable contrast after seeing the results.
+
+**A zero marginal prompt effect is not a stopping rule.** Opposite useful effects at different histories can cancel. Conversely, the best observed outcome among noisy branches is not an attainable conditional-mean oracle. Use the [landmark theory](landmark_prompt_theory.md) and [known-truth premise study](landmark_premise_results_20260920.md) to distinguish average effects, predictable conditional differences, learned-policy gain, and post-outcome selection. Merely observing different scores across branches does not prove exploitable heterogeneity.
+
+The development batch's success criterion is valid collection and interpretable uncertainty, not statistical superiority. Before a confirmatory trial, fix one primary policy contrast, an application-justified useful-gain threshold, confidence level, target precision and resource constraint. A lower confidence bound above zero supports superiority; a lower bound above the useful-gain threshold supports that stronger claim. An upper bound below the threshold supports futility for that declared benefit, while a wide interval is inconclusive. Adjust for any multiple primary claims and allow the noncausal-branded, history-adjusted learner to win.
+
+For an independently sampled paired binary contrast, planning uses `Var(D)=p_gain+p_harm−Delta^2` on all roots, not only oracle opportunities. The usual normal approximation is `n≈(1.96+.84)^2 Var(D)/delta^2`; this is a planning illustration, not a guarantee. At delta=.03 and total discordance .10/.30/.50, the approximation needs about 864/2,606/4,348 roots. Family dependence increases the requirement. Repeated branches can lower conditional seed noise but do not remove between-root variation. Use pilot variance with a justified allowance for its uncertainty and freeze the final design before evaluating the policy.
+
+## Proposed bounded development budget
+
+Use at most 24 explicitly development-only roots × (one initial call + three arms × two repetitions) = **168 calls**, with at most **512 completion tokens per call**, **86,016 reserved completion tokens**, **20 minutes**, and **$0 external spend**. These are ceilings, not authority to launch an incomplete manifest. Record prompt tokens separately; a completion-token reservation is not an exact total-token cap. Require an 8,192-token context contract or revise/freeze it explicitly for the selected receiver. No service startup that disrupts a concurrent job; no new large model download or training.
+
+If a smaller cached receiver is used for engineering feasibility, name it explicitly and do not extend the earlier 3B/7B empirical claims to it. The current absence of a running service is not an efficacy finding. The lack of untouched available roots prevents confirmatory labeling, not CPU development or an honestly labeled reused-task pilot.
+
+## Required before real-run release
+
+The release manifest must pin the exact receiver/digest, server and template, dataset and prior-use exclusions, family split, evaluator/sandbox, initial/prompt renderer, seed/order design, failure endpoint, costs, code/config hashes and numerical ceilings. A clean committed freeze and measured environment preflight must precede calls. The present mock tests and synthetic study validate software/statistical contracts only. They do not substitute for that release or demonstrate prompt improvement.

@@ -76,9 +76,10 @@ The current governing judgment is `docs/scientific_judgment_20260920.md`.
 * Commit as **`Yukang Zeng <ykzeng2019@gmail.com>`** (owner's instruction, 2026-09-20).
   Set it once per clone with `git config user.name/user.email`; do not pass a different
   identity with `git -c`. **Do not add `Co-Authored-By:` trailers for the assistant.**
-  Earlier commits carry `ykzeng-yale <yukang.zeng@yale.edu>` and some carry an assistant
-  co-author trailer; published history is left alone because rewriting it would orphan the
-  commits another workstream's branch descends from.
+  At the owner's explicit request, historical identity metadata was corrected across all
+  three branches on September 20. The old-to-new map is in PR #6's attribution comment.
+  Use the current ancestry; never merge old ancestry back. That completed one-time
+  correction does not authorize future force-pushes.
 * Raw third-party data and large artifacts stay in gitignored `work/`.
 * Never commit credentials, private datasets, or personal messages. Inspect
   staged files before pushing.

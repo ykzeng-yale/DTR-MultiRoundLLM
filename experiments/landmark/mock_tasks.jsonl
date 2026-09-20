@@ -1,0 +1,2 @@
+{"root_id":"mock-a","family_id":"mock-family-a","prompt":"Return a short explanation of how to add two integers.","public_context":"This is an ungraded transport fixture."}
+{"root_id":"mock-b","family_id":"mock-family-b","prompt":"Explain how to inspect a loop's boundary condition.","public_context":"This is an ungraded transport fixture."}

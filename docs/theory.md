@@ -559,3 +559,8 @@ The proofs in this document are supplied explicitly for this project's notation 
 * van der Laan, M. J. and Luedtke, A. R. (2015). [Targeted Learning of the Mean Outcome under an Optimal Dynamic Treatment Rule](https://pmc.ncbi.nlm.nih.gov/articles/PMC4517487/). Dynamic-rule learning and data-adaptive targets.
 
 The attachment's recent paper titles, venue-status claims, and claims that a research area is unoccupied are research leads, not assumptions or validated novelty evidence for these theorems. The separate literature audit controls those statements.
+
+
+## Operational landmark design: next-prompt personalization
+
+The [landmark theory supplement](landmark_prompt_theory.md) specializes this general framework to the next bounded experiment. It proves the distinction between zero average arm contrast and positive personalization headroom, separates public-information/checkpoint/sample-max oracles, gives a conditional-mean error bound for greedy policy regret, and derives paired-root variance with repeated branches. Its transport discussion limits a one-decision result to the declared prefix and continuation law. These are scoped applications of established ideas, not claims of new foundational DTR theory. Exact checks and the separately frozen known-truth premise simulation accompany the supplement; neither establishes natural-language prompt efficacy.

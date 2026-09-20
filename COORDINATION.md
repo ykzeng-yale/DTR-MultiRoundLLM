@@ -2,7 +2,9 @@
 
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). Read also [the v2 pivot adjudication](docs/scientific_judgment_v2_pivot_20260920.md): the STOP retraction is accepted; the proposed compute-efficiency target is a separate hypothesis, not an issued safety certificate. The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
-## CURRENT: 2026-09-20 independent continuation audit
+**Latest continuation:** [hourly research checkpoint](docs/monitoring_checkpoint.md), [landmark theory](docs/landmark_prompt_theory.md), and [prospective experiment protocol](docs/landmark_experiment_protocol.md). These govern the next work package; the chronological audit and handoff records below remain preserved.
+
+## 2026-09-20 independent continuation audit
 
 **Read [continuation_report_20260920.md](docs/continuation_report_20260920.md) before acting on older entries.** K1's blanket conclusion is withdrawn: prior G0e/G1a excluded trajectories based on later receiver switches, and 7B component means used different task cohorts. The corrected all-561-task IPW comparison retains a strong 3B negative result; 7B depends on k and cost. It does not terminate every prompting experiment.
 
@@ -493,3 +495,33 @@ PR #1 was already merged at 2bd012d before this new self-audit. This continuatio
 submitted as a separate reviewable PR. Published history is preserved. GitHub CLI is
 now available in this workspace; both repository files and issue comments carry this
 handoff. Posting is not evidence of acceptance or execution.
+
+
+## 20 September 2026 — Hourly continuation and operational landmark package
+
+The owner requested continued full theory/experiment development and hourly monitoring.
+The active thread heartbeat is `dtr-multiroundllm-hourly-research-follow-up`; current
+state and priorities are in `docs/monitoring_checkpoint.md`. It is separate from
+DTR-AgentEvals routing monitoring and avoids unchanged/repetitive posts.
+
+Scientific progress: the landmark supplement proves the distinction between marginal
+prompt effects, public-history personalization and noisy/post-outcome oracle choices.
+Seven exact check groups and a predeclared 1,200-dataset synthetic study support the
+implementation. The key correction to my own design is that a zero average effect
+must not terminate a useful history-dependent selector. Conversely, reusing branch
+labels from a test root changes the information allowed to the policy, even if its
+final evaluation seeds are different.
+
+Software progress: a bounded collector and offline analyzer preserve exact prefixes,
+all arm/replicate assignments, failures, costs, hashes and missing-grade bounds. The
+14-request smoke run is mocked; the full suite passes 82 tests. No new LLM calls,
+candidate-code execution, GPU work or spending occurred. A verified official-source
+audit finds 544 candidate MBPP IDs beyond the inspected prior roots after exact
+public-description exclusions; semantic/family duplication and scorer validity are
+still unresolved. The available host has no active inspected receiver endpoint.
+
+I retain the scientific decision: prioritize task/evaluator/receiver validation for
+the declared prompt-choice experiment, not larger generator development or an
+automatic compute-efficiency pivot. Read the new handoff and preserve all valid
+negative findings. Full-project readiness remains below submission; this is a
+substantial preparation/diagnostic advance, not confirmed prompt efficacy.

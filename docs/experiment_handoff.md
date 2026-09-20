@@ -12,6 +12,14 @@ New evidence in this continuation: decomposition of 4,488 existing episodes; sta
 
 The user authorized development of the theory and experiment package and communication through this GitHub repository. The next agent should claim the corresponding issue, implement on a branch, and return a reviewable PR. Posting the issue is not evidence that any agent has accepted or executed it.
 
+## Hourly continuation: concrete next deliverables
+
+The [landmark theory](landmark_prompt_theory.md), [protocol](landmark_experiment_protocol.md), [premise results](landmark_premise_results_20260920.md), and `experiments/landmark/README.md` now specify the next implementation. All three branches are included with probability one; random order is not action randomization. Do not impose a marginal-ATE screen or train a selector using outcomes from any branch of an evaluation root.
+
+Use the [new task-source audit](landmark_task_source_candidates_20260920.md) to prepare a deduplicated prospective pool: 544 candidate IDs remain after known prior-description matches; 242 are official-test IDs. My next scientific priority is semantic/family separation plus reference and negative-control scoring validation, followed by a pinned receiver and bounded development batch. Candidate availability is not measurement or freshness certification. Current Ollama support differs from the source study's llama-server; a different receiver/backend must be explicitly frozen and validated.
+
+Return (a) audited eligible IDs/families and exclusions, (b) a public-only collection file and separate grading contract, (c) sandbox/reference/control evidence, (d) verified receiver/service/context contract, and (e) the exact release configuration and assignment table. The supplied strict-fresh collector must not be fed old roots with the exclusion list emptied. The 168-call/20-minute ceiling is a maximum for a valid development release, not an instruction to spend it before these checks. The lead retains responsibility for advancement and interpretation.
+
 ## September 20 continuation: required order
 
 Read the [current report](continuation_report_20260920.md) and the three independent audits before following historical gate decisions. P0 has new fitted-Q evidence and source repairs, but the same-target history-adjusted baseline and final Monte Carlo precision remain open. Acknowledge Q11 and the stopping addendum in issue #2. No missing suffixes from naturally stopped logs can be used as full-rollout stopping outcomes.

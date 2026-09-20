@@ -1,0 +1,22 @@
+{
+  "evidence_type": "synthetic_known_truth",
+  "plan": "docs/landmark_premise_simulation_plan.md",
+  "plan_freeze_commit": "4f957af",
+  "code_revision": "4f957af1f751fd71e48f13dc375b54219141e082",
+  "script_sha256": "0407245b2cbd280307e0f0799fafb2355cfd6b0ee490befadf5b5eae262e8933",
+  "n_train": 800,
+  "n_test": 800,
+  "replications_per_cell": 300,
+  "datasets": 1200,
+  "paired_policy_evaluations": 2400,
+  "branch_repetition_analyses_are_nested": true,
+  "python": "3.14.4",
+  "numpy": "2.5.3",
+  "wall_seconds": 0.4709011251106858,
+  "llm_calls": 0,
+  "paid_spend_usd": 0,
+  "output_sha256": {
+    "summary.json": "57b402591e497206b0272fa08db1e3fcf596be9f0f992218df57e65c1f36cd10",
+    "replicates.json": "6be2abf6b5566dae5ca03e461b1429daa8c5c67128bd8b86adc06ffafc1e3a30"
+  }
+}

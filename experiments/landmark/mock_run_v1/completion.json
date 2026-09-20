@@ -1,0 +1,40 @@
+{
+  "attempted_calls": 14,
+  "reserved_completion_tokens": 448,
+  "measured_prompt_tokens": 0,
+  "measured_completion_tokens": 0,
+  "attempted_calls_with_unknown_usage": 0,
+  "wall_seconds": 0.0031683752313256264,
+  "model_metadata": {
+    "before": {
+      "name": "MOCK",
+      "digest": "MOCK"
+    },
+    "version": {
+      "version": "MOCK"
+    },
+    "definition": {
+      "template": "MOCK",
+      "parameters": "MOCK",
+      "model_info": {
+        "tokenizer": "MOCK"
+      }
+    },
+    "after": {
+      "name": "MOCK",
+      "digest": "MOCK"
+    },
+    "digest_unchanged": true
+  },
+  "preflight_failure": null,
+  "fatal_error": null,
+  "assigned_roots": 2,
+  "excluded_roots": 0,
+  "paid_api_spend_usd": 0,
+  "candidate_executions": 0,
+  "checksums": {
+    "calls.jsonl": "8a66bf425b61cf3ecab00521a353e53d529ff83187272bfbf3efb9793a363cda",
+    "manifest.json": "5484bbb448a24022b60daf27cbe328d56082be197d957629414a3938027dff85",
+    "roots.jsonl": "233d47f59352bdd36ffb546b987f848cb849ca250d1242181371f7949d90c302"
+  }
+}

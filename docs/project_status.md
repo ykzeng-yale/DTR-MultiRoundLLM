@@ -2,11 +2,13 @@
 
 > **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
-## Current checkpoint — 20 September 2026
+## Current checkpoint — 20 September 2026 hourly continuation
 
-The [continuation report](continuation_report_20260920.md) is the current evidence ledger. Fifty-one tests pass; 1,360 corrected fitted-Q E0 replications and 72 independent audit replications ran; ten stopping identities passed; existing real-model logs were reanalysed; a fixed-bank selector pilot found an exploratory 7B logistic gain. Zero new model calls/GPU hours or external spend. No prospective prompt-treatment experiment or submission-ready package is claimed. The original statements below describe the initial Sept 19 release and remain historical where superseded.
+The [monitoring checkpoint](monitoring_checkpoint.md) records the live schedule and next steps. New work adds [landmark prompt theory](landmark_prompt_theory.md), seven exact check groups, 1,200 known-truth train/test datasets with 2,400 nested evaluations, a bounded collector/offline analyzer and a [reviewable protocol](landmark_experiment_protocol.md). These are theory, simulation and mock-tested software, not a frozen real-model trial. No new model calls, candidate-code execution or external spend occurred. The project remains below submission readiness. PR #1 is merged; PR #6 carries the current continuation and remains subject to review/integration. Historical release statements below are retained as such.
 
-Updated 2026-09-19. This is an initial theory and experimental-development release.
+## Historical initial release — 19 September 2026
+
+The remaining sections preserve the initial theory and experimental-development release. Counts and publication states below describe that release; use the current checkpoint above for present status.
 
 ## Delivered and checked
 
@@ -40,7 +42,7 @@ These are known-truth, fixed-nuisance statistical diagnostics. They do not measu
 
 ## GitHub coordination
 
-The experiments workstream seeded main and committed a task-pool audit while the theory package was being developed. Those files are preserved. The theory package is integrated on `theory/causal-prompt-package`, with direct answers to Q1–Q10 appended to `COORDINATION.md`. Its generated-slate probability design awaits experimental-agent acknowledgement before a freeze. PR/issue links are recorded when posted; publication alone is not acknowledgement or execution. No recurring monitor is configured by this release.
+The experiments workstream seeded main and committed a task-pool audit while the theory package was being developed. Those files are preserved. The theory package is integrated on `theory/causal-prompt-package`, with direct answers to Q1–Q10 appended to `COORDINATION.md`. Its generated-slate probability design awaits experimental-agent acknowledgement before a freeze. PR/issue links are recorded when posted; publication alone is not acknowledgement or execution. No recurring monitor was configured by the initial release; the current hourly heartbeat is recorded above.
 
 ## Usage ledger (this theory/reference workstream only)
 
@@ -48,7 +50,7 @@ Actual paid API spend: **$0**. Actual LLM inference calls: **0**. Training GPU h
 
 ## Published review and execution queue
 
-The theory/reference package is on branch `theory/causal-prompt-package` in [PR #1](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/pull/1), pending integration into main. Direct coordination answers are appended to `COORDINATION.md` in that PR.
+At initial publication, the theory/reference package was on branch `theory/causal-prompt-package` in [PR #1](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/pull/1), then pending integration. PR #1 has since merged. Direct coordination answers are appended to `COORDINATION.md` in that PR.
 
 | Work package | Issue | Observed state at publication |
 |---|---|---|

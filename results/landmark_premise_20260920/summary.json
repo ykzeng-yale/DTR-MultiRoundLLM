@@ -1,0 +1,330 @@
+[
+  {
+    "cell": "homogeneous_null",
+    "branch_repetitions": 1,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": -0.00017500000000000003,
+      "mcse": 0.0006324682012884328
+    },
+    "coverage": {
+      "mean": 0.99,
+      "mcse": 0.005754160919975786
+    },
+    "lower_above_zero": {
+      "mean": 0.006666666666666667,
+      "mcse": 0.004706155586970108
+    },
+    "public_oracle_value": {
+      "mean": 0.65,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.8781749999999999,
+      "mcse": 0.000650825412801865
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.22817499999999996,
+      "mcse": 0.000650825412801865
+    }
+  },
+  {
+    "cell": "homogeneous_null",
+    "branch_repetitions": 4,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": 0.00027916666666666666,
+      "mcse": 0.00031276916130387213
+    },
+    "coverage": {
+      "mean": 0.9833333333333333,
+      "mcse": 0.007403535467669016
+    },
+    "lower_above_zero": {
+      "mean": 0.006666666666666667,
+      "mcse": 0.004706155586970108
+    },
+    "public_oracle_value": {
+      "mean": 0.65,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.779796875,
+      "mcse": 0.00037523834921106546
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.12979687499999998,
+      "mcse": 0.00037523834921106546
+    }
+  },
+  {
+    "cell": "qualitative_interaction",
+    "branch_repetitions": 1,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.19999999999999996,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": 0.20040000000000002,
+      "mcse": 0.0009689766924680205
+    },
+    "coverage": {
+      "mean": 0.9633333333333334,
+      "mcse": 0.01086897062662093
+    },
+    "lower_above_zero": {
+      "mean": 1.0,
+      "mcse": 0.0
+    },
+    "public_oracle_value": {
+      "mean": 0.7999999999999999,
+      "mcse": 6.420585529534508e-18
+    },
+    "public_oracle_gain": {
+      "mean": 0.19999999999999996,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.8791000000000001,
+      "mcse": 0.0006387217237238331
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.07909999999999996,
+      "mcse": 0.0006387217237238331
+    }
+  },
+  {
+    "cell": "qualitative_interaction",
+    "branch_repetitions": 4,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.19999999999999996,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": 0.19968541666666667,
+      "mcse": 0.0006309775351952183
+    },
+    "coverage": {
+      "mean": 0.94,
+      "mcse": 0.013734218672418391
+    },
+    "lower_above_zero": {
+      "mean": 1.0,
+      "mcse": 0.0
+    },
+    "public_oracle_value": {
+      "mean": 0.7999999999999999,
+      "mcse": 6.420585529534508e-18
+    },
+    "public_oracle_gain": {
+      "mean": 0.19999999999999996,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.8150708333333334,
+      "mcse": 0.00038529930947006917
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.015070833333333292,
+      "mcse": 0.00038529930947006917
+    }
+  },
+  {
+    "cell": "weak_interaction",
+    "branch_repetitions": 1,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0370666666666666,
+      "mcse": 0.0006319147405435625
+    },
+    "estimated_policy_gain": {
+      "mean": 0.03707916666666666,
+      "mcse": 0.001160231170463413
+    },
+    "coverage": {
+      "mean": 0.96,
+      "mcse": 0.011332611951597255
+    },
+    "lower_above_zero": {
+      "mean": 0.5733333333333334,
+      "mcse": 0.028603050929618474
+    },
+    "public_oracle_value": {
+      "mean": 0.64,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.03999999999999993,
+      "mcse": 4.0128659559590677e-19
+    },
+    "policy_regret": {
+      "mean": 0.002933333333333328,
+      "mcse": 0.0006319147405435626
+    },
+    "sample_max_value": {
+      "mean": 0.8426541666666666,
+      "mcse": 0.000765020946745574
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.20265416666666664,
+      "mcse": 0.000765020946745574
+    }
+  },
+  {
+    "cell": "weak_interaction",
+    "branch_repetitions": 4,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0370666666666666,
+      "mcse": 0.0006319147405435625
+    },
+    "estimated_policy_gain": {
+      "mean": 0.037491666666666666,
+      "mcse": 0.0007997658048310822
+    },
+    "coverage": {
+      "mean": 0.9633333333333334,
+      "mcse": 0.010868970626620929
+    },
+    "lower_above_zero": {
+      "mean": 0.9266666666666666,
+      "mcse": 0.015075679272821343
+    },
+    "public_oracle_value": {
+      "mean": 0.64,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.03999999999999993,
+      "mcse": 4.0128659559590677e-19
+    },
+    "policy_regret": {
+      "mean": 0.002933333333333328,
+      "mcse": 0.0006319147405435626
+    },
+    "sample_max_value": {
+      "mean": 0.7373729166666667,
+      "mcse": 0.0003845863181719369
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.09737291666666667,
+      "mcse": 0.0003845863181719369
+    }
+  },
+  {
+    "cell": "unavailable_signal",
+    "branch_repetitions": 1,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": -0.0005166666666666666,
+      "mcse": 0.0008087232851314389
+    },
+    "coverage": {
+      "mean": 0.97,
+      "mcse": 0.00986531371603149
+    },
+    "lower_above_zero": {
+      "mean": 0.01,
+      "mcse": 0.005754160919975785
+    },
+    "public_oracle_value": {
+      "mean": 0.6,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.8795916666666667,
+      "mcse": 0.0006569984208009698
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.2795916666666667,
+      "mcse": 0.0006569984208009698
+    }
+  },
+  {
+    "cell": "unavailable_signal",
+    "branch_repetitions": 4,
+    "replications": 300,
+    "true_policy_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "estimated_policy_gain": {
+      "mean": -0.0001427083333333334,
+      "mcse": 0.0005407451151945721
+    },
+    "coverage": {
+      "mean": 0.9766666666666667,
+      "mcse": 0.008730235947285765
+    },
+    "lower_above_zero": {
+      "mean": 0.006666666666666667,
+      "mcse": 0.004706155586970108
+    },
+    "public_oracle_value": {
+      "mean": 0.6,
+      "mcse": 0.0
+    },
+    "public_oracle_gain": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "policy_regret": {
+      "mean": 0.0,
+      "mcse": 0.0
+    },
+    "sample_max_value": {
+      "mean": 0.8154385416666666,
+      "mcse": 0.0003802559777573115
+    },
+    "sample_max_excess_over_public_oracle": {
+      "mean": 0.21543854166666668,
+      "mcse": 0.00038025597775731155
+    }
+  }
+]

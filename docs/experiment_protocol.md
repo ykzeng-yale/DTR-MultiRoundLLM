@@ -4,6 +4,8 @@
 
 Status: prespecified development plan; confirmatory claims remain pending. The default budget is **$0 paid API spend**. Local runs require an explicit call/time cap. Hardware-intensive training belongs to a separately budgeted issue. The root task/family, not each branch or turn, is the independent sampling unit.
 
+The concrete next study is now the [landmark prompt-choice protocol](landmark_experiment_protocol.md), supported by [landmark theory](landmark_prompt_theory.md) and the [personalization premise simulation](landmark_premise_results_20260920.md). It is not yet a frozen real-model trial. A zero marginal arm effect is not a personalization futility gate; evaluate a frozen public-history selector on independent roots instead of selecting the best observed branch.
+
 ## Questions, estimands, and decision criteria
 
 | Study | Question | Primary target | Criterion / interpretation |

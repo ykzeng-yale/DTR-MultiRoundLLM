@@ -1,0 +1,266 @@
+{
+  "evidence_type": "mock_transport_only",
+  "config_sha256": "1229e64cd6cf50d381864265cd8b1ff2928501ffdf29c16cbda95c94722781ab",
+  "collection_manifest_sha256": "5484bbb448a24022b60daf27cbe328d56082be197d957629414a3938027dff85",
+  "grades_sha256": null,
+  "split": "all",
+  "assigned_roots": 2,
+  "excluded_roots": 0,
+  "receiver_identity_gate": true,
+  "quality": {
+    "stop": {
+      "observed": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_replicate_reasons": {
+        "not_yet_graded": 2
+      },
+      "all_assigned_mean_bounds": [
+        0.0,
+        1.0
+      ]
+    },
+    "generic_repair": {
+      "observed": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_replicate_reasons": {
+        "not_yet_graded": 4
+      },
+      "all_assigned_mean_bounds": [
+        0.0,
+        1.0
+      ]
+    },
+    "history_specific_repair": {
+      "observed": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_replicate_reasons": {
+        "not_yet_graded": 4
+      },
+      "all_assigned_mean_bounds": [
+        0.0,
+        1.0
+      ]
+    },
+    "independent_restart": {
+      "observed": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_replicate_reasons": {
+        "not_yet_graded": 4
+      },
+      "all_assigned_mean_bounds": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "contrasts": {
+    "history_specific_repair_minus_generic_repair": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "generic_repair_minus_independent_restart": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "history_specific_repair_minus_independent_restart": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "generic_repair_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "history_specific_repair_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    },
+    "independent_restart_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 0,
+        "n_families": 0,
+        "mean": null,
+        "se": null,
+        "ci95": null
+      },
+      "missing_pair_roots": 2,
+      "all_assigned_mean_bounds": [
+        -1.0,
+        1.0
+      ]
+    }
+  },
+  "realized_cost": {
+    "stop": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 1.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 3.7704594433307648e-06,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      }
+    },
+    "generic_repair": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 6.22868537902832e-06,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      }
+    },
+    "history_specific_repair": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 7.062219083309174e-06,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      }
+    },
+    "independent_restart": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 7.0410314947366714e-06,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 0.0,
+        "known_roots": 2,
+        "unknown_roots": 0
+      }
+    }
+  },
+  "interpretation": "Frozen finite-prompt landmark comparison; no learned policy or full DTR-value claim. Complete-case estimates select a population when outcomes are missing. Bounds retain all assigned roots. Mock outcomes are not empirical evidence.",
+  "actual_collection_cost": {
+    "attempted_calls": 14,
+    "reserved_completion_tokens": 448,
+    "measured_prompt_tokens": 0,
+    "measured_completion_tokens": 0,
+    "attempted_calls_with_unknown_usage": 0,
+    "wall_seconds": 0.0031683752313256264,
+    "paid_api_spend_usd": 0
+  }
+}

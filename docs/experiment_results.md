@@ -21,3 +21,10 @@ Ran 1,360 corrected E0 replications plus 72 independently audited fitted-Q repli
 ## 2026-09-20: scientific self-audit and mechanism diagnosis
 
 The coordinating agent owns the original design and interpretation. See [scientific judgment](scientific_judgment_20260920.md) for the decision. New diagnostic work retained all 4,488 episodes, identified 90 roots without substantive public checks, decomposed repair gains/losses, tested selector sensitivity across ten overlapping splits, and ran 400 matched-fit regression/DR diagnostic runs (79 base seeds overlap the prior grid; no cross-study pooling). No new model calls, candidate-code executions, GPU hours or external spend. This evidence strengthens the diagnosis and narrows the program; it does not establish personalized prompt efficacy.
+
+
+## 20 September 2026 — Landmark theory and personalization premise (scientific lead)
+
+The [new report](landmark_premise_results_20260920.md) records 1,200 simulated train/test datasets (four conditions ×300) and two nested replication analyses per dataset. Marginal arm effects are zero in all four declared laws; useful history-based selection is recovered only where its information is available. Seven exact theory-check groups include the information/noise oracle distinction, root-label leakage, regret and clustered variance. This is synthetic evidence for interpretation and implementation, not LLM efficacy.
+
+The new collector/analyzer executes a two-root mock run (14 mocked requests, zero receiver calls) and preserves absent grades as missing bounds. The full project suite passes 82 tests. The prospective source audit finds 544 additional MBPP candidate IDs after known description exclusions, not 544 validated fresh tasks. Current receiver/evaluator/family gates remain open. No candidate-code execution, GPU/model calls or external spending occurred in this continuation.

@@ -1,5 +1,7 @@
 # DTR-MultiRoundLLM
 
+> **Hourly continuation:** [landmark prompt theory](docs/landmark_prompt_theory.md), [personalization simulation](docs/landmark_premise_results_20260920.md), [next experiment protocol](docs/landmark_experiment_protocol.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
+
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
 **Causal value models and generative prompting policies for multi-round LLM interaction.**
@@ -10,15 +12,15 @@ This repository contains a developed theory and experiment package, a tested fin
 
 Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and the theory responses to Q1–Q10. Existing task-pool audits and sandbox tooling are preserved; their execution is attributed separately.
 
-The [updated research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
+The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. It predates the later scientific self-audit and landmark supplement; the current editable documents govern. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
 ## Latest continuation — 20 September 2026
 
-Read the [continuation report](docs/continuation_report_20260920.md) first. It supersedes earlier blanket “kill criterion fired,” “no learnable feature signal,” and unqualified stopping/ESS claims. The Sept 19 PDF remains a historical snapshot.
+Read the [scientific judgment](docs/scientific_judgment_20260920.md) and [hourly checkpoint](docs/monitoring_checkpoint.md) first. The latest addition is a rigorous [landmark design](docs/landmark_prompt_theory.md) with seven exact check groups, a known-truth personalization study with 1,200 datasets and 2,400 nested evaluations, and a bounded mock-tested collector/offline analyzer. **82 tests pass.** A zero average arm contrast does not rule out personalized benefit; a best-observed-branch gain does not establish deployable benefit.
 
-**Completed:** ten additional scoped theory results, 1,360 corrected simulation replications, an independent audit of 4,488 existing episodes, a corrected fixed-bank selector pilot, and 53 passing tests. The 7B logistic selector shows an exploratory +2.85 percentage-point gain on a reused task split; this is not a confirmed prompt-treatment or adaptive-cost improvement. No new model inference was used.
+The [task-source audit](docs/landmark_task_source_candidates_20260920.md) identifies 544 candidate MBPP IDs after known prior-description exclusions, including 242 official-test IDs. These are not yet a validated fresh family-separated evaluation set. No new receiver calls or candidate-code executions occurred. The [prior continuation report](docs/continuation_report_20260920.md) and immutable diagnostics remain available; the previously highlighted 7B +2.85-point split is exploratory and split-sensitive.
 
-**Still required:** a frozen design, new family-separated validation, and actual randomized next-prompt/continuation experiments. The original goal of personalized causal prompt evaluation remains distinct from choosing among initial answers. See [status](docs/project_status.md), [new theory](docs/theory_addendum_20260920.md), [corrected simulations](docs/e0_corrected_results_20260920.md), and [selection results](docs/selection_corrected_results_20260920.md).
+**Still required:** audited task families and evaluator, pinned live receiver, frozen collection contract, actual prompt-intervention data and independent policy validation. The full project is not submission-ready. Larger generator development remains conditional on the prompt-choice premise.
 
 ## Start here
 

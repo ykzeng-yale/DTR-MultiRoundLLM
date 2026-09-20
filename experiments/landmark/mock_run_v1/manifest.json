@@ -1,0 +1,170 @@
+{
+  "schema_version": "landmark-v1",
+  "evidence_type": "mock_transport_only",
+  "config": {
+    "schema_version": "landmark-v1",
+    "protocol_version": "MOCK-SCAFFOLD-v1",
+    "freeze_commit": "HEAD",
+    "model": "MOCK",
+    "model_digest": "MOCK",
+    "server_build": "MOCK",
+    "base_url": "http://127.0.0.1:11434",
+    "seed": 20260920,
+    "split_seed": 731,
+    "split_fractions": [
+      0.6,
+      0.2,
+      0.2
+    ],
+    "prior_seen_root_ids": [],
+    "prior_seen_family_ids": [],
+    "branch_replicates": 2,
+    "max_calls": 14,
+    "max_completion_tokens": 448,
+    "max_tokens_per_call": 32,
+    "max_seconds": 30,
+    "request_timeout_seconds": 10,
+    "max_request_bytes": 16384,
+    "decoding": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "num_ctx": 8192
+    },
+    "dataset_sha256": "REQUIRED_FOR_REAL",
+    "source_code_sha256": "REQUIRED_FOR_REAL",
+    "grading_contract_sha256": "MOCK_NO_GRADING",
+    "dataset_source": "synthetic transport fixtures",
+    "dataset_license": "repository test fixtures",
+    "paid_api_budget_usd": 0
+  },
+  "config_sha256": "1229e64cd6cf50d381864265cd8b1ff2928501ffdf29c16cbda95c94722781ab",
+  "dataset_sha256": "238dd511280bca254d421a3551effc2187488e63206189f79948987ade4d4f9a",
+  "source_hashes": {
+    "__init__.py": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+    "analyze.py": "5d4219c20b7e71552ecc4e7a4dbcaf7c8caa98c6a05915388946948c93ed4eb4",
+    "collect.py": "822e50c8b72b70a50fdee90ab6c436ca402934a4ef633a2e0f8542972e278c27"
+  },
+  "source_code_sha256": "0c0192f47e213c3ed9dc310f29a1881eecab55a9c7a1f3e96790c9c33a36946b",
+  "freeze": {
+    "resolved_commit": null,
+    "status": "mock_not_frozen"
+  },
+  "tasks": [
+    {
+      "root_id": "mock-a",
+      "family_id": "mock-family-a",
+      "prompt": "Return a short explanation of how to add two integers.",
+      "public_context": "This is an ungraded transport fixture."
+    },
+    {
+      "root_id": "mock-b",
+      "family_id": "mock-family-b",
+      "prompt": "Explain how to inspect a loop's boundary condition.",
+      "public_context": "This is an ungraded transport fixture."
+    }
+  ],
+  "assignment_table": [
+    {
+      "root_id": "mock-a",
+      "family_id": "mock-family-a",
+      "split": "train",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "independent_restart",
+          "replicate": 1
+        },
+        {
+          "arm": "history_specific_repair",
+          "replicate": 1
+        },
+        {
+          "arm": "history_specific_repair",
+          "replicate": 0
+        },
+        {
+          "arm": "generic_repair",
+          "replicate": 0
+        },
+        {
+          "arm": "generic_repair",
+          "replicate": 1
+        },
+        {
+          "arm": "independent_restart",
+          "replicate": 0
+        }
+      ],
+      "seeds": {
+        "initial": 1492567023,
+        "generic_repair:0": 257250723,
+        "generic_repair:1": 1838087170,
+        "history_specific_repair:0": 1825541702,
+        "history_specific_repair:1": 408343218,
+        "independent_restart:0": 2102176306,
+        "independent_restart:1": 330385797
+      }
+    },
+    {
+      "root_id": "mock-b",
+      "family_id": "mock-family-b",
+      "split": "train",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "independent_restart",
+          "replicate": 0
+        },
+        {
+          "arm": "history_specific_repair",
+          "replicate": 1
+        },
+        {
+          "arm": "generic_repair",
+          "replicate": 0
+        },
+        {
+          "arm": "history_specific_repair",
+          "replicate": 0
+        },
+        {
+          "arm": "independent_restart",
+          "replicate": 1
+        },
+        {
+          "arm": "generic_repair",
+          "replicate": 1
+        }
+      ],
+      "seeds": {
+        "initial": 842099891,
+        "generic_repair:0": 1668724892,
+        "generic_repair:1": 38767001,
+        "history_specific_repair:0": 1149251127,
+        "history_specific_repair:1": 1740739132,
+        "independent_restart:0": 1564119248,
+        "independent_restart:1": 2017955000
+      }
+    }
+  ],
+  "assignment_table_sha256": "bfc499d15e55a81e1e72e8884bba6ffc2df547a2810aebb49882ca505b6ff6ca",
+  "planned_calls": 14,
+  "design": "All three branches are collected; inclusion probability one. Order is randomized, not treatment assignment.",
+  "system": "Complete the public task. Use only the information supplied in this conversation.",
+  "generic_renderer": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+  "targeted_renderer": {
+    "loop": "Review the iteration boundaries and empty-input behavior of your previous answer against the original task and public information. Return your best complete answer.",
+    "division": "Review division, rounding, and zero-denominator behavior in your previous answer against the original task and public information. Return your best complete answer.",
+    "fallback": "Check whether your previous answer satisfies each requirement in the original task and public information. Resolve any discrepancy and return your best complete answer."
+  },
+  "limits": [
+    "No hidden grades or candidate execution in collector",
+    "Syntactic feedback scaffold, not validated semantic personalization",
+    "Completion-token reservation is hard; input tokens are measured separately",
+    "No tokenizer/truncation certification; real feasibility must audit context handling",
+    "Client deadline prevents dispatch; timed-out server computation may continue",
+    "Branch noise independence and server statelessness require audit"
+  ]
+}

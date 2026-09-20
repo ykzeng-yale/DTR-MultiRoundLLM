@@ -1,0 +1,238 @@
+{
+  "evidence_type": "exact_finite_law_theory_checks",
+  "source_sha256": "dc95ad8dcb86c63948d0894e23c4496c2420031a8d70cffd21ba182cef03ab35",
+  "python": "3.14.4",
+  "check_groups": 7,
+  "all_assertions_passed": true,
+  "model_calls": 0,
+  "paid_spend_usd": 0,
+  "checks": {
+    "zero_ate_personalization": {
+      "marginal_arm_values": [
+        {
+          "exact": "3/5",
+          "decimal": 0.6
+        },
+        {
+          "exact": "3/5",
+          "decimal": 0.6
+        }
+      ],
+      "ate": {
+        "exact": "0",
+        "decimal": 0.0
+      },
+      "public_oracle": {
+        "exact": "4/5",
+        "decimal": 0.8
+      },
+      "personalization_gain": {
+        "exact": "1/5",
+        "decimal": 0.2
+      },
+      "homogeneous_large_ate_but_no_personalization": {
+        "ate": {
+          "exact": "2/5",
+          "decimal": 0.4
+        },
+        "best_fixed_and_oracle": {
+          "exact": "4/5",
+          "decimal": 0.8
+        },
+        "personalization_gain": {
+          "exact": "0",
+          "decimal": 0.0
+        }
+      }
+    },
+    "oracle_gaps": {
+      "homogeneous_null": {
+        "public_and_checkpoint_oracle": {
+          "exact": "13/20",
+          "decimal": 0.65
+        },
+        "expected_sample_max": {
+          "1": {
+            "exact": "351/400",
+            "decimal": 0.8775
+          },
+          "2": {
+            "exact": "132119/160000",
+            "decimal": 0.82574375
+          },
+          "4": {
+            "exact": "3990963119/5120000000",
+            "decimal": 0.7794849841796875
+          },
+          "8": {
+            "exact": "487166434187311255091/655360000000000000000",
+            "decimal": 0.7433569857594471
+          }
+        }
+      },
+      "unavailable_signal": {
+        "public_oracle": {
+          "exact": "3/5",
+          "decimal": 0.6
+        },
+        "checkpoint_oracle": {
+          "exact": "4/5",
+          "decimal": 0.8
+        },
+        "irreducible_information_gap": {
+          "exact": "1/5",
+          "decimal": 0.2
+        },
+        "expected_sample_max": {
+          "1": {
+            "exact": "22/25",
+            "decimal": 0.88
+          },
+          "2": {
+            "exact": "526/625",
+            "decimal": 0.8416
+          },
+          "4": {
+            "exact": "63734/78125",
+            "decimal": 0.8157952
+          },
+          "8": {
+            "exact": "122638922446/152587890625",
+            "decimal": 0.8037264421421056
+          }
+        }
+      }
+    },
+    "within_root_label_leakage": {
+      "preintervention_public_oracle": {
+        "exact": "3/5",
+        "decimal": 0.6
+      },
+      "use_test_root_labels_then_fresh_evaluation": {
+        "exact": "17/25",
+        "decimal": 0.68
+      },
+      "extra_information_gain": {
+        "exact": "2/25",
+        "decimal": 0.08
+      },
+      "interpretation": "Different information/cost policy; not a valid prefix-only selector."
+    },
+    "randomized_branch_identity": {
+      "personalized_truth": {
+        "exact": "4/5",
+        "decimal": 0.8
+      },
+      "weighted_policy_value": {
+        "exact": "4/5",
+        "decimal": 0.8
+      },
+      "expected_policy_weight": {
+        "exact": "1",
+        "decimal": 1.0
+      },
+      "weighted_arm_values": [
+        {
+          "exact": "3/5",
+          "decimal": 0.6
+        },
+        {
+          "exact": "3/5",
+          "decimal": 0.6
+        }
+      ],
+      "unadjusted_action_group_values": [
+        {
+          "exact": "4/9",
+          "decimal": 0.4444444444444444
+        },
+        {
+          "exact": "26/55",
+          "decimal": 0.4727272727272727
+        }
+      ],
+      "spurious_unadjusted_arm_difference": {
+        "exact": "14/495",
+        "decimal": 0.028282828282828285
+      }
+    },
+    "finite_action_regret": {
+      "grid_cases": 5832,
+      "large_gap_cases": 1257,
+      "error_cap": {
+        "exact": "1/5",
+        "decimal": 0.2
+      },
+      "largest_regret": {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      "factor_two_attained": true
+    },
+    "paired_root_variance": {
+      "between_root_variance": {
+        "exact": "4/25",
+        "decimal": 0.16
+      },
+      "within_root_variance_one_pair": {
+        "exact": "2/5",
+        "decimal": 0.4
+      },
+      "root_contrast_variance_by_repetitions": {
+        "1": {
+          "exact": "14/25",
+          "decimal": 0.56
+        },
+        "2": {
+          "exact": "9/25",
+          "decimal": 0.36
+        },
+        "4": {
+          "exact": "13/50",
+          "decimal": 0.26
+        },
+        "8": {
+          "exact": "21/100",
+          "decimal": 0.21
+        }
+      },
+      "n_times_variance_of_root_mean_at_r4": {
+        "exact": "13/50",
+        "decimal": 0.26
+      },
+      "n_times_naive_variance_treating_4n_pairs_independent": {
+        "exact": "7/50",
+        "decimal": 0.14
+      },
+      "root_variance_at_r4_by_coupling": {
+        "independent": {
+          "exact": "13/50",
+          "decimal": 0.26
+        },
+        "common_uniform": {
+          "exact": "11/50",
+          "decimal": 0.22
+        },
+        "antithetic": {
+          "exact": "8/25",
+          "decimal": 0.32
+        }
+      }
+    },
+    "history_distribution_shift": {
+      "source_history_gain": {
+        "exact": "1/10",
+        "decimal": 0.1
+      },
+      "target_history_gain": {
+        "exact": "-7/10",
+        "decimal": -0.7
+      },
+      "history_reweighted_gain": {
+        "exact": "-7/10",
+        "decimal": -0.7
+      },
+      "invariant_conditional_Q_is_assumed": true
+    }
+  }
+}
