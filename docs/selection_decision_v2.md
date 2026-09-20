@@ -29,6 +29,20 @@ N = 50, and AlphaCode needed ~100,000 draws with >99% filtered.
 assertion), smallest k (3–4 now, 8 planned), and the only quantized receiver anywhere in
 this literature. **So the literature does not settle our case, in either direction.**
 
+### 1a. How much of that literature actually bears on us: 1 paper in 10
+
+The ten papers my search agents rated as critical were then re-checked by independent
+adversarial verifiers, whose default was that the numbers were wrong or misapplied. The
+verdicts: **9 MISAPPLIED, 1 CONFIRMED.** In nearly every case the quoted result depended on a
+larger k, a stronger model, full public test suites, model-written tests, or an oracle we do
+not have.
+
+This is the single most honest summary of the literature's bearing on this project: **the
+published numbers mostly do not transfer to our regime**, in either direction. It is also a
+caution about my own search: the first-pass summaries overstated relevance, and only the
+verification pass caught it. Any future literature claim in this project should carry a
+verification verdict alongside it.
+
 ## 2. Corroboration that is genuinely independent of my broken instrument
 
 My static-feature null was *not* an artifact. İşcan's "capability scissors" reproduces it
