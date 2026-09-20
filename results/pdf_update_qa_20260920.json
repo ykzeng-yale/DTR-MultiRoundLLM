@@ -1,0 +1,11 @@
+{
+  "artifact": "manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf",
+  "sha256": "b3e23752dab9851af4c539e9b9229445786e4b035ddd23699500d8b416ae6379",
+  "pages": 28,
+  "verification": [
+    "All28 pages rendered and visually inspected through contact sheets",
+    "Detailed inspection of simulation and selector tables",
+    "No clipping, overlapping text or missing glyphs observed"
+  ],
+  "scope": "layout validation, not independent proof verification"
+}

@@ -1,5 +1,7 @@
 # Deciding the selection question end to end
 
+> **Historical decision from `0ee7666`; not an accepted research-wide stopping rule.** The [independent source audit](latest_selection_decision_audit_20260920.md) identifies future-routing/failure selection, probe provenance, picker-specification and unmatched-cost problems. The [theory reconciliation, section 6](theory_reconciliation_20260920.md) proves the fixed-bank ceiling but corrects the effective-sample and impossibility claims. The [new selector pilot](selection_corrected_results_20260920.md) has a different four-call target and needs fresh validation. Preserve these scope distinctions.
+
 **Executed 2026-09-20, entirely at zero GPU cost.** Scripts
 `experiments/audits/g1{b,c}_*.py`; outputs under `results/audits/g1b_agreement/` and
 `results/audits/g1c_allocation/`.
