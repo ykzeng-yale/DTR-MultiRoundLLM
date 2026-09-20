@@ -1,0 +1,199 @@
+{
+  "created_utc": "20260919T234422Z",
+  "reps_per_cell": 1000,
+  "seed_base": 20260919,
+  "workers": 6,
+  "code_sha256": "7ef8450fd9d41fe29630c5990972eeadcf610dabd5caed1bede7de51d1d89c8a",
+  "python": "3.12.13",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "cells": {
+    "base": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "kappa0": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 0.0,
+      "floor": 0.2,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "kappa0.5": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 0.5,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "kappa2": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 2.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "floor0.05": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.05,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "floor0.02": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.02,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "T2": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 2,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "T5": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 5,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "n590": {
+      "n_tasks": 590,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "runs10": {
+      "n_tasks": 230,
+      "runs": 10,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "runs160": {
+      "n_tasks": 230,
+      "runs": 160,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "half_effect": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 0.5,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "latent_track": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 1.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_positivity": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 2.5,
+      "floor": 0.02,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_latent": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 2.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    },
+    "FAIL_mislabel": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.15,
+      "template_sd": 0.0
+    },
+    "FAIL_coarsening": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.28
+    }
+  },
+  "note": "Exact truth is recomputed per cell from the cell own cmult and T. Blips are graded against the POSTERIOR-weighted truth, because an estimator that conditions on the observed state targets that object, not the prior-weighted one."
+}

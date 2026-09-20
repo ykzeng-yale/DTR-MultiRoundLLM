@@ -1,0 +1,23 @@
+{
+  "created_utc": "20260919T234338Z",
+  "reps_per_cell": 24,
+  "seed_base": 20260919,
+  "workers": 8,
+  "code_sha256": "7ef8450fd9d41fe29630c5990972eeadcf610dabd5caed1bede7de51d1d89c8a",
+  "python": "3.12.13",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "cells": {
+    "base": {
+      "n_tasks": 230,
+      "runs": 40,
+      "T": 3,
+      "kappa": 1.0,
+      "floor": 0.1,
+      "cmult": 1.0,
+      "gz": 0.0,
+      "mislabel": 0.0,
+      "template_sd": 0.0
+    }
+  },
+  "note": "Exact truth is recomputed per cell from the cell own cmult and T. Blips are graded against the POSTERIOR-weighted truth, because an estimator that conditions on the observed state targets that object, not the prior-weighted one."
+}

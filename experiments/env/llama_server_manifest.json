@@ -1,0 +1,117 @@
+{
+  "artifact": "llama.cpp llama-server build used by this project",
+  "recorded_utc": "20260919T233619Z",
+  "local_path": "work/bin/  (gitignored; 19 MB, 26 files)",
+  "version_string": "version: 0.4.1-dev (build 1, commit 4fea119)",
+  "build": "0.4.1-dev, build 1, commit 4fea119, AppleClang 21.0.0 for Darwin arm64",
+  "provenance": "copied 2026-09-19 from a sibling Claude session scratchpad, /private/tmp/claude-501/-Users-yukangzengcmac-ICLR-WinRatioAgentEvals/35a3ef1c-e430-45ac-b78e-94ba942c34a1/scratchpad/llama.cpp/build/bin/ . That path is EPHEMERAL and may be wiped on reboot or when that session ends, which is why the build is copied here and hashed.",
+  "why_the_whole_directory": "llama-server links its dylibs through @rpath, so the 33 kB binary alone does not run. All 26 files are required.",
+  "restore_if_lost": "rebuild llama.cpp at commit 4fea119 with Metal enabled, or re-copy from the sibling scratchpad if it still exists; then re-verify every sha256 below. A different build changes decoding behaviour and therefore invalidates any frozen run: record the new hashes as a new environment version, do not silently substitute.",
+  "n_files": 26,
+  "files": {
+    "libggml-base.0.24.0.dylib": {
+      "bytes": 733208,
+      "sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14"
+    },
+    "libggml-base.0.dylib": {
+      "bytes": 733208,
+      "sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14"
+    },
+    "libggml-base.dylib": {
+      "bytes": 733208,
+      "sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14"
+    },
+    "libggml-blas.0.24.0.dylib": {
+      "bytes": 58776,
+      "sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0"
+    },
+    "libggml-blas.0.dylib": {
+      "bytes": 58776,
+      "sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0"
+    },
+    "libggml-blas.dylib": {
+      "bytes": 58776,
+      "sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0"
+    },
+    "libggml-cpu.0.24.0.dylib": {
+      "bytes": 1001776,
+      "sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7"
+    },
+    "libggml-cpu.0.dylib": {
+      "bytes": 1001776,
+      "sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7"
+    },
+    "libggml-cpu.dylib": {
+      "bytes": 1001776,
+      "sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7"
+    },
+    "libggml-metal.0.24.0.dylib": {
+      "bytes": 2163544,
+      "sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992"
+    },
+    "libggml-metal.0.dylib": {
+      "bytes": 2163544,
+      "sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992"
+    },
+    "libggml-metal.dylib": {
+      "bytes": 2163544,
+      "sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992"
+    },
+    "libggml.0.24.0.dylib": {
+      "bytes": 60064,
+      "sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce"
+    },
+    "libggml.0.dylib": {
+      "bytes": 60064,
+      "sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce"
+    },
+    "libggml.dylib": {
+      "bytes": 60064,
+      "sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce"
+    },
+    "libllama-common.0.4.1.dylib": {
+      "bytes": 4948792,
+      "sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae"
+    },
+    "libllama-common.0.dylib": {
+      "bytes": 4948792,
+      "sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae"
+    },
+    "libllama-common.dylib": {
+      "bytes": 4948792,
+      "sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae"
+    },
+    "libllama-server-impl.dylib": {
+      "bytes": 6305000,
+      "sha256": "2b1a935d0f8451a5c61e414f390c982868345506caf94dc1b1b5b42c36e2bda8"
+    },
+    "libllama.0.4.1.dylib": {
+      "bytes": 3148928,
+      "sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2"
+    },
+    "libllama.0.dylib": {
+      "bytes": 3148928,
+      "sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2"
+    },
+    "libllama.dylib": {
+      "bytes": 3148928,
+      "sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2"
+    },
+    "libmtmd.0.4.1.dylib": {
+      "bytes": 1378576,
+      "sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0"
+    },
+    "libmtmd.0.dylib": {
+      "bytes": 1378576,
+      "sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0"
+    },
+    "libmtmd.dylib": {
+      "bytes": 1378576,
+      "sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0"
+    },
+    "llama-server": {
+      "bytes": 33472,
+      "sha256": "f124807ba31de5a65ea22fd624f33fd4dfe3c837d1c014dcf4a516b66812ffd7"
+    }
+  }
+}

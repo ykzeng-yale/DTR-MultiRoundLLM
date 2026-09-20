@@ -1,0 +1,368 @@
+{
+ "refuted": [
+  {
+   "claimed": "\"Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context\", arcxiv.org/abs/2608.17499",
+   "verdict": "REFUTED (host fabricated, paper real). arcxiv.org is not a preprint server; no such repository exists.",
+   "replacement": "arXiv:2608.17499 \u2014 https://arxiv.org/abs/2608.17499 (FACA, submitted 18 Aug 2026). Treat the rest of whatever bibliography produced this URL as suspect: a fabricated hostname is a generation artifact."
+  },
+  {
+   "claimed": "A paper developing stochastic interventions / modified treatment policies with a TEXT-valued action space and identification theory",
+   "verdict": "NOT_FOUND. Searched several phrasings across arXiv full text and the web. No such paper exists as of 2026-09-19. Do not cite a precedent and do not imply identification for text-valued MTPs has been established.",
+   "replacement": "None. Nearest confirmed: arXiv:2606.27518 (function-valued numeric treatments, positivity-free stochastic policies) and arXiv:2502.17538 (Q-learning DTR over a language action space, no identification theory). This is our whitespace, but it is a negative search result and must be re-checked before it is written as a novelty claim."
+  },
+  {
+   "claimed": "Robins (1994) SNMM, DOI 10.1080/03610928408831393",
+   "verdict": "REFUTED. That DOI does not resolve (digit transposition).",
+   "replacement": "DOI 10.1080/03610929408831393 \u2014 Robins, \"Correcting for non-compliance in randomized trials using structural nested mean models\", Commun. Stat. Theory Methods 23(8):2379-2412, 1994."
+  },
+  {
+   "claimed": "ROSA2 / \"Words and Weights\", ICML 2026",
+   "verdict": "UNVERIFIED VENUE, and the title is wrong. arXiv:2603.01375 has one version, no Comments field, no journal-ref, no ICML acceptance footnote (only the template's \"Machine Learning, ICML\" keywords); no icml.cc/virtual/2026 page and no PMLR entry. The only assertion of ICML 2026 is the first author's personal homepage; search snippets echo it.",
+   "replacement": "Cite as arXiv:2603.01375, \"Words & Weights: Streamlining Multi-Turn Interactions via Co-Adaptation\" (preprint, 2 Mar 2026). Ampersand, not \"and\". Contrast arXiv:2509.24696 (T-POP), whose v2 Comments field literally reads \"Accepted to ICML 2026\" \u2014 that is what evidence looks like."
+  },
+  {
+   "claimed": "ProRefine, NeurIPS 2025",
+   "verdict": "OVERSTATED VENUE. It is the NeurIPS 2025 Workshop on Efficient Reasoning, not the main conference.",
+   "replacement": "arXiv:2506.05305, \"ProRefine: Inference-Time Prompt Refinement with Textual Feedback\", NeurIPS 2025 Workshop on Efficient Reasoning. Also: its \"3-37 point\" gain is against zero-shot CoT with 3+ LLM calls per iteration, i.e. unmatched compute."
+  },
+  {
+   "claimed": "Progressive-Hint Prompting, ICML",
+   "verdict": "OVERSTATED VENUE, and miscategorized. It is the ICML AI4MATH 2024 workshop, not main ICML (6 arXiv versions over 18 months, never a main track). It is also not a self-correction method \u2014 no critic, no error detection, just answer-conditioned re-prompting with an agreement stopping rule.",
+   "replacement": "arXiv:2304.09797, ICML AI4MATH 2024 workshop. Cite it for the efficiency result (46.17% fewer sampled paths) and as a critic-free ablation target, never grouped with Self-Refine/Reflexion as \"self-correction\"."
+  },
+  {
+   "claimed": "Self-Refine gives ~20% average absolute gain (used as support for multi-round reasoning improvement)",
+   "verdict": "REFUTED as reasoning evidence. The gain is concentrated in preference-judged open-ended tasks (Dialogue Response 25.4->74.6, Sentiment Reversal 3.8->36.2). On GSM8K: GPT-3.5 64.1->64.1, ChatGPT 74.8->75.0, GPT-4 92.9->93.1. The paper itself blames the model's inability to detect whether an error exists.",
+   "replacement": "arXiv:2303.17651 (NeurIPS 2023) cited for the generate/critique/refine architecture only, with its own GSM8K row (+0.0/+0.2) quoted as honest evidence that a same-model critic does not repair reasoning."
+  },
+  {
+   "claimed": "Chen et al. CPO performs causal identification of prompt effects",
+   "verdict": "OVERSTATED. DML is applied to prompt and query embeddings as nuisance-adjustment features. There is no identification theorem for the prompt-as-treatment estimand, no overlap/positivity argument for a continuous embedding-valued treatment, and it is an unrefereed preprint.",
+   "replacement": "arXiv:2602.01711 cited as a \"DML-debiased offline reward model for query-specific prompt selection\". Note the live critique: by arXiv:2602.15730's argument, running DML on prompt AND query embeddings jointly is exactly the treatment/covariate conflation that requires residualization."
+  },
+  {
+   "claimed": "Wang et al. (SCIE) gives rigorous causal identification of instruction effects",
+   "verdict": "OVERSTATED. The ATE is estimated on LLM-self-generated observational data using hand-chosen interpretable textual features as the treatment representation, with no identification argument and no unconfoundedness discussion.",
+   "replacement": "AAAI-25, Vol 39 No 14, pp. 15212-15220, DOI 10.1609/aaai.v39i14.33669 (preprint arXiv:2412.15314), cited only as peer-reviewed precedent that \"instructions are treated as the treatment\" \u2014 which is verbatim in its abstract."
+  },
+  {
+   "claimed": "Feldman et al. propose residualization of the treatment with respect to text",
+   "verdict": "WRONG OBJECT, and wrong setting. It is COVARIATE residualization (covariates residualized w.r.t. treatment), and the setting is a controlled SAE-steered text experiment, so the bias is overcontrol / adjustment-set contamination, not classical observational confounding.",
+   "replacement": "arXiv:2602.15730 cited precisely: \"conditioning on a text representation induces bias because text conflates treatment and covariate information; remedy is covariate residualization, in a randomized SAE-steered design.\""
+  },
+  {
+   "claimed": "LMTP relaxes positivity for continuous/high-dimensional treatments",
+   "verdict": "HALF TRUE, and the price is omitted. Nothing is proven about identifying the static estimand when positivity fails. A DIFFERENT estimand (a policy applied to the natural value of treatment) is identified under a support-preservation condition on d that the analyst can enforce by construction. The cost: identification of the natural-value-dependent parameter requires STRONG sequential randomization (Assumption 3: U_{A,t} independent of future covariate AND treatment noise), not the standard condition; and for the threshold shift the parameter is not pathwise differentiable, so no sqrt(n) estimator exists.",
+   "replacement": "DOI 10.1080/01621459.2021.1955691 / arXiv:2006.01366 (JASA 118(542):846-857), with the support condition attributed to Young, Hernan & Robins, DOI 10.1515/em-2012-0001, and the strong-exchangeability cost stated explicitly. Confirmed independently by the tutorial arXiv:2304.09460."
+  },
+  {
+   "claimed": "Kennedy's incremental propensity score interventions cover continuous / high-dimensional treatments",
+   "verdict": "REFUTED. The treatment is binary at every time point. The no-positivity result is genuine but binary-only, and the estimand is defined through the true propensity score, so it moves if the observational treatment mechanism moves.",
+   "replacement": "arXiv:1704.00211, JASA 114(526):645-656, cited as the cleanest precedent for a longitudinal estimand needing no positivity at all, explicitly scoped to binary treatments. Review: arXiv:2110.10532."
+  },
+  {
+   "claimed": "An Orthogonal Learner for Individualized Outcomes in MDPs handles discrete or continuous action spaces",
+   "verdict": "REFUTED. The \"discrete or continuous\" generality is about STATE spaces. The construction is finite-action throughout (R[pi_e] is a sum over a in A, action propensities pi_b(a|s), a Dirac delta(A'=a) in the nuisances, overlap metric sum_a min(pi_b,pi_e), Taxi/Frozen Lake experiments). It is also off-policy EVALUATION of a fixed pi_e targeting a level (a Q-function), not a contrast and not policy optimization.",
+   "replacement": "arXiv:2509.26429 (ICLR 2026) cited as a doubly robust, Neyman-orthogonal, quasi-oracle DRQ-learner for OPE in finite-action, discrete-or-continuous-state MDPs."
+  },
+  {
+   "claimed": "CATE-accurate models are suboptimal for downstream decisions",
+   "verdict": "OVERSTATED unconditionally. Theorem 4.1 is conditional on a RESTRICTED second-stage function class. With an unrestricted class, thresholding a correct CATE is still optimal. The paper is also strictly static and strictly binary-treatment.",
+   "replacement": "arXiv:2505.13092 (NeurIPS 2025) cited as \"CATE-optimal second stages can be decision-suboptimal under restricted model classes\", with the caveat that it must be re-derived for sequential rounds."
+  },
+  {
+   "claimed": "DeepBlip supports continuous treatments",
+   "verdict": "OVERSTATED. The losses support it (squared / BCE / one-hot), but the stated Overlap assumption is written in discrete form, the blip requires a reference level 0, and every experiment is binary.",
+   "replacement": "arXiv:2511.14545 (ICML 2026 poster, confirmed via icml.cc/virtual/2026/poster/64916; the arXiv v1 PDF still says PREPRINT) cited as a neural SNMM for CATE over time with binary/categorical treatments in practice, and with the App. C.2 (1+C)^{tau-k} backward error-propagation bound flagged."
+  },
+  {
+   "claimed": "TextGrad = arXiv:2406.07496 (bare arXiv cite)",
+   "verdict": "STALE. The canonical citation is now the Nature version.",
+   "replacement": "Nature 639(8055):609-616, 19 Mar 2025, DOI 10.1038/s41586-025-08661-4, \"Optimizing generative AI by backpropagating language model feedback\" (Crossref-verified; author list adds Pan Lu relative to arXiv v1). Keep arXiv:2406.07496 as the preprint."
+  },
+  {
+   "claimed": "GEPA is an arXiv preprint",
+   "verdict": "STALE. The v2 PDF header reads \"Accepted at ICLR 2026 (Oral)\".",
+   "replacement": "arXiv:2507.19457 v2 (14 Feb 2026), ICLR 2026 Oral. Also: the method name is GEPA (Genetic-Pareto), and it is a compound-system optimizer positioned AGAINST RL \u2014 do not paraphrase \"outperform RL\" as \"does RL\"."
+  },
+  {
+   "claimed": "T2PAM is the method for test-time multi-turn policy adaptation",
+   "verdict": "IMPRECISE. T2PAM is the problem framing; the algorithm is ROSA (Optimum-Referenced One-Step Adaptation). It is also a preprint / NeurIPS 2025 MTI-LLM workshop item, not a main-conference paper.",
+   "replacement": "arXiv:2509.23166, cited as \"T2PAM framing, ROSA algorithm\", workshop/preprint."
+  },
+  {
+   "claimed": "ShareGPT as a public dataset of real human-LLM multi-turn conversations, on a par with WildChat / PRISM",
+   "verdict": "UNCLEAR / do not use. No paper, no DOI, no authoritative release, no consent framework, contested provenance; the HF mirror is nominally Apache-2.0 but the uploader had no right to license OpenAI output or user content. Heavily self-selected toward showcase and jailbreak content. No labels.",
+   "replacement": "Use arXiv:2405.01470 (WildChat-1M) and arXiv:2404.16019 (PRISM, NeurIPS 2024 D&B Oral) instead. ShareGPT for smoke tests only, never in a published claim."
+  },
+  {
+   "claimed": "WildChat is released under AI2 ImpACT",
+   "verdict": "STALE (the paper says so; the live artifact does not).",
+   "replacement": "allenai/WildChat-1M is ODC-BY and ungated. Separately: LMSYS-Chat-1M (arXiv:2309.11998) is GATED under a bespoke non-transferable, no-redistribution license and averages only ~2.0 turns \u2014 both facts matter before we build on it."
+  },
+  {
+   "claimed": "Progressive multi-round self-critique improves reasoning; \"nobody has applied causal thinking to prompt optimization\"",
+   "verdict": "BOTH REFUTED. Intrinsic self-correction degrades: GPT-4 GSM8K 95.5->91.5->89.0, GPT-3.5 CommonSenseQA 75.8->38.1, Llama-2-70b GSM8K 62.0->43.5->36.5 (arXiv:2310.01798); no successful case with prompted-LLM feedback outside exceptionally suited tasks (TACL 2024, arXiv:2406.01297); critique CONTENT is largely irrelevant to iterative gains (arXiv:2310.12397). And causal thinking has already been applied to prompt optimization: arXiv:2605.26655 (propensity-adjusted edit-level audit) and arXiv:2504.02646 (off-policy prompt policy from logged bandit data).",
+   "replacement": "Drop both sentences. Cite 2310.01798 / 2406.01297 / 2311.08516 / 2310.12397 / 2601.00514 as the constraint set, and 2409.12917 (SCoRe, ICLR 2025 Oral) as the one route that works (train, do not prompt)."
+  },
+  {
+   "claimed": "\"Frauen et al. 2025\" orthogonal meta-learners for individualized treatment effects over time; arXiv 2510.19643; arXiv 2405.21012 (IGC-Net); arXiv 2606.13156 (VLM self-correction mirage); arXiv 2605.14553 (pure-exploration bandits for prompts)",
+   "verdict": "UNVERIFIED. These surfaced only as search hits or uncited references; no id was individually confirmed.",
+   "replacement": "None yet. Do not put any of these in a bibliography until each id is fetched and confirmed."
+  },
+  {
+   "claimed": "Richardson & Robins (2013) SWIGs, cited as a journal article",
+   "verdict": "MISCLASSIFIED. It is CSSS Working Paper 128, University of Washington \u2014 a real but unrefereed university technical report.",
+   "replacement": "Cite as a working paper (https://csss.uw.edu/files/working-papers/2013/wp128.pdf), with Theorem 31 named as the source of the strong-exchangeability condition that LMTP Assumption 3 mirrors."
+  },
+  {
+   "claimed": "Minor title/attribution errors carried in the draft bibliography",
+   "verdict": "CORRECTIONS. ProTeGi's real title puts \"Gradient Descent\" in scare quotes; \"ProTeGi\" appears only in the body. Item \"A Simple Try Again...\" carries quotation marks around \"Try Again\". Shani et al.'s awkward \"from Preference Human Feedback\" is the genuine title, not a typo. \"Lin et al.\" (arXiv:2510.05921) is a nine-author Gasic-group paper with a v3 of 17 May 2026 \u2014 pin the version. eva (PMLR v267 ye25a) is lowercase and does not appear in its own title. RealUserSim (arXiv:2605.20204) has an internally inconsistent submission date on its abs page (\"7 Apr 2026\" against a 2605 identifier) \u2014 flag if cited.",
+   "replacement": "Apply as written. None of items 1-3 in the multi-turn-RL batch asserts a peer-reviewed venue on its abstract page; cite all three as arXiv preprints."
+  }
+ ],
+ "closest_prior_art": [
+  {
+   "rank": 1,
+   "paper": "Kiyohara, Cao, Saito, Joachims \u2014 Prompt Optimization with Logged Bandit Data",
+   "id": "arXiv:2504.02646",
+   "has": "Genuinely causal and off-policy: logged bandit feedback where only the logged action's reward is observed, a policy that selects a prompt PER USER CONTEXT (not task-level), and a kernel-based off-policy policy-gradient estimator that exploits sentence similarity to control variance over a huge prompt action space while bounding reward-model bias. Evaluated on personalized description generation with click feedback.",
+   "lacks": "Single-turn with an immediate reward. No sequential regime, no backward induction, no time-varying confounding from earlier turns, no notion of a responding counterpart whose future behavior depends on the action. Venue unconfirmed. This is the single biggest threat to a naive \"first causal prompt policy\" claim."
+  },
+  {
+   "rank": 2,
+   "paper": "Nakamura & Imai \u2014 GenAI Powered Dynamic Causal Inference with Unstructured Data",
+   "id": "arXiv:2605.07834",
+   "has": "Causal effects of SEQUENCES of treatment features in unstructured text: internal GenAI representations extracted, then a marginal structural model fitted with a neural architecture that jointly learns a per-feature deconfounder along the sequence; semiparametric inference with valid asymptotic CIs. Demonstrates that a feature's effect depends on its position. This is the closest existing thing to a DTR over text.",
+   "lacks": "The sequence is over feature positions WITHIN a document, not over rounds of an interaction. No decision-making: it estimates effects, it does not optimize a policy or define a policy value. No responding counterpart, no time-varying confounding generated by an agent's own earlier actions. It was absent from the original task list \u2014 its omission was the biggest gap in the audit."
+  },
+  {
+   "rank": 3,
+   "paper": "Zhang, Wang, Dhillon \u2014 Policy Learning with a Natural Language Action Space: A Causal Approach",
+   "id": "arXiv:2502.17538",
+   "has": "Multi-stage decision-making with a NATURAL LANGUAGE action space and an outcome observed only after a sequence of actions; Q-learning to estimate a Dynamic Treatment Regime through a single model, gradient ascent on language embeddings, plus decoding back to coherent text. Applied to mental-health intervention, hate-speech countering, sentiment transfer.",
+   "lacks": "No identification argument at all: no stated exchangeability condition, no positivity/overlap analysis, no estimand definition, no estimator theory. Optimal-policy learning only \u2014 no stochastic or modified treatment policy, no OPE, no orthogonality. This is the paper that owns our framing and leaves the entire statistical layer open."
+  },
+  {
+   "rank": 4,
+   "paper": "Chen, Fang, Fu, Xu, Wei \u2014 Optimizing Prompts for LLMs: A Causal Approach (CPO)",
+   "id": "arXiv:2602.01711",
+   "has": "Prompt = treatment, query = covariate, reward = outcome, embeddings = nuisance-adjustment representation. Double Machine Learning to build an offline debiased reward model, then resource-efficient search for query-specific prompts with no online LLM evaluation. The natural T=1 baseline for our setup.",
+   "lacks": "Static one-shot; no sequential prompts, no time-varying confounding, no policy-value guarantee (just debiased reward plus greedy search). No identification theorem, no overlap/positivity argument for a continuous embedding-valued treatment. Unrefereed preprint. And its joint DML on prompt AND query embeddings is precisely the conflation arXiv:2602.15730 shows induces bias \u2014 a citable defect we can exploit."
+  },
+  {
+   "rank": 5,
+   "paper": "Ozolcer & Bae \u2014 Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users",
+   "id": "arXiv:2510.17173",
+   "has": "The only OPE done on real multi-turn LLM deployment logs: 7 users, 350 turns, 280 rated. Per-turn contextual-bandit reduction over factorized decision heads (Tool: none/Search/Code/Email; Style: concise/detailed), per-turn utility mixing satisfaction, tool outcomes and engagement, SNIPS and AIPW estimators. Finds a uniform heavy-tool policy raises average value while harming an identifiable subgroup.",
+   "lacks": "Propensities are RECONSTRUCTED post hoc with cross-fitted calibrated classifiers, not logged \u2014 the authors concede Tool-head calibration is only moderate, which biases IPS/SNIPS. N=7 is a pilot, so the subgroup claim is suggestive. Per-turn bandit reduction, not a sequential DTR estimand: no backward induction, no g-formula, no time-varying confounding adjustment. NeurIPS workshop."
+  },
+  {
+   "rank": 6,
+   "paper": "Ma, Frauen, Feuerriegel \u2014 DeepBlip: Estimating CATE Over Time",
+   "id": "arXiv:2511.14545",
+   "has": "First neural SNMM: blip decomposition giving per-round incremental effects, a double-optimization trick replacing sequential g-estimation, Neyman-orthogonal second-stage loss, LSTM/transformer nuisances, and offline evaluation of optimal treatment policies without recomputation. ICML 2026 poster.",
+   "lacks": "No text, no LLM, no language action space. Overlap stated in discrete form, blip requires a reference level 0, all experiments binary \u2014 so continuous/structured treatments are architecturally supported but never exercised. App. C.2 error propagation grows like (1+C)^{tau-k}, i.e. accuracy decays exponentially backwards along the horizon under weak overlap, which is exactly the regime a long conversation lives in."
+  },
+  {
+   "rank": 7,
+   "paper": "Javurek, Melnychuk, Schweisthal, Hess, Frauen, Feuerriegel \u2014 An Orthogonal Learner for Individualized Outcomes in MDPs",
+   "id": "arXiv:2509.26429",
+   "has": "DRQ-learner derived from the efficient influence function: doubly robust, Neyman-orthogonal, quasi-oracle efficient, debiased loss (not a one-step correction) for an infinite-dimensional target; weak positivity (supp pi_e contained in supp pi_b) rather than two-sided overlap; explicitly aimed at low-overlap regimes; reduces to Shi et al. (2021) in the discrete-state unrestricted case. ICLR 2026.",
+   "lacks": "Finite-action throughout despite the abstract's generality language (that generality is about STATE spaces). Off-policy EVALUATION of a fixed pi_e targeting a level (a Q-function), not a contrast and not policy optimization. Markov assumption conditions on S_t alone, a real strengthening relative to the longitudinal literature. No text."
+  },
+  {
+   "rank": 8,
+   "paper": "Diaz, Williams, Hoffman, Schenck \u2014 Nonparametric Causal Effects Based on Longitudinal Modified Treatment Policies",
+   "id": "arXiv:2006.01366 / DOI 10.1080/01621459.2021.1955691",
+   "has": "The identification backbone: extended g-formula in sequential-regression form, EIF, TMLE and a sequentially doubly robust estimator, handling continuous/multivariate exposures with time-varying confounding, censoring and survival. Positivity replaced by a support-preservation condition on the shift function d that is enforceable by construction.",
+   "lacks": "Never addresses a text-valued action space \u2014 Assumption 1 for strings is undefined, and there is no generalized propensity / conditional density over text. Requires STRONG sequential randomization once the policy reads the natural value. Only covers policies depending on the natural value at time t (history-dependent policies need arXiv:2605.24167). Some shifts yield non-pathwise-differentiable parameters, so no sqrt(n) estimator. No effect heterogeneity per round (that needs arXiv:2509.22916)."
+  },
+  {
+   "rank": 9,
+   "paper": "Zhao et al. \u2014 Towards Better Agents for Multi-Turn User Interaction (FACA)",
+   "id": "arXiv:2608.17499",
+   "has": "Per-stage credit assignment in a multi-turn agent: user-to-user segments treated as decision stages, the next user turn read as noisy temporally-local evidence about the preceding segment, mapped to ternary reaction evidence, z-normalized into a reaction advantage added at lambda=0.5 to the verified terminal outcome. +5.91pp at Qwen3-8B, +10.22pp at 14B on a nine-domain tau-bench-family average against a matched outcome-only Interactive GRPO control.",
+   "lacks": "Despite the framing, purely on-policy GRPO with standard ratio clipping: no importance weighting, no propensities, no off-policy correction, no estimand. The credit signal comes from PRIVILEGED simulator-internal behavioral metadata that real users do not emit, so it does not transfer to deployment logs. That combination is the clearest opening for a DTR/OPE contribution."
+  },
+  {
+   "rank": 10,
+   "paper": "Yuksekgonul et al. \u2014 TextGrad",
+   "id": "arXiv:2406.07496 / Nature DOI 10.1038/s41586-025-08661-4",
+   "has": "The only prompt-optimization paper of the canonical five with a genuine PER-INSTANCE mode: instance optimization improves a solution for a given query at test time (its own words), via LLM critiques backpropagated through a text computation graph, with a momentum analogue. Nature 2025, and its radiotherapy-plan application already touches medical decision objects.",
+   "lacks": "The optimized object is a static ARTIFACT (answer, code, molecule, plan) refined by self-critique against a FIXED query \u2014 not a message emitted into an ongoing interaction with a counterpart whose future behavior depends on it. Zero occurrences of \"causal\" or \"counterfactual\" in 41 pages: no outcome model, no counterfactual comparison, no estimand. The \"gradient\" is the authors' own scare-quoted metaphor."
+  },
+  {
+   "rank": 11,
+   "paper": "Wu et al. \u2014 CollabLLM: From Passive Responders to Active Collaborators",
+   "id": "arXiv:2502.00640",
+   "has": "Multiturn-aware Rewards: simulated forward rollouts of both assistant and user turns give a long-horizon value estimate used for credit assignment on a single response \u2014 the closest published analogue to a model-based DTR. ICML 2025 Outstanding Paper, and one of very few in this area validated against real humans (201 judges: +17.6% satisfaction, -10.4% user time).",
+   "lacks": "The user model is prompt-based, not learned from logs, and the sim2real literature (arXiv:2601.17087, arXiv:2603.11245) shows prompt-based simulators are excessively cooperative and give uniformly positive feedback, biasing any simulator-derived value upward. Rollouts are a training-time credit-assignment device, not inference-time search. No causal estimand, no confounding adjustment, no OPE."
+  },
+  {
+   "rank": 12,
+   "paper": "Imai & Nakamura \u2014 Causal Inference with Generative AI: Application to Texts as Treatments (GPI)",
+   "id": "arXiv:2410.00903",
+   "has": "The rigorous identification backbone for text-as-treatment: nonparametric ATE identification conditions, treatment text generated by the LLM so its TRUE internal representation is known and the feature of interest is disentangled from unknown confounders, an estimation strategy explicitly designed to avoid overlap violations, DML asymptotics, plus an IV extension for perception-based features.",
+   "lacks": "Strictly POINT TREATMENT. No time-varying confounding, no sequential randomization, no g-formula, no modified treatment policy. Its overlap strategy comes from controlling the text-generating process, which is an alternative to our route \u2014 we must say why we are not simply doing that across rounds."
+  },
+  {
+   "rank": 13,
+   "paper": "Wei et al. \u2014 T2PAM / ROSA, and Wei et al. \u2014 Words & Weights / ROSA2",
+   "id": "arXiv:2509.23166 and arXiv:2603.01375",
+   "has": "Explicit sequential framing over dialogue turns with per-turn user feedback as reward; ROSA does a one-step closed-form-style parameter update cheap enough to run mid-dialogue with a convergence-as-turns-accumulate argument; ROSA2 jointly optimizes prompt text and weights, proving co-adaptation shrinks the required parameter shift, with ~30% MATH gains and ~40% fewer turns against TextGrad and ROSA.",
+   "lacks": "Greedy/one-step rules, not backward-induction optimal regimes. No identification, no estimand, no OPE, no confounding adjustment. Self-reported best-case numbers from one author cluster (Yao Shu on both; ROSA2 is the explicit sequel), so not an independent consensus. ROSA2's ICML 2026 claim is unsupported by any primary source, and both repos are bare-bones."
+  },
+  {
+   "rank": 14,
+   "paper": "Feldman, Venugopal, Spiess, Feder \u2014 Causal Effect Estimation with Latent Textual Treatments",
+   "id": "arXiv:2602.15730",
+   "has": "The sharpest theoretical warning for our design: characterizes the bias from adjusting on a text representation that conflates treatment and covariate information, and fixes it with covariate residualization; SAE features as the latent treatment, end-to-end generation plus robust estimation, econ.EM register.",
+   "lacks": "Point treatment in a controlled/randomized SAE-steered experiment, so the problem is overcontrol / adjustment-set contamination, not classical observational confounding, and nothing about sequences or policies. But the result transfers directly to our nuisance construction: any embedding of the prompt OR of the conversation history contains the treatment."
+  },
+  {
+   "rank": 15,
+   "paper": "Barnard, Huling, Wolfson \u2014 Causal Inference for Functional Treatments with Stochastic Policies",
+   "id": "arXiv:2606.27518",
+   "has": "Proof of concept that positivity-free stochastic policies survive an INFINITE-DIMENSIONAL treatment space: function-valued exposures, modification along a single analyst-chosen basis function, temporal confounding in continuous time, asymptotic normality and rate double robustness, applied to NHANES accelerometer data.",
+   "lacks": "The action space is real-valued functions, and the whole technique depends on that linear/basis structure. Text has no basis. So it supports the claim that the idea is not intrinsically scalar, and supports nothing about strings."
+  },
+  {
+   "rank": 16,
+   "paper": "Li et al. \u2014 What if LLMs Ate Their Words: Causal History Effects in Multi-Turn Interaction",
+   "id": "arXiv:2609.05882",
+   "has": "Step-level COUNTERFACTUAL interventions on multi-turn dialogue history: Neutralization (replay user messages with assistant history replaced by neutral placeholders, ~3000 conversations) and Turn Surgery (intervene on one assistant turn at a time to find which positions flip failure to success). Establishes that specific assistant turns have real, selective downstream effects.",
+   "lacks": "Analysis and diagnosis only \u2014 it audits, it does not optimize a per-turn message, define an estimand, or build an estimator. Cite it as motivation; our differentiator is that we optimize."
+  }
+ ],
+ "novelty_claim": "We formulate the assistant's next message in an ongoing multi-round interaction as a sequential treatment and give the first identification-and-estimation framework for it: a dynamic treatment regime over a text-valued action space, with an explicit support-preservation condition in place of point-treatment positivity, sequential-ignorability conditions stated for history that the agent's own earlier actions generate, nuisances residualized so the adjustment representation does not contain the treatment, and a turn-level orthogonal off-policy estimator of the multi-round policy value from logged interactions.",
+ "novelty_weaknesses": [
+  "The word \"first\" rests entirely on a negative search result, and two confirmed papers sit close enough that a reviewer can recast our contribution as the composition of existing pieces. Nakamura & Imai (arXiv:2605.07834) already estimate causal effects of SEQUENCES of text treatment features with a marginal structural model, a per-feature deconfounder and valid semiparametric CIs; Kiyohara et al. (arXiv:2504.02646) already learn a per-context prompt policy off-policy from logged bandit feedback with a variance-controlled estimator over a large text action space; Zhang, Wang & Dhillon (arXiv:2502.17538) already do Q-learning for an optimal DTR in a natural-language action space. Our claim survives only as the conjunction \u2014 sequential rounds AND a responding counterpart AND identification AND off-policy policy value \u2014 and every one of those four conjuncts individually belongs to someone else. Before submission, re-run the negative search, because \"no such paper exists\" was last checked on 2026-09-19 and is the load-bearing premise.",
+  "The statistical machinery we are promising does not yet exist for strings, and the evidence says the obvious implementations fail. LMTP's Assumption 1 (if (a_t,h_t) is in the support then (d(a_t,h_t),h_t) is too) has no definition when the action is a string, and nothing plays the role of a generalized propensity or conditional density over text \u2014 the hardest open problem in the project, and the one the closest precedent (arXiv:2606.27518) solves only by leaning on basis/linear structure that text lacks. Meanwhile arXiv:2606.05558 shows that even with EXACT per-token behavior log-probabilities, IS/WIS/DR over multi-turn text degenerate badly enough to lose to a learned world model, so our estimator's validity depends on a coarsening (factorized per-turn heads as in arXiv:2510.17173, or turn-level geometric-mean ratios as in arXiv:2511.20718) whose estimand is then no longer the text policy we claimed to evaluate. Add arXiv:2602.15730: any embedding of the prompt or the conversation history that we adjust on contains the treatment, so our own nuisances inherit the bias we are citing against CPO, and residualization in a sequential, non-randomized setting is not something anyone has shown to work."
+ ],
+ "must_cite": [
+  {
+   "role": "causal-longitudinal backbone (identification, positivity, sequential estimands)",
+   "citations": [
+    "arXiv:2006.01366 / DOI 10.1080/01621459.2021.1955691 \u2014 Diaz, Williams, Hoffman, Schenck, Nonparametric Causal Effects Based on Longitudinal Modified Treatment Policies, JASA 118(542):846-857",
+    "DOI 10.1515/em-2012-0001 \u2014 Young, Hernan, Robins (2014), Epidemiologic Methods 3(1):1-19 \u2014 primary source of the support/positivity condition; cite alongside Diaz et al., not instead of",
+    "arXiv:2605.24167 \u2014 Diaz, Williams, Morzywolek, Rudolph, Modified treatment policies that depend on the natural history of treatment (the case our multi-round intervention actually needs; the 2021/2023 LMTP paper does NOT cover it)",
+    "arXiv:1704.00211 / JASA 114(526):645-656 \u2014 Kennedy, Nonparametric Causal Effects Based on Incremental Propensity Score Interventions (the only genuinely positivity-free longitudinal result; binary treatment)",
+    "arXiv:2110.10532 \u2014 Bonvini, McClean, Branson, Kennedy, Incremental causal effects: an introduction and review",
+    "DOI 10.1080/03610929408831393 \u2014 Robins (1994), SNMMs with sequential randomization (note the corrected DOI)",
+    "arXiv:2509.22916 \u2014 Shahn, Structural Nested Mean Models for Modified Treatment Policies (per-round heterogeneity of MTP effects)",
+    "arXiv:2511.14545 \u2014 Ma, Frauen, Feuerriegel, DeepBlip, ICML 2026",
+    "arXiv:2509.26429 \u2014 Javurek et al., An Orthogonal Learner for Individualized Outcomes in MDPs, ICLR 2026",
+    "arXiv:2505.13092 \u2014 Frauen et al., Treatment effect estimation for optimal decision-making, NeurIPS 2025",
+    "PMLR v162 melnychuk22a / arXiv:2204.07258 \u2014 Melnychuk, Frauen, Feuerriegel, Causal Transformer, ICML 2022 (the canonical C/SO/SI assumption template)",
+    "arXiv:2002.04083 \u2014 Bica, Alaa, Jordon, van der Schaar, Counterfactual Recurrent Network, ICLR 2020",
+    "arXiv:2606.27518 \u2014 Barnard, Huling, Wolfson, Causal Inference for Functional Treatments with Stochastic Policies",
+    "arXiv:2304.09460 \u2014 Hoffman et al., Studying continuous, time-varying, and/or complex exposures using LMTPs (best plain statement of the positivity logic; structural vs practical violations)",
+    "DOI 10.1146/annurev-statistics-042424-110756 \u2014 Sarvet & Stensrud, The Natural Value of Treatment and Its Importance for Causal Inference, Annu. Rev. Stat. Appl. 13:439-463 (2026) \u2014 get it through the library before finalizing the assumption set",
+    "arXiv:2502.11820 / DOI 10.1515/jci-2025-0007 \u2014 Ring & Schomaker, diagnostic for stochastic positivity violations (evidence that MTPs are not automatically safe)",
+    "arXiv:2411.14285 \u2014 Levis, Kennedy, McClean, Balakrishnan, Wasserman, Stochastic interventions, sensitivity analysis, and optimal transport (natural-value dependence is not a free lunch under confounding)",
+    "arXiv:2206.12525 \u2014 Ying, Causal Identification for Complex Functional Longitudinal Studies (measure-theoretic apparatus for non-finite-dimensional actions)",
+    "DOI 10.1002/sim.5907 \u2014 Haneuse & Rotnitzky (2013), origin of MTPs on the natural value",
+    "DOI 10.1111/j.1541-0420.2011.01685.x \u2014 Munoz & van der Laan (2012), origin of the stochastic-intervention line",
+    "Richardson & Robins (2013), SWIGs, CSSS Working Paper 128, University of Washington \u2014 cite explicitly as an unrefereed working paper; Theorem 31 is the source of the strong-exchangeability condition"
+   ]
+  },
+  {
+   "role": "text-as-treatment / prompt-as-treatment",
+   "citations": [
+    "arXiv:2410.00903 \u2014 Imai & Nakamura, Causal Inference with Generative AI: Application to Texts as Treatments (GPI) \u2014 the identification backbone the prompt-as-treatment preprints lack",
+    "arXiv:2605.07834 \u2014 Nakamura & Imai, GenAI Powered Dynamic Causal Inference with Unstructured Data \u2014 MANDATORY: the closest existing work to a DTR over text, and it was missing from the original list",
+    "arXiv:2602.15730 \u2014 Feldman, Venugopal, Spiess, Feder, Causal Effect Estimation with Latent Textual Treatments (covariate residualization; the bias our own nuisances risk)",
+    "DOI 10.1609/aaai.v39i14.33669 / arXiv:2412.15314 \u2014 Wang et al., Eliciting Causal Abilities in LLMs for Reasoning Tasks (SCIE), AAAI-25 39(14):15212-15220 \u2014 peer-reviewed precedent for \"instructions are treated as the treatment\"",
+    "arXiv:2602.01711 \u2014 Chen et al., Optimizing Prompts for LLMs: A Causal Approach (CPO) \u2014 the T=1 baseline; cite as a DML-debiased offline reward model",
+    "arXiv:2605.25998 \u2014 Frauen et al., Causal methods for LLM development and evaluation, KDD 2026 \u2014 peer-reviewed legitimation of prompt-as-treatment plus doubly-robust/orthogonal policy learning, and it explicitly leaves the sequential/agentic case open",
+    "arXiv:2609.01322 \u2014 Zhong, Keith, Field, Exploring Sparse Autoencoders in Text-Based Causal Confounding Adjustment, EMNLP 2026 Main \u2014 the practical counterpart to the residualization theory",
+    "arXiv:2410.21474 \u2014 Guo, Marmarelis, Morstatter, Lerman, Estimating Causal Effects of Text Interventions Leveraging LLMs (CausalDANN)",
+    "arXiv:2403.02738 \u2014 Zhang et al., Causal Prompting: front-door adjustment with CoT as mediator, AAAI 2025 \u2014 a different estimand from ours; name and distinguish",
+    "arXiv:2609.05882 \u2014 Li et al., What if LLMs Ate Their Words: Causal History Effects in Multi-Turn Interaction \u2014 establishes that specific assistant turns have selective downstream effects"
+   ]
+  },
+  {
+   "role": "prompt optimization baselines (and the non-causality claim)",
+   "citations": [
+    "arXiv:2310.16427 \u2014 Wang et al., PromptAgent, ICLR 2024 (MDP + MCTS over prompt EDITS; Sec 3.2 treats instance-specificity as a failure mode to search away from)",
+    "arXiv:2309.03409 \u2014 Yang et al., Large Language Models as Optimizers (OPRO), ICLR 2024",
+    "arXiv:2305.03495 / aclanthology 2023.emnlp-main.494 \u2014 Pryzant et al., ProTeGi, EMNLP 2023 (UCB / successive-rejects best-arm identification \u2014 an A/B test, not causal inference)",
+    "arXiv:2406.07496 + Nature 639:609-616, DOI 10.1038/s41586-025-08661-4 \u2014 TextGrad (the one with a genuine per-instance test-time mode; our nearest neighbour)",
+    "arXiv:2507.19457 \u2014 Agrawal et al., GEPA, ICLR 2026 Oral (Sec 5.1's inference-time mode still optimizes a shared prompt; it only drops the generalization requirement)",
+    "arXiv:2504.02646 \u2014 Kiyohara, Cao, Saito, Joachims, Prompt Optimization with Logged Bandit Data \u2014 MANDATORY: per-context prompt policy learned off-policy; read before finalizing any novelty sentence",
+    "arXiv:2605.26655 \u2014 Gong & Wen, Why Prompt Optimization Works, and Why It Sometimes Doesn't (propensity-adjusted edit-level analysis; authors themselves hedge to \"associational\")",
+    "arXiv:2506.05305 \u2014 ProRefine, NeurIPS 2025 Workshop on Efficient Reasoning (three-role Task/Feedback/Optimizer split; unmatched-compute baseline)",
+    "PMLR v267:71910-71937 (ye25a) \u2014 Ye et al., Reward-Guided Prompt Evolving in RL for LLMs (eva), ICML 2025 \u2014 train-time curriculum, not multi-turn; cite for adaptive data selection only"
+   ]
+  },
+  {
+   "role": "multi-turn RL, multi-turn adaptation, and the self-correction constraint set",
+   "citations": [
+    "arXiv:2405.14655 \u2014 Shani et al., Multi-turn Reinforcement Learning from Preference Human Feedback (trajectory-level preference over whole conversations; preference-based Markov game)",
+    "arXiv:2608.17499 \u2014 Zhao et al., Towards Better Agents for Multi-Turn User Interaction (FACA) \u2014 the main baseline to differentiate from; per-stage pseudo-reward but on-policy and simulator-privileged",
+    "arXiv:2502.00640 \u2014 Wu et al., CollabLLM, ICML 2025 Outstanding Paper (multiturn-aware rewards via simulated rollouts; validated with 201 human judges)",
+    "arXiv:2509.23166 \u2014 Wei et al., T2PAM framing / ROSA algorithm (test-time policy adaptation over turns)",
+    "arXiv:2603.01375 \u2014 Wei et al., Words & Weights / ROSA2 (joint prompt+weight co-adaptation; cite as preprint, NOT ICML 2026)",
+    "arXiv:2509.24696 \u2014 Qu et al., T-POP, ICML 2026 (neural dueling bandits for per-round pairwise preference; myopic per round)",
+    "arXiv:2502.19148 \u2014 Zhang et al., Amulet, ICLR 2025 (the de facto SOTA reference for test-time personalization; missing from the original list)",
+    "arXiv:2507.14295 \u2014 Liu et al., A Simple \"Try Again\" Can Elicit Multi-Turn LLM Reasoning (UFO) \u2014 the mandatory zero-information-feedback control",
+    "arXiv:2510.05921 \u2014 Lin et al., Prompt reinforcing for long-term planning of LLMs (gradient-free comparator; non-stationary behavior policy)",
+    "arXiv:2310.01798 \u2014 Huang et al., Large Language Models Cannot Self-Correct Reasoning Yet, ICLR 2024",
+    "arXiv:2406.01297 / TACL 2024 (aclanthology 2024.tacl-1.78) \u2014 Kamoi et al., When Can LLMs Actually Correct Their Own Mistakes? \u2014 the strongest single negative citation",
+    "arXiv:2311.08516 / Findings of ACL 2024 \u2014 Tyen et al., LLMs cannot find reasoning errors, but can correct them given the error location (the bottleneck is detection, not repair)",
+    "arXiv:2310.12397 \u2014 Stechly, Marquez, Kambhampati, GPT-4 Doesn't Know It's Wrong (critique CONTENT is largely irrelevant \u2014 forces a critique-content ablation)",
+    "arXiv:2409.12917 \u2014 Kumar et al., SCoRe, ICLR 2025 Oral (the deficit is behavioral; the fix is multi-turn RL, not prompting)",
+    "arXiv:2303.17651 \u2014 Madaan et al., Self-Refine, NeurIPS 2023 (architecture only; quote its own GSM8K row)",
+    "arXiv:2303.11366 \u2014 Shinn et al., Reflexion, NeurIPS 2023 (positive result, but it rests on an external verifier)",
+    "arXiv:2304.09797 \u2014 Zheng et al., Progressive-Hint Prompting, ICML AI4MATH 2024 workshop (critic-free ablation target; 46% fewer sampled paths)",
+    "arXiv:2601.00514 \u2014 d'Aliberti & Horta Ribeiro, The Illusion of Insight in Reasoning Models (preprint; triggering shifts under high uncertainty does help \u2014 the uncertainty-gating idea)"
+   ]
+  },
+  {
+   "role": "off-policy evaluation and logging/experiment design (the honest substitute for a SMART citation)",
+   "citations": [
+    "arXiv:2510.17173 \u2014 Ozolcer & Bae, Offline Policy Evaluation of Multi-Turn LLM Health Coaching with Real Users, NeurIPS 2025 MTI-LLM workshop (per-turn contextual bandit over factorized heads, SNIPS + AIPW; propensities reconstructed, not logged)",
+    "arXiv:2606.05558 \u2014 Liu, Xiong, Zhang, Tang, Autoregressive Diffusion World Models for OPE of LLM Agents \u2014 the decisive negative result: even with exact per-token behavior log-probs, IS/WIS/DR lose to a learned world model",
+    "arXiv:2511.20718 \u2014 Stabilizing Off-Policy Training for Long-Horizon LLM Agents via Turn-Level Importance Sampling (turn-level geometric-mean ratios; off-policy TRAINING, do not cite as OPE)",
+    "arXiv:2406.10030 \u2014 Bhargava, Jain, Kveton, Liu, Mukherjee, Off-Policy Evaluation from Logged Human Feedback (single-turn; the economic argument for reusing feedback; its propensity description is the least firmly sourced item in the bundle \u2014 verify before citing on that point)",
+    "arXiv:2209.00876 \u2014 Dialogue Evaluation with Offline Reinforcement Learning (Gasic group) \u2014 pre-LLM lineage for evaluating dialogue policies from logs",
+    "arXiv:2605.15108 \u2014 Douglas et al., Logging Policy Design for Off-Policy Evaluation \u2014 the theory for prospectively randomizing our own deployment so logs support OPE; no LLMs, do not cite as an LLM paper",
+    "arXiv:2605.29500 \u2014 Xie et al., Quotient DAGs for OPE (exact unordered slate propensities) \u2014 slate recommendation, NOT dialogue; listed so it is not miscited",
+    "NOTE \u2014 the design/SMART slot is EMPTY. The evidence bundle contains no verified sequential-multiple-assignment-randomized-trial citation. Do not write a SMART paragraph from memory; commission a separate verification pass (Murphy 2005, Lavori & Dawson, Almirall/Nahum-Shani micro-randomized trials are the likely targets and are all unverified here)."
+   ]
+  },
+  {
+   "role": "benchmarks, logs, and the simulator-validity problem",
+   "citations": [
+    "arXiv:2406.12045 \u2014 Yao, Shinn, Razavi, Narasimhan, tau-bench (LLM-simulated user; introduces pass^k)",
+    "arXiv:2506.07982 \u2014 Barres et al., tau^2-Bench (dual-control Dec-POMDP; user constrained by tools and observable state \u2014 the main existing fix for hallucinating simulators)",
+    "arXiv:2402.14762 / aclanthology 2024.acl-long.401 \u2014 Bai et al., MT-Bench-101, ACL 2024 (SCRIPTED replay, not simulation; cannot evaluate a policy that changes the trajectory)",
+    "arXiv:2501.17399 / aclanthology 2025.findings-acl.958 \u2014 Sirdeshmukh et al., MultiChallenge, Findings of ACL 2025 (failure taxonomy from real logs; per-instance rubrics)",
+    "arXiv:2405.01470 \u2014 Zhao et al., WildChat-1M, ICLR 2024 (largest organic log; live license is ODC-BY, not the paper's AI2 ImpACT; no outcome labels)",
+    "arXiv:2309.11998 \u2014 Zheng et al., LMSYS-Chat-1M, ICLR 2024 (gated bespoke no-redistribution license; ~2.0 turns mean \u2014 shallow for DTR)",
+    "arXiv:2404.16019 \u2014 Kirk et al., The PRISM Alignment Dataset, NeurIPS 2024 D&B Oral \u2014 BEST FIT for DTR among public logs: covariates X, per-turn model choice A, per-turn ratings R, all linked to an individual id, so heterogeneity is identifiable",
+    "arXiv:2601.17087 / aclanthology 2026.acl-long.2192 \u2014 Seshadri et al., Lost in Simulation (agent success swings up to 9 points on simulator choice alone; systematic miscalibration; sim2real gap is itself subgroup-dependent, worse for AAVE and Indian English)",
+    "arXiv:2603.11245 \u2014 Zhou et al., Mind the Sim2Real Gap in User Simulation for Agentic Tasks, COLM 2026 (451 humans, 165 tasks, 31 simulators, User-Sim Index; simulators are excessively cooperative and give uniformly positive feedback; model capability does not predict simulation faithfulness)",
+    "arXiv:2605.20204 \u2014 Zhu et al., RealUserSim (Formalism Ceiling and Directive Amplification; flag the inconsistent submission date on its abs page)"
+   ]
+  }
+ ],
+ "already_done_drop": [
+  "Drop \"we are the first to frame the prompt/instruction as a treatment.\" Done three times over, and one of them is peer-reviewed: SCIE (AAAI-25, DOI 10.1609/aaai.v39i14.33669) puts \"the instructions are treated as the treatment\" verbatim in its abstract; CPO (arXiv:2602.01711) builds a causal reward model on that framing; and the KDD 2026 position paper (arXiv:2605.25998) states prompt-as-treatment with final outcome as reward and says doubly robust / orthogonal policy learning is directly relevant. Cite these as established framing and spend the novelty budget elsewhere.",
+  "Drop \"per-instance / per-query prompt selection with a causal estimator\" as a contribution. Kiyohara et al. (arXiv:2504.02646) already do off-policy, per-context prompt policy learning from logged bandit feedback with a kernel estimator built for a large text action space, and TextGrad (Nature 2025) already optimizes a per-instance object at test time. Both predate us.",
+  "Drop any plan to build a DML-debiased reward model over prompt and query embeddings. CPO already did it, and by arXiv:2602.15730's argument doing DML on prompt AND query embeddings jointly is precisely the treatment/covariate conflation that biases the estimate. Reimplementing it reproduces a known defect. Use it as a baseline and a critique target instead.",
+  "Drop \"Q-learning for an optimal regime over a natural-language action space\" as the contribution. arXiv:2502.17538 already does exactly that, including the embedding-space gradient ascent and decoding back to coherent text. What it leaves open is the identification and off-policy-evaluation layer \u2014 that is the only part of this component still ours.",
+  "Do not rebuild neural SNMM / blip machinery. DeepBlip (arXiv:2511.14545, ICML 2026) already replaces sequential g-estimation with simultaneous blip learning under a Neyman-orthogonal loss, with LSTM/transformer nuisances and offline policy evaluation. Extend it to a text action space; do not re-derive it.",
+  "Do not build a doubly robust orthogonal Q-learner for MDPs from scratch. arXiv:2509.26429 (ICLR 2026) derives the DRQ-learner from the efficient influence function with double robustness, Neyman orthogonality and quasi-oracle efficiency under weak positivity. The open gap is the action space (it is finite-action), not the estimator.",
+  "Drop the \"diagnose which prompt edits or which turns actually matter\" work package. Both halves exist: arXiv:2605.26655 does a propensity-adjusted edit-level audit across DSPy/TextGrad-style optimizers and finds systematic edit-family by task interactions, and arXiv:2609.05882 does step-level counterfactual interventions on dialogue history (Neutralization over ~3000 conversations, Turn Surgery per turn) and shows specific assistant turns selectively flip outcomes. Cite them as motivation; auditing is no longer a contribution.",
+  "Drop token-level importance weighting for multi-turn OPE. arXiv:2606.05558 implements it with exact per-token behavior log-probs (spans matched by longest-common-token-prefix to survive BPE merges) and reports that IS/WIS/DR still lose badly to a learned world model, because ratios over horizon times a vocabulary-scale action space degenerate; the authors also call exact log-probs privileged and unavailable in real deployment. Go coarse instead: factorized per-turn decision heads (arXiv:2510.17173) or turn-level geometric-mean ratios (arXiv:2511.20718).",
+  "Drop any component whose signal is the model critiquing itself with no external evidence. Five independent results close this: arXiv:2310.01798 (monotone degradation, GPT-4 GSM8K 95.5->91.5->89.0, GPT-3.5 CommonSenseQA 75.8->38.1), arXiv:2406.01297 (TACL survey: no successful case with prompted-LLM feedback outside exceptionally suited tasks), arXiv:2311.08516 (failure is at detection, not repair), arXiv:2310.12397 (critique content largely irrelevant), arXiv:2601.00514 (reasoning-model \"aha moments\" are rare and seldom help). If a round has no external signal, name it or cut it.",
+  "Drop \"jointly adapt the prompt text and the weights across turns.\" ROSA2 (arXiv:2603.01375) already occupies that position and even proves co-adaptation shrinks the required parameter shift, against TextGrad (words only) and ROSA (weights only). Differentiate on the decision-theoretic side or not at all.",
+  "Drop \"multi-turn-aware reward via simulated forward rollouts.\" CollabLLM (arXiv:2502.00640, ICML 2025 Outstanding Paper) does it and validates with 201 human judges. If we want this, the differentiator must be that the user model is learned from logs and the rollout happens at decision time, not that rollouts are used at all.",
+  "Drop any plan that trusts a prompt-based user simulator as ground truth. arXiv:2601.17087 shows agent success swings up to 9 points on simulator identity alone with systematic miscalibration and subgroup-dependent gaps; arXiv:2603.11245 (451 humans, 31 simulators) shows simulators are excessively cooperative, never produce realistic frustration, give uniformly positive feedback, and that bigger models are not better simulators. A simulator is an unmeasured nuisance parameter that shifts the estimand. Either ground it in environment state (tau^2-Bench) or validate against humans with the published protocol.",
+  "Drop bandit-style best-arm identification over candidate prompts as a methodological contribution. ProTeGi (EMNLP 2023) already implements and compares UCB, UCB-E, Successive Rejects and Successive Halving. It is also not causal inference \u2014 it is an on-policy A/B test over freshly sampled candidates \u2014 so it cannot be claimed as either novel or causal.",
+  "Drop \"extend MTPs to infinite-dimensional treatments.\" arXiv:2606.27518 did it for function-valued exposures with positivity-free stochastic policies, asymptotic normality and rate double robustness. The remaining problem is specifically that text has no basis structure \u2014 say that, rather than claiming the infinite-dimensional extension.",
+  "Drop plans to build a new multi-turn benchmark. tau-bench (2406.12045), tau^2-Bench (2506.07982), MT-Bench-101 (2402.14762) and MultiChallenge (2501.17399) cover the space, and PRISM (2404.16019) is the only public log with the X/A/R-per-person structure a DTR needs. Build on PRISM plus a human reference protocol; do not spend the project on a benchmark."
+ ]
+}

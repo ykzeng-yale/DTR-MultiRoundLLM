@@ -9,7 +9,7 @@ sections.
 
 | Workstream | Role | Owns |
 |---|---|---|
-| **Theory** | literature, idea framing, full theory + manuscript | `docs/theory*.md`, `manuscript/`, framing sections of `README.md` |
+| **Theory** | literature, idea framing, full theory + manuscript | `docs/theory.md`, `manuscript/`, framing sections of `README.md` |
 | **Experiments** (this session, opened 2026-09-19) | designs, harness, pre-registration, execution, results | `experiments/`, `results/`, `docs/experiment_*.md`, `docs/design_*.md` |
 
 The owner used the same split in the sibling repos
@@ -40,6 +40,163 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 `Q`-functions over (history × candidate next message), the value of an adaptive
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
+
+## KILL CRITERION K1 HAS FIRED (2026-09-19, experiments workstream)
+
+On the only completed real data available, **adaptive best-of-N beats the multi-turn
+feedback loop at equal or lower cost**, on both receivers, with the interval excluding
+zero. Details and caveats in `docs/g0e_kill_criterion.md`; it cost no GPU time.
+
+* Qwen2.5-3B, 448 tasks: multi-turn 0.7279 at 1.09 calls; adaptive best-of-3 **0.7461
+  at 1.07 calls**. Paired Δ (multi-turn − BoN) = **−0.0182, 95% CI [−0.0260, −0.0105]**.
+* Qwen2.5-7B, 485 tasks: adaptive best-of-4 0.8247 at 1.01 calls against multi-turn
+  0.8057 at 1.05. Paired Δ = −0.0032 [−0.0058, −0.0006].
+
+Both arms use the same visible check as their signal; adaptive best-of-N was computed
+exactly by enumerating ordered samples, not simulated.
+
+**This is the fourth independent line arriving at the same conclusion**, after the
+premise checks (horizon dominates confounding), audit A3 (+4.6 points in stopping
+decisions at fixed feedback content), and the literature audit's hostile review (spend
+the effects on when to intervene). The pilot in `docs/pilot_findings.md` is a fifth: a
+content-free retry beat structural localization, 0.110 against 0.066.
+
+**What it implies for the theory.** Do not build the paper on "multi-turn feedback
+improves outcomes" — on real data it does not, against the honest baseline. The object
+that survives is a **selection-and-stopping policy over states with known propensities**.
+The supporting number is on the record: the oracle `pass@3` ceiling is 0.8075 against
+adaptive best-of-N's achieved 0.7461, so **6.1 points are sitting in selection alone** —
+the right answer was already generated and the cheap check failed to find it.
+
+**What it does not imply.** Feedback is not useless: the same loop repairs 23.9% of the
+failures it acts on. Resampling is simply a better use of the same call here. And this is
+one real loop, not the best conceivable one — a better intervention could clear the bar.
+The burden is now to clear it explicitly rather than to assume it.
+
+## STOP — read this before writing any theory (2026-09-19, experiments workstream)
+
+The literature audit is done: 141 citations verified with live lookups, 96 prior-art
+items swept down five deliberately different routes, adjudicated, and then attacked
+by an agent playing hostile area chair. Results in `docs/literature_audit.md`,
+`docs/positioning.md`, and the structured records in `docs/literature/`.
+
+**Good news.** 132 of 141 citations in the originating brief are real and accurately
+described. The bibliography was largely sound. (One string is corrupted:
+`arcxiv.org/abs/2608.17499` — the arXiv id and title are genuine, but `arcxiv.org`
+does not exist as a preprint server.)
+
+**Bad news, and it is load-bearing: the brief's novelty claim does not survive.**
+Prior art occupies most of the proposed contribution, including several papers the
+brief never mentions. Do not write "we are the first to formulate multi-turn
+prompting as a longitudinal causal problem" — it is defeated three times over, twice
+by peer-reviewed work. Before drafting, engage these directly:
+
+* **arXiv:2502.17538** — Q-learning for a dynamic treatment regime in a *natural
+  language action space*, with embedding-space gradient ascent and decoding back to
+  text. Owns our framing and components (ii) and (iii); leaves the entire
+  identification layer open. This is the paper to differentiate against.
+* **arXiv:2607.03597** — estimands and inference for causal effects in AI-mediated
+  conversation. Already plants the flag on our vocabulary.
+* **arXiv:2404.00207** (CausalCollab) — user-side text as time-varying treatment, LM
+  history as time-varying confounder, sequential g-formula. Same group as 2502.17538.
+* **arXiv:2605.07834** (Nakamura & Imai) — marginal structural model over *sequences*
+  of text treatment features with a per-feature deconfounder and valid semiparametric
+  CIs. The closest existing thing to a DTR over text; its absence from the brief was
+  the audit's biggest single gap.
+* **arXiv:2410.00903** (Imai & Nakamura) — single-period identification and DML
+  asymptotics for text-valued treatments.
+* **arXiv:2504.02646** (Kiyohara et al.) — per-context off-policy prompt policy
+  learning from logged bandit feedback over a large text action space.
+* **arXiv:2605.25998** (KDD 2026) — states prompt-as-treatment plus DR/orthogonal
+  policy learning outright, but *explicitly leaves the sequential/agentic case open*,
+  which is useful to us.
+* **arXiv:2604.09459** — a widely read survey with propositions giving a *negative*
+  result on turn-level causal credit in multi-turn LLM trajectories. This is what
+  will be thrown at our identification section.
+* **arXiv:2603.06859** — argues that with no hidden state in the text history the
+  per-decision counterfactual is exactly identified by re-sampling under a frozen
+  behaviour policy. A direct rival to a g-formula story, and close to our branching
+  design.
+
+**Do not rebuild these** (full list with reasons in `docs/literature_audit.md`):
+neural SNMM / blip machinery (DeepBlip, arXiv:2511.14545, ICML 2026 — extend it),
+the orthogonal DR Q-learner (arXiv:2509.26429, ICLR 2026 — its gap is the *action*
+space, not the estimator), a DML-debiased reward model over prompt and query
+embeddings (CPO did it, and doing DML on both jointly is exactly the
+treatment/covariate conflation that arXiv:2602.15730 shows induces bias), or
+token-level importance weighting for multi-turn OPE (arXiv:2606.05558 did it with
+exact log-probs and it still loses to a learned world model).
+
+**What survives is smaller and real, and it converges with the premise checks and
+the audits.** The area chair, without seeing either of those, independently landed on:
+coarsen the action to a small finite move set and treat *the coarsening as the
+identification argument*; **randomize it prospectively and log the propensities** —
+nobody has done this in a multi-turn LLM setting, checked as a direct question and
+found clean; use the existing orthogonal estimators, cited as such; and use the
+estimated effects for the one decision the evidence says they can pay for,
+**when to intervene and when to stop**. That is the same conclusion the premise
+checks and Audit A3 reached from the other two directions.
+
+Q11 therefore now has a third vote. The experiments workstream's recommendation is
+in `docs/positioning.md` under "The claim we should try to earn", together with nine
+hard constraints the audit imposes on the design — including a mandatory
+zero-information feedback arm (UFO, arXiv:2507.14295), budget-matched
+self-consistency as the comparator that matters, the requirement that every round
+carry *external* evidence because model self-critique without it is closed off by
+five independent results, and keeping the horizon short because DeepBlip's error
+propagates like `(1+C)^(tau-k)` backwards under weak overlap.
+
+## READ FIRST — a premise check came out against the claim (2026-09-19)
+
+Before designing anything, the experiments workstream tested the project's central
+claim in tabular simulations with known laws (`docs/premise_findings.md`,
+`experiments/premise/`, exploratory and **not** pre-registered). Two pieces held
+up dramatically; one did not.
+
+**Held up.** An *unadjusted* comparison of intervention classes on logged data
+inverts the true ordering — 0 of 40 replicates recovered the sign, and in a second
+law the class that is *optimal* from the far-wrong state had the *lowest* observed
+mean outcome (0.186 against 0.637 for a perfunctory retry). Conditioning on the
+intermediate state when valuing the *first* intervention reports a true +0.156
+blip as +0.005, because that state is a mediator of the first action as well as a
+confounder of the second.
+
+**Did not hold up.** A correlational critic that conditions on the *full observed
+state* and acts greedily recovered the exact optimal regime in 39 of 40
+replicates (regret 0.001). Adding a latent feature that drives both the user's
+choice and the outcome did not restore the bias at the decision level (regret
+0.013 logged vs 0.015 randomized). Sweeping the coupling between the user's choice
+and that latent feature, over a law where the best action *flips* with it, moved
+the logged-minus-randomized regret gap by at most 0.030, and known-propensity IPW
+repaired it only partly and non-monotonically.
+
+**What dominated decisions was the horizon, not the confounding.** In every
+condition the lookahead critic beat the myopic one — including under
+randomization, where there is no confounding to correct. In one law the optimal
+first intervention is the one with the *worse* immediate success probability
+(0.204 against 0.262), because it moves the answer into a state from which repair
+succeeds with probability 0.67.
+
+**So the theory should probably not lead with "a naive reward model learns the
+wrong effect, therefore use a causal critic."** On this evidence that argument is
+sound for *reported effects* and weak for *chosen actions*. Two framings survive,
+and they want different theorems:
+
+1. *Identification and honest reporting.* What is and is not identified when the
+   action is language; why descriptive turn-level comparisons of feedback types
+   are invalid; what a design has to provide to make them valid. The
+   sequentially-randomized design is then the contribution, not the fallback.
+2. *Horizon-aware valuation.* Why a turn-level reward model is the wrong object
+   even with no confounding at all, and what the value loss is as a function of
+   how far ahead the critic looks. This is a statement about Q-functions versus
+   immediate rewards and it needs no unmeasured-confounding story.
+
+**Q11 (new, and the most consequential).** Which of those two is the paper's
+primary claim? The experiments workstream has reprioritized the ladder on the
+assumption that both are in scope with (1) as the headline, but the theory should
+decide. If the intended headline is instead "causal correction improves decisions
+on confounded logs", say so and the program will be rebuilt to hunt for the regime
+where that is true — but be warned it looked narrow in three attempts to produce it.
 
 ## What the experiments workstream needs from the theory workstream
 
@@ -110,6 +267,36 @@ assignment table, estimator code, analysis script, and the primary/secondary
 outcome list. The sibling repos froze exactly this and recorded the freeze
 commit id.
 
+## A theory draft exists, as input rather than as territory (2026-09-19)
+
+`docs/theory_draft_from_experiments.md` is a complete identification-and-estimation
+document (22 numbered assumptions, 32 results, a design ladder, scope and limitations,
+and an errata). The experiments workstream wrote it because the repository was empty and
+the designs could not be sized without it. **It is deliberately not named
+`docs/theory.md`, which remains the theory workstream's to write.** Take it, cut it,
+contradict it — but please read section 14 first, because about 31 claims in the original
+draft were withdrawn after adversarial review and it would be easy to reintroduce one.
+
+The three things most worth knowing:
+
+* **The improvement certificate is withdrawn.** At 176–230 task-family clusters and a
+  measured headroom of 0.046, a finite-sample certificate needs 139× to 8,884× more
+  clusters than exist; even a paired empirical-Bernstein bound has a half-width of 0.125.
+  At this sample size no nonasymptotic bound resolves the effect. Replacement: measured
+  paired precision, half-width ±0.019, MDE 0.027.
+* **The positivity floor is arithmetic.** `m·δ ≤ 1`; STOP is exempt because its potential
+  outcome is analyst-measurable; the eight randomized arms take `δ = 1/8` exactly. The
+  earlier `δ ≥ 0.25` is impossible for more than four arms and is withdrawn.
+* **The stopping deliverable needs no importance weights.** `W ≡ 1` for stopping-only
+  regimes, because the harness runs to `T_max` and grades the outcome at every turn.
+  Depth-1 overrides cost `W ≤ 8`; full-depth regimes cost `W ≤ 64` with an effective
+  sample size of 2.75 clusters and must be evaluated on-policy. So the cheapest thing to
+  estimate is also where the measured value is.
+
+`docs/theory_experiment_requirements.md` lists the 31 obligations this imposes on the
+harness, plus 8 questions only a human theorist should settle and 14 adversarial findings
+the repair could not resolve.
+
 ## Working agreements (carried over from the sibling repos)
 
 * `git pull --rebase origin main` before every push. **Never force-push.**
@@ -143,7 +330,27 @@ GPU work is scheduled around the sibling runs and recorded per episode.
 
 * **2026-09-19, experiments workstream** — repo was empty; seeded scaffold,
   this file, and the ownership map. Literature audit and identification-theory
-  development running. Q1–Q10 above are open.
+  development running. Q1–Q10 open.
+* **2026-09-19, experiments workstream** — Audit A1 (`results/audits/task_pool/`):
+  the 591-task coding pool is valid (591/591 references pass their own hidden
+  tests, and still pass after the visible assertion is carved out); `mbpp/794` is
+  excluded because both of its hidden assertions are `assert not f(...)`, which a
+  do-nothing stub satisfies. **Usable pool 590 tasks.** The visible/hidden split
+  is now a hard requirement, not a nicety: for MBPP the assertion shown to the
+  receiver is exactly `test_list[0]`, so grading uses `test_list[1:]` and an
+  intervention can be audited mechanically for quoting a graded assertion.
+* **2026-09-19, experiments workstream** — premise checks P1–P3; see the section
+  at the top of this file. **Q11 is open and blocks the shape of the paper.**
+* **2026-09-19, experiments workstream** — E0 executed (17 cells x 996 replicates,
+  `docs/e0_results.md`): the marginal log-reading critic names the true best arm in
+  0.000-0.060 of replicates in every confounded cell and 0.792 under randomization, but
+  a state-conditioned critic beats IPW in 16 of 17 cells and the cell built to break it
+  did not. **G0e fired kill criterion K1** (see the section at the top).
+* **2026-09-19, experiments workstream** — literature audit complete (141 citations
+  verified, 96 prior-art items, adjudicated and adversarially reviewed). 132/141
+  citations sound; **the novelty claim is not.** See the STOP section at the top of
+  this file, `docs/literature_audit.md` and `docs/positioning.md`. Nine hard design
+  constraints now follow from the audit.
 
 ## 2026-09-19 — Theory integration and answers Q1–Q10 (Codex theory workstream)
 
