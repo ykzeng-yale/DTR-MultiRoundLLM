@@ -1,0 +1,592 @@
+{
+  "audit": "G1b_execution_agreement",
+  "created_utc": "20260920T193428Z",
+  "source": "/Users/yukangzengcmac/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "elapsed_seconds": 81.3,
+  "cells_usable": 40,
+  "skipped": {
+    "no_probes": 63
+  },
+  "receivers": {
+    "qwen2.5-3b-instruct": {
+      "n_tasks": 19,
+      "mean_probes": 6.052631578947368,
+      "mean_clusters": 1.894736842105263,
+      "mean_top_cluster_frac": 0.7456140350877193,
+      "single_attempt": {
+        "mean": 0.6710526315789473,
+        "se": 0.075260454246981
+      },
+      "visible_picker": {
+        "mean": 0.7368421052631579,
+        "se": 0.10379087338771255
+      },
+      "agreement_picker": {
+        "mean": 0.7894736842105263,
+        "se": 0.09609167675529229
+      },
+      "agree_plus_visible": {
+        "mean": 0.8421052631578947,
+        "se": 0.085947008518708
+      },
+      "oracle": {
+        "mean": 0.9473684210526315,
+        "se": 0.05263157894736841
+      },
+      "selection_gap": 0.21052631578947367,
+      "agreement_minus_visible": {
+        "delta": 0.05263157894736842,
+        "se": 0.09283337933559967,
+        "ci95": [
+          -0.12932184455040693,
+          0.23458500244514377
+        ],
+        "fraction_of_gap": 0.25
+      },
+      "agree_plus_visible_minus_visible": {
+        "delta": 0.10526315789473684,
+        "se": 0.07233518641434492,
+        "ci95": [
+          -0.0365138074773792,
+          0.24704012326685287
+        ],
+        "fraction_of_gap": 0.5
+      },
+      "corr_topcluster_vs_correct": 0.42548147169838163,
+      "accuracy_when_cluster_large": 1.0,
+      "accuracy_when_cluster_small": 0.625,
+      "_per_task": [
+        {
+          "uid": "humaneval/0",
+          "r": 4,
+          "n_probes": 6,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/100",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 4,
+          "top_cluster_frac": 0.25,
+          "single": 0.25,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/102",
+          "r": 3,
+          "n_probes": 5,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.6666666666666666,
+          "single": 0.6666666666666666,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/103",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 0.5,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/104",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 0.75,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/106",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/107",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/109",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.5,
+          "single": 0.25,
+          "visible": 1,
+          "agreement": 0,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/11",
+          "r": 4,
+          "n_probes": 4,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/110",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.5,
+          "single": 0.5,
+          "visible": 0,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/113",
+          "r": 3,
+          "n_probes": 7,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/114",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 0.75,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/117",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 0.75,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/118",
+          "r": 3,
+          "n_probes": 4,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.3333333333333333,
+          "single": 0.0,
+          "visible": 0,
+          "agreement": 0,
+          "agree_plus_visible": 0,
+          "oracle": 0
+        },
+        {
+          "uid": "humaneval/119",
+          "r": 4,
+          "n_probes": 7,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.5,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/121",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 0.75,
+          "visible": 0,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/122",
+          "r": 3,
+          "n_probes": 8,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/123",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.5,
+          "single": 0.25,
+          "visible": 0,
+          "agreement": 0,
+          "agree_plus_visible": 0,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/124",
+          "r": 3,
+          "n_probes": 4,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.6666666666666666,
+          "single": 0.3333333333333333,
+          "visible": 0,
+          "agreement": 0,
+          "agree_plus_visible": 0,
+          "oracle": 1
+        }
+      ]
+    },
+    "qwen2.5-7b-instruct": {
+      "n_tasks": 21,
+      "mean_probes": 6.0,
+      "mean_clusters": 1.4761904761904763,
+      "mean_top_cluster_frac": 0.8690476190476191,
+      "single_attempt": {
+        "mean": 0.8690476190476191,
+        "se": 0.05193715313760762
+      },
+      "visible_picker": {
+        "mean": 0.9047619047619048,
+        "se": 0.06563832739090582
+      },
+      "agreement_picker": {
+        "mean": 0.9047619047619048,
+        "se": 0.06563832739090582
+      },
+      "agree_plus_visible": {
+        "mean": 0.9047619047619048,
+        "se": 0.06563832739090582
+      },
+      "oracle": {
+        "mean": 1.0,
+        "se": 0.0
+      },
+      "selection_gap": 0.09523809523809523,
+      "agreement_minus_visible": {
+        "delta": 0.0,
+        "se": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "fraction_of_gap": 0.0
+      },
+      "agree_plus_visible_minus_visible": {
+        "delta": 0.0,
+        "se": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "fraction_of_gap": 0.0
+      },
+      "corr_topcluster_vs_correct": 0.5180080575852473,
+      "accuracy_when_cluster_large": 1.0,
+      "accuracy_when_cluster_small": 0.7142857142857143,
+      "_per_task": [
+        {
+          "uid": "humaneval/0",
+          "r": 4,
+          "n_probes": 6,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/1",
+          "r": 3,
+          "n_probes": 4,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/100",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/102",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/104",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.5,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/106",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/107",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/109",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.5,
+          "single": 0.75,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/11",
+          "r": 4,
+          "n_probes": 4,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 0.75,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/110",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 0.5,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/111",
+          "r": 4,
+          "n_probes": 4,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/113",
+          "r": 4,
+          "n_probes": 7,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/114",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/117",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/118",
+          "r": 4,
+          "n_probes": 4,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/119",
+          "r": 4,
+          "n_probes": 7,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.75,
+          "single": 0.25,
+          "visible": 0,
+          "agreement": 0,
+          "agree_plus_visible": 0,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/120",
+          "r": 3,
+          "n_probes": 8,
+          "n_clusters": 3,
+          "top_cluster_frac": 0.3333333333333333,
+          "single": 0.3333333333333333,
+          "visible": 0,
+          "agreement": 0,
+          "agree_plus_visible": 0,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/121",
+          "r": 4,
+          "n_probes": 8,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/122",
+          "r": 3,
+          "n_probes": 8,
+          "n_clusters": 2,
+          "top_cluster_frac": 0.6666666666666666,
+          "single": 0.6666666666666666,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/123",
+          "r": 4,
+          "n_probes": 5,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        },
+        {
+          "uid": "humaneval/124",
+          "r": 4,
+          "n_probes": 4,
+          "n_clusters": 1,
+          "top_cluster_frac": 1.0,
+          "single": 1.0,
+          "visible": 1,
+          "agreement": 1,
+          "agree_plus_visible": 1,
+          "oracle": 1
+        }
+      ]
+    }
+  }
+}
