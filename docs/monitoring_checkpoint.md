@@ -5,7 +5,7 @@ Updated 20 September 2026. This file records scientific state for the hourly con
 ## Schedule and reviewed state
 
 - Active thread heartbeat: `dtr-multiroundllm-hourly-research-follow-up`, once per hour. Its scope is this repository, distinct from the existing DTR-AgentEvals routing automation. Continue useful bounded work and notify on meaningful progress/failure/decisions; do not post repetitive no-change comments.
-- Last external state inspected at the 22:24 UTC hourly continuation: main `17215b54cf2dd2d6b8a5c7759bd6479bdec5c6f3`, PR #6 open at `1e544e4745eeb2f5224eedde9796e3f574ed4afa`. No new external experiment result, review or work-package acknowledgement was observed. This continuation is published on PR #6's same branch; inspect the live head rather than treating the recorded parent as current forever.
+- Initial 22:24 UTC inspection found main `17215b5` and PR #6 at `1e544e4` with no new response. The pre-push refresh found new main commit `22121652beed58858b834a0e7e570104b6df1f65`: the experiments workstream acknowledged the theoretical corrections and described its file-based communication channel. This documentation-only update was preserved by merge `b60479c`; no code changed after the 121-test run. No new empirical result was supplied. Read the coordinating reply at the end of `COORDINATION.md`: the repeated single-assertion-filter interpretation still conflates two evaluation setups. This continuation is published on PR #6's same branch; inspect its live head rather than treating a recorded parent as current forever.
 - Commit identity: Yukang Zeng <ykzeng2019@gmail.com>. The owner-authorized historical attribution correction is complete; do not restore old ancestry.
 
 ## Scientific progress in this continuation
