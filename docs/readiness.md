@@ -124,3 +124,26 @@ because the original hypothesis survived.
 
 **Largest remaining milestones:** assemble the repaired theory; re-scope Gate 1 around
 selection and stopping; answer the 10 theory blockers; freeze; then Gate 1's GPU work.
+
+### 2026-09-19, checkpoint 5 — **49%** (+4 since checkpoint 4)
+
+| # | Component | Credit | Δ | Basis |
+|---|---|---|---|---|
+| 1 | Positioning / literature | 0.85 | — | unchanged |
+| 2 | Theory | 0.65 | +0.10 | the repaired document is assembled with its errata, and the 31 requirements it imposes are extracted. Not higher: 15 questions need a human theorist and 14 adversarial findings remain unresolved. |
+| 3 | Design / pre-registration | 0.75 | +0.05 | Gate 1 re-scoped against the evidence, with the new primary costing 3.07 GPU-h instead of 12.60 and needing no intervention arms |
+| 4 | Harness | 0.40 | — | unchanged; still the largest gap, and G1a′ showed the feature map is now load-bearing |
+| 5 | Simulation study | 0.90 | — | unchanged |
+| 6 | Real-model experiments | 0.20 | +0.05 | two decisive gates run at zero GPU cost, both returning negative |
+| 7 | Critic / policy | 0.00 | — | target now selection and stopping; feasibility is an open question |
+| 8 | Manuscript | 0.00 | — | not started |
+
+**Two of this session's most valuable results are negative**, and both arrived before any
+confirmatory budget was committed: adaptive best-of-N beats a real multi-turn loop, and
+cheap policy-observable features recover none of the selection headroom. The project is
+better off knowing both now.
+
+**The single question that decides the project:** can cross-candidate execution agreement
+recover the 3.5–7.4 points of selection headroom? It is well-posed, it has a measured
+ceiling, it has a known-strong published comparator, and it requires probe-input
+generation inside Gate 1. Everything else is downstream of the answer.
