@@ -1,0 +1,21 @@
+{
+  "cells": [
+    "base",
+    "kappa0",
+    "FAIL_latent",
+    "FAIL_coarsening",
+    "FAIL_positivity"
+  ],
+  "replications_per_cell": 80,
+  "seed_base": 20260921,
+  "workers": 4,
+  "source_hashes": {
+    "scripts/diagnose_matched_estimators.py": "1e696c6f011d4895d4112eed3ec7d05281197dd6374e2938830871b84e0da67a",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/run_grid.py": "f668d1f51f6cf906a94b27071c11fc66051e7f8a97d055d77d90492cf8bf9939"
+  },
+  "plan": "docs/scientific_diagnostic_plan_20260920.md",
+  "target": "uniform continuation actual replicate template mixture",
+  "note": "same Q fits and task folds; known behavior; no model calls"
+}

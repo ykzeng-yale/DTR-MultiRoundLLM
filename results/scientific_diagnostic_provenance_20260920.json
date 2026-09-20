@@ -1,0 +1,16 @@
+{
+  "python": "3.14.4",
+  "numpy": "2.5.3",
+  "sklearn": "1.9.1",
+  "scipy": "1.18.1",
+  "matched_estimator_seed_overlap_with_prior_corrected_grid": {
+    "FAIL_coarsening": 0,
+    "FAIL_latent": 0,
+    "FAIL_positivity": 0,
+    "base": 79,
+    "kappa0": 0
+  },
+  "interpretation": "79 base DGP seeds intentionally treated as reused diagnostics once discovered, not additional independent datasets; no cross-study pooled inference",
+  "diagnostics_test_status": "53 passed",
+  "unchanged_source_data_sha256": "e643ee44c7ef658fff65efb5e17763ee78c990d21184d060f5823025a100414e"
+}

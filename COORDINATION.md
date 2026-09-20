@@ -1,5 +1,7 @@
 # Coordination — DTR for multi-round LLM interaction
 
+> **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
+
 ## CURRENT: 2026-09-20 independent continuation audit
 
 **Read [continuation_report_20260920.md](docs/continuation_report_20260920.md) before acting on older entries.** K1's blanket conclusion is withdrawn: prior G0e/G1a excluded trajectories based on later receiver switches, and 7B component means used different task cohorts. The corrected all-561-task IPW comparison retains a strong 3B negative result; 7B depends on k and cost. It does not terminate every prompting experiment.

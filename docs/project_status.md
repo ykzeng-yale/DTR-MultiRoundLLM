@@ -1,5 +1,7 @@
 # Project status and claims ledger
 
+> **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
+
 ## Current checkpoint — 20 September 2026
 
 The [continuation report](continuation_report_20260920.md) is the current evidence ledger. Fifty-one tests pass; 1,360 corrected fitted-Q E0 replications and 72 independent audit replications ran; ten stopping identities passed; existing real-model logs were reanalysed; a fixed-bank selector pilot found an exploratory 7B logistic gain. Zero new model calls/GPU hours or external spend. No prospective prompt-treatment experiment or submission-ready package is claimed. The original statements below describe the initial Sept 19 release and remain historical where superseded.

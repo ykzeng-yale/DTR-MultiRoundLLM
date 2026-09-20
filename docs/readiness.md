@@ -1,5 +1,7 @@
 # Full-project readiness rubric
 
+> The percentages below are historical work-planning scores. The [current scientific judgment](scientific_judgment_20260920.md) controls advancement: the original prompt-choice benefit is untested and the project is not submission-ready. Additional proofs, files or simulations do not establish practical utility or raise a scientific probability of success.
+
 `AGENTS.md` requires every user-facing progress summary and every scheduled repo
 update to state the estimated readiness of the **full project** for a paper
 submission, its change since the previous checkpoint, and the largest remaining

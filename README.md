@@ -1,5 +1,7 @@
 # DTR-MultiRoundLLM
 
+> **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
+
 **Causal value models and generative prompting policies for multi-round LLM interaction.**
 
 Given a task and a frozen receiver LLM, estimate how a proposed next prompt changes the expected final outcome, conditional on the conversation and a specified continuation policy. Use those values to choose feedback or STOP, then study a learned prompt generator as an autonomous adaptive user.
@@ -14,7 +16,7 @@ The [updated research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Exper
 
 Read the [continuation report](docs/continuation_report_20260920.md) first. It supersedes earlier blanket “kill criterion fired,” “no learnable feature signal,” and unqualified stopping/ESS claims. The Sept 19 PDF remains a historical snapshot.
 
-**Completed:** ten additional scoped theory results, 1,360 corrected simulation replications, an independent audit of 4,488 existing episodes, a corrected fixed-bank selector pilot, and 51 passing tests. The 7B logistic selector shows an exploratory +2.85 percentage-point gain on a reused task split; this is not a confirmed prompt-treatment or adaptive-cost improvement. No new model inference was used.
+**Completed:** ten additional scoped theory results, 1,360 corrected simulation replications, an independent audit of 4,488 existing episodes, a corrected fixed-bank selector pilot, and 53 passing tests. The 7B logistic selector shows an exploratory +2.85 percentage-point gain on a reused task split; this is not a confirmed prompt-treatment or adaptive-cost improvement. No new model inference was used.
 
 **Still required:** a frozen design, new family-separated validation, and actual randomized next-prompt/continuation experiments. The original goal of personalized causal prompt evaluation remains distinct from choosing among initial answers. See [status](docs/project_status.md), [new theory](docs/theory_addendum_20260920.md), [corrected simulations](docs/e0_corrected_results_20260920.md), and [selection results](docs/selection_corrected_results_20260920.md).
 

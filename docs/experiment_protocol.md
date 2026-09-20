@@ -1,5 +1,7 @@
 # Experiment protocol v0.1
 
+> **Current prioritization:** the [scientific self-audit](scientific_judgment_20260920.md) narrows the next experiment to a frozen landmark prompt-choice test with fixed continuation and a competent same-target baseline. The broader S0–S5 plan below is a development roadmap, not authorization to advance without demonstrating useful, predictable prompt differences. The five-point power example is not a retrospectively binding advancement threshold. No fresh confirmatory protocol is frozen merely by this prioritization note.
+
 Status: prespecified development plan; confirmatory claims remain pending. The default budget is **$0 paid API spend**. Local runs require an explicit call/time cap. Hardware-intensive training belongs to a separately budgeted issue. The root task/family, not each branch or turn, is the independent sampling unit.
 
 ## Questions, estimands, and decision criteria

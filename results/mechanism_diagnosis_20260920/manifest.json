@@ -1,0 +1,10 @@
+{
+  "source": "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "source_sha256": "e643ee44c7ef658fff65efb5e17763ee78c990d21184d060f5823025a100414e",
+  "script_sha256": "d7e337f311cd2ac9f454ac1a79b729bc83a140825f47fa3f891ac75b95221ba5",
+  "seconds": 0.4593377085402608,
+  "external_model_calls": 0,
+  "candidate_executions": 0,
+  "paid_spend_usd": 0,
+  "numpy_version": "2.5.3"
+}

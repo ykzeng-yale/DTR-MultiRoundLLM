@@ -21,6 +21,21 @@ open questions between workstreams.
   result, and planned-but-not-run. A proposed extension is not an experiment.
 * Report null and negative results plainly. "H1 not supported" is a result.
 
+## Scientific ownership and advancement decisions
+
+The coordinating scientific agent owns the research question, estimand, design,
+measurement contract, comparator fairness and integrated judgment. Delegating
+execution does not transfer that responsibility. Review negative findings as tests
+of the scientific chain, not merely as implementation failures.
+
+Before advancing, distinguish identification, estimability, conditional ranking,
+policy improvement and total-cost benefit. A theorem or passing code check at one
+link is not evidence for the later links. Preserve valid negative conclusions.
+Treat changes in population, permitted information, bank size, generator, endpoint
+or budget as new scientific targets unless they restore the declared original
+contract. Do not select splits, benchmarks or thresholds to rescue a narrative.
+The current governing judgment is `docs/scientific_judgment_20260920.md`.
+
 ## Experiment discipline
 
 * **Pre-register.** Before any model call: freeze and commit the protocol, the

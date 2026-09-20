@@ -1,0 +1,310 @@
+{
+  "elapsed_seconds": 1.032077374868095,
+  "split_summary": {
+    "qwen2.5-3b-instruct": {
+      "all_differences": [
+        -0.0007407407407407391,
+        -0.0018518518518518506,
+        -0.008518518518518517,
+        0.011111111111111112,
+        -0.0066666666666666645,
+        -0.008518518518518517,
+        -0.008518518518518517,
+        -0.005555555555555555,
+        -0.026296296296296293,
+        -0.023703703703703703
+      ],
+      "median": -0.007592592592592591,
+      "minimum": -0.026296296296296293,
+      "maximum": 0.011111111111111112,
+      "positive_splits": 1,
+      "n_splits": 10
+    },
+    "qwen2.5-7b-instruct": {
+      "all_differences": [
+        0.02851851851851852,
+        0.0,
+        0.0059259259259259265,
+        0.014074074074074076,
+        -0.0011111111111111107,
+        0.013703703703703702,
+        0.010740740740740742,
+        0.005185185185185187,
+        0.0044444444444444444,
+        0.011851851851851853
+      ],
+      "median": 0.008333333333333335,
+      "minimum": -0.0011111111111111107,
+      "maximum": 0.02851851851851852,
+      "positive_splits": 8,
+      "n_splits": 10
+    }
+  },
+  "ablations": [
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-3b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": -0.0007407407407407391,
+        "task_se": 0.012232489274336471,
+        "exploratory_task_ci95": [
+          -0.02484621818631529,
+          0.02336473670483381
+        ]
+      },
+      "learned": {
+        "mean": 0.6666666666666666,
+        "task_se": 0.031497039417435604,
+        "exploratory_task_ci95": [
+          0.6045982555483949,
+          0.7287350777849384
+        ]
+      },
+      "visible": {
+        "mean": 0.6674074074074073,
+        "task_se": 0.029373750447695843,
+        "exploratory_task_ci95": [
+          0.6095231728064925,
+          0.7252916420083222
+        ]
+      },
+      "positive_roots": 15,
+      "negative_roots": 16,
+      "features": "full"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-3b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": 0.006666666666666667,
+        "task_se": 0.004142788724120312,
+        "exploratory_task_ci95": [
+          -0.001497158202616095,
+          0.014830491535949428
+        ]
+      },
+      "learned": {
+        "mean": 0.674074074074074,
+        "task_se": 0.02941181513753443,
+        "exploratory_task_ci95": [
+          0.6161148287781323,
+          0.7320333193700158
+        ]
+      },
+      "visible": {
+        "mean": 0.6674074074074073,
+        "task_se": 0.029373750447695843,
+        "exploratory_task_ci95": [
+          0.6095231728064925,
+          0.7252916420083222
+        ]
+      },
+      "positive_roots": 3,
+      "negative_roots": 0,
+      "features": "public_check_only"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-3b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": -0.1074074074074074,
+        "task_se": 0.02305072089723075,
+        "exploratory_task_ci95": [
+          -0.15283141066880163,
+          -0.06198340414601317
+        ]
+      },
+      "learned": {
+        "mean": 0.56,
+        "task_se": 0.03301634996602994,
+        "exploratory_task_ci95": [
+          0.4949376188613498,
+          0.6250623811386503
+        ]
+      },
+      "visible": {
+        "mean": 0.6674074074074073,
+        "task_se": 0.029373750447695843,
+        "exploratory_task_ci95": [
+          0.6095231728064925,
+          0.7252916420083222
+        ]
+      },
+      "positive_roots": 13,
+      "negative_roots": 41,
+      "features": "code_structure_only"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-3b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": -0.10222222222222223,
+        "task_se": 0.021832646703529298,
+        "exploratory_task_ci95": [
+          -0.14524587512607245,
+          -0.05919856931837201
+        ]
+      },
+      "learned": {
+        "mean": 0.5651851851851851,
+        "task_se": 0.03265751935540658,
+        "exploratory_task_ci95": [
+          0.5008299195810083,
+          0.6295404507893619
+        ]
+      },
+      "visible": {
+        "mean": 0.6674074074074073,
+        "task_se": 0.029373750447695843,
+        "exploratory_task_ci95": [
+          0.6095231728064925,
+          0.7252916420083222
+        ]
+      },
+      "positive_roots": 12,
+      "negative_roots": 42,
+      "features": "tokens_only"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-7b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": 0.02851851851851852,
+        "task_se": 0.008453571137772693,
+        "exploratory_task_ci95": [
+          0.011859818573965071,
+          0.04517721846307197
+        ]
+      },
+      "learned": {
+        "mean": 0.7377777777777778,
+        "task_se": 0.029388236257643925,
+        "exploratory_task_ci95": [
+          0.6798649972809987,
+          0.7956905582745568
+        ]
+      },
+      "visible": {
+        "mean": 0.7092592592592591,
+        "task_se": 0.02895858841914558,
+        "exploratory_task_ci95": [
+          0.652193147502439,
+          0.7663253710160793
+        ]
+      },
+      "positive_roots": 18,
+      "negative_roots": 2,
+      "features": "full"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-7b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": 0.0044444444444444444,
+        "task_se": 0.0031356740103394296,
+        "exploratory_task_ci95": [
+          -0.001734749130774242,
+          0.01062363801966313
+        ]
+      },
+      "learned": {
+        "mean": 0.7137037037037036,
+        "task_se": 0.028984967756909726,
+        "exploratory_task_ci95": [
+          0.6565856085347387,
+          0.7708217988726686
+        ]
+      },
+      "visible": {
+        "mean": 0.7092592592592591,
+        "task_se": 0.02895858841914558,
+        "exploratory_task_ci95": [
+          0.652193147502439,
+          0.7663253710160793
+        ]
+      },
+      "positive_roots": 2,
+      "negative_roots": 0,
+      "features": "public_check_only"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-7b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": -0.05592592592592592,
+        "task_se": 0.01795477913176294,
+        "exploratory_task_ci95": [
+          -0.09130781048714995,
+          -0.020544041364701886
+        ]
+      },
+      "learned": {
+        "mean": 0.6533333333333333,
+        "task_se": 0.03179797338056486,
+        "exploratory_task_ci95": [
+          0.590671898448751,
+          0.7159947682179156
+        ]
+      },
+      "visible": {
+        "mean": 0.7092592592592591,
+        "task_se": 0.02895858841914558,
+        "exploratory_task_ci95": [
+          0.652193147502439,
+          0.7663253710160793
+        ]
+      },
+      "positive_roots": 11,
+      "negative_roots": 21,
+      "features": "code_structure_only"
+    },
+    {
+      "seed": 20260920,
+      "receiver": "qwen2.5-7b-instruct",
+      "n_training_roots": 336,
+      "n_evaluation_roots": 225,
+      "contrast": {
+        "mean": -0.052222222222222225,
+        "task_se": 0.017555028121472183,
+        "exploratory_task_ci95": [
+          -0.08681635306085556,
+          -0.017628091383588902
+        ]
+      },
+      "learned": {
+        "mean": 0.6570370370370371,
+        "task_se": 0.03156912791558516,
+        "exploratory_task_ci95": [
+          0.5948265675341423,
+          0.7192475065399319
+        ]
+      },
+      "visible": {
+        "mean": 0.7092592592592591,
+        "task_se": 0.02895858841914558,
+        "exploratory_task_ci95": [
+          0.652193147502439,
+          0.7663253710160793
+        ]
+      },
+      "positive_roots": 12,
+      "negative_roots": 21,
+      "features": "tokens_only"
+    }
+  ],
+  "caveat": "Splits overlap and are not independent replications. No pooled p-value or best-split result is valid. Feature ablations are post-hoc diagnostics, not causal mediation."
+}
