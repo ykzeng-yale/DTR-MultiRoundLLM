@@ -1,0 +1,186 @@
+{
+  "audit": "G1a_prime_selection_pilot",
+  "created_utc": "20260920T003949Z",
+  "source": "/Users/yukangzengcmac/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+  "folds": 5,
+  "receivers": {
+    "qwen2.5-3b-instruct": {
+      "gbm": {
+        "n_tasks": 448,
+        "single_attempt": {
+          "mean": 0.7168898809523808,
+          "se": 0.018703072364676096
+        },
+        "visible_picker": {
+          "mean": 0.7455357142857143,
+          "se": 0.02060126475832284
+        },
+        "learned_picker": {
+          "mean": 0.7321428571428571,
+          "se": 0.020945742941635457
+        },
+        "oracle": {
+          "mean": 0.8191964285714286,
+          "se": 0.018203033401809534
+        },
+        "learned_minus_visible": {
+          "delta": -0.013392857142857142,
+          "se": 0.010462222895140044,
+          "ci95": [
+            -0.03389881401733163,
+            0.0071130997316173426
+          ]
+        },
+        "selection_gap_oracle_minus_visible": 0.0736607142857143,
+        "fraction_of_gap_recovered": -0.18181818181818177
+      },
+      "logit": {
+        "n_tasks": 448,
+        "single_attempt": {
+          "mean": 0.7168898809523808,
+          "se": 0.018703072364676096
+        },
+        "visible_picker": {
+          "mean": 0.7455357142857143,
+          "se": 0.02060126475832284
+        },
+        "learned_picker": {
+          "mean": 0.7410714285714286,
+          "se": 0.02071887932447209
+        },
+        "oracle": {
+          "mean": 0.8191964285714286,
+          "se": 0.018203033401809534
+        },
+        "learned_minus_visible": {
+          "delta": -0.004464285714285714,
+          "se": 0.012639259314593936,
+          "ci95": [
+            -0.029237233970889828,
+            0.020308662542318397
+          ]
+        },
+        "selection_gap_oracle_minus_visible": 0.0736607142857143,
+        "fraction_of_gap_recovered": -0.06060606060606059
+      },
+      "feature_names": [
+        "completion_tokens",
+        "fc_assert",
+        "fc_empty",
+        "fc_exception",
+        "fc_none",
+        "fc_other",
+        "fc_syntax",
+        "fc_timeout",
+        "frac_fail",
+        "has_for",
+        "has_if",
+        "has_import",
+        "has_recursion",
+        "has_try",
+        "has_while",
+        "is_humaneval",
+        "len_chars",
+        "max_depth",
+        "n_asserts",
+        "n_def",
+        "n_lines",
+        "n_nodes",
+        "n_return",
+        "parses",
+        "prompt_tokens",
+        "timed_out",
+        "visible_pass"
+      ]
+    },
+    "qwen2.5-7b-instruct": {
+      "gbm": {
+        "n_tasks": 485,
+        "single_attempt": {
+          "mean": 0.795360824742268,
+          "se": 0.017053303503047148
+        },
+        "visible_picker": {
+          "mean": 0.8041237113402062,
+          "se": 0.018039715609109806
+        },
+        "learned_picker": {
+          "mean": 0.8041237113402062,
+          "se": 0.018039715609109802
+        },
+        "oracle": {
+          "mean": 0.8391752577319588,
+          "se": 0.01669860095481225
+        },
+        "learned_minus_visible": {
+          "delta": 0.0,
+          "se": 0.006526892351070347,
+          "ci95": [
+            -0.01279270900809788,
+            0.01279270900809788
+          ]
+        },
+        "selection_gap_oracle_minus_visible": 0.035051546391752564,
+        "fraction_of_gap_recovered": 0.0
+      },
+      "logit": {
+        "n_tasks": 485,
+        "single_attempt": {
+          "mean": 0.795360824742268,
+          "se": 0.017053303503047148
+        },
+        "visible_picker": {
+          "mean": 0.8041237113402062,
+          "se": 0.018039715609109806
+        },
+        "learned_picker": {
+          "mean": 0.8041237113402062,
+          "se": 0.018039715609109806
+        },
+        "oracle": {
+          "mean": 0.8391752577319588,
+          "se": 0.01669860095481225
+        },
+        "learned_minus_visible": {
+          "delta": 0.0,
+          "se": 0.008255938348845452,
+          "ci95": [
+            -0.016181639163737084,
+            0.016181639163737084
+          ]
+        },
+        "selection_gap_oracle_minus_visible": 0.035051546391752564,
+        "fraction_of_gap_recovered": 0.0
+      },
+      "feature_names": [
+        "completion_tokens",
+        "fc_assert",
+        "fc_empty",
+        "fc_exception",
+        "fc_none",
+        "fc_other",
+        "fc_syntax",
+        "fc_timeout",
+        "frac_fail",
+        "has_for",
+        "has_if",
+        "has_import",
+        "has_recursion",
+        "has_try",
+        "has_while",
+        "is_humaneval",
+        "len_chars",
+        "max_depth",
+        "n_asserts",
+        "n_def",
+        "n_lines",
+        "n_nodes",
+        "n_return",
+        "parses",
+        "prompt_tokens",
+        "timed_out",
+        "visible_pass"
+      ]
+    }
+  }
+}
