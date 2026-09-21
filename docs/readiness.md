@@ -11,6 +11,27 @@ checkpoints rather than re-invented each time.
 It is a **planning estimate of work completed against work required**. It is not an
 acceptance probability, not a quality judgement, and not a time estimate.
 
+## Reviewed development delivery — 2026-09-21T13:26:15Z
+
+**51%, +2 points** under the unchanged fixed rubric: implemented measurement and
+collection increases from 60% to 80% of its 10-point component. Other credits remain
+unchanged. Independently inspected real adapter, reference/control, grading and
+collection artifacts earn engineering credit; efficacy is unestablished and the
+full project remains not submission-ready.
+
+Worker acknowledgement is received. Last-seen and independently reviewed worker
+head: 335a6de. The [scientific ruling](development_delivery_judgment_20260921.md)
+accepts scoped development evidence and requests MRL-05 sizing/interpretation and
+MRL-06 receiver-guard repairs before any new stage. Three runs total 147 calls,
+39,378 tokens,265.153 collection seconds,$0. The lead performed record/source review
+and arithmetic only, with zero model/reference/candidate execution. Replacement
+worker scheduler success remains reported-pending; guidance receipt is verified.
+
+Next: exact public-information intervention design, corrected root/family precision
+planning and receiver-law guards; then a new reviewed freeze and independent policy
+validation. Existing negative results remain preserved. This is a seven-task syntactic
+prompt pilot, not validated diagnostic feedback or a population benefit estimate.
+
 ## Latest hourly continuation — 21 September 2026, offline component
 
 **04:47 UTC half-hour update: 49%, delta 0.** The [known-assignment proof note](known_assignment_inference_20260921.md)
@@ -79,12 +100,12 @@ most half credit until independently checked. Lost validity can decrease credit.
 | Positioning and literature | 10% | 80% | 8 points | Primary-source correction audit exists; reconcile broader novelty/claim ledger and final bibliography. |
 | Theory and proofs | 20% | 80% | 16 points | Scoped longitudinal/landmark results, independent reviews and exact checks; integrate the remaining broad-draft claims and final assumption-to-result audit. |
 | Experiment and measurement design | 15% | 60% | 9 points | Exact arms, curation and versioned public/private proposals; no valid receiver/evaluator/family/assignment release freeze yet. |
-| Implemented measurement and collection | 10% | 60% | 6 points | Collector, analyzer, private grader and provenance guards tested; containment, reference/control execution and receiver validation remain open. |
+| Implemented measurement and collection | 10% | 80% | 8 points | Real adapter, remote containment/control records, graded collection and provenance independently inspected; complete receiver-law guards and measurement adequacy remain open. |
 | Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
 | Fresh supported-prompt experiment | 15% | 0% | 0 points | No validated fresh landmark prompt collection. Historical routing/reused-bank diagnostics earn no credit in this specifically fresh-data component. |
 | Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
 | Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
-| **Total** | **100%** | | **49 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+| **Total** | **100%** | | **51 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
 
 The last five columns of evidence are judgments, not automatically generated
 scores. Keep these eight weights and component meanings fixed for subsequent

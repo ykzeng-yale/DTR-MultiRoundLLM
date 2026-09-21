@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T04:47:57Z",
+  "checkpoint_utc": "2026-09-21T13:26:15Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -24,8 +24,8 @@
     {
       "name": "harness",
       "weight_percent": 10,
-      "completion_fraction": 0.6,
-      "contribution_points": 6.0
+      "completion_fraction": 0.8,
+      "contribution_points": 8
     },
     {
       "name": "known_truth_validation",
@@ -52,18 +52,19 @@
       "contribution_points": 4.0
     }
   ],
-  "overall_percent": 49.0,
+  "overall_percent": 51,
   "prior_check_reconstructed_percent": 49,
-  "prior_checked_head": "184fb8b8f31148a80fb3f7d4ba92482cab58543a",
-  "baseline_note": "Same fixed rubric and 49%; reviewed inference clarification does not finish final theory integration or empirical validation",
-  "delta_percentage_points": 0,
+  "prior_checked_head": "ab0dcbd3d96d8155575ba6d185665d654a2cdb1c",
+  "baseline_note": "Same fixed weights; implemented measurement/collection60% to80% earns2points following independent review of real development artifacts; all other credits unchanged",
+  "delta_percentage_points": 2,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Known-assignment misspecified-Q inference proof and independent internal review; no new worker delivery, simulations or receiver data",
+  "latest_evidence": "Fresh exploratory syntactic-prompt development delivery, independently audited logs/grades/hashes; sizing and receiver-law guard repair required",
   "latest_worker_review": {
-    "last_seen_worker_revision": "4ba4abfbff5228b8b0cf4d8f5a0b7956b504708a",
-    "delivery_type": "status only, not new empirical results",
-    "scientific_review_revision": "630b6e4ab62c6121f090642ee97cb31a15ced092",
-    "acknowledgement_received": false
+    "last_seen_worker_revision": "335a6deb0a7dd60e75b25313487dae242ca6a000",
+    "delivery_type": "fresh exploratory seven-root development data plus source/measurement validation",
+    "scientific_review_revision": "335a6deb0a7dd60e75b25313487dae242ca6a000",
+    "review_record": "docs/development_delivery_judgment_20260921.md",
+    "acknowledgement_received": true
   }
 }

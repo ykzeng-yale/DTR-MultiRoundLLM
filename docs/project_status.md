@@ -1,5 +1,27 @@
 # Project status and claims ledger
 
+## Reviewed development delivery — 2026-09-21T13:26:15Z
+
+**51%, +2 points** under the unchanged fixed rubric: implemented measurement and
+collection increases from 60% to 80% of its 10-point component. Other credits remain
+unchanged. Independently inspected real adapter, reference/control, grading and
+collection artifacts earn engineering credit; efficacy is unestablished and the
+full project remains not submission-ready.
+
+Worker acknowledgement is received. Last-seen and independently reviewed worker
+head: 335a6de. The [scientific ruling](development_delivery_judgment_20260921.md)
+accepts scoped development evidence and requests MRL-05 sizing/interpretation and
+MRL-06 receiver-guard repairs before any new stage. Three runs total 147 calls,
+39,378 tokens,265.153 collection seconds,$0. The lead performed record/source review
+and arithmetic only, with zero model/reference/candidate execution. Replacement
+worker scheduler success remains reported-pending; guidance receipt is verified.
+
+Next: exact public-information intervention design, corrected root/family precision
+planning and receiver-law guards; then a new reviewed freeze and independent policy
+validation. Existing negative results remain preserved. This is a seven-task syntactic
+prompt pilot, not validated diagnostic feedback or a population benefit estimate.
+
+
 ## Coordination recovery — 2026-09-21T12:39:13Z
 
 **49%, delta 0; not submission-ready.** The owner flagged the stalled exchange.

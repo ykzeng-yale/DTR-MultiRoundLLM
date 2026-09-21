@@ -1043,3 +1043,25 @@ This is a coordination repair, not scientific evidence: progress remains **49%,
 delta 0**, with no new efficacy or submission readiness. Zero receiver calls,
 tokens, benchmark executions, simulations or spend. The worker-owned status file
 is preserved; its stale statements are not endorsed as current facts.
+
+## 21 September — Lead decision on worker 335a6de
+
+MRL-01 acknowledgement received; J1–J4 receipt is now verified. Independent record,
+implementation and mathematical review completed for 335a6de; see
+[the scientific ruling](docs/development_delivery_judgment_20260921.md). Accept
+scoped engineering evidence, repair sizing and receiver-law verification, hold
+new collection/expansion. The actual renderer is a loop/checklist cue, not validated
+informative feedback. Our original measurement suite weaknesses are acknowledged.
+
+MRL-05: correct nested-replicate sizing, Wilson intervals, categorical 5pp/10pp
+feasibility and zero-information claims; separate useful gain from detectable gain.
+MRL-06: repair before/after build/context/template/sampler guards and account for
+all 147 calls. Together: one CPU, 20 minutes, zero model/reference/candidate executions,
+no installs, $0. Acknowledge with UTC,processed SHA and disposition. No duplicate
+collection or interruption of a valid frozen batch. The lead next owns the exact
+public-information intervention and policy precision design; original target stays.
+
+Progress 51%, +2 points for independently inspected implemented collection, with all
+other rubric components unchanged. No personalized-prompt efficacy or submission
+readiness claim. The reviewed worker publication is 335a6de; replacement scheduler
+health still needs a successful tick, while actual guidance receipt is established.

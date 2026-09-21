@@ -1,0 +1,212 @@
+{
+  "evidence_type": "Independent read-only audit of worker fresh exploratory development records; no model or candidate execution",
+  "reviewed_worker_commit": "335a6deb0a7dd60e75b25313487dae242ca6a000",
+  "checks": {
+    "completion_checksums": true,
+    "freeze_commit_blob_hashes": true,
+    "output_hashes": true,
+    "grade_output_bindings": true,
+    "usage_sums": true,
+    "three_output_maps_equal": true
+  },
+  "runs": [
+    {
+      "run": "landmark_dev_release_v1_20260921T130048Z",
+      "freeze": "ddcfdacde585ec30c62c977138824a68cbbaaea1",
+      "calls": 49,
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "seconds": 92.26686620805413,
+      "paid_usd": 0
+    },
+    {
+      "run": "landmark_dev_release_v1b_20260921T130349Z",
+      "freeze": "3e70c0a04482bf8ca1e9e0872c4d1037988ba09d",
+      "calls": 49,
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "seconds": 86.37465166673064,
+      "paid_usd": 0
+    },
+    {
+      "run": "landmark_dev_release_v1c_20260921T130757Z",
+      "freeze": "d5efcd8544b0718961190fe06f442d3a1d727ae4",
+      "calls": 49,
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "seconds": 86.51161195803434,
+      "paid_usd": 0
+    }
+  ],
+  "totals": {
+    "calls": 147,
+    "prompt_tokens": 29892,
+    "completion_tokens": 9486,
+    "seconds": 265.1531298328191,
+    "paid_usd": 0
+  },
+  "features": {
+    "fallback": 4,
+    "loop": 3
+  },
+  "families": [
+    "unresolved_development_family"
+  ],
+  "root_outcomes": {
+    "mbpp/357": {
+      "stop": [
+        1
+      ],
+      "generic_repair": [
+        1,
+        1
+      ],
+      "history_specific_repair": [
+        1,
+        1
+      ],
+      "independent_restart": [
+        1,
+        1
+      ]
+    },
+    "mbpp/373": {
+      "stop": [
+        1
+      ],
+      "generic_repair": [
+        1,
+        1
+      ],
+      "history_specific_repair": [
+        1,
+        1
+      ],
+      "independent_restart": [
+        1,
+        1
+      ]
+    },
+    "mbpp/378": {
+      "stop": [
+        1
+      ],
+      "generic_repair": [
+        1,
+        1
+      ],
+      "history_specific_repair": [
+        0,
+        1
+      ],
+      "independent_restart": [
+        0,
+        1
+      ]
+    },
+    "mbpp/402": {
+      "stop": [
+        0
+      ],
+      "generic_repair": [
+        0,
+        0
+      ],
+      "history_specific_repair": [
+        0,
+        0
+      ],
+      "independent_restart": [
+        0,
+        0
+      ]
+    },
+    "mbpp/489": {
+      "stop": [
+        0
+      ],
+      "generic_repair": [
+        0,
+        0
+      ],
+      "history_specific_repair": [
+        0,
+        0
+      ],
+      "independent_restart": [
+        0,
+        1
+      ]
+    },
+    "mbpp/509": {
+      "stop": [
+        1
+      ],
+      "generic_repair": [
+        1,
+        0
+      ],
+      "history_specific_repair": [
+        1,
+        1
+      ],
+      "independent_restart": [
+        0,
+        1
+      ]
+    },
+    "mbpp/52": {
+      "stop": [
+        1
+      ],
+      "generic_repair": [
+        1,
+        1
+      ],
+      "history_specific_repair": [
+        1,
+        1
+      ],
+      "independent_restart": [
+        1,
+        1
+      ]
+    }
+  },
+  "arm_means": {
+    "stop": 0.7142857142857143,
+    "generic_repair": 0.6428571428571429,
+    "history_specific_repair": 0.6428571428571429,
+    "independent_restart": 0.6428571428571429
+  },
+  "root_mean_history_minus_generic": {
+    "mbpp/357": 0,
+    "mbpp/373": 0,
+    "mbpp/378": -0.5,
+    "mbpp/402": 0,
+    "mbpp/489": 0,
+    "mbpp/509": 0.5,
+    "mbpp/52": 0
+  },
+  "descriptive_root_sample_variance": 0.08333333333333333,
+  "input_sha256": {
+    "results/landmark_dev_release_v1_20260921T130048Z/completion.json": "72781a066adcd5950e58a7c8be3abcc2a44d55287c4b6c8b53677abc33097005",
+    "results/landmark_dev_release_v1_20260921T130048Z/manifest.json": "af994fc9b1a56d06db2c1da7dc96bd621b84b3aba124733b606a17f136765016",
+    "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl": "1c450864da8515278c66fcc09327bac890ddd1b0953cf0ac7a97c9201c5eb2ab",
+    "results/landmark_dev_release_v1_20260921T130048Z/roots.jsonl": "22d080f479456c515cc8db40d254332c9b088b70faabf2d5de59de660c7e3f78",
+    "results/landmark_dev_release_v1b_20260921T130349Z/completion.json": "069eddfdeda72b90050ddb325a4ff4b380fedcc8baa5c41c1854473750c5ea3b",
+    "results/landmark_dev_release_v1b_20260921T130349Z/manifest.json": "b8266848842ecd48d711282a18c3cf162573bd3170981d5b64227d14e05c0dba",
+    "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl": "9940704e9aa62ba549818b63311644aadcbaae2bd34d1e46dc79f8260926f6c5",
+    "results/landmark_dev_release_v1b_20260921T130349Z/roots.jsonl": "495023bd6dbc74f3d7112ea875ee53f0abb0ea55acfe9ae09851d12d60331994",
+    "results/landmark_dev_release_v1c_20260921T130757Z/completion.json": "bd96679fd1837829ae416648e947c2c718d82134b6a4313dc71c921ba3dc70de",
+    "results/landmark_dev_release_v1c_20260921T130757Z/manifest.json": "8b848b4712413e5467bbe67b33b9b7457cf08827ffdee257258cefae75e07728",
+    "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+    "results/landmark_dev_release_v1c_20260921T130757Z/roots.jsonl": "317dbc25d9fe9def74613066d2dbda0b71a8a05c3369a174baec8660874f0cf8",
+    "results/landmark_dev_release_v1c_20260921T130757Z_grades/grades.jsonl": "e1a9d72dffb12b9b0fcf72066dbc354e3caae6d5573c60d577e7b6e007dd5bee"
+  },
+  "audit_seconds": 0.43170504178851843,
+  "audit_new_model_calls": 0,
+  "audit_new_candidate_executions": 0,
+  "audit_paid_usd": 0,
+  "limits": "Does not independently rerun grading or establish root independence, population precision, or feedback efficacy."
+}
