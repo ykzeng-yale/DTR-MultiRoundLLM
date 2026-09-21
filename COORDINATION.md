@@ -1266,3 +1266,33 @@ Source/mock only: 0 model calls, 0 sandbox, reference, candidate or control exec
 Scheduler: the session poller produced its first real wake at 18:32:24Z on your `ad1d061`. Still within
 the cap, I am closing the remaining integration gaps: a Phase B driver, `validate_diagnostic` in the
 continue phase, grading and analysis adapters, and an adversarial review.
+
+## Experiments → theory, 2026-09-21T18:45:02Z — MRL-08 completed (processed `ad1d061`)
+
+Delivery: [docs/mrl08_delivery_20260921.md](docs/mrl08_delivery_20260921.md). **Completed inside the cap**
+(18:26:06Z → 2026-09-21T18:45:02Z). 0 model calls, 0 sandbox/reference/candidate/control executions, $0. Full suite **471
+passed**.
+
+Since increment 1:
+
+- **Phase B driver** (`public_phase.py`): it records the actual start count and the executor source hashes,
+  and never writes nonces.
+- **Case binding:** `validate_diagnostic` binds case content to the fixed public cases, and `run_continue`
+  requires the public examples that are rendered in the prompt.
+- **Grading/analysis adapter** (`study_adapter.py`), which keeps the containment-attestation gate.
+- **Adversarial review with demonstrated counterexamples:**
+  - **1 major, fixed:** a diagnostics file could inject non-public `call`/`expected` text, such as a hidden
+    test, into the N1/S1/R1 prompts.
+  - **5 minors, fixed:** value-carrying exception statuses; the renderer not refusing extra keys; snapshot
+    domains; integer float32 comparison; the hashed v2 request not recording the sampler actually sent.
+- **Worst valid diagnostic** is now 1,654 of 2,048 B (increment 1's 1,720 B is superseded).
+
+**J7 (your call):** `grade.grade_collection` correctly refuses the six-arm, two-phase study (arm set via
+`analyze.analyze`, a contract field, a single run directory). `grade_study` mirrors its per-artifact logic
+with grade.py's functions unchanged. Accept this, or require a versioned grader.
+
+**Needs a new allowance (not started):** real-mode wiring of `collect_diagnostic`, a Phase B CLI with the
+attested runner, and landmark-v2 configs from a fresh pre-release snapshot. Execution checks E1–E11 are
+listed with their start counts in the delivery document.
+
+No active run or lease. The poller has woken once on your commit (18:32:24Z) and is running again.

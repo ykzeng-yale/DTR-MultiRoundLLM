@@ -86,7 +86,9 @@ def _check_result(r):
     # Freeze field 6: status only. A reason is the explicit cause of an unavailable case, nothing else.
     if (status == "unavailable") != (reason is not None) or (reason is not None and reason not in UNAVAILABLE_REASONS):
         raise ValueError("reason is required for unavailable (one of UNAVAILABLE_REASONS) and forbidden otherwise")
-    if status in ("format_error", "interface_error", "unavailable") and kind != "none":
+    # Only an observed return (pass / wrong_value) may display a value; every other status is status-only
+    # (fields 3 and 6). The executor cannot emit such a line, so the validator must not accept one either.
+    if status not in ("pass", "wrong_value") and kind != "none":
         raise ValueError(f"{status} cannot carry a returned value")
 
 
@@ -107,8 +109,57 @@ def build_diagnostic(root_id: str, initial_artifact_sha256: str, entry_point: st
         rows.append({"case_id": c["case_id"], "call": render_call(entry_point, c["args_literal"]), "expected": expected,
                      "status": r["status"], "returned": r["returned"], "value_kind": r["value_kind"], "reason": r["reason"]})
     diag = {"schema_version": SCHEMA, "root_id": root_id, "initial_artifact_sha256": initial_artifact_sha256, "cases": rows}
-    diagnostic_message(diag)  # overflow fails at build time, before any arm is rendered
+    validate_diagnostic(diag)  # same policy as a loaded record; overflow fails at build time, before any arm is rendered
     return diag
+
+
+DIAG_KEYS = frozenset({"schema_version", "root_id", "initial_artifact_sha256", "cases"})
+CASE_KEYS = frozenset({"case_id", "call", "expected", "status", "returned", "value_kind", "reason"})
+
+
+def public_skeleton(entry_point: str, cases: list[dict]) -> list[tuple]:
+    """(case_id, call, expected) per fixed public case, built exactly as build_diagnostic builds its rows."""
+    _public_cases(entry_point, cases)
+    return [(c["case_id"], render_call(entry_point, c["args_literal"]), ast.literal_eval(c["expected_literal"])) for c in cases]
+
+
+def _same(a, b):
+    return type(a) is type(b) and (a == b if type(a) is not list else len(a) == len(b) and all(_same(x, y) for x, y in zip(a, b)))
+
+
+def validate_diagnostic(diag: dict, entry_point: str | None = None, cases: list[dict] | None = None) -> None:
+    """Refuse any record build_diagnostic could not have produced: exact keys, bounded values, byte cap.
+
+    With entry_point and cases (the task's fixed public cases), also require the exact ordered
+    case_id, call and expected of every row, so no non-public text can ride in a diagnostic.
+    """
+    if not isinstance(diag, dict) or set(diag) != DIAG_KEYS:
+        raise ValueError("diagnostic must have exactly schema_version, root_id, initial_artifact_sha256, cases")
+    if diag["schema_version"] != SCHEMA:
+        raise ValueError("not a public-diagnostic-v1 record")
+    if not isinstance(diag["root_id"], str) or not diag["root_id"]:
+        raise ValueError("root_id required")
+    sha = diag["initial_artifact_sha256"]
+    if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{64}", sha):
+        raise ValueError("initial_artifact_sha256 must be 64 lowercase hex")
+    if not isinstance(diag["cases"], list) or not diag["cases"]:
+        raise ValueError("need a nonempty ordered case list")
+    for c in diag["cases"]:
+        if not isinstance(c, dict) or set(c) != CASE_KEYS:
+            raise ValueError("diagnostic case must have exactly " + ", ".join(sorted(CASE_KEYS)))
+        if not isinstance(c["case_id"], str) or not c["case_id"] or not isinstance(c["call"], str):
+            raise ValueError("case_id and call must be strings")
+        if not _displayable(c["expected"]):
+            raise ValueError("public expected value outside the bounded display policy")
+        _check_result({k: c[k] for k in ("status", "returned", "value_kind", "reason")})
+    if (entry_point is None) != (cases is None):
+        raise ValueError("entry_point and cases are given together")
+    if cases is not None:
+        skeleton = public_skeleton(entry_point, cases)
+        rows = [(c["case_id"], c["call"], c["expected"]) for c in diag["cases"]]
+        if len(rows) != len(skeleton) or not all(r[0] == k[0] and r[1] == k[1] and _same(r[2], k[2]) for r, k in zip(rows, skeleton)):
+            raise ValueError("diagnostic cases differ from the fixed public cases (case_id, call, expected, count or order)")
+    diagnostic_message(diag)  # DiagnosticOverflow (a ValueError) past MAX_DIAGNOSTIC_BYTES
 
 
 def diagnostic_bytes(diag: dict) -> bytes:
@@ -142,6 +193,7 @@ def select_s1(diag: dict) -> str:
 def render_arms(base_messages: list, initial_output: str, diag: dict) -> dict[str, list]:
     if collect.digest(collect.TARGETED) != TARGETED_SHA256:
         raise RuntimeError("collect.TARGETED changed; S0 is pinned by digest")
+    validate_diagnostic(diag)  # exact keys only: nothing extra can reach the shared diagnostic turn
     if not isinstance(initial_output, str):
         raise ValueError("initial_output must be the receiver's text")
     base = [dict(m) for m in base_messages]

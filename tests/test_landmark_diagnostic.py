@@ -156,10 +156,11 @@ def test_worst_case_size_fits_or_raises_never_truncates():
     longest_reason = max(d.UNAVAILABLE_REASONS, key=len)
     longest_status = max(d.STATUSES, key=len)
     for root, r in BY_ROOT.items():
-        # Valid worst case: every case returns the maximal 16-int list.
-        valid = d.build_diagnostic(root, "f" * 64, r["entry_point"], r["cases"], [res(longest_status, BIG, "int_list")] * 3)
-        # Superset envelope beyond validity: maximal list AND longest reason AND longest status in every case.
-        env = {**valid, "cases": [{**c, "reason": longest_reason} for c in valid["cases"]]}
+        # Valid worst case: every case returns the maximal 16-int list; only pass/wrong_value may carry a value,
+        # and wrong_value is the longer of the two.
+        valid = d.build_diagnostic(root, "f" * 64, r["entry_point"], r["cases"], [res("wrong_value", BIG, "int_list")] * 3)
+        # Superset envelope beyond validity: maximal list AND longest status AND longest reason in every case.
+        env = {**valid, "cases": [{**c, "status": longest_status, "reason": longest_reason} for c in valid["cases"]]}
         for diag in (valid, env):
             try:
                 content = d.diagnostic_message(diag)["content"].encode()
@@ -206,3 +207,76 @@ def test_builder_refuses_bad_output(tmp_path):
         b.build(tmp_path / "outside_work")
     with pytest.raises(SystemExit):
         b.build(b.ROOT / "work")  # exists, and is not strictly under work/
+
+
+@pytest.mark.parametrize("name", sorted(SCENARIOS))
+def test_built_diagnostics_validate(name):
+    d.validate_diagnostic(diag_for(name))  # build_diagnostic output passes the loaded-record validator
+
+
+def _mutated(fn):
+    diag = json.loads(json.dumps(diag_for("diag_all_pass_mbpp_52")))
+    fn(diag)
+    return diag
+
+
+@pytest.mark.parametrize("mutate", [
+    lambda g: g["cases"][0].update(extra="x"),                                        # extra per-case field
+    lambda g: g.update(extra="x"),                                                    # extra top-level field
+    lambda g: g["cases"][0].update(reason="protocol_integrity_review"),               # reason on a non-unavailable case
+    lambda g: g["cases"][0].update(returned=True),                                    # bool is not an int
+    lambda g: g["cases"][0].update(status="unavailable", returned=None, value_kind="none", reason="made_up"),
+    lambda g: g.update(initial_artifact_sha256="A" * 64),                             # uppercase hex
+    lambda g: g.update(schema_version="public-diagnostic-v0"),
+    lambda g: g["cases"][0].update(expected=True),
+], ids=["extra_case_field", "extra_top_field", "reason_not_unavailable", "bool_returned", "bad_reason", "upper_sha",
+        "schema", "bool_expected"])
+def test_validate_refuses(mutate):
+    with pytest.raises(ValueError):
+        d.validate_diagnostic(_mutated(mutate))
+
+
+def test_validate_refuses_oversized():
+    diag = _mutated(lambda g: g["cases"].extend(
+        [{"case_id": f"x{i}", "call": "f()", "expected": BIG, "status": "wrong_value", "returned": BIG,
+          "value_kind": "int_list", "reason": None} for i in range(8)]))
+    with pytest.raises(d.DiagnosticOverflow):
+        d.validate_diagnostic(diag)
+
+
+def test_validate_binds_case_content_to_the_fixed_public_cases():
+    # MRL-08 finding: a shape-valid record carrying a non-public call/expected must be refused when the public cases are known.
+    cases = [{"case_id": "c1", "args_literal": "[1]", "expected_literal": "2"}]
+    leak = {"schema_version": d.SCHEMA, "root_id": "r1", "initial_artifact_sha256": "a" * 64,
+            "cases": [{"case_id": "hidden_7", "call": "assert f(99) == 12345  # PRIVATE HIDDEN TEST / reference: return x*x",
+                       "expected": 12345, "status": "pass", "returned": None, "value_kind": "none", "reason": None}]}
+    d.validate_diagnostic(leak)  # shape alone passes: this is why the binding is needed
+    with pytest.raises(ValueError, match="fixed public cases"):
+        d.validate_diagnostic(leak, "f", cases)
+    good = d.build_diagnostic("r1", "a" * 64, "f", cases, [res("pass")])
+    d.validate_diagnostic(good, "f", cases)
+    for bad in ({**good["cases"][0], "expected": 3}, {**good["cases"][0], "call": "f(2)"}, {**good["cases"][0], "case_id": "c2"}):
+        with pytest.raises(ValueError, match="fixed public cases"):
+            d.validate_diagnostic({**good, "cases": [bad]}, "f", cases)
+    with pytest.raises(ValueError, match="fixed public cases"):
+        d.validate_diagnostic({**good, "cases": good["cases"] * 2}, "f", cases)
+    with pytest.raises(ValueError, match="together"):
+        d.validate_diagnostic(good, "f")
+
+
+# --- MRL-08 round-2 adversarial findings ---
+
+@pytest.mark.parametrize("status", ["program_exception", "timeout", "output_limit"])
+def test_status_only_cases_cannot_carry_a_returned_value(status):
+    case = [{"case_id": "c0", "args_literal": "[1]", "expected_literal": "2"}]
+    with pytest.raises(ValueError, match="cannot carry a returned value"):
+        d.build_diagnostic("r", "a" * 64, "f", case, [{"status": status, "returned": 123456789, "value_kind": "int", "reason": None}])
+
+
+def test_render_arms_refuses_extra_diagnostic_keys():
+    case = [{"case_id": "c0", "args_literal": "[1]", "expected_literal": "2"}]
+    diag = d.build_diagnostic("r", "a" * 64, "f", case, [{"status": "pass", "returned": 2, "value_kind": "int", "reason": None}])
+    diag["private_hidden_assert"] = "assert f(99) == 7"
+    base = [{"role": "system", "content": "S"}, {"role": "user", "content": "U"}]
+    with pytest.raises(ValueError):
+        d.render_arms(base, "```python\ndef f(x): return 2\n```", diag)

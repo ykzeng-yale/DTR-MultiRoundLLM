@@ -1,12 +1,12 @@
 """MRL-08: phased diagnostic-v1 collector. Fake receiver only; no network, no model, no candidate execution."""
-import copy, hashlib, json, sys, types
+import copy, hashlib, json, sys
 from pathlib import Path
 
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "experiments" / "landmark"))
-import collect_diagnostic as cd  # noqa: E402
+sys.path.insert(0, str(ROOT))
+from experiments.landmark import collect_diagnostic as cd  # noqa: E402
 
 collect = cd.collect  # the exact module object the collector uses (isinstance checks against collect.Mock)
 PARAMS = {"seed": 4294967295, "temperature": 0.8, "top_k": 40, "top_p": 0.95, "min_p": 0.05, "typical_p": 1.0,
@@ -58,30 +58,18 @@ def make_config(**over):
     return cfg
 
 
-TASKS = [{"root_id": f"root{i}", "family_id": f"fam{i}", "prompt": f"Write f for case {i}.", "public_context": "Public examples:\nf(1) == 2"}
-         for i in range(7)]
+PUBLIC_CASES = [{"case_id": "c1", "args_literal": "[1]", "expected_literal": "2"}]
+TASKS = [{"root_id": f"root{i}", "family_id": f"fam{i}", "prompt": f"Write f for case {i}.",
+          "public_context": "Public examples (inputs and required outputs):\nf(1) == 2"} for i in range(7)]
+
+
+def public_for(tasks):
+    return {t["root_id"]: {"entry_point": "f", "cases": copy.deepcopy(PUBLIC_CASES)} for t in tasks}
 
 
 @pytest.fixture
-def dm(monkeypatch):
-    try:
-        module = cd.diagnostic_module()
-        module.render_arms  # noqa: B018  (a partially written concurrent module falls back to the stand-in)
-        return module
-    except (ImportError, AttributeError):
-        pass
-    head = "Public diagnostic report for the previous answer (execution status is recorded per case):"
-    def dbytes(d): return json.dumps(d, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
-    def render_arms(base, initial_output, diag):
-        prefix = [*base, {"role": "assistant", "content": initial_output}]
-        msg = {"role": "user", "content": head + "\n" + dbytes(diag).decode()}
-        return {"N0": [*prefix, {"role": "user", "content": "N"}], "S0": [*prefix, {"role": "user", "content": "S0"}],
-                "N1": [*prefix, msg, {"role": "user", "content": "N"}], "S1": [*prefix, msg, {"role": "user", "content": "S1"}],
-                "R1": [*base, msg, {"role": "user", "content": "R1"}]}
-    stand_in = types.SimpleNamespace(SCHEMA="public-diagnostic-v1", DIAGNOSTIC_HEADER=head, N_INSTRUCTION="N", R1_INSTRUCTION="R1",
-                                     S1_STRINGS=("a", "b", "c"), diagnostic_bytes=dbytes, render_arms=render_arms)
-    monkeypatch.setattr(cd, "diagnostic_module", lambda: stand_in)
-    return stand_in
+def dm():
+    return cd.diagnostic_module()  # the real renderer/validator (no stand-in: validation must run)
 
 
 def diagnostics_for(initial_dir, schema, **override_sha):
@@ -106,7 +94,7 @@ def run_both(tmp_path, dm, cfg=None, initial_adapter=None, continue_adapter=None
     first = cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=initial_adapter or Fake())
     sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA))
     second = cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
-                             expected_diagnostics_sha256=sha, adapter=continue_adapter or Fake())
+                             expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=continue_adapter or Fake())
     return first, second
 
 
@@ -158,7 +146,7 @@ def test_continue_refuses_changed_diagnostics_file(tmp_path, dm):
     (tmp_path / "diag.json").write_text((tmp_path / "diag.json").read_text() + " ")
     fake = Fake()
     with pytest.raises(ValueError, match="bound SHA-256"):
-        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, adapter=fake)
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
     with pytest.raises(ValueError, match="expected SHA-256"):
         cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=None, adapter=fake)
     assert fake.payloads == [] and not (tmp_path / "C").exists()
@@ -170,12 +158,12 @@ def test_continue_refuses_artifact_hash_mismatch(tmp_path, dm):
     fake = Fake()
     sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA, root3="0" * 64))
     with pytest.raises(ValueError, match="different initial artifact"):
-        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, adapter=fake)
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
     # A consistent diagnostic but tampered artifact bytes is refused too (phase-A checksums re-verified).
     sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA))
     (tmp_path / "A/artifacts/root2.txt").write_text("def f(x):\n    return 2\n")
     with pytest.raises(ValueError, match="changed after completion"):
-        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, adapter=fake)
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
     assert fake.payloads == [] and not (tmp_path / "C").exists()
 
 
@@ -233,7 +221,66 @@ def test_real_root_ids_with_slash_are_collected(tmp_path, dm):
     assert all(f"artifacts/mbpp%2F{50 + i}.txt" in first["checksums"] for i in range(7))
     sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA))
     second = cd.run_continue(make_config(), tasks, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
-                             expected_diagnostics_sha256=sha, adapter=Fake())
+                             expected_diagnostics_sha256=sha, public_examples=public_for(tasks), adapter=Fake())
     assert second["phase_attempted_calls"] == 70
     with pytest.raises(ValueError, match="safe artifact file name"):
         cd.assignments(make_config(), [dict(TASKS[0], root_id="mbpp%2F52")])
+
+
+def test_collect_is_one_module_object():
+    from experiments.landmark import diagnostic
+    assert diagnostic.collect is cd.collect
+    assert cd.diagnostic_module() is diagnostic
+
+
+def test_continue_refuses_extra_diagnostic_field_before_dispatch(tmp_path, dm):
+    cfg = make_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA)
+    diags[sorted(diags)[-1]]["cases"][0]["hidden_note"] = "x"  # one extra per-case field in the last root
+    sha = write_diagnostics(tmp_path / "diag.json", diags)
+    fake = Fake()
+    with pytest.raises(ValueError, match="fails validation"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
+    assert fake.payloads == [] and not (tmp_path / "C").exists()
+
+
+@pytest.mark.parametrize("field,value", [("call", "assert f(99) == 12345  # PRIVATE HIDDEN TEST"), ("expected", 12345),
+                                         ("case_id", "hidden_7"), ("extra_case", None), ("expected_type", None)])
+def test_continue_refuses_non_public_case_content_before_dispatch(tmp_path, dm, field, value):
+    cfg = make_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA)
+    case = diags[sorted(diags)[-1]]["cases"]
+    if field == "extra_case":
+        case.append(dict(case[0], case_id="c2", call="f(2)", expected=4, status="pass", returned=None, value_kind="none"))
+    elif field == "expected_type":
+        case[0]["expected"] = [2]
+    else:
+        case[0][field] = value
+    sha = write_diagnostics(tmp_path / "diag.json", diags)
+    fake = Fake()
+    with pytest.raises(ValueError, match="fails validation"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                        expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
+    assert fake.payloads == [] and not (tmp_path / "C").exists()
+
+
+def test_continue_refuses_public_examples_not_in_the_prompt(tmp_path, dm):
+    cfg = make_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA)
+    for d in diags.values():
+        d["cases"][0].update(call="f(99)", expected=12345)
+    sha = write_diagnostics(tmp_path / "diag.json", diags)
+    public = public_for(TASKS)
+    for ex in public.values():
+        ex["cases"] = [{"case_id": "c1", "args_literal": "[99]", "expected_literal": "12345"}]  # not the prompt's cases
+    fake = Fake()
+    with pytest.raises(ValueError, match="not the ones rendered"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                        expected_diagnostics_sha256=sha, public_examples=public, adapter=fake)
+    with pytest.raises(ValueError, match="public examples"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                        expected_diagnostics_sha256=sha, adapter=fake)
+    assert fake.payloads == [] and not (tmp_path / "C").exists()

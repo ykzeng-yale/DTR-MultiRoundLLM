@@ -22,12 +22,12 @@ import json
 from pathlib import Path
 import random
 import re
+import sys
 import time
 
-try:
-    from . import collect
-except ImportError:  # run as a script or imported with experiments/landmark on sys.path (as the tests do)
-    import collect
+if not __package__:  # run as a script: put the repo root on sys.path so collect is ONE module object
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from experiments.landmark import collect  # same import as diagnostic.py, so diagnostic.collect is this collect
 
 ARM_SET = "diagnostic-v1"
 DIAG_ARMS = ("N0", "S0", "N1", "S1", "R1")
@@ -39,11 +39,8 @@ HEX64 = re.compile(r"[0-9a-f]{64}")
 
 
 def diagnostic_module():
-    """Lazy: diagnostic.py is written concurrently and is needed only to render the continue phase."""
-    try:
-        return importlib.import_module(__package__ + ".diagnostic") if __package__ else importlib.import_module("diagnostic")
-    except ImportError:
-        return importlib.import_module("diagnostic")
+    """Lazy: needed only to validate and render the continue phase; package import shares collect with this module."""
+    return importlib.import_module("experiments.landmark.diagnostic")
 
 
 def file_sha(path):
@@ -163,6 +160,8 @@ class _Phase:
         seed_key = "initial" if arm == "initial" else f"{arm}:{replicate}"
         payload = {"model": config["model"], "messages": messages, "stream": False,
                    "options": {**config["decoding"], "num_predict": config["max_tokens_per_call"], "seed": p["seeds"][seed_key]}}
+        if "sampler" in config:  # the hashed request records the sampler actually sent (LlamaServer enforces equality)
+            payload["sampler"] = dict(config["sampler"])
         rec = {"phase": phase, "root_id": p["root_id"], "arm": arm, "replicate": replicate, "seed_key": seed_key,
                "request": payload, "request_sha256": collect.digest(payload), "attempted": False, "output": None,
                "output_sha256": None, "missing_reason": None, "prompt_tokens": None, "completion_tokens": None, "seconds": 0.0}
@@ -311,7 +310,7 @@ def _load_initial(initial_dir, config, tasks, plan):
 
 
 def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expected_diagnostics_sha256,
-                 adapter=None, clock=time.monotonic, real=False):
+                 public_examples=None, adapter=None, clock=time.monotonic, real=False):
     if real:
         raise ValueError("Real diagnostic collection is not released; this collector is source/mock only")
     collect.validate(config, tasks, real)
@@ -321,6 +320,8 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     diagnostics_sha256 = hashlib.sha256(raw).hexdigest()
     if diagnostics_sha256 != expected_diagnostics_sha256:
         raise ValueError("Diagnostics file differs from its bound SHA-256")
+    if not isinstance(public_examples, dict):
+        raise ValueError("Continue phase requires the fixed public examples (root_id -> entry_point, cases)")
     plan = assignments(config, tasks)
     planned = planned_calls(config, plan)
     initial_dir, initial_completion, initial_rows = _load_initial(initial_dir, config, tasks, plan)
@@ -329,6 +330,24 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     if not isinstance(diagnostics, dict) or set(diagnostics) != {r["root_id"] for r in collected}:
         raise ValueError("Diagnostics must map exactly the roots with an initial artifact")
     dm = diagnostic_module()
+    # Every loaded record must be one build_diagnostic could have produced, before any rendering or dispatch.
+    # The public cases must be the ones already rendered at the end of the task's public prompt, and every
+    # diagnostic row must match them exactly: no non-public call, expected value or case can reach Phase B.
+    by_root = {t["root_id"]: t for t in tasks}
+    for root_id in sorted(diagnostics):
+        ex = public_examples.get(root_id)
+        if not isinstance(ex, dict) or set(ex) - {"root_id"} != {"entry_point", "cases"} or ex.get("root_id", root_id) != root_id:
+            raise ValueError(f"Public examples for {root_id} missing or malformed")
+        try:
+            rendered = dm.render_public_examples(ex["entry_point"], ex["cases"])
+        except (ValueError, SyntaxError, TypeError) as exc:
+            raise ValueError(f"Public examples for {root_id} are invalid: {exc}") from exc
+        if not by_root[root_id]["public_context"].endswith("\n" + rendered) and by_root[root_id]["public_context"] != rendered:
+            raise ValueError(f"Public examples for {root_id} are not the ones rendered in the task's public prompt")
+        try:
+            dm.validate_diagnostic(diagnostics[root_id], ex["entry_point"], ex["cases"])
+        except ValueError as exc:
+            raise ValueError(f"Diagnostic for {root_id} fails validation: {exc}") from exc
     # Bind and render everything before any dispatch: a refusal never leaves a partial continuation.
     bound = {}
     for task, p in zip(tasks, plan):
@@ -406,16 +425,23 @@ def main():
     p.add_argument("--initial", type=Path, help="continue: the initial-phase output directory")
     p.add_argument("--diagnostics", type=Path, help="continue: root_id -> diagnostic JSON file")
     p.add_argument("--diagnostics-sha256", help="continue: required SHA-256 of the diagnostics file bytes")
+    p.add_argument("--public-examples", type=Path, help="continue: the fixed public examples JSON (build_dev_release_v2 input)")
     args = p.parse_args()
     config = json.loads(args.config.read_text())
     tasks = [json.loads(line) for line in args.tasks.read_text().splitlines() if line.strip()]
     if args.phase == "initial":
         result = run_initial(config, tasks, args.output)
     else:
-        if args.initial is None or args.diagnostics is None or args.diagnostics_sha256 is None:
-            p.error("--phase continue needs --initial, --diagnostics and --diagnostics-sha256")
+        if args.initial is None or args.diagnostics is None or args.diagnostics_sha256 is None or args.public_examples is None:
+            p.error("--phase continue needs --initial, --diagnostics, --diagnostics-sha256 and --public-examples")
+        examples = json.loads(args.public_examples.read_text())
+        examples = examples["cases"] if isinstance(examples, dict) and "cases" in examples else examples
+        if isinstance(examples, list):
+            if len({e["root_id"] for e in examples}) != len(examples):
+                p.error("--public-examples lists a root twice")
+            examples = {e["root_id"]: e for e in examples}
         result = run_continue(config, tasks, args.initial, args.diagnostics, args.output,
-                              expected_diagnostics_sha256=args.diagnostics_sha256)
+                              expected_diagnostics_sha256=args.diagnostics_sha256, public_examples=examples)
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
 

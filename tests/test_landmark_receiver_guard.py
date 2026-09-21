@@ -298,3 +298,42 @@ def test_v1_config_is_unaffected_by_v2_keys(tmp_path, weights):
     out = go(tmp_path, cfg, server)
     assert not any(k in server.bodies[0] for k in (*collect.PINNED_SAMPLER, "sampler_law"))
     assert "lease" not in out["model_metadata"] and "sampler_overrides" not in out["model_metadata"]
+
+
+# --- MRL-08 round-2 adversarial findings (each was demonstrated with fakes before the fix) ---
+
+def test_snapshot_params_are_held_to_field_domains(weights):
+    for key, bad in (("top_k", 40.7), ("mirostat", 1.5), ("repeat_last_n", -7.2), ("min_p", 2.0)):
+        p = props(weights)
+        p["default_generation_settings"]["params"][key] = bad
+        with pytest.raises(ValueError, match="typed state schema"):
+            collect.receiver_state(p)
+
+
+def test_integer_sampler_fields_compare_exactly_not_by_float32():
+    params = dict(PARAMS, top_k=16777216.0)
+    assert "top_k" in collect.sampler_differences(dict(SAMPLER, top_k=16777217), params)
+    assert "top_k" in collect.sampler_differences(dict(SAMPLER, top_k=40), dict(PARAMS, top_k=40.0))
+    assert collect.sampler_differences(dict(SAMPLER), dict(PARAMS, min_p=0.05000000074505806)) == {}
+
+
+def test_v2_hashed_request_records_the_sampler_actually_sent(tmp_path, weights):
+    cfg = config_v2(weights)
+    server = FakeServer(cfg, weights)
+    go(tmp_path, cfg, server)
+    calls = [json.loads(l) for l in (tmp_path / "out/calls.jsonl").read_text().splitlines()]
+    assert calls and all(c["request"]["sampler"] == cfg["sampler"] for c in calls)
+    assert all(b["top_k"] == c["request"]["sampler"]["top_k"] for b, c in zip(server.bodies, calls))
+
+
+def test_adapter_refuses_a_request_whose_sampler_differs_from_the_freeze(weights):
+    cfg = config_v2(weights)
+    server = FakeServer(cfg, weights)
+    payload = {"model": "m.gguf", "messages": [{"role": "user", "content": "U"}], "stream": False,
+               "options": {"temperature": 0.7, "top_p": 0.95, "num_ctx": 8192, "num_predict": 8, "seed": 1},
+               "sampler": dict(cfg["sampler"], top_k=20)}
+    with pytest.raises(ValueError, match="differs from the frozen config sampler"):
+        server.generate(payload, 5)
+    del payload["sampler"]
+    with pytest.raises(ValueError, match="differs from the frozen config sampler"):
+        server.generate(payload, 5)

@@ -79,6 +79,7 @@ SAMPLER_DOMAINS = {
     "mirostat": lambda v: type(v) is int and v in (0, 1, 2),
 }
 assert set(SAMPLER_DOMAINS) == set(PINNED_SAMPLER)
+INT_SAMPLER = ("top_k", "repeat_last_n", "mirostat")
 
 
 def check_sampler(sampler):
@@ -102,7 +103,10 @@ def sampler_differences(sampler, params):
     out = {}
     for k in PINNED_SAMPLER:
         a, b = sampler[k], params.get(k)
-        same = a == b if type(a) is int and type(b) is int else _num(b) and _f32(a) == _f32(b)
+        if k in INT_SAMPLER:
+            same = type(a) is int and type(b) is int and a == b  # never float32-rounded: 16777217 != 16777216.0
+        else:
+            same = _num(b) and _f32(a) == _f32(b)
         if not same:
             out[k] = {"request": a, "server_default": b}
     return out
@@ -132,7 +136,7 @@ def receiver_state(props):
         if not isinstance(params, dict):
             bad.append("default_generation_settings.params")
         else:
-            bad += [f"params.{k}" for k in PINNED_SAMPLER if not _num(params.get(k))]
+            bad += [f"params.{k}" for k in PINNED_SAMPLER if not SAMPLER_DOMAINS[k](params.get(k))]
             if not isinstance(params.get("samplers"), list) or not all(isinstance(x, str) for x in params["samplers"]):
                 bad.append("params.samplers")
     if bad:
@@ -407,7 +411,10 @@ class LlamaServer:
         body = {"messages": payload["messages"], "stream": False, "cache_prompt": False,
                 "temperature": opts["temperature"], "top_p": opts["top_p"],
                 "max_tokens": opts["num_predict"], "seed": opts["seed"]}
-        body.update(self.config.get("sampler") or {})  # landmark-v2: server defaults cannot move the output law
+        # landmark-v2: send exactly the sampler recorded in the hashed request, and only the frozen one.
+        if payload.get("sampler") != self.config.get("sampler"):
+            raise ValueError("Request sampler differs from the frozen config sampler")
+        body.update(payload.get("sampler") or {})
         out = self.request("/v1/chat/completions", body, timeout)
         choice = (out.get("choices") or [{}])[0]
         usage = out.get("usage") or {}
@@ -562,6 +569,8 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
         seed_key = "initial" if arm == "initial" else arm+":"+str(replicate)
         payload = {"model": config["model"], "messages": messages, "stream": False,
                    "options": {**config["decoding"], "num_predict": config["max_tokens_per_call"], "seed": p["seeds"][seed_key]}}
+        if "sampler" in config:  # landmark-v2 only; v1 payload bytes unchanged
+            payload["sampler"] = dict(config["sampler"])
         rec = {"root_id": p["root_id"], "arm": arm, "replicate": replicate, "request": payload, "request_sha256": digest(payload),
                "attempted": False, "output": None, "output_sha256": None, "missing_reason": None,
                "prompt_tokens": None, "completion_tokens": None, "seconds": 0.0}
