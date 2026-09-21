@@ -1,5 +1,14 @@
 # Hourly research checkpoint
 
+## MRL-10 reviewed; MRL-11 instrument validation released — 2026-09-21T20:15:14Z
+
+Last seen and independently reviewed worker revision 0bb2388a85c4167d514bc2359707f8b834b8ef5f. Reconciled package hashes, grading source map and contract, unchanged private assertions/reference code and real-mode config/spec validation. Read the saved E9 record:47 nongenerating requests,1.215 seconds, zero model calls and no state drift. Focused local tests:68passed,2failed due to host-bound E2 paths; failures preserved, not counted as passes. Independent source reviewer accepts running the frozen bundle only on its intended worker host with exact path/hash checks.
+
+[MRL-11 release](mrl10_review_mrl11_release_20260921.md): one ordered E1–E8 job, at most77 isolated start attempts, one CPU,20-minute whole-bundle cap,$0, zero model/receiver requests, no retries. Mandatory JSON verdicts govern advancement; shell exit alone is insufficient for E1/E2/E6. Charge E1's full9-start reservation if interrupted without established usage. E7 disagreement is preserved; unexpected failures stop subsequent mandatory stages. E11 remains unreleased and receiver ownership unresolved. No sandbox/model program ran in the lead review.
+
+51%, delta0. Next milestone is independently reviewed executed instrument-validation evidence, then receiver ownership/current freeze for the same-prefix development study. Efficacy remains unestablished; full project not submission-ready.
+
+
 ## MRL-09 reviewed; static build and nongenerating preflight authorized — 2026-09-21T19:41:20Z
 
 Latest seen/reviewed worker e1660b2 completed19:23:13 UTC inside its allowance. Independently ran326 focused mocked tests in1.31s; all passed. Reviewed repaired frozen grading bindings and diagnostic safeguards. Source inspection found E1 path mismatch, historical E8 script incompatible with rebound specs/402 expectations, and E10's overlooked existing auditor. No live executions attempted. [Decision](mrl09_independent_review_20260921.md) releases MRL-10 static build and validation-plan repairs plus at most50 nongenerating loopback metadata/template requests, oneCPU/30minutes/$0. No model or sandbox execution released. The remaining exact E2/E6/E7 fixtures and durable canary accounting must be finalized before one ordered instrument-validation bundle is released. No separate owner approval per gate is required.

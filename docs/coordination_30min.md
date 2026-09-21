@@ -126,3 +126,7 @@ MRL-05/06 deliveries were received and independently reviewed; source guard and 
 ## Current queue after MRL-09 review
 
 MRL-08/09 source/mock deliveries are received and reviewed. MRL-10 now authorizes the static release build, validation-plan repairs and bounded nongenerating preflight under the exact caps in docs/mrl09_independent_review_20260921.md. E1–E8 execution and E11 model collection remain unreleased. This supersedes the older current-queue paragraph; no further MRL-07/J7 decision is pending.
+
+## Current queue after MRL-10 review
+
+MRL-10 static package/preflight is reviewed. MRL-11 releases one ordered E1–E8 instrument-validation bundle on the intended host:77starts maximum,20minutes,oneCPU,$0,zero model calls. Exact conditions and stop rules are in docs/mrl10_review_mrl11_release_20260921.md. Earlier HOLD paragraphs are historical. E11 collection remains unreleased; no receiver ownership agreement exists yet.
