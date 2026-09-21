@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import hashlib
 import json
 from pathlib import Path
 import sys
@@ -38,7 +39,27 @@ def boundary_assertion(entry_point, arguments, case):
     return f"assert {entry_point}({', '.join(repr(x) for x in args)}) == {expected!r}"
 
 
-def build(source, config):
+def reference_code(row, cfg, adopt):
+    """The reference placed in the private spec.
+
+    Default: the pinned original, exactly as before. With adopt=True and a task carrying a
+    `reference_repair`, the repaired reference is rebuilt from the original by the recorded change and
+    accepted ONLY if it hashes to the frozen `repaired_raw_sha256`. Nothing is taken on trust from the
+    contract's prose; and the grader still re-validates the reference against the full private suite
+    before it grades any candidate for that root.
+    """
+    repair = cfg.get("reference_repair")
+    if not adopt or not repair:
+        return row["code"]
+    if row["code"].count("return C[r]") != 1:
+        raise ValueError("Recorded repair does not apply to this reference")
+    repaired = row["code"].replace("return C[r]", "return C[r] % p", 1)
+    if hashlib.sha256(repaired.encode()).hexdigest() != repair["repaired_raw_sha256"]:
+        raise ValueError("Rebuilt repaired reference does not match its frozen hash")
+    return repaired
+
+
+def build(source, config, adopt_reference_repairs=False):
     if config["version"] not in (VERSION, VERSION_V2) or config["source_sha256"] != SOURCE_SHA:
         raise ValueError("Unexpected source or specification version")
     if file_sha(source) != SOURCE_SHA:
@@ -91,7 +112,7 @@ def build(source, config):
         spec = {"root_id": task["root_id"], "public_task_sha256": digest(task),
                 "entry_point": fn.name, "public_assertions": [],
                 "private_assertions": [*row["test_list"], *added], "preamble": [],
-                "reference_code": row["code"], "negative_controls": controls}
+                "reference_code": reference_code(row, cfg, adopt_reference_repairs), "negative_controls": controls}
         tasks.append(task)
         specs.append(spec)
         provenance.append({"root_id": task["root_id"], "status": cfg["status"],
@@ -110,6 +131,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--config", type=Path, default=ROOT/"experiments/landmark/task_contracts_v1.json")
+    parser.add_argument("--adopt-reference-repairs", action="store_true",
+                        help="Place hash-verified recorded reference repairs in the private specs (recorded in the manifest)")
     parser.add_argument("--out", type=Path, required=True,
                         help="Unused directory under ignored work/; contains PRIVATE reference/tests")
     args = parser.parse_args(argv)
@@ -120,13 +143,13 @@ def main(argv=None):
         raise FileExistsError("Use a new output directory; completed packages are immutable")
     started = time.monotonic()
     config = json.loads(args.config.read_text())
-    tasks, specs, provenance = build(args.source, config)
+    tasks, specs, provenance = build(args.source, config, adopt_reference_repairs=args.adopt_reference_repairs)
     frozen_grader = contract(specs)
     output.mkdir(parents=True, exist_ok=False)
     (output/"public_tasks.REVIEW_ONLY.jsonl").write_text("".join(json.dumps(t, sort_keys=True)+"\n" for t in tasks))
     (output/"private_specs.REVIEW_ONLY.json").write_text(json.dumps(specs, indent=2)+"\n")
     (output/"grading_contract.REVIEW_ONLY.json").write_text(json.dumps(frozen_grader, indent=2)+"\n")
-    manifest = {"version": VERSION, "evidence_class": "source-only contract preparation",
+    manifest = {"version": config["version"], "adopt_reference_repairs": bool(args.adopt_reference_repairs), "evidence_class": "source-only contract preparation",
         "ready_for_collection": False, "reference_controls_executed": False,
         "blocking_conditions": ["host containment not established", "mbpp/402 original reference conflicts with p=1,r=0",
             "other references/controls not executed", "families and independent policy-test cohort unresolved",
