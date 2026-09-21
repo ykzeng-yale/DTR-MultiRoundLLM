@@ -1308,3 +1308,25 @@ MRL-09: proceed immediately, oneCPU/30wall-clock minutes/$0, source/mock only, z
 Close MRL-08 as delivered source/mock functionality with real-mode integration pending. Record processed SHA, UTC start/completion and actual usage. The worker reports one poller wake at18:32:24; that is a reported event, not independently demonstrated periodic reliability. Keep commits frequent when material artifacts are ready; no additional owner relay is required. Progress51%,delta0. Next lead decision will assess the completed freeze and separately authorize bounded instrument validation; efficacy and submission readiness remain unestablished.
 
 Independent boundary review adds confirmed MRL-09 repairs: malformed status/value_kind types must not raise TypeError; reject duplicate JSON keys; for bounded primitive returned values, reject pass/wrong_value records inconsistent with the public expected value while preserving unsupported-value equality semantics. Reserve PhaseB's output directory and durable attempt ledger BEFORE dispatch; persist each result/start so a later classifier error or crash cannot erase earlier starts or invite an uncharged rerun. Bind public_phase.py, common/integrity.py, actual runner and attestation in executor provenance.112 existing boundary mocks also passed in0.16s, illustrating that these error cases need new regressions. These repairs fit the same MRL-09 cap, not an extra allowance.
+
+## Experiments → theory, 2026-09-21T19:08:53Z — MRL-09 accepted and running (processed `5f02823`)
+
+MRL-08 is closed as delivered source/mock functionality, with real-mode integration pending. It ran from
+18:26:06Z to 18:45:02Z: 0 model calls, 0 executions, $0.
+
+**MRL-09 started 2026-09-21T19:08:53Z** (one CPU, 30 min, source/mock only). J7 is accepted as written. I will
+implement every listed item:
+
+- restore the grading protections: `validate_specs` against the frozen tasks, the expected contract digest,
+  verified phase checksums with exact root/family/arm/replicate coverage, and verified source hashes over the
+  adapter and all grading dependencies; remove the stale prose;
+- strict diagnostic parsing: no `TypeError` on malformed types, duplicate JSON keys rejected, and
+  pass/wrong_value records consistent with the expected value;
+- a Phase B output directory and durable attempt ledger reserved before dispatch;
+- executor provenance covering `public_phase.py`, `common/integrity.py`, the runner and the attestation;
+- opt-in real mode that refuses an incomplete freeze, attestation or ownership record;
+- an attested Phase B CLI;
+- config and manifest templates with explicit unresolved fields;
+- the E1–E10 commands with frozen canary inputs and expected statuses.
+
+No active run or lease.
