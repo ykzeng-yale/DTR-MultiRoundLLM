@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-13 status recovery — 2026-09-21T22:58:52Z
+
+Two checks22:27Z and22:57Z found no new delivery. Remote main512f506, last worker6b3f311, scientific source review3f56ec6 unchanged. Issues #2–#5 unchanged; no open PRs. Published one status-recovery escalation in COORDINATION and issue #3, retaining the conditional release and all caps. Latest receipt was21:25:47Z; current execution/lease/scheduler state unverified. Available Codex tasks contain no uniquely identified separate experimental worker. No unrelated task messaged or duplicate job created.
+
+52%, delta0; no efficacy evidence, not submission-ready. Owner scheduling question remains pending. Next scientific review requires the frozen run outputs/diagnostics/grades/costs, not another test of unchanged source. No model or sandbox execution, no spend. If recovery is unanswered next review, explicitly request the exact external worker task/session link; do not repost this escalation.
+
 ## MRL-13 receipt verified; actual scheduling dependency — 2026-09-21T21:57:00Z
 
 Last seen worker `6b3f311db77f380914fee108bb9299066ad5fc1f`; substantive source review remains `3f56ec6`. MRL-13 acknowledged21:25:47Z after processing10937b3, reporting BLOCKED with zero dispatch and no run ID. Worker reports owner-chat requests about20:32Z and21:01Z, with another at acknowledgement. The lead surfaced the concrete45-minute receiver-window question to the owner here; no consent inferred. No repeated recovery escalation or duplicate worker. Issues #2–#5 and open PRs checked: no new scientific delivery.

@@ -1584,3 +1584,15 @@ agreement will be invented.
 ## Theory → experiments — 2026-09-21T21:57:00Z — receipt verified; interpretation recorded
 
 MRL-13 BLOCKED acknowledgement at6b3f311 is received; no further scientific approval is pending for its unchanged conditional scope. The lead has surfaced the actual45-minute scheduling question to the owner in this task. The [precollection interpretation guide](docs/e11_precollection_interpretation_20260921.md) clarifies existing reporting only; no source, intervention, analysis or budget changes. Retain the frozen release and report the real agreement or continued block; do not interpret this documentation commit as agreement.52%, delta0; no new efficacy evidence.
+
+## Theory → experiments — 2026-09-21T22:58:52Z — MRL-13 status recovery
+
+MRL-13 delivery recovery (single escalation). Two actual reviews,22:27Z and22:57Z, found no worker update after the21:25:47Z BLOCKED acknowledgement at6b3f311. Receipt of the scientific release is already verified; current execution/scheduler state is not. This is a status-recovery request, not a new experiment allowance.
+
+Already-issued decision remains: MRL-12 accepted; MRL-13 conditionally permits ONE frozen E11 development run only after a real committed receiver-owner agreement and all live guards pass. Otherwise HOLD with zero dispatch. No further scientific approval is pending for the unchanged scope. All caps and no-retry rules in docs/mrl12_review_mrl13_release_20260921.md remain unchanged.
+
+At the next available worker turn, publish a bounded status-only reply (at most5minutes, no model/receiver/sandbox calls,$0): real UTC; latest processed lead SHA (512f506 or this recovery commit); accepted/running/completed/blocked disposition; last actual scheduler tick and observed health/error; receiver-window request disposition; and any existing run ID/lease/immutable partial artifact, or explicitly none. If still waiting for the owner, say so; do not repeat model execution or fabricate an agreement. If a valid batch is running, do not interrupt it: use its next safe status boundary.
+
+The lead inspected available Codex tasks and found no uniquely identifiable separate experiment-worker task, so no unrelated task was messaged and no duplicate worker was created. A repository commit is sufficient for the reply. Owner scheduling question is already pending in the lead task. If this escalation remains unanswered at the next review, delivery cannot be verified; the missing routing detail will be the exact external worker task/session link.
+
+Progress52%, delta0. No new efficacy evidence; not submission-ready. Next discriminating scientific work is the independent audit of the frozen run's raw outputs, public diagnostics, private grades and costs; those artifacts have not been delivered. Repeating passed tests or changing the design while waiting would not resolve that dependency.

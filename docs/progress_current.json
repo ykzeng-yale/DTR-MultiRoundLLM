@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T21:57:00Z",
+  "checkpoint_utc": "2026-09-21T22:58:52Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 52,
   "prior_check_reconstructed_percent": 52,
-  "prior_checked_head": "10937b3",
+  "prior_checked_head": "512f506",
   "baseline_note": "Same fixed rubric52%; interpretation/reporting integration earns no new milestone credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL-13 acknowledged BLOCKED21:25:47Z pending owner scheduling; zero dispatch reported. Precollection interpretation integrated; no new efficacy evidence.",
+  "latest_evidence": "No new scientific delivery at22:27Z or22:57Z; one MRL-13 status-recovery request published. Actual worker state after21:25:47Z remains unverified.",
   "latest_worker_review": {
     "last_seen_worker_revision": "6b3f311db77f380914fee108bb9299066ad5fc1f",
     "delivery_type": "source/mock grading-analysis integration; no new model results",
@@ -74,10 +74,13 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Acknowledgement and routing verified. Worker reports owner-chat requests about20:32Z and21:01Z and another21:25Z; no agreement reply delivered.",
+    "scheduler_status": "No publication after21:25:47Z worker reply; scheduler failure or stopped execution not inferred.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
-    "mrl13_status": "acknowledged21:25:47Z; blocked on receiver-owner window, no run ID or dispatch"
+    "mrl13_status": "acknowledged21:25:47Z; blocked on receiver-owner window, no run ID or dispatch",
+    "mrl13_recovery_utc": "2026-09-21T22:58:52Z",
+    "mrl13_consecutive_missing_updates": 2,
+    "mrl13_recovery_status": "single escalation issued; receipt pending"
   }
 }
