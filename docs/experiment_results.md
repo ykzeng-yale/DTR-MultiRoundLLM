@@ -50,3 +50,33 @@ The real source-only builder took 0.010368 seconds and produced a review-only pa
 The [planning report](landmark_precision_plan_20260921.md) contains 14 deterministic design scenarios and six inversions of the existing fixed-family confidence radius. An independent internal reviewer recomputed them and verified source hashes without blockers. Under the conservative procedure, even seven independent roots all with contrast +1 have lower bound −.0266 for one prespecified 95% interval; the unresolved shared-group design yields [-1,1]. These are hypothetical calculations, not observed outcomes, power estimates, empirical failures or an impossibility theorem for other methods.
 
 The source-bound artifact is `results/landmark_precision_planning_20260921/report.json`; planning wall time was .001424 seconds. The full software suite passed 136 tests and 8 subtests in 1.47 seconds, including existing deterministic simulator checks. Zero model calls/tokens, benchmark executions, sandbox attempts, GPU work or spend. Earlier source results are unchanged. Milestone completion is approximately 49%, unchanged under the newly documented retrospective baseline. Full project remains not submission-ready; fresh supported prompt data and independent policy validation remain absent.
+
+## 21 September, 01:36 UTC heartbeat — Offline graph component completed
+
+The coordinating agent implemented the bounded source-adoption handoff, with an
+exact fixture/protocol commit 5884723 before implementation and code commit 61136c3
+before execution. See [the validation report](graph_offline_validation_20260921.md).
+Three pure Reasoning Gym functions are narrowly reused with license/provenance;
+strict JSON/public-feedback handling and interruption-safe immutable records are
+validated. The 32-root batch made 42 generator attempts and matched 15/15 controls,
+including missing output. Independent artifact review checked source hashes,
+all 32 direct reference constraints and public/private/ledger consistency. These
+are trusted data-only fixtures, not LLM outputs or code-candidate execution.
+
+The full suite passes 222 tests and 8 subtests in 1.52 seconds. Whole batch process
+0.233 seconds, 24.92 MiB peak RSS, 58,262 artifact bytes; zero model calls/tokens,
+spend, sandbox launches, installations or downloads. A pre-execution interruption
+bug was found and fixed. The historical novelty audit no longer controls current
+README/theory claims; current source links were corrected without rewriting history.
+
+Keep the original seven coding roots and all holds. The controlled graph target
+has a complete public verifier and a cheap algorithmic solution; it cannot prove
+practical LLM utility or prompt efficacy. The current collector is still three-arm
+v1, not the five-arm amendment. No collection is released. Next return the exact
+receiver/environment/resource window and finish the selected renderer/measurement
+freeze, then fresh data and independent policy validation. Resource clarification
+was requested from the owner; no answer or paid approval has been inferred.
+
+Progress remains 49%, Δ=0 points; full project not submission-ready. Continue on
+current main under Yukang Zeng's identity. Do not repeat the unchanged offline
+batch merely to create activity, and do not expand generator training.

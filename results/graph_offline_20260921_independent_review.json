@@ -1,0 +1,1181 @@
+{
+  "audit_activity": {
+    "candidate_programs_executed": 0,
+    "model_calls": 0,
+    "read_only_validation_seconds": 0.18053279258310795,
+    "tasks_regenerated": 0,
+    "test_runs": 0,
+    "upstream_grader_calls": 0
+  },
+  "checked_quantities": {
+    "accepted_roots": 32,
+    "artifact_bytes": 58262,
+    "assigned_roots": 32,
+    "attempt_histogram": {
+      "1": 26,
+      "2": 3,
+      "3": 2,
+      "4": 1
+    },
+    "checks_passed": 245,
+    "checks_total": 245,
+    "declared_family_count": 1,
+    "directly_validated_references": 32,
+    "exact_duplicate_groups": [],
+    "fixed_controls_independently_checked": 15,
+    "ledger_generation_attempt_sum": 42,
+    "public_rows_with_exact_graph_only_context": 32,
+    "source_files_checked": 7
+  },
+  "checks": [
+    {
+      "check": "exact_frozen_config_bytes",
+      "passed": true
+    },
+    {
+      "check": "frozen_config_hash",
+      "passed": true
+    },
+    {
+      "check": "design_is_implementation_ancestor",
+      "passed": true
+    },
+    {
+      "check": "review_HEAD_matches_implementation",
+      "passed": true
+    },
+    {
+      "check": "summary_commit_bindings",
+      "passed": true
+    },
+    {
+      "check": "manifest_hash_matches_summary",
+      "passed": true
+    },
+    {
+      "check": "artifact_fixed_controls.json",
+      "passed": true
+    },
+    {
+      "check": "artifact_private_references.jsonl",
+      "passed": true
+    },
+    {
+      "check": "artifact_public_tasks.jsonl",
+      "passed": true
+    },
+    {
+      "check": "artifact_root_ledger.jsonl",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/graph_adapter.py",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/vendor/REASONING_GYM_LICENSE",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/vendor/__init__.py",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/vendor/reasoning_gym_graph_color.py",
+      "passed": true
+    },
+    {
+      "check": "source_experiments/landmark/vendor/reasoning_gym_graph_color_manifest.json",
+      "passed": true
+    },
+    {
+      "check": "source_scripts/validate_graph_offline.py",
+      "passed": true
+    },
+    {
+      "check": "start_marker_hash",
+      "passed": true
+    },
+    {
+      "check": "start_marker_bindings",
+      "passed": true
+    },
+    {
+      "check": "artifact_directory_membership",
+      "passed": true
+    },
+    {
+      "check": "assigned_root_IDs_and_order",
+      "passed": true
+    },
+    {
+      "check": "unique_export_IDs",
+      "passed": true
+    },
+    {
+      "check": "public_private_ledger_alignment",
+      "passed": true
+    },
+    {
+      "check": "all_roots_accepted",
+      "passed": true
+    },
+    {
+      "check": "all_denominators_32",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_0",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_0",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_0",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_0",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_0",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_0",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_1",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_1",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_1",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_1",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_1",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_1",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_2",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_2",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_2",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_2",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_2",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_2",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_3",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_3",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_3",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_3",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_3",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_3",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_4",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_4",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_4",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_4",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_4",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_4",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_5",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_5",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_5",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_5",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_5",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_5",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_6",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_6",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_6",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_6",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_6",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_6",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_7",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_7",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_7",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_7",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_7",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_7",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_8",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_8",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_8",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_8",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_8",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_8",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_9",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_9",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_9",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_9",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_9",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_9",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_10",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_10",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_10",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_10",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_10",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_10",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_11",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_11",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_11",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_11",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_11",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_11",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_12",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_12",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_12",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_12",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_12",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_12",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_13",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_13",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_13",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_13",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_13",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_13",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_14",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_14",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_14",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_14",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_14",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_14",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_15",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_15",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_15",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_15",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_15",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_15",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_16",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_16",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_16",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_16",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_16",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_16",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_17",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_17",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_17",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_17",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_17",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_17",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_18",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_18",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_18",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_18",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_18",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_18",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_19",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_19",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_19",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_19",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_19",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_19",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_20",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_20",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_20",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_20",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_20",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_20",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_21",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_21",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_21",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_21",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_21",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_21",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_22",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_22",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_22",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_22",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_22",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_22",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_23",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_23",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_23",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_23",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_23",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_23",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_24",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_24",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_24",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_24",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_24",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_24",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_25",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_25",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_25",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_25",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_25",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_25",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_26",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_26",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_26",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_26",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_26",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_26",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_27",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_27",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_27",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_27",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_27",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_27",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_28",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_28",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_28",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_28",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_28",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_28",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_29",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_29",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_29",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_29",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_29",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_29",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_30",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_30",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_30",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_30",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_30",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_30",
+      "passed": true
+    },
+    {
+      "check": "root_schedule_31",
+      "passed": true
+    },
+    {
+      "check": "independent_specification_and_reference_31",
+      "passed": true
+    },
+    {
+      "check": "public_field_isolation_31",
+      "passed": true
+    },
+    {
+      "check": "root_hashes_31",
+      "passed": true
+    },
+    {
+      "check": "attempt_bounds_31",
+      "passed": true
+    },
+    {
+      "check": "reference_flags_31",
+      "passed": true
+    },
+    {
+      "check": "one_fixed_public_prompt",
+      "passed": true
+    },
+    {
+      "check": "status_histogram",
+      "passed": true
+    },
+    {
+      "check": "attempt_total",
+      "passed": true
+    },
+    {
+      "check": "no_failed_or_unknown_roots",
+      "passed": true
+    },
+    {
+      "check": "exact_duplicate_groups",
+      "passed": true
+    },
+    {
+      "check": "honest_family_and_readiness_scope",
+      "passed": true
+    },
+    {
+      "check": "control_names_and_order",
+      "passed": true
+    },
+    {
+      "check": "independent_control_valid",
+      "passed": true
+    },
+    {
+      "check": "independent_control_valid_permuted",
+      "passed": true
+    },
+    {
+      "check": "independent_control_monochromatic",
+      "passed": true
+    },
+    {
+      "check": "independent_control_missing_vertex",
+      "passed": true
+    },
+    {
+      "check": "independent_control_extra_vertex",
+      "passed": true
+    },
+    {
+      "check": "independent_control_out_of_domain",
+      "passed": true
+    },
+    {
+      "check": "independent_control_boolean_color",
+      "passed": true
+    },
+    {
+      "check": "independent_control_fractional_color",
+      "passed": true
+    },
+    {
+      "check": "independent_control_integral_float_color",
+      "passed": true
+    },
+    {
+      "check": "independent_control_duplicate_key",
+      "passed": true
+    },
+    {
+      "check": "independent_control_noncanonical_key",
+      "passed": true
+    },
+    {
+      "check": "independent_control_malformed",
+      "passed": true
+    },
+    {
+      "check": "independent_control_empty",
+      "passed": true
+    },
+    {
+      "check": "independent_control_array",
+      "passed": true
+    },
+    {
+      "check": "independent_control_missing_output",
+      "passed": true
+    },
+    {
+      "check": "control_counts",
+      "passed": true
+    },
+    {
+      "check": "artifact_byte_accounting",
+      "passed": true
+    },
+    {
+      "check": "reported_peak_RSS_bound",
+      "passed": true
+    },
+    {
+      "check": "reported_elapsed_order_and_bound",
+      "passed": true
+    },
+    {
+      "check": "zero_receiver_and_program_activity_declared",
+      "passed": true
+    },
+    {
+      "check": "successful_run_status",
+      "passed": true
+    }
+  ],
+  "controls": [
+    {
+      "independent_score": 1,
+      "matches_recorded": true,
+      "name": "valid",
+      "status": "observed"
+    },
+    {
+      "independent_score": 1,
+      "matches_recorded": true,
+      "name": "valid_permuted",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "monochromatic",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "missing_vertex",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "extra_vertex",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "out_of_domain",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "boolean_color",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "fractional_color",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "integral_float_color",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "duplicate_key",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "noncanonical_key",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "malformed",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "empty",
+      "status": "observed"
+    },
+    {
+      "independent_score": 0,
+      "matches_recorded": true,
+      "name": "array",
+      "status": "observed"
+    },
+    {
+      "independent_score": null,
+      "matches_recorded": true,
+      "name": "missing_output",
+      "status": "missing"
+    }
+  ],
+  "design_freeze_commit": "58847236039b84f561bcc94c2ad53bd7e72e0fa1",
+  "files": {
+    "fixed_controls.json": {
+      "bytes": 3021,
+      "sha256": "0f0c1330da50eb7a91a2a12f833bd31ea57b5dc519f70a4ac792e91e18d4641a"
+    },
+    "private_references.jsonl": {
+      "bytes": 15569,
+      "sha256": "c36256cd61211bb614905bcdb8dc2b0b76cc974d99a615037c416fea7f2d6a02"
+    },
+    "public_tasks.jsonl": {
+      "bytes": 23824,
+      "sha256": "c8025931f68b6be7d81780c4ae1def9c553918eae1b67b0f7f085ee4e5b322f9"
+    },
+    "root_ledger.jsonl": {
+      "bytes": 12712,
+      "sha256": "7a7993323d8de2ec4c85f0bcc693c0b04d6a100afb169d3f66bc54a911dbe90a"
+    }
+  },
+  "implementation_commit": "61136c329768e9d826f89f70ca39a5483e36a680",
+  "input_bindings": {
+    "config_sha256": "8fcae6e34fdc7d935fcd5301bfd24efd0cce1ad490e5921ff1db7e8cc831714e",
+    "manifest_sha256": "18bcc4d94b251c18444b5bccc28cf03deda07526bc94c86f5e87ab73713464f6",
+    "run_summary_sha256": "4dbda6bd43c5acac5848a6f5a6a21da9b185ee051921290a027799c8f7d1ed8e"
+  },
+  "issues": [],
+  "limitations": [
+    "Generation attempts and producer runtime/RSS are recorded measurements; this audit verifies their ledger sums/bounds but does not independently replay or remeasure the producer.",
+    "Exact duplicate hashes are not an isomorphism screen, proof of distinct semantic families, or evidence of no prior exposure. All32 roots retain one shared development-family label.",
+    "Complete public constraint validity is the declared graph endpoint; this is a separate controlled extension and does not validate the coding endpoint or establish prompt-policy efficacy.",
+    "No receiver outputs were collected. Positive references and fixed controls establish only their measured offline contracts; ready_for_collection remains false.",
+    "The audit runtime covers reading, hashing, local Git checks and independent validity calculations through report assembly, excluding final audit-file serialization/write."
+  ],
+  "reported_run_resources": {
+    "elapsed_total_seconds": 0.17708395794034004,
+    "paid_spend_usd": 0,
+    "peak_resident_bytes": 26132480,
+    "process_elapsed_seconds": 0.23264566715806723,
+    "receiver_calls": 0,
+    "receiver_tokens": 0,
+    "whole_process_timeout_seconds": 60
+  },
+  "reviewed_at_utc": "2026-09-21T01:50:57.181132+00:00",
+  "reviewer": "Independent evidence agent for Yukang Zeng",
+  "schema_version": "graph-offline-independent-review-v1",
+  "scope": "Read-only audit of persisted offline fixtures and local Git objects; no regeneration, upstream grader invocation, model calls, candidate execution or test rerun.",
+  "source_files": {
+    "experiments/landmark/__init__.py": {
+      "matches_implementation_commit": true,
+      "sha256": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb"
+    },
+    "experiments/landmark/graph_adapter.py": {
+      "matches_implementation_commit": true,
+      "sha256": "0f22040fbc0f29ceb125ab629f6e390789a5caa1485d127d2127cfa494bacc84"
+    },
+    "experiments/landmark/vendor/REASONING_GYM_LICENSE": {
+      "matches_implementation_commit": true,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    "experiments/landmark/vendor/__init__.py": {
+      "matches_implementation_commit": true,
+      "sha256": "e8584f68beb6aebde68d69f0a39bb470b711e9857f97c7592b6603e3576d36a4"
+    },
+    "experiments/landmark/vendor/reasoning_gym_graph_color.py": {
+      "matches_implementation_commit": true,
+      "sha256": "bcd4ed71c47bb202bd57ca1e56477b81e1e270fd71a8710fe8e507181f994cca"
+    },
+    "experiments/landmark/vendor/reasoning_gym_graph_color_manifest.json": {
+      "matches_implementation_commit": true,
+      "sha256": "575404ce51446b2601bf11852630752b7e4ce8095c5d08189b0da1cb35d488d2"
+    },
+    "scripts/validate_graph_offline.py": {
+      "matches_implementation_commit": true,
+      "sha256": "98d688c5e6c30bd73e7cb549b32d7653429bcec6add4f3974dd08a0bc3bd082d"
+    }
+  },
+  "status": "passed"
+}

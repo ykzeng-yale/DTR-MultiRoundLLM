@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "failure": null,
+  "assigned_roots": 32,
+  "accepted_roots": 32,
+  "generation_failed_roots": 0,
+  "not_attempted_roots": 0,
+  "recorded_generation_attempts": 42,
+  "generation_attempt_count_unknown_roots": 0,
+  "fixed_controls_checked": 15,
+  "fixed_controls_matched": 15,
+  "peak_resident_bytes": 26132480,
+  "artifact_bytes": 58262,
+  "elapsed_total_seconds": 0.17708395794034004,
+  "manifest_sha256": "18bcc4d94b251c18444b5bccc28cf03deda07526bc94c86f5e87ab73713464f6",
+  "output": "work/graph_offline_20260921_0136_v1",
+  "receiver_calls": 0,
+  "receiver_tokens": 0,
+  "paid_spend_usd": 0,
+  "command": [
+    ".venv/bin/python",
+    "scripts/validate_graph_offline.py",
+    "--output",
+    "work/graph_offline_20260921_0136_v1"
+  ],
+  "whole_process_timeout_seconds": 60,
+  "process_elapsed_seconds": 0.23264566715806723,
+  "implementation_commit": "61136c329768e9d826f89f70ca39a5483e36a680",
+  "design_freeze_commit": "58847236039b84f561bcc94c2ad53bd7e72e0fa1"
+}

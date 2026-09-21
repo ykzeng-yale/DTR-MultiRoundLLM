@@ -2,41 +2,40 @@
 
 > **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
-## Current checkpoint — 21 September 2026, literature-guided design
+## Current checkpoint — 21 September 2026, offline measurement validation
 
 **Research milestone completion: approximately 49%, Δ=0 percentage points.**
-The fixed rubric is unchanged. The source audit improves design preparation but
-has not completed the broader claim-ledger reconciliation or a measurement release.
-Fresh prompt efficacy remains unestablished; the full project is not submission-ready.
+The same fixed rubric applies. The new offline graph component is complete within
+its narrow scope; it does not close the original measurement/receiver release,
+fresh-prompt or independent-policy milestones. Efficacy remains unestablished and
+the full project is not submission-ready.
 
-The coordinator and three independent workstream reviewers examined ten close
-primary-paper designs and official code from eleven repositories. The
-[literature-to-design report](literature_guided_design_20260921.md) separates
-feedback access, instruction strategy, stopping/selection, final-artifact quality
-and total budget. Source code exposed oracle/cumulative scoring and version
-mismatches that must not be inherited blindly. These observations do not re-estimate
-published results. The [source inventory](literature/source_inventory_20260921.json)
-records exact revisions and hashes; the [adoption handoff](opensource_adoption_20260921.md)
-specifies small reusable components and required corrections. No upstream runner
-has been integrated or executed.
+The [frozen offline validation](graph_offline_validation_20260921.md) now implements
+three narrowly reused, licensed Reasoning Gym functions, strict JSON grading and
+public-only feedback. The one batch accepted all 32 roots in 42 generation attempts;
+all 15 frozen controls matched, including an absent-output case. Independent
+read-only review verified artifact/source hashes, all 32 reference colorings,
+public/private root bindings and the assigned denominator. The generated tasks
+remain one shared development family with ready_for_collection=false. This is a
+separate complete-public-verifier extension, not replacement of the seven coding
+roots or evidence that a prompting policy works.
 
-The [simulation amendment](literature_simulation_plan_20260921.md) adds a
-receiver-output mechanism, matched fitted-Q/DR comparisons and measurement failure
-cells. It requires a numerical freeze before execution. Independent review checked
-the intervention-kernel formula, replication precision and proposed 132-call
-arithmetic; information leakage and replica-selection ambiguities were tightened.
+Review also repaired interruption accounting before the batch and corrected the
+live README/theory references to superseded novelty claims. The final suite passed
+222 tests and 8 subtests in 1.52 seconds; the exhaustive grader check covers 5,184
+small graph/coloring combinations, not empirical observations.
 
-The seven-root coding slate remains engineering-only and blocked on its existing
-measurement/isolation/receiver conditions. A controlled graph-checking extension
-and later adapted instruction-constraint application are separate targets, not
-replacement roots. Next: a narrow offline component with validated controls and a
-complete receiver/measurement freeze, then fresh prompt collection and independent
-policy evaluation. Generator expansion remains deferred.
+The batch took 0.233 seconds for the whole process, with 26,132,480 peak resident
+bytes and 58,262 artifact bytes. Zero receiver calls/tokens, paid spend, candidate
+program/coding-reference execution, sandbox starts or package installs occurred.
+The independent artifact audit took 0.181 seconds without regenerating tasks.
 
-Usage this continuation: zero receiver calls/tokens, benchmark/reference executions,
-sandbox launches, package installs or paid spend. The source-inventory check took
-0.388 seconds; full research wall time was not comprehensively instrumented.
-The prior 136-test/8-subtest run was not repeated or counted as new evidence.
+Next: a complete graph-specific renderer/receiver freeze if that controlled
+extension is selected, or original coding collection after genuine containment and
+reference/control validation. A resource inquiry asks for available Linux/GPU
+access or preparation of a capped API proposal; no response or spending approval
+is assumed. Independent policy evaluation on untouched roots remains required;
+larger generator development stays deferred.
 
 ## Earlier preparation checkpoints — 20 September 2026
 

@@ -705,3 +705,33 @@ service, model download or generator training is authorized by this review.
 Progress 49%, unchanged; no new efficacy evidence; not submission-ready. Zero model
 calls/tokens, benchmark executions, sandbox launches, installs or spend. Published
 directly on current main under Yukang Zeng's identity; preserve current ancestry.
+
+## 21 September, 01:36 UTC heartbeat — Offline graph component completed
+
+The coordinating agent implemented the bounded source-adoption handoff, with an
+exact fixture/protocol commit 5884723 before implementation and code commit 61136c3
+before execution. See [the validation report](docs/graph_offline_validation_20260921.md).
+Three pure Reasoning Gym functions are narrowly reused with license/provenance;
+strict JSON/public-feedback handling and interruption-safe immutable records are
+validated. The 32-root batch made 42 generator attempts and matched 15/15 controls,
+including missing output. Independent artifact review checked source hashes,
+all 32 direct reference constraints and public/private/ledger consistency. These
+are trusted data-only fixtures, not LLM outputs or code-candidate execution.
+
+The full suite passes 222 tests and 8 subtests in 1.52 seconds. Whole batch process
+0.233 seconds, 24.92 MiB peak RSS, 58,262 artifact bytes; zero model calls/tokens,
+spend, sandbox launches, installations or downloads. A pre-execution interruption
+bug was found and fixed. The historical novelty audit no longer controls current
+README/theory claims; current source links were corrected without rewriting history.
+
+Keep the original seven coding roots and all holds. The controlled graph target
+has a complete public verifier and a cheap algorithmic solution; it cannot prove
+practical LLM utility or prompt efficacy. The current collector is still three-arm
+v1, not the five-arm amendment. No collection is released. Next return the exact
+receiver/environment/resource window and finish the selected renderer/measurement
+freeze, then fresh data and independent policy validation. Resource clarification
+was requested from the owner; no answer or paid approval has been inferred.
+
+Progress remains 49%, Δ=0 points; full project not submission-ready. Continue on
+current main under Yukang Zeng's identity. Do not repeat the unchanged offline
+batch merely to create activity, and do not expand generator training.

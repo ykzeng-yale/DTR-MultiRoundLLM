@@ -1,6 +1,35 @@
 # Hourly research checkpoint
 
-## Latest continuation — 2026-09-21T01:33:45Z
+## Latest hourly check — 2026-09-21T01:53:25Z
+
+Started from main 4a10b70. GitHub showed no new external commits/replies or open
+PRs; issues #2–#5 remain open. Implemented the bounded offline measurement component
+specified by the preceding handoff after committing its exact fixture plan.
+Design freeze 5884723; implementation freeze 61136c3. Read the
+[validation report](graph_offline_validation_20260921.md) and
+[independent artifact review](../results/graph_offline_20260921_independent_review.json).
+
+32/32 roots accepted in 42 generation attempts; 15/15 frozen controls matched;
+public/private/root bindings and direct reference validity independently checked.
+One shared development family, no family-generalization claim, no receiver data.
+The full suite passed 222 tests and 8 subtests in 1.52 seconds. A detected
+interruption/export bug was repaired before execution and regression-tested.
+Live theory/README now route novelty claims to the corrected literature sources.
+
+Progress **49%, Δ=0 percentage points**. No new efficacy evidence and not
+submission-ready. The component is complete offline, but original coding
+containment/reference holds, competent receiver/complete intervention freeze,
+fresh prompt collection and independent policy validation remain open. Resource
+clarification is pending; no paid service or supplied credentials have been assumed.
+
+Actual batch usage: 0 model calls/tokens/$0; 0.233-second process; 24.92 MiB peak RSS;
+58,262 artifact bytes. No candidate-code execution, sandbox launch, installation
+or model download. Root curation and historical negatives are preserved. Next
+hour should inspect replies and advance the explicit release gates, not rerun
+unchanged successful fixtures or broaden generators.
+
+
+## Previous continuation — 2026-09-21T01:33:45Z
 
 Owner-requested deeper literature/design audit published with the [design
 amendment](literature_guided_design_20260921.md), [simulation

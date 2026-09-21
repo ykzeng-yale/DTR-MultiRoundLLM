@@ -11,7 +11,16 @@ checkpoints rather than re-invented each time.
 It is a **planning estimate of work completed against work required**. It is not an
 acceptance probability, not a quality judgement, and not a time estimate.
 
-## Latest continuation — 21 September 2026, literature/design review
+## Latest hourly continuation — 21 September 2026, offline component
+
+**49%, Δ=0 percentage points.** The frozen graph adapter/fixtures and independent
+artifact review complete the bounded offline task. This is a separate controlled
+measurement extension; the fixed component credit is unchanged because the main
+receiver/evaluator release, fresh prompt data and independent policy validation
+remain open. No new efficacy evidence; not submission-ready. See the
+[executed validation and limits](graph_offline_validation_20260921.md).
+
+## Prior continuation — 21 September 2026, literature/design review
 
 **49%, Δ=0 percentage points.** The deeper primary-paper/code audit and concrete
 reuse/simulation amendments refine work already credited in literature/design.

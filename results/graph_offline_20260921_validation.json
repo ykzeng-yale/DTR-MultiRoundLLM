@@ -1,0 +1,24 @@
+{
+  "design_freeze": "58847236039b84f561bcc94c2ad53bd7e72e0fa1",
+  "implementation_freeze": "61136c329768e9d826f89f70ca39a5483e36a680",
+  "classification": "deterministic offline measurement validation; no model efficacy evidence",
+  "tests": {
+    "command": "uv run --extra dev pytest -q",
+    "passed": 222,
+    "subtests_passed": 8,
+    "elapsed_seconds": 1.52,
+    "independent_graph_assignment_cases": 5184
+  },
+  "independent_review": "graph_offline_20260921_independent_review.json",
+  "run": "graph_offline_20260921_run.json",
+  "scope_boundaries": [
+    "Separate complete-public-verifier extension; original coding roots unchanged",
+    "One shared development family; no family independence certified",
+    "Existing collector remains three-arm v1",
+    "No model collection released"
+  ],
+  "progress_percent": 49,
+  "delta_percentage_points": 0,
+  "submission_ready": false,
+  "prompt_efficacy_established": false
+}

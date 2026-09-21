@@ -1,6 +1,9 @@
 # Concrete open-source adoption handoff
 
-21 September 2026. **Inspected and pinned; not installed or integrated.** Use the
+21 September 2026. **Initial source-adoption handoff.** The narrow graph component
+has subsequently been implemented and checked in the [offline validation
+report](graph_offline_validation_20260921.md); the full upstream runners remain
+uninstalled and no receiver collection is released. Use the
 [source inventory](literature/source_inventory_20260921.json) for exact commits,
 URLs, SHA-256 hashes and licenses. It covers 11 repositories and 145 unique source
 files, including inspected paper downloads. This is an audit inventory, not a

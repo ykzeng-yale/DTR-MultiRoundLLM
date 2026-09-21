@@ -14,7 +14,18 @@ Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and
 
 The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. It predates the later scientific self-audit and landmark supplement; the current editable documents govern. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
-## Latest continuation — 20 September 2026
+## Latest continuation — 21 September 2026
+
+The [literature-guided design](docs/literature_guided_design_20260921.md) now has a
+concrete [offline graph measurement component](docs/graph_offline_validation_20260921.md):
+licensed source reuse, strict public-constraint grading, fixed controls and
+interruption-safe provenance. The frozen 32-root batch validates that component;
+it contains no receiver outcomes and does not replace the coding task. Research
+completion remains approximately 49%, unchanged under the fixed rubric. Fresh
+prompt efficacy, receiver/measurement release and independent policy validation
+remain open; the full project is not submission-ready.
+
+## Earlier continuation — 20 September 2026
 
 Read the [scientific judgment](docs/scientific_judgment_20260920.md) and [hourly checkpoint](docs/monitoring_checkpoint.md) first. The [landmark design](docs/landmark_prompt_theory.md), seven exact check groups, 1,200-dataset known-truth personalization study and bounded collector remain available. The latest continuation adds source-family curation, a private grading adapter and finite-sample inference safeguards. A specific 24-root law exposes 91.28% coverage for the earlier nominal 95% normal interval; conservative bounds now state their fixed-weight independent-family assumptions and multiplicity scope. A zero average arm contrast still does not rule out personalized benefit; a best-observed-branch gain does not establish deployable benefit.
 
