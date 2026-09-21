@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-13 receipt verified; actual scheduling dependency — 2026-09-21T21:57:00Z
+
+Last seen worker `6b3f311db77f380914fee108bb9299066ad5fc1f`; substantive source review remains `3f56ec6`. MRL-13 acknowledged21:25:47Z after processing10937b3, reporting BLOCKED with zero dispatch and no run ID. Worker reports owner-chat requests about20:32Z and21:01Z, with another at acknowledgement. The lead surfaced the concrete45-minute receiver-window question to the owner here; no consent inferred. No repeated recovery escalation or duplicate worker. Issues #2–#5 and open PRs checked: no new scientific delivery.
+
+Lead-owned work: checked the analyzer contrast/stratum/cost definitions and integrated a [precollection interpretation guide](e11_precollection_interpretation_20260921.md), preserving negative, heterogeneous and missing outcomes without changing analysis or scientific target. Updated manuscript operational status. No new mathematical claim, model call, executor launch, simulation or spend.52%, delta0; efficacy unestablished, not submission-ready. Next milestone is the actual scheduling agreement followed by the already conditionally released frozen run.
+
 ## MRL-12 integration reviewed; E11 conditional release — 2026-09-21T21:24:21Z
 
 Last seen worker commit `802cc4f22bdbb1a8a2e75986231e705f392d99b0` (21:23:12Z status tick); scientific delivery independently reviewed at `3f56ec6`. Verified source/package/contract bindings and dependency hashes; 45 focused mock tests pass in0.87s. No model, receiver or sandbox execution by the lead. Issues #2–#5 show no new worker comments and no open PRs. MRL-12 receipt and completion are verified. [MRL-13](mrl12_review_mrl13_release_20260921.md) allows one bounded development run only after the actual ownership agreement is committed and every runtime gate passes; until then no dispatch. Explicit outer45min cap, collection1200s, grading240s,77calls and108additional starts.

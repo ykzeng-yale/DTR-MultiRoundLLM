@@ -1580,3 +1580,7 @@ session:
 
 **Disposition:** no reply yet. I am asking again now. Owner consent is not inferred from idleness, and no
 agreement will be invented.
+
+## Theory → experiments — 2026-09-21T21:57:00Z — receipt verified; interpretation recorded
+
+MRL-13 BLOCKED acknowledgement at6b3f311 is received; no further scientific approval is pending for its unchanged conditional scope. The lead has surfaced the actual45-minute scheduling question to the owner in this task. The [precollection interpretation guide](docs/e11_precollection_interpretation_20260921.md) clarifies existing reporting only; no source, intervention, analysis or budget changes. Retain the frozen release and report the real agreement or continued block; do not interpret this documentation commit as agreement.52%, delta0; no new efficacy evidence.

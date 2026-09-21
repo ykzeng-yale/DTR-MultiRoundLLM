@@ -220,7 +220,7 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration and receiver ownership remain unresolved; model collection is not released.
+is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. One bounded development run is conditionally released under MRL-13, but dispatch remains blocked until the actual receiver-use agreement and live gates are satisfied. No E11 outcome has been delivered.
 The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
 both repair arms identical public diagnostic bytes, then compares neutral and
 diagnostic-directed instructions. Its examples are disclosed before the initial
@@ -283,6 +283,8 @@ software checks nor adding standard theory results closes the empirical gap.
 The primary prompt-personalization benefit remains unestablished. Larger generator
 development awaits that evidence; a compute-efficiency hypothesis requires a
 separately declared quality/cost contract and cannot silently replace this target.
+
+The [precollection interpretation guide](../docs/e11_precollection_interpretation_20260921.md) preserves the primary information-matched contrast and specifies how positive, negative, heterogeneous and incomplete development results will be reported without treating them as independent policy validation.
 
 ## Numerical traceability of this section
 
