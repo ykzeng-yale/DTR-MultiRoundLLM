@@ -1,0 +1,143 @@
+{
+ "manifest": "dev-release-v2-diagnostic-PROPOSAL",
+ "status": "proposal only; nothing released; lead gate required",
+ "processed_lead_sha": "6b88f68",
+ "receiver": {
+  "schema": "landmark-v2",
+  "base_url": "http://127.0.0.1:8193",
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "sampler_law": "server_defaults_pinned",
+  "sampler": {
+   "top_k": 40,
+   "min_p": 0.05,
+   "typical_p": 1.0,
+   "top_n_sigma": -1.0,
+   "xtc_probability": 0.0,
+   "repeat_penalty": 1.0,
+   "repeat_last_n": 64,
+   "presence_penalty": 0.0,
+   "frequency_penalty": 0.0,
+   "dry_multiplier": 0.0,
+   "mirostat": 0
+  },
+  "decoding": {
+   "temperature": 0.7,
+   "top_p": 0.95,
+   "num_ctx": 8192
+  },
+  "receiver_state_sha256": "TO BE SNAPSHOT IMMEDIATELY BEFORE RELEASE (read-only /props)",
+  "ownership_evidence": "TO BE RECORDED AT FREEZE: server PID/start time, owning project, written agreement that no other client uses :8193 during the window; sampled idle slots are not a lease"
+ },
+ "collection": {
+  "roots": 7,
+  "arms": [
+   "STOP",
+   "N0",
+   "S0",
+   "N1",
+   "S1",
+   "R1"
+  ],
+  "branch_replicates": 2,
+  "receiver_calls": 77,
+  "max_tokens_per_call": 512,
+  "max_completion_tokens": 39424,
+  "max_seconds": 1200,
+  "paid_usd": 0,
+  "seeds": "independent arm:replicate streams; no coupling claim"
+ },
+ "public_executor_caps": {
+  "per_case_soft_alarm_seconds": 2,
+  "aggregate_cpu_seconds_RLIMIT_CPU": 5,
+  "parent_wall_seconds": 10,
+  "memory": "RLIMIT_DATA 536870912 bytes requested; best effort on macOS, not guaranteed containment",
+  "output_cap_bytes": 65536,
+  "file_size_RLIMIT_FSIZE_bytes": 65536,
+  "nproc": 1,
+  "starts_per_artifact": 1,
+  "retries": 0
+ },
+ "grader_caps": {
+  "timeout_seconds": 2.0,
+  "cpu_seconds": 1,
+  "output_cap_bytes": 65536,
+  "memory": "RLIMIT_DATA 536870912 bytes best effort",
+  "source": "experiments/landmark/grade.py:83,146"
+ },
+ "diagnostic": {
+  "schema": "public-diagnostic-v1",
+  "header": "Public diagnostic report for the previous answer (execution status is recorded per case):",
+  "serialization": "json sort_keys, separators (',',':'), ensure_ascii=False, UTF-8",
+  "max_bytes": 2048,
+  "overflow": "raises DiagnosticOverflow (validation failure); never truncated"
+ },
+ "start_ledger": {
+  "core": [
+   {
+    "use": "public_instrument_references",
+    "detail": "7 references x 1 start (3 public cases each) must pass all public cases",
+    "starts": 7
+   },
+   {
+    "use": "public_instrument_controls",
+    "detail": "17 negative-control artifacts x 1 start; predicted public pass patterns in results/public_checker_static_discrimination_20260921.json",
+    "starts": 17
+   },
+   {
+    "use": "status_category_fixtures",
+    "detail": "wrong_value, program_exception, timeout (alarm), output_limit, crash-after-start (later cases unavailable)",
+    "starts": 5
+   },
+   {
+    "use": "private_revalidation_new_binding",
+    "detail": "7 references + 17 controls against the rebound private specs",
+    "starts": 24
+   },
+   {
+    "use": "public_diagnostics_initial",
+    "detail": "7 initial artifacts (format errors execute nothing; count is an upper bound)",
+    "starts": 7
+   },
+   {
+    "use": "final_grading_candidates",
+    "detail": "7 STOP + 70 continuation artifacts",
+    "starts": 77
+   },
+   {
+    "use": "final_grading_reference_control_rechecks",
+    "detail": "grade.py re-validates references/controls inside final grading; reserved conservatively",
+    "starts": 24
+   }
+  ],
+  "core_total": 161,
+  "integrity": [
+   {
+    "use": "containment_attestation",
+    "detail": "fresh 9-canary attestation (24 h validity) before public/private execution",
+    "starts": 9
+   },
+   {
+    "use": "private_read_canary",
+    "detail": "public executor attempts to read the private spec path (must fail) and the public case file (must succeed)",
+    "starts": 2
+   },
+   {
+    "use": "spoof_tamper_canaries",
+    "detail": "forged-nonce line, duplicate line, extra line, stdout flood, SIGALRM caught/reset by candidate, RLIMIT_CPU exhaustion, parent-wall kill, sys.exit mid-case, os._exit mid-case, RecursionError crash, oversized return",
+    "starts": 11
+   },
+   {
+    "use": "interface_runtime_fixtures",
+    "detail": "missing entry point; signature bind failure (wrong arity)",
+    "starts": 2
+   }
+  ],
+  "integrity_total": 24,
+  "integrity_cap": 39,
+  "unallocated_margin": 15,
+  "ceiling": 200,
+  "rules": "no hidden retries; a shared gate is counted once only if documented as genuinely serving both purposes; record actual counts"
+ }
+}

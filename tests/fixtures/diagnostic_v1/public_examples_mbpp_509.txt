@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+average_Odd(13) == 7
+average_Odd(21) == 11
+average_Odd(31) == 16

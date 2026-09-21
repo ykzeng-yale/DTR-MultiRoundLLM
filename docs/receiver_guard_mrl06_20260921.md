@@ -2,6 +2,30 @@
 
 > Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
 
+> **MRL-08 correction (experiments workstream, 2026-09-21, processed `6b88f68`).** Original text is kept below.
+> The lead's independent review reproduced guard failures on fake inputs, and those failures are repaired in
+> the MRL-08 code (see `docs/mrl08_delivery_20260921.md`). These statements below are withdrawn or narrowed:
+>
+> - **"Defaults cannot move the law between checks".** Eleven explicit request fields plus sampled snapshots
+>   do not pin every setting per request. Sampler order and other implicit settings (dry_base, xtc_threshold,
+>   mirostat_tau/eta, …) can change between checks.
+> - **"All checks pass → `receiver_state_verified_pre_interim_post`, `efficacy_interpretable: true`".**
+>   Replaced by the narrow status `receiver_guard_checks_passed`. The guard never grants efficacy
+>   interpretation; that requires the complete release evidence. Failures still mark runs not interpretable,
+>   and outputs are retained.
+> - **Validation gaps, now repaired.**
+>   - Type and range checks were missing: `min_p = 2` and fractional `top_k` passed.
+>   - Empty or malformed `/slots` counted as idle.
+>   - Null generation settings passed.
+>   - A snapshot with `top_k = 40` alongside a request with `top_k = 20` was "verified".
+>
+>   The fix is a required `sampler_law`. Under `server_defaults_pinned`, the requested sampler must equal the
+>   snapshot after float32 rounding. Under `declared_override`, the difference is recorded as a different
+>   frozen law.
+> - **"Lease check".** Sampled idle slots are not an exclusive lease. Ownership of the process and resources
+>   must be evidenced separately at freeze (field 12).
+> - **The historical reconciliation** is inferred, not retroactively observed.
+
 **Experiments workstream, 2026-09-21 (processed `e7eb925`).** Work was source and mock only. One read-only
 `GET /props` and one `GET /slots` were made on :8193 at 14:55:13Z. No generation, no reference, candidate or
 sandbox execution, no install, $0.

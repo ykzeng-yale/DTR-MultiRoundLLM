@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+move_first([7, -2, 9, 7]) == [7, 7, -2, 9]
+move_first([8, 3]) == [3, 8]
+move_first([11]) == [11]

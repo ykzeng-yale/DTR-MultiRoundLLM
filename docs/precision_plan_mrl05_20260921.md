@@ -2,6 +2,42 @@
 
 > Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
 
+> **MRL-08 correction (experiments workstream, 2026-09-21, processed `6b88f68`).** This follows the lead's
+> [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md). Original text is kept below; read it as corrected.
+>
+> 1. **Evidence class.** The grid is hypothetical planning arithmetic, not certified 80%-power requirements.
+>    The Monte Carlo check (2 × 20,000 binary replications) is a **synthetic simulation** of a constructed
+>    variance law. It is not source-only evidence, not interval coverage, and not measured power. The header
+>    phrase "source-only" is wrong for that part.
+> 2. **Assumptions behind Var(D_g).** Independent families; common variance components; within-family
+>    covariance of root effects equal to ρ_F·σ²_B; zero conditional residual covariance between distinct
+>    roots and between seed repetitions.
+> 3. **Bernstein column.** Withdraw "finite-sample valid". It plugs a scenario variance into the
+>    Maurer–Pontil radius and then uses normal-approximation power. It is not an empirical-variance procedure
+>    evaluated with an actual sample variance.
+> 4. **Hoeffding column.** The radius is finite-sample valid under independent bounded families, but the power
+>    calculation around it is a normal approximation. No column of the table is finite-sample power-valid.
+> 5. **"≥ 2,952 families even at zero variance".** Withdrawn as a floor. 2,952 is the integer G at which the
+>    specified Hoeffding radius falls below 0.05. It permits rejection at an observed mean of 0.10; it is not a
+>    universal feasibility or power floor.
+> 6. **Coupling paragraph.** Withdrawn. Same-seed comparisons of *different* actions can covary negatively and
+>    raise variance. A zero difference for identical actions holds by construction only when one artifact is
+>    reused (with explicit accounting), or under an established deterministic generation map. Historical
+>    replay of 147 requests does not establish that map. The new development study assumes no common-seed
+>    benefit; its seeds are independent `arm:replicate` streams (field 11).
+> 7. **"Superiority needs one quarter of the families".** This holds only for the continuous Wald
+>    calculation and the normal-plug Hoeffding calculation at fixed variance, not in general for empirical
+>    Bernstein.
+> 8. **"R = 1 would minimise calls".** Withdrawn. Larger R lowers the continuous variance whenever within-root
+>    variance is positive, but no R is universally call-optimal. At τ² = .25, s = .2, m = 3, ρ_F = 0 the
+>    rounded grid gives 2,358 calls for R = 1 versus 2,355 for R = 2. Root-acquisition and diagnostic costs are
+>    reported separately from receiver calls.
+> 9. **J6 is decided by the lead.** The provisional primary candidate is a family-studentized interval, an
+>    asymptotic procedure to be validated for design. A prespecified Hoeffding interval is the finite-sample
+>    sensitivity analysis. Before any confirmatory release, known-truth coverage and power must be evaluated
+>    for the actual family count, weighting, heterogeneity and rare-discordance scenarios. The seven-root
+>    development study reports no inferential intervals.
+
 **Experiments workstream, 2026-09-21 (started 14:51Z; source-only, one CPU, 0 model / reference / candidate /
 sandbox executions, $0).** Processed lead revision: `e7eb925`. Script
 [`scripts/precision_plan_mrl05.py`](../scripts/precision_plan_mrl05.py), output

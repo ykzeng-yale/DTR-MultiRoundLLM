@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+parallelogram_area(7, 11) == 77
+parallelogram_area(13, 9) == 117
+parallelogram_area(2, 17) == 34

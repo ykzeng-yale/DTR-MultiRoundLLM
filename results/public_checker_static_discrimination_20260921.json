@@ -9,7 +9,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "97a8dea10670dc620a09a72b3ce3cdc5a5e7f45bdc7cde13ed6f92221617777d",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/52",
@@ -19,7 +22,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "dd867dca8ade98a664b1052609b37954b05fbc534efc770abbc0024fc778106e",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/52",
@@ -29,7 +35,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 2,
+   "control_code_sha256": "c17f0a74a20b7e01040f5bba0ff361323ee672f73dda8e5941038c23ac7cae57",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/357",
@@ -39,7 +48,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "388833903aa81ff0018d9856a6ce2f2f498ebb95bf186a8c7ad163a1fbc4cd9c",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/357",
@@ -49,7 +61,10 @@
     true,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "0e0c1f9aaa55eb10f8c1817eed681d00b7b8c9a79438e050808ebd11a791e1f1",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/357",
@@ -59,7 +74,10 @@
     true,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 2,
+   "control_code_sha256": "080af383e5bb1f71c2ddc7c504b426df5818ba683e2194da62b9ab49ba919241",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/373",
@@ -69,7 +87,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "a623e65a4b8df35b0256ae05bc25dd3ffc1cab9396aed731b10c0f0355da344b",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/373",
@@ -79,7 +100,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "add427c39e894f7472d9f7a403055f6d5deff7d69d75eae7c49f1487e415440f",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/378",
@@ -89,7 +113,10 @@
     false,
     true
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "6d7b0c2987ea14d9128ebdc63b133ad562af5f369ecb41500870ccebe626793b",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/378",
@@ -99,7 +126,10 @@
     true,
     true
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "0303210f62ee80fa422446ba03204b48bd763d736eb191d06f252eb3fe5ba1f7",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/378",
@@ -109,7 +139,10 @@
     true,
     true
    ],
-   "public_rejects": false
+   "public_rejects": false,
+   "control_index": 2,
+   "control_code_sha256": "642ff52c8346a50d5b8d5e238f2a359ee9cffe5315fddc36dd0cdde0e6e4c8d5",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/402",
@@ -119,7 +152,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "1c96381491be28ac6bed2d02fcffb31c41a263e0c654b24564906661e43d8ae9",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/402",
@@ -129,7 +165,10 @@
     false,
     true
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "ca39fe495b6d6d684be1b62c8abe6f38b23b26890d02b3c997226173c765d98e",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/402",
@@ -139,7 +178,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": null,
+   "control_code_sha256": null,
+   "is_control_artifact": false
   },
   {
    "root": "mbpp/402",
@@ -149,7 +191,10 @@
     true,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": null,
+   "control_code_sha256": null,
+   "is_control_artifact": false
   },
   {
    "root": "mbpp/489",
@@ -159,7 +204,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "93fd4f1be70c309779a0f4b0e2060fac281243ed9f1e31b62b0d56683eaa94e7",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/489",
@@ -169,7 +217,10 @@
     false,
     true
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "e37d8595575bde7965d1d236a170eda6fad6dd7adf8f24199e87a20db25b3733",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/509",
@@ -179,7 +230,10 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 0,
+   "control_code_sha256": "2b2195da7c8adcc9143b6f7c1b064466d6d8b7f5d3952337d0cf3f47648f3590",
+   "is_control_artifact": true
   },
   {
    "root": "mbpp/509",
@@ -189,7 +243,17 @@
     false,
     false
    ],
-   "public_rejects": true
+   "public_rejects": true,
+   "control_index": 1,
+   "control_code_sha256": "01e1e5451e84e00a6cfd428c85249fe3c4d005f0f785bfa485de602b08baae4a",
+   "is_control_artifact": true
   }
- ]
+ ],
+ "mapping_note": "19 predicted behaviours = the 17 negative-control artifacts of task_contracts_v2 (bound by code sha256, in contract order) + 2 non-control natural wrong programs for mbpp/402 (prime-only Lucas; original reference without % p). Predicted public rejection: 16/17 control artifacts (not the mbpp/378 empty-list control) and 2/2 non-control programs. Static prediction only; executed validation is a later released job.",
+ "summary": {
+  "control_artifacts": 17,
+  "controls_predicted_rejected": 16,
+  "non_control_programs": 2,
+  "non_control_predicted_rejected": 2
+ }
 }

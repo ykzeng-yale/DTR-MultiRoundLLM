@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+volume_cuboid(3, 7, 11) == 231
+volume_cuboid(2, 5, 13) == 130
+volume_cuboid(4, 4, 9) == 144

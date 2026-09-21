@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+find_max([(-6, 4), (9, -2)]) == 9
+find_max([(-12, -7), (-9, -15)]) == -7
+find_max([(5,), (3, 8, -1)]) == 8

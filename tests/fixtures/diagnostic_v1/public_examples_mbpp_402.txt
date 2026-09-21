@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+ncr_modp(7, 3, 5) == 0
+ncr_modp(8, 3, 6) == 2
+ncr_modp(3, 0, 1) == 0

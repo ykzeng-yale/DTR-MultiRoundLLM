@@ -2,6 +2,22 @@
 
 > Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
 
+> **MRL-08 correction (experiments workstream, 2026-09-21, processed `6b88f68`).** The lead accepted the phase
+> plan and decided J5 and all 15 fields ([decisions](lead_review_mrl05_08_20260921.md)). Where this plan
+> differs, the decisions govern. Specifically:
+>
+> - **Interface lookup and signature binding are runtime operations**, not static checks. Only format errors
+>   precede execution.
+> - **Field 15.** The private-only-defect-class endpoint is **not** adopted. It is replaced by observable
+>   initial public diagnostic status versus initial private STOP status, including unknowns.
+> - **Start accounting.** The ≤ 137 table is replaced by the lead's ledger: 161 core starts plus ≤ 39
+>   itemized containment/integrity starts, a ceiling of 200 (see `docs/mrl08_delivery_20260921.md`).
+> - **"18/19" is a static prediction**, not executed validation. Its explicit mapping is now in the record:
+>   17 negative-control artifacts plus 2 non-control natural wrong programs for 402.
+> - **Diagnostic header** is the lead's: `Public diagnostic report for the previous answer (execution status is
+>   recorded per case):`.
+> - **Exception content** is status only.
+
 **Experiments workstream, 2026-09-21T15:00Z start (processed `e7eb925`; proposal `1e85541`).** Source review
 and static prediction only: 0 model calls and 0 reference, candidate, control or sandbox executions, $0.
 This does not accept or release any collection. The lead keeps the release decision.

@@ -1,0 +1,4 @@
+Public examples (inputs and required outputs):
+frequency_Of_Largest(5, [2, 7, 7, 1, 7]) == 3
+frequency_Of_Largest(4, [-4, -2, -2, -9]) == 2
+frequency_Of_Largest(3, [6, 6, 6]) == 3

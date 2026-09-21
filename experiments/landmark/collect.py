@@ -9,6 +9,7 @@ import math
 from pathlib import Path
 import random
 import re
+import struct
 import subprocess
 import time
 import os
@@ -44,18 +45,98 @@ def source_hashes():
 # explicitly in every request AND freezes the server's whole outcome-relevant /props state, re-checked before
 # every root and after the run. Only fields that change without any change of receiver law are excluded.
 SCHEMAS = ("landmark-v1", "landmark-v2")
-V2_KEYS = {"receiver_state_sha256", "sampler"}
+V2_KEYS = {"receiver_state_sha256", "sampler", "sampler_law"}
 PINNED_SAMPLER = ("top_k", "min_p", "typical_p", "top_n_sigma", "xtc_probability", "repeat_penalty",
                   "repeat_last_n", "presence_penalty", "frequency_penalty", "dry_multiplier", "mirostat")
 VOLATILE_PROPS = {"is_sleeping"}
+# sampler_law binds the request to the frozen mapping. "server_defaults_pinned": every pinned request value must equal
+# the frozen snapshot's server default (the request restates the observed law). "declared_override": a different
+# frozen law; its differences from the snapshot are recorded per run as sampler_overrides.
+SAMPLER_LAWS = ("server_defaults_pinned", "declared_override")
+# An idle /slots sample is not an exclusive lease: another client can occupy a slot right after the read.
+LEASE = "sampled_idle_slots_only_not_exclusive"
+GUARD_LIMITS = ("Eleven explicit sampler fields plus sampled state snapshots are not every setting pinned per request",
+                "Sampler order and other implicit settings can change between checks",
+                "Idle slots are sampled, not leased; process/resource ownership is not evidenced by this guard")
+
+
+def _num(v):
+    return type(v) in (int, float) and math.isfinite(v)  # type(), not isinstance(): bool is never a number here
+
+
+# Field domains (llama.cpp semantics). Integer fields reject floats, including 20.5 and 20.0.
+SAMPLER_DOMAINS = {
+    "top_k": lambda v: type(v) is int and v >= 0,
+    "min_p": lambda v: _num(v) and 0 <= v <= 1,
+    "typical_p": lambda v: _num(v) and 0 < v <= 1,
+    "top_n_sigma": lambda v: _num(v) and (v == -1 or v >= 0),
+    "xtc_probability": lambda v: _num(v) and 0 <= v <= 1,
+    "repeat_penalty": lambda v: _num(v) and v > 0,
+    "repeat_last_n": lambda v: type(v) is int and v >= -1,
+    "presence_penalty": lambda v: _num(v) and -2 <= v <= 2,
+    "frequency_penalty": lambda v: _num(v) and -2 <= v <= 2,
+    "dry_multiplier": lambda v: _num(v) and v >= 0,
+    "mirostat": lambda v: type(v) is int and v in (0, 1, 2),
+}
+assert set(SAMPLER_DOMAINS) == set(PINNED_SAMPLER)
+
+
+def check_sampler(sampler):
+    if not isinstance(sampler, dict) or set(sampler) != set(PINNED_SAMPLER):
+        raise ValueError(f"landmark-v2 pins exactly these server sampler settings: {PINNED_SAMPLER}")
+    bad = [k for k in PINNED_SAMPLER if not SAMPLER_DOMAINS[k](sampler[k])]
+    if bad:
+        raise ValueError(f"landmark-v2 sampler values outside their field domains: {bad}")
+
+
+def _f32(v):
+    try:
+        return struct.unpack("f", struct.pack("f", v))[0]
+    except OverflowError:
+        return v
+
+
+def sampler_differences(sampler, params):
+    """Pinned request values that differ from the snapshot's server defaults. llama-server stores sampler floats as
+    float32 and reports 0.05 as 0.05000000074505806, so floats compare after float32 rounding; two ints exactly."""
+    out = {}
+    for k in PINNED_SAMPLER:
+        a, b = sampler[k], params.get(k)
+        same = a == b if type(a) is int and type(b) is int else _num(b) and _f32(a) == _f32(b)
+        if not same:
+            out[k] = {"request": a, "server_default": b}
+    return out
 
 
 def receiver_state(props):
     """Canonical outcome-relevant receiver state from /props: everything except volatile fields.
 
-    Fail-closed by construction: a field added by a server upgrade enters the state and changes its digest."""
-    if not isinstance(props, dict) or not props.get("build_info") or "default_generation_settings" not in props:
-        raise ValueError("Receiver /props lacks build_info or default_generation_settings")
+    Fail-closed twice: the typed schema below must hold (null or malformed generation settings raise), and a field
+    added by a server upgrade enters the state and changes its digest."""
+    if not isinstance(props, dict):
+        raise ValueError("Receiver /props is not an object")
+    bad = []
+    if not isinstance(props.get("build_info"), str) or not props["build_info"]:
+        bad.append("build_info")
+    if not isinstance(props.get("chat_template"), str):
+        bad.append("chat_template")
+    if type(props.get("total_slots")) is not int or props["total_slots"] < 1:
+        bad.append("total_slots")
+    gen = props.get("default_generation_settings")
+    if not isinstance(gen, dict):
+        bad.append("default_generation_settings")
+    else:
+        if type(gen.get("n_ctx")) is not int or gen["n_ctx"] <= 0:
+            bad.append("default_generation_settings.n_ctx")
+        params = gen.get("params")
+        if not isinstance(params, dict):
+            bad.append("default_generation_settings.params")
+        else:
+            bad += [f"params.{k}" for k in PINNED_SAMPLER if not _num(params.get(k))]
+            if not isinstance(params.get("samplers"), list) or not all(isinstance(x, str) for x in params["samplers"]):
+                bad.append("params.samplers")
+    if bad:
+        raise ValueError(f"Receiver /props fails the typed state schema: {bad}")
     return {k: v for k, v in props.items() if k not in VOLATILE_PROPS}
 
 
@@ -140,10 +221,9 @@ def validate(config, tasks, real=False):
     if any(type(d[k]) not in (int, float) or not math.isfinite(d[k]) for k in ("temperature", "top_p")) or d["temperature"] < 0 or not 0 < d["top_p"] <= 1 or type(d["num_ctx"]) is not int or d["num_ctx"] < 1:
         raise ValueError("Invalid decoding parameters")
     if config["schema_version"] == "landmark-v2":
-        sampler = config["sampler"]
-        if not isinstance(sampler, dict) or set(sampler) != set(PINNED_SAMPLER) or any(
-                type(v) not in (int, float) or not math.isfinite(v) for v in sampler.values()):
-            raise ValueError(f"landmark-v2 pins exactly these server sampler settings: {PINNED_SAMPLER}")
+        check_sampler(config["sampler"])
+        if config["sampler_law"] not in SAMPLER_LAWS:
+            raise ValueError(f"landmark-v2 sampler_law must be one of {SAMPLER_LAWS}")
         if not isinstance(config["receiver_state_sha256"], str) or not config["receiver_state_sha256"]:
             raise ValueError("landmark-v2 requires a frozen receiver_state_sha256")
     parsed = urlparse(config["base_url"])
@@ -297,14 +377,19 @@ class LlamaServer:
         return receiver_state(self.props(timeout))
 
     def busy_slots(self, timeout):
-        """Slots processing any task right now; None if /slots is unavailable (treated as unverified)."""
+        """Slots processing any task right now, or None (unverified, never idle) unless /slots is exactly the typed
+        inventory of the current state: total_slots dicts with int ids 0..total_slots-1 and bool is_processing.
+        total_slots comes from the latest /props read, which run() refreshes via receiver_state() just before."""
         try:
+            total = (self._props or self.props(timeout)).get("total_slots")
             slots = self.request("/slots", None, timeout)
         except Exception:
             return None
-        if not isinstance(slots, list):
+        if type(total) is not int or total < 1 or not isinstance(slots, list) or len(slots) != total or any(
+                not isinstance(s, dict) or type(s.get("id")) is not int or type(s.get("is_processing")) is not bool
+                for s in slots) or sorted(s["id"] for s in slots) != list(range(total)):
             return None
-        return sum(bool(s.get("is_processing")) for s in slots)
+        return sum(s["is_processing"] for s in slots)
 
     def definition(self, timeout):
         props = self._props or self.props(timeout)
@@ -386,8 +471,9 @@ def receiver_verification(config, adapter, metadata, preflight_failure, fatal, g
             problems.append("postflight_weight_digest_changed")
     if problems:
         return {"status": "receiver_not_verified_outputs_retained", "efficacy_interpretable": False, "reasons": problems}
-    return {"status": "receiver_state_verified_pre_interim_post", "efficacy_interpretable": True,
-            "scope": "receiver law only; says nothing about task validity, grading or statistical adequacy"}
+    # Narrow on purpose (MRL-06): passing the guard does not make evidence interpretable for efficacy.
+    return {"status": "receiver_guard_checks_passed", "scope": "sampled receiver-state and idle-slot checks only",
+            "efficacy_interpretation": "not granted by the receiver guard; requires the complete release evidence"}
 
 
 def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic, config_path=None, tasks_path=None):
@@ -424,6 +510,8 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
 
     guarded = config["schema_version"] == "landmark-v2" and not isinstance(adapter, Mock)
     metadata["interim_checks"] = []
+    if guarded:
+        metadata.update(sampler_law=config["sampler_law"], lease=LEASE, receiver_guard_limits=list(GUARD_LIMITS))
     try:
         metadata["before"] = metadata_call(adapter.metadata)
         metadata["version"] = metadata_call(adapter.version)
@@ -437,6 +525,10 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
             metadata["state_before_sha256"] = digest(metadata["state_before"])
             if metadata["state_before_sha256"] != config["receiver_state_sha256"]:
                 raise ValueError("Receiver state (build/template/context/sampler defaults) differs from freeze")
+            overrides = sampler_differences(config["sampler"], metadata["state_before"]["default_generation_settings"]["params"])
+            if config["sampler_law"] == "server_defaults_pinned" and overrides:
+                raise ValueError(f"Request sampler differs from the frozen server defaults under server_defaults_pinned: {overrides}")
+            metadata["sampler_overrides"] = overrides  # empty under server_defaults_pinned by construction
             busy = metadata_call(adapter.busy_slots)
             if busy != 0:
                 raise ValueError(f"Receiver lease check failed: busy slots = {busy}")

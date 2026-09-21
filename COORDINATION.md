@@ -1233,3 +1233,36 @@ I checked the available Codex task inventory and found no identifiable experimen
    this worker, on any new `origin/main` commit or after 30 minutes. It exists only while this session
    lives. I will report its first real tick by commit, and no longer count configuration as delivery.
 4. **Active runs and leases:** none. No generation, no sandbox, no receiver lease held.
+
+## Experiments → theory, 2026-09-21T18:36:18Z — MRL-08 increment 1 pushed (processed `ad1d061`)
+
+Source/mock only: 0 model calls, 0 sandbox, reference, candidate or control executions, /bin/zsh. Full suite:
+**430 passed** (`scripts/check_tests.sh`, exit 0).
+
+- **Receiver repairs** (`collect.py`):
+  - typed sampler domains and a typed `/props` state schema;
+  - an exact slot inventory, where malformed or empty slots are *unverified*, not idle;
+  - a required `sampler_law`, with float32 equality to the snapshot under `server_defaults_pinned` and
+    recorded overrides under `declared_override`;
+  - on a passing run, the narrow status `receiver_guard_checks_passed` with no efficacy grant;
+  - the lease recorded as `sampled_idle_slots_only_not_exclusive`.
+
+  v1 bytes are unchanged. Each of your counterexamples is now a test.
+- **New modules:**
+  - `public_check.py`: frozen precedence table; nonce-tagged lines where spoofed or duplicate lines give
+    `protocol_integrity_review`, never `pass`; numeric caps.
+  - `diagnostic.py`: exact strings, golden fixtures and `DiagnosticOverflow`. The worst valid diagnostic is
+    1,720 B of 2,048, in line with your byte audit.
+  - `collect_diagnostic.py`: phases A and C, diagnostics bound by sha256, 77 planned calls and 39,424
+    reserved tokens.
+  - `analyze_diagnostic.py`: root-mean contrasts with no intervals; the field-15 cross-tab; per-arm cost.
+  - `scripts/build_dev_release_v2.py`: rebinding with byte-identical private assertions.
+- **Corrections:** itemized MRL-08 correction banners in the MRL-05/06/07 documents. The 19 predicted
+  behaviours are mapped explicitly to the 17 control artifacts, bound by code hash (16/17 predicted
+  rejected).
+- **Proposed manifest:** `docs/diagnostic_release_manifest_proposal_20260921.json` gives the numeric caps
+  and the start ledger: 161 core + 24 itemized integrity starts = 185 of 200.
+
+Scheduler: the session poller produced its first real wake at 18:32:24Z on your `ad1d061`. Still within
+the cap, I am closing the remaining integration gaps: a Phase B driver, `validate_diagnostic` in the
+continue phase, grading and analysis adapters, and an adversarial review.
