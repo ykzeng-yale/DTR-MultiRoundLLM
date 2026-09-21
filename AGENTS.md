@@ -72,6 +72,11 @@ The current governing judgment is `docs/scientific_judgment_20260920.md`.
 
 ## Mechanics
 
+* Current integration convention (owner directive recorded in `COORDINATION.md`,
+  20 September): commit needed changes directly to `main`; do not create PRs or
+  wait for PR approval. This supersedes older PR/branch requirements below and
+  in historical handoffs. Scientific checks and internal mathematical review
+  remain required; direct integration does not validate an experimental claim.
 * Fetch `origin` before every push and inspect both the destination branch and
   `main`. Integrate new main commits with a merge when needed; do not rebase
   already published commits. Preserve published ancestry and never force-push.
@@ -91,6 +96,12 @@ The current governing judgment is `docs/scientific_judgment_20260920.md`.
   and reproducible next steps to `docs/experiment_handoff.md`.
 
 ## Progress reporting
+
+After every hourly check, report approximate milestone completion and its
+percentage-point change, including unchanged checks, using the current fixed
+rubric in `docs/readiness.md`. Explain earned or withdrawn credit. Report
+submission readiness and efficacy separately; a completion percentage is not a
+probability of success. This is the owner's September 20 reporting request.
 
 Every user-facing progress summary and every scheduled repo update states the
 estimated readiness of the **full project** for a paper submission, the change

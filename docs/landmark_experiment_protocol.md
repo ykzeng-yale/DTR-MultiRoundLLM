@@ -41,6 +41,16 @@ The current point estimate weights roots equally, so a family with more included
 
 The development batch's success criterion is valid collection and interpretable uncertainty, not statistical superiority. Before a confirmatory trial, fix one primary policy contrast, an application-justified useful-gain threshold, confidence level, target precision and resource constraint. A lower confidence bound above zero supports superiority; a lower bound above the useful-gain threshold supports that stronger claim. An upper bound below the threshold supports futility for that declared benefit, while a wide interval is inconclusive. Adjust for any multiple primary claims and allow the noncausal-branded, history-adjusted learner to win.
 
+The [precision and decision table](landmark_precision_plan_20260921.md) makes this
+limit numerical: even seven hypothetical independent singleton roots all showing
+the maximal contrast +1 cannot exclude zero using the conservative single-contrast
+reference. The actual shared unresolved-family slate is less informative. This
+does not prove that other valid procedures cannot detect an effect. Keep this
+batch for engineering, and define a separate affordable evaluation design for the
+frozen policy; do not retroactively remove multiplicity or inflate the root count
+with continuation repetitions. The current analyzer reports arm summaries, not
+an already implemented independent learned-policy comparison.
+
 For an independently sampled paired binary contrast, planning uses `Var(D)=p_gain+p_harm−Delta^2` on all roots, not only oracle opportunities. The usual normal approximation is `n≈(1.96+.84)^2 Var(D)/delta^2`; this is a planning illustration, not a guarantee. At delta=.03 and total discordance .10/.30/.50, the approximation needs about 864/2,606/4,348 roots. Family dependence increases the requirement. Repeated branches can lower conditional seed noise but do not remove between-root variation. Use pilot variance with a justified allowance for its uncertainty and freeze the final design before evaluating the policy.
 
 ## Proposed bounded development budget

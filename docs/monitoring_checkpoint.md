@@ -1,11 +1,48 @@
 # Hourly research checkpoint
 
-Updated 20 September 2026. This file records scientific state for the hourly continuation; it is not a substitute for inspecting live GitHub before every run.
+Updated 21 September 2026, 00:25 UTC. This file records scientific state for the hourly continuation; it is not a substitute for inspecting live GitHub before every run.
+
+## Current milestone completion
+
+**Approximately 49%; Δ=0 percentage points this hour.** The [fixed reporting rubric](readiness.md)
+retains the eight historical weights but documents current component meanings,
+evidence and incomplete work. This is the first resumed hourly percentage report;
+the previous checked head `5c6ef13` also scores 49% under this rubric, explicitly
+reconstructed as the baseline. It is not an efficacy or submission probability.
+Full project remains not submission-ready. Fresh supported prompt collection and
+independent policy validation each have zero completion credit.
+
+## Latest check: 00:25 UTC
+
+GitHub confirms PR #6 merged at `5c6ef13` at 00:19:21 UTC, followed by main commit
+`ec5b343`, which records direct-main integration and clarifies the other agent's
+available communication channel. No open PR or new empirical result was observed;
+issues #2–#5 remain open. This clone moved to main without rewriting history.
+The new directive takes precedence over historical requests for a PR. AGENTS.md
+is synchronized here because the coordination commit had not actually changed it.
+
+New [precision/resource planning](landmark_precision_plan_20260921.md) applies the
+existing reviewed bound to 14 scenarios and six half-width thresholds. Even seven
+independent roots all showing +1 have a single-contrast lower bound of −.0266;
+the unresolved shared-family proposal gives the entire [-1,1] range. An independent
+internal reviewer recomputed every scenario and inversion without blockers.
+This limits the small batch to engineering development, not an impossibility
+claim about other designs or personalization. A policy-specific contrast requires
+its own frozen evaluation and multiplicity allocation; the current ten-endpoint
+analyzer does not already evaluate a learned policy.
+
+No model calls/tokens, benchmark executions, sandbox retries, GPU work or spend.
+The source-only planning report took .001424 seconds; it is numerical design
+arithmetic, not a new synthetic efficacy study. This work refines an existing
+design milestone, so the completion estimate is unchanged. Next: establish valid
+containment/measurement, resolve the 402 reference hold, and freeze the receiver and
+accepted development slate; independent policy validation follows on untouched
+root/family information.
 
 ## Schedule and reviewed state
 
 - Latest run: **23:24 UTC heartbeat**, starting from PR #6 head `aa9b92f` and main `2212165`. Live inspection found no new external commits, issue replies or reviews. Source-only contract work below is the meaningful change; no unchanged containment probes were repeated.
-- Active thread heartbeat: `dtr-multiroundllm-hourly-research-follow-up`, once per hour. Its scope is this repository, distinct from the existing DTR-AgentEvals routing automation. Continue useful bounded work and notify on meaningful progress/failure/decisions; do not post repetitive no-change comments.
+- Active thread heartbeat: `dtr-multiroundllm-hourly-research-follow-up`, once per hour. Its scope is this repository, distinct from DTR-AgentEvals routing monitoring. Report progress to the owner after every check, including unchanged percentages, as requested. Avoid repetitive unchanged GitHub comments.
 - Initial 22:24 UTC inspection found main `17215b5` and PR #6 at `1e544e4` with no new response. The pre-push refresh found new main commit `22121652beed58858b834a0e7e570104b6df1f65`: the experiments workstream acknowledged the theoretical corrections and described its file-based communication channel. This documentation-only update was preserved by merge `b60479c`; no code changed after the 121-test run. No new empirical result was supplied. Read the coordinating reply at the end of `COORDINATION.md`: the repeated single-assertion-filter interpretation still conflates two evaluation setups. This continuation is published on PR #6's same branch; inspect its live head rather than treating a recorded parent as current forever.
 - Commit identity: Yukang Zeng <ykzeng2019@gmail.com>. The owner-authorized historical attribution correction is complete; do not restore old ancestry.
 
@@ -40,7 +77,7 @@ Final validation for this continuation: **121 project tests and two subtests pas
 
 ## Next scientific work, in priority order
 
-1. Review and integrate PR #6's scientific corrections and new landmark work; resolve any reviewer findings against the declared estimand. Do not repeat completed synthetic runs unless a change or discrepancy warrants it.
+1. PR #6 is integrated. Continue on main and resolve scientific findings against the declared estimand; do not wait for a nonexistent PR-review requirement. Do not repeat completed synthetic runs unless a change or discrepancy warrants it.
 2. Resolve host sandbox startup with harmless checks in a supported environment, without weakening containment to obtain a pass. Preserve failed attempts and rebind the interpreter/profile/source evidence after any change. Do not run benchmark references or candidates until containment is demonstrated. The installed Docker client did not return daemon/version or image inventory within two five-second read-only probes; no alternate container runtime was established or started.
 3. Review the new `landmark-curated-development-contracts-v1` package and resolve the 402 reference defect using a separately versioned, validated repair if retaining that task. The source-only export is complete; actual reference/control execution is pending. Preserve all 24 curation decisions and do not backfill excluded tasks. Family labels remain a shared unresolved placeholder; these are not real-run task files. A larger untouched confirmatory cohort requires a new prespecified sampling/curation design.
 4. Complete reference/negative-control validation and pin a competent receiver/service, then freeze a bounded development batch. The earlier host inventory verified only 0.5B/1.5B Ollama artifacts, not the historical 3B/7B runtime; this hourly continuation did not start or claim a live receiver. The protocol ceiling remains 24 roots, two continuations per non-STOP arm, 168 calls, 512 completion tokens per call, 20 minutes, $0, and must be reduced to the actual frozen slate. A seven-root slate would require at most 49 receiver calls. The current strict exclusion mode cannot silently reuse known old families.
@@ -49,3 +86,11 @@ Final validation for this continuation: **121 project tests and two subtests pas
 ## Readiness and reporting boundary
 
 Full project: **not submission-ready**, unchanged in that categorical status. The present advance is design/theory/software validity; no claimed efficacy or safety certificate has been added. The largest remaining milestones are validated measurement/receiver/task freeze, actual supported prompt-intervention data, independent policy validation and manuscript integration. Historical readiness percentages are subjective planning scores and are not probabilities of scientific success. Report new negative, inconclusive and positive evidence equally and retain the coordinating agent's responsibility for choosing the next discriminating test.
+
+Latest validation addendum: 136 project tests and 8 subtests passed in 1.47 seconds,
+including the five new precision tests and six threshold subtests. The independent
+review and exact source hashes are recorded in
+`results/landmark_precision_planning_20260921/validation.json`.
+`docs/progress_current.json` records the 49-point sum, reconstructed baseline and
+zero-point change in machine-readable form. All validation remains source/numerical
+or mocked; there is no new empirical prompt result.

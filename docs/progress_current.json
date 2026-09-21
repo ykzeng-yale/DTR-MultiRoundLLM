@@ -1,0 +1,62 @@
+{
+  "rubric_version": "hourly-milestones-20260921-v1",
+  "checkpoint_utc": "2026-09-21T00:25:46Z",
+  "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
+  "components": [
+    {
+      "name": "literature",
+      "weight_percent": 10,
+      "completion_fraction": 0.8,
+      "contribution_points": 8.0
+    },
+    {
+      "name": "theory",
+      "weight_percent": 20,
+      "completion_fraction": 0.8,
+      "contribution_points": 16.0
+    },
+    {
+      "name": "design_and_measurement",
+      "weight_percent": 15,
+      "completion_fraction": 0.6,
+      "contribution_points": 9.0
+    },
+    {
+      "name": "harness",
+      "weight_percent": 10,
+      "completion_fraction": 0.6,
+      "contribution_points": 6.0
+    },
+    {
+      "name": "known_truth_validation",
+      "weight_percent": 10,
+      "completion_fraction": 0.6,
+      "contribution_points": 6.0
+    },
+    {
+      "name": "fresh_prompt_experiment",
+      "weight_percent": 15,
+      "completion_fraction": 0,
+      "contribution_points": 0
+    },
+    {
+      "name": "independent_policy_validation",
+      "weight_percent": 10,
+      "completion_fraction": 0,
+      "contribution_points": 0
+    },
+    {
+      "name": "manuscript_and_reproducibility",
+      "weight_percent": 10,
+      "completion_fraction": 0.4,
+      "contribution_points": 4.0
+    }
+  ],
+  "overall_percent": 49.0,
+  "prior_check_reconstructed_percent": 49,
+  "prior_checked_head": "5c6ef13549c9f007396361e67f012b905ad58ea9",
+  "baseline_note": "First resumed hourly percentage series; previous checked state reconstructed with same rubric, not a percentage reported last hour",
+  "delta_percentage_points": 0,
+  "submission_ready": false,
+  "fresh_prompt_efficacy_established": false
+}

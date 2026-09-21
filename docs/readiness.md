@@ -1,6 +1,6 @@
-# Full-project readiness rubric
+# Research-completion rubric and historical checkpoints
 
-> The percentages below are historical work-planning scores. The [current scientific judgment](scientific_judgment_20260920.md) controls advancement: the original prompt-choice benefit is untested and the project is not submission-ready. Additional proofs, files or simulations do not establish practical utility or raise a scientific probability of success.
+> Historical work-planning scores are preserved after the current reporting contract below. The [current scientific judgment](scientific_judgment_20260920.md) controls advancement: the original prompt-choice benefit is untested and the project is not submission-ready. Additional proofs, files or simulations do not establish practical utility or raise a scientific probability of success.
 
 `AGENTS.md` requires every user-facing progress summary and every scheduled repo
 update to state the estimated readiness of the **full project** for a paper
@@ -10,6 +10,64 @@ checkpoints rather than re-invented each time.
 
 It is a **planning estimate of work completed against work required**. It is not an
 acceptance probability, not a quality judgement, and not a time estimate.
+
+## Current reporting contract — 21 September 2026, 00:25 UTC
+
+The owner requested a percentage after **every** hourly check, including unchanged
+checks. The current estimate is **49% milestone completion**, with **0 percentage
+points of newly earned credit this hour**. This is the first checkpoint in the
+resumed hourly percentage series. Applying the rubric below retrospectively to the
+previous inspected head `5c6ef13` also gives 49%; that baseline reconstruction is
+explicit, not a claim that 49% was reported last hour. The historical 48% checkpoint
+used different credit judgments and must not be described as a one-point gain in
+this hour. Its eight component weights are retained unchanged.
+
+The number is a subjective planning estimate, rounded to the nearest whole
+percentage point, not a measured fraction of scientific truth, acceptance chance,
+time remaining or submission readiness. Completion credit requires concrete
+reviewed artifacts or evidence. A well-executed negative trial can earn full credit;
+a favorable unvalidated result cannot. Proof/test counts and GitHub integration do
+not automatically increase a component. Reported-only empirical findings earn at
+most half credit until independently checked. Lost validity can decrease credit.
+
+| Component | Fixed weight | Current component completion | Contribution | Evidence earning credit; what remains |
+|---|---:|---:|---:|---|
+| Positioning and literature | 10% | 80% | 8 points | Primary-source correction audit exists; reconcile broader novelty/claim ledger and final bibliography. |
+| Theory and proofs | 20% | 80% | 16 points | Scoped longitudinal/landmark results, independent reviews and exact checks; integrate the remaining broad-draft claims and final assumption-to-result audit. |
+| Experiment and measurement design | 15% | 60% | 9 points | Exact arms, curation and versioned public/private proposals; no valid receiver/evaluator/family/assignment release freeze yet. |
+| Implemented measurement and collection | 10% | 60% | 6 points | Collector, analyzer, private grader and provenance guards tested; containment, reference/control execution and receiver validation remain open. |
+| Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
+| Fresh supported-prompt experiment | 15% | 0% | 0 points | No validated fresh landmark prompt collection. Historical routing/reused-bank diagnostics earn no credit in this specifically fresh-data component. |
+| Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
+| Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
+| **Total** | **100%** | | **49 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+
+The last five columns of evidence are judgments, not automatically generated
+scores. Keep these eight weights and component meanings fixed for subsequent
+updates. A change must identify the component, specific newly completed or
+invalidated milestone, old/new credit and weighted difference. Do not reward
+repeated checks or additional documentation with automatic increments. If scope
+changes, publish old and new calculations and the reason; do not silently shrink
+the denominator to obtain a higher percentage.
+
+This operational rubric explicitly restores fresh prompt and independent policy
+validation as the experimental targets. It stops crediting the old routing/bank
+studies as completion of those targets while retaining their scientific value as
+diagnostics. The weighted increases from newly developed theory/design/software
+and the withdrawn experimental credits are already incorporated in the 49%
+retrospective baseline; they are not new gains for this check.
+
+**This hour's advance:** PR #6 is verified merged on main; the direct-main workflow
+is acknowledged; 14 planning scenarios and six precision thresholds are checked
+and independently reviewed. The [precision report](landmark_precision_plan_20260921.md)
+clarifies what the development batch can establish. These improve the existing
+design package but do not complete another scored milestone, hence Δ=0 points.
+The largest blockers remain valid containment/measurement, receiver and task
+freeze, fresh supported prompt data, and independent policy evaluation. Full
+manuscript integration remains required.
+
+The following weights and checkpoints are retained as historical context. Their
+original interpretations and now-superseded pivot do not override this contract.
 
 ## Weights
 

@@ -78,3 +78,11 @@ The source-only public/private export in [the contract report](landmark_task_con
 Resolve the newly detected 402 boundary defect (r=0,p=1) with a separate reviewed reference version and isolated checks if retaining that root. The original reference and positive-modulus domain remain unchanged in the review package. Do not exclude p=1 just to certify the old reference. Return control/reference outcomes, failures and source bindings only after containment passes. All other roots also await validation. Preserve every original curation decision and the unresolved family status; no backfill. The eventual call cap must follow the actual accepted subset, and this slate cannot serve as independent policy validation.
 
 No new environment startup attempt or receiver call was made. The full suite passes 131 tests and two subtests; no new efficacy evidence or submission readiness follows. The earlier endpoint/power wording correction requested from the experiments workstream remains open.
+
+## 21 September, 00:25 UTC — Direct-main integration and attainable precision
+
+PR #6 is merged. The current owner directive in COORDINATION.md supersedes historical PR requirements: integrate validated changes directly on main, preserving current ancestry and other agents' work. No PR approval wait is required.
+
+Read `docs/landmark_precision_plan_20260921.md`: the seven-root development slate cannot exclude zero under the present conservative bound even with the most favorable hypothetical contrast. This is a procedure-specific precision limit, not a universal impossibility result or an instruction to increase the collection budget. Its declared role remains engineering development. The later independent policy trial needs its own frozen contrast/multiplicity allocation, competent comparator, untouched root/family information and affordable precision. The current ten-endpoint analyzer reports arms, not a learned-policy comparison.
+
+Progress reporting now uses `docs/readiness.md`: approximately 49%, unchanged under the reconstructed prior-check baseline. Measurement/receiver validation, actual prompt collection and independent policy evaluation remain the main gaps. No new model, sandbox or benchmark-code execution occurred in this planning continuation.

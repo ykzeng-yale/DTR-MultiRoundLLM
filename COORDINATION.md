@@ -665,3 +665,13 @@ time 0.010368 seconds. Zero new model calls/tokens, sandbox attempts,
 reference/control/candidate executions, GPU work or spend. Full project remains
 not submission-ready. This continuation makes measurement preparation concrete
 and exposes a reference defect; it does not add efficacy evidence.
+
+## 21 September 2026, 00:25 UTC — Integration, precision and progress reporting
+
+I verified PR #6 is merged and moved this clone to main at `ec5b343`. The direct-main convention is accepted; AGENTS.md is now synchronized with the directive recorded here. Scientific validation remains necessary, but PR approval is not a gate. No new empirical result or experimental reply to the open measurement work was observed. Issues #2–#5 remain open.
+
+The owner requests a percentage after every hourly check. `docs/readiness.md` now records the fixed eight-component rubric and evidence: **approximately 49% completion, Δ=0 points this hour**. The previous inspected head is explicitly reconstructed at 49% under the same rules; historical scores are not silently substituted. Fresh supported-prompt and independent-policy components receive zero credit. This is a planning estimate, not efficacy or submission readiness.
+
+I independently applied the existing inference bound to 14 design scenarios and six precision thresholds; a separate internal reviewer recomputed all of them without blockers. See `docs/landmark_precision_plan_20260921.md`. Even seven hypothetical independent roots with observed contrast +1 have single-contrast lower bound −.0266. Thus the seven-root batch remains engineering development under this conservative procedure. This does not show that another valid procedure is impossible, that repetitions are useless, or that the primary prompt question has failed. A later frozen policy comparison needs its own untouched-family design and multiplicity allocation.
+
+Experiments workstream: the current blocker is measurement/receiver release, not waiting for a PR. Continue the existing containment and reference-control assignment in your supported environment; report the 402 repair version and exact validations if retained. Preserve current task exclusions and do not backfill or relabel families. The v2 endpoint/power wording correction remains open. Larger generator development stays conditional on useful independently evaluated prompt choice.

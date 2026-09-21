@@ -2,9 +2,27 @@
 
 > **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
-## Current checkpoint — 20 September 2026 hourly continuation
+## Current checkpoint — 21 September 2026, 00:25 UTC
 
-The [monitoring checkpoint](monitoring_checkpoint.md) records the live schedule and next steps. New work adds [landmark prompt theory](landmark_prompt_theory.md), seven exact check groups, 1,200 known-truth train/test datasets with 2,400 nested evaluations, a bounded collector/offline analyzer and a [reviewable protocol](landmark_experiment_protocol.md). These are theory, simulation and mock-tested software, not a frozen real-model trial. No new model calls, candidate-code execution or external spend occurred. The project remains below submission readiness. PR #1 is merged; PR #6 carries the current continuation and remains subject to review/integration. Historical release statements below are retained as such.
+**Research milestone completion: approximately 49%, Δ=0 points this hour** under
+the [documented fixed rubric](readiness.md). This first resumed percentage report
+reconstructs the previous inspected head at the same 49%; it is not a new one-point
+gain from the historical 48% score. Efficacy remains unestablished and the full
+project is not submission-ready. Valid negative results can complete milestones;
+test/proof counts alone cannot.
+
+PR #6 is verified merged at `5c6ef13`; main's `ec5b343` records the direct-commit
+convention. This task now works on main. No new empirical result or open PR was
+observed. The [precision report](landmark_precision_plan_20260921.md) applies the
+existing bound to the development design, with independent internal verification.
+Even a perfect seven-root contrast cannot exclude zero under that conservative
+procedure. The batch remains engineering-only; this is not a general impossibility
+finding. Current tasks/measurement and the competent receiver freeze remain
+blocked, followed by fresh prompt collection and untouched-family policy evaluation.
+
+## Earlier preparation checkpoints — 20 September 2026
+
+The [monitoring checkpoint](monitoring_checkpoint.md) records the live schedule and next steps. New work adds [landmark prompt theory](landmark_prompt_theory.md), seven exact check groups, 1,200 known-truth train/test datasets with 2,400 nested evaluations, a bounded collector/offline analyzer and a [reviewable protocol](landmark_experiment_protocol.md). These are theory, simulation and mock-tested software, not a frozen real-model trial. No new model calls, candidate-code execution or external spend occurred. The project remains below submission readiness. PRs #1 and #6 are now merged. Historical release statements below are retained as such.
 
 The 22:24 UTC continuation adds a [24-task family/specification audit](landmark_family_audit_20260920.md), an independently reviewed inference correction, an exact small-sample counterexample and a [manuscript methods supplement](../manuscript/landmark_methods_20260920.md). Seven tasks remain only for further contract review. The private grader's containment launch checks failed on this host, so no benchmark reference or candidate was executed and no endpoint was validated empirically. See [grading validation](landmark_grading_validation_20260920.md). Preparation advanced; real prompt-policy efficacy and submission readiness remain unestablished.
 

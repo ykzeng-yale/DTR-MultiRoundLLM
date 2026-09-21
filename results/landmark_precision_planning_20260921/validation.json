@@ -1,0 +1,30 @@
+{
+  "evidence_class": "deterministic planning and software validation",
+  "independent_review": {
+    "scope": "14 scenarios and 6 threshold inversions; arithmetic, hashes, tests and interpretation",
+    "reviewer": "separate internal theory reviewer",
+    "blocking_findings": 0,
+    "scope_limits": [
+      "Sufficient conservative precision, not power or impossibility",
+      "Shared unresolved group does not prove actual dependence",
+      "Ten existing arm/contrast endpoints do not include a new policy endpoint"
+    ]
+  },
+  "full_suite": {
+    "command": "uv run --extra dev pytest -q",
+    "passed": 136,
+    "subtests_passed": 8,
+    "reported_seconds": 1.47
+  },
+  "files_sha256": {
+    "scripts/plan_landmark_precision.py": "2591ece13d9c10e8661eac0a7ebe89ca52ff063fe405763da4d576fff17a83dc",
+    "tests/test_landmark_precision_plan.py": "89b51bfc84fc08a5aa186d44d334f4f0ccda7911fdb93d878f320ea24fb5e36c",
+    "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+    "results/landmark_precision_planning_20260921/report.json": "50b04228e06eeecfb493be7306e16ecd4a2436d74cc8d111887c0f6504fea241"
+  },
+  "model_calls": 0,
+  "model_tokens": 0,
+  "benchmark_executions": 0,
+  "sandbox_attempts": 0,
+  "external_spend_usd": 0
+}
