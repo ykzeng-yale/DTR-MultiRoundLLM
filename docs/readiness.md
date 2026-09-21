@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Executed instrument validation — 2026-09-21T20:51:00Z
+
+**52%, +1 point.** Independently reconciled MRL-11 artifacts account for all 77 starts and the declared instrument gates pass. Implemented measurement/collection rises from 80% to 90% of its 10-point weight; all other credits and weights remain fixed. This completes the bounded instrument-validation step, while CLI integration, a real receiver-use agreement and frozen collection remain open. No prompt efficacy or independent policy validation is established; the full project is not submission-ready.
+
 > Historical work-planning scores are preserved after the current reporting contract below. The [current scientific judgment](scientific_judgment_20260920.md) controls advancement: the original prompt-choice benefit is untested and the project is not submission-ready. Additional proofs, files or simulations do not establish practical utility or raise a scientific probability of success.
 
 `AGENTS.md` requires every user-facing progress summary and every scheduled repo
@@ -126,12 +130,12 @@ most half credit until independently checked. Lost validity can decrease credit.
 | Positioning and literature | 10% | 80% | 8 points | Primary-source correction audit exists; reconcile broader novelty/claim ledger and final bibliography. |
 | Theory and proofs | 20% | 80% | 16 points | Scoped longitudinal/landmark results, independent reviews and exact checks; integrate the remaining broad-draft claims and final assumption-to-result audit. |
 | Experiment and measurement design | 15% | 60% | 9 points | Exact arms, curation and versioned public/private proposals; no valid receiver/evaluator/family/assignment release freeze yet. |
-| Implemented measurement and collection | 10% | 80% | 8 points | Real adapter, remote containment/control records, graded collection and provenance independently inspected; complete receiver-law guards and measurement adequacy remain open. |
+| Implemented measurement and collection | 10% | 90% | 9 points | Scoped executed instrument validation independently reconciled; grading/analysis CLI, receiver agreement and end-to-end collection remain open. |
 | Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
 | Fresh supported-prompt experiment | 15% | 0% | 0 points | No validated fresh landmark prompt collection. Historical routing/reused-bank diagnostics earn no credit in this specifically fresh-data component. |
 | Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
 | Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
-| **Total** | **100%** | | **51 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+| **Total** | **100%** | | **52 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
 
 The last five columns of evidence are judgments, not automatically generated
 scores. Keep these eight weights and component meanings fixed for subsequent

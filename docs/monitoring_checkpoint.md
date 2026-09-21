@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-11 accepted; MRL-12 integration released — 2026-09-21T20:51:00Z
+
+Last seen worker head `0dd73c3de35c5c89bb555593542ed8ec0ae368dc` (20:49:14Z status tick); scientific delivery reviewed through `99860097c6e0edbc5f3ee6350dffb6cf98c25e60`; executed bundle delivered at `b73054e`. All 13 hashes reconcile, and ledger/result records account for 77 starts with declared gates passing. Public controls reject 16/17 as predicted; all 17 fail private grading. Review and handoff: [MRL-11 / MRL-12](mrl11_review_mrl12_handoff_20260921.md). Open PRs absent and issues #2–#5 checked; material feedback posted on issue #3 in this review.
+
+52%, +1 point under unchanged rubric. No efficacy established; not submission-ready. MRL-12 permits only source/mock CLI/cost integration for 20 minutes, one CPU, $0, no model or sandbox execution. Next: review integrated release bindings and actual receiver agreement before deciding E11. Lead review made zero model calls or sandbox starts.
+
 ## MRL-10 reviewed; MRL-11 instrument validation released — 2026-09-21T20:15:14Z
 
 Last seen and independently reviewed worker revision 0bb2388a85c4167d514bc2359707f8b834b8ef5f. Reconciled package hashes, grading source map and contract, unchanged private assertions/reference code and real-mode config/spec validation. Read the saved E9 record:47 nongenerating requests,1.215 seconds, zero model calls and no state drift. Focused local tests:68passed,2failed due to host-bound E2 paths; failures preserved, not counted as passes. Independent source reviewer accepts running the frozen bundle only on its intended worker host with exact path/hash checks.

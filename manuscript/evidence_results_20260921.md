@@ -220,7 +220,7 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is implemented as reviewed source/mock code, but has not been validated operationally. The ordered instrument-validation bundle is now authorized; model collection is not.
+is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration and receiver ownership remain unresolved; model collection is not released.
 The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
 both repair arms identical public diagnostic bytes, then compares neutral and
 diagnostic-directed instructions. Its examples are disclosed before the initial

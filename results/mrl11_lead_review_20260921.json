@@ -1,0 +1,64 @@
+{
+  "review_utc": "2026-09-21T20:51:00Z",
+  "worker_head": "99860097c6e0edbc5f3ee6350dffb6cf98c25e60",
+  "evidence_class": "read-only independent audit of saved finite instrument-validation records",
+  "artifact_checks": {
+    "E1.started_utc": true,
+    "attestation/attestation.json": true,
+    "e2/ledger.jsonl": true,
+    "e2/result.json": true,
+    "e3_e5/ledger.json": true,
+    "e3_e5/ledger.jsonl": true,
+    "e3_e5/result.json": true,
+    "e6/ledger.jsonl": true,
+    "e6/result.json": true,
+    "e7/ledger.jsonl": true,
+    "e7/result.json": true,
+    "e8/attempts.jsonl": true,
+    "e8/summary.json": true
+  },
+  "ledger_record_counts": {
+    "e3_e5/ledger.jsonl": {
+      "reserved": 1,
+      "start": 18,
+      "runner_result": 18,
+      "result": 18,
+      "complete": 1
+    },
+    "e2/ledger.jsonl": {
+      "reserved": 1,
+      "start": 2,
+      "result": 2,
+      "complete": 1
+    },
+    "e6/ledger.jsonl": {
+      "reserved": 1,
+      "start": 7,
+      "result": 7,
+      "complete": 1
+    },
+    "e8/attempts.jsonl": {
+      "reserved": 1,
+      "job_start": 24,
+      "program_start": 24,
+      "job_result": 24,
+      "complete": 1
+    },
+    "e7/ledger.jsonl": {
+      "reserved": 1,
+      "start": 17,
+      "result": 17,
+      "complete": 1
+    }
+  },
+  "validated_start_total": 77,
+  "lead_model_calls": 0,
+  "lead_sandbox_starts": 0,
+  "lead_cost_usd": 0,
+  "hash_and_ledger_audit_seconds": 0.003892207518219948,
+  "limitations": [
+    "No fresh prompt efficacy result",
+    "Not a universal measurement or security certificate",
+    "Worker execution was not repeated by lead"
+  ]
+}
