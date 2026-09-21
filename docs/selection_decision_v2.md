@@ -1,3 +1,19 @@
+> **CORRECTION (2026-09-21, per `docs/experimental_status_rulings_20260921.md`, J2).**
+> Two parts of this document are withdrawn. **Section 4** uses outcome-selected opportunity counts
+> (39, 89, 1,281 tasks) as the sample size for population-level policy improvement — invalid: those
+> are counts of events defined *using the outcome*. **Section 5** infers a do-no-harm certificate from
+> the sample size ("needs n ≥ 45; we have 230–561") — invalid: sample size alone certifies nothing, and
+> with a zero margin unchanged quality sits on the null boundary. The replacement is the ruling's
+> prospective **quality-and-cost contract**: freeze policy, comparator, population, family grouping and
+> fixed family weights before evaluation; success requires both ΔQ > −δ and ΔC > s_min with δ and
+> s_min fixed before outcomes; the conservative Hoeffding lower bound has radius
+> √(2·v_w·log(1/a)) — 0.1614 for one joint decision at a = .05 with 230 *actual independent,
+> equal-weight* families, which have **not** yet been established. The compute-efficiency direction is
+> a **separate optional hypothesis**, not a replacement for the primary prompt-efficacy target, which
+> remains primary.
+
+---
+
 # The selection question, decided end to end (supersedes the retracted v1)
 
 **2026-09-20.** Replaces `docs/selection_decision.md`, whose STOP conclusion is retracted

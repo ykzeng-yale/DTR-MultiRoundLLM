@@ -236,3 +236,29 @@ number: A2 reached it by fitting a beta-binomial to per-task success counts, the
 integrity/mutation route reached it through POOL A, and the scoring route reaches it
 again. `results/audits/final_pool.json` holds the list; it is the pool the
 experiments use, and any future gate can only shrink it.
+
+
+---
+
+## Corrections per the 2026-09-21 rulings
+
+Recorded 2026-09-21T12:39Z. The findings above are preserved as written; these are the interpretations the
+coordinating agent's rulings (`docs/experimental_status_rulings_20260921.md`) supersede.
+
+1. **"Upper bound on the bias is 0.0000" is too strong.** What was measured is that the *enumerated*
+   hack flags fired on 0 of 4,488 episodes. Absence of flags for enumerated exploits does not prove
+   zero bias from every possible exploit. The correct statement is the measured one.
+2. **"The effective sample is about 230 tasks" and "every power calculation must use 230" are
+   superseded.** A2's ~230 is a fitted informative *mass* under a difficulty law, and A4's 230 is a
+   difficulty-selected *subset*. Neither is a count of independent families, and their numerical
+   agreement is **not** independent replication of an effective-sample-size calculation. Power must be
+   computed on the actual target population with fixed family weights and paired variation, including
+   possible harm on baseline-correct roots; a restricted population needs its own declared target.
+3. **A3's repair rate (0.239) and degradation rate (0.162) are conditional descriptive findings.** They
+   are conditional on the first candidate's hidden status *and* on the source loop having chosen to take
+   another turn, and they describe that one loop's policy on that one corpus. They are not population
+   treatment effects and must not be reported as such.
+4. **Historical reference checks are not validation of the new contracts.** "591/591 references pass"
+   refers to the *original* endpoint and its original assertions. It says nothing about the
+   `landmark-curated-development-contracts-v1` private suites, which add authored boundary cases — and
+   under which the MBPP 402 reference has a known boundary defect (r = 0, p = 1).

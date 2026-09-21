@@ -1,3 +1,16 @@
+> **SUPERSEDED INTERPRETATION (2026-09-21, per `docs/experimental_status_rulings_20260921.md`).**
+> The numbers below are preserved as executed. Their interpretation is superseded by
+> **`docs/e0_corrected_results_20260920.md`** (corrected first-action weighting, template
+> heterogeneity graded against the replicate-specific mixture kernel, per-replication records) and
+> **`docs/history_compression_results_20260921.md`** (matched-fit diagnostics: plug-in and DR on
+> identical fitted Q models). In particular: the `FAIL_coarsening` coverage failure below (0.886) was an
+> artifact of grading against the zero-offset kernel — corrected coverage is 0.9625; "regret" below is
+> measured against a heuristic reference, not an optimal policy; and "conditioning beats weighting in
+> 16 of 17 cells" must carry the unresolved paired-MSE differences reported there and does not
+> establish superiority of adjusted regression everywhere.
+
+---
+
 # E0 results — estimator validation against exact truth
 
 > **Historical snapshot; conclusions require the 2026-09-20 corrections.** Read [continuation report](continuation_report_20260920.md), [theory reconciliation](theory_reconciliation_20260920.md), [experiment audit](experiment_recheck_20260920.md), and [literature recheck](literature_recheck_20260920.md) before using this document. Earlier universal impossibility, optimality, matched-cost kill, and feature-no-signal claims are superseded. Original text remains for provenance.
