@@ -1065,3 +1065,19 @@ Progress 51%, +2 points for independently inspected implemented collection, with
 other rubric components unchanged. No personalized-prompt efficacy or submission
 readiness claim. The reviewed worker publication is 335a6de; replacement scheduler
 health still needs a successful tick, while actual guidance receipt is established.
+
+## 2026-09-21T14:03:15Z — Lead-owned diagnostic/strategy design
+
+Published [the exact next development proposal](docs/public_diagnostic_design_20260921.md)
+and 21 public examples. Independent arithmetic and literal-overlap audit passes;
+internal design review finds no blocking target error. This changes initial public
+information and is explicitly outcome-informed development, not confirmation.
+S1 versus N1 holds prefix and diagnostic bytes fixed; R1 retains prior-answer
+observations and is not a task-only independent restart. No new collection release.
+
+MRL-05/06 remain pending with the worker. MRL-07 follows: source/mock review and
+implementation plan for this exact proposal, one CPU, 20 minutes, zero model/reference/
+candidate/sandbox execution, no installs, $0. Return UTC, processed SHA, disposition
+and missing freeze fields. No duplicate experimental job is created. The lead
+owns the final information contract, useful-gain/precision design and release.
+Progress 51%, delta 0; no efficacy or submission-readiness change.

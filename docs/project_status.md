@@ -1,5 +1,23 @@
 # Project status and claims ledger
 
+## Public-diagnostic design — 2026-09-21T14:03:15Z
+
+**51%, delta 0.** The [new exact development design](public_diagnostic_design_20260921.md)
+separates diagnostic exposure from instruction strategy while holding diagnostic
+bytes fixed in the primary comparison. It includes 21 public examples with independently
+recomputed answers and no literal private-input overlap, plus independent design
+review. No model, candidate/reference or sandbox execution occurred; $0.
+
+This is outcome-informed preparation on the same seven development roots. Initial
+public information changes; preserve the old pilot separately. No new collection
+is released. MRL-05/06 correction acknowledgement remains pending; latest worker
+head seen and reviewed remains 335a6de, with guidance receipt previously verified.
+MRL-07 now requests source/mock implementation planning after those corrections.
+Next milestones are a validated public checker, complete receiver guards and a
+reviewed release; independent policy validation remains open. Personalized-prompt
+efficacy is unestablished and the project is not submission-ready.
+
+
 ## Reviewed development delivery — 2026-09-21T13:26:15Z
 
 **51%, +2 points** under the unchanged fixed rubric: implemented measurement and

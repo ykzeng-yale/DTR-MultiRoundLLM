@@ -1,0 +1,155 @@
+{
+  "version": "public-diagnostic-development-proposal-v1",
+  "status": "source-reviewed proposal; not executed or released",
+  "prior_outcome_exposure": true,
+  "information_law_change": "All examples and expected values are shown in the initial public prompt; both diagnostic repair arms receive the same executed-result object later. New initial-history distribution; do not pool with priorpilot.",
+  "cases": [
+    {
+      "root_id": "mbpp/52",
+      "entry_point": "parallelogram_area",
+      "cases": [
+        {
+          "case_id": "public-52-1",
+          "args_literal": "[7,11]",
+          "expected_literal": "77"
+        },
+        {
+          "case_id": "public-52-2",
+          "args_literal": "[13,9]",
+          "expected_literal": "117"
+        },
+        {
+          "case_id": "public-52-3",
+          "args_literal": "[2,17]",
+          "expected_literal": "34"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/357",
+      "entry_point": "find_max",
+      "cases": [
+        {
+          "case_id": "public-357-1",
+          "args_literal": "[[(-6,4),(9,-2)]]",
+          "expected_literal": "9"
+        },
+        {
+          "case_id": "public-357-2",
+          "args_literal": "[[(-12,-7),(-9,-15)]]",
+          "expected_literal": "-7"
+        },
+        {
+          "case_id": "public-357-3",
+          "args_literal": "[[(5,), (3,8,-1)]]",
+          "expected_literal": "8"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/373",
+      "entry_point": "volume_cuboid",
+      "cases": [
+        {
+          "case_id": "public-373-1",
+          "args_literal": "[3,7,11]",
+          "expected_literal": "231"
+        },
+        {
+          "case_id": "public-373-2",
+          "args_literal": "[2,5,13]",
+          "expected_literal": "130"
+        },
+        {
+          "case_id": "public-373-3",
+          "args_literal": "[4,4,9]",
+          "expected_literal": "144"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/378",
+      "entry_point": "move_first",
+      "cases": [
+        {
+          "case_id": "public-378-1",
+          "args_literal": "[[7,-2,9,7]]",
+          "expected_literal": "[7, 7, -2, 9]"
+        },
+        {
+          "case_id": "public-378-2",
+          "args_literal": "[[8,3]]",
+          "expected_literal": "[3, 8]"
+        },
+        {
+          "case_id": "public-378-3",
+          "args_literal": "[[11]]",
+          "expected_literal": "[11]"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/402",
+      "entry_point": "ncr_modp",
+      "cases": [
+        {
+          "case_id": "public-402-1",
+          "args_literal": "[7,3,5]",
+          "expected_literal": "0"
+        },
+        {
+          "case_id": "public-402-2",
+          "args_literal": "[8,3,6]",
+          "expected_literal": "2"
+        },
+        {
+          "case_id": "public-402-3",
+          "args_literal": "[3,0,1]",
+          "expected_literal": "0"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/489",
+      "entry_point": "frequency_Of_Largest",
+      "cases": [
+        {
+          "case_id": "public-489-1",
+          "args_literal": "[5,[2,7,7,1,7]]",
+          "expected_literal": "3"
+        },
+        {
+          "case_id": "public-489-2",
+          "args_literal": "[4,[-4,-2,-2,-9]]",
+          "expected_literal": "2"
+        },
+        {
+          "case_id": "public-489-3",
+          "args_literal": "[3,[6,6,6]]",
+          "expected_literal": "3"
+        }
+      ]
+    },
+    {
+      "root_id": "mbpp/509",
+      "entry_point": "average_Odd",
+      "cases": [
+        {
+          "case_id": "public-509-1",
+          "args_literal": "[13]",
+          "expected_literal": "7"
+        },
+        {
+          "case_id": "public-509-2",
+          "args_literal": "[21]",
+          "expected_literal": "11"
+        },
+        {
+          "case_id": "public-509-3",
+          "args_literal": "[31]",
+          "expected_literal": "16"
+        }
+      ]
+    }
+  ]
+}

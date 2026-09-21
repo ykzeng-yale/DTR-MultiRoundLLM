@@ -1,0 +1,142 @@
+{
+  "evidence_type": "static literal/input and arithmetic audit; no stored code execution",
+  "cases": [
+    {
+      "root_id": "mbpp/52",
+      "case_id": "public-52-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/52",
+      "case_id": "public-52-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/52",
+      "case_id": "public-52-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/357",
+      "case_id": "public-357-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/357",
+      "case_id": "public-357-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/357",
+      "case_id": "public-357-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/373",
+      "case_id": "public-373-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/373",
+      "case_id": "public-373-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/373",
+      "case_id": "public-373-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/378",
+      "case_id": "public-378-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/378",
+      "case_id": "public-378-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/378",
+      "case_id": "public-378-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/402",
+      "case_id": "public-402-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/402",
+      "case_id": "public-402-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/402",
+      "case_id": "public-402-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/489",
+      "case_id": "public-489-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/489",
+      "case_id": "public-489-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/489",
+      "case_id": "public-489-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/509",
+      "case_id": "public-509-1",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/509",
+      "case_id": "public-509-2",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    },
+    {
+      "root_id": "mbpp/509",
+      "case_id": "public-509-3",
+      "oracle_agrees": true,
+      "literal_private_input_overlap": false
+    }
+  ],
+  "case_count": 21,
+  "overlap_gate": "PASS",
+  "input_sha256": {
+    "docs/public_diagnostic_examples_v1.json": "bf8cf8ed2cc20608d99d782622d9100e319502d57f044a0f0d7dbebd14dfa703",
+    "experiments/landmark/dev_release_v1c/private_specs.jsonl": "00c7af9ffc0dcfb28e47a56bc54f7ff285b5cd36f37fc9c7a6b1ec50f1b97179"
+  },
+  "seconds": 0.0016559585928916931,
+  "model_calls": 0,
+  "candidate_reference_executions": 0,
+  "paid_usd": 0,
+  "limits": "No semantic holdout, grader validity, informative diagnostic or empirical efficacy certification."
+}

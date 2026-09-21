@@ -55,7 +55,7 @@ Publish material feedback in the current review cycle. An unchanged cycle needs
 the requested user progress report, not a repeated issue comment or no-op commit.
 Do bounded theory/manuscript work when useful, instead of rerunning passed tests.
 
-## Current requests — stable IDs, no duplicate queue
+## Initial request register — preserved history
 
 These IDs organize the existing [J1–J4 decisions](experimental_status_rulings_20260921.md);
 they do not reopen them or authorize extra inference. Worker acknowledgement is
@@ -81,7 +81,7 @@ protocol, runtime validation and numerical cap. Preserve shared-hardware jobs.
 The lead's existing heartbeat is now active every 30 minutes. Read
 `docs/readiness.md` and `docs/progress_current.json`; report overall milestone
 completion, change, independently completed/checked work, blockers and next
-milestone after every check, even unchanged. Current baseline is **49%, delta 0**.
+milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **51%**, per the fixed rubric.
 Changing coordination frequency earns no research-completion credit. No new
 efficacy evidence is supplied here; the full project remains not submission-ready.
 Measurement/receiver release, fresh prompt data and independent policy validation
@@ -103,3 +103,18 @@ worker silence does not block every manuscript or source-review task. Preserve
 execution ownership, original caps, running batches and scientific release gates.
 Publication, acknowledgement, execution and independently accepted evidence are
 separate states. The September 21 recovery is recorded in COORDINATION.md.
+
+## Current queue after development review and diagnostic design
+
+MRL-01 acknowledged at 12:40:51 UTC; the communication recovery is closed. MRL-02
+measurement artifacts were reviewed; MRL-03 runtime was delivered with receiver
+guard repairs now tracked under MRL-06. MRL-04 produced the preserved development
+pilot, not a release for further collection. See the scientific ruling at 07fa225.
+
+MRL-05/06 are the pending sizing/interpretation and receiver-contract repairs,
+sharing one CPU, 20 minutes, source/mock work only, $0. MRL-07 follows them: inspect the
+[exact public-diagnostic proposal](public_diagnostic_design_20260921.md) and fixtures,
+return implementation plan and missing freeze fields; one CPU, 20 minutes, no model,
+reference/candidate/sandbox execution or installs, $0. These are distinct bounded
+source assignments, not recurring budget renewals. Record acknowledgement, UTC and
+processed SHA. The lead owns the scientific release and independent policy design.
