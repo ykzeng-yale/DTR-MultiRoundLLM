@@ -229,6 +229,41 @@ outcome-informed development; a later policy comparison requires untouched roots
 and a frozen comparator. Its context-removal arm retains diagnostic observations
 about the old answer and is not the task-only restart reported in the table above.
 
+The proposed diagnostic comparison also has a specific measurement limit. The public
+examples exercise many of the same error classes as the private suites, although
+none repeats a private input literally. Their disclosure is part of the declared
+intervention environment for every arm. Thus, a favorable contrast would concern
+performance under that shared information; it would not demonstrate transfer to
+entirely unseen error classes. We retain the examples and private assertions rather
+than selecting a more favorable split after inspecting the pilot. Planned summaries
+will cross-tabulate initial public diagnostic status with the initial private
+verdict, retaining unavailable diagnostics explicitly. Final private outcomes will
+also be described by initial diagnostic status. These summaries do not validate a
+learned policy on new tasks, and no final-public-pass rate can be reported without
+actually checking the final artifacts on the public instrument. The
+[reviewed design decisions](../docs/lead_review_mrl05_08_20260921.md) specify these
+limits and the implementation requirements; this study has not yet been executed.
+
+Receiver reproducibility is a separate limitation. The historical requests recorded
+only part of the decoding configuration. Later observations make particular server
+defaults plausible during collection, but cannot retroactively turn those defaults
+into contemporaneous measurements. The proposed successor records explicit request
+settings and checks receiver state before, during and after collection. Those checks
+provide evidence at observed times; they do not prove absence of intervening changes,
+exclusive access to the service or deterministic outputs. The receiver guards still
+require the independently identified validation repairs before another release.
+
+Future policy validation uses a newly declared working usefulness threshold of five
+percentage points in private-suite success, with ten points as a planning alternative.
+This is not an estimate from the pilot or a validated user-utility threshold. Existing
+sample-size scenarios illustrate sensitivity to family structure and variance; they
+do not certify power or establish the number of eligible independent families.
+The current variance simulations check a specified synthetic covariance construction,
+not confidence-interval coverage. The provisional studentized procedure must be
+assessed against the eventual family design before confirmatory collection, with
+its asymptotic interpretation kept separate from a prespecified conservative
+finite-sample sensitivity analysis. No confirmatory sample size is released.
+
 A zero marginal arm contrast is not a personalization futility criterion, because
 conditional differences can cancel. Conversely, selecting the best observed branch
 uses evaluation outcomes and does not establish achievable benefit. The completed

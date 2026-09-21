@@ -1,5 +1,21 @@
 # Hourly research checkpoint
 
+## Manuscript boundary integration; MRL-08 receipt pending — 2026-09-21T15:56:30Z
+
+GitHub main remains89f6054; last seen and independently reviewed worker revision remains
+e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. No new PR or issue2–5 delivery; latest worker
+publication remains15:05 UTC. This is the first check without acknowledgement of MRL-08,
+not evidence of stopped execution. Do not duplicate its request or renew its30-minute cap.
+
+Integrated the already reviewed public/private defect-class limitation, partial historical
+receiver-state observation and prospective precision limits into the editable manuscript.
+Checked the prose against89f6054; no new mathematical claim or efficacy result. No model,
+reference/candidate/sandbox execution, simulation or paid spend.51%, change0; full project
+not submission-ready and personalized-prompt efficacy unestablished. Next milestone:
+MRL-08 implementation/mock delivery and a complete freeze for independent release review.
+If the next actual check is also unanswered, apply the single recovery escalation rule.
+
+
 ## MRL-05–08 independent review — 2026-09-21T15:23:49Z
 
 Last seen and independently reviewed worker head: e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. [Decision record](lead_review_mrl05_08_20260921.md) resolves all15 fields and J5/J6; authorizes30-minute source/mock implementation only.15 existing mock tests passed; malformed sampler/state/slot cases exposed guard gaps. Mathematical review corrects variance-plug-in power claims and coupling assertions. Worker40,000 replications are synthetic variance checks, not interval validation. No lead model/reference/candidate/sandbox executions or spend.51%, delta0; no efficacy established, not submission-ready. Receipt verified; scheduler delivery still unverified. Next milestone: repaired implementation and complete freeze, followed by separately gated isolated instrument validation.

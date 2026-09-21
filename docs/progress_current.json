@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T15:23:49Z",
+  "checkpoint_utc": "2026-09-21T15:56:30Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,17 +54,19 @@
   ],
   "overall_percent": 51,
   "prior_check_reconstructed_percent": 51,
-  "prior_checked_head": "e7eb925",
+  "prior_checked_head": "89f6054",
   "baseline_note": "Same fixed rubric and51%; decisions and targeted workflow repair do not complete another scored milestone",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Independent MRL-05/06 audit; all15 MRL-07 fields and J5/J6 resolved; MRL-08 source/mock implementation authorized, execution not released",
+  "latest_evidence": "Integrated reviewed diagnostic measurement, receiver-state and precision limitations into manuscript; no new worker delivery or MRL-08 acknowledgement at first follow-up",
   "latest_worker_review": {
     "last_seen_worker_revision": "e8b10b03f2d172fec8fb3c8733da4a9dcbddae78",
     "delivery_type": "source/mock receiver guards, synthetic variance checks, development implementation plan",
     "scientific_review_revision": "e8b10b03f2d172fec8fb3c8733da4a9dcbddae78",
     "review_record": "docs/lead_review_mrl05_08_20260921.md",
-    "acknowledgement_received": true
+    "acknowledgement_received": true,
+    "mrl08_acknowledgement_received": false,
+    "mrl08_consecutive_unanswered_checks": 1
   }
 }
