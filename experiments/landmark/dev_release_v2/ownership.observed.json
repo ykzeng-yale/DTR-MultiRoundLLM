@@ -1,0 +1,11 @@
+{
+  "receiver_base_url": "http://127.0.0.1:8193",
+  "server_pid": 63657,
+  "server_start_utc": "2026-09-19T17:41:11Z",
+  "owner_project": "UNRESOLVED: launched from the ICLR-WinRatioAgentEvals session scratchpad (observed via ps); owner confirmation required",
+  "exclusive_window_start_utc": "UNRESOLVED: no exclusive-use agreement exists; must be obtained, not invented",
+  "exclusive_window_end_utc": "UNRESOLVED: no exclusive-use agreement exists; must be obtained, not invented",
+  "agreement_ref": "UNRESOLVED: written agreement with the receiver's owner",
+  "recorded_by": "experiments workstream (observed facts only)",
+  "recorded_utc": "2026-09-21T19:45:07.627367+00:00"
+}

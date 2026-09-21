@@ -292,3 +292,101 @@ def test_malformed_public_example_is_refused_before_reservation(tmp_path, phase_
     with pytest.raises(ValueError, match="list literal"):
         pp.run_phase_b(tmp_path / "A", bad, tmp_path / "B", Never())
     assert not (tmp_path / "B").exists()
+
+
+# --- MRL-10: complete checksum inventory + Phase A manifest/assignment coverage, all before any runner start ---
+def _reseal(d):
+    comp = json.loads((d / "completion.json").read_text())
+    comp["checksums"] = {q.relative_to(d).as_posix(): hashlib.sha256(q.read_bytes()).hexdigest()
+                         for q in sorted(d.rglob("*")) if q.is_file() and q.name != "completion.json"}
+    (d / "completion.json").write_text(json.dumps(comp))
+
+
+def _edit_json(d, name, fn):
+    doc = json.loads((d / name).read_text())
+    fn(doc)
+    (d / name).write_text(json.dumps(doc))
+
+
+def _refused_before_start(phase_a, tmp_path, match):
+    runner = Runner()
+    with pytest.raises(ValueError, match=match):
+        pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", runner)
+    assert runner.programs == [] and not (tmp_path / "B").exists()
+
+
+def test_unlisted_extra_file_refused(phase_a, tmp_path):
+    (phase_a / "artifacts" / "smuggled.txt").write_text("def f(): pass\n")
+    _refused_before_start(phase_a, tmp_path, "Incomplete checksum inventory")
+
+
+def test_inventory_missing_required_file_refused(phase_a, tmp_path):
+    for name in ("calls.jsonl", "roots.jsonl", "manifest.json"):
+        _edit_json(phase_a, "completion.json", lambda c: c["checksums"].pop(name))
+        _refused_before_start(phase_a, tmp_path, "Incomplete checksum inventory")
+        _reseal(phase_a)
+    pp.load_initial(phase_a)  # resealed complete inventory loads
+
+
+def test_inventory_missing_artifact_entry_refused(phase_a, tmp_path):
+    art = sorted((phase_a / "artifacts").glob("*.txt"))[0].relative_to(phase_a).as_posix()
+    _edit_json(phase_a, "completion.json", lambda c: c["checksums"].pop(art))
+    _refused_before_start(phase_a, tmp_path, "Incomplete checksum inventory")
+
+
+@pytest.mark.parametrize("edit,match", [
+    (lambda m: m.pop("evidence_type"), "evidence_type"),
+    (lambda m: m.__setitem__("evidence_type", "graded"), "evidence_type"),
+    (lambda m: m.__setitem__("arm_set", "other"), "arm_set"),
+    (lambda m: m.pop("assignment_table"), "assignment_table"),
+    (lambda m: m["assignment_table"].pop(), "assignment_table"),
+    (lambda m: m["assignment_table"].reverse(), "assignment_table"),
+])
+def test_manifest_and_assignment_coverage_refused_even_when_resealed(phase_a, tmp_path, edit, match):
+    _edit_json(phase_a, "manifest.json", edit)
+    _reseal(phase_a)
+    _refused_before_start(phase_a, tmp_path, match)
+
+
+def test_duplicate_or_missing_root_row_refused(phase_a, tmp_path):
+    lines = (phase_a / "roots.jsonl").read_text().splitlines()
+    (phase_a / "roots.jsonl").write_text("\n".join(lines[:-1]) + "\n")
+    _reseal(phase_a)
+    _refused_before_start(phase_a, tmp_path, "assignment_table")
+
+
+def test_excluded_root_with_artifact_refused(phase_a, tmp_path):
+    rows = [json.loads(x) for x in (phase_a / "roots.jsonl").read_text().splitlines() if x.strip()]
+    k = next(i for i, r in enumerate(rows) if r.get("artifact_sha256"))
+    rows[k]["excluded"] = True
+    (phase_a / "roots.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+    _edit_json(phase_a, "manifest.json", lambda m: m["assignment_table"][k].__setitem__("excluded", True))
+    _reseal(phase_a)
+    _refused_before_start(phase_a, tmp_path, "Excluded root has an artifact")
+
+
+def _reseal(phase_a):
+    comp = json.loads((phase_a / "completion.json").read_text())
+    comp["checksums"] = {q.relative_to(phase_a).as_posix(): hashlib.sha256(q.read_bytes()).hexdigest()
+                         for q in phase_a.rglob("*") if q.is_file() and q.name != "completion.json"}
+    (phase_a / "completion.json").write_text(json.dumps(comp))
+
+
+def test_uncovered_assigned_root_refused(phase_a, tmp_path):
+    # MRL-10 review: a non-excluded assigned root with no artifact and no recorded failure must not be skipped.
+    rows = [json.loads(x) for x in (phase_a / "roots.jsonl").read_text().splitlines()]
+    victim = next(r for r in rows if not r["excluded"])
+    (phase_a / victim["artifact"]).unlink()
+    victim.update(artifact=None, artifact_sha256=None)
+    victim.pop("status", None)
+    (phase_a / "roots.jsonl").write_text("".join(json.dumps(r) + "\n" for r in rows))
+    _reseal(phase_a)
+    with pytest.raises(ValueError, match="neither collected nor recorded"):
+        pp.load_initial(phase_a)
+
+
+def test_stray_artifact_refused(phase_a, tmp_path):
+    (phase_a / "artifacts" / "ghost%2F999.txt").write_text("x")
+    _reseal(phase_a)
+    with pytest.raises(ValueError, match="artifacts/ does not equal"):
+        pp.load_initial(phase_a)

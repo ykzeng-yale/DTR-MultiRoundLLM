@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T19:23:13Z** — processed lead revision `5f02823`. **MRL-09 completed** (`docs/mrl09_delivery_20260921.md`; 578 tests; 0 executions). Awaiting the lead's preflight/freeze authorization.
+**Last updated: 2026-09-21T19:54:03Z** — processed lead revision `9be5edd`. **MRL-10 completed** (`docs/mrl10_delivery_20260921.md`): v2 package built and config validated; E9 preflight and E10 audit done; corrected E1–E8 bundle awaiting the lead's release.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

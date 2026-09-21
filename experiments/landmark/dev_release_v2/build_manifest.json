@@ -1,0 +1,39 @@
+{
+  "builder_sha256": "50962cd488ab8d3d8af9ac27e5f54fc72b90f80310353481ce05538b4e7d258e",
+  "diagnostic_sha256": "71b3b946a645a7ad5aaca634aa440f9a0b3478534809652fb60332116e7d8558",
+  "examples_sha256": "bf8cf8ed2cc20608d99d782622d9100e319502d57f044a0f0d7dbebd14dfa703",
+  "executions": 0,
+  "grading_contract_sha256": "0b49177c831b67fbe045b614cbdc1f388bdf8b8b38ff83a20a5ea556f8330109",
+  "model_calls": 0,
+  "pending": [
+    "final literal-overlap audit (PASS/HOLD)",
+    "landmark-v2 receiver config binding",
+    "template render check"
+  ],
+  "private_assertions_and_reference_code_identical_to_v1c": true,
+  "private_specs_sha256": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
+  "public_task_sha256": {
+    "mbpp/357": "d42f928a0e566d2f553d787cafa4ebe6288d4451b8d1d6df8a9fd6329b2f198b",
+    "mbpp/373": "09fe9780feeff7ca776d0a4ff822ced8f7363e01a57e867be42a432dec590966",
+    "mbpp/378": "79eb0446d6b60634bc0ca6e38354efefbe39af16e5d8a38e95a8c1d5676fd7fa",
+    "mbpp/402": "07b08bcd02a8dc02ed2929db50f4784bf9e4009c5a88a07be5a0d7e14303b7bb",
+    "mbpp/489": "05f79037cb6adfe40f0b788488b0dbff90badb1f950fb3404b80b619803adc38",
+    "mbpp/509": "7cbf1a55e0ef915c33bbc1b0e5989e7b6b0c32504ae16b7166fd33376dbf3552",
+    "mbpp/52": "f4397cfba03fde5f2f4b9b4ef9aa604e55a6a3d724b69878a04d8a364b09fbdb"
+  },
+  "roots": [
+    "mbpp/52",
+    "mbpp/357",
+    "mbpp/373",
+    "mbpp/378",
+    "mbpp/402",
+    "mbpp/489",
+    "mbpp/509"
+  ],
+  "schema_version": "landmark-dev-release-v2-proposal",
+  "status": "source-only build; not frozen or released",
+  "tasks_sha256": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372",
+  "v1c_grading_contract_sha256": "dfd784fddeba09ac8958d7aeda19bb57b58d0f74c71fbde0a2a9df3c1cefd183",
+  "v1c_private_specs_sha256": "00c7af9ffc0dcfb28e47a56bc54f7ff285b5cd36f37fc9c7a6b1ec50f1b97179",
+  "v1c_tasks_sha256": "79a19b60c92f0ee74157a0f09553300ce74985d239c910634770cc0b99030775"
+}

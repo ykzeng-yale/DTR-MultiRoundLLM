@@ -1,0 +1,65 @@
+{
+ "manifest": "dev-release-v2-diagnostic",
+ "status": "PREPARATION: not released; E1-E8 HOLD; E11 (77 receiver calls) NOT authorized",
+ "processed_lead_sha": "9be5edd",
+ "roots": {
+  "ids": [
+   "mbpp/52",
+   "mbpp/357",
+   "mbpp/373",
+   "mbpp/378",
+   "mbpp/402",
+   "mbpp/489",
+   "mbpp/509"
+  ],
+  "status": "all seven have been inspected during development and are intentionally reused DEVELOPMENT roots; never untouched evaluation roots",
+  "historical_exclusion_inputs": "prior_seen_root_ids/prior_seen_family_ids preserved verbatim from dev_release_v1c config"
+ },
+ "package": {
+  "tasks.jsonl": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372",
+  "private_specs.jsonl": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
+  "config.json": "8142bcffdc2c4ed45aea8423a539ea1dd694c44937cf20b90da351ff0bb77b15",
+  "build_manifest.json": "ca5f0a4954a23ed3d8f952bfeb32feab64281a2da5a2497d3b797dcf092b6a6f",
+  "private_assertions_and_reference_code_identical_to_v1c": true
+ },
+ "grading_bindings": {
+  "frozen_tasks_path": "experiments/landmark/dev_release_v2/tasks.jsonl",
+  "frozen_tasks_sha256": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372",
+  "expected_contract_sha256": "0b49177c831b67fbe045b614cbdc1f388bdf8b8b38ff83a20a5ea556f8330109",
+  "expected_config_sha256": "3b6a6ef37e8642dae73640523f3f2d8b1626854502f4dbd9bd5b145a633a0f53",
+  "expected_source_hashes": {
+   "experiments/landmark/study_adapter.py": "d035843b48d6b17af857badb6408777882abd56ebd2b36d42ee79cd5fcbb8833",
+   "experiments/landmark/grade.py": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
+   "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "experiments/landmark/diagnostic.py": "71b3b946a645a7ad5aaca634aa440f9a0b3478534809652fb60332116e7d8558",
+   "experiments/landmark/collect_diagnostic.py": "b33b6a540176323cbabcb7dae38f8eb53fa97af83307d2e9e47eb679af6043c0",
+   "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719"
+  },
+  "note": "verified by study_adapter.grade_study before any real grading; re-derive at the freeze commit if any listed source changes"
+ },
+ "receiver": {
+  "preflight_dir": "results/receiver_preflight_mrl10_20260921T194506Z",
+  "receiver_state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+  "weight_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "note": "preparation snapshot (E9); state, idle slots and ownership must be current again immediately before any collection"
+ },
+ "ownership": {
+  "record": "experiments/landmark/dev_release_v2/ownership.observed.json",
+  "status": "UNRESOLVED: observed facts only; no exclusive-use agreement exists and none was invented"
+ },
+ "e10_static_overlap_audit": {
+  "result": "results/public_diagnostic_examples_audit_v2_20260921T195217Z.json",
+  "sha256": "603d1c23aafee8ca9200739f4861561b651f1c6beeaff599342e357ca47f3417",
+  "verdict": "PASS"
+ },
+ "collection_ceiling_proposed_unreleased": {
+  "receiver_calls": 77,
+  "max_completion_tokens": 39424,
+  "max_seconds": 1200,
+  "branch_replicates": 2,
+  "paid_usd": 0
+ }
+}

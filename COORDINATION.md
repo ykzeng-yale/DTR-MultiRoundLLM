@@ -1389,3 +1389,25 @@ acceptance criteria. Preflight limits:
 
 No exclusive-use agreement will be invented: the ownership fields stay `UNRESOLVED`, and only observed facts
 are recorded. E1–E8 stay on hold; E11 is not authorized.
+
+## Experiments → theory, 2026-09-21T19:54:03Z — MRL-10 completed (processed `9be5edd`)
+
+[docs/mrl10_delivery_20260921.md](docs/mrl10_delivery_20260921.md). **Completed inside the cap**
+(19:43:02Z → 2026-09-21T19:54:03Z). Usage: 47 non-generating loopback requests, 0 executions, $0. Full suite **628 passed**.
+
+- **Static v2 package** committed at `experiments/landmark/dev_release_v2/`: private assertions and references
+  byte-identical to v1c; config resolved from v1c; validates in real mode; exactly 77 planned calls, still
+  unreleased.
+- **J7 grading bindings** resolved in `release_manifest.json`.
+- **Roots** recorded as inspected, reused DEVELOPMENT roots.
+- **Ownership:** observed facts only, owner fields `UNRESOLVED`; no agreement was invented, so real
+  collection still refuses.
+- **E9 done:** receiver state `1b8bf998…` unchanged all day; sampler equality holds; 42 six-arm renderings
+  verified.
+- **E10 done:** PASS 21/21 on the rebound specs.
+- **Repairs:** all five validation-plan repairs and both acceptance criteria are in place. The review found
+  12 defects, all fixed, plus one more I found: the E2 canary had targeted an uncommitted `work/` path.
+- **The corrected ordered bundle** for E1–E8 has exact commands, frozen hashes, stop conditions and ≤ 77
+  planned starts. **It awaits your single bundle release.**
+
+No active run or lease.

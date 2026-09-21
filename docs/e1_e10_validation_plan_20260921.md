@@ -1,5 +1,33 @@
 # E1–E10 validation plan (MRL-09) — NOT RUN; requires separate lead authorization
 
+## Corrected ordered bundle (MRL-10, experiments workstream) — supersedes the table below
+
+The lead's five repairs and two added acceptance criteria are applied. **E9 and E10 are DONE**, both
+non-executing. **E1–E8 are HOLD** until the lead releases this bundle as one ordered job with stop conditions;
+**E11 is not authorized**.
+
+\`RUN=work/validation_bundle_v2_<UTC at release>\` is a new, non-existent directory. Every driver refuses to
+overwrite, verifies the attestation first, writes an fsynced start/result ledger, never retries, and reports
+actual starts separately from the planned maximum.
+
+| order | gate | exact command | frozen inputs (sha256) | planned starts | pass criterion (frozen) | stop condition |
+|---|---|---|---|---|---|---|
+| 1 | E1 | \`uv run --extra dev python scripts/check_landmark_sandbox.py --runner landmark --output $RUN/attestation/\` (a **directory**; consumers use \`$RUN/attestation/attestation.json\`) | check_landmark_sandbox.py \`8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b\` | 9 | 9/9 canaries started and contained; \`passed: true\` | any canary escapes or fails to start → stop the bundle |
+| 2 | E2 | \`uv run --extra dev python -m experiments.landmark.public_instrument_validation --items experiments/landmark/public_instrument_items_v1.json --items-sha256 91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e --gate E2 --out $RUN/e2 --attestation $RUN/attestation/attestation.json --real\` | items \`91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e\` (canary targets the committed \`dev_release_v2/private_specs.jsonl\` \`b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1\`); driver \`97a60c478e1a02b5e0d528b636006ef4546ea961d783d044367be16afcb75503\` | 2 | canary: every case passes with the returned-if-denied value and **no private bytes in stdout**; positive control: permitted read succeeds | a private byte in stdout, or the positive control fails → stop |
+| 3 | E3–E5 | \`uv run --extra dev python -m experiments.landmark.validation_canaries --canaries experiments/landmark/validation_canaries_v1.json --out $RUN/e3_e5 --attestation $RUN/attestation/attestation.json --real\` | canaries \`ec6f81e3f254f983bb795ba0420c7b65509ef1b2c21233e2ebc4fbba69190e47\` (18: E3 11, E4 2, E5 5); driver \`5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba\` | ≤ 18 (static-gate canaries start nothing; actual reported separately) | each canary's observed statuses in its \`acceptable\` set; never-pass cases never \`pass\` | any never-pass case observed as \`pass\` → stop |
+| 4 | E6 | as E2 with \`--gate E6 --out $RUN/e6\` | items as above | 7 | all 21 public cases \`pass\` for the 7 references | any reference fails a public case → stop |
+| 5 | E7 | as E2 with \`--gate E7 --out $RUN/e7\` | items as above; predictions bound by control code sha256 | 17 (one per control, root/control identity preserved) | each observed pattern **reported against** the static prediction (16/17 predicted rejected); disagreement reported, not tuned; unexecuted items counted separately | none; this gate reports |
+| 6 | E8 | \`uv run --extra dev python -m experiments.landmark.validate_rebound_references --specs experiments/landmark/dev_release_v2/private_specs.jsonl --specs-sha256 b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1 --tasks experiments/landmark/dev_release_v2/tasks.jsonl --out $RUN/e8 --attestation $RUN/attestation/attestation.json --real\` | specs \`b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1\`; validator \`2a48480605b0c25f86b05d4d41372aabc47ef18eecef6f5289229f6a7a08d69d\` (no 402 special case; historical \`validate_references.py\` preserved unchanged) | 24 | 7/7 references pass, 17/17 controls fail (\`matches_expected\`) | anything else → stop; grading is not releasable |
+| — | E9 | **DONE**: \`scripts/receiver_preflight_mrl10.py\` | \`results/receiver_preflight_mrl10_20260921T194506Z\` | 0 (47 loopback requests: GET /slots, /props, /v1/models, POST /apply-template ×42) | state \`1b8bf998…\` unchanged before/after; sampler equals pinned; 42 six-arm renderings verified | — |
+| — | E10 | **DONE**: \`scripts/check_public_diagnostic_examples_20260921.py --examples docs/public_diagnostic_examples_v1.json --private-specs experiments/landmark/dev_release_v2/private_specs.jsonl --out <new> --expected-case-count 21\` | \`results/public_diagnostic_examples_audit_v2_20260921T195217Z.json\` | 0 | **PASS**, 21/21, no literal overlap (tuple/list-normalized) | — |
+
+**Planned starts:** 9 + 2 + ≤18 + 7 + 17 + 24 = **≤ 77**, inside the 185-of-200 ledger. Final grading (77 + 24
+rechecks) and Phase B diagnostics (≤ 7) belong to E11 and are not released.
+
+---
+
+## Superseded table (MRL-09); kept for the record
+
 Nothing in this document has been executed. Each gate below needs its own lead authorization. Starts match the proposal
 ledger (`docs/diagnostic_release_manifest_proposal_20260921.json`, sha256 `ca0164536f50e3d114414e2ee879bfd066ca821a414babec7365e50ed93aae48`):
 E1 9 + E2 2 + E3 11 + E4 2 + E5 5 + E6 7 + E7 17 + E8 24 + E9 0 + E10 0 = 77 starts (integrity 24, core 53 of the 161 core). No retries.

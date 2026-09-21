@@ -1,0 +1,911 @@
+{
+ "evidence_class": "source-built fixture; nothing executed",
+ "expected_counts": {
+  "E2": 2,
+  "E6": 7,
+  "E7": 17
+ },
+ "gates": {
+  "E2": [
+   {
+    "cases": [
+     {
+      "args_literal": "[3]",
+      "case_id": "synthetic-inc-1",
+      "expected_literal": "4"
+     },
+     {
+      "args_literal": "[-8]",
+      "case_id": "synthetic-inc-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[41]",
+      "case_id": "synthetic-inc-3",
+      "expected_literal": "42"
+     }
+    ],
+    "code": "def increment(x):\n    path = \"/Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/landmark/dev_release_v2/private_specs.jsonl\"\n    try:\n        with open(path, 'rb') as fh:\n            fh.read(1)\n    except Exception:\n        return x + 1\n    return -999999\n",
+    "code_sha256": "a37a8d01af2a9e501fa8fafd08c6d48920c2cbc7bd52f7d4b2a3faa9a924c725",
+    "criterion": "read denied: every case passes with the returned-if-denied value AND no private bytes in stdout",
+    "entry_point": "increment",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E2",
+    "item_id": "E2/private_read_canary",
+    "kind": "private_read_canary",
+    "private_path": "/Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/landmark/dev_release_v2/private_specs.jsonl",
+    "root_id": "synthetic/increment"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[3]",
+      "case_id": "synthetic-inc-1",
+      "expected_literal": "4"
+     },
+     {
+      "args_literal": "[-8]",
+      "case_id": "synthetic-inc-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[41]",
+      "case_id": "synthetic-inc-3",
+      "expected_literal": "42"
+     }
+    ],
+    "code": "def increment(x):\n    path = \"/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/os.py\"\n    try:\n        with open(path, 'rb') as fh:\n            data = fh.read(64)\n    except Exception:\n        return -999999\n    return x + 1 if data else -999998\n",
+    "code_sha256": "ca1a3143c56fbff46e56fa648f36b2983f23c26e2b5162076d19d59dc92136bc",
+    "criterion": "profile-permitted read succeeds: every case passes",
+    "entry_point": "increment",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E2",
+    "item_id": "E2/permitted_read_control",
+    "kind": "permitted_read_positive_control",
+    "permitted_path": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/os.py",
+    "root_id": "synthetic/increment"
+   }
+  ],
+  "E6": [
+   {
+    "cases": [
+     {
+      "args_literal": "[7,11]",
+      "case_id": "public-52-1",
+      "expected_literal": "77"
+     },
+     {
+      "args_literal": "[13,9]",
+      "case_id": "public-52-2",
+      "expected_literal": "117"
+     },
+     {
+      "args_literal": "[2,17]",
+      "case_id": "public-52-3",
+      "expected_literal": "34"
+     }
+    ],
+    "code": "def parallelogram_area(b,h):\r\n  area=b*h\r\n  return area",
+    "code_sha256": "011c1febedef987f2ab2d777ebb537d52fa679b6e3e259da4b6abfaa10e0e297",
+    "criterion": "every_public_case_pass",
+    "entry_point": "parallelogram_area",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/52/reference",
+    "kind": "reference",
+    "root_id": "mbpp/52"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[(-6,4),(9,-2)]]",
+      "case_id": "public-357-1",
+      "expected_literal": "9"
+     },
+     {
+      "args_literal": "[[(-12,-7),(-9,-15)]]",
+      "case_id": "public-357-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[[(5,), (3,8,-1)]]",
+      "case_id": "public-357-3",
+      "expected_literal": "8"
+     }
+    ],
+    "code": "def find_max(test_list):\r\n  res = max(int(j) for i in test_list for j in i)\r\n  return (res) ",
+    "code_sha256": "5ff8e1ce8994384072c0b79057f6640c4fd3db098cc2925011542156349dd33a",
+    "criterion": "every_public_case_pass",
+    "entry_point": "find_max",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/357/reference",
+    "kind": "reference",
+    "root_id": "mbpp/357"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[3,7,11]",
+      "case_id": "public-373-1",
+      "expected_literal": "231"
+     },
+     {
+      "args_literal": "[2,5,13]",
+      "case_id": "public-373-2",
+      "expected_literal": "130"
+     },
+     {
+      "args_literal": "[4,4,9]",
+      "case_id": "public-373-3",
+      "expected_literal": "144"
+     }
+    ],
+    "code": "def volume_cuboid(l,w,h):\r\n  volume=l*w*h\r\n  return volume",
+    "code_sha256": "ff46c074ba32b51e5fd6e8aace7e39e6d93a072df2b65c4cc582b6f5b8ae8acc",
+    "criterion": "every_public_case_pass",
+    "entry_point": "volume_cuboid",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/373/reference",
+    "kind": "reference",
+    "root_id": "mbpp/373"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[7,-2,9,7]]",
+      "case_id": "public-378-1",
+      "expected_literal": "[7, 7, -2, 9]"
+     },
+     {
+      "args_literal": "[[8,3]]",
+      "case_id": "public-378-2",
+      "expected_literal": "[3, 8]"
+     },
+     {
+      "args_literal": "[[11]]",
+      "case_id": "public-378-3",
+      "expected_literal": "[11]"
+     }
+    ],
+    "code": "def move_first(test_list):\r\n  test_list = test_list[-1:] + test_list[:-1]  \r\n  return test_list",
+    "code_sha256": "3c61be1232c97cec319ff889cbf4be1df2db499683a166eeb775061b3b96ab70",
+    "criterion": "every_public_case_pass",
+    "entry_point": "move_first",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/378/reference",
+    "kind": "reference",
+    "root_id": "mbpp/378"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[7,3,5]",
+      "case_id": "public-402-1",
+      "expected_literal": "0"
+     },
+     {
+      "args_literal": "[8,3,6]",
+      "case_id": "public-402-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,0,1]",
+      "case_id": "public-402-3",
+      "expected_literal": "0"
+     }
+    ],
+    "code": "def ncr_modp(n, r, p): \r\n    C = [0 for i in range(r+1)]   \r\n    C[0] = 1\r\n    for i in range(1, n+1): \r\n        for j in range(min(i, r), 0, -1): \r\n            C[j] = (C[j] + C[j-1]) % p   \r\n    return C[r] % p ",
+    "code_sha256": "50fafebe4b19c8d4a6821ef4da2c84f14b14e8409d915dc8c5c00f154332acb4",
+    "criterion": "every_public_case_pass",
+    "entry_point": "ncr_modp",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/402/reference",
+    "kind": "reference",
+    "root_id": "mbpp/402"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[5,[2,7,7,1,7]]",
+      "case_id": "public-489-1",
+      "expected_literal": "3"
+     },
+     {
+      "args_literal": "[4,[-4,-2,-2,-9]]",
+      "case_id": "public-489-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,[6,6,6]]",
+      "case_id": "public-489-3",
+      "expected_literal": "3"
+     }
+    ],
+    "code": "def frequency_Of_Largest(n,arr): \r\n    mn = arr[0] \r\n    freq = 1\r\n    for i in range(1,n): \r\n        if (arr[i] >mn): \r\n            mn = arr[i] \r\n            freq = 1\r\n        elif (arr[i] == mn): \r\n            freq += 1\r\n    return freq ",
+    "code_sha256": "8f120362093551905a10336e17a0856a6a77bf7a2cd62968cce4566d66195185",
+    "criterion": "every_public_case_pass",
+    "entry_point": "frequency_Of_Largest",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/489/reference",
+    "kind": "reference",
+    "root_id": "mbpp/489"
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[13]",
+      "case_id": "public-509-1",
+      "expected_literal": "7"
+     },
+     {
+      "args_literal": "[21]",
+      "case_id": "public-509-2",
+      "expected_literal": "11"
+     },
+     {
+      "args_literal": "[31]",
+      "case_id": "public-509-3",
+      "expected_literal": "16"
+     }
+    ],
+    "code": "def average_Odd(n) : \r\n    if (n%2==0) : \r\n        return (\"Invalid Input\") \r\n        return -1 \r\n    sm =0\r\n    count =0\r\n    while (n>=1) : \r\n        count=count+1\r\n        sm = sm + n \r\n        n = n-2\r\n    return sm//count ",
+    "code_sha256": "ce3ac5995f5117698da502f72ac48b3e21b0c3345e6c3f8ae4807616a98114e8",
+    "criterion": "every_public_case_pass",
+    "entry_point": "average_Odd",
+    "expected_statuses": [
+     "pass",
+     "pass",
+     "pass"
+    ],
+    "gate": "E6",
+    "item_id": "E6/mbpp/509/reference",
+    "kind": "reference",
+    "root_id": "mbpp/509"
+   }
+  ],
+  "E7": [
+   {
+    "cases": [
+     {
+      "args_literal": "[7,11]",
+      "case_id": "public-52-1",
+      "expected_literal": "77"
+     },
+     {
+      "args_literal": "[13,9]",
+      "case_id": "public-52-2",
+      "expected_literal": "117"
+     },
+     {
+      "args_literal": "[2,17]",
+      "case_id": "public-52-3",
+      "expected_literal": "34"
+     }
+    ],
+    "code": "def parallelogram_area(b, h):\n    return b+h\n",
+    "code_sha256": "97a8dea10670dc620a09a72b3ce3cdc5a5e7f45bdc7cde13ed6f92221617777d",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "parallelogram_area",
+    "gate": "E7",
+    "item_id": "E7/mbpp/52/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/52",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[7,11]",
+      "case_id": "public-52-1",
+      "expected_literal": "77"
+     },
+     {
+      "args_literal": "[13,9]",
+      "case_id": "public-52-2",
+      "expected_literal": "117"
+     },
+     {
+      "args_literal": "[2,17]",
+      "case_id": "public-52-3",
+      "expected_literal": "34"
+     }
+    ],
+    "code": "def parallelogram_area(b, h):\n    return 0\n",
+    "code_sha256": "dd867dca8ade98a664b1052609b37954b05fbc534efc770abbc0024fc778106e",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "parallelogram_area",
+    "gate": "E7",
+    "item_id": "E7/mbpp/52/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/52",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[7,11]",
+      "case_id": "public-52-1",
+      "expected_literal": "77"
+     },
+     {
+      "args_literal": "[13,9]",
+      "case_id": "public-52-2",
+      "expected_literal": "117"
+     },
+     {
+      "args_literal": "[2,17]",
+      "case_id": "public-52-3",
+      "expected_literal": "34"
+     }
+    ],
+    "code": "def parallelogram_area(b, h):\n    return b*h//2\n",
+    "code_sha256": "c17f0a74a20b7e01040f5bba0ff361323ee672f73dda8e5941038c23ac7cae57",
+    "control_index": 2,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "parallelogram_area",
+    "gate": "E7",
+    "item_id": "E7/mbpp/52/control2",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/52",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[(-6,4),(9,-2)]]",
+      "case_id": "public-357-1",
+      "expected_literal": "9"
+     },
+     {
+      "args_literal": "[[(-12,-7),(-9,-15)]]",
+      "case_id": "public-357-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[[(5,), (3,8,-1)]]",
+      "case_id": "public-357-3",
+      "expected_literal": "8"
+     }
+    ],
+    "code": "def find_max(test_list):\n    return min(j for row in test_list for j in row)\n",
+    "code_sha256": "388833903aa81ff0018d9856a6ce2f2f498ebb95bf186a8c7ad163a1fbc4cd9c",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "find_max",
+    "gate": "E7",
+    "item_id": "E7/mbpp/357/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/357",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[(-6,4),(9,-2)]]",
+      "case_id": "public-357-1",
+      "expected_literal": "9"
+     },
+     {
+      "args_literal": "[[(-12,-7),(-9,-15)]]",
+      "case_id": "public-357-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[[(5,), (3,8,-1)]]",
+      "case_id": "public-357-3",
+      "expected_literal": "8"
+     }
+    ],
+    "code": "def find_max(test_list):\n    return max(test_list[0])\n",
+    "code_sha256": "0e0c1f9aaa55eb10f8c1817eed681d00b7b8c9a79438e050808ebd11a791e1f1",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "find_max",
+    "gate": "E7",
+    "item_id": "E7/mbpp/357/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/357",
+    "static_prediction_pass_pattern": [
+     false,
+     true,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[(-6,4),(9,-2)]]",
+      "case_id": "public-357-1",
+      "expected_literal": "9"
+     },
+     {
+      "args_literal": "[[(-12,-7),(-9,-15)]]",
+      "case_id": "public-357-2",
+      "expected_literal": "-7"
+     },
+     {
+      "args_literal": "[[(5,), (3,8,-1)]]",
+      "case_id": "public-357-3",
+      "expected_literal": "8"
+     }
+    ],
+    "code": "def find_max(test_list):\n    return max(t[-1] for t in test_list)\n",
+    "code_sha256": "080af383e5bb1f71c2ddc7c504b426df5818ba683e2194da62b9ab49ba919241",
+    "control_index": 2,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "find_max",
+    "gate": "E7",
+    "item_id": "E7/mbpp/357/control2",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/357",
+    "static_prediction_pass_pattern": [
+     false,
+     true,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[3,7,11]",
+      "case_id": "public-373-1",
+      "expected_literal": "231"
+     },
+     {
+      "args_literal": "[2,5,13]",
+      "case_id": "public-373-2",
+      "expected_literal": "130"
+     },
+     {
+      "args_literal": "[4,4,9]",
+      "case_id": "public-373-3",
+      "expected_literal": "144"
+     }
+    ],
+    "code": "def volume_cuboid(l, w, h):\n    return l+w+h\n",
+    "code_sha256": "a623e65a4b8df35b0256ae05bc25dd3ffc1cab9396aed731b10c0f0355da344b",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "volume_cuboid",
+    "gate": "E7",
+    "item_id": "E7/mbpp/373/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/373",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[3,7,11]",
+      "case_id": "public-373-1",
+      "expected_literal": "231"
+     },
+     {
+      "args_literal": "[2,5,13]",
+      "case_id": "public-373-2",
+      "expected_literal": "130"
+     },
+     {
+      "args_literal": "[4,4,9]",
+      "case_id": "public-373-3",
+      "expected_literal": "144"
+     }
+    ],
+    "code": "def volume_cuboid(l, w, h):\n    return l*l*l\n",
+    "code_sha256": "add427c39e894f7472d9f7a403055f6d5deff7d69d75eae7c49f1487e415440f",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "volume_cuboid",
+    "gate": "E7",
+    "item_id": "E7/mbpp/373/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/373",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[7,-2,9,7]]",
+      "case_id": "public-378-1",
+      "expected_literal": "[7, 7, -2, 9]"
+     },
+     {
+      "args_literal": "[[8,3]]",
+      "case_id": "public-378-2",
+      "expected_literal": "[3, 8]"
+     },
+     {
+      "args_literal": "[[11]]",
+      "case_id": "public-378-3",
+      "expected_literal": "[11]"
+     }
+    ],
+    "code": "def move_first(test_list):\n    return test_list\n",
+    "code_sha256": "6d7b0c2987ea14d9128ebdc63b133ad562af5f369ecb41500870ccebe626793b",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "move_first",
+    "gate": "E7",
+    "item_id": "E7/mbpp/378/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/378",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     true
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[7,-2,9,7]]",
+      "case_id": "public-378-1",
+      "expected_literal": "[7, 7, -2, 9]"
+     },
+     {
+      "args_literal": "[[8,3]]",
+      "case_id": "public-378-2",
+      "expected_literal": "[3, 8]"
+     },
+     {
+      "args_literal": "[[11]]",
+      "case_id": "public-378-3",
+      "expected_literal": "[11]"
+     }
+    ],
+    "code": "def move_first(test_list):\n    return test_list[1:]+test_list[:1]\n",
+    "code_sha256": "0303210f62ee80fa422446ba03204b48bd763d736eb191d06f252eb3fe5ba1f7",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "move_first",
+    "gate": "E7",
+    "item_id": "E7/mbpp/378/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/378",
+    "static_prediction_pass_pattern": [
+     false,
+     true,
+     true
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[[7,-2,9,7]]",
+      "case_id": "public-378-1",
+      "expected_literal": "[7, 7, -2, 9]"
+     },
+     {
+      "args_literal": "[[8,3]]",
+      "case_id": "public-378-2",
+      "expected_literal": "[3, 8]"
+     },
+     {
+      "args_literal": "[[11]]",
+      "case_id": "public-378-3",
+      "expected_literal": "[11]"
+     }
+    ],
+    "code": "def move_first(test_list):\n    return [test_list[-1]] + test_list[:-1]\n",
+    "code_sha256": "642ff52c8346a50d5b8d5e238f2a359ee9cffe5315fddc36dd0cdde0e6e4c8d5",
+    "control_index": 2,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "move_first",
+    "gate": "E7",
+    "item_id": "E7/mbpp/378/control2",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/378",
+    "static_prediction_pass_pattern": [
+     true,
+     true,
+     true
+    ],
+    "static_prediction_rejects": false
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[7,3,5]",
+      "case_id": "public-402-1",
+      "expected_literal": "0"
+     },
+     {
+      "args_literal": "[8,3,6]",
+      "case_id": "public-402-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,0,1]",
+      "case_id": "public-402-3",
+      "expected_literal": "0"
+     }
+    ],
+    "code": "import math\ndef ncr_modp(n, r, p):\n    return math.comb(n,r)\n",
+    "code_sha256": "1c96381491be28ac6bed2d02fcffb31c41a263e0c654b24564906661e43d8ae9",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "ncr_modp",
+    "gate": "E7",
+    "item_id": "E7/mbpp/402/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/402",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[7,3,5]",
+      "case_id": "public-402-1",
+      "expected_literal": "0"
+     },
+     {
+      "args_literal": "[8,3,6]",
+      "case_id": "public-402-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,0,1]",
+      "case_id": "public-402-3",
+      "expected_literal": "0"
+     }
+    ],
+    "code": "def ncr_modp(n, r, p):\n    return 0\n",
+    "code_sha256": "ca39fe495b6d6d684be1b62c8abe6f38b23b26890d02b3c997226173c765d98e",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "ncr_modp",
+    "gate": "E7",
+    "item_id": "E7/mbpp/402/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/402",
+    "static_prediction_pass_pattern": [
+     true,
+     false,
+     true
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[5,[2,7,7,1,7]]",
+      "case_id": "public-489-1",
+      "expected_literal": "3"
+     },
+     {
+      "args_literal": "[4,[-4,-2,-2,-9]]",
+      "case_id": "public-489-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,[6,6,6]]",
+      "case_id": "public-489-3",
+      "expected_literal": "3"
+     }
+    ],
+    "code": "def frequency_Of_Largest(n, arr):\n    return max(arr)\n",
+    "code_sha256": "93fd4f1be70c309779a0f4b0e2060fac281243ed9f1e31b62b0d56683eaa94e7",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "frequency_Of_Largest",
+    "gate": "E7",
+    "item_id": "E7/mbpp/489/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/489",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[5,[2,7,7,1,7]]",
+      "case_id": "public-489-1",
+      "expected_literal": "3"
+     },
+     {
+      "args_literal": "[4,[-4,-2,-2,-9]]",
+      "case_id": "public-489-2",
+      "expected_literal": "2"
+     },
+     {
+      "args_literal": "[3,[6,6,6]]",
+      "case_id": "public-489-3",
+      "expected_literal": "3"
+     }
+    ],
+    "code": "def frequency_Of_Largest(n, arr):\n    return arr.count(arr[0])\n",
+    "code_sha256": "e37d8595575bde7965d1d236a170eda6fad6dd7adf8f24199e87a20db25b3733",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "frequency_Of_Largest",
+    "gate": "E7",
+    "item_id": "E7/mbpp/489/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/489",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     true
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[13]",
+      "case_id": "public-509-1",
+      "expected_literal": "7"
+     },
+     {
+      "args_literal": "[21]",
+      "case_id": "public-509-2",
+      "expected_literal": "11"
+     },
+     {
+      "args_literal": "[31]",
+      "case_id": "public-509-3",
+      "expected_literal": "16"
+     }
+    ],
+    "code": "def average_Odd(n):\n    return n\n",
+    "code_sha256": "2b2195da7c8adcc9143b6f7c1b064466d6d8b7f5d3952337d0cf3f47648f3590",
+    "control_index": 0,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "average_Odd",
+    "gate": "E7",
+    "item_id": "E7/mbpp/509/control0",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/509",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   },
+   {
+    "cases": [
+     {
+      "args_literal": "[13]",
+      "case_id": "public-509-1",
+      "expected_literal": "7"
+     },
+     {
+      "args_literal": "[21]",
+      "case_id": "public-509-2",
+      "expected_literal": "11"
+     },
+     {
+      "args_literal": "[31]",
+      "case_id": "public-509-3",
+      "expected_literal": "16"
+     }
+    ],
+    "code": "def average_Odd(n):\n    return n//2\n",
+    "code_sha256": "01e1e5451e84e00a6cfd428c85249fe3c4d005f0f785bfa485de602b08baae4a",
+    "control_index": 1,
+    "criterion": "observed_reported_against_prediction; disagreement reported, not tuned",
+    "entry_point": "average_Odd",
+    "gate": "E7",
+    "item_id": "E7/mbpp/509/control1",
+    "kind": "negative_control",
+    "prediction_source_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+    "root_id": "mbpp/509",
+    "static_prediction_pass_pattern": [
+     false,
+     false,
+     false
+    ],
+    "static_prediction_rejects": true
+   }
+  ]
+ },
+ "inputs": {
+  "e2_base_interpreter_prefix": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none",
+  "e2_permitted_path": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/os.py",
+  "e2_private_path": "/Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/landmark/dev_release_v2/private_specs.jsonl",
+  "e2_private_path_sha256": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
+  "public_examples_sha256": "bf8cf8ed2cc20608d99d782622d9100e319502d57f044a0f0d7dbebd14dfa703",
+  "static_predictions_sha256": "0cbe57123773ba4123d892f1c6cf00e20e21151dae5b14b42fdb6e3bac1000be",
+  "v1c_private_specs_sha256": "00c7af9ffc0dcfb28e47a56bc54f7ff285b5cd36f37fc9c7a6b1ec50f1b97179"
+ },
+ "version": "public-instrument-items-v1"
+}

@@ -125,23 +125,65 @@ def load_examples(examples_path):
     return out
 
 
+PHASE_A_EVIDENCE_TYPES = ("ungraded_real_collection", "mock_transport_only")
+PHASE_A_REQUIRED_FILES = ("manifest.json", "roots.jsonl", "calls.jsonl")
+
+
 def load_initial(initial_dir):
-    """Phase A rows with verified artifact text, in roots.jsonl (assignment) order. Refuses on any mismatch."""
+    """Phase A rows with verified artifact text, in roots.jsonl (assignment) order. Refuses on any mismatch.
+
+    MRL-10: all of this runs before any runner start. The completion checksum inventory must be COMPLETE (its key set
+    equals exactly the files present apart from completion.json, and includes manifest.json, roots.jsonl, calls.jsonl
+    and every artifacts/*.txt); the manifest must be a recorded Phase A manifest (phase initial, arm_set equal to
+    completion's, evidence_type recorded); and roots.jsonl must cover the manifest assignment_table exactly (same roots
+    in the same order, each once; excluded roots carry no artifact)."""
     initial_dir = Path(initial_dir)
     manifest = _loads((initial_dir / "manifest.json").read_bytes())
     completion = _loads((initial_dir / "completion.json").read_bytes())
     if manifest.get("phase") != "initial" or completion.get("phase") != "initial":
         raise ValueError("Not a diagnostic initial-phase directory")
-    for rel, sha in completion["checksums"].items():
+    if not manifest.get("arm_set") or manifest.get("arm_set") != completion.get("arm_set"):
+        raise ValueError("Phase A manifest arm_set missing or differs from completion.json")
+    if manifest.get("evidence_type") not in PHASE_A_EVIDENCE_TYPES:
+        raise ValueError("Phase A manifest does not record a known evidence_type")
+    checksums = completion.get("checksums")
+    if not isinstance(checksums, dict):
+        raise ValueError("completion.json has no checksum inventory")
+    present = {q.relative_to(initial_dir).as_posix() for q in initial_dir.rglob("*") if q.is_file()} - {"completion.json"}
+    missing_required = [f for f in PHASE_A_REQUIRED_FILES if f not in checksums]
+    if missing_required:
+        raise ValueError(f"Incomplete checksum inventory: missing {missing_required}")
+    if set(checksums) != present:
+        raise ValueError("Incomplete checksum inventory: checksummed files differ from files present "
+                         f"(unlisted={sorted(present - set(checksums))}, absent={sorted(set(checksums) - present)})")
+    for rel, sha in checksums.items():
         if _sha((initial_dir / rel).read_bytes()) != sha:
             raise ValueError(f"Initial-phase file changed after completion: {rel}")
     rows = [_loads(x) for x in (initial_dir / "roots.jsonl").read_text().splitlines() if x.strip()]
     ids = [r["root_id"] for r in rows]
     if len(set(ids)) != len(ids):
         raise ValueError("Duplicate root in roots.jsonl")
+    table = manifest.get("assignment_table")
+    if not isinstance(table, list) or not table:
+        raise ValueError("Phase A manifest has no assignment_table")
+    if [p["root_id"] for p in table] != ids:
+        raise ValueError("roots.jsonl does not cover the manifest assignment_table exactly once, in order")
+    for p, r in zip(table, rows):
+        if bool(p["excluded"]) != bool(r.get("excluded")):
+            raise ValueError(f"Exclusion differs between assignment_table and roots.jsonl for {p['root_id']}")
+        if p["excluded"] and (r.get("artifact") or r.get("artifact_sha256")
+                              or (initial_dir / "artifacts" / _artifact_name(p["root_id"])).exists()):
+            raise ValueError(f"Excluded root has an artifact: {p['root_id']}")
     collected = []
-    for r in rows:
+    for p, r in zip(table, rows):
+        if p["excluded"]:
+            continue
         if not r.get("artifact_sha256"):
+            # MRL-10 review: a non-excluded assigned root must be covered, or carry the recorded collection failure.
+            initial = r.get("initial")
+            if (r.get("status") != "initial_failed" or r.get("artifact") is not None or not isinstance(initial, dict)
+                    or initial.get("output") is not None):
+                raise ValueError(f"Assigned root neither collected nor recorded as initial_failed: {p['root_id']}")
             continue
         if r.get("artifact") != "artifacts/" + _artifact_name(r["root_id"]):
             raise ValueError(f"Unexpected artifact path for {r['root_id']}")
@@ -149,6 +191,9 @@ def load_initial(initial_dir):
         if _sha(data) != r["artifact_sha256"]:
             raise ValueError(f"Initial artifact bytes differ from the recorded SHA-256 for {r['root_id']}")
         collected.append((r["root_id"], r["artifact_sha256"], data.decode("utf-8")))
+    expected_artifacts = {"artifacts/" + _artifact_name(root) for root, _, _ in collected}
+    if {q for q in checksums if q.startswith("artifacts/")} != expected_artifacts:
+        raise ValueError("artifacts/ does not equal the artifacts of collected assigned roots")
     return completion, collected
 
 
