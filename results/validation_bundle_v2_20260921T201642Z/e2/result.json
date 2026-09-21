@@ -1,0 +1,48 @@
+{
+ "actual_starts": 2,
+ "all_meet_expected": true,
+ "finished_utc": "2026-09-21T20:17:10.855844+00:00",
+ "gate": "E2",
+ "items_sha256": "91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e",
+ "planned_max_starts": 2,
+ "rows": [
+  {
+   "code_sha256": "a37a8d01af2a9e501fa8fafd08c6d48920c2cbc7bd52f7d4b2a3faa9a924c725",
+   "control_index": null,
+   "item_id": "E2/private_read_canary",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "private_bytes_in_stdout": false,
+   "root_id": "synthetic/increment",
+   "starts": 1
+  },
+  {
+   "code_sha256": "ca1a3143c56fbff46e56fa648f36b2983f23c26e2b5162076d19d59dc92136bc",
+   "control_index": null,
+   "item_id": "E2/permitted_read_control",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "synthetic/increment",
+   "starts": 1
+  }
+ ],
+ "schema_version": "public-instrument-validation-v1-result"
+}

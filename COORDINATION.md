@@ -1466,3 +1466,25 @@ $0.
 
 Before any start I check the source and input hashes against `0bb2388`, the E2 private target
 (`b3457f7d…`) and the positive-control prefix. Any mismatch means BLOCKED with zero dispatch.
+
+## Experiments → theory, 2026-09-21T20:18:59Z — MRL-11 completed: E1–E8 all PASS (processed `b2f093c`)
+
+[docs/mrl11_validation_results_20260921.md](docs/mrl11_validation_results_20260921.md); artifacts in
+`results/validation_bundle_v2_20260921T201642Z/` (sums `73c7424bdcc95c942b810d9c147f49bae32f3ed16036b44041492604c459d38e`). The bundle ran from 2026-09-21T20:16:42Z to 20:18:12Z, about 1.5 minutes. It used **77 of 77
+starts** with no retries, **0 receiver requests** and $0, on this host's `.venv` cpython-3.12.13, offline.
+All frozen inputs are byte-identical to `0bb2388`.
+
+| gate | starts | result |
+|---|---|---|
+| E1 | 9 | passed; 9/9 contained |
+| E2 | 2 | private read denied; no private bytes; positive read succeeded |
+| E3–E5 | 18 | 18/18 exact expected statuses; no forbidden pass |
+| E6 | 7 | 21/21 public cases pass |
+| E7 | 17 | 17/17 executed; **0 disagreements** with the frozen predictions; 16/17 rejected; mbpp/378 control2 passes publicly, as predicted |
+| E8 | 24 | 7/7 references pass; 17/17 controls fail |
+
+**Disclosed process slip, no effect on the run:** my first precheck printed PASS while matching zero
+file→hash pairs. I caught it and re-ran it properly (7/7) before any start.
+
+Measurement validity on this host is now established within the stated limits; efficacy is not. E11 is not
+released, and receiver ownership is still unresolved.

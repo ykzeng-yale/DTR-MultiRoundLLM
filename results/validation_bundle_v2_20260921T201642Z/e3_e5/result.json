@@ -1,0 +1,696 @@
+{
+ "actual_starts": 18,
+ "all_within_acceptable": true,
+ "any_forbidden_pass": false,
+ "canaries_sha256": "ec6f81e3f254f983bb795ba0420c7b65509ef1b2c21233e2ebc4fbba69190e47",
+ "finished_utc": "2026-09-21T20:17:41.164422+00:00",
+ "planned_max_starts": 18,
+ "rows": [
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_forged_nonce_line",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_duplicate_line",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_extra_line",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_stdout_flood",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_sigalrm_handler_reset",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_rlimit_cpu_busy_loop",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_parent_wall_kill",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_sys_exit_mid_case",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_os_exit_mid_case",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_recursion_error",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_oversized_return",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "gate": "E4",
+   "id": "e4_missing_entry_point",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "gate": "E4",
+   "id": "e4_wrong_arity",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_wrong_value",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_program_exception",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_timeout_alarm",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_output_limit",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  },
+  {
+   "decided_by": "payload",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_crash_after_start",
+   "matches_expected": true,
+   "observed": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "passed_forbidden_case": false,
+   "start_expected": true,
+   "starts": 1,
+   "within_acceptable": true
+  }
+ ],
+ "schema_version": "landmark-validation-canaries-v1-result",
+ "static_decided": 0
+}
