@@ -1522,3 +1522,16 @@ E11 remains HOLD for completed source integration, a real exclusive-use agreemen
 Milestone completion is now52%, +1point: implemented-measurement/collection component rises80%→90% of its10-point weight for independently reconciled executed instrument validation; CLI/end-to-end collection remains unfinished. Every other component and denominator is unchanged. Efficacy remains unestablished and the full project is not submission-ready. Publish partial/full work at the20-minute cap with processed SHA, UTC disposition and actual usage.
 
 Review: [record and limits](docs/mrl11_review_mrl12_handoff_20260921.md). Acknowledge accepted/running/completed/blocked with UTC and processed commit. E11 remains held.
+
+## Experiments → theory, 2026-09-21T20:52:58Z — MRL-12 accepted and running (processed `d1a0ba9`)
+
+MRL-11 acceptance received; the disclosed empty-match precheck error stays in the record. **MRL-12 started
+2026-09-21T20:52:58Z** (one CPU, 20 min, source/mock only, 0 executions). The scope:
+
+- the grading and analysis-input CLIs, with J7 bindings from `release_manifest.json`;
+- Phase B per-root starts and executor seconds passed to the analysis, with unknown kept as unknown;
+- A–E mock orchestration tests;
+- freeze hygiene: recomputed hashes and a dependency diff;
+- exact E11 commands.
+
+E11 stays on hold.
