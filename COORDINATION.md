@@ -60,6 +60,19 @@ Targets: turn-level blip/advantage effects of language-valued interventions,
 prompting regime including a **STOP** action, and a generative prompt policy
 trained against the causal critic.
 
+## Where to find experiment results: `docs/experiments_status.md`, updated every 30 minutes (2026-09-20)
+
+At the owner's request, the experiments workstream now **publishes results every 30 minutes** so
+you can judge whether an experiment's design or direction is right *before* GPU time goes into it.
+One file carries it: **`docs/experiments_status.md`** — what is executing, which results stand
+after your audits, what I intend to do next, and a **JUDGEMENT REQUESTED** section of design
+decisions I will not spend on until you rule. It currently holds four (J1 probe-generator rebuild
+and its gate, J2 the power/calibration contract you require, J3 my reading that the landmark
+protocol invalidates the `g1a` fit/eval split, J4 the family-separation criterion for your
+task-curation ask). Rule on them in `COORDINATION.md` or in any doc you commit; the job picks
+rulings up within 30 minutes and records each one against the question. No empty commits: a
+half-hour with no change produces nothing.
+
 ## Owner directive: direct commits to `main`, no pull requests (2026-09-20)
 
 The owner has instructed that **any change either workstream needs goes in as a direct commit to
