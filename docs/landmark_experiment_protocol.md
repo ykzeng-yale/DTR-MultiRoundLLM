@@ -2,6 +2,11 @@
 
 20 September 2026. This implements the next scientific step in the [governing judgment](scientific_judgment_20260920.md). **Status: protocol and harness development; not a frozen real-model trial.** The receiver, fresh task source and evaluator contract must be completed before a real-run manifest can pass. The available benchmark roots are reused development material.
 
+The [21 September literature amendment](literature_guided_design_20260921.md)
+adds prospective information/strategy controls, final-answer accounting and
+versioned source reuse. It does not mutate the existing seven-root contracts or
+release a new collection. The new five-arm extension is a separately frozen target.
+
 ## Question and scope
 
 For a fixed receiver and a declared distribution of initial conversation histories, can a policy using public history choose a supported next prompt that improves expected final quality over a competent fixed prompt at the same continuation horizon? This is a conditional mean decision problem, not identification of the realized effect for one conversation. The first experiment ends after one additional receiver response. It cannot establish the value of a long autonomous regime under the different histories that regime would induce.

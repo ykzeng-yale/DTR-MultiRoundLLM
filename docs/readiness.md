@@ -11,7 +11,16 @@ checkpoints rather than re-invented each time.
 It is a **planning estimate of work completed against work required**. It is not an
 acceptance probability, not a quality judgement, and not a time estimate.
 
-## Current reporting contract — 21 September 2026, 00:25 UTC
+## Latest continuation — 21 September 2026, literature/design review
+
+**49%, Δ=0 percentage points.** The deeper primary-paper/code audit and concrete
+reuse/simulation amendments refine work already credited in literature/design.
+The broader claim-ledger reconciliation, numerical/measurement freeze and actual
+validation remain open, so no component credit changes. All weights and the
+49-point prior baseline stay fixed. No new efficacy evidence; not submission-ready.
+See [current project status](project_status.md) and the source validation record.
+
+## Fixed reporting contract established 21 September 2026, 00:25 UTC
 
 The owner requested a percentage after **every** hourly check, including unchanged
 checks. The current estimate is **49% milestone completion**, with **0 percentage

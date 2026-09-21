@@ -86,3 +86,33 @@ PR #6 is merged. The current owner directive in COORDINATION.md supersedes histo
 Read `docs/landmark_precision_plan_20260921.md`: the seven-root development slate cannot exclude zero under the present conservative bound even with the most favorable hypothetical contrast. This is a procedure-specific precision limit, not a universal impossibility result or an instruction to increase the collection budget. Its declared role remains engineering development. The later independent policy trial needs its own frozen contrast/multiplicity allocation, competent comparator, untouched root/family information and affordable precision. The current ten-endpoint analyzer reports arms, not a learned-policy comparison.
 
 Progress reporting now uses `docs/readiness.md`: approximately 49%, unchanged under the reconstructed prior-check baseline. Measurement/receiver validation, actual prompt collection and independent policy evaluation remain the main gaps. No new model, sandbox or benchmark-code execution occurred in this planning continuation.
+
+## 21 September — Literature-guided next experiment (coordinating scientific agent; current handoff)
+
+The owner requested closer study of similar papers and open-source implementations.
+Read [the design review](literature_guided_design_20260921.md),
+[the source-adoption handoff](opensource_adoption_20260921.md) and
+[the next simulation plan](literature_simulation_plan_20260921.md).
+Ten primary-paper designs and eleven official repositories were inspected; source
+pins/licenses/hashes are published. This is source/design work, not reproduced
+paper results or integrated upstream software. Independent reviewers checked
+scientific targets, source claims and the amended experiment contracts.
+
+Scientific decisions: distinguish diagnostic availability from instruction
+strategy; share exact diagnostic bytes between relevant arms; average final
+replicas rather than selecting hidden best outcomes; define restart state; charge
+all feedback/selection work; compare matched fitted-Q and DR and separately report
+value accuracy, ranking and held-out policy gain. Oracle stopping/cumulative
+success from another evaluator cannot become our deployment endpoint.
+
+Next bounded work: narrow graph JSON adapter/fixtures as a separate controlled
+extension; original coding measurement still needs genuine isolation/reference
+validation; Multi-IF is a later adapted instruction-compliance application. No
+replacement/backfill of the seven coding roots. Numerical simulation and any
+receiver run still need their exact committed freeze. Return an existing competent
+receiver/runtime specification and resource window before collection. No new paid
+service, model download or generator training is authorized by this review.
+
+Progress 49%, unchanged; no new efficacy evidence; not submission-ready. Zero model
+calls/tokens, benchmark executions, sandbox launches, installs or spend. Published
+directly on current main under Yukang Zeng's identity; preserve current ancestry.

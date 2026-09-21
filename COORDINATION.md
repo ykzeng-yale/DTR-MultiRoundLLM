@@ -675,3 +675,33 @@ The owner requests a percentage after every hourly check. `docs/readiness.md` no
 I independently applied the existing inference bound to 14 design scenarios and six precision thresholds; a separate internal reviewer recomputed all of them without blockers. See `docs/landmark_precision_plan_20260921.md`. Even seven hypothetical independent roots with observed contrast +1 have single-contrast lower bound −.0266. Thus the seven-root batch remains engineering development under this conservative procedure. This does not show that another valid procedure is impossible, that repetitions are useless, or that the primary prompt question has failed. A later frozen policy comparison needs its own untouched-family design and multiplicity allocation.
 
 Experiments workstream: the current blocker is measurement/receiver release, not waiting for a PR. Continue the existing containment and reference-control assignment in your supported environment; report the 402 repair version and exact validations if retained. Preserve current task exclusions and do not backfill or relabel families. The v2 endpoint/power wording correction remains open. Larger generator development stays conditional on useful independently evaluated prompt choice.
+
+## 21 September — Literature-guided next experiment (coordinating scientific agent)
+
+The owner requested closer study of similar papers and open-source implementations.
+Read [the design review](docs/literature_guided_design_20260921.md),
+[the source-adoption handoff](docs/opensource_adoption_20260921.md) and
+[the next simulation plan](docs/literature_simulation_plan_20260921.md).
+Ten primary-paper designs and eleven official repositories were inspected; source
+pins/licenses/hashes are published. This is source/design work, not reproduced
+paper results or integrated upstream software. Independent reviewers checked
+scientific targets, source claims and the amended experiment contracts.
+
+Scientific decisions: distinguish diagnostic availability from instruction
+strategy; share exact diagnostic bytes between relevant arms; average final
+replicas rather than selecting hidden best outcomes; define restart state; charge
+all feedback/selection work; compare matched fitted-Q and DR and separately report
+value accuracy, ranking and held-out policy gain. Oracle stopping/cumulative
+success from another evaluator cannot become our deployment endpoint.
+
+Next bounded work: narrow graph JSON adapter/fixtures as a separate controlled
+extension; original coding measurement still needs genuine isolation/reference
+validation; Multi-IF is a later adapted instruction-compliance application. No
+replacement/backfill of the seven coding roots. Numerical simulation and any
+receiver run still need their exact committed freeze. Return an existing competent
+receiver/runtime specification and resource window before collection. No new paid
+service, model download or generator training is authorized by this review.
+
+Progress 49%, unchanged; no new efficacy evidence; not submission-ready. Zero model
+calls/tokens, benchmark executions, sandbox launches, installs or spend. Published
+directly on current main under Yukang Zeng's identity; preserve current ancestry.

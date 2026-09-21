@@ -2,23 +2,41 @@
 
 > **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
-## Current checkpoint — 21 September 2026, 00:25 UTC
+## Current checkpoint — 21 September 2026, literature-guided design
 
-**Research milestone completion: approximately 49%, Δ=0 points this hour** under
-the [documented fixed rubric](readiness.md). This first resumed percentage report
-reconstructs the previous inspected head at the same 49%; it is not a new one-point
-gain from the historical 48% score. Efficacy remains unestablished and the full
-project is not submission-ready. Valid negative results can complete milestones;
-test/proof counts alone cannot.
+**Research milestone completion: approximately 49%, Δ=0 percentage points.**
+The fixed rubric is unchanged. The source audit improves design preparation but
+has not completed the broader claim-ledger reconciliation or a measurement release.
+Fresh prompt efficacy remains unestablished; the full project is not submission-ready.
 
-PR #6 is verified merged at `5c6ef13`; main's `ec5b343` records the direct-commit
-convention. This task now works on main. No new empirical result or open PR was
-observed. The [precision report](landmark_precision_plan_20260921.md) applies the
-existing bound to the development design, with independent internal verification.
-Even a perfect seven-root contrast cannot exclude zero under that conservative
-procedure. The batch remains engineering-only; this is not a general impossibility
-finding. Current tasks/measurement and the competent receiver freeze remain
-blocked, followed by fresh prompt collection and untouched-family policy evaluation.
+The coordinator and three independent workstream reviewers examined ten close
+primary-paper designs and official code from eleven repositories. The
+[literature-to-design report](literature_guided_design_20260921.md) separates
+feedback access, instruction strategy, stopping/selection, final-artifact quality
+and total budget. Source code exposed oracle/cumulative scoring and version
+mismatches that must not be inherited blindly. These observations do not re-estimate
+published results. The [source inventory](literature/source_inventory_20260921.json)
+records exact revisions and hashes; the [adoption handoff](opensource_adoption_20260921.md)
+specifies small reusable components and required corrections. No upstream runner
+has been integrated or executed.
+
+The [simulation amendment](literature_simulation_plan_20260921.md) adds a
+receiver-output mechanism, matched fitted-Q/DR comparisons and measurement failure
+cells. It requires a numerical freeze before execution. Independent review checked
+the intervention-kernel formula, replication precision and proposed 132-call
+arithmetic; information leakage and replica-selection ambiguities were tightened.
+
+The seven-root coding slate remains engineering-only and blocked on its existing
+measurement/isolation/receiver conditions. A controlled graph-checking extension
+and later adapted instruction-constraint application are separate targets, not
+replacement roots. Next: a narrow offline component with validated controls and a
+complete receiver/measurement freeze, then fresh prompt collection and independent
+policy evaluation. Generator expansion remains deferred.
+
+Usage this continuation: zero receiver calls/tokens, benchmark/reference executions,
+sandbox launches, package installs or paid spend. The source-inventory check took
+0.388 seconds; full research wall time was not comprehensively instrumented.
+The prior 136-test/8-subtest run was not repeated or counted as new evidence.
 
 ## Earlier preparation checkpoints — 20 September 2026
 

@@ -1,5 +1,40 @@
 # Hourly research checkpoint
 
+## Latest continuation — 2026-09-21T01:33:45Z
+
+Owner-requested deeper literature/design audit published with the [design
+amendment](literature_guided_design_20260921.md), [simulation
+plan](literature_simulation_plan_20260921.md), [open-source
+handoff](opensource_adoption_20260921.md), and [validation
+record](../results/literature_design_review_20260921.json). Live GitHub showed no
+open PRs; issues #2–#5 remain open. Main was clean at e816fe7 before this work;
+no concurrent update was observed on the pre-integration fetch. Keep checking live
+state rather than treating this parent as permanently current.
+
+Approximately **49% complete, Δ=0 points** under the unchanged fixed rubric.
+This is design/source progress, not empirical efficacy or submission readiness.
+Independent reviews covered feedback experiments, close causal predecessors and
+reusable evaluators. The coordinator checked load-bearing code behaviors and
+resolved review findings on intervention kernels, practical propensities,
+diagnostic isolation, replica averaging and restart context.
+
+Next actions: implement the narrowly specified offline source adapter/controls;
+freeze the next numerical simulator; resolve original coding containment and
+reference/control holds; inventory and pin a competent receiver. Any graph or
+Multi-IF extension is explicitly a new target, not backfill. No new model
+collection is released. The five-arm extension ceiling is 132 calls, alternative
+to—not additive with—the original 49-call seven-root development plan. Final
+policy trial requires its own useful-gain/precision and untouched-root design.
+
+Zero model calls/tokens, code-grading executions, sandbox starts, installations or
+spend. 122 cached-file hash checks and three independent remote text-file checks
+support the 145-source inventory; they do not validate benchmark performance.
+No complete research wall-time measurement is claimed. Hourly monitoring and
+percentage reports continue.
+
+## Preserved prior checkpoint
+
+
 Updated 21 September 2026, 00:25 UTC. This file records scientific state for the hourly continuation; it is not a substitute for inspecting live GitHub before every run.
 
 ## Current milestone completion

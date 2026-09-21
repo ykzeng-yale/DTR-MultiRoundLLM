@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T00:25:46Z",
+  "checkpoint_utc": "2026-09-21T01:33:45Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,9 +54,10 @@
   ],
   "overall_percent": 49.0,
   "prior_check_reconstructed_percent": 49,
-  "prior_checked_head": "5c6ef13549c9f007396361e67f012b905ad58ea9",
-  "baseline_note": "First resumed hourly percentage series; previous checked state reconstructed with same rubric, not a percentage reported last hour",
+  "prior_checked_head": "e816fe7dcdbbf25f41a8f007f601b275d0675767",
+  "baseline_note": "Same fixed rubric and 49% as previous check; no denominator or component credit changed",
   "delta_percentage_points": 0,
   "submission_ready": false,
-  "fresh_prompt_efficacy_established": false
+  "fresh_prompt_efficacy_established": false,
+  "latest_evidence": "Ten-paper/eleven-repository design audit; pinned sources and bounded reuse/simulation plans, not new empirical validation"
 }

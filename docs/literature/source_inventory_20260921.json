@@ -1,0 +1,819 @@
+{
+  "schema_version": 1,
+  "inspection_date_utc": "2026-09-21",
+  "evidence_status": "Source inspection only; no reproduced experiments or integrated upstream runner",
+  "paper_versions": [
+    "2404.00207v1",
+    "2502.17538v1",
+    "2504.02646v1",
+    "2303.17651v2",
+    "2303.11366v4",
+    "2305.11738v2",
+    "2310.01798v2",
+    "2309.10691v2",
+    "2505.06120v1",
+    "2603.06859v2"
+  ],
+  "repositories": [
+    {
+      "repository": "xingyaoww/mint-bench",
+      "commit": "3f7f12c10bf763be1e6dbdeb42feb57624121f61",
+      "license": "Apache-2.0"
+    },
+    {
+      "repository": "EIT-EAST-Lab/C3",
+      "commit": "43d566b76fe0ca029b8bc8bca92ee16429d688ae",
+      "license": "Apache-2.0"
+    },
+    {
+      "repository": "microsoft/lost_in_conversation",
+      "commit": "c865793fe34a929d316119b0451d01bd9183bcfd",
+      "license": "MIT"
+    },
+    {
+      "repository": "madaan/self-refine",
+      "commit": "9a206d41e5d2d0c241bb441f41eeadb945afaa55",
+      "license": "Apache-2.0"
+    },
+    {
+      "repository": "noahshinn/reflexion",
+      "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+      "license": "MIT"
+    },
+    {
+      "repository": "microsoft/ProphetNet",
+      "commit": "5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53",
+      "license": "MIT"
+    },
+    {
+      "repository": "XMUBQ/dtr-text",
+      "commit": "3b88317fc074eeeff3a25825ef7fe3db3dce9309",
+      "license": "No explicit LICENSE verified; inspect only, do not vendor"
+    },
+    {
+      "repository": "aiueola/offline-prompts",
+      "commit": "2c92dd7225b356adaa5acfdcb5010a0613dfcbcc",
+      "license": "Apache-2.0"
+    },
+    {
+      "repository": "evalplus/evalplus",
+      "commit": "26d6d00bb1fd0fa37f39c99d5290da67891d1c5e",
+      "license": "Apache-2.0; individual evaluator files retain upstream MIT-style notices",
+      "adoption": "Deferred coding measurement; no security sandbox established"
+    },
+    {
+      "repository": "open-thought/reasoning-gym",
+      "commit": "49b07130b3fcd12f2d064bba7c43869543a0e7e7",
+      "license": "Apache-2.0",
+      "adoption": "Recommended narrow graph-coloring extraction, separate benchmark extension, not implemented"
+    },
+    {
+      "repository": "facebookresearch/Multi-IF",
+      "commit": "1cdb53ed18499ad729e0766e5d3099dd5344406f",
+      "license": "Apache-2.0",
+      "adoption": "Later adapted instruction-compliance study; not official benchmark unchanged"
+    }
+  ],
+  "files": [
+    {
+      "url": "https://arxiv.org/pdf/2303.11366v4",
+      "sha256": "6059b6f89fea9959bd3dab553fbb97756a3dfb1b15e3cbab2fbf3ab6664333bd",
+      "bytes": 591097
+    },
+    {
+      "url": "https://arxiv.org/pdf/2303.17651",
+      "sha256": "81e44592314d80218ad108d3490cd0b84ba5962fefd5c84819987afd77a57087",
+      "bytes": 2014949
+    },
+    {
+      "url": "https://arxiv.org/pdf/2310.01798",
+      "sha256": "15e1731e255ec6b217792a1e077926807da77e8e46b69e6c57dda30d67794761",
+      "bytes": 385585
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EIT-EAST-Lab/C3/43d566b76fe0ca029b8bc8bca92ee16429d688ae/LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "bytes": 11356
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EIT-EAST-Lab/C3/43d566b76fe0ca029b8bc8bca92ee16429d688ae/c3/credit/provider.py",
+      "sha256": "f54eda79474db171864dacbf0e62d550a97721f9d5b1fac2614cc7c285ebb898",
+      "bytes": 21341
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EIT-EAST-Lab/C3/43d566b76fe0ca029b8bc8bca92ee16429d688ae/c3/utils/budget_ledger.py",
+      "sha256": "3b7b4caab0aba1b2c5a387cc51f88be12947bb1a3b4db7e3fb4fd94aeb028b17",
+      "bytes": 4557
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EIT-EAST-Lab/C3/43d566b76fe0ca029b8bc8bca92ee16429d688ae/c3/utils/context_key.py",
+      "sha256": "fb4d4f9b2994a5b063f93cdf3f66b94b0fbc6961ad3947bbda5178be369dbd18",
+      "bytes": 1576
+    },
+    {
+      "url": "https://raw.githubusercontent.com/EIT-EAST-Lab/C3/43d566b76fe0ca029b8bc8bca92ee16429d688ae/docs/32_evaluation_protocol.md",
+      "sha256": "d536c85c83ef1294368ea257f158f6ab8c009b014c969cc170437a70b3e6fdc1",
+      "bytes": 9591
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/.gitattributes",
+      "sha256": "1a1dbe176bc233b499d35a57db7513f2941c99ab9759f177830c9149be99005b",
+      "bytes": 66
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/.gitignore",
+      "sha256": "ab2d57378906cc6aa28ef150e97ff302c3de0ccda0b2f5e63605bfac788a39ca",
+      "bytes": 48
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/README.md",
+      "sha256": "0898fb932d78bfd42745628c852405cde672ab3856862f18b80831b164bfa05b",
+      "bytes": 1429
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/argsparser.py",
+      "sha256": "deb51ec0330d70bd92210f3dd41a2882f4974a9ff3eca4a7b2901bf72efc09d6",
+      "bytes": 1249
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/dataset/vae_datasets.py",
+      "sha256": "5c62f2bf23aeb5c5be473d38ba7b1c0cc3b436b39134774b693f964d095d45d7",
+      "bytes": 448
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loader/load_baize.py",
+      "sha256": "01c50802356f14344606291ab3dbd440a57ca4da2d7302c186a5a35d8d772de2",
+      "bytes": 2511
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loader/load_coauthor.py",
+      "sha256": "77eb6290f72d139d713715383cc2cd81d5c9a007a0419b540ef9fbf685a6014b",
+      "bytes": 2972
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loader/load_dialcon.py",
+      "sha256": "af9fd08e855695aa777aa7c5b6b1250c080a6d0349aa6d196dc3ea5433653ae6",
+      "bytes": 2527
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loader/loader.py",
+      "sha256": "b17912d2023f9c275d028371fcdc741dd56bb85cd21ff8501785101382b0526f",
+      "bytes": 456
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loader/loader_factory.py",
+      "sha256": "b83e2bd0915d17ab636a76815f8c163e6dd68b501ab9673ffd36be1afa363599",
+      "bytes": 574
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/loading.py",
+      "sha256": "c5a709f9d3d0c778da398a58cfa64c89476068d1fcc6e1734ed060d1df3d0f2f",
+      "bytes": 2606
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/main.py",
+      "sha256": "958e4ec982351d023739bbabf4f7212251fee161c8ceebc8649485a17bafe057",
+      "bytes": 151
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/backbone/MLP.py",
+      "sha256": "4d296f00636373121ed1737b2db24bdd29dc63cdca13208e1322d6a71e18b9ea",
+      "bytes": 886
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/backbone/VAE.py",
+      "sha256": "09204ddbe2bddfbac5f3a9570d5e5e5b6ed4428dd0f952dbc18af09229493f4d",
+      "bytes": 877
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/backbone/cVAE.py",
+      "sha256": "c8593b3e590401ac7792a694d64ae21c78f11f6cbe6108d3a70bb461a7937534",
+      "bytes": 1124
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/base_model.py",
+      "sha256": "3e85e6b10ee4780e0a52c944252126316cf34084b5e4a22457ff4c71b2845249",
+      "bytes": 1651
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/g_adjust_model.py",
+      "sha256": "21cc38fb734f028477bd28e960deb6bae94f0be2a0b4688d4a6eedfa9a72fc83",
+      "bytes": 6682
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/model_factory.py",
+      "sha256": "74bdf53f28bace57cd6b8474038f618065b6fe62e84c5dc492fd5b0d4e45f184",
+      "bytes": 426
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_MLP.py",
+      "sha256": "2c3362f5baf221075fe1063f85c885a2b38e9bdd40304678fa09bd59557dc1f1",
+      "bytes": 2746
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_PCA.py",
+      "sha256": "17ca0ee5295d54a53b97ff603b45ab7d9128a07b3d3a499db30530e545c39652",
+      "bytes": 639
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_cVAE.py",
+      "sha256": "639d7794335fe6368a98ab548c7c251e51bd62d7c46f976290e00bdf02dea342",
+      "bytes": 4609
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_gMLP.py",
+      "sha256": "faf54df319c310376b6b6b48e1e95f00e5a9d21d555b0988319c14674be400e3",
+      "bytes": 4824
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_plus.py",
+      "sha256": "d40635b2a82f8acc731c27e2b59bc40d23c2d41447904faf6df60fd5853535b7",
+      "bytes": 1381
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/models/sklearn_plus/sk_vanilla_VAE.py",
+      "sha256": "8a9f97143810e65e89c91c7658e26008e77a208a3729c6f0dbc4a67a24fbb047",
+      "bytes": 3971
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/skeleton/frame_factory.py",
+      "sha256": "bfa15e2f22caebc549272a9d724d065e89d8e260764d2c7666d4a386da59f175",
+      "bytes": 428
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/skeleton/g_adjust_frame.py",
+      "sha256": "5a858c09fdac00f85f4de8155d15fd4e8202dfe47e3aefb80fdf82c296177b9b",
+      "bytes": 5150
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/skeleton/skeleton.py",
+      "sha256": "aacd318e5cdc73a3185b9e69992ce28a1cd20c06896adbf0860b57c6531293af",
+      "bytes": 235
+    },
+    {
+      "url": "https://raw.githubusercontent.com/XMUBQ/dtr-text/3b88317fc074eeeff3a25825ef7fe3db3dce9309/utils.py",
+      "sha256": "0f27297ff3467908d99d48b407b213ad4deed06c6c6605c6efadbf1823302775",
+      "bytes": 2783
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/LICENSE",
+      "sha256": "f7c5baad172467a5ad9b6ff99a9f7f1757277886d086c6393d86265fe0617fbd",
+      "bytes": 11399
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/README.md",
+      "sha256": "38018fa4e3c586922830996ad23c932839f1522945408dd0937a9b4f2a9a9a39",
+      "bytes": 14912
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/README.md",
+      "sha256": "7e5d3e010e658140e57c1bc54c5e3676dcdfe82a6f52c17180e207cb346b3f92",
+      "bytes": 10260
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/config.yaml",
+      "sha256": "00e5b9637f9bb4d42155c1eb47b64ea73105471899361564d8f6862091267adc",
+      "bytes": 160
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/evaluation/default.yaml",
+      "sha256": "2c7fa6132a6db8afcb864bbacc51738ff06fec25c66d07a75dab6f4df057e332",
+      "bytes": 341
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/offline/default.yaml",
+      "sha256": "daed1202bf9194cf096badbd58bd0d455bc1a058760e0ff3e70a2f9bed5df9c5",
+      "bytes": 446
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/online/default.yaml",
+      "sha256": "3ed58550bc0de344a09ab4446835e7d679807e786ddd1bd97df1aac4dfecb842",
+      "bytes": 83
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/setting/default.yaml",
+      "sha256": "74cd58fe2d88e73b217f76f175c50a1cf2eaebe174770e3358e2b77e22b702fa",
+      "bytes": 844
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/conf/validation/default.yaml",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/data_collection_and_reward_regression.py",
+      "sha256": "5672bede2cf1f172f429fa93fd9c04bdc1aba992571f315cb320f9f097dafd7c",
+      "bytes": 8487
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/evaluate_policy_performance.py",
+      "sha256": "d5651c5b08850fb008f82dccd4b4a725cc6a1b42d72162d2499078aa0fd8944c",
+      "bytes": 22219
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/movie_description/off_policy_learning.py",
+      "sha256": "428321894fe050900a6306f5adc01366d1006aeec9db306002a6e3bbd18e5f98",
+      "bytes": 13767
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/config.yaml",
+      "sha256": "d7f29d1c9a4ec769f38e8676e151f9040ad1c64a9daec5ef6991db08c5351a59",
+      "bytes": 119
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/evaluation/default.yaml",
+      "sha256": "ba1c13ef9f253c4dc47879f2f5a015d1c934cf5da4e082aff8ac7db0fdb605a5",
+      "bytes": 376
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/setting/candidate_actions.yaml",
+      "sha256": "2955b3d9b72c43ed321a3740cefc4ec39671736d4d9de7d160f782b679081a8c",
+      "bytes": 721
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/setting/data_size.yaml",
+      "sha256": "35c41e426cd05e6539618e32fe35e4a320bab387b2c816ed743b29b797d964c6",
+      "bytes": 711
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/setting/default.yaml",
+      "sha256": "37de8e5e064bde98dbe700dfa5d2e9097dd9e59fd72a184485856b580b5a77e8",
+      "bytes": 680
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/setting/kernel_bandwidth.yaml",
+      "sha256": "d1cb745f74c5e28ed116b13c43ffa120bcaa4afa295d46b88f389ead793afed1",
+      "bytes": 714
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/setting/reward_noise.yaml",
+      "sha256": "20a47b3269102b77cb87a75c92dc97cfab094b192a066bfeba8af791c6f4e2e6",
+      "bytes": 711
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/conf/visualization/default.yaml",
+      "sha256": "3a14e371a55c7038729221e088bc4d611db10e744a67f87b4cef76e30d666446",
+      "bytes": 231
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/data_collection_and_reward_regression.py",
+      "sha256": "3a6fa5a3e5d22506fb55e503cde1531c220effc19194edc748807c058bb1d978",
+      "bytes": 8100
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/evaluate_policy_performance.py",
+      "sha256": "d1f47a9d09fb42e139396fae2f89790c2ee39f127eea108b7a7d8920f6426c09",
+      "bytes": 28616
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/experiments/synthetic/off_policy_learning.py",
+      "sha256": "fe80b1478550ff7e00e03a0c50880d64c0a33ee73f4d55e66a78144d03e538ab",
+      "bytes": 14985
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/dataset/assets/preprocess_movielens_dataset_for_reward_simulation.py",
+      "sha256": "c5ff41350ec52571c4a6bec22b284a30bb9c797f358f61670831eab848ac300e",
+      "bytes": 9152
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/dataset/assets/reward_finetuner.py",
+      "sha256": "3ebca63acba250a315731fbd4d84555dbaa5befa15501ccdb042cf558aec73c4",
+      "bytes": 16314
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/dataset/benchmark.py",
+      "sha256": "6eeebb153708c75228fe38ffbcdf99f5399c049bb52de17e1ad54661a8f9ddc8",
+      "bytes": 30190
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/opl/policy_evaluator.py",
+      "sha256": "b60513da9f89371646da7ba2c95cedfbcbe6f7fc11b4e53a7a18935f58bedba6",
+      "bytes": 30287
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/opl/policy_learner.py",
+      "sha256": "1dace9337377db6f1f843b2e3db0df09c601e396556c6e268fa20b87ed60de93",
+      "bytes": 84274
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts/policy/policy.py",
+      "sha256": "9a4515dc058c464fd1d5e75df98fb5eb1f899b156833748cd2b865ca4bcf6198",
+      "bytes": 99968
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts_syn/dataset/function.py",
+      "sha256": "21e5668bd863444263feaa69f25602d3885693ae973b646da363723656f0c55e",
+      "bytes": 65761
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts_syn/dataset/synthetic.py",
+      "sha256": "1479bf4626d1a8cf0c67ba4c9833f885cec1681578812b9d12c3ee05175965a7",
+      "bytes": 20995
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts_syn/opl/policy_learner.py",
+      "sha256": "919771ecc2403c3fb9786eccabc9c0ea5959c4e4a159e4ec0a1d06d4fb146ce8",
+      "bytes": 62403
+    },
+    {
+      "url": "https://raw.githubusercontent.com/aiueola/offline-prompts/2c92dd7225b356adaa5acfdcb5010a0613dfcbcc/off_prompts_syn/policy/policy.py",
+      "sha256": "d9c6bdd95747d32910778801e5cba3ab5659a8aaf66b62bd8c5ed0b779f5aa96",
+      "bytes": 95725
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/Dockerfile",
+      "sha256": "75028e850b513107ecbadf899f9dc441b380588042dee497a85d7197c53f0296",
+      "bytes": 464
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/LICENSE",
+      "sha256": "fcc1f77fe5443b21bfc4dfcc3d66f7654f599b91582df771850e5e876986a103",
+      "bytes": 11558
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/data/humaneval.py",
+      "sha256": "105969e0c700fa77f18b1ae7dd06230e22f81540cf030ddca2cbfeb2630055b4",
+      "bytes": 3454
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/data/mbpp.py",
+      "sha256": "186e09b7b14dcf12ed259dfca1d6644a1c266c1bbac41c917fd3c0449a734b24",
+      "bytes": 5504
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/eval/__init__.py",
+      "sha256": "3c833c39b842e33f251c83db4347e0a95191909f23b390c12d73ab29a28a4daf",
+      "bytes": 10651
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/eval/utils.py",
+      "sha256": "5bf8925c8dd7c8f06b05c0ff4f28672e8e3b61d1b567b6a86b90e80bd8b780a4",
+      "bytes": 5467
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/gen/__init__.py",
+      "sha256": "7952440f3bd47b4f97f628b3d529dab58e57c42766f9e0594b4d4ccf55882dbb",
+      "bytes": 753
+    },
+    {
+      "url": "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/requirements.txt",
+      "sha256": "3f59331cacb2a6ac62fd84c4341b2091f3e1ad21b8cf9fa8038aca574ded896f",
+      "bytes": 260
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/LICENSE",
+      "sha256": "600cc67cc4cb2f5ea317dcfc687ad1c74dc4bec8782bbe9db0afd83513b935b7",
+      "bytes": 11359
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/api_client.py",
+      "sha256": "351a525333dd02dc644fc343f10e98cf0a79e3830b303840e7181519d19c3c71",
+      "bytes": 6687
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/ifeval.py",
+      "sha256": "61a56d4510a0b8cbacc511d50d4707d20ff72e521d02e29a2898dec69a5507b2",
+      "bytes": 89050
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/metrics.py",
+      "sha256": "3aa15edc8e5f6d2f92abe0ec7ae12e9568ed6aadd1f82efc7805808fef76dc2b",
+      "bytes": 11415
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/multi_turn_instruct_following_eval_api.py",
+      "sha256": "c99acda29af9d0853f2e0f7cccc83f0ed2960ac4268f82047ed4d91957e4eed4",
+      "bytes": 10116
+    },
+    {
+      "url": "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/requirements.txt",
+      "sha256": "18646ab880ee8adba89c983c849ff8adc637eb1d9931b8e965a1854f6a3e7c78",
+      "bytes": 120
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/README.md",
+      "sha256": "54f667a07214567976b2966fcb87ce881afdc1aeb745ce07d1f139ae8747882a",
+      "bytes": 7178
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/docs/pie_eval.md",
+      "sha256": "907e03d1251cca16d21c5c5be46da270ee803210bf294ad3d48224c8cbcbd77d",
+      "bytes": 2854
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/commongen/eval.py",
+      "sha256": "5a1e295dd1e96f54bbc0db834a472152252f76fe5ea99a0d3c1448bd1ac7e850",
+      "bytes": 2602
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/gsm/feedback.py",
+      "sha256": "ff5d7035147b92630f44f276f4531e2ec5ab4157089c057b7948889ecd9f0806",
+      "bytes": 3400
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/gsm/gsm_selfref_eval.py",
+      "sha256": "8a661d40af9201629aa3b181db1f7b9494b9358d9f087aa4c1cf8b097e055675",
+      "bytes": 4531
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/gsm/run.py",
+      "sha256": "7b381b420a2e7b5471def9c8893d22534b22a9260dc5c1225148a1efdac8c604",
+      "bytes": 3823
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/pie/pie_eval.py",
+      "sha256": "483826cb54ea54bc1b2aaa17292e067ebcf72922e7ee13fa64e98b949aadf862",
+      "bytes": 14097
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/pie/run.py",
+      "sha256": "bb744f48139c827f49210189fea991df34e4653e6e383a7b12e3f9c8cc4eaf01",
+      "bytes": 5374
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/responsegen/feedback.py",
+      "sha256": "e5e1fea5f764f5a6288f62d6d33f69cc0a8a9f23ce229cbdbe8b70cd88acc949",
+      "bytes": 3463
+    },
+    {
+      "url": "https://raw.githubusercontent.com/madaan/self-refine/9a206d41e5d2d0c241bb441f41eeadb945afaa55/src/responsegen/run.py",
+      "sha256": "6200d165c441ee99031bb10c7d45f999bf639a667fda25e454c84fe2f943a75d",
+      "bytes": 5595
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/README.md",
+      "sha256": "3b46fe57ddcd2b8e405f194b65df9167dd8c6f6db0c205fbac9a781016eb7e97",
+      "bytes": 4487
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/scripts/run_program_critic.sh",
+      "sha256": "ef9bdaa7942914e87a53825128a7223f0eeacbb49a6f01529a136e8db56b93de",
+      "bytes": 754
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/scripts/run_qa_critic.sh",
+      "sha256": "57e5c221e52581c2cab4830536e6b26d9dd928a136cddb3b155fb737043e5c04",
+      "bytes": 823
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/datasets/dataset_loader.py",
+      "sha256": "47ac6dfeb44839066c76b66db8c1e5f48758b9a9b894c0291f39621bb90abf42",
+      "bytes": 2003
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/llms/api.py",
+      "sha256": "02812b37c955d8c00b1c411425d0db9ffcd8c797931f8e40c423b5fdd5b320f0",
+      "bytes": 1388
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/program/critic.py",
+      "sha256": "6f0e1c59d1cb4cbe74452627b8953d20e4a0e8b21626613da8ae148b8478436b",
+      "bytes": 5468
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/program/evaluate.py",
+      "sha256": "745a3082bc7c0f4f494135783e749c942423c23a5302f2d5b7c350e35ecf189f",
+      "bytes": 2425
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/program/inference.py",
+      "sha256": "aa2bd838f2202f87080458758d39d25831af2807dff5fa8c7bcdd1e158b13d06",
+      "bytes": 4851
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/program/utils.py",
+      "sha256": "523448bd0ae5ab97a7f990768b4f7850d37970811b2434be94cd00557337ac73",
+      "bytes": 2931
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/qa/critic.py",
+      "sha256": "e0745486a6975f951cec5f4aa4851226f21faf6be8250447bef71a8bfbcca76e",
+      "bytes": 7814
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/qa/evaluate.py",
+      "sha256": "db66b2d5d2a9a8899f745b31ed5d78a2c81074b5094930f8404f1bfc0acaaa17",
+      "bytes": 7856
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/qa/inference.py",
+      "sha256": "8cd3b7853f895014efbccf41f0ec3ff51052f155d3fd67af7843fc9407b5d56f",
+      "bytes": 5953
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/CRITIC/src/qa/utils.py",
+      "sha256": "82f1634414546a51074f843f0627148c47ae1a2cc8a40cbf973489152a6340e0",
+      "bytes": 4654
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/ProphetNet/5cf70eb41cdaa1d8faa3e1265d95ee5792d49a53/LICENSE",
+      "sha256": "9906940f61b1f0b533fa7d99baf55178b2808fbe113ea51dfbfad8572ccd5f2b",
+      "bytes": 1162
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/LICENSE",
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+      "bytes": 1141
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/run_simulations.py",
+      "sha256": "9f1f81c31edf3057644e380d8fcbb8f6ebc65cd1b3a6dd0ff07dc96fcd0f9498",
+      "bytes": 6366
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/simulator_full.py",
+      "sha256": "261ee834476e4372982d06dc8661a3ca52b0d6e33a7b8ca82edefb9e830f0143",
+      "bytes": 5011
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/simulator_recap.py",
+      "sha256": "357431174571498038728ff0a38b08545d44355fcf0c96e00f294bf4bf7703e3",
+      "bytes": 7470
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/simulator_sharded.py",
+      "sha256": "3b6e1ea222c7e2c4d7fa411a3ae7b2fae09a4e45ca6f7196dacb65e6abda82d6",
+      "bytes": 7773
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/simulator_snowball.py",
+      "sha256": "9be52731941152d6488e95cd22a2205466c8961dc5bc68880775de42256bbe6e",
+      "bytes": 9252
+    },
+    {
+      "url": "https://raw.githubusercontent.com/microsoft/lost_in_conversation/c865793fe34a929d316119b0451d01bd9183bcfd/task_base.py",
+      "sha256": "c1a97834402eda164d6abb5d1b442c2aaf87ee7d79ae3f147a8d9bfd64ac70de",
+      "bytes": 2722
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/LICENSE",
+      "sha256": "6e9db9e62fe5597c3f04a620136eadb7eb8e8f77ebb0e820f7098546fb8a08e6",
+      "bytes": 1067
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/README.md",
+      "sha256": "5209db116381e7c067dd0ee4085da26b7d00fd19cbe66b6367051a2f95ef9024",
+      "bytes": 4342
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/hotpotqa_runs/agents.py",
+      "sha256": "19be4a1a8639245ed344470873a534ea684898954c062378e2b0e32d429c874a",
+      "bytes": 15784
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/hotpotqa_runs/environment.py",
+      "sha256": "615bd3f8090badad163ade9c076674726ef5c4763de57222ba482c9caa0b8402",
+      "bytes": 2992
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/hotpotqa_runs/notebooks/CotQA_context.ipynb",
+      "sha256": "3549df3ca9dead52b5ad80a85db0f5f2afccf1f96a7b79619d02b1fab8bc5c1e",
+      "bytes": 10314
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/executors/py_executor.py",
+      "sha256": "988deb3cbe125ceefd27e50934d4a09da01a19db27199d1aaefde26cbbcf3a5c",
+      "bytes": 2885
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/generators/generator_utils.py",
+      "sha256": "fab9d9d97797f37bd62017cd09ee23794e60ba29ba5f976b3c830adbd7fa0886",
+      "bytes": 8297
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/generators/model.py",
+      "sha256": "019008518883fb174eda469ac2d85f4f2394ce79ad7c289edb181bbb08309a1c",
+      "bytes": 9127
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/generators/py_generate.py",
+      "sha256": "9d9078f0b034caa1e2d52af236f71196efb947f24f9b180384cace756e893e5f",
+      "bytes": 17937
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/immediate_refinement.py",
+      "sha256": "4cc8a53a42187c3687c1f495164a55a39a5e8a31c54fdb1c327f595948237cd0",
+      "bytes": 3065
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/main.py",
+      "sha256": "0f634153dc83c5e42e222b19f6eec16571c3fbec140040d1374243e928bbdc0a",
+      "bytes": 4812
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/reflexion.py",
+      "sha256": "84691522ee84bc3cc55e06e8f4338d7820b937911e4d58bd3a16f84b62cfc1d7",
+      "bytes": 3651
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/run_reflexion.sh",
+      "sha256": "0cfa5377f0d3cfa87fbfe893df61e54e9cb77add8f360184a807d0b721ccfdab",
+      "bytes": 241
+    },
+    {
+      "url": "https://raw.githubusercontent.com/noahshinn/reflexion/218cf0ef1df84b05ce379dd4a8e47f17766733a0/programming_runs/simple.py",
+      "sha256": "f9f1cbed213b2c1e0206eaa4dab3ec582fe76c25a8cad91f45589c321ce3b046",
+      "bytes": 1805
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/pyproject.toml",
+      "sha256": "a993ac50278a2bd17c79eb659e8d62d2725af986956913247f11a1138b40276b",
+      "bytes": 1764
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/__init__.py",
+      "sha256": "b62c9b9ce67ec3234444cc88ea45a57e5be1869ede95ca7c77aa263dc5b3c1b7",
+      "bytes": 852
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/algorithmic/__init__.py",
+      "sha256": "f77492da35192df6b595e57978c18d669aa2310c2c25f813cea7624dcef0015f",
+      "bytes": 6302
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/algorithmic/graph_color.py",
+      "sha256": "b89db0e352de50fe841f7126904dfff1153596811171e8da70eb4ae4295d4929",
+      "bytes": 9803
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/algorithmic/string_manipulation.py",
+      "sha256": "acd0355646b5a302cb1af04e4d39da4ff38b097c3489c3019a297a005d06d795",
+      "bytes": 10368
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/dataset.py",
+      "sha256": "6e29c6f83cba9174631bd0fd10b86c5fbdd9de5904ace54d2554c92ee80371b4",
+      "bytes": 5430
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/factory.py",
+      "sha256": "fc651cc93205fafab926526a7d2c7a88c9dfa569af6e895135a1db48765e75bf",
+      "bytes": 3220
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/games/__init__.py",
+      "sha256": "2bea8a60126b2ab0c990a56b47166e9a50ada51400bf17a96bcb4d691a219133",
+      "bytes": 2596
+    },
+    {
+      "url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/graphs/__init__.py",
+      "sha256": "e506b5df0b2b17b2de7d955887abc6d4019db26d221aedd913dbb40a63339630",
+      "bytes": 1094
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/docs/SERVING.md",
+      "sha256": "a9b6e8d1eac47db23d99ec2dec11ebe0b2ae2c31a7ccea21f0a007252759a92a",
+      "bytes": 3176
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/mint/agents/openai_feedback_agent.py",
+      "sha256": "e3f42fd1cf94108e4112576f1d248dc068829d14329ecf0e747b6d549d14d754",
+      "bytes": 3624
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/mint/configs/generate_config.py",
+      "sha256": "01d5e7ec5d40be16eb6128390703a809ed5380fb2a4fa29537c7234c4b7fecc9",
+      "bytes": 7510
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/mint/envs/general_env.py",
+      "sha256": "c40f1d69ed6087769efc6a6a7120b82834994d593a3c7670c3072d00e731408f",
+      "bytes": 11521
+    },
+    {
+      "url": "https://raw.githubusercontent.com/xingyaoww/mint-bench/3f7f12c10bf763be1e6dbdeb42feb57624121f61/mint/tools/python_tool.py",
+      "sha256": "b6ad1d99bb3ca140a51b7859a3d450fc35ea42b0fcde0c2166ae53bab8b69ac2",
+      "bytes": 4740
+    }
+  ],
+  "metadata_only_dataset": {
+    "id": "facebook/Multi-IF",
+    "revision": "0ab97ce0b45c7f57772e8ba2ac1616f4b00bd3aa",
+    "license": "CC-BY-NC-2.0",
+    "file": "multiIF_20241018.csv",
+    "reported_bytes": 7402992,
+    "downloaded": false,
+    "sha256": null
+  },
+  "limits": [
+    "Current code heads are not verified original paper run commits",
+    "No official code located in bounded review for NLPolicyLearn or Cannot Self-Correct Reasoning Yet",
+    "CausalCollab has no explicit code license verified",
+    "Web/HTML retrieval bytes and full review wall time were not comprehensively measured"
+  ]
+}

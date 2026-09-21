@@ -1,0 +1,56 @@
+{
+  "date_utc": "2026-09-21",
+  "status": "source and design validation, not model efficacy",
+  "repositories": 11,
+  "unique_hashed_sources": 145,
+  "inventoried_unique_bytes": 4251921,
+  "cached_file_hash_checks": 122,
+  "independent_remote_source_hash_checks": [
+    "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/algorithmic/graph_color.py",
+    "https://raw.githubusercontent.com/evalplus/evalplus/26d6d00bb1fd0fa37f39c99d5290da67891d1c5e/evalplus/eval/utils.py",
+    "https://raw.githubusercontent.com/facebookresearch/Multi-IF/1cdb53ed18499ad729e0766e5d3099dd5344406f/ifeval.py"
+  ],
+  "source_inventory_sha256": "5343bcacc5baa31a786a9fa69400f5ed75e11301015927e7c1e8dc60299d833b",
+  "inventory_validation_runtime_seconds": 0.3877026252448559,
+  "model_calls": 0,
+  "model_input_tokens": 0,
+  "model_output_tokens": 0,
+  "model_runtime_seconds": 0,
+  "benchmark_candidate_or_reference_executions": 0,
+  "new_sandbox_launches": 0,
+  "external_spend_usd": 0,
+  "upstream_package_installs": 0,
+  "full_test_suite_rerun": false,
+  "test_note": "Documentation/source-inventory change only; prior136+8-subtest run was not repeated or counted as new evidence",
+  "internal_reviews": [
+    {
+      "scope": "Four feedback papers, factorial design,132-call arithmetic",
+      "findings_fixed": [
+        "No-diagnostic renderer isolation",
+        "Instruction-strategy rather than pure wording effect",
+        "Average replicas, no hidden selector",
+        "Explicit restart state contract"
+      ]
+    },
+    {
+      "scope": "Three causal papers, finite intervention-kernel identity,simulation design",
+      "findings_fixed": [
+        "Intervention versus observed kernels",
+        "Known randomized propensity is practical input",
+        "Exact upstream method name"
+      ],
+      "mcse_at_200": 0.015411035007422441
+    },
+    {
+      "scope": "EvalPlus,Reasoning Gym,Multi-IF source reuse",
+      "findings": "Pinned license/checker/containment boundaries verified; no adapter implemented"
+    }
+  ],
+  "remaining": [
+    "Exact numerical simulation freeze",
+    "Source reuse adapters and validated measurement",
+    "Original coding isolation and reference/control gate",
+    "Competent pinned receiver and full collection freeze",
+    "Fresh prompt experiment and independent policy validation"
+  ]
+}
