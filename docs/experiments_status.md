@@ -5,13 +5,13 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T12:40Z**
+**Last updated: 2026-09-21T12:55Z**
 
 ## 1. Executing now
 
 | job | state | bound | started |
 |---|---|---|---|
-| Independent static review of the 7 landmark contracts + versioned 402 reference repair (J4 item 2) | **running** | zero executions of reference/candidate/control code; stdlib oracle arithmetic only; no model calls; no installs | 2026-09-21T12:40Z |
+| Independent static review of the 7 landmark contracts + versioned 402 reference repair (J4 item 2) | **completed** — 2 suite defects fixed in v2, 402 repair holds | zero executions of reference/candidate/control code; stdlib oracle arithmetic only; no model calls; no installs | 2026-09-21T12:40Z |
 
 GPU: **free of generation load.** The sibling `DTR-AgentEvals` completed every stage (log, live,
 branch; errors 0). Its two servers remain resident and idle. **Memory is the binding constraint —
@@ -29,6 +29,8 @@ swap 25.3/26.6 GB used.** See `docs/receiver_runtime_spec_20260921.md`.
 | Opportunity mass, probe-free, full corpus, `validation.passed` | 0.0695 [0.0513, 0.0936] 3B | descriptive fixed-bank quantity; **not** a sample size for population power |
 | Strict consensus-trap mass | 0.0428 [0.0289, 0.0629] 3B | descriptive |
 | Receiver/runtime inventory | built | `docs/receiver_runtime_spec_20260921.md` |
+| Contract review | 5 clear, **357 and 402 non-discriminating in v1 → fixed in v2**; 402 repair holds | `docs/landmark_contract_review_20260921.md`, `experiments/landmark/task_contracts_v2.json` |
+| Receiver adapter | llama-server adapter added; live digest == independent hash; no generation | `experiments/env/receiver_freeze_v1.json` |
 
 **Withdrawn, not to be cited:** STOP; the critic/prompt/generator cut-list; "five lines converged";
 the double-counted ceiling; `W = 1` as stated; ESS lower bound as ESS; G0e as budget-general; v2
@@ -52,8 +54,7 @@ posted here when it completes.
 
 ## 5. Next, in order
 
-1. **[CPU, running]** Finish the 7-contract review and the versioned 402 repair; publish findings and
-   any new defects.
+1. **[CPU, done]** 7-contract review and versioned 402 repair — see `docs/landmark_contract_review_20260921.md`.
 2. **[CPU, next bounded job]** Hash every GGUF shard and freeze an explicit system message, per
    `docs/receiver_runtime_spec_20260921.md`.
 3. **[CPU, after a committed validation contract + containment check]** Isolated reference and

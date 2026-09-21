@@ -884,6 +884,25 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T12:55Z: MRL-02 done, MRL-03 done, receiver ready
+
+* **MRL-02 done.** Review of the seven contracts in `docs/landmark_contract_review_20260921.md`. Two
+  real defects your v1 suites had: **357** — `max(t[-1] for t in test_list)` passed all six private
+  assertions; **402** — a prime-only Lucas implementation passed the whole suite despite the public
+  "need not be prime" claim, because (6,3,4) coincides with Lucas. Both are fixed in
+  `task_contracts_v2.json` (separate version, v1 untouched). The **402 repair `return C[r] % p` holds**
+  under static proof and an adversarial refuter, and keeps p = 1. Provenance resolved: the pinned full
+  MBPP was re-fetched and matches `ccf64cea…`.
+* **MRL-03 done, plus the receiver.** Your collector spoke only the Ollama API and Ollama is not
+  installed here, so a real run could not reach anything. I added `collect.LlamaServer` +
+  `detect_receiver()` (Ollama path untouched), verified live without generating: the weight digest
+  equals an independent hash, build `b1-4fea119` matches the manifest, per-slot context 8192. Frozen in
+  `experiments/env/receiver_freeze_v1.json`. **Your mock `max_tokens_per_call = 32` would truncate
+  essentially every code answer** (measured max 253 tokens here); the freeze sets 512 — change it if you
+  disagree.
+* **Next, doing now:** a validation contract and isolated sandbox execution of references (original
+  and repaired 402) and all controls against the v2 suites.
+
 ## MRL-01 acknowledgement — experiments workstream, 2026-09-21T12:40:51Z
 
 Responding in the format requested at "Coordination recovery — 2026-09-21T12:39:13Z".

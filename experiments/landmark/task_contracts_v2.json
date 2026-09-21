@@ -1,0 +1,324 @@
+{
+  "version": "landmark-curated-development-contracts-v2",
+  "source_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "source_url": "https://github.com/google-research/google-research/blob/4700efb9afa54286b0e04473ba80a13e8461e25f/mbpp/mbpp.jsonl",
+  "dataset_license": "CC-BY-4.0",
+  "family_id": "unresolved_development_family",
+  "format_instruction": "Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.",
+  "public_assertions": [],
+  "tasks": [
+    {
+      "source_task_id": 52,
+      "entry_point": "parallelogram_area",
+      "arguments": [
+        "b",
+        "h"
+      ],
+      "prompt": "Return the area of a parallelogram with base b and perpendicular height h. Both inputs are positive integers; return the exact integer area.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, 1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[7, 1]",
+          "expected_literal": "7"
+        },
+        {
+          "args_literal": "[2, 11]",
+          "expected_literal": "22"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def parallelogram_area(b, h):\n    return b+h\n",
+          "rationale": "Adds dimensions instead of computing area."
+        },
+        {
+          "code": "def parallelogram_area(b, h):\n    return 0\n",
+          "rationale": "Constant zero is wrong for positive dimensions."
+        },
+        {
+          "code": "def parallelogram_area(b, h):\n    return b*h//2\n",
+          "rationale": "Triangle area confusion; the reviewer noted no control exercised it. Fails [1, 1] -> 1 (returns 0).",
+          "added_in": "v2"
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 357,
+      "entry_point": "find_max",
+      "arguments": [
+        "test_list"
+      ],
+      "prompt": "Return the largest integer among all elements of test_list, a nonempty list of nonempty tuples of integers. Integers can be negative, zero or positive; tuple lengths can differ. Return an integer.",
+      "boundary_cases": [
+        {
+          "args_literal": "[[(-8, -3), (-5,)]]",
+          "expected_literal": "-3"
+        },
+        {
+          "args_literal": "[[(0,)]]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[[(9,), (-2, 4, 8)]]",
+          "expected_literal": "9"
+        },
+        {
+          "args_literal": "[[(1, 2), (8, 3)]]",
+          "expected_literal": "8",
+          "added_in": "v2",
+          "reason": "DEFECT FIX: max-of-each-tuple's-LAST-element returns 3 and first-tuple-only returns 2; v1's six private assertions could not distinguish the last-element program from a correct one"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def find_max(test_list):\n    return min(j for row in test_list for j in row)\n",
+          "rationale": "Returns the minimum rather than the maximum."
+        },
+        {
+          "code": "def find_max(test_list):\n    return max(test_list[0])\n",
+          "rationale": "Ignores every tuple after the first."
+        },
+        {
+          "code": "def find_max(test_list):\n    return max(t[-1] for t in test_list)\n",
+          "rationale": "The natural wrong program independent review found passing all six v1 private assertions; now caught by [[(1, 2), (8, 3)]] -> 8.",
+          "added_in": "v2"
+        }
+      ],
+      "status": "discrimination_defect_fixed_in_v2_awaiting_isolated_validation"
+    },
+    {
+      "source_task_id": 373,
+      "entry_point": "volume_cuboid",
+      "arguments": [
+        "l",
+        "w",
+        "h"
+      ],
+      "prompt": "Return the volume of a cuboid whose perpendicular edge lengths are l, w and h. All three inputs are positive integers; return the exact integer volume.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, 1, 1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[2, 3, 4]",
+          "expected_literal": "24"
+        },
+        {
+          "args_literal": "[1, 7, 8]",
+          "expected_literal": "56"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def volume_cuboid(l, w, h):\n    return l+w+h\n",
+          "rationale": "Adds edge lengths instead of computing volume."
+        },
+        {
+          "code": "def volume_cuboid(l, w, h):\n    return l*l*l\n",
+          "rationale": "Assumes all edge lengths equal the first input."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 378,
+      "entry_point": "move_first",
+      "arguments": [
+        "test_list"
+      ],
+      "prompt": "Return a list formed by moving the last element of test_list to the front and keeping the other elements in their original relative order. The input is a list of integers and can be empty or contain repeated values. For an empty list return an empty list; for a one-element list return a list with that element. Only the returned value is scored; input mutation and output object identity are not scored.",
+      "boundary_cases": [
+        {
+          "args_literal": "[[]]",
+          "expected_literal": "[]"
+        },
+        {
+          "args_literal": "[[6]]",
+          "expected_literal": "[6]"
+        },
+        {
+          "args_literal": "[[2, 2, 5]]",
+          "expected_literal": "[5, 2, 2]"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def move_first(test_list):\n    return test_list\n",
+          "rationale": "Leaves a nontrivial list unchanged."
+        },
+        {
+          "code": "def move_first(test_list):\n    return test_list[1:]+test_list[:1]\n",
+          "rationale": "Rotates in the opposite direction."
+        },
+        {
+          "code": "def move_first(test_list):\n    return [test_list[-1]] + test_list[:-1]\n",
+          "rationale": "Correct on nonempty input, raises IndexError on []; no v1 control exercised the empty-list case the domain was widened to include.",
+          "added_in": "v2"
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 402,
+      "entry_point": "ncr_modp",
+      "arguments": [
+        "n",
+        "r",
+        "p"
+      ],
+      "prompt": "Return the binomial coefficient n choose r, reduced modulo p, as an integer in the range from 0 through p-1. Inputs n, r and p are integers with 0 <= r <= n and p >= 1. The modulus need not be prime.",
+      "boundary_cases": [
+        {
+          "args_literal": "[0, 0, 1]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[4, 0, 1]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[0, 0, 7]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[6, 3, 4]",
+          "expected_literal": "0"
+        },
+        {
+          "args_literal": "[4, 2, 4]",
+          "expected_literal": "2",
+          "added_in": "v2",
+          "reason": "DEFECT FIX: a prime-only Lucas implementation returns 0; v1's only composite-modulus case (6,3,4) coincides with Lucas, so the suite did not test the public 'modulus need not be prime' claim"
+        },
+        {
+          "args_literal": "[6, 2, 6]",
+          "expected_literal": "3",
+          "added_in": "v2",
+          "reason": "second composite-modulus case on which prime-only Lucas returns 0"
+        },
+        {
+          "args_literal": "[5, 2, 1]",
+          "expected_literal": "0",
+          "added_in": "v2",
+          "reason": "p = 1 with r >= 1: regression guard for the modulus-one path beyond r = 0"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "import math\ndef ncr_modp(n, r, p):\n    return math.comb(n,r)\n",
+          "rationale": "Omits modular reduction."
+        },
+        {
+          "code": "def ncr_modp(n, r, p):\n    return 0\n",
+          "rationale": "Constant zero fails cases with a nonzero remainder."
+        }
+      ],
+      "status": "reference_repair_proposed_awaiting_isolated_execution",
+      "reference_repair": {
+        "label": "mbpp/402 reference-repair-v1",
+        "change": "append ' % p' to the return expression: `return C[r]` -> `return C[r] % p`; CRLF and trailing whitespace preserved",
+        "original_canonical_json_digest": "60c271e5bbdf2f739a783bc54ce4371959c8b164daf3c8d9b92d7cd44ecb91a9",
+        "original_canonical_digest_matches_report": true,
+        "original_raw_sha256": "d82fd7d5ba1f8d00063729e60f949c0505de1c2b91f65519fc10b7ab6ac2d41c",
+        "repaired_raw_sha256": "50fafebe4b19c8d4a6821ef4da2c84f14b14e8409d915dc8c5c00f154332acb4",
+        "repaired_canonical_json_digest": "ec6505005baa22db96d1e3bd9802e84e6e05c3a238015c8b50022116d4916e9a",
+        "static_proof_summary": "C[0] is set to 1 and never rewritten (the inner range stops before j = 0), so r = 0 returned an unreduced 1 -- wrong only when p = 1; the added % p makes it 0. For j >= 1 every write is reduced mod p, so C[r] already lies in [0, p-1] and the extra % p is a no-op; for r = 0 and p >= 2, 1 % p = 1. Pascal's recurrence holds modulo any m >= 1, so primality is not required. The repair therefore changes exactly the p = 1, r = 0 outputs and nothing else in-domain.",
+        "adversarial_verdict": "REPAIR_HOLDS -- no counterexample across p = 1 (r = 0 and r >= 1), composite p, r = n, n = 0, and the original three assertions",
+        "p_equals_1_retained": true,
+        "status": "proposed; not adopted until isolated execution of original vs repaired passes a committed validation contract"
+      }
+    },
+    {
+      "source_task_id": 489,
+      "entry_point": "frequency_Of_Largest",
+      "arguments": [
+        "n",
+        "arr"
+      ],
+      "prompt": "Return the number of occurrences of the largest integer in arr. arr is a nonempty list of integers, which can be negative, zero or positive; n is an integer equal to len(arr). Return the count as an integer.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1, [-8]]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[4, [-2, -2, -5, -2]]",
+          "expected_literal": "3"
+        },
+        {
+          "args_literal": "[3, [0, 0, 0]]",
+          "expected_literal": "3"
+        },
+        {
+          "args_literal": "[4, [1, 3, 3, 2]]",
+          "expected_literal": "2",
+          "added_in": "v2",
+          "reason": "the count-arr[0] control returns 1; in all three v1 boundary cases arr[0] is the maximum, so only the original assertions caught it"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def frequency_Of_Largest(n, arr):\n    return max(arr)\n",
+          "rationale": "Returns the maximum value rather than its frequency."
+        },
+        {
+          "code": "def frequency_Of_Largest(n, arr):\n    return arr.count(arr[0])\n",
+          "rationale": "Counts the first value even when it is not the maximum."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    },
+    {
+      "source_task_id": 509,
+      "entry_point": "average_Odd",
+      "arguments": [
+        "n"
+      ],
+      "prompt": "Return the arithmetic mean of all positive odd integers from 1 through n, including n. n is a positive odd integer. This mean is an integer; return that exact integer value. Behavior for even, zero or negative n is outside this task contract.",
+      "boundary_cases": [
+        {
+          "args_literal": "[1]",
+          "expected_literal": "1"
+        },
+        {
+          "args_literal": "[3]",
+          "expected_literal": "2"
+        },
+        {
+          "args_literal": "[101]",
+          "expected_literal": "51"
+        }
+      ],
+      "negative_controls": [
+        {
+          "code": "def average_Odd(n):\n    return n\n",
+          "rationale": "Returns the last value rather than the mean."
+        },
+        {
+          "code": "def average_Odd(n):\n    return n//2\n",
+          "rationale": "Rounds half of n down, one below the required mean."
+        }
+      ],
+      "status": "awaiting_isolated_reference_and_control_validation"
+    }
+  ],
+  "supersedes": "landmark-curated-development-contracts-v1",
+  "recorded_utc": "2026-09-21T12:54Z",
+  "provenance_verification": "Pinned full MBPP source re-fetched from source_url; SHA-256 ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f matches source_sha256 exactly (974 records). All seven entry points appear in their reference definitions and in all three original assertions. This resolves the provenance holds raised by independent review for roots 52, 357, 402 and 509.",
+  "review": "Independent static review, workflow wf_4b8bab05-55e: seven per-root reviewers, a 402 repair proposer and an adversarial refuter. Zero executions of reference, candidate, control or assertion text; expected values checked against standard-library oracles only; zero model calls; zero installs.",
+  "changes_from_v1": [
+    "52: control -- Triangle area confusion; the reviewer noted no control exercised it. Fails [1, 1] -> 1 (returns 0).",
+    "357: boundary [[(1, 2), (8, 3)]] -> 8 (DEFECT FIX: max-of-each-tuple's-LAST-element returns 3 and first-tuple-only returns 2; v1's six private assertions could not distinguish the last-element program from a correct one)",
+    "357: control -- The natural wrong program independent review found passing all six v1 private assertions; now caught by [[(1, 2), (8, 3)]] -> 8.",
+    "378: control -- Correct on nonempty input, raises IndexError on []; no v1 control exercised the empty-list case the domain was widened to include.",
+    "402: boundary [4, 2, 4] -> 2 (DEFECT FIX: a prime-only Lucas implementation returns 0; v1's only composite-modulus case (6,3,4) coincides with Lucas, so the suite did not test the public 'modulus need not be prime' claim)",
+    "402: boundary [6, 2, 6] -> 3 (second composite-modulus case on which prime-only Lucas returns 0)",
+    "402: boundary [5, 2, 1] -> 0 (p = 1 with r >= 1: regression guard for the modulus-one path beyond r = 0)",
+    "489: boundary [4, [1, 3, 3, 2]] -> 2 (the count-arr[0] control returns 1; in all three v1 boundary cases arr[0] is the maximum, so only the original assertions caught it)"
+  ]
+}
