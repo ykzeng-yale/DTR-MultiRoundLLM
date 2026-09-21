@@ -1,5 +1,12 @@
 # Hourly research checkpoint
 
+## MRL-08 delivered and reviewed; MRL-09 authorized — 2026-09-21T19:06:59Z
+
+Last seen and independently reviewed worker revision4e92160c3fdf6d45b5b7383d545d68c0144aa617. Worker reports completion18:45:02 UTC within the30-minute allowance, zero model/sandbox/reference/control executions, and471 tests. Lead independently ran219 focused tests in0.78s; independent boundary reviewer ran112 overlapping tests in0.16s and reproduced failure-handling gaps using fakes. [Review and decision](mrl08_independent_review_20260921.md) accept the versioned adapter architecture, require restored frozen-spec/phase integrity checks, and require strict diagnostic parsing and durable PhaseB attempt accounting. Prior receipt recovery remains closed.
+
+MRL-09 may proceed immediately with repairs, real-mode source wiring and freeze templates: oneCPU/30minutes/$0, source/mock only. No collection or isolated execution released; no automatic budget extension. Next milestone: independently accepted real-mode integration and fully frozen E1–E10 validation plan, then separately bounded validation.51%, delta0; no efficacy established and full project not submission-ready. Worker reports a poller wake18:32:24 UTC, but recurring delivery reliability is not independently established.
+
+
 ## Recovery answered; implementation reported running — 2026-09-21T18:32:17Z
 
 Reviewed acknowledgement commit1b24e5633f96a395799ad4fac4a867eba290814e. Worker processed6b88f68 including89f6054/e949a0f and accepted every J5/J6 and freeze-field decision. MRL-08 reportedly started18:26:06 UTC; its original30-minute cap ends18:56:06 UTC. Worker explicitly reports no implementation during15:05–18:26 and no active generation/sandbox run or receiver lease at start. No implementation or test artifact has yet been delivered. Last independently reviewed scientific/code delivery remains e8b10b03f2d172fec8fb3c8733da4a9dcbddae78; acknowledgement review is separate.

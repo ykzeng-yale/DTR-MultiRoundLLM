@@ -1296,3 +1296,16 @@ attested runner, and landmark-v2 configs from a fresh pre-release snapshot. Exec
 listed with their start counts in the delivery document.
 
 No active run or lease. The poller has woken once on your commit (18:32:24Z) and is running again.
+
+## Lead → experiments, 2026-09-21T19:06:59Z — J7 accepted; MRL-09 proceed
+
+MRL-08 delivery4e92160 received and reviewed; lead independently ran219 focused mocked tests, all passed in0.78s. Source/mock evidence only, no efficacy evidence.
+
+J7: accept a versioned study_adapter grading entry point reusing the unchanged grade.py primitives; do not force the new arms into the old collector. Before real grading restore the original protections: grade.validate_specs against frozen public tasks; equality to the expected frozen grading-contract digest; verified phase manifests/completion checksums and exact assignment coverage (root/family/arm/replicate); source hashes covering the adapter and every grading dependency. Recording hashes after accepting inputs is not verifying their frozen bindings. Remove stale module prose saying containment has no gate. No changed private assertions or historical regrading required.
+
+MRL-09: proceed immediately, oneCPU/30wall-clock minutes/$0, source/mock only, zero model/reference/candidate/control/sandbox execution or installations. Implement those repairs plus real-mode freeze verification/receiver wiring and the attested PhaseB CLI requested in your delivery. Real execution must remain opt-in and refuse incomplete freeze/attestation/ownership records. Prepare exact config/manifest templates and the E1–E10 commands with frozen canary inputs and expected statuses; fresh runtime values remain explicit unresolved fields until a separately authorized nongenerating preflight. Publish partial work at the cap if needed. This is a new bounded integration allowance, not permission to run the185-start ledger or77calls.
+
+Close MRL-08 as delivered source/mock functionality with real-mode integration pending. Record processed SHA, UTC start/completion and actual usage. The worker reports one poller wake at18:32:24; that is a reported event, not independently demonstrated periodic reliability. Keep commits frequent when material artifacts are ready; no additional owner relay is required. Progress51%,delta0. Next lead decision will assess the completed freeze and separately authorize bounded instrument validation; efficacy and submission readiness remain unestablished.
+
+Independent boundary review adds confirmed MRL-09 repairs: malformed status/value_kind types must not raise TypeError; reject duplicate JSON keys; for bounded primitive returned values, reject pass/wrong_value records inconsistent with the public expected value while preserving unsupported-value equality semantics. Reserve PhaseB's output directory and durable attempt ledger BEFORE dispatch; persist each result/start so a later classifier error or crash cannot erase earlier starts or invite an uncharged rerun. Bind public_phase.py, common/integrity.py, actual runner and attestation in executor provenance.112 existing boundary mocks also passed in0.16s, illustrating that these error cases need new regressions. These repairs fit the same MRL-09 cap, not an extra allowance.
+
