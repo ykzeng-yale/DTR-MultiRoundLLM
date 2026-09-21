@@ -11,6 +11,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+import scipy
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'experiments/e0'))
@@ -88,7 +89,8 @@ def main():
     config_path = ROOT / 'experiments/e0/history_compression_config_v1.json'
     config = json.loads(config_path.read_text())
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-    paths = list(config['source_hashes']) + [str(config_path.relative_to(ROOT)), str(Path(__file__).resolve().relative_to(ROOT))]
+    paths = list(config['source_hashes']) + [str(config_path.relative_to(ROOT)), str(Path(__file__).resolve().relative_to(ROOT)),
+                                           'docs/history_compression_plan_20260921.md', 'tests/test_history_compression.py']
     hashes = {}
     for name in paths:
         data = (ROOT / name).read_bytes()
@@ -119,7 +121,7 @@ def main():
         raise TimeoutError('Exact calculation exceeded cap')
     report = {
         'created_utc': datetime.now(timezone.utc).isoformat(), 'freeze_revision': revision,
-        'source_hashes': hashes, 'python': platform.python_version(), 'numpy': np.__version__,
+        'source_hashes': hashes, 'python': platform.python_version(), 'numpy': np.__version__, 'scipy': scipy.__version__,
         'config': config, 'full_history_reference': full, 'rows': rows,
         'usage': {'calculation_seconds': elapsed, 'receiver_calls': 0, 'receiver_tokens': 0,
                   'paid_usd': 0, 'sampled_trajectories': 0, 'fitted_models': 0},
