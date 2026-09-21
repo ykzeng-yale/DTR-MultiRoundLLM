@@ -57,3 +57,36 @@ These are six roots. They motivate a properly sized study; they do not constitut
    The receiver is deterministic, so re-collection reproduces these outputs exactly and only adds 402.
 2. The confirmatory design needs many more independent families; the protocol's planning figures
    (roughly 864–4,348 roots at δ = 0.03) are the reference for sizing it.
+
+---
+
+## Release v1c — all seven roots graded (2026-09-21T13:09Z)
+
+Frozen at `d5efcd8`; run `results/landmark_dev_release_v1c_20260921T130757Z/`, grades `results/landmark_dev_release_v1c_20260921T130757Z_grades/`, analysis `results/landmark_dev_release_v1c_20260921T130757Z_analysis.json`. Identical to v1 in everything that
+reaches the receiver; 402's private spec carries the hash-verified repair. **49/49 outputs byte-identical to
+release v1** — the third independent confirmation that the seeded receiver is deterministic. 52 sandbox
+executions, **0 missing grades**.
+
+| root | STOP | generic repair | history-specific repair | independent restart |
+|---|---|---|---|---|
+| 52 | 1 | 1, 1 | 1, 1 | 1, 1 |
+| 357 | 1 | 1, 1 | 1, 1 | 1, 1 |
+| 373 | 1 | 1, 1 | 1, 1 | 1, 1 |
+| 378 | 1 | 1, 1 | **0**, 1 | **0**, 1 |
+| **402** | **0** | 0, 0 | 0, 0 | 0, 0 |
+| 489 | 0 | 0, 0 | 0, 0 | 0, **1** |
+| 509 | 1 | 1, **0** | 1, 1 | **0**, 1 |
+
+Arm means over seven roots: **STOP 0.714; generic, history-specific and restart each 0.643.** Intervals are
+suppressed — one effective family.
+
+* **Continuing broke correct answers**: 4 of 30 continuation replicates on the five roots correct at STOP (13%).
+* **Feedback repair fixed nothing**: 0 of 8 attempts across the two roots wrong at STOP (402 and 489).
+  Independent restart fixed 1 of 4.
+* **402 is simply hard for this receiver**: wrong at STOP and under all six continuations. Its grade was
+  blocked in v1 by the defective reference, not by anything about the receiver.
+* **History-specific and generic repair tie** at 0.643.
+
+**Same caveat, stated again because it matters most:** seven roots, one effective family. This is a working,
+reproducible pipeline and a description of seven tasks — not evidence that feedback content, continuation or
+restart has any population-level effect. Sizing a confirmatory study is the next scientific decision.

@@ -884,6 +884,20 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T13:09Z: release v1c — all seven roots graded
+
+Same freeze as v1 except 402's spec carries the hash-verified repair (new explicit `--adopt-reference-repairs`
+builder option, off by default, recorded in the build manifest). **49/49 byte-identical to v1** — third
+determinism confirmation. 0 missing grades. STOP 0.714 vs 0.643 for every continuation arm; feedback repair
+fixed **0 of 8** attempts on the two wrong roots, restart 1 of 4; continuing broke 4 of 30 correct replicates;
+402 is wrong at STOP and under every continuation. Descriptive only (one effective family).
+
+**The next decision is scientific and it is yours to weigh in on:** the pipeline is now proven end to end and
+reproducible, so the open question is the confirmatory design — how many independent families, drawn how.
+Your protocol's planning figures (~864–4,348 roots at δ = 0.03) are far beyond seven. I am drafting a sizing
+note from these measured discordance rates and will commit it next; object in COORDINATION.md if you would
+rather size it differently.
+
 ## Experiments → theory, 2026-09-21T13:06Z: first real graded collection is in
 
 Development release v1 ran against the pinned 3B: 49/49 calls, 0 missing, \$0, 86 s. **Re-running with the

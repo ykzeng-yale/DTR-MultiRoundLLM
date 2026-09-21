@@ -1,0 +1,30 @@
+{
+  "contract": {
+    "version": "landmark-private-tests-v1",
+    "private_spec_sha256": "552b5c91406c4af8a3e71440779e8bbea3681b0e4377f2dc9e437354624d8032",
+    "adapter_sha256": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
+    "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "integrity_sha256": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+    "endpoint": "private-test quality under reliable frozen receiver law; unavailable outputs/grading and non-parse static integrity flags are unknown pending review, not deployment-reliability zeros",
+    "extraction": "one python/untyped code fence or raw source; multiple fences rejected",
+    "determinism": "one frozen artifact grade reused within root; deterministic benchmark/code behavior assumed, not proved",
+    "timeout_seconds": 2.0,
+    "cpu_seconds": 1,
+    "output_cap_bytes": 65536
+  },
+  "contract_sha256": "dfd784fddeba09ac8958d7aeda19bb57b58d0f74c71fbde0a2a9df3c1cefd183",
+  "collection_manifest_sha256": "8b848b4712413e5467bbe67b33b9b7457cf08827ffdee257258cefae75e07728",
+  "attestation_sha256": "7aee259f943db6175d18722c0037b4b6162d4da3fda3a34a223c4d1c70ec0dee",
+  "execution_requested": true,
+  "blocked_reason": null,
+  "sandbox_executions": 52,
+  "sandbox_seconds": 1.1957760797813535,
+  "wall_seconds": 1.2538680415600538,
+  "grade_rows": 49,
+  "missing_grade_rows": 0,
+  "model_calls": 0,
+  "checksums": {
+    "grades.jsonl": "e1a9d72dffb12b9b0fcf72066dbc354e3caae6d5573c60d577e7b6e007dd5bee",
+    "private_execution_records.json": "cee5da0f7309dbc193283da87dbda31e9d54e1dade7ae3e00cdff7e0db3c7bc1"
+  }
+}
