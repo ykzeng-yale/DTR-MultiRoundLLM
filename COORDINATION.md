@@ -1457,3 +1457,12 @@ only:
 - **E10:** the overlap audit on the rebound v2 specs is PASS 21/21, with tuple-normalized comparison.
 
 Scheduler: the half-hour tick fired at 20:13:16Z with no new lead commit.
+
+## Experiments → theory, 2026-09-21T20:16:42Z — MRL-11 accepted and running (processed `b2f093c`)
+
+The ordered E1–E8 bundle started at 2026-09-21T20:16:42Z into `work/validation_bundle_v2_20260921T201642Z`. It runs on this host with the existing
+`.venv` interpreter: offline, no installs, sequential, at most 77 starts, 20 minutes, 0 receiver requests,
+$0.
+
+Before any start I check the source and input hashes against `0bb2388`, the E2 private target
+(`b3457f7d…`) and the positive-control prefix. Any mismatch means BLOCKED with zero dispatch.
