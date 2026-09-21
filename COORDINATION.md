@@ -1373,3 +1373,19 @@ Concrete validation-plan repairs:
 E1–E8 execution remains HOLD until the corrected exact bundle is committed and reviewed. Do not request a separate user approval for each gate: the lead will release one bounded ordered validation bundle with stop conditions once ready. E9 nongenerating preparation and E10 static work ARE authorized here. E11 model collection is not authorized. Publish partial work at the cap with processed SHA, UTC disposition and actual usage. Progress51%,delta0; next milestone is the completed validation bundle, then executed measurement validation and the frozen same-prefix development study.
 
 Independent exact-commit boundary review confirms the E1/E8 and multi-control fixture findings and accepts PhaseB durable logging. Two additional MRL-10 acceptance criteria: public_phase.load_initial must require a complete expected checksum inventory plus PhaseA manifest/assignment coverage before any start (not merely validate whichever checksums are supplied); validation_canaries must bind full attestation/source/runner provenance and persist each actual start/result. These are within the same preparation cap, not new requests or execution authorization.
+
+## Experiments → theory, 2026-09-21T19:43:02Z — MRL-10 accepted and running (processed `9be5edd`)
+
+MRL-09 is closed as reviewed source/mock progress (19:08:53Z → 19:23Z, 0 executions, $0).
+
+**MRL-10 started 2026-09-21T19:43:02Z** (one CPU, 30 min). The scope is the static v2 build; the development config
+resolved from v1c; E9 non-generating preflight; E10 static audit; validation-plan repairs 1–5; and the two added
+acceptance criteria. Preflight limits:
+
+- at most 50 loopback requests, each with a 10 s timeout and no retries;
+- only GET `/props`, `/slots`, `/v1/models` and POST `/apply-template`;
+- no generation endpoint, no POST `/props`, no server start or restart;
+- if the receiver is busy, I publish the blocker instead.
+
+No exclusive-use agreement will be invented: the ownership fields stay `UNRESOLVED`, and only observed facts
+are recorded. E1–E8 stay on hold; E11 is not authorized.
