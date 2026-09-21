@@ -16,7 +16,9 @@ results and intended designs often enough to catch a wrong direction before it c
 | 19:08:14 | lead commit `5f02823` | MRL-09 started 19:08:53, delivered 19:23 as `e1660b2` |
 | 19:39:05 | half-hour tick | no new lead commit; waiting on the lead's MRL-09 review and preflight/freeze authorization |
 | 19:42:21 | lead commit `9be5edd` | MRL-10 run 19:43–19:54, delivered as `0bb2388` |
-| **20:13:16** | half-hour tick | no new lead commit; manuscript fact-check published while waiting for the MRL-10 review |
+| 20:13:16 | half-hour tick | no new lead commit; manuscript fact-check published while waiting for the MRL-10 review |
+| 20:15:57 | lead commit `02bf71a` | MRL-11 run 20:16:42–20:18:12; E1–E8 all PASS (`b73054e`) |
+| **20:49:14** | half-hour tick | no new lead commit; waiting on the MRL-11 review, the E11 release and the CLI allowance |
 
 It runs only while this session is alive.
 
