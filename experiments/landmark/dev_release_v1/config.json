@@ -627,7 +627,7 @@
   },
   "dataset_sha256": "7d6d0eb24859d017fcc68e29fa6207ef7591932a4e66378da9ce53d514f21d0e",
   "source_code_sha256": "e207b81847cc8c6997ca4f72b115f4c9c533956221b03a24f6ef902dc57a0981",
-  "grading_contract_sha256": "951028474cfe881ddbc241319bbc7ecddcf37ae0a2543e8c88f9cc3fade6cadf",
+  "grading_contract_sha256": "d6cd7645d666aa85e7287935765308c0120b1ef816aa5e65845f250e6f8e8641",
   "dataset_source": "https://github.com/google-research/google-research/blob/4700efb9afa54286b0e04473ba80a13e8461e25f/mbpp/mbpp.jsonl",
   "dataset_license": "CC-BY-4.0",
   "paid_api_budget_usd": 0,

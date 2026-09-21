@@ -26,3 +26,15 @@ Missing outputs stay missing; the analyzer reports all-assigned completion bound
 repair and each arm vs STOP, receiver noise across the two seeds, every failure and missing outcome,
 and calls, tokens and wall time. A null or a reversal is reported exactly as found; nothing is
 re-run, re-seeded or re-scored to change it.
+
+## Re-freeze before any grading (recorded honestly)
+
+The first collection, frozen at , is **superseded and was never graded**. I froze its
+ as the SHA-256 of the contract *file*, but  binds a collection to
+, which also covers the grader, sandbox and integrity sources — so the grader
+correctly refused it. **No outcome of that collection was observed**: grading stopped before executing
+anything, so re-collecting is not selection on outcomes. The corrected freeze changes only that hash and
+stores the specs as JSONL, the format the grader reads (the builder emits a JSON array — an interface
+mismatch between the two). Seeds derive from the unchanged  and root IDs, so the re-collection uses
+identical seeds, which also measures whether the receiver is reproducible run to run. The superseded run
+directory is kept, not deleted.  makes the error unrepeatable.
