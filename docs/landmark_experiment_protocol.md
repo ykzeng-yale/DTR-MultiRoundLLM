@@ -67,3 +67,14 @@ If a smaller cached receiver is used for engineering feasibility, name it explic
 ## Required before real-run release
 
 The release manifest must pin the exact receiver/digest, server and template, dataset and prior-use exclusions, family split, evaluator/sandbox, initial/prompt renderer, seed/order design, failure endpoint, costs, code/config hashes and numerical ceilings. A clean committed freeze and measured environment preflight must precede calls. The present mock tests and synthetic study validate software/statistical contracts only. They do not substitute for that release or demonstrate prompt improvement.
+
+## Subsequent lead decision: useful gain for independent policy validation
+
+The [21 September consolidated resolution](worker_issues_resolution_20260921.md)
+adopts 0.05 as the working absolute useful-gain threshold for a future frozen
+public-history policy against the frozen development-selected fixed arm. This is
+a new prospective design choice after development, not an observed effect or a
+released trial. Its 0.10 planning alternative differs from the 0.05 usefulness null
+by 0.05; precision/power must use the actual root/family design and costs. The
+seven-root diagnostic stage remains descriptive. The resolution gives the exact
+final-analysis benefit/futility/inconclusive rules and remaining release gates.

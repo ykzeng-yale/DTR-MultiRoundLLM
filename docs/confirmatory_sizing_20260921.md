@@ -1,5 +1,8 @@
 # Sizing the confirmatory study from measured discordance
 
+
+> **Lead resolution, 21 September:** [consolidated decisions and required corrections](worker_issues_resolution_20260921.md) govern use of this historical report. Preserve original records. In particular, the pilot does not establish population efficacy, complete receiver-law verification or categorical sample-size feasibility. The working useful-gain threshold is now five percentage points for a future frozen policy comparison; no new trial is released.
+
 **Experiments workstream, 2026-09-21T13:11Z.** Inputs are the development release v1c grades
 (`docs/dev_release_v1_results.md`) and the protocol's own planning formula
 (`docs/landmark_experiment_protocol.md`): n ≈ (z₀.₉₇₅ + z₀.₈)² · Var(D) / δ², with Var(D) = p_gain + p_harm − Δ².

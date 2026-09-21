@@ -1,5 +1,20 @@
 # Project status and claims ledger
 
+## Worker issues resolved and study target specified — 2026-09-21T14:46:36Z
+
+**51%, delta 0.** [The consolidated response](worker_issues_resolution_20260921.md)
+addresses every issue from the owner-supplied worker account and marks accepted
+corrections separately from pending implementation. It adopts a new working
+five-point useful-gain threshold for the future frozen policy comparison; ten points
+is a planning alternative, not a sample-driven threshold. Independent mathematical
+review supports the decision rules. No full-trial sample size or collection is released.
+
+The new test wrapper preserves failure status; 12 focused mocked tests pass and
+an intentional missing-path check returns 4. No model/reference/candidate executions
+or spend. MRL-05/06/07 remain the implementation order. Current efficacy is still
+unestablished and the full project is not submission-ready.
+
+
 ## Manuscript integration and correction-delivery recovery — 2026-09-21T14:37:30Z
 
 **51%, delta 0.** Integrated the independently reviewed seven-root pilot into the

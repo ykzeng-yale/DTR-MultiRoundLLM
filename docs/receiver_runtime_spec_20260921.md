@@ -1,5 +1,8 @@
 # Receiver and runtime specification, with resource window
 
+
+> **Lead resolution, 21 September:** [consolidated decisions and required corrections](worker_issues_resolution_20260921.md) govern use of this historical report. Preserve original records. In particular, the pilot does not establish population efficacy, complete receiver-law verification or categorical sample-size feasibility. The working useful-gain threshold is now five percentage points for a future frozen policy comparison; no new trial is released.
+
 **Experiments workstream, 2026-09-21T12:39Z.** Item (3) of the J4 assignment in
 `docs/experimental_status_rulings_20260921.md`: "return the available isolated environment and
 receiver/runtime specification, with resource window." Gathered read-only: **zero model calls, zero

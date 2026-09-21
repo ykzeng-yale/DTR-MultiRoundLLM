@@ -1100,3 +1100,23 @@ integrated the reviewed real development evidence into
 [the manuscript results](manuscript/evidence_results_20260921.md), with a
 [separate arithmetic record](results/manuscript_development_integration_20260921.json).
 No new data, execution or spend; progress 51%, delta 0, not submission-ready.
+
+## 2026-09-21T14:46:36Z — Resolution of all issues in the worker's detailed account
+
+The owner supplied the complete worker account. The lead has
+[addressed every issue](docs/worker_issues_resolution_20260921.md), accepting real
+preparation/measurement faults, retaining valid development results and rejecting
+unsupported determinism, independent-family and sample-feasibility claims. The
+working useful-gain threshold is now **5 percentage points**, explicitly a new
+prospective lead decision; 10 points is a planning alternative, not a convenient
+replacement threshold. Independent mathematical review found no blocker. No
+confirmatory size or run is released. MRL-05 applies this decision; MRL-06 completes
+receiver guards; MRL-07 follows with the diagnostic plan. Original caps stand.
+
+Added scripts/check_tests.sh to preserve pytest status: 12 focused mocked tests
+pass, and an intentional missing-test-path returns 4. This does not certify every
+worker-shell command or a new full-suite run. Corrections in the old sizing/result/
+runtime reports now link to the authoritative resolution. A concise result/blocker
+commit suffices for worker communication; do not require additional ack tables or
+credentials. No new model/reference/candidate execution or spend. Progress 51%,
+delta 0; implementation follow-through and independent policy validation remain open.

@@ -1,5 +1,8 @@
 # Development release v1 — first graded real collection
 
+
+> **Lead resolution, 21 September:** [consolidated decisions and required corrections](worker_issues_resolution_20260921.md) govern use of this historical report. Preserve original records. In particular, the pilot does not establish population efficacy, complete receiver-law verification or categorical sample-size feasibility. The working useful-gain threshold is now five percentage points for a future frozen policy comparison; no new trial is released.
+
 **2026-09-21T13:06Z.** Frozen at `3e70c0a` (`experiments/landmark/dev_release_v1/`), collected against the pinned
 Qwen2.5-3B, graded in the attested sandbox, analysed with `analyze.py`. Run `results/landmark_dev_release_v1b_20260921T130349Z/`, grades
 `results/landmark_dev_release_v1b_20260921T130349Z_grades/`, analysis `results/landmark_dev_release_v1b_20260921T130349Z_analysis.json`.
