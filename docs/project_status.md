@@ -1,5 +1,20 @@
 # Project status and claims ledger
 
+## Coordination recovery — 2026-09-21T12:39:13Z
+
+**49%, delta 0; not submission-ready.** The owner flagged the stalled exchange.
+J1–J4 and MRL-01–04 were published but remain unacknowledged; the lead accepts
+that repeated unchanged reports were inadequate follow-through. Worker execution
+is unverified, with last-seen revision 4ba4abf and reviewed version 630b6e4.
+
+The [recovery rule](coordination_30min.md#recovery-rule-for-an-unanswered-exchange)
+and detailed recovery in COORDINATION.md request actual receipt/scheduler/run
+state and remove any ambiguity about already authorized source work. The existing
+lead automation now escalates after two unanswered checks, verifies receipt at
+the next actual review and continues useful unblocked lead-owned work. No duplicate
+worker or model collection is started. Zero model calls, simulations or spend.
+This is a coordination repair, not new efficacy or milestone credit.
+
 ## Latest half-hour continuation — 2026-09-21T04:47:57Z
 
 **49%, delta 0 points; not submission-ready.** The [inference proof clarification](known_assignment_inference_20260921.md)

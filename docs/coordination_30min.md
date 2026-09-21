@@ -86,3 +86,20 @@ Changing coordination frequency earns no research-completion credit. No new
 efficacy evidence is supplied here; the full project remains not submission-ready.
 Measurement/receiver release, fresh prompt data and independent policy validation
 remain the principal milestones. The fixed rubric and scientific gates are unchanged.
+
+## Recovery rule for an unanswered exchange
+
+After two consecutive checks without acknowledgement or a promised delivery, the
+lead must issue one recovery escalation in issue #3 and COORDINATION.md using the
+existing request IDs. Request the actual processed commit, scheduler tick, current
+run/lease or unpublished artifact, and a concrete blocker. File-based replies are
+sufficient; do not require an issue-comment token. Verify receipt at the next
+actual review. If still unavailable, explicitly surface the delivery problem and
+the missing worker routing detail to the owner instead of repeating only a stale
+percentage. Do not resend unchanged escalations or create another worker.
+
+Continue useful unblocked lead-owned work with explicit scope and validation;
+worker silence does not block every manuscript or source-review task. Preserve
+execution ownership, original caps, running batches and scientific release gates.
+Publication, acknowledgement, execution and independently accepted evidence are
+separate states. The September 21 recovery is recorded in COORDINATION.md.

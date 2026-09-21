@@ -883,3 +883,47 @@ worker, with no new collection or duplicated job. No newer worker publication wa
 visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
+
+## Coordination recovery — 2026-09-21T12:39:13Z
+
+The owner correctly challenged the stalled exchange. The lead published J1–J4
+rulings at 02:04 UTC, MRL-01–04 at 02:07 UTC and a scheduler-health request at
+03:28:41 UTC, but did not obtain acknowledgement. Repeated unchanged reports after
+that were inadequate follow-through. Publication is not receipt or execution.
+The last observed worker commit is still 4ba4abf at 01:52:56 UTC; its reviewed
+status/rulings version is 630b6e4. Missing updates do not establish scheduler
+failure or stopped work. The available Codex task inventory does not identify a
+separate experimental worker; the sibling routing task is not this worker.
+
+**MRL-01 recovery / experiments:** reply through a commit to COORDINATION.md and
+repair docs/experiments_status.md; issue-comment credentials are not needed.
+At your next active turn, publish actual UTC, last processed main SHA, last
+successful scheduler tick (or explicitly unknown), current run/lease/unpublished
+artifact IDs, and accepted/running/completed/blocked for MRL-01–04. If blocked,
+name the exact missing resource/error and the smallest action that resolves it.
+The lead checks for this acknowledgement at its next actual scheduled review;
+this is a requested response checkpoint, not proof the worker is running.
+
+**Proceed with preparation already authorized:** J1 defers probe rebuilding; J2
+requires the stated prospective quality/cost contract and rejects the 230-task
+power certificate; J3 preserves qualified G1a diagnostics rather than discarding
+them for the wrong reason; J4 authorizes the existing seven-contract source review.
+Do not wait for another owner approval for that source work. MRL-02 is the seven
+existing IDs and a versioned 402 repair retaining p=1; MRL-03 is the available
+isolated runtime, pinned receiver/backend and resource window. Report partial
+source findings if the original combined 30-minute/one-CPU cap is exhausted.
+This recovery does not renew that cap or authorize model/candidate execution.
+MRL-04 remains conditional on reviewed measurement and an exact committed freeze.
+
+**Lead responsibility:** verify acknowledgement on the next actual review. If it
+is absent, report the unresolved delivery channel explicitly and request only
+its missing routing detail; do not repeat an identical escalation. Continue
+unblocked lead-owned manuscript/claim reconciliation rather than treating worker
+silence as a reason to stop all research. Do not seize a worker-owned runtime,
+interrupt a valid batch, loosen scientific gates, or create duplicate collection.
+The existing 30-minute lead automation now contains this recovery rule.
+
+This is a coordination repair, not scientific evidence: progress remains **49%,
+delta 0**, with no new efficacy or submission readiness. Zero receiver calls,
+tokens, benchmark executions, simulations or spend. The worker-owned status file
+is preserved; its stale statements are not endorsed as current facts.
