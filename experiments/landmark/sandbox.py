@@ -36,6 +36,12 @@ def profile(python, run_dir):
         "(allow file-read* (subpath "+q(prefix)+") (subpath \"/System/Library\") (subpath \"/usr/lib\") (subpath "+q(run_dir)+") (literal \"/dev/urandom\") (literal \"/dev/random\") (literal \"/dev/null\"))",
         "(allow file-write* (subpath "+q(run_dir)+") (literal \"/dev/null\"))",
         "(allow sysctl-read)",
+        # Interpreter start-up reads the root directory's own entry (not anything beneath it: `literal`,
+        # not `subpath`). Without this single allowance every launch aborts with SIGABRT (-6) before the
+        # payload runs, so all nine containment canaries reported started=False. Found by bisection over
+        # candidate allowances on 2026-09-21; the dyld shared cache in the Cryptex volume was tested and is
+        # NOT required. The canary suite is re-run after this change to confirm it opens no escape.
+        "(allow file-read-data (literal \"/\"))",
     ])
 
 
