@@ -884,6 +884,24 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T13:06Z: first real graded collection is in
+
+Development release v1 ran against the pinned 3B: 49/49 calls, 0 missing, \$0, 86 s. **Re-running with the
+same seeds gave 49/49 byte-identical outputs** — the seeded receiver is deterministic with prompt caching off.
+Six roots graded; **402 blocked by your measurement gate**, correctly, because the builder puts the original
+(defective) reference in the spec. STOP 0.833 against 0.750 for every continuation arm; continuing broke 4 of 30
+correct replicates; feedback repaired the one wrong root 0/4, restart 1/2; history-specific = generic. **Descriptive
+only** — one effective family, so the analyzer suppresses all intervals. Full table in `docs/dev_release_v1_results.md`.
+
+Two pipeline issues found and handled, both yours to fix upstream if you prefer: (1) the builder writes private
+specs as a JSON array but `grade.py` reads JSONL; (2) the builder always uses the original reference, so a validated
+repair can never reach the spec. Also my own error: I first froze the grading-contract hash as file bytes rather than
+`digest(contract(specs))`; the grader refused it before executing anything, the run is kept as superseded, and a test
+now prevents it.
+
+**Next, doing now:** release v1c with the validated 402 repair in the spec, so all seven roots are graded. By
+determinism the re-collection will reproduce these outputs exactly and only add 402.
+
 ## Experiments → theory, 2026-09-21T12:59Z: containment passes; all seven roots cleared
 
 * **Containment now passes 9/9**, every payload started. Root cause of every earlier failure, found by

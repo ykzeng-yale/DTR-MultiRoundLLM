@@ -1,0 +1,433 @@
+{
+  "analysis_version": "landmark-analysis-v2",
+  "evidence_type": "ungraded_real_collection",
+  "config_sha256": "abbc1890af1f16e0e586b93c0a92d8c778ded65ab97f3f2acb40d119c19c07b5",
+  "collection_manifest_sha256": "b8266848842ecd48d711282a18c3cf162573bd3170981d5b64227d14e05c0dba",
+  "grades_sha256": "f8ca263b9eb6aa81c3fff9b336c141228d6d09cca9d8c64cc643adfb2c4f971d",
+  "split": "all",
+  "assigned_roots": 7,
+  "excluded_roots": 0,
+  "receiver_identity_gate": true,
+  "quality": {
+    "stop": {
+      "observed": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.8333333333333334,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_replicate_reasons": {
+        "reference_validation_failed_or_unavailable": 1
+      },
+      "all_assigned_mean_bounds": [
+        0.7142857142857143,
+        0.8571428571428571
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root mean; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          0,
+          1
+        ],
+        "radius": 1.7308183826022854,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "generic_repair": {
+      "observed": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.75,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_replicate_reasons": {
+        "reference_validation_failed_or_unavailable": 2
+      },
+      "all_assigned_mean_bounds": [
+        0.6428571428571429,
+        0.7857142857142857
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root mean; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          0,
+          1
+        ],
+        "radius": 1.7308183826022854,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "history_specific_repair": {
+      "observed": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.75,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_replicate_reasons": {
+        "reference_validation_failed_or_unavailable": 2
+      },
+      "all_assigned_mean_bounds": [
+        0.6428571428571429,
+        0.7857142857142857
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root mean; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          0,
+          1
+        ],
+        "radius": 1.7308183826022854,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "independent_restart": {
+      "observed": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.75,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_replicate_reasons": {
+        "reference_validation_failed_or_unavailable": 2
+      },
+      "all_assigned_mean_bounds": [
+        0.6428571428571429,
+        0.7857142857142857
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root mean; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          0,
+          1
+        ],
+        "radius": 1.7308183826022854,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    }
+  },
+  "contrasts": {
+    "history_specific_repair_minus_generic_repair": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.0,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "generic_repair_minus_independent_restart": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.0,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "history_specific_repair_minus_independent_restart": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": 0.0,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.14285714285714285,
+        0.14285714285714285
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "generic_repair_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": -0.08333333333333333,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.21428571428571427,
+        0.07142857142857142
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "history_specific_repair_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": -0.08333333333333333,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.21428571428571427,
+        0.07142857142857142
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    },
+    "independent_restart_minus_stop": {
+      "complete_pairs": {
+        "n_roots": 6,
+        "n_families": 1,
+        "mean": -0.08333333333333333,
+        "se": null,
+        "ci95": null,
+        "interval_note": "No interval: insufficient independent families, incomplete assigned grades, or measurement gate failed"
+      },
+      "missing_pair_roots": 1,
+      "all_assigned_mean_bounds": [
+        -0.21428571428571427,
+        0.07142857142857142
+      ],
+      "all_assigned_mean_bounds_scope": "Completion bounds for the realized assigned-root contrast; not a population confidence interval",
+      "finite_sample_reference": {
+        "method": "Hoeffding with fixed family weights and missing-outcome completion bounds",
+        "alpha": 0.005,
+        "interval": [
+          -1,
+          1
+        ],
+        "radius": 3.4616367652045708,
+        "effective_families": 1.0,
+        "target": "Expected equal-root mean for these prespecified family sizes and weights",
+        "assumptions": "Independent complete-data family outcomes, fixed family weights and policies, well-defined bounded outcomes and valid measurement; family IDs alone do not verify independence",
+        "scope": "Conditional on the declared sampling design/training; not arbitrary task-population transport or a random-family-size ratio target",
+        "suppression_reason": null
+      }
+    }
+  },
+  "realized_cost": {
+    "stop": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 1.0,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 1.2252672382497363,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 159.71428571428572,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 44.857142857142854,
+        "known_roots": 7,
+        "unknown_roots": 0
+      }
+    },
+    "generic_repair": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 2.4543501251776303,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 392.2857142857143,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 87.71428571428571,
+        "known_roots": 7,
+        "unknown_roots": 0
+      }
+    },
+    "history_specific_repair": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 4.096585417166352,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 399.2857142857143,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 156.71428571428572,
+        "known_roots": 7,
+        "unknown_roots": 0
+      }
+    },
+    "independent_restart": {
+      "interpretation": "Initial call plus mean cost of one continuation, averaging replicates within root; actual collection total separately pays for all replicates. Failure and partial-collection costs are not completed-policy costs.",
+      "attempted_calls": {
+        "mean_observed": 2.0,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "seconds": {
+        "mean_observed": 2.5351962441844598,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "mean_observed": 319.42857142857144,
+        "known_roots": 7,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "mean_observed": 93.57142857142857,
+        "known_roots": 7,
+        "unknown_roots": 0
+      }
+    }
+  },
+  "interpretation": "Frozen finite-prompt landmark comparison; no learned policy or full DTR-value claim. Complete-case estimates select a population when outcomes are missing. Completion bounds concern this realized run, not population confidence. Mock outcomes are not empirical evidence.",
+  "finite_sample_reference_family": {
+    "overall_alpha": 0.05,
+    "number_of_fixed_endpoints": 10,
+    "per_endpoint_alpha": 0.005,
+    "scope": "Bonferroni simultaneous reference intervals across these four arms and six contrasts only, under each stated fixed-weight independent-family model; repeated looks, selected policies and changed endpoints are not covered"
+  },
+  "actual_collection_cost": {
+    "attempted_calls": 49,
+    "reserved_completion_tokens": 25088,
+    "measured_prompt_tokens": 9964,
+    "measured_completion_tokens": 3162,
+    "attempted_calls_with_unknown_usage": 0,
+    "wall_seconds": 86.37465166673064,
+    "paid_api_spend_usd": 0
+  }
+}
