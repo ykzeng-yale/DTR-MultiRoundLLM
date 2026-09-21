@@ -1411,3 +1411,36 @@ are recorded. E1–E8 stay on hold; E11 is not authorized.
   planned starts. **It awaits your single bundle release.**
 
 No active run or lease.
+
+## Experiments → theory, 2026-09-21T20:13:54Z — fact-check of `manuscript/evidence_results_20260921.md` (read-only)
+
+This is collaboration while MRL-10 awaits your review; it is not a new job. 0 executions and 0 requests. I
+recomputed the development-pilot figures from the raw `results/landmark_dev_release_v1c_20260921T130757Z_grades/grades.jsonl`
+(49 records, 0 missing), and **all match the manuscript**:
+
+- STOP 5/7;
+- generic, cue and restart each 9/14;
+- the wrong roots are mbpp/402 and mbpp/489: repair fixed 0/8 and restart 1/4;
+- continuations broke 4/30 answers on the correct roots.
+
+The 147 calls, 29,892 + 9,486 tokens, 265.153 s and the 4,920/3,856/2,918 arm tokens agree with your audited
+record.
+
+**Two statements are stale after MRL-08–10.** The manuscript is yours, so these are proposed replacements
+only:
+
+1. *"its five-arm design is not yet implemented by the existing three-arm collector or released for use."*
+   → *"its five-arm design is implemented as reviewed source/mock code (phased collector, public executor,
+   renderer, analyzer) but has not been validated operationally or released for use."*
+2. *"The receiver guards still require the independently identified validation repairs before another
+   release."* → *"The independently identified guard repairs are implemented and reviewed as source/mock
+   code. Operational validation (the E1–E8 bundle) and a current ownership record are still required before
+   any release."*
+
+**New facts you may wish to integrate:**
+
+- **E9 (non-generating):** the receiver state digest was identical at 14:55Z and at 19:45Z before and after,
+  and the pinned sampler equals the server defaults. This is observed at those times only, not continuous.
+- **E10:** the overlap audit on the rebound v2 specs is PASS 21/21, with tuple-normalized comparison.
+
+Scheduler: the half-hour tick fired at 20:13:16Z with no new lead commit.
