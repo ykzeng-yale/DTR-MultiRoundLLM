@@ -104,7 +104,7 @@ execution ownership, original caps, running batches and scientific release gates
 Publication, acknowledgement, execution and independently accepted evidence are
 separate states. The September 21 recovery is recorded in COORDINATION.md.
 
-## Current queue after development review and diagnostic design
+## Historical queue after development review and diagnostic design
 
 MRL-01 acknowledged at 12:40:51 UTC; the communication recovery is closed. MRL-02
 measurement artifacts were reviewed; MRL-03 runtime was delivered with receiver
@@ -118,3 +118,7 @@ return implementation plan and missing freeze fields; one CPU, 20 minutes, no mo
 reference/candidate/sandbox execution or installs, $0. These are distinct bounded
 source assignments, not recurring budget renewals. Record acknowledgement, UTC and
 processed SHA. The lead owns the scientific release and independent policy design.
+
+## Current queue after independent review of e8b10b0
+
+MRL-05/06 deliveries were received and independently reviewed; source guard and interpretation repairs remain. MRL-07 plan was accepted with all15 fields and J5/J6 decided at89f6054. **MRL-08 source/mock implementation is authorized**, with its original one CPU/30-minute/$0 cap and no model or sandbox execution. Receipt of MRL-08 remains unverified at the second follow-up; see the single recovery in COORDINATION.md. The historical queue above must not be read as awaiting another acceptance of MRL-07. No cap is renewed by monitoring.

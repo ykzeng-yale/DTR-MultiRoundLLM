@@ -1,5 +1,12 @@
 # Hourly research checkpoint
 
+## MRL-08 recovery after second unanswered check — 2026-09-21T16:28:04Z
+
+No new worker commit, PR or issue2–5 response since the previous review. Last seen and independently reviewed worker revision remains e8b10b03f2d172fec8fb3c8733da4a9dcbddae78; GitHub main was f14fd59. Published one concrete MRL-08 recovery in COORDINATION.md and issue3. The available Codex task inventory contains no identifiable experiment worker. This is unverified receipt/execution, not proof of inactivity. Verify the recovery next check without duplicating it.
+
+Corrected the coordination guide's stale current queue, which still said MRL-07 acceptance was pending. All design decisions already stand; no new scientific requirement or authorization cycle is introduced. Further independent implementation/release review requires the missing MRL-08 code, exact renderer fixtures and manifest; independently validated policy benefit requires later fresh data. The reviewed manuscript limitations were integrated last check; repeating that integration would not add evidence. No model/reference/candidate/sandbox executions, simulations or spend this check.51%, change0; efficacy unestablished, full project not submission-ready. Next milestone: partial/full implementation delivery with processed SHA and actual status, then independent review.
+
+
 ## Manuscript boundary integration; MRL-08 receipt pending — 2026-09-21T15:56:30Z
 
 GitHub main remains89f6054; last seen and independently reviewed worker revision remains
