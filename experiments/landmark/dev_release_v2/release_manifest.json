@@ -18,7 +18,7 @@
  "package": {
   "tasks.jsonl": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372",
   "private_specs.jsonl": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
-  "config.json": "8142bcffdc2c4ed45aea8423a539ea1dd694c44937cf20b90da351ff0bb77b15",
+  "config.json": "74bb81549c094ab9c89be6aef04e644ed8d65958c522e17f8ab73c918088c371",
   "build_manifest.json": "ca5f0a4954a23ed3d8f952bfeb32feab64281a2da5a2497d3b797dcf092b6a6f",
   "private_assertions_and_reference_code_identical_to_v1c": true
  },
@@ -26,9 +26,9 @@
   "frozen_tasks_path": "experiments/landmark/dev_release_v2/tasks.jsonl",
   "frozen_tasks_sha256": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372",
   "expected_contract_sha256": "0b49177c831b67fbe045b614cbdc1f388bdf8b8b38ff83a20a5ea556f8330109",
-  "expected_config_sha256": "3b6a6ef37e8642dae73640523f3f2d8b1626854502f4dbd9bd5b145a633a0f53",
+  "expected_config_sha256": "f2ff9fd3693cb35775885217537bcd13c028c9f94b94c9f386438ad79f3dedd4",
   "expected_source_hashes": {
-   "experiments/landmark/study_adapter.py": "d035843b48d6b17af857badb6408777882abd56ebd2b36d42ee79cd5fcbb8833",
+   "experiments/landmark/study_adapter.py": "c91659d6495b89aff7b844f5bdabe47c090f1b4958f0675311aa163fe31da495",
    "experiments/landmark/grade.py": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
    "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
@@ -61,5 +61,18 @@
   "max_seconds": 1200,
   "branch_replicates": 2,
   "paid_usd": 0
- }
+ },
+ "freeze_history": [
+  {
+   "mrl": "MRL-12",
+   "reason": "CLI glue in study_adapter.py and executor timing in public_phase.py changed collector source hash and grading source bindings",
+   "config_source_code_sha256": {
+    "before": "61e157f93a1966c7e2abc4e8c3a20b0b2ef23eb6d7431810556957ecbc9e4efe",
+    "after": "57882f73fc56079aa8406126d2d07a5e6bc0a839d4d738f7e1bd64fe07bde021"
+   },
+   "changed_grading_sources": [
+    "experiments/landmark/study_adapter.py"
+   ]
+  }
+ ]
 }

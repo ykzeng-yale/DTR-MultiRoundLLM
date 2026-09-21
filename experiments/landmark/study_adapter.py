@@ -29,7 +29,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
+import re
+import subprocess
 import sys
 import time
 
@@ -216,6 +219,8 @@ def _write_view(view, initial_dir, continue_dir, out_dir):
                             "continue_completion_sha256": file_sha(continue_dir / "completion.json"),
                             "continue_roots_sha256": file_sha(continue_dir / "roots.jsonl")},
                 "roots_sha256": file_sha(out_dir / "roots.jsonl")}
+    cman = continue_dir / "manifest.json"  # the diagnostics digest the continue phase actually bound (MRL-12)
+    manifest["continue_diagnostics_sha256"] = _strict(cman.read_bytes()).get("diagnostics_sha256") if cman.exists() else None
     (out_dir / "view_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
 
 
@@ -333,6 +338,8 @@ def to_analysis_input(view, grades, diagnostics=None, diagnostic_costs=None):
     for row in rows:
         if row["excluded"]:
             continue
+        if diagnostic_costs and row["root_id"] not in diagnostic_costs:
+            raise ValueError(f"No diagnostic cost entry for {row['root_id']}")
         d = diagnostic_costs.get(row["root_id"], {})
         r = {"root_id": row["root_id"], "family_id": row.get("family_id"),
              "initial_artifact_sha256": row.get("initial_artifact_sha256"), "initial": dict(row["initial"]),
@@ -364,3 +371,274 @@ def to_analysis_input(view, grades, diagnostics=None, diagnostic_costs=None):
         raise ValueError("Grade for an unassigned artifact")
     return {"roots": out, "diagnostics": {k: v for k, v in diagnostics.items() if k in {r["root_id"] for r in out}},
             "missing_grades": missing}
+
+
+# ---------------------------------------------------------------- MRL-12 CLI (grade / analysis-input / view)
+BINDING_KEYS = ("frozen_tasks_path", "frozen_tasks_sha256", "expected_contract_sha256", "expected_config_sha256",
+                "expected_source_hashes")
+PACKAGE_FILES = ("tasks.jsonl", "private_specs.jsonl", "config.json")
+PLANNED_MAX_ARTIFACTS, PLANNED_MAX_RECHECKS = 77, 24
+GRADING_LEDGER = "grading_attempts.jsonl"
+COMMITTED_RELEASE_MANIFEST = "experiments/landmark/dev_release_v2/release_manifest.json"
+HEX64 = re.compile(r"[0-9a-f]{64}")
+
+
+class GradingInterrupted(BaseException):
+    """Raised through grade.evaluate (which swallows Exception) so a runner/ledger failure stops grading: no retries."""
+
+
+def _unresolved(value):
+    if isinstance(value, str):
+        return value.startswith("UNRESOLVED:")
+    if isinstance(value, dict):
+        return any(_unresolved(k) or _unresolved(v) for k, v in value.items())
+    if isinstance(value, list):
+        return any(_unresolved(v) for v in value)
+    return False
+
+
+def _resolve(path):
+    p = Path(path)
+    return p if p.is_absolute() else ROOT / p
+
+
+def load_release_bindings(release_manifest, specs_path):
+    """Every J7 binding from the release manifest's grading_bindings; refuses missing/UNRESOLVED/mismatched."""
+    release_manifest = Path(release_manifest)
+    m = _strict(release_manifest.read_bytes())
+    b = m.get("grading_bindings")
+    if not isinstance(b, dict):
+        raise ValueError("Release manifest has no grading_bindings")
+    for key in BINDING_KEYS:
+        if key not in b or b[key] in (None, "", {}):
+            raise ValueError(f"Release manifest grading binding missing: {key}")
+        if _unresolved(b[key]):
+            raise ValueError(f"Release manifest grading binding unresolved: {key}")
+    for key in ("frozen_tasks_sha256", "expected_contract_sha256", "expected_config_sha256"):
+        if not isinstance(b[key], str) or not HEX64.fullmatch(b[key]):
+            raise ValueError(f"Release manifest grading binding is not a sha256 hex digest: {key}")
+    pkg = m.get("package")
+    if not isinstance(pkg, dict) or any(not isinstance(pkg.get(f), str) or _unresolved(pkg.get(f)) for f in PACKAGE_FILES):
+        raise ValueError("Release manifest package hashes missing or unresolved")
+    here = release_manifest.parent
+    for name in PACKAGE_FILES:
+        if file_sha(here / name) != pkg[name]:
+            raise ValueError(f"Release package file hash mismatch: {name}")
+    tasks_path = _resolve(b["frozen_tasks_path"])
+    if file_sha(tasks_path) != b["frozen_tasks_sha256"] or b["frozen_tasks_sha256"] != pkg["tasks.jsonl"]:
+        raise ValueError("Frozen tasks binding does not match the release package")
+    if file_sha(specs_path) != pkg["private_specs.jsonl"]:
+        raise ValueError("Private specs do not match the release package hash")
+    if digest(_strict((here / "config.json").read_bytes())) != b["expected_config_sha256"]:
+        raise ValueError("Release config does not match expected_config_sha256")
+    verify_source_hashes(b["expected_source_hashes"])
+    return {**{k: b[k] for k in BINDING_KEYS}, "frozen_tasks_path": tasks_path}
+
+
+def verify_committed_release(path):
+    """sha256 of the committed release manifest; refuses any other path, an untracked file, or one modified vs git HEAD."""
+    committed = (ROOT / COMMITTED_RELEASE_MANIFEST).resolve()
+    if Path(path).resolve() != committed:
+        raise ValueError(f"release manifest must be the committed {COMMITTED_RELEASE_MANIFEST}")
+    proc = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob", f"HEAD:{COMMITTED_RELEASE_MANIFEST}"],
+                          capture_output=True, check=False)
+    if proc.returncode != 0:
+        raise ValueError("release manifest is not tracked at git HEAD")
+    if proc.stdout != committed.read_bytes():
+        raise ValueError("release manifest differs from its git HEAD blob")
+    return hashlib.sha256(proc.stdout).hexdigest()
+
+
+class _DurableLedger:
+    def __init__(self, path):
+        self.f = open(path, "x", encoding="utf-8")
+
+    def write(self, rec):
+        self.f.write(json.dumps(rec, sort_keys=True) + "\n")
+        self.f.flush()
+        os.fsync(self.f.fileno())
+
+    def close(self):
+        if not self.f.closed:
+            self.f.close()
+
+
+def _utc():
+    from datetime import datetime, timezone
+    return datetime.now(timezone.utc).isoformat()
+
+
+def ledgered_runner(runner, ledger, counter, clock=time.monotonic):
+    """Start record BEFORE and result record (elapsed_seconds) AFTER each execution; failures stop grading."""
+    def wrapped(program, **limits):
+        try:
+            ledger.write({"event": "start", "n": counter["starts"] + 1, "program_sha256": _bytes_sha(program), "utc": _utc()})
+        except BaseException as e:
+            raise GradingInterrupted(f"ledger start write failed: {type(e).__name__}: {e}") from e
+        counter["starts"] += 1
+        t0 = clock()
+        try:
+            run = runner(program, **limits)
+        except BaseException as e:
+            ledger.write({"event": "result", "n": counter["starts"], "elapsed_seconds": clock() - t0,
+                          "runner_error": f"{type(e).__name__}: {e}", "utc": _utc()})
+            raise GradingInterrupted(f"runner failed: {type(e).__name__}: {e}") from e
+        elapsed = clock() - t0
+        try:
+            ledger.write({"event": "result", "n": counter["starts"], "elapsed_seconds": elapsed,
+                          "returncode": run.get("returncode") if isinstance(run, dict) else None,
+                          "timed_out": run.get("timed_out") if isinstance(run, dict) else None, "utc": _utc()})
+        except BaseException as e:
+            raise GradingInterrupted(f"ledger result write failed: {type(e).__name__}: {e}") from e
+        counter["results"] += 1
+        return run
+    return wrapped
+
+
+def _refuse(msg):
+    raise SystemExit(f"refusing: {msg}")
+
+
+def cmd_grade(a):
+    if not a.real:
+        _refuse("grading executes candidate programs; pass --real with a verified --attestation")
+    for flag, value in vars(a).items():
+        if isinstance(value, str) and value.startswith("UNRESOLVED:"):
+            _refuse(f"--{flag.replace('_', '-')} is unresolved ({value})")
+    from experiments.landmark import grade, sandbox  # lazy: nothing real is imported unless --real
+    try:  # attestation FIRST: before any input or the output directory is touched
+        before = file_sha(a.attestation)
+        grade.verify_attestation(a.attestation)
+    except Exception as e:
+        _refuse(f"containment attestation not verified: {type(e).__name__}: {e}")
+    if file_sha(a.attestation) != before:
+        _refuse("attestation file changed during verification")
+    out = Path(a.out)
+    if out.exists():
+        _refuse(f"output already exists (no uncharged rerun): {out}")
+    try:
+        committed_release_sha = verify_committed_release(a.release_manifest)
+        bindings = load_release_bindings(a.release_manifest, a.specs)
+    except (ValueError, OSError, KeyError) as e:
+        _refuse(f"release bindings: {type(e).__name__}: {e}")
+    specs = _rows(a.specs)
+    out.mkdir(parents=True, exist_ok=False)  # reservation: from here on every start is charged and recorded
+    ledger = _DurableLedger(out / GRADING_LEDGER)
+    counter = {"starts": 0, "results": 0}
+    planned = PLANNED_MAX_ARTIFACTS + PLANNED_MAX_RECHECKS
+    try:
+        ledger.write({"event": "reserved", "release_manifest_sha256": file_sha(a.release_manifest),
+                      "committed_release_manifest_sha256": committed_release_sha,
+                      "specs_sha256": file_sha(a.specs), "attestation_sha256": before, "planned_max_starts": planned,
+                      "utc": _utc()})
+        to_grading_view(a.initial_dir, a.continue_dir, out / "view")
+        runner = ledgered_runner(sandbox.run_program, ledger, counter)
+        t0 = time.monotonic()
+        result = grade_study(out / "view", specs, runner, initial_dir=a.initial_dir, continue_dir=a.continue_dir,
+                             attestation_path=a.attestation, max_executions=planned, **bindings)
+        wall = time.monotonic() - t0
+        if file_sha(a.attestation) != before:
+            raise ValueError("attestation file changed during grading")
+        with (out / "grades.jsonl").open("x", encoding="utf-8") as f:
+            f.write("".join(json.dumps(g) + "\n" for g in result["grades"]))
+        with (out / "private_execution_records.json").open("x", encoding="utf-8") as f:
+            f.write(json.dumps(result["executions"], indent=2) + "\n")
+        ledger.write({"event": "complete", "executor_starts": counter["starts"], "utc": _utc()})
+        ledger.close()
+        summary = {"actual_starts": counter["starts"], "actual_results": counter["results"],
+                   "planned_max_starts": planned, "planned_max_artifacts": PLANNED_MAX_ARTIFACTS,
+                   "planned_max_rechecks": PLANNED_MAX_RECHECKS, "sandbox_executions": result["sandbox_executions"],
+                   "grading_wall_seconds": wall, "grade_rows": len(result["grades"]),
+                   "missing_grade_rows": result["missing_grade_rows"], "contract_sha256": result["contract_sha256"],
+                   "containment_gate": result["containment_gate"], "attestation_sha256": before, "model_calls": 0,
+                   "retries": 0, "ledger_sha256": file_sha(out / GRADING_LEDGER),
+                   "checksums": {p: file_sha(out / p) for p in ("grades.jsonl", "private_execution_records.json",
+                                                                "view/roots.jsonl", "view/view_manifest.json")}}
+        with (out / "summary.json").open("x", encoding="utf-8") as f:
+            f.write(json.dumps(summary, indent=2) + "\n")
+        return summary
+    except BaseException as e:
+        try:
+            ledger.write({"event": "incomplete", "error": f"{type(e).__name__}: {e}", "executor_starts": counter["starts"],
+                          "utc": _utc()})
+        finally:
+            ledger.close()
+            with (out / "INCOMPLETE").open("x", encoding="utf-8") as f:
+                f.write(f"{type(e).__name__}: {e}\n")
+        raise
+
+
+def phase_b_costs(phase_b_dir, expected_diagnostics_sha256, expected_roots=None):
+    """(diagnostics, {root_id: {executor_starts, executor_seconds}}) from a Phase B dir bound to the digest."""
+    phase_b_dir = Path(phase_b_dir)
+    raw = (phase_b_dir / "diagnostics.json").read_bytes()
+    if not isinstance(expected_diagnostics_sha256, str) or hashlib.sha256(raw).hexdigest() != expected_diagnostics_sha256:
+        raise ValueError("Phase B diagnostics bytes do not match the expected diagnostics sha256")
+    manifest = _strict((phase_b_dir / "manifest.json").read_bytes())
+    if manifest.get("diagnostics_sha256") != expected_diagnostics_sha256:
+        raise ValueError("Phase B manifest does not bind the expected diagnostics sha256")
+    costs = {}
+    for r in manifest["roots"]:
+        starts, secs = r.get("runner_invocations"), r.get("executor_seconds")
+        if type(starts) is not int or starts < 0:
+            raise ValueError(f"Invalid runner_invocations for {r.get('root_id')}")
+        if secs is not None and (type(secs) not in (int, float) or secs < 0):
+            raise ValueError(f"Invalid executor_seconds for {r.get('root_id')}")
+        if r["root_id"] in costs:
+            raise ValueError(f"Duplicate Phase B root {r['root_id']}")
+        costs[r["root_id"]] = {"executor_starts": starts, "executor_seconds": None if secs is None else float(secs)}
+    if expected_roots is not None and set(costs) != set(expected_roots):
+        raise ValueError("Phase B manifest roots do not equal the view's diagnosed roots")
+    return _strict(raw), costs
+
+
+def cmd_analysis_input(a):
+    out = Path(a.out)
+    if out.exists():
+        _refuse(f"output already exists: {out}")
+    vman = _strict((Path(a.view) / "view_manifest.json").read_bytes())
+    bound = vman.get("continue_diagnostics_sha256")
+    if not isinstance(bound, str) or not HEX64.fullmatch(bound) or bound != a.expected_diagnostics_sha256:
+        raise ValueError("Expected diagnostics sha256 is not the digest the continue phase bound")
+    rows = load_view(a.view)
+    live = [r for r in rows if not r["excluded"]]
+    diagnosed = {r["root_id"] for r in live if r.get("initial_artifact_sha256") is not None}
+    diagnostics, costs = phase_b_costs(a.phase_b_dir, a.expected_diagnostics_sha256, diagnosed)
+    for r in live:  # no initial artifact -> no diagnostic could run: zero starts is known, never None
+        if r["root_id"] not in diagnosed:
+            costs[r["root_id"]] = {"executor_starts": 0, "executor_seconds": 0.0}
+    data = to_analysis_input(a.view, _rows(a.grades), diagnostics, costs)
+    data["sources"] = {"grades_sha256": file_sha(a.grades), "phase_b_manifest_sha256": file_sha(Path(a.phase_b_dir) / "manifest.json"),
+                       "diagnostics_sha256": a.expected_diagnostics_sha256,
+                       "view_roots_sha256": file_sha(Path(a.view) / "roots.jsonl")}
+    with out.open("x", encoding="utf-8") as f:
+        f.write(json.dumps(data, indent=2) + "\n")
+    return data
+
+
+def main(argv=None):
+    import argparse
+    ap = argparse.ArgumentParser(prog="python -m experiments.landmark.study_adapter")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+    g = sub.add_parser("grade")
+    for flag in ("--release-manifest", "--specs", "--initial-dir", "--continue-dir", "--out", "--attestation"):
+        g.add_argument(flag, required=True)
+    g.add_argument("--real", action="store_true")
+    n = sub.add_parser("analysis-input")
+    for flag in ("--view", "--grades", "--phase-b-dir", "--expected-diagnostics-sha256", "--out"):
+        n.add_argument(flag, required=True)
+    v = sub.add_parser("view")
+    for flag in ("--initial-dir", "--continue-dir", "--out"):
+        v.add_argument(flag, required=True)
+    a = ap.parse_args(argv)
+    if a.cmd == "grade":
+        return cmd_grade(a)
+    if a.cmd == "analysis-input":
+        return cmd_analysis_input(a)
+    if Path(a.out).exists():
+        _refuse(f"output already exists: {a.out}")
+    return to_grading_view(a.initial_dir, a.continue_dir, a.out)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

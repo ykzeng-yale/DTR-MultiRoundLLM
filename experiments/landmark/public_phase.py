@@ -41,6 +41,7 @@ import os
 from pathlib import Path
 import secrets
 import sys
+import time
 
 from experiments.landmark import diagnostic, public_check
 
@@ -238,6 +239,24 @@ def run_phase_b(initial_dir: Path, examples_path: Path, out_dir: Path, runner, n
     return manifest
 
 
+def _monotonic():
+    """time.monotonic(), or None when the clock cannot be read (never a fabricated 0)."""
+    try:
+        t = time.monotonic()
+    except Exception:
+        return None
+    return float(t) if isinstance(t, (int, float)) and not isinstance(t, bool) else None
+
+
+def _since(t0):
+    """Elapsed seconds since t0 by time.monotonic(); None if either reading is unavailable or not finite/non-negative."""
+    t1 = _monotonic()
+    if t0 is None or t1 is None:
+        return None
+    d = t1 - t0
+    return d if d >= 0 and d != float("inf") and d == d else None
+
+
 def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attestation, ident, examples, collected,
               ledger):
     ledger.write({"event": "reserved", "schema_version": SCHEMA, "runner": ident, "attestation": attestation, "utc": _utc(),
@@ -245,6 +264,7 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
                   "examples_sha256": _sha(Path(examples_path).read_bytes())})
     invocations = {"n": 0}
     current = {}
+    elapsed = []  # per-start time.monotonic() elapsed for the current root; None = could not be measured
     ledger_errors = []
 
     def counted(*args, **kwargs):  # every runner invocation is an executor start attempt; no retries
@@ -255,15 +275,21 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
             ledger_errors.append(e)
             raise
         invocations["n"] += 1
+        t0 = _monotonic()
         try:
             run = runner(*args, **kwargs)
         except BaseException as e:
-            _result({"root_id": current["root"], "runner_error": f"{type(e).__name__}: {e}"})
+            secs = _since(t0)
+            elapsed.append(secs)
+            _result({"root_id": current["root"], "runner_error": f"{type(e).__name__}: {e}", "elapsed_seconds": secs})
             raise
+        secs = _since(t0)
+        elapsed.append(secs)
         stdout = run.get("stdout", "") if isinstance(run, dict) else ""
         _result({"root_id": current["root"], "returncode": run.get("returncode") if isinstance(run, dict) else None,
                  "timed_out": run.get("timed_out") if isinstance(run, dict) else None,
-                 "stdout_sha256": _sha(stdout.encode("utf-8", "surrogatepass") if isinstance(stdout, str) else bytes(stdout))})
+                 "stdout_sha256": _sha(stdout.encode("utf-8", "surrogatepass") if isinstance(stdout, str) else bytes(stdout)),
+                 "elapsed_seconds": secs})
         return run
 
     def _result(rec):
@@ -279,19 +305,22 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
         entry_point, cases = examples[root]
         before = invocations["n"]
         current.update(root=root, sha=sha, nonce=nonce_factory())
+        elapsed.clear()
         results = public_check.check_artifact(text, entry_point, cases, counted, current["nonce"])
         if ledger_errors:
             raise ledger_errors[0]
         statuses = [r["status"] for r in results]
+        # Sum of measured runner-call time for this root; zero starts measure 0.0; any unmeasured start -> null.
+        executor_seconds = None if any(x is None for x in elapsed) else float(sum(elapsed))
         ledger.write({"event": "classified", "root_id": root, "runner_invocations": invocations["n"] - before,
-                      "statuses": statuses, "utc": _utc()})
+                      "executor_seconds": executor_seconds, "statuses": statuses, "utc": _utc()})
         diag = diagnostic.build_diagnostic(root, sha, entry_point, cases, results)
         if validate is not None:
             validate(diag)
         diagnostic.diagnostic_bytes(diag)  # cap check; raises, never truncates
         diags[root] = diag
         per_root.append({"root_id": root, "initial_artifact_sha256": sha, "runner_invocations": invocations["n"] - before,
-                         "statuses": statuses})
+                         "executor_seconds": executor_seconds, "statuses": statuses})
 
     data = json.dumps(diags, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
     ledger.write({"event": "complete", "diagnostics_sha256": _sha(data), "executor_starts": invocations["n"],

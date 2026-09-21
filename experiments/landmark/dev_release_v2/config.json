@@ -626,7 +626,7 @@
     "num_ctx": 8192
   },
   "dataset_sha256": "50a7061d15c7a3df5a9d32e101d39333a4175eee5d5700af3591e1134536349f",
-  "source_code_sha256": "61e157f93a1966c7e2abc4e8c3a20b0b2ef23eb6d7431810556957ecbc9e4efe",
+  "source_code_sha256": "57882f73fc56079aa8406126d2d07a5e6bc0a839d4d738f7e1bd64fe07bde021",
   "grading_contract_sha256": "0b49177c831b67fbe045b614cbdc1f388bdf8b8b38ff83a20a5ea556f8330109",
   "dataset_source": "https://github.com/google-research/google-research/blob/4700efb9afa54286b0e04473ba80a13e8461e25f/mbpp/mbpp.jsonl",
   "dataset_license": "CC-BY-4.0",

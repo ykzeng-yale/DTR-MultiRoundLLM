@@ -390,3 +390,86 @@ def test_stray_artifact_refused(phase_a, tmp_path):
     _reseal(phase_a)
     with pytest.raises(ValueError, match="artifacts/ does not equal"):
         pp.load_initial(phase_a)
+
+
+# --- MRL-12: per-root executor elapsed seconds (time.monotonic around each runner call; fake clock) ---
+class Clock:
+    """Deterministic stand-in for public_phase.time; only the driver's module reference is replaced."""
+    def __init__(self, broken=False):
+        self.t, self.broken = 100.0, broken
+
+    def monotonic(self):
+        if self.broken:
+            raise OSError("clock unavailable")
+        return self.t
+
+
+class TimedRunner(Runner):
+    def __init__(self, clock, step, fail=False):
+        super().__init__()
+        self.clock, self.step, self.fail = clock, step, fail
+
+    def __call__(self, program, **limits):
+        self.clock.t += self.step
+        if self.fail and "def broken(" not in program and "y=2" not in program:
+            self.programs.append(program)
+            raise RuntimeError("fake executor crashed")
+        return super().__call__(program, **limits)
+
+
+def _ledger(d):
+    return [json.loads(x) for x in (d / "attempts.jsonl").read_text().splitlines()]
+
+
+def test_executor_seconds_per_root_and_elapsed_in_ledger(phase_a, tmp_path, monkeypatch):
+    clock = Clock()
+    monkeypatch.setattr(pp, "time", clock)
+    runner = TimedRunner(clock, 1.5)
+    m = pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", runner)
+    assert [r["executor_seconds"] for r in m["roots"]] == [0.0 if i in BAD else 1.5 for i in range(len(SPEC))]
+    for i, r in enumerate(m["roots"]):
+        assert type(r["executor_seconds"]) is float  # format errors: zero starts, measured 0.0 (not null)
+        assert r["runner_invocations"] == (0 if i in BAD else 1)
+    assert json.loads((tmp_path / "B/manifest.json").read_text()) == m
+    recs = _ledger(tmp_path / "B")
+    results = [r for r in recs if r["event"] == "result"]
+    assert len(results) == len(runner.programs) and all(r["elapsed_seconds"] == 1.5 for r in results)
+    classified = {r["root_id"]: r["executor_seconds"] for r in recs if r["event"] == "classified"}
+    assert classified == {r["root_id"]: r["executor_seconds"] for r in m["roots"]}
+
+
+def test_elapsed_measured_when_runner_raises(phase_a, tmp_path, monkeypatch):
+    clock = Clock()
+    monkeypatch.setattr(pp, "time", clock)
+    runner = TimedRunner(clock, 2.25, fail=True)
+    m = pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", runner)
+    results = [r for r in _ledger(tmp_path / "B") if r["event"] == "result"]
+    assert results and all("runner_error" in r and r["elapsed_seconds"] == 2.25 for r in results)
+    assert [r["executor_seconds"] for r in m["roots"]] == [0.0 if i in BAD else 2.25 for i in range(len(SPEC))]
+
+
+def test_unmeasurable_elapsed_is_null_never_zero(phase_a, tmp_path, monkeypatch):
+    clock = Clock(broken=True)
+    monkeypatch.setattr(pp, "time", clock)
+    runner = Runner()
+    m = pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", runner)
+    assert [r["executor_seconds"] for r in m["roots"]] == [0.0 if i in BAD else None for i in range(len(SPEC))]
+    on_disk = json.loads((tmp_path / "B/manifest.json").read_text())
+    assert [r["executor_seconds"] for r in on_disk["roots"]] == [r["executor_seconds"] for r in m["roots"]]
+    results = [r for r in _ledger(tmp_path / "B") if r["event"] == "result"]
+    assert len(results) == len(runner.programs) and all(r["elapsed_seconds"] is None for r in results)
+    assert m["executor_starts"] == len(runner.programs)  # measurement failure never blocks or retries a start
+
+
+def test_elapsed_helpers_null_on_unreadable_or_backwards_clock(monkeypatch):
+    # Direct unit check of the per-root aggregation helpers: a backwards/unreadable clock yields null.
+    clock = Clock()
+    monkeypatch.setattr(pp, "time", clock)
+    t0 = pp._monotonic()
+    clock.t += 0.75
+    assert pp._since(t0) == 0.75
+    clock.t -= 5.0
+    assert pp._since(t0) is None
+    assert pp._since(None) is None
+    clock.broken = True
+    assert pp._monotonic() is None

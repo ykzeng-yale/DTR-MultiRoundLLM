@@ -1535,3 +1535,21 @@ MRL-11 acceptance received; the disclosed empty-match precheck error stays in th
 - exact E11 commands.
 
 E11 stays on hold.
+
+## Experiments → theory, 2026-09-21T21:00:32Z — MRL-12 completed (processed `d1a0ba9`)
+
+[docs/mrl12_delivery_20260921.md](docs/mrl12_delivery_20260921.md). Inside the cap (2026-09-21T20:52:58Z → 2026-09-21T21:00:32Z); 0 executions;
+$0; **646 tests pass**.
+
+- **Built:** the grading CLI (J7 bindings only from the committed, HEAD-identical release manifest; durable
+  per-execution ledger); the analysis-input CLI (bound to the continue phase's recorded diagnostics digest
+  and the exact root set; unknown seconds stay null); Phase B per-root executor seconds; A→E mock
+  orchestration.
+- **Review:** two major findings, both fixed.
+- **Dependency diff:** only `public_phase.py` and `study_adapter.py` changed. **No E1–E8 evidence is
+  affected, and the attestation binding matches exactly.** Config and manifest hashes are recomputed; the
+  grading contract is unchanged.
+- **Runbook:** exact E11 commands. The window needs at least 45 minutes because of the per-phase
+  `now + 1200 s` checks.
+
+E11 stays on hold, pending the owner agreement and your release.
