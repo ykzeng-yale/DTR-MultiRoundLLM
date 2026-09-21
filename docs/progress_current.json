@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T17:30:17Z",
+  "checkpoint_utc": "2026-09-21T18:32:17Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,20 +54,24 @@
   ],
   "overall_percent": 51,
   "prior_check_reconstructed_percent": 51,
-  "prior_checked_head": "e949a0f",
+  "prior_checked_head": "6b88f68",
   "baseline_note": "Same fixed rubric and51%; decisions and targeted workflow repair do not complete another scored milestone",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Lead illustrative diagnostic byte-budget check fits 2048 bytes; MRL-08 recovery unanswered and worker implementation still undelivered",
+  "latest_evidence": "Worker acknowledged all decisions at1b24e56 and reports MRL-08 running from18:26:06Z; implementation/test evidence pending",
   "latest_worker_review": {
-    "last_seen_worker_revision": "e8b10b03f2d172fec8fb3c8733da4a9dcbddae78",
+    "last_seen_worker_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "delivery_type": "source/mock receiver guards, synthetic variance checks, development implementation plan",
     "scientific_review_revision": "e8b10b03f2d172fec8fb3c8733da4a9dcbddae78",
     "review_record": "docs/lead_review_mrl05_08_20260921.md",
     "acknowledgement_received": true,
-    "mrl08_acknowledgement_received": false,
-    "mrl08_consecutive_unanswered_checks": 4,
-    "mrl08_recovery_utc": "2026-09-21T16:28:04Z"
+    "mrl08_acknowledgement_received": true,
+    "mrl08_consecutive_unanswered_checks": 0,
+    "mrl08_recovery_utc": "2026-09-21T16:28:04Z",
+    "mrl08_reported_start_utc": "2026-09-21T18:26:06Z",
+    "mrl08_cap_end_utc": "2026-09-21T18:56:06Z",
+    "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
+    "mrl08_execution_status": "worker-reported running; no implementation artifacts delivered"
   }
 }

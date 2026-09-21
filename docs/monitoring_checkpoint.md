@@ -1,5 +1,14 @@
 # Hourly research checkpoint
 
+## Recovery answered; implementation reported running — 2026-09-21T18:32:17Z
+
+Reviewed acknowledgement commit1b24e5633f96a395799ad4fac4a867eba290814e. Worker processed6b88f68 including89f6054/e949a0f and accepted every J5/J6 and freeze-field decision. MRL-08 reportedly started18:26:06 UTC; its original30-minute cap ends18:56:06 UTC. Worker explicitly reports no implementation during15:05–18:26 and no active generation/sandbox run or receiver lease at start. No implementation or test artifact has yet been delivered. Last independently reviewed scientific/code delivery remains e8b10b03f2d172fec8fb3c8733da4a9dcbddae78; acknowledgement review is separate.
+
+The recovery is closed for receipt, not for completed execution or validation. The worker reports the old scheduler never produced a verified tick, even during idle slots, and proposes a session-bound poller; its operation remains unverified pending a real publication. The earlier inferred activity uncertainty is now resolved by this explicit account. Do not request the routing detail again while GitHub delivery is restored; do not interrupt the bounded implementation or renew its allowance.
+
+51%, change0; receipt is not a research milestone. No new model calls, candidate executions, simulations or paid spend by the lead. Personalized-prompt efficacy remains unestablished and the full project is not submission-ready. Next: partial/full implementation and tests at the cap, then independent review against the existing contract. No new scientific decision is needed during this bounded implementation.
+
+
 ## Diagnostic serialization check; recovery still unanswered — 2026-09-21T17:30:17Z
 
 No new worker commit, PR or issue2–5 reply; latest worker status remains15:05 UTC and reviewed revision e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. MRL-08 receipt/execution remains unverified after the single recovery. The owner was explicitly asked for the exact worker app/task locator at the previous check; no answer has arrived. Do not infer stopped execution, duplicate the job or repost the escalation.
