@@ -61,7 +61,7 @@
   "fresh_prompt_efficacy_established": false,
   "latest_evidence": "MRL-08 source/mock delivery independently reviewed;219 focused tests pass; boundary and grading provenance gaps require MRL-09 repairs",
   "latest_worker_review": {
-    "last_seen_worker_revision": "4e92160c3fdf6d45b5b7383d545d68c0144aa617",
+    "last_seen_worker_revision": "868ee5108e3c46a783dbe18d2e399e1d04b03cd9",
     "delivery_type": "source/mock implementation, no fresh model outcomes",
     "scientific_review_revision": "4e92160c3fdf6d45b5b7383d545d68c0144aa617",
     "review_record": "docs/mrl08_independent_review_20260921.md",
@@ -73,6 +73,7 @@
     "mrl08_cap_end_utc": "2026-09-21T18:56:06Z",
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
-    "mrl09_status": "authorized source/mock; acknowledgement pending"
+    "mrl09_status": "authorized source/mock; acknowledgement pending",
+    "scheduler_status": "First periodic publication at19:05:59Z reported in868ee51; no long-term reliability claim"
   }
 }
