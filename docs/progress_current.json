@@ -61,7 +61,7 @@
   "fresh_prompt_efficacy_established": false,
   "latest_evidence": "MRL-10 preparation independently reviewed; host-scoped E1-E8 instrument validation released as MRL-11 with77starts/20minutes/$0/no model calls",
   "latest_worker_review": {
-    "last_seen_worker_revision": "0bb2388a85c4167d514bc2359707f8b834b8ef5f",
+    "last_seen_worker_revision": "d9347ba60c58736dd158de0e9af5b0589d590f04",
     "delivery_type": "source/mock implementation, no fresh model outcomes",
     "scientific_review_revision": "0bb2388a85c4167d514bc2359707f8b834b8ef5f",
     "review_record": "docs/mrl10_review_mrl11_release_20260921.md",

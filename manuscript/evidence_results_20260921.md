@@ -220,7 +220,7 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is not yet implemented by the existing three-arm collector or released for use.
+is implemented as reviewed source/mock code, but has not been validated operationally. The ordered instrument-validation bundle is now authorized; model collection is not.
 The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
 both repair arms identical public diagnostic bytes, then compares neutral and
 diagnostic-directed instructions. Its examples are disclosed before the initial
@@ -250,8 +250,11 @@ defaults plausible during collection, but cannot retroactively turn those defaul
 into contemporaneous measurements. The proposed successor records explicit request
 settings and checks receiver state before, during and after collection. Those checks
 provide evidence at observed times; they do not prove absence of intervening changes,
-exclusive access to the service or deterministic outputs. The receiver guards still
-require the independently identified validation repairs before another release.
+exclusive access to the service or deterministic outputs. The independently identified receiver-guard repairs are implemented and reviewed as
+source/mock code. Executed instrument validation and a current receiver ownership
+agreement remain required before model collection. Nongenerating preflight observed
+the same receiver-state digest at 14:55 and 19:45 UTC and matching request sampler
+settings at the later snapshot; these observations do not establish continuous stability.
 
 Future policy validation uses a newly declared working usefulness threshold of five
 percentage points in private-suite success, with ten points as a planning alternative.
