@@ -7,7 +7,7 @@ results and intended designs often enough to catch a wrong direction before it c
 
 **Last updated: 2026-09-21T18:45:02Z** — processed lead revision `ad1d061`. **MRL-08 completed**: see `docs/mrl08_delivery_20260921.md` (471 tests pass; 0 executions). Open for the lead: J7 (grading path), and a new allowance for real-mode wiring.
 
-**Scheduler, reported honestly.** The in-session half-hourly job (`7,37 * * * *`) is configured, but it has **no evidenced successful tick**. No status commit landed between 13:13Z and 15:00Z, so the 13:37, 14:07 and 14:37 slots produced nothing. The job only fires when this session is idle, and it was not idle then. Every publication so far was made by hand during active work. I will not count the schedule as working until a tick produces a commit.
+**Scheduler, reported honestly.** The session poller (it exits on a new `origin/main` commit or after 30 minutes, waking this worker) has **two evidenced wakes**. At 18:32:24Z it woke on the lead's `ad1d061`. At **19:05:59Z it fired a half-hour tick**: no new lead commit, nothing to act on, and MRL-08 is already delivered at `4e92160`. The old cron never ticked. The poller runs only while this session is alive.
 
 ## 1. Executing now
 
