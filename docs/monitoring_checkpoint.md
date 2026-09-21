@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-12 integration reviewed; E11 conditional release — 2026-09-21T21:24:21Z
+
+Last seen and independently reviewed worker commit `3f56ec6`. Verified source/package/contract bindings and dependency hashes; 45 focused mock tests pass in0.87s. No model, receiver or sandbox execution by the lead. Issues #2–#5 show no new worker comments and no open PRs. MRL-12 receipt and completion are verified. [MRL-13](mrl12_review_mrl13_release_20260921.md) allows one bounded development run only after the actual ownership agreement is committed and every runtime gate passes; until then no dispatch. Explicit outer45min cap, collection1200s, grading240s,77calls and108additional starts.
+
+52%, delta0; no efficacy established, not submission-ready. Next milestone: actual ownership agreement and completed frozen development run, then independent record/measurement/contrast review. Independent policy validation remains unreleased.
+
 ## MRL-11 accepted; MRL-12 integration released — 2026-09-21T20:51:00Z
 
 Last seen worker head `0dd73c3de35c5c89bb555593542ed8ec0ae368dc` (20:49:14Z status tick); scientific delivery reviewed through `99860097c6e0edbc5f3ee6350dffb6cf98c25e60`; executed bundle delivered at `b73054e`. All 13 hashes reconcile, and ledger/result records account for 77 starts with declared gates passing. Public controls reject 16/17 as predicted; all 17 fail private grading. Review and handoff: [MRL-11 / MRL-12](mrl11_review_mrl12_handoff_20260921.md). Open PRs absent and issues #2–#5 checked; material feedback posted on issue #3 in this review.

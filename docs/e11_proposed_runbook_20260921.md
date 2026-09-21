@@ -1,6 +1,6 @@
-# E11 proposed runbook: the 77-call development collection (NOT RELEASED)
+# E11 runbook: conditionally released 77-call development collection
 
-**Experiments workstream, revised under MRL-12.** Nothing here is authorized, and nothing has been run. Every
+**Experiments workstream, revised under MRL-12; lead release MRL-13.** Execution is conditional on a committed real receiver-owner agreement and all frozen/runtime gates. No execution is implied. Every
 command is exact, with no ellipses. Shell variables are defined once and never invented mid-run.
 
 ## Preconditions (all must hold; otherwise BLOCKED with zero dispatch)
@@ -46,6 +46,7 @@ $PY -m experiments.landmark.collect_diagnostic --phase continue --config $REL/co
 test "$(git rev-parse HEAD)" = "$FREEZE"
 $PY -m experiments.landmark.study_adapter grade --release-manifest $REL/release_manifest.json --specs $REL/private_specs.jsonl --initial-dir $RUN/A --continue-dir $RUN/C --out $RUN/D --attestation $ATT --real
 # E: analysis (0 starts; descriptive only; no intervals)
+test "$(git rev-parse HEAD)" = "$FREEZE"
 $PY -m experiments.landmark.study_adapter analysis-input --view $RUN/D/view --grades $RUN/D/grades.jsonl --phase-b-dir $RUN/B --expected-diagnostics-sha256 $DIAG_SHA --out $RUN/analysis_input.json
 $PY -c "import json,sys;d=json.load(open(sys.argv[1]));open(sys.argv[2],'w').write(''.join(json.dumps(r)+chr(10) for r in d['roots']));json.dump(d['diagnostics'],open(sys.argv[3],'w'))" $RUN/analysis_input.json $RUN/roots_for_analysis.jsonl $RUN/diagnostics_for_analysis.json
 $PY -m experiments.landmark.analyze_diagnostic --roots $RUN/roots_for_analysis.jsonl --diagnostics $RUN/diagnostics_for_analysis.json --output $RUN/analysis.json
@@ -73,11 +74,13 @@ $PY -m experiments.landmark.analyze_diagnostic --roots $RUN/roots_for_analysis.j
 |---|---|---|
 | Collection time (A + C) | `completion.json` `wall_seconds`, carried study-wide | 1,200 s |
 | Diagnostic executor time (B) | Phase B manifest `executor_seconds` per root | ≤ 7 starts |
-| Grading time (D) | `grading_attempts.jsonl` `elapsed_seconds` | ≤ 101 starts |
-| End-to-end | first A request to the analysis file | must fit the ownership window |
+| Grading time (D) | `grading_attempts.jsonl` `elapsed_seconds` and adapter wall time | ≤ 101 starts; 240 s adapter cap |
+| End-to-end | start of A command to the analysis file | ≤ 45 minutes and within ownership window |
 
 **Isolated starts.** E11 uses at most 7 + 101 = 108 starts, bringing the ledger to 185 of 200 (MRL-11 used 77).
-An attestation refresh adds 9, for 194.
+An attestation refresh would add 9, for 194, but is not authorized by MRL-13; report expiry for a separate decision.
+
+MRL-13 explicitly replaces the original proposal's ambiguous 20-minute overall cap: 1,200 seconds applies to A+C collection; 45 minutes caps the whole workflow. Call/token/start ceilings are unchanged. Publish partial artifacts and stop at the cap.
 
 ## Stop conditions
 

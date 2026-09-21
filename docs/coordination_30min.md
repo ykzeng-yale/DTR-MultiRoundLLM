@@ -81,7 +81,7 @@ protocol, runtime validation and numerical cap. Preserve shared-hardware jobs.
 The lead's existing heartbeat is now active every 30 minutes. Read
 `docs/readiness.md` and `docs/progress_current.json`; report overall milestone
 completion, change, independently completed/checked work, blockers and next
-milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **51%**, per the fixed rubric.
+milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **52%**, per the fixed rubric.
 Changing coordination frequency earns no research-completion credit. No new
 efficacy evidence is supplied here; the full project remains not submission-ready.
 Measurement/receiver release, fresh prompt data and independent policy validation
@@ -130,3 +130,7 @@ MRL-08/09 source/mock deliveries are received and reviewed. MRL-10 now authorize
 ## Current queue after MRL-10 review
 
 MRL-10 static package/preflight is reviewed. MRL-11 releases one ordered E1–E8 instrument-validation bundle on the intended host:77starts maximum,20minutes,oneCPU,$0,zero model calls. Exact conditions and stop rules are in docs/mrl10_review_mrl11_release_20260921.md. Earlier HOLD paragraphs are historical. E11 collection remains unreleased; no receiver ownership agreement exists yet.
+
+## Current queue after MRL-12 review
+
+MRL-12 source/mock integration is independently reviewed. MRL-13 conditionally releases one bounded E11 development run after the real receiver agreement is committed and existing live guards pass. Until then HOLD. See `docs/mrl12_review_mrl13_release_20260921.md` for exact bounds; earlier queue paragraphs are historical.

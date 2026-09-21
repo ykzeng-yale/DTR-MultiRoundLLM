@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T20:51:00Z",
+  "checkpoint_utc": "2026-09-21T21:24:21Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -53,18 +53,18 @@
     }
   ],
   "overall_percent": 52,
-  "prior_check_reconstructed_percent": 51,
-  "prior_checked_head": "b2f093c",
-  "baseline_note": "Unchanged fixed rubric: harness credit rises from 8 to 9 points for independently reviewed executed instrument validation; end-to-end CLI and collection remain incomplete.",
-  "delta_percentage_points": 1,
+  "prior_check_reconstructed_percent": 52,
+  "prior_checked_head": "d1a0ba9",
+  "baseline_note": "Unchanged fixed rubric and52%; reviewed CLI integration remains within current90% harness credit, with real collection unfinished.",
+  "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL-11: 77 isolated starts accounted for, all declared instrument gates pass; zero receiver/model calls. MRL-12 source/mock CLI integration released.",
+  "latest_evidence": "MRL-12 source/mock integration accepted;45 focused tests pass and frozen bindings reconcile. MRL-13 conditional E11 release awaits actual receiver agreement.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "0dd73c3de35c5c89bb555593542ed8ec0ae368dc",
-    "delivery_type": "executed finite instrument validation and proposed E11 runbook",
-    "scientific_review_revision": "99860097c6e0edbc5f3ee6350dffb6cf98c25e60",
-    "review_record": "docs/mrl11_review_mrl12_handoff_20260921.md",
+    "last_seen_worker_revision": "3f56ec6",
+    "delivery_type": "source/mock grading-analysis integration; no new model results",
+    "scientific_review_revision": "3f56ec6",
+    "review_record": "docs/mrl12_review_mrl13_release_20260921.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -74,9 +74,10 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Observed worker half-hour publication at20:49:14Z; it had not yet seen the lead repository handoff. Issue feedback is supplemented by this committed handoff.",
+    "scheduler_status": "Worker acknowledged20:52:58Z and delivered21:00:32Z; no stale delivery inferred.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
-    "mrl12_status": "source/mock CLI and cost integration authorized; acknowledgement pending"
+    "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
+    "mrl13_status": "conditional collection release; actual ownership agreement unresolved"
   }
 }
