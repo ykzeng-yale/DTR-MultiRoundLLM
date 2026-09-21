@@ -61,7 +61,7 @@
   "fresh_prompt_efficacy_established": false,
   "latest_evidence": "MRL-09 reviewed;326 focused mock tests pass; static build and bounded nongenerating preflight released under MRL-10; validation command defects remain",
   "latest_worker_review": {
-    "last_seen_worker_revision": "e1660b21b46c22af0abaf834380367c5a9f45c13",
+    "last_seen_worker_revision": "73b1153",
     "delivery_type": "source/mock implementation, no fresh model outcomes",
     "scientific_review_revision": "e1660b21b46c22af0abaf834380367c5a9f45c13",
     "review_record": "docs/mrl09_independent_review_20260921.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "First periodic publication at19:05:59Z reported in868ee51; no long-term reliability claim",
+    "scheduler_status": "Observed worker publication reporting periodic tick19:39:05Z; sustained reliability remains unestablished",
     "mrl10_status": "authorized preparation and bounded nongenerating preflight; acknowledgement pending"
   }
 }
