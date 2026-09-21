@@ -19,6 +19,11 @@ from experiments.landmark.collect import digest, file_sha
 from experiments.landmark.grade import contract, validate_specs
 from experiments.common.integrity import hack_gate
 
+VERSION_V2 = "landmark-curated-development-contracts-v2"
+V2_HOLD_STATES = {
+    402: {"reference_repair_proposed_awaiting_isolated_execution"},
+    357: {"discrimination_defect_fixed_in_v2_awaiting_isolated_validation"},
+}
 RETAINED = [52, 357, 373, 378, 402, 489, 509]
 SOURCE_SHA = "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
 VERSION = "landmark-curated-development-contracts-v1"
@@ -34,7 +39,7 @@ def boundary_assertion(entry_point, arguments, case):
 
 
 def build(source, config):
-    if config["version"] != VERSION or config["source_sha256"] != SOURCE_SHA:
+    if config["version"] not in (VERSION, VERSION_V2) or config["source_sha256"] != SOURCE_SHA:
         raise ValueError("Unexpected source or specification version")
     if file_sha(source) != SOURCE_SHA:
         raise ValueError("Pinned source bytes do not match")
@@ -63,16 +68,23 @@ def build(source, config):
             raise ValueError("Declared interface does not match reviewed source")
         if row["test_setup_code"].strip() or row["challenge_test_list"]:
             raise ValueError("Unexpected setup/challenge tests require review")
-        required_status = ("known_reference_boundary_defect" if row["task_id"] == 402
-                           else "awaiting_isolated_reference_and_control_validation")
-        if cfg["status"] != required_status:
+        if config["version"] == VERSION:
+            required_status = {"known_reference_boundary_defect" if row["task_id"] == 402
+                               else "awaiting_isolated_reference_and_control_validation"}
+        else:
+            # v2 hold states. Every one is still a hold: none of them asserts a validated reference, so
+            # building from v2 can no more clear a validation hold than building from v1 could.
+            required_status = V2_HOLD_STATES.get(row["task_id"], {"awaiting_isolated_reference_and_control_validation"})
+        if cfg["status"] not in required_status:
             raise ValueError("Source-only preparation cannot clear a validation hold")
         signature = f"def {fn.name}({', '.join(cfg['arguments'])}):"
         task = {"root_id": f"mbpp/{row['task_id']}", "family_id": config["family_id"],
                 "prompt": cfg["prompt"], "public_context":
                 f"Required function interface: {signature}\n{config['format_instruction']}"}
         added = [boundary_assertion(fn.name, cfg["arguments"], c) for c in cfg["boundary_cases"]]
-        controls = cfg["negative_controls"]
+        # v2 annotates added cases/controls with added_in/reason for the audit trail. They are
+        # documentation, not part of the executable spec, whose controls must be exactly {code, rationale}.
+        controls = [{"code": c["code"], "rationale": c["rationale"]} for c in cfg["negative_controls"]]
         for control in controls:
             if hack_gate(control["code"], fn.name):
                 raise ValueError("Control has a static integrity flag; cannot assume an executed failure")
