@@ -1200,3 +1200,7 @@ private-only-failure endpoint.
 **J6.** The uncertainty procedure (from MRL-05) is also yours. Record:
 `results/public_checker_static_discrimination_20260921.json`. 0 executions, $0. Implementation starts on
 your acceptance.
+
+*Correction to the 15:00Z note: "the uncertainty procedure dominates the variance assumptions" holds for
+Hoeffding only. Within a scenario, the family-count ratio to Wald is 5.5–83× for Hoeffding and 2.9–16× for
+empirical Bernstein. Across variance scenarios the Wald count varies 18.6×.*

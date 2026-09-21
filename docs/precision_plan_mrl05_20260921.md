@@ -81,7 +81,10 @@ the policy makes.
 
 ## What the grid says, stated conditionally
 
-1. **The uncertainty procedure is the largest design lever.**
+1. **The J2 Hoeffding procedure dominates everything else.** Its 2,952 floor exceeds every Wald and
+   empirical-Bernstein requirement in the grid. Within a scenario, family-count ratios to Wald are 5.5–83×
+   (Hoeffding) and 2.9–16× (empirical Bernstein), against 18.6× variation of the Wald count across variance
+   scenarios.
    - The J2 Hoeffding bound uses the full [−1, 1] range of D_g. Even at zero variance, the 0.05-versus-0.10
      test needs **≥ 2,952 independent families**; the bound alone requires √(2·log 40 / G) < 0.05.
    - A variance-adaptive valid bound (empirical Bernstein) needs 617–2,038 families across the grid.

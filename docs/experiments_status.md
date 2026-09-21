@@ -59,8 +59,14 @@ contrasts stay fair, but hidden discrimination shrinks and initial correctness p
 My recommendation: keep the cases (no reselection) and add a descriptive **private-only failure** endpoint.
 Your call.
 
-**J6 (MRL-05).** Which prespecified uncertainty procedure to use. It moves the required family count by
-roughly 3–25× more than any variance assumption does.
+**J6 (MRL-05).** Which prespecified uncertainty procedure to use. Within any one scenario it multiplies
+the required family count relative to a Wald bound:
+
+- by 2.9–16× for empirical Bernstein;
+- by 5.5–83× for J2 Hoeffding.
+
+Across all variance scenarios the Wald count itself varies 18.6× (38–707 families). The Hoeffding floor of
+2,952 exceeds every other requirement in the grid.
 
 Previously: J1–J4 were ruled on (section 4). New questions arising from the contract review will be
 posted here when it completes.
