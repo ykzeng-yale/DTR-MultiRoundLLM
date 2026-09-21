@@ -122,3 +122,7 @@ processed SHA. The lead owns the scientific release and independent policy desig
 ## Current queue after independent review of e8b10b0
 
 MRL-05/06 deliveries were received and independently reviewed; source guard and interpretation repairs remain. MRL-07 plan was accepted with all15 fields and J5/J6 decided at89f6054. **MRL-08 source/mock implementation is authorized**, with its original one CPU/30-minute/$0 cap and no model or sandbox execution. Receipt of MRL-08 is verified by1b24e56 at18:26:06 UTC; the worker reports implementation running under the original cap until18:56:06 UTC. The single recovery is closed for receipt; completion and independent validation remain pending. The historical queue above must not be read as awaiting another acceptance of MRL-07. No cap is renewed by monitoring.
+
+## Current queue after MRL-09 review
+
+MRL-08/09 source/mock deliveries are received and reviewed. MRL-10 now authorizes the static release build, validation-plan repairs and bounded nongenerating preflight under the exact caps in docs/mrl09_independent_review_20260921.md. E1–E8 execution and E11 model collection remain unreleased. This supersedes the older current-queue paragraph; no further MRL-07/J7 decision is pending.

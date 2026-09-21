@@ -1,5 +1,12 @@
 # Hourly research checkpoint
 
+## MRL-09 reviewed; static build and nongenerating preflight authorized — 2026-09-21T19:41:20Z
+
+Latest seen/reviewed worker e1660b2 completed19:23:13 UTC inside its allowance. Independently ran326 focused mocked tests in1.31s; all passed. Reviewed repaired frozen grading bindings and diagnostic safeguards. Source inspection found E1 path mismatch, historical E8 script incompatible with rebound specs/402 expectations, and E10's overlooked existing auditor. No live executions attempted. [Decision](mrl09_independent_review_20260921.md) releases MRL-10 static build and validation-plan repairs plus at most50 nongenerating loopback metadata/template requests, oneCPU/30minutes/$0. No model or sandbox execution released. The remaining exact E2/E6/E7 fixtures and durable canary accounting must be finalized before one ordered instrument-validation bundle is released. No separate owner approval per gate is required.
+
+51%, delta0. Source/mock progress is not a completed operational measurement milestone. Personalized-prompt efficacy remains unestablished and the full project is not submission-ready. Next: resolved preparation artifacts and corrected validation bundle, followed by bounded executed instrument validation and eventually the frozen same-prefix development study.
+
+
 ## MRL-08 delivered and reviewed; MRL-09 authorized — 2026-09-21T19:06:59Z
 
 Latest worker status revision868ee5108e3c46a783dbe18d2e399e1d04b03cd9; independently reviewed implementation revision4e92160c3fdf6d45b5b7383d545d68c0144aa617. Worker reports completion18:45:02 UTC within the30-minute allowance, zero model/sandbox/reference/control executions, and471 tests. Lead independently ran219 focused tests in0.78s; independent boundary reviewer ran112 overlapping tests in0.16s and reproduced failure-handling gaps using fakes. [Review and decision](mrl08_independent_review_20260921.md) accept the versioned adapter architecture, require restored frozen-spec/phase integrity checks, and require strict diagnostic parsing and durable PhaseB attempt accounting. Prior receipt recovery remains closed.

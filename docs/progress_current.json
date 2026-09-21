@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T19:06:59Z",
+  "checkpoint_utc": "2026-09-21T19:41:20Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,17 +54,17 @@
   ],
   "overall_percent": 51,
   "prior_check_reconstructed_percent": 51,
-  "prior_checked_head": "ad1d061",
+  "prior_checked_head": "5f02823",
   "baseline_note": "Same fixed rubric and51%; decisions and targeted workflow repair do not complete another scored milestone",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL-08 source/mock delivery independently reviewed;219 focused tests pass; boundary and grading provenance gaps require MRL-09 repairs",
+  "latest_evidence": "MRL-09 reviewed;326 focused mock tests pass; static build and bounded nongenerating preflight released under MRL-10; validation command defects remain",
   "latest_worker_review": {
-    "last_seen_worker_revision": "868ee5108e3c46a783dbe18d2e399e1d04b03cd9",
+    "last_seen_worker_revision": "e1660b21b46c22af0abaf834380367c5a9f45c13",
     "delivery_type": "source/mock implementation, no fresh model outcomes",
-    "scientific_review_revision": "4e92160c3fdf6d45b5b7383d545d68c0144aa617",
-    "review_record": "docs/mrl08_independent_review_20260921.md",
+    "scientific_review_revision": "e1660b21b46c22af0abaf834380367c5a9f45c13",
+    "review_record": "docs/mrl09_independent_review_20260921.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -73,7 +73,8 @@
     "mrl08_cap_end_utc": "2026-09-21T18:56:06Z",
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
-    "mrl09_status": "authorized source/mock; acknowledgement pending",
-    "scheduler_status": "First periodic publication at19:05:59Z reported in868ee51; no long-term reliability claim"
+    "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
+    "scheduler_status": "First periodic publication at19:05:59Z reported in868ee51; no long-term reliability claim",
+    "mrl10_status": "authorized preparation and bounded nongenerating preflight; acknowledgement pending"
   }
 }
