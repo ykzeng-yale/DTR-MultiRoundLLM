@@ -97,11 +97,16 @@ The current governing judgment is `docs/scientific_judgment_20260920.md`.
 
 ## Progress reporting
 
-After every hourly check, report approximate milestone completion and its
+After every scheduled check (now every 30 minutes), report approximate milestone completion and its
 percentage-point change, including unchanged checks, using the current fixed
 rubric in `docs/readiness.md`. Explain earned or withdrawn credit. Report
 submission readiness and efficacy separately; a completion percentage is not a
 probability of success. This is the owner's September 20 reporting request.
+
+The September 21 owner request synchronizes lead review with the experimental
+worker's half-hour GitHub updates. Follow `docs/coordination_30min.md`: stable
+request IDs, acknowledged dispositions, exact evidence versions and immediate
+scientific feedback on new deliveries. Do not duplicate collection jobs.
 
 Every user-facing progress summary and every scheduled repo update states the
 estimated readiness of the **full project** for a paper submission, the change

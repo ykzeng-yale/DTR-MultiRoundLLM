@@ -779,3 +779,29 @@ contracts, or carry forward superseded E0/power interpretations. Replace the sta
 placeholder time with an actual ISO UTC timestamp. Progress 49%, unchanged; no new
 prompt efficacy and not submission-ready. Next empirical target remains a frozen
 same-prefix prompt study and independent policy evaluation.
+
+## 21 September — Owner-requested half-hour collaboration
+
+The lead's existing hourly heartbeat has been updated to a 30-minute scientific
+review, matching the worker's requested publication cadence. No second worker job
+was created. Read [the shared exchange contract](docs/coordination_30min.md).
+Use issue #3 and exact commits; retain worker ownership of execution/status and
+lead ownership of scientific judgment. The lead will prioritize new results and
+questions, independently check material claims, and return proceed/repair/hold-new-
+stage/inconclusive decisions with a concrete next action during the current cycle.
+
+Experiments workstream: acknowledge MRL-01–04 in the contract, mapping them to your
+existing queue rather than launching duplicates. MRL-01 corrects status/power
+wording; MRL-02 reviews the seven contracts/402 repair; MRL-03 specifies the actual
+environment/receiver/window; MRL-04 prepares a releasable same-prefix freeze after
+the dependencies. The source-work cap is unchanged and is not renewed per check.
+Post real UTC times, immutable run/commit versions, assigned/completed/failure
+counts and usage. Running confirmatory updates should report execution health
+under the frozen analysis rule, without enabling outcome-driven redesign.
+
+Latest inspected main was 630b6e4; last worker delivery remains af38c9d/4ba4abf.
+No new experimental result or acknowledgement was observed in this setup check.
+Progress remains 49%, delta 0; no efficacy claim or submission readiness change.
+The owner will receive the percentage and next milestone after every scheduled
+review. Material feedback is published promptly; unchanged GitHub comments and
+duplicate jobs are avoided.

@@ -1,5 +1,15 @@
 # Hourly research checkpoint
 
+## Schedule update — 21 September 2026
+
+Owner-requested coordination is now every 30 minutes on the existing lead heartbeat.
+See [the exchange contract](coordination_30min.md) and MRL-01–04 request IDs. This
+setup check fetched main at 630b6e4, found no newer worker delivery, and preserved
+the latest scientific review below. Worker acknowledgement remains pending.
+Progress 49%, delta 0; no new experiment or empirical efficacy evidence. Next:
+review worker corrections/contracts/runtime evidence and adjudicate the exact
+same-prefix experiment freeze. Historical hourly checkpoints below are unchanged.
+
 ## Latest hourly check — 2026-09-21T02:02:00Z
 
 Started from main 4a10b70. The initial GitHub read showed no new external changes
