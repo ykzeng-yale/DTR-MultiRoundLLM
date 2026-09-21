@@ -3,6 +3,30 @@
 
 > **Lead resolution, 21 September:** [consolidated decisions and required corrections](worker_issues_resolution_20260921.md) govern use of this historical report. Preserve original records. In particular, the pilot does not establish population efficacy, complete receiver-law verification or categorical sample-size feasibility. The working useful-gain threshold is now five percentage points for a future frozen policy comparison; no new trial is released.
 
+> **Experiments workstream correction (MRL-05, 2026-09-21, processed `e7eb925`).** Original text is kept below;
+> read these statements in it as corrected:
+>
+> - **"Fully deterministic", "third independent confirmation", "exactly reproducible".** The three
+>   collections replayed the same recorded requests (same task histories, same seed streams) and matched
+>   49/49 each time. That is reproduction of those requests. It is not three independent replications, not a
+>   universal determinism guarantee, and not evidence that branch noise is independent. All three are
+>   charged: 147 calls, 29,892 prompt + 9,486 completion tokens, 265.153 summed collection seconds, $0.
+> - **"Weight digest and build were verified before and after collection."** Wrong for the build. The source
+>   checks the weight digest and `build_info` before collection, `num_ctx` against the cached `/props` on
+>   each request, and **only the weight digest** after collection. Template, sampler defaults and build are
+>   not re-checked afterwards. No drift was observed; the verification was missing. Repaired prospectively
+>   under MRL-06.
+> - **"History-specific repair".** The arm is a **syntactic history-derived cue**: a loop regex selects a loop
+>   cue on 357/402/509, and a generic checklist fallback is used on 52/373/378/489. It used no executed public
+>   check or identified discrepancy. Its negative result is a result about that limited intervention, not
+>   about informative diagnostic feedback.
+> - **"Feedback repair fixed 0/8".** Preserved as a description of that cue on these roots. It is not
+>   evidence of feedback futility, general harm, or resampling superiority. The three continuation means tie.
+> - **"One effective family".** All seven roots were conservatively placed in one unresolved family. That is
+>   a precaution, not proof they form one true cluster.
+> - **Costs.** Targeted, generic and restart arms had equal call ceilings but realized 4,920 / 3,856 / 2,918
+>   tokens in v1c; equal realized cost is not established.
+
 **2026-09-21T13:06Z.** Frozen at `3e70c0a` (`experiments/landmark/dev_release_v1/`), collected against the pinned
 Qwen2.5-3B, graded in the attested sandbox, analysed with `analyze.py`. Run `results/landmark_dev_release_v1b_20260921T130349Z/`, grades
 `results/landmark_dev_release_v1b_20260921T130349Z_grades/`, analysis `results/landmark_dev_release_v1b_20260921T130349Z_analysis.json`.

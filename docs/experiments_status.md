@@ -5,15 +5,21 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T13:13Z**
+**Last updated: 2026-09-21T15:00Z** — processed lead revision `e7eb925`.
+
+**Scheduler, reported honestly.** The in-session half-hourly job (`7,37 * * * *`) is configured, but it has **no evidenced successful tick**. No status commit landed between 13:13Z and 15:00Z, so the 13:37, 14:07 and 14:37 slots produced nothing. The job only fires when this session is idle, and it was not idle then. Every publication so far was made by hand during active work. I will not count the schedule as working until a tick produces a commit.
 
 ## 1. Executing now
 
 | job | state | bound | started |
 |---|---|---|---|
-| Independent static review of the 7 landmark contracts + versioned 402 reference repair (J4 item 2) | **completed** — 2 suite defects fixed in v2, 402 repair holds | zero executions of reference/candidate/control code; stdlib oracle arithmetic only; no model calls; no installs | 2026-09-21T12:40Z |
+| **MRL-05**: correct sizing/status claims; root/family precision plan against the 5 pp useful-gain null | **completed** | source-only; 0 model/reference/candidate/sandbox executions; $0 | 2026-09-21T14:51Z |
+| **MRL-06**: receiver configuration/drift guards (`landmark-v2`) plus source/mock tests | **completed** (260 tests pass) | as above, plus one read-only `/props` and one `/slots` GET, no generation | 2026-09-21T14:51Z |
+| **MRL-07**: implementation plan for the public-diagnostic proposal, and its missing freeze fields | **running** | source/mock only; one CPU; 20 min; $0 | 2026-09-21T15:00Z |
 
-GPU: **free of generation load.** The sibling `DTR-AgentEvals` completed every stage (log, live,
+No frozen batch is running and no lease is held. `/slots` showed 4/4 slots idle at 14:55Z.
+
+Receiver: **no generation load from this workstream.** The sibling `DTR-AgentEvals` completed every stage (log, live,
 branch; errors 0). Its two servers remain resident and idle. **Memory is the binding constraint —
 swap 25.3/26.6 GB used.** See `docs/receiver_runtime_spec_20260921.md`.
 
@@ -32,10 +38,11 @@ swap 25.3/26.6 GB used.** See `docs/receiver_runtime_spec_20260921.md`.
 | Contract review | 5 clear, **357 and 402 non-discriminating in v1 → fixed in v2**; 402 repair holds | `docs/landmark_contract_review_20260921.md`, `experiments/landmark/task_contracts_v2.json` |
 | Receiver adapter | llama-server adapter added; live digest == independent hash; no generation | `experiments/env/receiver_freeze_v1.json` |
 | **Containment** | **passes 9/9 for the first time** — one missing profile line made every launch abort (SIGABRT) | `results/landmark_containment_*` |
-| **Pool screen** | 544 fresh candidates → **396 mechanically usable**; 0 fail reference/integrity/stub gates; 142 lost only to the one-function rule | `docs/confirmatory_sizing_20260921.md` |
-| **Confirmatory sizing** | measured discordance 0.143; δ=0.05 needs ~449 (> 396 → out of reach); δ=0.10 needs ~113 (attainable, tight) | `docs/confirmatory_sizing_20260921.md` |
-| **Development release v1c (all 7 roots graded)** | 49/49 byte-identical to v1 (3rd determinism confirmation), 0 missing grades; STOP 0.714 vs every continuation 0.643; feedback repair fixed 0/8 on wrong roots, restart 1/4; continuing broke 4/30 correct replicates; descriptive only | `docs/dev_release_v1_results.md` |
-| **Development release v1 (first real graded collection)** | 49/49 calls, 0 missing, **49/49 outputs byte-identical on re-run**; 6 roots graded (402 blocked by design); STOP 0.833 vs every continuation 0.750; continuing broke 4/30 correct replicates; descriptive only, 1 effective family | `docs/dev_release_v1_results.md` |
+| **Pool screen** | 544 fresh candidates → **396 pass the mechanical gates**. That is a mechanical count, **not** eligible independent families; the 24-slate exclusion fraction does not transport; interface relaxation is deferred | `docs/confirmatory_sizing_20260921.md` |
+| ~~Confirmatory sizing~~ **withdrawn** (MRL-05) | Wilson intervals on nested pairs and categorical feasibility claims withdrawn. The lead set a **0.05 useful-gain null** with 0.10 as the planning alternative. The replacement is a conditional root/family scenario plan: 114–1,086 roots under a Wald bound, 617–2,038 families under empirical Bernstein, **≥ 2,952 families under J2 Hoeffding even at zero variance**. The uncertainty procedure is the largest lever | `docs/precision_plan_mrl05_20260921.md` |
+| **Development release v1c (all 7 roots graded)** | 49/49 matched v1 — **reproduction of the same requests, not independent replication**; 0 missing grades; STOP 0.714 vs every continuation 0.643; the **syntactic history-derived cue** fixed 0/8 on wrong roots, restart 1/4; continuing broke 4/30 correct replicates; descriptive only | `docs/dev_release_v1_results.md` |
+| **Receiver law, reconciled** (MRL-06) | The v1–v1c requests pinned only temperature/top_p; **server defaults top_k = 40 and min_p = 0.05 were active and unrecorded**. The same receiver process ran through all three collections and `POST /props` is disabled, so those defaults were most plausibly in force. `landmark-v2` now pins them and checks the full `/props` state before, per root and after | `docs/receiver_guard_mrl06_20260921.md` |
+| **Development release v1 (first real graded collection)** | 49/49 calls, 0 missing, 49/49 matched on re-run (same requests); 6 roots graded (402 blocked by design); STOP 0.833 vs every continuation 0.750; continuing broke 4/30 correct replicates; descriptive only, one conservatively assigned unresolved family. All three runs are charged: 147 calls, 39,378 tokens | `docs/dev_release_v1_results.md` |
 | **Reference/control validation** | **7/7 roots cleared, 25/25 outcomes as pre-registered**; 402 defect confirmed by execution, repair passes | `docs/landmark_reference_validation_results.md` |
 
 **Withdrawn, not to be cited:** STOP; the critic/prompt/generator cut-list; "five lines converged";
@@ -56,14 +63,23 @@ posted here when it completes.
 | **J3** g1a fit/eval split | **Do not discard G1a** for my stated reason: task-level folds, training-only fitting and no evaluation-root outcome labels in fitting. Decision-time features are not automatically leakage. Real limits remain (future-routing filter, `n_fail==0` proxy, variable banks, reused labels). | **Accepted — my reading was wrong.** G1a is kept as a qualified historical diagnostic; `scripts/recheck_selection.py` is authoritative. |
 | **J4** task curation | Bounded existing curation, not a new pool search. Jaccard is a duplicate screen, not an independence certificate. Order: (1) acknowledge + correct wording, (2) inspect the 7 contracts and propose a versioned 402 repair without excluding p = 1, (3) runtime spec. Bound: one CPU worker, 30 min, zero model calls/executions/installs, $0. | **(1) done** this cycle; **(3) done** (`docs/receiver_runtime_spec_20260921.md`); **(2) running.** |
 | Corrections to live status | real ISO timestamp; point E0 to corrected docs; A3 as conditional descriptive; historical checks ≠ contract validation; enumerated-flag absence ≠ zero bias | **All applied** — `docs/audits.md`, `docs/e0_results.md`, `docs/selection_decision_v2.md`, this file. |
+| **Resolution `e7eb925`** (`docs/worker_issues_resolution_20260921.md`) | 5 pp working useful-gain threshold (a new prospective lead decision); no categorical feasibility; pilot claims narrowed; order MRL-05 → 06 → 07 | **Accepted in full.** MRL-05 and MRL-06 are completed this cycle; MRL-07 is running. |
+| **Development judgment `07fa225`** (`docs/development_delivery_judgment_20260921.md`) | Wilson intervals and nested sizing wrong; "history-specific" is a syntactic cue; reproduction ≠ replication; the postflight check is digest-only | **Accepted.** All four are corrected in `docs/dev_release_v1_results.md` and `docs/confirmatory_sizing_20260921.md` (original text kept) and in this file. |
+| **Public-diagnostic design `1e85541`** (`docs/public_diagnostic_design_20260921.md`) | Five arms N0/S0/N1/S1/R1, one shared executed public diagnostic, 77-call ceiling proposed, not released | MRL-07 is reviewing the plan and freeze fields; nothing will be collected. |
 | Earlier: post-treatment selection, `validation.passed`, probe provenance, G1c picker, closest≠matched cost, personalization value, fixed-bank ceiling scope | — | Accepted (`docs/selection_decision_RETRACTED.md`). |
 
 ## 5. Next, in order
 
-1. **[CPU, done]** 7-contract review and versioned 402 repair — see `docs/landmark_contract_review_20260921.md`.
-2. **[CPU, next bounded job]** Hash every GGUF shard and freeze an explicit system message, per
-   `docs/receiver_runtime_spec_20260921.md`.
-3. **[CPU, after a committed validation contract + containment check]** Isolated reference and
-   negative-control execution for the 7 contracts, including original-vs-repaired 402.
-4. **[GPU, needs a complete freeze]** The frozen same-prefix prompt study named by the rulings as the
-   next empirical milestone — not proposed until 1–3 pass.
+1. **[CPU, running] MRL-07.** Implementation plan and missing freeze fields for the public-diagnostic
+   proposal. Source/mock only.
+2. **[CPU, after the lead accepts MRL-07]** Implement the public executor, diagnostic renderer and five-arm
+   collector on `landmark-v2`, with mock tests. No execution until the lead releases a validation contract.
+3. **[Lead decisions pending, not mine]**
+   - uncertainty procedure (Wald, empirical Bernstein or Hoeffding);
+   - R;
+   - target population and weights;
+   - resource ceiling.
+
+   These dominate the precision plan.
+4. **[CPU, bounded, when released]** Semantic, prior-family and specification review of screened candidates
+   to count **eligible independent families**. This is the input the precision plan cannot assume.

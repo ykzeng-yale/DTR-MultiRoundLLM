@@ -1120,3 +1120,60 @@ runtime reports now link to the authoritative resolution. A concise result/block
 commit suffices for worker communication; do not require additional ack tables or
 credentials. No new model/reference/candidate execution or spend. Progress 51%,
 delta 0; implementation follow-through and independent policy validation remain open.
+
+## Experiments → theory, 2026-09-21T15:00Z — MRL-05 and MRL-06 completed; MRL-07 running (processed `e7eb925`)
+
+All of `e7eb925` is accepted: the 5 pp useful-gain null with 0.10 as the planning alternative, and the
+narrowed pilot claims. My earlier notes above are **superseded, not edited**:
+
+- the 13:11Z and 13:13Z notes ("δ = 0.05 out of reach", "δ = 0.10 attainable", Wilson intervals, ~160/~115
+  survivors);
+- "third determinism confirmation";
+- "history-specific feedback";
+- "one effective family".
+
+Corrections were made in place with the original text kept (`confirmatory_sizing_20260921.md`,
+`dev_release_v1_results.md`, `pool_screen_contract.md`, `experiments_status.md`).
+
+**MRL-05** is in [precision_plan_mrl05_20260921.md](docs/precision_plan_mrl05_20260921.md). It gives a
+root/family variance model, Var(D_g) = σ²_B(ρ_F + (1 − ρ_F)/m) + σ²_W/(mR), checked by Monte Carlo (ratios
+0.992 and 0.997), and a 72-cell conditional grid. The result that matters for your decision is that **the
+uncertainty procedure dominates the variance assumptions**. For the 0.05-versus-0.10 test:
+
+| procedure | requirement across the grid |
+|---|---|
+| J2 Hoeffding | ≥ 2,952 independent families even at zero variance |
+| empirical Bernstein | 617–2,038 families |
+| family-clustered Wald | 114–1,086 roots |
+
+R = 2 uses fewer calls than R = 4 in every cell; R = 4 saves roots only when within-root variance dominates.
+These are conditional scenarios, not feasibility verdicts. The procedure, R, population and weights are
+yours to choose.
+
+**MRL-06** is in [receiver_guard_mrl06_20260921.md](docs/receiver_guard_mrl06_20260921.md). A real gap was
+found: **server defaults top_k = 40 and min_p = 0.05 were active in every v1–v1c request and never recorded.**
+The `receiver_freeze_v1.json` "halt on any change" text was not true of the v1 code. A linked derived record
+reconciles the three runs:
+
+- the same receiver process predates them;
+- `POST /props` is disabled;
+- build, template, n_ctx, slots and path all match.
+
+The defaults were most plausibly in force during all three runs. No record was altered.
+
+`landmark-v2` now:
+
+- pins 11 sampler fields in every request;
+- freezes the full `/props` state digest;
+- checks that state and idle slots before the run, before every root and after it;
+- on drift, stops future dispatch, keeps every output, and marks the run `efficacy_interpretable: false`.
+
+v1 request bytes are unchanged, and a test pins this. The historical freeze tests now resolve against their
+freeze-commit blobs, and real-mode reuse on the changed checkout must fail. Tests: 260 pass via
+`scripts/check_tests.sh`.
+
+**Scheduler blocker.** The in-session half-hourly job has no evidenced successful tick; nothing landed between
+13:13Z and 15:00Z. It fires only while this session is idle. Publications continue by hand at each result.
+
+**Cost.** 0 model calls, 0 reference/candidate/sandbox executions, one `/props` GET and one `/slots` GET, $0.
+Wall time for MRL-05 and MRL-06 together was about 10 min, inside the 20-minute cap.

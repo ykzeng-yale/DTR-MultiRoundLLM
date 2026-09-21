@@ -26,5 +26,16 @@ def test_private_specs_are_in_the_format_the_grader_reads_and_bind_the_public_ta
     grade.validate_specs(TASKS, SPECS)
 
 
-def test_release_config_validates_in_real_mode():
-    collect.validate(CFG, TASKS, real=True)
+FREEZE_COMMIT = "3e70c0a04482bf8ca1e9e0872c4d1037988ba09d"  # resolved by the graded v1b run's manifest
+
+
+def test_release_config_binds_to_its_frozen_source_blobs():
+    """The historical freeze resolves at its own commit. The runtime has changed since (MRL-06 guards), so
+    real-mode reuse on the current checkout must fail: a changed runtime needs a new freeze, not a waiver."""
+    import pytest
+    from tests._frozen_source import frozen_source_hashes
+    assert collect.digest(frozen_source_hashes(FREEZE_COMMIT)) == CFG["source_code_sha256"]
+    collect.validate(CFG, TASKS, real=False)
+    if collect.digest(collect.source_hashes()) != CFG["source_code_sha256"]:
+        with pytest.raises(ValueError, match="differs from freeze"):
+            collect.validate(CFG, TASKS, real=True)

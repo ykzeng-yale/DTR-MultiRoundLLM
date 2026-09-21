@@ -1,0 +1,127 @@
+{
+ "record": "mrl06-receiver-state-reconciliation-v1",
+ "evidence_class": "derived record from preserved outputs + one read-only /props GET",
+ "snapshot_utc": "2026-09-21T14:55:13Z",
+ "receiver_process_start_utc": "2026-09-19T17:41:11Z",
+ "receiver_state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+ "endpoint_props_mutable": false,
+ "unrecorded_active_defaults": {
+  "top_k": 40,
+  "min_p": 0.05000000074505806,
+  "typical_p": 1.0,
+  "top_n_sigma": -1.0,
+  "xtc_probability": 0.0,
+  "repeat_penalty": 1.0,
+  "repeat_last_n": 64,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "dry_multiplier": 0.0,
+  "mirostat": 0
+ },
+ "sampler_order": [
+  "penalties",
+  "dry",
+  "top_n_sigma",
+  "top_k",
+  "typ_p",
+  "top_p",
+  "min_p",
+  "xtc",
+  "temperature"
+ ],
+ "effective_sampler_v1_v1b_v1c": {
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "top_k": 40,
+  "min_p": 0.05000000074505806,
+  "typical_p": 1.0,
+  "top_n_sigma": -1.0,
+  "xtc_probability": 0.0,
+  "repeat_penalty": 1.0,
+  "repeat_last_n": 64,
+  "presence_penalty": 0.0,
+  "frequency_penalty": 0.0,
+  "dry_multiplier": 0.0,
+  "mirostat": 0,
+  "seed": "per request"
+ },
+ "runs": [
+  {
+   "run": "landmark_dev_release_v1_20260921T130048Z",
+   "freeze_commit": "ddcfdacde585ec30c62c977138824a68cbbaaea1",
+   "recorded_build": "b1-4fea119",
+   "build_matches_snapshot": true,
+   "recorded_weight_digest_before_after": [
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+   ],
+   "template_matches_snapshot": true,
+   "n_ctx_matches_snapshot": true,
+   "slots_match_snapshot": true,
+   "model_path_matches_snapshot": true,
+   "request_overrides": [
+    "num_ctx",
+    "num_predict",
+    "seed",
+    "temperature",
+    "top_p"
+   ]
+  },
+  {
+   "run": "landmark_dev_release_v1b_20260921T130349Z",
+   "freeze_commit": "3e70c0a04482bf8ca1e9e0872c4d1037988ba09d",
+   "recorded_build": "b1-4fea119",
+   "build_matches_snapshot": true,
+   "recorded_weight_digest_before_after": [
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+   ],
+   "template_matches_snapshot": true,
+   "n_ctx_matches_snapshot": true,
+   "slots_match_snapshot": true,
+   "model_path_matches_snapshot": true,
+   "request_overrides": [
+    "num_ctx",
+    "num_predict",
+    "seed",
+    "temperature",
+    "top_p"
+   ]
+  },
+  {
+   "run": "landmark_dev_release_v1c_20260921T130757Z",
+   "freeze_commit": "d5efcd8544b0718961190fe06f442d3a1d727ae4",
+   "recorded_build": "b1-4fea119",
+   "build_matches_snapshot": true,
+   "recorded_weight_digest_before_after": [
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+   ],
+   "template_matches_snapshot": true,
+   "n_ctx_matches_snapshot": true,
+   "slots_match_snapshot": true,
+   "model_path_matches_snapshot": true,
+   "request_overrides": [
+    "num_ctx",
+    "num_predict",
+    "seed",
+    "temperature",
+    "top_p"
+   ]
+  }
+ ],
+ "inference": "The receiver process started before all three collections and is still running, and POST /props is disabled, so launch-time defaults could not change through the API; build, template, n_ctx, slots and model path recorded by each run match the snapshot. The snapshot's sampler defaults were therefore most plausibly in force during v1/v1b/v1c.",
+ "limits": [
+  "Relies on llama-server semantics: per-request sampler fields do not persist and defaults are launch-time when POST /props is disabled. Not independently proven here.",
+  "Process identity is from ps PID and start time; /props exposes no process identity.",
+  "Sampler defaults were never recorded by the runs themselves; this does not convert v1-v1c into receiver-verified efficacy evidence (they remain descriptive development data).",
+  "One snapshot after the fact is not a continuous record of the runs."
+ ],
+ "accounting": {
+  "model_calls": 0,
+  "executions": 0,
+  "props_reads": 1,
+  "slots_reads": 1,
+  "usd": 0
+ }
+}

@@ -20,4 +20,7 @@ def test_v1c_binds_to_the_graders_contract_and_402_carries_the_repair():
     assert cfg["grading_contract_sha256"] == grade.digest(grade.contract(specs))
     ref = [s for s in specs if s["root_id"] == "mbpp/402"][0]["reference_code"]
     assert ref.rstrip().endswith("return C[r] % p")
-    collect.validate(cfg, load(V1C, "tasks.jsonl"), real=True)
+    from tests._frozen_source import frozen_source_hashes
+    # Resolved at the v1c run's own freeze commit (its manifest), not the current checkout.
+    assert collect.digest(frozen_source_hashes("d5efcd8544b0718961190fe06f442d3a1d727ae4")) == cfg["source_code_sha256"]
+    collect.validate(cfg, load(V1C, "tasks.jsonl"), real=False)

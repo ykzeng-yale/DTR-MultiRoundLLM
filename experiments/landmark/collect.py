@@ -39,6 +39,30 @@ def source_hashes():
     return {p.name: file_sha(p) for p in sorted(HERE.glob("*.py"))}
 
 
+# Receiver-law guard (landmark-v2). Server defaults the request does not override still shape every output:
+# b1-4fea119 serves top_k=40 and min_p=0.05 by default, which v1/v1c never recorded. landmark-v2 pins these
+# explicitly in every request AND freezes the server's whole outcome-relevant /props state, re-checked before
+# every root and after the run. Only fields that change without any change of receiver law are excluded.
+SCHEMAS = ("landmark-v1", "landmark-v2")
+V2_KEYS = {"receiver_state_sha256", "sampler"}
+PINNED_SAMPLER = ("top_k", "min_p", "typical_p", "top_n_sigma", "xtc_probability", "repeat_penalty",
+                  "repeat_last_n", "presence_penalty", "frequency_penalty", "dry_multiplier", "mirostat")
+VOLATILE_PROPS = {"is_sleeping"}
+
+
+def receiver_state(props):
+    """Canonical outcome-relevant receiver state from /props: everything except volatile fields.
+
+    Fail-closed by construction: a field added by a server upgrade enters the state and changes its digest."""
+    if not isinstance(props, dict) or not props.get("build_info") or "default_generation_settings" not in props:
+        raise ValueError("Receiver /props lacks build_info or default_generation_settings")
+    return {k: v for k, v in props.items() if k not in VOLATILE_PROPS}
+
+
+def state_drift(before, after):
+    return sorted(k for k in set(before) | set(after) if before.get(k) != after.get(k))
+
+
 def seeded(config, root_id, label):
     return int(digest([config["seed"], root_id, label])[:15], 16) % (2**31)
 
@@ -89,9 +113,11 @@ def validate(config, tasks, real=False):
                 "max_calls", "max_completion_tokens", "max_seconds", "max_tokens_per_call", "request_timeout_seconds",
                 "max_request_bytes", "decoding", "dataset_sha256", "source_code_sha256", "grading_contract_sha256",
                 "dataset_source", "dataset_license", "paid_api_budget_usd", "branch_replicates"}
+    if config.get("schema_version") == "landmark-v2":
+        required = required | V2_KEYS
     if set(config) != required:
         raise ValueError(f"Configuration keys differ: missing={required-set(config)}, extra={set(config)-required}")
-    if config["schema_version"] != "landmark-v1" or config["paid_api_budget_usd"] != 0:
+    if config["schema_version"] not in SCHEMAS or config["paid_api_budget_usd"] != 0:
         raise ValueError("Unsupported schema or paid budget")
     if type(config["branch_replicates"]) is not int or not 1 <= config["branch_replicates"] <= 4:
         raise ValueError("This bounded harness supports one to four continuations per arm")
@@ -113,6 +139,13 @@ def validate(config, tasks, real=False):
         raise ValueError("Pin exactly temperature, top_p, and num_ctx")
     if any(type(d[k]) not in (int, float) or not math.isfinite(d[k]) for k in ("temperature", "top_p")) or d["temperature"] < 0 or not 0 < d["top_p"] <= 1 or type(d["num_ctx"]) is not int or d["num_ctx"] < 1:
         raise ValueError("Invalid decoding parameters")
+    if config["schema_version"] == "landmark-v2":
+        sampler = config["sampler"]
+        if not isinstance(sampler, dict) or set(sampler) != set(PINNED_SAMPLER) or any(
+                type(v) not in (int, float) or not math.isfinite(v) for v in sampler.values()):
+            raise ValueError(f"landmark-v2 pins exactly these server sampler settings: {PINNED_SAMPLER}")
+        if not isinstance(config["receiver_state_sha256"], str) or not config["receiver_state_sha256"]:
+            raise ValueError("landmark-v2 requires a frozen receiver_state_sha256")
     parsed = urlparse(config["base_url"])
     if parsed.scheme != "http" or parsed.hostname not in ("127.0.0.1", "localhost", "::1") or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in ("", "/"):
         raise ValueError("Only a loopback HTTP receiver service is supported")
@@ -122,7 +155,8 @@ def validate(config, tasks, real=False):
         if set(task) != {"root_id", "family_id", "prompt", "public_context"} or any(not isinstance(v, str) for v in task.values()) or not all(task[k] for k in ("root_id", "family_id", "prompt")):
             raise ValueError("Tasks must contain only root_id, family_id, prompt, public_context")
     if real:
-        for key in ("model_digest", "dataset_sha256", "source_code_sha256", "grading_contract_sha256"):
+        for key in ("model_digest", "dataset_sha256", "source_code_sha256", "grading_contract_sha256",
+                    *(("receiver_state_sha256",) if config["schema_version"] == "landmark-v2" else ())):
             if not isinstance(config[key], str) or not re.fullmatch(r"[0-9a-f]{64}", config[key]):
                 raise ValueError(f"Real collection requires a frozen {key}")
         if config["dataset_sha256"] != digest(tasks) or config["source_code_sha256"] != digest(source_hashes()):
@@ -258,6 +292,20 @@ class LlamaServer:
     def version(self, timeout):
         return {"version": (self._props or self.props(timeout)).get("build_info")}
 
+    def receiver_state(self, timeout):
+        """Always a fresh /props read; never the cached copy."""
+        return receiver_state(self.props(timeout))
+
+    def busy_slots(self, timeout):
+        """Slots processing any task right now; None if /slots is unavailable (treated as unverified)."""
+        try:
+            slots = self.request("/slots", None, timeout)
+        except Exception:
+            return None
+        if not isinstance(slots, list):
+            return None
+        return sum(bool(s.get("is_processing")) for s in slots)
+
     def definition(self, timeout):
         props = self._props or self.props(timeout)
         gen = props.get("default_generation_settings") or {}
@@ -274,6 +322,7 @@ class LlamaServer:
         body = {"messages": payload["messages"], "stream": False, "cache_prompt": False,
                 "temperature": opts["temperature"], "top_p": opts["top_p"],
                 "max_tokens": opts["num_predict"], "seed": opts["seed"]}
+        body.update(self.config.get("sampler") or {})  # landmark-v2: server defaults cannot move the output law
         out = self.request("/v1/chat/completions", body, timeout)
         choice = (out.get("choices") or [{}])[0]
         usage = out.get("usage") or {}
@@ -314,6 +363,33 @@ class Mock:
                 "prompt_eval_count": 0, "eval_count": 0}
 
 
+def receiver_verification(config, adapter, metadata, preflight_failure, fatal, guarded):
+    """Whether the receiver law is verified for the whole run. Never deletes or hides outputs: a failed or
+    unverifiable check marks the collected evidence invalid for efficacy interpretation, nothing more."""
+    if isinstance(adapter, Mock):
+        return {"status": "mock_not_applicable", "efficacy_interpretable": False}
+    if not guarded:
+        return {"status": "v1_partial_guard", "efficacy_interpretable": False,
+                "reason": "landmark-v1 checks weight digest and build before, weight digest after; template, context "
+                          "and sampler defaults are not re-verified. Use landmark-v2 for efficacy evidence."}
+    if preflight_failure:
+        return {"status": "preflight_failed_no_dispatch", "efficacy_interpretable": False, "reason": preflight_failure}
+    problems = []
+    if fatal:
+        problems.append(fatal)
+    if metadata.get("postflight_error") or "postflight_drift_fields" not in metadata:
+        problems.append("postflight_unverifiable: " + str(metadata.get("postflight_error")))
+    else:
+        if metadata["postflight_drift_fields"]:
+            problems.append(f"postflight_drift: {metadata['postflight_drift_fields']}")
+        if metadata.get("digest_unchanged") is not True:
+            problems.append("postflight_weight_digest_changed")
+    if problems:
+        return {"status": "receiver_not_verified_outputs_retained", "efficacy_interpretable": False, "reasons": problems}
+    return {"status": "receiver_state_verified_pre_interim_post", "efficacy_interpretable": True,
+            "scope": "receiver law only; says nothing about task validity, grading or statistical adequacy"}
+
+
 def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic, config_path=None, tasks_path=None):
     validate(config, tasks, real)
     freeze = verify_freeze(config, tasks, config_path, tasks_path) if real else {"resolved_commit": None, "status": "mock_not_frozen"}
@@ -322,7 +398,7 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
     plan = assignments(tasks, config)
     started = clock()
     adapter = adapter if adapter is not None else detect_receiver(config) if real else Mock()
-    manifest = {"schema_version": "landmark-v1", "evidence_type": "ungraded_real_collection" if real else "mock_transport_only",
+    manifest = {"schema_version": config["schema_version"], "evidence_type": "ungraded_real_collection" if real else "mock_transport_only",
         "config": config, "config_sha256": digest(config), "dataset_sha256": digest(tasks), "source_hashes": source_hashes(),
         "source_code_sha256": digest(source_hashes()), "freeze": freeze, "tasks": tasks, "assignment_table": plan,
         "assignment_table_sha256": digest(plan), "planned_calls": (1 + 3*config["branch_replicates"]) * sum(not p["excluded"] for p in plan),
@@ -346,15 +422,48 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
             raise TimeoutError("Run deadline reached before metadata request")
         return method(min(config["request_timeout_seconds"], remaining()))
 
+    guarded = config["schema_version"] == "landmark-v2" and not isinstance(adapter, Mock)
+    metadata["interim_checks"] = []
     try:
         metadata["before"] = metadata_call(adapter.metadata)
         metadata["version"] = metadata_call(adapter.version)
         metadata["definition"] = metadata_call(adapter.definition)
         if real and (metadata["before"].get("digest") != config["model_digest"] or metadata["version"].get("version") != config["server_build"]):
             raise ValueError("Receiver digest or server build differs from freeze")
+        if guarded:
+            if not hasattr(adapter, "receiver_state"):
+                raise ValueError("landmark-v2 needs a receiver that exposes its /props state")
+            metadata["state_before"] = metadata_call(adapter.receiver_state)
+            metadata["state_before_sha256"] = digest(metadata["state_before"])
+            if metadata["state_before_sha256"] != config["receiver_state_sha256"]:
+                raise ValueError("Receiver state (build/template/context/sampler defaults) differs from freeze")
+            busy = metadata_call(adapter.busy_slots)
+            if busy != 0:
+                raise ValueError(f"Receiver lease check failed: busy slots = {busy}")
     except Exception as exc:
         fatal = f"preflight: {type(exc).__name__}: {exc}"
     preflight_failure = fatal
+
+    def interim_check(root_id):
+        """Before each root: same receiver state and no foreign load. On failure stop FUTURE dispatch only;
+        every output already collected is kept and the run is marked not interpretable for efficacy."""
+        nonlocal fatal
+        if not guarded or fatal is not None:
+            return
+        check = {"root_id": root_id}
+        try:
+            state = metadata_call(adapter.receiver_state)
+            check.update(state_sha256=digest(state), drift_fields=state_drift(metadata["state_before"], state),
+                         busy_slots=metadata_call(adapter.busy_slots))
+        except Exception as exc:
+            check["error"] = f"{type(exc).__name__}: {exc}"
+        metadata["interim_checks"].append(check)
+        if check.get("error"):
+            fatal = f"receiver_unverifiable_before_{root_id}: {check['error']}"
+        elif check["drift_fields"]:
+            fatal = f"receiver_drift_before_{root_id}: {check['drift_fields']}"
+        elif check["busy_slots"] != 0:
+            fatal = f"receiver_contention_before_{root_id}: busy slots = {check['busy_slots']}"
 
     def generate(messages, p, arm, replicate=0):
         nonlocal attempted, reserved, fatal
@@ -403,6 +512,7 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
         if p["excluded"]:
             row["status"] = "excluded_before_collection"
         else:
+            interim_check(p["root_id"])
             base = initial_messages(task)
             initial = generate(base, p, "initial")
             row["initial"] = initial
@@ -432,16 +542,21 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
     try:
         metadata["after"] = metadata_call(adapter.metadata)
         metadata["digest_unchanged"] = metadata["after"].get("digest") == metadata.get("before", {}).get("digest")
+        if guarded and "state_before" in metadata:
+            after = metadata_call(adapter.receiver_state)
+            metadata["state_after_sha256"] = digest(after)
+            metadata["postflight_drift_fields"] = state_drift(metadata["state_before"], after)
     except Exception as exc:
         metadata["postflight_error"] = f"{type(exc).__name__}: {exc}"
         metadata["digest_unchanged"] = None
+    verification = receiver_verification(config, adapter, metadata, preflight_failure, fatal, guarded)
     completion = {"attempted_calls": attempted, "reserved_completion_tokens": reserved,
         "measured_prompt_tokens": sum(c["prompt_tokens"] or 0 for c in calls),
         "measured_completion_tokens": sum(c["completion_tokens"] or 0 for c in calls),
         "attempted_calls_with_unknown_usage": sum(c["attempted"] and (c["prompt_tokens"] is None or c["completion_tokens"] is None) for c in calls),
         "wall_seconds": clock() - started, "model_metadata": metadata, "preflight_failure": preflight_failure, "fatal_error": fatal,
         "assigned_roots": sum(not p["excluded"] for p in plan), "excluded_roots": sum(p["excluded"] for p in plan),
-        "paid_api_spend_usd": 0, "candidate_executions": 0,
+        "paid_api_spend_usd": 0, "candidate_executions": 0, "receiver_verification": verification,
         "checksums": {p.name: file_sha(p) for p in sorted(output.glob("*.json*"))}}
     (output / "completion.json").write_text(json.dumps(completion, indent=2) + "\n")
     return completion
@@ -454,10 +569,15 @@ def main():
     p.add_argument("--output", type=Path)
     p.add_argument("--real", action="store_true", help="Explicit real local receiver mode; freeze checks required")
     p.add_argument("--print-freeze", action="store_true", help="Print hashes only; no connection or collection")
+    p.add_argument("--print-receiver-state", action="store_true",
+                   help="Read-only /props snapshot and its digest for a landmark-v2 freeze; no generation")
     args = p.parse_args()
     config = json.loads(args.config.read_text())
     tasks = [json.loads(line) for line in args.tasks.read_text().splitlines() if line.strip()]
-    if args.print_freeze:
+    if args.print_receiver_state:
+        state = LlamaServer(config).receiver_state(config["request_timeout_seconds"])
+        print(json.dumps({"receiver_state_sha256": digest(state), "receiver_state": state}, indent=2))
+    elif args.print_freeze:
         print(json.dumps({"dataset_sha256": digest(tasks), "source_code_sha256": digest(source_hashes()), "source_hashes": source_hashes(), "assignment_table": assignments(tasks, config)}, indent=2))
     elif args.output is None:
         p.error("--output is required for collection")

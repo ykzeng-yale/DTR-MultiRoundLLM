@@ -3,6 +3,34 @@
 
 > **Lead resolution, 21 September:** [consolidated decisions and required corrections](worker_issues_resolution_20260921.md) govern use of this historical report. Preserve original records. In particular, the pilot does not establish population efficacy, complete receiver-law verification or categorical sample-size feasibility. The working useful-gain threshold is now five percentage points for a future frozen policy comparison; no new trial is released.
 
+> **Experiments workstream correction (MRL-05, 2026-09-21, processed `e7eb925`).** Original text is kept below;
+> these statements in it are withdrawn:
+>
+> 1. **The Wilson intervals.** They treat 14 or 42 branch pairs as independent Bernoulli draws. The
+>    replicates are nested within roots, and the 42 comparisons reuse STOP and pool interventions, so their
+>    coverage is not established.
+> 2. **The "Roots required" table as a design input.** "Discordance − Δ²" is the variance of one paired binary
+>    contrast. It is not the variance of a two-replicate root mean, and 0.143 comes from two discordant roots
+>    in one unresolved family. The table survives only as arithmetic for single-replicate independent roots.
+> 3. **"Four roots carry no information."** Zero observed discordance on two seeds does not establish a true
+>    ceiling or floor. Those roots contribute to the unconditional mean and must not be removed on outcomes.
+> 4. **Every categorical feasibility statement:**
+>    - "δ = 0.05 is out of reach";
+>    - "δ = 0.10 is feasible/attainable";
+>    - "~160" and "~115";
+>    - "regardless of review".
+>
+>    396 is a mechanical-screen count, not a count of eligible independent families. The 24-slate exclusion
+>    fraction was never shown to transport to the larger pool.
+> 5. **Recommendation 3 (pre-register δ = 0.10).** It is superseded by the lead's prospective decision: the
+>    working useful-gain threshold is **0.05**, and 0.10 is only the planning alternative for power.
+> 6. **Recommendation 2 (difficulty screen).** A screen on independent seeds changes the target population
+>    unless its sampling weights are kept. Relaxing the interface rule (the "~538" remark) is deferred by the
+>    lead: it changes the evaluator, security and parser contracts.
+>
+> The corrected root/family precision plan is [precision_plan_mrl05_20260921.md](precision_plan_mrl05_20260921.md).
+> Its numbers are all conditional scenarios.
+
 **Experiments workstream, 2026-09-21T13:11Z.** Inputs are the development release v1c grades
 (`docs/dev_release_v1_results.md`) and the protocol's own planning formula
 (`docs/landmark_experiment_protocol.md`): n ≈ (z₀.₉₇₅ + z₀.₈)² · Var(D) / δ², with Var(D) = p_gain + p_harm − Δ².
