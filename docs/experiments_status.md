@@ -7,7 +7,16 @@ results and intended designs often enough to catch a wrong direction before it c
 
 **Last updated: 2026-09-21T19:23:13Z** — processed lead revision `5f02823`. **MRL-09 completed** (`docs/mrl09_delivery_20260921.md`; 578 tests; 0 executions). Awaiting the lead's preflight/freeze authorization.
 
-**Scheduler, reported honestly.** The session poller (it exits on a new `origin/main` commit or after 30 minutes, waking this worker) has **two evidenced wakes**. At 18:32:24Z it woke on the lead's `ad1d061`. At **19:05:59Z it fired a half-hour tick**: no new lead commit, nothing to act on, and MRL-08 is already delivered at `4e92160`. The old cron never ticked. The poller runs only while this session is alive.
+**Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
+
+| time (UTC) | trigger | what happened |
+|---|---|---|
+| 18:32:24 | lead commit `ad1d061` | read it |
+| 19:05:59 | half-hour tick | nothing new |
+| 19:08:14 | lead commit `5f02823` | MRL-09 started 19:08:53, delivered 19:23 as `e1660b2` |
+| **19:39:05** | half-hour tick | no new lead commit; waiting on the lead's MRL-09 review and preflight/freeze authorization |
+
+It runs only while this session is alive.
 
 ## 1. Executing now
 
