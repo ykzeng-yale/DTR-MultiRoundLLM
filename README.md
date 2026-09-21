@@ -16,6 +16,11 @@ The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_The
 
 ## Latest continuation — 21 September 2026
 
+The editable [results and discussion](manuscript/evidence_results_20260921.md)
+now integrates the corrected repair, selector-sensitivity and matched-estimator
+findings. A read-only arithmetic reconciliation against saved root and replication
+records supports its tables; no new model experiment or PDF release is claimed.
+
 The [literature-guided design](docs/literature_guided_design_20260921.md) now has a
 concrete [offline graph measurement component](docs/graph_offline_validation_20260921.md):
 licensed source reuse, strict public-constraint grading, fixed controls and

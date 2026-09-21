@@ -13,6 +13,12 @@ acceptance probability, not a quality judgement, and not a time estimate.
 
 ## Latest hourly continuation — 21 September 2026, offline component
 
+**02:43 UTC half-hour update: 49%, delta 0.** A current editable results/discussion
+section and record-level arithmetic reconciliation are complete. This is partial
+integration within the existing manuscript credit; final synthesis, empirical
+validation and complete reproduction remain open. No new efficacy data or worker
+delivery was observed. All weights and contribution points remain unchanged.
+
 **49%, Δ=0 percentage points.** The frozen graph adapter/fixtures and independent
 artifact review complete the bounded offline task. This is a separate controlled
 measurement extension; the fixed component credit is unchanged because the main

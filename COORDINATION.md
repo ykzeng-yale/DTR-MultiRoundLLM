@@ -805,3 +805,22 @@ Progress remains 49%, delta 0; no efficacy claim or submission readiness change.
 The owner will receive the percentage and next milestone after every scheduled
 review. Material feedback is published promptly; unchanged GitHub comments and
 duplicate jobs are avoided.
+
+## 21 September, 02:43 UTC — Lead manuscript evidence reconciliation
+
+No newer worker delivery or MRL acknowledgement was visible after ba582a0; the
+last worker status remains af38c9d/4ba4abf, reviewed at 630b6e4. Its incomplete
+timestamp cannot certify current job state. MRL-01–04 stay with the worker.
+
+The lead completed [a current editable results/discussion section](manuscript/evidence_results_20260921.md)
+and a separate read-only arithmetic reconciliation against saved repair,
+selection-sensitivity and matched-estimator records. All selected summaries agree;
+this does not repeat source-log extraction or certify family independence.
+Preserve the repair deficit, modest split-sensitive 7B signal and weak-overlap DR
+failure when incorporating results. The old PDFs remain dated snapshots, and the
+new section is not a completed empirical paper.
+
+Source hashes/results are in `results/manuscript_evidence_reconciliation_20260921.json`;
+arithmetic took 0.071 seconds, with zero model calls/tokens, new simulation/fitting,
+candidate execution or spend. Progress remains 49%, delta 0; no prompt efficacy
+or full-project submission readiness change. No duplicate worker job is introduced.

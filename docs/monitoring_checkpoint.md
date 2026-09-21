@@ -1,5 +1,33 @@
 # Hourly research checkpoint
 
+## Latest half-hour check — 2026-09-21T02:43:24Z
+
+Observed main ba582a0 with no newer commits, open PRs or worker replies on issues
+#2–#5. Last worker delivery remains status-only af38c9d/4ba4abf; its scientific
+review is committed at 630b6e4. The worker status's placeholder timestamp remains
+uncorrected, so this does not verify its current execution state. MRL-01–04
+acknowledgements/deliveries remain pending; no duplicate worker job was started.
+
+The lead completed a bounded [editable results/discussion section](../manuscript/evidence_results_20260921.md).
+A separate arithmetic implementation reconciled its selected quantitative claims
+against 1,122 saved root/receiver records, 4,500 held-out record entries from
+overlapping splits, and 400 saved synthetic replications. Six input hashes and the
+script hash are in [the reconciliation artifact](../results/manuscript_evidence_reconciliation_20260921.json).
+These are old records, not newly collected or independent observations. No fitting,
+simulation, source-log extraction or model execution was repeated.
+
+The section preserves the repair-versus-resampling deficit, split-sensitive 7B
+selection signal, weak-overlap DR variance/coverage problem and absent prospective
+prompt-policy evidence. Dated PDFs remain unchanged. Local source links and hashes
+were checked; no new proof or full-suite rerun is claimed. Arithmetic runtime was
+0.071 seconds, with zero model calls/tokens, candidate executions, installations
+or spend. The complete writing/review wall time was not measured.
+
+Progress **49%, delta 0 points** under the fixed rubric. Partial manuscript
+integration does not close final synthesis/reproduction. No new efficacy evidence;
+not submission-ready. Next: worker MRL-01–03 responses, measurement/receiver
+release, frozen same-prefix collection and independent policy validation.
+
 ## Schedule update — 21 September 2026
 
 Owner-requested coordination is now every 30 minutes on the existing lead heartbeat.

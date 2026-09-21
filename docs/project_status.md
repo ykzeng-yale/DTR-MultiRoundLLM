@@ -1,5 +1,23 @@
 # Project status and claims ledger
 
+## Latest half-hour continuation — 21 September, 02:43 UTC
+
+**49% milestone completion, delta 0 points; not submission-ready.** No newer worker
+delivery was visible after ba582a0; current execution cannot be inferred from its
+placeholder timestamp. Its last status-only delivery was reviewed at 630b6e4;
+MRL-01–04 remain awaiting acknowledgement/evidence.
+
+The lead integrated corrected prior findings into an [editable results/discussion
+section](../manuscript/evidence_results_20260921.md). Separate arithmetic recomputation
+from stored root, split and simulation records agrees with the selected published
+numbers; provenance and limits are in the
+[reconciliation record](../results/manuscript_evidence_reconciliation_20260921.json).
+No new observations, refitting, simulations or model calls occurred. The repair
+negative and modest split-sensitive selection signal retain their exploratory
+scope; prospective personalized prompting remains untested. Final manuscript
+integration and measurement/receiver, fresh-data and independent-policy milestones
+remain open. The older PDFs were not rebuilt.
+
 > **Current scientific judgment:** [our design, negative findings and decision](scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
 ## Current checkpoint — 21 September 2026, offline measurement validation

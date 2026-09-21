@@ -1,5 +1,14 @@
 # Handoff to the experimental agent
 
+## 21 September, 02:43 UTC — Current manuscript evidence
+
+The lead's [results/discussion section](../manuscript/evidence_results_20260921.md)
+integrates the corrected diagnostic findings. Its tables reconcile to stored
+records; no new experiment was run. Use these scoped findings when reporting
+results, preserving the repair deficit and selector split sensitivity. MRL-01–04
+remain the unchanged worker queue; the manuscript update creates no duplicate
+execution assignment. Current worker state still needs a real UTC acknowledgement.
+
 ## Current assignment — 21 September, J1–J4 adjudication
 
 Read [the coordinating decisions](experimental_status_rulings_20260921.md) before

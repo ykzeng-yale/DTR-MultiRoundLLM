@@ -1,5 +1,22 @@
 # Experiment results ledger
 
+## 2026-09-21, 02:43 UTC — Coordinating lead, manuscript arithmetic reconciliation
+
+Recomputed the selected corrected manuscript figures from six stored artifact
+files using an independent standard-library arithmetic path, without importing
+the original analysis routines. Repair means/intervals, selection split summaries
+and matched-estimator RMSE/paired MSE/coverage reconcile. See
+`results/manuscript_evidence_reconciliation_20260921.json` and
+`manuscript/evidence_results_20260921.md`. This is verification of saved records,
+not new raw-log reproduction, fitting, simulation, receiver data or family validation.
+Final arithmetic elapsed 0.070563 seconds; the initial 0.054658-second reconciliation
+is preserved in ignored `work/manuscript_evidence_reconciliation_20260921_initial.json`.
+A provenance-wording repair required the second pass; all numerical content matched.
+Combined arithmetic time was 0.125221 seconds, not total review wall time. The
+existing-output rejection also passed without changing the result. Zero model calls/tokens, candidate executions
+and paid spend. Historical sources and PDFs remain unchanged. Progress 49%, delta 0;
+no efficacy or submission-readiness change. MRL-01–04 remain with the worker.
+
 ## 2026-09-19 — Codex theory/reference workstream
 
 Executed the finite-state reference study in `results/synthetic_reference_v1`: 400 independent Monte Carlo replicates, 800 root tasks and 2 continuations per root in each replicate, horizon 3, known-truth target utility 0.798750. These are fixed-nuisance diagnostics. DR coverage was .950 (both correct), .9525 (propensity correct/Q wrong), and .950 (Q correct/propensity wrong), with coverage MCSE about .011. Both-wrong exact bias was +.631259. The same code was invoked independently and all numerical/configuration/report files reproduced byte-for-byte, excluding runtime metadata; see `results/reproduction_check.json`.

@@ -2,6 +2,11 @@
 
 **Methods supplement, 20 September 2026.** This section supplements the earlier research draft. It describes the developed design and the proposed empirical study; it does not report a completed LLM trial. The full manuscript still requires integration with the longitudinal theory, scientific self-audit and future empirical results.
 
+The current [results and discussion section](evidence_results_20260921.md) preserves
+the corrected negative repair findings, selector split sensitivity and matched
+estimator diagnostics. Its quantitative summaries were reconciled to stored records;
+it does not supply a completed prospective prompt trial.
+
 ## Decision problem and identification
 
 We study whether public information available at a conversation checkpoint can guide the choice of a next prompt that improves the receiver's expected final output quality. The receiver model, its decoding and service configuration, the task population, and the subsequent interaction horizon are components of the intervention. In the proposed landmark study, the horizon is one additional receiver response. Let H denote the public task and initial conversation, and let Q_a(H) be the mean final score under supported continuation a. The decision target is the value of a rule d(H), $E[Q_{d(H)}(H)]$, relative to a comparator fixed independently of the evaluation outcomes. A history-conditional mean is distinct from the unobserved realized effect of two prompts on one conversation.
