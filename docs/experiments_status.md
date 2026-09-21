@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T15:00Z** — processed lead revision `e7eb925`.
+**Last updated: 2026-09-21T15:05Z** — processed lead revision `e7eb925`.
 
 **Scheduler, reported honestly.** The in-session half-hourly job (`7,37 * * * *`) is configured, but it has **no evidenced successful tick**. No status commit landed between 13:13Z and 15:00Z, so the 13:37, 14:07 and 14:37 slots produced nothing. The job only fires when this session is idle, and it was not idle then. Every publication so far was made by hand during active work. I will not count the schedule as working until a tick produces a commit.
 
@@ -15,7 +15,7 @@ results and intended designs often enough to catch a wrong direction before it c
 |---|---|---|---|
 | **MRL-05**: correct sizing/status claims; root/family precision plan against the 5 pp useful-gain null | **completed** | source-only; 0 model/reference/candidate/sandbox executions; $0 | 2026-09-21T14:51Z |
 | **MRL-06**: receiver configuration/drift guards (`landmark-v2`) plus source/mock tests | **completed** (260 tests pass) | as above, plus one read-only `/props` and one `/slots` GET, no generation | 2026-09-21T14:51Z |
-| **MRL-07**: implementation plan for the public-diagnostic proposal, and its missing freeze fields | **running** | source/mock only; one CPU; 20 min; $0 | 2026-09-21T15:00Z |
+| **MRL-07**: implementation plan for the public-diagnostic proposal, and its missing freeze fields | **completed**: plan, 15 freeze fields, executor table ≤ 137 starts; one design issue raised (section 1 of the plan) | source + static prediction only; 0 executions; $0 | 2026-09-21T15:00Z |
 
 No frozen batch is running and no lease is held. `/slots` showed 4/4 slots idle at 14:55Z.
 
@@ -51,7 +51,18 @@ sections 4–5 (outcome-selected power counts, no-harm from *n*).
 
 ## 3. JUDGEMENT REQUESTED
 
-None open. J1–J4 were ruled on (section 4). New questions arising from the contract review will be
+**J5 (MRL-07, defect-class exposure).** The 21 public examples reject 18/19 known wrong behaviours by
+prediction. They include last-element max (357), prime-only Lucas (402) and the original 402 reference bug,
+which are exactly the classes the v2 *private* boundary cases were written to catch. Every arm sees them, so
+contrasts stay fair, but hidden discrimination shrinks and initial correctness probably rises.
+
+My recommendation: keep the cases (no reselection) and add a descriptive **private-only failure** endpoint.
+Your call.
+
+**J6 (MRL-05).** Which prespecified uncertainty procedure to use. It moves the required family count by
+roughly 3–25× more than any variance assumption does.
+
+Previously: J1–J4 were ruled on (section 4). New questions arising from the contract review will be
 posted here when it completes.
 
 ## 4. Rulings and requests received, with disposition
@@ -70,8 +81,8 @@ posted here when it completes.
 
 ## 5. Next, in order
 
-1. **[CPU, running] MRL-07.** Implementation plan and missing freeze fields for the public-diagnostic
-   proposal. Source/mock only.
+1. **[CPU, done] MRL-07.** See `docs/public_diagnostic_implementation_plan_mrl07_20260921.md`. It is
+   waiting on the lead to accept the plan and to rule on the defect-class exposure issue.
 2. **[CPU, after the lead accepts MRL-07]** Implement the public executor, diagnostic renderer and five-arm
    collector on `landmark-v2`, with mock tests. No execution until the lead releases a validation contract.
 3. **[Lead decisions pending, not mine]**

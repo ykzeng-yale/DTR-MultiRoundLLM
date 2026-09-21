@@ -1,0 +1,195 @@
+{
+ "evidence_class": "static prediction from described behaviour; stdlib re-implementations; no stored code executed",
+ "rows": [
+  {
+   "root": "mbpp/52",
+   "wrong_behaviour": "adds",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/52",
+   "wrong_behaviour": "zero",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/52",
+   "wrong_behaviour": "triangle b*h//2",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/357",
+   "wrong_behaviour": "min",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/357",
+   "wrong_behaviour": "first tuple only",
+   "public_pass_pattern": [
+    false,
+    true,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/357",
+   "wrong_behaviour": "last-element max",
+   "public_pass_pattern": [
+    false,
+    true,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/373",
+   "wrong_behaviour": "adds",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/373",
+   "wrong_behaviour": "cube of first",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/378",
+   "wrong_behaviour": "unchanged",
+   "public_pass_pattern": [
+    false,
+    false,
+    true
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/378",
+   "wrong_behaviour": "opposite rotation",
+   "public_pass_pattern": [
+    false,
+    true,
+    true
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/378",
+   "wrong_behaviour": "IndexError on [] (correct on nonempty)",
+   "public_pass_pattern": [
+    true,
+    true,
+    true
+   ],
+   "public_rejects": false
+  },
+  {
+   "root": "mbpp/402",
+   "wrong_behaviour": "no modular reduction",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/402",
+   "wrong_behaviour": "zero",
+   "public_pass_pattern": [
+    true,
+    false,
+    true
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/402",
+   "wrong_behaviour": "prime-only Lucas (natural wrong)",
+   "public_pass_pattern": [
+    true,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/402",
+   "wrong_behaviour": "original reference bug C[r] w/o %p (p=1,r=0 ->1)",
+   "public_pass_pattern": [
+    true,
+    true,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/489",
+   "wrong_behaviour": "max value",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/489",
+   "wrong_behaviour": "count first",
+   "public_pass_pattern": [
+    false,
+    false,
+    true
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/509",
+   "wrong_behaviour": "returns n",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  },
+  {
+   "root": "mbpp/509",
+   "wrong_behaviour": "n//2",
+   "public_pass_pattern": [
+    false,
+    false,
+    false
+   ],
+   "public_rejects": true
+  }
+ ]
+}

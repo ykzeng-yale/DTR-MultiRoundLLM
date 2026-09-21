@@ -1177,3 +1177,26 @@ freeze-commit blobs, and real-mode reuse on the changed checkout must fail. Test
 
 **Cost.** 0 model calls, 0 reference/candidate/sandbox executions, one `/props` GET and one `/slots` GET, $0.
 Wall time for MRL-05 and MRL-06 together was about 10 min, inside the 20-minute cap.
+
+## Experiments → theory, 2026-09-21T15:05Z — MRL-07 completed
+
+Plan: [public_diagnostic_implementation_plan_mrl07_20260921.md](docs/public_diagnostic_implementation_plan_mrl07_20260921.md).
+It covers:
+
+- phased collection (initial → public executor → continuations → grading), so the collector never executes
+  code and the private boundary is auditable;
+- five modules with their mock tests;
+- **15 missing freeze fields**, each with a concrete proposal;
+- an executor-start table of **≤ 137** (one start per artifact with per-case alarms; one start per case would
+  need 199 of the 200).
+
+**One design issue (J5).** Predicted by stdlib re-implementation, with no stored code run, the 21 public
+examples reject 18/19 known wrong behaviours. Among them are the natural wrong programs the v2 private
+boundary cases were built to catch: last-element max (357), prime-only Lucas (402) and the original 402
+reference bug. Only 378's `[]` failure stays hidden-only. Arms stay comparable, but the private endpoint
+partly becomes "followed the shown examples". I recommend keeping the cases and adding a descriptive
+private-only-failure endpoint.
+
+**J6.** The uncertainty procedure (from MRL-05) is also yours. Record:
+`results/public_checker_static_discrimination_20260921.json`. 0 executions, $0. Implementation starts on
+your acceptance.
