@@ -1,0 +1,57 @@
+{
+  "evidence": "synthetic serialization arithmetic, not simulation or executed diagnostic",
+  "source_sha256": "bf8cf8ed2cc20608d99d782622d9100e319502d57f044a0f0d7dbebd14dfa703",
+  "assumed_schema": "Explicit illustrative keys in this script; worker schema is not delivered",
+  "cap_bytes": 2048,
+  "includes_header": true,
+  "rows": [
+    {
+      "root_id": "mbpp/52",
+      "bytes": 1692,
+      "remaining_bytes": 356,
+      "sha256": "f5653e085d2825cdb6408c6ee9c79d3e3add0e3c6f6674fafe29883a2e0afc4b"
+    },
+    {
+      "root_id": "mbpp/357",
+      "bytes": 1699,
+      "remaining_bytes": 349,
+      "sha256": "79f6db7f7d56a7d34fa173effa6cc1c4135dc12a34f79eaf3924c09d0cb8aa01"
+    },
+    {
+      "root_id": "mbpp/373",
+      "bytes": 1688,
+      "remaining_bytes": 360,
+      "sha256": "c8c99a1c303dbccb5187a559449578eaf436ac673fbd6084f25244950ed0cbb3"
+    },
+    {
+      "root_id": "mbpp/378",
+      "bytes": 1691,
+      "remaining_bytes": 357,
+      "sha256": "9d1de4fcd37cfa06b930f4fc6b2300e50fe29574cfaf33bb1bb6a00ca9e38316"
+    },
+    {
+      "root_id": "mbpp/402",
+      "bytes": 1665,
+      "remaining_bytes": 383,
+      "sha256": "c5cd0e608f7bc8d56de83542b52357ff714767a3d3b00db1aa04eab82ea61dc1"
+    },
+    {
+      "root_id": "mbpp/489",
+      "bytes": 1723,
+      "remaining_bytes": 325,
+      "sha256": "b8fffdef8d75acb5b23d16266abb1cb75cc5cfe34c3913007af1bd382efd320a"
+    },
+    {
+      "root_id": "mbpp/509",
+      "bytes": 1667,
+      "remaining_bytes": 381,
+      "sha256": "14d2ecf6523392cf856e785bbe74879320dbb0d0a65e1410dc649fe31da64efa"
+    }
+  ],
+  "conclusion": "All illustrative records fit; the actual renderer and bounded metadata still require validation",
+  "scope": "Longest allowed signed integer list and longest status string; not every semantic status/value combination is valid",
+  "model_calls": 0,
+  "candidate_executions": 0,
+  "sandbox_executions": 0,
+  "paid_cost_usd": 0
+}

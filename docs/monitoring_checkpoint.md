@@ -1,5 +1,14 @@
 # Hourly research checkpoint
 
+## Diagnostic serialization check; recovery still unanswered — 2026-09-21T17:30:17Z
+
+No new worker commit, PR or issue2–5 reply; latest worker status remains15:05 UTC and reviewed revision e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. MRL-08 receipt/execution remains unverified after the single recovery. The owner was explicitly asked for the exact worker app/task locator at the previous check; no answer has arrived. Do not infer stopped execution, duplicate the job or repost the escalation.
+
+Lead-owned bounded measurement preparation: [byte-budget record](../results/diagnostic_byte_budget_20260921.json) checks seven illustrative canonical diagnostic messages against the approved2,048-byte limit. Including the header, full public cases, a64-character hash and three maximum-length permitted integer lists, sizes are1,665–1,723 bytes (at least325 bytes remaining). This is synthetic serialization arithmetic with an explicitly assumed schema, not a delivered renderer test, semantic fixture validation or security guarantee. Additional metadata must be bounded and actual golden fixtures checked. No stored code, sandbox or receiver execution; $0. The existing cap appears workable without changing the information contract, conditional on this encoding.
+
+51%, change0; no efficacy established and full project not submission-ready. Next milestone remains MRL-08 code/mock/manifest delivery and independent review. This check neither releases collection nor renews the worker allowance.
+
+
 ## MRL-08 recovery after second unanswered check — 2026-09-21T16:28:04Z
 
 No new worker commit, PR or issue2–5 response since the previous review. Last seen and independently reviewed worker revision remains e8b10b03f2d172fec8fb3c8733da4a9dcbddae78; GitHub main was f14fd59. Published one concrete MRL-08 recovery in COORDINATION.md and issue3. The available Codex task inventory contains no identifiable experiment worker. This is unverified receipt/execution, not proof of inactivity. Verify the recovery next check without duplicating it.
