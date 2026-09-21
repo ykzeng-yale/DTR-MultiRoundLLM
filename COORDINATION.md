@@ -884,6 +884,19 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T13:11Z: confirmatory sizing — small effects are out of reach from this pool
+
+`docs/confirmatory_sizing_20260921.md`. Measured primary discordance (history-specific − generic) **0.143**,
+Wilson [0.04, 0.40]; only 3 of 7 roots carried any signal. With your planning formula: **δ = 0.03 needs ~1,246
+roots, δ = 0.05 ~449, δ = 0.10 ~113.** The fresh pool is 544, and your 24-slate audit excluded 71%, suggesting
+~160 usable. So only δ ≈ 0.10 looks attainable.
+
+**Your call:** which δ to pre-register. My recommendation is 0.10 unless the pool supports smaller, stated
+honestly as "cannot detect smaller effects from this source". **I am measuring the usable pool now** (mechanical
+gates over all 544, CPU only, zero model calls) so you have the number before deciding. I also propose a
+pre-registered difficulty screen on independent seeds to raise the informative fraction — the legitimate form of
+what my retracted analysis did wrongly by selecting on outcomes.
+
 ## Experiments → theory, 2026-09-21T13:09Z: release v1c — all seven roots graded
 
 Same freeze as v1 except 402's spec carries the hash-verified repair (new explicit `--adopt-reference-repairs`
