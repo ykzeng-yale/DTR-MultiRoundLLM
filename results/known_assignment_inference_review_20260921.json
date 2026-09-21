@@ -1,0 +1,54 @@
+{
+  "reviewed_utc": "2026-09-21T04:48:09.091598+00:00",
+  "review_type": "Independent internal mathematical and final-prose review; not external peer review or empirical validation",
+  "source": {
+    "path": "docs/known_assignment_inference_20260921.md",
+    "sha256": "bde2b9226dad58d4c2457ce5f253bdb11bd2576b4481eacf4dbb551da91999c3",
+    "bytes": 9400
+  },
+  "repository_head_at_review": "184fb8b8f31148a80fb3f7d4ba92482cab58543a",
+  "verdict": "No blocking mathematical or inference defect found under the stated conditions",
+  "checked_assumptions": [
+    "Fixed supported target policy and observation law, or conditioning on an independently trained policy held fixed for evaluation.",
+    "Exact assignment mechanisms and coherent V(Q) computed from the same Q; the arbitrary-Q mean identity is assumed from the main identification result.",
+    "Iid independent root clusters with a fixed prespecified trajectory count, equal root averaging and arbitrary permitted dependence inside a root.",
+    "A fixed finite number of folds formed independently of root data; fold proportions have positive limits; fitting and tuning exclude complete evaluation roots.",
+    "Fold-specific training information includes independent learner randomness; foldwise conditioning does not condition jointly on all fitted models.",
+    "Convergence in probability of the squared L2 root-score difference to a deterministic, potentially misspecified limit, plus positive finite limiting root-score variance.",
+    "Integrability for finite-sample unbiasedness; exact assignment alone does not guarantee score stability or useful finite-sample inference."
+  ],
+  "checked_proof_steps": [
+    "Applying the arbitrary-Q identity conditional on each training fold establishes conditional and, when integrable, unconditional mean validity.",
+    "Conditional variance of the evaluation-fold mean difference equals the squared L2 score difference divided by the fold size.",
+    "Conditional Chebyshev with probability bounds truncated at one uses norm convergence in probability without requiring its unconditional expectation to converge.",
+    "Fixed-K summation controls the aggregate error without assuming independence across fitted-score folds, yielding asymptotic linearity at the deterministic limiting score.",
+    "The iid-root central limit theorem applies to the limiting score under positive finite variance.",
+    "Conditional Markov with the same truncation argument gives vanishing empirical mean squared fitted-minus-limit score.",
+    "Cauchy-Schwarz, the second-moment law of large numbers and convergence of empirical means establish consistency of the root-score sample variance.",
+    "Slutsky then establishes asymptotic Wald coverage, with no quarter-rate Q requirement in this exact-assignment setting."
+  ],
+  "scope_and_interpretation_checks": [
+    "The note correctly distinguishes Q-prediction clipping with coherent V recomputation from weight/score clipping.",
+    "Misspecified Q does not necessarily achieve efficiency; the theorem asserts neither a universal DR-versus-plug-in variance ordering nor finite-sample coverage.",
+    "The 81.25 percent historical coverage is preserved as an empirical finite-replication result, without assigning its cause to Q misspecification.",
+    "The empty-cell oracle sensitivity does not verify the new variant confidence intervals or a deployable-method improvement.",
+    "The note does not claim that the 80 archived records establish its L2 score-stability condition.",
+    "Known assignment, mean validity, asymptotic validity and useful finite-sample precision remain distinct."
+  ],
+  "findings": [],
+  "remaining_obligations": [
+    "Applying the theorem to a fitted procedure requires justification of its actual root-score L2 convergence and independent sampling contract.",
+    "Prospective finite-sample inference assessment remains outstanding; this review supplies no coverage, efficacy or readiness credit."
+  ],
+  "review_activity": {
+    "sampled_simulations": 0,
+    "numerical_replays": 0,
+    "model_calls": 0,
+    "refits": 0,
+    "candidate_or_reference_executions": 0,
+    "package_installs": 0,
+    "paid_usd": 0,
+    "repository_source_edits": 0
+  },
+  "basis": "Read the completed note and compared its assumptions and proof to the previously reviewed fixed-policy known-assignment argument and main theory section 6.2. Only source hashing and metadata serialization were performed."
+}

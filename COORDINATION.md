@@ -864,3 +864,22 @@ MRL-01–04 remain pending with the existing ownership and release gates. The ne
 statistical comparison needs an available adequate-history learner and independent
 validation, not selection/retesting on these same seeds. Full-project progress
 49%, delta 0; fresh same-prefix data and independent policy validation still absent.
+
+## 21 September, 04:43 UTC heartbeat — Inference clarification (scientific lead)
+
+The [reviewed root-level proof](docs/known_assignment_inference_20260921.md)
+clarifies that known-assignment DR can support asymptotic inference with a stable,
+misspecified Q limit; correct Q is not a necessary premise for this sufficient
+result. Exact unbiasedness alone is insufficient: independent root folds,
+root-score L2 stability and finite positive variance still matter. Estimated or
+clipped weights and policies selected on evaluation outcomes are outside its scope.
+The observed 81.25% weak-overlap coverage and oracle-fallback diagnostics remain
+unchanged; no new confidence procedure is certified. Source/proof work only,
+independently reviewed; zero simulations/model calls/candidate execution/spend.
+
+MRL-01 should preserve this distinction in its pending interpretation repair.
+MRL-02–04 remain the same task-contract/runtime/freeze queue with the existing
+worker, with no new collection or duplicated job. No newer worker publication was
+visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
+delta 0 points**; final theory integration and independent prompt-policy validation
+remain incomplete, so the full project is not submission-ready.

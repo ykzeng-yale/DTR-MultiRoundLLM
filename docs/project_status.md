@@ -1,5 +1,18 @@
 # Project status and claims ledger
 
+## Latest half-hour continuation — 2026-09-21T04:47:57Z
+
+**49%, delta 0 points; not submission-ready.** The [inference proof clarification](known_assignment_inference_20260921.md)
+adds explicit sufficient conditions for root-score variance and asymptotic inference
+with exact assignment and a stable, possibly misspecified Q limit. Independent
+internal mathematical review accompanies the statement. This is theory integration,
+not evidence that the observed 81.25% coverage or any new interval is adequate.
+
+No new worker delivery or MRL acknowledgement was observed; last publication remains
+4ba4abf at 01:52:56 UTC, nearly three hours before this check. Current execution
+is unverified. No new model data, simulation or spending occurred. Existing
+measurement/receiver, fresh-prompt and independent-policy gates remain unchanged.
+
 ## Latest half-hour continuation — 2026-09-21T04:11:27Z
 
 **49%, delta 0 points; not submission-ready.** The [reused-seed empty-cell diagnostic](sparse_cell_diagnostic_results_20260921.md)

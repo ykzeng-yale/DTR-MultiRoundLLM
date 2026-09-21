@@ -277,6 +277,17 @@ For fixed $T$, products in (7) that sum to $o_p(n^{-1/2})$, score convergence in
 
 **Asymptotic expansion.** With a fixed finite number of folds, condition on a fold's training sample. Decompose its score average into the empirical mean of the true score, the centered empirical mean of $D(\widehat\eta)-D(\eta_0)$, and its conditional mean. Conditional independence and $L_2$ score convergence make the centered difference $o_p(n^{-1/2})$ by its conditional variance; (7) controls the mean. Sum the finite folds. The ordinary independent-root central limit theorem then applies to the true influence scores. This proof fails if branches from one root leak across training and evaluation folds.
 
+**Known-assignment clarification (21 September 2026).** Correct continuation Q is
+not necessary for valid asymptotic inference when all assignment probabilities
+are known exactly. The [root-level proof note](known_assignment_inference_20260921.md)
+shows that convergence in root-score L2 to a deterministic possibly misspecified
+Q limit, finite positive limiting variance, independent roots and proper
+cross-fitting suffice. The limiting score then uses that Q limit rather than the
+efficient true-Q score; no n^(-1/4) Q rate is needed in this special case. Exact
+mean validity alone does not imply the stability or finite-sample coverage conditions.
+The note covers equal prespecified root aggregates, not outcome-selected policy
+evaluation or estimated/clipped assignment weights.
+
 ### Theorem 5: efficient influence function in the stated model
 
 Consider a nonparametric finite-horizon full-history model whose unknown factors are the initial-history law, logging action laws, and transition/reward laws. The target action law $d$ is fixed externally and does not vary with this observed-data model. Assume positivity, differentiability along regular submodels, and square-integrability of the expression. Then

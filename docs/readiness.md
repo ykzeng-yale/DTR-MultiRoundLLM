@@ -13,6 +13,11 @@ acceptance probability, not a quality judgement, and not a time estimate.
 
 ## Latest hourly continuation — 21 September 2026, offline component
 
+**04:47 UTC half-hour update: 49%, delta 0.** The [known-assignment proof note](known_assignment_inference_20260921.md)
+clarifies inference with a stable misspecified Q limit. Final theory integration
+and observed finite-sample validation remain incomplete; all component credits
+and weights are unchanged. No new efficacy or submission-readiness claim.
+
 **04:11 UTC half-hour update: 49%, delta 0.** The [empty-cell diagnostic](sparse_cell_diagnostic_results_20260921.md)
 finds material sensitivity to an unavailable oracle substitution in the 80 old
 weak-overlap seeds. This narrows failure diagnosis without completing available

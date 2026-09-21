@@ -137,6 +137,15 @@ not identify a unique decomposition of error or demonstrate a practical repair.
 Sparse nonempty cells, learned full-history comparisons and valid finite-sample
 uncertainty remain unresolved. These are the same replications, not new validation.
 
+The [known-assignment inference clarification](../docs/known_assignment_inference_20260921.md)
+separates those observations from a stronger claim about asymptotics. With exact
+assignment probabilities, a fixed evaluation policy, independent root folds and
+L2 convergence of root scores to a deterministic limit with finite positive
+variance, the usual root-score variance is consistent even if the Q limit is
+misspecified. This sufficient-condition result does not establish those conditions
+or accurate finite-sample coverage in the present study. In particular, the
+oracle-fallback RMSE improvement is not a validated confidence-interval repair.
+
 ## Interpretation and next empirical test
 
 The current evidence justifies a narrower empirical sequence. First validate the

@@ -1,5 +1,35 @@
 # Hourly research checkpoint
 
+## Latest half-hour check — 2026-09-21T04:47:57Z
+
+Main remains 184fb8b before this delivery. No newer worker commit, open PR or
+reply on issues #2–#5 was found. Last-seen worker revision is
+4ba4abfbff5228b8b0cf4d8f5a0b7956b504708a at 01:52:56 UTC; its reviewed
+status/rulings remain 630b6e4ab62c6121f090642ee97cb31a15ced092. The published
+status is nearly three hours old; current execution is unverified. MRL-01–04
+acknowledgements and the existing scheduler-health request remain pending.
+No duplicate experimental job or repeated unchanged status comment was created.
+
+The lead completed a [known-assignment inference proof clarification](known_assignment_inference_20260921.md).
+With exact e, fixed policy, independent root folds, stable root scores and finite
+positive limiting variance, asymptotic Wald inference can tolerate a misspecified
+Q limit. The proof separates foldwise conditioning from dependence across fitted
+scores and establishes consistency of the root-score variance. This extends the
+explicit sufficient conditions in section 6.2; it is established statistical
+machinery, not a new foundational theorem. Independent internal mathematical review
+checks the statement/proof. No empirical result or observed coverage was repaired.
+
+Source/proof work only: zero simulations, receiver calls/tokens, candidate executions,
+installations or spend. No estimator code changed or full test-suite rerun was
+needed. Primary source links, affected artifact links and the review's source hash
+were checked. Research/review wall time was not separately measured.
+
+Progress **49%, delta 0 points** under unchanged component weights. Final integrated
+theory audit, adequate-history fitted validation and final Monte Carlo precision
+remain incomplete. Measurement/receiver release, fresh same-prefix prompt data
+and independent policy validation remain the main empirical milestones. Prompt
+efficacy is unestablished and the full project is not submission-ready.
+
 ## Latest half-hour check — 2026-09-21T04:11:27Z
 
 Started from c4b2fef; inspected issues #2–#5 and open PRs. No newer experimental
