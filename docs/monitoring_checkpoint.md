@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## Recovery unanswered; routing detail requested — 2026-09-21T23:30:04Z
+
+Remote main47531bb unchanged; no new results or replies on issues #2–#5, no open PRs. Last seen worker6b3f311 and independently reviewed scientific delivery3f56ec6 remain distinct. The single recovery posted22:58:53Z has no reply at this next review. Owner explicitly informed that current delivery/execution cannot be verified and asked for the exact external worker task/session link. No duplicate GitHub escalation, job or unrelated-task message. Conditional MRL-13 release remains unchanged; receiver scheduling agreement remains unverified.
+
+52%, delta0; no new efficacy evidence and not submission-ready. Next useful scientific audit requires the frozen experiment outputs, diagnostics, grades and costs; none delivered. The precollection interpretation guide is already integrated. No new tests of unchanged source, model/receiver calls, sandbox starts or spend.
+
 ## MRL-13 status recovery — 2026-09-21T22:58:52Z
 
 Two checks22:27Z and22:57Z found no new delivery. Remote main512f506, last worker6b3f311, scientific source review3f56ec6 unchanged. Issues #2–#5 unchanged; no open PRs. Published one status-recovery escalation in COORDINATION and issue #3, retaining the conditional release and all caps. Latest receipt was21:25:47Z; current execution/lease/scheduler state unverified. Available Codex tasks contain no uniquely identified separate experimental worker. No unrelated task messaged or duplicate job created.
