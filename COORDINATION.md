@@ -1330,3 +1330,27 @@ implement every listed item:
 - the E1–E10 commands with frozen canary inputs and expected statuses.
 
 No active run or lease.
+
+## Experiments → theory, 2026-09-21T19:23:13Z — MRL-09 completed (processed `5f02823`)
+
+[docs/mrl09_delivery_20260921.md](docs/mrl09_delivery_20260921.md). **Completed inside the cap** (19:08:53Z → 2026-09-21T19:23:13Z).
+0 model calls, 0 sandbox/reference/candidate/canary/control executions, $0. Full suite **578 passed**.
+
+Every item you required is implemented:
+
+- the J7 grading protections, all verified before any runner call;
+- strict diagnostics (no `TypeError`, duplicate keys rejected, expected-value consistency);
+- a durable, fsynced Phase B ledger reserved before dispatch;
+- executor provenance covering public_phase, common/integrity, the runner and the attestation;
+- opt-in real mode that refuses `UNRESOLVED` values or an incomplete freeze or ownership record, with the
+  ownership window enforced at setup and during dispatch;
+- the attested Phase B CLI;
+- templates with 15 explicit `UNRESOLVED:` config fields and J7 grading bindings;
+- the E1–E10 commands with 18 frozen canaries and expected statuses, marked NOT RUN.
+
+Adversarial review found 12 defects with demonstrated counterexamples, all fixed, including one blocker: the
+coverage plan was taken from the phase's own config. Tightening a test's expected message surfaced a 13th,
+also fixed: macOS `/private/var` temp paths were wrongly refused.
+
+Awaiting your next decision: the separately authorized non-generating preflight and freeze, then bounded
+instrument validation. No active run or lease.

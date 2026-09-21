@@ -1,0 +1,1063 @@
+{
+ "canaries": [
+  {
+   "acceptable": [
+    [
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\ndef f(x):\n    g = sys._getframe(1).f_globals\n    g['_pc_out'].write('{\"i\":0,\"n\":\"0000000000000000\",\"returned\":2,\"status\":\"pass\",\"value_kind\":\"int\"}\\n')\n    g['_pc_out'].flush()\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_forged_nonce_line",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 2 (wrong nonce); row 0 gives the same outcome if hack_gate flags frame access",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\nimport json\ndef f(x):\n    g = sys._getframe(1).f_globals\n    if x == 1:\n        g['_pc_out'].write(json.dumps({'n': g['_PC_NONCE'], 'i': 0, 'status': 'pass', 'returned': 2, 'value_kind': 'int'}, sort_keys=True, separators=(',', ':')) + '\\n')\n        g['_pc_out'].flush()\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_duplicate_line",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 2 (second line for index 0)",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\nimport json\ndef f(x):\n    g = sys._getframe(1).f_globals\n    if x == 3:\n        g['_pc_out'].write(json.dumps({'n': g['_PC_NONCE'], 'i': 2, 'status': 'pass', 'returned': 4, 'value_kind': 'int'}, sort_keys=True, separators=(',', ':')) + '\\n')\n        g['_pc_out'].flush()\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    },
+    {
+     "reason": "protocol_integrity_review",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_extra_line",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 2 (four lines for three cases)",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "output_limit"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ],
+    [
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\nimport os\ndef f(x):\n    g = sys._getframe(1).f_globals\n    g['_pc_out'].flush()\n    os.write(g['_pc_out'].fileno(), b'x' * 200000)\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_stdout_flood",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 4 (cap reached, no newline in flood); all protocol_integrity_review acceptable if row 0/2 applies",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "timeout"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import signal\ndef f(x):\n    signal.signal(signal.SIGALRM, signal.SIG_IGN)\n    signal.setitimer(signal.ITIMER_REAL, 0)\n    while True:\n        pass\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_sigalrm_handler_reset",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "soft alarm defeated; RLIMIT_CPU (5 s) or parent wall (10 s) ends it -> row 4 timeout",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "timeout"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    while True:\n        try:\n            while True:\n                pass\n        except BaseException:\n            pass\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_rlimit_cpu_busy_loop",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "the alarm exception is swallowed; SIGXCPU at 5 s aggregate CPU -> row 4 timeout",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "timeout"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import signal, time\ndef f(x):\n    signal.signal(signal.SIGALRM, signal.SIG_IGN)\n    while True:\n        time.sleep(0.5)\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_parent_wall_kill",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "CPU-idle wait: RLIMIT_CPU never fires; parent wall (10 s) kill -> row 4 timeout",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "pass"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": null,
+      "status": "pass"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\ndef f(x):\n    if x == 2:\n        sys.exit(0)\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_sys_exit_mid_case",
+   "never_pass_cases": [
+    1
+   ],
+   "note": "SystemExit is a BaseException caught per case by the harness (row 3); never pass for case 1",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "pass"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import os\ndef f(x):\n    if x == 2:\n        os._exit(0)\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_os_exit_mid_case",
+   "never_pass_cases": [
+    1,
+    2
+   ],
+   "note": "row 4: abnormal early end with returncode 0, no cap, no timeout",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    return f(x) + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_recursion_error",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "RecursionError is caught per case (row 3); a hard C-stack crash (not expected at the default limit) would give [program_exception, unavailable, unavailable]",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "wrong_value"
+     },
+     {
+      "reason": null,
+      "status": "wrong_value"
+     },
+     {
+      "reason": null,
+      "status": "wrong_value"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    return 10 ** 30 + x\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "gate": "E3",
+   "id": "e3_oversized_return",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 3; display value_kind unsupported, returned None",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "interface_error"
+     },
+     {
+      "reason": null,
+      "status": "interface_error"
+     },
+     {
+      "reason": null,
+      "status": "interface_error"
+     }
+    ]
+   ],
+   "candidate_code": "def g(x):\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "gate": "E4",
+   "id": "e4_missing_entry_point",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "runtime lookup failure (row 3)",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "interface_error"
+     },
+     {
+      "reason": null,
+      "status": "interface_error"
+     },
+     {
+      "reason": null,
+      "status": "interface_error"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x, y):\n    return x + y\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    },
+    {
+     "reason": null,
+     "status": "interface_error"
+    }
+   ],
+   "gate": "E4",
+   "id": "e4_wrong_arity",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "signature bind failure per case (row 3)",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "wrong_value"
+     },
+     {
+      "reason": null,
+      "status": "wrong_value"
+     },
+     {
+      "reason": null,
+      "status": "wrong_value"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    return x + 2\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    },
+    {
+     "reason": null,
+     "status": "wrong_value"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_wrong_value",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 3; value_kind int",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    raise ValueError('canary')\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_program_exception",
+   "never_pass_cases": [
+    0,
+    1,
+    2
+   ],
+   "note": "row 3",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "timeout"
+     },
+     {
+      "reason": null,
+      "status": "pass"
+     },
+     {
+      "reason": null,
+      "status": "pass"
+     }
+    ]
+   ],
+   "candidate_code": "def f(x):\n    if x == 1:\n        while True:\n            pass\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "timeout"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "pass"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_timeout_alarm",
+   "never_pass_cases": [
+    0
+   ],
+   "note": "soft alarm (2 s) raises; about 2 s of the 5 s CPU budget used (row 3)",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "pass"
+     },
+     {
+      "reason": null,
+      "status": "output_limit"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ],
+    [
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     },
+     {
+      "reason": "protocol_integrity_review",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import sys\nimport os\ndef f(x):\n    if x == 2:\n        g = sys._getframe(1).f_globals\n        g['_pc_out'].flush()\n        os.write(g['_pc_out'].fileno(), b'y' * 200000)\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "output_limit"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_output_limit",
+   "never_pass_cases": [
+    1,
+    2
+   ],
+   "note": "row 4 after one authentic line; all protocol_integrity_review acceptable if row 0 applies",
+   "static_gate_flags": []
+  },
+  {
+   "acceptable": [
+    [
+     {
+      "reason": null,
+      "status": "pass"
+     },
+     {
+      "reason": null,
+      "status": "program_exception"
+     },
+     {
+      "reason": "not_attempted_after_termination",
+      "status": "unavailable"
+     }
+    ]
+   ],
+   "candidate_code": "import os, signal\ndef f(x):\n    if x == 2:\n        os.kill(os.getpid(), signal.SIGSEGV)\n    return x + 1\n",
+   "cases": [
+    {
+     "args_literal": "[1]",
+     "expected_literal": "2"
+    },
+    {
+     "args_literal": "[2]",
+     "expected_literal": "3"
+    },
+    {
+     "args_literal": "[3]",
+     "expected_literal": "4"
+    }
+   ],
+   "entry_point": "f",
+   "expected": [
+    {
+     "reason": null,
+     "status": "pass"
+    },
+    {
+     "reason": null,
+     "status": "program_exception"
+    },
+    {
+     "reason": "not_attempted_after_termination",
+     "status": "unavailable"
+    }
+   ],
+   "gate": "E5",
+   "id": "e5_crash_after_start",
+   "never_pass_cases": [
+    1,
+    2
+   ],
+   "note": "row 4: signal death other than SIGXCPU/SIGKILL/SIGXFSZ",
+   "static_gate_flags": []
+  }
+ ],
+ "precedence_source": "experiments/landmark/public_check.py module docstring (rows 0-5)",
+ "schema_version": "landmark-validation-canaries-v1",
+ "starts": {
+  "E3": 11,
+  "E4": 2,
+  "E5": 5
+ },
+ "status": "FROZEN INPUTS; NOT RUN; execution requires separate lead authorization",
+ "task": {
+  "description": "synthetic f(x) = x + 1",
+  "entry_point": "f"
+ }
+}

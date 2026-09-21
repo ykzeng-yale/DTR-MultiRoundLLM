@@ -238,7 +238,7 @@ def test_validate_refuses(mutate):
 
 def test_validate_refuses_oversized():
     diag = _mutated(lambda g: g["cases"].extend(
-        [{"case_id": f"x{i}", "call": "f()", "expected": BIG, "status": "wrong_value", "returned": BIG,
+        [{"case_id": f"x{i}", "call": "f()", "expected": BIG, "status": "pass", "returned": BIG,
           "value_kind": "int_list", "reason": None} for i in range(8)]))
     with pytest.raises(d.DiagnosticOverflow):
         d.validate_diagnostic(diag)
@@ -249,11 +249,11 @@ def test_validate_binds_case_content_to_the_fixed_public_cases():
     cases = [{"case_id": "c1", "args_literal": "[1]", "expected_literal": "2"}]
     leak = {"schema_version": d.SCHEMA, "root_id": "r1", "initial_artifact_sha256": "a" * 64,
             "cases": [{"case_id": "hidden_7", "call": "assert f(99) == 12345  # PRIVATE HIDDEN TEST / reference: return x*x",
-                       "expected": 12345, "status": "pass", "returned": None, "value_kind": "none", "reason": None}]}
+                       "expected": 12345, "status": "wrong_value", "returned": None, "value_kind": "none", "reason": None}]}
     d.validate_diagnostic(leak)  # shape alone passes: this is why the binding is needed
     with pytest.raises(ValueError, match="fixed public cases"):
         d.validate_diagnostic(leak, "f", cases)
-    good = d.build_diagnostic("r1", "a" * 64, "f", cases, [res("pass")])
+    good = d.build_diagnostic("r1", "a" * 64, "f", cases, [res("wrong_value", 5, "int")])
     d.validate_diagnostic(good, "f", cases)
     for bad in ({**good["cases"][0], "expected": 3}, {**good["cases"][0], "call": "f(2)"}, {**good["cases"][0], "case_id": "c2"}):
         with pytest.raises(ValueError, match="fixed public cases"):
@@ -280,3 +280,75 @@ def test_render_arms_refuses_extra_diagnostic_keys():
     base = [{"role": "system", "content": "S"}, {"role": "user", "content": "U"}]
     with pytest.raises(ValueError):
         d.render_arms(base, "```python\ndef f(x): return 2\n```", diag)
+
+
+# ---- MRL-09 boundary repairs
+@pytest.mark.parametrize("bad", [["pass"], {"pass": 1}, None, 1])
+@pytest.mark.parametrize("field", ["status", "value_kind"])
+def test_malformed_status_or_kind_types_are_value_errors(field, bad):
+    r = res("pass", 77, "int")
+    r[field] = bad
+    with pytest.raises(ValueError):
+        d._check_result(r)
+    diag = _mutated(lambda g: g["cases"][0].__setitem__(field, bad))
+    with pytest.raises(ValueError):
+        d.validate_diagnostic(diag)
+    with pytest.raises(ValueError):
+        d.select_s1({"cases": [{"status": bad}]}) if field == "status" else d._check_result(r)
+
+
+@pytest.mark.parametrize("bad", [["x"], {"x": 1}, 1])
+def test_malformed_reason_type_is_value_error(bad):
+    with pytest.raises(ValueError):
+        d._check_result(res("unavailable", reason=bad))
+
+
+def test_strict_json_loads_rejects_duplicate_keys_at_any_depth():
+    assert d.strict_json_loads('{"a": {"b": 1}}') == {"a": {"b": 1}}
+    assert d.strict_json_loads(b'[1, 2]') == [1, 2]
+    for bad in ('{"a": 1, "a": 1}', '{"x": [{"b": 1, "b": 2}]}'):
+        with pytest.raises(ValueError):
+            d.strict_json_loads(bad)
+    with pytest.raises(ValueError):
+        d.strict_json_loads(None)
+
+
+def test_load_diagnostic_rejects_duplicate_keys():
+    good = diag_for("diag_all_pass_mbpp_52")
+    r = BY_ROOT["mbpp/52"]
+    raw = json.dumps(good)
+    assert d.load_diagnostic(raw, r["entry_point"], r["cases"]) == good
+    dup_case = raw.replace('"status": "pass"', '"status": "wrong_value", "status": "pass"', 1)
+    dup_top = raw.replace('"root_id": ', '"root_id": "other", "root_id": ', 1)
+    for bad in (dup_case, dup_top):
+        assert bad != raw
+        with pytest.raises(ValueError):
+            d.load_diagnostic(bad)
+
+
+@pytest.mark.parametrize("status,returned,kind", [("pass", 78, "int"), ("wrong_value", 77, "int"),
+                                                  ("pass", [77], "int_list"), ("wrong_value", [], "int_list")])
+def test_bounded_return_must_agree_with_expected(status, returned, kind):
+    r = BY_ROOT["mbpp/52"]
+    exp = ast.literal_eval(r["cases"][0]["expected_literal"])
+    if kind == "int_list":  # an int_list return can never == an int expected; build a list-expected record
+        diag = _mutated(lambda g: g["cases"][0].update(expected=[7] if status == "wrong_value" else [1],
+                                                       status=status, returned=[7] if status == "wrong_value" else returned, value_kind=kind))
+    else:
+        assert exp == 77
+        diag = _mutated(lambda g: g["cases"][0].update(status=status, returned=returned, value_kind=kind))
+    with pytest.raises(ValueError, match="inconsistent"):
+        d.validate_diagnostic(diag)
+    if kind == "int":
+        results = [res(status, returned, kind), res("pass", 117, "int"), res("pass", 34, "int")]
+        with pytest.raises(ValueError, match="inconsistent"):
+            d.build_diagnostic("mbpp/52", A, r["entry_point"], r["cases"], results)
+
+
+@pytest.mark.parametrize("status", ["pass", "wrong_value"])
+def test_unsupported_keeps_executor_equality_result(status):
+    r = BY_ROOT["mbpp/52"]
+    results = [res(status, None, "unsupported"), res("pass", 117, "int"), res("pass", 34, "int")]
+    diag = d.build_diagnostic("mbpp/52", A, r["entry_point"], r["cases"], results)
+    assert diag["cases"][0]["status"] == status
+    d.validate_diagnostic(diag, r["entry_point"], r["cases"])

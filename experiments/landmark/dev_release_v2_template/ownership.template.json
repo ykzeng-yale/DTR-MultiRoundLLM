@@ -1,0 +1,11 @@
+{
+ "receiver_base_url": "UNRESOLVED: base_url of the owned receiver (must equal config base_url)",
+ "server_pid": "UNRESOLVED: PID of the llama-server process recorded at freeze",
+ "server_start_utc": "UNRESOLVED: process start time from ps at freeze",
+ "owner_project": "UNRESOLVED: project that owns the :8193 server",
+ "exclusive_window_start_utc": "UNRESOLVED: agreed exclusive window start (ISO 8601 UTC)",
+ "exclusive_window_end_utc": "UNRESOLVED: agreed exclusive window end (ISO 8601 UTC)",
+ "agreement_ref": "UNRESOLVED: reference to the written exclusive-use agreement",
+ "recorded_by": "UNRESOLVED: person/agent recording the evidence",
+ "recorded_utc": "UNRESOLVED: time the record was written (ISO 8601 UTC)"
+}

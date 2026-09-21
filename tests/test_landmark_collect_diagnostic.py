@@ -284,3 +284,257 @@ def test_continue_refuses_public_examples_not_in_the_prompt(tmp_path, dm):
         cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
                         expected_diagnostics_sha256=sha, adapter=fake)
     assert fake.payloads == [] and not (tmp_path / "C").exists()
+
+
+# ---- MRL-09 real-mode wiring: fakes only; every refusal happens with zero adapter requests ----
+from datetime import datetime, timedelta, timezone  # noqa: E402
+
+NOW = datetime(2026, 9, 21, 12, 0, tzinfo=timezone.utc)
+
+
+@pytest.fixture(autouse=True)
+def _strict_loads(monkeypatch):
+    dmod = cd.diagnostic_module()
+    if not hasattr(dmod, "strict_json_loads"):  # the 'strict' agent owns it; stand-in only until it lands
+        def strict(data):
+            def hook(pairs):
+                keys = [k for k, _ in pairs]
+                if len(keys) != len(set(keys)):
+                    raise ValueError("duplicate key")
+                return dict(pairs)
+            return json.loads(data, object_pairs_hook=hook)
+        monkeypatch.setattr(dmod, "strict_json_loads", strict, raising=False)
+
+
+class NoRequests:
+    """LlamaServer stand-in: constructing it is allowed; any request fails the test."""
+    constructed = 0
+
+    def __init__(self, config):
+        NoRequests.constructed += 1
+
+    def __getattr__(self, name):
+        pytest.fail(f"adapter request made: {name}")
+
+
+def real_config(**over):
+    cfg = make_config(model="qwen2.5-coder-7b", model_digest="a" * 64, server_build="b1", grading_contract_sha256="c" * 64,
+                      dataset_sha256=collect.digest(TASKS), source_code_sha256=collect.digest(collect.source_hashes()),
+                      freeze_commit="HEAD", protocol_version="landmark-v2-diag", dataset_source="mbpp", dataset_license="cc-by-4.0",
+                      receiver_state_sha256=collect.digest(collect.receiver_state(props())))
+    cfg.update(over)
+    return cfg
+
+
+def ownership(cfg, **over):
+    rec = {"receiver_base_url": cfg["base_url"], "server_pid": 4242, "server_start_utc": "2026-09-21T08:00:00Z",
+           "owner_project": "DTR-MultiRoundLLM", "exclusive_window_start_utc": "2026-09-21T09:00:00Z",
+           "exclusive_window_end_utc": "2026-09-21T18:00:00Z", "agreement_ref": "docs/lead_review_mrl05_08_20260921.md",
+           "recorded_by": "experiments", "recorded_utc": "2026-09-21T08:30:00Z"}
+    rec.update(over)
+    return rec
+
+
+@pytest.fixture
+def realenv(monkeypatch, tmp_path):
+    NoRequests.constructed = 0
+    freezes = []
+    monkeypatch.setattr(collect, "LlamaServer", NoRequests)
+    monkeypatch.setattr(collect, "verify_freeze", lambda *a: freezes.append(a) or {"resolved_commit": "f" * 40, "tracked_file_hashes": {}})
+    return freezes
+
+
+def write_own(tmp_path, rec):
+    path = tmp_path / "own.json"
+    path.write_text(json.dumps(rec))
+    return path
+
+
+def real_initial(tmp_path, cfg, own_path, now=NOW):
+    return cd.run_initial(cfg, TASKS, tmp_path / "A", real=True, config_path=tmp_path / "c.json", tasks_path=tmp_path / "t.jsonl",
+                          ownership=own_path, now_utc=lambda: now)
+
+
+def test_complete_ownership_record_passes():
+    cfg = real_config()
+    assert cd.validate_ownership(ownership(cfg), cfg, NOW) == ownership(cfg)
+
+
+@pytest.mark.parametrize("over", [{"agreement_ref": "UNRESOLVED: lead signs"}, {"recorded_by": "todo"}, {"owner_project": "placeholder"},
+                                  {"recorded_by": ""}, {"server_pid": 0}, {"receiver_base_url": "http://127.0.0.1:9999"},
+                                  {"exclusive_window_end_utc": "2026-09-21T11:00:00Z"}, {"server_start_utc": "yesterday"},
+                                  {"exclusive_window_start_utc": "2026-09-21T09:00:00"}])
+def test_bad_ownership_records_rejected(over):
+    cfg = real_config()
+    with pytest.raises(ValueError):
+        cd.validate_ownership(ownership(cfg, **over), cfg, NOW)
+
+
+def test_ownership_missing_field_and_window_uses_injected_clock():
+    cfg = real_config()
+    rec = ownership(cfg)
+    del rec["agreement_ref"]
+    with pytest.raises(ValueError, match="fields differ"):
+        cd.validate_ownership(rec, cfg, NOW)
+    with pytest.raises(ValueError, match="outside"):
+        cd.validate_ownership(ownership(cfg), cfg, NOW + timedelta(hours=7))
+    with pytest.raises(ValueError, match="outside"):
+        cd.validate_ownership(ownership(cfg), cfg, NOW - timedelta(hours=4))
+
+
+@pytest.mark.parametrize("case", ["unresolved", "no_record", "placeholder", "base_url", "window", "freeze", "not_hex", "injected_adapter"])
+def test_real_refusals_make_zero_requests(tmp_path, monkeypatch, realenv, case):
+    cfg = real_config()
+    own = write_own(tmp_path, ownership(cfg))
+    now = NOW
+    kw = {}
+    if case == "unresolved":
+        cfg = real_config(server_build="UNRESOLVED: record llama-server build_info")
+    elif case == "no_record":
+        own = None
+    elif case == "placeholder":
+        own = write_own(tmp_path, ownership(cfg, agreement_ref="TODO"))
+    elif case == "base_url":
+        own = write_own(tmp_path, ownership(cfg, receiver_base_url="http://127.0.0.1:1"))
+    elif case == "window":
+        now = NOW + timedelta(days=1)
+    elif case == "freeze":
+        monkeypatch.setattr(collect, "verify_freeze", lambda *a: (_ for _ in ()).throw(ValueError("Working file differs from freeze")))
+    elif case == "not_hex":
+        cfg = real_config(receiver_state_sha256="deadbeef")
+    elif case == "injected_adapter":
+        kw["adapter"] = NoRequests(cfg)
+        NoRequests.constructed = 0
+    with pytest.raises(ValueError):
+        cd.run_initial(cfg, TASKS, tmp_path / "A", real=True, config_path=tmp_path / "c.json", tasks_path=tmp_path / "t.jsonl",
+                       ownership=own, now_utc=lambda: now, **kw)
+    assert NoRequests.constructed == 0 and not (tmp_path / "A").exists()
+
+
+def test_real_refusal_on_duplicate_key_ownership(tmp_path, realenv):
+    cfg = real_config()
+    path = tmp_path / "own.json"
+    path.write_text(json.dumps(ownership(cfg))[:-1] + ', "recorded_by": "someone else"}')
+    with pytest.raises(ValueError):
+        real_initial(tmp_path, cfg, path)
+    assert NoRequests.constructed == 0
+
+
+def test_real_initial_uses_freeze_and_llamaserver_and_records_ownership(tmp_path, monkeypatch, realenv):
+    cfg = real_config()
+    own = write_own(tmp_path, ownership(cfg))
+    made = []
+
+    class Server(Fake):  # the LlamaServer stand-in that a fully verified real run reaches (fake transport, no network)
+        def __init__(self, config):
+            super().__init__()
+            made.append(config)
+
+    monkeypatch.setattr(collect, "LlamaServer", Server)
+    result = real_initial(tmp_path, cfg, own)
+    manifest = json.loads((tmp_path / "A" / "manifest.json").read_text())
+    assert made == [cfg] and len(realenv) == 1 and realenv[0][2:] == (tmp_path / "c.json", tmp_path / "t.jsonl")
+    assert manifest["evidence_type"] == "ungraded_real_collection" and manifest["freeze"]["resolved_commit"] == "f" * 40
+    assert manifest["ownership"] == {"sha256": hashlib.sha256(own.read_bytes()).hexdigest(), "record": ownership(cfg)}
+    assert result["attempted_calls"] == 7
+
+
+def test_continue_refuses_duplicate_keys_in_diagnostics(tmp_path, dm):
+    cd.run_initial(make_config(), TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA)
+    text = json.dumps(diags, sort_keys=True)
+    first = sorted(diags)[0]
+    text = "{" + json.dumps(first) + ": " + json.dumps(diags[first]) + ", " + text[1:]
+    (tmp_path / "diag.json").write_text(text)
+    sha = hashlib.sha256((tmp_path / "diag.json").read_bytes()).hexdigest()
+    fake = Fake()
+    with pytest.raises(ValueError):
+        cd.run_continue(make_config(), TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                        expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=fake)
+    assert fake.payloads == [] and not (tmp_path / "C").exists()
+
+
+def test_continue_real_refuses_before_requests(tmp_path, realenv, dm):
+    cd.run_initial(make_config(), TASKS, tmp_path / "A", adapter=Fake())
+    sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA))
+    cfg = real_config()
+    with pytest.raises(ValueError, match="ownership"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha,
+                        public_examples=public_for(TASKS), real=True, config_path=tmp_path / "c.json", tasks_path=tmp_path / "t.jsonl",
+                        ownership=None, now_utc=lambda: NOW)
+    assert NoRequests.constructed == 0 and not (tmp_path / "C").exists()
+
+
+def test_cli_real_requires_ownership(tmp_path, monkeypatch, capsys):
+    monkeypatch.setattr(sys, "argv", ["collect_diagnostic", "--phase", "initial", "--config", "c", "--tasks", "t", "--output", "o", "--real"])
+    with pytest.raises(SystemExit):
+        cd.main()
+    assert "--ownership" in capsys.readouterr().err
+
+
+# --- MRL-09 adversarial findings 10-12 (each demonstrated on fakes before the fix) ---
+
+def _counting_server(monkeypatch):
+    class Server(Fake):
+        def __init__(self, config):
+            super().__init__()
+            Server.last = self
+    monkeypatch.setattr(collect, "LlamaServer", Server)
+    return Server
+
+
+def test_ownership_window_is_a_dispatch_guard(tmp_path, monkeypatch, realenv):
+    cfg = real_config()  # max_seconds must fit inside the window at setup
+    end = NOW + timedelta(minutes=35)
+    own = write_own(tmp_path, ownership(cfg, exclusive_window_end_utc=end.isoformat().replace("+00:00", "Z")))
+    Server = _counting_server(monkeypatch)
+    t = [NOW]
+
+    def advancing():  # setup reads NOW+10m; each request then adds 10 minutes of UTC
+        t[0] += timedelta(minutes=10)
+        return t[0]
+    assert cfg["max_seconds"] <= 20 * 60
+    result = cd.run_initial(cfg, TASKS, tmp_path / "A", real=True, config_path=tmp_path / "c.json",
+                            tasks_path=tmp_path / "t.jsonl", ownership=own, now_utc=advancing)
+    assert result["attempted_calls"] == 2 and len(Server.last.payloads) == 2  # the third request would be past the window
+    rows = [json.loads(l) for l in (tmp_path / "A" / "calls.jsonl").read_text().splitlines()]
+    assert rows[2]["missing_reason"] == "ownership_window_expired" and rows[0]["output"] is not None  # outputs kept
+
+
+def test_window_shorter_than_time_budget_is_refused_at_setup(tmp_path, realenv):
+    cfg = real_config()
+    end = NOW + timedelta(seconds=cfg["max_seconds"] - 1)
+    own = write_own(tmp_path, ownership(cfg, exclusive_window_end_utc=end.isoformat().replace("+00:00", "Z")))
+    with pytest.raises(ValueError, match="time budget"):
+        real_initial(tmp_path, cfg, own)
+    assert NoRequests.constructed == 0 and not (tmp_path / "A").exists()
+
+
+def test_real_continue_refuses_a_mock_initial_phase(tmp_path, monkeypatch, realenv, dm):
+    cfg = real_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())  # mock transport, same config
+    sha = write_diagnostics(tmp_path / "diag.json", diagnostics_for(tmp_path / "A", dm.SCHEMA))
+    own = write_own(tmp_path, ownership(cfg))
+    Server = _counting_server(monkeypatch)
+    with pytest.raises(ValueError, match="real initial phase"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C", expected_diagnostics_sha256=sha,
+                        public_examples=public_for(TASKS), real=True, config_path=tmp_path / "c.json",
+                        tasks_path=tmp_path / "t.jsonl", ownership=own, now_utc=lambda: NOW)
+    assert Server.last.payloads == [] and not (tmp_path / "C").exists()
+
+
+def test_cli_real_refuses_unresolved_bytes_even_behind_a_duplicate_key(tmp_path, monkeypatch):
+    cfg = real_config()
+    text = json.dumps(cfg)[:-1] + ', "server_build": "b1"}'
+    text = text.replace('"server_build": "b1",', '"server_build": "UNRESOLVED: record llama-server build_info",', 1)
+    (tmp_path / "c.json").write_text(text)
+    (tmp_path / "t.jsonl").write_text("".join(json.dumps(t) + "\n" for t in TASKS))
+    (tmp_path / "own.json").write_text(json.dumps(ownership(cfg)))
+    monkeypatch.setattr(collect, "LlamaServer", NoRequests)
+    NoRequests.constructed = 0
+    monkeypatch.setattr(sys, "argv", ["collect_diagnostic", "--phase", "initial", "--config", str(tmp_path / "c.json"),
+                                      "--tasks", str(tmp_path / "t.jsonl"), "--output", str(tmp_path / "A"), "--real",
+                                      "--ownership", str(tmp_path / "own.json")])
+    with pytest.raises(SystemExit):
+        cd.main()
+    assert NoRequests.constructed == 0 and not (tmp_path / "A").exists()

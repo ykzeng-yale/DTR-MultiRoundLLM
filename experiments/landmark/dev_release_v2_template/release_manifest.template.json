@@ -1,0 +1,173 @@
+{
+ "manifest": "dev-release-v2-diagnostic-TEMPLATE",
+ "status": "template only; nothing released; lead gate required",
+ "proposal": "docs/diagnostic_release_manifest_proposal_20260921.json",
+ "config_template": "config.template.json",
+ "ownership_template": "ownership.template.json",
+ "validation_plan": "docs/e1_e10_validation_plan_20260921.md",
+ "validation_canaries": "experiments/landmark/validation_canaries_v1.json",
+ "gates": [
+  {
+   "gate": "E1",
+   "starts": 9,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E2",
+   "starts": 2,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E3",
+   "starts": 11,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E4",
+   "starts": 2,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E5",
+   "starts": 5,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E6",
+   "starts": 7,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E7",
+   "starts": 17,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E8",
+   "starts": 24,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E9",
+   "starts": 0,
+   "status": "NOT RUN; requires separate lead authorization"
+  },
+  {
+   "gate": "E10",
+   "starts": 0,
+   "status": "NOT RUN; requires separate lead authorization"
+  }
+ ],
+ "start_ledger": {
+  "core": [
+   {
+    "use": "public_instrument_references",
+    "detail": "7 references x 1 start (3 public cases each) must pass all public cases",
+    "starts": 7
+   },
+   {
+    "use": "public_instrument_controls",
+    "detail": "17 negative-control artifacts x 1 start; predicted public pass patterns in results/public_checker_static_discrimination_20260921.json",
+    "starts": 17
+   },
+   {
+    "use": "status_category_fixtures",
+    "detail": "wrong_value, program_exception, timeout (alarm), output_limit, crash-after-start (later cases unavailable)",
+    "starts": 5
+   },
+   {
+    "use": "private_revalidation_new_binding",
+    "detail": "7 references + 17 controls against the rebound private specs",
+    "starts": 24
+   },
+   {
+    "use": "public_diagnostics_initial",
+    "detail": "7 initial artifacts (format errors execute nothing; count is an upper bound)",
+    "starts": 7
+   },
+   {
+    "use": "final_grading_candidates",
+    "detail": "7 STOP + 70 continuation artifacts",
+    "starts": 77
+   },
+   {
+    "use": "final_grading_reference_control_rechecks",
+    "detail": "grade.py re-validates references/controls inside final grading; reserved conservatively",
+    "starts": 24
+   }
+  ],
+  "core_total": 161,
+  "integrity": [
+   {
+    "use": "containment_attestation",
+    "detail": "fresh 9-canary attestation (24 h validity) before public/private execution",
+    "starts": 9
+   },
+   {
+    "use": "private_read_canary",
+    "detail": "public executor attempts to read the private spec path (must fail) and the public case file (must succeed)",
+    "starts": 2
+   },
+   {
+    "use": "spoof_tamper_canaries",
+    "detail": "forged-nonce line, duplicate line, extra line, stdout flood, SIGALRM caught/reset by candidate, RLIMIT_CPU exhaustion, parent-wall kill, sys.exit mid-case, os._exit mid-case, RecursionError crash, oversized return",
+    "starts": 11
+   },
+   {
+    "use": "interface_runtime_fixtures",
+    "detail": "missing entry point; signature bind failure (wrong arity)",
+    "starts": 2
+   }
+  ],
+  "integrity_total": 24,
+  "integrity_cap": 39,
+  "unallocated_margin": 15,
+  "ceiling": 200,
+  "rules": "no hidden retries; a shared gate is counted once only if documented as genuinely serving both purposes; record actual counts"
+ },
+ "public_executor_caps": {
+  "per_case_soft_alarm_seconds": 2,
+  "aggregate_cpu_seconds_RLIMIT_CPU": 5,
+  "parent_wall_seconds": 10,
+  "memory": "RLIMIT_DATA 536870912 bytes requested; best effort on macOS, not guaranteed containment",
+  "output_cap_bytes": 65536,
+  "file_size_RLIMIT_FSIZE_bytes": 65536,
+  "nproc": 1,
+  "starts_per_artifact": 1,
+  "retries": 0
+ },
+ "grader_caps": {
+  "timeout_seconds": 2.0,
+  "cpu_seconds": 1,
+  "output_cap_bytes": 65536,
+  "memory": "RLIMIT_DATA 536870912 bytes best effort",
+  "source": "experiments/landmark/grade.py:83,146"
+ },
+ "diagnostic": {
+  "schema": "public-diagnostic-v1",
+  "header": "Public diagnostic report for the previous answer (execution status is recorded per case):",
+  "serialization": "json sort_keys, separators (',',':'), ensure_ascii=False, UTF-8",
+  "max_bytes": 2048,
+  "overflow": "raises DiagnosticOverflow (validation failure); never truncated"
+ },
+ "unresolved": {
+  "receiver_state_sha256": "UNRESOLVED: fresh nongenerating /props preflight (E9)",
+  "ownership_record_sha256": "UNRESOLVED: sha256 of the completed ownership record (E9)",
+  "containment_attestation_sha256": "UNRESOLVED: sha256 of the fresh E1 attestation",
+  "dataset_sha256": "UNRESOLVED: scripts/build_dev_release_v2.py output",
+  "grading_contract_sha256": "UNRESOLVED: scripts/build_dev_release_v2.py output",
+  "source_code_sha256": "UNRESOLVED: freeze commit",
+  "freeze_commit": "UNRESOLVED: lead-authorized freeze commit",
+  "overlap_audit_verdict": "UNRESOLVED: E10 PASS/HOLD",
+  "template_render_sha256": "UNRESOLVED: /apply-template rendering of all six arms (E9)"
+ },
+ "grading_bindings": {
+  "note": "J7: every value is verified by study_adapter.grade_study before any real grading; recording is not verifying",
+  "frozen_tasks_path": "UNRESOLVED: tasks.jsonl written by scripts/build_dev_release_v2.py into the committed release dir",
+  "frozen_tasks_sha256": "UNRESOLVED: sha256 of that tasks.jsonl at the freeze commit",
+  "expected_contract_sha256": "UNRESOLVED: grade.digest(grade.contract(rebound specs)) printed by build_dev_release_v2",
+  "expected_config_sha256": "UNRESOLVED: collect.digest(frozen landmark-v2 config) at the freeze commit",
+  "expected_source_hashes": "UNRESOLVED: study_adapter.grading_source_hashes() at the freeze commit (study_adapter, grade, sandbox, common/integrity, collect, diagnostic, collect_diagnostic, analyze)",
+  "executor_source_hashes": "UNRESOLVED: public_phase manifest executor provenance (public_phase, public_check, diagnostic, sandbox, grade, common/integrity) at the freeze commit"
+ }
+}

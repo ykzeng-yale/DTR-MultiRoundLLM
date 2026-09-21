@@ -16,7 +16,13 @@ CASES = [{"case_id": f"public-52-{i}", "args_literal": a, "expected_literal": e}
 GOOD = "def parallelogram_area(b, h):\n    return b * h\n"
 
 
-def line(i, status="pass", returned=77, kind="int", nonce=NONCE):
+EXPECTED = {0: 77, 1: 117, 2: 34}
+_DEFAULT = object()
+
+
+def line(i, status="pass", returned=_DEFAULT, kind="int", nonce=NONCE):
+    # Default: the consistent passing value for case i, so tamper tests fail only for their stated reason.
+    returned = EXPECTED.get(i, 77) if returned is _DEFAULT else returned
     return json.dumps({"n": nonce, "i": i, "status": status, "returned": returned, "value_kind": kind},
                       sort_keys=True, separators=(",", ":")) + "\n"
 
@@ -187,3 +193,80 @@ def test_results_match_build_diagnostic_shape():
     for r in pc.classify(out(line(0)), -9, True, CASES, NONCE):
         assert set(r) == {"status", "returned", "value_kind", "reason"} and r["status"] in pc.STATUSES
         assert r["value_kind"] in pc.VALUE_KINDS and (r["reason"] is None or r["reason"] in pc.UNAVAILABLE_REASONS)
+
+
+# ---- MRL-09 boundary repairs
+@pytest.mark.parametrize("bad", [["pass"], {"pass": 1}, None, 1])
+@pytest.mark.parametrize("field", ["status", "value_kind", "n"])
+def test_malformed_field_types_are_review_not_type_error(field, bad):
+    obj = {"n": NONCE, "i": 0, "status": "pass", "returned": 77, "value_kind": "int"}
+    obj[field] = bad
+    stdout = out(json.dumps(obj) + "\n", line(1), line(2))
+    assert statuses(pc.classify(stdout, 0, False, CASES, NONCE)) == REVIEW
+
+
+def test_consistent_stream_passes():
+    assert statuses(pc.classify(out(line(0), line(1), line(2)), 0, False, CASES, NONCE)) == [("pass", None)]*3
+
+
+def test_duplicate_key_in_result_line_is_review():
+    dup = '{"n":"%s","i":0,"status":"wrong_value","status":"pass","returned":77,"value_kind":"int"}\n' % NONCE
+    assert statuses(pc.classify(out(dup, line(1), line(2)), 0, False, CASES, NONCE)) == REVIEW
+    dup_same = '{"n":"%s","i":0,"i":0,"status":"pass","returned":77,"value_kind":"int"}\n' % NONCE
+    assert statuses(pc.classify(out(dup_same, line(1), line(2)), 0, False, CASES, NONCE)) == REVIEW
+
+
+def test_classify_parses_with_shared_strict_loader():
+    import inspect
+    assert "diagnostic.strict_json_loads(line)" in inspect.getsource(pc.classify)
+
+
+@pytest.mark.parametrize("bad_line", [line(0, "pass", 78, "int"), line(0, "wrong_value", 77, "int"),
+                                      line(0, "pass", [77], "int_list")])
+def test_bounded_return_inconsistent_with_expected_is_review(bad_line):
+    assert statuses(pc.classify(out(bad_line, line(1), line(2)), 0, False, CASES, NONCE)) == REVIEW
+
+
+def test_wrong_value_with_unequal_bounded_return_is_kept():
+    res = pc.classify(out(line(0, "wrong_value", [77], "int_list"), line(1, "wrong_value", 118, "int"), line(2)), 0, False, CASES, NONCE)
+    assert [r["status"] for r in res] == ["wrong_value", "wrong_value", "pass"]
+
+
+@pytest.mark.parametrize("status", ["pass", "wrong_value"])
+def test_unsupported_keeps_executor_equality(status):
+    res = pc.classify(out(line(0, status, None, "unsupported"), line(1), line(2)), 0, False, CASES, NONCE)
+    assert [r["status"] for r in res] == [status, "pass", "pass"] and res[0]["value_kind"] == "unsupported"
+
+
+# ---- MRL-09 fixer regressions ----
+def test_none_return_cannot_pass_an_int_expected():
+    from experiments.landmark import public_check as pc_mod, diagnostic as dmod
+    nonce = "a" * 32
+    cases = [{"case_id": "c0", "args_literal": "[1]", "expected_literal": "5"}]
+    line = json.dumps({"n": nonce, "i": 0, "status": "pass", "returned": None, "value_kind": "none"})
+    out = pc_mod.classify(pc_mod.PUBLIC_STARTED + nonce + "\n" + line + "\n", 0, False, cases, nonce)
+    assert out[0]["status"] != "pass"
+    with pytest.raises(ValueError):
+        dmod.check_consistent("pass", "none", None, 5)
+    dmod.check_consistent("wrong_value", "none", None, 5)
+
+
+@pytest.mark.parametrize("bad", ["[1,", "("])
+def test_malformed_literals_raise_valueerror(bad):
+    from experiments.landmark import public_check as pc_mod, diagnostic as dmod
+    with pytest.raises(ValueError):
+        dmod.render_public_examples("f", [{"case_id": "c0", "args_literal": bad, "expected_literal": "1"}])
+    with pytest.raises(ValueError):
+        pc_mod.classify(pc_mod.PUBLIC_STARTED + "a" * 32 + "\n", 0, False,
+                        [{"case_id": "c0", "args_literal": "[1]", "expected_literal": bad}], "a" * 32)
+
+
+def test_public_input_guard_exempts_only_the_macos_system_prefix(tmp_path):
+    """MRL-09: /private/var/folders/... (macOS temp) is a system prefix, not a private input; a 'private' path
+    component anywhere else is still refused."""
+    ok = Path("/private/var/folders/xx/T/pytest-1/examples.json")
+    pc.assert_public_inputs_only([ok])
+    for bad in (Path("/private/var/folders/xx/private_specs.json"), tmp_path / "private" / "e.json",
+                Path("/Users/x/private_specs.jsonl")):
+        with pytest.raises(ValueError, match="Private path"):
+            pc.assert_public_inputs_only([bad])

@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Phased collector for the public-diagnostic development study (arm set diagnostic-v1); mock only.
+"""Phased collector for the public-diagnostic development study (arm set diagnostic-v1); mock by default, real only with --real.
+
+Real mode (opt-in) refuses, before any adapter exists: "UNRESOLVED:" template values, a config failing
+collect.validate(real=True) or not landmark-v2, a missing/incomplete/placeholder/out-of-window ownership record
+(validate_ownership), and a failed collect.verify_freeze; then uses collect.LlamaServer(config).
 
 Phase A ("initial"): one receiver call per root, seed key "initial"; writes the initial artifact bytes and
 their SHA-256. Phase B (public executor, public_check.py) is NOT run here: this module never executes
@@ -16,6 +20,7 @@ only: outputs already collected are kept and the study is marked not interpretab
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timedelta, timezone
 import hashlib
 import importlib
 import json
@@ -36,6 +41,91 @@ PHASES = ("initial", "continue")
 # allowed in an id, so the encoding is injective and the file name never contains a path separator).
 SAFE_ROOT = re.compile(r"[A-Za-z0-9][A-Za-z0-9_./-]{0,127}")
 HEX64 = re.compile(r"[0-9a-f]{64}")
+UNRESOLVED = "UNRESOLVED:"
+OWNERSHIP_FIELDS = ("receiver_base_url", "server_pid", "server_start_utc", "owner_project", "exclusive_window_start_utc",
+                    "exclusive_window_end_utc", "agreement_ref", "recorded_by", "recorded_utc")
+PLACEHOLDERS = ("UNRESOLVED", "TODO", "PLACEHOLDER", "TBD", "FIXME")
+
+
+def utc_now():
+    return datetime.now(timezone.utc)
+
+
+def refuse_unresolved(value, where="config"):
+    """Real mode refuses any template value still marked "UNRESOLVED:<what resolves it>" (recursively)."""
+    if isinstance(value, str) and value.startswith(UNRESOLVED):
+        raise ValueError(f"Unresolved template value at {where}: {value!r}")
+    if isinstance(value, dict):
+        for k, v in value.items():
+            refuse_unresolved(v, f"{where}.{k}")
+    elif isinstance(value, list):
+        for i, v in enumerate(value):
+            refuse_unresolved(v, f"{where}[{i}]")
+
+
+def _utc(text, field):
+    try:
+        t = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except ValueError as exc:
+        raise ValueError(f"Ownership {field} is not an ISO-8601 timestamp") from exc
+    if t.tzinfo is None:
+        raise ValueError(f"Ownership {field} must carry a UTC offset")
+    return t
+
+
+def validate_ownership(record, config, now_utc):
+    """Receiver-ownership record for a real run: every field present and non-empty, no placeholder text, the receiver
+    base URL equal to the config's, and now inside the exclusive window. Returns the record; raises ValueError."""
+    if not isinstance(record, dict):
+        raise ValueError("Ownership record must be a JSON object")
+    missing = [k for k in OWNERSHIP_FIELDS if k not in record]
+    if missing or set(record) != set(OWNERSHIP_FIELDS):
+        raise ValueError(f"Ownership record fields differ: missing={missing}, extra={sorted(set(record) - set(OWNERSHIP_FIELDS))}")
+    for k in OWNERSHIP_FIELDS:
+        v = record[k]
+        if k == "server_pid" and type(v) is int:
+            if v <= 0:
+                raise ValueError("Ownership server_pid must be positive")
+            continue
+        if not isinstance(v, str) or not v.strip():
+            raise ValueError(f"Ownership {k} must be a non-empty string")
+        if any(x in v.upper() for x in PLACEHOLDERS):
+            raise ValueError(f"Ownership {k} contains placeholder text: {v!r}")
+    if record["receiver_base_url"].rstrip("/") != config["base_url"].rstrip("/"):
+        raise ValueError("Ownership receiver_base_url differs from the config base_url")
+    if not isinstance(now_utc, datetime) or now_utc.tzinfo is None:
+        raise ValueError("now_utc must be a timezone-aware datetime")
+    start, end = (_utc(record[k], k) for k in ("exclusive_window_start_utc", "exclusive_window_end_utc"))
+    for k in ("server_start_utc", "recorded_utc"):
+        _utc(record[k], k)
+    if not start < end:
+        raise ValueError("Ownership exclusive window is empty")
+    if not start <= now_utc <= end:
+        raise ValueError("Now is outside the ownership exclusive window")
+    return record
+
+
+def _real_setup(config, tasks, config_path, tasks_path, ownership, now_utc, adapter):
+    """Every real-mode refusal, before any adapter exists (so no request can be made). Returns adapter + manifest records."""
+    if adapter is not None:
+        raise ValueError("Real mode uses collect.LlamaServer(config); an injected adapter is refused")
+    refuse_unresolved(config)
+    refuse_unresolved(tasks, "tasks")
+    collect.validate(config, tasks, real=True)
+    if config["schema_version"] != "landmark-v2":
+        raise ValueError("Real diagnostic collection requires landmark-v2 (sampler_law + receiver_state_sha256)")
+    if ownership is None:
+        raise ValueError("Real mode requires an ownership record (--ownership)")
+    raw = Path(ownership).read_bytes()
+    now = now_utc()
+    record = validate_ownership(diagnostic_module().strict_json_loads(raw), config, now)
+    window_end = _utc(record["exclusive_window_end_utc"], "exclusive_window_end_utc")
+    if now + timedelta(seconds=config["max_seconds"]) > window_end:
+        raise ValueError("Ownership exclusive window ends before this phase's time budget (max_seconds) could elapse")
+    freeze = collect.verify_freeze(config, tasks, config_path, tasks_path)
+    extra = {"evidence_type": "ungraded_real_collection", "freeze": freeze,
+             "ownership": {"sha256": hashlib.sha256(raw).hexdigest(), "record": record}}
+    return collect.LlamaServer(config), extra
 
 
 def diagnostic_module():
@@ -95,6 +185,7 @@ class _Phase:
         self.preflight_failure = None
         self.metadata = {"interim_checks": []}
         self.calls = []
+        self.deadline = None  # real mode: (now_utc, exclusive_window_end); checked before every request
         self.guarded = config["schema_version"] == "landmark-v2" and not isinstance(adapter, collect.Mock)
 
     def remaining(self):
@@ -165,6 +256,8 @@ class _Phase:
         rec = {"phase": phase, "root_id": p["root_id"], "arm": arm, "replicate": replicate, "seed_key": seed_key,
                "request": payload, "request_sha256": collect.digest(payload), "attempted": False, "output": None,
                "output_sha256": None, "missing_reason": None, "prompt_tokens": None, "completion_tokens": None, "seconds": 0.0}
+        if self.fatal is None and self.deadline is not None and self.deadline[0]() > self.deadline[1]:
+            self.fatal = "ownership_window_expired"  # stops all future dispatch; collected outputs are kept
         reason = self.fatal
         if reason is None and self.remaining() <= 0: reason = "time_budget_exhausted"
         if reason is None and self.attempted >= config["max_calls"]: reason = "call_budget_exhausted"
@@ -240,11 +333,8 @@ class _Phase:
         return completion
 
 
-def _start(config, tasks, output, real):
-    if real:
-        # Fail closed: freeze verification (collect.verify_freeze) and release are not wired under MRL-08.
-        raise ValueError("Real diagnostic collection is not released; this collector is source/mock only")
-    collect.validate(config, tasks, real)
+def _start(config, tasks, output):
+    collect.validate(config, tasks)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
     plan = assignments(config, tasks)
@@ -252,19 +342,26 @@ def _start(config, tasks, output, real):
 
 
 def _manifest(config, tasks, plan, planned, phase, **extra):
-    return {"schema_version": config["schema_version"], "arm_set": ARM_SET, "phase": phase, "evidence_type": "mock_transport_only",
+    extra = {"evidence_type": "mock_transport_only", "freeze": {"resolved_commit": None, "status": "mock_not_frozen"}, **extra}
+    return {"schema_version": config["schema_version"], "arm_set": ARM_SET, "phase": phase,
             "config": config, "config_sha256": collect.digest(config), "dataset_sha256": collect.digest(tasks), "tasks": tasks,
             "assignment_table": plan, "assignment_table_sha256": collect.digest(plan), "planned_calls": planned,
             "system": collect.SYSTEM, "design": "All five continuation arms are collected for every root; inclusion probability one. "
             "Randomized execution order is scheduling, not treatment assignment.", **extra}
 
 
-def run_initial(config, tasks, output, *, adapter=None, clock=time.monotonic, real=False):
-    output, plan, planned = _start(config, tasks, output, real)
+def run_initial(config, tasks, output, *, adapter=None, clock=time.monotonic, real=False, config_path=None, tasks_path=None,
+                ownership=None, now_utc=utc_now):
+    real_extra = {}
+    if real:
+        adapter, real_extra = _real_setup(config, tasks, config_path, tasks_path, ownership, now_utc, adapter)
+    output, plan, planned = _start(config, tasks, output)
     (output / "artifacts").mkdir()
-    (output / "manifest.json").write_text(json.dumps(_manifest(config, tasks, plan, planned, "initial"), indent=2, ensure_ascii=False) + "\n")
+    (output / "manifest.json").write_text(json.dumps(_manifest(config, tasks, plan, planned, "initial", **real_extra), indent=2, ensure_ascii=False) + "\n")
     ph = _Phase(config, output, adapter if adapter is not None else collect.Mock(), clock,
                 {"attempted_calls": 0, "reserved_completion_tokens": 0, "wall_seconds": 0.0})
+    if real:
+        ph.deadline = (now_utc, _utc(real_extra["ownership"]["record"]["exclusive_window_end_utc"], "exclusive_window_end_utc"))
     ph.preflight()
     for task, p in zip(tasks, plan):
         row = {"root_id": p["root_id"], "family_id": p["family_id"], "excluded": p["excluded"]}
@@ -290,8 +387,9 @@ def run_initial(config, tasks, output, *, adapter=None, clock=time.monotonic, re
 def _load_initial(initial_dir, config, tasks, plan):
     """Everything phase C trusts from phase A, re-verified from bytes (checksums, config, dataset, plan)."""
     initial_dir = Path(initial_dir)
-    manifest = json.loads((initial_dir / "manifest.json").read_text())
-    completion = json.loads((initial_dir / "completion.json").read_text())
+    loads = diagnostic_module().strict_json_loads
+    manifest = loads((initial_dir / "manifest.json").read_bytes())
+    completion = loads((initial_dir / "completion.json").read_bytes())
     if manifest.get("phase") != "initial" or manifest.get("arm_set") != ARM_SET or completion.get("phase") != "initial":
         raise ValueError("Initial directory is not a diagnostic-v1 initial phase")
     if (manifest["config_sha256"], manifest["dataset_sha256"], manifest["assignment_table_sha256"]) != (
@@ -303,17 +401,19 @@ def _load_initial(initial_dir, config, tasks, plan):
     if set(completion["checksums"]) != {p.relative_to(initial_dir).as_posix()
                                         for p in [*initial_dir.glob("*.json*"), *initial_dir.glob("artifacts/*.txt")]} - {"completion.json"}:
         raise ValueError("Initial-phase directory contents differ from its completion checksums")
-    rows = {r["root_id"]: r for r in (json.loads(x) for x in (initial_dir / "roots.jsonl").read_text().splitlines() if x.strip())}
+    rows = {r["root_id"]: r for r in (loads(x) for x in (initial_dir / "roots.jsonl").read_text().splitlines() if x.strip())}
     if list(rows) != [p["root_id"] for p in plan]:
         raise ValueError("Initial roots differ from the assignment table")
     return initial_dir, completion, rows
 
 
 def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expected_diagnostics_sha256,
-                 public_examples=None, adapter=None, clock=time.monotonic, real=False):
+                 public_examples=None, adapter=None, clock=time.monotonic, real=False, config_path=None, tasks_path=None,
+                 ownership=None, now_utc=utc_now):
+    real_extra = {}
     if real:
-        raise ValueError("Real diagnostic collection is not released; this collector is source/mock only")
-    collect.validate(config, tasks, real)
+        adapter, real_extra = _real_setup(config, tasks, config_path, tasks_path, ownership, now_utc, adapter)
+    collect.validate(config, tasks)
     if not isinstance(expected_diagnostics_sha256, str) or not HEX64.fullmatch(expected_diagnostics_sha256):
         raise ValueError("Continue phase requires the expected SHA-256 of the diagnostics file")
     raw = Path(diagnostics_path).read_bytes()
@@ -325,11 +425,19 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     plan = assignments(config, tasks)
     planned = planned_calls(config, plan)
     initial_dir, initial_completion, initial_rows = _load_initial(initial_dir, config, tasks, plan)
-    diagnostics = json.loads(raw.decode("utf-8"))
+    dm = diagnostic_module()
+    if real:
+        initial_manifest = dm.strict_json_loads((Path(initial_dir) / "manifest.json").read_bytes())  # checksum-verified above
+        if initial_manifest.get("evidence_type") != "ungraded_real_collection":
+            raise ValueError("A real continue phase needs a real initial phase, not a mock/transport-only one")
+        if (initial_manifest.get("freeze") or {}).get("resolved_commit") != real_extra["freeze"].get("resolved_commit"):
+            raise ValueError("Initial phase was collected under a different freeze commit")
+        if (initial_manifest.get("ownership") or {}).get("sha256") != real_extra["ownership"]["sha256"]:
+            raise ValueError("Initial phase was collected under a different receiver ownership record")
+    diagnostics = dm.strict_json_loads(raw)  # duplicate keys are refused, never last-wins
     collected = [r for r in initial_rows.values() if r.get("artifact_sha256")]
     if not isinstance(diagnostics, dict) or set(diagnostics) != {r["root_id"] for r in collected}:
         raise ValueError("Diagnostics must map exactly the roots with an initial artifact")
-    dm = diagnostic_module()
     # Every loaded record must be one build_diagnostic could have produced, before any rendering or dispatch.
     # The public cases must be the ones already rendered at the end of the task's public prompt, and every
     # diagnostic row must match them exactly: no non-public call, expected value or case can reach Phase B.
@@ -379,7 +487,7 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     (output / "manifest.json").write_text(json.dumps(_manifest(
         config, tasks, plan, planned, "continue", initial_dir=str(initial_dir), initial_completion_sha256=file_sha(initial_dir / "completion.json"),
         diagnostics_sha256=diagnostics_sha256, renderers=renderers, renderers_sha256=collect.digest(renderers),
-        bindings={k: {x: v[x] for x in v if x != "messages"} for k, v in bound.items()}), indent=2, ensure_ascii=False) + "\n")
+        bindings={k: {x: v[x] for x in v if x != "messages"} for k, v in bound.items()}, **real_extra), indent=2, ensure_ascii=False) + "\n")
     carried = {k: initial_completion[k] for k in ("attempted_calls", "reserved_completion_tokens", "wall_seconds")}
     ph = _Phase(config, output, adapter if adapter is not None else collect.Mock(), clock, carried)
     ph.preflight(previous_state=initial_completion["model_metadata"].get("state_before") if ph.guarded else None)
@@ -422,26 +530,35 @@ def main():
     p.add_argument("--config", type=Path, required=True)
     p.add_argument("--tasks", type=Path, required=True)
     p.add_argument("--output", type=Path, required=True)
-    p.add_argument("--initial", type=Path, help="continue: the initial-phase output directory")
+    p.add_argument("--initial-dir", dest="initial", type=Path, help="continue: the initial-phase output directory")
     p.add_argument("--diagnostics", type=Path, help="continue: root_id -> diagnostic JSON file")
     p.add_argument("--diagnostics-sha256", help="continue: required SHA-256 of the diagnostics file bytes")
     p.add_argument("--public-examples", type=Path, help="continue: the fixed public examples JSON (build_dev_release_v2 input)")
+    p.add_argument("--real", action="store_true", help="opt-in real collection (freeze, ownership and landmark-v2 checks)")
+    p.add_argument("--ownership", type=Path, help="--real: the receiver ownership record JSON")
     args = p.parse_args()
-    config = json.loads(args.config.read_text())
-    tasks = [json.loads(line) for line in args.tasks.read_text().splitlines() if line.strip()]
+    if args.real and args.ownership is None:
+        p.error("--real needs --ownership")
+    real = {"real": True, "config_path": args.config, "tasks_path": args.tasks, "ownership": args.ownership} if args.real else {}
+    loads = diagnostic_module().strict_json_loads  # duplicate keys refused, never last-wins
+    raw_config, raw_tasks = args.config.read_bytes(), args.tasks.read_bytes()
+    if args.real and (b'"UNRESOLVED:' in raw_config or b'"UNRESOLVED:' in raw_tasks):
+        p.error("--real refuses a config or tasks file that still contains an UNRESOLVED: value")
+    config = loads(raw_config)
+    tasks = [loads(line) for line in raw_tasks.decode("utf-8").splitlines() if line.strip()]
     if args.phase == "initial":
-        result = run_initial(config, tasks, args.output)
+        result = run_initial(config, tasks, args.output, **real)
     else:
         if args.initial is None or args.diagnostics is None or args.diagnostics_sha256 is None or args.public_examples is None:
-            p.error("--phase continue needs --initial, --diagnostics, --diagnostics-sha256 and --public-examples")
-        examples = json.loads(args.public_examples.read_text())
+            p.error("--phase continue needs --initial-dir, --diagnostics, --diagnostics-sha256 and --public-examples")
+        examples = loads(args.public_examples.read_bytes())
         examples = examples["cases"] if isinstance(examples, dict) and "cases" in examples else examples
         if isinstance(examples, list):
             if len({e["root_id"] for e in examples}) != len(examples):
                 p.error("--public-examples lists a root twice")
             examples = {e["root_id"]: e for e in examples}
         result = run_continue(config, tasks, args.initial, args.diagnostics, args.output,
-                              expected_diagnostics_sha256=args.diagnostics_sha256, public_examples=examples)
+                              expected_diagnostics_sha256=args.diagnostics_sha256, public_examples=examples, **real)
     print(json.dumps(result, indent=2, ensure_ascii=False))
 
 

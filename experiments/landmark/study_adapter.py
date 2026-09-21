@@ -17,9 +17,13 @@ arms -> [{replicate, output, output_sha256, missing_reason}], output_sha256 = co
 plus a view manifest listing these blockers, and grade_study mirrors grade.grade_collection's
 per-artifact logic (output-hash binding, reference recheck, negative-control recheck, cache by
 (root_id, output_sha256), extract_code, bounded executions) calling grade.evaluate per artifact.
-Differences from grade_collection: no containment attestation gate (the caller owns the runner and must
-only pass the attested sandbox runner in real use), no collection-contract check (blocker 2), and no
-analyze.analyze binding (blocker 1); grade rows carry grader_id "landmark-private-tests-v1:study:<sha12>".
+grade_study keeps grade_collection's containment gate (grade.verify_attestation; only a declared fake test
+runner skips it) and, in place of blockers 1-3, restores the J7 protections on BOTH fake and real paths:
+grade.validate_specs against the frozen public tasks file (bytes sha256-verified before use), an expected
+frozen grading-contract digest, an expected frozen config digest (the plan is derived only from that config), both phase directories' completion.json checksums recomputed, the view
+rebuilt from the phase directories and compared, exact assignment coverage against the frozen plan, and
+verified source hashes of this adapter and every grading dependency (grading_source_hashes() freezes them).
+Grade rows carry grader_id "landmark-private-tests-v1:study:<sha12>".
 """
 from __future__ import annotations
 
@@ -36,6 +40,10 @@ from experiments.landmark.collect import digest, file_sha  # noqa: E402
 
 STUDY_ARMS = ("STOP", "N0", "S0", "N1", "S1", "R1")
 CONTINUATION_ARMS = STUDY_ARMS[1:]
+GRADING_SOURCES = ("experiments/landmark/study_adapter.py", "experiments/landmark/grade.py",
+                   "experiments/landmark/sandbox.py", "experiments/common/integrity.py",
+                   "experiments/landmark/collect.py", "experiments/landmark/diagnostic.py",
+                   "experiments/landmark/collect_diagnostic.py", "experiments/landmark/analyze.py")
 GRADE_PY_BLOCKERS = (
     "analyze.analyze(run_dir): set(row['arms']) must equal {'stop', *collect.ARMS}; STOP,N0,S0,N1,S1,R1 unrepresentable",
     "manifest['config']['grading_contract_sha256'] must equal digest(grade.contract(specs)); diagnostic-v1 config does not freeze it",
@@ -44,7 +52,7 @@ GRADE_PY_BLOCKERS = (
 
 
 def _rows(path):
-    return [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+    return [_strict(x) for x in Path(path).read_bytes().decode("utf-8").splitlines() if x.strip()]
 
 
 def _bytes_sha(text):
@@ -58,9 +66,97 @@ def _checked(rec):
     return out
 
 
+def _strict(data):
+    from experiments.landmark import diagnostic
+    return diagnostic.strict_json_loads(data)
+
+
+def grading_source_hashes():
+    """Current {relative_path: sha256} of this adapter and every grading dependency, for freezing."""
+    return {rel: file_sha(ROOT / rel) for rel in GRADING_SOURCES}
+
+
+def verify_source_hashes(expected):
+    if not isinstance(expected, dict) or set(expected) != set(GRADING_SOURCES):
+        raise ValueError("Expected source hashes must cover exactly the grading sources")
+    current = grading_source_hashes()
+    bad = sorted(k for k in GRADING_SOURCES if expected[k] != current[k])
+    if bad:
+        raise ValueError(f"Grading source hash mismatch: {bad}")
+
+
+def load_frozen_tasks(path, expected_sha256):
+    data = Path(path).read_bytes()
+    if not isinstance(expected_sha256, str) or hashlib.sha256(data).hexdigest() != expected_sha256:
+        raise ValueError("Frozen public tasks bytes do not match expected sha256")
+    return [_strict(x) for x in data.decode("utf-8").splitlines() if x.strip()]
+
+
+def verify_phase_dir(phase_dir):
+    phase_dir = Path(phase_dir)
+    completion = _strict((phase_dir / "completion.json").read_bytes())
+    sums = completion.get("checksums")
+    if not isinstance(sums, dict) or not {"manifest.json", "roots.jsonl"} <= set(sums):
+        raise ValueError(f"completion.json checksums incomplete in {phase_dir}")
+    listed = set(sums)
+    present = {p.relative_to(phase_dir).as_posix() for p in phase_dir.glob("artifacts/*.txt")}
+    present |= {p.name for p in phase_dir.glob("*.json*") if p.name != "completion.json"}
+    if present != listed:
+        raise ValueError(f"completion.json checksums do not list exactly the phase files in {phase_dir}")
+    for rel, sha in sums.items():
+        if Path(rel).is_absolute() or ".." in Path(rel).parts or not (phase_dir / rel).is_file() \
+                or file_sha(phase_dir / rel) != sha:
+            raise ValueError(f"completion.json checksum mismatch for {rel} in {phase_dir}")
+    return _strict((phase_dir / "manifest.json").read_bytes())
+
+
+def verify_coverage(rows, initial_dir, continue_dir, frozen_tasks, expected_config_sha256):
+    """Exact (root_id, family_id, arm, replicate) coverage of the view against the frozen plan: the plan is
+    derived only from a config whose digest equals the frozen expected_config_sha256 (from the freeze record)."""
+    from experiments.landmark import collect_diagnostic as cd
+    manifests = [verify_phase_dir(initial_dir), verify_phase_dir(continue_dir)]
+    if not isinstance(expected_config_sha256, str) \
+            or any(digest(m.get("config")) != expected_config_sha256 for m in manifests):
+        raise ValueError("Phase manifest config does not match the frozen config digest")
+    config = manifests[0]["config"]
+    plan = cd.assignments(config, frozen_tasks)
+    for m in manifests:
+        if m["dataset_sha256"] != digest(frozen_tasks) or m["assignment_table"] != plan:
+            raise ValueError("Phase manifest does not bind the frozen tasks and plan")
+    reps = config["branch_replicates"]
+    expected, observed = set(), []
+    for p in plan:
+        if not p["excluded"]:
+            expected.add((p["root_id"], p["family_id"], "STOP", 0))
+            expected |= {(p["root_id"], p["family_id"], a, r) for a in CONTINUATION_ARMS for r in range(reps)}
+    view_roots = [r["root_id"] for r in rows]
+    if len(view_roots) != len(set(view_roots)) or set(view_roots) != {p["root_id"] for p in plan} \
+            or {r["root_id"] for r in rows if r["excluded"]} != {p["root_id"] for p in plan if p["excluded"]}:
+        raise ValueError("View roots or exclusions do not match the frozen plan")
+    for row in rows:
+        if row["excluded"] and row["arms"]:
+            raise ValueError(f"Excluded root carries artifacts {row['root_id']}")
+        for arm, artifacts in row["arms"].items():
+            if any(type(a["replicate"]) is not int for a in artifacts):  # True == 1 must not pass coverage
+                raise ValueError(f"Replicate must be an int for {row['root_id']} {arm}")
+            observed += [(row["root_id"], row.get("family_id"), arm, a["replicate"]) for a in artifacts]
+    if len(observed) != len(set(observed)):
+        raise ValueError("Duplicate assignment in view")
+    if set(observed) != expected:
+        raise ValueError(f"Assignment coverage mismatch: missing={len(expected - set(observed))} "
+                         f"extra={len(set(observed) - expected)}")
+
+
 def to_grading_view(initial_dir, continue_dir, out_dir):
     """Write out_dir/roots.jsonl (grade.py row layout, arms STOP..R1) and out_dir/view_manifest.json."""
-    initial_dir, continue_dir, out_dir = Path(initial_dir), Path(continue_dir), Path(out_dir)
+    view = build_view(initial_dir, continue_dir)
+    _write_view(view, Path(initial_dir), Path(continue_dir), Path(out_dir))
+    return view
+
+
+def build_view(initial_dir, continue_dir):
+    """The grading view rows, rebuilt purely from the two phase directories (no writes)."""
+    initial_dir, continue_dir = Path(initial_dir), Path(continue_dir)
     a_rows = {r["root_id"]: r for r in _rows(initial_dir / "roots.jsonl")}
     c_rows = _rows(continue_dir / "roots.jsonl")
     if len(a_rows) != len(_rows(initial_dir / "roots.jsonl")) or {r["root_id"] for r in c_rows} != set(a_rows) \
@@ -79,7 +175,11 @@ def to_grading_view(initial_dir, continue_dir, out_dir):
         text = _checked(init)
         sha = a.get("artifact_sha256")
         if text is not None:
-            stored = (initial_dir / a["artifact"]).read_bytes()
+            rel = a.get("artifact")
+            sums = _strict((initial_dir / "completion.json").read_bytes()).get("checksums") or {}
+            if not isinstance(rel, str) or Path(rel).is_absolute() or ".." in Path(rel).parts or rel not in sums:
+                raise ValueError(f"Initial artifact path not a checksummed file of the phase dir for {c['root_id']}")
+            stored = (initial_dir / rel).read_bytes()
             if hashlib.sha256(stored).hexdigest() != sha or stored != text.encode("utf-8"):
                 raise ValueError(f"Initial artifact bytes do not match artifact_sha256 for {c['root_id']}")
             if c.get("initial_artifact_sha256") != sha:
@@ -104,6 +204,10 @@ def to_grading_view(initial_dir, continue_dir, out_dir):
                              "completion_tokens": r.get("completion_tokens")})
             row["arms"][arm] = recs
         view.append(row)
+    return view
+
+
+def _write_view(view, initial_dir, continue_dir, out_dir):
     out_dir.mkdir(parents=True, exist_ok=False)
     (out_dir / "roots.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in view))
     manifest = {"arm_set": "diagnostic-v1", "arms": list(STUDY_ARMS), "grade_py_blockers": list(GRADE_PY_BLOCKERS),
@@ -113,18 +217,20 @@ def to_grading_view(initial_dir, continue_dir, out_dir):
                             "continue_roots_sha256": file_sha(continue_dir / "roots.jsonl")},
                 "roots_sha256": file_sha(out_dir / "roots.jsonl")}
     (out_dir / "view_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
-    return view
 
 
 def load_view(view_dir):
     view_dir = Path(view_dir)
-    manifest = json.loads((view_dir / "view_manifest.json").read_text())
+    manifest = _strict((view_dir / "view_manifest.json").read_bytes())
     if file_sha(view_dir / "roots.jsonl") != manifest["roots_sha256"]:
         raise ValueError("Grading view checksum mismatch")
     return _rows(view_dir / "roots.jsonl")
 
 
-def grade_study(view, specs, runner, *, attestation_path=None, fake_runner_for_tests=False, max_executions=200,
+def grade_study(view, specs, runner, *, frozen_tasks_path=None, frozen_tasks_sha256=None,
+                expected_contract_sha256=None, initial_dir=None, continue_dir=None, expected_source_hashes=None,
+                expected_config_sha256=None,
+                attestation_path=None, fake_runner_for_tests=False, max_executions=200,
                 max_seconds=240, clock=time.monotonic):
     """Mirror of grade.grade_collection's per-artifact logic over a study view (list of rows or a view dir).
 
@@ -140,6 +246,16 @@ def grade_study(view, specs, runner, *, attestation_path=None, fake_runner_for_t
         grade.verify_attestation(attestation_path)
     if type(max_executions) is not int or not 1 <= max_executions <= 200 or not 0 < max_seconds <= 240:
         raise ValueError("Grading budget exceeds bounded adapter limits")
+    # J7 protections: run on fake and real paths alike (only the attestation above is fake-exempt).
+    if None in (frozen_tasks_path, frozen_tasks_sha256, expected_contract_sha256, initial_dir, continue_dir,
+                expected_source_hashes, expected_config_sha256):
+        raise ValueError("Frozen tasks, contract and config digests, phase directories and source hashes are required")
+    verify_source_hashes(expected_source_hashes)
+    frozen_tasks = load_frozen_tasks(frozen_tasks_path, frozen_tasks_sha256)
+    grade.validate_specs(frozen_tasks, specs)
+    contract_sha = digest(grade.contract(specs))
+    if contract_sha != expected_contract_sha256:
+        raise ValueError("Grading contract digest does not match the frozen digest")
     rows = load_view(view) if isinstance(view, (str, Path)) else view
     for row in rows:
         for arm, artifacts in row["arms"].items():
@@ -147,7 +263,9 @@ def grade_study(view, specs, runner, *, attestation_path=None, fake_runner_for_t
                 raise ValueError(f"Unknown arm {arm!r}")
             for artifact in artifacts:
                 _checked(artifact)
-    contract_sha = digest(grade.contract(specs))
+    verify_coverage(rows, initial_dir, continue_dir, frozen_tasks, expected_config_sha256)
+    if rows != build_view(initial_dir, continue_dir):
+        raise ValueError("Grading view does not equal the view rebuilt from the verified phase directories")
     by_root = {s["root_id"]: s for s in specs}
     started, count, executions, cache, grades = clock(), 0, [], {}, []
 

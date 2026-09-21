@@ -45,7 +45,7 @@ from pathlib import Path
 import re
 import signal
 
-from experiments.landmark import sandbox
+from experiments.landmark import diagnostic, sandbox
 from experiments.landmark.grade import extract_code
 from experiments.common.integrity import hack_gate
 
@@ -90,12 +90,15 @@ def display_value(value):
 
 def assert_public_inputs_only(paths):
     """Read allowlist guard: the public executor must never be handed private specs, releases or work paths."""
-    for p in paths:
-        resolved = Path(p).resolve()
-        parts = [x.lower() for x in resolved.parts[1:]]
+    def named_private(path):
+        parts = [x.lower() for x in path.parts[1:]] if path.is_absolute() else [x.lower() for x in path.parts]
         if parts[:1] == ["private"] and parts[1:2] in (["tmp"], ["var"], ["etc"]):
             parts = parts[1:]  # macOS system symlink prefix (/tmp -> /private/tmp), not a private input
-        if any("private" in x for x in parts) or "private" in str(p).lower():
+        return any("private" in x for x in parts)
+    for p in paths:
+        resolved = Path(p).resolve()
+        # Both the given and the resolved path are checked, each with the same system-prefix exemption.
+        if named_private(resolved) or named_private(Path(p)):
             raise ValueError(f"Private path is not a public executor input: {p}")
         try:
             rel = resolved.relative_to(ROOT).parts
@@ -138,8 +141,8 @@ def _check_nonce(nonce):
 def _case_literals(cases):
     out = []
     for case in cases:
-        args = ast.literal_eval(case["args_literal"])
-        ast.literal_eval(case["expected_literal"])
+        args = diagnostic.literal(case["args_literal"])
+        diagnostic.literal(case["expected_literal"])
         if not isinstance(args, (list, tuple)):
             raise ValueError("args_literal must be a list or tuple literal")
         out.append((case["args_literal"], case["expected_literal"]))
@@ -232,18 +235,28 @@ def build_public_program(code, entry_point, cases, nonce):
         code=code, entry=entry_point)
 
 
-def _authentic(obj, index, nonce):
-    """Strict shape/consistency check of one parsed result line."""
-    if not isinstance(obj, dict) or set(obj) != RESULT_KEYS or obj["n"] != nonce:
+def _authentic(obj, index, nonce, expected):
+    """Strict shape/consistency check of one parsed result line against its public expected value.
+
+    Types are checked exactly before any set membership, so malformed fields are rejected, never a TypeError.
+    A bounded int/int_list return must agree with the status under the private assert's Python ==
+    (pass iff returned == expected); an unsupported return keeps the executor's in-isolation result."""
+    if not isinstance(obj, dict) or set(obj) != RESULT_KEYS or type(obj["n"]) is not str or obj["n"] != nonce:
         return False
-    if type(obj["i"]) is not int or obj["i"] != index or obj["status"] not in PAYLOAD_STATUSES or obj["value_kind"] not in VALUE_KINDS:
+    status, kind, returned = obj["status"], obj["value_kind"], obj["returned"]
+    if type(obj["i"]) is not int or obj["i"] != index or type(status) is not str or type(kind) is not str:
         return False
-    kind, returned = obj["value_kind"], obj["returned"]
-    if obj["status"] not in ("pass", "wrong_value"):
+    if status not in PAYLOAD_STATUSES or kind not in VALUE_KINDS:
+        return False
+    if status not in ("pass", "wrong_value"):
         return kind == "none" and returned is None
-    if kind in ("none", "unsupported"):
+    if kind == "none":  # a None return is compared under == like any other value
+        return returned is None and (status == "pass") == (expected is None)
+    if kind == "unsupported":
         return returned is None
-    return display_value(returned) == (kind, returned)
+    if display_value(returned) != (kind, returned):
+        return False
+    return (status == "pass") == bool(returned == expected)
 
 
 def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None):
@@ -259,13 +272,14 @@ def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None):
     *lines, partial = stdout[len(start):].split("\n")
     if len(lines) > n:
         return review
+    expected = [diagnostic.literal(c["expected_literal"]) for c in cases]  # public literals, never executed
     results = []
     for i, line in enumerate(lines):
         try:
-            obj = json.loads(line)
+            obj = diagnostic.strict_json_loads(line)  # a duplicate key makes the stream protocol_integrity_review
         except ValueError:
             return review
-        if not _authentic(obj, i, nonce):
+        if not _authentic(obj, i, nonce, expected[i]):
             return review
         results.append({"status": obj["status"], "returned": obj["returned"], "value_kind": obj["value_kind"], "reason": None})
     if partial and not cap_hit:

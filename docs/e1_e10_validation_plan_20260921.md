@@ -1,0 +1,23 @@
+# E1–E10 validation plan (MRL-09) — NOT RUN; requires separate lead authorization
+
+Nothing in this document has been executed. Each gate below needs its own lead authorization. Starts match the proposal
+ledger (`docs/diagnostic_release_manifest_proposal_20260921.json`, sha256 `ca0164536f50e3d114414e2ee879bfd066ca821a414babec7365e50ed93aae48`):
+E1 9 + E2 2 + E3 11 + E4 2 + E5 5 + E6 7 + E7 17 + E8 24 + E9 0 + E10 0 = 77 starts (integrity 24, core 53 of the 161 core). No retries.
+Hashes below were recomputed after the MRL-09 review fixes (commit of this file); they are still re-verified at the freeze commit.
+
+| Gate | Command (exact) | Frozen inputs | Starts | Expected | Resolves |
+|---|---|---|---|---|---|
+| E1 | `python scripts/check_landmark_sandbox.py --runner landmark --output work/mrl09/attestation.json` | scripts/check_landmark_sandbox.py `8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b` | 9 | 9/9 canaries started and contained; `passed: true` | containment_attestation_sha256 (valid 24 h) |
+| E2 | `python -m experiments.landmark.public_phase --initial-dir work/mrl09/e2_private_read --examples <public cases> --out work/mrl09/e2 --attestation work/mrl09/attestation.json --real` with the private-read canary artifact | public_check.py `a42fbc9879027598db0378a58884c2181312fbad54cc27ece2632795f7d4d154` | 2 | private spec read fails; public case file read succeeds | public-executor read isolation |
+| E3 | `python -m experiments.landmark.validation_canaries --canaries experiments/landmark/validation_canaries_v1.json --out work/mrl09/e3_e5 --attestation work/mrl09/attestation.json --real` (one invocation covers E3–E5) | validation_canaries_v1.json `ec6f81e3f254f983bb795ba0420c7b65509ef1b2c21233e2ebc4fbba69190e47` | 11 | per canary `expected` (acceptable set in `acceptable`); forged/duplicate/extra -> all `unavailable/protocol_integrity_review`; flood -> `output_limit`; alarm reset, CPU exhaustion, wall kill -> `timeout`; sys.exit -> `program_exception` on that case; os._exit -> `program_exception` then `not_attempted_after_termination`; RecursionError -> `program_exception`; oversized -> `wrong_value`; never `pass` on a tampered case | spoof/tamper handling |
+| E4 | (same invocation as E3) | same | 2 | missing entry point -> `interface_error` x3; wrong arity -> `interface_error` x3 | runtime interface statuses |
+| E5 | (same invocation as E3) | same | 5 | wrong_value x3; program_exception x3; [timeout, pass, pass]; [pass, output_limit, unavailable]; [pass, program_exception, unavailable] | status categories |
+| E6 | `python -m experiments.landmark.public_phase --initial-dir <7 reference artifacts> --examples <public cases> --out work/mrl09/e6 --attestation work/mrl09/attestation.json --real` | references from the build output (UNRESOLVED: build sha) | 7 | all 21 public cases `pass` | public instrument on references |
+| E7 | as E6 with the 17 control artifacts, `--out work/mrl09/e7` | results/public_checker_static_discrimination_20260921.json (prediction) | 17 | compare with static prediction (16/17 rejected; mbpp/378 predicted all-pass); disagreement reported, not tuned | public instrument on controls |
+| E8 | `python -m experiments.landmark.validate_references --specs <rebound private specs> --attestation work/mrl09/attestation.json --out work/mrl09/e8.json` | validate_references.py `feb86670ff8b9b26cfb2816ac780d25ba9a214f4649bef9f8ca4a7b729ae953d`; specs from build (UNRESOLVED) | 24 | 7/7 references pass, 17/17 controls fail | private re-validation under rebound specs |
+| E9 | read-only `/props` and `/apply-template` preflight (nongenerating) + completed ownership record, then `python -m experiments.landmark.collect_diagnostic --phase initial --config <resolved config> --tasks <tasks> --output <dry> ` validation only (no `--real`) | experiments/landmark/dev_release_v2_template/*.json | 0 | state digest recorded; sampler equality under `server_defaults_pinned`; ownership window contains now; six-arm render bytes/digests saved | receiver_state_sha256, ownership, template_render_sha256 |
+| E10 | `python scripts/build_dev_release_v2.py --output work/dev_release_v2_<date>` then the final literal-overlap audit on the rebound specs | build_dev_release_v2.py `50962cd488ab8d3d8af9ac27e5f54fc72b90f80310353481ce05538b4e7d258e` | 0 (static) | PASS/HOLD only | dataset/grading digests, overlap verdict |
+
+Open item: no standalone literal-overlap audit script exists in `scripts/` or `experiments/` at writing (build_dev_release_v2.py lists
+it as pending); E10's audit command is UNRESOLVED until that script is written and frozen.
+E11 (77 calls, <=108 starts) is outside this plan and needs the lead's release of the frozen package.
