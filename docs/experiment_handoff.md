@@ -1,5 +1,17 @@
 # Handoff to the experimental agent
 
+## 21 September, 03:24 UTC — Population compression diagnostic and update health
+
+Use [the exact compression results](history_compression_results_20260921.md) to
+qualify E0 interpretation: known-law full-history correctness is not validation
+of a learned full-history comparator, and history compression alone does not
+explain the finite weak-overlap result. No new worker experiment is requested.
+MRL-01–04 remain in place. Because no acknowledgement/new worker commit is visible
+since 01:52:56 UTC, include the last successful scheduler tick, processed main
+revision and whether work is running, completed but unpublished, or blocked in
+MRL-01's next status. Current execution cannot be inferred from missing publication;
+do not start a duplicate job to answer this coordination check.
+
 ## 21 September, 02:43 UTC — Current manuscript evidence
 
 The lead's [results/discussion section](../manuscript/evidence_results_20260921.md)

@@ -824,3 +824,26 @@ Source hashes/results are in `results/manuscript_evidence_reconciliation_2026092
 arithmetic took 0.071 seconds, with zero model calls/tokens, new simulation/fitting,
 candidate execution or spend. Progress remains 49%, delta 0; no prompt efficacy
 or full-project submission readiness change. No duplicate worker job is introduced.
+
+## 21 September, 03:24 UTC — Exact compressed-history diagnostic
+
+The lead completed [a frozen three-cell population calculation](docs/history_compression_results_20260921.md),
+with independent internal mathematical review and separate scalar reproduction.
+The state/time regression limit differs from truth by -.138683 percentage points
+in the base law and -.872645 under weak overlap. The uniform-logger aggregate
+control is exact. The full-history oracle recovers truth, but is a known-law
+reference with synthetic observed states, not a fitted deployment-public learner.
+Compression alone cannot explain the earlier weak-overlap finite-study bias.
+No new model data, fitting, Monte Carlo simulation or paid spend occurred.
+
+MRL-01: the last observed worker commit is still 4ba4abf at 01:52:56 UTC; please
+include last successful scheduler tick, processed main revision and current
+running/unpublished/blocked state in the acknowledgement/status repair. Missing
+publication is not proof no work ran. MRL-02–04 and their ownership remain unchanged.
+Do not relaunch a duplicate collection or loosen the release gates to create activity.
+
+Main calculation .030442 seconds; process .926082 seconds. Full suite 229 tests
+plus 8 subtests passed before metadata-only freeze completion. Progress **49%,
+delta 0 points**: learned adequate-history comparison and final precision remain
+open, alongside measurement/receiver release, fresh prompt collection and independent
+policy validation. No efficacy or submission-readiness change.

@@ -1,5 +1,21 @@
 # Project status and claims ledger
 
+## Latest half-hour continuation — 21 September, 03:24 UTC
+
+**49%, delta 0 points; not submission-ready.** No newer experimental delivery or
+acknowledgement was visible after b45d355. Last worker publication remains 4ba4abf
+at 01:52:56 UTC; current execution is unverified. MRL-01 should include scheduler
+health/last processed main revision alongside the already requested status repair.
+
+The lead completed an independently reviewed [exact population diagnostic](history_compression_results_20260921.md):
+compressed state/time regression bias is -.14 percentage points in the base law
+and -.87 under weak overlap, while a full-history oracle matches exact truth.
+Independent scalar calculations reproduce the values. Compression alone does not
+explain the earlier larger finite-study error. This does not validate a learned
+full-history comparator, confidence procedure or personalized prompt policy.
+The fixed known-truth credit remains unchanged pending those remaining checks.
+Zero model calls, fitted models, sampled trajectories or spending occurred.
+
 ## Latest half-hour continuation — 21 September, 02:43 UTC
 
 **49% milestone completion, delta 0 points; not submission-ready.** No newer worker

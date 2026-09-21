@@ -13,6 +13,12 @@ acceptance probability, not a quality judgement, and not a time estimate.
 
 ## Latest hourly continuation — 21 September 2026, offline component
 
+**03:24 UTC half-hour update: 49%, delta 0.** The frozen population-limit diagnostic
+isolates history-compression bias and receives independent numerical/math review.
+It does not deliver a fitted adequate-history comparator or final Monte Carlo
+precision, so the existing known-truth credit remains 6/10 points. No fresh prompt
+data, independent policy validation or submission readiness follows. Same weights.
+
 **02:43 UTC half-hour update: 49%, delta 0.** A current editable results/discussion
 section and record-level arithmetic reconciliation are complete. This is partial
 integration within the existing manuscript credit; final synthesis, empirical

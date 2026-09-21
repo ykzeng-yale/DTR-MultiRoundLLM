@@ -1,5 +1,34 @@
 # Hourly research checkpoint
 
+## Latest half-hour check — 2026-09-21T03:24:44Z
+
+Started from b45d355. No newer worker delivery, open PR or reply on issues #2–#5
+was visible. Last worker status is 4ba4abf at 01:52:56 UTC, about 85 minutes before
+the scheduled check, with an incomplete human timestamp. Its current job state
+cannot be verified. MRL-01–04 remain awaiting acknowledgement/evidence; do not
+infer idleness or duplicate the worker's collection.
+
+Completed a new [exact E0 history-compression diagnostic](history_compression_results_20260921.md).
+Frozen plan/code/config 5f9febe, provenance completion 91f9a74, both before the
+report. Population compressed-Q bias is -.00138683 in the base cell and -.00872645
+under weak overlap, zero in the uniform-logger control. Full-history oracle and
+independent scalar/forward calculations agree with DP truth .645977006174.
+This cannot by itself explain the much larger finite-study weak-overlap bias.
+It is a known-law population check, not a fitted full-history baseline or model trial.
+
+The full suite passed 229 tests and 8 subtests before a metadata-only freeze
+completion. Main calculation .030442 seconds; entire process .926082 seconds;
+zero model calls/tokens, fitted models, sampled trajectories, candidate executions
+or spend. Independent internal mathematical/numerical review found no blocker.
+The report and manuscript now state all scope limits.
+
+Progress **49%, delta 0 points**. The learned adequate-history baseline and final
+simulation precision remain open; the new diagnostic does not close those scored
+milestones. Prompt efficacy is unestablished; not submission-ready. Next empirical
+step remains worker contract/runtime evidence and same-prefix release. Ask MRL-01
+to include its last successful scheduler tick and processed main revision to
+diagnose the missing half-hour delivery, without creating a duplicate job.
+
 ## Latest half-hour check — 2026-09-21T02:43:24Z
 
 Observed main ba582a0 with no newer commits, open PRs or worker replies on issues

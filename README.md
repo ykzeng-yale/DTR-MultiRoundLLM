@@ -16,6 +16,11 @@ The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_The
 
 ## Latest continuation — 21 September 2026
 
+An independently reviewed [exact history-compression check](docs/history_compression_results_20260921.md)
+now separates a small population regression bias from the larger weak-overlap
+error in the finite diagnostic. This is synthetic enumeration, not a newly trained
+history-aware comparator or receiver result. Research completion remains 49%.
+
 The editable [results and discussion](manuscript/evidence_results_20260921.md)
 now integrates the corrected repair, selector-sensitivity and matched-estimator
 findings. A read-only arithmetic reconciliation against saved root and replication

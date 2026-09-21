@@ -1,5 +1,18 @@
 # Experiment results ledger
 
+## 2026-09-21, 03:24 UTC — Coordinating lead, exact compression diagnostic
+
+Plan/code/config frozen at 5f9febe and provenance completed at 91f9a74 before the
+three-cell report. The [results](history_compression_results_20260921.md) quantify
+population compressed-Q bias in base (-.00138683), uniform (zero) and weak-overlap
+(-.00872645) cells; full-history oracle agrees with DP truth .645977006174.
+Independent scalar occupancy/forward-terminal calculations reproduce all values.
+This is exact synthetic enumeration, not fitted-model or real-receiver validation.
+Actual calculation .030442 seconds, complete process .926082 seconds; report
+below 10 MiB; no model calls/tokens, sampled trajectories, fitted models, candidate
+execution or spend. Seven structural tests passed; full suite 229 tests/8 subtests
+passed before metadata-only freeze completion. Progress 49%, unchanged.
+
 ## 2026-09-21, 02:43 UTC — Coordinating lead, manuscript arithmetic reconciliation
 
 Recomputed the selected corrected manuscript figures from six stored artifact

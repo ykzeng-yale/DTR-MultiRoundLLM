@@ -114,6 +114,17 @@ The [stored diagnostics](../results/matched_estimator_diagnosis_20260920/summary
 retain all conditions; the next empirical study must allow an appropriately
 adjusted regression comparator to win.
 
+A subsequent [exact population diagnostic](../docs/history_compression_results_20260921.md)
+quantifies one limitation of this working Q model. Its state/time compression
+induces bias of -.001387 in the base law and -.008726 under weak overlap; the
+oracle full-observed-history value agrees with exact truth. The uniform-logger
+aggregate control has zero bias. The weak-overlap population compression error
+is smaller than the earlier finite-study bias of -.054293, so compression alone
+does not explain that result. Finite-data estimation and sparsity remain unresolved.
+This is a known-law reference, not a trained full-history comparator or new
+receiver evidence; synthetic observed states also contain correctness information
+not automatically available to a deployed coding policy.
+
 ## Interpretation and next empirical test
 
 The current evidence justifies a narrower empirical sequence. First validate the

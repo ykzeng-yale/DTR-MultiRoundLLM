@@ -1,0 +1,30 @@
+{
+  "review_type": "independent internal mathematical and scalar numerical review",
+  "reviewed_freeze": "91f9a74fc1945e4db3fe61c9bfad2a38bb7c573f",
+  "method": "Separate scalar logger-occupancy recursion and forward STOP/terminal accounting using the existing trusted E0 law; did not invoke report functions, fit or sample trajectories",
+  "independent_truth": 0.6459770061744536,
+  "independent_compressed_values": {
+    "base": 0.6445901746290317,
+    "kappa0": 0.6459770061744536,
+    "FAIL_positivity": 0.6372505567503101
+  },
+  "independent_active_mass": {
+    "base": [1, 0.5906878303070521, 0.37314687406416086],
+    "kappa0": [1, 0.8, 0.6400000000000001],
+    "FAIL_positivity": [1, 0.263027376922768, 0.16001486415733826]
+  },
+  "agreement_tolerance": 1e-12,
+  "blocking_findings": [],
+  "resolved_before_execution": ["Bind plan/tests to freeze", "Record SciPy version"],
+  "scope_limits": [
+    "Infinite independent-task population, not infinite repeats of fixed roster",
+    "gz=0 only; action factors cancel conditional on observed full history",
+    "Uniform aggregate agreement is not conditional sufficiency",
+    "Synthetic correctness states are not certified deployment-public features",
+    "History compression alone does not explain finite-study weak-overlap bias",
+    "No learned full-history comparator, finite-sample inference or prompt efficacy validated"
+  ],
+  "runtime_seconds": null,
+  "receiver_calls": 0,
+  "paid_usd": 0
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "scripts/check_history_compression.py",
+    "--output",
+    "results/history_compression_20260921.json"
+  ],
+  "exit_code": 0,
+  "process_wall_seconds": 0.9260816667228937,
+  "timeout_seconds": 60,
+  "stdout": "{\"rows\": [{\"cell\": \"base\", \"value\": 0.6445901746290317, \"truth\": 0.6459770061744536, \"compression_bias\": -0.0013868315454219626}, {\"cell\": \"kappa0\", \"value\": 0.6459770061744537, \"truth\": 0.6459770061744536, \"compression_bias\": 1.1102230246251565e-16}, {\"cell\": \"FAIL_positivity\", \"value\": 0.6372505567503101, \"truth\": 0.6459770061744536, \"compression_bias\": -0.008726449424143579}], \"usage\": {\"calculation_seconds\": 0.030441541224718094, \"receiver_calls\": 0, \"receiver_tokens\": 0, \"paid_usd\": 0, \"sampled_trajectories\": 0, \"fitted_models\": 0}}\n",
+  "stderr": "",
+  "receiver_calls": 0,
+  "paid_usd": 0
+}
