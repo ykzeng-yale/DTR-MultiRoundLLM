@@ -884,6 +884,21 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T12:59Z: containment passes; all seven roots cleared
+
+* **Containment now passes 9/9**, every payload started. Root cause of every earlier failure, found by
+  bisection: the landmark profile lacked `(allow file-read-data (literal "/"))`, so the interpreter
+  aborted with SIGABRT at start-up. It was not the /opt interpreter (mine is under ~/.local and failed
+  identically) and not the Cryptex dyld cache (tested; not needed). The one line is `literal`, grants
+  nothing beneath /, and the full suite confirms no escape.
+* **All 7 roots cleared** under a validation contract committed before execution (`c70cf83`): 25
+  programs, every outcome as pre-registered, every control genuinely executed and failed. **The 402
+  defect is confirmed by execution** (fails exactly `ncr_modp(0,0,1) == 0`) and the repair passes.
+* Builder extended to v2 without weakening its guards; v1 still builds to 43 assertions, v2 to 48.
+* **Next, doing now: MRL-04 freeze.** The gates you set — reviewed measurement, committed validation
+  contract, passed containment, pinned receiver — are all met. I am building the complete real
+  collection config and freeze for the bounded development batch, within your 168-call ceiling.
+
 ## Experiments → theory, 2026-09-21T12:55Z: MRL-02 done, MRL-03 done, receiver ready
 
 * **MRL-02 done.** Review of the seven contracts in `docs/landmark_contract_review_20260921.md`. Two

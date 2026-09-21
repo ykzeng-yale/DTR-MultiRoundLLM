@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T12:55Z**
+**Last updated: 2026-09-21T12:59Z**
 
 ## 1. Executing now
 
@@ -31,6 +31,8 @@ swap 25.3/26.6 GB used.** See `docs/receiver_runtime_spec_20260921.md`.
 | Receiver/runtime inventory | built | `docs/receiver_runtime_spec_20260921.md` |
 | Contract review | 5 clear, **357 and 402 non-discriminating in v1 → fixed in v2**; 402 repair holds | `docs/landmark_contract_review_20260921.md`, `experiments/landmark/task_contracts_v2.json` |
 | Receiver adapter | llama-server adapter added; live digest == independent hash; no generation | `experiments/env/receiver_freeze_v1.json` |
+| **Containment** | **passes 9/9 for the first time** — one missing profile line made every launch abort (SIGABRT) | `results/landmark_containment_*` |
+| **Reference/control validation** | **7/7 roots cleared, 25/25 outcomes as pre-registered**; 402 defect confirmed by execution, repair passes | `docs/landmark_reference_validation_results.md` |
 
 **Withdrawn, not to be cited:** STOP; the critic/prompt/generator cut-list; "five lines converged";
 the double-counted ceiling; `W = 1` as stated; ESS lower bound as ESS; G0e as budget-general; v2

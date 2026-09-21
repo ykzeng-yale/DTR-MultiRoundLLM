@@ -1,0 +1,51 @@
+{
+  "executed_programs": 25,
+  "sandbox_seconds_wall": 0.6,
+  "model_calls": 0,
+  "roots_cleared": 7,
+  "all_as_preregistered": true,
+  "verdict": {
+    "mbpp/52": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/357": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/373": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/378": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/402": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/489": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    },
+    "mbpp/509": {
+      "cleared": true,
+      "positive_reference_passes": true,
+      "every_control_executed_and_failed": true,
+      "all_outcomes_as_preregistered": true
+    }
+  }
+}
