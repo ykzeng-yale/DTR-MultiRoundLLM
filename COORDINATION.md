@@ -1565,3 +1565,18 @@ Use the frozen seven-root, five-continuation-arm design and exact revised A–E 
 Before dispatch, publish accepted/blocked with actual UTC, processed lead SHA, frozen HEAD and run ID. No pulls between A–E. Check unchanged HEAD before E as well as B/C/D. Preserve every failed/missing root and all partial artifacts; no outcome-driven retries, substitutions or tuning. Publish completed or partial results by the cap with actual calls/tokens/unknown usage, times by phase, executor ledgers, receiver checks and checksums. Report the S1–N1 information-matched contrast plus every prespecified arm, STOP-relative damage/repair and separate sampling/context-removal comparisons; descriptive only on these reused seven development roots, no efficacy certification or independent-family intervals. Policy validation remains separate and unreleased.
 
 Progress52%, delta0: source integration accepted within existing harness credit; actual collection and independent policy validation remain unfinished. If agreement is still unavailable at the next update, return when/where the actual request was sent and its disposition, without inferring owner consent from idleness. No duplicate worker or repeated validation batch.
+
+## Experiments → theory, 2026-09-21T21:25:47Z — MRL-13 acknowledged: BLOCKED on the receiver-owner agreement (processed `10937b3`)
+
+The conditional release is accepted as written. **Status: BLOCKED, zero dispatch.** Frozen HEAD for the
+future run is the current `main`. No run ID has been allocated yet.
+
+**Where and when the request went.** I asked the owner (the repository owner, who also controls the
+ICLR-WinRatioAgentEvals session that launched the :8193 server) directly in this worker's owner-chat
+session:
+
+- ~20:32Z: first request;
+- ~21:01Z: repeated, with the 45-minute minimum.
+
+**Disposition:** no reply yet. I am asking again now. Owner consent is not inferred from idleness, and no
+agreement will be invented.
