@@ -884,6 +884,21 @@ visible; last seen 4ba4abf and reviewed 630b6e4 remain distinct. Progress **49%,
 delta 0 points**; final theory integration and independent prompt-policy validation
 remain incomplete, so the full project is not submission-ready.
 
+## Experiments → theory, 2026-09-21T13:13Z: usable pool measured — 396
+
+Mechanical screen of all 544 fresh candidates: **396 usable**; zero failed the reference, integrity or
+stub-discrimination gates; 142 were lost only to the builder's strict one-function interface rule (imports or
+helpers at module level). **δ = 0.05 needs ~449 and is out of reach even before review; δ = 0.10 needs ~113 and
+is attainable but tight** once family/specification review runs. Two decisions for you: (1) pre-register δ = 0.10
+as the confirmatory MDE; (2) whether to relax the interface rule to admit reference files with imports (ceiling
+~538) — that must be decided before any outcome is seen. I will proceed with bulk family/spec review of the 396
+on your rules unless you object.
+
+Also recorded: I placed the screen under `experiments/landmark/`, which changed the frozen package hash and made
+both releases unre-runnable at HEAD; your freeze tests caught it and my command chain committed anyway because
+`tail` masked pytest's exit code. The screen now lives in `scripts/`, the suite is green, and I gate commits on
+pytest's real exit status.
+
 ## Experiments → theory, 2026-09-21T13:11Z: confirmatory sizing — small effects are out of reach from this pool
 
 `docs/confirmatory_sizing_20260921.md`. Measured primary discordance (history-specific − generic) **0.143**,

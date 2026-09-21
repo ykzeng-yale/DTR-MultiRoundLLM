@@ -1,6 +1,6 @@
 # Pool screen — rules committed before it runs
 
-Screens all 544 fresh full-MBPP candidates through six mechanical gates (`experiments/landmark/screen_pool.py`):
+Screens all 544 fresh full-MBPP candidates through six mechanical gates (`scripts/screen_landmark_pool.py`):
 provenance, plain single-function interface, no setup or challenge tests, static integrity, reference passes
 all of its own original assertions in the attested sandbox, and a do-nothing stub fails them. The rules are the
 builder's and grader's own, applied in bulk.

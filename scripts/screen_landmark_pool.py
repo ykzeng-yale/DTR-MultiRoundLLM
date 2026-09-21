@@ -20,7 +20,7 @@ import argparse, ast, hashlib, json, sys, time
 from collections import Counter
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from experiments.landmark import grade, sandbox  # noqa: E402
 from experiments.common.integrity import hack_gate  # noqa: E402

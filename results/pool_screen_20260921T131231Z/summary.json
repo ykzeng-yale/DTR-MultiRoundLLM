@@ -1,0 +1,15 @@
+{
+  "candidates": 544,
+  "usable_upper_bound": 396,
+  "first_failing_gate": {
+    "G2_interface": 142,
+    "USABLE": 396,
+    "G3_setup": 6
+  },
+  "reasons": {
+    "G2_interface:not_single_function": 142,
+    "G3_setup:setup_or_challenge_tests_present": 6
+  },
+  "wall_seconds": 18.9,
+  "model_calls": 0
+}

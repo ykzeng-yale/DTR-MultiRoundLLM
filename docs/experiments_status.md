@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T13:09Z**
+**Last updated: 2026-09-21T13:13Z**
 
 ## 1. Executing now
 
@@ -32,6 +32,8 @@ swap 25.3/26.6 GB used.** See `docs/receiver_runtime_spec_20260921.md`.
 | Contract review | 5 clear, **357 and 402 non-discriminating in v1 → fixed in v2**; 402 repair holds | `docs/landmark_contract_review_20260921.md`, `experiments/landmark/task_contracts_v2.json` |
 | Receiver adapter | llama-server adapter added; live digest == independent hash; no generation | `experiments/env/receiver_freeze_v1.json` |
 | **Containment** | **passes 9/9 for the first time** — one missing profile line made every launch abort (SIGABRT) | `results/landmark_containment_*` |
+| **Pool screen** | 544 fresh candidates → **396 mechanically usable**; 0 fail reference/integrity/stub gates; 142 lost only to the one-function rule | `docs/confirmatory_sizing_20260921.md` |
+| **Confirmatory sizing** | measured discordance 0.143; δ=0.05 needs ~449 (> 396 → out of reach); δ=0.10 needs ~113 (attainable, tight) | `docs/confirmatory_sizing_20260921.md` |
 | **Development release v1c (all 7 roots graded)** | 49/49 byte-identical to v1 (3rd determinism confirmation), 0 missing grades; STOP 0.714 vs every continuation 0.643; feedback repair fixed 0/8 on wrong roots, restart 1/4; continuing broke 4/30 correct replicates; descriptive only | `docs/dev_release_v1_results.md` |
 | **Development release v1 (first real graded collection)** | 49/49 calls, 0 missing, **49/49 outputs byte-identical on re-run**; 6 roots graded (402 blocked by design); STOP 0.833 vs every continuation 0.750; continuing broke 4/30 correct replicates; descriptive only, 1 effective family | `docs/dev_release_v1_results.md` |
 | **Reference/control validation** | **7/7 roots cleared, 25/25 outcomes as pre-registered**; 402 defect confirmed by execution, repair passes | `docs/landmark_reference_validation_results.md` |
