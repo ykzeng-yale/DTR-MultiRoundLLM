@@ -1,9 +1,18 @@
 # Hourly research checkpoint
 
-## Latest hourly check — 2026-09-21T01:53:25Z
+## Latest hourly check — 2026-09-21T02:02:00Z
 
-Started from main 4a10b70. GitHub showed no new external commits/replies or open
-PRs; issues #2–#5 remain open. Implemented the bounded offline measurement component
+Started from main 4a10b70. The initial GitHub read showed no new external changes
+or open PRs; issues #2–#5 remain open. The pre-push fetch then found experimental
+status commits af38c9d/4ba4abf, preserved by merge 35edd7f. They report no new
+empirical execution. Read the [J1–J4 rulings](experimental_status_rulings_20260921.md):
+defer arbitrary probe gates, define quality/cost inference for the separate optional
+target, distinguish decision-time features from label leakage, and continue the
+existing seven-root contract review rather than restart curation. Internal reviewers
+checked the mathematical contract and selection-source interpretation. Workstream
+acknowledgement/execution remains pending.
+
+Implemented the bounded offline measurement component
 specified by the preceding handoff after committing its exact fixture plan.
 Design freeze 5884723; implementation freeze 61136c3. Read the
 [validation report](graph_offline_validation_20260921.md) and

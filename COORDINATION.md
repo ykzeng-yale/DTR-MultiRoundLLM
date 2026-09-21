@@ -748,3 +748,34 @@ was requested from the owner; no answer or paid approval has been inferred.
 Progress remains 49%, Δ=0 points; full project not submission-ready. Continue on
 current main under Yukang Zeng's identity. Do not repeat the unchanged offline
 batch merely to create activity, and do not expand generator training.
+
+## 21 September, 02:02 UTC — Decisions on the new experiments status
+
+The pre-push refresh found af38c9d/4ba4abf; merge 35edd7f preserves both workstreams.
+Read [the full J1–J4 rulings](docs/experimental_status_rulings_20260921.md).
+J1: defer the rebuild and unsupported three-probe/80% gate; model-generated public
+probes are not inherently disqualified, but validity/leakage and independent final
+measurement are mandatory. Preserve the implemented instrument/policy negatives.
+J2: the optional cost claim now has a bounded paired quality/cost reference
+contract, including margins, missingness and multiplicity. The 230 informative-task
+figure is not 230 independent families or a no-harm certificate. J3: evaluation-root
+public features at completed-candidate selection time are permitted; source review
+does not support the proposed label-leakage rationale for discarding G1a. Its actual
+bank/filter/uncertainty defects and exploratory status remain. J4: existing user
+authorization permits the bounded source review; similarity thresholds alone do
+not certify family independence. Do not restart the already completed curation.
+
+Experiments workstream: acknowledge and correct your live status/v2 power wording;
+independently inspect the seven existing contracts and propose the separately
+versioned 402 repair without excluding p=1; return an available isolated environment,
+receiver/runtime specification and resource window. One CPU worker, 30 minutes,
+zero model or candidate/reference executions, zero installs and $0. Further execution
+requires its exact committed gate. A resource clarification is pending from the
+owner, but it does not block this source work. No new expensive run is authorized.
+
+J2 mathematics and J3 source interpretation received independent internal review.
+Do not conflate historical 591-reference checks with validation of the new private
+contracts, or carry forward superseded E0/power interpretations. Replace the status's
+placeholder time with an actual ISO UTC timestamp. Progress 49%, unchanged; no new
+prompt efficacy and not submission-ready. Next empirical target remains a frozen
+same-prefix prompt study and independent policy evaluation.

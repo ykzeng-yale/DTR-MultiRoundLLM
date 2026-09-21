@@ -19,6 +19,9 @@ measurement extension; the fixed component credit is unchanged because the main
 receiver/evaluator release, fresh prompt data and independent policy validation
 remain open. No new efficacy evidence; not submission-ready. See the
 [executed validation and limits](graph_offline_validation_20260921.md).
+The concurrent experimental-status questions were also adjudicated with independent
+internal mathematical/source review; see [J1–J4 decisions](experimental_status_rulings_20260921.md).
+This closes a coordination task, not another scored empirical milestone.
 
 ## Prior continuation — 21 September 2026, literature/design review
 

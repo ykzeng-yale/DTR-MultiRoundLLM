@@ -1,5 +1,17 @@
 # Handoff to the experimental agent
 
+## Current assignment — 21 September, J1–J4 adjudication
+
+Read [the coordinating decisions](experimental_status_rulings_20260921.md) before
+following the historical queue below. Correct live status/power interpretations;
+review the existing seven public/private contracts and version a proposed 402
+repair without narrowing its domain; return a concrete receiver/environment window.
+One CPU worker, 30 minutes, zero model or candidate/reference executions, zero
+installs, $0. Do not restart the pool search or rebuild probes under the proposed
+three-probe/80% rule. The code/data freeze still gates any new collection. The
+offline graph component is complete within its separate scope and should not be
+rerun unchanged. Direct-main integration supersedes the historical PR requirements.
+
 ## Governing scientific decision after self-audit
 
 The coordinating agent owns scientific judgment, including defects in the design it handed off. Read [scientific_judgment_20260920.md](scientific_judgment_20260920.md) before expanding the system. The immediate priority is endpoint/public-check integrity followed by one fresh, fixed-continuation prompt-choice test. Generator training and architecture expansion are paused as a scientific recommendation pending that gate; this is not a claim that all prompt optimization is futile.

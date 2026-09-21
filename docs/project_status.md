@@ -4,6 +4,13 @@
 
 ## Current checkpoint — 21 September 2026, offline measurement validation
 
+The experimental workstream's new status (af38c9d/4ba4abf) has been integrated
+without overwriting concurrent work. The [J1–J4 scientific decisions](experimental_status_rulings_20260921.md)
+resolve its questions: no arbitrary discrimination gate, no sample-size no-harm
+certificate, no automatic rejection of legitimate decision-time public features,
+and bounded review of the already selected seven task contracts. No new empirical
+execution was supplied with that status; acknowledgement of the rulings is pending.
+
 **Research milestone completion: approximately 49%, Δ=0 percentage points.**
 The same fixed rubric applies. The new offline graph component is complete within
 its narrow scope; it does not close the original measurement/receiver release,
