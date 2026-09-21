@@ -61,7 +61,7 @@
   "fresh_prompt_efficacy_established": false,
   "latest_evidence": "MRL-12 source/mock integration accepted;45 focused tests pass and frozen bindings reconcile. MRL-13 conditional E11 release awaits actual receiver agreement.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "3f56ec6",
+    "last_seen_worker_revision": "802cc4f22bdbb1a8a2e75986231e705f392d99b0",
     "delivery_type": "source/mock grading-analysis integration; no new model results",
     "scientific_review_revision": "3f56ec6",
     "review_record": "docs/mrl12_review_mrl13_release_20260921.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker acknowledged20:52:58Z and delivered21:00:32Z; no stale delivery inferred.",
+    "scheduler_status": "Observed21:23:12Z half-hour tick, still awaiting receiver agreement and lead repository release; MRL-12 completion21:00:32Z independently reviewed.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",

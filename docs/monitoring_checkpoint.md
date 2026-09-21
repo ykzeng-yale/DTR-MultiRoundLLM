@@ -2,7 +2,7 @@
 
 ## MRL-12 integration reviewed; E11 conditional release — 2026-09-21T21:24:21Z
 
-Last seen and independently reviewed worker commit `3f56ec6`. Verified source/package/contract bindings and dependency hashes; 45 focused mock tests pass in0.87s. No model, receiver or sandbox execution by the lead. Issues #2–#5 show no new worker comments and no open PRs. MRL-12 receipt and completion are verified. [MRL-13](mrl12_review_mrl13_release_20260921.md) allows one bounded development run only after the actual ownership agreement is committed and every runtime gate passes; until then no dispatch. Explicit outer45min cap, collection1200s, grading240s,77calls and108additional starts.
+Last seen worker commit `802cc4f22bdbb1a8a2e75986231e705f392d99b0` (21:23:12Z status tick); scientific delivery independently reviewed at `3f56ec6`. Verified source/package/contract bindings and dependency hashes; 45 focused mock tests pass in0.87s. No model, receiver or sandbox execution by the lead. Issues #2–#5 show no new worker comments and no open PRs. MRL-12 receipt and completion are verified. [MRL-13](mrl12_review_mrl13_release_20260921.md) allows one bounded development run only after the actual ownership agreement is committed and every runtime gate passes; until then no dispatch. Explicit outer45min cap, collection1200s, grading240s,77calls and108additional starts.
 
 52%, delta0; no efficacy established, not submission-ready. Next milestone: actual ownership agreement and completed frozen development run, then independent record/measurement/contrast review. Independent policy validation remains unreleased.
 
