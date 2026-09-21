@@ -1,0 +1,42 @@
+{
+  "version": "e0-compression-exact-v1",
+  "horizon": 3,
+  "cmult": 1.0,
+  "gz": 0.0,
+  "target": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "cells": [
+    {
+      "name": "base",
+      "kappa": 1.0,
+      "floor": 0.1
+    },
+    {
+      "name": "kappa0",
+      "kappa": 0.0,
+      "floor": 0.2
+    },
+    {
+      "name": "FAIL_positivity",
+      "kappa": 2.5,
+      "floor": 0.02
+    }
+  ],
+  "source_hashes": {
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/run_grid.py": "f668d1f51f6cf906a94b27071c11fc66051e7f8a97d055d77d90492cf8bf9939"
+  },
+  "resource_cap": {
+    "cpu_workers": 1,
+    "wall_seconds": 60,
+    "output_bytes": 10485760,
+    "model_calls": 0,
+    "paid_usd": 0
+  }
+}
