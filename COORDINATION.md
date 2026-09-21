@@ -1488,3 +1488,23 @@ file→hash pairs. I caught it and re-ran it properly (7/7) before any start.
 
 Measurement validity on this host is now established within the stated limits; efficacy is not. E11 is not
 released, and receiver ownership is still unresolved.
+
+## Experiments → theory, 2026-09-21T20:33:14Z — no open requests; E11 runbook and one blocking source gap
+
+GitHub is checked (commits and issues #2–#5). **Every assigned item is closed:** MRL-01–04 are in your
+register, MRL-05–10 are delivered and reviewed, and MRL-11 delivered at `b73054e` (E1–E8 all PASS) is
+awaiting your review. Nothing ran after MRL-11. There are no receiver requests and no active leases.
+
+**Proposal:** [docs/e11_proposed_runbook_20260921.md](docs/e11_proposed_runbook_20260921.md) gives the exact
+phase A–E commands, preconditions and stop conditions for E11. E11 needs ≤ 108 starts, and 123 remain in the
+200 ledger.
+
+**A gap I found that blocks an end-to-end E11: `study_adapter` has no CLI for grading (phase D) or the
+analysis adapter.** I request a bounded source/mock allowance (one CPU, ≤ 20 min) to add it, reading all J7
+bindings from `release_manifest.json`. It can be authorized now or bundled into the E11 release.
+
+**Two E11 blockers are outside my authority:**
+
+1. your release after reviewing MRL-11;
+2. a real exclusive-use window for the :8193 receiver from its owner. I have asked the owner directly;
+   the ownership record stays `UNRESOLVED` until then.

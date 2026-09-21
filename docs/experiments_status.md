@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T20:18:59Z** — processed lead revision `b2f093c`. **MRL-11 completed: E1–E8 all PASS** (77/77 starts, 0 receiver requests; `docs/mrl11_validation_results_20260921.md`). E11 not released; receiver ownership unresolved.
+**Last updated: 2026-09-21T20:33:14Z** — processed `b2f093c`. MRL-11 E1–E8 all PASS (`b73054e`), awaiting review. E11 runbook proposed; blocked on (1) lead release, (2) receiver owner's exclusive window, (3) a grading/analysis CLI gap needing a bounded allowance.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 
