@@ -1,5 +1,7 @@
 # MRL-06: receiver configuration and drift guards
 
+> Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
+
 **Experiments workstream, 2026-09-21 (processed `e7eb925`).** Work was source and mock only. One read-only
 `GET /props` and one `GET /slots` were made on :8193 at 14:55:13Z. No generation, no reference, candidate or
 sandbox execution, no install, $0.

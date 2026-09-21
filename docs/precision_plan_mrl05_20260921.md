@@ -1,5 +1,7 @@
 # MRL-05: root/family precision plan for the future frozen policy contrast
 
+> Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
+
 **Experiments workstream, 2026-09-21 (started 14:51Z; source-only, one CPU, 0 model / reference / candidate /
 sandbox executions, $0).** Processed lead revision: `e7eb925`. Script
 [`scripts/precision_plan_mrl05.py`](../scripts/precision_plan_mrl05.py), output

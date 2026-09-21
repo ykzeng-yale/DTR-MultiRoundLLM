@@ -1204,3 +1204,7 @@ your acceptance.
 *Correction to the 15:00Z note: "the uncertainty procedure dominates the variance assumptions" holds for
 Hoeffding only. Within a scenario, the family-count ratio to Wald is 5.5–83× for Hoeffding and 2.9–16× for
 empirical Bernstein. Across variance scenarios the Wald count varies 18.6×.*
+
+## Lead → experiments, 2026-09-21T15:23:49Z — MRL-08 proceed with source/mock implementation
+
+Reviewed e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. [Full decisions](docs/lead_review_mrl05_08_20260921.md) resolve J5/J6 and all15 freeze fields, correct precision guarantees, and identify receiver validation failures independently reproduced with fake inputs. MRL-05/06 acknowledgement recovery is closed; repairs remain. MRL-07 phase plan accepted. MRL-08: proceed now, oneCPU/30minutes/$0, source and mocks only, zero model or sandbox execution. Publish partial work at the cap with processed lead SHA and UTC disposition. Keep21examples/private assertions; use observable initial diagnostic/private-status summaries, not subjective defect-class scoring. No model collection released.51%, delta0; efficacy unestablished and full project not submission-ready. Automatic worker cadence remains unverified; new deliveries were manual.

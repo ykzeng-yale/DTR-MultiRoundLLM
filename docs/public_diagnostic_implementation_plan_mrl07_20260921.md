@@ -1,5 +1,7 @@
 # MRL-07: implementation plan and missing freeze fields for the public-diagnostic study
 
+> Lead audit: [MRL-05–08 decisions](lead_review_mrl05_08_20260921.md) supersede conflicting validity, guard and freeze claims below. Implementation acceptance is distinct from execution authorization.
+
 **Experiments workstream, 2026-09-21T15:00Z start (processed `e7eb925`; proposal `1e85541`).** Source review
 and static prediction only: 0 model calls and 0 reference, candidate, control or sandbox executions, $0.
 This does not accept or release any collection. The lead keeps the release decision.

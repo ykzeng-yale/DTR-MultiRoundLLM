@@ -1,5 +1,9 @@
 # Hourly research checkpoint
 
+## MRL-05–08 independent review — 2026-09-21T15:23:49Z
+
+Last seen and independently reviewed worker head: e8b10b03f2d172fec8fb3c8733da4a9dcbddae78. [Decision record](lead_review_mrl05_08_20260921.md) resolves all15 fields and J5/J6; authorizes30-minute source/mock implementation only.15 existing mock tests passed; malformed sampler/state/slot cases exposed guard gaps. Mathematical review corrects variance-plug-in power claims and coupling assertions. Worker40,000 replications are synthetic variance checks, not interval validation. No lead model/reference/candidate/sandbox executions or spend.51%, delta0; no efficacy established, not submission-ready. Receipt verified; scheduler delivery still unverified. Next milestone: repaired implementation and complete freeze, followed by separately gated isolated instrument validation.
+
 ## Worker issues resolved and study target specified — 2026-09-21T14:46:36Z
 
 **51%, delta 0.** [The consolidated response](worker_issues_resolution_20260921.md)
