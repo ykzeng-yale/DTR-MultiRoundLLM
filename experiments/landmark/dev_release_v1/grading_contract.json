@@ -1,0 +1,13 @@
+{
+  "version": "landmark-private-tests-v1",
+  "private_spec_sha256": "0133a63a792a4ffe27b1e18362fd476c4d6f256b86b6e021ce7ada2854801b6b",
+  "adapter_sha256": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
+  "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+  "integrity_sha256": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+  "endpoint": "private-test quality under reliable frozen receiver law; unavailable outputs/grading and non-parse static integrity flags are unknown pending review, not deployment-reliability zeros",
+  "extraction": "one python/untyped code fence or raw source; multiple fences rejected",
+  "determinism": "one frozen artifact grade reused within root; deterministic benchmark/code behavior assumed, not proved",
+  "timeout_seconds": 2.0,
+  "cpu_seconds": 1,
+  "output_cap_bytes": 65536
+}
