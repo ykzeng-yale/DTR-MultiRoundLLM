@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "repository": "open-thought/reasoning-gym",
+  "revision": "49b07130b3fcd12f2d064bba7c43869543a0e7e7",
+  "upstream_path": "reasoning_gym/algorithmic/graph_color.py",
+  "upstream_url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/reasoning_gym/algorithmic/graph_color.py",
+  "upstream_bytes": 9803,
+  "upstream_sha256": "b89db0e352de50fe841f7126904dfff1153596811171e8da70eb4ae4295d4929",
+  "local_path": "reasoning_gym_graph_color.py",
+  "local_sha256": "bcd4ed71c47bb202bd57ca1e56477b81e1e270fd71a8710fe8e507181f994cca",
+  "extraction_method": "Parse upstream AST as data; preserve exact source line slices. Add provenance-only module docstring. Do not execute/import entire upstream module.",
+  "functions": [
+    {
+      "name": "generate_random_graph",
+      "upstream_start_line": 12,
+      "upstream_end_line": 31,
+      "source_segment_sha256": "ef95ce2e43a5c58b0735819936091ebe964a3805a6f2943bbae1003dc8265085",
+      "changes": "None; exact line-preserving source segment including docstring."
+    },
+    {
+      "name": "verify_graph_coloring_solution",
+      "upstream_start_line": 60,
+      "upstream_end_line": 120,
+      "source_segment_sha256": "90f43eefcdb261a31a9d4a11f53e69a0729871a7d61f6c153866a7755ae44669",
+      "changes": "None; exact line-preserving source segment including docstring."
+    },
+    {
+      "name": "greedy_graph_coloring",
+      "upstream_start_line": 123,
+      "upstream_end_line": 153,
+      "source_segment_sha256": "80c17745c5f91692befa6b4495c285b8b0d4b1d6e3c7f7ee434601d4a270fce7",
+      "changes": "None; exact line-preserving source segment including docstring."
+    }
+  ],
+  "local_changes": [
+    "Added provenance module docstring; omitted all other upstream code/imports.",
+    "Adapter validates configuration, caps rejection sampling, and imposes a stricter JSON response contract outside these functions."
+  ],
+  "license": {
+    "spdx": "Apache-2.0",
+    "upstream_url": "https://raw.githubusercontent.com/open-thought/reasoning-gym/49b07130b3fcd12f2d064bba7c43869543a0e7e7/LICENSE",
+    "local_path": "REASONING_GYM_LICENSE",
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "scope": "Separate controlled graph extension; not replacement of coding roots; no safety or empirical efficacy certification."
+}

@@ -558,7 +558,7 @@ The proofs in this document are supplied explicitly for this project's notation 
 * Luedtke, A. R. and van der Laan, M. J. (2016). [Statistical inference for the mean outcome under a possibly non-unique optimal treatment strategy](https://pmc.ncbi.nlm.nih.gov/articles/PMC6338452/). Nonregularity and inference for optimal versus learned policies.
 * van der Laan, M. J. and Luedtke, A. R. (2015). [Targeted Learning of the Mean Outcome under an Optimal Dynamic Treatment Rule](https://pmc.ncbi.nlm.nih.gov/articles/PMC4517487/). Dynamic-rule learning and data-adaptive targets.
 
-The attachment's recent paper titles, venue-status claims, and claims that a research area is unoccupied are research leads, not assumptions or validated novelty evidence for these theorems. The separate literature audit controls those statements.
+Longitudinal human–LM causal analysis, language-valued DTR learning, and contextual off-policy prompt optimization have close predecessors. This project studies supported next-prompt selection for a fixed receiver and continuation, using established identification and estimation principles. Novelty of the specific design and practical policy improvement remain unestablished. The [literature recheck](literature_recheck_20260920.md) supersedes contrary claims in the historical audit; the [subsequent methods and code review](literature_guided_design_20260921.md) informs the prospective experiment. The attachment's recent paper titles, venue claims and assertions of an unoccupied research area are leads, not assumptions or verified novelty evidence.
 
 
 ## Operational landmark design: next-prompt personalization

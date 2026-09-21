@@ -34,7 +34,7 @@ Validation at this checkpoint: **121 tests and two subtests pass**. These includ
 | [Training and serving](docs/training_and_serving.md) | Concrete critic, generator, and autonomous-user implementation contract |
 | [Experiment protocol](docs/experiment_protocol.md) | Simulations, randomized feedback, branch calibration, and locked policy trials |
 | [Data contract](docs/data_contract.md) | Slates, propensities, exact prompts, costs, branch lineage, and hidden-label separation |
-| [Literature audit](docs/literature_audit.md) | Verified primary sources, closest precedents, and corrected novelty claims |
+| [Literature recheck](docs/literature_recheck_20260920.md) and [methods/code review](docs/literature_guided_design_20260921.md) | Corrections to prior-art and novelty claims; limits of current evidence; experimental lessons |
 | [Experimental-agent handoff](docs/experiment_handoff.md) | Work packages, ownership, acceptance criteria, and reply format |
 | [Project status](docs/project_status.md) | Executed checks, actual evidence, outstanding work, and GitHub coordination |
 
@@ -81,4 +81,4 @@ Before actual model calls, commit the experiment protocol, configuration, candid
 
 The core DTR and DR results are established foundations specialized here with explicit proofs. Candidate-generation scope, history-conditional learning, and independent evaluation form the proposed research direction; novelty and practical superiority are not asserted merely from the formulation. The package separates proof, synthetic numerical validation, model feasibility, and prospective empirical evidence.
 
-Experimental work is coordinated through the linked [issues](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues). An agent should claim its issue, pin a branch and budget, and return a PR with reproducible artifacts. Follow [AGENTS.md](AGENTS.md). An issue's existence does not mean another agent has begun work.
+Experimental work is coordinated through the linked [issues](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues). Claim the issue and pin the scientific scope and budget. Under the owner's current convention, integrate reviewed changes and reproducible artifacts directly on main, preserving concurrent work and published ancestry. Follow [AGENTS.md](AGENTS.md). An issue's existence does not mean another agent has begun work.
