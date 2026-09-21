@@ -1,0 +1,37 @@
+{
+  "updated_utc": "2026-09-21T14:36:39.527850+00:00",
+  "type": "manuscript arithmetic integration of already independently reviewed development evidence",
+  "checks": {
+    "wrong_roots": 2,
+    "correct_roots": 5,
+    "repair_success_wrong": 0,
+    "repair_attempts_wrong": 8,
+    "restart_success_wrong": 1,
+    "restart_attempts_wrong": 4,
+    "damage_correct": 4,
+    "attempts_correct": 30
+  },
+  "final_run_arm_tokens": {
+    "generic_repair": 3856,
+    "history_specific_repair": 4920,
+    "independent_restart": 2918
+  },
+  "three_run_totals": {
+    "calls": 147,
+    "prompt_tokens": 29892,
+    "completion_tokens": 9486,
+    "seconds": 265.1531298328191,
+    "paid_usd": 0
+  },
+  "sources_sha256": {
+    "results/development_delivery_lead_audit_20260921.json": "546a23be66f4a103ac7e7a5bb3ac824b09983aec0425e83de440f675b378ac6c",
+    "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+    "manuscript/evidence_results_20260921.md": "70785dea9816c475b39cd60d4b8220fedbc470eab09a6c589904bd83d081e412"
+  },
+  "seconds": 0.002035374753177166,
+  "new_model_calls": 0,
+  "new_candidate_reference_executions": 0,
+  "new_simulations": 0,
+  "paid_usd": 0,
+  "limits": "No new data or independent live rerun; no population interval; existing proof claims unchanged; PDFs not rebuilt."
+}

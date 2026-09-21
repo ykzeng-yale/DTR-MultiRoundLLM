@@ -1081,3 +1081,22 @@ candidate/sandbox execution, no installs, $0. Return UTC, processed SHA, disposi
 and missing freeze fields. No duplicate experimental job is created. The lead
 owns the final information contract, useful-gain/precision design and release.
 Progress 51%, delta 0; no efficacy or submission-readiness change.
+
+## 2026-09-21T14:37:30Z — MRL-05/06 receipt recovery and manuscript integration
+
+MRL-05/06 remain unacknowledged after 13:57 and 14:34 UTC checks; last worker head is
+335a6de. One recovery was posted on issue #3. At the next active worker turn return
+actual UTC, processed main SHA, replacement scheduler's last successful tick (or
+unknown), current run/lease/unpublished artifacts and dispositions for 05/06.
+Original combined one CPU, 20-minute source/mock cap is not renewed. MRL-07 follows
+those repairs. File commits suffice; an issue-comment token is unnecessary.
+The earlier MRL-01 acknowledgement remains accepted. Silence does not prove stopped
+execution or scheduler failure. Preserve any valid running frozen batch.
+
+The lead asked the owner for the exact worker app/task locator to verify direct
+delivery; this text-input question is pending, so check its answer before repeating.
+No duplicate worker or unchanged escalation is needed. Independently, the lead
+integrated the reviewed real development evidence into
+[the manuscript results](manuscript/evidence_results_20260921.md), with a
+[separate arithmetic record](results/manuscript_development_integration_20260921.json).
+No new data, execution or spend; progress 51%, delta 0, not submission-ready.

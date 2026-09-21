@@ -2,13 +2,14 @@
 
 **Editable results and discussion section, 21 September 2026.** This section
 updates the interpretation of the dated research PDFs and accompanies the
-[landmark methods](landmark_methods_20260920.md). It integrates previously reported
-diagnostics; it does not report a new receiver experiment. Integration into a
-complete manuscript and independent prospective policy validation remain pending.
+[landmark methods](landmark_methods_20260920.md). It integrates the historical corpus diagnostics and the subsequently collected
+seven-task development pilot. No additional receiver data were generated for this
+manuscript integration. A complete manuscript and independent prospective policy
+validation remain pending.
 
 ## Evidence populations and endpoints
 
-The available real-model evidence is a reused corpus of 4,488 episodes from 561
+The historical real-model evidence includes a reused corpus of 4,488 episodes from 561
 root coding tasks, with four initial draws for each of two receivers. Subsequent
 receiver routing was randomized within an existing repair/check process. The
 recorded endpoint is full benchmark-test success under that process's evaluator.
@@ -84,6 +85,69 @@ selection time; the same future outputs are unavailable at an earlier prompt-cho
 decision. See the [selection records](../results/selection_sensitivity_20260920/summary.json)
 and [decision-time audit](../docs/experimental_status_rulings_20260921.md).
 
+## A fresh development pilot establishes execution, not personalized benefit
+
+A subsequent development study collected new interactions with a pinned Qwen2.5-3B
+receiver on seven previously inspected coding tasks. Each task supplied one initial
+answer, two generic-repair continuations, two continuations using a deterministic
+syntactic cue, and two independent task-only restarts. Both repair arms retained the
+same initial prefix; restart omitted the old answer. STOP accepted the initial answer.
+Every continuation arm was included for every task. Randomized execution order did
+not constitute randomized single-action assignment. The endpoint was success on a
+separately versioned private suite, distinct from the historical corpus endpoint.
+
+The final v1c grading records include seven accepted references and rejection of
+17 prespecified wrong-program controls. Review of the initial measurement design
+had exposed two suites that failed to distinguish plausible wrong implementations;
+the revised suites and the modulus-one reference repair were versioned separately.
+These checks support the declared finite instrument, not correctness on every input.
+Source and saved-record audits confirmed the recorded collection/grading bindings;
+they did not independently repeat live execution or establish a complete receiver-law
+freeze. In particular, postflight source checks verified the weight digest but did
+not substantiate all claimed build/context/template checks.
+
+| Strategy | Passed artifacts | Mean over the seven roots |
+|---|---:|---:|
+| STOP | 5/7 | .7143 |
+| Generic repair | 9/14 | .6429 |
+| Syntactic history-derived cue | 9/14 | .6429 |
+| Independent task-only restart | 9/14 | .6429 |
+
+Each continuation mean first averages its two repetitions within a root. The cue
+renderer selected a loop instruction on three roots and a general checklist on four.
+It received no executed public diagnostic or identified semantic discrepancy. Thus,
+its aggregate tie with generic repair concerns these simple instructions; it is not
+a test of validated diagnostic feedback. Across the two initially incorrect roots,
+repair continuations corrected zero of eight attempts and restart corrected one of
+four. Across five initially correct roots, four of 30 continuation attempts failed.
+These conditional counts are descriptive and are not independent task observations.
+The contrast between cue and generic repair varied across two observed roots, but
+neither this variation nor a zero aggregate contrast establishes predictable
+conditional-mean heterogeneity or its absence.
+
+All seven tasks retained an unresolved-family label, and population intervals were
+suppressed. Fourteen paired branch observations cannot be treated as 14 independent
+roots. Their single-pair discordance does not directly supply the variance of a
+two-repetition root mean. The resulting earlier assertions that a five-point effect
+was infeasible or that a ten-point study would establish absence of that benefit
+were not supported. Neither the seven-task pilot nor the separate mechanical screen
+of 396 candidate IDs establishes the count of independent eligible evaluation families.
+
+Three collections reused the same seeds and requests and reproduced the same 49
+outputs. Together they used 147 receiver calls, 29,892 prompt tokens, 9,486 completion
+tokens and 265.153 seconds of recorded collection time, with $0 paid API expenditure.
+These are repeated engineering executions, not three independent efficacy studies.
+Within the final run, cue, generic and restart arms used 4,920, 3,856 and 2,918 tokens,
+respectively, despite equal call counts and per-call caps. Exact total-cost parity
+was not established. Regrading and metadata corrections should preserve the outputs
+and create linked derived artifacts rather than repeat receiver collection.
+
+The [independent development review](../docs/development_delivery_judgment_20260921.md)
+and [record-level audit](../results/development_delivery_lead_audit_20260921.json)
+retain the completed observations, source versions and limits. The useful result is
+that the observation and grading pipeline operated on these tasks. The scientific
+question of beneficial, learnable next-prompt choice remains unresolved.
+
 ## Matched estimator diagnostics show no general DR advantage
 
 The synthetic comparison uses identical fitted Q functions, folds and target
@@ -148,14 +212,22 @@ oracle-fallback RMSE improvement is not a validated confidence-interval repair.
 
 ## Interpretation and next empirical test
 
-The current evidence justifies a narrower empirical sequence. First validate the
-measurement contract and receiver. Then compare supported continuation strategies
+The current evidence justifies a narrower empirical sequence. Complete receiver-law
+verification and validate the public diagnostic instrument, building on the scoped
+execution evidence above. Then compare supported continuation strategies
 from a common public history, with frozen prompts, continuation, information and
 cost rules. Evaluate a frozen public-history selector against competent fixed and
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
 is not yet implemented by the existing three-arm collector or released for use.
+The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
+both repair arms identical public diagnostic bytes, then compares neutral and
+diagnostic-directed instructions. Its examples are disclosed before the initial
+answer, changing the initial-history law relative to the pilot. It is explicitly
+outcome-informed development; a later policy comparison requires untouched roots
+and a frozen comparator. Its context-removal arm retains diagnostic observations
+about the old answer and is not the task-only restart reported in the table above.
 
 A zero marginal arm contrast is not a personalization futility criterion, because
 conditional differences can cancel. Conversely, selecting the best observed branch
@@ -192,3 +264,10 @@ family independence or audit an operational receiver. No model calls, candidate
 executions or paid spend occurred. The reported arithmetic check took 0.071 seconds;
 this is not a measurement of the entire manuscript-review time. The existing PDFs
 remain dated snapshots and were not regenerated by this update.
+
+The development-pilot section was subsequently integrated from the independently
+reviewed v1c grades and the three preserved collection logs. Its separate
+[manuscript integration record](../results/manuscript_development_integration_20260921.json)
+checks the reported conditional counts, arm costs and total usage without executing
+receiver or candidate code. This integration adds no observations, repairs no
+confidence interval and does not update the dated PDFs.

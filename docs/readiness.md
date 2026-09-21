@@ -11,6 +11,15 @@ checkpoints rather than re-invented each time.
 It is a **planning estimate of work completed against work required**. It is not an
 acceptance probability, not a quality judgement, and not a time estimate.
 
+## Development manuscript integration — 21 September, 14:34 review
+
+**51%, delta 0.** The editable results section now includes the reviewed seven-task
+pilot, reconciled conditional counts and full repeated-run costs. This is partial
+manuscript integration within the existing 40% component credit, not completion of
+the paper or reproducibility package. No new efficacy evidence. MRL-05/06 remain
+unacknowledged after two checks; one delivery recovery is now recorded. Other
+weights, credits and scientific release gates remain unchanged.
+
 ## Public-diagnostic design — 2026-09-21T14:03:15Z
 
 **51%, delta 0.** The [new exact development design](public_diagnostic_design_20260921.md)

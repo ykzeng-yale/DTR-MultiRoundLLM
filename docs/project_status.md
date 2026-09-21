@@ -1,5 +1,28 @@
 # Project status and claims ledger
 
+## Manuscript integration and correction-delivery recovery — 2026-09-21T14:37:30Z
+
+**51%, delta 0.** Integrated the independently reviewed seven-root pilot into the
+[editable results section](../manuscript/evidence_results_20260921.md), preserving
+negative outcomes, syntactic-cue scope, unresolved family structure, receiver-law
+verification gaps and all three runs' costs. The separate arithmetic record checks
+repair 0/8, restart 1/4, damage 4/30 and arm-token counts; this is reused-record
+integration, not new data or a completed manuscript package. No model/reference/
+candidate execution, simulation or spend. Older PDFs remain dated snapshots.
+
+The worker's last publication remains 335a6de at 13:13 UTC; no newer commit or MRL-05/06
+acknowledgement was found. Two unanswered reviews triggered one correction-delivery
+recovery on issue #3 and COORDINATION.md. This does not reopen the completed MRL-01
+acknowledgement or assert another scheduler failure. The owner was asked only for
+the worker's exact app/task locator because it is not identified in the available
+Codex task inventory. Check the pending reply before asking again. MRL-05/06 retain
+their original combined 20-minute source/mock cap; MRL-07 follows, not a new run.
+
+Next: verify receipt and correct sizing/receiver guards, validate the proposed
+public diagnostic instrument, then review the complete freeze. Personalized-prompt
+efficacy remains unestablished; full-project submission readiness remains negative.
+
+
 ## Public-diagnostic design — 2026-09-21T14:03:15Z
 
 **51%, delta 0.** The [new exact development design](public_diagnostic_design_20260921.md)

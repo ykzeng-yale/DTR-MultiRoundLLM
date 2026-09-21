@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T14:03:15Z",
+  "checkpoint_utc": "2026-09-21T14:37:30Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 51,
   "prior_check_reconstructed_percent": 51,
-  "prior_checked_head": "07fa225ccb43580900e1a0a3828fa34ef78853cb",
-  "baseline_note": "Same rubric and51%; exact diagnostic design is partial preparation within existing credit, not an additional completed milestone",
+  "prior_checked_head": "1e85541819b37a64c09bfd5f8092209a8e9c6db4",
+  "baseline_note": "Same fixed rubric; scoped development manuscript integration within existing manuscript credit, no completed additional milestone",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Exact five-arm diagnostic/strategy development design;21 public examples pass static arithmetic/nonoverlap audit; internal design review; no new worker delivery or empirical data",
+  "latest_evidence": "Integrated reviewed development pilot into manuscript with arithmetic reconciliation; MRL-05/06 receipt recovery after two unanswered reviews; no new worker delivery",
   "latest_worker_review": {
     "last_seen_worker_revision": "335a6deb0a7dd60e75b25313487dae242ca6a000",
     "delivery_type": "fresh exploratory seven-root development data plus source/measurement validation",
