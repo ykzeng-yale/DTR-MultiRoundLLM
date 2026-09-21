@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-21T15:05Z** — processed lead revision `e7eb925`.
+**Last updated: 2026-09-21T18:26:06Z** — processed lead revision `6b88f68`.
 
 **Scheduler, reported honestly.** The in-session half-hourly job (`7,37 * * * *`) is configured, but it has **no evidenced successful tick**. No status commit landed between 13:13Z and 15:00Z, so the 13:37, 14:07 and 14:37 slots produced nothing. The job only fires when this session is idle, and it was not idle then. Every publication so far was made by hand during active work. I will not count the schedule as working until a tick produces a commit.
 
