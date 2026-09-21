@@ -11,6 +11,7 @@ import random
 import re
 import subprocess
 import time
+import os
 import urllib.error
 import urllib.request
 from urllib.parse import urlparse
@@ -114,7 +115,7 @@ def validate(config, tasks, real=False):
         raise ValueError("Invalid decoding parameters")
     parsed = urlparse(config["base_url"])
     if parsed.scheme != "http" or parsed.hostname not in ("127.0.0.1", "localhost", "::1") or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in ("", "/"):
-        raise ValueError("Only a loopback HTTP Ollama service is supported")
+        raise ValueError("Only a loopback HTTP receiver service is supported")
     if not tasks or len({t.get("root_id") for t in tasks}) != len(tasks):
         raise ValueError("Need nonempty unique roots")
     for task in tasks:
@@ -194,6 +195,110 @@ class Ollama:
         return self.request("/api/chat", payload, timeout)
 
 
+class LlamaServer:
+    """Receiver adapter for llama.cpp ``llama-server``, the only receiver installed on this host.
+
+    The collector was written against the Ollama API (``/api/chat``, ``options``, ``num_predict``,
+    ``num_ctx``), and Ollama is absent here, so without this adapter a real run cannot reach any
+    receiver. It speaks llama-server's OpenAI-compatible ``/v1/chat/completions`` and translates both
+    ways, so ``run()`` and its accounting are unchanged.
+
+    Identity is checked, not asserted. ``metadata()`` returns the SHA-256 of the actual weight file
+    the server reports loading (for a multi-shard GGUF, the digest of every shard's digest in order),
+    so ``run()``'s comparison against the frozen ``model_digest`` fails if the weights change.
+    ``version()`` returns ``/props`` ``build_info``.
+
+    Two properties are enforced rather than trusted:
+      * ``num_ctx`` cannot be set per request on llama-server; it is the per-slot context fixed at
+        launch (``-c`` divided by ``-np``). The adapter fails closed if the frozen ``num_ctx`` differs
+        from the server's actual per-slot ``n_ctx``.
+      * ``cache_prompt`` is disabled. Prompt caching changes batch composition, which llama.cpp does
+        not guarantee to be bit-reproducible; branches restored from a common prefix must not differ
+        because one of them happened to hit the cache.
+    """
+
+    def __init__(self, config):
+        self.config = config
+        self._props = None
+
+    def request(self, endpoint, payload, timeout):
+        req = urllib.request.Request(self.config["base_url"].rstrip("/") + endpoint,
+              data=None if payload is None else json.dumps(payload).encode(), headers={"Content-Type": "application/json"})
+        with urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect()).open(req, timeout=timeout) as response:
+            return json.load(response)
+
+    def props(self, timeout):
+        self._props = self.request("/props", None, timeout)
+        return self._props
+
+    @staticmethod
+    def weight_digest(model_path):
+        path = os.path.realpath(model_path)
+        m = re.match(r"(.*-)(\d{5})-of-(\d{5})\.gguf$", path)
+        if not m:
+            return file_sha(path)
+        total = int(m.group(3))
+        shards = [os.path.realpath(f"{m.group(1)}{i:05d}-of-{m.group(3)}.gguf") for i in range(1, total + 1)]
+        return digest([file_sha(s) for s in shards])
+
+    def metadata(self, timeout):
+        props = self.props(timeout)
+        model_path = props.get("model_path")
+        if not model_path or not os.path.exists(model_path):
+            raise ValueError("Receiver does not report a readable model_path")
+        alias = os.path.basename(model_path)
+        if self.config["model"] not in (alias, props.get("model_alias"), os.path.splitext(alias)[0]):
+            # accept the configured alias only if it names the loaded file
+            models = self.request("/v1/models", None, timeout).get("data", [])
+            if not any(self.config["model"] == m.get("id") for m in models):
+                raise ValueError("Exact installed receiver not found uniquely")
+        return {"name": self.config["model"], "model_path": model_path,
+                "digest": self.weight_digest(model_path)}
+
+    def version(self, timeout):
+        return {"version": (self._props or self.props(timeout)).get("build_info")}
+
+    def definition(self, timeout):
+        props = self._props or self.props(timeout)
+        gen = props.get("default_generation_settings") or {}
+        return {"template": props.get("chat_template"),
+                "parameters": {"n_ctx_per_slot": gen.get("n_ctx"), "total_slots": props.get("total_slots")},
+                "model_info": {"model_path": props.get("model_path")}}
+
+    def generate(self, payload, timeout):
+        props = self._props or self.props(timeout)
+        opts = payload.get("options", {})
+        slot_ctx = (props.get("default_generation_settings") or {}).get("n_ctx")
+        if opts.get("num_ctx") != slot_ctx:
+            raise ValueError(f"Frozen num_ctx={opts.get('num_ctx')} differs from the server's per-slot n_ctx={slot_ctx}")
+        body = {"messages": payload["messages"], "stream": False, "cache_prompt": False,
+                "temperature": opts["temperature"], "top_p": opts["top_p"],
+                "max_tokens": opts["num_predict"], "seed": opts["seed"]}
+        out = self.request("/v1/chat/completions", body, timeout)
+        choice = (out.get("choices") or [{}])[0]
+        usage = out.get("usage") or {}
+        finish = choice.get("finish_reason")
+        # Translate to the Ollama shape run() expects. A length-capped reply is complete as a
+        # response (Ollama also reports done=true with done_reason=length); run() separately
+        # enforces the completion-token cap.
+        return {"message": {"role": "assistant", "content": (choice.get("message") or {}).get("content")},
+                "done": finish in ("stop", "length"), "done_reason": finish,
+                "prompt_eval_count": usage.get("prompt_tokens"), "eval_count": usage.get("completion_tokens"),
+                "llama_server_raw": {"id": out.get("id"), "model": out.get("model"), "finish_reason": finish}}
+
+
+def detect_receiver(config, timeout=5.0):
+    """Pick the adapter for whichever loopback receiver is actually serving base_url."""
+    probe = LlamaServer(config)
+    try:
+        props = probe.props(timeout)
+        if isinstance(props, dict) and "build_info" in props and "default_generation_settings" in props:
+            return probe
+    except Exception:
+        pass
+    return Ollama(config)
+
+
 class Mock:
     def metadata(self, timeout):
         return {"name": "MOCK", "digest": "MOCK"}
@@ -216,7 +321,7 @@ def run(config, tasks, output, *, real=False, adapter=None, clock=time.monotonic
     output.mkdir(parents=True, exist_ok=False)
     plan = assignments(tasks, config)
     started = clock()
-    adapter = adapter if adapter is not None else Ollama(config) if real else Mock()
+    adapter = adapter if adapter is not None else detect_receiver(config) if real else Mock()
     manifest = {"schema_version": "landmark-v1", "evidence_type": "ungraded_real_collection" if real else "mock_transport_only",
         "config": config, "config_sha256": digest(config), "dataset_sha256": digest(tasks), "source_hashes": source_hashes(),
         "source_code_sha256": digest(source_hashes()), "freeze": freeze, "tasks": tasks, "assignment_table": plan,

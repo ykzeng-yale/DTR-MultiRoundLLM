@@ -1,0 +1,33 @@
+{
+  "schema": "receiver-freeze-v1",
+  "recorded_utc": "2026-09-21T12:49Z",
+  "decided_by": "experiments workstream",
+  "backend": "llama.cpp llama-server (OpenAI-compatible /v1/chat/completions), via collect.LlamaServer",
+  "why_not_ollama": "Ollama is not installed on this host; llama-server is the only receiver. collect.detect_receiver() selects the adapter by probing /props.",
+  "base_url": "http://127.0.0.1:8193",
+  "decision_attach_not_launch": "Attach to the resident, idle Qwen2.5-3B server. Its build matches the pinned manifest; swap is 25.3/26.6 GB so a new receiver cannot be loaded; attaching avoids touching another session's processes.",
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "model_bytes": 2104932768,
+  "model_digest_verification": "independent shasum -a 256 of the resolved file == collect.LlamaServer.metadata() live digest (MATCH)",
+  "server_build": "b1-4fea119",
+  "server_build_matches": "experiments/env/llama_server_manifest.json commit 4fea119",
+  "per_slot_n_ctx": 8192,
+  "slots": 4,
+  "decoding_required": {
+    "temperature": 0.7,
+    "top_p": 0.95,
+    "num_ctx": 8192,
+    "note": "num_ctx is fixed by the server at 8192 per slot; the adapter fails closed on any other value. temperature/top_p match the theory workstream's config and the sibling project's measured regime, so earlier calibration transfers."
+  },
+  "cache_prompt": false,
+  "cache_prompt_reason": "prompt caching changes batch composition and llama.cpp does not guarantee bit-reproducibility across it; restored branches must not differ because one hit the cache",
+  "system_message_sha256": "b341d18be9f9114c13896905037b2607dfd1529da4c0c04136221d1bdc0de519",
+  "system_message_source": "collect.SYSTEM",
+  "template_injection": "The server chat template injects 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' when no system message is sent. Verified via /apply-template (renders without generating) that an explicit system message replaces it completely. collect.initial_messages() always sends collect.SYSTEM, so the injected default never reaches the receiver.",
+  "max_tokens_per_call_required": 512,
+  "max_tokens_per_call_reason": "The mock config's 32 would truncate essentially every code answer. Measured completions on this receiver and task family: median 67, p90 164-176, max 253 tokens (docs/measured_calibration.md, docs/pilot_findings.md). 512 clears the observed maximum with 2x margin; run() still enforces the cap and records length-truncated replies via done_reason.",
+  "per_chunk_guard": "Record /props build_info, model_path and per-slot n_ctx at the start and end of every run (run() already calls metadata before and after); halt on any change.",
+  "throughput_planning": "909 multi-turn calls/hour on this receiver under contention (docs/pilot_findings.md); the 168-call development ceiling is ~11 minutes of generation.",
+  "not_yet_done": "No generation call has been made through this adapter. The first is the frozen development release, per the protocol's rule that a clean committed freeze and measured preflight precede calls."
+}
