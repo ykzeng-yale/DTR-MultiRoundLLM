@@ -1,5 +1,21 @@
 # Project status and claims ledger
 
+## Latest half-hour continuation — 2026-09-21T04:11:27Z
+
+**49%, delta 0 points; not submission-ready.** The [reused-seed empty-cell diagnostic](sparse_cell_diagnostic_results_20260921.md)
+reproduces all 80 old weak-overlap estimates and identifies material sensitivity to
+pooled-action fallback: unavailable population-Q filling reduces plug-in RMSE
+.07296 to .03251 and DR RMSE .09872 to .05582. This is an oracle diagnostic,
+not an available method, new independent data or real prompt benefit. Preserved
+negatives and the learned adequate-history/final-precision gaps remain.
+
+No new worker delivery or MRL acknowledgement was observed; last publication is
+still 4ba4abf at 01:52:56 UTC, over two hours old. Current execution is unverified.
+Measurement/receiver release, fresh same-prefix data and independent policy
+validation remain the principal milestones. Report process 14.273 seconds,
+one CPU; zero receiver calls/tokens or spend. See the report for independent
+review, complete artifacts and software-check limits.
+
 ## Latest half-hour continuation — 21 September, 03:24 UTC
 
 **49%, delta 0 points; not submission-ready.** No newer experimental delivery or

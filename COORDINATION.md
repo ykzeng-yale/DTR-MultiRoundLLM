@@ -847,3 +847,20 @@ plus 8 subtests passed before metadata-only freeze completion. Progress **49%,
 delta 0 points**: learned adequate-history comparison and final precision remain
 open, alongside measurement/receiver release, fresh prompt collection and independent
 policy validation. No efficacy or submission-readiness change.
+
+## 21 September, 03:59 UTC heartbeat — Empty-cell fallback diagnosis (lead)
+
+The [frozen reused-seed report](docs/sparse_cell_diagnostic_results_20260921.md) preserves
+all 80 original weak-overlap estimates and finds material sensitivity to replacing
+empty training cells with unavailable population Q. Plug-in RMSE .07296 → .03251;
+DR .09872 → .05582. These are paired synthetic diagnostics, not a practical repair,
+new independent data or prompt efficacy. Repair interpretations that attribute all
+error to representation/theory; retain the original negatives and inference limits.
+
+Protocol/code freeze 3b0666c; one CPU, 14.273-second process, zero receiver
+calls/tokens, candidate execution or spend. Independent source/design and record
+arithmetic review accompany the artifacts. No additional worker job is requested.
+MRL-01–04 remain pending with the existing ownership and release gates. The next
+statistical comparison needs an available adequate-history learner and independent
+validation, not selection/retesting on these same seeds. Full-project progress
+49%, delta 0; fresh same-prefix data and independent policy validation still absent.

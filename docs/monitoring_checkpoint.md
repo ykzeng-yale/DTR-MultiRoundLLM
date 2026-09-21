@@ -1,5 +1,35 @@
 # Hourly research checkpoint
 
+## Latest half-hour check — 2026-09-21T04:11:27Z
+
+Started from c4b2fef; inspected issues #2–#5 and open PRs. No newer experimental
+worker delivery or acknowledgement was visible. Last-seen worker commit remains
+4ba4abfbff5228b8b0cf4d8f5a0b7956b504708a (01:52:56 UTC); its independently
+reviewed status/rulings remain 630b6e4ab62c6121f090642ee97cb31a15ced092.
+More than two hours have elapsed since publication, and current execution is
+unverified. The pending MRL-01 scheduler-health request remains unanswered; no
+duplicate collection or repeated unchanged status comment was created.
+
+The lead completed the [frozen empty-cell diagnostic](sparse_cell_diagnostic_results_20260921.md)
+at code/protocol freeze 3b0666c. All 80 old weak-overlap estimates reproduce within
+3.33e-16; independent array predictions/scores agree exactly. Replacing only empty
+training cells with known population Q, with upstream recomputation, changes
+plug-in bias from -.05429 to -.00565 and RMSE .07296 to .03251; DR RMSE falls
+.09872 to .05582 while its paired mean shift is inconclusive. This is a material
+sensitivity to the fallback rule, not a practical repair, causal error decomposition,
+new independent study or prompt efficacy. Original negatives remain authoritative.
+
+The full suite passed 233 tests and 8 subtests before final metadata/report-label
+edits; four affected tests passed again. The complete report process took 14.273
+seconds on one CPU within its 120-second cap. Zero model calls/tokens, candidate
+execution, installations or spend. Independent review checks source/design and
+saved-record arithmetic; no duplicate simulations are needed for that review.
+
+Progress **49%, delta 0 points**. Learned adequate-history validation and final
+precision remain open, alongside measurement/receiver release, fresh same-prefix
+prompt data and independent policy validation. No efficacy or submission-readiness
+change. Next empirical milestone remains the existing MRL-02–04 handoff.
+
 ## Latest half-hour check — 2026-09-21T03:24:44Z
 
 Started from b45d355. No newer worker delivery, open PR or reply on issues #2–#5

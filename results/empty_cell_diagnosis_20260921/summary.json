@@ -1,0 +1,131 @@
+{
+  "status": "complete",
+  "failure": null,
+  "completed": 80,
+  "planned": 80,
+  "summary": {
+    "estimator_diagnostics": {
+      "plugin": {
+        "bias": {
+          "mean": -0.054293021011480605,
+          "mcse": 0.0054836980187981,
+          "approximate_mc_interval95": [
+            -0.06504106912832489,
+            -0.04354497289463633
+          ]
+        },
+        "rmse": 0.07296119998671431
+      },
+      "dr": {
+        "bias": {
+          "mean": 0.01580166675237668,
+          "mcse": 0.010963756518450397,
+          "approximate_mc_interval95": [
+            -0.005687296023786096,
+            0.037290629528539454
+          ]
+        },
+        "rmse": 0.09872084518897915
+      },
+      "oracle_fill_plugin": {
+        "bias": {
+          "mean": -0.005651412085025213,
+          "mcse": 0.003601575321607725,
+          "approximate_mc_interval95": [
+            -0.012710499715376354,
+            0.0014076755453259274
+          ]
+        },
+        "rmse": 0.032506533151578296
+      },
+      "oracle_fill_dr": {
+        "bias": {
+          "mean": 0.016532688492966338,
+          "mcse": 0.0059989811037313425,
+          "approximate_mc_interval95": [
+            0.004774685529652907,
+            0.02829069145627977
+          ]
+        },
+        "rmse": 0.05582440288222162
+      },
+      "population_q_initial": {
+        "bias": {
+          "mean": -0.008500999509065884,
+          "mcse": 0.0010154463884642325,
+          "approximate_mc_interval95": [
+            -0.010491274430455779,
+            -0.0065107245876759885
+          ]
+        },
+        "rmse": 0.012398643906205936
+      }
+    },
+    "paired_oracle_fill_minus_original": {
+      "plugin": {
+        "estimate_change": {
+          "mean": 0.04864160892645539,
+          "mcse": 0.003908984627753322,
+          "approximate_mc_interval95": [
+            0.040979999056058876,
+            0.0563032187968519
+          ]
+        },
+        "squared_error_change": {
+          "mean": -0.004266662005966662,
+          "mcse": 0.0007256465654556001,
+          "approximate_mc_interval95": [
+            -0.005688929274259638,
+            -0.002844394737673686
+          ]
+        }
+      },
+      "dr": {
+        "estimate_change": {
+          "mean": 0.0007310217405896574,
+          "mcse": 0.007539605579931223,
+          "approximate_mc_interval95": [
+            -0.01404660519607554,
+            0.015508648677254855
+          ]
+        },
+        "squared_error_change": {
+          "mean": -0.006629441317669795,
+          "mcse": 0.0012013435543237888,
+          "approximate_mc_interval95": [
+            -0.00898407468414442,
+            -0.004274807951195169
+          ]
+        }
+      }
+    },
+    "sparsity": {
+      "exposure_distribution": "logger-generated eligible held-out histories; equal averaging over folds and seeds, not target history occupancy",
+      "total_fold_cells": 14400,
+      "empty_fold_cells": 318,
+      "one_to_four_episode_cells": 2372,
+      "one_to_four_root_cells": 2403,
+      "mean_empty_fraction_by_stage": [
+        0.0,
+        0.0022916666666666667,
+        0.06395833333333334
+      ],
+      "mean_target_mass_exposure_by_stage": [
+        0.0,
+        0.0011025011716083598,
+        0.02352177482664295
+      ]
+    }
+  },
+  "max_reproduction_error": 3.3306690738754696e-16,
+  "max_array_parity_error": 0.0,
+  "usage": {
+    "elapsed_seconds": 13.421999333426356,
+    "workers": 1,
+    "receiver_calls": 0,
+    "receiver_tokens": 0,
+    "candidate_executions": 0,
+    "paid_usd": 0
+  },
+  "interpretation": "Only a complete run supports the frozen 80-seed comparison. No efficacy or deployable-method claim."
+}

@@ -16,6 +16,12 @@ The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_The
 
 ## Latest continuation — 21 September 2026
 
+The [frozen empty-cell diagnostic](docs/sparse_cell_diagnostic_results_20260921.md)
+reproduces the old weak-overlap estimates and shows material sensitivity to their
+pooled-action fallback. Filling absent cells with known simulation values reduces
+error, but is unavailable in practice and supplies no new prompt efficacy.
+Progress remains 49%; fresh prompt and independent policy validation remain open.
+
 An independently reviewed [exact history-compression check](docs/history_compression_results_20260921.md)
 now separates a small population regression bias from the larger weak-overlap
 error in the finite diagnostic. This is synthetic enumeration, not a newly trained

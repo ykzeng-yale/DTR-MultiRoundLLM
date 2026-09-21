@@ -1,0 +1,172 @@
+{
+  "reviewed_utc": "2026-09-21T04:10:42.079670+00:00",
+  "classification": "Independent internal arithmetic and provenance review of existing saved records; no resimulation, refitting or model execution.",
+  "review_method": "Python standard library only: math.fsum means and squared deviations; sample-variance MCSE divided by replicate count; direct loops over saved cell counts and exposure; SHA256 and read-only git-show source checks.",
+  "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "input_sha256": {
+    "manifest.json": "7b9498f23c87caee4a8a34c89a4491179512c03250a36470f368ef51f13cf40a",
+    "replicates.jsonl": "f25b8393fe09df398cfe261532501f860cd4e26b9b167d7d7d187e73b2701195",
+    "summary.json": "0f81a4833fd0122c984df7225358e5723cabf3c59ce3f9068b45f4ebc39b9c88",
+    "invocation.json": "8ad8f5d80684501cd187a50601158695a2ab54db9d86e41f4cec7185ac983a2a"
+  },
+  "freeze_revision": "3b0666cbe8cfba5c00bf4a5090d5b476cf98d2ba",
+  "pinned_sources_verified_against_current_files_and_freeze": [
+    "experiments/e0/simulator.py",
+    "experiments/e0/estimators.py",
+    "experiments/e0/run_grid.py",
+    "results/matched_estimator_diagnosis_20260920/replicates.json",
+    "results/history_compression_20260921.json",
+    "scripts/diagnose_matched_estimators.py",
+    "experiments/e0/sparse_cell_config_v1.json",
+    "scripts/diagnose_empty_cells.py",
+    "tests/test_empty_cells.py",
+    "docs/sparse_cell_diagnostic_plan_20260921.md"
+  ],
+  "all_80_planned_unique_seeds_present_in_order": true,
+  "archive_estimates_max_absolute_discrepancy_recomputed": 3.3306690738754696e-16,
+  "recorded_array_parity_maximum": 0.0,
+  "summary_numeric_entries_checked": 51,
+  "summary_max_absolute_arithmetic_discrepancy": 6.938893903907228e-18,
+  "recomputed_summary": {
+    "estimator_diagnostics": {
+      "plugin": {
+        "bias": {
+          "mean": -0.054293021011480605,
+          "mcse": 0.005483698018798101,
+          "approximate_mc_interval95": [
+            -0.06504106912832489,
+            -0.043544972894636325
+          ]
+        },
+        "rmse": 0.07296119998671431
+      },
+      "dr": {
+        "bias": {
+          "mean": 0.01580166675237668,
+          "mcse": 0.010963756518450397,
+          "approximate_mc_interval95": [
+            -0.005687296023786096,
+            0.037290629528539454
+          ]
+        },
+        "rmse": 0.09872084518897915
+      },
+      "oracle_fill_plugin": {
+        "bias": {
+          "mean": -0.005651412085025213,
+          "mcse": 0.0036015753216077258,
+          "approximate_mc_interval95": [
+            -0.012710499715376355,
+            0.001407675545325929
+          ]
+        },
+        "rmse": 0.032506533151578296
+      },
+      "oracle_fill_dr": {
+        "bias": {
+          "mean": 0.016532688492966338,
+          "mcse": 0.005998981103731343,
+          "approximate_mc_interval95": [
+            0.004774685529652906,
+            0.02829069145627977
+          ]
+        },
+        "rmse": 0.05582440288222162
+      },
+      "population_q_initial": {
+        "bias": {
+          "mean": -0.008500999509065884,
+          "mcse": 0.0010154463884642325,
+          "approximate_mc_interval95": [
+            -0.010491274430455779,
+            -0.0065107245876759885
+          ]
+        },
+        "rmse": 0.012398643906205936
+      }
+    },
+    "paired_oracle_fill_minus_original": {
+      "plugin": {
+        "estimate_change": {
+          "mean": 0.04864160892645539,
+          "mcse": 0.003908984627753323,
+          "approximate_mc_interval95": [
+            0.040979999056058876,
+            0.0563032187968519
+          ]
+        },
+        "squared_error_change": {
+          "mean": -0.004266662005966662,
+          "mcse": 0.0007256465654556002,
+          "approximate_mc_interval95": [
+            -0.005688929274259638,
+            -0.0028443947376736857
+          ]
+        }
+      },
+      "dr": {
+        "estimate_change": {
+          "mean": 0.0007310217405896574,
+          "mcse": 0.007539605579931224,
+          "approximate_mc_interval95": [
+            -0.014046605196075541,
+            0.015508648677254856
+          ]
+        },
+        "squared_error_change": {
+          "mean": -0.006629441317669795,
+          "mcse": 0.001201343554323789,
+          "approximate_mc_interval95": [
+            -0.008984074684144422,
+            -0.004274807951195168
+          ]
+        }
+      }
+    },
+    "sparsity": {
+      "total_fold_cells": 14400,
+      "empty_fold_cells": 318,
+      "one_to_four_episode_cells": 2372,
+      "one_to_four_root_cells": 2403,
+      "mean_empty_fraction_by_stage": [
+        0.0,
+        0.0022916666666666667,
+        0.06395833333333334
+      ],
+      "mean_target_mass_exposure_by_stage": [
+        0.0,
+        0.0011025011716083598,
+        0.023521774826642954
+      ]
+    }
+  },
+  "empty_cells_by_stage": [
+    0,
+    11,
+    307
+  ],
+  "fold_cells_by_stage": [
+    4800,
+    4800,
+    4800
+  ],
+  "recorded_execution_runtime_seconds": {
+    "internal": 13.421999333426356,
+    "whole_process": 14.27318208385259
+  },
+  "blocking_issues": [],
+  "interpretation": [
+    "The specified oracle filling and backward propagation materially changes the plug-in estimate and reduces observed squared error for both score variants on these reused seeds.",
+    "The paired DR mean-change interval includes zero; the reduction in DR error is not evidence of a systematic mean-bias correction.",
+    "This is not a fraction-of-error decomposition, validation of a deployable fallback, independent confirmation, or evidence of real prompt-policy benefit.",
+    "Exposure averages target action mass on logger-generated eligible evaluation histories, with equal fold/seed averaging; it is not target-policy occupancy.",
+    "Data/fold hashes are well-formed records; original trajectory-array hashes do not exist, so bytewise trajectory reproduction cannot be independently verified from this archive alone."
+  ],
+  "review_usage": {
+    "arithmetic_and_provenance_review_seconds": 0.17922954261302948,
+    "resimulations": 0,
+    "refits": 0,
+    "model_calls": 0,
+    "paid_usd": 0
+  }
+}

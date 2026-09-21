@@ -13,6 +13,12 @@ acceptance probability, not a quality judgement, and not a time estimate.
 
 ## Latest hourly continuation — 21 September 2026, offline component
 
+**04:11 UTC half-hour update: 49%, delta 0.** The [empty-cell diagnostic](sparse_cell_diagnostic_results_20260921.md)
+finds material sensitivity to an unavailable oracle substitution in the 80 old
+weak-overlap seeds. This narrows failure diagnosis without completing available
+adequate-history validation, final precision or fresh prompt/policy milestones.
+Same denominator and component credits; no efficacy or submission-readiness change.
+
 **03:24 UTC half-hour update: 49%, delta 0.** The frozen population-limit diagnostic
 isolates history-compression bias and receives independent numerical/math review.
 It does not deliver a fitted adequate-history comparator or final Monte Carlo

@@ -125,6 +125,18 @@ This is a known-law reference, not a trained full-history comparator or new
 receiver evidence; synthetic observed states also contain correctness information
 not automatically available to a deployed coding policy.
 
+A subsequent frozen [empty-cell sensitivity analysis](../docs/sparse_cell_diagnostic_results_20260921.md)
+replayed all 80 weak-overlap seeds and recovered every original estimate. Replacing
+only absent training cells by known population compressed-Q values, before
+recomputing upstream targets, reduced plug-in RMSE from .07296 to .03251 and DR
+RMSE from .09872 to .05582. The paired plug-in estimate increased .04864
+(approximate Monte Carlo interval [.04098, .05630]); the paired DR mean shift
+was .00073 [-.01405, .01551]. This unavailable oracle substitution establishes
+material sensitivity to the specified fallback in the reused diagnostic; it does
+not identify a unique decomposition of error or demonstrate a practical repair.
+Sparse nonempty cells, learned full-history comparisons and valid finite-sample
+uncertainty remain unresolved. These are the same replications, not new validation.
+
 ## Interpretation and next empirical test
 
 The current evidence justifies a narrower empirical sequence. First validate the
