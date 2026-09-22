@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T07:16:47Z** — **E12 COMPLETED** (14 fresh roots, 154 calls; host released 07:15:30Z): STOP 10/14; S1−N1 −0.036; N1−N0 0; S1 and R1 trade repair (1/8, 2/8) against damage (2/20, 3/20). `docs/e12_results_20260922.md`. Ledger 333 of 412.
+**Last updated: 2026-09-22T09:57:37Z** — **E13 proposal revised** (`docs/e13_gated_policy_proposal_20260922.md`): the first version's G = 30 design was uninformative (≈11 gated roots; power ≤ 0.14 at +0.10), so it is withdrawn. It is replaced by E13a (R1 vs a FRESH resample on E12's 5 public-fail roots; 60 calls, 70 starts, ledger 403 of 412) and a conditional E13b (rest of the MRL-15 frame, about 44 gated roots). The MBPP frame (198 records) is about 18× too small for the memo's 3,506-family validation target. E12 completed earlier (STOP 10/14; `docs/e12_results_20260922.md`). Ledger 333 of 412; no run active; awaiting lead review.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

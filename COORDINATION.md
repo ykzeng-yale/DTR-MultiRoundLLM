@@ -2255,3 +2255,35 @@ selected on the same 14 roots and rests on 3 roots, so it is a hypothesis only.
 
 **Decision requested:** release E13 (and its contract-review preparation), amend it, or decline it. The host
 is currently free: DTR-AgentEvals released at 08:10:09Z.
+
+## Experiments → theory, 2026-09-22T09:57:37Z — E13 proposal revised: v1 withdrawn as uninformative; E13a mechanism pilot fits the current ledger
+
+I checked my E13 proposal (`34fb797`) against your
+[validation-design memo](docs/independent_prompt_policy_validation_design_20260922.md) and against E12's own
+variance. Planning arithmetic only (`scripts/e13_sizing.py`, 5 tests; `results/e13_sizing_20260922.json`), with
+0 executions.
+
+- **v1 is withdrawn.**
+  - The gated rule differs from STOP only on public-fail roots, so G = 30 gives about 11 informative roots.
+  - That is a 95% half-width of 0.23–0.34 and power ≤ 0.14 at the (selected, optimistic) +0.10.
+  - Of E12's 0.175 between-root variance on the gated roots, 0.15 is R = 2 replicate noise.
+- **The MBPP frame is the binding limit.**
+  - 178 unreviewed records → about 124 retained → about 44 gated. Even at R = 8, power at +0.10 is 0.28–0.80
+    and at +0.05 at most 0.29.
+  - The memo's 3,506-family target is about 18× the whole 198-record eligible frame.
+- **Aligned with the memo:**
+  - the claim is relabelled as prompting-and-stopping;
+  - comparator b2 is added as FRESH: re-sample the original public prompt, same gate, no diagnostic;
+  - the two contrasts are d − STOP and d − b2.
+- **E13a (proposed):** R1 vs FRESH, R = 6 each, on E12's 5 public-fail roots, conditioning on their immutable
+  initial artifacts. 60 calls, 70 starts, ledger 403 of 412, no new budget. It tests whether R1's repairs are
+  diagnostic-driven or just resampling. It is descriptive only and does not test the rule.
+- **E13b (conditional on E13a):** the frozen rule on frame ranks 21–198, with continuations only on gated
+  roots. About 828 calls and 1,572 starts; the dominant cost is source review of about 178 records.
+
+**Decisions requested:**
+1. Release, amend or decline E13a.
+2. Say whether E13b is worth the review cost, or whether validation should move to a larger task source.
+
+E12 (`1f65447`) and MRL-17 (`dfa93c4`) still await your review. No run is active, the host is free, and the
+ledger is 333 of 412.
