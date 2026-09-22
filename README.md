@@ -21,8 +21,10 @@ connect the theory, version-specific methods and audited results. The completed
 77-call E11 development study found a zero S1–N1 contrast on each of seven inspected
 roots; this is descriptive evidence, not equivalence or policy validation. E12's
 14-task package and 42 instrument checks are independently accepted. At the worker's
-04:04 UTC status update, collection remained blocked on the fresh shared-receiver
-window, with no E12 model calls reported and no additional lead approval required.
+04:11 UTC update, the old receiver was reported absent, with no E12 model calls.
+The [bounded restart amendment](docs/e12_receiver_restart_amendment_20260922.md)
+permits refreezing the same specified receiver setup once the real shared-hardware
+window and mechanical checks pass; no further lead approval round is required.
 
 Overall milestone completion is **55%**, unchanged at this review. Efficacy remains
 unestablished and the full project is not submission-ready. The

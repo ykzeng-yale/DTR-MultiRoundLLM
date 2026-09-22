@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-22T04:11:03Z",
+  "checkpoint_utc": "2026-09-22T04:18:52Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -59,9 +59,9 @@
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker08d63b7 posthoc E11 output counts independently reproduced; structural-unassessable and causal-interpretation defects corrected, preserving original grades. New manuscript abstract and version-specific methods independently reviewed. No E12 receiver outcomes.",
+  "latest_evidence": "Worker08d63b7 posthoc E11 output counts independently reproduced; structural-unassessable and causal-interpretation defects corrected, preserving original grades. New manuscript abstract and version-specific methods independently reviewed. No E12 receiver outcomes. Worker cafa02f receiver-restart proposal independently reviewed and conditionally released; no replacement receiver independently observed.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "08d63b73777075fbd4e35469caad4221422c813f",
+    "last_seen_worker_revision": "cafa02f27a98c8c04fd43eadae8335619ac8521b",
     "delivery_type": "post-hoc static descriptors from immutable E11 outputs; no fresh E12 observations",
     "scientific_review_revision": "08d63b73777075fbd4e35469caad4221422c813f",
     "review_record": "docs/e11_mechanism_lead_review_20260922.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "85bc81be5ce87ccd1a519c2b8a072026a3cca4d3",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Latest worker update04:04:18Z reports poller tick03:57:30Z and continued window block; delivery is active, no E12 dispatch reported.",
+    "scheduler_status": "Worker04:11:30Z reports old receiver absent after local04:10Zcheck; last reported poller tick03:57:30Z. Active delivery, no E12dispatch reported.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -84,11 +84,13 @@
     "mrl13_recovery_status": "closed; real agreement and run delivered",
     "mrl14_status": "delivered01:43:07Z; reviewed with remaining fault-attribution and design corrections",
     "mrl15_status": "delivered02:18:35Z; implementation/instrument accepted, frame/design corrections incorporated",
-    "mrl16_status": "Accepted all lead feedback at03:27:16Z, processed25637aa; blocked on actual shared-receiver window, zero dispatch. No new scientific delivery.",
+    "mrl16_status": "Prior feedback acknowledged85bc81b; cafa02f requests own-server receiver amendment. Lead conditionally permits one bounded restart/refreeze, preserving shared-hardware window and live guards; latest amendment acknowledgement pending.",
     "mrl16_publication_received": true,
-    "mrl16_execution_state": "instrument validation accepted; latest acknowledged status zero receiver calls/window pending",
+    "mrl16_execution_state": "Instrument validation accepted; zero E12receivercalls reported; oldserverabsent perworker; freshrestart/window/snapshot conditions pending.",
     "mrl16_independent_validation_state": "accepted within finite instrument/source scope",
-    "mrl16_latest_feedback_acknowledged": true,
-    "mrl17_status": "Lead accepted reproduced static counts and repaired descriptors/interpretation; bounded optional post-E12 exploratory supplement permitted, acknowledgement pending."
+    "mrl16_latest_feedback_acknowledged": false,
+    "mrl17_status": "Lead accepted reproduced static counts and repaired descriptors/interpretation; bounded optional post-E12 exploratory supplement permitted, acknowledgement pending.",
+    "last_reviewed_operational_proposal_revision": "cafa02f27a98c8c04fd43eadae8335619ac8521b",
+    "operational_review_record": "docs/e12_receiver_restart_amendment_20260922.md"
   }
 }

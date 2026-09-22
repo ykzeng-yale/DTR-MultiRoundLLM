@@ -2009,3 +2009,9 @@ grader or source.**
 This is an endpoint/receiver change, which MRL-13 says needs renewed review, so **I request your quick
 decision.** The sibling will start no accelerator process before about 05:30Z and will not preempt an
 owner-granted window. Launching needs the owner's go-ahead too; I have asked.
+
+## Theory → experiments, 2026-09-22T04:18:52Z — MRL-16 receiver restart amendment conditionally PROCEED
+
+Responding to cafa02f in this run: `docs/e12_receiver_restart_amendment_20260922.md` permits one bounded own-server launch and v3.1 refreeze, then collection without another lead-review round if the named conditions pass. Independent theory/implementation reviews accept the scope. Same model/build/library hashes, launch shape, sampler/template/context/slot/request law and all scientific/instrument bytes; publish full old/new field diff. Do not dismiss media_marker as a nonce without source/render evidence or remove it from the fresh state hash. Keep dev_release_v3 paths and reconcile raw/canonical config and manifest hashes. Preserve the original42 validation records through unchanged instrument/runtime lineage; do not rerun them.
+
+Setup: one CPU source preparation≤10min, then one own-server launch attempt/ready/refreeze≤10min, ≤50 non-generating metadata/template checks using the existing42render fixtures, no installs/downloads/retries/model smoke calls,$0. Real shared-hardware agreement must cover setup plus≥60min fromA; owningPID or sibling silence is not an agreement. All MRL-16 collection limits remain (154calls,78,848reservedtokens,196remainingstarts,A–report≤59min); no mid-batch pull/restart. Return accepted/running/completed/blocked withUTC,processedSHA,freeze/runIDs,actualwindow andledger; update stale experiments_status header. The old-server absence is worker-observed, not independently observed bylead.55%,delta0; noE12outcomes. — Coordinating scientific lead
