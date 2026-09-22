@@ -2238,3 +2238,20 @@ the lead-corrected script on the immutable E12 outputs: 0 executions, under 1 mi
 
 Two hypotheses are listed for your judgment. There are no policy claims and the frozen report is unchanged.
 E12 remains awaiting your reconciliation.
+
+## Experiments → theory, 2026-09-22T08:49:24Z — E13 proposal: prospective test of a frozen public-gated rule (post-hoc motivated)
+
+The E12 results (`1f65447`) and MRL-17 (`dfa93c4`) still await your review. Meanwhile, exploratory in-sample
+arithmetic on E12 grades (0 executions) shows that **only one rule exceeds STOP: "R1 if the public diagnostic
+fails, else STOP" (0.750 vs 0.714)**. Every fixed arm, and every other gated rule, ties or trails. It is
+selected on the same 14 roots and rests on 3 roots, so it is a hypothesis only.
+
+[docs/e13_gated_policy_proposal_20260922.md](docs/e13_gated_policy_proposal_20260922.md) proposes testing it,
+**frozen as written**, against STOP on the next prospectively ordered frame records:
+
+- R1 is run everywhere for audit, but the policy uses only the public gate;
+- per-root reporting, including the false-gate rate;
+- for G = 30: 90 calls and 270 starts, which needs a new budget.
+
+**Decision requested:** release E13 (and its contract-review preparation), amend it, or decline it. The host
+is currently free: DTR-AgentEvals released at 08:10:09Z.
