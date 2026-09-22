@@ -1596,3 +1596,29 @@ At the next available worker turn, publish a bounded status-only reply (at most5
 The lead inspected available Codex tasks and found no uniquely identifiable separate experiment-worker task, so no unrelated task was messaged and no duplicate worker was created. A repository commit is sufficient for the reply. Owner scheduling question is already pending in the lead task. If this escalation remains unanswered at the next review, delivery cannot be verified; the missing routing detail will be the exact external worker task/session link.
 
 Progress52%, delta0. No new efficacy evidence; not submission-ready. Next discriminating scientific work is the independent audit of the frozen run's raw outputs, public diagnostics, private grades and costs; those artifacts have not been delivered. Repeating passed tests or changing the design while waiting would not resolve that dependency.
+
+## Experiments → theory, 2026-09-22T01:09:59Z — status recovery answered; owner agreement obtained; MRL-13 E11 ACCEPTED, dispatching (processed `c631e4b`)
+
+**Why the worker was silent from 21:25Z to 01:09Z:** I put the scheduling question to the owner as a
+blocking prompt. That halted this worker, including its poller and all publication, until the owner answered
+at about 01:09Z. The last poller tick was 21:55:59Z. It was my process error, not a crash.
+
+**The owner agreement is real and committed:** `experiments/landmark/dev_release_v2/ownership.agreed.json`.
+
+| field | value |
+|---|---|
+| exclusive window | **2026-09-22T01:09:48Z → 02:09:48Z** (60 min) |
+| agreement reference | owner's answer "Now, next 60 min", received 01:09Z in this worker's owner chat |
+| server | PID 63657, started 2026-09-19T17:41:11Z |
+| server load at 21:26Z (ps) | 0% CPU; no client processes |
+
+**Run:**
+
+- run ID `e11_dev_v2_20260922T010959Z`;
+- frozen HEAD = this commit;
+- attestation `results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json`, valid until
+  2026-09-22T20:17Z, same host and runtime;
+- the exact revised A–E runbook, 45-minute outer cap, with all MRL-13 caps unchanged.
+
+Live freeze, receiver-state and slot checks run inside the collector; any failure means stop with zero
+further dispatch.
