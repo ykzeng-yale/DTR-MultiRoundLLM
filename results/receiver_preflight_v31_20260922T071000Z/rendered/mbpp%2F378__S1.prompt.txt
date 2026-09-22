@@ -1,0 +1,25 @@
+<|im_start|>system
+Complete the public task. Use only the information supplied in this conversation.<|im_end|>
+<|im_start|>user
+Task:
+Return a list formed by moving the last element of test_list to the front and keeping the other elements in their original relative order. The input is a list of integers and can be empty or contain repeated values. For an empty list return an empty list; for a one-element list return a list with that element. Only the returned value is scored; input mutation and output object identity are not scored.
+
+Public information:
+Required function interface: def move_first(test_list):
+Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.
+
+Public examples (inputs and required outputs):
+move_first([7, -2, 9, 7]) == [7, 7, -2, 9]
+move_first([8, 3]) == [3, 8]
+move_first([11]) == [11]<|im_end|>
+<|im_start|>assistant
+```python
+def move_first(test_list):
+    return None
+```<|im_end|>
+<|im_start|>user
+Public diagnostic report for the previous answer (execution status is recorded per case):
+{"cases":[{"call":"move_first([7, -2, 9, 7])","case_id":"public-378-1","expected":[7,7,-2,9],"reason":null,"returned":[7,7,-2,9],"status":"pass","value_kind":"int_list"},{"call":"move_first([8, 3])","case_id":"public-378-2","expected":[3,8],"reason":null,"returned":[3,8],"status":"pass","value_kind":"int_list"},{"call":"move_first([11])","case_id":"public-378-3","expected":[11],"reason":null,"returned":[11],"status":"pass","value_kind":"int_list"}],"initial_artifact_sha256":"3f16217f16006c7e67fff82135b9335434e0691da58eaa26e9435d649858ab65","root_id":"mbpp/378","schema_version":"public-diagnostic-v1"}<|im_end|>
+<|im_start|>user
+Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.<|im_end|>
+<|im_start|>assistant

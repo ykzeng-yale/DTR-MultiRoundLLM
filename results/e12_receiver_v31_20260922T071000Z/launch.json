@@ -1,0 +1,48 @@
+{
+ "schema": "mrl16-own-receiver-launch-v31",
+ "source_head": "2bc8546aff8747ee4a6e73bee84bf7f391d3b30f",
+ "launcher_path": "scripts/launch_own_receiver_v31.py",
+ "launcher_sha256": "03bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5",
+ "pid": 35499,
+ "command": [
+  "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server",
+  "-m",
+  "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+  "--alias",
+  "qwen2.5-3b-instruct",
+  "--port",
+  "8193",
+  "-ngl",
+  "99",
+  "-np",
+  "4",
+  "-c",
+  "32768",
+  "--jinja",
+  "--host",
+  "127.0.0.1"
+ ],
+ "env_pinned": {
+  "LLAMA_MEDIA_MARKER": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>"
+ },
+ "host": "Yukangs-MacBook-Pro.local",
+ "started_utc": "2026-09-22T07:10:02.173407+00:00",
+ "pinned_build_files_verified": 26,
+ "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+ "memory_before": {
+  "swap": "total = 15360.00M  used = 13817.44M  free = 1542.56M  (encrypted)",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     6752.\nPages active:                                 677306.\nPages inactive:                               676943.\nPages speculative:                               155.\nPages throttled:                                   0.\n"
+ },
+ "ownership_record": "docs/e12_shared_window_20260922T071000Z.json",
+ "ownership_sha256": "e198e01a9db858605bb8a79f4869df06137de148c738be19ad52cb1b67f26714",
+ "setup_deadline_utc": "2026-09-22T07:20:00+00:00",
+ "shared_window_hard_end_utc": "2026-09-22T08:20:00Z",
+ "generation_requests": 0,
+ "memory_ready": {
+  "swap": "total = 15360.00M  used = 13817.44M  free = 1542.56M  (encrypted)",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     6524.\nPages active:                                 570074.\nPages inactive:                               564022.\nPages speculative:                              5339.\nPages throttled:                                   0.\n"
+ },
+ "ready_utc": "2026-09-22T07:10:03.180766+00:00",
+ "ready_seconds": 1.0284066256135702,
+ "exited": null
+}

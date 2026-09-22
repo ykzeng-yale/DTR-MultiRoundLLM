@@ -1,0 +1,11 @@
+{
+  "receiver_base_url": "http://127.0.0.1:8193",
+  "server_pid": 35499,
+  "server_start_utc": "2026-09-22T07:10:02.173407+00:00",
+  "owner_project": "DTR-MultiRoundLLM (own pinned llama-server launched under the MRL-16 v3.1 amendment; host owner Yukang Zeng)",
+  "exclusive_window_start_utc": "2026-09-22T07:10:00Z",
+  "exclusive_window_end_utc": "2026-09-22T08:20:00Z",
+  "agreement_ref": "docs/e12_shared_window_20260922T071000Z.json: proposal issue #3 comment 5771507492, acceptance 5771595750; DTR-AgentEvals slot_agreement_20260922_0710.json (f9ca76a); prior DTR-AgentEvals block RELEASED 05:54:42Z (cross-session release message; PIDs 19747/21163 stopped), independently re-checked by this worker before launch",
+  "recorded_by": "experiments workstream",
+  "recorded_utc": "2026-09-22T07:10:04Z"
+}

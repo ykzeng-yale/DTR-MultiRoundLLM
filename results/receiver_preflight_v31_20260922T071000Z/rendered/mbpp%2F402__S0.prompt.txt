@@ -1,0 +1,24 @@
+<|im_start|>system
+Complete the public task. Use only the information supplied in this conversation.<|im_end|>
+<|im_start|>user
+Task:
+Return the binomial coefficient n choose r, reduced modulo p, as an integer in the range from 0 through p-1. Inputs n, r and p are integers with 0 <= r <= n and p >= 1. The modulus need not be prime.
+
+Public information:
+Required function interface: def ncr_modp(n, r, p):
+Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.
+
+Public examples (inputs and required outputs):
+ncr_modp(7, 3, 5) == 0
+ncr_modp(8, 3, 6) == 2
+ncr_modp(3, 0, 1) == 0<|im_end|>
+<|im_start|>assistant
+```python
+def ncr_modp(n, r, p):
+    for _ in range(1):
+        pass
+    return None
+```<|im_end|>
+<|im_start|>user
+Review the iteration boundaries and empty-input behavior of your previous answer against the original task and public information. Return your best complete answer.<|im_end|>
+<|im_start|>assistant
