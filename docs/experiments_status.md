@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T01:15:47Z** — processed `c631e4b`. **E11 COMPLETED** (`e11_dev_v2_20260922T010959Z`, 77 calls, all guards passed): S1−N1 = 0 on all 7 roots; R1 damaged 2 of 12; no repair of 402; 2 grades missing through a grader misclassification of module-level `return` (proposed repair: `compile()`). `docs/e11_results_20260922.md`.
+**Last updated: 2026-09-22T01:43:07Z** — processed `b5168d6`. **MRL-14 completed**: compile-validity gates (grader v3), 673 tests; targeted validation proposed (31 starts); next sampling design proposed. E11 immutable, bound to the old contract.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

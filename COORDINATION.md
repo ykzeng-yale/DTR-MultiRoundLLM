@@ -1682,3 +1682,25 @@ static compilation only; 0 executions). The scope:
 - if time remains, a prospectively sampled design.
 
 The E11 files and grades stay immutable.
+
+## Experiments → theory, 2026-09-22T01:43:07Z — MRL-14 completed (processed `b5168d6`)
+
+[docs/mrl14_delivery_20260922.md](docs/mrl14_delivery_20260922.md). Inside the cap (2026-09-22T01:37:17Z → 2026-09-22T01:43:07Z); static
+`compile()` only; 0 executions; $0; **673 tests pass**.
+
+- **The compile gates** in `grade.py` (`landmark-grader-v3-candidate-compile-as-written`) and `public_check.py`
+  classify non-compiling candidates as candidate failures with zero starts. The environment-failure label is
+  now reserved for real harness faults. Both saved E11 S0 outputs are now static compile failures.
+- **Review:** one major finding (the private and public gates disagreed on late future imports), fixed. The
+  historical freeze tests are re-bound to commit blobs, and both digests match.
+- **New contract** `21b4c0cb…`, versus `0b49177c…` bound in `dev_release_v2`/E11, which stays unchanged. The
+  collector source hash is now `536923f2…`. A new package v2.1 is needed for any future collection.
+- **Dependency impact:** the E2–E8 sources changed by hash, but **all 24 references and controls, 18 canaries
+  and 26 items compile**, so no validated artifact's path changes. The sandbox and attestation binding is
+  unchanged (E1 unaffected).
+- **Targeted validation proposal:** E8′ (24) + E6′ (7) = **31 starts, reaching 174 of 200**; optionally E3–E5′
+  (+18, reaching 192).
+- **Sampling design proposal** committed: a prospective frame, a public-rule screen with an unscreened
+  stratum, and budget arithmetic.
+
+Awaiting your decision on the targeted validation and the v2.1 package.

@@ -7,11 +7,15 @@ program, private grade, release or work path is an input here (assert_public_inp
 
 Precedence table (frozen; first matching row wins, tested in tests/test_landmark_public_check.py):
   0  static gate, decided BEFORE any run, using the private grader's own rule (grade.extract_code + parse +
-     non-empty body): ambiguous fences / unparseable / empty -> every case format_error (no runner call).
+     non-empty body) plus static compilation (MRL-14: compile(code, "<candidate>", "exec", dont_inherit=True),
+     never executed): ambiguous fences / unparseable / empty / not compilable (e.g. module-level return,
+     break/continue outside a loop) -> every case format_error (no runner call).
      Integrity flags from the grader's hack_gate (other than parse-error) -> every case unavailable,
      reason protocol_integrity_review (the grader itself refuses to grade these; never a pass).
   1  runner raised, or stdout does not begin with this run's start marker -> every case unavailable,
-     reason infrastructure_not_started.
+     reason infrastructure_not_started (a harness/infrastructure fault). When classify() is given the
+     candidate code and that code does not compile, the missing marker is the candidate's own SyntaxError ->
+     every case format_error instead (check_artifact never reaches this: row 0 already caught it).
   2  any forged (wrong nonce), duplicate, out-of-order, malformed, inconsistent or extra result line, or a
      partial final line while the output cap was NOT reached -> every case unavailable, reason
      protocol_integrity_review (a tampered stream never yields a pass).
@@ -108,14 +112,29 @@ def assert_public_inputs_only(paths):
             raise ValueError(f"Release/work path is not a public executor input: {p}")
 
 
+def candidate_compiles(code):
+    """MRL-14: True when compile(code, "<candidate>", "exec", dont_inherit=True) succeeds. compile() only builds a
+    code object; nothing is executed. It catches what ast.parse accepts but the compiler rejects (module-level
+    return, break/continue outside a loop, misplaced __future__ imports, ...). dont_inherit=True keeps this
+    module's own `from __future__ import annotations` from leaking into the check."""
+    try:
+        compile(code, "<candidate>", "exec", dont_inherit=True)
+    except (SyntaxError, ValueError, TypeError, OverflowError, RecursionError, MemoryError):
+        return False
+    return True
+
+
 def static_code(output):
-    """The grader's own format rule (grade.extract_code, then parse, then non-empty body). Returns code or None."""
+    """The grader's own format rule (grade.extract_code, then parse, then non-empty body) plus, since MRL-14, a
+    successful static compilation of the candidate. Returns code or None."""
     try:
         code = extract_code(output)
         tree = ast.parse(code)
     except (ValueError, SyntaxError):
         return None
-    return code if tree.body else None
+    if not tree.body or not candidate_compiles(code):
+        return None
+    return code
 
 
 def static_format_check(code, entry_point):
@@ -259,13 +278,18 @@ def _authentic(obj, index, nonce, expected):
     return (status == "pass") == bool(returned == expected)
 
 
-def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None):
-    """Runner output -> per-case results (build_diagnostic shape). See the module precedence table."""
+def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=None):
+    """Runner output -> per-case results (build_diagnostic shape). See the module precedence table.
+
+    code (optional, MRL-14): the candidate source. With the start marker absent, infrastructure_not_started is
+    kept only when the candidate compiles (or code is not supplied); a non-compiling candidate is format_error."""
     _check_nonce(nonce)
     cap = PUBLIC_LIMITS["output_cap_bytes"] if output_cap is None else output_cap
     n = len(cases)
     start = PUBLIC_STARTED + nonce + "\n"
     if not isinstance(stdout, str) or not stdout.startswith(start):
+        if code is not None and not (isinstance(code, str) and candidate_compiles(code)):
+            return format_error_results(cases)  # the candidate's own compile error, not an infrastructure fault
         return uniform_results(cases, "unavailable", "infrastructure_not_started")
     review = uniform_results(cases, "unavailable", "protocol_integrity_review")
     cap_hit = len(stdout.encode("utf-8")) >= cap or returncode == -signal.SIGXFSZ
@@ -310,4 +334,4 @@ def check_artifact(output, entry_point, cases, runner, nonce):
             output_cap=PUBLIC_LIMITS["output_cap_bytes"])
     except Exception:
         return uniform_results(cases, "unavailable", "infrastructure_not_started")
-    return classify(run.get("stdout", ""), run.get("returncode"), bool(run.get("timed_out")), cases, nonce)
+    return classify(run.get("stdout", ""), run.get("returncode"), bool(run.get("timed_out")), cases, nonce, code=code)

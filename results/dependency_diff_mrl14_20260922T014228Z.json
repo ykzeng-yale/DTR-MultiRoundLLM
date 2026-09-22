@@ -1,0 +1,214 @@
+{
+ "schema": "mrl12-dependency-diff-v1",
+ "base": "0bb2388",
+ "files": [
+  {
+   "file": "experiments/landmark/sandbox.py",
+   "sha256_at_base": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "sha256_now": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "changed": false,
+   "evidence_gates": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8"
+   ]
+  },
+  {
+   "file": "scripts/check_landmark_sandbox.py",
+   "sha256_at_base": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+   "sha256_now": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+   "changed": false,
+   "evidence_gates": [
+    "E1"
+   ]
+  },
+  {
+   "file": "experiments/landmark/public_check.py",
+   "sha256_at_base": "a42fbc9879027598db0378a58884c2181312fbad54cc27ece2632795f7d4d154",
+   "sha256_now": "956a74b61ba19ee431c97ad6ff2011232818913bd6027524db1268968bbfec83",
+   "changed": true,
+   "evidence_gates": [
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7"
+   ]
+  },
+  {
+   "file": "experiments/landmark/diagnostic.py",
+   "sha256_at_base": "71b3b946a645a7ad5aaca634aa440f9a0b3478534809652fb60332116e7d8558",
+   "sha256_now": "71b3b946a645a7ad5aaca634aa440f9a0b3478534809652fb60332116e7d8558",
+   "changed": false,
+   "evidence_gates": [
+    "E3",
+    "E4",
+    "E5"
+   ]
+  },
+  {
+   "file": "experiments/landmark/public_instrument_validation.py",
+   "sha256_at_base": "97a60c478e1a02b5e0d528b636006ef4546ea961d783d044367be16afcb75503",
+   "sha256_now": "97a60c478e1a02b5e0d528b636006ef4546ea961d783d044367be16afcb75503",
+   "changed": false,
+   "evidence_gates": [
+    "E2",
+    "E6",
+    "E7"
+   ]
+  },
+  {
+   "file": "experiments/landmark/public_instrument_items_v1.json",
+   "sha256_at_base": "91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e",
+   "sha256_now": "91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e",
+   "changed": false,
+   "evidence_gates": [
+    "E2",
+    "E6",
+    "E7"
+   ]
+  },
+  {
+   "file": "experiments/landmark/validation_canaries.py",
+   "sha256_at_base": "5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba",
+   "sha256_now": "5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba",
+   "changed": false,
+   "evidence_gates": [
+    "E3",
+    "E4",
+    "E5"
+   ]
+  },
+  {
+   "file": "experiments/landmark/validation_canaries_v1.json",
+   "sha256_at_base": "ec6f81e3f254f983bb795ba0420c7b65509ef1b2c21233e2ebc4fbba69190e47",
+   "sha256_now": "ec6f81e3f254f983bb795ba0420c7b65509ef1b2c21233e2ebc4fbba69190e47",
+   "changed": false,
+   "evidence_gates": [
+    "E3",
+    "E4",
+    "E5"
+   ]
+  },
+  {
+   "file": "experiments/landmark/grade.py",
+   "sha256_at_base": "289447c007916ba2938c6681d75ecd1da61b584608665a46f2d47925abed7f36",
+   "sha256_now": "0602926a14ff939a68495928dc4c504af517e088f7a2e3291e11c194d1166d6d",
+   "changed": true,
+   "evidence_gates": [
+    "E8"
+   ]
+  },
+  {
+   "file": "experiments/common/integrity.py",
+   "sha256_at_base": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "sha256_now": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "changed": false,
+   "evidence_gates": [
+    "E3",
+    "E8"
+   ]
+  },
+  {
+   "file": "experiments/landmark/validate_rebound_references.py",
+   "sha256_at_base": "2a48480605b0c25f86b05d4d41372aabc47ef18eecef6f5289229f6a7a08d69d",
+   "sha256_now": "2a48480605b0c25f86b05d4d41372aabc47ef18eecef6f5289229f6a7a08d69d",
+   "changed": false,
+   "evidence_gates": [
+    "E8"
+   ]
+  },
+  {
+   "file": "experiments/landmark/dev_release_v2/private_specs.jsonl",
+   "sha256_at_base": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
+   "sha256_now": "b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1",
+   "changed": false,
+   "evidence_gates": [
+    "E2",
+    "E8"
+   ]
+  },
+  {
+   "file": "experiments/landmark/collect.py",
+   "sha256_at_base": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "sha256_now": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "changed": false,
+   "evidence_gates": []
+  },
+  {
+   "file": "experiments/landmark/collect_diagnostic.py",
+   "sha256_at_base": "b33b6a540176323cbabcb7dae38f8eb53fa97af83307d2e9e47eb679af6043c0",
+   "sha256_now": "b33b6a540176323cbabcb7dae38f8eb53fa97af83307d2e9e47eb679af6043c0",
+   "changed": false,
+   "evidence_gates": []
+  },
+  {
+   "file": "experiments/landmark/public_phase.py",
+   "sha256_at_base": "2e35e35639184604d2cfa4f39bc5efcd93f3bec2efc15f0b270c5d2a31812e01",
+   "sha256_now": "dc3ec18308b67dd89deab4ebffe48db0939bd68f03413b2b1feed3dbd503982c",
+   "changed": true,
+   "evidence_gates": []
+  },
+  {
+   "file": "experiments/landmark/study_adapter.py",
+   "sha256_at_base": "d035843b48d6b17af857badb6408777882abd56ebd2b36d42ee79cd5fcbb8833",
+   "sha256_now": "c91659d6495b89aff7b844f5bdabe47c090f1b4958f0675311aa163fe31da495",
+   "changed": true,
+   "evidence_gates": []
+  },
+  {
+   "file": "experiments/landmark/analyze_diagnostic.py",
+   "sha256_at_base": "81d82d8c8e93812ac8b86ce996defa9196d3b57701efc6032c504745d49e5c33",
+   "sha256_now": "81d82d8c8e93812ac8b86ce996defa9196d3b57701efc6032c504745d49e5c33",
+   "changed": false,
+   "evidence_gates": []
+  }
+ ],
+ "gates_whose_evidence_is_affected": [
+  "E2",
+  "E3",
+  "E4",
+  "E5",
+  "E6",
+  "E7",
+  "E8"
+ ],
+ "attestation": {
+  "path": "results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json",
+  "checked_at": "2026-09-21T20:17:03.055277+00:00",
+  "binding_recorded": {
+   "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+   "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+   "python_sha256": "a395f264e5612a2819662ed3e37fd30d39ed61179b98e5f86c3c783a008d8623",
+   "host_sha256": "e6626654e78211ef1aab3f691c1812d0f48f05d2a7057737dcf3469d57d48189",
+   "platform": "macOS-26.5.2-arm64-arm-64bit",
+   "sandbox_kind": "seatbelt"
+  },
+  "binding_now": {
+   "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+   "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+   "python_sha256": "61ca06eb1017676d1b9dd6f780046fa5e5fe3d7b11ff1d47ecb4d3d620e05d37",
+   "host_sha256": "e6626654e78211ef1aab3f691c1812d0f48f05d2a7057737dcf3469d57d48189",
+   "platform": "macOS-26.5.2-arm64-arm-64bit",
+   "sandbox_kind": "seatbelt"
+  },
+  "binding_fields_match": {
+   "sandbox_sha256": true,
+   "profile_sha256": true,
+   "python": true,
+   "host_sha256": true,
+   "platform": true,
+   "sandbox_kind": true
+  },
+  "reusable_if_unexpired": true
+ },
+ "evidence_class": "source hash comparison; no canary, reference, candidate or model executed"
+}

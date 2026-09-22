@@ -270,3 +270,73 @@ def test_public_input_guard_exempts_only_the_macos_system_prefix(tmp_path):
                 Path("/Users/x/private_specs.jsonl")):
         with pytest.raises(ValueError, match="Private path"):
             pc.assert_public_inputs_only([bad])
+
+
+# ---- MRL-14: static compilation gate (compile only; no candidate is executed)
+E11_CALLS = ROOT/"results/e11_dev_v2_20260922T010959Z/C/calls.jsonl"
+
+
+@pytest.mark.parametrize("code", [
+    "def parallelogram_area(b, h):\n    return b * h\nreturn parallelogram_area\n",          # module-level return
+    "def parallelogram_area(b, h):\n    return b * h\nbreak\n",                              # break outside loop
+    "def parallelogram_area(b, h):\n    return b * h\ncontinue\n",                           # continue outside loop
+    "def parallelogram_area(b, h):\n    continue\n",                                         # continue outside loop in a function
+    "def parallelogram_area(b, h):\n    return b * h\nfrom __future__ import annotations\n", # late future import
+])
+def test_parse_ok_but_not_compilable_is_format_error_without_runner(code):
+    import ast
+    ast.parse(code)  # the old parse-only gate accepted these
+    assert not pc.candidate_compiles(code)
+    assert pc.static_code(code) is None and not pc.static_format_check(code, "parallelogram_area")
+    assert statuses(pc.check_artifact(code, "parallelogram_area", CASES, never_run, NONCE)) == [("format_error", None)]*3
+    with pytest.raises(ValueError):
+        pc.build_public_program(code, "parallelogram_area", CASES, NONCE)
+
+
+@pytest.mark.parametrize("code", [
+    "from __future__ import annotations\ndef parallelogram_area(b: int, h: int) -> int:\n    return b * h\n",
+    GOOD,
+    "def parallelogram_area(b, h):\n    for _ in range(1):\n        break\n    return b * h\n",
+])
+def test_valid_code_still_compiles_and_reaches_runner_once(code):
+    assert pc.candidate_compiles(code) and pc.static_code(code) == pc.extract_code(code)
+    calls = []
+    def fake(program, **kw):
+        calls.append(kw)
+        return {"stdout": out(line(0), line(1), line(2)), "returncode": 0, "timed_out": False}
+    assert [r["status"] for r in pc.check_artifact(code, "parallelogram_area", CASES, fake, NONCE)] == ["pass"]*3
+    assert len(calls) == 1
+
+
+def _saved_s0(root_id):
+    rows = [json.loads(x) for x in E11_CALLS.read_text().splitlines() if x.strip()]
+    hits = [r for r in rows if r["root_id"] == root_id and r["arm"] == "S0" and r["replicate"] == 1]
+    assert len(hits) == 1
+    return hits[0]["output"]
+
+
+@pytest.mark.parametrize("root_id, entry", [("mbpp/378", "move_first"), ("mbpp/489", "frequency_Of_Largest")])
+def test_saved_e11_s0_module_level_returns_are_format_error(root_id, entry):
+    import ast
+    output = _saved_s0(root_id)  # read-only; the file is never modified or executed
+    code = pc.extract_code(output)
+    ast.parse(code)  # why E11's parse-only gate let it through
+    assert isinstance(ast.parse(code).body[-1], ast.Return)
+    assert pc.static_code(output) is None and not pc.static_format_check(output, entry)
+    assert statuses(pc.check_artifact(output, entry, CASES, never_run, NONCE)) == [("format_error", None)]*3
+
+
+def test_missing_marker_is_infrastructure_only_for_compiling_candidates():
+    for stdout in ("", "Traceback\n", line(0)):
+        assert statuses(pc.classify(stdout, 1, False, CASES, NONCE, code=GOOD)) == [("unavailable", "infrastructure_not_started")]*3
+        assert statuses(pc.classify(stdout, 1, False, CASES, NONCE)) == [("unavailable", "infrastructure_not_started")]*3
+        bad = GOOD + "return parallelogram_area\n"
+        assert statuses(pc.classify(stdout, 1, False, CASES, NONCE, code=bad)) == [("format_error", None)]*3
+    # With the marker present the candidate code is irrelevant to the stream classification.
+    assert [r["status"] for r in pc.classify(out(line(0), line(1), line(2)), 0, False, CASES, NONCE, code=GOOD)] == ["pass"]*3
+
+
+def test_compiling_candidate_whose_runner_emits_no_marker_is_infrastructure():
+    def silent(program, **kw):
+        return {"stdout": "", "returncode": 1, "timed_out": False}
+    assert statuses(pc.check_artifact(GOOD, "parallelogram_area", CASES, silent, NONCE)) == [("unavailable", "infrastructure_not_started")]*3

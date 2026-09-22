@@ -27,6 +27,11 @@ from experiments.common.integrity import hack_gate, canary_block
 SPEC_KEYS = {"root_id", "public_task_sha256", "entry_point", "public_assertions", "private_assertions", "preamble", "reference_code", "negative_controls"}
 REQUIRED_CHECKS = {"own_run_read_write", "home_read", "home_write", "peer_run_read", "outside_home_tmp_write", "loopback_network", "system_subprocess", "fork_creation", "timeout_and_process_cleanup"}
 STARTED = "__LANDMARK_GRADER_STARTED__"
+# MRL-14: bumped when the static gate added a candidate compile-validity check (ast.parse accepted module-level
+# `return`, which only fails at compilation). Recorded in contract() so the grading contract digest changes visibly.
+# v3 (MRL-14 review): the candidate is compiled exactly as written (no __future__ hoisting before the check), so
+# the private and public gates agree.
+GRADER_VERSION = "landmark-grader-v3-candidate-compile-as-written"
 
 
 def normalize_assertion(source):
@@ -74,11 +79,12 @@ def validate_specs(tasks, specs):
 
 
 def contract(specs):
-    return {"version": "landmark-private-tests-v1", "private_spec_sha256": digest(specs),
+    return {"version": "landmark-private-tests-v1", "grader_version": GRADER_VERSION, "private_spec_sha256": digest(specs),
         "adapter_sha256": file_sha(__file__), "sandbox_sha256": file_sha(Path(sandbox.__file__)),
         "integrity_sha256": file_sha(ROOT/"experiments/common/integrity.py"),
         "endpoint": "private-test quality under reliable frozen receiver law; unavailable outputs/grading and non-parse static integrity flags are unknown pending review, not deployment-reliability zeros",
         "extraction": "one python/untyped code fence or raw source; multiple fences rejected",
+        "candidate_compile": "candidate alone, exactly as written, must pass compile(exec, dont_inherit=True) before any sandbox start (same rule as the public gate); failure is outcome 0 candidate_compile_error",
         "determinism": "one frozen artifact grade reused within root; deterministic benchmark/code behavior assumed, not proved",
         "timeout_seconds": 2.0, "cpu_seconds": 1, "output_cap_bytes": 65536}
 
@@ -115,6 +121,17 @@ def extract_code(text):
     return text.strip()
 
 
+def candidate_compile_error(code, tree):
+    """Static compile-validity of the candidate alone; never executes it. Returns None or 'Class at line N: msg'."""
+    try:
+        # The candidate exactly as written (same rule as public_check.candidate_compiles): no future-hoisting
+        # rewrite first, so a late __future__ import is the candidate's own compile error in both gates.
+        compile(code, "<candidate>", "exec", dont_inherit=True)
+    except (SyntaxError, ValueError, RecursionError, MemoryError) as exc:
+        return f"{type(exc).__name__} at line {getattr(exc, 'lineno', None)}: {getattr(exc, 'msg', None) or exc}"
+    return None
+
+
 def prepare_program(spec, code):
     flags = hack_gate(code, spec["entry_point"])
     if flags:
@@ -123,6 +140,9 @@ def prepare_program(spec, code):
     tree = ast.parse(code)
     if not tree.body:
         return None, None, {"outcome": 0, "reason": "empty_produced_program"}
+    compile_error = candidate_compile_error(code, tree)
+    if compile_error is not None:
+        return None, None, {"outcome": 0, "reason": "candidate_compile_error", "details": compile_error}
     canary = canary_block({}, hidden_asserts=spec["private_assertions"])
     if canary is None:
         return None, None, {"outcome": None, "reason": "integrity_canary_unavailable"}
@@ -148,6 +168,8 @@ def evaluate(spec, code, runner):
         return {"outcome": None, "reason": "grader_execution_unavailable", "details": f"{type(exc).__name__}: {exc}", "sandbox_executed": False}
     start_marker = re.search(STARTED+r"[0-9a-f]{24}", program).group(0)
     if not result.get("stdout", "").startswith(start_marker+"\n"):
+        # The candidate compiled standalone in the static gate, so a missing start marker is a harness,
+        # compiler or runtime infrastructure fault, never the candidate's own compile error.
         outcome, reason = None, "grader_environment_failed_before_payload"
     elif result["timed_out"]:
         # Execution reached its declared bound: this is an observed endpoint failure.

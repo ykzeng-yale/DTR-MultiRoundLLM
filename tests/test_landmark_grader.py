@@ -205,3 +205,100 @@ def test_output_hash_checked_even_if_container_checksums_are_consistent(tmp_path
 def test_assigned_callable_is_not_rejected_by_ast_form(fixture_data):
     program,_,rejection=grade.prepare_program(fixture_data[1][0],"f = lambda x: x+1")
     assert rejection is None and "f = lambda" in program
+
+
+# MRL-14: candidate compile-validity in the static gate (static compilation only; nothing is executed).
+def _spec(entry="f"):
+    return {"root_id":"t","entry_point":entry,"private_assertions":[f"assert {entry}(2)==3"],"preamble":[]}
+
+
+def _never(*_a,**_k):
+    raise AssertionError("runner must not be called for a static rejection")
+
+
+@pytest.mark.parametrize("code",[
+    "def f(x):\n    return x+1\nreturn f\n",
+    "def f(x):\n    return x+1\nbreak\n",
+    "def f(x):\n    return x+1\ncontinue\n",
+    "def f(x):\n    return x+1\nawait f(1)\n",
+])
+def test_candidate_compile_errors_are_static_candidate_failures(code):
+    import ast
+    ast.parse(code)  # the old gate accepted these
+    result=grade.evaluate(_spec(),code,_never)
+    assert result["outcome"]==0 and result["reason"]=="candidate_compile_error" and result["sandbox_executed"] is False
+    assert result["details"].startswith("SyntaxError at line ") and "Traceback" not in result["details"]
+
+
+@pytest.mark.parametrize("code",[
+    "from __future__ import annotations\ndef f(x: 'int') -> int:\n    return x+1\n",
+    "def f(x):\n    return x+1\n",
+])
+def test_valid_candidates_pass_the_compile_gate_and_reach_the_runner(code):
+    import ast
+    assert grade.candidate_compile_error(code,ast.parse(code)) is None
+    result=grade.evaluate(_spec(),code,fake_pass)
+    assert result["outcome"]==1 and result["reason"]=="private_tests_passed"
+
+
+def test_null_byte_is_a_static_candidate_failure_without_runner():
+    code="def f(x):\n    return x+1\n\x00\n"
+    assert grade.candidate_compile_error(code,__import__("ast").parse("def f(x):\n    return x+1\n")) is not None
+    result=grade.evaluate(_spec(),code,_never)
+    # On this interpreter ast.parse itself rejects null bytes first (existing unparseable path); either way
+    # it is a static outcome-0 candidate failure with zero sandbox starts.
+    assert result["outcome"]==0 and result["sandbox_executed"] is False
+    assert result["reason"] in {"unparseable_output","candidate_compile_error"}
+
+
+def test_saved_e11_s0_module_level_returns_are_static_compile_errors():
+    calls=ROOT/"results/e11_dev_v2_20260922T010959Z/C/calls.jsonl"
+    rows=[json.loads(l) for l in calls.read_text().splitlines() if l.strip()]
+    entries={"mbpp/378":"move_first","mbpp/489":"frequency_Of_Largest"}
+    seen=set()
+    for r in rows:
+        if r["root_id"] in entries and r["arm"]=="S0" and r["replicate"]==1:
+            assert r["output_sha256"]==collect.digest(r["output"])  # read-only, bound to its saved hash
+            code=grade.extract_code(r["output"])
+            result=grade.evaluate(_spec(entries[r["root_id"]]),code,_never)
+            assert result["outcome"]==0 and result["reason"]=="candidate_compile_error" and result["sandbox_executed"] is False
+            assert "'return' outside function" in result["details"]
+            seen.add(r["root_id"])
+    assert seen==set(entries)
+
+
+def test_valid_candidate_whose_program_does_not_start_is_an_environment_fault():
+    def no_start(program,**kwargs):
+        return {"passed":False,"returncode":1,"stdout":"","stdout_tail":"","timed_out":False,"executed":True,"sandbox_kind":"seatbelt","seconds":.01}
+    result=grade.evaluate(_spec(),"def f(x):\n    return x+1\n",no_start)
+    assert result["outcome"] is None and result["reason"]=="grader_environment_failed_before_payload"
+
+
+def test_contract_records_the_bumped_grader_version():
+    c=grade.contract([])
+    assert c["grader_version"]==grade.GRADER_VERSION=="landmark-grader-v3-candidate-compile-as-written"
+    assert "candidate_compile" in c
+
+
+@pytest.mark.parametrize("code,compiles",[
+    ("import os\nfrom __future__ import annotations\ndef f(x):\n    return x\n", False),  # late future import
+    ("def f(x):\n    return x+1\nreturn f\n", False),                                    # module-level return
+    ("def f(x):\n    return x+1\nbreak\n", False),                                       # break outside loop
+    ('"""doc"""\nfrom __future__ import annotations\ndef f(x: int) -> int:\n    return x\n', True),  # docstring then future
+    ("from __future__ import annotations\ndef f(x: 'int') -> int:\n    return x+1\n", True),        # valid future
+])
+def test_private_and_public_compile_gates_agree_on_the_candidate_as_written(code,compiles):
+    """MRL-14 review: both gates compile the candidate exactly as written (no future-hoisting rewrite first)."""
+    import ast
+    from experiments.landmark import public_check as pc
+    try:
+        compile(code,"<candidate>","exec",dont_inherit=True); plain=True
+    except SyntaxError:
+        plain=False
+    assert plain is compiles
+    assert (grade.candidate_compile_error(code,ast.parse(code)) is None) is compiles
+    program,_,rejection=grade.prepare_program(_spec(),code)
+    assert (program is not None) is compiles
+    if not compiles:
+        assert rejection["outcome"]==0 and rejection["reason"]=="candidate_compile_error"
+    assert (pc.static_code(code) is not None) is compiles
