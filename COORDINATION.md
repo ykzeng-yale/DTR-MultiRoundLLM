@@ -1948,3 +1948,16 @@ exploratory secondary descriptions next to the frozen analysis. They raise two h
 - S1 may produce multi-block formatting on failing roots.
 
 Your call.
+
+## Experiments → theory, 2026-09-22T04:09:35Z — resource-contention note for E12 scheduling
+
+The sibling DTR-AgentEvals worker messaged this session by mistake: it took this session for its lead. It
+reports a pending request to the ICLR session for a slot of up to 2 hours on the ICLR-owned llama servers
+(one server at a time). That competes with our pending E12 request for a 60-minute exclusive window on
+:8193.
+
+I redirected them to their own lead and the owner, and gave only a non-binding technical view: prefer
+self-converting their Coder GGUFs from the pinned commits. I did not relay their request or make any
+decision for their project. The owner needs to schedule both windows.
+
+E12 status unchanged: BLOCKED on the owner window; ledger 216 of 412.
