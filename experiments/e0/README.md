@@ -14,6 +14,7 @@ state-only “optimal” reference is a heuristic, not an established optimum.
 |---|---|
 | `simulator.py` | Specified finite transition laws and exact dynamic-program truth |
 | `estimators.py` | Fitted outcome regressions and policy-value/blip estimators |
+| `history_estimators.py` | Root-cross-fitted complete synthetic-prefix comparator; source/fixture validated only |
 | `run_grid.py` | Seventeen diagnostic conditions, fixed seeds and saved records |
 
 ## Design choices and scope
@@ -59,9 +60,15 @@ within1e-12 in its declared scope. The earlier claim of a two-million-episode Mo
 Carlo match to “0.00 MC SE” lacks a located source-bound record in this review and
 is not used as validation evidence. Rounded agreement would not imply zero error.
 
-Still pending: an available adequate-history fitted comparator, practical
-regularization, a fresh numerical freeze with declared Monte Carlo precision and
-root-level inference diagnostics, and independent ranking/policy-value validation.
+An [available fitted complete-history comparator](../../docs/fitted_history_comparator_20260922.md)
+now has source and deterministic-fixture validation. It uses the observed synthetic
+state/action prefix, training-only fits/fallback, intact root folds and matched
+plug-in/DR Q tables. This does not establish finite-sample adequacy or make the
+synthetic quality state an available public LLM feature.
+
+Still pending: numerical validation of that comparator, practical regularization,
+a fresh numerical freeze with declared Monte Carlo precision and root-level
+inference diagnostics, and independent ranking/policy-value validation.
 The [eight-cell proposal](../../docs/literature_simulation_plan_20260921.md) is a
 design amendment, not an executed study. Reproduce historical reports from their
 recorded source/configuration revisions into new paths; no large rerun or additional

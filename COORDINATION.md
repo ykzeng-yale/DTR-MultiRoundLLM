@@ -2197,3 +2197,10 @@ Lead-owned `docs/independent_prompt_policy_validation_design_20260922.md` specif
 
 **Status: accepted; launch at 07:10:00Z** (pinned helper, reservation `docs/e12_shared_window_20260922T071000Z.json`).
 I will re-check quiescence immediately before launch. The ownership record will cite this release.
+
+
+## Theory source delivery, 2026-09-22T06:35:15.882253+00:00 — fitted-prefix comparator for issue #2; MRL-16 unchanged
+
+Lead implemented `experiments/e0/history_estimators.py` without changing pinned E0 source: complete recorded synthetic prefixes, intact root folds, shared training-only Q/fallback for plug-in and DR. Independent mathematical/source review and parent21-test verification pass; mixed-label coercion was repaired. Exact validation/source hashes/accounting: `results/e0_history_source_validation_20260922.json`; scientific limits: `docs/fitted_history_comparator_20260922.md`. This is source/fixture evidence only, no sampled datasets or model calls. Practical regularization and the frozen finite-sample comparison remain open; historical weak-overlap negatives remain unchanged.
+
+Reviewed worker873c4e7 and peer pinned release receipt b378613:05:54:42release and worker05:55:09live checks are published, with peer06:12:37confirmation. Lead corroborated records, not remote live state. MRL-16 retains the accepted07:10–08:20window and fresh prelaunch checks; no extra lead approval, new assignment or changed caps. No worker action on this source delivery is required before E12. Latest scientific08d63b7 and instrumente518cc1 reviews remain distinct from the operational873c4e7review.55%,delta0; no new efficacy or submission readiness. — Coordinating scientific lead

@@ -1,0 +1,69 @@
+{
+  "checked_utc": "2026-09-22T06:34:03.367349+00:00",
+  "classification": "source and deterministic-fixture validation; no sampled synthetic datasets or real receiver evidence",
+  "base_revision": "873c4e70b934a3f80382fd075037bfd4a31492c2",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_e0_history_estimators.py",
+    "-q"
+  ],
+  "exit_code": 0,
+  "stdout": ".....................                                                    [100%]\n21 passed in 0.51s",
+  "stderr": "",
+  "parent_test_subprocess_wall_seconds": 0.728844958357513,
+  "implementation_agent_reported_test_runs": [
+    {
+      "tests": 19,
+      "pytest_seconds": 1.28
+    },
+    {
+      "tests": 20,
+      "pytest_seconds": 0.77
+    },
+    {
+      "tests": 21,
+      "pytest_seconds": 0.75
+    }
+  ],
+  "budget": {
+    "cpu_workers": 1,
+    "focused_execution_cap_seconds": 60,
+    "parent_timeout_seconds": 20
+  },
+  "unchanged_pinned_sources": {
+    "experiments/e0/estimators.py": true,
+    "experiments/e0/simulator.py": true
+  },
+  "source_sha256": {
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "tests/test_e0_history_estimators.py": "9ce7bd11d7ccdff3158abbf202235e367500d90a0707252e59b7adec2a4a0be3",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "docs/fitted_history_comparator_20260922.md": "d3e617a938d19428031e3f27c520391cd0804e5e4d828c7c5ef2545634c02ac2"
+  },
+  "review": {
+    "independent_mathematical_review": "pass restricted gz=0/mislabel=0/support argument; corrected wording about action-indexed regression; no finite-cell inference claim",
+    "independent_source_review": "pass after mixed task-label coercion repair; root folds, heldout outcome isolation and identical Q reuse inspected read-only",
+    "parent_review": "inspected source and all deterministic tests; independently reran final suite; original E0 sources byte-identical"
+  },
+  "accounting": {
+    "new_sampled_synthetic_datasets": 0,
+    "experiment_model_calls": 0,
+    "experiment_prompt_tokens": 0,
+    "experiment_completion_tokens": 0,
+    "candidate_reference_executions": 0,
+    "installations": 0,
+    "external_spend_usd": 0,
+    "writing_review_wall_seconds": null
+  },
+  "limits": [
+    "No Monte Carlo bias/RMSE/coverage result",
+    "No real LLM history-feature adequacy claim",
+    "No practical regularization or sparse-cell stability guarantee",
+    "Known recorded propensities, not fitted behavior estimation",
+    "No learned-policy efficacy or independent validation",
+    "No new E12 stage or resource authorization"
+  ]
+}

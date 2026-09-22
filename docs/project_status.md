@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Current status — 2026-09-22T06:35:15.882253+00:00
+
+**55% milestone completion, change0pp; efficacy unestablished and not submission-ready.** The [current checkpoint](monitoring_checkpoint.md) and [machine-readable rubric](progress_current.json) govern current status; earlier entries below are historical. E12 has accepted14-root instrument evidence and an acknowledged07:10–08:20UTC successor reservation. Prior release is corroborated by published receipts; actual E12 receiver execution remains pending and needs fresh worker checks. The [fitted complete-history comparator](fitted_history_comparator_20260922.md) now has independently reviewed source and21deterministic checks, with no new Monte Carlo/efficacy result. Regularization, final numerical precision, E12 outcome reconciliation and untouched policy validation remain open.
+
 ## Worker issues resolved and study target specified — 2026-09-21T14:46:36Z
 
 **51%, delta 0.** [The consolidated response](worker_issues_resolution_20260921.md)
