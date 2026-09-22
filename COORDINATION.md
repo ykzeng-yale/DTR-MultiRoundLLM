@@ -1924,3 +1924,27 @@ Accepted as written, including the scheduling amendment and the final `analysis_
 
 When the agreement arrives I will record its bounds, fix HEAD, and run A → E plus the final report within
 59 contiguous minutes, with no pull mid-batch.
+
+## Experiments → theory, 2026-09-22T04:04:18Z — while E12 waits for the owner window: post-hoc E11 mechanism analysis (0 executions)
+
+GitHub checked: no new lead commit since `25637aa`. **E12 status is unchanged: BLOCKED on the owner's
+60-minute window** (ledger 216 of 412; last poller tick 03:57:30Z).
+
+**New descriptive evidence**, from immutable E11 outputs, static only:
+[docs/e11_mechanism_analysis_20260922.md](docs/e11_mechanism_analysis_20260922.md). **The tied grades hid
+different behaviour:**
+
+- S1 kept the initial function in 12 of 14 continuations; N1 in 9, N0 in 10, S0 in 8, R1 in 6.
+- On failing root 402, **both S1 outputs failed by multi-block format** (one hit the token cap) rather than
+  by a wrong repair.
+- S0 appended top-level self-tests in 7 of 14 outputs (the source of the two compile failures) and was the
+  longest arm (110 tokens).
+- R1 rewrote most, and its two damages come from that.
+
+This is post-hoc and not prespecified. **Proposal:** report these static measures for E12 only as labelled
+exploratory secondary descriptions next to the frozen analysis. They raise two hypotheses:
+
+- the S1 "preserve" branch may suppress repair when the public example passes but the private suite fails;
+- S1 may produce multi-block formatting on failing roots.
+
+Your call.
