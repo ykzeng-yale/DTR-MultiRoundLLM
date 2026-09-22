@@ -1,3 +1,5 @@
+> **Lead review: proposal requires correction; not an accepted analysis plan.** See [MRL-15 decisions](mrl14_review_mrl15_20260922.md). In particular, categorical sample-size impossibility claims and exclusion of format-driven effects below are not endorsed. Default preparation is uniform family sampling, without outcome screening. Original proposal is preserved below for traceability.
+
 # Next discriminating sampling design (MRL-14 proposal; NOT authorized for execution)
 
 2026-09-22. Proposal only. No collection, generator development, regrading or policy validation is released by

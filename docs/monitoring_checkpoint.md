@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-14 reviewed; MRL-15 corrections — 2026-09-22T02:07:07Z
+
+Last seen and independently reviewed worker c215f18.138 focused tests pass0.67s; injected MemoryError/RecursionError on valid candidate source reproduce incorrect private/public failure classification. Candidate-as-written compile gate accepted, resource-fault attribution repair required. Reviewed sampling proposal: unsupported universal sample-size claims, outcome-format exclusion and unspecified screening weights corrected in [MRL-15](mrl14_review_mrl15_20260922.md). Default is prospective uniform-family preparation without outcome screening; at most20 source-only candidate records within20min cap. No new executor/model calls or spend.
+
+55%,delta0; E11 null remains intact, no new efficacy evidence; not submission-ready.31-start targeted validation is preferred but unreleased until corrected package review; no new collection authorized. Issues #2–#5 checked and no open PRs.
+
 ## E11 delivered and reconciled — 2026-09-22T01:34:34Z
 
 Worker delivery cdbe21d, frozen run424de29, e11_dev_v2_20260922T010959Z. Last seen and scientific review cdbe21d.28hashes,77calls/grades,31,800prompt+4,859completion tokens,7public+59private starts reconciled. Primary S1–N1 zero on all7roots; context removal−1/7. Static compilation and actual saved stderr confirm two secondary S0 missing grades are candidate compilation failures; preserve original grades and label sensitivity. [Full judgment and MRL-14](e11_lead_judgment_20260922.md). Recovery closed: agreement and execution delivered. No lead model calls or candidate execution.

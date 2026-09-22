@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-22T01:34:34Z",
+  "checkpoint_utc": "2026-09-22T02:07:07Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -53,18 +53,18 @@
     }
   ],
   "overall_percent": 55,
-  "prior_check_reconstructed_percent": 52,
-  "prior_checked_head": "c631e4b",
-  "baseline_note": "Unchanged rubric: fresh_prompt_experiment earns3points (20% of15) for independently reconciled fresh descriptive development contrasts; no efficacy credit implied.",
-  "delta_percentage_points": 3,
+  "prior_check_reconstructed_percent": 55,
+  "prior_checked_head": "b5168d6",
+  "baseline_note": "Same fixed rubric55%; source repair review and prospective-design corrections do not complete another milestone.",
+  "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "E11 primary contrast zero on7roots; R1\u2013N1\u22121/7. Two S0 compile failures misclassified as missing; original record preserved.77calls and66isolated starts reconciled.",
+  "latest_evidence": "MRL-14 compile repair passes138 focused tests, but injected compiler resource faults misclassify failures; MRL-15 repair/frame preparation released. No new real outcomes.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "cdbe21d",
-    "delivery_type": "fresh interaction on reused development roots; independent stored-record audit",
-    "scientific_review_revision": "cdbe21d",
-    "review_record": "docs/e11_lead_judgment_20260922.md",
+    "last_seen_worker_revision": "c215f18",
+    "delivery_type": "source/mock measurement repair and sampling proposal",
+    "scientific_review_revision": "c215f18",
+    "review_record": "docs/mrl14_review_mrl15_20260922.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker reports blocking owner question suspended poller; resumed after agreement01:09Z and delivered01:15:47Z. Future reliability not inferred.",
+    "scheduler_status": "Worker acknowledged01:37:17Z and delivered01:43:07Z; exchange active.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -82,6 +82,7 @@
     "mrl13_recovery_utc": "2026-09-21T22:58:52Z",
     "mrl13_consecutive_missing_updates": 2,
     "mrl13_recovery_status": "closed; real agreement and run delivered",
-    "mrl14_status": "source/mock repair and prospective sampling proposal authorized; acknowledgement pending"
+    "mrl14_status": "delivered01:43:07Z; reviewed with remaining fault-attribution and design corrections",
+    "mrl15_status": "20min source/mock/static preparation authorized; receipt pending"
   }
 }
