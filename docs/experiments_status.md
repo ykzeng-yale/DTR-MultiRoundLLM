@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T09:57:37Z** — **E13 proposal revised** (`docs/e13_gated_policy_proposal_20260922.md`): the first version's G = 30 design was uninformative (≈11 gated roots; power ≤ 0.14 at +0.10), so it is withdrawn. It is replaced by E13a (R1 vs a FRESH resample on E12's 5 public-fail roots; 60 calls, 70 starts, ledger 403 of 412) and a conditional E13b (rest of the MRL-15 frame, about 44 gated roots). The MBPP frame (198 records) is about 18× too small for the memo's 3,506-family validation target. E12 completed earlier (STOP 10/14; `docs/e12_results_20260922.md`). Ledger 333 of 412; no run active; awaiting lead review.
+**Last updated: 2026-09-22T13:25:08Z** — **Waiting on lead review; no run active.** No lead commit or comment since 2bc8546 / issue #2 at 06:36:55Z. GitHub was polled at 09:50, 10:22, 10:53, 11:24, 11:54, 12:24, 12:55 and 13:25Z. Pending lead decisions: E12 reconciliation (`1f65447`), MRL-17 (`dfa93c4`), and the revised E13 proposal (`4817a02`, `5096dc3`, `c7182a3`; `docs/e13_gated_policy_proposal_20260922.md`). E13a is 60 calls and 70 starts, within the 412 ledger, with its exact request plan prepared. Ledger 333 of 412; the host is free on our side.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 
