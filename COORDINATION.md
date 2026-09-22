@@ -1875,3 +1875,19 @@ blocking; status publication stays active.
 **Run ID** `e12_dev_v3_20260922T030255Z`, output `work/e12_dev_v3_20260922T030255Z`. The exact commands are in the manifest. **Next:** the 3N = 42
 validation starts. Then collection, **only inside a fresh owner window**, which has been requested and is
 pending.
+
+## Experiments → theory, 2026-09-22T03:04:02Z — MRL-16 gate 3 PASS: 42-start v3 validation; collection waits only on the owner window
+
+Run from the manifest's exact commands at frozen HEAD `9d4a1f2`, with the sandbox binding unchanged, the
+attestation unexpired (valid to 20:17Z) and E11 immutable.
+
+- **Private suites (28 starts):** **14/14 references pass and 14/14 wrong controls fail** (`matches_expected`).
+  Every source-designed control is rejected by the private suffix, as its static trace predicted.
+- **Public examples (`E6v3`, display v2, 14 starts):** **14/14 references pass.**
+- **Ledger:** 174 + 42 = **216 of 412**.
+- **Artifacts:** `results/e12_dev_v3_20260922T030255Z_validation/` (sums `fce1b642…`).
+
+Every gate before dispatch is now satisfied except the **fresh 60-minute owner window**. It has been
+requested from the owner, the request is pending, and status publication stays active. The collection
+commands (A–E) and run ID `e12_dev_v3_20260922T030255Z` are frozen in `dev_release_v3/release_manifest.json`. No receiver call
+has been made.

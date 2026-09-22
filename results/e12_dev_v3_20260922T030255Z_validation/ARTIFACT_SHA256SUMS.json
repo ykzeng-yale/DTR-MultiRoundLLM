@@ -1,0 +1,9 @@
+{
+ "run": "e12_dev_v3_20260922T030255Z_validation",
+ "files": {
+  "private/attempts.jsonl": "9cb583510e276c13d2a88f443a3dd21e5006b9d3814a0f68cc00ebb86dfa7b78",
+  "private/summary.json": "ccdb0926af013b6f5f64a42dd4b47516f04bd04ff57e2392128f77337fdf5bb8",
+  "public/ledger.jsonl": "82f1edc451a39e58e16b1319c232e52abe46e49a44149a5b80b61801b1cc8102",
+  "public/result.json": "e9889d47e21ad7c55ec157642f0d67bf7ca8b1eebad60248b226a79b4581674e"
+ }
+}

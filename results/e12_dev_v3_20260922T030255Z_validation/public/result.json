@@ -1,0 +1,240 @@
+{
+ "actual_starts": 14,
+ "all_meet_expected": true,
+ "committed_sha256": {
+  "private_specs.jsonl": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+  "public_examples": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+  "release_manifest.json": "c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea"
+ },
+ "display": "v2",
+ "finished_utc": "2026-09-22T03:03:44.098956+00:00",
+ "gate": "E6v3",
+ "planned_max_starts": 14,
+ "rows": [
+  {
+   "code_sha256": "1384c35a7c4e7793c713e7369190b544e189904c6e600d30357fc226ddf92887",
+   "item_id": "E6v3/mbpp/918/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/918",
+   "starts": 1
+  },
+  {
+   "code_sha256": "8870bb06d16a186d3c58bcdde5c574e8eb945ee7f49ebb1960bc2a2937acbd96",
+   "item_id": "E6v3/mbpp/825/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/825",
+   "starts": 1
+  },
+  {
+   "code_sha256": "547a5f75a13e7d85207a2c39930bce3ee8181ad1c66291e51e7aab1a2f928988",
+   "item_id": "E6v3/mbpp/842/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/842",
+   "starts": 1
+  },
+  {
+   "code_sha256": "24fc1029fd7957e59ea4be1e2eced2446a02d4290b82f08e650d95c3f7909f55",
+   "item_id": "E6v3/mbpp/816/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/816",
+   "starts": 1
+  },
+  {
+   "code_sha256": "5f801a3b6e2cffe122cc0a6dd79cadd3dabfe1bf39f101b5839c79fa8fcec259",
+   "item_id": "E6v3/mbpp/895/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/895",
+   "starts": 1
+  },
+  {
+   "code_sha256": "a2fa7c0af78f76e16555dc0d844f0764e8bb9e5d19b698ddd9e9c3e3eccbe9c9",
+   "item_id": "E6v3/mbpp/868/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/868",
+   "starts": 1
+  },
+  {
+   "code_sha256": "e172ca1197bb516666d1a351c4642d9eaa5221a9e83d33600b0a288ed2ff5c06",
+   "item_id": "E6v3/mbpp/288/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/288",
+   "starts": 1
+  },
+  {
+   "code_sha256": "a25b8d14bc1afb4b344fc2cf0dd7d41f3ab11abc35bfc336fac0f3b8a9be59dc",
+   "item_id": "E6v3/mbpp/154/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/154",
+   "starts": 1
+  },
+  {
+   "code_sha256": "722f47e331649e3900ca1a67edce5ad39e301c8e69bccd0d063540df5b283ad9",
+   "item_id": "E6v3/mbpp/863/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/863",
+   "starts": 1
+  },
+  {
+   "code_sha256": "a4987acdddcf583c02e3d61251c8602bf4866a9a089438a334eaef629a9335c4",
+   "item_id": "E6v3/mbpp/966/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/966",
+   "starts": 1
+  },
+  {
+   "code_sha256": "fcde03d574912f75ad919636eec32f6ecea3384962b5a350d27bd6cf52579a9e",
+   "item_id": "E6v3/mbpp/652/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/652",
+   "starts": 1
+  },
+  {
+   "code_sha256": "b2efd629ade789ec2a9948d30bcc616d4df570f2142436ea5ac7a381c805e0b7",
+   "item_id": "E6v3/mbpp/651/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/651",
+   "starts": 1
+  },
+  {
+   "code_sha256": "3d8cf732fa24fc8d4e8e0ccf3a686aa139a2d994fc1a545d246e8ad28cf918ad",
+   "item_id": "E6v3/mbpp/499/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/499",
+   "starts": 1
+  },
+  {
+   "code_sha256": "3e46baf99f4220facfdf6b60150399fba9e8ea7be7928a391e5991e322189723",
+   "item_id": "E6v3/mbpp/974/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null
+   ],
+   "observed_statuses": [
+    "pass"
+   ],
+   "observed_value_kinds": [
+    "literal"
+   ],
+   "root_id": "mbpp/974",
+   "starts": 1
+  }
+ ],
+ "schema_version": "public-instrument-validation-e6v3-v1-result"
+}
