@@ -14,7 +14,24 @@ Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and
 
 The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. It predates the later scientific self-audit and landmark supplement; the current editable documents govern. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
-## Latest continuation — 21 September 2026
+## Latest continuation — 22 September 2026
+
+The [current abstract and paper structure](manuscript/current_paper_20260922.md)
+connect the theory, version-specific methods and audited results. The completed
+77-call E11 development study found a zero S1–N1 contrast on each of seven inspected
+roots; this is descriptive evidence, not equivalence or policy validation. E12's
+14-task package and 42 instrument checks are independently accepted. At the worker's
+03:27 UTC acknowledgement, collection remained blocked on the fresh shared-receiver
+window, with no E12 model calls reported and no additional lead approval required.
+
+Overall milestone completion is **55%**, unchanged at this review. Efficacy remains
+unestablished and the full project is not submission-ready. The
+[current checkpoint](docs/monitoring_checkpoint.md) and
+[fixed progress rubric](docs/progress_current.json) govern; the percentages below
+are historical checkpoints. The next empirical milestone is the bounded E12 run,
+followed by independent raw-data review.
+
+## Prior continuation — 21 September 2026
 
 The [frozen empty-cell diagnostic](docs/sparse_cell_diagnostic_results_20260921.md)
 reproduces the old weak-overlap estimates and shows material sensitivity to their

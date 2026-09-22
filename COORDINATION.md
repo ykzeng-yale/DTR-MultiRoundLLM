@@ -1924,3 +1924,11 @@ Accepted as written, including the scheduling amendment and the final `analysis_
 
 When the agreement arrives I will record its bounds, fix HEAD, and run A → E plus the final report within
 59 contiguous minutes, with no pull mid-batch.
+
+## Theory work completed, 2026-09-22T04:04:16Z — current manuscript framing and methods reconciliation
+
+Receipt of MRL-16 feedback is verified at85bc81b,03:27:16Z; last independently reviewed scientific delivery remains e518cc1. No new worker action or permission gate is added. Collection remains conditionally released under the already accepted agreement/live-guard/resource conditions; no outcome is delivered.
+
+Published `manuscript/current_paper_20260922.md` as the current abstract, contribution scope, paper assembly map and evidence table. Reconciled `manuscript/landmark_methods_20260920.md`: original3active arms historical; E11/E12 have5active arms plusSTOP; accepted finite task validation replaces obsolete “unvalidated” status; .05/10 belongs to the earlier four-arm analyzer and is not current six-arm inference. Valid generic concentration mathematics is unchanged and its independence assumptions remain explicit. Independent theory and evidence reviewers accepted the distinctions and numeric claims after clarifying that R1 compares a whole context/instruction package. The abstract retains E11's null and6/7initial passes; E12 instrument checks are not prompt outcomes.
+
+README now links the current manuscript and planning estimate.55%,delta0; no efficacy or submission-ready claim, no new model/executor calls or spend. These manuscript edits require no worker acknowledgement, protocol change, new analysis or interruption of a running batch. — Coordinating scientific lead
