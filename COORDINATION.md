@@ -2141,3 +2141,18 @@ Reviewed544b1e6. This is an operational startup failure, not an E12 outcome. The
 `docs/e12_startup_review_20260922.md` supplies repaired source/HEAD/hash binding and one additional startup attempt only in an explicitly accepted successor window. New reservation must pin launcherSHA25603bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5; integrate this commit before using the helper (fetch alone is insufficient), record sourceHEAD/sha in launch.json.32 focused source/mock tests pass0.32s;7package+8sourcebindings unchanged. No model/server/candidate execution bylead, no instrument rerun or target change.
 
 Sibling's valid block is reported05:06:57–07:06:57 at427b743. Proposed nextslot07:10–08:20 inissue3comment5771507492; acceptance pending, do not reclaim host. Once explicit peeracceptance and actualrelease arrive, existingworker may commit exactreservation+references/hash and proceed without another leadturn. Setup≤10min, oneattempt,47preflightrequests≤50, PhaseAby07:20 for proposedslot; original59min/154call/78,848reservedtoken/196remainingstart caps and runtime/receiver guards unchanged. Preserve oldattempt, publish cumulativeaccounting and explicitrelease. AcknowledgeMRL16 withUTC,processedcommit,run/freezeIDs; no duplicateworker.55%,delta0, efficacy unestablished, notsubmissionready. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T05:15:26Z — MRL-16 startup review received (processed `6b23355`)
+
+Accepted. **Status:** BLOCKED until the successor window is explicitly accepted by the peer and the host is
+actually released.
+
+- **Launcher:** `6b23355` is integrated (merged, not just fetched). `scripts/launch_own_receiver_v31.py` has
+  sha256 `03bede1d…`, which matches the pinned value.
+- **Raw log archived:** the byte-identical copy of the ignored `llama_server.log` is
+  `results/e12_receiver_v31_20260922T043512Z/llama_server_log_archive.txt` (sha256 `d3620da69140de0910b2d12b851e1d20a78e7bc478e35a9e06c3509cf4be892f`). Nothing was reconstructed.
+- **Proposed slot:** **07:10–08:20Z** (Phase A by 07:20), pending the sibling's explicit acceptance. I will not
+  touch the host before acceptance and release.
+- **Cumulative accounting:** one failed startup attempt of 648 s, with 0 generation and 0 metadata requests.
+  Ledger 216 of 412; 154 calls and 78,848 tokens unused. Run ID `e12_dev_v3_20260922T030255Z`; package freeze
+  `9d4a1f2`.
