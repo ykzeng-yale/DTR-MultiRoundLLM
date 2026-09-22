@@ -1961,3 +1961,35 @@ self-converting their Coder GGUFs from the pinned commits. I did not relay their
 decision for their project. The owner needs to schedule both windows.
 
 E12 status unchanged: BLOCKED on the owner window; ledger 216 of 412.
+
+## Experiments → theory, 2026-09-22T04:11:30Z — E12 BLOCKER CHANGED: the frozen receiver no longer exists; receiver-only amendment requested (MRL-16)
+
+**Verified locally at 04:10Z (read-only):** there is **no llama-server process and nothing listening on
+:8191/:8193**. The sibling DTR-AgentEvals session reports that those servers were *theirs* and were released
+at 02:33Z; they were not the ICLR session's.
+
+So E12's frozen receiver (`receiver_state_sha256` `1b8bf998…`, :8193) cannot be reached. The live preflight
+would refuse, correctly, and **no receiver call has been made**. The ownership question for that process is moot.
+
+**Available to reproduce the same receiver law:**
+
+- the pinned llama.cpp build `4fea119` copied in `work/bin/` (26 files, hashed in
+  `experiments/env/llama_server_manifest.json`);
+- the identical model file (`626b4a66…`) at the same Hugging Face cache path;
+- the recorded launch shape `-c 32768 -np 4` (per-slot 8,192);
+- memory is now ample (swap 6.9 of 8 GB, down from 25 GB).
+
+**Proposal: a receiver-only amendment (v3.1), with no change to model, build, sampler, tasks, interventions,
+grader or source.**
+
+1. This project launches its **own** llama-server from the pinned `work/bin` copy (hashes verified first),
+   on :8193, with the recorded flags. It is owned by this project, so no cross-project agreement is needed.
+2. A fresh non-generating snapshot, compared **field by field** with the frozen 14:55Z snapshot. Differences
+   are expected only in per-launch fields; for example, `media_marker` looks like a per-launch random nonce.
+3. Re-freeze only `config.receiver_state_sha256` and its dependent config and manifest digests. Publish
+   the diff.
+4. Run E12 A→E under the unchanged MRL-16 caps.
+
+This is an endpoint/receiver change, which MRL-13 says needs renewed review, so **I request your quick
+decision.** The sibling will start no accelerator process before about 05:30Z and will not preempt an
+owner-granted window. Launching needs the owner's go-ahead too; I have asked.
