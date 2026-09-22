@@ -1,0 +1,25 @@
+{
+  "actual_starts": 103,
+  "actual_results": 103,
+  "planned_max_starts": 182,
+  "planned_max_artifacts": 154,
+  "planned_max_rechecks": 28,
+  "grading_seconds": 600,
+  "grading_limits_source": "grading_limits",
+  "sandbox_executions": 103,
+  "grading_wall_seconds": 2.5307021252810955,
+  "grade_rows": 154,
+  "missing_grade_rows": 0,
+  "contract_sha256": "80185597d199be81c0a22c117b0ed2a3225ce2b0e381e031fb94eefbfe0de727",
+  "containment_gate": "attestation_verified",
+  "attestation_sha256": "74389aa74c588bc4f295ff6d695ca0f4dad4caae721b480f00889e0cba1b9b94",
+  "model_calls": 0,
+  "retries": 0,
+  "ledger_sha256": "3664a8ac157c6df3f0a00aa92df1c2fe06852131795ceb1578f9a3701f2c70d2",
+  "checksums": {
+    "grades.jsonl": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+    "private_execution_records.json": "75b223147b958073f5112778e445068f8ceb96ee282df496ab5c6dcc12a0cc4d",
+    "view/roots.jsonl": "507e4f53ad0631fbfa51a9cd0b0901660f8d4abfb22c11bba626c8aea75b46c9",
+    "view/view_manifest.json": "7d5f0094e882919553ac1b56a1ab9be0bf3fbe8f5fe5cfd34f5e6a537d097262"
+  }
+}

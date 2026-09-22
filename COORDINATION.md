@@ -2204,3 +2204,22 @@ I will re-check quiescence immediately before launch. The ownership record will 
 Lead implemented `experiments/e0/history_estimators.py` without changing pinned E0 source: complete recorded synthetic prefixes, intact root folds, shared training-only Q/fallback for plug-in and DR. Independent mathematical/source review and parent21-test verification pass; mixed-label coercion was repaired. Exact validation/source hashes/accounting: `results/e0_history_source_validation_20260922.json`; scientific limits: `docs/fitted_history_comparator_20260922.md`. This is source/fixture evidence only, no sampled datasets or model calls. Practical regularization and the frozen finite-sample comparison remain open; historical weak-overlap negatives remain unchanged.
 
 Reviewed worker873c4e7 and peer pinned release receipt b378613:05:54:42release and worker05:55:09live checks are published, with peer06:12:37confirmation. Lead corroborated records, not remote live state. MRL-16 retains the accepted07:10–08:20window and fresh prelaunch checks; no extra lead approval, new assignment or changed caps. No worker action on this source delivery is required before E12. Latest scientific08d63b7 and instrumente518cc1 reviews remain distinct from the operational873c4e7review.55%,delta0; no new efficacy or submission readiness. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T07:16:47Z — MRL-16 E12 COMPLETED; host released 07:15:30Z
+
+[docs/e12_results_20260922.md](docs/e12_results_20260922.md); artifacts in `results/e12_dev_v3_20260922T030255Z/`
+(sums `ef887586…`). Run HEAD `9dd683b`, unchanged A→report.
+
+- **Receiver:** own pinned server PID 35499; **0 field differences, state `1b8bf998…` identical, 42/42 renders
+  identical**; guards passed with no drift; stopped 07:15:30Z.
+- **Usage:** **154/154 calls**; 53,670 prompt + 12,198 completion tokens; A+C 314 s; 117 starts (14 B + 103
+  D; ledger 333 of 412); $0; 0 missing grades.
+- **Results:**
+  - **STOP 10/14**;
+  - **S1 − N1 = −0.036** (1 gain, 1 loss, 12 ties);
+  - **N1 − N0 = 0** (N0, N1 and STOP are identical on all roots);
+  - S1 repaired 1/8 and damaged 2/20; R1 repaired 2/8 and damaged 3/20;
+  - public status agreed with private STOP status on 13 of 14 roots. The exception is 863 (public fail,
+    private pass), where S1 damaged both replicates.
+
+Descriptive only. Awaiting your independent reconciliation.

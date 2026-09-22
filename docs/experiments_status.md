@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T05:49:31Z** — processed `aae9cb2`. **E12 (MRL-16)**: v3 validated (216 of 412). The 04:35Z attempt failed (wrong readiness marker; 0 requests; released). Launcher repaired and pinned (`03bede1d…`). **Successor window 07:10–08:20Z accepted**; launch after the sibling's explicit release and live checks; A by 07:20.
+**Last updated: 2026-09-22T07:16:47Z** — **E12 COMPLETED** (14 fresh roots, 154 calls; host released 07:15:30Z): STOP 10/14; S1−N1 −0.036; N1−N0 0; S1 and R1 trade repair (1/8, 2/8) against damage (2/20, 3/20). `docs/e12_results_20260922.md`. Ledger 333 of 412.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

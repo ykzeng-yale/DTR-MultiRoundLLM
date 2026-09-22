@@ -1,0 +1,1849 @@
+{
+  "schema_version": "landmark-v2",
+  "arm_set": "diagnostic-v1",
+  "phase": "continue",
+  "config": {
+    "schema_version": "landmark-v2",
+    "protocol_version": "landmark-development-release-v3-diagnostic (14 prospective fresh roots; adapted public contracts; 1 public / 2 private MBPP assertions; one wrong control per root; grader landmark-grader-v5-parse-and-compile-fault-attribution; public-diagnostic-v2)",
+    "freeze_commit": "HEAD",
+    "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+    "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "server_build": "b1-4fea119",
+    "base_url": "http://127.0.0.1:8193",
+    "seed": 20260921,
+    "split_seed": 20260921,
+    "split_fractions": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "prior_seen_root_ids": [
+      "humaneval/0",
+      "humaneval/1",
+      "humaneval/10",
+      "humaneval/100",
+      "humaneval/101",
+      "humaneval/102",
+      "humaneval/103",
+      "humaneval/104",
+      "humaneval/105",
+      "humaneval/106",
+      "humaneval/107",
+      "humaneval/108",
+      "humaneval/109",
+      "humaneval/11",
+      "humaneval/110",
+      "humaneval/111",
+      "humaneval/112",
+      "humaneval/113",
+      "humaneval/114",
+      "humaneval/115",
+      "humaneval/116",
+      "humaneval/117",
+      "humaneval/118",
+      "humaneval/119",
+      "humaneval/12",
+      "humaneval/120",
+      "humaneval/121",
+      "humaneval/122",
+      "humaneval/123",
+      "humaneval/124",
+      "humaneval/125",
+      "humaneval/126",
+      "humaneval/127",
+      "humaneval/128",
+      "humaneval/129",
+      "humaneval/13",
+      "humaneval/130",
+      "humaneval/131",
+      "humaneval/132",
+      "humaneval/133",
+      "humaneval/134",
+      "humaneval/135",
+      "humaneval/136",
+      "humaneval/137",
+      "humaneval/138",
+      "humaneval/139",
+      "humaneval/14",
+      "humaneval/140",
+      "humaneval/141",
+      "humaneval/142",
+      "humaneval/143",
+      "humaneval/144",
+      "humaneval/145",
+      "humaneval/146",
+      "humaneval/147",
+      "humaneval/148",
+      "humaneval/149",
+      "humaneval/15",
+      "humaneval/150",
+      "humaneval/151",
+      "humaneval/152",
+      "humaneval/153",
+      "humaneval/154",
+      "humaneval/155",
+      "humaneval/156",
+      "humaneval/157",
+      "humaneval/158",
+      "humaneval/159",
+      "humaneval/16",
+      "humaneval/160",
+      "humaneval/161",
+      "humaneval/162",
+      "humaneval/163",
+      "humaneval/17",
+      "humaneval/18",
+      "humaneval/19",
+      "humaneval/2",
+      "humaneval/20",
+      "humaneval/21",
+      "humaneval/22",
+      "humaneval/23",
+      "humaneval/24",
+      "humaneval/25",
+      "humaneval/26",
+      "humaneval/27",
+      "humaneval/28",
+      "humaneval/29",
+      "humaneval/3",
+      "humaneval/30",
+      "humaneval/31",
+      "humaneval/32",
+      "humaneval/33",
+      "humaneval/34",
+      "humaneval/35",
+      "humaneval/36",
+      "humaneval/37",
+      "humaneval/38",
+      "humaneval/39",
+      "humaneval/4",
+      "humaneval/40",
+      "humaneval/41",
+      "humaneval/42",
+      "humaneval/43",
+      "humaneval/44",
+      "humaneval/45",
+      "humaneval/46",
+      "humaneval/47",
+      "humaneval/48",
+      "humaneval/49",
+      "humaneval/5",
+      "humaneval/50",
+      "humaneval/51",
+      "humaneval/52",
+      "humaneval/53",
+      "humaneval/54",
+      "humaneval/55",
+      "humaneval/56",
+      "humaneval/57",
+      "humaneval/58",
+      "humaneval/59",
+      "humaneval/6",
+      "humaneval/60",
+      "humaneval/61",
+      "humaneval/62",
+      "humaneval/63",
+      "humaneval/64",
+      "humaneval/65",
+      "humaneval/66",
+      "humaneval/67",
+      "humaneval/68",
+      "humaneval/69",
+      "humaneval/7",
+      "humaneval/70",
+      "humaneval/71",
+      "humaneval/72",
+      "humaneval/73",
+      "humaneval/74",
+      "humaneval/75",
+      "humaneval/76",
+      "humaneval/77",
+      "humaneval/78",
+      "humaneval/79",
+      "humaneval/8",
+      "humaneval/80",
+      "humaneval/81",
+      "humaneval/82",
+      "humaneval/83",
+      "humaneval/84",
+      "humaneval/85",
+      "humaneval/86",
+      "humaneval/87",
+      "humaneval/88",
+      "humaneval/89",
+      "humaneval/9",
+      "humaneval/90",
+      "humaneval/91",
+      "humaneval/92",
+      "humaneval/93",
+      "humaneval/94",
+      "humaneval/95",
+      "humaneval/96",
+      "humaneval/97",
+      "humaneval/98",
+      "humaneval/99",
+      "mbpp/100",
+      "mbpp/101",
+      "mbpp/102",
+      "mbpp/103",
+      "mbpp/104",
+      "mbpp/105",
+      "mbpp/106",
+      "mbpp/108",
+      "mbpp/109",
+      "mbpp/11",
+      "mbpp/111",
+      "mbpp/113",
+      "mbpp/115",
+      "mbpp/116",
+      "mbpp/117",
+      "mbpp/118",
+      "mbpp/119",
+      "mbpp/12",
+      "mbpp/120",
+      "mbpp/123",
+      "mbpp/124",
+      "mbpp/125",
+      "mbpp/126",
+      "mbpp/127",
+      "mbpp/128",
+      "mbpp/129",
+      "mbpp/130",
+      "mbpp/131",
+      "mbpp/132",
+      "mbpp/133",
+      "mbpp/135",
+      "mbpp/137",
+      "mbpp/138",
+      "mbpp/139",
+      "mbpp/14",
+      "mbpp/140",
+      "mbpp/141",
+      "mbpp/142",
+      "mbpp/143",
+      "mbpp/145",
+      "mbpp/16",
+      "mbpp/160",
+      "mbpp/161",
+      "mbpp/162",
+      "mbpp/163",
+      "mbpp/164",
+      "mbpp/165",
+      "mbpp/166",
+      "mbpp/167",
+      "mbpp/168",
+      "mbpp/17",
+      "mbpp/170",
+      "mbpp/171",
+      "mbpp/172",
+      "mbpp/18",
+      "mbpp/189",
+      "mbpp/19",
+      "mbpp/2",
+      "mbpp/20",
+      "mbpp/202",
+      "mbpp/220",
+      "mbpp/222",
+      "mbpp/223",
+      "mbpp/224",
+      "mbpp/226",
+      "mbpp/227",
+      "mbpp/228",
+      "mbpp/229",
+      "mbpp/230",
+      "mbpp/232",
+      "mbpp/233",
+      "mbpp/234",
+      "mbpp/235",
+      "mbpp/237",
+      "mbpp/238",
+      "mbpp/239",
+      "mbpp/240",
+      "mbpp/242",
+      "mbpp/244",
+      "mbpp/245",
+      "mbpp/246",
+      "mbpp/247",
+      "mbpp/248",
+      "mbpp/249",
+      "mbpp/250",
+      "mbpp/251",
+      "mbpp/252",
+      "mbpp/253",
+      "mbpp/255",
+      "mbpp/256",
+      "mbpp/257",
+      "mbpp/259",
+      "mbpp/260",
+      "mbpp/261",
+      "mbpp/262",
+      "mbpp/264",
+      "mbpp/265",
+      "mbpp/266",
+      "mbpp/267",
+      "mbpp/268",
+      "mbpp/269",
+      "mbpp/270",
+      "mbpp/271",
+      "mbpp/272",
+      "mbpp/273",
+      "mbpp/274",
+      "mbpp/276",
+      "mbpp/277",
+      "mbpp/278",
+      "mbpp/279",
+      "mbpp/280",
+      "mbpp/281",
+      "mbpp/282",
+      "mbpp/283",
+      "mbpp/284",
+      "mbpp/285",
+      "mbpp/286",
+      "mbpp/287",
+      "mbpp/290",
+      "mbpp/291",
+      "mbpp/292",
+      "mbpp/293",
+      "mbpp/294",
+      "mbpp/295",
+      "mbpp/296",
+      "mbpp/297",
+      "mbpp/299",
+      "mbpp/3",
+      "mbpp/300",
+      "mbpp/301",
+      "mbpp/304",
+      "mbpp/305",
+      "mbpp/306",
+      "mbpp/307",
+      "mbpp/308",
+      "mbpp/309",
+      "mbpp/310",
+      "mbpp/311",
+      "mbpp/312",
+      "mbpp/336",
+      "mbpp/34",
+      "mbpp/371",
+      "mbpp/388",
+      "mbpp/389",
+      "mbpp/390",
+      "mbpp/391",
+      "mbpp/392",
+      "mbpp/393",
+      "mbpp/394",
+      "mbpp/395",
+      "mbpp/396",
+      "mbpp/397",
+      "mbpp/398",
+      "mbpp/399",
+      "mbpp/4",
+      "mbpp/400",
+      "mbpp/401",
+      "mbpp/404",
+      "mbpp/405",
+      "mbpp/406",
+      "mbpp/407",
+      "mbpp/408",
+      "mbpp/409",
+      "mbpp/410",
+      "mbpp/411",
+      "mbpp/412",
+      "mbpp/413",
+      "mbpp/414",
+      "mbpp/415",
+      "mbpp/417",
+      "mbpp/418",
+      "mbpp/419",
+      "mbpp/420",
+      "mbpp/421",
+      "mbpp/422",
+      "mbpp/424",
+      "mbpp/425",
+      "mbpp/426",
+      "mbpp/427",
+      "mbpp/428",
+      "mbpp/429",
+      "mbpp/43",
+      "mbpp/430",
+      "mbpp/431",
+      "mbpp/432",
+      "mbpp/433",
+      "mbpp/434",
+      "mbpp/435",
+      "mbpp/436",
+      "mbpp/437",
+      "mbpp/438",
+      "mbpp/439",
+      "mbpp/440",
+      "mbpp/441",
+      "mbpp/442",
+      "mbpp/443",
+      "mbpp/444",
+      "mbpp/445",
+      "mbpp/446",
+      "mbpp/447",
+      "mbpp/448",
+      "mbpp/450",
+      "mbpp/451",
+      "mbpp/452",
+      "mbpp/453",
+      "mbpp/454",
+      "mbpp/455",
+      "mbpp/456",
+      "mbpp/457",
+      "mbpp/458",
+      "mbpp/459",
+      "mbpp/460",
+      "mbpp/461",
+      "mbpp/462",
+      "mbpp/463",
+      "mbpp/464",
+      "mbpp/465",
+      "mbpp/468",
+      "mbpp/470",
+      "mbpp/471",
+      "mbpp/472",
+      "mbpp/473",
+      "mbpp/474",
+      "mbpp/475",
+      "mbpp/476",
+      "mbpp/477",
+      "mbpp/478",
+      "mbpp/479",
+      "mbpp/554",
+      "mbpp/555",
+      "mbpp/556",
+      "mbpp/557",
+      "mbpp/558",
+      "mbpp/559",
+      "mbpp/56",
+      "mbpp/560",
+      "mbpp/562",
+      "mbpp/563",
+      "mbpp/564",
+      "mbpp/565",
+      "mbpp/566",
+      "mbpp/567",
+      "mbpp/568",
+      "mbpp/569",
+      "mbpp/57",
+      "mbpp/572",
+      "mbpp/573",
+      "mbpp/574",
+      "mbpp/576",
+      "mbpp/577",
+      "mbpp/578",
+      "mbpp/579",
+      "mbpp/58",
+      "mbpp/580",
+      "mbpp/581",
+      "mbpp/582",
+      "mbpp/583",
+      "mbpp/584",
+      "mbpp/585",
+      "mbpp/586",
+      "mbpp/587",
+      "mbpp/588",
+      "mbpp/589",
+      "mbpp/59",
+      "mbpp/590",
+      "mbpp/591",
+      "mbpp/592",
+      "mbpp/593",
+      "mbpp/594",
+      "mbpp/595",
+      "mbpp/596",
+      "mbpp/597",
+      "mbpp/598",
+      "mbpp/599",
+      "mbpp/6",
+      "mbpp/600",
+      "mbpp/602",
+      "mbpp/603",
+      "mbpp/604",
+      "mbpp/605",
+      "mbpp/606",
+      "mbpp/607",
+      "mbpp/608",
+      "mbpp/61",
+      "mbpp/610",
+      "mbpp/611",
+      "mbpp/612",
+      "mbpp/614",
+      "mbpp/615",
+      "mbpp/616",
+      "mbpp/617",
+      "mbpp/618",
+      "mbpp/619",
+      "mbpp/62",
+      "mbpp/620",
+      "mbpp/622",
+      "mbpp/623",
+      "mbpp/624",
+      "mbpp/625",
+      "mbpp/626",
+      "mbpp/627",
+      "mbpp/628",
+      "mbpp/629",
+      "mbpp/63",
+      "mbpp/630",
+      "mbpp/631",
+      "mbpp/632",
+      "mbpp/633",
+      "mbpp/635",
+      "mbpp/637",
+      "mbpp/638",
+      "mbpp/639",
+      "mbpp/64",
+      "mbpp/640",
+      "mbpp/641",
+      "mbpp/643",
+      "mbpp/644",
+      "mbpp/65",
+      "mbpp/66",
+      "mbpp/67",
+      "mbpp/68",
+      "mbpp/69",
+      "mbpp/7",
+      "mbpp/70",
+      "mbpp/71",
+      "mbpp/72",
+      "mbpp/720",
+      "mbpp/721",
+      "mbpp/722",
+      "mbpp/723",
+      "mbpp/724",
+      "mbpp/725",
+      "mbpp/726",
+      "mbpp/728",
+      "mbpp/730",
+      "mbpp/731",
+      "mbpp/732",
+      "mbpp/733",
+      "mbpp/734",
+      "mbpp/735",
+      "mbpp/736",
+      "mbpp/737",
+      "mbpp/738",
+      "mbpp/739",
+      "mbpp/74",
+      "mbpp/740",
+      "mbpp/741",
+      "mbpp/742",
+      "mbpp/743",
+      "mbpp/744",
+      "mbpp/745",
+      "mbpp/746",
+      "mbpp/747",
+      "mbpp/748",
+      "mbpp/749",
+      "mbpp/75",
+      "mbpp/750",
+      "mbpp/751",
+      "mbpp/752",
+      "mbpp/753",
+      "mbpp/754",
+      "mbpp/755",
+      "mbpp/756",
+      "mbpp/757",
+      "mbpp/758",
+      "mbpp/759",
+      "mbpp/760",
+      "mbpp/762",
+      "mbpp/763",
+      "mbpp/764",
+      "mbpp/765",
+      "mbpp/766",
+      "mbpp/767",
+      "mbpp/769",
+      "mbpp/77",
+      "mbpp/770",
+      "mbpp/771",
+      "mbpp/772",
+      "mbpp/773",
+      "mbpp/775",
+      "mbpp/776",
+      "mbpp/777",
+      "mbpp/778",
+      "mbpp/779",
+      "mbpp/780",
+      "mbpp/781",
+      "mbpp/782",
+      "mbpp/783",
+      "mbpp/784",
+      "mbpp/785",
+      "mbpp/786",
+      "mbpp/787",
+      "mbpp/788",
+      "mbpp/79",
+      "mbpp/790",
+      "mbpp/791",
+      "mbpp/792",
+      "mbpp/793",
+      "mbpp/794",
+      "mbpp/796",
+      "mbpp/797",
+      "mbpp/798",
+      "mbpp/799",
+      "mbpp/8",
+      "mbpp/80",
+      "mbpp/800",
+      "mbpp/801",
+      "mbpp/802",
+      "mbpp/803",
+      "mbpp/804",
+      "mbpp/805",
+      "mbpp/806",
+      "mbpp/807",
+      "mbpp/808",
+      "mbpp/809",
+      "mbpp/82",
+      "mbpp/83",
+      "mbpp/84",
+      "mbpp/85",
+      "mbpp/86",
+      "mbpp/87",
+      "mbpp/88",
+      "mbpp/89",
+      "mbpp/9",
+      "mbpp/90",
+      "mbpp/91",
+      "mbpp/92",
+      "mbpp/93",
+      "mbpp/94",
+      "mbpp/95",
+      "mbpp/96",
+      "mbpp/97",
+      "mbpp/98",
+      "mbpp/99"
+    ],
+    "prior_seen_family_ids": [],
+    "max_calls": 154,
+    "max_completion_tokens": 78848,
+    "max_seconds": 1200,
+    "max_tokens_per_call": 512,
+    "request_timeout_seconds": 120,
+    "max_request_bytes": 32768,
+    "decoding": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "num_ctx": 8192
+    },
+    "dataset_sha256": "ca8bd653824dd1a025b4a61840700c8cc51263682e617a22584f8456ea8c7780",
+    "source_code_sha256": "65fc93ede14388b257abbd0de611ff9ab529b2ec8dee3dbbab6b95986dda135f",
+    "grading_contract_sha256": "80185597d199be81c0a22c117b0ed2a3225ce2b0e381e031fb94eefbfe0de727",
+    "dataset_source": "https://github.com/google-research/google-research/blob/4700efb9afa54286b0e04473ba80a13e8461e25f/mbpp/mbpp.jsonl",
+    "dataset_license": "CC-BY-4.0",
+    "paid_api_budget_usd": 0,
+    "branch_replicates": 2,
+    "receiver_state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+    "sampler": {
+      "top_k": 40,
+      "min_p": 0.05,
+      "typical_p": 1.0,
+      "top_n_sigma": -1.0,
+      "xtc_probability": 0.0,
+      "repeat_penalty": 1.0,
+      "repeat_last_n": 64,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "dry_multiplier": 0.0,
+      "mirostat": 0
+    },
+    "sampler_law": "server_defaults_pinned"
+  },
+  "config_sha256": "e3e310f881be370b3cbd8c6d8f3fe086241a99d98ce1db20f5c108a6efd124f4",
+  "dataset_sha256": "ca8bd653824dd1a025b4a61840700c8cc51263682e617a22584f8456ea8c7780",
+  "tasks": [
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "S is a nonempty list of distinct positive integer coin denominations, m equals its length, and n is a nonnegative integer amount. Return the number of unordered combinations totaling n when each denomination may be used any number of times; permutations of the same coins count once.",
+      "public_context": "Required function interface: def coin_change(S, m, n):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\ncoin_change([1, 2, 3], 3, 4) == 4",
+      "root_id": "mbpp/918"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "Return a list containing the elements of nums at the supplied indices, preserving the order and repetitions in list_index. Use Python list indexing; each supplied index is valid.",
+      "public_context": "Required function interface: def access_elements(nums, list_index):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\naccess_elements([2, 3, 8, 4, 7, 9], [0, 3, 5]) == [2, 4, 9]",
+      "root_id": "mbpp/825"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "arr is a nonempty integer list, arr_size equals its length, and exactly one distinct value occurs an odd number of times. Return that value.",
+      "public_context": "Required function interface: def get_odd_occurence(arr, arr_size):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nget_odd_occurence([2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2], 13) == 5",
+      "root_id": "mbpp/842"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "Given a tuple, return the empty tuple obtained by clearing all its elements. No in-place mutation is requested.",
+      "public_context": "Required function interface: def clear_tuple(test_tup):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nclear_tuple((1, 5, 3, 6, 8)) == ()",
+      "root_id": "mbpp/816"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "A is a nonempty list of integers. Return the largest sum of a nonempty subsequence whose chosen positions are never adjacent in the original list.",
+      "public_context": "Required function interface: def max_sum_subseq(A):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nmax_sum_subseq([1, 2, 9, 4, 5, 0, 4, 11, 6]) == 26",
+      "root_id": "mbpp/895"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "Words are separated by ordinary spaces. Ignore leading/trailing spaces and return the length of the last word; when no word exists, treat the last word as the empty string. Inputs use spaces rather than other internal whitespace separators.",
+      "public_context": "Required function interface: def length_Of_Last_Word(a):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nlength_Of_Last_Word('python language') == 8",
+      "root_id": "mbpp/868"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "P is an integer modulus at least two, N equals the length of the integer list arr, and duplicate entries count separately. Count entries whose residue is invertible modulo P and equal to its own multiplicative inverse.",
+      "public_context": "Required function interface: def modular_inverse(arr, N, P):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nmodular_inverse([1, 6, 4, 5], 4, 7) == 2",
+      "root_id": "mbpp/288"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "Return the element at zero-based column N from each row of nums, preserving row order. N is nonnegative and every row contains that position.",
+      "public_context": "Required function interface: def specified_element(nums, N):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nspecified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]], 0) == [1, 4, 7]",
+      "root_id": "mbpp/154"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "arr is a nonempty integer list and n equals its length. Ignore the original order and repeated copies of a value. Return the length of the longest run of consecutive integer values present in the list.",
+      "public_context": "Required function interface: def find_longest_conseq_subseq(arr, n):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nfind_longest_conseq_subseq([1, 2, 2, 3], 4) == 3",
+      "root_id": "mbpp/863"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "The input is a list whose elements are tuples or nonempty strings. Remove the empty tuples and preserve every other element and its order.",
+      "public_context": "Required function interface: def remove_empty(tuple1):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nremove_empty([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), 'd']) == [('',), ('a', 'b'), ('a', 'b', 'c'), 'd']",
+      "root_id": "mbpp/966"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "The input is a list of rows containing equal-length tuples. Visit those tuples in row-major order, collect each tuple-component position into a tuple, and form a list of those component tuples. Return the standard Python string representation of that list.",
+      "public_context": "Required function interface: def matrix_to_list(test_list):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nmatrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]]) == '[(4, 7, 10, 18, 0, 10), (5, 8, 13, 17, 4, 1)]'",
+      "root_id": "mbpp/652"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "Return whether every distinct element of the second tuple occurs in the first tuple. Element order and multiplicity do not matter.",
+      "public_context": "Required function interface: def check_subset(test_tup1, test_tup2):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\ncheck_subset((10, 4, 5, 6), (5, 10)) == True",
+      "root_id": "mbpp/651"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "r is the nonnegative radius of a circle. Return its diameter.",
+      "public_context": "Required function interface: def diameter_circle(r):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\ndiameter_circle(10) == 20",
+      "root_id": "mbpp/499"
+    },
+    {
+      "family_id": "unresolved_development_family",
+      "prompt": "A is a nonempty triangular list of integer rows, with row i containing i+1 entries. Starting at the top, move from position j to position j or j+1 in the next row until reaching the bottom. Return the smallest sum including both endpoints.",
+      "public_context": "Required function interface: def min_sum_path(A):\nReturn only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.\n\nPublic examples (inputs and required outputs):\nmin_sum_path([[2], [3, 9], [1, 6, 7]]) == 6",
+      "root_id": "mbpp/974"
+    }
+  ],
+  "assignment_table": [
+    {
+      "root_id": "mbpp/918",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1928852835,
+        "N0:0": 2075095269,
+        "N0:1": 143434032,
+        "S0:0": 63374508,
+        "S0:1": 1100131693,
+        "N1:0": 738936711,
+        "N1:1": 1577585208,
+        "S1:0": 410230499,
+        "S1:1": 417084153,
+        "R1:0": 1449281446,
+        "R1:1": 499309634
+      }
+    },
+    {
+      "root_id": "mbpp/825",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1368125338,
+        "N0:0": 1488975479,
+        "N0:1": 1886067669,
+        "S0:0": 1584442630,
+        "S0:1": 1301251218,
+        "N1:0": 632947729,
+        "N1:1": 1505881679,
+        "S1:0": 1745022611,
+        "S1:1": 788227637,
+        "R1:0": 628954956,
+        "R1:1": 1505413724
+      }
+    },
+    {
+      "root_id": "mbpp/842",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 988544966,
+        "N0:0": 1687197122,
+        "N0:1": 852415238,
+        "S0:0": 1969590557,
+        "S0:1": 127352837,
+        "N1:0": 123048256,
+        "N1:1": 181094087,
+        "S1:0": 325028918,
+        "S1:1": 2024818217,
+        "R1:0": 42796135,
+        "R1:1": 658166361
+      }
+    },
+    {
+      "root_id": "mbpp/816",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 894284307,
+        "N0:0": 853342743,
+        "N0:1": 1160811369,
+        "S0:0": 610946473,
+        "S0:1": 501251668,
+        "N1:0": 1730754519,
+        "N1:1": 1812004049,
+        "S1:0": 357096675,
+        "S1:1": 676041353,
+        "R1:0": 1895122699,
+        "R1:1": 1929959239
+      }
+    },
+    {
+      "root_id": "mbpp/895",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 433028415,
+        "N0:0": 193346903,
+        "N0:1": 126051380,
+        "S0:0": 2058443158,
+        "S0:1": 478798302,
+        "N1:0": 936166803,
+        "N1:1": 67165588,
+        "S1:0": 755157654,
+        "S1:1": 529296998,
+        "R1:0": 205226833,
+        "R1:1": 987963815
+      }
+    },
+    {
+      "root_id": "mbpp/868",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1415369786,
+        "N0:0": 259491001,
+        "N0:1": 959903914,
+        "S0:0": 1438290461,
+        "S0:1": 1020333922,
+        "N1:0": 1340592621,
+        "N1:1": 49060846,
+        "S1:0": 821334480,
+        "S1:1": 803492526,
+        "R1:0": 1069928067,
+        "R1:1": 1817116847
+      }
+    },
+    {
+      "root_id": "mbpp/288",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 173086830,
+        "N0:0": 757441222,
+        "N0:1": 2069471112,
+        "S0:0": 672584266,
+        "S0:1": 1211318645,
+        "N1:0": 1681498362,
+        "N1:1": 1368741849,
+        "S1:0": 795990480,
+        "S1:1": 104764520,
+        "R1:0": 426578150,
+        "R1:1": 196027882
+      }
+    },
+    {
+      "root_id": "mbpp/154",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1337810025,
+        "N0:0": 1011657923,
+        "N0:1": 1571903051,
+        "S0:0": 1989337288,
+        "S0:1": 544695306,
+        "N1:0": 796419745,
+        "N1:1": 1196563944,
+        "S1:0": 1864996501,
+        "S1:1": 896137248,
+        "R1:0": 563461113,
+        "R1:1": 125270044
+      }
+    },
+    {
+      "root_id": "mbpp/863",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 969731030,
+        "N0:0": 1923774718,
+        "N0:1": 82718010,
+        "S0:0": 101145391,
+        "S0:1": 580389841,
+        "N1:0": 435241900,
+        "N1:1": 2147055662,
+        "S1:0": 1052052617,
+        "S1:1": 1198746926,
+        "R1:0": 1550132357,
+        "R1:1": 748712412
+      }
+    },
+    {
+      "root_id": "mbpp/966",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1622367576,
+        "N0:0": 201743792,
+        "N0:1": 684236224,
+        "S0:0": 561942710,
+        "S0:1": 1760021186,
+        "N1:0": 534951091,
+        "N1:1": 945698908,
+        "S1:0": 1863105528,
+        "S1:1": 2129082042,
+        "R1:0": 1962854312,
+        "R1:1": 2056390782
+      }
+    },
+    {
+      "root_id": "mbpp/652",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 2074932835,
+        "N0:0": 614568861,
+        "N0:1": 1451666587,
+        "S0:0": 1556430640,
+        "S0:1": 1062885632,
+        "N1:0": 473263011,
+        "N1:1": 1107780375,
+        "S1:0": 735298371,
+        "S1:1": 1652420507,
+        "R1:0": 1418745546,
+        "R1:1": 663543033
+      }
+    },
+    {
+      "root_id": "mbpp/651",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 545897821,
+        "N0:0": 1847781608,
+        "N0:1": 1896755473,
+        "S0:0": 1072125386,
+        "S0:1": 1640354653,
+        "N1:0": 2039597670,
+        "N1:1": 511615815,
+        "S1:0": 1362915771,
+        "S1:1": 478836184,
+        "R1:0": 561474202,
+        "R1:1": 1512427303
+      }
+    },
+    {
+      "root_id": "mbpp/499",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 1861676708,
+        "N0:0": 1735722378,
+        "N0:1": 292812845,
+        "S0:0": 1066665098,
+        "S0:1": 970723098,
+        "N1:0": 2088764677,
+        "N1:1": 402148082,
+        "S1:0": 1378878569,
+        "S1:1": 1028638691,
+        "R1:0": 1482414807,
+        "R1:1": 1009802766
+      }
+    },
+    {
+      "root_id": "mbpp/974",
+      "family_id": "unresolved_development_family",
+      "excluded": false,
+      "exclusion_reason": null,
+      "branch_order": [
+        {
+          "arm": "S0",
+          "replicate": 0
+        },
+        {
+          "arm": "S0",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 0
+        },
+        {
+          "arm": "S1",
+          "replicate": 1
+        },
+        {
+          "arm": "R1",
+          "replicate": 1
+        },
+        {
+          "arm": "N0",
+          "replicate": 1
+        },
+        {
+          "arm": "N1",
+          "replicate": 1
+        },
+        {
+          "arm": "S1",
+          "replicate": 0
+        },
+        {
+          "arm": "N1",
+          "replicate": 0
+        },
+        {
+          "arm": "R1",
+          "replicate": 0
+        }
+      ],
+      "order_role": "scheduling_not_assignment",
+      "branch_inclusion_probability": 1.0,
+      "seeds": {
+        "initial": 988364973,
+        "N0:0": 229861609,
+        "N0:1": 1461141092,
+        "S0:0": 889708536,
+        "S0:1": 2063346611,
+        "N1:0": 191340824,
+        "N1:1": 1974579558,
+        "S1:0": 1869300113,
+        "S1:1": 83766701,
+        "R1:0": 587236650,
+        "R1:1": 1763649641
+      }
+    }
+  ],
+  "assignment_table_sha256": "9c7b596b78d654c127f53a3e00252a11984da19d91ee9e22dbafde4d5cc5dfaf",
+  "planned_calls": {
+    "initial": 14,
+    "continue": 140,
+    "total": 154
+  },
+  "system": "Complete the public task. Use only the information supplied in this conversation.",
+  "design": "All five continuation arms are collected for every root; inclusion probability one. Randomized execution order is scheduling, not treatment assignment.",
+  "evidence_type": "ungraded_real_collection",
+  "freeze": {
+    "resolved_commit": "9dd683b71b59a70b51932606c4928cce0851beb3",
+    "tracked_file_hashes": {
+      "experiments/landmark/dev_release_v3/config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+      "experiments/landmark/dev_release_v3/tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+      "experiments/landmark/__init__.py": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+      "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+      "experiments/landmark/analyze_diagnostic.py": "dca7f904b27d615e3f41d2b40e840ccbd0a9d4b88a46a0448a7eb139d5af720a",
+      "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+      "experiments/landmark/collect_diagnostic.py": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+      "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+      "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+      "experiments/landmark/graph_adapter.py": "0f22040fbc0f29ceb125ab629f6e390789a5caa1485d127d2127cfa494bacc84",
+      "experiments/landmark/public_check.py": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+      "experiments/landmark/public_instrument_validation.py": "ca712b0ed87da938ca5d40c7e8e21211fde79000e54dea920f858e4906b05468",
+      "experiments/landmark/public_phase.py": "dc7712ffda104f91ddb667bda2f59e3b5ae270bc140a395371f0221c22976722",
+      "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+      "experiments/landmark/study_adapter.py": "1e5734b883435790a0578e7b2dc7121ecdd47d6136be544b9060d0f8016abfbd",
+      "experiments/landmark/validate_rebound_references.py": "4ae742191b33a686c4e0d0af645fb67266d7ef249f38fc32ffb592fe4c485601",
+      "experiments/landmark/validate_references.py": "feb86670ff8b9b26cfb2816ac780d25ba9a214f4649bef9f8ca4a7b729ae953d",
+      "experiments/landmark/validation_canaries.py": "5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba"
+    }
+  },
+  "initial_dir": "work/e12_dev_v3_20260922T030255Z/A",
+  "initial_completion_sha256": "bdf071560a34e4b79313e735b46cf4c358d60f4def51e0997f6f69e1be5debc5",
+  "diagnostics_sha256": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+  "renderers": {
+    "n_instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+    "r1_instruction": "Solve the original task using the public information and diagnostic observations. Return your best complete answer.",
+    "s1_strings": [
+      "Review the first public example with a recorded wrong value, format error, interface error, or program exception, in the diagnostic order. Compare the expected result with the recorded behavior, identify the discrepancy in your previous answer, and return a complete corrected answer. Check the remaining public examples and the full stated domain; do not merely hard-code the examples.",
+      "The public diagnostic is incomplete. Do not interpret an unavailable result as a pass or infer a hidden error. Review your previous answer against the full stated domain and return your best complete answer.",
+      "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer."
+    ],
+    "diagnostic_header": "Public diagnostic report for the previous answer (execution status is recorded per case):",
+    "targeted_renderer": {
+      "loop": "Review the iteration boundaries and empty-input behavior of your previous answer against the original task and public information. Return your best complete answer.",
+      "division": "Review division, rounding, and zero-denominator behavior in your previous answer against the original task and public information. Return your best complete answer.",
+      "fallback": "Check whether your previous answer satisfies each requirement in the original task and public information. Resolve any discrepancy and return your best complete answer."
+    }
+  },
+  "renderers_sha256": "23ebae0b0c2b7441c4d854e926b0e541173230a4a6f5eb4ca2162ae60162841b",
+  "bindings": {
+    "mbpp/918": {
+      "diagnostic_sha256": "64b649666921471f75e8f8020106476bf01d31f26fec5db62b33ae0f846bc732",
+      "diagnostic_bytes_sha256": "64b649666921471f75e8f8020106476bf01d31f26fec5db62b33ae0f846bc732",
+      "rendered_sha256": {
+        "N0": "8d3f958931e164a7db80725a4f0ca3a1d25dc6e8adfa18a92ea2d87faba917fd",
+        "S0": "43bb0f755d0c03cab186c657793e7924a3e155ac40b9f2e9b2408a0693b3082c",
+        "N1": "222bac8053f26d474ab771e25a72ab418819393fde91290698e5bd29e3473680",
+        "S1": "ea5da52d4711784347e1035b2c0f4fbb2d358c2d20c742e7599d6aa8de618453",
+        "R1": "2f9d904425c1ea39a4b14504f2665c1989d87a106f1ce542dbfd844e4e313687"
+      }
+    },
+    "mbpp/825": {
+      "diagnostic_sha256": "b5184e404ca8d3165ddf78bdbd27b1a2f0cd96f3e4d4797e433cbeac423e7639",
+      "diagnostic_bytes_sha256": "b5184e404ca8d3165ddf78bdbd27b1a2f0cd96f3e4d4797e433cbeac423e7639",
+      "rendered_sha256": {
+        "N0": "e7423023c0614f4ad58ed48859e95c52b398d5eb19ded7430aed9ee8ac2d8ebd",
+        "S0": "f4181844d9bdbbb96b50805a2924bc46d4eb0380a6221815a9d4305b3674ce29",
+        "N1": "6b0166f4bb73a635f71f75008814b1b9cf7ead7eb1552a869c58f301eaf185cd",
+        "S1": "d8ceb9debc9f69100bbdc99c9e702caad5892f070b641440f6f3b328f95002a9",
+        "R1": "25161d6d93021e2c9647c15ea5677f27b6d52457180d6654e0c5d028fa2bb0fc"
+      }
+    },
+    "mbpp/842": {
+      "diagnostic_sha256": "7286ffc3f2149384c0210dc57491acb762866ff87469ad0208df19e8a6980024",
+      "diagnostic_bytes_sha256": "7286ffc3f2149384c0210dc57491acb762866ff87469ad0208df19e8a6980024",
+      "rendered_sha256": {
+        "N0": "3923ede64a00269b7e916895fd94b2ae37312ca739e6d609aa1c8839bed1d21d",
+        "S0": "0697570508688a09b255a5fe3b2e5ded78c8b7a68c39d36618b88069f02b168a",
+        "N1": "0c6484dc988ab14ee30a018c34e13513946a7447b6e8be80cec10db1f62b34ab",
+        "S1": "4af71b506d58ee7f54e3c7d2a4f856e3cc47cfd99e78b9e03eab7769529b99f2",
+        "R1": "33261f52f8b7744c1b345116069cd13275a3a5d3080c8fcf64de8d1151ea8144"
+      }
+    },
+    "mbpp/816": {
+      "diagnostic_sha256": "5370b9af469baff0c59cacf32b0ed4ad2dee06e95126f777a21cd3199213eea4",
+      "diagnostic_bytes_sha256": "5370b9af469baff0c59cacf32b0ed4ad2dee06e95126f777a21cd3199213eea4",
+      "rendered_sha256": {
+        "N0": "d35415447b75089911ce42fdf506d9727ca2bd4e6de4e715f7a296b6883e3b71",
+        "S0": "f849cd57f3c9218bd50ac3641f56730ac8e6bedf97c0268a3a975bd3313a7ef3",
+        "N1": "13a23e36c24c5da975a5269a5f4b66d65ada3cf54ba77dfbc1536d3e00a026e7",
+        "S1": "a31a27da6ed45354e06490bfa9b37f22a4cb98dafa0757661498e6e4315b8549",
+        "R1": "fb69d881d5c0a835c45bfd3ccf6e1b8673cb8232b3d33f09fa80c570761f9efd"
+      }
+    },
+    "mbpp/895": {
+      "diagnostic_sha256": "522224e67c6e732bf3f693015165b97b84b320b694cca3047211e19105ba5021",
+      "diagnostic_bytes_sha256": "522224e67c6e732bf3f693015165b97b84b320b694cca3047211e19105ba5021",
+      "rendered_sha256": {
+        "N0": "f07aca8f487d77aa34dd3fa60158a2abc07ad0d75b233a33f5bd02ac9f63af04",
+        "S0": "749fd3e8ade313a5cbc8747cbd06e5deb31ecb8efdb09c67524b483814801475",
+        "N1": "34fb2b6f549637548756ff88713e0d8f149613defb737453c1962e8beb74d1ec",
+        "S1": "f99951f507dc89f4ce862201be1851937f55a38af196125b30e50cadc74aefc3",
+        "R1": "2b00c158adc2bbe25e24e2eee24c0143a1c767a4d14f96571cddf969978dbbce"
+      }
+    },
+    "mbpp/868": {
+      "diagnostic_sha256": "8b4f4cf96f6bcb97a2c42abc72c37f6294d08948f4407cecd9c39c8ec1450ba3",
+      "diagnostic_bytes_sha256": "8b4f4cf96f6bcb97a2c42abc72c37f6294d08948f4407cecd9c39c8ec1450ba3",
+      "rendered_sha256": {
+        "N0": "b6d7d6fd057585e5fb655d59a828d1410e8ffda545cf7b75440a111fe7e373b7",
+        "S0": "358fe698a3192505c2f8ca4f315621ac7f223d43d42441a568f5d8be77e73f5b",
+        "N1": "c1a105d566e554167b8e2728c00886dab10a50e362814ab325e3236b969d9733",
+        "S1": "3d74099ba9a8d40d5b819996e43e233ed7b16f575a9b754c86d5ab483f174085",
+        "R1": "f55d892c10b8d9523407052e477e2e67c7fa53b0360f89288da19b7cbbf42d96"
+      }
+    },
+    "mbpp/288": {
+      "diagnostic_sha256": "63d1d905d8f048821792c5aff05a6586af9709d4338c1fb3d55b569fd0c16fc4",
+      "diagnostic_bytes_sha256": "63d1d905d8f048821792c5aff05a6586af9709d4338c1fb3d55b569fd0c16fc4",
+      "rendered_sha256": {
+        "N0": "2402c745a6d4823a4da4de0dcbe2e8c9f8d9651557e005ec44f34ed44067e919",
+        "S0": "6e530c95502625c26d88c9ef9fa5c6ef3825b533923c7b7c1295d90d34282b48",
+        "N1": "9a5db30077c3b6d53fb3e4a2d55a4f83028880b937bc02f7c9318b97841b29bf",
+        "S1": "e0bb07b32ea85dc8a4f7161a2aff3997daf63027d9fad2ac15e265e05bb0cbe4",
+        "R1": "f6279b7566fbba61ef043c3a77d7ff0cddfad7e3059adf4648aa01a73be315fe"
+      }
+    },
+    "mbpp/154": {
+      "diagnostic_sha256": "ca250d1aa852c5f3b7c7fdb579e081cc4b007089894dd29480cc9c6797f3c800",
+      "diagnostic_bytes_sha256": "ca250d1aa852c5f3b7c7fdb579e081cc4b007089894dd29480cc9c6797f3c800",
+      "rendered_sha256": {
+        "N0": "6301e5fef14f4a3a9804b8a99f8f664736f9d34bd6fed085abc592dd41475a2d",
+        "S0": "fef9acba097c8a905bc239c53e42eb44e0a8e358ecbaf48c4f75aa5768143938",
+        "N1": "4e24beb116db9eb5cc32e3b59b3d8ee1f86a748da5ab766f901d5740fdc324d7",
+        "S1": "13b1ba45332991830ac51cc02176259c4de839d97be132d27c356113a20327ae",
+        "R1": "963806d295fad25b184557e91a6cb880f46b8644f1e42bfaac52ee4298feeb77"
+      }
+    },
+    "mbpp/863": {
+      "diagnostic_sha256": "25f389fc764459d38705276376167b14a4169ba2d13272a25647778360f5ea69",
+      "diagnostic_bytes_sha256": "25f389fc764459d38705276376167b14a4169ba2d13272a25647778360f5ea69",
+      "rendered_sha256": {
+        "N0": "1eacf173e76d823f6510c12556c72d69d2e52373726249861cca393a66474fd1",
+        "S0": "aa91ba90b238c2e2f1a80d40b7bdd29fb5a4744c082cc9772b0143f08a9da8a1",
+        "N1": "22bfe8f317d71df53d9e6ac27cdfa7ee265440644cc21498866ef13bf82f14a2",
+        "S1": "6726cbf53538dacc94219e6dbc9db7bdf95ee1bad36135d1a49d56b6579625ce",
+        "R1": "695055be6d4b25a20c91eed1dee6bbe19a8f8b4f6b9e6613815bb732ea103b79"
+      }
+    },
+    "mbpp/966": {
+      "diagnostic_sha256": "72f612d455be159c328e2a5029c2bbb98e378929bf470d008e916a05737b9097",
+      "diagnostic_bytes_sha256": "72f612d455be159c328e2a5029c2bbb98e378929bf470d008e916a05737b9097",
+      "rendered_sha256": {
+        "N0": "6c977239ffc8f28482e53885f9b9b6e5f8d3a776fbbf0f2bf60637e1134709d3",
+        "S0": "e1973cacae5c28acb03fa2753da345b9f809570695de75158995c217874097aa",
+        "N1": "eda2e6de01a7bacd434b638da7d6c76f1eb70e19bdeb4aef7623ace5487e4aa1",
+        "S1": "1a0fbfffa202cc2758eb8de4ea2f977058ad1c2c6ff6e3e4e202684c7e59924d",
+        "R1": "118e2040a1a05d2757fcc36a0140a854cd4c35a306e5ff5def6be658d3786688"
+      }
+    },
+    "mbpp/652": {
+      "diagnostic_sha256": "0873443eb5269d4e34328b9507bdd9af905cd9d9c821633670bed46523a04d6e",
+      "diagnostic_bytes_sha256": "0873443eb5269d4e34328b9507bdd9af905cd9d9c821633670bed46523a04d6e",
+      "rendered_sha256": {
+        "N0": "86d2dff5dd1b6bc22ad180179557ddfca1863d19ee299b6289fedbd0e4223839",
+        "S0": "8fd51b0817767241bbbbf167fa0236da6555c615a7725cd419e5fd822136ea8b",
+        "N1": "2180e86af394d7d61a65a24024e19e0d4eaed9513b1d38974325f212bbed95d7",
+        "S1": "836aefe978aa165ee200572a06e33ccb5ef1aa51c9e2ccee4356eadb95c57876",
+        "R1": "152ecaff77f186662dc9a153f9ad8d132aae73fa981c9f37a7571e39bcda6763"
+      }
+    },
+    "mbpp/651": {
+      "diagnostic_sha256": "93fb451eea0196739ebb5ffef27de803e7c255771203f37c9acc437dd8f023f3",
+      "diagnostic_bytes_sha256": "93fb451eea0196739ebb5ffef27de803e7c255771203f37c9acc437dd8f023f3",
+      "rendered_sha256": {
+        "N0": "383df88261d22b9ebe21bbddec1a21cb94c55e998194d4ef6efca44d4f4d81b8",
+        "S0": "c55b8c5f5bd338cd7bafb68c39c5c75bb983e2003f447faca5e14795747511e1",
+        "N1": "f5a9c1e2ec1e2a127be94eda91cf1071af6a24ff8986c25133dd2edb4e86f8e4",
+        "S1": "554c793272b16bc404b94c5cd58224d8f5237dea0a12d017b70d7e2fd357ad69",
+        "R1": "4e40ab098aa559fe8c148ee07913b990010066cb19d91caf32bdd4fa239f61d7"
+      }
+    },
+    "mbpp/499": {
+      "diagnostic_sha256": "8c26d0a9798e9c44111c7289fedc1d54033a7eff4334b408403d29f7a0787a93",
+      "diagnostic_bytes_sha256": "8c26d0a9798e9c44111c7289fedc1d54033a7eff4334b408403d29f7a0787a93",
+      "rendered_sha256": {
+        "N0": "13a66b80414e6249b608643df20dcacf6b363ab8081d5a76a4fd41a5b48273eb",
+        "S0": "e701f357d86d61b1a14b2366941b4983f55f3db0f16a186eadcf722dae2425e6",
+        "N1": "0052b64da0eb9527bda451ec307982a7fcbf5b1aaf8ca95d48b9e17a70b75305",
+        "S1": "357e23e520fdddfbf381044e4e300023251af690b739f48659a82fa38038bbb3",
+        "R1": "ec2b5383043f1b50c73e91b71b186d760278fc5456175b86556dec3ab0f38a40"
+      }
+    },
+    "mbpp/974": {
+      "diagnostic_sha256": "4f7c0954e4b130d7ce8ead6f0fcdfe4d41ef115c5db5e548bd20c210730ba092",
+      "diagnostic_bytes_sha256": "4f7c0954e4b130d7ce8ead6f0fcdfe4d41ef115c5db5e548bd20c210730ba092",
+      "rendered_sha256": {
+        "N0": "075a617754879dc50576260fdaefc53c6ac4c6ecadd5dae59f012897ec43c792",
+        "S0": "82d3828c7ea94b077049a7e536df6da339280737ad586b25f7314e7159c87707",
+        "N1": "c306fcdf22976d3948fc2490b7ee341cca6c5deb60d3d0ed0da45d42ef24b941",
+        "S1": "f66844c7ecd3c7a43219df66c91663f25db2307f903d442f6273cc8493f7c907",
+        "R1": "b85672539f6a920effa549c42618a7edc7dd777b8f0522ec602a8918aa07f772"
+      }
+    }
+  },
+  "diagnostic_schema": "public-diagnostic-v2",
+  "ownership": {
+    "sha256": "7331d8f6920c2374a0284a4ad76269f6a18b803b039707ef7886c503a8c35ecd",
+    "record": {
+      "receiver_base_url": "http://127.0.0.1:8193",
+      "server_pid": 35499,
+      "server_start_utc": "2026-09-22T07:10:02.173407+00:00",
+      "owner_project": "DTR-MultiRoundLLM (own pinned llama-server launched under the MRL-16 v3.1 amendment; host owner Yukang Zeng)",
+      "exclusive_window_start_utc": "2026-09-22T07:10:00Z",
+      "exclusive_window_end_utc": "2026-09-22T08:20:00Z",
+      "agreement_ref": "docs/e12_shared_window_20260922T071000Z.json: proposal issue #3 comment 5771507492, acceptance 5771595750; DTR-AgentEvals slot_agreement_20260922_0710.json (f9ca76a); prior DTR-AgentEvals block RELEASED 05:54:42Z (cross-session release message; PIDs 19747/21163 stopped), independently re-checked by this worker before launch",
+      "recorded_by": "experiments workstream",
+      "recorded_utc": "2026-09-22T07:10:04Z"
+    }
+  }
+}

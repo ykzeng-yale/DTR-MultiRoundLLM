@@ -1,0 +1,5 @@
+def matrix_to_list(test_list):
+    result = []
+    for row in test_list:
+        result.append(tuple(x[i] for x in row for i in range(len(row))))
+    return str(result)

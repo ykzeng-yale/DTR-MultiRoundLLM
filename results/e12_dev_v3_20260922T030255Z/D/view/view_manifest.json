@@ -1,0 +1,24 @@
+{
+  "arm_set": "diagnostic-v1",
+  "arms": [
+    "STOP",
+    "N0",
+    "S0",
+    "N1",
+    "S1",
+    "R1"
+  ],
+  "grade_py_blockers": [
+    "analyze.analyze(run_dir): set(row['arms']) must equal {'stop', *collect.ARMS}; STOP,N0,S0,N1,S1,R1 unrepresentable",
+    "manifest['config']['grading_contract_sha256'] must equal digest(grade.contract(specs)); diagnostic-v1 config does not freeze it",
+    "analyze.analyze(run_dir): single manifest/completion/assignment_table for one run_dir; the study has two phase directories"
+  ],
+  "sources": {
+    "initial_completion_sha256": "bdf071560a34e4b79313e735b46cf4c358d60f4def51e0997f6f69e1be5debc5",
+    "initial_roots_sha256": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+    "continue_completion_sha256": "9b81f58cd3a361d79514e70bfeab390e0117d71dbfac0b350fe47c1a95ea1b37",
+    "continue_roots_sha256": "4ab80f09ddce3688cea28f27c96cddde84db58e169ad04d388a157bf43fd14ae"
+  },
+  "roots_sha256": "507e4f53ad0631fbfa51a9cd0b0901660f8d4abfb22c11bba626c8aea75b46c9",
+  "continue_diagnostics_sha256": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a"
+}

@@ -1,0 +1,351 @@
+{
+  "phase": "initial",
+  "arm_set": "diagnostic-v1",
+  "attempted_calls": 14,
+  "reserved_completion_tokens": 7168,
+  "phase_attempted_calls": 14,
+  "phase_reserved_completion_tokens": 7168,
+  "planned_calls": {
+    "initial": 14,
+    "continue": 140,
+    "total": 154
+  },
+  "measured_prompt_tokens": 2646,
+  "measured_completion_tokens": 592,
+  "attempted_calls_with_unknown_usage": 0,
+  "phase_wall_seconds": 16.654884959571064,
+  "wall_seconds": 16.65488533396274,
+  "model_metadata": {
+    "interim_checks": [
+      {
+        "root_id": "mbpp/918",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/825",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/842",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/816",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/895",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/868",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/288",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/154",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/863",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/966",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/652",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/651",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/499",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      },
+      {
+        "root_id": "mbpp/974",
+        "state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+        "drift_fields": [],
+        "busy_slots": 0
+      }
+    ],
+    "sampler_law": "server_defaults_pinned",
+    "lease": "sampled_idle_slots_only_not_exclusive",
+    "receiver_guard_limits": [
+      "Eleven explicit sampler fields plus sampled state snapshots are not every setting pinned per request",
+      "Sampler order and other implicit settings can change between checks",
+      "Idle slots are sampled, not leased; process/resource ownership is not evidenced by this guard"
+    ],
+    "before": {
+      "name": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "model_path": "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+    },
+    "version": {
+      "version": "b1-4fea119"
+    },
+    "definition": {
+      "template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}",
+      "parameters": {
+        "n_ctx_per_slot": 8192,
+        "total_slots": 4
+      },
+      "model_info": {
+        "model_path": "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf"
+      }
+    },
+    "state_before": {
+      "default_generation_settings": {
+        "params": {
+          "seed": 4294967295,
+          "temperature": 0.800000011920929,
+          "dynatemp_range": 0.0,
+          "dynatemp_exponent": 1.0,
+          "top_k": 40,
+          "top_p": 0.949999988079071,
+          "min_p": 0.05000000074505806,
+          "top_n_sigma": -1.0,
+          "xtc_probability": 0.0,
+          "xtc_threshold": 0.10000000149011612,
+          "typical_p": 1.0,
+          "repeat_last_n": 64,
+          "repeat_penalty": 1.0,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0,
+          "dry_multiplier": 0.0,
+          "dry_base": 1.75,
+          "dry_allowed_length": 2,
+          "dry_penalty_last_n": 64,
+          "mirostat": 0,
+          "mirostat_tau": 5.0,
+          "mirostat_eta": 0.10000000149011612,
+          "adaptive_target": -1.0,
+          "adaptive_decay": 0.8999999761581421,
+          "max_tokens": -1,
+          "n_predict": -1,
+          "n_keep": 0,
+          "n_discard": 0,
+          "ignore_eos": false,
+          "stream": false,
+          "n_probs": 0,
+          "min_keep": 0,
+          "chat_format": "Content-only",
+          "reasoning_format": "none",
+          "reasoning_in_content": false,
+          "generation_prompt": "",
+          "samplers": [
+            "penalties",
+            "dry",
+            "top_n_sigma",
+            "top_k",
+            "typ_p",
+            "top_p",
+            "min_p",
+            "xtc",
+            "temperature"
+          ],
+          "speculative.types": "none",
+          "timings_per_token": false,
+          "post_sampling_probs": false,
+          "backend_sampling": false,
+          "lora": []
+        },
+        "n_ctx": 8192
+      },
+      "total_slots": 4,
+      "model_alias": "qwen2.5-3b-instruct",
+      "model_ftype": "Q4_K - Medium",
+      "model_path": "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "modalities": {
+        "vision": false,
+        "video": false,
+        "audio": false
+      },
+      "media_marker": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>",
+      "endpoint_slots": true,
+      "endpoint_props": false,
+      "endpoint_metrics": false,
+      "ui": true,
+      "ui_settings": {},
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}",
+      "chat_template_caps": {
+        "supports_object_arguments": true,
+        "supports_parallel_tool_calls": true,
+        "supports_preserve_reasoning": false,
+        "supports_reasoning_effort": false,
+        "supports_string_content": true,
+        "supports_system_role": true,
+        "supports_tool_calls": true,
+        "supports_tools": true,
+        "supports_typed_content": false
+      },
+      "bos_token": "<|endoftext|>",
+      "eos_token": "<|im_end|>",
+      "build_info": "b1-4fea119",
+      "cors_proxy_enabled": false
+    },
+    "state_before_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+    "sampler_overrides": {},
+    "after": {
+      "name": "qwen2.5-3b-instruct-q4_k_m.gguf",
+      "model_path": "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
+    },
+    "digest_unchanged": true,
+    "state_after": {
+      "default_generation_settings": {
+        "params": {
+          "seed": 4294967295,
+          "temperature": 0.800000011920929,
+          "dynatemp_range": 0.0,
+          "dynatemp_exponent": 1.0,
+          "top_k": 40,
+          "top_p": 0.949999988079071,
+          "min_p": 0.05000000074505806,
+          "top_n_sigma": -1.0,
+          "xtc_probability": 0.0,
+          "xtc_threshold": 0.10000000149011612,
+          "typical_p": 1.0,
+          "repeat_last_n": 64,
+          "repeat_penalty": 1.0,
+          "presence_penalty": 0.0,
+          "frequency_penalty": 0.0,
+          "dry_multiplier": 0.0,
+          "dry_base": 1.75,
+          "dry_allowed_length": 2,
+          "dry_penalty_last_n": 64,
+          "mirostat": 0,
+          "mirostat_tau": 5.0,
+          "mirostat_eta": 0.10000000149011612,
+          "adaptive_target": -1.0,
+          "adaptive_decay": 0.8999999761581421,
+          "max_tokens": -1,
+          "n_predict": -1,
+          "n_keep": 0,
+          "n_discard": 0,
+          "ignore_eos": false,
+          "stream": false,
+          "n_probs": 0,
+          "min_keep": 0,
+          "chat_format": "Content-only",
+          "reasoning_format": "none",
+          "reasoning_in_content": false,
+          "generation_prompt": "",
+          "samplers": [
+            "penalties",
+            "dry",
+            "top_n_sigma",
+            "top_k",
+            "typ_p",
+            "top_p",
+            "min_p",
+            "xtc",
+            "temperature"
+          ],
+          "speculative.types": "none",
+          "timings_per_token": false,
+          "post_sampling_probs": false,
+          "backend_sampling": false,
+          "lora": []
+        },
+        "n_ctx": 8192
+      },
+      "total_slots": 4,
+      "model_alias": "qwen2.5-3b-instruct",
+      "model_ftype": "Q4_K - Medium",
+      "model_path": "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+      "modalities": {
+        "vision": false,
+        "video": false,
+        "audio": false
+      },
+      "media_marker": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>",
+      "endpoint_slots": true,
+      "endpoint_props": false,
+      "endpoint_metrics": false,
+      "ui": true,
+      "ui_settings": {},
+      "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}",
+      "chat_template_caps": {
+        "supports_object_arguments": true,
+        "supports_parallel_tool_calls": true,
+        "supports_preserve_reasoning": false,
+        "supports_reasoning_effort": false,
+        "supports_string_content": true,
+        "supports_system_role": true,
+        "supports_tool_calls": true,
+        "supports_tools": true,
+        "supports_typed_content": false
+      },
+      "bos_token": "<|endoftext|>",
+      "eos_token": "<|im_end|>",
+      "build_info": "b1-4fea119",
+      "cors_proxy_enabled": false
+    },
+    "state_after_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+    "postflight_drift_fields": []
+  },
+  "preflight_failure": null,
+  "fatal_error": null,
+  "assigned_roots": 14,
+  "excluded_roots": 0,
+  "paid_api_spend_usd": 0,
+  "candidate_executions": 0,
+  "receiver_verification": {
+    "status": "receiver_guard_checks_passed",
+    "scope": "sampled receiver-state and idle-slot checks only",
+    "efficacy_interpretation": "not granted by the receiver guard; requires the complete release evidence"
+  },
+  "checksums": {
+    "artifacts/mbpp%2F154.txt": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+    "artifacts/mbpp%2F288.txt": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+    "artifacts/mbpp%2F499.txt": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+    "artifacts/mbpp%2F651.txt": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+    "artifacts/mbpp%2F652.txt": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
+    "artifacts/mbpp%2F816.txt": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+    "artifacts/mbpp%2F825.txt": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+    "artifacts/mbpp%2F842.txt": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
+    "artifacts/mbpp%2F863.txt": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
+    "artifacts/mbpp%2F868.txt": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+    "artifacts/mbpp%2F895.txt": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+    "artifacts/mbpp%2F918.txt": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+    "artifacts/mbpp%2F966.txt": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
+    "artifacts/mbpp%2F974.txt": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+    "calls.jsonl": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+    "manifest.json": "ec6c97ec7069cc671706c908c032a657d6493accd6a4733c7b23a509f8fa164f",
+    "roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947"
+  }
+}

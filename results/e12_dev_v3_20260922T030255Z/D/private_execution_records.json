@@ -1,0 +1,2948 @@
+[
+  {
+    "root_id": "mbpp/918",
+    "kind": "reference",
+    "code_sha256": "2c116f105b8823ba13fb9722a9ba52dce9f49411869e4b5e4cedceca1a47a690",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__0213a4ccca0afb2e7d9f5fdd\n__LANDMARK_PRIVATE_OK__081202131771f71166853fca\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__0213a4ccca0afb2e7d9f5fdd\n__LANDMARK_PRIVATE_OK__081202131771f71166853fca\n",
+      "timed_out": false,
+      "seconds": 0.022113708779215813,
+      "executed": true,
+      "pid": 36339,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "b35ee163045b1f54d5fd34fb2170a7b81e0fe799da94cf70d6f6fb34fd9c6ff7",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "negative_control",
+    "code_sha256": "2fcda7d9eb1afa08ff263c4dcce78932c0b6841e4d05c1dda4facd8cedef40ea",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__bdbe257b0729b4b412f518fe\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_66ffrmq5/program.py\", line 9, in <module>\n    assert coin_change([4,5,6,7,8,9],6,9)==2\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__bdbe257b0729b4b412f518fe\n",
+      "timed_out": false,
+      "seconds": 0.024211375042796135,
+      "executed": true,
+      "pid": 36340,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "92b64337f875d8392762d127ad20f7062be691231e2d0a225fa0395668cb9198",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "4b404facaea4a370a41ef4bb1560abffa1a0d2dd30fc9120c46f0764e1f3d453",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__86ae83ed9a6b8fc72fb6171a\n__LANDMARK_PRIVATE_OK__4d27d2ad88bc5e49c333778d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__86ae83ed9a6b8fc72fb6171a\n__LANDMARK_PRIVATE_OK__4d27d2ad88bc5e49c333778d\n",
+      "timed_out": false,
+      "seconds": 0.023142999969422817,
+      "executed": true,
+      "pid": 36341,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "54f6210f76e03bba8b2f56952c257769c8d9f3094873b32f344f3ccaed10a18a",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "4b404facaea4a370a41ef4bb1560abffa1a0d2dd30fc9120c46f0764e1f3d453",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__9de1b548610e30ad1b383c24\n__LANDMARK_PRIVATE_OK__a87f0293b9e800c218ee3b1c\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9de1b548610e30ad1b383c24\n__LANDMARK_PRIVATE_OK__a87f0293b9e800c218ee3b1c\n",
+      "timed_out": false,
+      "seconds": 0.02219195943325758,
+      "executed": true,
+      "pid": 36342,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "22494a12150552cee7324b7bf2b2af3b135dc1dcb2e5875d231ee778747f4747",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "0a97e8ccbd28ba01d25b7363d4fd349b72710ee0634d97505ca41773ddb88250",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__c40cb0714495db5d88820c90\n__LANDMARK_PRIVATE_OK__82307213b0bbbb9ea034c29d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c40cb0714495db5d88820c90\n__LANDMARK_PRIVATE_OK__82307213b0bbbb9ea034c29d\n",
+      "timed_out": false,
+      "seconds": 0.024206750094890594,
+      "executed": true,
+      "pid": 36343,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "9ebfc85de2ecc3e247a922a28dd7645737211233a418a692167f1d5a68a41bec",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "bf42793254222648057070a7fb96285254b7c5ebbcc46528ebf0de5e0787ee6b",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__2b6db445a0bf26008e3d25b4\n__LANDMARK_PRIVATE_OK__8711c560462570e1fde72542\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__2b6db445a0bf26008e3d25b4\n__LANDMARK_PRIVATE_OK__8711c560462570e1fde72542\n",
+      "timed_out": false,
+      "seconds": 0.022677958011627197,
+      "executed": true,
+      "pid": 36344,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f876d640f860bbad5f0b4890ee0030db1609ea651c535d99adf63fa29039a27e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "0fcad6cbc340f9cb4a552f7655b8104ca488c21bba586bcdb87eca01585c815f",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__c0a948ee495efe67a8f7e68a\n__LANDMARK_PRIVATE_OK__85d088ebdcb58f431b906631\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c0a948ee495efe67a8f7e68a\n__LANDMARK_PRIVATE_OK__85d088ebdcb58f431b906631\n",
+      "timed_out": false,
+      "seconds": 0.020199582912027836,
+      "executed": true,
+      "pid": 36345,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "20af68973b877ee4e4093473d5808090d7785e54039c1eadc9146859a0342dc9",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/918",
+    "kind": "candidate",
+    "code_sha256": "9bd10a523a0c490cf2634257059c818fddb5b79ef0e537787ace285cfd71a347",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__ace0a9e29faf772bfee6b61d\n__LANDMARK_PRIVATE_OK__a92a943a652d5059e2767f7d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__ace0a9e29faf772bfee6b61d\n__LANDMARK_PRIVATE_OK__a92a943a652d5059e2767f7d\n",
+      "timed_out": false,
+      "seconds": 0.023334749974310398,
+      "executed": true,
+      "pid": 36346,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "525252eb704bb6c6b2522829a0b7436b3fa16ba960f1c1f6b0f0df7af3c7997f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/825",
+    "kind": "reference",
+    "code_sha256": "a7cebcbf864d13cfca20f74216400ab092ec3a4b116bc4ca05d090469c87a968",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__5bf6295b7674d8b250c386fa\n__LANDMARK_PRIVATE_OK__e1e6c8890574fca18e554fb8\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5bf6295b7674d8b250c386fa\n__LANDMARK_PRIVATE_OK__e1e6c8890574fca18e554fb8\n",
+      "timed_out": false,
+      "seconds": 0.021630041301250458,
+      "executed": true,
+      "pid": 36347,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "840280fb5f4bbb69ff87d334e0bfb2b2176cb97ef905c09b26f02b6168ac2a90",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/825",
+    "kind": "negative_control",
+    "code_sha256": "bda09d36fa6efd2755eca5ccb062bb43b0a2befee508c691b50d7979ea93330a",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__83efcf706d3d180003751cb5\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_5whg0crx/program.py\", line 4, in <module>\n    assert access_elements([1, 2, 3, 4, 5],[1,2]) == [2,3]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__83efcf706d3d180003751cb5\n",
+      "timed_out": false,
+      "seconds": 0.020031915977597237,
+      "executed": true,
+      "pid": 36348,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "4947fa90615656c763a30044f2cbc8c92282c9977dc875ca9fe224bbae0156d9",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/825",
+    "kind": "candidate",
+    "code_sha256": "9b2136f46231c086a20b2a1ecc90875261266a82eb3fca1c1f0b903ecefd95ad",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__9dd87cb062725199a7b8f52e\n__LANDMARK_PRIVATE_OK__90a5fe6a110ade4e7d80448a\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9dd87cb062725199a7b8f52e\n__LANDMARK_PRIVATE_OK__90a5fe6a110ade4e7d80448a\n",
+      "timed_out": false,
+      "seconds": 0.019641375169157982,
+      "executed": true,
+      "pid": 36349,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "d33526e557b91c61e4e651d5eaa50237b847489873121d7dc5d10e7aacb40a94",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/825",
+    "kind": "candidate",
+    "code_sha256": "aeebd23184fccbb0e644f4e1c73507e3f8e4272bb4d810c9bd4ae42926c744b4",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__9fefbefa9400d04f44cfe5d2\n__LANDMARK_PRIVATE_OK__6371aaff365c305e350fbdfd\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9fefbefa9400d04f44cfe5d2\n__LANDMARK_PRIVATE_OK__6371aaff365c305e350fbdfd\n",
+      "timed_out": false,
+      "seconds": 0.02368204202502966,
+      "executed": true,
+      "pid": 36350,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "c1f6a45d9248e8b684ac38bfb89a2d86256bc97feef230575c075cec19168bb2",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/825",
+    "kind": "candidate",
+    "code_sha256": "9b2136f46231c086a20b2a1ecc90875261266a82eb3fca1c1f0b903ecefd95ad",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__32690c3624996748830cb958\n__LANDMARK_PRIVATE_OK__0c6400783b883148fa711ede\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__32690c3624996748830cb958\n__LANDMARK_PRIVATE_OK__0c6400783b883148fa711ede\n",
+      "timed_out": false,
+      "seconds": 0.02127162553369999,
+      "executed": true,
+      "pid": 36351,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "c2117ccf7aa9b38491309287d60ddbcdd81d6d9ed88d0bc91351c71c1500abd3",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "reference",
+    "code_sha256": "34405f44a252f6b897186fe48f0ae3c2a2686b53b18601fc101a0582d1ca647c",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__d30ef5ac2b68cf4ba987181d\n__LANDMARK_PRIVATE_OK__ab55432cb1f830c95ceb34d6\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__d30ef5ac2b68cf4ba987181d\n__LANDMARK_PRIVATE_OK__ab55432cb1f830c95ceb34d6\n",
+      "timed_out": false,
+      "seconds": 0.024402916431427002,
+      "executed": true,
+      "pid": 36352,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "4b2be9b4b6626095160967b767f332fd079015738c863129089db7e95ee24405",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "negative_control",
+    "code_sha256": "a67e056d4bc2f742dfdf7d899d121645134d202cd9d89e9ad266f6fd8bbf2eea",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__eabddb0696cf36b4611e650f\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_p5pyf_01/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__eabddb0696cf36b4611e650f\n",
+      "timed_out": false,
+      "seconds": 0.02243079151958227,
+      "executed": true,
+      "pid": 36353,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "7305aa876d9cdae54b45fc6034351df096ab6e7d9144298a19ad1a5001c8c3eb",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "56b4ccc2c5176d4389d3642d07aca1290a487e684ac2bb24494e9d0c33e62958",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__fd2f0644e7e661a859703467\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_c87gvsnl/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__fd2f0644e7e661a859703467\n",
+      "timed_out": false,
+      "seconds": 0.024336875416338444,
+      "executed": true,
+      "pid": 36354,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "7682cf9b33438635edf7e1c0a09f6636bfd23f58bd24863f45ccb5d7a0caba0e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "965dcc88c3a9ffd6f5632b11551aba32d420e158221e3cb40abc9aebb36cb4e8",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__952d20030985ff68a775ba0a\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_9bsst1c_/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__952d20030985ff68a775ba0a\n",
+      "timed_out": false,
+      "seconds": 0.024091707542538643,
+      "executed": true,
+      "pid": 36355,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "9fe8dbd9c99a1881b448648b65b0d7e7ef34d88d1931fc04d0ff15340cc20842",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "b361c0382754871749fc6c68439f9abeb70297948af1e0e2b5bfd771430d8009",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__63452fe41f6c4a39c2a8bbd1\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_b3adsmsb/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__63452fe41f6c4a39c2a8bbd1\n",
+      "timed_out": false,
+      "seconds": 0.02409891691058874,
+      "executed": true,
+      "pid": 36356,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "142d53882a27786985382aaf773673a152e70fc89099bff6ec767b4a42717fa2",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "90a8d03e2358119838b88d2d4385696a055f3d4b6a8d9b1ee98d8fba34686bf3",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__245cbd1ee9d56a4f536a506e\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_3z17ygvk/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__245cbd1ee9d56a4f536a506e\n",
+      "timed_out": false,
+      "seconds": 0.023330166935920715,
+      "executed": true,
+      "pid": 36357,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f7a28e803c0d88d8658b1846d9efeae9eecdabde4da7abdbfcd7a5ee2c1dfb02",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "ce9cd8ed5135acb9cdc0e3e9c69654faef06fd040038a22c11ada65983313744",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__583e4622b574deb9e2fd593d\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_q4zp4bk7/program.py\", line 4, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__583e4622b574deb9e2fd593d\n",
+      "timed_out": false,
+      "seconds": 0.024364042095839977,
+      "executed": true,
+      "pid": 36358,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "17cdbdc5270b170e264fee5a1644803edd18788dc28a69487905712b5d5424a5",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "0fd7924b834d22d5cff9318d70b04b3afd4e071d51d74196de0ae65907bbe2e6",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__38d5291c218d98f234e12b45\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_q95vxj12/program.py\", line 5, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: get_odd_occurence() takes 1 positional argument but 2 were given\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__38d5291c218d98f234e12b45\n",
+      "timed_out": false,
+      "seconds": 0.0224138330668211,
+      "executed": true,
+      "pid": 36359,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "61ca109df3f502052d85502cfebf99556e1ef0969336f23583723c45ccff6de2",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "2dbae300d19241d6e3e42d8d845d852c567a2449c7380b30b553958cc8d98cc2",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__b0d63e38cad44a09e1ed78e3\n__LANDMARK_PRIVATE_OK__df6b90b048660e58159f8b6e\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__b0d63e38cad44a09e1ed78e3\n__LANDMARK_PRIVATE_OK__df6b90b048660e58159f8b6e\n",
+      "timed_out": false,
+      "seconds": 0.019986082799732685,
+      "executed": true,
+      "pid": 36360,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f5a13ce5cb34bc168e90d22f82e3bca1007ee608f74b865b8400c30a21ddb992",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "e176a8b3731dc3630b7608f9b31305ee766648ac4fcec96f900ea778a820f2df",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__4567512bc407a2a48f72678e\n__LANDMARK_PRIVATE_OK__c7688101f7f6ed78e9be453d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__4567512bc407a2a48f72678e\n__LANDMARK_PRIVATE_OK__c7688101f7f6ed78e9be453d\n",
+      "timed_out": false,
+      "seconds": 0.022096624597907066,
+      "executed": true,
+      "pid": 36361,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "b606b839021d8948d166a13ef1a3688c1153e311808729d98e45b26a5c66f25b",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/842",
+    "kind": "candidate",
+    "code_sha256": "07a77a0f0045e6447e1dee54a0351f332848fefa118401fe6aea03996c394f38",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__5dee7b024f98d487fd88aaf2\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_nr1sjyym/program.py\", line 5, in <module>\n    assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5dee7b024f98d487fd88aaf2\n",
+      "timed_out": false,
+      "seconds": 0.02178362477570772,
+      "executed": true,
+      "pid": 36362,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "98d1c910bb4a648bc2645896b86276b8cbbf0fc1ba345ec1de470bf1ac839745",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "reference",
+    "code_sha256": "087f9a2008ba402d3c88040441a2dcfa432911d8a1eed92ffdc1724e03283838",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__aac6134df9a09924c531efd1\n__LANDMARK_PRIVATE_OK__44dd9d4ccc12d0d1a594e4cd\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__aac6134df9a09924c531efd1\n__LANDMARK_PRIVATE_OK__44dd9d4ccc12d0d1a594e4cd\n",
+      "timed_out": false,
+      "seconds": 0.02251366712152958,
+      "executed": true,
+      "pid": 36363,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "9bcefa999009004683b32aa0ff068457af51afc62f3cdec532acbb03e530a188",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "negative_control",
+    "code_sha256": "c7d662ba3debe1c17c451f2167da2b756903e3690602ecfc0f55e3df20ce6d0e",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__73b02d9c0cab56c00b17aad2\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_nqvwlo8p/program.py\", line 4, in <module>\n    assert clear_tuple((2, 1, 4 ,5 ,6)) == ()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__73b02d9c0cab56c00b17aad2\n",
+      "timed_out": false,
+      "seconds": 0.024082083255052567,
+      "executed": true,
+      "pid": 36364,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "9fdcab2a3a36e5967607dbb1a53219e28ed99dd133879e79b3e5aaaf240e7305",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "0eb20adf18d7d2da4ccb76a97e098ee1879ff1f25c66affd2ac63183bf11c596",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__c215590f9c1db2c4894c1ff1\n__LANDMARK_PRIVATE_OK__a36624643f5381e171a2aa7d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c215590f9c1db2c4894c1ff1\n__LANDMARK_PRIVATE_OK__a36624643f5381e171a2aa7d\n",
+      "timed_out": false,
+      "seconds": 0.020936625078320503,
+      "executed": true,
+      "pid": 36365,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "e3960b83a5f0ca44c8637ac652a88a0d22b3ce468e4be38b07533adeeff08a26",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "5189871dbf6578cf3d6e46a5efcb0ba611d4b73d5697cfa41be14ded8cd09b73",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__9b45b66a75d991012f3f9994\n__LANDMARK_PRIVATE_OK__483985f329fc87e70e6faa82\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9b45b66a75d991012f3f9994\n__LANDMARK_PRIVATE_OK__483985f329fc87e70e6faa82\n",
+      "timed_out": false,
+      "seconds": 0.02387662511318922,
+      "executed": true,
+      "pid": 36366,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "3a6f58813318d8b7b6e17502d1e1e0b36741546d608a4827fe0b5bc124f2ff07",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "8209d1f3b9eb2fddaab90f9c7b7f7f65799060b06c2136165b91cc03cbfb0e93",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__0bb3cb2b037eb10fd47ca7e9\nTrue\n__LANDMARK_PRIVATE_OK__d8b7d59b75a983164ca13380\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__0bb3cb2b037eb10fd47ca7e9\nTrue\n__LANDMARK_PRIVATE_OK__d8b7d59b75a983164ca13380\n",
+      "timed_out": false,
+      "seconds": 0.022173875011503696,
+      "executed": true,
+      "pid": 36367,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "275da3fbf051a2b8ac09a7883f8caba5f9b0645c0bd741a3bdee77433fb70ba3",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "bc61a7f34137533f7da0a941cfe54f61156cd613a2cef49444144ec95caea982",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__3191a7694a3566df08c5b882\nTrue\n__LANDMARK_PRIVATE_OK__4846700fd3a121523a73505f\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__3191a7694a3566df08c5b882\nTrue\n__LANDMARK_PRIVATE_OK__4846700fd3a121523a73505f\n",
+      "timed_out": false,
+      "seconds": 0.02412137482315302,
+      "executed": true,
+      "pid": 36368,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "c366329f0eb2ce1d96c02db6d3c70eedd71dde65d0664298b9209528038e772e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "0eb20adf18d7d2da4ccb76a97e098ee1879ff1f25c66affd2ac63183bf11c596",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__ff4de67f676e218968119a60\n__LANDMARK_PRIVATE_OK__13e96eab7de8e193b731413b\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__ff4de67f676e218968119a60\n__LANDMARK_PRIVATE_OK__13e96eab7de8e193b731413b\n",
+      "timed_out": false,
+      "seconds": 0.02442816738039255,
+      "executed": true,
+      "pid": 36369,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "2559a943b32d3a9a8d658b0ea31d7e703290bdca724a5f284e25cb373c9fea6d",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "0eb20adf18d7d2da4ccb76a97e098ee1879ff1f25c66affd2ac63183bf11c596",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__a8f5678bfed02c5265cb78af\n__LANDMARK_PRIVATE_OK__467ea3eb08a5c7859c2df745\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a8f5678bfed02c5265cb78af\n__LANDMARK_PRIVATE_OK__467ea3eb08a5c7859c2df745\n",
+      "timed_out": false,
+      "seconds": 0.023168624378740788,
+      "executed": true,
+      "pid": 36370,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "18e2b4a6863136dfff8237fb14726cca3d3c79e68cfc060d984b738a0d6614f9",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/816",
+    "kind": "candidate",
+    "code_sha256": "cf67f8ac8cb8307b607d94213c32c3a759083d0ca42d276cba083eeba53e480e",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__1659c4a563095013633964ad\n__LANDMARK_PRIVATE_OK__c2b012f2a7b87e9ba7b12cbb\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__1659c4a563095013633964ad\n__LANDMARK_PRIVATE_OK__c2b012f2a7b87e9ba7b12cbb\n",
+      "timed_out": false,
+      "seconds": 0.021214166656136513,
+      "executed": true,
+      "pid": 36371,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "3cfa956151360507b6bef10844feea2d3e2c43f827cca5d4297575092db3d93f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "reference",
+    "code_sha256": "c762d66e8bfacf9a0ff17935d53736176bf8ce647279d73d7ac5651e0e703797",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__d4027929087071b6e0597b86\n__LANDMARK_PRIVATE_OK__cfa39d07a200b5eee9a1214e\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__d4027929087071b6e0597b86\n__LANDMARK_PRIVATE_OK__cfa39d07a200b5eee9a1214e\n",
+      "timed_out": false,
+      "seconds": 0.02245595958083868,
+      "executed": true,
+      "pid": 36372,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "e2dd527459b489e89f48740741f1691cc8897f56358f041c8e89af1c308cba2b",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "negative_control",
+    "code_sha256": "5ff7b0f00907002379a6e2eb9eaf05139ac526e5c2524f645923fb9c5478116f",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__cf5a2963e3c9839eae7e8331\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_m0bqx8e5/program.py\", line 4, in <module>\n    assert max_sum_subseq([1, 2, 9, 5, 6, 0, 5, 12, 7]) == 28\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__cf5a2963e3c9839eae7e8331\n",
+      "timed_out": false,
+      "seconds": 0.02096579223871231,
+      "executed": true,
+      "pid": 36373,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "5c9599bbc27c5c95bae11ff6be33bf75475ee0f8f1f93ac08969ed11bff99300",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "add8075764dfadf973dd655addc8bbd0aab8c0bf5a7477ec0394317b0da3c87d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__81fc64f98be2bcd5355a13ab\n__LANDMARK_PRIVATE_OK__94935f7ceffdf0738b06df9d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__81fc64f98be2bcd5355a13ab\n__LANDMARK_PRIVATE_OK__94935f7ceffdf0738b06df9d\n",
+      "timed_out": false,
+      "seconds": 0.023664874956011772,
+      "executed": true,
+      "pid": 36374,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "8b7eef472c04f48157eb60a8913db71cc211e5245dfcc1e5aad2cfce9b29b64e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "add8075764dfadf973dd655addc8bbd0aab8c0bf5a7477ec0394317b0da3c87d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__a590773ffdb8361643a166c2\n__LANDMARK_PRIVATE_OK__670df4ac562e77978fdabb01\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a590773ffdb8361643a166c2\n__LANDMARK_PRIVATE_OK__670df4ac562e77978fdabb01\n",
+      "timed_out": false,
+      "seconds": 0.02372420858591795,
+      "executed": true,
+      "pid": 36375,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "55731a78c27443c8913364fa0cfdecb85030ee52b479f5c2b9d9e0ee063bb30d",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "3d815bd72224485d67dc3fbb3ddfbe523f140b07ec757d3cd46a29642b738fa8",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__c1bd176ff72a56a847cc2f73\n__LANDMARK_PRIVATE_OK__df636897475ba6c48051fdc3\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c1bd176ff72a56a847cc2f73\n__LANDMARK_PRIVATE_OK__df636897475ba6c48051fdc3\n",
+      "timed_out": false,
+      "seconds": 0.023600708693265915,
+      "executed": true,
+      "pid": 36376,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "53321f3c589dc8692bf579166a451fe6031b83df418597f4aa68271e3aa5b531",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "42b965f1a6c3eb4378f54350e09cd26ebdd1b9ac594af1f5cc4313af04b029f2",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__4f657bdb2f27394757b809fc\n__LANDMARK_PRIVATE_OK__8d55a256efd0995195995ea1\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__4f657bdb2f27394757b809fc\n__LANDMARK_PRIVATE_OK__8d55a256efd0995195995ea1\n",
+      "timed_out": false,
+      "seconds": 0.02214154228568077,
+      "executed": true,
+      "pid": 36377,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "43210440561b30db542edcc246bcec4e19895791840c40a4c0335e37539d3758",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "4c7c61cedef831d975294f051ccd77c94ab638b02055cafe4a2799099bec672d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__4bd18251d9d7adb81212621e\n__LANDMARK_PRIVATE_OK__f44ac6efae548a6edac4fb06\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__4bd18251d9d7adb81212621e\n__LANDMARK_PRIVATE_OK__f44ac6efae548a6edac4fb06\n",
+      "timed_out": false,
+      "seconds": 0.024340207688510418,
+      "executed": true,
+      "pid": 36378,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "13ef6558f40f951f51b64fe00b3cec5fb3487bb3f223fd5ccf339af39d019894",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "e339bffe4cdf7f3e38e4e8c2d838543b35d2d4542b81e5c1bc274eb29b723b03",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__806e9e9bcf6bdd103633618b\n__LANDMARK_PRIVATE_OK__d192cc4c30f30b9b840c440c\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__806e9e9bcf6bdd103633618b\n__LANDMARK_PRIVATE_OK__d192cc4c30f30b9b840c440c\n",
+      "timed_out": false,
+      "seconds": 0.02363050077110529,
+      "executed": true,
+      "pid": 36379,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "e2ee7bdd1c22c90ca2811bd555f20b8b57f46646a672e2a7a9ecff5bb32520f3",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/895",
+    "kind": "candidate",
+    "code_sha256": "1681f2a13b0d54efaefb9d6284dd6b3c6f3cd9ef7e8b6b847ace7014dbac2fb8",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__07a40f61cf9f6929de8dc794\n__LANDMARK_PRIVATE_OK__0782667db2347db80709a8a3\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__07a40f61cf9f6929de8dc794\n__LANDMARK_PRIVATE_OK__0782667db2347db80709a8a3\n",
+      "timed_out": false,
+      "seconds": 0.022337665781378746,
+      "executed": true,
+      "pid": 36380,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "8d885deb49d8709627c7a95ac2da82ec0495f5ef2851644e8feb40693e88e4dd",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "reference",
+    "code_sha256": "3c28929a89a93a2e3ba2da2c54c5f8f423776022206f51ef833d0b51acc57165",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__dc51c2c32338054b877a9d2a\n__LANDMARK_PRIVATE_OK__ef29f0a3792c01d3037165e5\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__dc51c2c32338054b877a9d2a\n__LANDMARK_PRIVATE_OK__ef29f0a3792c01d3037165e5\n",
+      "timed_out": false,
+      "seconds": 0.021298708394169807,
+      "executed": true,
+      "pid": 36381,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "6ab7c2060732af96234459179570981ce896e315805ca56ec8997f976a2dc58f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "negative_control",
+    "code_sha256": "49105b5db457bc9146733dad189cf8204de0e8d9f43a030332355e368f32752c",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__a46a87ad104a7933b0e584f5\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_wrvz55zd/program.py\", line 4, in <module>\n    assert length_Of_Last_Word(\"PHP\") == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a46a87ad104a7933b0e584f5\n",
+      "timed_out": false,
+      "seconds": 0.024127332493662834,
+      "executed": true,
+      "pid": 36382,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "ab80a2b5417d238065ab02fbbc0a5c29cf38b27ff9a164cde8b6ace338f78f52",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "2ade7543cd9c099763c5b0bc390fa0fbec8fcc40b7fd9af9881d8fa04e277338",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__06e95d9516e7eadd2c0f00c5\n__LANDMARK_PRIVATE_OK__c184fa2476169ca7a047d2ae\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__06e95d9516e7eadd2c0f00c5\n__LANDMARK_PRIVATE_OK__c184fa2476169ca7a047d2ae\n",
+      "timed_out": false,
+      "seconds": 0.02259999979287386,
+      "executed": true,
+      "pid": 36383,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "71fd0b4547a410fe7635ec173bcf5afd2bcdeaca5db996ceb57b463c7ccd08c5",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "34a1f525b87c803d08a7c1143039326aa26d205d0b15306b5a1c4b464178e00e",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__c885b8c26c557d308b181f25\nTrue\n__LANDMARK_PRIVATE_OK__a4d390c272f2601cad381c7d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c885b8c26c557d308b181f25\nTrue\n__LANDMARK_PRIVATE_OK__a4d390c272f2601cad381c7d\n",
+      "timed_out": false,
+      "seconds": 0.02228162530809641,
+      "executed": true,
+      "pid": 36384,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "3d81e6c59bfe90f4e31bb321713af8b6cfe1dcbf60eef061337c049977870868",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "d4b3e7e49b6dd240d5ddbe49ec339a976fef130e87da577b5dc08c6e614213db",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__d1ece30994d97fa62a3da526\nTrue\n__LANDMARK_PRIVATE_OK__106626401056e3fa1db740f9\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__d1ece30994d97fa62a3da526\nTrue\n__LANDMARK_PRIVATE_OK__106626401056e3fa1db740f9\n",
+      "timed_out": false,
+      "seconds": 0.021937374956905842,
+      "executed": true,
+      "pid": 36385,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "353c389223d509bb61c89bc57076974a98df21ba58f956c32851ebd8f055853a",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "2ade7543cd9c099763c5b0bc390fa0fbec8fcc40b7fd9af9881d8fa04e277338",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__97e836409e763469ea047d84\n__LANDMARK_PRIVATE_OK__764203e3ebd7ede288b638d5\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__97e836409e763469ea047d84\n__LANDMARK_PRIVATE_OK__764203e3ebd7ede288b638d5\n",
+      "timed_out": false,
+      "seconds": 0.02411916758865118,
+      "executed": true,
+      "pid": 36386,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "ef0600cfe1d8db71b74bf3a2b40faef3ed265faaeacc7b76f18aa7fab543c4d1",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "1974e4fa7f7c6a273bcddd719511fd8f3268eb835da09d2e308cbe0bb54fcff3",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__226575790fb573cf70aebd83\n__LANDMARK_PRIVATE_OK__01fcb7ebd8129ea404e750b6\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__226575790fb573cf70aebd83\n__LANDMARK_PRIVATE_OK__01fcb7ebd8129ea404e750b6\n",
+      "timed_out": false,
+      "seconds": 0.023884916678071022,
+      "executed": true,
+      "pid": 36387,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "2a4de244dfe3a0cae3701f41b8d43452667220848894c18dc97556e9bacb91af",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/868",
+    "kind": "candidate",
+    "code_sha256": "ed2216a4c2776ce914c91dc9fff078b3a1b47940e4f5d77ecb9a9c87ead4468f",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__9687c6b4a567018f86604fcf\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_zzyghgg3/program.py\", line 6, in <module>\n    assert length_Of_Last_Word(\"\") == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_zzyghgg3/program.py\", line 3, in length_Of_Last_Word\n    last_word = a.split()[-1]\n                ~~~~~~~~~^^^^\nIndexError: list index out of range\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9687c6b4a567018f86604fcf\n",
+      "timed_out": false,
+      "seconds": 0.023726167157292366,
+      "executed": true,
+      "pid": 36388,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "8b10457da804f5e3dd51aa188b8c1d5f3e79afe8561fa1eec50e33d4d1db7454",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "reference",
+    "code_sha256": "8735e3ece02b0d868936556eff26aeb89e27da186cadf55e84949bfb1780165e",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__fef8ede51689dfc959623de3\n__LANDMARK_PRIVATE_OK__d79afa6381acce583aff4e97\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__fef8ede51689dfc959623de3\n__LANDMARK_PRIVATE_OK__d79afa6381acce583aff4e97\n",
+      "timed_out": false,
+      "seconds": 0.023814458400011063,
+      "executed": true,
+      "pid": 36389,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "90dcaf004bc8fb02786d54017c19ddcd10589730393b8bf7419b396bce38c7d9",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "negative_control",
+    "code_sha256": "8a99b58c5a8073b6b447d0cded18a4ab801aa1214c828c3c24f40034feff34e3",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__aae0f26e9aa02fccb4a85df3\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_rzejn9sm/program.py\", line 8, in <module>\n    assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__aae0f26e9aa02fccb4a85df3\n",
+      "timed_out": false,
+      "seconds": 0.02367316745221615,
+      "executed": true,
+      "pid": 36391,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "d3c67a2951696197a94672c45c923f83e683acd147a7c36b61d1bbb6d389a87b",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "candidate",
+    "code_sha256": "453775531881d57a95043cf636f2f661b54d88f92a4b1a20919412ce9b933156",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__5ff3d4792cec0a4ecc859695\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_s7u3xr4j/program.py\", line 4, in <module>\n    assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5ff3d4792cec0a4ecc859695\n",
+      "timed_out": false,
+      "seconds": 0.024338250048458576,
+      "executed": true,
+      "pid": 36392,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "58ba4347cad8e0ef2f3cf32ed97f660ecf834a4c36dfc196cf0385c0d4fab24f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "candidate",
+    "code_sha256": "e1c761b5d6f4c52d24b55ee77912329233374cbd0ffb220f9803b3b715df3850",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__e703ea32cf95b422afd70a01\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_2xs7c3nr/program.py\", line 4, in <module>\n    assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__e703ea32cf95b422afd70a01\n",
+      "timed_out": false,
+      "seconds": 0.08306154049932957,
+      "executed": true,
+      "pid": 36393,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "edf7c8aecc09de6db17fbe18a904e39cdbd7c25473c9dda0b304abeb759b4df9",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "candidate",
+    "code_sha256": "a526d78f989f763f3842b4a2bce0774e132e49ce5b497d2315b86cf5489bebde",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__62e572122de5899dfb5fceee\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_d8zfg7nd/program.py\", line 4, in <module>\n    assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_d8zfg7nd/program.py\", line 3, in modular_inverse\n    return sum((1 for x in arr if pow(x, 2, P) == 1 and x != 0 and (pow(x, i, P) != 1) for i in range(1, N) if i != x))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_d8zfg7nd/program.py\", line 3, in <genexpr>\n    return sum((1 for x in arr if pow(x, 2, P) == 1 and x != 0 and (pow(x, i, P) != 1) for i in range(1, N) if i != x))\n                                                                           ^\nUnboundLocalError: cannot access local variable 'i' where it is not associated with a value\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__62e572122de5899dfb5fceee\n",
+      "timed_out": false,
+      "seconds": 0.02111849933862686,
+      "executed": true,
+      "pid": 36394,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "5c3815c2f3ad50273ee8afbde637a20041187aca2694192605e7a001df23a61e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "candidate",
+    "code_sha256": "6649b88f74f465d313239d31f68aaa3d3fbf5f881bd75067663a2ef5140e4051",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__e4e4eedbab017ddfef10ed0c\n__LANDMARK_PRIVATE_OK__ca6e06da9a686c7b863012aa\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__e4e4eedbab017ddfef10ed0c\n__LANDMARK_PRIVATE_OK__ca6e06da9a686c7b863012aa\n",
+      "timed_out": false,
+      "seconds": 0.02171720750629902,
+      "executed": true,
+      "pid": 36395,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "1580618e46460555944c11aa968b313184ff5daeb08e142833465dc613ea9ffe",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/288",
+    "kind": "candidate",
+    "code_sha256": "822526a87391a59474465457ad3e55ce83532d91304fc805bdc075eaafd55573",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__77aa6281cb7adc9816024062\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_vm7uhc9y/program.py\", line 14, in <module>\n    assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__77aa6281cb7adc9816024062\n",
+      "timed_out": false,
+      "seconds": 0.023779000155627728,
+      "executed": true,
+      "pid": 36396,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "829e301ff53f51139e1e353de5687aefb1514eabffb1b8999930eb0b5713d0d0",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "reference",
+    "code_sha256": "687876f4c5b6543563c0dc59535eff58c53aae7d0a792773268a063891089e05",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__604b24b91575e80e38a38b90\n__LANDMARK_PRIVATE_OK__0bc00553ecb1e9a3dd98383c\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__604b24b91575e80e38a38b90\n__LANDMARK_PRIVATE_OK__0bc00553ecb1e9a3dd98383c\n",
+      "timed_out": false,
+      "seconds": 0.020425000227987766,
+      "executed": true,
+      "pid": 36397,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "5c0e83ebd273c3ce7cc1bb32e72627f744711336ed3491be68370f48383e5f6d",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "negative_control",
+    "code_sha256": "41f8d355176302e4ca5d27b006199fef5e869734d7e83d637b4a859817dd2a0b",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__df88ad2ac33e149b25f93508\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_hdgvtoop/program.py\", line 4, in <module>\n    assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],2)==[3, 6, 9]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__df88ad2ac33e149b25f93508\n",
+      "timed_out": false,
+      "seconds": 0.024045457132160664,
+      "executed": true,
+      "pid": 36398,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "156644b90e7013fac1d9bc7e8a3d64372a4baaf08644b83d2a620d808a9e80c1",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "candidate",
+    "code_sha256": "8e489d523a7bc8b7c8be02a0df25233170e6791063403e40b8566d1103ad5058",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__f6d67d4d86ecc15d7cbedaa9\n__LANDMARK_PRIVATE_OK__0bce47a881e9967f335d1223\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__f6d67d4d86ecc15d7cbedaa9\n__LANDMARK_PRIVATE_OK__0bce47a881e9967f335d1223\n",
+      "timed_out": false,
+      "seconds": 0.02236791606992483,
+      "executed": true,
+      "pid": 36399,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "4795aad747cdf351359392c2e77a8922eceb282226e9a5136715f2825d2f7ba8",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "candidate",
+    "code_sha256": "5919a71e122a0cb63ee7c9b7fa70b64b6c8d6936a5a9ecd3dbf0597399221e3a",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__915b9f734ad9bac1937b81c5\n__LANDMARK_PRIVATE_OK__56d7cdf7e9861ad343f78405\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__915b9f734ad9bac1937b81c5\n__LANDMARK_PRIVATE_OK__56d7cdf7e9861ad343f78405\n",
+      "timed_out": false,
+      "seconds": 0.022982625290751457,
+      "executed": true,
+      "pid": 36400,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "e4ebc7e8c20376a135c6be2130f84b23461ca32ac662b650f0a95766b418664b",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "candidate",
+    "code_sha256": "fbd1febd6dc7accbfd9fb857e028a6e8a4a94e786e593a5b32f7a45ce9aa17af",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__91d21b8ce3a96e51ee831113\n__LANDMARK_PRIVATE_OK__e20a61df94c70da38fda1a22\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__91d21b8ce3a96e51ee831113\n__LANDMARK_PRIVATE_OK__e20a61df94c70da38fda1a22\n",
+      "timed_out": false,
+      "seconds": 0.022050082683563232,
+      "executed": true,
+      "pid": 36401,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "8472758bf3ea0f9b0bb4fcbe30dc50bc1536e4f6e27f4fd3bbb7590be2496701",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/154",
+    "kind": "candidate",
+    "code_sha256": "928ec3c5c401626187de0e178abc4c2ffb7c52994c25199edcec7ff2e01899d6",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__0a4b64835e96360621d28b52\n__LANDMARK_PRIVATE_OK__a550c3f1f98c01cf3aec83ad\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__0a4b64835e96360621d28b52\n__LANDMARK_PRIVATE_OK__a550c3f1f98c01cf3aec83ad\n",
+      "timed_out": false,
+      "seconds": 0.020176208578050137,
+      "executed": true,
+      "pid": 36402,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "31c2512e0c58abae8147d56f4d5b6bd8c14a63ae985ae2637ceec6f385f9391e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "reference",
+    "code_sha256": "5407545d6fab5d839e9abb65362e12ea00c97747a6219bc9e7289fb818a93af1",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__5adb2caf12ebd67ba6a8087d\n__LANDMARK_PRIVATE_OK__64ffeda12a514cd38a5a765c\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5adb2caf12ebd67ba6a8087d\n__LANDMARK_PRIVATE_OK__64ffeda12a514cd38a5a765c\n",
+      "timed_out": false,
+      "seconds": 0.023643541149795055,
+      "executed": true,
+      "pid": 36403,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f9bf470f97653cca1845e0820f9b258ec7939defed9b140d0bdb289672867c94",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "negative_control",
+    "code_sha256": "41d76c94aecd3e633880101e97ad076b8ee572c18685c229536a25beda34bc67",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__f7608fd0ed95e6ec1e504932\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_672997d3/program.py\", line 8, in <module>\n    assert find_longest_conseq_subseq([1, 9, 3, 10, 4, 20, 2], 7) == 4\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__f7608fd0ed95e6ec1e504932\n",
+      "timed_out": false,
+      "seconds": 0.023760000243782997,
+      "executed": true,
+      "pid": 36404,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f90ee881e000348351b3a556d5e7eaff0c9d15363fa849343fbcdbea5aac9480",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "adb27290a787e019fb6745b10cf266c37e805e79e37c6b157a45f6799aadc493",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__557b8932eb5a6e0425fa4bad\n__LANDMARK_PRIVATE_OK__2b5249e54feebb203c0f548f\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__557b8932eb5a6e0425fa4bad\n__LANDMARK_PRIVATE_OK__2b5249e54feebb203c0f548f\n",
+      "timed_out": false,
+      "seconds": 0.022042958065867424,
+      "executed": true,
+      "pid": 36405,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "20fb49869bea00b79e34fa56b26415424b547afd174cd6a25afe52e5e815197f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "c68f37b0527627decfd4a4dd32cef5386271d00a84dd4ad26e459ed5c6697aca",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__ad5016ca3dde1023b72c5b81\n__LANDMARK_PRIVATE_OK__a50991f3a7d749694e49addf\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__ad5016ca3dde1023b72c5b81\n__LANDMARK_PRIVATE_OK__a50991f3a7d749694e49addf\n",
+      "timed_out": false,
+      "seconds": 0.020122583955526352,
+      "executed": true,
+      "pid": 36406,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "37489763c08fba27f70b2669c35100ae62c223f75f9d125cd131986c0dd0c61b",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "adb27290a787e019fb6745b10cf266c37e805e79e37c6b157a45f6799aadc493",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__a8cf00d312baeb48d0a6a2f2\n__LANDMARK_PRIVATE_OK__c0f0be283d1444d74cd31633\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a8cf00d312baeb48d0a6a2f2\n__LANDMARK_PRIVATE_OK__c0f0be283d1444d74cd31633\n",
+      "timed_out": false,
+      "seconds": 0.020952999591827393,
+      "executed": true,
+      "pid": 36407,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "4ea0da8ec63fabbc425776e7bb04c2a97ddb75aa75c8c5bdbe5e8a71b9d8694e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "f12582026a6b1b5a62873df85b1c9b509aee6d65ec94f9dad087baad587d93cd",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__41da8325a0391b46ed7c25b7\n__LANDMARK_PRIVATE_OK__923cecb8185d70bf9ceb51b0\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__41da8325a0391b46ed7c25b7\n__LANDMARK_PRIVATE_OK__923cecb8185d70bf9ceb51b0\n",
+      "timed_out": false,
+      "seconds": 0.023383375257253647,
+      "executed": true,
+      "pid": 36408,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "72817975734931a8f7fca2f0979da3264a3e366098162748bbd890e56d832fc3",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "9c9385d65d24c62791e4975149fe0306fd69025532a9c6e0c85b3afafb55292a",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__e8d2fced24c43331b5a4718f\n3\n__LANDMARK_PRIVATE_OK__4c7a285274854f8df67b06b0\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__e8d2fced24c43331b5a4718f\n3\n__LANDMARK_PRIVATE_OK__4c7a285274854f8df67b06b0\n",
+      "timed_out": false,
+      "seconds": 0.02221429068595171,
+      "executed": true,
+      "pid": 36409,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f7a3f88c6611df773afe41c165be68efd5f00b1d781a6f1a87580fd2a984ee39",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/863",
+    "kind": "candidate",
+    "code_sha256": "464839f09191021a3faa0fd9c171f7f3527e68dcf806f2ae5bb41a39eed51ee2",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__667fb7c8b414bde6f5d695fb\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_g33pi153/program.py\", line 13, in <module>\n    find_longest_conseq_subseq([1, 2, 2, 3], 4) == 3\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_g33pi153/program.py\", line 7, in find_longest_conseq_subseq\n    if arr[i] - arr[i - 1] == 1:\n       ~~~^^^\nIndexError: list index out of range\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__667fb7c8b414bde6f5d695fb\n",
+      "timed_out": false,
+      "seconds": 0.024398665875196457,
+      "executed": true,
+      "pid": 36410,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "1765b78899374639d396849ab7f6f1d6b2b280afbcaa7770767779e0ea8ab9f2",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "reference",
+    "code_sha256": "ccd5a7366c7ad2fb350a8eced1273a922a346ee14f2bcd35a6006bb035dfafb0",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__a91f33d72d0dba1b908b171d\n__LANDMARK_PRIVATE_OK__56a32358aacfa12d68cc7fa5\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a91f33d72d0dba1b908b171d\n__LANDMARK_PRIVATE_OK__56a32358aacfa12d68cc7fa5\n",
+      "timed_out": false,
+      "seconds": 0.022449291311204433,
+      "executed": true,
+      "pid": 36411,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "5e80bdd4d85b55b1901626c9c734bdbae95769aa14bfe8e3939f8603fda83237",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "negative_control",
+    "code_sha256": "9663379cc7e1ec0c87011656f630f65e51a825d9268f7ae09544277edfa76ef3",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__c08374c323416e4a17821e0b\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_mpeug_kv/program.py\", line 4, in <module>\n    assert remove_empty([(), (), ('',), (\"python\"), (\"program\")])==[('',), (\"python\"), (\"program\")]  \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__c08374c323416e4a17821e0b\n",
+      "timed_out": false,
+      "seconds": 0.023725999519228935,
+      "executed": true,
+      "pid": 36412,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "1246a7858a245426ec51c453c3dfe81e6d428d180b8dd34dbe260dd38bd7e422",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "candidate",
+    "code_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__973c25beea58fa959a48cb20\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_arov5gou/program.py\", line 4, in <module>\n    assert remove_empty([(), (), ('',), (\"python\"), (\"program\")])==[('',), (\"python\"), (\"program\")]  \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__973c25beea58fa959a48cb20\n",
+      "timed_out": false,
+      "seconds": 0.021123000420629978,
+      "executed": true,
+      "pid": 36413,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "427b283211866c1ac169dae5a1f35f3358e04c831356718e4ecb9b0c8a3337d5",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "candidate",
+    "code_sha256": "6c72c50bd56b846ea9a85b61c319aac187b972286851d5f0430915b2d1bf385d",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__0738107bd31b8b3c640867f2\n[]\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_bn8wfavw/program.py\", line 7, in <module>\n    assert remove_empty([(), (), ('',), (\"python\"), (\"program\")])==[('',), (\"python\"), (\"program\")]  \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__0738107bd31b8b3c640867f2\n[]\n",
+      "timed_out": false,
+      "seconds": 0.024116708897054195,
+      "executed": true,
+      "pid": 36414,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "230d1680ffd06e17f666bbcde0cf09d8b1b5bcba83e83aa993fb95ce79dc349a",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "candidate",
+    "code_sha256": "269c525616e1b97e77f4995532c3dc40d0c689f8009348f2a21616ed1d948d11",
+    "outcome": 0,
+    "reason": "unparseable_output",
+    "flags": [
+      "parse-error"
+    ],
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/966",
+    "kind": "candidate",
+    "code_sha256": "01ea3fb7a78db404ce5d0ed1e012f3522505b9ef7ba10fd58ac68e2ed0bebeba",
+    "outcome": 0,
+    "reason": "unparseable_output",
+    "flags": [
+      "parse-error"
+    ],
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "reference",
+    "code_sha256": "58eff9ab64a33310090d2b96e03e69a469b146cbe10bfeaa49d59c06c74c30d2",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__274f5707f7f3af8262da17d5\n__LANDMARK_PRIVATE_OK__cb5eecdf10166fc1ce075fdc\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__274f5707f7f3af8262da17d5\n__LANDMARK_PRIVATE_OK__cb5eecdf10166fc1ce075fdc\n",
+      "timed_out": false,
+      "seconds": 0.02060695830732584,
+      "executed": true,
+      "pid": 36415,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "89fe6bd650e487609657c39299ef37080a2390d1fa84b9f448ef564385b36f54",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "negative_control",
+    "code_sha256": "9308d06a32bad389e26a486027f841b87c2344e6be6175bd21a5f6a21d0391ab",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__5750a3371723b9d9fb972865\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_1e6yjdok/program.py\", line 5, in <module>\n    assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5750a3371723b9d9fb972865\n",
+      "timed_out": false,
+      "seconds": 0.024059374816715717,
+      "executed": true,
+      "pid": 36416,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "b6892759d657fc2991868229b0a7ed127e606ef740ab37d3b8fc7ff8201632fa",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "970460604298e1e9f1edfe6179ff474ae0ef6e7cdc49f389b0c6e7c6cd539fe0",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__31974b87daff2658dc6d308c\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_ahuwusrk/program.py\", line 7, in <module>\n    assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__31974b87daff2658dc6d308c\n",
+      "timed_out": false,
+      "seconds": 0.02223908342421055,
+      "executed": true,
+      "pid": 36417,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "710953b0f0aee55996e039bb937069bca6788ebc5f01713f4049d52bd7bb52dd",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "8fb1f99853709be1c7f986841adbbdcb2cdc1fe4a5e3234f1e9d6fe8ad9c1da1",
+    "outcome": 0,
+    "reason": "candidate_compile_error",
+    "details": "SyntaxError at line 9: 'return' outside function",
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "918b902e08fd43ae9b7574b7d511983740575ed233ba77b797f07a2b313985c2",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__9994f73a736e814c8a2007c5\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_sfcz_17e/program.py\", line 9, in <module>\n    assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__9994f73a736e814c8a2007c5\n",
+      "timed_out": false,
+      "seconds": 0.02359879110008478,
+      "executed": true,
+      "pid": 36418,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "75fd5cc8a5660ce692a9c7ce4646f415e787ac49876b006358d313655786ca58",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "27a864441032be0cc4ed54e1e076e984f77fb6985410210d05bed2f07caf6341",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__6107571085d8bab2096462a2\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_87kvd8em/program.py\", line 7, in <module>\n    assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_87kvd8em/program.py\", line 6, in matrix_to_list\n    return str([tuple((x[i] for x in row)) for row in test_list])\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_87kvd8em/program.py\", line 6, in <genexpr>\n    return str([tuple((x[i] for x in row)) for row in test_list])\n                         ^\nNameError: name 'i' is not defined. Did you mean: 'id'?\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__6107571085d8bab2096462a2\n",
+      "timed_out": false,
+      "seconds": 0.02213037572801113,
+      "executed": true,
+      "pid": 36419,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "afbcaa5a0bc330e8e6ac9a31f4c9ecc80c522e03e4f5f21d1a39bd7104c2f5cb",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "196a00e94ec8cb6bc6e89475c88d1ead6d2a2a080caeb47e8ff02c686d87e570",
+    "outcome": 0,
+    "reason": "unparseable_output",
+    "flags": [
+      "parse-error"
+    ],
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/652",
+    "kind": "candidate",
+    "code_sha256": "c787d397acb183d0911d5592e69fa0ea49e69eefe0cc51ff97a0e40e037ccee5",
+    "outcome": 0,
+    "reason": "unparseable_output",
+    "flags": [
+      "parse-error"
+    ],
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "reference",
+    "code_sha256": "4c1cdae23c38d42f1e79f7c97623f17c46ca831ec6944ce9a385bdc5e02a8927",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__a16bceacc9aa1d586c378763\n__LANDMARK_PRIVATE_OK__00a05025dc75e81f75a34b95\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__a16bceacc9aa1d586c378763\n__LANDMARK_PRIVATE_OK__00a05025dc75e81f75a34b95\n",
+      "timed_out": false,
+      "seconds": 0.018835249356925488,
+      "executed": true,
+      "pid": 36420,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "5a62d2ed044451453357f6506171dfe6106f4548ed50e1048e6a2ec4b7c7c593",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "negative_control",
+    "code_sha256": "23e0b3778655109abf7658ef625279f55118cf44cc05a775534de6c893020ebf",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__5fbe93f3125700f1f698dadf\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_7pbsmp4j/program.py\", line 5, in <module>\n    assert check_subset((7, 8, 9, 10), (10, 8)) == True\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__5fbe93f3125700f1f698dadf\n",
+      "timed_out": false,
+      "seconds": 0.023181875236332417,
+      "executed": true,
+      "pid": 36421,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f9999cb8663f2254849386db86cfc32a69ac049b6903ad167f5e2b5e9355b859",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "717a73eb0f389b9373e3c40e834ffd910f8d72ee0fb3ac7f80ed2856f71e4541",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__b05654bde69e906f6ac0e801\n__LANDMARK_PRIVATE_OK__2005127679aafbe9ad407386\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__b05654bde69e906f6ac0e801\n__LANDMARK_PRIVATE_OK__2005127679aafbe9ad407386\n",
+      "timed_out": false,
+      "seconds": 0.024144832976162434,
+      "executed": true,
+      "pid": 36422,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "81c8139e6eefdbad47cfa5fb7b3a45f6284ebdc897f1009df4ccfda76a537ca3",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "5b43ccc00af79cd167dae5359697c6ebee4698fa9cd33ad2bec192be08727757",
+    "outcome": 0,
+    "reason": "candidate_compile_error",
+    "details": "SyntaxError at line 10: 'return' outside function",
+    "sandbox_executed": false
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "1f43dc371f65aa9e9f64ae7c1ee5109c1a8166f6592130a9ca7954ba5284e48a",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__91dff5f1d53850890754361d\nTrue\nTrue\nTrue\nTrue\nFalse\nTrue\nTrue\nTrue\nTrue\nFalse\n__LANDMARK_PRIVATE_OK__cfa44d031af50b0213ace236\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__91dff5f1d53850890754361d\nTrue\nTrue\nTrue\nTrue\nFalse\nTrue\nTrue\nTrue\nTrue\nFalse\n__LANDMARK_PRIVATE_OK__cfa44d031af50b0213ace236\n",
+      "timed_out": false,
+      "seconds": 0.02275149989873171,
+      "executed": true,
+      "pid": 36423,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f8150efb846cf1d8a26020e984a61e14208f7a2a8209c43cbcabeb0be7cebfc0",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "cdc8a5d200d7e68ade9eb8e5e4290238a8edd986cb1e7ae3cb97fcd159baf29b",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__7d416f083f7267e0b0044be8\n__LANDMARK_PRIVATE_OK__88fe3fc2043940c1e53e4634\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__7d416f083f7267e0b0044be8\n__LANDMARK_PRIVATE_OK__88fe3fc2043940c1e53e4634\n",
+      "timed_out": false,
+      "seconds": 0.022942165844142437,
+      "executed": true,
+      "pid": 36424,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "8681ab3363075bcc12c55f322ad3df52008f28b8612649009421f81dbdb475a6",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "43cfcde80e37a39ccf441dd2437f6b1aa11c4f26bd993c3020ac1ee4deb9b55c",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__13c6426a6e91cff87fe9adbe\n__LANDMARK_PRIVATE_OK__bd445f841e1d25700d33f18d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__13c6426a6e91cff87fe9adbe\n__LANDMARK_PRIVATE_OK__bd445f841e1d25700d33f18d\n",
+      "timed_out": false,
+      "seconds": 0.021185082383453846,
+      "executed": true,
+      "pid": 36425,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "53b1226cabd5d2cb9c80989159b9e39474a22a6da0e5e024686ffc822377c5e8",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/651",
+    "kind": "candidate",
+    "code_sha256": "f174cf5f97b7dd5dbf070ac00dc679ae9c1821dc13c16c9f1a333f8ff1d21417",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__cbe09f22643fcd7b95626652\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_h2fh9vak/program.py\", line 6, in <module>\n    assert check_subset((7, 8, 9, 10), (10, 8)) == True\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__cbe09f22643fcd7b95626652\n",
+      "timed_out": false,
+      "seconds": 0.022601707838475704,
+      "executed": true,
+      "pid": 36426,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "f800e31ee01c863878bcae28305ace44dfdc8b9d5645af064103aaece04bfbbe",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "reference",
+    "code_sha256": "176c0bbd24967dc99541eec20776c362ef47ec11541e6ad0ca9b224d7a4bc00a",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__7ff53a0f223da641d4f224ba\n__LANDMARK_PRIVATE_OK__878ec8ba22d3d240e699f851\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__7ff53a0f223da641d4f224ba\n__LANDMARK_PRIVATE_OK__878ec8ba22d3d240e699f851\n",
+      "timed_out": false,
+      "seconds": 0.02398416679352522,
+      "executed": true,
+      "pid": 36427,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "98492c1fd6a645fa9a140e1e704f605495f68e7627d4656f9c1a19cf3bda457e",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "negative_control",
+    "code_sha256": "f6c61ef218d37369860cadcc713861e05460725d4d2ce3de4a6571db39a94da5",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__062aa73a4fbf484f2c41b12f\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_sn00h7a9/program.py\", line 4, in <module>\n    assert diameter_circle(40)==80\n           ^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__062aa73a4fbf484f2c41b12f\n",
+      "timed_out": false,
+      "seconds": 0.020655625499784946,
+      "executed": true,
+      "pid": 36428,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "71b34364d998f1ebaed1baeda55d2af1b6baa82f9864a2e039111e040cb60462",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "candidate",
+    "code_sha256": "faeb5e666da24f078cca7b99d3b26158838379850949a8d749bf328c40cb672d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__f6257c8b23274bb6c11e12fd\n__LANDMARK_PRIVATE_OK__d2d72ac1d563abf727b87f6d\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__f6257c8b23274bb6c11e12fd\n__LANDMARK_PRIVATE_OK__d2d72ac1d563abf727b87f6d\n",
+      "timed_out": false,
+      "seconds": 0.02333520818501711,
+      "executed": true,
+      "pid": 36429,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "bbe56e8cc065ee7bc8613d0c9b81c4378e94945fa1efb79bfb413dffe57da5bb",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "candidate",
+    "code_sha256": "243a60c233c9d9388f7ae7a384719e16c269b302ffdc86e7af7845c113feb12f",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__debbea5a3bbaf2984aea1c49\n__LANDMARK_PRIVATE_OK__e536b8688837fb5351ed7190\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__debbea5a3bbaf2984aea1c49\n__LANDMARK_PRIVATE_OK__e536b8688837fb5351ed7190\n",
+      "timed_out": false,
+      "seconds": 0.024223708547651768,
+      "executed": true,
+      "pid": 36430,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "0ad781360c3136fa800b6ede691d6a90fb702110bba58c8758ec78f5d6c876a2",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "candidate",
+    "code_sha256": "e842f67aaddb0ed95239462127446661c877062e7461432643cb1ba850469a7a",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__b6094fbe31db62a63d81ab7d\n__LANDMARK_PRIVATE_OK__c1e66dad0bae10e06041fa36\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__b6094fbe31db62a63d81ab7d\n__LANDMARK_PRIVATE_OK__c1e66dad0bae10e06041fa36\n",
+      "timed_out": false,
+      "seconds": 0.024102999828755856,
+      "executed": true,
+      "pid": 36431,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "c4002a6583372334290132765da3782171656ba0f0fd58ccde88bc1c92a9c3d1",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "candidate",
+    "code_sha256": "5ec86869faea504efcce65b954327ee79261b61841262762f802e89e2d5237fe",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__da44150eadd9de162b7316be\n__LANDMARK_PRIVATE_OK__692f7e3d491f7927b55d1e57\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__da44150eadd9de162b7316be\n__LANDMARK_PRIVATE_OK__692f7e3d491f7927b55d1e57\n",
+      "timed_out": false,
+      "seconds": 0.02213629148900509,
+      "executed": true,
+      "pid": 36433,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "90fe7d4db70edce226d81d354786e9667333cf02775bc6481edc605b289f5115",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/499",
+    "kind": "candidate",
+    "code_sha256": "faeb5e666da24f078cca7b99d3b26158838379850949a8d749bf328c40cb672d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__0ae6634d17202f708094ade6\n__LANDMARK_PRIVATE_OK__6785c6023b07c9b8f6f21e09\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__0ae6634d17202f708094ade6\n__LANDMARK_PRIVATE_OK__6785c6023b07c9b8f6f21e09\n",
+      "timed_out": false,
+      "seconds": 0.018825124949216843,
+      "executed": true,
+      "pid": 36434,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "bbce0e0628c111b842a326e540f27c3f04a7bd6ad484d590f042b54f358a4188",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "reference",
+    "code_sha256": "d9b95cbf30ba92463887e3257ceeb6cd8d3928882ce9561a5fbad5bd35e8c311",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__099c740e304d4630ff490686\n__LANDMARK_PRIVATE_OK__d5f4c346a46a637575297d59\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__099c740e304d4630ff490686\n__LANDMARK_PRIVATE_OK__d5f4c346a46a637575297d59\n",
+      "timed_out": false,
+      "seconds": 0.023182292468845844,
+      "executed": true,
+      "pid": 36435,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "3835a899fd2aae330f67e70fc6ea59ac205d623890c491da8c2b6f745ff61109",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "negative_control",
+    "code_sha256": "ff355330e9be188622e240b609ae643dcf5772982d46de91df185efbc22f1346",
+    "outcome": 0,
+    "reason": "executed_test_or_integrity_rejection",
+    "sandbox_executed": true,
+    "run": {
+      "passed": false,
+      "returncode": 1,
+      "stdout": "__LANDMARK_GRADER_STARTED__098b0a1d06aaf571308bcbac\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/run_j7zwwn29/program.py\", line 8, in <module>\n    assert min_sum_path([[ 2 ], [3, 7 ], [8, 5, 6 ]]) == 10 \n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__098b0a1d06aaf571308bcbac\n",
+      "timed_out": false,
+      "seconds": 0.023900125175714493,
+      "executed": true,
+      "pid": 36436,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "578294f82842ff43073b9c74e716bf6b116973105866a7eb162beda8b4d31b1f",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "f9c37549dd88d4d5e5791fe00117551723b34803aad551b2a67f4bd6a88b583c",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__906129c63349b3bd7073ea44\n__LANDMARK_PRIVATE_OK__4cbdf0bf979ae3a969beb0d5\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__906129c63349b3bd7073ea44\n__LANDMARK_PRIVATE_OK__4cbdf0bf979ae3a969beb0d5\n",
+      "timed_out": false,
+      "seconds": 0.023817124776542187,
+      "executed": true,
+      "pid": 36437,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "064b4e50f2590cd0ab5700572b53c4af7b8b598dedc051c84e7bca62481a1729",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "069cfe93c639f1e0d543249a612a5d8052dfc88f4d8aa49618b5f02d7e1b37bd",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__8b6a86f4bd570bafe699d829\n__LANDMARK_PRIVATE_OK__e6260ed46c3aa1ce80becbd9\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__8b6a86f4bd570bafe699d829\n__LANDMARK_PRIVATE_OK__e6260ed46c3aa1ce80becbd9\n",
+      "timed_out": false,
+      "seconds": 0.018453458324074745,
+      "executed": true,
+      "pid": 36438,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "507655c65c1dfc09d00e378acb6c15d950fddef8d54c205bb1ec0b3763425f40",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "825e24cb22fbde6b701c8a6c77ea4cb7dab26dabb3c53640cfbc749e31048bec",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__d0890ef25a3a99642798af9d\n__LANDMARK_PRIVATE_OK__78d368cb779dcb493793d709\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__d0890ef25a3a99642798af9d\n__LANDMARK_PRIVATE_OK__78d368cb779dcb493793d709\n",
+      "timed_out": false,
+      "seconds": 0.021023541688919067,
+      "executed": true,
+      "pid": 36439,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "06b6af5b9633c31095410ed27f9d0815c042943ce9e06bd12b6152d0d1a5c04c",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "3421f0ce07ace14c3d61861e17db9d455f215e9f925f3eec82e3e7047a95b76d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__8358f6e56acb3c43dbf3476c\n__LANDMARK_PRIVATE_OK__eaa96d9e31d1920009f0833f\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__8358f6e56acb3c43dbf3476c\n__LANDMARK_PRIVATE_OK__eaa96d9e31d1920009f0833f\n",
+      "timed_out": false,
+      "seconds": 0.02345212548971176,
+      "executed": true,
+      "pid": 36440,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "2d195489aba811be89a15dc2348019bb3629de21d225cee13e069928ab2ed284",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "3421f0ce07ace14c3d61861e17db9d455f215e9f925f3eec82e3e7047a95b76d",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__95c6af01cc028db557bbdcf2\n__LANDMARK_PRIVATE_OK__008633f7b5e98e27e4fb5c80\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__95c6af01cc028db557bbdcf2\n__LANDMARK_PRIVATE_OK__008633f7b5e98e27e4fb5c80\n",
+      "timed_out": false,
+      "seconds": 0.021915500052273273,
+      "executed": true,
+      "pid": 36441,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "06db0f0cbb314c7176498915d45df9f84d69e2775dfdd565da2a3984fdcdeb7c",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "b9ffd08ab4357ab37716804d002d2bc5b3a1ee0648186a483e27789cc92add22",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__f7a607b1c0eacab930967bbe\n__LANDMARK_PRIVATE_OK__1f2ca50627d5b23f98b8c2da\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__f7a607b1c0eacab930967bbe\n__LANDMARK_PRIVATE_OK__1f2ca50627d5b23f98b8c2da\n",
+      "timed_out": false,
+      "seconds": 0.02389412559568882,
+      "executed": true,
+      "pid": 36442,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "dff9bd596007eb47f6fb9f6044b2f7bcf291fa549e261b714a4515824e9d6301",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  {
+    "root_id": "mbpp/974",
+    "kind": "candidate",
+    "code_sha256": "10266ebee24449456195ab134389a94241345b7e56790ea6a08c82bc524cb2d9",
+    "outcome": 1,
+    "reason": "private_tests_passed",
+    "sandbox_executed": true,
+    "run": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "__LANDMARK_GRADER_STARTED__d899865eb2f35be17fa60111\n__LANDMARK_PRIVATE_OK__503100299796109a3689d3e5\n",
+      "stderr": "",
+      "stdout_tail": "__LANDMARK_GRADER_STARTED__d899865eb2f35be17fa60111\n__LANDMARK_PRIVATE_OK__503100299796109a3689d3e5\n",
+      "timed_out": false,
+      "seconds": 0.0214027501642704,
+      "executed": true,
+      "pid": 36445,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "02afc17f42d6bd51222266cb6efb06decc3854e3a81769091d169db173efe359",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  }
+]

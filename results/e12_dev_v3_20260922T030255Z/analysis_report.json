@@ -1,0 +1,1611 @@
+{
+  "analysis_version": "landmark-diagnostic-analysis-v1",
+  "diagnostic_schema": "public-diagnostic-v2",
+  "arms": [
+    "STOP",
+    "N0",
+    "S0",
+    "N1",
+    "S1",
+    "R1"
+  ],
+  "assigned_replicates": {
+    "STOP": 1,
+    "N0": 2,
+    "S0": 2,
+    "N1": 2,
+    "S1": 2,
+    "R1": 2
+  },
+  "n_roots": 14,
+  "n_families": 1,
+  "inference": {
+    "confidence_intervals": null,
+    "note": "No confidence intervals or tests: every root belongs to one unresolved family, so there is no independent replication to support population inference. Means and per-root vectors are descriptive only."
+  },
+  "quality": {
+    "STOP": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.7142857142857143,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 14,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.7142857142857143,
+        0.7142857142857143
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    },
+    "N0": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.7142857142857143,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 28,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.7142857142857143,
+        0.7142857142857143
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    },
+    "S0": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.6785714285714286,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 28,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.6785714285714286,
+        0.6785714285714286
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    },
+    "N1": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.7142857142857143,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 28,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.7142857142857143,
+        0.7142857142857143
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    },
+    "S1": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.6785714285714286,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 28,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.6785714285714286,
+        0.6785714285714286
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    },
+    "R1": {
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 1.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 1.0
+        }
+      ],
+      "mean_complete_roots": 0.6785714285714286,
+      "complete_roots": 14,
+      "incomplete_roots": 0,
+      "assigned_replicates": 28,
+      "missing_replicates": 0,
+      "missing_reasons": {},
+      "all_assigned_mean_bounds": [
+        0.6785714285714286,
+        0.6785714285714286
+      ],
+      "bounds_scope": "Completion bounds for this realized root set; not a confidence interval"
+    }
+  },
+  "contrasts": {
+    "S1_minus_N1": {
+      "primary": true,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": -1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 1,
+      "ties": 12,
+      "negative": 1,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    },
+    "N1_minus_N0": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": 0.0,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 0,
+      "ties": 14,
+      "negative": 0,
+      "all_assigned_mean_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    "S0_minus_N0": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 0,
+      "ties": 13,
+      "negative": 1,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    },
+    "R1_minus_N1": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 2,
+      "ties": 9,
+      "negative": 3,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    },
+    "N0_minus_STOP": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": 0.0,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 0,
+      "ties": 14,
+      "negative": 0,
+      "all_assigned_mean_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    "S0_minus_STOP": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 0,
+      "ties": 13,
+      "negative": 1,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    },
+    "N1_minus_STOP": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": 0.0,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 0,
+      "ties": 14,
+      "negative": 0,
+      "all_assigned_mean_bounds": [
+        0.0,
+        0.0
+      ]
+    },
+    "S1_minus_STOP": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": -1.0
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 1,
+      "ties": 12,
+      "negative": 1,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    },
+    "R1_minus_STOP": {
+      "primary": false,
+      "per_root": [
+        {
+          "root_id": "mbpp/918",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/825",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/842",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/816",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/895",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/868",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/288",
+          "value": 0.5
+        },
+        {
+          "root_id": "mbpp/154",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/863",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/966",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/652",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/651",
+          "value": -0.5
+        },
+        {
+          "root_id": "mbpp/499",
+          "value": 0.0
+        },
+        {
+          "root_id": "mbpp/974",
+          "value": 0.0
+        }
+      ],
+      "mean_complete_pairs": -0.03571428571428571,
+      "complete_pairs": 14,
+      "missing_pair_roots": 0,
+      "positive": 2,
+      "ties": 9,
+      "negative": 3,
+      "all_assigned_mean_bounds": [
+        -0.03571428571428571,
+        -0.03571428571428571
+      ]
+    }
+  },
+  "initial_status": {
+    "public_definition": "all_pass: every case pass; any_fail: any wrong_value/format_error/interface_error/program_exception; unknown: otherwise (any timeout/unavailable/output_limit, no cases, or no diagnostic)",
+    "private_definition": "Initial artifact STOP grade: 1 pass, 0 fail, missing unknown",
+    "crosstab": {
+      "all_pass": {
+        "pass": 9,
+        "fail": 0,
+        "unknown": 0
+      },
+      "any_fail": {
+        "pass": 1,
+        "fail": 4,
+        "unknown": 0
+      },
+      "unknown": {
+        "pass": 0,
+        "fail": 0,
+        "unknown": 0
+      }
+    },
+    "crosstab_roots": {
+      "all_pass": {
+        "pass": [
+          "mbpp/918",
+          "mbpp/825",
+          "mbpp/816",
+          "mbpp/895",
+          "mbpp/868",
+          "mbpp/154",
+          "mbpp/651",
+          "mbpp/499",
+          "mbpp/974"
+        ],
+        "fail": [],
+        "unknown": []
+      },
+      "any_fail": {
+        "pass": [
+          "mbpp/863"
+        ],
+        "fail": [
+          "mbpp/842",
+          "mbpp/288",
+          "mbpp/966",
+          "mbpp/652"
+        ],
+        "unknown": []
+      },
+      "unknown": {
+        "pass": [],
+        "fail": [],
+        "unknown": []
+      }
+    },
+    "public_totals": {
+      "all_pass": 9,
+      "any_fail": 5,
+      "unknown": 0
+    },
+    "private_totals": {
+      "pass": 10,
+      "fail": 4,
+      "unknown": 0
+    },
+    "diagnostic_missing_roots": [],
+    "final_private_by_initial_public": {
+      "all_pass": {
+        "n_roots": 9,
+        "arms": {
+          "STOP": {
+            "mean_complete_roots": 1.0,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          },
+          "N0": {
+            "mean_complete_roots": 1.0,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          },
+          "S0": {
+            "mean_complete_roots": 0.9444444444444444,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          },
+          "N1": {
+            "mean_complete_roots": 1.0,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          },
+          "S1": {
+            "mean_complete_roots": 1.0,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          },
+          "R1": {
+            "mean_complete_roots": 0.8888888888888888,
+            "complete_roots": 9,
+            "incomplete_roots": 0
+          }
+        }
+      },
+      "any_fail": {
+        "n_roots": 5,
+        "arms": {
+          "STOP": {
+            "mean_complete_roots": 0.2,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          },
+          "N0": {
+            "mean_complete_roots": 0.2,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          },
+          "S0": {
+            "mean_complete_roots": 0.2,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          },
+          "N1": {
+            "mean_complete_roots": 0.2,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          },
+          "S1": {
+            "mean_complete_roots": 0.1,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          },
+          "R1": {
+            "mean_complete_roots": 0.3,
+            "complete_roots": 5,
+            "incomplete_roots": 0
+          }
+        }
+      },
+      "unknown": {
+        "n_roots": 0,
+        "arms": {
+          "STOP": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          },
+          "N0": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          },
+          "S0": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          },
+          "N1": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          },
+          "S1": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          },
+          "R1": {
+            "mean_complete_roots": null,
+            "complete_roots": 0,
+            "incomplete_roots": 0
+          }
+        }
+      }
+    },
+    "note": "Descriptive strata only (lead field 15). Initial public status comes from the planned diagnostic executions of the initial artifacts; final artifacts were not executed on public cases, so this does not estimate final public-pass/private-fail rates, and these subgroup summaries do not validate a learned conditional policy or its value on new roots or families."
+  },
+  "cost": {
+    "note": "Equal calls are not equal token/runtime cost: R1 omits the previous answer, N1/S1/R1 carry the diagnostic message and its executor cost, and completion lengths differ by arm. Unknown cost components are counted, never zero-filled.",
+    "arms": {
+      "STOP": {
+        "totals": {
+          "calls": {
+            "known_sum": 0,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 0,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 0,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 14,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.31773112434893847,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 1.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 189.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 42.285714285714285,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      },
+      "N0": {
+        "totals": {
+          "calls": {
+            "known_sum": 28,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 7260,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 1202,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 5,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.17694604117423296,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 2.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 448.2857142857143,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 85.21428571428571,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      },
+      "S0": {
+        "totals": {
+          "calls": {
+            "known_sum": 28,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 7456,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 2247,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 19,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.42902045883238316,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 2.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 455.2857142857143,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 122.53571428571429,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      },
+      "N1": {
+        "totals": {
+          "calls": {
+            "known_sum": 28,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 12260,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 1432,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 12,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.2692369604483247,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 2.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 626.8571428571429,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 93.42857142857143,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 1.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.029763818518923863,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      },
+      "S1": {
+        "totals": {
+          "calls": {
+            "known_sum": 28,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 13084,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 4288,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 7,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.160369124263525,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 2.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 656.2857142857143,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 195.42857142857142,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 1.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.029763818518923863,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      },
+      "R1": {
+        "totals": {
+          "calls": {
+            "known_sum": 28,
+            "unknown_components": 0
+          },
+          "prompt_tokens": {
+            "known_sum": 10964,
+            "unknown_components": 0
+          },
+          "completion_tokens": {
+            "known_sum": 2437,
+            "unknown_components": 0
+          },
+          "grading_executor_starts": {
+            "known_sum": 18,
+            "unknown_components": 0
+          },
+          "grading_executor_seconds": {
+            "known_sum": 0.4035770380869508,
+            "unknown_components": 0
+          }
+        },
+        "per_root_policy_mean": {
+          "calls": {
+            "mean_known_roots": 2.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "prompt_tokens": {
+            "mean_known_roots": 580.5714285714286,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "completion_tokens": {
+            "mean_known_roots": 129.32142857142858,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_starts": {
+            "mean_known_roots": 1.0,
+            "known_roots": 14,
+            "unknown_roots": 0
+          },
+          "executor_seconds": {
+            "mean_known_roots": 0.029763818518923863,
+            "known_roots": 14,
+            "unknown_roots": 0
+          }
+        },
+        "scope": "per_root_policy_mean = shared initial call + replicate-averaged continuation (none for STOP) + the root's public diagnostic executor cost for N1/S1/R1 only. totals = continuation calls/tokens and private-grading executions across all replicates; the shared initial call and diagnostic are reported once under shared_*."
+      }
+    },
+    "shared_initial": {
+      "calls": {
+        "known_sum": 14,
+        "unknown_roots": 0
+      },
+      "prompt_tokens": {
+        "known_sum": 2646,
+        "unknown_roots": 0
+      },
+      "completion_tokens": {
+        "known_sum": 592,
+        "unknown_roots": 0
+      }
+    },
+    "shared_public_diagnostic": {
+      "executor_starts": {
+        "known_sum": 14,
+        "unknown_roots": 0
+      },
+      "executor_seconds": {
+        "known_sum": 0.41669345926493406,
+        "unknown_roots": 0
+      }
+    }
+  },
+  "interpretation": "Development-stage descriptive comparison of fixed prompt arms on these roots; no efficacy, population futility or policy-validation claim."
+}

@@ -1,0 +1,2171 @@
+{
+  "roots": [
+    {
+      "root_id": "mbpp/918",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 196,
+        "completion_tokens": 68
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.048656875267624855
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.023142999969422817
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 292,
+            "completion_tokens": 72,
+            "executor_starts": 1,
+            "executor_seconds": 0.02219195943325758
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 292,
+            "completion_tokens": 72,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 299,
+            "completion_tokens": 101,
+            "executor_starts": 1,
+            "executor_seconds": 0.024206750094890594
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 299,
+            "completion_tokens": 118,
+            "executor_starts": 1,
+            "executor_seconds": 0.022677958011627197
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 451,
+            "completion_tokens": 72,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 451,
+            "completion_tokens": 72,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 469,
+            "completion_tokens": 68,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 469,
+            "completion_tokens": 68,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 379,
+            "completion_tokens": 66,
+            "executor_starts": 1,
+            "executor_seconds": 0.020199582912027836
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 379,
+            "completion_tokens": 137,
+            "executor_starts": 1,
+            "executor_seconds": 0.023334749974310398
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/825",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 192,
+        "completion_tokens": 21
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.04134395904839039
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.019641375169157982
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 241,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 241,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 248,
+            "completion_tokens": 33,
+            "executor_starts": 1,
+            "executor_seconds": 0.02368204202502966
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 248,
+            "completion_tokens": 25,
+            "executor_starts": 1,
+            "executor_seconds": 0.02127162553369999
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 428,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 428,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 446,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 446,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 403,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 403,
+            "completion_tokens": 21,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/842",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 202,
+        "completion_tokens": 19
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.02370366733521223
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.024336875416338444
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 249,
+            "completion_tokens": 20,
+            "executor_starts": 1,
+            "executor_seconds": 0.024091707542538643
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 249,
+            "completion_tokens": 20,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 256,
+            "completion_tokens": 137,
+            "executor_starts": 1,
+            "executor_seconds": 0.02409891691058874
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 256,
+            "completion_tokens": 123,
+            "executor_starts": 1,
+            "executor_seconds": 0.023330166935920715
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 435,
+            "completion_tokens": 20,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 435,
+            "completion_tokens": 44,
+            "executor_starts": 1,
+            "executor_seconds": 0.024364042095839977
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 485,
+            "completion_tokens": 73,
+            "executor_starts": 1,
+            "executor_seconds": 0.0224138330668211
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 485,
+            "completion_tokens": 47,
+            "executor_starts": 1,
+            "executor_seconds": 0.019986082799732685
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 412,
+            "completion_tokens": 78,
+            "executor_starts": 1,
+            "executor_seconds": 0.022096624597907066
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 412,
+            "completion_tokens": 67,
+            "executor_starts": 1,
+            "executor_seconds": 0.02178362477570772
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/816",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 160,
+        "completion_tokens": 12
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.024525083601474762
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.020936625078320503
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 200,
+            "completion_tokens": 11,
+            "executor_starts": 1,
+            "executor_seconds": 0.02387662511318922
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 200,
+            "completion_tokens": 11,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 207,
+            "completion_tokens": 53,
+            "executor_starts": 1,
+            "executor_seconds": 0.022173875011503696
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 207,
+            "completion_tokens": 42,
+            "executor_starts": 1,
+            "executor_seconds": 0.02412137482315302
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 358,
+            "completion_tokens": 11,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 358,
+            "completion_tokens": 11,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 376,
+            "completion_tokens": 38,
+            "executor_starts": 1,
+            "executor_seconds": 0.02442816738039255
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 376,
+            "completion_tokens": 88,
+            "executor_starts": 1,
+            "executor_seconds": 0.023168624378740788
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 342,
+            "completion_tokens": 31,
+            "executor_starts": 1,
+            "executor_seconds": 0.021214166656136513
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 342,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/895",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 185,
+        "completion_tokens": 95
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.024362250231206417
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.023664874956011772
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 308,
+            "completion_tokens": 95,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 308,
+            "completion_tokens": 99,
+            "executor_starts": 1,
+            "executor_seconds": 0.02372420858591795
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 315,
+            "completion_tokens": 95,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 315,
+            "completion_tokens": 95,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 488,
+            "completion_tokens": 141,
+            "executor_starts": 1,
+            "executor_seconds": 0.023600708693265915
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 488,
+            "completion_tokens": 130,
+            "executor_starts": 1,
+            "executor_seconds": 0.02214154228568077
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 506,
+            "completion_tokens": 143,
+            "executor_starts": 1,
+            "executor_seconds": 0.024340207688510418
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 506,
+            "completion_tokens": 95,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 389,
+            "completion_tokens": 85,
+            "executor_starts": 1,
+            "executor_seconds": 0.02363050077110529
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 389,
+            "completion_tokens": 97,
+            "executor_starts": 1,
+            "executor_seconds": 0.022337665781378746
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/868",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 175,
+        "completion_tokens": 28
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.02334624994546175
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.02259999979287386
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 231,
+            "completion_tokens": 28,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 231,
+            "completion_tokens": 28,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 238,
+            "completion_tokens": 57,
+            "executor_starts": 1,
+            "executor_seconds": 0.02228162530809641
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 238,
+            "completion_tokens": 53,
+            "executor_starts": 1,
+            "executor_seconds": 0.021937374956905842
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 382,
+            "completion_tokens": 28,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 382,
+            "completion_tokens": 33,
+            "executor_starts": 1,
+            "executor_seconds": 0.02411916758865118
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 400,
+            "completion_tokens": 28,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 400,
+            "completion_tokens": 28,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 350,
+            "completion_tokens": 31,
+            "executor_starts": 1,
+            "executor_seconds": 0.023884916678071022
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 350,
+            "completion_tokens": 47,
+            "executor_starts": 1,
+            "executor_seconds": 0.023726167157292366
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/288",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 188,
+        "completion_tokens": 59
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.02461695857346058
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.024338250048458576
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 275,
+            "completion_tokens": 62,
+            "executor_starts": 1,
+            "executor_seconds": 0.08306154049932957
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 275,
+            "completion_tokens": 62,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 282,
+            "completion_tokens": 59,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 282,
+            "completion_tokens": 59,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 444,
+            "completion_tokens": 62,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 444,
+            "completion_tokens": 61,
+            "executor_starts": 1,
+            "executor_seconds": 0.02111849933862686
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 494,
+            "completion_tokens": 512,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 494,
+            "completion_tokens": 300,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 381,
+            "completion_tokens": 119,
+            "executor_starts": 1,
+            "executor_seconds": 0.02171720750629902
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 381,
+            "completion_tokens": 196,
+            "executor_starts": 1,
+            "executor_seconds": 0.023779000155627728
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/154",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 199,
+        "completion_tokens": 19
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.024534333497285843
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.02236791606992483
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 246,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 246,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 253,
+            "completion_tokens": 24,
+            "executor_starts": 1,
+            "executor_seconds": 0.022982625290751457
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 253,
+            "completion_tokens": 32,
+            "executor_starts": 1,
+            "executor_seconds": 0.022050082683563232
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 443,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 443,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 461,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 461,
+            "completion_tokens": 19,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 420,
+            "completion_tokens": 70,
+            "executor_starts": 1,
+            "executor_seconds": 0.020176208578050137
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 420,
+            "completion_tokens": 70,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/863",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 189,
+        "completion_tokens": 99
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.02442079223692417
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.022042958065867424
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 316,
+            "completion_tokens": 99,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 316,
+            "completion_tokens": 99,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 323,
+            "completion_tokens": 120,
+            "executor_starts": 1,
+            "executor_seconds": 0.020122583955526352
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 323,
+            "completion_tokens": 104,
+            "executor_starts": 1,
+            "executor_seconds": 0.020952999591827393
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 482,
+            "completion_tokens": 159,
+            "executor_starts": 1,
+            "executor_seconds": 0.023383375257253647
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 482,
+            "completion_tokens": 104,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 532,
+            "completion_tokens": 512,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 532,
+            "completion_tokens": 477,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 379,
+            "completion_tokens": 258,
+            "executor_starts": 1,
+            "executor_seconds": 0.02221429068595171
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 379,
+            "completion_tokens": 128,
+            "executor_starts": 1,
+            "executor_seconds": 0.024398665875196457
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/966",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 193,
+        "completion_tokens": 24
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.024183915928006172
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.021123000420629978
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 245,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 245,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 252,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 252,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 436,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 436,
+            "completion_tokens": 24,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 486,
+            "completion_tokens": 138,
+            "executor_starts": 1,
+            "executor_seconds": 0.024116708897054195
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 486,
+            "completion_tokens": 349,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 408,
+            "completion_tokens": 204,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 408,
+            "completion_tokens": 205,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/652",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 257,
+        "completion_tokens": 42
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.038818374276161194
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.02223908342421055
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 327,
+            "completion_tokens": 42,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 327,
+            "completion_tokens": 42,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 334,
+            "completion_tokens": 60,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 334,
+            "completion_tokens": 53,
+            "executor_starts": 1,
+            "executor_seconds": 0.02359879110008478
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 600,
+            "completion_tokens": 56,
+            "executor_starts": 1,
+            "executor_seconds": 0.02213037572801113
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 600,
+            "completion_tokens": 42,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 650,
+            "completion_tokens": 505,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 650,
+            "completion_tokens": 512,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 554,
+            "completion_tokens": 91,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 554,
+            "completion_tokens": 134,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/651",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 173,
+        "completion_tokens": 30
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.024681707844138145
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.024144832976162434
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 231,
+            "completion_tokens": 30,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 231,
+            "completion_tokens": 30,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 238,
+            "completion_tokens": 141,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 238,
+            "completion_tokens": 314,
+            "executor_starts": 1,
+            "executor_seconds": 0.02275149989873171
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 397,
+            "completion_tokens": 31,
+            "executor_starts": 1,
+            "executor_seconds": 0.022942165844142437
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 397,
+            "completion_tokens": 30,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 415,
+            "completion_tokens": 30,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 415,
+            "completion_tokens": 30,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 363,
+            "completion_tokens": 55,
+            "executor_starts": 1,
+            "executor_seconds": 0.021185082383453846
+          },
+          {
+            "replicate": 1,
+            "grade": 0,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 363,
+            "completion_tokens": 51,
+            "executor_starts": 1,
+            "executor_seconds": 0.022601707838475704
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/499",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 142,
+        "completion_tokens": 12
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.023931958712637424
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.02333520818501711
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 182,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 182,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 189,
+            "completion_tokens": 88,
+            "executor_starts": 1,
+            "executor_seconds": 0.024223708547651768
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 189,
+            "completion_tokens": 57,
+            "executor_starts": 1,
+            "executor_seconds": 0.024102999828755856
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 334,
+            "completion_tokens": 12,
+            "executor_starts": 1,
+            "executor_seconds": 0.02213629148900509
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 334,
+            "completion_tokens": 17,
+            "executor_starts": 1,
+            "executor_seconds": 0.018825124949216843
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 352,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 352,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 318,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 318,
+            "completion_tokens": 12,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "root_id": "mbpp/974",
+      "family_id": "unresolved_development_family",
+      "initial_artifact_sha256": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+      "initial": {
+        "calls": 1,
+        "prompt_tokens": 195,
+        "completion_tokens": 64
+      },
+      "diagnostic_cost": {
+        "executor_starts": 1,
+        "executor_seconds": 0.04556733276695013
+      },
+      "arms": {
+        "STOP": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 0,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "executor_starts": 1,
+            "executor_seconds": 0.023817124776542187
+          }
+        ],
+        "N0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 287,
+            "completion_tokens": 64,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 287,
+            "completion_tokens": 64,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "S0": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 294,
+            "completion_tokens": 78,
+            "executor_starts": 1,
+            "executor_seconds": 0.018453458324074745
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 294,
+            "completion_tokens": 78,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          }
+        ],
+        "N1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 452,
+            "completion_tokens": 85,
+            "executor_starts": 1,
+            "executor_seconds": 0.021023541688919067
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 452,
+            "completion_tokens": 83,
+            "executor_starts": 1,
+            "executor_seconds": 0.02345212548971176
+          }
+        ],
+        "S1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 470,
+            "completion_tokens": 64,
+            "executor_starts": 0,
+            "executor_seconds": 0.0
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 470,
+            "completion_tokens": 79,
+            "executor_starts": 1,
+            "executor_seconds": 0.021915500052273273
+          }
+        ],
+        "R1": [
+          {
+            "replicate": 0,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 384,
+            "completion_tokens": 69,
+            "executor_starts": 1,
+            "executor_seconds": 0.02389412559568882
+          },
+          {
+            "replicate": 1,
+            "grade": 1,
+            "missing_reason": null,
+            "calls": 1,
+            "prompt_tokens": 384,
+            "completion_tokens": 70,
+            "executor_starts": 1,
+            "executor_seconds": 0.0214027501642704
+          }
+        ]
+      }
+    }
+  ],
+  "diagnostics": {
+    "mbpp/154": {
+      "cases": [
+        {
+          "call": "specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]], 0)",
+          "case_id": "public-154-1",
+          "expected": "[1, 4, 7]",
+          "reason": null,
+          "returned": "[1, 4, 7]",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+      "root_id": "mbpp/154",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/288": {
+      "cases": [
+        {
+          "call": "modular_inverse([1, 6, 4, 5], 4, 7)",
+          "case_id": "public-288-1",
+          "expected": "2",
+          "reason": null,
+          "returned": "0",
+          "status": "wrong_value",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+      "root_id": "mbpp/288",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/499": {
+      "cases": [
+        {
+          "call": "diameter_circle(10)",
+          "case_id": "public-499-1",
+          "expected": "20",
+          "reason": null,
+          "returned": "20",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+      "root_id": "mbpp/499",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/651": {
+      "cases": [
+        {
+          "call": "check_subset((10, 4, 5, 6), (5, 10))",
+          "case_id": "public-651-1",
+          "expected": "True",
+          "reason": null,
+          "returned": "True",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+      "root_id": "mbpp/651",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/652": {
+      "cases": [
+        {
+          "call": "matrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]])",
+          "case_id": "public-652-1",
+          "expected": "'[(4, 7, 10, 18, 0, 10), (5, 8, 13, 17, 4, 1)]'",
+          "reason": null,
+          "returned": "'[(4, 5, 7, 8), (10, 13, 18, 17), (0, 4, 10, 1)]'",
+          "status": "wrong_value",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
+      "root_id": "mbpp/652",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/816": {
+      "cases": [
+        {
+          "call": "clear_tuple((1, 5, 3, 6, 8))",
+          "case_id": "public-816-1",
+          "expected": "()",
+          "reason": null,
+          "returned": "()",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+      "root_id": "mbpp/816",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/825": {
+      "cases": [
+        {
+          "call": "access_elements([2, 3, 8, 4, 7, 9], [0, 3, 5])",
+          "case_id": "public-825-1",
+          "expected": "[2, 4, 9]",
+          "reason": null,
+          "returned": "[2, 4, 9]",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+      "root_id": "mbpp/825",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/842": {
+      "cases": [
+        {
+          "call": "get_odd_occurence([2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2], 13)",
+          "case_id": "public-842-1",
+          "expected": "5",
+          "reason": null,
+          "returned": "6",
+          "status": "wrong_value",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
+      "root_id": "mbpp/842",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/863": {
+      "cases": [
+        {
+          "call": "find_longest_conseq_subseq([1, 2, 2, 3], 4)",
+          "case_id": "public-863-1",
+          "expected": "3",
+          "reason": null,
+          "returned": "2",
+          "status": "wrong_value",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
+      "root_id": "mbpp/863",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/868": {
+      "cases": [
+        {
+          "call": "length_Of_Last_Word('python language')",
+          "case_id": "public-868-1",
+          "expected": "8",
+          "reason": null,
+          "returned": "8",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+      "root_id": "mbpp/868",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/895": {
+      "cases": [
+        {
+          "call": "max_sum_subseq([1, 2, 9, 4, 5, 0, 4, 11, 6])",
+          "case_id": "public-895-1",
+          "expected": "26",
+          "reason": null,
+          "returned": "26",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+      "root_id": "mbpp/895",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/918": {
+      "cases": [
+        {
+          "call": "coin_change([1, 2, 3], 3, 4)",
+          "case_id": "public-918-1",
+          "expected": "4",
+          "reason": null,
+          "returned": "4",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+      "root_id": "mbpp/918",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/966": {
+      "cases": [
+        {
+          "call": "remove_empty([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), 'd'])",
+          "case_id": "public-966-1",
+          "expected": "[('',), ('a', 'b'), ('a', 'b', 'c'), 'd']",
+          "reason": null,
+          "returned": "['d']",
+          "status": "wrong_value",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
+      "root_id": "mbpp/966",
+      "schema_version": "public-diagnostic-v2"
+    },
+    "mbpp/974": {
+      "cases": [
+        {
+          "call": "min_sum_path([[2], [3, 9], [1, 6, 7]])",
+          "case_id": "public-974-1",
+          "expected": "6",
+          "reason": null,
+          "returned": "6",
+          "status": "pass",
+          "value_kind": "literal"
+        }
+      ],
+      "initial_artifact_sha256": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+      "root_id": "mbpp/974",
+      "schema_version": "public-diagnostic-v2"
+    }
+  },
+  "missing_grades": {},
+  "sources": {
+    "grades_sha256": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+    "phase_b_manifest_sha256": "e7904772293ded59f514790ceb90e99c8cd4ed1c00ac6c07250517479e7ee14c",
+    "diagnostics_sha256": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "view_roots_sha256": "507e4f53ad0631fbfa51a9cd0b0901660f8d4abfb22c11bba626c8aea75b46c9",
+    "diagnostic_schema": "public-diagnostic-v2",
+    "committed_release_manifest_sha256": "c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea"
+  }
+}

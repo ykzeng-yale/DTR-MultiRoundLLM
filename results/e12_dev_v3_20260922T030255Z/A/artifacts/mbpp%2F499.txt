@@ -1,0 +1,2 @@
+def diameter_circle(r):
+    return r * 2
