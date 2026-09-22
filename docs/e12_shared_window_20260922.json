@@ -1,0 +1,16 @@
+{
+  "request": "MRL-16 / DTR-REQ-004",
+  "recorded_utc": "2026-09-22T04:23:21Z",
+  "status": "reservation accepted; worker receipt and execution not yet evidenced",
+  "start_utc": "2026-09-22T04:35:00Z",
+  "hard_end_utc": "2026-09-22T05:45:00Z",
+  "phase_a_latest_start_utc": "2026-09-22T04:45:00Z",
+  "offer": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5771167234",
+  "acceptance": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5771177672",
+  "iclr_deferral": "https://github.com/ykzeng-yale/DTR-AgentEvals/issues/4#issuecomment-5771078470",
+  "quiet_requirement": "No competing accelerator workloads or CPU/memory/IO-heavy conversion, quantization or builds; light source/status work allowed. Report a nonquiescent prior job before start; never signal others' processes.",
+  "authority": "Existing user authorization and MRL-16 bounded restart release; this is a cooperative reservation, not a new owner-chat reply or evidence of a running server.",
+  "next_worker_action": "Acknowledge, pass live conditions, freeze real ownership/PID record before A; start by04:45 or report blocked/release; publish full/partial run and explicit release by05:45. No new lead review required.",
+  "actual_server_pid": null,
+  "actual_execution_start_utc": null
+}

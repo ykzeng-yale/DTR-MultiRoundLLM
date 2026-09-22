@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-22T04:18:52Z",
+  "checkpoint_utc": "2026-09-22T04:23:21Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -86,11 +86,12 @@
     "mrl15_status": "delivered02:18:35Z; implementation/instrument accepted, frame/design corrections incorporated",
     "mrl16_status": "Prior feedback acknowledged85bc81b; cafa02f requests own-server receiver amendment. Lead conditionally permits one bounded restart/refreeze, preserving shared-hardware window and live guards; latest amendment acknowledgement pending.",
     "mrl16_publication_received": true,
-    "mrl16_execution_state": "Instrument validation accepted; zero E12receivercalls reported; oldserverabsent perworker; freshrestart/window/snapshot conditions pending.",
+    "mrl16_execution_state": "42 instrument starts accepted; old receiver absent per worker; concrete restart reservation accepted, no E12 receiver calls evidenced.",
     "mrl16_independent_validation_state": "accepted within finite instrument/source scope",
     "mrl16_latest_feedback_acknowledged": false,
     "mrl17_status": "Lead accepted reproduced static counts and repaired descriptors/interpretation; bounded optional post-E12 exploratory supplement permitted, acknowledgement pending.",
     "last_reviewed_operational_proposal_revision": "cafa02f27a98c8c04fd43eadae8335619ac8521b",
-    "operational_review_record": "docs/e12_receiver_restart_amendment_20260922.md"
+    "operational_review_record": "docs/e12_receiver_restart_amendment_20260922.md",
+    "resource_reservation": "Accepted04:35\u201305:45UTC via issue#3 comments5771167234/5771177672; workerreceipt/liveguards/freeze pending, no execution evidenced."
   }
 }
