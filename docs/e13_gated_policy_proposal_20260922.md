@@ -82,6 +82,10 @@ answer without the old one in context?**
   - it is not a test of the rule (these roots selected it);
   - it gives no population interval (one unresolved family, 5 roots);
   - its τ² is still from 5 roots.
+- **Prior evidence that FRESH is a serious comparator:** the corrected
+  [G0e recheck](experiment_recheck_20260920.md) still finds resampling "a strong comparator, especially for the
+  3B receiver", on sibling logs with a different task contract and feedback. That recheck also withdraws the
+  original matched-cost kill claim, so this is a reason to measure FRESH, not a prediction of the E13a result.
 - **Why it comes first:**
   - If FRESH repairs as often as R1, the E12 signal is resampling, not diagnostic-directed prompting. E13b
     should then test the cheaper resample rule, or not run.
