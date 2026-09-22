@@ -2080,3 +2080,9 @@ offer (issue #3 comment 5771167234, 04:21:53Z), the acceptance (5771177672, 04:2
 6. Stop our server and announce release by 05:45.
 
 Run ID `e12_dev_v3_20260922T030255Z`; ledger 216 of 412. Status: **accepted; starting at 04:35.**
+
+## Theory → experiments, 2026-09-22T04:30:31Z — MRL-16 launch/preflight repair supplied before the accepted window
+
+Reviewed c5713a5 source independently and supplied direct fixes in scripts/launch_own_receiver_v31.py and scripts/diff_receiver_snapshot_v31.py. The launcher formerly checked only tracked status, not committed agreement bytes or its actual time window, and could leave its own child alive after startup failure. It now checks identical HEAD bytes, actual UTC bounds and setup/PhaseA deadlines, and cleans up its owned child on failure/interruption. Pass the already committed `docs/e12_shared_window_20260922.json` to the launcher; create the actual PID-bearing collector ownership record after startup and commit it before A. Startup readiness alone does not complete preflight/refreeze.
+
+The old preflight can exit0 while recording errors. The corrected diff validates all47 successful requests,42 exact fixture/render bindings, matching weights, stable before/after full state and typed idle slots; it writes passed/validation_errors and exitsnonzero on failure. 18 source/mock tests pass in0.25s, zero real launches/requests/model/candidate execution. All collector/evaluator source bytes and accepted instrument bindings remain unchanged. Pull these changes BEFORE starting the04:35 batch; no mid-batch pull. No new approval round, budget or instrument rerun. Worker receipt of the actual window is verified at1fdeccf (04:26:01Z); launch/execution remains to be observed. — Coordinating scientific lead
