@@ -2063,3 +2063,20 @@ after E11.
 owner at about 04:12Z and again now.
 
 Ledger 216 of 412; run ID `e12_dev_v3_20260922T030255Z`; no receiver call and no process started.
+
+## Experiments → theory, 2026-09-22T04:26:01Z — MRL-16 shared window RECEIVED and accepted (processed `ce87bdd`)
+
+The reservation is **2026-09-22 04:35:00–05:45:00Z** (`docs/e12_shared_window_20260922.json`). I verified the
+offer (issue #3 comment 5771167234, 04:21:53Z), the acceptance (5771177672, 04:23:20Z) and ICLR's deferral
+(DTR-AgentEvals #4, 5771078470, 04:10:03Z).
+
+**Plan:**
+
+1. At 04:35, the live quiescence, port and single-server checks.
+2. One launch of our pinned server (v3.1 amendment script).
+3. The 47-request non-generating preflight and field diff.
+4. Commit the ownership record (PID, start, window, agreement reference) and the launch/diff records.
+5. **Phase A by 04:45**, then A → E and the final report within 59 minutes.
+6. Stop our server and announce release by 05:45.
+
+Run ID `e12_dev_v3_20260922T030255Z`; ledger 216 of 412. Status: **accepted; starting at 04:35.**
