@@ -2015,3 +2015,47 @@ owner-granted window. Launching needs the owner's go-ahead too; I have asked.
 Responding to cafa02f in this run: `docs/e12_receiver_restart_amendment_20260922.md` permits one bounded own-server launch and v3.1 refreeze, then collection without another lead-review round if the named conditions pass. Independent theory/implementation reviews accept the scope. Same model/build/library hashes, launch shape, sampler/template/context/slot/request law and all scientific/instrument bytes; publish full old/new field diff. Do not dismiss media_marker as a nonce without source/render evidence or remove it from the fresh state hash. Keep dev_release_v3 paths and reconcile raw/canonical config and manifest hashes. Preserve the original42 validation records through unchanged instrument/runtime lineage; do not rerun them.
 
 Setup: one CPU source preparation≤10min, then one own-server launch attempt/ready/refreeze≤10min, ≤50 non-generating metadata/template checks using the existing42render fixtures, no installs/downloads/retries/model smoke calls,$0. Real shared-hardware agreement must cover setup plus≥60min fromA; owningPID or sibling silence is not an agreement. All MRL-16 collection limits remain (154calls,78,848reservedtokens,196remainingstarts,A–report≤59min); no mid-batch pull/restart. Return accepted/running/completed/blocked withUTC,processedSHA,freeze/runIDs,actualwindow andledger; update stale experiments_status header. The old-server absence is worker-observed, not independently observed bylead.55%,delta0; noE12outcomes. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T04:22:55Z — MRL-16 v3.1 amendment ACCEPTED; source prep done (0 executions); BLOCKED on the owner agreement. MRL-17 accepted.
+
+Processed `7566e9f`. **The E11 mechanism correction is accepted:** "402 failed by format, not wrong repair"
+is withdrawn (both S1 implementations return 1 for the public (3,0,1) case), unassessable is not "changed",
+and R1 rewriting is not an identified cause. **MRL-17 is accepted:** optional exploratory static
+descriptions only after the frozen E12 report.
+
+**v3.1 preparation** (source only, no launch, no request):
+
+- all **26/26 pinned build hashes verified** against `llama_server_manifest.json`;
+- model digest `626b4a66…` verified, at exactly the frozen `model_path`.
+
+**The recorded 3B launch shape**, from DTR-AgentEvals' own record `results/v2_agent/servers_20260922.json`,
+for the pre-02:33Z `-np 4` server:
+
+`-m <model_path> --alias qwen2.5-3b-instruct --port 8193 -ngl 99 -np 4 -c 32768 --jinja --host 127.0.0.1`
+
+Our E11 ran on that `-np 4` state; every live check matched `1b8bf998…`. The sibling's `-np 2` restart came
+after E11.
+
+**Source evidence for `media_marker`** (pinned llama.cpp `4fea119`, `tools/server/server-common.cpp`):
+
+- `get_media_marker()` returns a static random 32-character string generated once per process, **unless
+  `LLAMA_MEDIA_MARKER` is set**, and the source comments that this "allow[s] user to pin a reproducible
+  marker";
+- it is substituted only for image/audio/video content parts and the ASR transcription endpoint, never for
+  text-only chat;
+- **plan:** pin `LLAMA_MEDIA_MARKER` to the frozen marker, so the fresh state can match the frozen digest
+  exactly. If it matches, only launch records change; otherwise the diff is published and any unclassified
+  difference holds collection.
+
+**Scripts**, prepared and not run:
+
+- `scripts/launch_own_receiver_v31.py`: refuses without a *committed* owner agreement; hash checks; port and
+  single-server checks; readiness from the log, with no HTTP; records the PID, command, times and memory;
+  `--stop` terminates only the recorded PID;
+- `scripts/diff_receiver_snapshot_v31.py`: full field diff, canonical state versus `1b8bf998…`, and 42/42
+  render byte comparisons against the MRL-10 fixtures, reusing the 47-request preflight (≤ 50).
+
+**Blocked on the owner's real shared-hardware agreement** (setup + ≥ 60 minutes). It was requested from the
+owner at about 04:12Z and again now.
+
+Ledger 216 of 412; run ID `e12_dev_v3_20260922T030255Z`; no receiver call and no process started.
