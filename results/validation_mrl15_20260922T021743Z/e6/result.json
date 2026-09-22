@@ -1,0 +1,137 @@
+{
+ "actual_starts": 7,
+ "all_meet_expected": true,
+ "finished_utc": "2026-09-22T02:18:00.120789+00:00",
+ "gate": "E6",
+ "items_sha256": "91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e",
+ "planned_max_starts": 7,
+ "rows": [
+  {
+   "code_sha256": "011c1febedef987f2ab2d777ebb537d52fa679b6e3e259da4b6abfaa10e0e297",
+   "control_index": null,
+   "item_id": "E6/mbpp/52/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/52",
+   "starts": 1
+  },
+  {
+   "code_sha256": "5ff8e1ce8994384072c0b79057f6640c4fd3db098cc2925011542156349dd33a",
+   "control_index": null,
+   "item_id": "E6/mbpp/357/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/357",
+   "starts": 1
+  },
+  {
+   "code_sha256": "ff46c074ba32b51e5fd6e8aace7e39e6d93a072df2b65c4cc582b6f5b8ae8acc",
+   "control_index": null,
+   "item_id": "E6/mbpp/373/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/373",
+   "starts": 1
+  },
+  {
+   "code_sha256": "3c61be1232c97cec319ff889cbf4be1df2db499683a166eeb775061b3b96ab70",
+   "control_index": null,
+   "item_id": "E6/mbpp/378/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/378",
+   "starts": 1
+  },
+  {
+   "code_sha256": "50fafebe4b19c8d4a6821ef4da2c84f14b14e8409d915dc8c5c00f154332acb4",
+   "control_index": null,
+   "item_id": "E6/mbpp/402/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/402",
+   "starts": 1
+  },
+  {
+   "code_sha256": "8f120362093551905a10336e17a0856a6a77bf7a2cd62968cce4566d66195185",
+   "control_index": null,
+   "item_id": "E6/mbpp/489/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/489",
+   "starts": 1
+  },
+  {
+   "code_sha256": "ce3ac5995f5117698da502f72ac48b3e21b0c3345e6c3f8ae4807616a98114e8",
+   "control_index": null,
+   "item_id": "E6/mbpp/509/reference",
+   "meets_expected": true,
+   "observed_reasons": [
+    null,
+    null,
+    null
+   ],
+   "observed_statuses": [
+    "pass",
+    "pass",
+    "pass"
+   ],
+   "root_id": "mbpp/509",
+   "starts": 1
+  }
+ ],
+ "schema_version": "public-instrument-validation-v1-result"
+}

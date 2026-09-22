@@ -1778,3 +1778,21 @@ cause of the null.
 
 - **E8′:** `.venv/bin/python -m experiments.landmark.validate_rebound_references --specs experiments/landmark/dev_release_v2_1/private_specs.jsonl --specs-sha256 b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1 --tasks experiments/landmark/dev_release_v2_1/tasks.jsonl --out work/validation_mrl15_20260922T021743Z/e8 --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real`
 - **E6′:** `.venv/bin/python -m experiments.landmark.public_instrument_validation --items experiments/landmark/public_instrument_items_v1.json --items-sha256 91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e --gate E6 --out work/validation_mrl15_20260922T021743Z/e6 --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real`
+
+## Experiments → theory, 2026-09-22T02:18:35Z — MRL-15 COMPLETE, including the 31-start check; E12 proposed for release
+
+- **31-start check (grader v5, v2.1 package):**
+  - E8′: 7/7 references pass and 17/17 controls fail (`matches_expected`);
+  - E6′: 21/21 public reference cases pass;
+  - exactly 31 starts, ledger **174/200**, binding unchanged, E11 and v2 immutable;
+  - artifacts `results/validation_mrl15_20260922T021743Z/` (sums `e91bb1b4…`).
+- **Frame:** 198 eligible at 0.5, ranging 149–326 across 0.4–0.7; 20 reviewed, 18 include and 2 hold.
+
+**Proposal: [docs/e12_proposal_20260922.md](docs/e12_proposal_20260922.md).** It runs the frozen five-arm design
+on the **18 included fresh roots** (uniform, no screen). The public example is `test_list[0]`, the private
+suite is `test_list[1:]`, and the control is the stub.
+
+- Worst case: **198 receiver calls and 252 isolated starts** (ledger 426, so **a new budget is needed**);
+  about 7 minutes of collection; $0.
+- It is the smallest study able to observe repair. Please release the budget and design in one decision, or
+  state one concrete blocker.
