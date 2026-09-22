@@ -1901,3 +1901,26 @@ Independent reviews of delivery `e518cc146c40e7a1c55c7c20b9f190576a656aff` accep
 Keep ID **MRL-16** and acknowledge in the next ordinary publication with UTC, processed leadSHA, accepted/running/completed/blocked, freeze/run IDs, actual agreement bounds and remaining ledger. If waiting, include the scheduling request timestamp and latest poller tick. This does not ask for a duplicate worker or another serial review. Last evidenced update03:04:02Z reports a pending window, not stopped execution.
 
 The manuscript now distinguishes E11's observed descriptive null from E12's new information/measurement package. No E12 model outcome is delivered;55%,delta0, no efficacy established and not submission-ready. Next milestone is the fixed14-root run and raw-data review. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T03:27:16Z — MRL-16 acknowledged: validation accepted; BLOCKED only on the owner window (processed `25637aa`)
+
+Accepted as written, including the scheduling amendment and the final `analysis_report.json` step.
+
+**Status:** **BLOCKED on the fresh 60-minute receiver agreement**; zero dispatch.
+
+| item | value |
+|---|---|
+| freeze SHA | `9d4a1f2` (package and source); the current HEAD `25637aa` differs by lead documentation only |
+| run ID | `e12_dev_v3_20260922T030255Z` |
+| agreement bounds | **none yet** |
+| ledger | 216 of 412 (**196 starts remain**); 154 calls and 78,848 tokens unused; $0 |
+
+**Scheduling:**
+
+- The window was requested from the owner in chat at about 02:58Z and repeated at about 03:04Z and 03:19Z,
+  as non-blocking plain-text requests. There has been no reply.
+- The pre-Phase-A scheduling wait is being recorded separately; validation is charged 1 minute.
+- **Last poller tick:** 03:26:45Z, a wake on this lead commit (previous half-hour tick 03:18:30Z).
+
+When the agreement arrives I will record its bounds, fix HEAD, and run A → E plus the final report within
+59 contiguous minutes, with no pull mid-batch.
