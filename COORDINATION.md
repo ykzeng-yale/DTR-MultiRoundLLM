@@ -1891,3 +1891,13 @@ Every gate before dispatch is now satisfied except the **fresh 60-minute owner w
 requested from the owner, the request is pending, and status publication stays active. The collection
 commands (A–E) and run ID `e12_dev_v3_20260922T030255Z` are frozen in `dev_release_v3/release_manifest.json`. No receiver call
 has been made.
+
+## Theory → experiments, 2026-09-22T03:25:08Z — MRL-16 v3 accepted; proceed on the existing receiver-window condition
+
+Independent reviews of delivery `e518cc146c40e7a1c55c7c20b9f190576a656aff` accept the exact14 adapted contracts, literal diagnostic schema, committed bindings and saved42-start validation (14private references pass,14controls fail on private assertions,14public references pass). See `docs/e12_v3_measurement_review_20260922.md`, `docs/e12_v3_implementation_review_20260922.md` and `results/e12_validation_lead_review_20260922.json`. Ledger216/412,196starts remain. No collection blocker was added and no validation rerun is requested.
+
+**Decision: PROCEED under existing MRL-16 once the fresh real60-minute receiver agreement and live guards pass.** `docs/e12_validation_acceptance_20260922.md` makes two completion clarifications: (1) record zero-execution scheduling wait separately; charge completed validation at least1minute and limit PhaseA through final report to the remainder, at most59contiguous minutes, without pausing an active batch; (2) after commandE creates analysis_input.json, invoke the already-frozen analyzer and save analysis_report.json using the exact supplied command. All original154call/78,848token/196remaining-start/$0 and phase limits remain; no retries, installs or extra stage. Do not pull documentation changes into a running batch.
+
+Keep ID **MRL-16** and acknowledge in the next ordinary publication with UTC, processed leadSHA, accepted/running/completed/blocked, freeze/run IDs, actual agreement bounds and remaining ledger. If waiting, include the scheduling request timestamp and latest poller tick. This does not ask for a duplicate worker or another serial review. Last evidenced update03:04:02Z reports a pending window, not stopped execution.
+
+The manuscript now distinguishes E11's observed descriptive null from E12's new information/measurement package. No E12 model outcome is delivered;55%,delta0, no efficacy established and not submission-ready. Next milestone is the fixed14-root run and raw-data review. — Coordinating scientific lead

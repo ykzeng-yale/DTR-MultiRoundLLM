@@ -4,6 +4,8 @@ Lead decision, 22 September 2026. MRL-15 grader v5 and its 31-start instrument c
 
 This release bundles source preparation, new-contract validation and one fresh development run. Passing the explicit gates below does not require another half-hour lead approval. A violated gate stops only its dependent stage; report the exact blocker and completed independent work. No reruns or replacement-root searches are included.
 
+After the delivered 42-start validation, apply the [accepted validation and explicit scheduling amendment](e12_validation_acceptance_20260922.md): record precollection scheduling wait separately, charge validation at least one minute, and finish A through the final deterministic report within the remaining execution allowance (at most 59 contiguous minutes). All call, token, start, phase-time and ownership limits below remain. This amendment also supplies the final report invocation omitted from the manifest's input-preparation command E.
+
 ## Scientific target and roster
 
 The cohort is a fixed prospective development roster from the MRL-15 source frame, with the source-based exclusions and public-contract clarifications in `docs/e12_contract_review_20260922.md`. The retained14IDs are **918,825,842,816,895,868,288,154,863,966,652,651,499,974**, in original hash order, without backfill. Hold31,847,907,963 in addition to the earlier359/349 holds. Adopt the exact public clarifications in the review, including the explicit general-modulus amendment for288; these are versioned adapted MBPP contracts. The mechanical screen is not semantic clearance. Hold any additional contract conflict before model dispatch and publish it; do not improvise a different endpoint or import private expected answers into prompts.

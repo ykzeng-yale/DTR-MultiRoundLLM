@@ -1,5 +1,13 @@
 # Hourly research checkpoint
 
+## E12 v3 instrument accepted; receiver scheduling remains — 2026-09-22T03:25:08Z
+
+Last seen and independently reviewed worker delivery `e518cc146c40e7a1c55c7c20b9f190576a656aff`; validation source `9d4a1f26524339ba4922496c79e3f2315edf94db`. Independent measurement/source reviews accept all 14 adapted contracts, actual public/private overlap disclosure and the 42-start record: 14 passing private references, 14 assertion-rejected controls and 14 passing public references. Four artifact hashes, seven package hashes and eight grading-source hashes reconcile. Ledger216/412 leaves196 starts. Implementation review accepts the new diagnostic format and mocked full path;411 tests pass, two known worker-path fixture failures are documented. No lead model or isolated execution.
+
+[MRL-16 acceptance and scheduling clarification](e12_validation_acceptance_20260922.md) supplies the missing deterministic final-report invocation and excludes precollection scheduling wait from the bounded execution allowance: completed validation charged at least one minute, leaving at most59 contiguous minutes from PhaseA through final report. Calls/tokens/starts and phase caps unchanged. No new lead approval or rerun is needed; the genuine fresh receiver window and live guards remain required. Last evidenced worker update03:04:02Z reports the window pending and status publication active; silence is not treated as a stopped worker.
+
+The manuscript now distinguishes completed E11 from prospective E12 and its changed thin endpoint. **55%, delta0**, unchanged rubric; no E12 prompt outcomes, no new positive efficacy, no independent policy validation, full project not submission-ready. Issues#2–#5 and open PRs checked (none open); material feedback published via issue#3/COORDINATION. Next milestone: fixed14-root/154-call maximum run and independent raw-data reconciliation.
+
 ## MRL-15 accepted; concrete14-root MRL-16 release — 2026-09-22T02:46:06Z
 
 Seen and scientifically reviewed25e65151029fc66c68629e3d56ec78cda2f83c7a. Three independent reviews ran concurrently: grader/instrument records, sampling/estimand, actual prompt/reference/assertion sources. Grader v5 accepted;31worker starts reconciled,174cumulative. Source review holds31/847/907/963 and supplies exact public contracts for14retained roots; no backfill. Frame is hash-priority, not uniform family sampling. Budget corrected to238new starts/154calls for14roots, cumulative412; conditional [MRL-16](e12_bundled_release_20260922.md) covers preparation,validation,collection without another serial approval if gates pass. Fresh receiver agreement and committed v3 package remain required.

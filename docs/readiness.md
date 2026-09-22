@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## E12 instrument acceptance — 2026-09-22T03:25:08Z
+
+**55%, change 0 points.** The 14-root v3 package and 42 saved instrument-validation starts are independently accepted. This and the E11/E12 manuscript clarification fall within existing measurement/harness/manuscript credit. E12 receiver outcomes and independent policy validation remain absent; a fresh shared-receiver window is the current operational dependency. No efficacy or submission-readiness claim is added.
+
 ## Fresh development delivery — 2026-09-22T01:34:34Z
 
 **55%, +3 points.** Fresh-experiment component increases from0% to20% of15points; other credits unchanged. This records completed, independently reconciled development work, including a null primary contrast and an open secondary grading defect, not positive efficacy. Full project remains not submission-ready.

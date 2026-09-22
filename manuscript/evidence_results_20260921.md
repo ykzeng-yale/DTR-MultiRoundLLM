@@ -1,9 +1,9 @@
 # Diagnostic evidence and limits of adaptive-prompt claims
 
-**Editable results and discussion section, 21 September 2026.** This section
+**Editable results and discussion section, 21 September 2026; E11/E12 status updated 22 September.** This section
 updates the interpretation of the dated research PDFs and accompanies the
-[landmark methods](landmark_methods_20260920.md). It integrates the historical corpus diagnostics and the subsequently collected
-seven-task development pilot. No additional receiver data were generated for this
+[landmark methods](landmark_methods_20260920.md). It integrates the historical corpus diagnostics, the subsequently collected
+seven-task development studies and the prospective E12 contract. No additional receiver data were generated for this
 manuscript integration. A complete manuscript and independent prospective policy
 validation remain pending.
 
@@ -13,7 +13,7 @@ The historical real-model evidence includes a reused corpus of 4,488 episodes fr
 root coding tasks, with four initial draws for each of two receivers. Subsequent
 receiver routing was randomized within an existing repair/check process. The
 recorded endpoint is full benchmark-test success under that process's evaluator.
-It is distinct from the later proposed private grading contracts. Task families
+It is distinct from the later private grading contracts. Task families
 remain unresolved; root-level uncertainty below is exploratory and does not
 certify generalization to independent families or other task populations.
 
@@ -220,34 +220,34 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. The E11 development run subsequently completed under a committed receiver-use agreement. Its independently reconciled results are reported below; no further collection is released.
-The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
-both repair arms identical public diagnostic bytes, then compares neutral and
-diagnostic-directed instructions. Its examples are disclosed before the initial
+is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. The E11 development run subsequently completed under a committed receiver-use agreement. Its independently reconciled results are reported below. E12 has a separate conditional release; its changed contract and delivered instrument records are distinguished below from model outcomes.
+The [E11 design](../docs/public_diagnostic_design_20260921.md) gave
+both repair arms identical public diagnostic bytes and compared neutral and
+diagnostic-directed instructions. Its examples were disclosed before the initial
 answer, changing the initial-history law relative to the pilot. It is explicitly
 outcome-informed development; a later policy comparison requires untouched roots
 and a frozen comparator. Its context-removal arm retains diagnostic observations
 about the old answer and is not the task-only restart reported in the table above.
 
-The proposed diagnostic comparison also has a specific measurement limit. The public
+The E11 diagnostic comparison also has a specific measurement limit. The public
 examples exercise many of the same error classes as the private suites, although
 none repeats a private input literally. Their disclosure is part of the declared
 intervention environment for every arm. Thus, a favorable contrast would concern
 performance under that shared information; it would not demonstrate transfer to
 entirely unseen error classes. We retain the examples and private assertions rather
-than selecting a more favorable split after inspecting the pilot. Planned summaries
-will cross-tabulate initial public diagnostic status with the initial private
-verdict, retaining unavailable diagnostics explicitly. Final private outcomes will
-also be described by initial diagnostic status. These summaries do not validate a
+than selecting a more favorable split after inspecting the pilot. Its reporting
+contract compares initial public diagnostic status with the initial private
+verdict, retaining unavailable diagnostics explicitly, and describes final private
+outcomes by initial diagnostic status. These summaries do not validate a
 learned policy on new tasks, and no final-public-pass rate can be reported without
 actually checking the final artifacts on the public instrument. The
 [reviewed design decisions](../docs/lead_review_mrl05_08_20260921.md) specify these
-limits and the implementation requirements; this study has not yet been executed.
+limits and the implementation requirements; the completed E11 findings appear below.
 
 Receiver reproducibility is a separate limitation. The historical requests recorded
 only part of the decoding configuration. Later observations make particular server
 defaults plausible during collection, but cannot retroactively turn those defaults
-into contemporaneous measurements. The proposed successor records explicit request
+into contemporaneous measurements. The successor harness records explicit request
 settings and checks receiver state before, during and after collection. Those checks
 provide evidence at observed times; they do not prove absence of intervening changes,
 exclusive access to the service or deterministic outputs. The independently identified receiver-guard repairs are implemented and reviewed as
@@ -293,6 +293,31 @@ The [E11 review](../docs/e11_lead_judgment_20260922.md) reconciled 77 fresh rece
 Context removal reduced mean quality by 1/7 relative to N1, with two failures among 12 initially correct continuations. The S0 arm had ten passes, two failures and two missing grades. Static compilation and saved worker stderr identify those missing grades as candidate module-level return statements misclassified as environment failures. The immutable analysis retains them as missing; scoring them zero in a labeled sensitivity gives S0 10/14 and a −1/7 contrast against N0. The defect does not affect the primary comparison. No arm repaired the initially failing root across its ten continuation attempts.
 
 The run consumed 31,800 prompt and 4,859 completion tokens, seven public-check starts and 59 private-grading starts, at $0 paid service cost. Two continuations per arm and one unresolved task family provide no independent policy validation. The six-of-seven initial success ceiling limits repair opportunity and reflects our development design; it does not justify selecting a favorable replacement cohort after observing outcomes. A new cohort requires a prospective sampling and screening target, and any grader change requires versioned validation.
+
+## Prospective E12 contract and delivered instrument checks
+
+The [conditional E12 release](../docs/e12_bundled_release_20260922.md) specifies
+14 adapted MBPP roots retained after source-based contract review, without backfill.
+This is a finite, prospective hash-priority development roster. Selecting each
+provisional family's minimum member hash and ranking those minima was not uniform
+family sampling; neither representative-population nor independent-family inference
+is claimed. Each adapted public task discloses the first original assertion's
+example before the initial answer; its two remaining original assertions form the
+private suite. This thin suite-passing endpoint and information package differ
+from E11 and are not pooled with it or equated with complete program correctness.
+The primary contrast remains S1 minus N1 at the same initial prefix with identical
+public-diagnostic bytes and two independently seeded continuations per arm. All
+assigned roots, failures and unavailable outcomes remain in descriptive reporting.
+
+At worker delivery `e518cc1`, the [instrument records](../results/e12_dev_v3_20260922T030255Z_validation/ARTIFACT_SHA256SUMS.json)
+reported 42 checks: 14 private references passing, 14 wrong controls rejected by
+the private suffix, and 14 public references passing. [Independent review](../docs/e12_v3_measurement_review_20260922.md)
+subsequently reconciled all four artifact hashes and all 42 recorded starts, including
+assertion-level rejection of each control. The worker reported no E12 receiver
+calls; collection awaited a fresh receiver-use window under the committed release
+conditions. These delivered checks add no E12 prompt-effect estimate or learned-policy
+validation. E11's observed null remains intact, and the future five-point usefulness
+criterion is not an efficacy or stopping threshold for this descriptive study.
 
 ## Numerical traceability of this section
 
