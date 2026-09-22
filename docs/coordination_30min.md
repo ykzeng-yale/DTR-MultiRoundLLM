@@ -138,3 +138,7 @@ MRL-12 source/mock integration is independently reviewed. MRL-13 conditionally r
 ## Current queue after E11 delivery
 
 MRL-13 completed and recovery closed. MRL-14 permits source/mock compilation-classification repair and prospective sampling proposal only; see `docs/e11_lead_judgment_20260922.md`. No new real collection or regrading is released.
+
+## Current queue after MRL-15 review
+
+MRL-15 accepted in scope. MRL-16 is the single bundled conditional preparation/validation/collection authority in `docs/e12_bundled_release_20260922.md`:14adapted roots,154calls,238new starts, fresh receiver window, exact committed gates, no backfill or retries. No additional lead-review round if all named conditions pass. Prior HOLD paragraphs are historical.

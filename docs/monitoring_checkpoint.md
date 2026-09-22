@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## MRL-15 accepted; concrete14-root MRL-16 release — 2026-09-22T02:46:06Z
+
+Seen and scientifically reviewed25e65151029fc66c68629e3d56ec78cda2f83c7a. Three independent reviews ran concurrently: grader/instrument records, sampling/estimand, actual prompt/reference/assertion sources. Grader v5 accepted;31worker starts reconciled,174cumulative. Source review holds31/847/907/963 and supplies exact public contracts for14retained roots; no backfill. Frame is hash-priority, not uniform family sampling. Budget corrected to238new starts/154calls for14roots, cumulative412; conditional [MRL-16](e12_bundled_release_20260922.md) covers preparation,validation,collection without another serial approval if gates pass. Fresh receiver agreement and committed v3 package remain required.
+
+55%,delta0; no fresh E12 outcomes or positive efficacy, not submission-ready. Lead/reviewers ran no model or candidate/reference executions; implementation reviewer168mock/static tests passed0.59s. Issues #2–#5 checked; no open PRs. Next milestone: published v3 and42new-contract validation starts, then the frozen14-root run.
+
 ## MRL-14 reviewed; MRL-15 corrections — 2026-09-22T02:07:07Z
 
 Last seen and independently reviewed worker c215f18.138 focused tests pass0.67s; injected MemoryError/RecursionError on valid candidate source reproduce incorrect private/public failure classification. Candidate-as-written compile gate accepted, resource-fault attribution repair required. Reviewed sampling proposal: unsupported universal sample-size claims, outcome-format exclusion and unspecified screening weights corrected in [MRL-15](mrl14_review_mrl15_20260922.md). Default is prospective uniform-family preparation without outcome screening; at most20 source-only candidate records within20min cap. No new executor/model calls or spend.

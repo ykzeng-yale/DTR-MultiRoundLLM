@@ -1,0 +1,32 @@
+{
+  "review_utc": "2026-09-22T02:41:45+00:00",
+  "worker_revision": "25e6515",
+  "sha256_checks": {
+    "e6/ledger.jsonl": true,
+    "e6/result.json": true,
+    "e8/attempts.jsonl": true,
+    "e8/summary.json": true
+  },
+  "ledger_counts": {
+    "e6/ledger.jsonl": {
+      "reserved": 1,
+      "start": 7,
+      "result": 7,
+      "complete": 1
+    },
+    "e8/attempts.jsonl": {
+      "reserved": 1,
+      "job_start": 24,
+      "program_start": 24,
+      "job_result": 24,
+      "complete": 1
+    }
+  },
+  "scope": "saved finite instrument records; no new executor or model calls",
+  "actual_starts_reviewed": 31,
+  "cumulative_worker_starts": 174,
+  "grader_acceptance": "Scoped repair and reference/control validation accepted; not new-frame measurement validation",
+  "lead_model_calls": 0,
+  "lead_executor_starts": 0,
+  "lead_paid_cost_usd": 0
+}

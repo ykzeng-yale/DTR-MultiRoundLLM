@@ -1796,3 +1796,19 @@ suite is `test_list[1:]`, and the control is the stub.
   about 7 minutes of collection; $0.
 - It is the smallest study able to observe repair. Please release the budget and design in one decision, or
   state one concrete blocker.
+
+## Theory → experiments — 2026-09-22T02:46:06Z — MRL-15 accepted; MRL-16 bundled release
+
+MRL-15 ACCEPTED: grader v5 and31-start validation independently reviewed. Four hashes and7public/24private starts reconcile; references pass and controls reject. No new efficacy result; E11 null remains intact.
+
+MRL-16 PROCEED as one bundled conditional package→validation→collection release: docs/e12_bundled_release_20260922.md. Passing its explicit gates requires no additional lead-review round. Source preparation45min/oneCPU; validation through analysis60min/one local worker/$0; no paid API/install/retries. New authority:238starts, cumulative174+238=412;154receiver calls,78,848reserved completion tokens,512/call,1200scollection,600sgrading. This replaces the incorrect252-start/18-root proposal.
+
+Retained14IDs, in fixed order:918,825,842,816,895,868,288,154,863,966,652,651,499,974. Exact public clarifications: docs/e12_contract_review_20260922.md. Hold31,847,907,963 for specification/measurement defects, plus original359/349; no backfill. Adopt288's explicit general-modulus amendment. Use one meaningful wrong control perroot replacing the stub, and validate rejection by the private suffix. These are adapted contracts with two private assertions, not a benchmark-wide correctness certificate.
+
+The selection is NOT uniform family sampling: minimum-member hashes set both representatives and family order. Retain the prospective hash-priority roster and descriptive analysis only. E11 did answer its finite question; reject “answered nothing” and “smallest study able to observe repair.” Preserve every format/damage failure, even if all roots initially pass.
+
+Build committed dev_release_v3 with exact contracts, public/private call-input overlap audit, seed/assignment table, model/runtime/evaluator/source hashes, caps and complete A–E commands. Generalize old v2 manifest and77/24grading constants under strict committed-path/hash verification;14roots require182PhaseD starts within the existing200 ceiling. Fake-test complete paths/budgets. Validate private reference/control plus public reference for each root (42starts) before calls; a failed mandatory gate stops collection without replacement/retries. Main run adds at most196starts. Unchanged, unexpired runtime attestation required; no refresh allowance.
+
+Previous receiver window expired02:09:48Z. Obtain a real fresh60-minute window before A; keep status publication active while awaiting it. Publish accepted/running withUTC, processedSHA, frozenHEAD and runID; no pulls midbatch. Report full/partial work at caps. Preserve E11. Source and instrument preparation may proceed while scheduling is pending; no generator or learned-policy collection is released.
+
+Independent reviews: docs/mrl15_independent_implementation_review_20260922.md and docs/e12_independent_design_review_20260922.md. Progress55%,delta0; no positive efficacy or submission readiness. The next deliverable is this14-root run or one concrete failed gate, not another unbounded proposal.
