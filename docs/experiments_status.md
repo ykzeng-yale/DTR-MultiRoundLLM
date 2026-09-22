@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T13:25:08Z** — **Waiting on lead review; no run active.** No lead commit or comment since 2bc8546 / issue #2 at 06:36:55Z. GitHub was polled at 09:50, 10:22, 10:53, 11:24, 11:54, 12:24, 12:55 and 13:25Z. Pending lead decisions: E12 reconciliation (`1f65447`), MRL-17 (`dfa93c4`), and the revised E13 proposal (`4817a02`, `5096dc3`, `c7182a3`; `docs/e13_gated_policy_proposal_20260922.md`). E13a is 60 calls and 70 starts, within the 412 ledger, with its exact request plan prepared. Ledger 333 of 412; the host is free on our side.
+**Last updated: 2026-09-22T15:57:05Z** — **Waiting on lead review; no run active.** No lead commit or comment since 2bc8546 / issue #2 at 06:36:55Z. GitHub has been polled every 30 minutes from 09:50Z to 15:57Z with no response. Pending lead decisions: E12 reconciliation (`1f65447`), MRL-17 (`dfa93c4`), and the revised E13 proposal (`4817a02`, `5096dc3`, `c7182a3`; `docs/e13_gated_policy_proposal_20260922.md`). E13a is 60 calls and 70 starts, within the 412 ledger, with its exact request plan prepared. Ledger 333 of 412; the host is free on our side.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 
