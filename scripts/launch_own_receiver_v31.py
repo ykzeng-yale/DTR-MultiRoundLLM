@@ -51,6 +51,24 @@ def committed_agreement(path):
     return record, hashlib.sha256(data).hexdigest()
 
 
+def launcher_provenance(agreement):
+    """Bind the executing helper to committed bytes and an optional reservation pin."""
+    path = Path(__file__).resolve()
+    relative = path.relative_to(ROOT.resolve()).as_posix()
+    revision = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True)
+    if revision.returncode != 0:
+        raise SystemExit("Cannot resolve committed launcher revision")
+    head = revision.stdout.decode().strip()
+    saved = subprocess.run(["git", "show", f"{head}:{relative}"], cwd=ROOT, capture_output=True)
+    data = path.read_bytes()
+    if saved.returncode != 0 or saved.stdout != data:
+        raise SystemExit("Launcher source bytes are not committed identically in HEAD")
+    digest = hashlib.sha256(data).hexdigest()
+    if "launcher_sha256" in agreement and agreement["launcher_sha256"] != digest:
+        raise SystemExit("Launcher SHA256 differs from the reservation pin")
+    return {"source_head": head, "launcher_path": relative, "launcher_sha256": digest}
+
+
 def utc(value):
     try:
         result = datetime.fromisoformat(value.replace("Z", "+00:00"))
@@ -125,6 +143,7 @@ def main(argv=None):
     if a.ownership is None or not a.ownership.exists():
         raise SystemExit("Refusing to launch: no committed owner agreement (shared-hardware window) supplied")
     agreement, agreement_sha = committed_agreement(a.ownership)
+    provenance = launcher_provenance(agreement)
     setup_deadline = ready_deadline(agreement, datetime.now(timezone.utc))
     if a.out.exists():
         raise SystemExit("Refusing to overwrite an existing receiver record")
@@ -142,6 +161,8 @@ def main(argv=None):
     mem_before = {"swap": sh("sysctl -n vm.swapusage").strip(), "vm_stat": sh("vm_stat | head -6")}
     if datetime.now(timezone.utc) >= setup_deadline:
         raise SystemExit("Setup deadline passed before spawn; no server launched")
+    if launcher_provenance(agreement) != provenance:
+        raise SystemExit("Launcher revision changed during setup; refusing to spawn")
     log = open(a.out / "llama_server.log", "w")
     started = now(); t0 = time.monotonic()
     try:
@@ -149,7 +170,7 @@ def main(argv=None):
     except BaseException:
         log.close()
         raise
-    rec = {"schema": "mrl16-own-receiver-launch-v31", "pid": proc.pid, "command": cmd,
+    rec = {"schema": "mrl16-own-receiver-launch-v31", **provenance, "pid": proc.pid, "command": cmd,
            "env_pinned": {"LLAMA_MEDIA_MARKER": snap["media_marker"]}, "host": os.uname().nodename,
            "started_utc": started, "pinned_build_files_verified": nfiles, "model_sha256": MODEL_SHA,
            "memory_before": mem_before, "ownership_record": str(a.ownership), "ownership_sha256": agreement_sha,

@@ -1,0 +1,112 @@
+{
+  "recorded_utc": "2026-09-22T05:12:13.047713+00:00",
+  "evidence_class": "saved-record and source/mock review; no live host or receiver validation",
+  "last_seen_worker_commit": "544b1e6ad7ecf9f8642ad2c352dfa6073289058d",
+  "independently_reviewed_operational_delivery": "544b1e6ad7ecf9f8642ad2c352dfa6073289058d",
+  "last_independently_reproduced_scientific_delivery": "08d63b73777075fbd4e35469caad4221422c813f",
+  "launch_record": {
+    "path": "results/e12_receiver_v31_20260922T043512Z/launch.json",
+    "sha256": "3ca84f1f2dd4c48ffd21171bfc9f3b015850da1aaceed1fe7feddbd5a08d32f9",
+    "recorded_start_to_stop_seconds": 648.009445,
+    "reported_ready_wait_seconds": 600.2079093744978,
+    "reported_generation_requests": 0,
+    "reported_stop_is_not_independent_process_exit_evidence": true,
+    "raw_log_delivered": false
+  },
+  "frozen_package_and_source_checks": {
+    "experiments/landmark/dev_release_v3/tasks.jsonl": {
+      "expected": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+      "actual": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/private_specs.jsonl": {
+      "expected": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+      "actual": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/public_examples_v3.json": {
+      "expected": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+      "actual": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/config.json": {
+      "expected": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+      "actual": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/controls_rationale.json": {
+      "expected": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
+      "actual": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/exclusions.json": {
+      "expected": "d3a0d7ea86c1817d71b54d1a5198b5d20824e8fc6f923daf056fa7fd077dceec",
+      "actual": "d3a0d7ea86c1817d71b54d1a5198b5d20824e8fc6f923daf056fa7fd077dceec",
+      "passed": true
+    },
+    "experiments/landmark/dev_release_v3/overlap_audit.json": {
+      "expected": "aa8264383b61771afb35767730445aaf707b9d7101121bf150ffcd6a83f312b7",
+      "actual": "aa8264383b61771afb35767730445aaf707b9d7101121bf150ffcd6a83f312b7",
+      "passed": true
+    },
+    "experiments/landmark/study_adapter.py": {
+      "expected": "1e5734b883435790a0578e7b2dc7121ecdd47d6136be544b9060d0f8016abfbd",
+      "actual": "1e5734b883435790a0578e7b2dc7121ecdd47d6136be544b9060d0f8016abfbd",
+      "passed": true
+    },
+    "experiments/landmark/grade.py": {
+      "expected": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+      "actual": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+      "passed": true
+    },
+    "experiments/landmark/sandbox.py": {
+      "expected": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+      "actual": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+      "passed": true
+    },
+    "experiments/common/integrity.py": {
+      "expected": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+      "actual": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+      "passed": true
+    },
+    "experiments/landmark/collect.py": {
+      "expected": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+      "actual": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+      "passed": true
+    },
+    "experiments/landmark/diagnostic.py": {
+      "expected": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+      "actual": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+      "passed": true
+    },
+    "experiments/landmark/collect_diagnostic.py": {
+      "expected": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+      "actual": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+      "passed": true
+    },
+    "experiments/landmark/analyze.py": {
+      "expected": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+      "actual": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+      "passed": true
+    }
+  },
+  "reviewed_launcher_sha256": "03bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5",
+  "validation": {
+    "focused_parent_tests": 32,
+    "seconds": 0.32,
+    "command": ".venv/bin/python -m pytest -q tests/test_receiver_restart_v31.py tests/test_build_dev_release_v3.py",
+    "independent_reviewer_focused_tests": 24,
+    "independent_reviewer_seconds": 0.3,
+    "test_scope": "mock processes, reported log excerpt, and static package reconstruction"
+  },
+  "accounting": {
+    "new_model_calls": 0,
+    "new_prompt_tokens": 0,
+    "new_completion_tokens": 0,
+    "new_candidate_or_reference_executions": 0,
+    "new_server_launches": 0,
+    "paid_usd": 0,
+    "saved_record_check_seconds": 0.004466417245566845
+  },
+  "decision": "Repair operational provenance; same-target one additional attempt only in explicitly accepted new window; no E12 efficacy result"
+}

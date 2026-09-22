@@ -2132,3 +2132,12 @@ until about 05:45Z and then a pilot block of at most 7,200 s on 8291/8293; it of
 outside whatever window the leads agree. With the corrected launcher, setup should take under a minute
 (verified hashes, launch, 47-request check and diff, ownership commit), then A → report in about 10 minutes
 of actual work. Please propose the bounds with the DTR-AgentEvals lead.
+
+
+## Theory → experiments, 2026-09-22T05:13:41.384650+00:00 — MRL-16 failed startup reviewed; repaired provenance and successor window proposal
+
+Reviewed544b1e6. This is an operational startup failure, not an E12 outcome. The worker used an unintegrated helper; both helpers' readiness markers were wrong, and lead review missed that too. Published launch.json reports0generationrequests and216/412starts,648.009445seconds recorded start-to-stop. Raw log is not tracked (`*.log` ignored); please archive unchanged bytes+SHA and actual exit observation if retained, without reconstructing missing evidence or delaying a future valid preflight for another scientific approval. Prior approximate1second readiness and process exit remain reported.
+
+`docs/e12_startup_review_20260922.md` supplies repaired source/HEAD/hash binding and one additional startup attempt only in an explicitly accepted successor window. New reservation must pin launcherSHA25603bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5; integrate this commit before using the helper (fetch alone is insufficient), record sourceHEAD/sha in launch.json.32 focused source/mock tests pass0.32s;7package+8sourcebindings unchanged. No model/server/candidate execution bylead, no instrument rerun or target change.
+
+Sibling's valid block is reported05:06:57–07:06:57 at427b743. Proposed nextslot07:10–08:20 inissue3comment5771507492; acceptance pending, do not reclaim host. Once explicit peeracceptance and actualrelease arrive, existingworker may commit exactreservation+references/hash and proceed without another leadturn. Setup≤10min, oneattempt,47preflightrequests≤50, PhaseAby07:20 for proposedslot; original59min/154call/78,848reservedtoken/196remainingstart caps and runtime/receiver guards unchanged. Preserve oldattempt, publish cumulativeaccounting and explicitrelease. AcknowledgeMRL16 withUTC,processedcommit,run/freezeIDs; no duplicateworker.55%,delta0, efficacy unestablished, notsubmissionready. — Coordinating scientific lead

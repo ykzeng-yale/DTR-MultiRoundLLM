@@ -94,6 +94,7 @@ def test_failed_launch_reaps_mock_child_and_preserves_record(tmp_path, monkeypat
     agreement = tmp_path / "agreement.json"
     agreement.write_text(json.dumps(AGREEMENT))
     monkeypatch.setattr(launch, "committed_agreement", lambda p: (AGREEMENT, "frozen-hash"))
+    monkeypatch.setattr(launch, "launcher_provenance", lambda a: {"source_head": "mock-head", "launcher_sha256": "mock-sha"})
     monkeypatch.setattr(launch, "verify", lambda: ({"media_marker": "pinned"}, "/mock/model", 26))
     monkeypatch.setattr(launch, "sh", lambda cmd: "")
 
@@ -164,7 +165,7 @@ def test_incomplete_or_failed_preflight_fails_closed(saved_preflight, tmp_path, 
 
 
 def test_ready_marker_matches_the_pinned_build_log():
-    """The 04:35Z attempt waited out its allowance because the old markers never occur in 4fea119's log."""
+    """Worker-reported excerpt only: the original raw log was not delivered with 544b1e6."""
     import importlib.util
     spec = importlib.util.spec_from_file_location("launch_v31", ROOT / "scripts/launch_own_receiver_v31.py")
     mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
@@ -172,3 +173,76 @@ def test_ready_marker_matches_the_pinned_build_log():
                 "0.14.321145 I srv  llama_server: listening on http://127.0.0.1:8193\n")
     assert mod.READY_MARKER in observed
     assert "server is listening" not in observed and "all slots are idle" not in observed
+
+
+def test_successful_mock_start_records_provenance_and_leaves_child_alive(tmp_path, monkeypatch):
+    """Exercise main using a worker-reported excerpt, not an independently archived server log."""
+    agreement = tmp_path / "agreement.json"
+    agreement.write_text(json.dumps(AGREEMENT))
+    provenance = {"source_head": "a" * 40, "launcher_path": "scripts/launch_own_receiver_v31.py", "launcher_sha256": "b" * 64}
+    monkeypatch.setattr(launch, "committed_agreement", lambda p: (AGREEMENT, "agreement-hash"))
+    monkeypatch.setattr(launch, "launcher_provenance", lambda a: provenance)
+    monkeypatch.setattr(launch, "verify", lambda: ({"media_marker": "pinned"}, "/mock/model", 26))
+    monkeypatch.setattr(launch, "sh", lambda cmd: "")
+
+    class Clock(datetime):
+        @classmethod
+        def now(cls, tz=None):
+            return datetime(2026, 9, 22, 4, 35, tzinfo=timezone.utc)
+
+    monkeypatch.setattr(launch, "datetime", Clock)
+    ticks = iter([0, 0.1, 0.2])
+    monkeypatch.setattr(launch.time, "monotonic", lambda: next(ticks))
+    monkeypatch.setattr(launch.time, "sleep", lambda _: pytest.fail("Ready marker should finish without sleeping"))
+    child = FakeChild()
+
+    def fake_popen(*args, **kwargs):
+        kwargs["stdout"].write("0.14.321143 I srv llama_server: model loaded\n"
+                                "0.14.321145 I srv llama_server: listening on http://127.0.0.1:8193\n")
+        kwargs["stdout"].flush()
+        return child
+
+    monkeypatch.setattr(launch.subprocess, "Popen", fake_popen)
+    out = tmp_path / "run"
+    launch.main(["--ownership", str(agreement), "--out", str(out)])
+    record = json.loads((out / "launch.json").read_text())
+    assert all(record[k] == v for k, v in provenance.items())
+    assert record["ready_utc"] is not None and record["generation_requests"] == 0
+    assert record["ownership_sha256"] == "agreement-hash"
+    assert not child.terminated and child.poll() is None
+
+
+@pytest.mark.parametrize("defect", ["dirty", "missing_from_commit", "reservation_mismatch"])
+def test_source_mismatch_refuses_before_spawn(tmp_path, monkeypatch, defect):
+    source = tmp_path / "launcher.py"
+    source.write_bytes(b"# mock source\n")
+    agreement = tmp_path / "agreement.json"
+    agreement.write_text(json.dumps(AGREEMENT))
+    record = {**AGREEMENT, "launcher_sha256": "wrong"} if defect == "reservation_mismatch" else AGREEMENT
+    monkeypatch.setattr(launch, "ROOT", tmp_path)
+    monkeypatch.setattr(launch, "__file__", str(source))
+    monkeypatch.setattr(launch, "committed_agreement", lambda p: (record, "agreement-hash"))
+
+    def fake_run(args, **kwargs):
+        if args[1] == "rev-parse":
+            return SimpleNamespace(returncode=0, stdout=b"a" * 40 + b"\n")
+        return SimpleNamespace(returncode=1 if defect == "missing_from_commit" else 0,
+                               stdout=b"# different\n" if defect == "dirty" else source.read_bytes())
+
+    monkeypatch.setattr(launch.subprocess, "run", fake_run)
+    monkeypatch.setattr(launch.subprocess, "Popen", lambda *a, **k: pytest.fail("Must refuse before spawn"))
+    with pytest.raises(SystemExit, match="Launcher"):
+        launch.main(["--ownership", str(agreement), "--out", str(tmp_path / "run")])
+
+
+def test_source_provenance_accepts_exact_committed_reservation_pin(tmp_path, monkeypatch):
+    import hashlib
+    source = tmp_path / "launcher.py"
+    source.write_bytes(b"# exact source\n")
+    digest = hashlib.sha256(source.read_bytes()).hexdigest()
+    monkeypatch.setattr(launch, "ROOT", tmp_path)
+    monkeypatch.setattr(launch, "__file__", str(source))
+    monkeypatch.setattr(launch.subprocess, "run", lambda args, **k: SimpleNamespace(
+        returncode=0, stdout=b"a" * 40 + b"\n" if args[1] == "rev-parse" else source.read_bytes()))
+    assert launch.launcher_provenance({"launcher_sha256": digest}) == {
+        "source_head": "a" * 40, "launcher_path": "launcher.py", "launcher_sha256": digest}

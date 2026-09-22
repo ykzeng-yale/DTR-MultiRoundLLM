@@ -1,5 +1,13 @@
 # Hourly research checkpoint
 
+## Failed startup reviewed; successor window proposed — 2026-09-22T05:13:41.384650+00:00
+
+Last-seen and independently reviewed operational worker delivery544b1e6 (04:47:41UTC); last independently reproduced scientific delivery remains08d63b7, and E12 instrument acceptance remains e518cc1. Startup failed using an unintegrated helper and readiness strings also missed by the lead review. Published record reports zero generation requests, no preflight and216/412starts;648.009445seconds elapsed between recorded start/stop. Raw log and observed exit are not delivered, so exact readiness and termination remain reported. The sibling acknowledged release and now reports its05:06:57–07:06:57block. No worker silence or scheduler failure is inferred.
+
+[Review and conditional one-attempt recovery](e12_startup_review_20260922.md): exact committed helper/hash checks and positive mocked readiness path repaired;32 focused tests pass0.32s and15 frozen bindings match. Proposed07:10–08:20 successor window requires explicit peer acceptance and actual release; no collection or duplicate job is started by the lead. Earlier04:35reservation is exhausted. Material scheduling feedback posted during this check. Scientific target, caps and negative findings unchanged.
+
+Independent review clarified base-seed reuse in the portfolio; the active scientific memo points to subsequent threshold/instrument decisions without erasing history. Overall55%,change0pp; efficacy unestablished and full project notsubmission-ready. Actual lead-review modelcalls/tokens/candidateexecutions/spend zero. Next: accepted resource slot, successful frozen E12 run and independent raw-artifact reconciliation; independent policy validation and fitted-history/final-precision validation remain open.
+
 ## Whole-portfolio review and acknowledged shared-host window — 2026-09-22T04:28:45Z
 
 User-directed review covered issues#2–#5 and all completed evidence classes. No open PR. Last seen worker1fdeccf (04:26:01Z) acknowledges the04:35–05:45UTC shared-host reservation; priorc5713a5 accepts MRL16restart/MRL17feedback. Last independently reproduced result delivery remains08d63b7; operational source review advanced toc5713a5. No E12 receiver outcomes yet. The known scheduling conflict is resolved; actual liveconditions, launch/freeze and collection remain to be evidenced. StartAby04:45 orreportblocked/release; no duplicateworker ormidbatchpull.
