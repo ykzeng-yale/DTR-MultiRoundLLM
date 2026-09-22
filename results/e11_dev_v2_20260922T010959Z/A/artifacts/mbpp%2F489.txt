@@ -1,0 +1,2 @@
+def frequency_Of_Largest(n, arr):
+    return arr.count(max(arr))

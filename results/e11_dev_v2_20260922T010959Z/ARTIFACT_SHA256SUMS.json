@@ -1,0 +1,33 @@
+{
+ "run": "e11_dev_v2_20260922T010959Z",
+ "files": {
+  "A/artifacts/mbpp%2F357.txt": "d953de3999e98fd128f8f4f1f2e48cf51ccf9170e9367bb5b5bc0a06e7480d00",
+  "A/artifacts/mbpp%2F373.txt": "720de64950253ad6934681d7d0f4f209d7f814591ba081c324bebad65706bb52",
+  "A/artifacts/mbpp%2F378.txt": "f1ed9f713a358346bdc4cd7bf1e05a710c62d84efb1faeefebc49abd9c5eb65a",
+  "A/artifacts/mbpp%2F402.txt": "b1c89dd3833e287a14453eb6f2c73e3b59914c870d8a7362c0687a6027cd321f",
+  "A/artifacts/mbpp%2F489.txt": "20ed8b84ae9f084f77aea6f0687722034aa42805df77addbb108690b6aea51bf",
+  "A/artifacts/mbpp%2F509.txt": "9dbf52044f7b252a5cf6b6d7ba56707657dc2058c100277fc3db859870e83569",
+  "A/artifacts/mbpp%2F52.txt": "37fa2297cf51d459a81b0e7a4baf2bd48989ad3bad3f5bad003dc1b907ac941e",
+  "A/calls.jsonl": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+  "A/completion.json": "4e8aa7b7bd4511ed12fc04c3187eb4e24fae1aaa0291ae5912d794b9d61a406f",
+  "A/manifest.json": "c14808f4cd6c0b6661d855e66c291f9f3519a6691bcf154df8e2b782f096df46",
+  "A/roots.jsonl": "06232cfb8de58e197756089fa1c746b4ce75bf48fcb27e47efd9b7af64c803b3",
+  "B/attempts.jsonl": "eacafe6ae3ee8d8fe5e346c4120acbc08543b99cc832b507bff61e7444421cc4",
+  "B/diagnostics.json": "f23f4650ab0ebf5d72ceb24b2bd9ec59fd85404387121f862a9d5d8682f0869c",
+  "B/manifest.json": "38fb287e6f089d301e79f65efbd8c02691b0971a66f5342da154ff47637d06a5",
+  "C/calls.jsonl": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+  "C/completion.json": "0d02131a5d56ac7845015b68d44be9c19d4680d3e724975a89a5f785a24dc9e2",
+  "C/manifest.json": "e8fd39b6a69b7f1a56e65dc2e6a4554e07ed9eeaae264a2168c73f7d58ccb92c",
+  "C/roots.jsonl": "f7331cd713709c1c633edb5a45bbc87396fb0426f58f6bad0660b8d64d6c9ae6",
+  "D/grades.jsonl": "d5e96fb698d7d75ea8036e5c0e6ebafadab1989b24761f6c3aa5a2f0c6ea2e4e",
+  "D/grading_attempts.jsonl": "223a6cde632636ccdeeb96063a1496553b8060060de03225bf88d3b1f9ddba10",
+  "D/private_execution_records.json": "b0afcd9f9fd480ad7de6c3fbf55dea082ea9457c5bf8a1ba8b8b391a257689e8",
+  "D/summary.json": "32cb0fd744b5f1eb58ba796a35422f03030228eb1ffc700990b344c714a53c15",
+  "D/view/roots.jsonl": "909b178b5f68b6ef84ce3b38ebdd9f45373370d31185179da648533a7c3346b1",
+  "D/view/view_manifest.json": "24a28a376d2dd3bab553a8582ecfa8d5742dd60ce6ff592ebf4dd9d9657df50e",
+  "analysis.json": "bbf1ca69d1dfb535069875e515962d12bf05861ccfe89c8a4b35b817764e9770",
+  "analysis_input.json": "37d09972b23248df12ced219e716f96deddddcbce9081871c1d4c66eeaccd915",
+  "diagnostics_for_analysis.json": "405c2c94e51231980f4001b1283c3b3b1ff70403b99e332fda930efd2056c81a",
+  "roots_for_analysis.jsonl": "d35aa0a252a4a7043ac7538bc8d4d3f726e20d0cfa6bdc3aeb563fc6d9b57e2f"
+ }
+}

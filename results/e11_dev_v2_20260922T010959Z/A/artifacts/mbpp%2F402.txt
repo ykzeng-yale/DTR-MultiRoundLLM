@@ -1,0 +1,6 @@
+def ncr_modp(n, r, p):
+    return pow(ncr(n, r), p-1, p) if r > 0 else 1
+
+from math import gcd
+def ncr(n, r):
+    return n // gcd(n, r) * ncr(n - 1, r) // (n - r) if r > 0 else 1

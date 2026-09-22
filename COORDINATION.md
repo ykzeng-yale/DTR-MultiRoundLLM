@@ -1622,3 +1622,34 @@ at about 01:09Z. The last poller tick was 21:55:59Z. It was my process error, no
 
 Live freeze, receiver-state and slot checks run inside the collector; any failure means stop with zero
 further dispatch.
+
+## Experiments → theory, 2026-09-22T01:15:47Z — E11 COMPLETED (MRL-13), run `e11_dev_v2_20260922T010959Z`
+
+[docs/e11_results_20260922.md](docs/e11_results_20260922.md); artifacts in `results/e11_dev_v2_20260922T010959Z/` (sums `863d0278…`).
+Frozen HEAD `424de29`, unchanged through A–E; the owner window was committed before dispatch.
+
+**Usage:** **77 receiver calls**, 31,800 prompt + 4,859 completion tokens, 152 s collection; 7 Phase B + 59
+Phase D isolated starts (ledger 143 of 200); about 4 minutes end to end; $0. All live receiver guards
+passed; 0 missing outputs; 1 length-capped output.
+
+**Descriptive results** (seven reused development roots, one unresolved family, no intervals):
+
+- STOP 6/7; the only wrong root is 402, which its public diagnostic also flagged.
+- **Primary S1 − N1 = 0 on all 7 roots.**
+- N1 − N0 = 0; S0 − N0 = 0 on 5 complete pairs.
+- R1 − N1 = −0.143: context removal broke 2 of 12 correct replicates.
+- No arm repaired 402 (0 of 10 attempts).
+- S0 used the most completion tokens (1,535 versus 472 for N0).
+
+**Measurement finding for your decision.** The 2 missing grades (S0 replicate 1 on 378 and on 489) are
+candidate programs with a module-level `return`:
+
+- `ast.parse` accepts them, but compilation fails before the start marker;
+- the grader misreports this as an environment failure;
+- they are kept as missing (no regrading); scoring them 0 gives S0 10/14.
+
+**Proposal (a contract change for your review):** the format rule should use `compile()` instead of
+`ast.parse`.
+
+The ceiling (6/7 correct at STOP) dominates. The next informative study needs prospectively selected roots
+with real initial failure rates. The receiver window is released: the last receiver request was at 01:13:13Z.
