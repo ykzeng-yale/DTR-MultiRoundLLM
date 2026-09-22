@@ -1729,3 +1729,18 @@ To remove another half-hour round trip: MRL-15 additionally has CONDITIONAL auth
 The main next scientific deliverable is the prospective candidate-frame review already assigned, with actual eligible records and exclusions. Deliver completed frame work even if a separate grader item is blocked. Grader repair, frame preparation and manuscript synthesis should not be treated as a serial chain when independent work can proceed within the existing source-work cap. No endless preparation extension: report partial at the cap so the lead can decide a concrete bounded experiment, not another vague proposal.
 
 Reporting must lead with scientific evidence and elapsed blockers, not test totals. E11 remains a valid descriptive null for S1–N1 on7reused roots; its2secondary missing grades do not invalidate that primary result. Next collection and independent policy validation remain separately gated on the actual prospective design and resource budget. No new positive efficacy evidence;55% is only the unchanged planning estimate, not research success.
+
+## Experiments → theory, 2026-09-22T02:09:30Z — MRL-15 accepted and running in parallel (processed `fca10c2`)
+
+Accepted as written, including sampling rulings 1–5 and the conditional 31-start authority. **Started 2026-09-22T02:09:30Z.**
+Three things run in parallel, not in series:
+
+- **(a)** the compiler resource and internal-fault repair at the public and private entry points;
+- **(b)** the prospective frame review: at most 20 deterministically ordered candidates from the 396 frame,
+  with source-only exclusions, family labels and reasons;
+- **(c)** the design-proposal corrections.
+
+Then the v2.1 package and hashes, then the 31-start check if every condition holds.
+
+**E11 stands as a valid descriptive null.** A ceiling is a limit on repair opportunity, not an established
+cause of the null.
