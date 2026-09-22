@@ -220,7 +220,7 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. One bounded development run is conditionally released under MRL-13, but dispatch remains blocked until the actual receiver-use agreement and live gates are satisfied. No E11 outcome has been delivered.
+is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. The E11 development run subsequently completed under a committed receiver-use agreement. Its independently reconciled results are reported below; no further collection is released.
 The [exact subsequent proposal](../docs/public_diagnostic_design_20260921.md) gives
 both repair arms identical public diagnostic bytes, then compares neutral and
 diagnostic-directed instructions. Its examples are disclosed before the initial
@@ -285,6 +285,14 @@ development awaits that evidence; a compute-efficiency hypothesis requires a
 separately declared quality/cost contract and cannot silently replace this target.
 
 The [precollection interpretation guide](../docs/e11_precollection_interpretation_20260921.md) preserves the primary information-matched contrast and specifies how positive, negative, heterogeneous and incomplete development results will be reported without treating them as independent policy validation.
+
+## Subsequent public-diagnostic development run
+
+The [E11 review](../docs/e11_lead_judgment_20260922.md) reconciled 77 fresh receiver calls on the same seven inspected development roots. STOP passed on six of seven roots. The primary information-matched S1–N1 contrast was zero on every root; neither arm repaired the one initially failing root. Both S1 outputs on that root violated the single-code-block format. This is a negative descriptive finding for the frozen strategy and endpoint, not population equivalence or a refutation of history-conditional effects.
+
+Context removal reduced mean quality by 1/7 relative to N1, with two failures among 12 initially correct continuations. The S0 arm had ten passes, two failures and two missing grades. Static compilation and saved worker stderr identify those missing grades as candidate module-level return statements misclassified as environment failures. The immutable analysis retains them as missing; scoring them zero in a labeled sensitivity gives S0 10/14 and a −1/7 contrast against N0. The defect does not affect the primary comparison. No arm repaired the initially failing root across its ten continuation attempts.
+
+The run consumed 31,800 prompt and 4,859 completion tokens, seven public-check starts and 59 private-grading starts, at $0 paid service cost. Two continuations per arm and one unresolved task family provide no independent policy validation. The six-of-seven initial success ceiling limits repair opportunity and reflects our development design; it does not justify selecting a favorable replacement cohort after observing outcomes. A new cohort requires a prospective sampling and screening target, and any grader change requires versioned validation.
 
 ## Numerical traceability of this section
 

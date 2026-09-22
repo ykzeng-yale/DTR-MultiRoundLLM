@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Fresh development delivery — 2026-09-22T01:34:34Z
+
+**55%, +3 points.** Fresh-experiment component increases from0% to20% of15points; other credits unchanged. This records completed, independently reconciled development work, including a null primary contrast and an open secondary grading defect, not positive efficacy. Full project remains not submission-ready.
+
 ## Executed instrument validation — 2026-09-21T20:51:00Z
 
 **52%, +1 point.** Independently reconciled MRL-11 artifacts account for all 77 starts and the declared instrument gates pass. Implemented measurement/collection rises from 80% to 90% of its 10-point weight; all other credits and weights remain fixed. This completes the bounded instrument-validation step, while CLI integration, a real receiver-use agreement and frozen collection remain open. No prompt efficacy or independent policy validation is established; the full project is not submission-ready.
@@ -130,12 +134,12 @@ most half credit until independently checked. Lost validity can decrease credit.
 | Positioning and literature | 10% | 80% | 8 points | Primary-source correction audit exists; reconcile broader novelty/claim ledger and final bibliography. |
 | Theory and proofs | 20% | 80% | 16 points | Scoped longitudinal/landmark results, independent reviews and exact checks; integrate the remaining broad-draft claims and final assumption-to-result audit. |
 | Experiment and measurement design | 15% | 60% | 9 points | Exact arms, curation and versioned public/private proposals; no valid receiver/evaluator/family/assignment release freeze yet. |
-| Implemented measurement and collection | 10% | 90% | 9 points | Scoped executed instrument validation independently reconciled; grading/analysis CLI, receiver agreement and end-to-end collection remain open. |
+| Implemented measurement and collection | 10% | 90% | 9 points | Scoped executed instrument validation independently reconciled; CLI and first development execution checked; compilation-classification repair and prospective validation remain open. |
 | Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
-| Fresh supported-prompt experiment | 15% | 0% | 0 points | No validated fresh landmark prompt collection. Historical routing/reused-bank diagnostics earn no credit in this specifically fresh-data component. |
+| Fresh supported-prompt experiment | 15% | 20% | 3 points | Fresh seven-root development contrasts independently reconciled; primary tie retained. Broader prospective sampling, precision and validation remain open. |
 | Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
 | Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
-| **Total** | **100%** | | **52 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+| **Total** | **100%** | | **55 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
 
 The last five columns of evidence are judgments, not automatically generated
 scores. Keep these eight weights and component meanings fixed for subsequent

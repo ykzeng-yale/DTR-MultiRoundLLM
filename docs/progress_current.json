@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-21T23:30:04Z",
+  "checkpoint_utc": "2026-09-22T01:34:34Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -36,8 +36,8 @@
     {
       "name": "fresh_prompt_experiment",
       "weight_percent": 15,
-      "completion_fraction": 0,
-      "contribution_points": 0
+      "completion_fraction": 0.2,
+      "contribution_points": 3
     },
     {
       "name": "independent_policy_validation",
@@ -52,19 +52,19 @@
       "contribution_points": 4.0
     }
   ],
-  "overall_percent": 52,
+  "overall_percent": 55,
   "prior_check_reconstructed_percent": 52,
-  "prior_checked_head": "47531bb",
-  "baseline_note": "Same fixed rubric52%; interpretation/reporting integration earns no new milestone credit.",
-  "delta_percentage_points": 0,
+  "prior_checked_head": "c631e4b",
+  "baseline_note": "Unchanged rubric: fresh_prompt_experiment earns3points (20% of15) for independently reconciled fresh descriptive development contrasts; no efficacy credit implied.",
+  "delta_percentage_points": 3,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Recovery remains unanswered at23:29Z review; no new worker artifacts or issue replies. Exact external worker task/session link requested from owner.",
+  "latest_evidence": "E11 primary contrast zero on7roots; R1\u2013N1\u22121/7. Two S0 compile failures misclassified as missing; original record preserved.77calls and66isolated starts reconciled.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "6b3f311db77f380914fee108bb9299066ad5fc1f",
-    "delivery_type": "source/mock grading-analysis integration; no new model results",
-    "scientific_review_revision": "3f56ec6",
-    "review_record": "docs/mrl12_review_mrl13_release_20260921.md",
+    "last_seen_worker_revision": "cdbe21d",
+    "delivery_type": "fresh interaction on reused development roots; independent stored-record audit",
+    "scientific_review_revision": "cdbe21d",
+    "review_record": "docs/e11_lead_judgment_20260922.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -74,13 +74,14 @@
     "acknowledgement_review_revision": "1b24e5633f96a395799ad4fac4a867eba290814e",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Latest worker reply21:25:47Z. No subsequent execution or scheduler state verified; no stopped/failure inference.",
+    "scheduler_status": "Worker reports blocking owner question suspended poller; resumed after agreement01:09Z and delivered01:15:47Z. Future reliability not inferred.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
-    "mrl13_status": "acknowledged21:25:47Z; blocked on receiver-owner window, no run ID or dispatch",
+    "mrl13_status": "completed and independently reconciled; secondary grader defect preserved",
     "mrl13_recovery_utc": "2026-09-21T22:58:52Z",
     "mrl13_consecutive_missing_updates": 2,
-    "mrl13_recovery_status": "unanswered at next actual review; owner informed that delivery cannot be verified; exact external worker session link requested"
+    "mrl13_recovery_status": "closed; real agreement and run delivered",
+    "mrl14_status": "source/mock repair and prospective sampling proposal authorized; acknowledgement pending"
   }
 }

@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## E11 delivered and reconciled — 2026-09-22T01:34:34Z
+
+Worker delivery cdbe21d, frozen run424de29, e11_dev_v2_20260922T010959Z. Last seen and scientific review cdbe21d.28hashes,77calls/grades,31,800prompt+4,859completion tokens,7public+59private starts reconciled. Primary S1–N1 zero on all7roots; context removal−1/7. Static compilation and actual saved stderr confirm two secondary S0 missing grades are candidate compilation failures; preserve original grades and label sensitivity. [Full judgment and MRL-14](e11_lead_judgment_20260922.md). Recovery closed: agreement and execution delivered. No lead model calls or candidate execution.
+
+55%,+3points under unchanged rubric: partial fresh-experiment credit only. No positive efficacy evidence; not submission-ready. MRL-14 source/mock repair20min/$0/no real execution; next collection requires prospective frame/screening design and versioned measurement validation.
+
 ## Recovery unanswered; routing detail requested — 2026-09-21T23:30:04Z
 
 Remote main47531bb unchanged; no new results or replies on issues #2–#5, no open PRs. Last seen worker6b3f311 and independently reviewed scientific delivery3f56ec6 remain distinct. The single recovery posted22:58:53Z has no reply at this next review. Owner explicitly informed that current delivery/execution cannot be verified and asked for the exact external worker task/session link. No duplicate GitHub escalation, job or unrelated-task message. Conditional MRL-13 release remains unchanged; receiver scheduling agreement remains unverified.

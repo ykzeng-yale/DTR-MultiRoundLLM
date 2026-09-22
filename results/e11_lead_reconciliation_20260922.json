@@ -1,0 +1,120 @@
+{
+  "files_checked": 28,
+  "all_checksums_match": true,
+  "calls": 77,
+  "prompt_tokens": 31800,
+  "completion_tokens": 4859,
+  "missing_outputs": 0,
+  "grades": 77,
+  "missing_grades": [
+    {
+      "root": "mbpp/378",
+      "arm": "S0",
+      "rep": 1,
+      "reason": "grader_environment_failed_before_payload"
+    },
+    {
+      "root": "mbpp/489",
+      "arm": "S0",
+      "rep": 1,
+      "reason": "grader_environment_failed_before_payload"
+    }
+  ],
+  "arm_counts": {
+    "STOP": {
+      "1": 6,
+      "0": 1
+    },
+    "N0": {
+      "1": 12,
+      "0": 2
+    },
+    "S0": {
+      "1": 10,
+      "None": 2,
+      "0": 2
+    },
+    "N1": {
+      "1": 12,
+      "0": 2
+    },
+    "S1": {
+      "1": 12,
+      "0": 2
+    },
+    "R1": {
+      "1": 10,
+      "0": 4
+    }
+  },
+  "primary_root_differences": {
+    "mbpp/357": 0.0,
+    "mbpp/373": 0.0,
+    "mbpp/378": 0.0,
+    "mbpp/402": 0.0,
+    "mbpp/489": 0.0,
+    "mbpp/509": 0.0,
+    "mbpp/52": 0.0
+  },
+  "context_removal_mean": -0.14285714285714285,
+  "ledgers": {
+    "B/attempts.jsonl": {
+      "reserved": 1,
+      "start": 7,
+      "result": 7,
+      "classified": 7,
+      "complete": 1
+    },
+    "D/grading_attempts.jsonl": {
+      "reserved": 1,
+      "start": 59,
+      "result": 59,
+      "complete": 1
+    }
+  },
+  "static_compile_failures": [
+    {
+      "root": "mbpp/378",
+      "arm": "S0",
+      "rep": 1,
+      "error": "'return' outside function",
+      "line": 17,
+      "ast_parse_accepts": true
+    },
+    {
+      "root": "mbpp/378",
+      "arm": "R1",
+      "rep": 0,
+      "error": "invalid syntax",
+      "line": 1,
+      "ast_parse_accepts": false
+    },
+    {
+      "root": "mbpp/402",
+      "arm": "S1",
+      "rep": 0,
+      "error": "ambiguous fences",
+      "ast_parse_accepts": false
+    },
+    {
+      "root": "mbpp/402",
+      "arm": "S1",
+      "rep": 1,
+      "error": "ambiguous fences",
+      "ast_parse_accepts": false
+    },
+    {
+      "root": "mbpp/489",
+      "arm": "S0",
+      "rep": 1,
+      "error": "'return' outside function",
+      "line": 15,
+      "ast_parse_accepts": true
+    }
+  ],
+  "receiver_status": {
+    "A": "receiver_guard_checks_passed",
+    "C": "receiver_guard_checks_passed"
+  },
+  "evidence_class": "saved-record arithmetic and static compilation only; no candidate execution or model calls"
+}
