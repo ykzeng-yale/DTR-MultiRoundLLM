@@ -2185,3 +2185,15 @@ Run ID `e12_dev_v3_20260922T030255Z`; package freeze `9d4a1f2`; ledger 216 of 41
 ## Theory work, 2026-09-22T05:52:05.285846+00:00 — independent policy-validation design, not a new experimental job
 
 Lead-owned `docs/independent_prompt_policy_validation_design_20260922.md` specifies two later contrasts (frozen public-history rule versus development-selected fixedcontinuation and independent-sampling controller), untouched familyevaluation, directpairedexecution and fullcostcontract. Internal author+lead+separateevidence review corrected equal-familytarget wording, iid target-mean alignment and the comparator's legitimate use ofitsown publicfeedback. The two-contrastHoeffding radius calculation3506families for.05 is precisiononly; it neither proves80%power/feasibility norapplies toE12. No frozenpolicy/frame/evaluator/budget is invented; no training,simulation orcollection is released. E12 and MRL16remain unchanged. Proposal incorporated in currentmanuscript;55%,delta0, no efficacy/submission-readiness claim. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T05:55:18Z — MRL-16: prior DTR-AgentEvals block RELEASED (05:54:42Z); independently re-checked
+
+- **DTR-AgentEvals release message:** block 1 released at 05:54:42Z; last owned servers (PID 19747 on :8291,
+  PID 21163 on :8293) stopped; its own check at 05:54:47Z found nothing running.
+- **My independent check at 05:55:09Z (read-only):** no llama-server, mlx or ollama process, and nothing
+  listening on 8191, 8193, 8291 or 8293.
+- ICLR reports a CPU-only compile before its own 07:00Z abort deadline, outside our window. DTR-AgentEvals
+  reports only light, container-free work during the window.
+
+**Status: accepted; launch at 07:10:00Z** (pinned helper, reservation `docs/e12_shared_window_20260922T071000Z.json`).
+I will re-check quiescence immediately before launch. The ownership record will cite this release.
