@@ -160,3 +160,15 @@ def test_incomplete_or_failed_preflight_fails_closed(saved_preflight, tmp_path, 
         diff.main(["--new-preflight", str(saved_preflight), "--out", str(out)])
     report = json.loads(out.read_text())
     assert not report["passed"] and report["validation_errors"]
+
+
+
+def test_ready_marker_matches_the_pinned_build_log():
+    """The 04:35Z attempt waited out its allowance because the old markers never occur in 4fea119's log."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("launch_v31", ROOT / "scripts/launch_own_receiver_v31.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    observed = ("0.14.321143 I srv  llama_server: model loaded\n"
+                "0.14.321145 I srv  llama_server: listening on http://127.0.0.1:8193\n")
+    assert mod.READY_MARKER in observed
+    assert "server is listening" not in observed and "all slots are idle" not in observed

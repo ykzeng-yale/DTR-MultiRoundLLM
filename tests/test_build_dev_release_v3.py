@@ -28,11 +28,26 @@ def _jsonl(text):
     return [json.loads(l) for l in text.splitlines() if l.strip()]
 
 
+PACKAGE_BUILD_COMMIT = "9d4a1f2"  # dev_release_v3 was built and committed here; later lead doc edits must not break it
+
+
 def test_deterministic_and_matches_committed_package(files):
+    """Rebuild is deterministic and equals the committed package. The one provenance field that hashes the
+    (lead-editable) release document is checked against that document's bytes at the package build commit,
+    not the current file, so later documentation amendments cannot make the frozen package look changed."""
+    import hashlib, subprocess
     assert b.build() == files
     assert set(files) == set(NAMES)
     for name in NAMES:
-        assert (PKG / name).read_text() == files[name], name
+        committed = (PKG / name).read_text()
+        if name != "exclusions.json":
+            assert committed == files[name], name
+            continue
+        c, f = json.loads(committed), json.loads(files[name])
+        blob = subprocess.check_output(["git", "show", f"{PACKAGE_BUILD_COMMIT}:docs/e12_bundled_release_20260922.md"], cwd=ROOT)
+        assert c["sources"]["bundled_release_sha256"] == hashlib.sha256(blob).hexdigest()
+        c["sources"].pop("bundled_release_sha256"); f["sources"].pop("bundled_release_sha256")
+        assert c == f, name
 
 
 def test_refuses_to_overwrite(tmp_path):

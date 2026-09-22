@@ -1,0 +1,44 @@
+{
+ "schema": "mrl16-own-receiver-launch-v31",
+ "pid": 8458,
+ "command": [
+  "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server",
+  "-m",
+  "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+  "--alias",
+  "qwen2.5-3b-instruct",
+  "--port",
+  "8193",
+  "-ngl",
+  "99",
+  "-np",
+  "4",
+  "-c",
+  "32768",
+  "--jinja",
+  "--host",
+  "127.0.0.1"
+ ],
+ "env_pinned": {
+  "LLAMA_MEDIA_MARKER": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>"
+ },
+ "host": "Yukangs-MacBook-Pro.local",
+ "started_utc": "2026-09-22T04:35:13.456780+00:00",
+ "pinned_build_files_verified": 26,
+ "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+ "memory_before": {
+  "swap": "total = 10240.00M  used = 9249.00M  free = 991.00M  (encrypted)",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4391.\nPages active:                                 480209.\nPages inactive:                               422984.\nPages speculative:                             56666.\nPages throttled:                                   0.\n"
+ },
+ "ownership_record": "docs/e12_shared_window_20260922.json",
+ "generation_requests": 0,
+ "ready_utc": null,
+ "ready_seconds": 600.2079093744978,
+ "exited": null,
+ "memory_ready": {
+  "swap": "total = 10240.00M  used = 9137.00M  free = 1103.00M  (encrypted)",
+  "vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                     4020.\nPages active:                                 476129.\nPages inactive:                               467883.\nPages speculative:                              7419.\nPages throttled:                                   0.\n"
+ },
+ "stopped_utc": "2026-09-22T04:46:01.466225+00:00",
+ "post_hoc_note": "Server was actually listening ~1 s after start (log: 'llama_server: model loaded' / 'listening on http://127.0.0.1:8193'); the launcher's readiness strings never occur in this build, so it waited 600 s and recorded ready_utc=null. No preflight, diff, refreeze or receiver request followed; stopped by the worker at 04:46:01Z (window released)."
+}

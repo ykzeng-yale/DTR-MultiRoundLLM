@@ -2090,3 +2090,45 @@ The old preflight can exit0 while recording errors. The corrected diff validates
 ## Theory review completed, 2026-09-22T04:31:57Z — complete experiment inventory and issue dispositions
 
 User requested a review across experiments and GitHub feedback. `docs/experiment_portfolio_review_20260922.md` maps every completed evidence class to its actual target, result and remaining milestone. Independent static audit verifies87 source hashes,224published receiver calls andonly7unique roots; E12's42instrumentstarts are separate. Independent E0 saved-record arithmetic reconciles both disjoint80seed sets and65/80coverage, including finitebias signs and interval calibration; no new simulations orfits. Artifacts and runtimes are recorded. E0README universal-validation/effective-pool/unlocated-MC claims are repaired, R1manuscript wording names the context/instruction package, and inherited ungraded metadata is annotated without changing archives. Issues2–5 get current-disposition headers; obsolete free-form/60root/T3/420call andPR instructions do not govern E12. Critic/generator stages remainheld, issue2adequate-history/finalprecision open.55%,delta0; no efficacy orsubmission-readiness claim. Documentation updates do not require a running worker to pull afterfreeze. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-22T04:47:41Z — MRL-16 v3.1 attempt BLOCKED and window RELEASED; zero receiver requests; new window requested
+
+**What happened**, with the full record in `results/e12_receiver_v31_20260922T043512Z/` (`launch.json` and the server log):
+
+| step | time |
+|---|---|
+| launch: our pinned server (PID 8458, :8193), after the port, single-server and quiescence checks passed | 04:35:13Z |
+| server listening (**about 1 s later**) | 04:35:14Z |
+| launcher reports "not ready", having waited its full 600 s cap | 04:45:13Z |
+| **Phase A deadline** (04:45:00Z) and the 10-minute setup allowance both missed | — |
+| rule applied: **report blocked and release; do not start late**; stopped only our PID | 04:46:01Z |
+| sibling DTR-AgentEvals notified; it resumed at 04:46:38Z | — |
+
+**Receiver usage:** 0 generation requests and 0 metadata/template requests. Only model load and warm-up
+ran; memory is recorded. No preflight, diff or refreeze was performed, the E12 ledger is untouched (216 of
+412), and nothing needs to be preserved beyond this record.
+
+**Root cause (my errors):**
+
+1. I launched with my **own** launcher, because I had fetched but not merged your 04:30Z repaired scripts
+   before starting.
+2. **Both** launcher versions waited for readiness strings (`server is listening` / `all slots are idle`)
+   that the pinned 4fea119 build never prints. Its log says `llama_server: model loaded` and then
+   `listening on http://127.0.0.1:8193`.
+
+**Fix, committed now:** your launcher (merged) keys readiness on the observed marker `listening on
+http://127.0.0.1:8193`. There is a regression test built from the real log lines. The launcher is not
+collector source, so the frozen v3 hashes are unchanged.
+
+I also stopped a leftover task of mine: a 15.5-hour runaway Lucas-oracle helper from 2026-09-21 12:51Z at
+100% CPU, found during the quiescence check.
+
+**Test fix:** `test_build_dev_release_v3` compared the release-document hash in `exclusions.json` with the
+*current* document, which you later amended. It now checks against that document at the package build
+commit `9d4a1f2`, and the package bytes are unchanged. Full suite: 860 pass.
+
+**Request:** a new shared-host window of setup plus ≥ 60 minutes. The sibling expects CPU-heavy conversion
+until about 05:45Z and then a pilot block of at most 7,200 s on 8291/8293; it offers to keep heavy work
+outside whatever window the leads agree. With the corrected launcher, setup should take under a minute
+(verified hashes, launch, 47-request check and diff, ownership commit), then A → report in about 10 minutes
+of actual work. Please propose the bounds with the DTR-AgentEvals lead.

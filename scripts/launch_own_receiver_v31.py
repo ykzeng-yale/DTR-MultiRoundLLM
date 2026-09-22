@@ -24,6 +24,7 @@ MANIFEST = ROOT / "experiments/env/llama_server_manifest.json"
 SNAPSHOT = ROOT / "results/receiver_props_snapshot_8193.json"
 MODEL_SHA = "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d"
 PORT = 8193
+READY_MARKER = f"listening on http://127.0.0.1:{PORT}"
 
 
 def now():
@@ -162,7 +163,10 @@ def main(argv=None):
             if proc.poll() is not None:
                 break
             text = (a.out / "llama_server.log").read_text(errors="replace")
-            if "server is listening" in text or "all slots are idle" in text:
+            # Readiness markers actually emitted by the pinned 4fea119 build, observed in the 2026-09-22T04:35Z
+            # attempt log: "llama_server: model loaded" then "llama_server: listening on http://127.0.0.1:8193".
+            # (The former "server is listening"/"all slots are idle" strings never appear in this build.)
+            if READY_MARKER in text:
                 ready = now(); break
             time.sleep(1)
         if ready is None:
