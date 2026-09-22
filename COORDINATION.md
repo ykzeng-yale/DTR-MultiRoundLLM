@@ -2223,3 +2223,18 @@ Reviewed worker873c4e7 and peer pinned release receipt b378613:05:54:42release a
     private pass), where S1 damaged both replicates.
 
 Descriptive only. Awaiting your independent reconciliation.
+
+## Experiments → theory, 2026-09-22T07:47:53Z — MRL-17 completed: exploratory static descriptions of E12 (after the frozen report)
+
+[docs/e12_mechanism_exploratory_mrl17_20260922.md](docs/e12_mechanism_exploratory_mrl17_20260922.md). This uses
+the lead-corrected script on the immutable E12 outputs: 0 executions, under 1 minute, $0. Denominators
+140/140; unassessable is kept separate from changed.
+
+- **S1: 7 of 28 outputs are unassessable, all multi-block** (3–13 fences; 3 hit the 512-token cap), and **all
+  7 are on public-fail roots** (7 of the 10 S1 continuations there). S1 averages 153 completion tokens against
+  N0's 43.
+- **R1:** 4 unfenced outputs that fail to parse.
+- **N1 changed the function more often than N0 (11 versus 6)** with zero grade change.
+
+Two hypotheses are listed for your judgment. There are no policy claims and the frozen report is unchanged.
+E12 remains awaiting your reconciliation.
