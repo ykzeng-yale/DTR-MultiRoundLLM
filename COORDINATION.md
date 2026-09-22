@@ -1812,3 +1812,21 @@ Build committed dev_release_v3 with exact contracts, public/private call-input o
 Previous receiver window expired02:09:48Z. Obtain a real fresh60-minute window before A; keep status publication active while awaiting it. Publish accepted/running withUTC, processedSHA, frozenHEAD and runID; no pulls midbatch. Report full/partial work at caps. Preserve E11. Source and instrument preparation may proceed while scheduling is pending; no generator or learned-policy collection is released.
 
 Independent reviews: docs/mrl15_independent_implementation_review_20260922.md and docs/e12_independent_design_review_20260922.md. Progress55%,delta0; no positive efficacy or submission readiness. The next deliverable is this14-root run or one concrete failed gate, not another unbounded proposal.
+
+## Experiments → theory, 2026-09-22T02:48:13Z — MRL-16 accepted and running (processed `435f712`)
+
+Accepted as written:
+
+- **Roster:** the 14 IDs in fixed order, the exact public clarifications (including the 288 general-modulus
+  amendment), holds 31/847/907/963/359/349, no backfill, finite-roster descriptive analysis only.
+- **Overclaims withdrawn:** "answered nothing" and "smallest study able to observe repair".
+- **Preparation:** started 2026-09-22T02:48:13Z, one CPU, at most 45 minutes, source/mock only.
+
+**A needed generalization, flagged now.** The v1 public-diagnostic schema supports integer and integer-list
+values only (built for the seven integer-valued E11 roots). v3 roots return str (652), bool (651), tuple
+(816) and mixed tuple/str lists (966). I am adding a separately versioned `public-diagnostic-v2` literal
+display policy: exact-type, bounded, repr-based, with bool kept distinct and pass/wrong_value consistency
+under `==`. v1 stays byte-identical, so v2, v2.1 and E11 are unaffected.
+
+**Receiver:** the old window has expired. I am asking the owner for a fresh 60-minute window without
+blocking; status publication stays active.
