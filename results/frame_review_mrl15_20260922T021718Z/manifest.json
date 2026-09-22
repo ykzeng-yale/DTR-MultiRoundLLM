@@ -1,0 +1,1110 @@
+{
+ "counts": {
+  "after_i_prior_seen": 384,
+  "after_ii_prior_seen_near_duplicate": 235,
+  "after_ii_within_frame_family": 198,
+  "n_multi_member_families": 26,
+  "start_frame": 396,
+  "threshold_sensitivity_reported_not_used": {
+   "0.4": {
+    "after_ii_prior_seen_near_duplicate": 179,
+    "after_ii_within_frame_family": 149
+   },
+   "0.6": {
+    "after_ii_prior_seen_near_duplicate": 291,
+    "after_ii_within_frame_family": 262
+   },
+   "0.7": {
+    "after_ii_prior_seen_near_duplicate": 345,
+    "after_ii_within_frame_family": 326
+   }
+  }
+ },
+ "decision_counts": {
+  "exclude": 0,
+  "hold": 2,
+  "include": 18
+ },
+ "eligible_ordered_ids": [
+  918,
+  825,
+  359,
+  842,
+  31,
+  847,
+  816,
+  895,
+  868,
+  288,
+  154,
+  907,
+  863,
+  966,
+  652,
+  349,
+  963,
+  651,
+  499,
+  974,
+  911,
+  211,
+  701,
+  960,
+  667,
+  344,
+  370,
+  484,
+  524,
+  814,
+  346,
+  187,
+  508,
+  194,
+  356,
+  366,
+  302,
+  670,
+  376,
+  650,
+  193,
+  540,
+  923,
+  890,
+  839,
+  697,
+  375,
+  243,
+  877,
+  539,
+  363,
+  318,
+  681,
+  570,
+  936,
+  345,
+  343,
+  945,
+  864,
+  878,
+  885,
+  675,
+  339,
+  873,
+  694,
+  543,
+  679,
+  551,
+  159,
+  176,
+  354,
+  561,
+  867,
+  696,
+  689,
+  149,
+  844,
+  659,
+  553,
+  714,
+  333,
+  169,
+  901,
+  158,
+  184,
+  174,
+  200,
+  685,
+  718,
+  883,
+  386,
+  711,
+  236,
+  340,
+  175,
+  190,
+  919,
+  552,
+  513,
+  838,
+  613,
+  219,
+  548,
+  662,
+  678,
+  819,
+  423,
+  506,
+  953,
+  526,
+  335,
+  136,
+  215,
+  575,
+  661,
+  37,
+  654,
+  315,
+  263,
+  710,
+  231,
+  857,
+  851,
+  955,
+  298,
+  666,
+  967,
+  355,
+  872,
+  950,
+  856,
+  827,
+  846,
+  547,
+  380,
+  828,
+  314,
+  107,
+  324,
+  207,
+  925,
+  536,
+  609,
+  469,
+  76,
+  112,
+  351,
+  826,
+  834,
+  533,
+  374,
+  916,
+  510,
+  874,
+  192,
+  522,
+  646,
+  703,
+  973,
+  700,
+  481,
+  289,
+  971,
+  46,
+  929,
+  368,
+  951,
+  889,
+  660,
+  523,
+  483,
+  811,
+  961,
+  833,
+  969,
+  321,
+  903,
+  110,
+  241,
+  687,
+  350,
+  515,
+  500,
+  656,
+  915,
+  134,
+  53,
+  621,
+  387,
+  480,
+  36,
+  908,
+  869,
+  177,
+  205,
+  698,
+  525,
+  921
+ ],
+ "excluded": {
+  "121": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/798",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "144": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/270",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "146": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/242",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "147": {
+   "reason": "provisional family PF-147; kept 974 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "150": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/576",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "153": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/430",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "155": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/235",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "156": {
+   "reason": "score 0.8 >= 0.5 vs prior-seen mbpp/785",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "179": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/20",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "183": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/564",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "185": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/430",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "188": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/72",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "189": {
+   "reason": "dev_release_v1c.prior_seen_root_ids",
+   "step": "i_prior_seen"
+  },
+  "191": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/336",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "195": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/793",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "196": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/772",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "197": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/261",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "199": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/388",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "201": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/281",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "202": {
+   "reason": "dev_release_v1c.prior_seen_root_ids",
+   "step": "i_prior_seen"
+  },
+  "203": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/558",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "204": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/109",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "206": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/470",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "21": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/103",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "213": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/261",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "216": {
+   "reason": "provisional family PF-216; kept 872 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "22": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/19",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "221": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/807",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "225": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/793",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "24": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/99",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "258": {
+   "reason": "provisional family PF-258; kept 697 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "29": {
+   "reason": "provisional family PF-29; kept 842 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "313": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/66",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "316": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/733",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "320": {
+   "reason": "score 0.7 >= 0.5 vs prior-seen mbpp/555",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "322": {
+   "reason": "provisional family PF-200; kept 200 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "325": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/767",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "327": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "328": {
+   "reason": "score 0.75 >= 0.5 vs prior-seen mbpp/743",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "329": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/66",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "33": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/99",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "331": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/224",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "332": {
+   "reason": "provisional family PF-332; kept 666 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "334": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/576",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "336": {
+   "reason": "dev_release_v1c.prior_seen_root_ids",
+   "step": "i_prior_seen"
+  },
+  "34": {
+   "reason": "dev_release_v1c.prior_seen_root_ids",
+   "step": "i_prior_seen"
+  },
+  "341": {
+   "reason": "provisional family PF-341; kept 945 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "347": {
+   "reason": "provisional family PF-76; kept 76 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "35": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/268",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "352": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/92",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "353": {
+   "reason": "provisional family PF-353; kept 551 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "357": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "358": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/282",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "360": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/268",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "361": {
+   "reason": "provisional family PF-361; kept 966 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "362": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/130",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "365": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/792",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "369": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/233",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "371": {
+   "reason": "dev_release_v1c.prior_seen_root_ids",
+   "step": "i_prior_seen"
+  },
+  "373": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "377": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/800",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "378": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "379": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/85",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "38": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/594",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "382": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/34",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "383": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/235",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "384": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/489",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "385": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/268",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "402": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "41": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/426",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "449": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "467": {
+   "reason": "provisional family PF-194; kept 194 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "48": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/235",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "487": {
+   "reason": "provisional family PF-487; kept 839 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "489": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "49": {
+   "reason": "provisional family PF-49; kept 154 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "490": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/63",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "492": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/280",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "494": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/785",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "498": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "5": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/93",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "50": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/393",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "502": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/257",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "503": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/472",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "504": {
+   "reason": "score 0.8571 >= 0.5 vs prior-seen mbpp/420",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "505": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/632",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "507": {
+   "reason": "provisional family PF-507; kept 570 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "509": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "51": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "511": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/453",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "514": {
+   "reason": "provisional family PF-205; kept 205 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "516": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/71",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "517": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/443",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "52": {
+   "reason": "E11/dev inspected root",
+   "step": "i_prior_seen"
+  },
+  "521": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "527": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/767",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "528": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/290",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "529": {
+   "reason": "score 0.75 >= 0.5 vs prior-seen mbpp/752",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "532": {
+   "reason": "provisional family PF-532; kept 885 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "535": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/574",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "537": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/602",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "538": {
+   "reason": "score 0.75 >= 0.5 vs prior-seen mbpp/132",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "54": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/428",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "544": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/788",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "546": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/11",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "549": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/770",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "550": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/793",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "571": {
+   "reason": "provisional family PF-149; kept 149 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "60": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/145",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "634": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/271",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "636": {
+   "reason": "provisional family PF-359; kept 359 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "642": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/400",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "649": {
+   "reason": "score 0.875 >= 0.5 vs prior-seen mbpp/170",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "655": {
+   "reason": "score 0.75 >= 0.5 vs prior-seen mbpp/271",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "658": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/130",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "664": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/509",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "665": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/632",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "672": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/227",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "673": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/439",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "677": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "680": {
+   "reason": "provisional family PF-670; kept 670 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "682": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/282",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "683": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/72",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "684": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/602",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "690": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/472",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "692": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/577",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "695": {
+   "reason": "score 0.8333 >= 0.5 vs prior-seen mbpp/809",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "699": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/595",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "705": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/290",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "706": {
+   "reason": "provisional family PF-650; kept 650 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "707": {
+   "reason": "provisional family PF-707; kept 903 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "708": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/118",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "713": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/744",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "715": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/132",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "716": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/17",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "729": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/282",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "761": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/746",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "768": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/406",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "78": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/224",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "81": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/259",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "813": {
+   "reason": "provisional family PF-813; kept 868 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "815": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/793",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "817": {
+   "reason": "provisional family PF-817; kept 883 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "818": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/461",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "820": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/336",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "824": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/412",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "831": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/564",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "835": {
+   "reason": "provisional family PF-190; kept 190 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "837": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/420",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "840": {
+   "reason": "provisional family PF-359; kept 359 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "841": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/296",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "848": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/432",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "849": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/295",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "850": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "852": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/412",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "855": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/406",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "858": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/792",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "865": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/8",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "866": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/336",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "870": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/133",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "871": {
+   "reason": "provisional family PF-532; kept 885 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "875": {
+   "reason": "score 0.5556 >= 0.5 vs prior-seen mbpp/63",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "876": {
+   "reason": "provisional family PF-51; kept 356 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "880": {
+   "reason": "provisional family PF-359; kept 359 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "881": {
+   "reason": "score 0.7143 >= 0.5 vs prior-seen mbpp/594",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "882": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/52",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "884": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/228",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "886": {
+   "reason": "score 0.625 >= 0.5 vs prior-seen mbpp/98",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "887": {
+   "reason": "score 0.6667 >= 0.5 vs prior-seen mbpp/600",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "888": {
+   "reason": "score 0.7778 >= 0.5 vs prior-seen mbpp/401",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "891": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/576",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "893": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/460",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "894": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/132",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "897": {
+   "reason": "score 0.625 >= 0.5 vs prior-seen mbpp/79",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "899": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/804",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "904": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/92",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "909": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/100",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "914": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/741",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "920": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/75",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "922": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/415",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "924": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/309",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "932": {
+   "reason": "provisional family PF-507; kept 570 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "934": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/59",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "935": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/248",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "939": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/64",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "941": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/446",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "942": {
+   "reason": "score 0.5714 >= 0.5 vs prior-seen mbpp/808",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "947": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/90",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "948": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/307",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "952": {
+   "reason": "score 0.8 >= 0.5 vs prior-seen mbpp/402",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "954": {
+   "reason": "score 0.7778 >= 0.5 vs prior-seen mbpp/452",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "958": {
+   "reason": "provisional family PF-958; kept 961 (smallest seeded hash)",
+   "step": "ii_within_frame_family"
+  },
+  "959": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/105",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "964": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/79",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "965": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/102",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "968": {
+   "reason": "score 0.6 >= 0.5 vs prior-seen mbpp/126",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "970": {
+   "reason": "score 1.0 >= 0.5 vs prior-seen mbpp/404",
+   "step": "ii_near_duplicate_of_prior_seen"
+  },
+  "972": {
+   "reason": "score 0.5 >= 0.5 vs prior-seen mbpp/2",
+   "step": "ii_near_duplicate_of_prior_seen"
+  }
+ },
+ "execution": {
+  "exec_eval_subprocess": false,
+  "model_calls": 0,
+  "static_ops": [
+   "ast.parse",
+   "compile"
+  ]
+ },
+ "preregistered": {
+  "family_rule": "union-find over within-frame pairs with score >= threshold; keep member with smallest seeded hash",
+  "n_review": 20,
+  "order_key": "sha256(f\"mrl15-frame-seed-20260922:{task_id}\")",
+  "outcome_information_used": "none",
+  "seed": "mrl15-frame-seed-20260922",
+  "similarity_rule": "score = max(Jaccard(text tokens), Jaccard(code identifier tokens)); tokens = lowercase [a-z0-9_]+ ; code tokens exclude Python keywords and builtins-free list below; pairs with score >= threshold are near-duplicates",
+  "similarity_threshold": 0.5
+ },
+ "prior_seen_mbpp_in_source": 441,
+ "records_sha256": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+ "reproduce": "python3 scripts/review_candidate_frame_mrl15.py --out-dir results/frame_review_mrl15_<UTC>",
+ "review_ids": [
+  918,
+  825,
+  359,
+  842,
+  31,
+  847,
+  816,
+  895,
+  868,
+  288,
+  154,
+  907,
+  863,
+  966,
+  652,
+  349,
+  963,
+  651,
+  499,
+  974
+ ],
+ "source": {
+  "e11_dev_roots": [
+   52,
+   357,
+   373,
+   378,
+   402,
+   489,
+   509
+  ],
+  "mbpp_path": "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/sources/mbpp_full.jsonl",
+  "mbpp_rows": 974,
+  "mbpp_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "prior_seen": {
+   "config_sha256": "9b22b94cfdabf48ae36e8bdf27d748adc71465ace2b56e0ae5ff30d1a61b062a",
+   "n_humaneval_not_mbpp": 164,
+   "n_mapped_mbpp": 434,
+   "n_prior_seen_ids": 598,
+   "note": "humaneval/* ids are a different benchmark and cannot map to MBPP task_ids; no HumanEval source is pinned, so they are not similarity-screened (limitation).",
+   "unmappable_other": []
+  },
+  "screen_dir": "results/pool_screen_20260921T131231Z",
+  "screen_verification": {
+   "all_marked_usable": true,
+   "per_candidate_usable": 396,
+   "summary": {
+    "candidates": 544,
+    "first_failing_gate": {
+     "G2_interface": 142,
+     "G3_setup": 6,
+     "USABLE": 396
+    },
+    "model_calls": 0,
+    "reasons": {
+     "G2_interface:not_single_function": 142,
+     "G3_setup:setup_or_challenge_tests_present": 6
+    },
+    "usable_upper_bound": 396,
+    "wall_seconds": 18.9
+   },
+   "usable_ids": 396,
+   "usable_ids_sha256": "b2bab50b0999659309f941174aefa1163f09c28c3a62261d5dc5c9aa5bfd0f55"
+  }
+ },
+ "status": "preparation only; not collection authorization; not a family-independence certificate",
+ "task": "MRL-15 prospective candidate-frame review (lead ruling 3)"
+}

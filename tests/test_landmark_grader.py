@@ -276,7 +276,7 @@ def test_valid_candidate_whose_program_does_not_start_is_an_environment_fault():
 
 def test_contract_records_the_bumped_grader_version():
     c=grade.contract([])
-    assert c["grader_version"]==grade.GRADER_VERSION=="landmark-grader-v3-candidate-compile-as-written"
+    assert c["grader_version"]==grade.GRADER_VERSION=="landmark-grader-v5-parse-and-compile-fault-attribution"
     assert "candidate_compile" in c
 
 
@@ -302,3 +302,82 @@ def test_private_and_public_compile_gates_agree_on_the_candidate_as_written(code
     if not compiles:
         assert rejection["outcome"]==0 and rejection["reason"]=="candidate_compile_error"
     assert (pc.static_code(code) is not None) is compiles
+
+
+# MRL-15: injected compiler faults at the private entry points (compile is monkeypatched; nothing executes).
+_VALID = "def f(x):\n    return x+1\n"
+_FAULTS = [MemoryError, RecursionError, TypeError, OverflowError, KeyError]
+
+
+def _raising_compile(exc_type):
+    def fake(*args, **kwargs):
+        raise exc_type("injected compiler fault")
+    return fake
+
+
+@pytest.mark.parametrize("exc_type", _FAULTS)
+def test_injected_compile_fault_is_unavailable_not_candidate_failure(fixture_data, monkeypatch, exc_type):
+    spec = fixture_data[1][0]
+    monkeypatch.setattr(grade, "compile", _raising_compile(exc_type), raising=False)
+    program, sentinel, rejection = grade.prepare_program(spec, _VALID)
+    assert program is None and rejection["outcome"] is None and rejection["reason"] == "grader_compile_resource_fault"
+    assert exc_type.__name__ in rejection["details"]
+    calls = []
+    result = grade.evaluate(spec, _VALID, lambda *a, **k: calls.append(1) or {})
+    assert calls == [] and result["outcome"] is None and result["sandbox_executed"] is False
+    assert result["reason"] == "grader_compile_resource_fault"
+    with pytest.raises(grade.CompileResourceFault):
+        grade.candidate_compile_error(_VALID)
+
+
+def test_injected_valueerror_without_null_byte_is_a_fault_but_null_byte_is_candidate(fixture_data, monkeypatch):
+    spec = fixture_data[1][0]
+    monkeypatch.setattr(grade, "compile", _raising_compile(ValueError), raising=False)
+    assert grade.prepare_program(spec, _VALID)[2]["reason"] == "grader_compile_resource_fault"
+    assert grade.candidate_compile_error("x = 1\x00\n") is not None
+
+
+@pytest.mark.parametrize("exc_type", [SyntaxError, IndentationError, TabError])
+def test_injected_syntaxerror_family_remains_candidate_compile_error(fixture_data, monkeypatch, exc_type):
+    spec = fixture_data[1][0]
+    monkeypatch.setattr(grade, "compile", _raising_compile(exc_type), raising=False)
+    result = grade.evaluate(spec, _VALID, lambda *a, **k: pytest.fail("runner must not be called"))
+    assert result["outcome"] == 0 and result["reason"] == "candidate_compile_error" and result["sandbox_executed"] is False
+
+
+# MRL-15 review: ast.parse (in hack_gate and prepare_program) runs before compile() and raises the same resource
+# faults; they are attributed as grader faults, never scored and never propagated. Static parsing only.
+_PARSE_FAULT_INPUTS = ["x = " + "-" * 200000 + "1\n", "x = " + "+".join(["1"] * 300000) + "\n"]
+
+
+def _raising_parse(exc_type):
+    def fake(*args, **kwargs):
+        raise exc_type("injected parser fault")
+    return fake
+
+
+@pytest.mark.parametrize("exc_type", _FAULTS)
+def test_injected_parse_fault_is_unavailable_not_candidate_failure(fixture_data, monkeypatch, exc_type):
+    spec = fixture_data[1][0]
+    monkeypatch.setattr(grade.ast, "parse", _raising_parse(exc_type))
+    calls = []
+    result = grade.evaluate(spec, _VALID, lambda *a, **k: calls.append(1) or {})
+    monkeypatch.undo()
+    assert calls == [] and result["outcome"] is None and result["sandbox_executed"] is False
+    assert result["reason"] == "grader_compile_resource_fault" and exc_type.__name__ in result["details"]
+
+
+def test_injected_parse_syntaxerror_remains_unparseable(fixture_data, monkeypatch):
+    spec = fixture_data[1][0]
+    monkeypatch.setattr(grade.ast, "parse", _raising_parse(SyntaxError))
+    result = grade.evaluate(spec, _VALID, lambda *a, **k: pytest.fail("runner must not be called"))
+    monkeypatch.undo()
+    assert result["outcome"] == 0 and result["reason"] == "unparseable_output"
+
+
+@pytest.mark.parametrize("code", _PARSE_FAULT_INPUTS)
+def test_overcomplex_source_is_grader_fault_not_crash(fixture_data, code):
+    spec = fixture_data[1][0]
+    result = grade.evaluate(spec, code, lambda *a, **k: pytest.fail("runner must not be called"))
+    assert result["outcome"] is None and result["reason"] == "grader_compile_resource_fault"
+    assert result["sandbox_executed"] is False

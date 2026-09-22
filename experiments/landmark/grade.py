@@ -31,7 +31,13 @@ STARTED = "__LANDMARK_GRADER_STARTED__"
 # `return`, which only fails at compilation). Recorded in contract() so the grading contract digest changes visibly.
 # v3 (MRL-14 review): the candidate is compiled exactly as written (no __future__ hoisting before the check), so
 # the private and public gates agree.
-GRADER_VERSION = "landmark-grader-v3-candidate-compile-as-written"
+# v4 (MRL-15): compiler-fault attribution. Only a genuine SyntaxError (incl. IndentationError/TabError) or a
+# ValueError for null bytes in the candidate text is the candidate's own compile error (outcome 0). Any other
+# exception from compile() (MemoryError, RecursionError, TypeError, OverflowError, ...) is a grader-side
+# resource/internal fault: outcome None, reason grader_compile_resource_fault, no sandbox start.
+# v5 (MRL-15 review): the same attribution covers ast.parse (in hack_gate and prepare_program), which runs before
+# compile() and raises MemoryError/RecursionError on over-complex source.
+GRADER_VERSION = "landmark-grader-v5-parse-and-compile-fault-attribution"
 
 
 def normalize_assertion(source):
@@ -84,7 +90,7 @@ def contract(specs):
         "integrity_sha256": file_sha(ROOT/"experiments/common/integrity.py"),
         "endpoint": "private-test quality under reliable frozen receiver law; unavailable outputs/grading and non-parse static integrity flags are unknown pending review, not deployment-reliability zeros",
         "extraction": "one python/untyped code fence or raw source; multiple fences rejected",
-        "candidate_compile": "candidate alone, exactly as written, must pass compile(exec, dont_inherit=True) before any sandbox start (same rule as the public gate); failure is outcome 0 candidate_compile_error",
+        "candidate_compile": "candidate alone, exactly as written, must pass compile(exec, dont_inherit=True) before any sandbox start (same rule as the public gate); failure is outcome 0 candidate_compile_error only for SyntaxError (incl. subclasses) or a null-byte ValueError; any other compile() exception, and any non-SyntaxError/non-null-byte exception from ast.parse (MemoryError, RecursionError, ...), is outcome None grader_compile_resource_fault (no sandbox start)",
         "determinism": "one frozen artifact grade reused within root; deterministic benchmark/code behavior assumed, not proved",
         "timeout_seconds": 2.0, "cpu_seconds": 1, "output_cap_bytes": 65536}
 
@@ -121,26 +127,56 @@ def extract_code(text):
     return text.strip()
 
 
-def candidate_compile_error(code, tree):
-    """Static compile-validity of the candidate alone; never executes it. Returns None or 'Class at line N: msg'."""
+class CompileResourceFault(RuntimeError):
+    """compile() raised something that is not the candidate's own compile error (MRL-15): a grader-side
+    resource limit or internal fault. Never a candidate failure; the grade is unavailable."""
+
+
+def candidate_compile_error(code, tree=None):
+    """Static compile-validity of the candidate alone; never executes it. Returns None or 'Class at line N: msg'.
+
+    Only a SyntaxError (incl. IndentationError/TabError) or a ValueError for null bytes in the candidate text
+    is the candidate's own error. Any other exception from compile() -- MemoryError, RecursionError, TypeError
+    (the input is always a str, so this is internal), OverflowError (an internal limit), ... -- raises
+    CompileResourceFault instead of being scored."""
     try:
-        # The candidate exactly as written (same rule as public_check.candidate_compiles): no future-hoisting
+        # The candidate exactly as written (same rule as public_check.candidate_compile_status): no future-hoisting
         # rewrite first, so a late __future__ import is the candidate's own compile error in both gates.
         compile(code, "<candidate>", "exec", dont_inherit=True)
-    except (SyntaxError, ValueError, RecursionError, MemoryError) as exc:
+    except SyntaxError as exc:
         return f"{type(exc).__name__} at line {getattr(exc, 'lineno', None)}: {getattr(exc, 'msg', None) or exc}"
+    except ValueError as exc:
+        if isinstance(code, str) and "\x00" in code:
+            return f"{type(exc).__name__} at line None: {exc}"
+        raise CompileResourceFault(f"{type(exc).__name__}: {exc}") from exc
+    except Exception as exc:  # MemoryError, RecursionError, TypeError, OverflowError, any other compiler fault
+        raise CompileResourceFault(f"{type(exc).__name__}: {exc}") from exc
     return None
 
 
 def prepare_program(spec, code):
-    flags = hack_gate(code, spec["entry_point"])
+    try:
+        # MRL-15 review: the parser (inside hack_gate and here) raises the same resource faults as compile()
+        # ("Parser stack overflowed" MemoryError, RecursionError during AST construction); attribute them the same way.
+        flags = hack_gate(code, spec["entry_point"])
+        tree = None if flags else ast.parse(code)
+    except SyntaxError:
+        raise  # the candidate's own parse error: evaluate() scores it unparseable_output
+    except ValueError as exc:
+        if isinstance(code, str) and "\x00" in code:
+            raise
+        return None, None, {"outcome": None, "reason": "grader_compile_resource_fault", "details": f"{type(exc).__name__}: {exc}"}
+    except Exception as exc:  # MemoryError, RecursionError, any other parser fault
+        return None, None, {"outcome": None, "reason": "grader_compile_resource_fault", "details": f"{type(exc).__name__}: {exc}"}
     if flags:
         parse_failure = flags == ["parse-error"]
         return None, None, {"outcome": 0 if parse_failure else None, "reason": "unparseable_output" if parse_failure else "integrity_review_required", "flags": flags}
-    tree = ast.parse(code)
     if not tree.body:
         return None, None, {"outcome": 0, "reason": "empty_produced_program"}
-    compile_error = candidate_compile_error(code, tree)
+    try:
+        compile_error = candidate_compile_error(code, tree)
+    except CompileResourceFault as exc:
+        return None, None, {"outcome": None, "reason": "grader_compile_resource_fault", "details": str(exc)}
     if compile_error is not None:
         return None, None, {"outcome": 0, "reason": "candidate_compile_error", "details": compile_error}
     canary = canary_block({}, hidden_asserts=spec["private_assertions"])

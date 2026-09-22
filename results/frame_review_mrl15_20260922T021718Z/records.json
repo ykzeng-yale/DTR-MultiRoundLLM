@@ -1,0 +1,656 @@
+[
+ {
+  "arity": 3,
+  "entry_point": "coin_change",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.2857,
+   "task_id": 187
+  },
+  "nearest_prior_seen": {
+   "score": 0.2,
+   "task_id": 253
+  },
+  "provisional_family": "PF-918",
+  "rank": 1,
+  "reference_code_sha256": "1384c35a7c4e7793c713e7369190b544e189904c6e600d30357fc226ddf92887",
+  "seed_hash": "00a27544c451213dd8d2c42af54b869b15ca7830ebde890c05d5b21bb560a784",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 918,
+  "test_list_sha256": "c2d00ddeb09f8ca8ad686a29cc0eb5da155270ce21b33b1488121efece9d34dd",
+  "text": "Write a function to count coin change.",
+  "text_sha256": "76893d2e42b98878514e009c026715273f1deab283254005354d6068976f6944"
+ },
+ {
+  "arity": 2,
+  "entry_point": "access_elements",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.25,
+   "task_id": 49
+  },
+  "nearest_prior_seen": {
+   "score": 0.25,
+   "task_id": 71
+  },
+  "provisional_family": "PF-825",
+  "rank": 2,
+  "reference_code_sha256": "8870bb06d16a186d3c58bcdde5c574e8eb945ee7f49ebb1960bc2a2937acbd96",
+  "seed_hash": "0299c0aa25bac163bc024bf61491ef970acaa437cd1cf4a86763ce25f8f95754",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 825,
+  "test_list_sha256": "3e7dfb387ad776aad764717565eae2575d421b3c890b1a9d8f888d6e86eb9e3f",
+  "text": "Write a python function to access multiple elements of specified index from a given list.",
+  "text_sha256": "0a12b8343d3b81558e7a0359545474dc549f9d7773f630b48951d2a933a95cb0"
+ },
+ {
+  "arity": 3,
+  "entry_point": "Check_Solution",
+  "family_size_in_frame": 4,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.8571,
+   "task_id": 636
+  },
+  "nearest_prior_seen": {
+   "score": 0.3333,
+   "task_id": 160
+  },
+  "provisional_family": "PF-359",
+  "rank": 3,
+  "reference_code_sha256": "49b3a97a00c8f5e531185cba4ae92e7c1f4cbfe22e8cdc18f4d42f5b20239d54",
+  "seed_hash": "05e8e847175e3887105d5103d15c608caed2e96ee9ee838624ae18391aed1b87",
+  "spec_review": {
+   "decision": "hold",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    },
+    {
+     "flag": "unstated_output_string",
+     "reason": "expected output is a literal message string not given in text"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "high"
+  },
+  "task_id": 359,
+  "test_list_sha256": "88d060fa426283dd7c1fa80225fe4ffee6c3f384338b77a50831424be950ff10",
+  "text": "Write a python function to check whether one root of the quadratic equation is twice of the other or not.",
+  "text_sha256": "0ed8d53a112788a573009c0f6dad36d9c1f1cfe6a46df5eee098d2a24c700189"
+ },
+ {
+  "arity": 2,
+  "entry_point": "get_odd_occurence",
+  "family_size_in_frame": 2,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.6,
+   "task_id": 29
+  },
+  "nearest_prior_seen": {
+   "score": 0.3333,
+   "task_id": 767
+  },
+  "provisional_family": "PF-29",
+  "rank": 4,
+  "reference_code_sha256": "547a5f75a13e7d85207a2c39930bce3ee8181ad1c66291e51e7aab1a2f928988",
+  "seed_hash": "0683b92858600c73c9df495e8a120412478b1ad918b6c1e042535ddc4a718d21",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 842,
+  "test_list_sha256": "323ed94cdea712319137afcee87e2ed2338f480a386a6acab9fce31007daa358",
+  "text": "Write a function to find the number which occurs for odd number of times in the given array.",
+  "text_sha256": "23a001d6b6a155403fb80c727a4e5928c147b722ac71850da692482c78680cff"
+ },
+ {
+  "arity": 2,
+  "entry_point": "func",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.2222,
+   "task_id": 911
+  },
+  "nearest_prior_seen": {
+   "score": 0.2941,
+   "task_id": 130
+  },
+  "provisional_family": "PF-31",
+  "rank": 5,
+  "reference_code_sha256": "a40094d49c89e90684e626cbbd2045fc4e7103231e2cac94b21f198b1bd40e36",
+  "seed_hash": "06f496bef73cd8f93271e8c52bdfb009f02d474869ba8eb441db11fd08069a0f",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 31,
+  "test_list_sha256": "e2c60b5a4b6245a4aa7e401a99586adb792c6e11c16b9cc4085cd150da31e044",
+  "text": "Write a function to find the top k integers that occur most frequently from given lists of sorted and distinct integers using heap queue algorithm.",
+  "text_sha256": "eda0bdba367b6afa32960338fb6562b3af3f240527ca0908cbdadb833dc8e275"
+ },
+ {
+  "arity": 1,
+  "entry_point": "lcopy",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.3333,
+   "task_id": 205
+  },
+  "nearest_prior_seen": {
+   "score": 0.4,
+   "task_id": 587
+  },
+  "provisional_family": "PF-847",
+  "rank": 6,
+  "reference_code_sha256": "1769adf8f2c854d45e88e9800cfd4633f5cd248ce86b177bdcca5cb16f38b89c",
+  "seed_hash": "0c3927a166a644c66b15af0be985e14b2b6656edeb6d3fc09385d7fe10dcaf4e",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 847,
+  "test_list_sha256": "4d623a4fce8cc1bad9a10731203e9ecd04fba004b3b77ed56722b872326b1dcc",
+  "text": "Write a python function to copy a list from a singleton tuple.",
+  "text_sha256": "6da4f4156fedfd69741b6b218756a0e71b941ae9a4842b4a71f47d79996a978e"
+ },
+ {
+  "arity": 1,
+  "entry_point": "clear_tuple",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.25,
+   "task_id": 376
+  },
+  "nearest_prior_seen": {
+   "score": 0.2222,
+   "task_id": 394
+  },
+  "provisional_family": "PF-816",
+  "rank": 7,
+  "reference_code_sha256": "24fc1029fd7957e59ea4be1e2eced2446a02d4290b82f08e650d95c3f7909f55",
+  "seed_hash": "0c8b71fc3165a7f5a6b5ae8a8f613ee361144372eef3762e517e08d838fc593f",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 816,
+  "test_list_sha256": "d5209da69aa309bbe13122504122d5f0c6cac5e97c6e6fdb557128ec741d78a0",
+  "text": "Write a function to clear the values of the given tuples.",
+  "text_sha256": "1240fc6492015e8cd24be860042a2cb1299a85eb1177448ce502d4bd5adb5d52"
+ },
+ {
+  "arity": 1,
+  "entry_point": "max_sum_subseq",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.3333,
+   "task_id": 524
+  },
+  "nearest_prior_seen": {
+   "score": 0.3333,
+   "task_id": 777
+  },
+  "provisional_family": "PF-895",
+  "rank": 8,
+  "reference_code_sha256": "5f801a3b6e2cffe122cc0a6dd79cadd3dabfe1bf39f101b5839c79fa8fcec259",
+  "seed_hash": "0d8ad02d5dd521386726316f297170f2197cf2752e2e32c820cbfe69ce9dce3c",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 895,
+  "test_list_sha256": "4ade8f091529460c809babeba9db17370a00b8a7f33c48373f075d5ce0e659de",
+  "text": "Write a function to find the maximum sum of subsequences of given array with no adjacent elements.",
+  "text_sha256": "2d510deb9d057bc48586907eb20ef92141891bbe41719a741f2b14d96acfbc7e"
+ },
+ {
+  "arity": 1,
+  "entry_point": "length_Of_Last_Word",
+  "family_size_in_frame": 2,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.5,
+   "task_id": 813
+  },
+  "nearest_prior_seen": {
+   "score": 0.4,
+   "task_id": 90
+  },
+  "provisional_family": "PF-813",
+  "rank": 9,
+  "reference_code_sha256": "a2fa7c0af78f76e16555dc0d844f0764e8bb9e5d19b698ddd9e9c3e3eccbe9c9",
+  "seed_hash": "0df0e85d93baefc09c5dec68f4c7260b032bd320d3502d83c6e8f612b0250a42",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 868,
+  "test_list_sha256": "8b1c86f9328ba5b91718ed16960ccab3e8006a1d1bae9700383931b5ff225322",
+  "text": "Write a python function to find the length of the last word in a given string.",
+  "text_sha256": "138d85932309f8532cfc7154643b42e6284f0878b1afc80531725bf2f40bc1f1"
+ },
+ {
+  "arity": 3,
+  "entry_point": "modular_inverse",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.25,
+   "task_id": 134
+  },
+  "nearest_prior_seen": {
+   "score": 0.2,
+   "task_id": 101
+  },
+  "provisional_family": "PF-288",
+  "rank": 10,
+  "reference_code_sha256": "e172ca1197bb516666d1a351c4642d9eaa5221a9e83d33600b0a288ed2ff5c06",
+  "seed_hash": "0e2dacda0f682fe08263ddda9be3e8e6251ff0d9c8b47b5f9077c1b46e16e022",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 288,
+  "test_list_sha256": "6cceb21027ebcf06d139c8365988fc31b362167b8f53c5d3764fc39eb2b8071d",
+  "text": "Write a function to count array elements having modular inverse under given prime number p equal to itself.",
+  "text_sha256": "cdf9f1338a004f7e5cdb941abcadb189489d47834e51e3a9d026b603d27ca9b4"
+ },
+ {
+  "arity": 2,
+  "entry_point": "specified_element",
+  "family_size_in_frame": 2,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 1.0,
+   "task_id": 49
+  },
+  "nearest_prior_seen": {
+   "score": 0.3333,
+   "task_id": 265
+  },
+  "provisional_family": "PF-49",
+  "rank": 11,
+  "reference_code_sha256": "a25b8d14bc1afb4b344fc2cf0dd7d41f3ab11abc35bfc336fac0f3b8a9be59dc",
+  "seed_hash": "0fea2a3e37cef7e206125fbe82cec28c38023d272855edcb6385c9c4f5f66c72",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 154,
+  "test_list_sha256": "ccf93a48f2eb16a146817edd96a9c595c55eaf3a8316204fb868fd3d68046f46",
+  "text": "Write a function to extract every specified element from a given two dimensional list.",
+  "text_sha256": "b7165fbb5a30f453e50403077ee7d6718a72763be52a82186c6e9ab1ca5ce2cf"
+ },
+ {
+  "arity": 1,
+  "entry_point": "lucky_num",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.4286,
+   "task_id": 901
+  },
+  "nearest_prior_seen": {
+   "score": 0.375,
+   "task_id": 422
+  },
+  "provisional_family": "PF-907",
+  "rank": 12,
+  "reference_code_sha256": "6a01fac1c4573642d9a3b4de7c56cc77c6bbc355223c08fdda67c37d1a16cedb",
+  "seed_hash": "1156c2a02eb31267057449e8adc87ef443c0972ff43bf68b43f0caa0a7c06ba5",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 907,
+  "test_list_sha256": "df2ed9c0dad8a51eeaa97c9b3080c8ceccb0fb205fa10d1ad5484f2e8c5f4d64",
+  "text": "Write a function to print the first n lucky numbers.",
+  "text_sha256": "26d3a4da317830fa072a1c6f08ed63fddcc5195e204c999ca579e5cc7627b50a"
+ },
+ {
+  "arity": 2,
+  "entry_point": "find_longest_conseq_subseq",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.3333,
+   "task_id": 540
+  },
+  "nearest_prior_seen": {
+   "score": 0.2222,
+   "task_id": 633
+  },
+  "provisional_family": "PF-863",
+  "rank": 13,
+  "reference_code_sha256": "722f47e331649e3900ca1a67edce5ad39e301c8e69bccd0d063540df5b283ad9",
+  "seed_hash": "11ad514faa5a3021cc03f8242095d5bc0effa34a7089da61129e8a318f4d9181",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 863,
+  "test_list_sha256": "11a5d784115620a0da5cbce2296c785065eb8678bb2dcb979a6b3d8d14e1744b",
+  "text": "Write a function to find the length of the longest sub-sequence such that elements in the subsequences are consecutive integers.",
+  "text_sha256": "068e0d0a31c227c54a26d0b9cde524877f59e972354a1125eed784a5b0088e8f"
+ },
+ {
+  "arity": 1,
+  "entry_point": "remove_empty",
+  "family_size_in_frame": 2,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.5,
+   "task_id": 361
+  },
+  "nearest_prior_seen": {
+   "score": 0.4286,
+   "task_id": 780
+  },
+  "provisional_family": "PF-361",
+  "rank": 14,
+  "reference_code_sha256": "a4987acdddcf583c02e3d61251c8602bf4866a9a089438a334eaef629a9335c4",
+  "seed_hash": "11dda9c46c409c6426493c960c095f69dd443eae6392301d033f203bd3c0854a",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 966,
+  "test_list_sha256": "e95c15cbbfb77e3105493f7241fcc21c84148cc5595a87d0989f01d8057d329b",
+  "text": "Write a function to remove an empty tuple from a list of tuples.",
+  "text_sha256": "ca6170b1a8e68c6f1221f4c41813ef432f5416ddb2789fe25c38af0522d98266"
+ },
+ {
+  "arity": 1,
+  "entry_point": "matrix_to_list",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.3,
+   "task_id": 969
+  },
+  "nearest_prior_seen": {
+   "score": 0.375,
+   "task_id": 75
+  },
+  "provisional_family": "PF-652",
+  "rank": 15,
+  "reference_code_sha256": "fcde03d574912f75ad919636eec32f6ecea3384962b5a350d27bd6cf52579a9e",
+  "seed_hash": "1280cac63ff7b5280a9974aa35dd1222d7e81377ee97b229c24f531cb141fd92",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 652,
+  "test_list_sha256": "14b15de9b43159ddb17e41ac0f6ebaa6e3f983dcdc54fc809fd2cfa45f7a5ace",
+  "text": "Write a function to flatten the given tuple matrix into the tuple list with each tuple representing each column.",
+  "text_sha256": "5fec2aa6764c44cf5cf9a8224ff955303b7a335fcdf3824cc9b056e5e38dafc0"
+ },
+ {
+  "arity": 1,
+  "entry_point": "check",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.25,
+   "task_id": 53
+  },
+  "nearest_prior_seen": {
+   "score": 0.375,
+   "task_id": 760
+  },
+  "provisional_family": "PF-349",
+  "rank": 16,
+  "reference_code_sha256": "e6d7e610d20d1b7f40313d969ca13cae4025b1c6a7247663bb384689056316bc",
+  "seed_hash": "13d095823817578bf6168a34f6578edc1c6065334326fdd341735fa290050dea",
+  "spec_review": {
+   "decision": "hold",
+   "flags": [
+    {
+     "flag": "unstated_output_string",
+     "reason": "expected output is a literal message string not given in text"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "high"
+  },
+  "task_id": 349,
+  "test_list_sha256": "9b06010d56984951f7fe201132d046a632064213b4c7750292a7e7bfdcd47b4f",
+  "text": "Write a python function to check whether the given string is a binary string or not.",
+  "text_sha256": "7477a922baa37638bea541c1c210471db44ad27e447c4ef3be8b88ab1506dfad"
+ },
+ {
+  "arity": 3,
+  "entry_point": "discriminant_value",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.2667,
+   "task_id": 880
+  },
+  "nearest_prior_seen": {
+   "score": 0.4,
+   "task_id": 93
+  },
+  "provisional_family": "PF-963",
+  "rank": 17,
+  "reference_code_sha256": "9e8a5d438f5dfcaab88d784bd427954af0446d2447d80d3542a88af9e7fd211b",
+  "seed_hash": "145acf33968aae0fab0b9d78c78282d766ad637a6a2847865e3655ef9e93e4e0",
+  "spec_review": {
+   "decision": "include",
+   "flags": [],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "low"
+  },
+  "task_id": 963,
+  "test_list_sha256": "8b7025a61336ba94b09b478b62233780f75473c3ec7779a6d7054b91f308243a",
+  "text": "Write a function to calculate the discriminant value.",
+  "text_sha256": "f7e375499f6ddff78da1949df95274d8d6003fccc9e93950227e2099d2168aec"
+ },
+ {
+  "arity": 2,
+  "entry_point": "check_subset",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.4286,
+   "task_id": 216
+  },
+  "nearest_prior_seen": {
+   "score": 0.4,
+   "task_id": 2
+  },
+  "provisional_family": "PF-651",
+  "rank": 18,
+  "reference_code_sha256": "b2efd629ade789ec2a9948d30bcc616d4df570f2142436ea5ac7a381c805e0b7",
+  "seed_hash": "14f0346de3f57c95248d8d0442645e0509723fd2e188c65190068c5413973d2d",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 651,
+  "test_list_sha256": "c93e37aac170c751aaa83a82bb89abea6f45583c53e4d40060d0797d73fc2645",
+  "text": "Write a function to check if one tuple is a subset of another tuple.",
+  "text_sha256": "66d74b9b87c394bd525c4803a71e482be0deea01beba58536cba9dc86a161733"
+ },
+ {
+  "arity": 1,
+  "entry_point": "diameter_circle",
+  "family_size_in_frame": 1,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.2,
+   "task_id": 112
+  },
+  "nearest_prior_seen": {
+   "score": 0.3333,
+   "task_id": 139
+  },
+  "provisional_family": "PF-499",
+  "rank": 19,
+  "reference_code_sha256": "3d8cf732fa24fc8d4e8e0ccf3a686aa139a2d994fc1a545d246e8ad28cf918ad",
+  "seed_hash": "1593061531ccbe50d286f57fe3162709795242a0ac676157624399a423e04b95",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 499,
+  "test_list_sha256": "63c3297c51a238af6fe5a274a2e0c440985f3624a24d7893a85ba59fe6586050",
+  "text": "Write a function to find the diameter of a circle.",
+  "text_sha256": "05c937b4dc5027b011144b5839260727a49eedb8a2baab53c1902824891e3a53"
+ },
+ {
+  "arity": 1,
+  "entry_point": "min_sum_path",
+  "family_size_in_frame": 2,
+  "n_challenge_tests": 0,
+  "n_official_tests": 3,
+  "nearest_in_frame": {
+   "score": 0.6667,
+   "task_id": 147
+  },
+  "nearest_prior_seen": {
+   "score": 0.2857,
+   "task_id": 126
+  },
+  "provisional_family": "PF-147",
+  "rank": 20,
+  "reference_code_sha256": "3e46baf99f4220facfdf6b60150399fba9e8ea7be7928a391e5991e322189723",
+  "seed_hash": "1821c887e6c04e77de1bb226e9af2b1122e917460798d5c788a25228a2a7bd43",
+  "spec_review": {
+   "decision": "include",
+   "flags": [
+    {
+     "flag": "function_name_unstated",
+     "reason": "task text does not name the entry point; tests call it by name"
+    }
+   ],
+   "note": "static heuristic review from source only; the function-name convention is universal in MBPP and is supplied to the model by the harness interface, so alone it does not block inclusion",
+   "uncertainty": "medium"
+  },
+  "task_id": 974,
+  "test_list_sha256": "462c96af9a29b843da023029eb16d42001db2226bcb3399b91e8b25b68598fde",
+  "text": "Write a function to find the minimum total path sum in the given triangle.",
+  "text_sha256": "880b251bafc3715a7af102da3a32d3f6f952623570316c58228876c1ebd2c2eb"
+ }
+]

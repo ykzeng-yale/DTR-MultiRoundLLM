@@ -9,7 +9,11 @@ Precedence table (frozen; first matching row wins, tested in tests/test_landmark
   0  static gate, decided BEFORE any run, using the private grader's own rule (grade.extract_code + parse +
      non-empty body) plus static compilation (MRL-14: compile(code, "<candidate>", "exec", dont_inherit=True),
      never executed): ambiguous fences / unparseable / empty / not compilable (e.g. module-level return,
-     break/continue outside a loop) -> every case format_error (no runner call).
+     break/continue outside a loop) -> every case format_error (no runner call). MRL-15: only a SyntaxError
+     (incl. IndentationError/TabError) or a null-byte ValueError is the candidate's own compile error; any other
+     compile() exception (MemoryError, RecursionError, TypeError, OverflowError, ...) is a grader-side fault ->
+     every case unavailable, reason infrastructure_not_started (no runner call; never format_error). The same holds
+     for a MemoryError/RecursionError from ast.parse (MRL-15 review).
      Integrity flags from the grader's hack_gate (other than parse-error) -> every case unavailable,
      reason protocol_integrity_review (the grader itself refuses to grade these; never a pass).
   1  runner raised, or stdout does not begin with this run's start marker -> every case unavailable,
@@ -112,26 +116,57 @@ def assert_public_inputs_only(paths):
             raise ValueError(f"Release/work path is not a public executor input: {p}")
 
 
+class CompileResourceFault(RuntimeError):
+    """compile() raised something that is not the candidate's own compile error (MRL-15): a grader-side
+    resource limit or internal fault, never a format_error."""
+
+
+def candidate_compile_status(code):
+    """MRL-15 tri-state of compile(code, "<candidate>", "exec", dont_inherit=True) (only builds a code object;
+    nothing is executed): "ok"; "candidate_error" for a SyntaxError (incl. IndentationError/TabError) or a
+    ValueError for null bytes in the candidate text; "fault" for anything else compile() raises (MemoryError,
+    RecursionError, TypeError -- the input is a str, so internal -- OverflowError, ...)."""
+    try:
+        compile(code, "<candidate>", "exec", dont_inherit=True)
+    except SyntaxError:
+        return "candidate_error"
+    except ValueError:
+        return "candidate_error" if isinstance(code, str) and "\x00" in code else "fault"
+    except Exception:
+        return "fault"
+    return "ok"
+
+
 def candidate_compiles(code):
     """MRL-14: True when compile(code, "<candidate>", "exec", dont_inherit=True) succeeds. compile() only builds a
     code object; nothing is executed. It catches what ast.parse accepts but the compiler rejects (module-level
     return, break/continue outside a loop, misplaced __future__ imports, ...). dont_inherit=True keeps this
-    module's own `from __future__ import annotations` from leaking into the check."""
-    try:
-        compile(code, "<candidate>", "exec", dont_inherit=True)
-    except (SyntaxError, ValueError, TypeError, OverflowError, RecursionError, MemoryError):
-        return False
-    return True
+    module's own `from __future__ import annotations` from leaking into the check. MRL-15: a compiler fault
+    (see candidate_compile_status) raises CompileResourceFault instead of returning False."""
+    status = candidate_compile_status(code)
+    if status == "fault":
+        raise CompileResourceFault("compile() raised a non-candidate exception")
+    return status == "ok"
 
 
 def static_code(output):
     """The grader's own format rule (grade.extract_code, then parse, then non-empty body) plus, since MRL-14, a
-    successful static compilation of the candidate. Returns code or None."""
+    successful static compilation of the candidate. Returns code or None. MRL-15: raises CompileResourceFault
+    when compile() fails for a grader-side reason (never reported as None / format_error)."""
     try:
         code = extract_code(output)
-        tree = ast.parse(code)
-    except (ValueError, SyntaxError):
+    except ValueError:
         return None
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        return None
+    except ValueError as exc:
+        if not (isinstance(code, str) and "\x00" in code):
+            raise CompileResourceFault(f"ast.parse raised {type(exc).__name__}") from exc
+        return None  # a null byte in the candidate text is the candidate's own error
+    except Exception as exc:  # MRL-15 review: parser MemoryError / RecursionError is a grader-side fault
+        raise CompileResourceFault(f"ast.parse raised {type(exc).__name__}") from exc
     if not tree.body or not candidate_compiles(code):
         return None
     return code
@@ -282,13 +317,14 @@ def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=
     """Runner output -> per-case results (build_diagnostic shape). See the module precedence table.
 
     code (optional, MRL-14): the candidate source. With the start marker absent, infrastructure_not_started is
-    kept only when the candidate compiles (or code is not supplied); a non-compiling candidate is format_error."""
+    kept unless the candidate has its own compile error (SyntaxError or null-byte ValueError), which is
+    format_error; a compiler fault (MRL-15) keeps infrastructure_not_started."""
     _check_nonce(nonce)
     cap = PUBLIC_LIMITS["output_cap_bytes"] if output_cap is None else output_cap
     n = len(cases)
     start = PUBLIC_STARTED + nonce + "\n"
     if not isinstance(stdout, str) or not stdout.startswith(start):
-        if code is not None and not (isinstance(code, str) and candidate_compiles(code)):
+        if code is not None and (not isinstance(code, str) or candidate_compile_status(code) == "candidate_error"):
             return format_error_results(cases)  # the candidate's own compile error, not an infrastructure fault
         return uniform_results(cases, "unavailable", "infrastructure_not_started")
     review = uniform_results(cases, "unavailable", "protocol_integrity_review")
@@ -323,7 +359,10 @@ def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=
 
 def check_artifact(output, entry_point, cases, runner, nonce):
     """Static gate, then at most one injected runner call, then classify. The runner is always injected."""
-    code = static_code(output)
+    try:
+        code = static_code(output)
+    except CompileResourceFault:
+        return uniform_results(cases, "unavailable", "infrastructure_not_started")  # grader fault, no runner call
     if code is None:
         return format_error_results(cases)
     if [f for f in hack_gate(code, entry_point) if f != "parse-error"]:

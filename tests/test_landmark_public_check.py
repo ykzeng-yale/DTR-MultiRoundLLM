@@ -340,3 +340,75 @@ def test_compiling_candidate_whose_runner_emits_no_marker_is_infrastructure():
     def silent(program, **kw):
         return {"stdout": "", "returncode": 1, "timed_out": False}
     assert statuses(pc.check_artifact(GOOD, "parallelogram_area", CASES, silent, NONCE)) == [("unavailable", "infrastructure_not_started")]*3
+
+
+# ---- MRL-15: injected compiler faults at the public entry points (compile monkeypatched; nothing executes)
+_FAULTS = [MemoryError, RecursionError, TypeError, OverflowError, KeyError]
+
+
+def _raising_compile(exc_type):
+    def fake(*args, **kwargs):
+        raise exc_type("injected compiler fault")
+    return fake
+
+
+@pytest.mark.parametrize("exc_type", _FAULTS)
+def test_injected_compile_fault_is_infrastructure_not_format_error(monkeypatch, exc_type):
+    monkeypatch.setattr(pc, "compile", _raising_compile(exc_type), raising=False)
+    assert pc.candidate_compile_status(GOOD) == "fault"
+    with pytest.raises(pc.CompileResourceFault):
+        pc.static_code(GOOD)
+    results = pc.check_artifact(GOOD, "parallelogram_area", CASES, lambda *a, **k: pytest.fail("runner must not be called"), NONCE)
+    assert [(r["status"], r["reason"]) for r in results] == [("unavailable", "infrastructure_not_started")]*3
+    # classify with a missing start marker keeps the infrastructure attribution (not the candidate's format_error)
+    assert [r["status"] for r in pc.classify("", 1, False, CASES, NONCE, code=GOOD)] == ["unavailable"]*3
+
+
+def test_injected_valueerror_without_null_byte_is_a_fault(monkeypatch):
+    monkeypatch.setattr(pc, "compile", _raising_compile(ValueError), raising=False)
+    assert pc.candidate_compile_status(GOOD) == "fault"
+    assert pc.candidate_compile_status("x = 1\x00\n") == "candidate_error"
+
+
+@pytest.mark.parametrize("exc_type", [SyntaxError, IndentationError, TabError])
+def test_injected_syntaxerror_family_remains_format_error(monkeypatch, exc_type):
+    monkeypatch.setattr(pc, "compile", _raising_compile(exc_type), raising=False)
+    assert pc.static_code(GOOD) is None
+    results = pc.check_artifact(GOOD, "parallelogram_area", CASES, lambda *a, **k: pytest.fail("runner must not be called"), NONCE)
+    assert [r["status"] for r in results] == ["format_error"]*3
+
+
+def test_real_null_byte_is_candidate_error_in_both_gates():
+    from experiments.landmark import grade
+    code = "def parallelogram_area(b, h):\n    return b * h\x00\n"
+    assert pc.candidate_compile_status(code) == "candidate_error"
+    assert grade.candidate_compile_error(code) is not None
+
+
+# ---- MRL-15 review: ast.parse faults at the public entry points (static parsing only; nothing executes)
+_PARSE_FAULT_INPUTS = ["x = " + "-" * 200000 + "1\n", "x = " + "+".join(["1"] * 300000) + "\n"]
+
+
+@pytest.mark.parametrize("exc_type", _FAULTS)
+def test_injected_parse_fault_is_infrastructure_not_format_error(monkeypatch, exc_type):
+    def fake(*args, **kwargs):
+        raise exc_type("injected parser fault")
+    monkeypatch.setattr(pc.ast, "parse", fake)
+    try:
+        with pytest.raises(pc.CompileResourceFault):
+            pc.static_code(GOOD)
+        results = pc.check_artifact(GOOD, "parallelogram_area", CASES, lambda *a, **k: pytest.fail("runner must not be called"), NONCE)
+    finally:
+        monkeypatch.undo()
+    assert [(r["status"], r["reason"]) for r in results] == [("unavailable", "infrastructure_not_started")]*3
+
+
+@pytest.mark.parametrize("code", _PARSE_FAULT_INPUTS)
+def test_overcomplex_source_is_infrastructure_not_crash(code):
+    answer = "```python\n" + code + "```"
+    results = pc.check_artifact(answer, "parallelogram_area", CASES, lambda *a, **k: pytest.fail("runner must not be called"), NONCE)
+    assert [(r["status"], r["reason"]) for r in results] == [("unavailable", "infrastructure_not_started")]*3
+
+
+def test_ambiguous_fences_still_format_error_after_parse_fault_repair():
+    assert pc.static_code("no code fence here") is None

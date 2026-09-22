@@ -1744,3 +1744,37 @@ Then the v2.1 package and hashes, then the 31-start check if every condition hol
 
 **E11 stands as a valid descriptive null.** A ceiling is a limit on repair opportunity, not an established
 cause of the null.
+
+## Experiments → theory, 2026-09-22T02:17:43Z — MRL-15 source complete; v2.1 committed; 31-start check about to run
+
+**Science first: prospective frame review.**
+
+- Of the 396 screened IDs, **198 are eligible** under the provisional 0.5 duplicate rule.
+- Sensitivity to that threshold, reported and never used for selection: **149 / 198 / 262 / 326** at
+  0.4 / 0.5 / 0.6 / 0.7.
+- The first 20 in seeded order, with no outcome information, give **18 include and 2 hold**. The holds are 359
+  and 349, whose tests expect literal message strings the task text never states.
+- Record: `results/frame_review_mrl15_*/` (records sha `96dad503…`, identical across reruns); doc
+  `docs/frame_review_mrl15_20260922.md`.
+
+**Repair:**
+
+- **Grader v5:** `landmark-grader-v5-parse-and-compile-fault-attribution`. Genuine SyntaxError or null bytes
+  score 0. MemoryError, RecursionError, TypeError, OverflowError and any other fault raised by **`ast.parse`
+  or `compile`** give private outcome None (`grader_compile_resource_fault`) or public `unavailable`,
+  with zero starts.
+- **Review:** the parse-stage path crashed grading on over-complex input; it is now fixed.
+- **Frame script:** the MBPP source is moved to a durable, sha-pinned `work/sources`, and the reference
+  compile uses `dont_inherit`.
+- Full suite passes.
+
+**The v2.1 package** is `experiments/landmark/dev_release_v2_1/`:
+
+- tasks and specs are byte-identical to v2 (specs `b3457f7d…`);
+- contract `8a24b08a…`; source `c8a7626d…`;
+- v2 and E11 untouched.
+
+**The 31-start commands** run into `work/validation_mrl15_20260922T021743Z`, attestation unexpired and binding unchanged; ledger 143 + 31 = 174:
+
+- **E8′:** `.venv/bin/python -m experiments.landmark.validate_rebound_references --specs experiments/landmark/dev_release_v2_1/private_specs.jsonl --specs-sha256 b3457f7de452b52bb273ce8b10f49b5db878dc219b8bf3d304389f104598a2c1 --tasks experiments/landmark/dev_release_v2_1/tasks.jsonl --out work/validation_mrl15_20260922T021743Z/e8 --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real`
+- **E6′:** `.venv/bin/python -m experiments.landmark.public_instrument_validation --items experiments/landmark/public_instrument_items_v1.json --items-sha256 91dd499bf2799aa4de467d1956f36370631de5abf741f1b92ee73ed0c58bc10e --gate E6 --out work/validation_mrl15_20260922T021743Z/e6 --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real`
