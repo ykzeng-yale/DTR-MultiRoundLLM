@@ -1,0 +1,32 @@
+{
+  "recorded_utc": "2026-09-22T05:48:18.996883+00:00",
+  "evidence_class": "independent saved operational log/source review, no live host requests",
+  "worker_delivery": "6beb64eda037bdb1f3ea705befaf02e4cc385972",
+  "log_path": "results/e12_receiver_v31_20260922T043512Z/llama_server_log_archive.txt",
+  "log_sha256": "d3620da69140de0910b2d12b851e1d20a78e7bc478e35a9e06c3509cf4be892f",
+  "launcher_sha256": "03bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5",
+  "repaired_commit_in_worker_ancestry": true,
+  "log_supports": [
+    "four slots,8192context each",
+    "model loaded",
+    "exact corrected listening marker",
+    "cleanup-before-exit path entered"
+  ],
+  "not_established": [
+    "absolute launch-to-readiness timing or log clock origin",
+    "completed process exit from cleanup line alone",
+    "independent traffic census for reported zero requests",
+    "full receiver state or preflight success",
+    "E12 receiver observations"
+  ],
+  "accounting": {
+    "model_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "candidate_or_reference_executions": 0,
+    "tests_rerun": 0,
+    "paid_usd": 0,
+    "saved_record_review_seconds": 0.020959333516657352
+  },
+  "decision": "Accept operational evidence repair; proceed only under already-released one-attempt conditions in accepted07:10-08:20window."
+}

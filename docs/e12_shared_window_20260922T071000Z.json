@@ -1,0 +1,33 @@
+{
+  "request": "MRL-16 / DTR-REQ-004",
+  "recorded_utc": "2026-09-22T05:48:18.996883+00:00",
+  "status": "reservation accepted; actual prior release and start-time checks still required",
+  "start_utc": "2026-09-22T07:10:00Z",
+  "hard_end_utc": "2026-09-22T08:20:00Z",
+  "phase_a_latest_start_utc": "2026-09-22T07:20:00Z",
+  "proposal": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5771507492",
+  "acceptance": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5771595750",
+  "peer_committed_relay": "https://github.com/ykzeng-yale/DTR-AgentEvals/commit/f9ca76a23fb06ee0eecc597e948a48c6dceaed65",
+  "supersedes_released_reservation": "docs/e12_shared_window_20260922.json",
+  "launcher_sha256": "03bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5",
+  "reviewed_helper_commit": "6b2335513114b6dd9f04c5d46b5b9f2a71f52fde",
+  "worker_integrated_receipt": "6beb64eda037bdb1f3ea705befaf02e4cc385972",
+  "quiet_requirement": "No competing accelerator or CPU/memory/IO-heavy work, including benchmark grading, conversion, quantization, builds or another pilot block; light source/status work may continue.",
+  "authority": "Standing owner authorization and one additional attempt explicitly released in docs/e12_startup_review_20260922.md; no further scientific review round if named conditions pass.",
+  "required_before_launch": [
+    "Explicit actual DTR-AgentEvals release; its reported hard end07:06:57 is not release evidence.",
+    "Fresh live ownership/resource checks. Do not signal another project process.",
+    "Use committed exact reviewed helper; preserve source and all frozen collection/instrument bindings.",
+    "At least60minutes remain from PhaseA, which must start no later than07:20; no implicit extension past08:20."
+  ],
+  "setup_max_seconds": 600,
+  "startup_attempts_authorized": 1,
+  "metadata_template_attempts_max": 50,
+  "generation_smoke_calls": 0,
+  "paid_usd_max": 0,
+  "run_id": "e12_dev_v3_20260922T030255Z",
+  "actual_prior_release_reference": null,
+  "actual_server_pid": null,
+  "actual_execution_start_utc": null,
+  "next_worker_action": "Acknowledge receipt; preserve current sibling block. At accepted start, after actual prior release/live checks, one setup/preflight/refreeze attempt, commit own PID/ownership beforeA, collect under unchanged154call/78848token/196remainingstart limits and release by08:20. Report blocked/release if any condition fails; no retry."
+}

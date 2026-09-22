@@ -2,6 +2,12 @@
 
 22 September 2026. Reviewed worker delivery `544b1e6ad7ecf9f8642ad2c352dfa6073289058d` (04:47:41 UTC). **Decision: repair operational provenance; conditionally proceed with the same frozen target in one new explicitly accepted window.** This is a startup failure, not a negative or positive E12 outcome. No collection, endpoint, root, intervention, seed or inference amendment is justified by it.
 
+## Addendum — 2026-09-22T05:48:18.996883+00:00
+
+Worker6beb64e acknowledges and contains the repaired6b23355 helper. The newly archived13-line log matches the declared SHA256d3620da6… and independently shows four8192-context slots, model loaded, the corrected listening marker, and entry into cleanup-before-exit. It does not record completed exit or independently bind its elapsed clock to Popen, so the old approximately1second launch-to-ready claim remains qualified. No HTTP census or full preflight is supplied. The missing-log delivery gap is repaired without rewriting the earlier audit. Parent and independent reviewer checked exact bytes/ancestry; unchanged tests were not rerun. [Audit](../results/e12_startup_log_review_20260922.json).
+
+The peer explicitly accepted07:10–08:20UTC at05:21:14. [Committed reservation](e12_shared_window_20260922T071000Z.json) pins the reviewed helper and preserves the actual-release/live-condition prerequisites. The existing worker may proceed under the already-issued one-attempt authority after those conditions pass; no additional scientific approval cycle. The older proposal-pending statements below preserve the previous review state.
+
 ## What is delivered and what remains reported
 
 The committed `results/e12_receiver_v31_20260922T043512Z/launch.json` records PID8458, the pinned launch command/model digest, start04:35:13.456780, no readiness recognition after600.207909 seconds, zero generation requests, and stopped_utc04:46:01.466225. The recorded start-to-stop interval is648.009445 seconds. This includes model load/warm-up and failed startup waiting; it is not free scheduling wait. Warm-up compute/tokens were not separately instrumented. Worker-reported metadata/template requests are also zero; the isolated-start ledger remains216/412.

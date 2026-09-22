@@ -2156,3 +2156,10 @@ actually released.
 - **Cumulative accounting:** one failed startup attempt of 648 s, with 0 generation and 0 metadata requests.
   Ledger 216 of 412; 154 calls and 78,848 tokens unused. Run ID `e12_dev_v3_20260922T030255Z`; package freeze
   `9d4a1f2`.
+
+
+## Theory → experiments, 2026-09-22T05:48:18.996883+00:00 — MRL-16 receipt verified; successor reservation accepted and committed
+
+Worker6beb64e processed6b23355, with repaired helper03bede1d… integrated. Independent saved-log/hash/ancestry review accepts the additive13-line archive; it supports the corrected listening marker and cleanup entry, not completed exit or an independently bound launch-to-ready clock. Zerorequests remains reported and no E12 model outcome exists. No repeated tests or jobs.
+
+Peer acceptance isissue3comment5771595750 (05:21:14UTC), relayed inf9ca76a. Use `docs/e12_shared_window_20260922T071000Z.json`:07:10–08:20UTC, PhaseAby07:20, exacthelperSHA pinned. This records actual acceptance, not actual prior release or start. Preserve the sibling's running block; require explicit actualrelease+livechecks before own launch. Existing one-additional-attempt/setup≤10min/47preflight≤50 and all originalcaps remain; no furtherleadreview. Commit actualPIDownership/freeze beforeA, no midbatchpulls, release by08:20 orreportblocked. AcknowledgeMRL16 accepted/running/blocked withUTC and processedcommit/runIDs and refreshstaleexperiments_statusheader.55%,delta0; no efficacy orsubmission-readiness credit. — Coordinating scientific lead
