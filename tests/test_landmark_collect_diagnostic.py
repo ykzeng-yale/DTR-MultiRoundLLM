@@ -538,3 +538,61 @@ def test_cli_real_refuses_unresolved_bytes_even_behind_a_duplicate_key(tmp_path,
     with pytest.raises(SystemExit):
         cd.main()
     assert NoRequests.constructed == 0 and not (tmp_path / "A").exists()
+
+
+# ---- MRL-16: schema-aware continue phase (v1 or v2 diagnostics), 14 roots x 11 = 154 planned calls ----
+
+def v2_diagnostics_for(initial_dir, dm):
+    out = diagnostics_for(initial_dir, dm.SCHEMA_V2)
+    for d in out.values():
+        d["cases"][0].update(expected="2", returned="'3'", value_kind="literal")
+    return out
+
+
+def test_fourteen_roots_by_eleven_is_154_planned_calls_v2(tmp_path, dm):
+    tasks = [{"root_id": f"mbpp/{rid}", "family_id": f"fam{i}", "prompt": f"Write f for case {i}.",
+              "public_context": TASKS[0]["public_context"]}
+             for i, rid in enumerate((918, 825, 842, 816, 895, 868, 288, 154, 863, 966, 652, 651, 499, 974))]
+    cfg = make_config(max_calls=154, max_completion_tokens=154 * 512)
+    plan = cd.assignments(cfg, tasks)
+    assert cd.planned_calls(cfg, plan) == {"initial": 14, "continue": 140, "total": 154}
+    first = cd.run_initial(cfg, tasks, tmp_path / "A", adapter=Fake())
+    sha = write_diagnostics(tmp_path / "diag.json", v2_diagnostics_for(tmp_path / "A", dm))
+    done = cd.run_continue(cfg, tasks, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                           expected_diagnostics_sha256=sha, public_examples=public_for(tasks), adapter=Fake())
+    assert first["attempted_calls"] == 14 and done["attempted_calls"] == 154
+    assert done["reserved_completion_tokens"] == 154 * 512 and done["fatal_error"] is None
+    rows = [json.loads(x) for x in (tmp_path / "C/roots.jsonl").read_text().splitlines()]
+    assert len(rows) == 14 and all(r["status"] == "outputs_complete" for r in rows)
+    assert json.loads((tmp_path / "C/manifest.json").read_text())["diagnostic_schema"] == "public-diagnostic-v2"
+
+
+def test_v1_continue_manifest_has_no_schema_field(tmp_path, dm):
+    run_both(tmp_path, dm)
+    assert "diagnostic_schema" not in json.loads((tmp_path / "C/manifest.json").read_text())
+
+
+def test_continue_refuses_mixed_or_unknown_diagnostic_schemas(tmp_path, dm):
+    cfg = make_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA)
+    first = sorted(diags)[0]
+    diags[first] = v2_diagnostics_for(tmp_path / "A", dm)[first]
+    for i, bad in enumerate((diags, {k: {**v, "schema_version": "public-diagnostic-v3"} for k, v in diags.items()})):
+        sha = write_diagnostics(tmp_path / f"diag{i}.json", bad)
+        with pytest.raises(ValueError, match="schema"):
+            cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / f"diag{i}.json", tmp_path / f"C{i}",
+                            expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=Fake())
+        assert not (tmp_path / f"C{i}").exists()
+
+
+def test_continue_validates_v2_record_with_its_own_schema(tmp_path, dm):
+    # A v2 record carrying a v1-style int display is invalid under v2 and refused before dispatch.
+    cfg = make_config()
+    cd.run_initial(cfg, TASKS, tmp_path / "A", adapter=Fake())
+    diags = diagnostics_for(tmp_path / "A", dm.SCHEMA_V2)
+    sha = write_diagnostics(tmp_path / "diag.json", diags)
+    with pytest.raises(ValueError, match="fails validation"):
+        cd.run_continue(cfg, TASKS, tmp_path / "A", tmp_path / "diag.json", tmp_path / "C",
+                        expected_diagnostics_sha256=sha, public_examples=public_for(TASKS), adapter=Fake())
+    assert not (tmp_path / "C").exists()

@@ -25,6 +25,11 @@ is the runner. run_phase_b refuses sandbox.run_program without a verified attest
 Outputs (out_dir must not exist; nothing is ever overwritten):
   diagnostics.json  exact bytes json.dumps({root_id: diag}, sort_keys=True, separators=(",", ":"), ensure_ascii=False)
                     .encode(); its SHA-256 is what collect_diagnostic.run_continue(expected_diagnostics_sha256=...) binds.
+
+Display (MRL-16): display="v1" (default, the CLI's default too) is the MRL-08 path, unchanged: public_check's v1 harness
+and diagnostic.SCHEMA records, with no v2 lookups at all. display="v2" passes display="v2" to public_check.check_artifact
+and schema=diagnostic.SCHEMA_V2 to public_skeleton/build_diagnostic/validate_diagnostic, and records "display" and
+"diagnostic_schema" in the reserved ledger record and in manifest.json (v1 records stay byte-for-byte as before).
   manifest.json     diagnostics_sha256, executor source SHA-256s, PUBLIC_LIMITS, actual runner invocations. Nonces are
                     ephemeral and never written. There are no retries: each root gets at most one runner invocation.
 """
@@ -53,6 +58,7 @@ EXECUTOR_SOURCES = ("experiments/landmark/public_phase.py", "experiments/landmar
 SCHEMA = "public-phase-b-v2"
 LEDGER = "attempts.jsonl"
 FAKE_ATTESTATION = "fake_runner_for_tests"
+DISPLAYS = ("v1", "v2")
 ATTESTATION_FIELDS = ("schema_version", "passed", "checked_at", "binding", "script_sha256")
 
 
@@ -198,9 +204,23 @@ def load_initial(initial_dir):
     return completion, collected
 
 
+def _schema_kwargs(display):
+    """{} for v1 (the MRL-08 calls, unchanged); {"schema": diagnostic.SCHEMA_V2} for v2 (refuses if it is absent)."""
+    if display == "v1":
+        return {}
+    schema = getattr(diagnostic, "SCHEMA_V2", None)
+    if schema != "public-diagnostic-v2":
+        raise ValueError("display v2 needs diagnostic.SCHEMA_V2 == 'public-diagnostic-v2'")
+    return {"schema": schema}
+
+
 def run_phase_b(initial_dir: Path, examples_path: Path, out_dir: Path, runner, nonce_factory=secrets.token_hex,
-                attestation: dict | None = None) -> dict:
-    """attestation: attestation_provenance(...) of a VERIFIED record (CLI --real path); None only for fake runners."""
+                attestation: dict | None = None, display: str = "v1") -> dict:
+    """attestation: attestation_provenance(...) of a VERIFIED record (CLI --real path); None only for fake runners.
+    display: "v1" (default; MRL-08 behaviour) or "v2" (public_check v2 harness, diagnostic.SCHEMA_V2 records)."""
+    if display not in DISPLAYS:
+        raise ValueError(f"display must be one of {DISPLAYS}, got {display!r}")
+    schema_kw = _schema_kwargs(display)  # before anything is touched
     out_dir = Path(out_dir)
     if out_dir.exists():
         raise FileExistsError(f"Phase B output already exists (no uncharged rerun): {out_dir}")
@@ -221,13 +241,13 @@ def run_phase_b(initial_dir: Path, examples_path: Path, out_dir: Path, runner, n
         raise ValueError(f"No public examples for collected roots: {missing}")
     for root, _, _ in collected:  # every example validated against diagnostic's case policy before any charge
         entry_point, cases = examples[root]
-        diagnostic.public_skeleton(entry_point, cases)
+        diagnostic.public_skeleton(entry_point, cases, **schema_kw)
 
     out_dir.mkdir(parents=True, exist_ok=False)  # reservation: from here on every attempt is charged
     ledger = Ledger(out_dir / LEDGER)
     try:
         manifest = _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attestation, ident,
-                             examples, collected, ledger)
+                             examples, collected, ledger, display, schema_kw)
     except BaseException as e:
         try:
             ledger.write({"event": "incomplete", "error": f"{type(e).__name__}: {e}", "utc": _utc()})
@@ -258,10 +278,13 @@ def _since(t0):
 
 
 def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attestation, ident, examples, collected,
-              ledger):
+              ledger, display="v1", schema_kw=None):
+    schema_kw = schema_kw or {}
+    v2 = {"display": display, "diagnostic_schema": schema_kw["schema"]} if display != "v1" else {}
+    check_kw = {"display": display} if display != "v1" else {}
     ledger.write({"event": "reserved", "schema_version": SCHEMA, "runner": ident, "attestation": attestation, "utc": _utc(),
                   "initial_completion_sha256": _sha((Path(initial_dir) / "completion.json").read_bytes()),
-                  "examples_sha256": _sha(Path(examples_path).read_bytes())})
+                  "examples_sha256": _sha(Path(examples_path).read_bytes()), **v2})
     invocations = {"n": 0}
     current = {}
     elapsed = []  # per-start time.monotonic() elapsed for the current root; None = could not be measured
@@ -306,7 +329,7 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
         before = invocations["n"]
         current.update(root=root, sha=sha, nonce=nonce_factory())
         elapsed.clear()
-        results = public_check.check_artifact(text, entry_point, cases, counted, current["nonce"])
+        results = public_check.check_artifact(text, entry_point, cases, counted, current["nonce"], **check_kw)
         if ledger_errors:
             raise ledger_errors[0]
         statuses = [r["status"] for r in results]
@@ -314,9 +337,9 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
         executor_seconds = None if any(x is None for x in elapsed) else float(sum(elapsed))
         ledger.write({"event": "classified", "root_id": root, "runner_invocations": invocations["n"] - before,
                       "executor_seconds": executor_seconds, "statuses": statuses, "utc": _utc()})
-        diag = diagnostic.build_diagnostic(root, sha, entry_point, cases, results)
+        diag = diagnostic.build_diagnostic(root, sha, entry_point, cases, results, **schema_kw)
         if validate is not None:
-            validate(diag)
+            validate(diag, **schema_kw)
         diagnostic.diagnostic_bytes(diag)  # cap check; raises, never truncates
         diags[root] = diag
         per_root.append({"root_id": root, "initial_artifact_sha256": sha, "runner_invocations": invocations["n"] - before,
@@ -335,7 +358,7 @@ def _dispatch(initial_dir, examples_path, out_dir, runner, nonce_factory, attest
         "attempts_ledger": LEDGER, "attempts_ledger_sha256": _sha((out_dir / LEDGER).read_bytes()),
         "public_limits": dict(public_check.PUBLIC_LIMITS),
         "executor_starts": invocations["n"],  # runner invocations (format errors / integrity flags start nothing)
-        "retries": 0, "nonces_recorded": False, "roots": per_root,
+        "retries": 0, "nonces_recorded": False, "roots": per_root, **v2,
     }
     with (out_dir / "diagnostics.json").open("xb") as f:
         f.write(data)
@@ -351,6 +374,7 @@ def main(argv=None) -> dict:
     ap.add_argument("--out", required=True)
     ap.add_argument("--attestation", required=True)
     ap.add_argument("--real", action="store_true")
+    ap.add_argument("--display", choices=DISPLAYS, default="v1")
     a = ap.parse_args(argv)
     if not a.real:
         raise SystemExit("refusing: Phase B executes candidate programs; pass --real with a verified --attestation")
@@ -366,7 +390,8 @@ def main(argv=None) -> dict:
         raise SystemExit(f"refusing: containment attestation not verified: {type(e).__name__}: {e}")
     if prov["sha256"] != before:
         raise SystemExit("refusing: attestation file changed during verification")
-    return run_phase_b(Path(a.initial_dir), Path(a.examples), Path(a.out), sandbox.run_program, attestation=prov)
+    return run_phase_b(Path(a.initial_dir), Path(a.examples), Path(a.out), sandbox.run_program, attestation=prov,
+                       display=a.display)
 
 
 if __name__ == "__main__":

@@ -62,6 +62,8 @@ STATUSES = ("pass", "wrong_value", "format_error", "interface_error", "program_e
 # Statuses the harness itself may emit; the rest are assigned by the parent (static gate / termination).
 PAYLOAD_STATUSES = frozenset({"pass", "wrong_value", "interface_error", "program_exception", "timeout"})
 VALUE_KINDS = frozenset({"int", "int_list", "unsupported", "none"})
+VALUE_KINDS_V2 = frozenset(diagnostic.VALUE_KINDS_V2)  # MRL-16 display="v2": literal / unsupported / none
+DISPLAYS = ("v1", "v2")
 UNAVAILABLE_REASONS = ("not_attempted_after_termination", "infrastructure_not_started", "protocol_integrity_review")
 PUBLIC_STARTED = "__LANDMARK_PUBLIC_STARTED__"
 RESULT_KEYS = frozenset({"n", "i", "status", "returned", "value_kind"})
@@ -96,6 +98,20 @@ def display_value(value):
     return "unsupported", None
 
 
+# MRL-16 v2 display policy: the one definition lives in diagnostic (self-contained source, copied verbatim into
+# the isolated harness as _pc_display_value, so the displayed value is computed INSIDE isolation).
+display_value_v2 = diagnostic.display_value_v2
+
+
+def _check_display(display):
+    if display not in DISPLAYS:
+        raise ValueError("display must be 'v1' or 'v2'")
+    return display
+
+
+PUBLIC_RELEASE_FILES_V3 = ("experiments", "landmark", "dev_release_v3", "public_examples_v3.json")
+
+
 def assert_public_inputs_only(paths):
     """Read allowlist guard: the public executor must never be handed private specs, releases or work paths."""
     def named_private(path):
@@ -111,6 +127,8 @@ def assert_public_inputs_only(paths):
         try:
             rel = resolved.relative_to(ROOT).parts
         except ValueError:
+            continue
+        if rel == PUBLIC_RELEASE_FILES_V3:  # MRL-16: the one public file of dev_release_v3, exact path only
             continue
         if rel[:1] == ("work",) or (rel[:2] == ("experiments", "landmark") and len(rel) > 2 and rel[2].startswith("dev_release")):
             raise ValueError(f"Release/work path is not a public executor input: {p}")
@@ -276,17 +294,51 @@ for _pc_i, (_pc_args_lit, _pc_exp_lit) in enumerate(_PC_CASES):
 '''
 
 
-def build_public_program(code, entry_point, cases, nonce):
-    """Harness text only (nothing is executed here). code must already have passed static_code."""
+def build_public_program(code, entry_point, cases, nonce, display="v1"):
+    """Harness text only (nothing is executed here). code must already have passed static_code.
+
+    display="v1" (default) is byte-identical to the MRL-08 harness. display="v2" (MRL-16) swaps only the
+    display function: diagnostic.display_value_v2, which reports ("literal", repr string) for bounded literals."""
+    _check_display(display)
     _check_nonce(nonce)
     if not isinstance(entry_point, str) or not entry_point.isidentifier():
         raise ValueError("Need an identifier entry point")
     if not isinstance(code, str) or static_code(code) is None:
         raise ValueError("Candidate must pass the static format gate before a program is built")
-    display_src = inspect.getsource(display_value).replace("def display_value(", "def _pc_display_value(", 1)
+    if display == "v1":
+        display_src = inspect.getsource(display_value).replace("def display_value(", "def _pc_display_value(", 1)
+    else:
+        display_src = inspect.getsource(diagnostic.display_value_v2).replace("def display_value_v2(", "def _pc_display_value(", 1)
     return _HARNESS.format(cpu=PUBLIC_LIMITS["aggregate_cpu_seconds"], start=PUBLIC_STARTED+nonce,
         display_src=display_src, nonce=nonce, cases=_case_literals(cases), alarm=PUBLIC_LIMITS["per_case_alarm_seconds"],
         code=code, entry=entry_point)
+
+
+def _authentic_v2(obj, index, nonce, expected):
+    """v2 twin of _authentic: exact shape, then a literal return must be the canonical repr of a bounded literal
+    whose Python == against the public expected value agrees with the status. value_kind none is status-only."""
+    if not isinstance(obj, dict) or set(obj) != RESULT_KEYS or type(obj["n"]) is not str or obj["n"] != nonce:
+        return False
+    status, kind, returned = obj["status"], obj["value_kind"], obj["returned"]
+    if type(obj["i"]) is not int or obj["i"] != index or type(status) is not str or type(kind) is not str:
+        return False
+    if status not in PAYLOAD_STATUSES or kind not in VALUE_KINDS_V2:
+        return False
+    if status not in ("pass", "wrong_value"):
+        return kind == "none" and returned is None
+    if kind == "none":  # the v2 harness displays an observed None as literal 'None'
+        return False
+    if kind == "unsupported":
+        return returned is None
+    if type(returned) is not str or len(returned) > 400:
+        return False
+    try:
+        value = diagnostic.literal(returned)
+    except ValueError:
+        return False
+    if display_value_v2(value) != ("literal", returned):
+        return False
+    return (status == "pass") == bool(value == expected)
 
 
 def _authentic(obj, index, nonce, expected):
@@ -313,12 +365,15 @@ def _authentic(obj, index, nonce, expected):
     return (status == "pass") == bool(returned == expected)
 
 
-def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=None):
+def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=None, display="v1"):
     """Runner output -> per-case results (build_diagnostic shape). See the module precedence table.
 
     code (optional, MRL-14): the candidate source. With the start marker absent, infrastructure_not_started is
     kept unless the candidate has its own compile error (SyntaxError or null-byte ValueError), which is
-    format_error; a compiler fault (MRL-15) keeps infrastructure_not_started."""
+    format_error; a compiler fault (MRL-15) keeps infrastructure_not_started.
+
+    display (MRL-16): "v1" (default) or "v2"; must match the display the harness was built with."""
+    authentic = _authentic if _check_display(display) == "v1" else _authentic_v2
     _check_nonce(nonce)
     cap = PUBLIC_LIMITS["output_cap_bytes"] if output_cap is None else output_cap
     n = len(cases)
@@ -339,7 +394,7 @@ def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=
             obj = diagnostic.strict_json_loads(line)  # a duplicate key makes the stream protocol_integrity_review
         except ValueError:
             return review
-        if not _authentic(obj, i, nonce, expected[i]):
+        if not authentic(obj, i, nonce, expected[i]):
             return review
         results.append({"status": obj["status"], "returned": obj["returned"], "value_kind": obj["value_kind"], "reason": None})
     if partial and not cap_hit:
@@ -357,8 +412,9 @@ def classify(stdout, returncode, timed_out, cases, nonce, output_cap=None, code=
     return results
 
 
-def check_artifact(output, entry_point, cases, runner, nonce):
+def check_artifact(output, entry_point, cases, runner, nonce, display="v1"):
     """Static gate, then at most one injected runner call, then classify. The runner is always injected."""
+    _check_display(display)
     try:
         code = static_code(output)
     except CompileResourceFault:
@@ -367,10 +423,10 @@ def check_artifact(output, entry_point, cases, runner, nonce):
         return format_error_results(cases)
     if [f for f in hack_gate(code, entry_point) if f != "parse-error"]:
         return uniform_results(cases, "unavailable", "protocol_integrity_review")
-    program = build_public_program(code, entry_point, cases, nonce)
+    program = build_public_program(code, entry_point, cases, nonce, display)
     try:
         run = runner(program, timeout_s=PUBLIC_LIMITS["parent_wall_seconds"], cpu_seconds=PUBLIC_LIMITS["aggregate_cpu_seconds"],
             output_cap=PUBLIC_LIMITS["output_cap_bytes"])
     except Exception:
         return uniform_results(cases, "unavailable", "infrastructure_not_started")
-    return classify(run.get("stdout", ""), run.get("returncode"), bool(run.get("timed_out")), cases, nonce, code=code)
+    return classify(run.get("stdout", ""), run.get("returncode"), bool(run.get("timed_out")), cases, nonce, code=code, display=display)

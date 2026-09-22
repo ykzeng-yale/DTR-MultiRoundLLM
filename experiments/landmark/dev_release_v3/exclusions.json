@@ -1,0 +1,44 @@
+{
+  "backfill": false,
+  "held": [],
+  "n_retained": 14,
+  "retained": [
+    "mbpp/918",
+    "mbpp/825",
+    "mbpp/842",
+    "mbpp/816",
+    "mbpp/895",
+    "mbpp/868",
+    "mbpp/288",
+    "mbpp/154",
+    "mbpp/863",
+    "mbpp/966",
+    "mbpp/652",
+    "mbpp/651",
+    "mbpp/499",
+    "mbpp/974"
+  ],
+  "roster": [
+    "mbpp/918",
+    "mbpp/825",
+    "mbpp/842",
+    "mbpp/816",
+    "mbpp/895",
+    "mbpp/868",
+    "mbpp/288",
+    "mbpp/154",
+    "mbpp/863",
+    "mbpp/966",
+    "mbpp/652",
+    "mbpp/651",
+    "mbpp/499",
+    "mbpp/974"
+  ],
+  "sources": {
+    "bundled_release_sha256": "a5094c0727f8f036fcf38e61710867dc44928c6656680c9c3588b448e1235a4e",
+    "contract_review_sha256": "eceae0c5e9d3c541ecc5ee20d2da1be790662b9880f78090d4d3c1281e6a5cbc",
+    "mbpp_jsonl_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "v2_tasks_sha256": "5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372"
+  },
+  "version": "dev-release-v3-exclusions"
+}

@@ -1,0 +1,152 @@
+{
+  "normalization": "tuples and lists compared as equal sequences, recursively",
+  "roots": [
+    {
+      "full_input_overlap": [],
+      "public_call": "coin_change([1, 2, 3], 3, 4)",
+      "review_semantic_note": "Original “count coin change” leaves amount/count/ordering and parameter roles unspecified. This states the usual unbounded-combination problem implemented by the source.",
+      "root_id": "mbpp/918",
+      "same_expected_output": [],
+      "shared_argument_positions": [
+        {
+          "assertion": "assert coin_change([4,5,6,7,8,9],6,4)==1",
+          "positions": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "access_elements([2, 3, 8, 4, 7, 9], [0, 3, 5])",
+      "review_semantic_note": "Public example supplies a reasonable interface; clarify index-list order and indexing explicitly. No tested source contradiction found.",
+      "root_id": "mbpp/825",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "get_odd_occurence([2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2], 13)",
+      "review_semantic_note": "The source returns the first odd-frequency value if several exist and a sentinel if none exists. Those cases are not specified by the original singular task or exercised by its assertions; the declared unique-odd domain avoids silently imposing an arbitrary tie/sentinel rule.",
+      "root_id": "mbpp/842",
+      "same_expected_output": [
+        "assert get_odd_occurence([5, 7, 2, 7, 5, 2, 5], 7) == 5"
+      ],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "clear_tuple((1, 5, 3, 6, 8))",
+      "review_semantic_note": "The correct function is constant. Every source assertion checks the same output. Retain transparently as a simple task; do not label a constant empty-tuple implementation a wrong control or infer generalization from distinct inputs. Do not exclude it based on anticipated ceiling.",
+      "root_id": "mbpp/816",
+      "same_expected_output": [
+        "assert clear_tuple((2, 1, 4 ,5 ,6)) == ()",
+        "assert clear_tuple((3, 2, 5, 6, 8)) == ()"
+      ],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "max_sum_subseq([1, 2, 9, 4, 5, 0, 4, 11, 6])",
+      "review_semantic_note": "The empty-subsequence convention matters for all-negative inputs; an empty input crashes the source. The source implements the declared nonempty version. This clarification is needed before adding boundary checks.",
+      "root_id": "mbpp/895",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "length_Of_Last_Word('python language')",
+      "review_semantic_note": "The source resets on ASCII space, not arbitrary internal whitespace. The private suite includes an empty-string boundary. State the general no-word convention publicly instead of assuming the first example explains it.",
+      "root_id": "mbpp/868",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "modular_inverse([1, 6, 4, 5], 4, 7)",
+      "review_semantic_note": "**Explicit domain amendment:** the original says prime, but a private assertion uses a composite modulus. The source checks the correct self-inverse congruence for general P. Either adopt this broadened, versioned modulus contract or hold 288; do not grade an originally prime-only task on an undisclosed composite case.",
+      "root_id": "mbpp/288",
+      "same_expected_output": [],
+      "shared_argument_positions": [
+        {
+          "assertion": "assert modular_inverse([2, 3, 4, 5], 4, 6) == 1",
+          "positions": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]], 0)",
+      "review_semantic_note": "All source assertions reuse one matrix while varying the column. This is limited within-instance coverage, not unseen-matrix validation.",
+      "root_id": "mbpp/154",
+      "same_expected_output": [],
+      "shared_argument_positions": [
+        {
+          "assertion": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],2)==[3, 6, 9]",
+          "positions": [
+            0
+          ]
+        },
+        {
+          "assertion": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],3)==[2,2,5]",
+          "positions": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "find_longest_conseq_subseq([1, 2, 2, 3], 4)",
+      "review_semantic_note": "Original “subsequence” may imply order preservation. The public example does not resolve this, while private cases require ignoring order. The reference sorts/deduplicates. Clarify semantics rather than penalizing a legitimate order-preserving interpretation.",
+      "root_id": "mbpp/863",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "remove_empty([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), 'd'])",
+      "review_semantic_note": "Source fixtures contain bare strings written with parentheses, not only tuples. The reference removes all false-valued objects; on this declared input domain that agrees with removing empty tuples. A broader domain containing other false-valued objects needs a reference repair and new controls.",
+      "root_id": "mbpp/966",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "matrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]])",
+      "review_semantic_note": "The prose requests a tuple list, but the reference returns its string representation. The public assertion already exposes that representation convention; make it explicit. Exact string formatting is part of this adapted endpoint.",
+      "root_id": "mbpp/652",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "check_subset((10, 4, 5, 6), (5, 10))",
+      "review_semantic_note": "Clarifies direction and set rather than multiset containment, consistent with reference and public example.",
+      "root_id": "mbpp/651",
+      "same_expected_output": [
+        "assert check_subset((7, 8, 9, 10), (10, 8)) == True"
+      ],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "diameter_circle(10)",
+      "review_semantic_note": "Clarifies the input quantity. Source assertions use integers; no numerical-tolerance issue is demonstrated by these cases.",
+      "root_id": "mbpp/499",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    },
+    {
+      "full_input_overlap": [],
+      "public_call": "min_sum_path([[2], [3, 9], [1, 6, 7]])",
+      "review_semantic_note": "Original text omits allowed moves. This states the standard adjacency rule implemented by the source; no tested source contradiction found.",
+      "root_id": "mbpp/974",
+      "same_expected_output": [],
+      "shared_argument_positions": []
+    }
+  ],
+  "version": "dev-release-v3-overlap"
+}

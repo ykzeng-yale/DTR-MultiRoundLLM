@@ -15,11 +15,14 @@ import re
 from experiments.landmark import collect
 
 SCHEMA = "public-diagnostic-v1"
+SCHEMA_V2 = "public-diagnostic-v2"  # MRL-16: repr-string display of bounded Python literals (v1 stays the default)
+SCHEMAS = (SCHEMA, SCHEMA_V2)
 EXAMPLES_HEADER = "Public examples (inputs and required outputs):"
 DIAGNOSTIC_HEADER = "Public diagnostic report for the previous answer (execution status is recorded per case):"
 MAX_DIAGNOSTIC_BYTES = 2048
 STATUSES = ("pass", "wrong_value", "format_error", "interface_error", "program_exception", "timeout", "unavailable", "output_limit")
 VALUE_KINDS = ("int", "int_list", "unsupported", "none")
+VALUE_KINDS_V2 = ("literal", "unsupported", "none")
 UNAVAILABLE_REASONS = ("not_attempted_after_termination", "infrastructure_not_started", "protocol_integrity_review")
 MAX_ABS_INT, MAX_LIST_LEN = 10**18 - 1, 16  # freeze field 3: int (not bool) with |v| < 10**18, lists of <= 16
 PAYLOAD_FAILURES = ("wrong_value", "format_error", "interface_error", "program_exception")
@@ -68,6 +71,63 @@ def _displayable(v):
     return _is_int(v) or (type(v) is list and len(v) <= MAX_LIST_LEN and all(_is_int(x) for x in v))
 
 
+def display_value_v2(value):
+    """MRL-16 v2 bounded display policy -> ("literal", repr string) or ("unsupported", None).
+
+    "literal" iff value is built recursively only from exact types int (abs < 10**18), bool, str (len <= 200),
+    NoneType, tuple and list, with <= 64 total contained elements (all nesting levels; the top-level value is
+    not counted), container nesting depth <= 4 ([[[[1]]]] is depth 4) and repr length <= 400 characters AND
+    <= 400 UTF-8 bytes (a character cap alone lets 4-byte characters push one row past MAX_DIAGNOSTIC_BYTES;
+    repr escapes every non-printable character, so the encode cannot fail). Only type()
+    identity checks, len() and abs() on exact builtins run before the structure is proven; repr() runs only
+    afterwards, so no candidate-defined __repr__/__eq__/__len__ is ever called. Self-contained (no module
+    globals): public_check copies this source into the isolated harness."""
+    stack = [(value, 0)]
+    count = 0
+    while stack:
+        v, depth = stack.pop()
+        t = type(v)
+        if t is int:
+            if not abs(v) < 10**18:
+                return "unsupported", None
+        elif t is bool or v is None:
+            pass
+        elif t is str:
+            if len(v) > 200:
+                return "unsupported", None
+        elif t is tuple or t is list:
+            if depth >= 4:
+                return "unsupported", None
+            count += len(v)
+            if count > 64:
+                return "unsupported", None
+            for x in v:
+                stack.append((x, depth + 1))
+        else:
+            return "unsupported", None
+    text = repr(value)
+    if len(text) > 400 or len(text.encode("utf-8")) > 400:
+        return "unsupported", None
+    return "literal", text
+
+
+def _check_schema(schema):
+    if schema not in SCHEMAS:
+        raise ValueError(f"unknown diagnostic schema: {schema!r}")
+    return schema
+
+
+def _canonical_literal(text):
+    """True iff text is the exact repr of a value inside the v2 literal display policy."""
+    if type(text) is not str or len(text) > 400:
+        return False
+    try:
+        value = literal(text)
+    except ValueError:
+        return False
+    return display_value_v2(value) == ("literal", text)
+
+
 def _public_cases(entry_point, cases):
     # Only the three public fields are accepted, so no private field can reach a renderer.
     if not isinstance(entry_point, str) or not entry_point.isidentifier():
@@ -92,17 +152,23 @@ def render_public_examples(entry_point: str, cases: list[dict]) -> str:
     return "\n".join([EXAMPLES_HEADER, *lines])
 
 
-def _check_result(r):
+def _check_result(r, schema=SCHEMA):
     if not isinstance(r, dict) or set(r) != {"status", "returned", "value_kind", "reason"}:
         raise ValueError("result must have exactly status, returned, value_kind, reason")
     status, returned, kind, reason = r["status"], r["returned"], r["value_kind"], r["reason"]
+    kinds = VALUE_KINDS if _check_schema(schema) == SCHEMA else VALUE_KINDS_V2
     # Exact str before any membership test: a list/dict/None/int is a ValueError, never a TypeError.
-    if type(status) is not str or type(kind) is not str or status not in STATUSES or kind not in VALUE_KINDS:
+    if type(status) is not str or type(kind) is not str or status not in STATUSES or kind not in kinds:
         raise ValueError(f"unknown status/value_kind: {status!r}/{kind!r}")
     if reason is not None and type(reason) is not str:
         raise ValueError("reason must be None or a string")
-    ok = {"int": _is_int(returned), "int_list": type(returned) is list and _displayable(returned),
-          "unsupported": returned is None, "none": returned is None}[kind]
+    if schema == SCHEMA:
+        ok = {"int": _is_int(returned), "int_list": type(returned) is list and _displayable(returned),
+              "unsupported": returned is None, "none": returned is None}[kind]
+    else:  # v2: a displayed value is the canonical repr string of a bounded literal
+        ok = {"literal": _canonical_literal(returned), "unsupported": returned is None, "none": returned is None}[kind]
+        if ok and kind == "none" and status in ("pass", "wrong_value"):
+            raise ValueError("v2 displays an observed None return as value_kind literal 'None', never none")
     if not ok:
         raise ValueError("returned value does not match its bounded value_kind")
     # Freeze field 6: status only. A reason is the explicit cause of an unavailable case, nothing else.
@@ -122,10 +188,18 @@ def literal(text):
         raise ValueError(f"malformed public literal: {type(exc).__name__}") from None
 
 
-def check_consistent(status, kind, returned, expected):
+def check_consistent(status, kind, returned, expected, schema=SCHEMA):
     """A bounded primitive return (int / int_list) is the value itself, so its status must equal the private
     assert's Python ==: pass iff returned == expected. value_kind unsupported (returned None) keeps the
-    executor's in-isolation equality result, so either pass or wrong_value is allowed."""
+    executor's in-isolation equality result, so either pass or wrong_value is allowed.
+
+    v2 (MRL-16): returned and expected are repr strings; for value_kind literal, pass iff
+    ast.literal_eval(returned) == ast.literal_eval(expected) (Python ==, so True == 1 and (1,) != [1])."""
+    if _check_schema(schema) == SCHEMA_V2:
+        if kind == "literal" and status in ("pass", "wrong_value"):
+            if (status == "pass") != bool(literal(returned) == literal(expected)):
+                raise ValueError(f"status {status} is inconsistent with the returned value and the public expected value")
+        return
     if kind in ("int", "int_list") and status in ("pass", "wrong_value"):
         if (status == "pass") != bool(returned == expected):
             raise ValueError(f"status {status} is inconsistent with the returned value and the public expected value")
@@ -133,7 +207,21 @@ def check_consistent(status, kind, returned, expected):
         raise ValueError(f"status {status} is inconsistent with a None return and the public expected value")
 
 
-def build_diagnostic(root_id: str, initial_artifact_sha256: str, entry_point: str, cases: list[dict], results: list[dict]) -> dict:
+def _expected_display(expected_literal, schema):
+    expected = literal(expected_literal)
+    if schema == SCHEMA:
+        if not _displayable(expected):
+            raise ValueError("public expected value outside the bounded display policy")
+        return expected
+    kind, text = display_value_v2(expected)
+    if kind != "literal":
+        raise ValueError("public expected value outside the bounded display policy")
+    return text
+
+
+def build_diagnostic(root_id: str, initial_artifact_sha256: str, entry_point: str, cases: list[dict], results: list[dict],
+                     *, schema: str = SCHEMA) -> dict:
+    _check_schema(schema)
     _public_cases(entry_point, cases)
     if not isinstance(root_id, str) or not root_id:
         raise ValueError("root_id required")
@@ -143,14 +231,12 @@ def build_diagnostic(root_id: str, initial_artifact_sha256: str, entry_point: st
         raise ValueError("one result per public case, in the fixed case order")
     rows = []
     for c, r in zip(cases, results):
-        _check_result(r)
-        expected = literal(c["expected_literal"])
-        if not _displayable(expected):
-            raise ValueError("public expected value outside the bounded display policy")
+        _check_result(r, schema)
+        expected = _expected_display(c["expected_literal"], schema)
         rows.append({"case_id": c["case_id"], "call": render_call(entry_point, c["args_literal"]), "expected": expected,
                      "status": r["status"], "returned": r["returned"], "value_kind": r["value_kind"], "reason": r["reason"]})
-    diag = {"schema_version": SCHEMA, "root_id": root_id, "initial_artifact_sha256": initial_artifact_sha256, "cases": rows}
-    validate_diagnostic(diag)  # same policy as a loaded record; overflow fails at build time, before any arm is rendered
+    diag = {"schema_version": schema, "root_id": root_id, "initial_artifact_sha256": initial_artifact_sha256, "cases": rows}
+    validate_diagnostic(diag, schema=schema)  # same policy as a loaded record; overflow fails at build time, before any arm is rendered
     return diag
 
 
@@ -158,17 +244,34 @@ DIAG_KEYS = frozenset({"schema_version", "root_id", "initial_artifact_sha256", "
 CASE_KEYS = frozenset({"case_id", "call", "expected", "status", "returned", "value_kind", "reason"})
 
 
-def public_skeleton(entry_point: str, cases: list[dict]) -> list[tuple]:
-    """(case_id, call, expected) per fixed public case, built exactly as build_diagnostic builds its rows."""
+def public_skeleton(entry_point: str, cases: list[dict], schema: str = SCHEMA) -> list[tuple]:
+    """(case_id, call, expected) per fixed public case, built exactly as build_diagnostic builds its rows
+    (v2: expected is the repr string of the public expected value)."""
+    _check_schema(schema)
     _public_cases(entry_point, cases)
-    return [(c["case_id"], render_call(entry_point, c["args_literal"]), literal(c["expected_literal"])) for c in cases]
+    if schema == SCHEMA:
+        return [(c["case_id"], render_call(entry_point, c["args_literal"]), literal(c["expected_literal"])) for c in cases]
+    return [(c["case_id"], render_call(entry_point, c["args_literal"]), _expected_display(c["expected_literal"], schema)) for c in cases]
 
 
 def _same(a, b):
     return type(a) is type(b) and (a == b if type(a) is not list else len(a) == len(b) and all(_same(x, y) for x, y in zip(a, b)))
 
 
-def validate_diagnostic(diag: dict, entry_point: str | None = None, cases: list[dict] | None = None) -> None:
+def _diag_schema(diag, schema):
+    """Schema of a record: detected from diag["schema_version"]; a given schema must match it exactly."""
+    found = diag.get("schema_version") if isinstance(diag, dict) else None
+    if schema is not None:
+        _check_schema(schema)
+        if found != schema:
+            raise ValueError(f"not a {schema} record")
+        return schema
+    if type(found) is not str or found not in SCHEMAS:
+        raise ValueError("not a public-diagnostic-v1 record")
+    return found
+
+
+def validate_diagnostic(diag: dict, entry_point: str | None = None, cases: list[dict] | None = None, schema: str | None = None) -> None:
     """Refuse any record build_diagnostic could not have produced: exact keys, bounded values, byte cap.
 
     With entry_point and cases (the task's fixed public cases), also require the exact ordered
@@ -176,8 +279,7 @@ def validate_diagnostic(diag: dict, entry_point: str | None = None, cases: list[
     """
     if not isinstance(diag, dict) or set(diag) != DIAG_KEYS:
         raise ValueError("diagnostic must have exactly schema_version, root_id, initial_artifact_sha256, cases")
-    if diag["schema_version"] != SCHEMA:
-        raise ValueError("not a public-diagnostic-v1 record")
+    schema = _diag_schema(diag, schema)
     if not isinstance(diag["root_id"], str) or not diag["root_id"]:
         raise ValueError("root_id required")
     sha = diag["initial_artifact_sha256"]
@@ -190,29 +292,30 @@ def validate_diagnostic(diag: dict, entry_point: str | None = None, cases: list[
             raise ValueError("diagnostic case must have exactly " + ", ".join(sorted(CASE_KEYS)))
         if not isinstance(c["case_id"], str) or not c["case_id"] or not isinstance(c["call"], str):
             raise ValueError("case_id and call must be strings")
-        if not _displayable(c["expected"]):
+        if not (_displayable(c["expected"]) if schema == SCHEMA else _canonical_literal(c["expected"])):
             raise ValueError("public expected value outside the bounded display policy")
-        _check_result({k: c[k] for k in ("status", "returned", "value_kind", "reason")})
-        check_consistent(c["status"], c["value_kind"], c["returned"], c["expected"])
+        _check_result({k: c[k] for k in ("status", "returned", "value_kind", "reason")}, schema)
+        check_consistent(c["status"], c["value_kind"], c["returned"], c["expected"], schema)
     if (entry_point is None) != (cases is None):
         raise ValueError("entry_point and cases are given together")
     if cases is not None:
-        skeleton = public_skeleton(entry_point, cases)
+        skeleton = public_skeleton(entry_point, cases, schema)
         rows = [(c["case_id"], c["call"], c["expected"]) for c in diag["cases"]]
         if len(rows) != len(skeleton) or not all(r[0] == k[0] and r[1] == k[1] and _same(r[2], k[2]) for r, k in zip(rows, skeleton)):
             raise ValueError("diagnostic cases differ from the fixed public cases (case_id, call, expected, count or order)")
     diagnostic_message(diag)  # DiagnosticOverflow (a ValueError) past MAX_DIAGNOSTIC_BYTES
 
 
-def load_diagnostic(data, entry_point: str | None = None, cases: list[dict] | None = None) -> dict:
-    """Parse one serialized diagnostic record (str/bytes) with strict_json_loads, then validate_diagnostic."""
+def load_diagnostic(data, entry_point: str | None = None, cases: list[dict] | None = None, schema: str | None = None) -> dict:
+    """Parse one serialized diagnostic record (str/bytes) with strict_json_loads, then validate_diagnostic
+    (schema detected from the record, or required to equal the given schema)."""
     diag = strict_json_loads(data)
-    validate_diagnostic(diag, entry_point, cases)
+    validate_diagnostic(diag, entry_point, cases, schema)
     return diag
 
 
 def diagnostic_bytes(diag: dict) -> bytes:
-    if not isinstance(diag, dict) or diag.get("schema_version") != SCHEMA:
+    if not isinstance(diag, dict) or diag.get("schema_version") not in SCHEMAS:
         raise ValueError("not a public-diagnostic-v1 record")
     data = json.dumps(diag, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode("utf-8")
     if len(data) > MAX_DIAGNOSTIC_BYTES:
@@ -228,7 +331,9 @@ def diagnostic_message(diag: dict) -> dict:
     return {"role": "user", "content": content}
 
 
-def select_s1(diag: dict) -> str:
+def select_s1(diag: dict, schema: str | None = None) -> str:
+    if schema is not None:
+        _diag_schema(diag, schema)
     statuses = [c["status"] for c in diag["cases"]]
     if any(type(s) is not str or s not in STATUSES for s in statuses):
         raise ValueError("unknown status")
@@ -240,6 +345,7 @@ def select_s1(diag: dict) -> str:
 
 
 def render_arms(base_messages: list, initial_output: str, diag: dict) -> dict[str, list]:
+    # Signature pinned to public inputs only; the schema (v1 or v2) is detected from diag["schema_version"].
     if collect.digest(collect.TARGETED) != TARGETED_SHA256:
         raise RuntimeError("collect.TARGETED changed; S0 is pinned by digest")
     validate_diagnostic(diag)  # exact keys only: nothing extra can reach the shared diagnostic turn

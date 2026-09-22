@@ -1,0 +1,299 @@
+{
+  "controls": [
+    {
+      "fault": "Counts ordered sequences (permutations) of coins instead of unordered combinations.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 1,
+      "private_cases": [
+        {
+          "assertion": "assert coin_change([4,5,6,7,8,9],6,9)==2",
+          "expected": "2",
+          "predicted_control_return": "3",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert coin_change([4,5,6,7,8,9],6,4)==1",
+          "expected": "1",
+          "predicted_control_return": "1",
+          "predicted_fails": false
+        }
+      ],
+      "root_id": "mbpp/918",
+      "static_trace": "Amount 9 over [4..9]: ordered sequences are (9), (4,5), (5,4) -> 3, expected 2. Amount 4: only (4) -> 1."
+    },
+    {
+      "fault": "Treats the supplied indices as 1-based instead of Python zero-based list indexing.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert access_elements([1, 2, 3, 4, 5],[1,2]) == [2,3]",
+          "expected": "[2, 3]",
+          "predicted_control_return": "[1, 2]",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert access_elements([1,0,2,3],[0,1]) == [1,0]",
+          "expected": "[1, 0]",
+          "predicted_control_return": "[3, 1]",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/825",
+      "static_trace": "[1,2,3,4,5] at [1,2] -> nums[0], nums[1] = [1, 2], expected [2, 3]. [1,0,2,3] at [0,1] -> nums[-1], nums[0] = [3, 1], expected [1, 0]."
+    },
+    {
+      "fault": "Returns the first element instead of the value occurring an odd number of times.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 1,
+      "private_cases": [
+        {
+          "assertion": "assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3",
+          "expected": "3",
+          "predicted_control_return": "1",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert get_odd_occurence([5, 7, 2, 7, 5, 2, 5], 7) == 5",
+          "expected": "5",
+          "predicted_control_return": "5",
+          "predicted_fails": false
+        }
+      ],
+      "root_id": "mbpp/842",
+      "static_trace": "[1,2,3,2,3,1,3] -> 1, expected 3. [5,7,2,7,5,2,5] -> 5, expected 5."
+    },
+    {
+      "fault": "Returns the input tuple unchanged instead of the cleared (empty) tuple.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert clear_tuple((2, 1, 4 ,5 ,6)) == ()",
+          "expected": "()",
+          "predicted_control_return": "(2, 1, 4, 5, 6)",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert clear_tuple((3, 2, 5, 6, 8)) == ()",
+          "expected": "()",
+          "predicted_control_return": "(3, 2, 5, 6, 8)",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/816",
+      "static_trace": "(2, 1, 4, 5, 6) -> (2, 1, 4, 5, 6), expected (). (3, 2, 5, 6, 8) -> itself, expected ()."
+    },
+    {
+      "fault": "Ignores the non-adjacency constraint: sums every positive element (adjacent picks allowed).",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert max_sum_subseq([1, 2, 9, 5, 6, 0, 5, 12, 7]) == 28",
+          "expected": "28",
+          "predicted_control_return": "47",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert max_sum_subseq([1, 3, 10, 5, 6, 0, 6, 14, 21]) == 44",
+          "expected": "44",
+          "predicted_control_return": "66",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/895",
+      "static_trace": "[1,2,9,5,6,0,5,12,7] -> 1+2+9+5+6+5+12+7 = 47, expected 28. [1,3,10,5,6,0,6,14,21] -> 66, expected 44."
+    },
+    {
+      "fault": "Returns the number of words instead of the length of the last word.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 1,
+      "private_cases": [
+        {
+          "assertion": "assert length_Of_Last_Word(\"PHP\") == 3",
+          "expected": "3",
+          "predicted_control_return": "1",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert length_Of_Last_Word(\"\") == 0",
+          "expected": "0",
+          "predicted_control_return": "0",
+          "predicted_fails": false
+        }
+      ],
+      "root_id": "mbpp/868",
+      "static_trace": "\"PHP\" -> 1 word, expected 3. \"\" -> 0, expected 0."
+    },
+    {
+      "fault": "Omits the modulus: counts entries with x*x == 1 instead of x*x congruent to 1 modulo P.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3",
+          "expected": "3",
+          "predicted_control_return": "1",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert modular_inverse([2, 3, 4, 5], 4, 6) == 1",
+          "expected": "1",
+          "predicted_control_return": "0",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/288",
+      "static_trace": "[1,3,8,12,12] mod 13: only 1 has x*x == 1 -> 1, expected 3 (1, 12, 12). [2,3,4,5] mod 6: none -> 0, expected 1 (5)."
+    },
+    {
+      "fault": "Returns row N instead of column N.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],2)==[3, 6, 9]",
+          "expected": "[3, 6, 9]",
+          "predicted_control_return": "[7, 1, 9, 5]",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],3)==[2,2,5]",
+          "expected": "[2, 2, 5]",
+          "predicted_control_return": "'IndexError'",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/154",
+      "static_trace": "N=2 -> row [7, 1, 9, 5], expected [3, 6, 9]. N=3 -> no row 3 (IndexError), expected [2, 2, 5]."
+    },
+    {
+      "fault": "Counts runs of consecutive values in the original order without sorting or deduplicating.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert find_longest_conseq_subseq([1, 9, 3, 10, 4, 20, 2], 7) == 4",
+          "expected": "4",
+          "predicted_control_return": "1",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert find_longest_conseq_subseq([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42], 11) == 5",
+          "expected": "5",
+          "predicted_control_return": "2",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/863",
+      "static_trace": "[1,9,3,10,4,20,2]: no adjacent pair increases by 1 -> 1, expected 4. [36,41,56,35,44,33,34,92,43,32,42]: only (33,34) -> 2, expected 5."
+    },
+    {
+      "fault": "Removes every tuple (including nonempty ones) instead of only the empty tuples.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert remove_empty([(), (), ('',), (\"python\"), (\"program\")])==[('',), (\"python\"), (\"program\")]  ",
+          "expected": "[('',), 'python', 'program']",
+          "predicted_control_return": "['python', 'program']",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert remove_empty([(), (), ('',), (\"java\")])==[('',),(\"java\") ]  ",
+          "expected": "[('',), 'java']",
+          "predicted_control_return": "['java']",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/966",
+      "static_trace": "[(),(),('',),'python','program'] -> ['python', 'program'], expected [('',), 'python', 'program']. [(),(),('',),'java'] -> ['java'], expected [('',), 'java']."
+    },
+    {
+      "fault": "Flattens the tuples in row-major order but omits the transpose into component tuples.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'",
+          "expected": "'[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'",
+          "predicted_control_return": "'[(5, 6), (8, 9), (11, 14), (19, 18), (1, 5), (11, 2)]'",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert matrix_to_list([[(6, 7), (9, 10)], [(12, 15), (20, 21)], [(23, 7), (15, 8)]]) == '[(6, 9, 12, 20, 23, 15), (7, 10, 15, 21, 7, 8)]'",
+          "expected": "'[(6, 9, 12, 20, 23, 15), (7, 10, 15, 21, 7, 8)]'",
+          "predicted_control_return": "'[(6, 7), (9, 10), (12, 15), (20, 21), (23, 7), (15, 8)]'",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/652",
+      "static_trace": "Second case -> '[(5, 6), (8, 9), (11, 14), (19, 18), (1, 5), (11, 2)]', expected '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'; third case likewise."
+    },
+    {
+      "fault": "Reverses the subset direction: tests whether the first tuple's elements occur in the second.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 1,
+      "private_cases": [
+        {
+          "assertion": "assert check_subset((1, 2, 3, 4), (5, 6)) == False",
+          "expected": "False",
+          "predicted_control_return": "False",
+          "predicted_fails": false
+        },
+        {
+          "assertion": "assert check_subset((7, 8, 9, 10), (10, 8)) == True",
+          "expected": "True",
+          "predicted_control_return": "False",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/651",
+      "static_trace": "((1,2,3,4),(5,6)) -> False, expected False. ((7,8,9,10),(10,8)) -> {7,8,9,10} subset of {8,10} is False, expected True."
+    },
+    {
+      "fault": "Squares the radius instead of doubling it.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert diameter_circle(40)==80",
+          "expected": "80",
+          "predicted_control_return": "1600",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert diameter_circle(15)==30",
+          "expected": "30",
+          "predicted_control_return": "225",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/499",
+      "static_trace": "r=40 -> 1600, expected 80. r=15 -> 225, expected 30."
+    },
+    {
+      "fault": "Returns the maximum top-to-bottom path sum instead of the minimum.",
+      "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+      "predicted_failing_private_assertions": 2,
+      "private_cases": [
+        {
+          "assertion": "assert min_sum_path([[ 2 ], [3, 7 ], [8, 5, 6 ]]) == 10 ",
+          "expected": "10",
+          "predicted_control_return": "15",
+          "predicted_fails": true
+        },
+        {
+          "assertion": "assert min_sum_path([[ 3 ], [6, 4 ], [5, 2, 7 ]]) == 9",
+          "expected": "9",
+          "predicted_control_return": "14",
+          "predicted_fails": true
+        }
+      ],
+      "root_id": "mbpp/974",
+      "static_trace": "[[2],[3,7],[8,5,6]]: row1 -> 3+8=11, 7+6=13; top 2+13 = 15, expected 10. [[3],[6,4],[5,2,7]]: row1 -> 11, 11; top 14, expected 9."
+    }
+  ],
+  "version": "dev-release-v3-controls"
+}

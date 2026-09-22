@@ -186,3 +186,32 @@ def test_validation_errors(data):
 def test_shared_contract_constants_agree_if_present():
     diagnostic = pytest.importorskip("experiments.landmark.diagnostic")
     assert diagnostic.SCHEMA == ad.SCHEMA
+
+
+def test_v2_schema_accepted_and_reported(data):
+    # MRL-16: v2 diagnostics carry the same case keys (repr-string displays); only statuses are read.
+    roots, diags = data
+    v2 = {rid: {**d, "schema_version": ad.SCHEMA_V2} for rid, d in diags.items()}
+    rep1, rep2 = ad.analyze(roots, diags), ad.analyze(roots, v2)
+    assert rep1["diagnostic_schema"] == "public-diagnostic-v1" and rep2["diagnostic_schema"] == "public-diagnostic-v2"
+    assert rep1["initial_status"] == rep2["initial_status"] and rep1["quality"] == rep2["quality"]
+    x = {**diag("x", "pass", "wrong_value"), "schema_version": ad.SCHEMA_V2}
+    x["cases"][1].update(returned="'abc'", expected="('a', True)", value_kind="literal")
+    assert ad.public_status(x, "x") == "any_fail"
+    assert ad.analyze(roots, {})["diagnostic_schema"] == ad.SCHEMA
+
+
+def test_mixed_or_unknown_schemas_refused(data):
+    roots, diags = data
+    first, *rest = sorted(diags)
+    if rest:
+        with pytest.raises(ValueError, match="one schema"):
+            ad.analyze(roots, {**diags, first: {**diags[first], "schema_version": ad.SCHEMA_V2}})
+    with pytest.raises(ValueError):
+        ad.analyze(roots, {first: {**diags[first], "schema_version": "public-diagnostic-v3"}})
+
+
+def test_v2_schema_constant_agrees_if_present():
+    diagnostic = pytest.importorskip("experiments.landmark.diagnostic")
+    if hasattr(diagnostic, "SCHEMA_V2"):
+        assert diagnostic.SCHEMA_V2 == ad.SCHEMA_V2

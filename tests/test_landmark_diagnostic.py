@@ -129,7 +129,9 @@ def test_renderers_take_only_public_inputs():
     params = lambda f: list(inspect.signature(f).parameters)
     assert params(d.render_arms) == ["base_messages", "initial_output", "diag"]
     assert params(d.render_public_examples) == ["entry_point", "cases"]
-    assert params(d.build_diagnostic) == ["root_id", "initial_artifact_sha256", "entry_point", "cases", "results"]
+    # MRL-16: the only addition is the keyword-only schema selector (default v1); no private input.
+    assert params(d.build_diagnostic) == ["root_id", "initial_artifact_sha256", "entry_point", "cases", "results", "schema"]
+    assert inspect.signature(d.build_diagnostic).parameters["schema"].kind is inspect.Parameter.KEYWORD_ONLY
     tree = ast.parse(Path(d.__file__).read_text())
     imported = {a.name for n in ast.walk(tree) if isinstance(n, (ast.Import, ast.ImportFrom)) for a in n.names}
     assert imported <= {"annotations", "ast", "json", "re", "collect"}
@@ -352,3 +354,174 @@ def test_unsupported_keeps_executor_equality_result(status):
     diag = d.build_diagnostic("mbpp/52", A, r["entry_point"], r["cases"], results)
     assert diag["cases"][0]["status"] == status
     d.validate_diagnostic(diag, r["entry_point"], r["cases"])
+
+
+# ---- MRL-16: public-diagnostic-v2 (repr-string display of bounded literals); v1 stays the default
+def v2case(expected_literal, args_literal="[1]", cid="public-1-1"):
+    return [{"case_id": cid, "args_literal": args_literal, "expected_literal": expected_literal}]
+
+
+def v2diag(expected_literal, results, args_literal="[1]"):
+    return d.build_diagnostic("mbpp/1", A, "f", v2case(expected_literal, args_literal), results, schema=d.SCHEMA_V2)
+
+
+def test_v1_remains_default_and_v2_schema_constant():
+    assert d.SCHEMA == "public-diagnostic-v1" and d.SCHEMA_V2 == "public-diagnostic-v2"
+    assert d.build_diagnostic.__kwdefaults__ == {"schema": d.SCHEMA} and diag_for("diag_all_pass_mbpp_52")["schema_version"] == d.SCHEMA
+
+
+@pytest.mark.parametrize("value,expected", [
+    ("abc", ("literal", "'abc'")), (True, ("literal", "True")), (1, ("literal", "1")), ((), ("literal", "()")),
+    (None, ("literal", "None")), ([("a", 1), ("b", (2, "c"))], ("literal", "[('a', 1), ('b', (2, 'c'))]")),
+    ([[[[1]]]], ("literal", "[[[[1]]]]")), ([[[[[1]]]]], ("unsupported", None)), (10**18, ("unsupported", None)),
+    ("x" * 200, ("literal", repr("x" * 200))), ("x" * 201, ("unsupported", None)), (list(range(64)), ("literal", repr(list(range(64))))),
+    (list(range(65)), ("unsupported", None)), ([[1] * 40, [2] * 30], ("unsupported", None)), (7.0, ("unsupported", None)),
+    ({1: 2}, ("unsupported", None)), ({1}, ("unsupported", None)), (b"x", ("unsupported", None)),
+    (["y" * 150, "z" * 150, "w" * 150], ("unsupported", None)),  # repr longer than 400
+])
+def test_v2_display_policy(value, expected):
+    assert d.display_value_v2(value) == expected
+
+
+def test_v2_display_never_calls_candidate_repr_and_bounds_self_reference():
+    class Sneaky(str):
+        def __repr__(self): raise AssertionError("repr must not be called")
+    assert d.display_value_v2([Sneaky("a")]) == ("unsupported", None)
+    loop = []
+    loop.append(loop)
+    assert d.display_value_v2(loop) == ("unsupported", None)
+
+
+def test_v2_display_caps_utf8_bytes_not_only_characters():
+    # 398 characters but ~1.6 KB of UTF-8: under a character-only cap this overflowed roots 966 and 652.
+    wide = ("\U0001F600" * 195,) * 2
+    assert len(repr(wide)) <= 400 and d.display_value_v2(wide) == ("unsupported", None)
+    assert d.display_value_v2("\u00e9" * 200) == ("unsupported", None)  # 202 characters, 402 bytes
+    assert d.display_value_v2("\u00e9" * 199) == ("literal", repr("\u00e9" * 199))  # 201 characters, exactly 400 bytes
+
+
+def test_v2_worst_case_literal_row_fits_every_v3_root():
+    """Largest v2 'returned' JSON (a 400-byte repr that is all backslashes, doubled by JSON) fits the byte cap
+    on every v3 public call, 652 (the longest) included; a 4-byte-character tuple is displayed as unsupported."""
+    pub = json.loads((ROOT / "experiments/landmark/dev_release_v3/public_examples_v3.json").read_text())["cases"]
+    worst = "\\" * 199
+    kind, text = d.display_value_v2(worst)
+    assert kind == "literal" and len(text.encode("utf-8")) == 400
+    wide_kind, wide_text = d.display_value_v2(("\U0001F600" * 195,) * 2)
+    assert "mbpp/652" in {t["root_id"] for t in pub}
+    for t in pub:
+        for kw in ((text, kind), (wide_text, wide_kind)):
+            results = [res("wrong_value", kw[0], kw[1]) for _ in t["cases"]]
+            diag = d.build_diagnostic(t["root_id"], A, t["entry_point"], t["cases"], results, schema=d.SCHEMA_V2)
+            assert len(d.diagnostic_message(diag)["content"].encode("utf-8")) <= d.MAX_DIAGNOSTIC_BYTES
+
+
+def test_v2_str_bool_tuple_nested_rows():
+    g = v2diag("'abc'", [res("wrong_value", "'abd'", "literal")], "['abc']")
+    assert g["schema_version"] == d.SCHEMA_V2 and g["cases"][0]["expected"] == "'abc'" and g["cases"][0]["returned"] == "'abd'"
+    # bool displayed distinct from 1, while status follows the private assert's == (True == 1)
+    g = v2diag("1", [res("pass", "True", "literal")])
+    assert g["cases"][0]["returned"] == "True" and g["cases"][0]["expected"] == "1"
+    assert v2diag("()", [res("pass", "()", "literal")])["cases"][0]["expected"] == "()"
+    nested = "[('a', 1), ('b', 'c')]"
+    assert v2diag(nested, [res("pass", nested, "literal")])["cases"][0]["returned"] == nested
+    assert v2diag("None", [res("pass", "None", "literal")])["cases"][0]["returned"] == "None"
+    d.validate_diagnostic(g)  # schema detected from the record
+    d.validate_diagnostic(g, schema=d.SCHEMA_V2)
+    with pytest.raises(ValueError):
+        d.validate_diagnostic(g, schema=d.SCHEMA)
+
+
+@pytest.mark.parametrize("status,returned,expected_literal", [
+    ("pass", "'abd'", "'abc'"), ("wrong_value", "'abc'", "'abc'"), ("pass", "(1,)", "[1]"), ("wrong_value", "True", "1"),
+    ("pass", "None", "0"), ("wrong_value", "[('a', 1)]", "[('a', 1)]"),
+])
+def test_v2_literal_status_must_agree_with_expected(status, returned, expected_literal):
+    with pytest.raises(ValueError, match="inconsistent"):
+        v2diag(expected_literal, [res(status, returned, "literal")])
+
+
+@pytest.mark.parametrize("status", ["pass", "wrong_value"])
+def test_v2_unsupported_keeps_executor_equality(status):
+    assert v2diag("'abc'", [res(status, None, "unsupported")])["cases"][0]["status"] == status
+
+
+@pytest.mark.parametrize("bad", [
+    res("pass", "'abc' ", "literal"), res("pass", '"abc"', "literal"), res("pass", "abc", "literal"), res("pass", "7.0", "literal"),
+    res("pass", 1, "literal"), res("pass", None, "literal"), res("pass", "'abc'", "unsupported"), res("pass", None, "none"),
+    res("pass", "'abc'", "int"), res("program_exception", "'abc'", "literal"), res("timeout", None, "unsupported"),
+    res("pass", repr([[[[["abc"]]]]]), "literal"), res("pass", repr(list(range(65))), "literal"),
+])
+def test_v2_result_validation_rejects(bad):
+    with pytest.raises(ValueError):
+        v2diag("'abc'", [bad])
+
+
+def test_v2_expected_outside_policy_is_refused_and_v1_kinds_rejected():
+    with pytest.raises(ValueError, match="bounded display policy"):
+        v2diag("7.5", [res("program_exception")])
+    with pytest.raises(ValueError):
+        v2diag("7", [res("pass", 7, "int")])
+    with pytest.raises(ValueError):
+        d.build_diagnostic("mbpp/1", A, "f", v2case("7"), [res("pass", "7", "literal")])  # v1 default refuses v2 kinds
+    with pytest.raises(ValueError, match="unknown diagnostic schema"):
+        d.build_diagnostic("mbpp/1", A, "f", v2case("7"), [res("program_exception")], schema="public-diagnostic-v3")
+
+
+def test_v2_skeleton_binding_and_forged_expected():
+    cases = v2case("[('a', 1)]", "['x', (1, 2)]")
+    g = d.build_diagnostic("mbpp/1", A, "f", cases, [res("pass", "[('a', 1)]", "literal")], schema=d.SCHEMA_V2)
+    assert d.public_skeleton("f", cases, d.SCHEMA_V2) == [("public-1-1", "f('x', (1, 2))", "[('a', 1)]")]
+    d.validate_diagnostic(g, "f", cases)
+    forged = json.loads(json.dumps(g))
+    forged["cases"][0]["expected"] = "[('a', 2)]"
+    forged["cases"][0]["returned"] = "[('a', 2)]"
+    with pytest.raises(ValueError, match="fixed public cases"):
+        d.validate_diagnostic(forged, "f", cases)
+
+
+def test_v2_s1_selection_and_render_arms():
+    wrong = v2diag("'abc'", [res("wrong_value", "'abd'", "literal")])
+    crash = v2diag("'abc'", [res("program_exception")])
+    incomplete = v2diag("'abc'", [res("unavailable", reason="protocol_integrity_review")])
+    ok = v2diag("'abc'", [res("pass", "'abc'", "literal")])
+    assert [d.select_s1(x) for x in (wrong, crash, incomplete, ok)] == [d.S1_STRINGS[0], d.S1_STRINGS[0], d.S1_STRINGS[1], d.S1_STRINGS[2]]
+    assert d.select_s1(wrong, schema=d.SCHEMA_V2) == d.S1_STRINGS[0]
+    with pytest.raises(ValueError):
+        d.select_s1(wrong, schema=d.SCHEMA)
+    arms = d.render_arms(BASE, "def f(x):\n    return x\n", wrong)
+    shared = d.diagnostic_message(wrong)
+    assert arms["S1"][-2] == shared == arms["N1"][-2] == arms["R1"][-2] and arms["S1"][-1]["content"] == d.S1_STRINGS[0]
+    assert '"schema_version":"public-diagnostic-v2"' in shared["content"] and "\"returned\":\"'abd'\"" in shared["content"]
+    forged = dict(wrong, schema_version="public-diagnostic-v3")
+    with pytest.raises(ValueError):
+        d.render_arms(BASE, "x", forged)
+
+
+def test_v2_size_cap_raises_never_truncates():
+    big = repr("\\" * 190)  # JSON escaping doubles each backslash
+    args = repr(["\\" * 190, "\\" * 190])
+    with pytest.raises(d.DiagnosticOverflow):
+        d.build_diagnostic("mbpp/1", A, "f", [{"case_id": f"public-1-{i}", "args_literal": args, "expected_literal": big} for i in range(2)],
+                           [res("wrong_value", repr("\\" * 189), "literal")] * 2, schema=d.SCHEMA_V2)
+    assert d.MAX_DIAGNOSTIC_BYTES == 2048
+
+
+def test_v2_load_diagnostic_strict_duplicate_keys():
+    g = v2diag("'abc'", [res("pass", "'abc'", "literal")])
+    data = d.diagnostic_bytes(g).decode()
+    assert d.load_diagnostic(data) == g and d.load_diagnostic(data, schema=d.SCHEMA_V2) == g
+    dup = data.replace('"status":"pass"', '"status":"wrong_value","status":"pass"', 1)
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        d.load_diagnostic(dup)
+    dup_top = data.replace('"schema_version":"public-diagnostic-v2"', '"schema_version":"public-diagnostic-v1","schema_version":"public-diagnostic-v2"', 1)
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        d.load_diagnostic(dup_top)
+    with pytest.raises(ValueError):
+        d.load_diagnostic(data, schema=d.SCHEMA)
+
+
+def test_v1_golden_fixture_bytes_unchanged_after_v2():
+    for name in SCENARIOS:
+        assert hashlib.sha256((FIX / f"{name}.json").read_bytes()).hexdigest() == SHAS[f"{name}.json"]
+        assert d.diagnostic_bytes(diag_for(name)) == (FIX / f"{name}.json").read_bytes()

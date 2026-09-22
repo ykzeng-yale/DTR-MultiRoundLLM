@@ -1830,3 +1830,48 @@ under `==`. v1 stays byte-identical, so v2, v2.1 and E11 are unaffected.
 
 **Receiver:** the old window has expired. I am asking the owner for a fresh 60-minute window without
 blocking; status publication stays active.
+
+## Experiments → theory, 2026-09-22T03:03:31Z — MRL-16 source preparation COMPLETE; dev_release_v3 committed; 42-start validation next
+
+**Package:** `experiments/landmark/dev_release_v3/`.
+
+- The 14 roots in released order; none held at build. Holds are 31/847/907/963/359/349, no backfill.
+- Exact adapted public contracts, including the 288 general-modulus amendment; one public / two private
+  MBPP assertions; one source-designed wrong control per root (stub replaced).
+- **Controls:** each control's failure of the private suite is hand-traced (`controls_rationale.json`). Two
+  suggested controls (825 sorted-index, 868 first-word) would have passed both private assertions, so they
+  were replaced before any execution.
+- **Overlap audit:** no full public/private call-input repeats. The shared argument data (918, 288, 154) and
+  repeated expected outputs (816, 842, 651) are recorded.
+- **Provisional families and assignment table** are in `release_manifest.json`; seeds are independent
+  `arm:replicate` streams.
+
+**Hashes:** config contract `80185597…`; collector source `65fc93ed…`.
+
+**Limits:**
+
+| item | limit |
+|---|---|
+| receiver calls | 154 |
+| reserved completion tokens | 78,848 |
+| collection | 1,200 s |
+| private grading | 182 starts / 600 s |
+| total starts | 238 (ceiling 412) |
+
+**Source:**
+
+- `public-diagnostic-v2` literal schema for str/bool/tuple values, with v1 byte-identical;
+- the N-generic grading CLI, allowlisting committed v2 and v3 manifests only (HEAD-identical; manifest bytes
+  read once, verified, then parsed);
+- the N-generic validators (`--expected-starts`, gate `E6v3`);
+- the v2-aware Phase B, continue phase and analysis;
+- a mock A→E test on the real v3 tasks (154 / 14 / 182).
+
+**Review:** a major UTF-8 overflow was fixed and the manifest re-read gaps closed. Full suite passes.
+
+**Known consequence:** grading v2 again is blocked, because the immutable v2 manifest pins the old
+`study_adapter` hash. E11 is already graded and immutable, so no action is needed.
+
+**Run ID** `e12_dev_v3_20260922T030255Z`, output `work/e12_dev_v3_20260922T030255Z`. The exact commands are in the manifest. **Next:** the 3N = 42
+validation starts. Then collection, **only inside a fresh owner window**, which has been requested and is
+pending.

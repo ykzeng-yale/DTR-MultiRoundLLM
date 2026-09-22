@@ -179,3 +179,49 @@ def test_cli_requires_real(tmp_path, att, capsys):
     with pytest.raises(PermissionError):
         V.main(["--specs", str(SPECS), "--specs-sha256", SHA, "--tasks", str(TASKS), "--out", str(tmp_path / "o"),
                 "--attestation", str(att)])
+
+
+# ---------------------------------------------------------------- MRL-16: generic 2N plan (--expected-starts)
+def _one_control_specs(tmp_path):
+    specs = _specs()
+    for s in specs:
+        s["negative_controls"] = s["negative_controls"][:1]
+    p = tmp_path / "specs_2n.jsonl"
+    p.write_text("".join(json.dumps(s) + "\n" for s in specs))
+    return p, hashlib.sha256(p.read_bytes()).hexdigest(), len(specs)
+
+
+def test_generic_2n_plan_runs_n_pass_n_fail(tmp_path, att):
+    p, sha, n = _one_control_specs(tmp_path)
+    runner = FakeRunner()
+    s = V.run(p, sha, TASKS, tmp_path / "o", att, True, runner=runner, expected_starts=2 * n)
+    assert s["planned_starts"] == s["actual_starts"] == 2 * n == len(runner.calls)
+    assert (s["passes"], s["fails"], s["expected"], s["matches_expected"]) == (n, n, {"pass": n, "fail": n}, True)
+    ev = _ledger(tmp_path / "o")
+    assert ev[0]["planned_starts"] == 2 * n and ev[0]["expected"] == {"pass": n, "fail": n} and ev[-1]["event"] == "complete"
+
+
+def test_expected_starts_must_equal_refs_plus_controls(tmp_path, att):
+    p, sha, n = _one_control_specs(tmp_path)
+    for bad in (24, 2 * n + 1, 0, 201):
+        with pytest.raises(ValueError, match="exactly|expected-starts"):
+            V.run(p, sha, TASKS, tmp_path / f"o{bad}", att, True, runner=FakeRunner(), expected_starts=bad)
+        assert not (tmp_path / f"o{bad}").exists()
+
+
+def test_plan_shape_requires_a_control_per_root():
+    specs = _specs()
+    specs[0]["negative_controls"] = []
+    jobs = V.plan_jobs(specs)
+    with pytest.raises(ValueError, match="exactly"):
+        V.check_plan(jobs, len(jobs))
+
+
+def test_cli_expected_starts_default_24_and_passthrough(tmp_path, att, monkeypatch):
+    seen = {}
+    monkeypatch.setattr(V, "run", lambda *a, **k: seen.update(k) or {"planned_starts": 1, "actual_starts": 1, "passes": 1,
+                                                                       "fails": 0, "matches_expected": True})
+    base = ["--specs", str(SPECS), "--specs-sha256", SHA, "--tasks", str(TASKS), "--out", str(tmp_path / "o"),
+            "--attestation", str(att), "--real"]
+    assert V.main(base) == 0 and seen["expected_starts"] == 24
+    assert V.main(base + ["--expected-starts", "28"]) == 0 and seen["expected_starts"] == 28

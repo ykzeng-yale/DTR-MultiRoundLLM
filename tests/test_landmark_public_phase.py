@@ -85,9 +85,9 @@ def nonces():
 
 def test_end_to_end_diagnostics_bound_and_accepted_by_continue(phase_a, tmp_path, monkeypatch):
     seen, real = [], getattr(diagnostic, "validate_diagnostic", None)
-    def recording(d, *public):
+    def recording(d, *public, **kw):  # MRL-16: build_diagnostic may pass schema=
         seen.append(d["root_id"])
-        return real(d, *public) if real else None
+        return real(d, *public, **kw) if real else None
     monkeypatch.setattr(diagnostic, "validate_diagnostic", recording, raising=False)
     runner, gen = Runner(), nonces()
     m = pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", runner, nonce_factory=lambda: next(gen))
@@ -473,3 +473,127 @@ def test_elapsed_helpers_null_on_unreadable_or_backwards_clock(monkeypatch):
     assert pp._since(None) is None
     clock.broken = True
     assert pp._monotonic() is None
+
+
+# ---- MRL-16: display="v2" through A -> B -> C on a synthetic 3-root package (str / bool / tuple outputs) ----
+
+V2_SPEC = [
+    {"root_id": "mbpp/9001", "entry_point": "f_str",
+     "cases": [{"case_id": "public-9001-1", "args_literal": "['ab']", "expected_literal": "'abc'"}]},
+    {"root_id": "mbpp/9002", "entry_point": "f_bool",
+     "cases": [{"case_id": "public-9002-1", "args_literal": "[3]", "expected_literal": "True"}]},
+    {"root_id": "mbpp/9003", "entry_point": "f_tuple",
+     "cases": [{"case_id": "public-9003-1", "args_literal": "[1, 'a']", "expected_literal": "(1, 'a')"}]},
+]
+V2_TASKS = [{"root_id": c["root_id"], "family_id": f"v2fam{i}", "prompt": f"Write {c['entry_point']}.",
+             "public_context": "Public information.\n\n" + diagnostic.render_public_examples(c["entry_point"], c["cases"])}
+            for i, c in enumerate(V2_SPEC)]
+# What the (faked) isolated v2 harness observed for each root: str pass, bool wrong_value, tuple wrong_value.
+V2_RESULTS = {"f_str": {"status": "pass", "returned": "'abc'", "value_kind": "literal", "reason": None},
+              "f_bool": {"status": "wrong_value", "returned": "False", "value_kind": "literal", "reason": None},
+              "f_tuple": {"status": "wrong_value", "returned": "(1, 'b', True)", "value_kind": "literal", "reason": None}}
+
+
+class V2Receiver(tcd.Fake):
+    def generate(self, payload, timeout):
+        self.payloads.append(payload)
+        i = len(self.payloads) - 1
+        text = f"def {V2_SPEC[i]['entry_point']}(*a):\n    return None\n" if i < len(V2_SPEC) else "def g():\n    return 1\n"
+        return {"message": {"content": text}, "done": True, "prompt_eval_count": 40, "eval_count": 20}
+
+
+class V2Runner:
+    FAKE_RUNNER = True
+    def __init__(self):
+        self.programs = []
+
+    def __call__(self, program, **limits):
+        compile(program, "<public-harness>", "exec")  # compiled only, never executed
+        self.programs.append(program)
+        return {"stdout": "", "returncode": 0, "timed_out": False}
+
+
+@pytest.fixture
+def v2_package(tmp_path):
+    ex = tmp_path / "public_examples_v3.json"
+    ex.write_text(json.dumps({"version": "public-examples-v3", "cases": V2_SPEC}))
+    cfg = tcd.make_config(prior_seen_root_ids=[], prior_seen_family_ids=[])
+    cd.run_initial(cfg, V2_TASKS, tmp_path / "A", adapter=V2Receiver())
+    return cfg, ex, tmp_path / "A"
+
+
+def _fake_check(seen):
+    def check(output, entry_point, cases, runner, nonce, display="v1"):
+        seen.append(display)
+        runner(f"# harness for {entry_point}\nx = 1\n", timeout_s=10, cpu_seconds=5, output_cap=65536)  # one counted start
+        return [dict(V2_RESULTS[entry_point]) for _ in cases]
+    return check
+
+
+def test_v2_display_end_to_end_a_b_c(v2_package, tmp_path, monkeypatch):
+    cfg, ex, a = v2_package
+    seen = []
+    monkeypatch.setattr(pp.public_check, "check_artifact", _fake_check(seen))
+    runner = V2Runner()
+    m = pp.run_phase_b(a, ex, tmp_path / "B", runner, display="v2")
+    assert seen == ["v2"] * 3 and m["executor_starts"] == len(runner.programs) == 3
+    assert m["display"] == "v2" and m["diagnostic_schema"] == diagnostic.SCHEMA_V2 == "public-diagnostic-v2"
+    reserved = json.loads((tmp_path / "B/attempts.jsonl").read_text().splitlines()[0])
+    assert reserved["display"] == "v2" and reserved["diagnostic_schema"] == "public-diagnostic-v2"
+    raw = (tmp_path / "B/diagnostics.json").read_bytes()
+    diags = json.loads(raw)
+    assert hashlib.sha256(raw).hexdigest() == m["diagnostics_sha256"]
+    for c in V2_SPEC:
+        d = diags[c["root_id"]]
+        assert d["schema_version"] == "public-diagnostic-v2"
+        diagnostic.validate_diagnostic(d, c["entry_point"], c["cases"])  # schema detected from the record
+    rows = {c["root_id"]: diags[c["root_id"]]["cases"][0] for c in V2_SPEC}
+    assert rows["mbpp/9001"]["expected"] == "'abc'" and rows["mbpp/9001"]["status"] == "pass"
+    assert rows["mbpp/9002"]["expected"] == "True" and rows["mbpp/9002"]["returned"] == "False"
+    assert rows["mbpp/9003"]["expected"] == "(1, 'a')" and rows["mbpp/9003"]["returned"] == "(1, 'b', True)"
+    assert all(r["value_kind"] == "literal" for r in rows.values())
+    # C: the continue phase validates each diagnostic with the schema it records, against the same examples file.
+    examples = {c["root_id"]: c for c in json.loads(ex.read_text())["cases"]}
+    done = cd.run_continue(cfg, V2_TASKS, a, tmp_path / "B/diagnostics.json", tmp_path / "C",
+                           expected_diagnostics_sha256=m["diagnostics_sha256"], adapter=tcd.Fake(), public_examples=examples)
+    assert done["diagnostics_sha256"] == m["diagnostics_sha256"] and done["attempted_calls"] == 3 * 11
+    man = json.loads((tmp_path / "C/manifest.json").read_text())
+    assert man["diagnostic_schema"] == "public-diagnostic-v2"
+
+
+def test_v2_display_default_is_v1_and_unknown_display_refused(v2_package, tmp_path, monkeypatch):
+    cfg, ex, a = v2_package
+    with pytest.raises(ValueError, match="display"):
+        pp.run_phase_b(a, ex, tmp_path / "B", V2Runner(), display="v3")
+    assert not (tmp_path / "B").exists()
+    # Default v1: v2 outputs (str/bool/tuple expected) are outside the v1 display policy -> refused, no diagnostics.
+    with pytest.raises(ValueError):
+        pp.run_phase_b(a, ex, tmp_path / "B", V2Runner())
+    assert not (tmp_path / "B/diagnostics.json").exists()
+
+
+def test_v1_manifest_and_ledger_unchanged_by_v2_fields(phase_a, tmp_path):
+    m = pp.run_phase_b(phase_a, EXAMPLES, tmp_path / "B", Runner(), nonce_factory=lambda gen=nonces(): next(gen))
+    assert "display" not in m and "diagnostic_schema" not in m
+    reserved = json.loads((tmp_path / "B/attempts.jsonl").read_text().splitlines()[0])
+    assert "display" not in reserved and "diagnostic_schema" not in reserved
+    diags = json.loads((tmp_path / "B/diagnostics.json").read_text())
+    assert {d["schema_version"] for d in diags.values()} == {"public-diagnostic-v1"}
+
+
+def test_cli_display_flag_parsed_and_passed(phase_a, tmp_path, no_sandbox, monkeypatch):
+    got = {}
+    monkeypatch.setattr(pp, "run_phase_b", lambda *a, **k: got.update(k) or {})
+    from experiments.landmark import grade
+    monkeypatch.setattr(grade, "verify_attestation", lambda path: {k: True for k in pp.ATTESTATION_FIELDS} | {"checks": [{"name": "x"}]})
+    att = tmp_path / "att.json"
+    att.write_text("{}")
+    pp.main(["--initial-dir", str(phase_a), "--examples", str(EXAMPLES), "--out", str(tmp_path / "B"),
+             "--attestation", str(att), "--real", "--display", "v2"])
+    assert got["display"] == "v2"
+    pp.main(["--initial-dir", str(phase_a), "--examples", str(EXAMPLES), "--out", str(tmp_path / "B"),
+             "--attestation", str(att), "--real"])
+    assert got["display"] == "v1"
+    with pytest.raises(SystemExit):
+        pp.main(["--initial-dir", str(phase_a), "--examples", str(EXAMPLES), "--out", str(tmp_path / "B"),
+                 "--attestation", str(att), "--real", "--display", "v3"])

@@ -13,6 +13,9 @@ Items (frozen fixture public_instrument_items_v1.json, built by build_items() an
 
 Run: python -m experiments.landmark.public_instrument_validation --items I --items-sha256 H --gate E2|E6|E7
      --out DIR --attestation A --real
+E6v3 (MRL-16): --gate E6v3 --package-dir P --public-examples X --display v2 --out DIR --attestation A --real:
+     the public references of ANY committed package (git HEAD blob identical), exactly N starts (N = specs),
+     display v2 via public_check.check_artifact(display="v2"); attestation first; durable exclusive ledger.
 Order: --real, refuse existing --out, grade.verify_attestation, items sha256 + UNRESOLVED refusal, exact item
 count, then a durable fsynced ledger (reserved -> per item start/result -> complete, or INCOMPLETE on
 exception). Each item gets at most one runner start via public_check.check_artifact; never retried.
@@ -272,15 +275,160 @@ def run(items_path, items_sha, gate, out, attestation, real, runner=None):
     return summary
 
 
+# ------------------------------------------------------------------ E6v3 (MRL-16): any committed package
+E6V3_GATE = "E6v3"
+E6V3_SCHEMA = "public-instrument-validation-e6v3-v1"
+PUBLIC_EXAMPLES_V3_VERSION = "public-examples-v3"
+
+
+def _git_head_blob(path):
+    """HEAD blob bytes of a repo file (git plumbing only; nothing candidate-derived is executed)."""
+    import subprocess
+    rel = Path(path).resolve().relative_to(ROOT.resolve()).as_posix()
+    proc = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob", f"HEAD:{rel}"], capture_output=True, check=False)
+    if proc.returncode != 0:
+        raise SystemExit(f"E6v3: {rel} is not tracked at git HEAD")
+    return proc.stdout
+
+
+def verify_committed(path):
+    """Refuse a file outside the repo, untracked, or differing from its git HEAD blob; return its sha256."""
+    path = Path(path)
+    try:
+        path.resolve().relative_to(ROOT.resolve())
+    except ValueError:
+        raise SystemExit(f"E6v3: {path} is outside the repository (a committed package is required)")
+    if _git_head_blob(path) != path.read_bytes():
+        raise SystemExit(f"E6v3: {path} differs from its git HEAD blob")
+    return file_sha(path)
+
+
+def build_package_items(package_dir, public_examples):
+    """One E6v3 item per private spec: the spec's reference code against that root's v3 public cases.
+    Reads only (strict JSON); executes nothing. Roots/entry points must match exactly between the two files."""
+    from experiments.landmark import diagnostic
+    specs = [diagnostic.strict_json_loads(l) for l in (Path(package_dir) / "private_specs.jsonl").read_text().splitlines()
+             if l.strip()]
+    doc = diagnostic.strict_json_loads(Path(public_examples).read_bytes())
+    refuse_unresolved(doc, "public_examples")
+    if not isinstance(doc, dict) or doc.get("version") != PUBLIC_EXAMPLES_V3_VERSION or not isinstance(doc.get("cases"), list):
+        raise SystemExit(f"E6v3: public examples must be version {PUBLIC_EXAMPLES_V3_VERSION}")
+    ex = {}
+    for c in doc["cases"]:
+        if c["root_id"] in ex:
+            raise SystemExit(f"E6v3: duplicate public-example root {c['root_id']}")
+        ex[c["root_id"]] = c
+    roots = [s["root_id"] for s in specs]
+    if not specs or len(roots) != len(set(roots)) or set(roots) != set(ex):
+        raise SystemExit("E6v3: private spec roots and public-example roots must be the same unique set")
+    items = []
+    for s in specs:
+        root, ep, pub = s["root_id"], s["entry_point"], ex[s["root_id"]]
+        if pub["entry_point"] != ep or not pub["cases"]:
+            raise SystemExit(f"E6v3: entry point mismatch or no public cases for {root}")
+        code = s["reference_code"]
+        items.append({"item_id": f"E6v3/{root}/reference", "gate": E6V3_GATE, "kind": "reference", "root_id": root,
+                      "entry_point": ep, "code": code, "code_sha256": sha256_bytes(code.encode()), "cases": pub["cases"],
+                      "expected_statuses": ["pass"] * len(pub["cases"]), "criterion": "every_public_case_pass"})
+    return items
+
+
+def run_package(package_dir, public_examples, display, out, attestation, real, runner=None, expected_n=None):
+    """Gate E6v3: exactly N starts (N = number of private specs in the committed package), one per reference.
+    Order: --real, attestation FIRST, display == v2, refuse existing --out, committed-bytes checks, item build,
+    then an exclusive fsynced ledger (reserved -> start/result per item -> complete | INCOMPLETE)."""
+    if not real:
+        raise SystemExit("public_instrument_validation executes sandboxed programs; pass --real (separately authorized)")
+    att = grade.verify_attestation(attestation)  # FIRST: before any input or output is touched
+    if display != "v2":
+        raise SystemExit("E6v3 requires --display v2")
+    out = Path(out)
+    if out.exists():
+        raise SystemExit(f"Refusing to overwrite {out}")
+    package_dir = Path(package_dir)
+    committed = {"private_specs.jsonl": verify_committed(package_dir / "private_specs.jsonl"),
+                 "public_examples": verify_committed(public_examples)}
+    if (package_dir / "release_manifest.json").exists():
+        committed["release_manifest.json"] = verify_committed(package_dir / "release_manifest.json")
+    items = build_package_items(package_dir, public_examples)
+    n = len(items)
+    if expected_n is not None and expected_n != n:
+        raise SystemExit(f"E6v3 requires exactly {expected_n} items; package has {n}")
+    runner = runner or sandbox.run_program
+    if runner is not sandbox.run_program and getattr(runner, "FAKE_RUNNER", False) is not True:
+        raise SystemExit("Only sandbox.run_program or a FAKE_RUNNER test double may be used")
+    out.mkdir(parents=True)
+    rows, starts = [], 0
+    with (out / "ledger.jsonl").open("x") as fh:
+        _append(fh, {"event": "reserved", "schema_version": E6V3_SCHEMA, "gate": E6V3_GATE, "display": display,
+                     "package_dir": str(package_dir), "committed_sha256": committed, "planned_max_starts": n,
+                     "planned_item_ids": [i["item_id"] for i in items], "retries": 0,
+                     "runner": f"{getattr(runner, '__module__', '?')}.{getattr(runner, '__qualname__', type(runner).__name__)}",
+                     "fake_runner": getattr(runner, "FAKE_RUNNER", False) is True,
+                     "attestation_path": str(attestation), "attestation_sha256": file_sha(attestation),
+                     "attestation_checked_at": att.get("checked_at"),
+                     "source_sha256": {p: file_sha(ROOT / p) for p in PROVENANCE_SOURCES}, "utc": _now()})
+        try:
+            for it in items:
+                item_starts = [0]
+
+                def counted(program, _it=it, _is=item_starts, **kw):
+                    nonlocal starts
+                    if _is[0]:
+                        raise RuntimeError(f"second start refused for {_it['item_id']}")
+                    if starts >= n:
+                        raise RuntimeError("E6v3 start budget exhausted")
+                    starts += 1
+                    _is[0] += 1
+                    _append(fh, {"event": "start", "item_id": _it["item_id"], "root_id": _it["root_id"],
+                                 "code_sha256": _it["code_sha256"], "program_sha256": sha256_bytes(program.encode()),
+                                 "actual_starts_so_far": starts, "utc": _now()})
+                    return runner(program, **kw)
+                observed = public_check.check_artifact(_fence(it["code"]), it["entry_point"], it["cases"], counted,
+                                                       secrets.token_hex(16), display=display)
+                statuses = [r["status"] for r in observed]
+                row = {"item_id": it["item_id"], "root_id": it["root_id"], "code_sha256": it["code_sha256"],
+                       "starts": item_starts[0], "observed_statuses": statuses,
+                       "observed_reasons": [r["reason"] for r in observed],
+                       "observed_value_kinds": [r.get("value_kind") for r in observed],
+                       "meets_expected": item_starts[0] == 1 and statuses == it["expected_statuses"]}
+                _append(fh, {"event": "result", **row, "utc": _now()})
+                rows.append(row)
+        except BaseException as exc:
+            _append(fh, {"event": "INCOMPLETE", "error": f"{type(exc).__name__}: {exc}", "actual_starts": starts,
+                         "completed_items": len(rows), "planned_max_starts": n, "utc": _now()})
+            raise
+        summary = {"schema_version": E6V3_SCHEMA + "-result", "gate": E6V3_GATE, "display": display,
+                   "committed_sha256": committed, "planned_max_starts": n, "actual_starts": starts, "rows": rows,
+                   "all_meet_expected": len(rows) == n and starts == n and all(r["meets_expected"] for r in rows),
+                   "finished_utc": _now()}
+        _append(fh, {"event": "complete", "actual_starts": starts, "utc": _now()})
+    with (out / "result.json").open("x") as f:
+        f.write(json.dumps(summary, indent=1, sort_keys=True) + "\n")
+    return summary
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--items", required=True)
-    ap.add_argument("--items-sha256", required=True)
-    ap.add_argument("--gate", required=True, choices=sorted(EXPECTED_COUNTS))
+    ap.add_argument("--items")
+    ap.add_argument("--items-sha256")
+    ap.add_argument("--gate", required=True, choices=sorted(EXPECTED_COUNTS) + [E6V3_GATE])
+    ap.add_argument("--package-dir", help="E6v3: committed package directory (private_specs.jsonl)")
+    ap.add_argument("--public-examples", help="E6v3: committed public-examples-v3 file")
+    ap.add_argument("--display", choices=("v1", "v2"), help="E6v3: must be v2")
+    ap.add_argument("--expected-n", type=int, help="E6v3: optional exact item/start count (e.g. 14)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--attestation", required=True)
     ap.add_argument("--real", action="store_true")
     a = ap.parse_args(argv)
+    if a.gate == E6V3_GATE:
+        if not (a.package_dir and a.public_examples and a.display) or a.items or a.items_sha256:
+            ap.error("E6v3 requires --package-dir, --public-examples and --display (and no --items)")
+        res = run_package(a.package_dir, a.public_examples, a.display, a.out, a.attestation, a.real, expected_n=a.expected_n)
+        print(json.dumps({k: v for k, v in res.items() if k != "rows"}, sort_keys=True))
+        return
+    if not (a.items and a.items_sha256) or a.package_dir or a.public_examples or a.display:
+        ap.error(f"--gate {a.gate} requires --items and --items-sha256 only")
     res = run(a.items, a.items_sha256, a.gate, a.out, a.attestation, a.real)
     print(json.dumps({k: v for k, v in res.items() if k != "rows"}, sort_keys=True))
 

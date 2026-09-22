@@ -8,14 +8,17 @@ Supersedes the historical validate_references.py for the rebound release (which 
   * reads the builder's JSONL spec format (one spec per line, duplicate keys refused);
   * one job per frozen reference and one per frozen negative control -- NO special-case rewrite of any root
     (in particular no 402 repair job: the rebound reference is already the repaired one) and no extra jobs;
-  * exactly 24 planned starts (7 references + 17 controls); expected 7 pass / 17 fail.
+  * planned starts = len(references) + len(controls) from the specs, and must equal --expected-starts (default 24,
+    the 7-root v2 specs: 7 references + 17 controls; the 14-root v3 specs, one control per root, declare 28);
+    exactly one reference per spec/root; expected len(references) pass / len(controls) fail.
 
 Per job this uses grade.evaluate (grade.prepare_program semantics) against the spec's FULL private suite.
 A control counts as a demonstrated failure only if the runner actually started it and it returned outcome 0;
 a static rejection, environment failure or timeout-before-payload never stands in for a failure.
 
 Refusals (in order, before any start): missing --real; grade.verify_attestation failure (checked FIRST);
-specs byte SHA-256 mismatch; grade.validate_specs(tasks, specs) failure; planned job count != 24; existing out dir;
+specs byte SHA-256 mismatch; grade.validate_specs(tasks, specs) failure; planned job count != --expected-starts
+(or a malformed plan: not one reference per root, no control); existing out dir;
 a runner that is neither sandbox.run_program nor an explicitly declared fake (FAKE_RUNNER = True).
 
 Durable accounting: OUT/attempts.jsonl is created exclusively and every record is flushed + fsynced:
@@ -91,12 +94,23 @@ def plan_jobs(specs: list[dict]) -> list[dict]:
     return jobs
 
 
-def check_plan(jobs: list[dict]) -> None:
+def check_plan(jobs: list[dict], expected_starts: int = PLANNED_STARTS) -> dict:
+    """Generic plan check: planned starts == refs + controls == expected_starts; one reference per root, every
+    root with >= 1 control. The v2 default (24) additionally keeps the exact 7 + 17 shape."""
+    if type(expected_starts) is not int or not 1 <= expected_starts <= 200:
+        raise ValueError(f"--expected-starts must be an int in [1, 200]; got {expected_starts!r}")
     refs = sum(j["kind"] == "reference" for j in jobs)
     ctls = sum(j["kind"] == "control" for j in jobs)
-    if len(jobs) != PLANNED_STARTS or refs != EXPECTED_REFERENCES or ctls != EXPECTED_CONTROLS:
-        raise ValueError(f"Planned job count must be exactly {PLANNED_STARTS} "
-                         f"({EXPECTED_REFERENCES} references + {EXPECTED_CONTROLS} controls); got {len(jobs)} ({refs}+{ctls})")
+    ref_roots = [j["root_id"] for j in jobs if j["kind"] == "reference"]
+    ctl_roots = {j["root_id"] for j in jobs if j["kind"] == "control"}
+    shape_ok = len(ref_roots) == len(set(ref_roots)) and ctl_roots == set(ref_roots)
+    if expected_starts == PLANNED_STARTS:
+        shape_ok = shape_ok and refs == EXPECTED_REFERENCES and ctls == EXPECTED_CONTROLS
+    if len(jobs) != expected_starts or refs + ctls != len(jobs) or not shape_ok:
+        extra = f" ({EXPECTED_REFERENCES} references + {EXPECTED_CONTROLS} controls)" if expected_starts == PLANNED_STARTS else \
+            " (one reference per root + >= 1 control per root)"
+        raise ValueError(f"Planned job count must be exactly {expected_starts}{extra}; got {len(jobs)} ({refs}+{ctls})")
+    return {"planned_starts": len(jobs), "references": refs, "controls": ctls}
 
 
 def provenance() -> dict:
@@ -121,7 +135,7 @@ def _as_expected(job_row: dict) -> bool:
     return job_row["outcome"] == 0 and job_row["starts"] == 1 and job_row["sandbox_executed"] is True
 
 
-def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=None) -> dict:
+def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=None, expected_starts=PLANNED_STARTS) -> dict:
     if real is not True:
         raise PermissionError("Refusing: real execution requires --real")
     verified = grade.verify_attestation(attestation)  # FIRST: raises unless containment passed, fresh and bound
@@ -138,7 +152,8 @@ def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=Non
     tasks = load_jsonl(tasks_bytes, "tasks")
     grade.validate_specs(tasks, specs)
     jobs = plan_jobs(specs)
-    check_plan(jobs)
+    plan = check_plan(jobs, expected_starts)
+    planned, n_refs, n_ctls = plan["planned_starts"], plan["references"], plan["controls"]
     by_root = {s["root_id"]: s for s in specs}
 
     out = Path(out)
@@ -150,7 +165,8 @@ def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=Non
     rows = []
     try:
         ledger.write({"event": "reserved", "schema_version": SCHEMA, "utc": _utc(),
-                      "planned_starts": PLANNED_STARTS, "specs_sha256": actual_sha,
+                      "planned_starts": planned, "expected_starts": expected_starts,
+                      "expected": {"pass": n_refs, "fail": n_ctls}, "specs_sha256": actual_sha,
                       "tasks_sha256": _sha(tasks_bytes), "source_sha256": provenance(),
                       "runner": ident, "attestation": att,
                       "jobs": [{k: j[k] for k in ("root_id", "kind", "index", "code_sha256", "expected_outcome")} for j in jobs]})
@@ -180,12 +196,12 @@ def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=Non
             rows.append(row)
             ledger.write({"event": "job_result", "job": n, **row, "actual_starts_so_far": state["starts"], "utc": _utc()})
         passes = sum(r["passed"] for r in rows)
-        summary = {"schema_version": SCHEMA, "planned_starts": PLANNED_STARTS, "actual_starts": state["starts"],
+        summary = {"schema_version": SCHEMA, "planned_starts": planned, "actual_starts": state["starts"],
                    "jobs_completed": len(rows), "model_calls": 0,
                    "sandbox_seconds_wall": round(time.monotonic() - started, 2),
                    "passes": passes, "fails": len(rows) - passes,
-                   "expected": {"pass": EXPECTED_REFERENCES, "fail": EXPECTED_CONTROLS},
-                   "matches_expected": len(rows) == PLANNED_STARTS and all(r["as_expected"] for r in rows),
+                   "expected": {"pass": n_refs, "fail": n_ctls},
+                   "matches_expected": len(rows) == planned and state["starts"] == planned and all(r["as_expected"] for r in rows),
                    "jobs": [{k: r[k] for k in ("root_id", "kind", "index", "code_sha256", "outcome", "reason",
                                                "timed_out", "starts", "passed", "expected_outcome", "as_expected")}
                             for r in rows],
@@ -194,14 +210,14 @@ def run(specs_path, specs_sha256, tasks_path, out, attestation, real, runner=Non
             f.write(json.dumps(summary, indent=2, sort_keys=True))
             f.flush()
             os.fsync(f.fileno())
-        ledger.write({"event": "complete", "actual_starts": state["starts"], "planned_starts": PLANNED_STARTS,
+        ledger.write({"event": "complete", "actual_starts": state["starts"], "planned_starts": planned,
                       "matches_expected": summary["matches_expected"], "utc": _utc()})
         return summary
     except BaseException as e:
         try:
             ledger.write({"event": "INCOMPLETE", "error": f"{type(e).__name__}: {e}",
                           "traceback_tail": traceback.format_exc()[-2000:], "actual_starts": state["starts"],
-                          "planned_starts": PLANNED_STARTS, "jobs_completed": len(rows), "utc": _utc()})
+                          "planned_starts": planned, "jobs_completed": len(rows), "utc": _utc()})
         finally:
             ledger.close()
         raise
@@ -217,9 +233,11 @@ def main(argv=None) -> int:
     p.add_argument("--tasks", type=Path, required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--attestation", type=Path, required=True)
+    p.add_argument("--expected-starts", type=int, default=PLANNED_STARTS,
+                   help="must equal len(references)+len(controls) in the specs (v2: 24; v3 14 roots: 28)")
     p.add_argument("--real", action="store_true")
     a = p.parse_args(argv)
-    summary = run(a.specs, a.specs_sha256, a.tasks, a.out, a.attestation, a.real)
+    summary = run(a.specs, a.specs_sha256, a.tasks, a.out, a.attestation, a.real, expected_starts=a.expected_starts)
     print(json.dumps({k: summary[k] for k in ("planned_starts", "actual_starts", "passes", "fails", "matches_expected")}, indent=2))
     return 0 if summary["matches_expected"] else 1
 

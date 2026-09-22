@@ -133,6 +133,20 @@ def diagnostic_module():
     return importlib.import_module("experiments.landmark.diagnostic")
 
 
+def diagnostic_schemas(dm):
+    """Diagnostic schemas the continue phase accepts: dm.SCHEMA (v1) and, when the module defines it, dm.SCHEMA_V2."""
+    return tuple(s for s in (dm.SCHEMA, getattr(dm, "SCHEMA_V2", None)) if isinstance(s, str))
+
+
+def diagnostics_schema(dm, diagnostics):
+    """The single schema recorded by every diagnostic in the file (MRL-16: v1 or v2, never mixed); refuses otherwise.
+    Each record is then validated with the schema it records (validate_diagnostic detects it from schema_version)."""
+    found = {d.get("schema_version") if isinstance(d, dict) else None for d in diagnostics.values()}
+    if len(found) != 1 or next(iter(found)) not in diagnostic_schemas(dm):
+        raise ValueError(f"Diagnostics must all record one known schema {diagnostic_schemas(dm)}, found {sorted(map(str, found))}")
+    return next(iter(found))
+
+
 def file_sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -438,6 +452,7 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     collected = [r for r in initial_rows.values() if r.get("artifact_sha256")]
     if not isinstance(diagnostics, dict) or set(diagnostics) != {r["root_id"] for r in collected}:
         raise ValueError("Diagnostics must map exactly the roots with an initial artifact")
+    schema = diagnostics_schema(dm, diagnostics) if diagnostics else dm.SCHEMA
     # Every loaded record must be one build_diagnostic could have produced, before any rendering or dispatch.
     # The public cases must be the ones already rendered at the end of the task's public prompt, and every
     # diagnostic row must match them exactly: no non-public call, expected value or case can reach Phase B.
@@ -466,7 +481,7 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
         if hashlib.sha256(data).hexdigest() != row["artifact_sha256"]:
             raise ValueError(f"Initial artifact bytes differ from the recorded SHA-256 for {p['root_id']}")
         diag = diagnostics[p["root_id"]]
-        if not isinstance(diag, dict) or diag.get("schema_version") != dm.SCHEMA or diag.get("root_id") != p["root_id"]:
+        if not isinstance(diag, dict) or diag.get("schema_version") != schema or diag.get("root_id") != p["root_id"]:
             raise ValueError(f"Diagnostic for {p['root_id']} has the wrong schema or root")
         if diag.get("initial_artifact_sha256") != row["artifact_sha256"]:
             raise ValueError(f"Diagnostic for {p['root_id']} is bound to a different initial artifact")
@@ -487,7 +502,8 @@ def run_continue(config, tasks, initial_dir, diagnostics_path, output, *, expect
     (output / "manifest.json").write_text(json.dumps(_manifest(
         config, tasks, plan, planned, "continue", initial_dir=str(initial_dir), initial_completion_sha256=file_sha(initial_dir / "completion.json"),
         diagnostics_sha256=diagnostics_sha256, renderers=renderers, renderers_sha256=collect.digest(renderers),
-        bindings={k: {x: v[x] for x in v if x != "messages"} for k, v in bound.items()}, **real_extra), indent=2, ensure_ascii=False) + "\n")
+        bindings={k: {x: v[x] for x in v if x != "messages"} for k, v in bound.items()},
+        **({"diagnostic_schema": schema} if schema != dm.SCHEMA else {}), **real_extra), indent=2, ensure_ascii=False) + "\n")
     carried = {k: initial_completion[k] for k in ("attempted_calls", "reserved_completion_tokens", "wall_seconds")}
     ph = _Phase(config, output, adapter if adapter is not None else collect.Mock(), clock, carried)
     ph.preflight(previous_state=initial_completion["model_metadata"].get("state_before") if ph.guarded else None)

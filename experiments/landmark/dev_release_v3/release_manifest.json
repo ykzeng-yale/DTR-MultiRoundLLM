@@ -1,0 +1,1030 @@
+{
+ "manifest": "dev-release-v3-diagnostic",
+ "status": "MRL-16 package; validation then collection only inside a fresh owner window",
+ "roots": [
+  "mbpp/918",
+  "mbpp/825",
+  "mbpp/842",
+  "mbpp/816",
+  "mbpp/895",
+  "mbpp/868",
+  "mbpp/288",
+  "mbpp/154",
+  "mbpp/863",
+  "mbpp/966",
+  "mbpp/652",
+  "mbpp/651",
+  "mbpp/499",
+  "mbpp/974"
+ ],
+ "n_roots": 14,
+ "holds_no_backfill": {
+  "mbpp/31": "tie/order unspecified (review)",
+  "mbpp/847": "copy vs alias not distinguished (review)",
+  "mbpp/907": "private answers recoverable from public prefix; print vs return (review)",
+  "mbpp/963": "message strings unstated; invalid private classification (review)",
+  "mbpp/359": "literal message strings unstated (MRL-15 frame review)",
+  "mbpp/349": "literal message strings unstated (MRL-15 frame review)"
+ },
+ "prior_exposure": {
+  "historical_prior_seen": "dev_release_v1c prior_seen_root_ids (598)",
+  "inspected_development_roots": [
+   "mbpp/52",
+   "mbpp/357",
+   "mbpp/373",
+   "mbpp/378",
+   "mbpp/402",
+   "mbpp/489",
+   "mbpp/509"
+  ]
+ },
+ "provisional_families": {
+  "mbpp/918": "PF-918",
+  "mbpp/825": "PF-825",
+  "mbpp/842": "PF-29",
+  "mbpp/816": "PF-816",
+  "mbpp/895": "PF-895",
+  "mbpp/868": "PF-813",
+  "mbpp/288": "PF-288",
+  "mbpp/154": "PF-49",
+  "mbpp/863": "PF-863",
+  "mbpp/966": "PF-361",
+  "mbpp/652": "PF-652",
+  "mbpp/651": "PF-651",
+  "mbpp/499": "PF-499",
+  "mbpp/974": "PF-147"
+ },
+ "family_note": "provisional duplicate screen only; min-member-hash representatives; NOT uniform family sampling; not independence",
+ "contract_note": "adapted MBPP contracts (docs/e12_contract_review_20260922.md), incl. 288 general-modulus amendment; two private assertions per root; not a benchmark-wide correctness certificate",
+ "frame_review": {
+  "dir": "results/frame_review_mrl15_20260922T021718Z",
+  "records_sha256": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74"
+ },
+ "model": {
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "receiver_state_sha256_expected": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+  "sampler_law": "server_defaults_pinned"
+ },
+ "evaluator": {
+  "grader_version": "landmark-grader-v5-parse-and-compile-fault-attribution",
+  "diagnostic_schema": "public-diagnostic-v2"
+ },
+ "seed_schedule": {
+  "derivation": "collect.seeded(config, root_id, label) = int(digest([seed, root_id, label])[:15],16) % 2**31; labels 'initial' and '<arm>:<replicate>'; independent streams, NOT common-random-number coupling",
+  "seed": 20260921
+ },
+ "assignment_table": [
+  {
+   "root_id": "mbpp/918",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1928852835,
+    "N0:0": 2075095269,
+    "N0:1": 143434032,
+    "S0:0": 63374508,
+    "S0:1": 1100131693,
+    "N1:0": 738936711,
+    "N1:1": 1577585208,
+    "S1:0": 410230499,
+    "S1:1": 417084153,
+    "R1:0": 1449281446,
+    "R1:1": 499309634
+   }
+  },
+  {
+   "root_id": "mbpp/825",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1368125338,
+    "N0:0": 1488975479,
+    "N0:1": 1886067669,
+    "S0:0": 1584442630,
+    "S0:1": 1301251218,
+    "N1:0": 632947729,
+    "N1:1": 1505881679,
+    "S1:0": 1745022611,
+    "S1:1": 788227637,
+    "R1:0": 628954956,
+    "R1:1": 1505413724
+   }
+  },
+  {
+   "root_id": "mbpp/842",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 988544966,
+    "N0:0": 1687197122,
+    "N0:1": 852415238,
+    "S0:0": 1969590557,
+    "S0:1": 127352837,
+    "N1:0": 123048256,
+    "N1:1": 181094087,
+    "S1:0": 325028918,
+    "S1:1": 2024818217,
+    "R1:0": 42796135,
+    "R1:1": 658166361
+   }
+  },
+  {
+   "root_id": "mbpp/816",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 894284307,
+    "N0:0": 853342743,
+    "N0:1": 1160811369,
+    "S0:0": 610946473,
+    "S0:1": 501251668,
+    "N1:0": 1730754519,
+    "N1:1": 1812004049,
+    "S1:0": 357096675,
+    "S1:1": 676041353,
+    "R1:0": 1895122699,
+    "R1:1": 1929959239
+   }
+  },
+  {
+   "root_id": "mbpp/895",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 433028415,
+    "N0:0": 193346903,
+    "N0:1": 126051380,
+    "S0:0": 2058443158,
+    "S0:1": 478798302,
+    "N1:0": 936166803,
+    "N1:1": 67165588,
+    "S1:0": 755157654,
+    "S1:1": 529296998,
+    "R1:0": 205226833,
+    "R1:1": 987963815
+   }
+  },
+  {
+   "root_id": "mbpp/868",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1415369786,
+    "N0:0": 259491001,
+    "N0:1": 959903914,
+    "S0:0": 1438290461,
+    "S0:1": 1020333922,
+    "N1:0": 1340592621,
+    "N1:1": 49060846,
+    "S1:0": 821334480,
+    "S1:1": 803492526,
+    "R1:0": 1069928067,
+    "R1:1": 1817116847
+   }
+  },
+  {
+   "root_id": "mbpp/288",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 173086830,
+    "N0:0": 757441222,
+    "N0:1": 2069471112,
+    "S0:0": 672584266,
+    "S0:1": 1211318645,
+    "N1:0": 1681498362,
+    "N1:1": 1368741849,
+    "S1:0": 795990480,
+    "S1:1": 104764520,
+    "R1:0": 426578150,
+    "R1:1": 196027882
+   }
+  },
+  {
+   "root_id": "mbpp/154",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1337810025,
+    "N0:0": 1011657923,
+    "N0:1": 1571903051,
+    "S0:0": 1989337288,
+    "S0:1": 544695306,
+    "N1:0": 796419745,
+    "N1:1": 1196563944,
+    "S1:0": 1864996501,
+    "S1:1": 896137248,
+    "R1:0": 563461113,
+    "R1:1": 125270044
+   }
+  },
+  {
+   "root_id": "mbpp/863",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 969731030,
+    "N0:0": 1923774718,
+    "N0:1": 82718010,
+    "S0:0": 101145391,
+    "S0:1": 580389841,
+    "N1:0": 435241900,
+    "N1:1": 2147055662,
+    "S1:0": 1052052617,
+    "S1:1": 1198746926,
+    "R1:0": 1550132357,
+    "R1:1": 748712412
+   }
+  },
+  {
+   "root_id": "mbpp/966",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1622367576,
+    "N0:0": 201743792,
+    "N0:1": 684236224,
+    "S0:0": 561942710,
+    "S0:1": 1760021186,
+    "N1:0": 534951091,
+    "N1:1": 945698908,
+    "S1:0": 1863105528,
+    "S1:1": 2129082042,
+    "R1:0": 1962854312,
+    "R1:1": 2056390782
+   }
+  },
+  {
+   "root_id": "mbpp/652",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 2074932835,
+    "N0:0": 614568861,
+    "N0:1": 1451666587,
+    "S0:0": 1556430640,
+    "S0:1": 1062885632,
+    "N1:0": 473263011,
+    "N1:1": 1107780375,
+    "S1:0": 735298371,
+    "S1:1": 1652420507,
+    "R1:0": 1418745546,
+    "R1:1": 663543033
+   }
+  },
+  {
+   "root_id": "mbpp/651",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 545897821,
+    "N0:0": 1847781608,
+    "N0:1": 1896755473,
+    "S0:0": 1072125386,
+    "S0:1": 1640354653,
+    "N1:0": 2039597670,
+    "N1:1": 511615815,
+    "S1:0": 1362915771,
+    "S1:1": 478836184,
+    "R1:0": 561474202,
+    "R1:1": 1512427303
+   }
+  },
+  {
+   "root_id": "mbpp/499",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 1861676708,
+    "N0:0": 1735722378,
+    "N0:1": 292812845,
+    "S0:0": 1066665098,
+    "S0:1": 970723098,
+    "N1:0": 2088764677,
+    "N1:1": 402148082,
+    "S1:0": 1378878569,
+    "S1:1": 1028638691,
+    "R1:0": 1482414807,
+    "R1:1": 1009802766
+   }
+  },
+  {
+   "root_id": "mbpp/974",
+   "family_id": "unresolved_development_family",
+   "excluded": false,
+   "exclusion_reason": null,
+   "branch_order": [
+    {
+     "arm": "S0",
+     "replicate": 0
+    },
+    {
+     "arm": "S0",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 0
+    },
+    {
+     "arm": "S1",
+     "replicate": 1
+    },
+    {
+     "arm": "R1",
+     "replicate": 1
+    },
+    {
+     "arm": "N0",
+     "replicate": 1
+    },
+    {
+     "arm": "N1",
+     "replicate": 1
+    },
+    {
+     "arm": "S1",
+     "replicate": 0
+    },
+    {
+     "arm": "N1",
+     "replicate": 0
+    },
+    {
+     "arm": "R1",
+     "replicate": 0
+    }
+   ],
+   "order_role": "scheduling_not_assignment",
+   "branch_inclusion_probability": 1.0,
+   "seeds": {
+    "initial": 988364973,
+    "N0:0": 229861609,
+    "N0:1": 1461141092,
+    "S0:0": 889708536,
+    "S0:1": 2063346611,
+    "N1:0": 191340824,
+    "N1:1": 1974579558,
+    "S1:0": 1869300113,
+    "S1:1": 83766701,
+    "R1:0": 587236650,
+    "R1:1": 1763649641
+   }
+  }
+ ],
+ "assignment_table_sha256": "9c7b596b78d654c127f53a3e00252a11984da19d91ee9e22dbafde4d5cc5dfaf",
+ "package": {
+  "tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+  "private_specs.jsonl": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+  "public_examples_v3.json": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+  "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+  "controls_rationale.json": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
+  "exclusions.json": "d3a0d7ea86c1817d71b54d1a5198b5d20824e8fc6f923daf056fa7fd077dceec",
+  "overlap_audit.json": "aa8264383b61771afb35767730445aaf707b9d7101121bf150ffcd6a83f312b7"
+ },
+ "diagnostic_schema": "public-diagnostic-v2",
+ "grading_limits": {
+  "n_roots": 14,
+  "artifact_starts": 154,
+  "recheck_starts": 28,
+  "max_private_starts": 182,
+  "grading_seconds": 600
+ },
+ "grading_bindings": {
+  "frozen_tasks_path": "experiments/landmark/dev_release_v3/tasks.jsonl",
+  "frozen_tasks_sha256": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+  "expected_contract_sha256": "80185597d199be81c0a22c117b0ed2a3225ce2b0e381e031fb94eefbfe0de727",
+  "expected_config_sha256": "e3e310f881be370b3cbd8c6d8f3fe086241a99d98ce1db20f5c108a6efd124f4",
+  "expected_source_hashes": {
+   "experiments/landmark/study_adapter.py": "1e5734b883435790a0578e7b2dc7121ecdd47d6136be544b9060d0f8016abfbd",
+   "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+   "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+   "experiments/landmark/collect_diagnostic.py": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+   "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719"
+  }
+ },
+ "caps": {
+  "receiver_calls": 154,
+  "reserved_completion_tokens": 78848,
+  "collection_seconds": 1200,
+  "grading_seconds": 600,
+  "isolated_starts": {
+   "validation": 42,
+   "phase_b": 14,
+   "phase_d": 182,
+   "total": 238
+  },
+  "ledger": {
+   "spent_before": 174,
+   "ceiling": 412
+  },
+  "outer_wall_minutes": 60,
+  "paid_usd": 0
+ },
+ "run_id": "e12_dev_v3_20260922T030255Z",
+ "output_location": "work/e12_dev_v3_20260922T030255Z",
+ "commands": {
+  "validation_private": ".venv/bin/python -m experiments.landmark.validate_rebound_references --specs experiments/landmark/dev_release_v3/private_specs.jsonl --specs-sha256 24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305 --tasks experiments/landmark/dev_release_v3/tasks.jsonl --expected-starts 28 --out work/e12_dev_v3_20260922T030255Z/validation/private --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real",
+  "validation_public": ".venv/bin/python -m experiments.landmark.public_instrument_validation --gate E6v3 --package-dir experiments/landmark/dev_release_v3 --public-examples experiments/landmark/dev_release_v3/public_examples_v3.json --display v2 --expected-n 14 --out work/e12_dev_v3_20260922T030255Z/validation/public --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real",
+  "A": ".venv/bin/python -m experiments.landmark.collect_diagnostic --phase initial --config experiments/landmark/dev_release_v3/config.json --tasks experiments/landmark/dev_release_v3/tasks.jsonl --output work/e12_dev_v3_20260922T030255Z/A --real --ownership experiments/landmark/dev_release_v3/ownership.agreed.json",
+  "B": ".venv/bin/python -m experiments.landmark.public_phase --initial-dir work/e12_dev_v3_20260922T030255Z/A --examples experiments/landmark/dev_release_v3/public_examples_v3.json --out work/e12_dev_v3_20260922T030255Z/B --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --display v2 --real",
+  "C": ".venv/bin/python -m experiments.landmark.collect_diagnostic --phase continue --config experiments/landmark/dev_release_v3/config.json --tasks experiments/landmark/dev_release_v3/tasks.jsonl --initial-dir work/e12_dev_v3_20260922T030255Z/A --diagnostics work/e12_dev_v3_20260922T030255Z/B/diagnostics.json --diagnostics-sha256 $DIAG_SHA --public-examples experiments/landmark/dev_release_v3/public_examples_v3.json --output work/e12_dev_v3_20260922T030255Z/C --real --ownership experiments/landmark/dev_release_v3/ownership.agreed.json",
+  "D": ".venv/bin/python -m experiments.landmark.study_adapter grade --release-manifest experiments/landmark/dev_release_v3/release_manifest.json --specs experiments/landmark/dev_release_v3/private_specs.jsonl --initial-dir work/e12_dev_v3_20260922T030255Z/A --continue-dir work/e12_dev_v3_20260922T030255Z/C --out work/e12_dev_v3_20260922T030255Z/D --attestation results/validation_bundle_v2_20260921T201642Z/attestation/attestation.json --real",
+  "E": ".venv/bin/python -m experiments.landmark.study_adapter analysis-input --release-manifest experiments/landmark/dev_release_v3/release_manifest.json --view work/e12_dev_v3_20260922T030255Z/D/view --grades work/e12_dev_v3_20260922T030255Z/D/grades.jsonl --phase-b-dir work/e12_dev_v3_20260922T030255Z/B --expected-diagnostics-sha256 $DIAG_SHA --out work/e12_dev_v3_20260922T030255Z/analysis_input.json",
+  "DIAG_SHA": "DIAG_SHA=$(.venv/bin/python -c \"import json,sys;print(json.load(open(sys.argv[1]))['diagnostics_sha256'])\" work/e12_dev_v3_20260922T030255Z/B/manifest.json)",
+  "same_head_guard": "FREEZE=$(git rev-parse HEAD) before A; test \"$(git rev-parse HEAD)\" = \"$FREEZE\" before B, C, D and E; no pulls mid-batch"
+ },
+ "ownership": {
+  "status": "a fresh, real 60-minute owner agreement must be committed at experiments/landmark/dev_release_v3/ownership.agreed.json before A"
+ }
+}

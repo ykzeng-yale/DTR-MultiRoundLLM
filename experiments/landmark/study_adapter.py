@@ -42,6 +42,7 @@ if str(ROOT) not in sys.path:
 from experiments.landmark.collect import digest, file_sha  # noqa: E402
 
 STUDY_ARMS = ("STOP", "N0", "S0", "N1", "S1", "R1")
+MAX_PRIVATE_STARTS, MAX_GRADING_SECONDS, DEFAULT_GRADING_SECONDS = 200, 600, 240
 CONTINUATION_ARMS = STUDY_ARMS[1:]
 GRADING_SOURCES = ("experiments/landmark/study_adapter.py", "experiments/landmark/grade.py",
                    "experiments/landmark/sandbox.py", "experiments/common/integrity.py",
@@ -236,7 +237,7 @@ def grade_study(view, specs, runner, *, frozen_tasks_path=None, frozen_tasks_sha
                 expected_contract_sha256=None, initial_dir=None, continue_dir=None, expected_source_hashes=None,
                 expected_config_sha256=None,
                 attestation_path=None, fake_runner_for_tests=False, max_executions=200,
-                max_seconds=240, clock=time.monotonic):
+                max_seconds=240, clock=time.monotonic, max_seconds_cap=240):
     """Mirror of grade.grade_collection's per-artifact logic over a study view (list of rows or a view dir).
 
     `runner` is required and injected (tests pass a fake; never defaulted to sandbox.run_program here). As in
@@ -249,7 +250,12 @@ def grade_study(view, specs, runner, *, frozen_tasks_path=None, frozen_tasks_sha
         if attestation_path is None:
             raise ValueError("Containment attestation required")
         grade.verify_attestation(attestation_path)
-    if type(max_executions) is not int or not 1 <= max_executions <= 200 or not 0 < max_seconds <= 240:
+    # The 240 s cap is raised only when a committed release manifest's grading_limits says so (cmd_grade passes
+    # max_seconds_cap=grading_seconds), and never above MAX_GRADING_SECONDS; never more than 200 private starts.
+    if type(max_seconds_cap) not in (int, float) or not 0 < max_seconds_cap <= MAX_GRADING_SECONDS:
+        raise ValueError("Grading budget exceeds bounded adapter limits")
+    if type(max_executions) is not int or not 1 <= max_executions <= MAX_PRIVATE_STARTS \
+            or type(max_seconds) not in (int, float) or not 0 < max_seconds <= max_seconds_cap:
         raise ValueError("Grading budget exceeds bounded adapter limits")
     # J7 protections: run on fake and real paths alike (only the attestation above is fake-exempt).
     if None in (frozen_tasks_path, frozen_tasks_sha256, expected_contract_sha256, initial_dir, continue_dir,
@@ -377,9 +383,11 @@ def to_analysis_input(view, grades, diagnostics=None, diagnostic_costs=None):
 BINDING_KEYS = ("frozen_tasks_path", "frozen_tasks_sha256", "expected_contract_sha256", "expected_config_sha256",
                 "expected_source_hashes")
 PACKAGE_FILES = ("tasks.jsonl", "private_specs.jsonl", "config.json")
-PLANNED_MAX_ARTIFACTS, PLANNED_MAX_RECHECKS = 77, 24
+PLANNED_MAX_ARTIFACTS, PLANNED_MAX_RECHECKS = 77, 24  # v2 defaults (no grading_limits in the v2 manifest)
 GRADING_LEDGER = "grading_attempts.jsonl"
-COMMITTED_RELEASE_MANIFEST = "experiments/landmark/dev_release_v2/release_manifest.json"
+COMMITTED_RELEASE_MANIFEST = "experiments/landmark/dev_release_v2/release_manifest.json"  # v2 (kept for callers)
+COMMITTED_RELEASE_MANIFESTS = (COMMITTED_RELEASE_MANIFEST, "experiments/landmark/dev_release_v3/release_manifest.json")
+GRADING_LIMIT_KEYS = frozenset({"n_roots", "artifact_starts", "recheck_starts", "max_private_starts", "grading_seconds"})
 HEX64 = re.compile(r"[0-9a-f]{64}")
 
 
@@ -402,10 +410,13 @@ def _resolve(path):
     return p if p.is_absolute() else ROOT / p
 
 
-def load_release_bindings(release_manifest, specs_path):
-    """Every J7 binding from the release manifest's grading_bindings; refuses missing/UNRESOLVED/mismatched."""
+def load_release_bindings(release_manifest, specs_path, data=None):
+    """Every J7 binding from the release manifest's grading_bindings; refuses missing/UNRESOLVED/mismatched.
+
+    `data` = the manifest bytes already verified against the HEAD blob; when given they are parsed instead of
+    re-reading the path (no verify-then-reread gap)."""
     release_manifest = Path(release_manifest)
-    m = _strict(release_manifest.read_bytes())
+    m = _strict(release_manifest.read_bytes() if data is None else data)
     b = m.get("grading_bindings")
     if not isinstance(b, dict):
         raise ValueError("Release manifest has no grading_bindings")
@@ -435,18 +446,99 @@ def load_release_bindings(release_manifest, specs_path):
     return {**{k: b[k] for k in BINDING_KEYS}, "frozen_tasks_path": tasks_path}
 
 
-def verify_committed_release(path):
-    """sha256 of the committed release manifest; refuses any other path, an untracked file, or one modified vs git HEAD."""
-    committed = (ROOT / COMMITTED_RELEASE_MANIFEST).resolve()
-    if Path(path).resolve() != committed:
-        raise ValueError(f"release manifest must be the committed {COMMITTED_RELEASE_MANIFEST}")
-    proc = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob", f"HEAD:{COMMITTED_RELEASE_MANIFEST}"],
+def verify_committed_release(path, data=None):
+    """sha256 of a committed release manifest at an ALLOWLISTED path (COMMITTED_RELEASE_MANIFESTS: dev_release_v2,
+    dev_release_v3); refuses any other path, an untracked file, or one modified vs its git HEAD blob.
+
+    data: the manifest bytes the caller read once and will parse; they (not a fresh re-read of the path) must
+    equal the HEAD blob, so grading limits and the diagnostic schema come from exactly the verified bytes."""
+    resolved = Path(path).resolve()
+    rel = next((r for r in COMMITTED_RELEASE_MANIFESTS if (ROOT / r).resolve() == resolved), None)
+    if rel is None:
+        raise ValueError(f"release manifest must be one of the committed {list(COMMITTED_RELEASE_MANIFESTS)}")
+    committed = (ROOT / rel).resolve()
+    proc = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob", f"HEAD:{rel}"],
                           capture_output=True, check=False)
     if proc.returncode != 0:
         raise ValueError("release manifest is not tracked at git HEAD")
-    if proc.stdout != committed.read_bytes():
+    if proc.stdout != (committed.read_bytes() if data is None else bytes(data)):
         raise ValueError("release manifest differs from its git HEAD blob")
     return hashlib.sha256(proc.stdout).hexdigest()
+
+
+def _int(v):
+    return type(v) is int
+
+
+def _manifest_bytes(release_manifest):
+    """Already-verified manifest bytes pass through unchanged; a path is read."""
+    if isinstance(release_manifest, (bytes, bytearray)):
+        return bytes(release_manifest)
+    return Path(release_manifest).read_bytes()
+
+
+def load_grading_limits(release_manifest, specs=None):
+    """(artifact_starts, recheck_starts, grading_seconds, seconds_cap) from the manifest's grading_limits.
+
+    Absent -> the v2 defaults (77, 24, 240 s, cap 240). Present -> strict: exactly GRADING_LIMIT_KEYS, ints,
+    max_private_starts == artifact_starts + recheck_starts <= 200, 0 < grading_seconds <= 600, n_roots == len(specs).
+    release_manifest: a path, or the exact bytes verify_committed_release checked (no re-read)."""
+    m = _strict(_manifest_bytes(release_manifest))
+    if "grading_limits" not in m:
+        return {"artifact_starts": PLANNED_MAX_ARTIFACTS, "recheck_starts": PLANNED_MAX_RECHECKS,
+                "grading_seconds": DEFAULT_GRADING_SECONDS, "seconds_cap": DEFAULT_GRADING_SECONDS, "source": "v2_default"}
+    lim = m["grading_limits"]
+    if not isinstance(lim, dict) or set(lim) != GRADING_LIMIT_KEYS or not all(_int(lim[k]) for k in GRADING_LIMIT_KEYS):
+        raise ValueError(f"grading_limits must carry exactly int {sorted(GRADING_LIMIT_KEYS)}")
+    a, r, mx, secs = lim["artifact_starts"], lim["recheck_starts"], lim["max_private_starts"], lim["grading_seconds"]
+    if a < 1 or r < 0 or mx != a + r or mx > MAX_PRIVATE_STARTS:
+        raise ValueError(f"grading_limits starts invalid: max_private_starts must equal artifact+recheck and be <= {MAX_PRIVATE_STARTS}")
+    if not 0 < secs <= MAX_GRADING_SECONDS:
+        raise ValueError(f"grading_limits grading_seconds must be in (0, {MAX_GRADING_SECONDS}]")
+    if lim["n_roots"] < 1 or (specs is not None and lim["n_roots"] != len(specs)):
+        raise ValueError("grading_limits n_roots does not equal the number of private specs")
+    return {"artifact_starts": a, "recheck_starts": r, "grading_seconds": secs, "seconds_cap": secs,
+            "source": "grading_limits"}
+
+
+def manifest_diagnostic_schema(release_manifest):
+    """The diagnostic schema a release declares (diagnostic_schema); absent -> v1 (the v2 release predates it)."""
+    from experiments.landmark import diagnostic
+    m = _strict(_manifest_bytes(release_manifest))
+    schema = m.get("diagnostic_schema", diagnostic.SCHEMA)
+    if schema not in _known_schemas():
+        raise ValueError(f"Unknown diagnostic_schema {schema!r}")
+    return schema
+
+
+def _known_schemas():
+    from experiments.landmark import diagnostic
+    return {diagnostic.SCHEMA} | ({diagnostic.SCHEMA_V2} if isinstance(getattr(diagnostic, "SCHEMA_V2", None), str) else set())
+
+
+def validate_phase_b_diagnostics(diagnostics, schema=None):
+    """Every Phase B diagnostic record validated by diagnostic.validate_diagnostic under ONE schema: the release's
+    (schema given) or the records' own schema_version (all records must agree). Returns the schema used."""
+    from experiments.landmark import diagnostic
+    if not isinstance(diagnostics, dict):
+        raise ValueError("Phase B diagnostics must be a root_id -> diagnostic object")
+    found = {d.get("schema_version") if isinstance(d, dict) else None for d in diagnostics.values()}
+    if schema is None:
+        if len(found) > 1:
+            raise ValueError(f"Phase B diagnostics mix schemas {sorted(map(str, found))}")
+        schema = next(iter(found), diagnostic.SCHEMA)
+    if schema not in _known_schemas():
+        raise ValueError(f"Unknown diagnostic schema {schema!r}")
+    for root_id, d in diagnostics.items():
+        if not isinstance(d, dict) or d.get("schema_version") != schema:
+            raise ValueError(f"Diagnostic for {root_id} is not schema {schema}")
+        if d.get("root_id") != root_id:
+            raise ValueError(f"Diagnostic keyed {root_id} carries root_id {d.get('root_id')!r}")
+        if schema == diagnostic.SCHEMA:
+            diagnostic.validate_diagnostic(d)  # v1: behaviour unchanged
+        else:
+            diagnostic.validate_diagnostic(d, schema=schema)
+    return schema
 
 
 class _DurableLedger:
@@ -517,25 +609,30 @@ def cmd_grade(a):
     if out.exists():
         _refuse(f"output already exists (no uncharged rerun): {out}")
     try:
-        committed_release_sha = verify_committed_release(a.release_manifest)
-        bindings = load_release_bindings(a.release_manifest, a.specs)
+        release_bytes = Path(a.release_manifest).read_bytes()  # read once: verified, then parsed, from these bytes
+        committed_release_sha = verify_committed_release(a.release_manifest, release_bytes)
+        bindings = load_release_bindings(a.release_manifest, a.specs, data=release_bytes)
+        specs = _rows(a.specs)
+        limits = load_grading_limits(release_bytes, specs)
     except (ValueError, OSError, KeyError) as e:
         _refuse(f"release bindings: {type(e).__name__}: {e}")
-    specs = _rows(a.specs)
     out.mkdir(parents=True, exist_ok=False)  # reservation: from here on every start is charged and recorded
     ledger = _DurableLedger(out / GRADING_LEDGER)
     counter = {"starts": 0, "results": 0}
-    planned = PLANNED_MAX_ARTIFACTS + PLANNED_MAX_RECHECKS
+    planned = limits["artifact_starts"] + limits["recheck_starts"]
+    if planned > MAX_PRIVATE_STARTS:  # belt and braces: load_grading_limits already refuses this
+        _refuse(f"planned private starts {planned} exceed {MAX_PRIVATE_STARTS}")
     try:
         ledger.write({"event": "reserved", "release_manifest_sha256": file_sha(a.release_manifest),
                       "committed_release_manifest_sha256": committed_release_sha,
                       "specs_sha256": file_sha(a.specs), "attestation_sha256": before, "planned_max_starts": planned,
-                      "utc": _utc()})
+                      "grading_limits": limits, "utc": _utc()})
         to_grading_view(a.initial_dir, a.continue_dir, out / "view")
         runner = ledgered_runner(sandbox.run_program, ledger, counter)
         t0 = time.monotonic()
         result = grade_study(out / "view", specs, runner, initial_dir=a.initial_dir, continue_dir=a.continue_dir,
-                             attestation_path=a.attestation, max_executions=planned, **bindings)
+                             attestation_path=a.attestation, max_executions=planned,
+                             max_seconds=limits["grading_seconds"], max_seconds_cap=limits["seconds_cap"], **bindings)
         wall = time.monotonic() - t0
         if file_sha(a.attestation) != before:
             raise ValueError("attestation file changed during grading")
@@ -546,8 +643,9 @@ def cmd_grade(a):
         ledger.write({"event": "complete", "executor_starts": counter["starts"], "utc": _utc()})
         ledger.close()
         summary = {"actual_starts": counter["starts"], "actual_results": counter["results"],
-                   "planned_max_starts": planned, "planned_max_artifacts": PLANNED_MAX_ARTIFACTS,
-                   "planned_max_rechecks": PLANNED_MAX_RECHECKS, "sandbox_executions": result["sandbox_executions"],
+                   "planned_max_starts": planned, "planned_max_artifacts": limits["artifact_starts"],
+                   "planned_max_rechecks": limits["recheck_starts"], "grading_seconds": limits["grading_seconds"],
+                   "grading_limits_source": limits["source"], "sandbox_executions": result["sandbox_executions"],
                    "grading_wall_seconds": wall, "grade_rows": len(result["grades"]),
                    "missing_grade_rows": result["missing_grade_rows"], "contract_sha256": result["contract_sha256"],
                    "containment_gate": result["containment_gate"], "attestation_sha256": before, "model_calls": 0,
@@ -596,6 +694,11 @@ def cmd_analysis_input(a):
     out = Path(a.out)
     if out.exists():
         _refuse(f"output already exists: {out}")
+    schema, release_sha = None, None
+    if getattr(a, "release_manifest", None) is not None:  # optional: the release fixes the diagnostic schema
+        release_bytes = Path(a.release_manifest).read_bytes()  # read once: verified, then parsed, from these bytes
+        release_sha = verify_committed_release(a.release_manifest, release_bytes)
+        schema = manifest_diagnostic_schema(release_bytes)
     vman = _strict((Path(a.view) / "view_manifest.json").read_bytes())
     bound = vman.get("continue_diagnostics_sha256")
     if not isinstance(bound, str) or not HEX64.fullmatch(bound) or bound != a.expected_diagnostics_sha256:
@@ -604,13 +707,15 @@ def cmd_analysis_input(a):
     live = [r for r in rows if not r["excluded"]]
     diagnosed = {r["root_id"] for r in live if r.get("initial_artifact_sha256") is not None}
     diagnostics, costs = phase_b_costs(a.phase_b_dir, a.expected_diagnostics_sha256, diagnosed)
+    schema = validate_phase_b_diagnostics(diagnostics, schema)
     for r in live:  # no initial artifact -> no diagnostic could run: zero starts is known, never None
         if r["root_id"] not in diagnosed:
             costs[r["root_id"]] = {"executor_starts": 0, "executor_seconds": 0.0}
     data = to_analysis_input(a.view, _rows(a.grades), diagnostics, costs)
     data["sources"] = {"grades_sha256": file_sha(a.grades), "phase_b_manifest_sha256": file_sha(Path(a.phase_b_dir) / "manifest.json"),
                        "diagnostics_sha256": a.expected_diagnostics_sha256,
-                       "view_roots_sha256": file_sha(Path(a.view) / "roots.jsonl")}
+                       "view_roots_sha256": file_sha(Path(a.view) / "roots.jsonl"),
+                       "diagnostic_schema": schema, "committed_release_manifest_sha256": release_sha}
     with out.open("x", encoding="utf-8") as f:
         f.write(json.dumps(data, indent=2) + "\n")
     return data
@@ -627,6 +732,8 @@ def main(argv=None):
     n = sub.add_parser("analysis-input")
     for flag in ("--view", "--grades", "--phase-b-dir", "--expected-diagnostics-sha256", "--out"):
         n.add_argument(flag, required=True)
+    n.add_argument("--release-manifest", default=None, help="optional allowlisted committed release manifest; "
+                   "its diagnostic_schema (default v1) is enforced on every Phase B diagnostic")
     v = sub.add_parser("view")
     for flag in ("--initial-dir", "--continue-dir", "--out"):
         v.add_argument(flag, required=True)

@@ -152,3 +152,111 @@ def test_e7_infrastructure_failure_is_not_agreement(tmp_path, att):
     recs = ledger(out)
     assert sum(r["event"] == "start" for r in recs) == res["actual_starts"] == 17
     assert all(r["starts"] == 1 for r in recs if r["event"] == "result")
+
+
+# ---------------------------------------------------------------- MRL-16: gate E6v3 (any committed package)
+def _package(tmp_path, n=3):
+    pkg = tmp_path / "pkg"
+    pkg.mkdir()
+    specs = [{"root_id": f"mbpp/{i}", "entry_point": f"f{i}", "reference_code": f"def f{i}(x):\n    return x + 1\n",
+              "negative_controls": [{"code": f"def f{i}(x):\n    return x\n"}]} for i in range(n)]
+    (pkg / "private_specs.jsonl").write_text("".join(json.dumps(s) + "\n" for s in specs))
+    ex = {"version": "public-examples-v3", "cases": [
+        {"root_id": s["root_id"], "entry_point": s["entry_point"],
+         "cases": [{"case_id": f"public-{i}-1", "args_literal": "[1]", "expected_literal": "2"}]} for i, s in enumerate(specs)]}
+    (tmp_path / "ex.json").write_text(json.dumps(ex))
+    return pkg, tmp_path / "ex.json"
+
+
+@pytest.fixture
+def e6v3(monkeypatch, tmp_path):
+    """Committed-bytes check faked (tmp package); check_artifact faked to record display and make ONE start."""
+    monkeypatch.setattr(piv, "verify_committed", lambda p: piv.file_sha(p))
+    calls = []
+
+    def fake_check(output, entry_point, cases, runner, nonce, display="v1"):
+        calls.append(display)
+        compile(output.split("```python\n", 1)[1].rsplit("```", 1)[0], "<fake>", "exec")  # static only
+        runner("# harness text, never executed\n", timeout_s=1)
+        return [{"case_id": c["case_id"], "status": "pass", "reason": None, "value_kind": "literal"} for c in cases]
+    monkeypatch.setattr(public_check, "check_artifact", fake_check)
+    return calls
+
+
+class OkRunner:
+    FAKE_RUNNER = True
+
+    def __init__(self, fail_at=None):
+        self.calls, self.fail_at = 0, fail_at
+
+    def __call__(self, program, **kw):
+        self.calls += 1
+        if self.fail_at == self.calls:
+            raise KeyboardInterrupt("simulated interruption")
+        return {"stdout": "", "returncode": 0, "timed_out": False}
+
+
+def test_e6v3_exactly_n_starts_display_v2_and_durable_ledger(tmp_path, att, e6v3):
+    pkg, ex = _package(tmp_path)
+    r = OkRunner()
+    res = piv.run_package(pkg, ex, "v2", tmp_path / "o", att, True, runner=r, expected_n=3)
+    assert res["planned_max_starts"] == res["actual_starts"] == r.calls == 3 and res["all_meet_expected"] is True
+    assert e6v3 == ["v2"] * 3
+    ev = ledger(tmp_path / "o")
+    assert [e["event"] for e in ev] == ["reserved"] + ["start", "result"] * 3 + ["complete"]
+    assert ev[0]["gate"] == "E6v3" and ev[0]["display"] == "v2" and ev[0]["planned_max_starts"] == 3
+    assert all(e["observed_value_kinds"] == ["literal"] for e in ev if e["event"] == "result")
+    with pytest.raises(SystemExit, match="overwrite"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o", att, True, runner=OkRunner())
+
+
+def test_e6v3_attestation_first_and_refusals_before_any_start(tmp_path, att, e6v3, monkeypatch):
+    pkg, ex = _package(tmp_path)
+    r = OkRunner()
+    with pytest.raises(SystemExit, match="--real"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o", att, False, runner=r)
+    order = []
+    monkeypatch.setattr(grade, "verify_attestation", lambda p: order.append("att") or (_ for _ in ()).throw(ValueError("stale")))
+    monkeypatch.setattr(piv, "verify_committed", lambda p: order.append("committed"))
+    with pytest.raises(ValueError, match="stale"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o", att, True, runner=r)
+    assert order == ["att"] and not (tmp_path / "o").exists() and r.calls == 0
+
+
+def test_e6v3_refuses_bad_display_count_roots_and_runner(tmp_path, att, e6v3):
+    pkg, ex = _package(tmp_path)
+    with pytest.raises(SystemExit, match="display v2"):
+        piv.run_package(pkg, ex, "v1", tmp_path / "o1", att, True, runner=OkRunner())
+    with pytest.raises(SystemExit, match="exactly 14"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o2", att, True, runner=OkRunner(), expected_n=14)
+    with pytest.raises(SystemExit, match="FAKE_RUNNER"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o3", att, True, runner=lambda program, **kw: {})
+    doc = json.loads(ex.read_text())
+    doc["cases"] = doc["cases"][1:]
+    ex.write_text(json.dumps(doc))
+    with pytest.raises(SystemExit, match="same unique set"):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o4", att, True, runner=OkRunner())
+    assert not any((tmp_path / f"o{i}").exists() for i in range(1, 5))
+
+
+def test_e6v3_interruption_leaves_incomplete_ledger(tmp_path, att, e6v3):
+    pkg, ex = _package(tmp_path)
+    with pytest.raises(KeyboardInterrupt):
+        piv.run_package(pkg, ex, "v2", tmp_path / "o", att, True, runner=OkRunner(fail_at=2))
+    ev = ledger(tmp_path / "o")
+    assert ev[-1]["event"] == "INCOMPLETE" and ev[-1]["actual_starts"] == 2 and not (tmp_path / "o/result.json").exists()
+
+
+def test_e6v3_committed_check_refuses_out_of_repo(tmp_path):
+    p = tmp_path / "x.json"
+    p.write_text("{}")
+    with pytest.raises(SystemExit, match="outside the repository"):
+        piv.verify_committed(p)
+
+
+def test_e6v3_cli_argument_separation(tmp_path, att):
+    with pytest.raises(SystemExit):
+        piv.main(["--gate", "E6v3", "--out", str(tmp_path / "o"), "--attestation", str(att), "--real"])
+    with pytest.raises(SystemExit):
+        piv.main(["--gate", "E6", "--package-dir", "x", "--out", str(tmp_path / "o"), "--attestation", str(att)])
+    assert not (tmp_path / "o").exists()

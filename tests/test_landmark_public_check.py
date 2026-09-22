@@ -412,3 +412,110 @@ def test_overcomplex_source_is_infrastructure_not_crash(code):
 
 def test_ambiguous_fences_still_format_error_after_parse_fault_repair():
     assert pc.static_code("no code fence here") is None
+
+
+# ---- MRL-16: display="v2" (repr-string literals computed inside isolation); v1 harness byte-identical
+V2_CASES = [{"case_id": "public-1-1", "args_literal": "['abc']", "expected_literal": "'abc'"},
+            {"case_id": "public-1-2", "args_literal": "[1]", "expected_literal": "[('a', 1), ('b', 'c')]"},
+            {"case_id": "public-1-3", "args_literal": "[2]", "expected_literal": "1"}]
+V2_OK = ["'abc'", "[('a', 1), ('b', 'c')]", "1"]
+
+
+def v2line(i, status="pass", returned=_DEFAULT, kind="literal", nonce=NONCE):
+    returned = V2_OK[i] if returned is _DEFAULT else returned
+    return json.dumps({"n": nonce, "i": i, "status": status, "returned": returned, "value_kind": kind},
+                      sort_keys=True, separators=(",", ":")) + "\n"
+
+
+def v2classify(*lines):
+    return pc.classify(out(*lines), 0, False, V2_CASES, NONCE, display="v2")
+
+
+def test_v1_harness_is_byte_identical_to_default():
+    from experiments.landmark import diagnostic
+    import hashlib, inspect
+    a = pc.build_public_program(GOOD, "parallelogram_area", CASES, NONCE)
+    assert pc.build_public_program(GOOD, "parallelogram_area", CASES, NONCE, display="v1") == a
+    assert inspect.getsource(pc.display_value).replace("def display_value(", "def _pc_display_value(", 1) in a
+    assert "count > 64" not in a
+    b = pc.build_public_program(GOOD, "parallelogram_area", CASES, NONCE, display="v2")
+    compile(b, "<harness>", "exec", dont_inherit=True)  # compiled only, never executed
+    assert "def _pc_display_value(value):" in b and "count > 64" in b and "text = repr(value)" in b
+    assert a.replace(inspect.getsource(pc.display_value).replace("def display_value(", "def _pc_display_value(", 1), "") == \
+        b.replace(inspect.getsource(diagnostic.display_value_v2).replace("def display_value_v2(", "def _pc_display_value(", 1), "")
+    with pytest.raises(ValueError):
+        pc.build_public_program(GOOD, "parallelogram_area", CASES, NONCE, display="v3")
+
+
+def test_v2_display_function_is_self_contained_source():
+    import ast, inspect
+    tree = ast.parse(inspect.getsource(pc.display_value_v2))
+    names = {n.id for n in ast.walk(tree) if isinstance(n, ast.Name) and isinstance(n.ctx, ast.Load)}
+    assert names <= {"value", "stack", "count", "v", "depth", "t", "int", "abs", "bool", "str", "tuple", "list", "len", "x", "repr", "text", "type"}
+
+
+def test_v2_consistent_stream_passes_with_repr_strings():
+    res = v2classify(v2line(0), v2line(1), v2line(2, "pass", "True"))
+    assert [(r["status"], r["value_kind"], r["returned"]) for r in res] == [
+        ("pass", "literal", "'abc'"), ("pass", "literal", "[('a', 1), ('b', 'c')]"), ("pass", "literal", "True")]
+    from experiments.landmark import diagnostic
+    g = diagnostic.build_diagnostic("mbpp/1", "a" * 64, "f", V2_CASES, res, schema=diagnostic.SCHEMA_V2)
+    assert g["cases"][2]["returned"] == "True" and g["cases"][2]["expected"] == "1"
+
+
+def test_v2_wrong_value_and_unsupported_and_status_only_kept():
+    res = v2classify(v2line(0, "wrong_value", "'abd'"), v2line(1, "pass", None, "unsupported"), v2line(2, "program_exception", None, "none"))
+    assert [(r["status"], r["value_kind"], r["returned"]) for r in res] == [
+        ("wrong_value", "literal", "'abd'"), ("pass", "unsupported", None), ("program_exception", "none", None)]
+    res = v2classify(v2line(0, "wrong_value", "()"), v2line(1, "wrong_value", "[['a', 1], ['b', 'c']]"), v2line(2, "wrong_value", "None"))
+    assert [r["status"] for r in res] == ["wrong_value"] * 3
+
+
+V2_REVIEW = [("unavailable", "protocol_integrity_review")] * 3
+
+
+@pytest.mark.parametrize("bad", [
+    v2line(0, nonce="e" * 32),                        # forged nonce
+    v2line(0, "pass", "'abd'"),                       # pass inconsistent with expected
+    v2line(0, "wrong_value", "'abc'"),                # wrong_value but equal
+    v2line(0, "pass", '"abc"'),                       # non-canonical repr
+    v2line(0, "pass", "abc"),                         # not a literal
+    v2line(0, "pass", "7.0"),                         # float outside the policy
+    v2line(0, "pass", "x" * 401),                     # oversized
+    v2line(0, "pass", repr([[[[["abc"]]]]])),          # too deep
+    v2line(0, "pass", 1),                             # non-string returned
+    v2line(0, "pass", None, "none"),                  # v2 never emits none for a return
+    v2line(0, "pass", "'abc'", "unsupported"),        # unsupported carrying a value
+    v2line(0, "pass", 1, "int"),                      # v1 kind on a v2 stream
+    v2line(0, "timeout", "'abc'"),                    # value on a non-returning status
+    v2line(0, "format_error", None, "none"),          # status the harness cannot emit
+])
+def test_v2_forged_or_inconsistent_lines_are_review(bad):
+    res = v2classify(bad, v2line(1), v2line(2))
+    assert statuses(res) == V2_REVIEW and all(r["status"] != "pass" for r in res)
+
+
+def test_v2_lines_are_review_under_v1_and_v1_lines_under_v2():
+    assert statuses(pc.classify(out(v2line(0, returned="77"), line(1), line(2)), 0, False, CASES, NONCE)) == REVIEW
+    assert statuses(v2classify(line(0, returned="abc"), v2line(1), v2line(2))) == V2_REVIEW
+
+
+def test_v2_duplicate_key_line_is_review():
+    dup = '{"n":"%s","i":0,"status":"wrong_value","status":"pass","returned":"\'abc\'","value_kind":"literal"}\n' % NONCE
+    assert statuses(v2classify(dup, v2line(1), v2line(2))) == V2_REVIEW
+
+
+def test_v2_termination_rows_unchanged():
+    res = pc.classify(out(v2line(0)), -9, True, V2_CASES, NONCE, display="v2")
+    assert statuses(res) == [("pass", None), ("timeout", None), ("unavailable", "not_attempted_after_termination")]
+
+
+def test_v2_check_artifact_passes_display_to_runner_program():
+    seen = []
+    def runner(program, **k):
+        seen.append(program)
+        return {"stdout": out(v2line(0), v2line(1), v2line(2)), "returncode": 0, "timed_out": False}
+    res = pc.check_artifact("def f(x):\n    return x\n", "f", V2_CASES, runner, NONCE, display="v2")
+    assert len(seen) == 1 and "count > 64" in seen[0] and [r["status"] for r in res] == ["pass"] * 3
+    with pytest.raises(ValueError):
+        pc.check_artifact("def f(x):\n    return x\n", "f", V2_CASES, never_run, NONCE, display="bad")

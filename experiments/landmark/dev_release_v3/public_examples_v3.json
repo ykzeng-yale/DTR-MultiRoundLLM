@@ -1,0 +1,159 @@
+{
+  "cases": [
+    {
+      "cases": [
+        {
+          "args_literal": "[[1, 2, 3], 3, 4]",
+          "case_id": "public-918-1",
+          "expected_literal": "4"
+        }
+      ],
+      "entry_point": "coin_change",
+      "root_id": "mbpp/918"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[2, 3, 8, 4, 7, 9], [0, 3, 5]]",
+          "case_id": "public-825-1",
+          "expected_literal": "[2, 4, 9]"
+        }
+      ],
+      "entry_point": "access_elements",
+      "root_id": "mbpp/825"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2], 13]",
+          "case_id": "public-842-1",
+          "expected_literal": "5"
+        }
+      ],
+      "entry_point": "get_odd_occurence",
+      "root_id": "mbpp/842"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[(1, 5, 3, 6, 8)]",
+          "case_id": "public-816-1",
+          "expected_literal": "()"
+        }
+      ],
+      "entry_point": "clear_tuple",
+      "root_id": "mbpp/816"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[1, 2, 9, 4, 5, 0, 4, 11, 6]]",
+          "case_id": "public-895-1",
+          "expected_literal": "26"
+        }
+      ],
+      "entry_point": "max_sum_subseq",
+      "root_id": "mbpp/895"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "['python language']",
+          "case_id": "public-868-1",
+          "expected_literal": "8"
+        }
+      ],
+      "entry_point": "length_Of_Last_Word",
+      "root_id": "mbpp/868"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[1, 6, 4, 5], 4, 7]",
+          "case_id": "public-288-1",
+          "expected_literal": "2"
+        }
+      ],
+      "entry_point": "modular_inverse",
+      "root_id": "mbpp/288"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]], 0]",
+          "case_id": "public-154-1",
+          "expected_literal": "[1, 4, 7]"
+        }
+      ],
+      "entry_point": "specified_element",
+      "root_id": "mbpp/154"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[1, 2, 2, 3], 4]",
+          "case_id": "public-863-1",
+          "expected_literal": "3"
+        }
+      ],
+      "entry_point": "find_longest_conseq_subseq",
+      "root_id": "mbpp/863"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), 'd']]",
+          "case_id": "public-966-1",
+          "expected_literal": "[('',), ('a', 'b'), ('a', 'b', 'c'), 'd']"
+        }
+      ],
+      "entry_point": "remove_empty",
+      "root_id": "mbpp/966"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]]]",
+          "case_id": "public-652-1",
+          "expected_literal": "'[(4, 7, 10, 18, 0, 10), (5, 8, 13, 17, 4, 1)]'"
+        }
+      ],
+      "entry_point": "matrix_to_list",
+      "root_id": "mbpp/652"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[(10, 4, 5, 6), (5, 10)]",
+          "case_id": "public-651-1",
+          "expected_literal": "True"
+        }
+      ],
+      "entry_point": "check_subset",
+      "root_id": "mbpp/651"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[10]",
+          "case_id": "public-499-1",
+          "expected_literal": "20"
+        }
+      ],
+      "entry_point": "diameter_circle",
+      "root_id": "mbpp/499"
+    },
+    {
+      "cases": [
+        {
+          "args_literal": "[[[2], [3, 9], [1, 6, 7]]]",
+          "case_id": "public-974-1",
+          "expected_literal": "6"
+        }
+      ],
+      "entry_point": "min_sum_path",
+      "root_id": "mbpp/974"
+    }
+  ],
+  "version": "public-examples-v3"
+}

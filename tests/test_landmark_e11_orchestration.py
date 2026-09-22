@@ -2,7 +2,7 @@
 Phase C bound to Phase B's diagnostics sha -> study_adapter CLI grade (sandbox.run_program monkeypatched to a
 parse-only FAKE; attestation verification faked) -> analysis-input CLI -> analyze_diagnostic.analyze.
 No model, receiver, reference, candidate, canary or sandbox program is ever executed."""
-import hashlib, importlib.util, json, re, sys
+import hashlib, importlib.util, inspect, json, re, sys
 from pathlib import Path
 
 import pytest
@@ -114,7 +114,7 @@ def grade_argv(tmp_path, rel, out="G", real=True):
 def fake_real(monkeypatch, runner):
     monkeypatch.setattr(sandbox, "run_program", runner)
     monkeypatch.setattr(grade, "verify_attestation", lambda path: {"passed": True})
-    monkeypatch.setattr(sa, "verify_committed_release", lambda path: "c" * 64)  # tmp release; the gate is tested below
+    monkeypatch.setattr(sa, "verify_committed_release", lambda path, data=None: "c" * 64)  # tmp release; the gate is tested below
 
 
 def events(path):
@@ -270,3 +270,136 @@ def test_contract_binding_shape_checked_at_load(tmp_path):
     rel = write_release(tmp_path, expected_contract_sha256="not-a-digest")
     with pytest.raises(ValueError, match="expected_contract_sha256"):
         sa.load_release_bindings(rel / "release_manifest.json", rel / "private_specs.jsonl")
+
+
+# ---------------------------------------------------------------- MRL-16: allowlist, grading_limits, diag schema
+def _with_manifest_fields(rel, **fields):
+    m = json.loads((rel / "release_manifest.json").read_text())
+    m.update(fields)
+    (rel / "release_manifest.json").write_text(json.dumps(m))
+
+
+def test_allowlist_names_v2_and_v3_only(tmp_path):
+    assert sa.COMMITTED_RELEASE_MANIFESTS == ("experiments/landmark/dev_release_v2/release_manifest.json",
+                                              "experiments/landmark/dev_release_v3/release_manifest.json")
+    for bad in (ROOT / "experiments/landmark/dev_release_v2_1/release_manifest.json", tmp_path / "release_manifest.json"):
+        with pytest.raises(ValueError, match="committed"):
+            sa.verify_committed_release(bad)
+
+
+def test_grading_limits_default_v2_and_strict_v3(tmp_path):
+    rel = write_release(tmp_path)
+    n = len(specs())
+    d = sa.load_grading_limits(rel / "release_manifest.json", specs())
+    assert (d["artifact_starts"], d["recheck_starts"], d["grading_seconds"], d["seconds_cap"]) == (77, 24, 240, 240)
+    good = {"n_roots": n, "artifact_starts": 11 * n, "recheck_starts": 2 * n, "max_private_starts": 13 * n, "grading_seconds": 600}
+    _with_manifest_fields(rel, grading_limits=good)
+    d = sa.load_grading_limits(rel / "release_manifest.json", specs())
+    assert (d["artifact_starts"], d["recheck_starts"], d["grading_seconds"]) == (11 * n, 2 * n, 600)
+    for bad in ({**good, "grading_seconds": 601}, {**good, "max_private_starts": 13 * n + 1},
+                {**good, "artifact_starts": 190, "recheck_starts": 11, "max_private_starts": 201}, {**good, "n_roots": n + 1},
+                {**good, "grading_seconds": True}, {k: v for k, v in good.items() if k != "n_roots"}, {**good, "extra": 1}):
+        _with_manifest_fields(rel, grading_limits=bad)
+        with pytest.raises(ValueError, match="grading_limits"):
+            sa.load_grading_limits(rel / "release_manifest.json", specs())
+
+
+def test_limits_and_schema_parse_the_verified_bytes_not_a_reread(tmp_path, monkeypatch):
+    """Review finding (TOCTOU): the manifest is read once, those bytes are checked against the HEAD blob, and
+    grading_limits / diagnostic_schema are parsed from the same bytes; a later swap of the file is ignored."""
+    import types
+    n = len(specs())
+    good = {"n_roots": n, "artifact_starts": 11 * n, "recheck_starts": 2 * n, "max_private_starts": 13 * n, "grading_seconds": 600}
+    swapped = {"n_roots": n, "artifact_starts": 199, "recheck_starts": 1, "max_private_starts": 200, "grading_seconds": 600}
+    rel = sa.COMMITTED_RELEASE_MANIFESTS[1]
+    path = tmp_path / rel
+    path.parent.mkdir(parents=True)
+    blob = json.dumps({"grading_limits": good, "diagnostic_schema": "public-diagnostic-v2"}).encode()
+    path.write_bytes(blob)
+    monkeypatch.setattr(sa, "ROOT", tmp_path)
+    monkeypatch.setattr(sa, "subprocess", types.SimpleNamespace(run=lambda *a, **k: types.SimpleNamespace(returncode=0, stdout=blob)))
+    data = path.read_bytes()
+    assert sa.verify_committed_release(path, data) == hashlib.sha256(blob).hexdigest()
+    path.write_bytes(json.dumps({"grading_limits": swapped}).encode())  # replaced after the gate
+    d = sa.load_grading_limits(data, specs())
+    assert (d["artifact_starts"], d["recheck_starts"]) == (11 * n, 2 * n)
+    assert sa.manifest_diagnostic_schema(data) == "public-diagnostic-v2"
+    with pytest.raises(ValueError, match="HEAD"):
+        sa.verify_committed_release(path, path.read_bytes())  # bytes that differ from the blob are refused
+    src = inspect.getsource(sa.cmd_grade) + inspect.getsource(sa.cmd_analysis_input)
+    assert "load_grading_limits(release_bytes" in src and "manifest_diagnostic_schema(release_bytes)" in src
+    assert src.count("verify_committed_release(a.release_manifest, release_bytes)") == 2
+
+
+def test_grade_study_seconds_cap_only_raised_explicitly(tmp_path):
+    kw = dict(fake_runner_for_tests=True)  # budget checks run before any other input is touched
+    with pytest.raises(ValueError, match="budget"):
+        sa.grade_study([], specs(), GradeRunner(), max_seconds=600, **kw)  # default cap 240
+    with pytest.raises(ValueError, match="budget"):
+        sa.grade_study([], specs(), GradeRunner(), max_seconds=601, max_seconds_cap=601, **kw)
+    with pytest.raises(ValueError, match="budget"):
+        sa.grade_study([], specs(), GradeRunner(), max_executions=201, max_seconds=600, max_seconds_cap=600, **kw)
+    with pytest.raises(ValueError, match="required"):  # passes the budget gate, then needs the J7 bindings
+        sa.grade_study([], specs(), GradeRunner(), max_executions=200, max_seconds=600, max_seconds_cap=600, **kw)
+
+
+def test_cli_grade_uses_manifest_grading_limits(tmp_path, phases, monkeypatch):
+    rel = write_release(tmp_path)
+    n = len(specs())
+    _with_manifest_fields(rel, grading_limits={"n_roots": n, "artifact_starts": 11 * n, "recheck_starts": 2 * n,
+                                               "max_private_starts": 13 * n, "grading_seconds": 600},
+                          diagnostic_schema=diagnostic.SCHEMA)
+    runner = GradeRunner()
+    fake_real(monkeypatch, runner)
+    seen = {}
+    real_gs = sa.grade_study
+    monkeypatch.setattr(sa, "grade_study", lambda *a, **k: seen.update(k) or real_gs(*a, **k))
+    summary = sa.main(grade_argv(tmp_path, rel))
+    assert summary["planned_max_starts"] == 13 * n and summary["grading_seconds"] == 600
+    assert (seen["max_executions"], seen["max_seconds"], seen["max_seconds_cap"]) == (13 * n, 600, 600)
+    assert events(tmp_path / "G" / sa.GRADING_LEDGER)[0]["planned_max_starts"] == 13 * n
+
+
+def test_cli_grade_refuses_bad_grading_limits_before_reservation(tmp_path, phases, monkeypatch):
+    rel = write_release(tmp_path)
+    _with_manifest_fields(rel, grading_limits={"n_roots": 99, "artifact_starts": 1, "recheck_starts": 0,
+                                               "max_private_starts": 1, "grading_seconds": 60})
+    fake_real(monkeypatch, GradeRunner())
+    with pytest.raises(SystemExit, match="grading_limits"):
+        sa.main(grade_argv(tmp_path, rel))
+    assert not (tmp_path / "G").exists()
+
+
+def test_analysis_input_enforces_manifest_diagnostic_schema(tmp_path, phases, monkeypatch):
+    rel = write_release(tmp_path)
+    fake_real(monkeypatch, GradeRunner())
+    sa.main(grade_argv(tmp_path, rel))
+    h = phases["diagnostics_sha256"]
+    _with_manifest_fields(rel, diagnostic_schema=diagnostic.SCHEMA)
+    argv = _analysis_argv(tmp_path, h) + ["--release-manifest", str(rel / "release_manifest.json")]
+    data = sa.main(argv)
+    assert data["sources"]["diagnostic_schema"] == diagnostic.SCHEMA
+    assert data["sources"]["committed_release_manifest_sha256"] == "c" * 64
+    (tmp_path / "in.json").unlink()
+    monkeypatch.setattr(diagnostic, "SCHEMA_V2", "public-diagnostic-v2", raising=False)
+    _with_manifest_fields(rel, diagnostic_schema="public-diagnostic-v2")
+    with pytest.raises(ValueError, match="not schema public-diagnostic-v2"):  # v1 records under a v2 release
+        sa.main(argv)
+    assert not (tmp_path / "in.json").exists()
+    _with_manifest_fields(rel, diagnostic_schema="public-diagnostic-v9")
+    with pytest.raises(ValueError, match="Unknown diagnostic_schema"):
+        sa.main(argv)
+
+
+def test_validate_phase_b_diagnostics_v2_dispatch(monkeypatch):
+    monkeypatch.setattr(diagnostic, "SCHEMA_V2", "public-diagnostic-v2", raising=False)
+    calls = []
+    monkeypatch.setattr(diagnostic, "validate_diagnostic", lambda d, *a, **k: calls.append(k))
+    v2 = {"r1": {"schema_version": "public-diagnostic-v2", "root_id": "r1", "initial_artifact_sha256": "a" * 64, "cases": []}}
+    assert sa.validate_phase_b_diagnostics(v2) == "public-diagnostic-v2" and calls == [{"schema": "public-diagnostic-v2"}]
+    v1 = {"r1": dict(v2["r1"], schema_version=diagnostic.SCHEMA)}
+    assert sa.validate_phase_b_diagnostics(v1) == diagnostic.SCHEMA and calls[-1] == {}
+    with pytest.raises(ValueError, match="mix schemas"):
+        sa.validate_phase_b_diagnostics({**v2, "r2": dict(v1["r1"], root_id="r2")})
+    with pytest.raises(ValueError, match="carries root_id"):
+        sa.validate_phase_b_diagnostics({"r9": v2["r1"]})

@@ -30,7 +30,10 @@ diagnostics: mapping root_id -> dict as produced by diagnostic.build_diagnostic:
     {"schema_version": "public-diagnostic-v1", "root_id": str, "initial_artifact_sha256": str,
      "cases": [{"case_id", "call", "expected", "status", "returned", "value_kind", "reason"}, ...]}
 
-  Only "status" (and the identity fields) are read. A root without a diagnostic is
+  schema_version may be "public-diagnostic-v1" or "public-diagnostic-v2" (MRL-16; same case keys, v2
+  displays repr strings), but all diagnostics passed to one analysis must record the same schema; the report's
+  diagnostic_schema is that schema (v1 when there are no diagnostics). Only "status" (and the identity fields)
+  are read. A root without a diagnostic is
   classified public-unknown and listed separately; it is never dropped.
 
 Missing grades, records and whole arms are counted per arm with reasons; root means
@@ -48,6 +51,8 @@ from pathlib import Path
 # Mirrors diagnostic.SCHEMA / the shared status contract; kept local so this analyzer
 # does not depend on the renderer module (checked for agreement in the tests).
 SCHEMA = "public-diagnostic-v1"
+SCHEMA_V2 = "public-diagnostic-v2"
+SCHEMAS = (SCHEMA, SCHEMA_V2)
 STATUSES = ("pass", "wrong_value", "format_error", "interface_error", "program_exception",
             "timeout", "unavailable", "output_limit")
 FAIL_STATUSES = frozenset(("wrong_value", "format_error", "interface_error", "program_exception"))
@@ -91,7 +96,7 @@ def public_status(diag, root_id):
     """
     if diag is None:
         return "unknown"
-    if diag.get("schema_version") != SCHEMA or diag.get("root_id") != root_id:
+    if diag.get("schema_version") not in SCHEMAS or diag.get("root_id") != root_id:
         raise ValueError(f"Diagnostic schema/root mismatch for {root_id}")
     statuses = [c.get("status") for c in diag.get("cases", [])]
     if any(s not in STATUSES for s in statuses):
@@ -134,6 +139,10 @@ def analyze(roots, diagnostics, replicates=2):
         if d is not None and row.get("initial_artifact_sha256") is not None \
                 and d.get("initial_artifact_sha256") != row["initial_artifact_sha256"]:
             raise ValueError(f"Diagnostic is for a different initial artifact: {row['root_id']}")
+    schemas = {d.get("schema_version") if isinstance(d, dict) else None for d in diagnostics.values() if d is not None}
+    if len(schemas) > 1 or not schemas <= set(SCHEMAS):
+        raise ValueError(f"Diagnostics must all record one schema of {SCHEMAS}, found {sorted(map(str, schemas))}")
+    schema = next(iter(schemas)) if schemas else SCHEMA
     expected = {arm: 1 if arm == "STOP" else replicates for arm in ARMS}
     slots = {(row["root_id"], arm): _records(row, arm, expected[arm]) for row in roots for arm in ARMS}
 
@@ -154,7 +163,7 @@ def analyze(roots, diagnostics, replicates=2):
         return sum(v) / len(v) if v else None
 
     n = len(roots)
-    report = {"analysis_version": "landmark-diagnostic-analysis-v1", "diagnostic_schema": SCHEMA,
+    report = {"analysis_version": "landmark-diagnostic-analysis-v1", "diagnostic_schema": schema,
               "arms": list(ARMS), "assigned_replicates": expected, "n_roots": n,
               "n_families": len({r.get("family_id") for r in roots}) if n else 0,
               "inference": {"confidence_intervals": None, "note": NO_INTERVAL_NOTE},
