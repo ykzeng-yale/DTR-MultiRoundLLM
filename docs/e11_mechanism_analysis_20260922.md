@@ -1,45 +1,28 @@
-# E11 post-hoc mechanism analysis: behaviour changed even where grades tied
+# E11 post-hoc output analysis: structural differences despite tied grades
 
-**Evidence class: post-hoc, exploratory, descriptive.** This is not a prespecified endpoint. It uses the immutable
-E11 outputs (7 reused development roots) and changes no grade or E11 result. It is static only
-(`grade.extract_code` and `ast.parse`), with **no execution and no receiver request**. Reproduce with
-`scripts/e11_mechanism_analysis.py`; the results are in `results/e11_mechanism_analysis_20260922.json`.
+**Evidence class: post-hoc, exploratory, descriptive.** Corrected after independent lead review of worker delivery `08d63b7`. This uses immutable E11 outputs from seven reused development roots, changes no grade and performs no candidate or receiver execution. The original result remains `results/e11_mechanism_analysis_20260922.json`; the corrected tri-state result is `results/e11_mechanism_analysis_v2_20260922.json`. See [the lead judgment](e11_mechanism_lead_review_20260922.md) for the corrections and E12 reporting decision.
 
-## What the saved outputs show (14 continuations per arm)
+## What the saved outputs show
 
-| arm | kept the initial function (AST-identical) | added top-level test code | extraction/parse failure | mean completion tokens |
-|---|---|---|---|---|
-| N0: neutral, no diagnostic | 10 | 0 | 0 | 34 |
-| S0: syntactic cue | 8 | **7** | 0 | **110** |
-| N1: neutral + diagnostic | 9 | 1 | 0 | 42 |
-| S1: diagnostic-directed | **12** | 0 | 2 | 79 |
-| R1: context removal | **6** | 0 | 1 | 67 |
+Each arm has 14 saved continuation records. Identity refers to the ordered list of **all top-level function-definition ASTs**, ignoring source locations. It excludes imports and other module-level statements. Consequently, equality is not semantic equivalence, and inequality does not necessarily mean that the task function changed: helpers or duplicate definitions can differ too. An extraction or parsing failure is unassessable, not a measured rewrite.
 
-All 7 initial answers were clean single functions.
+| Arm | Same function-definition AST | Different assessable AST | Unassessable | Additional module-level statements | Mean completion tokens, rounded |
+|---|---:|---:|---:|---:|---:|
+| N0 | 10 | 4 | 0 | 0 | 34 |
+| S0 | 8 | 6 | 0 | 7 | 110 |
+| N1 | 9 | 5 | 0 | 1 | 42 |
+| S1 | 12 | 0 | 2 | 0 | 79 |
+| R1 | 6 | 7 | 1 | 0 | 67 |
 
-- **S1 is the most conservative arm.** On the six all-pass roots its instruction reads "passes the listed
-  public examples … preserve correct behavior", and the receiver kept the function in 12 of 14 outputs.
-  The tie with N1 is therefore partly *no change*, not *changed but still correct*.
-- **On the only failing root (402), S1 failed by format, not by a wrong repair.** Both S1 outputs contained
-  multiple code blocks (4 and 5 fence markers; one hit the 512-token cap), and the grader's single-block
-  rule could not extract an answer. Every other arm changed 402's function (except N0 replicate 0, which
-  returned it unchanged), and none became correct.
-- **S0 induces self-test scaffolding.** 7 of 14 outputs appended top-level test code. These are the longest
-  outputs, and they are the source of the two module-level-`return` compile failures.
-- **R1 rewrites most** (8 of 14 changed), and its two damages come from that: 378 is non-code text, and 509
-  is a wrong formula.
+All 70 completion-token counts are known, totaling 4,636 continuation tokens. The initial answers contain no module-level statements beyond functions/imports. Six contain one function; root402 contains two functions and an import. The original statement that all seven were single functions was incorrect.
 
-## Why it matters
+- S1 preserved the function-definition AST on both continuations of each of the six public-all-pass roots. Those roots were also privately correct. This is an observed structural pattern, not evidence that the instruction generally causes conservation or suppresses repair.
+- Both S1 outputs on402 violated the frozen single-block extraction rule. **Format rejection does not establish a correct attempted repair.** In fact, both displayed implementations return1 when `r=0`, including the already public input `(n,r,p)=(3,0,1)` whose required value is0. This counterexample follows by reading the source; no code was executed and no alternate block was regraded. The original “format, not a wrong repair” interpretation is withdrawn.
+- Seven S0 outputs contain additional self-test-like statements. Two include invalid module-level returns (378/replicate1 and489/replicate1). In489/replicate0 the comparison calls the function on both sides and is tautological. Presence of scaffolding does not demonstrate discriminating or successful verification. The underlying generic metric counts additional non-function/import statements, not successful tests.
+- R1 has seven assessably different function-definition ASTs and one unassessable non-code response. Its two recorded damages are the non-code response on378 and a wrong formula on509. The comparison does not identify rewriting as their cause. R1 changes a context/instruction package and retains the public diagnostic.
 
-Equal pass rates hid strongly different behavioural effects: conservation (S1), scaffolding (S0), rewriting
-(R1) and multi-block formatting on the failing root (S1). Under the complete-answer endpoint these format
-effects are real failures, per lead ruling 1, not noise to remove.
+## Exploratory questions, not established mechanisms
 
-For E12, whose prespecified analysis is frozen, the same static measures can be reported **as labelled
-exploratory secondary descriptions** next to the frozen report, never in place of it. Two questions follow:
+The failing402 initial answer received two public program-exception statuses and one wrong value. E11 therefore has **zero initial public-all-pass/private-fail roots**. It cannot substantiate the hypothesis that the all-pass preservation instruction suppresses repair in that stratum. The possibility remains an exploratory question for future observations, not a reason to revise the frozen S1 rule or enrich E12 after seeing outcomes.
 
-1. Does the S1 instruction's "preserve" branch suppress repair when the single public example passes but the
-   private suite fails?
-2. Does S1's multi-block formatting recur on failing roots?
-
-These are hypotheses for the lead, not conclusions from 7 roots.
+Static output descriptors may accompany E12 only as a separately labeled **E11-informed exploratory supplement** after the frozen batch and primary report. They must retain assigned roots, report absent/noncomparable outputs separately and preserve unknown costs. They neither replace primary outcomes nor justify filtering, tuning, unplanned stopping or policy promotion. The primary E12 release and its resource conditions are unchanged.

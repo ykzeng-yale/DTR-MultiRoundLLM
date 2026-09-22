@@ -294,6 +294,8 @@ Context removal reduced mean quality by 1/7 relative to N1, with two failures am
 
 The run consumed 31,800 prompt and 4,859 completion tokens, seven public-check starts and 59 private-grading starts, at $0 paid service cost. Two continuations per arm and one unresolved task family provide no independent policy validation. The six-of-seven initial success ceiling limits repair opportunity and reflects our development design; it does not justify selecting a favorable replacement cohort after observing outcomes. A new cohort requires a prospective sampling and screening target, and any grader change requires versioned validation.
 
+A later [post-hoc static output review](../docs/e11_mechanism_lead_review_20260922.md) found that the two S1 continuations on each of the six public-all-pass roots retained the initial function-definition AST; the other two S1 outputs were unassessable under the frozen extraction rule. R1 had six matching function-definition ASTs, seven different assessable ASTs and one unparseable output. These structural descriptors do not measure semantic equivalence or identify why an intervention helped or harmed. Both displayed S1 implementations on root402 also retain a visible error at the already-public modulus-one example, so format rejection is not evidence of a correct repair obscured by parsing. No candidate was re-executed or regraded. All six public-all-pass roots were privately correct; the hypothesis that a preservation instruction suppresses repair in a public-pass/private-fail stratum therefore remains untested by E11.
+
 ## Prospective E12 contract and delivered instrument checks
 
 The [conditional E12 release](../docs/e12_bundled_release_20260922.md) specifies

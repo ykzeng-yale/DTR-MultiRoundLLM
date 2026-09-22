@@ -1,6 +1,6 @@
 # Evaluating history-dependent prompt choice in multi-round language-model interaction
 
-Working title and manuscript entry point, 22 September 2026. This is an editable synthesis of the current evidence, not a submission-ready paper. It supersedes the empirical framing of the dated PDFs without replacing their historical records. The latest reviewed scientific delivery is `e518cc1`; the subsequent worker acknowledgement `85bc81b` reports no E12 receiver calls.
+Working title and manuscript entry point, 22 September 2026. This is an editable synthesis of the current evidence, not a submission-ready paper. It supersedes the empirical framing of the dated PDFs without replacing their historical records. The E12 instrument delivery `e518cc1` is independently accepted. The subsequent E11 static diagnostic delivery `08d63b7` is reviewed with explicit interpretation corrections and reports no E12 receiver calls.
 
 ## Abstract
 
@@ -36,6 +36,6 @@ The empirical contribution currently consists of corrected reused-data diagnosti
 | E11: 77 calls, seven inspected roots, primary contrast zero on each root | [Independent E11 judgment](../docs/e11_lead_judgment_20260922.md) and [reconciliation artifact](../results/e11_lead_reconciliation_20260922.json). Two continuations per active arm; descriptive development evidence. |
 | Context-removal package: −1/7 mean quality relative to neutral continuation with diagnostics | Same E11 sources. The arm changes the retained context and instruction, retains diagnostics about the old answer, and is not task-only resampling. |
 | Two missing grades in a secondary arm | Same E11 judgment; immutable S0 records remain missing, with a separately labeled candidate-format sensitivity. The primary contrast is unaffected. |
-| E12 has instrument evidence but no delivered model outcomes | [Accepted validation](../docs/e12_validation_acceptance_20260922.md); 42 reference/control starts are not prompt-efficacy observations. Worker acknowledgement at 03:27 UTC retains the scheduling block. |
+| E12 has instrument evidence but no delivered model outcomes | [Accepted validation](../docs/e12_validation_acceptance_20260922.md); 42 reference/control starts are not prompt-efficacy observations. Worker status at 04:04 UTC retains the scheduling block. |
 
 The unfinished empirical milestones are the bounded E12 delivery and its independent reconciliation, followed by a scientifically justified, separately frozen policy evaluation if warranted. Manuscript assembly, citation/notation reconciliation and a complete reproducibility package also remain. This draft adds no empirical observation, new mathematical result, collection permission or completion credit.

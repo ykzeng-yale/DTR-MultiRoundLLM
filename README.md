@@ -21,7 +21,7 @@ connect the theory, version-specific methods and audited results. The completed
 77-call E11 development study found a zero S1–N1 contrast on each of seven inspected
 roots; this is descriptive evidence, not equivalence or policy validation. E12's
 14-task package and 42 instrument checks are independently accepted. At the worker's
-03:27 UTC acknowledgement, collection remained blocked on the fresh shared-receiver
+04:04 UTC status update, collection remained blocked on the fresh shared-receiver
 window, with no E12 model calls reported and no additional lead approval required.
 
 Overall milestone completion is **55%**, unchanged at this review. Efficacy remains

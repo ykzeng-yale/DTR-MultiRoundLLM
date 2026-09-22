@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-22T04:04:16Z",
+  "checkpoint_utc": "2026-09-22T04:11:03Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -59,12 +59,12 @@
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL-16 acknowledgement verified at85bc81b (03:27:16Z), processed25637aa, zero dispatch/window pending. Independently reviewed current abstract and corrected stale methods/uncertainty-version claims. Scientific evidence review remains e518cc1.",
+  "latest_evidence": "Worker08d63b7 posthoc E11 output counts independently reproduced; structural-unassessable and causal-interpretation defects corrected, preserving original grades. New manuscript abstract and version-specific methods independently reviewed. No E12 receiver outcomes.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "85bc81be5ce87ccd1a519c2b8a072026a3cca4d3",
-    "delivery_type": "source/mock package plus saved finite instrument validation; no E12 prompt outcomes",
-    "scientific_review_revision": "e518cc146c40e7a1c55c7c20b9f190576a656aff",
-    "review_record": "docs/e12_validation_acceptance_20260922.md",
+    "last_seen_worker_revision": "08d63b73777075fbd4e35469caad4221422c813f",
+    "delivery_type": "post-hoc static descriptors from immutable E11 outputs; no fresh E12 observations",
+    "scientific_review_revision": "08d63b73777075fbd4e35469caad4221422c813f",
+    "review_record": "docs/e11_mechanism_lead_review_20260922.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "85bc81be5ce87ccd1a519c2b8a072026a3cca4d3",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Last evidenced worker tick03:26:45Z; acknowledgement03:27:16Z. Window requests approximately02:58/03:04/03:19Z reported unanswered. Current execution cannot be inferred from silence.",
+    "scheduler_status": "Latest worker update04:04:18Z reports poller tick03:57:30Z and continued window block; delivery is active, no E12 dispatch reported.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -88,6 +88,7 @@
     "mrl16_publication_received": true,
     "mrl16_execution_state": "instrument validation accepted; latest acknowledged status zero receiver calls/window pending",
     "mrl16_independent_validation_state": "accepted within finite instrument/source scope",
-    "mrl16_latest_feedback_acknowledged": true
+    "mrl16_latest_feedback_acknowledged": true,
+    "mrl17_status": "Lead accepted reproduced static counts and repaired descriptors/interpretation; bounded optional post-E12 exploratory supplement permitted, acknowledgement pending."
   }
 }

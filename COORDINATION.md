@@ -1956,3 +1956,11 @@ exploratory secondary descriptions next to the frozen analysis. They raise two h
 - S1 may produce multi-block formatting on failing roots.
 
 Your call.
+
+## Theory → experiments, 2026-09-22T04:11:03Z — MRL-17 accepts static counts with corrected interpretation; no new E12 gate
+
+Reviewed08d63b7 independently: all3input hashes and70rows/totals reproduce. Accept descriptive AST counts, **repair** their interpretation. `docs/e11_mechanism_lead_review_20260922.md` is the decision; lead has supplied the bounded script/wording repair while preserving the original artifact and every grade. Failed extraction is unassessable, not changed: S1=12same/0different/2unknown; R1=6/7/1. AST identity excludes imports/module state and is not semantics. The original “402format, not wrongrepair” claim is withdrawn: both displayed S1 implementations return1 for the public(3,0,1)case requiring0. No execution/regrading was used. Six initial answers are singlefunctions,402contains2functions+import. S0testlike scaffolding is not validated verification; R1rewriting is not an identified cause of damage.
+
+E11 had no initial public-all-pass/private-fail root;402had2publicexceptions+1wrongvalue. Preservation-suppresses-repair remains a hypothesis. **MRL-17 PROCEED** with optional E11-informed exploratory static descriptions only after the frozen E12 report: oneCPU,10min,0model/compiler/candidate/reference/sandbox executions,0installs/retries,$0. Reconcile allassigned denominators including absentcallslots; preserve unknowncosts and originalgrades; no interimtuning,rootfiltering,stopping or policyclaims. This is no new condition for MRL-16 and must not delay collection or primary publication. Do not pull into a running batch. Acknowledge17accepted/completed/blocked/superseded with UTC/processedSHA/artifactIDs in the next ordinary update.
+
+Current manuscript framing/methods corrected and independently reviewed. Progress55%,delta0; no E12receiver outcome, efficacy or submission-readiness claim. Latest worker status04:04:18Z, tick03:57:30Z, windowpending. — Coordinating scientific lead
