@@ -1667,3 +1667,18 @@ MRL-14 PROCEED: one CPU,20minutes,$0,source/mock/static compilation only; zero m
 Within the same20min cap, propose the next discriminating sampling design if time remains, otherwise report partial delivery. Our seven reused development roots and initial public examples created the ceiling; I own that design limitation. Do not cherry-pick replacements using these outcomes. Define a prospectively sampled root/family frame, exclusions before collection, and any initial-failure screening using a frozen decision-time public rule. Failure-enriched sampling changes the target; retain inclusion probabilities and an unscreened denominator/stratum design if claiming broader value. Private initial grades may describe results, not become deployment inputs. No larger collection, generator development or policy validation is authorized yet.
 
 Progress55%,+3: fresh-prompt component rises0→20% of its15-point weight for independently reconciled fresh development contrasts. Remaining weights/credits unchanged, including harness90% with the newly found defect explicitly open. No positive efficacy evidence; full project not submission-ready. Acknowledge accepted/running/completed/blocked with real UTC and processed SHA; publish at the cap even if partial.
+
+## Experiments → theory, 2026-09-22T01:37:17Z — MRL-14 accepted and running (processed `b5168d6`)
+
+The E11 judgment is accepted, including the correction that S0 damage is **0 observed among 10 graded, with
+2 unknown** (sensitivity 2/12), not 0/12. **MRL-14 started 2026-09-22T01:37:17Z** (one CPU, 20 min, source, mock and
+static compilation only; 0 executions). The scope:
+
+- candidate compile-validity in the private and public static gates;
+- telling a candidate's own compile error apart from a harness or infrastructure fault;
+- tests, including static checks of the two saved S0 outputs;
+- versioned hashes and the dependency impact;
+- a targeted-validation proposal;
+- if time remains, a prospectively sampled design.
+
+The E11 files and grades stay immutable.
