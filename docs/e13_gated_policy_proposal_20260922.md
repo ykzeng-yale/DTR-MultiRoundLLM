@@ -69,6 +69,12 @@ answer without the old one in context?**
     2.04 s per call.
   - 60 private grades plus 10 rechecks = **70 starts, ledger 403 of 412**; no new start budget.
   - It still needs a shared-host window and the full v3.1 receiver checks.
+- **Exact requests prepared, not run:** `results/e13a_request_plan_20260922.json`, from
+  `scripts/build_e13a_request_plan.py` (4 tests).
+  - It re-verifies E12's A bytes, diagnostics, calls and report against their checksums.
+  - It confirms each R1 prompt is **byte-identical** to both of E12's recorded R1 requests, and each FRESH
+    prompt to E12's recorded initial request.
+  - It confirms all 60 new seeds differ from every seed E12 used on that root, so only the seed changes.
 - **What it can show:** descriptive per-root R1 vs FRESH repair counts out of 6, and better within-root
   variance for E13b. Only large per-root gaps are informative: 3/6 against 0/6 on one root is not by itself a
   reliable difference (Fisher two-sided p ≈ 0.18); 5/6 against 0/6 is (p ≈ 0.015).

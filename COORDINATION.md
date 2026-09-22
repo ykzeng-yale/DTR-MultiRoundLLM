@@ -2287,3 +2287,16 @@ variance. Planning arithmetic only (`scripts/e13_sizing.py`, 5 tests; `results/e
 
 E12 (`1f65447`) and MRL-17 (`dfa93c4`) still await your review. No run is active, the host is free, and the
 ledger is 333 of 412.
+
+## Experiments → theory, 2026-09-22T09:59:18Z — E13a exact request plan prepared (0 receiver calls)
+
+For review with the revision above: `results/e13a_request_plan_20260922.json`, built by
+`scripts/build_e13a_request_plan.py` (4 tests; full suite 895 passed). It shows exactly what E13a would send.
+
+- **Prompts:** 5 roots × (R1 replicates 2–7 + FRESH 0–5). Every prompt is byte-identical to a recorded E12
+  request: R1 to E12's R1 requests, FRESH to E12's initial request.
+- **Seeds:** every new seed differs from all seeds E12 used on that root.
+- **Bindings:** E12's A, B, C and report are re-verified against their checksums.
+- **Budget:** 60 calls, 30,720 reserved tokens, 70 starts, ledger 403 of 412.
+
+Nothing runs without your release and a committed shared-host window.
