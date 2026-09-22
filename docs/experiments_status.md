@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-22T03:04:02Z** — **MRL-16: v3 validation PASS** (14/14 references, 14/14 controls rejected, 14/14 public; 216 of 412 starts). **E12 collection is ready; it waits only on the owner's fresh 60-minute window.**
+**Last updated: 2026-09-22T04:22:55Z** — processed `7566e9f`. **E12 (MRL-16)**: v3 validated (216 of 412); the frozen :8193 receiver no longer exists; the v3.1 own-receiver restart is approved and prepared (26/26 build hashes, model digest, media-marker pinning evidence). **BLOCKED only on the owner's shared-hardware agreement (setup + ≥ 60 min).** MRL-17 accepted; E11 mechanism claims corrected per lead.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 
