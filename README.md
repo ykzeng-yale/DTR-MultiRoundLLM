@@ -23,8 +23,11 @@ roots; this is descriptive evidence, not equivalence or policy validation. E12's
 14-task package and 42 instrument checks are independently accepted. At the worker's
 04:11 UTC update, the old receiver was reported absent, with no E12 model calls.
 The [bounded restart amendment](docs/e12_receiver_restart_amendment_20260922.md)
-permits refreezing the same specified receiver setup once the real shared-hardware
-window and mechanical checks pass; no further lead approval round is required.
+permits refreezing the same specified receiver setup. The worker acknowledged the
+04:35–05:45 UTC shared-host reservation; actual restart and collection still need
+to be evidenced. No further lead approval round is required if live checks pass.
+The [whole-portfolio review](docs/experiment_portfolio_review_20260922.md) maps each
+completed result to its actual scope and the remaining issues.
 
 Overall milestone completion is **55%**, unchanged at this review. Efficacy remains
 unestablished and the full project is not submission-ready. The

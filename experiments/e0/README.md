@@ -1,78 +1,68 @@
-# E0 — reference simulator and estimator validation
+# E0 — known-truth estimator diagnostics
 
-> **Corrected 2026-09-20.** The [corrected E0 report](../../docs/e0_corrected_results_20260920.md) supersedes historical target/optimality/failure interpretations below. The current code includes first-action weighting, replicate-specific mixture truth, explicit logging-versus-target comparisons, a heuristic reference, exact seed counts and saved replicate records. Executed run sources are snapshotted with each dated result.
+The [corrected E0 report](../../docs/e0_corrected_results_20260920.md),
+[matched-fit comparison](../../results/matched_estimator_diagnosis_20260920/summary.json),
+and [current portfolio review](../../docs/experiment_portfolio_review_20260922.md)
+govern interpretation. Original dated outputs remain immutable.
 
-CPU only, no model calls. This is the work that proceeds while the GPU is held by a
-sibling project, and it is the gate every estimator must pass before it is trusted on
-real data.
+E0 evaluates the implemented estimators against specified synthetic policy values
+and blips. It does not validate every estimator in the project, real-model effects,
+unknown-confounding adjustment, or general representation sufficiency. The former
+state-only “optimal” reference is a heuristic, not an established optimum.
 
-| file | contents |
+| File | Role |
 |---|---|
-| `simulator.py` | the data-generating process, the exact dynamic program, and the two failure mechanisms |
-| `estimators.py` | six estimators, three of which are meant to fail |
-| `run_grid.py` | the 17-cell grid, manifests, metrics |
+| `simulator.py` | Specified finite transition laws and exact dynamic-program truth |
+| `estimators.py` | Fitted outcome regressions and policy-value/blip estimators |
+| `run_grid.py` | Seventeen diagnostic conditions, fixed seeds and saved records |
 
-## What it is for
+## Design choices and scope
 
-Every estimator in this project is validated here against a law whose optimal regime,
-policy values and turn-level blip effects are computed exactly by dynamic programming
-rather than estimated. It licenses statements of the form *"estimator X recovers, or
-fails to recover, a known truth under condition Y"*. It licenses no statement about
-what any real intervention does to any real model.
+The ease-distribution parameters and damage scenarios were motivated by historical
+corpus diagnostics. They are numerical design choices, not estimates of a validated
+real intervention law. The historical 16.2% degradation rate was conditional on the
+source loop continuing an initially correct artifact; it does not establish that
+every prompt arm is harmful. The historical `n_tasks=230` is a difficulty-selected
+subset size, not a measured effective sample size or independent-family count.
 
-## Calibrated to this project's own measurements, not invented
+Policy truth uses the actual continuation and replicate-specific template-mixture
+law. Conditional blips integrate the latent distribution given the specified
+observed state. Neither changing the target continuation nor supplying a different
+mixture truth is a cosmetic correction. With five actions, a common assignment
+floor must satisfy `5 * floor <= 1`; the implementation rejects infeasible floors.
 
-* The ease distribution is the **beta-binomial fitted in audit A2** to per-task
-  first-attempt success for Qwen2.5-3B (α 0.348, β 0.230), which is why it is U-shaped:
-  tasks are reliably solved or reliably unsolved, not concentrated in a middle.
-* `n_tasks = 230` is the **effective pool measured by three independent routes**
-  (A2's beta-binomial, the integrity/mutation exclusions, and the A4 scoring rule).
-* Every arm is **harmful in the correct state**, because audit A3 measured a 16.2%
-  degradation rate when a correct answer is iterated on.
-* State 2 — passes the visible assertion, fails the hidden ones — exists because the
-  harness's own visible/hidden split creates it, and it is the configuration in which
-  A3 found a self-check stopping rule stopping on half of all failures.
+The legacy cell names are retained to preserve record linkage:
 
-## Two structural features that carry the study
+- `FAIL_positivity`: positive .02 action floor and weak finite-sample overlap;
+  this is not zero-support nonidentification.
+- `FAIL_latent`: assignment depends on latent information, but the estimator
+  receives the true latent-dependent probabilities. This is not a test of fitted
+  behavior models or identification under unknown confounding.
+- `FAIL_mislabel`: an explicit treatment-recording error condition.
+- `FAIL_coarsening`: a randomized template-mixture condition scored against its
+  actual mixture truth. Its corrected result does not establish arbitrary text
+  compression validity or intrinsic failure of a declared mixture intervention.
 
-**Blips are graded against the posterior-weighted truth.** An estimator conditioning
-on the observed state `S_1 = s` targets a blip that integrates the latents over
-`P(E, Z | S_1 = s)`, not over their prior. The prior-weighted version is a different
-number — at `s = 1` the two differ by about 0.09 — and grading against it would
-misattribute a correct estimator's behaviour to bias. `true_blips` (prior) is kept
-only so the two can be compared; `true_blips_posterior` is the truth.
+## Delivered and still pending
 
-**The positivity floor is not a free parameter.** A per-arm floor `δ` over `K` arms
-requires `K·δ ≤ 1`, so at `K = 5` the largest attainable floor is `0.20`, which is
-exactly uniform randomization. `make_beh` raises on an infeasible floor rather than
-silently renormalizing. This is the arithmetic that five independent reviewers found
-violated in the theory draft, where a floor of 0.25 was recommended alongside 5–6
-arms plus STOP.
+The corrected grid contains **17 ×80=1,360** diagnostic replications, rather than
+completion of a high-precision 1,000-per-cell study. The matched study contains
+**5 ×80=400** comparisons using the same fits/folds for plug-in and DR. Known
+assignment probabilities are used; outcome regressions are fitted. In weak overlap,
+DR coverage is65/80=.8125 in each of two distinct seed sets, with MCSE .0436. Retain
+this failure and the matched DR RMSE penalty; theoretical robustness does not
+certify finite-sample interval performance.
 
-## Failure cells are part of the design
+The [exact history-compression check](../../docs/history_compression_results_20260921.md)
+independently reconciles full-history population truth with the dynamic program
+within1e-12 in its declared scope. The earlier claim of a two-million-episode Monte
+Carlo match to “0.00 MC SE” lacks a located source-bound record in this review and
+is not used as validation evidence. Rounded agreement would not imply zero error.
 
-`FAIL_positivity` (floor 0.02 with strong confounding), `FAIL_latent` (the logging
-policy tracks the unobservable that determines which arm is best), `FAIL_mislabel`
-(15% of localization interventions recorded as retries — what a text-log classifier
-produces), and `FAIL_coarsening` (three paraphrases per class with genuinely different
-effects, violating the assumption that the outcome depends on the message only through
-its class). A simulation study that only shows the causal estimators winning is an
-advertisement; these cells are pre-registered so the boundary is reported rather than
-discovered by a reviewer.
-
-## Reproduce
-
-```bash
-python experiments/e0/run_grid.py --list
-python experiments/e0/run_grid.py --cell base --reps 200 --workers 6
-python experiments/e0/run_grid.py --reps 1000 --workers 6      # pre-registered R
-```
-
-Results land in an immutable `results/e0/<stamp>/<cell>/` with a manifest recording
-the seed table, code hash and the exact truth each cell was graded against.
-
-## Verified
-
-The exact dynamic program matches a 2,000,000-episode Monte Carlo of `V(uniform-5)` to
-**0.00 MC SE** (0.645977 both), and every conditional blip matches its brute-force
-Monte Carlo within about one MC SE. That is E0's hardest abort condition and it passes.
+Still pending: an available adequate-history fitted comparator, practical
+regularization, a fresh numerical freeze with declared Monte Carlo precision and
+root-level inference diagnostics, and independent ranking/policy-value validation.
+The [eight-cell proposal](../../docs/literature_simulation_plan_20260921.md) is a
+design amendment, not an executed study. Reproduce historical reports from their
+recorded source/configuration revisions into new paths; no large rerun or additional
+compute is authorized by this README. No simulation result establishes LLM efficacy.

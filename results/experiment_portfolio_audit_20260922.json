@@ -1,0 +1,918 @@
+{
+  "schema_version": "experiment-portfolio-audit-v1",
+  "created_utc": "2026-09-22T04:27:02.401549+00:00",
+  "reviewer": "Independent evidence subagent /root/evidence",
+  "requested_review_revision": "7566e9f28074059a922dc04b0981bd2fed84e10e",
+  "observed_head_at_static_recheck": "1fdeccffef885b8517e5f6e71f0ccbf5fb37cb11",
+  "scope": "Read-only JSON/count/hash reconciliation; current audit does not independently rerun fitting, simulations, grading, containment or receiver execution. One new audit JSON only.",
+  "input_files": {
+    "results/development_delivery_lead_audit_20260921.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/development_delivery_lead_audit_20260921.json",
+      "sha256": "546a23be66f4a103ac7e7a5bb3ac824b09983aec0425e83de440f675b378ac6c",
+      "bytes": 5728
+    },
+    "results/landmark_dev_release_v1_20260921T130048Z/completion.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1_20260921T130048Z/completion.json",
+      "sha256": "72781a066adcd5950e58a7c8be3abcc2a44d55287c4b6c8b53677abc33097005",
+      "bytes": 4441
+    },
+    "results/landmark_dev_release_v1_20260921T130048Z/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1_20260921T130048Z/manifest.json",
+      "sha256": "af994fc9b1a56d06db2c1da7dc96bd621b84b3aba124733b606a17f136765016",
+      "bytes": 29468
+    },
+    "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl",
+      "sha256": "1c450864da8515278c66fcc09327bac890ddd1b0953cf0ac7a97c9201c5eb2ab",
+      "bytes": 115165
+    },
+    "results/landmark_dev_release_v1_20260921T130048Z/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1_20260921T130048Z/roots.jsonl",
+      "sha256": "22d080f479456c515cc8db40d254332c9b088b70faabf2d5de59de660c7e3f78",
+      "bytes": 133303
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z/completion.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z/completion.json",
+      "sha256": "069eddfdeda72b90050ddb325a4ff4b380fedcc8baa5c41c1854473750c5ea3b",
+      "bytes": 4441
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z/manifest.json",
+      "sha256": "b8266848842ecd48d711282a18c3cf162573bd3170981d5b64227d14e05c0dba",
+      "bytes": 29468
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl",
+      "sha256": "9940704e9aa62ba549818b63311644aadcbaae2bd34d1e46dc79f8260926f6c5",
+      "bytes": 115159
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z/roots.jsonl",
+      "sha256": "495023bd6dbc74f3d7112ea875ee53f0abb0ea55acfe9ae09851d12d60331994",
+      "bytes": 133297
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z/completion.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z/completion.json",
+      "sha256": "bd96679fd1837829ae416648e947c2c718d82134b6a4313dc71c921ba3dc70de",
+      "bytes": 4441
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z/manifest.json",
+      "sha256": "8b848b4712413e5467bbe67b33b9b7457cf08827ffdee257258cefae75e07728",
+      "bytes": 29517
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl",
+      "sha256": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+      "bytes": 115162
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z/roots.jsonl",
+      "sha256": "317dbc25d9fe9def74613066d2dbda0b71a8a05c3369a174baec8660874f0cf8",
+      "bytes": 133300
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z_grades/grades.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z_grades/grades.jsonl",
+      "sha256": "e1a9d72dffb12b9b0fcf72066dbc354e3caae6d5573c60d577e7b6e007dd5bee",
+      "bytes": 16681
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z_grades/grades.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z_grades/grades.jsonl",
+      "sha256": "f8ca263b9eb6aa81c3fff9b336c141228d6d09cca9d8c64cc643adfb2c4f971d",
+      "bytes": 16982
+    },
+    "results/landmark_dev_release_v1b_20260921T130349Z_analysis.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1b_20260921T130349Z_analysis.json",
+      "sha256": "8b0df82479845a03daf52f6d84fadcc68b3fcffdf21119466f697b5076397be5",
+      "bytes": 18598
+    },
+    "results/landmark_dev_release_v1c_20260921T130757Z_analysis.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/landmark_dev_release_v1c_20260921T130757Z_analysis.json",
+      "sha256": "05aa784eaf2e8e7b1de9c2d57631765e15190a3e60430e20bb73da0a012e025a",
+      "bytes": 18291
+    },
+    "results/e11_dev_v2_20260922T010959Z/ARTIFACT_SHA256SUMS.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/ARTIFACT_SHA256SUMS.json",
+      "sha256": "863d0278f745a68755ba566f1d7898c5ee032017a75ffbf81b3438cf2ac6aa5b",
+      "bytes": 2686
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F357.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F357.txt",
+      "sha256": "d953de3999e98fd128f8f4f1f2e48cf51ccf9170e9367bb5b5bc0a06e7480d00",
+      "bytes": 66
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F373.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F373.txt",
+      "sha256": "720de64950253ad6934681d7d0f4f209d7f814591ba081c324bebad65706bb52",
+      "bytes": 48
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F378.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F378.txt",
+      "sha256": "f1ed9f713a358346bdc4cd7bf1e05a710c62d84efb1faeefebc49abd9c5eb65a",
+      "bytes": 140
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F402.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F402.txt",
+      "sha256": "b1c89dd3833e287a14453eb6f2c73e3b59914c870d8a7362c0687a6027cd321f",
+      "bytes": 178
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F489.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F489.txt",
+      "sha256": "20ed8b84ae9f084f77aea6f0687722034aa42805df77addbb108690b6aea51bf",
+      "bytes": 64
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F509.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F509.txt",
+      "sha256": "9dbf52044f7b252a5cf6b6d7ba56707657dc2058c100277fc3db859870e83569",
+      "bytes": 82
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F52.txt": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/artifacts/mbpp%2F52.txt",
+      "sha256": "37fa2297cf51d459a81b0e7a4baf2bd48989ad3bad3f5bad003dc1b907ac941e",
+      "bytes": 46
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/calls.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+      "sha256": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+      "bytes": 15997
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/completion.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/completion.json",
+      "sha256": "4e8aa7b7bd4511ed12fc04c3187eb4e24fae1aaa0291ae5912d794b9d61a406f",
+      "bytes": 18786
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/manifest.json",
+      "sha256": "c14808f4cd6c0b6661d855e66c291f9f3519a6691bcf154df8e2b782f096df46",
+      "bytes": 32864
+    },
+    "results/e11_dev_v2_20260922T010959Z/A/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/A/roots.jsonl",
+      "sha256": "06232cfb8de58e197756089fa1c746b4ce75bf48fcb27e47efd9b7af64c803b3",
+      "bytes": 18452
+    },
+    "results/e11_dev_v2_20260922T010959Z/B/attempts.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/B/attempts.jsonl",
+      "sha256": "eacafe6ae3ee8d8fe5e346c4120acbc08543b99cc832b507bff61e7444421cc4",
+      "bytes": 7903
+    },
+    "results/e11_dev_v2_20260922T010959Z/B/diagnostics.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/B/diagnostics.json",
+      "sha256": "f23f4650ab0ebf5d72ceb24b2bd9ec59fd85404387121f862a9d5d8682f0869c",
+      "bytes": 4202
+    },
+    "results/e11_dev_v2_20260922T010959Z/B/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/B/manifest.json",
+      "sha256": "38fb287e6f089d301e79f65efbd8c02691b0971a66f5342da154ff47637d06a5",
+      "bytes": 5135
+    },
+    "results/e11_dev_v2_20260922T010959Z/C/calls.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+      "sha256": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+      "bytes": 228460
+    },
+    "results/e11_dev_v2_20260922T010959Z/C/completion.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/C/completion.json",
+      "sha256": "0d02131a5d56ac7845015b68d44be9c19d4680d3e724975a89a5f785a24dc9e2",
+      "bytes": 18227
+    },
+    "results/e11_dev_v2_20260922T010959Z/C/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/C/manifest.json",
+      "sha256": "e8fd39b6a69b7f1a56e65dc2e6a4554e07ed9eeaae264a2168c73f7d58ccb92c",
+      "bytes": 39752
+    },
+    "results/e11_dev_v2_20260922T010959Z/C/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/C/roots.jsonl",
+      "sha256": "f7331cd713709c1c633edb5a45bbc87396fb0426f58f6bad0660b8d64d6c9ae6",
+      "bytes": 236957
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/grades.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/grades.jsonl",
+      "sha256": "d5e96fb698d7d75ea8036e5c0e6ebafadab1989b24761f6c3aa5a2f0c6ea2e4e",
+      "bytes": 29854
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/grading_attempts.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/grading_attempts.jsonl",
+      "sha256": "223a6cde632636ccdeeb96063a1496553b8060060de03225bf88d3b1f9ddba10",
+      "bytes": 18627
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/private_execution_records.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/private_execution_records.json",
+      "sha256": "b0afcd9f9fd480ad7de6c3fbf55dea082ea9457c5bf8a1ba8b8b391a257689e8",
+      "bytes": 73707
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/summary.json",
+      "sha256": "32cb0fd744b5f1eb58ba796a35422f03030228eb1ffc700990b344c714a53c15",
+      "bytes": 1017
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/view/roots.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/view/roots.jsonl",
+      "sha256": "909b178b5f68b6ef84ce3b38ebdd9f45373370d31185179da648533a7c3346b1",
+      "bytes": 32422
+    },
+    "results/e11_dev_v2_20260922T010959Z/D/view/view_manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/D/view/view_manifest.json",
+      "sha256": "24a28a376d2dd3bab553a8582ecfa8d5742dd60ce6ff592ebf4dd9d9657df50e",
+      "bytes": 1129
+    },
+    "results/e11_dev_v2_20260922T010959Z/analysis.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/analysis.json",
+      "sha256": "bbf1ca69d1dfb535069875e515962d12bf05861ccfe89c8a4b35b817764e9770",
+      "bytes": 30088
+    },
+    "results/e11_dev_v2_20260922T010959Z/analysis_input.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/analysis_input.json",
+      "sha256": "37d09972b23248df12ced219e716f96deddddcbce9081871c1d4c66eeaccd915",
+      "bytes": 33719
+    },
+    "results/e11_dev_v2_20260922T010959Z/diagnostics_for_analysis.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/diagnostics_for_analysis.json",
+      "sha256": "405c2c94e51231980f4001b1283c3b3b1ff70403b99e332fda930efd2056c81a",
+      "bytes": 4559
+    },
+    "results/e11_dev_v2_20260922T010959Z/roots_for_analysis.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_dev_v2_20260922T010959Z/roots_for_analysis.jsonl",
+      "sha256": "d35aa0a252a4a7043ac7538bc8d4d3f726e20d0cfa6bdc3aeb563fc6d9b57e2f",
+      "bytes": 15645
+    },
+    "results/e12_dev_v3_20260922T030255Z_validation/ARTIFACT_SHA256SUMS.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_dev_v3_20260922T030255Z_validation/ARTIFACT_SHA256SUMS.json",
+      "sha256": "fce1b642b55d3208d9672765e8cd5bcb6c47cb9f184dc9ee2d937ae4c5cdbb76",
+      "bytes": 442
+    },
+    "results/e12_dev_v3_20260922T030255Z_validation/private/attempts.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_dev_v3_20260922T030255Z_validation/private/attempts.jsonl",
+      "sha256": "9cb583510e276c13d2a88f443a3dd21e5006b9d3814a0f68cc00ebb86dfa7b78",
+      "bytes": 39349
+    },
+    "results/e12_dev_v3_20260922T030255Z_validation/private/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_dev_v3_20260922T030255Z_validation/private/summary.json",
+      "sha256": "ccdb0926af013b6f5f64a42dd4b47516f04bd04ff57e2392128f77337fdf5bb8",
+      "bytes": 10911
+    },
+    "results/e12_dev_v3_20260922T030255Z_validation/public/ledger.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_dev_v3_20260922T030255Z_validation/public/ledger.jsonl",
+      "sha256": "82f1edc451a39e58e16b1319c232e52abe46e49a44149a5b80b61801b1cc8102",
+      "bytes": 11250
+    },
+    "results/e12_dev_v3_20260922T030255Z_validation/public/result.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_dev_v3_20260922T030255Z_validation/public/result.json",
+      "sha256": "e9889d47e21ad7c55ec157642f0d67bf7ca8b1eebad60248b226a79b4581674e",
+      "bytes": 5255
+    },
+    "results/e11_lead_reconciliation_20260922.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e11_lead_reconciliation_20260922.json",
+      "sha256": "145fa95af4d62525e11eddab0d2669caf1b99cf562027cafa2a87caf28639342",
+      "bytes": 2320
+    },
+    "results/selection_review_20260920.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_review_20260920.json",
+      "sha256": "579da372134bd15003dd1c57a9da71f53d718f3aa298665fa9b784d1c9647542",
+      "bytes": 4808
+    },
+    "results/selection_corrected_20260920_v2/manifest.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_corrected_20260920_v2/manifest.json",
+      "sha256": "f220ad7a11efdb87fd74ed17c4f18525beab5d8c5eefbb26fbf60aeff35cbfd9",
+      "bytes": 17066
+    },
+    "results/selection_corrected_20260920_v2/per_task.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_corrected_20260920_v2/per_task.json",
+      "sha256": "a51823254123b283aa833923bf5deb333130f94155d250e6c21a8dd5a6a1f128",
+      "bytes": 394097
+    },
+    "results/selection_corrected_20260920_v2/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_corrected_20260920_v2/summary.json",
+      "sha256": "57463813c89fe630a16579a29252affedf69133da98587b8a680babcca8e6936",
+      "bytes": 6194
+    },
+    "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/log/episodes.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+      "sha256": "e643ee44c7ef658fff65efb5e17763ee78c990d21184d060f5823025a100414e",
+      "bytes": 15615680
+    },
+    "results/selection_sensitivity_20260920/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_sensitivity_20260920/summary.json",
+      "sha256": "8d90bd6340e31fa822de1104fe0562b3e219cdc67b92dcca4ce4d27245871274",
+      "bytes": 8238
+    },
+    "results/mechanism_diagnosis_20260920/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/mechanism_diagnosis_20260920/summary.json",
+      "sha256": "3c5eac92b1eb702b79dfb10334064c8f818a9bf704bf1be9d03bc7749e40bea1",
+      "bytes": 122471
+    },
+    "results/manuscript_evidence_reconciliation_20260921.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/manuscript_evidence_reconciliation_20260921.json",
+      "sha256": "7081d85606c5012aeac38e600fb8445127c0f3fa41d8bb33ea60c855d3d0700c",
+      "bytes": 327137
+    },
+    "results/mechanism_diagnosis_20260920/root_scores.jsonl": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/mechanism_diagnosis_20260920/root_scores.jsonl",
+      "sha256": "55b08bb53a96787bb29d5493f540e75bc743cf5accaf76ec461007f92800f246",
+      "bytes": 2251699
+    },
+    "results/selection_sensitivity_20260920/fits.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/selection_sensitivity_20260920/fits.json",
+      "sha256": "d0c86fb1878ecf633f367c9feee640d49a705d8a617e6ee3f6f1acf9421fe02c",
+      "bytes": 1257854
+    },
+    "results/matched_estimator_diagnosis_20260920/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "bytes": 146292
+    },
+    "results/matched_estimator_diagnosis_20260920/summary.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/matched_estimator_diagnosis_20260920/summary.json",
+      "sha256": "13fcb077c5733232a09fa586c4d350721b20eeaf83b0b41c99acdf7bddfd4524",
+      "bytes": 3080
+    },
+    "results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json",
+      "sha256": "74a1c8df38eb60c02b1ef3b746e189fc3616a4c35c50c61650303199b57a6ee5",
+      "bytes": 468473
+    },
+    "results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json",
+      "sha256": "d26365868b49107b5f1d8ee6e262b5e9345de398553b29e62161336ab125eb4e",
+      "bytes": 426621
+    },
+    "results/e0_corrected_20260920/20260920T193602Z/base/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193602Z/base/replicates.json",
+      "sha256": "0e2fa005ddb4428463847a760757c792b25d958a9c1a72705c7bc7947fb9f403",
+      "bytes": 427013
+    },
+    "results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json",
+      "sha256": "701d6cae45b4233d669063a3f1a64cb7112548b974c362937d398a9dd39e388a",
+      "bytes": 426686
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json",
+      "sha256": "7745352d6b9508bd5dcef5503bf703dab9b774c03b77ec22331d14d4ba1fff89",
+      "bytes": 427157
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json",
+      "sha256": "f130fc33e4e24093a3638a509afb17c3b10765e0e38261505843192c46616964",
+      "bytes": 422834
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json",
+      "sha256": "9e66a014c7863f309423aac157e992ecf02e7d75d7a4d460c4674a9f11ce6851",
+      "bytes": 422047
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json",
+      "sha256": "85879a1740fdc4733cd97798a2d95274eb79379397375dec69ae72774a2a8c75",
+      "bytes": 436548
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json",
+      "sha256": "cd548ed3db7dfd65cdb349d5e9a9493849c1e36cc2171c10f06c9723cf17ce11",
+      "bytes": 426858
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json",
+      "sha256": "2422034a282b32c1a9033babba4e27e3e951693ff884ab3f97c3b519f8415881",
+      "bytes": 428744
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json",
+      "sha256": "742ab7a12507989b2c8247f95b39ade2a7b38b6c8f3fccd398478176dad1e9ae",
+      "bytes": 427908
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json",
+      "sha256": "4595d9d78030cfefd5b79fa26d3f1d01dd7b1faa44206c41276f4d9e365ee7a0",
+      "bytes": 427015
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json",
+      "sha256": "0fac59398ded911422ea0a27b4d4531faa40ad4d597fb2fb77ff35a0984a9b21",
+      "bytes": 426877
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json",
+      "sha256": "b306f52964c434fb58bd70159b05d2a951400adff35e64835dc54460634246ba",
+      "bytes": 426830
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json",
+      "sha256": "3af3e4a551bfda0fe7e7c8f4e9e0a6854e12580edf8e7c6e7b59446a8262db79",
+      "bytes": 427348
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json",
+      "sha256": "24c89fc4983aaac8ade14baf22dd9d80b2bb73df787a999cea72287a9eb7295c",
+      "bytes": 422955
+    },
+    "results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json",
+      "sha256": "8f52adf69584358bbd1cbfafb31dffde9bc0a5e1aca470054f8b7959ccce6806",
+      "bytes": 427490
+    },
+    "results/e12_validation_lead_review_20260922.json": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/results/e12_validation_lead_review_20260922.json",
+      "sha256": "5fa81e4621ab17ce8e2cd531fee412ef08fbde81d52760f526818c4211ee18ba",
+      "bytes": 2376
+    },
+    "experiments/landmark/analyze.py": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/experiments/landmark/analyze.py",
+      "sha256": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+      "bytes": 14517
+    },
+    "docs/development_delivery_judgment_20260921.md": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/development_delivery_judgment_20260921.md",
+      "sha256": "49b33eebd18464de2f55e8853fbfe3d4204e9f85b42dfa2fbbc27159b3a9b665",
+      "bytes": 9731
+    },
+    "docs/e11_lead_judgment_20260922.md": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/e11_lead_judgment_20260922.md",
+      "sha256": "ac773a0efb84914262101b7e5e76e07cb4aa7d70c1c187975c0bc480738b01f4",
+      "bytes": 3930
+    },
+    "docs/e12_v3_measurement_review_20260922.md": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/e12_v3_measurement_review_20260922.md",
+      "sha256": "b9acb8ce5401ddb05f9d6e4c5c28d58e864a55a2dd6c04cf4663cf299c02d179",
+      "bytes": 7237
+    },
+    "docs/e12_receiver_restart_amendment_20260922.md": {
+      "absolute_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/docs/e12_receiver_restart_amendment_20260922.md",
+      "sha256": "54818c2c769921e20cd7c88152421a2a72e5d1632de700286232d016825a9ab6",
+      "bytes": 7135
+    }
+  },
+  "checks": {
+    "v1_series_archived_input_hashes": {
+      "results/landmark_dev_release_v1_20260921T130048Z/completion.json": true,
+      "results/landmark_dev_release_v1_20260921T130048Z/manifest.json": true,
+      "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl": true,
+      "results/landmark_dev_release_v1_20260921T130048Z/roots.jsonl": true,
+      "results/landmark_dev_release_v1b_20260921T130349Z/completion.json": true,
+      "results/landmark_dev_release_v1b_20260921T130349Z/manifest.json": true,
+      "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl": true,
+      "results/landmark_dev_release_v1b_20260921T130349Z/roots.jsonl": true,
+      "results/landmark_dev_release_v1c_20260921T130757Z/completion.json": true,
+      "results/landmark_dev_release_v1c_20260921T130757Z/manifest.json": true,
+      "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl": true,
+      "results/landmark_dev_release_v1c_20260921T130757Z/roots.jsonl": true,
+      "results/landmark_dev_release_v1c_20260921T130757Z_grades/grades.jsonl": true
+    },
+    "landmark_dev_release_v1_20260921T130048Z_completion_counts": {
+      "calls": true,
+      "prompt_tokens": true,
+      "completion_tokens": true
+    },
+    "landmark_dev_release_v1b_20260921T130349Z_completion_counts": {
+      "calls": true,
+      "prompt_tokens": true,
+      "completion_tokens": true
+    },
+    "landmark_dev_release_v1b_20260921T130349Z_grade_binding": true,
+    "landmark_dev_release_v1c_20260921T130757Z_completion_counts": {
+      "calls": true,
+      "prompt_tokens": true,
+      "completion_tokens": true
+    },
+    "landmark_dev_release_v1c_20260921T130757Z_grade_binding": true,
+    "v1_series_output_maps_equal": true,
+    "e11_dev_v2_20260922T010959Z_artifact_hashes": {
+      "A/artifacts/mbpp%2F357.txt": true,
+      "A/artifacts/mbpp%2F373.txt": true,
+      "A/artifacts/mbpp%2F378.txt": true,
+      "A/artifacts/mbpp%2F402.txt": true,
+      "A/artifacts/mbpp%2F489.txt": true,
+      "A/artifacts/mbpp%2F509.txt": true,
+      "A/artifacts/mbpp%2F52.txt": true,
+      "A/calls.jsonl": true,
+      "A/completion.json": true,
+      "A/manifest.json": true,
+      "A/roots.jsonl": true,
+      "B/attempts.jsonl": true,
+      "B/diagnostics.json": true,
+      "B/manifest.json": true,
+      "C/calls.jsonl": true,
+      "C/completion.json": true,
+      "C/manifest.json": true,
+      "C/roots.jsonl": true,
+      "D/grades.jsonl": true,
+      "D/grading_attempts.jsonl": true,
+      "D/private_execution_records.json": true,
+      "D/summary.json": true,
+      "D/view/roots.jsonl": true,
+      "D/view/view_manifest.json": true,
+      "analysis.json": true,
+      "analysis_input.json": true,
+      "diagnostics_for_analysis.json": true,
+      "roots_for_analysis.jsonl": true
+    },
+    "e12_dev_v3_20260922T030255Z_validation_artifact_hashes": {
+      "private/attempts.jsonl": true,
+      "private/summary.json": true,
+      "public/ledger.jsonl": true,
+      "public/result.json": true
+    },
+    "e11_against_lead_review": {
+      "calls": true,
+      "primary_root_differences": true,
+      "R1_package_contrast": true,
+      "prompt_tokens": true,
+      "completion_tokens": true
+    },
+    "corrected_selection_archived_output_hashes": {
+      "manifest.json": true,
+      "per_task.json": true,
+      "summary.json": true
+    },
+    "historical_raw_source_hash": true,
+    "prior_manuscript_evidence_input_hashes": {
+      "results/mechanism_diagnosis_20260920/root_scores.jsonl": true,
+      "results/mechanism_diagnosis_20260920/summary.json": true,
+      "results/selection_sensitivity_20260920/fits.json": true,
+      "results/selection_sensitivity_20260920/summary.json": true,
+      "results/matched_estimator_diagnosis_20260920/replicates.json": true,
+      "results/matched_estimator_diagnosis_20260920/summary.json": true
+    },
+    "e0_all_cells_have_80_distinct_seeds": {
+      "results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193602Z/base/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json": true,
+      "results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json": true
+    },
+    "e12_start_counts_match_summaries": {
+      "private": true,
+      "public": true,
+      "all_private_expected": true,
+      "all_public_expected": true
+    },
+    "aggregate_expected_values": true
+  },
+  "all_listed_checks_pass": true,
+  "observed_or_explicitly_cited_counts": {
+    "landmark_dev_release_v1_20260921T130048Z": {
+      "run_directory": "results/landmark_dev_release_v1_20260921T130048Z",
+      "freeze_commit": "ddcfdacde585ec30c62c977138824a68cbbaaea1",
+      "calls": 49,
+      "unique_call_keys": 49,
+      "roots": [
+        "mbpp/357",
+        "mbpp/373",
+        "mbpp/378",
+        "mbpp/402",
+        "mbpp/489",
+        "mbpp/509",
+        "mbpp/52"
+      ],
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "unknown_token_rows": 0,
+      "grades": null,
+      "missing_grades": null,
+      "grade_counts_by_arm": null,
+      "recorded_collection_seconds": 92.26686620805413,
+      "raw_collection_evidence_type": "ungraded_real_collection",
+      "analysis_evidence_type": null
+    },
+    "landmark_dev_release_v1b_20260921T130349Z": {
+      "run_directory": "results/landmark_dev_release_v1b_20260921T130349Z",
+      "freeze_commit": "3e70c0a04482bf8ca1e9e0872c4d1037988ba09d",
+      "calls": 49,
+      "unique_call_keys": 49,
+      "roots": [
+        "mbpp/357",
+        "mbpp/373",
+        "mbpp/378",
+        "mbpp/402",
+        "mbpp/489",
+        "mbpp/509",
+        "mbpp/52"
+      ],
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "unknown_token_rows": 0,
+      "grades": 49,
+      "missing_grades": 7,
+      "grade_counts_by_arm": {
+        "generic_repair": {
+          "1": 9,
+          "missing": 2,
+          "0": 3
+        },
+        "history_specific_repair": {
+          "1": 9,
+          "0": 3,
+          "missing": 2
+        },
+        "independent_restart": {
+          "1": 9,
+          "0": 3,
+          "missing": 2
+        },
+        "stop": {
+          "1": 5,
+          "missing": 1,
+          "0": 1
+        }
+      },
+      "recorded_collection_seconds": 86.37465166673064,
+      "raw_collection_evidence_type": "ungraded_real_collection",
+      "analysis_evidence_type": "ungraded_real_collection"
+    },
+    "landmark_dev_release_v1c_20260921T130757Z": {
+      "run_directory": "results/landmark_dev_release_v1c_20260921T130757Z",
+      "freeze_commit": "d5efcd8544b0718961190fe06f442d3a1d727ae4",
+      "calls": 49,
+      "unique_call_keys": 49,
+      "roots": [
+        "mbpp/357",
+        "mbpp/373",
+        "mbpp/378",
+        "mbpp/402",
+        "mbpp/489",
+        "mbpp/509",
+        "mbpp/52"
+      ],
+      "prompt_tokens": 9964,
+      "completion_tokens": 3162,
+      "unknown_token_rows": 0,
+      "grades": 49,
+      "missing_grades": 0,
+      "grade_counts_by_arm": {
+        "generic_repair": {
+          "1": 9,
+          "0": 5
+        },
+        "history_specific_repair": {
+          "1": 9,
+          "0": 5
+        },
+        "independent_restart": {
+          "1": 9,
+          "0": 5
+        },
+        "stop": {
+          "1": 5,
+          "0": 2
+        }
+      },
+      "recorded_collection_seconds": 86.51161195803434,
+      "raw_collection_evidence_type": "ungraded_real_collection",
+      "analysis_evidence_type": "ungraded_real_collection"
+    },
+    "e11": {
+      "run_directory": "results/e11_dev_v2_20260922T010959Z",
+      "calls": 77,
+      "roots": [
+        "mbpp/357",
+        "mbpp/373",
+        "mbpp/378",
+        "mbpp/402",
+        "mbpp/489",
+        "mbpp/509",
+        "mbpp/52"
+      ],
+      "prompt_tokens": 31800,
+      "completion_tokens": 4859,
+      "grades": 77,
+      "missing_grades": [
+        {
+          "root_id": "mbpp/378",
+          "arm": "S0",
+          "replicate": 1,
+          "reason": null
+        },
+        {
+          "root_id": "mbpp/489",
+          "arm": "S0",
+          "replicate": 1,
+          "reason": null
+        }
+      ],
+      "grades_by_arm": {
+        "N0": {
+          "1": 12,
+          "0": 2
+        },
+        "N1": {
+          "1": 12,
+          "0": 2
+        },
+        "R1": {
+          "1": 10,
+          "0": 4
+        },
+        "S0": {
+          "1": 10,
+          "missing": 2,
+          "0": 2
+        },
+        "S1": {
+          "1": 12,
+          "0": 2
+        },
+        "STOP": {
+          "1": 6,
+          "0": 1
+        }
+      },
+      "primary_root_differences": {
+        "mbpp/52": 0.0,
+        "mbpp/357": 0.0,
+        "mbpp/373": 0.0,
+        "mbpp/378": 0.0,
+        "mbpp/402": 0.0,
+        "mbpp/489": 0.0,
+        "mbpp/509": 0.0
+      },
+      "R1_package_minus_N1_root_mean": -0.14285714285714285
+    },
+    "historical_reused_data": {
+      "source_path": "/Users/yukang/Documents/Codex/2026-09-18/fur/work/DTR-AgentEvals/results/code_routing/log/episodes.jsonl",
+      "source_sha256": "e643ee44c7ef658fff65efb5e17763ee78c990d21184d060f5823025a100414e",
+      "source_episodes_recorded_and_previously_reconciled": 4488,
+      "roots_per_receiver_recorded": {
+        "qwen2.5-3b-instruct": 561,
+        "qwen2.5-7b-instruct": 561
+      },
+      "current_check_scope": "Raw file hash verified; earlier raw-row reconstruction is cited, not rerun here."
+    },
+    "fixed_bank_selection": {
+      "original_split": {
+        "qwen2.5-3b-instruct": {
+          "gbm": {
+            "training_roots": 336,
+            "evaluation_roots": 225,
+            "gain": 0.0025925925925925943
+          },
+          "logit": {
+            "training_roots": 336,
+            "evaluation_roots": 225,
+            "gain": -0.0007407407407407391
+          }
+        },
+        "qwen2.5-7b-instruct": {
+          "gbm": {
+            "training_roots": 336,
+            "evaluation_roots": 225,
+            "gain": 0.002962962962962964
+          },
+          "logit": {
+            "training_roots": 336,
+            "evaluation_roots": 225,
+            "gain": 0.02851851851851852
+          }
+        }
+      },
+      "overlapping_split_summaries": {
+        "qwen2.5-3b-instruct": {
+          "all_differences": [
+            -0.0007407407407407391,
+            -0.0018518518518518506,
+            -0.008518518518518517,
+            0.011111111111111112,
+            -0.0066666666666666645,
+            -0.008518518518518517,
+            -0.008518518518518517,
+            -0.005555555555555555,
+            -0.026296296296296293,
+            -0.023703703703703703
+          ],
+          "median": -0.007592592592592591,
+          "minimum": -0.026296296296296293,
+          "maximum": 0.011111111111111112,
+          "positive_splits": 1,
+          "n_splits": 10
+        },
+        "qwen2.5-7b-instruct": {
+          "all_differences": [
+            0.02851851851851852,
+            0.0,
+            0.0059259259259259265,
+            0.014074074074074076,
+            -0.0011111111111111107,
+            0.013703703703703702,
+            0.010740740740740742,
+            0.005185185185185187,
+            0.0044444444444444444,
+            0.011851851851851853
+          ],
+          "median": 0.008333333333333335,
+          "minimum": -0.0011111111111111107,
+          "maximum": 0.02851851851851852,
+          "positive_splits": 8,
+          "n_splits": 10
+        }
+      },
+      "scope": "Saved summary values; previous independent 900-row reconstruction remains bound by unchanged output hashes; no refitting."
+    },
+    "e0_synthetic": {
+      "cells": 17,
+      "replications": 1360,
+      "replications_by_file": {
+        "results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193602Z/base/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json": 80,
+        "results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json": 80
+      },
+      "evidence_class": "Synthetic known-truth diagnostic; not real-model outcomes"
+    },
+    "e12_validation": {
+      "private_ledger_events": {
+        "reserved": 1,
+        "job_start": 28,
+        "program_start": 28,
+        "job_result": 28,
+        "complete": 1
+      },
+      "public_ledger_events": {
+        "reserved": 1,
+        "start": 14,
+        "result": 14,
+        "complete": 1
+      },
+      "private_references_passing": 14,
+      "private_controls_rejected": 14,
+      "public_references_passing": 14,
+      "model_calls_reported_at_validation": 0,
+      "ledger_before_recorded": 174,
+      "ledger_after_recorded": 216,
+      "remaining_starts_recorded": 196,
+      "scope": "Finite saved instrument evidence only; no delivered E12 receiver outcomes reviewed."
+    },
+    "published_v1_series_plus_e11": {
+      "receiver_calls": 224,
+      "prompt_tokens": 61692,
+      "completion_tokens": 14345,
+      "unique_root_count": 7,
+      "unique_roots": [
+        "mbpp/357",
+        "mbpp/373",
+        "mbpp/378",
+        "mbpp/402",
+        "mbpp/489",
+        "mbpp/509",
+        "mbpp/52"
+      ],
+      "scope": "Four published collections, including three exact-output reproductions. Not four independent efficacy studies; excludes historical sibling collection and every validation/sandbox start."
+    }
+  },
+  "metadata_caveats": [
+    {
+      "issue": "v1b/v1c analysis evidence_type is ungraded_real_collection despite present linked grades",
+      "source": "experiments/landmark/analyze.py:136 copies the raw collection manifest evidence_type",
+      "disposition": "Classify these as graded development records with stated missingness in current inventory; preserve immutable artifacts."
+    },
+    {
+      "issue": "The130048Z v1 collection has no separately published own grade file; first graded source is v1b130349Z",
+      "disposition": "Use exact run IDs. The v1 family report explicitly points to v1b; do not count an additional independent graded efficacy run."
+    }
+  ],
+  "timing": {
+    "previous_successful_stdout_reconciliation_seconds": 0.07601495832204819,
+    "previous_timing_scope": "Earlier bounded arithmetic/hash pass reported in this audit conversation; no artifact was written by that pass.",
+    "this_static_recheck_seconds": 0.12992416601628065,
+    "this_timing_scope": "Includes source/hash/JSON reconciliation and read-only Git HEAD lookup; excludes manual review and final JSON serialization/write."
+  },
+  "audit_resource_use": {
+    "new_model_calls": 0,
+    "candidate_executions": 0,
+    "reference_executions": 0,
+    "sandbox_starts": 0,
+    "new_simulations": 0,
+    "new_model_fits": 0,
+    "paid_spend_usd": 0,
+    "local_worker_processes": 1
+  },
+  "limits": [
+    "Previously accepted independent reviews remain scoped internal audits, not external replication.",
+    "Source hashes establish identity, not receiver invariance, semantic grader completeness, family independence or improved policy value.",
+    "No E12 runtime-host state was independently observed here; current conditional restart status is separate from accepted validation.",
+    "No archive or worker-owned file was modified."
+  ]
+}

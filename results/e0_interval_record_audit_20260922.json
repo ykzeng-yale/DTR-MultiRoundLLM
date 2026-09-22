@@ -1,0 +1,64 @@
+{
+  "evidence_class": "post-hoc saved-record arithmetic, no new simulations or fits",
+  "inputs": {
+    "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json": "f130fc33e4e24093a3638a509afb17c3b10765e0e38261505843192c46616964",
+    "results/matched_estimator_diagnosis_20260920/replicates.json": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3"
+  },
+  "corrected_grid": {
+    "n": 80,
+    "seed_min": 33260920,
+    "seed_max": 33260999,
+    "bias": -0.015787554281836192,
+    "rmse": 0.07834733209313238,
+    "empirical_sd": 0.07722436538111593,
+    "reported_se_mean": 0.058055960079782434,
+    "reported_se_rms": 0.0690286852100515,
+    "coverage_count": 65,
+    "coverage": 0.8125,
+    "coverage_mcse": 0.04363825013677794,
+    "interval_below_truth": 15,
+    "interval_above_truth": 0,
+    "standardized_error_mean": -0.848956933995422,
+    "standardized_error_sd": 2.3517443494225145,
+    "standardized_error_range": [
+      -12.409682655059864,
+      1.6627621827779822
+    ]
+  },
+  "matched_fit": {
+    "n": 80,
+    "seed_min": 20660921,
+    "seed_max": 20661000,
+    "bias": 0.01580166675237667,
+    "rmse": 0.09872084518897911,
+    "empirical_sd": 0.09806281945604602,
+    "reported_se_mean": 0.07210209609055411,
+    "reported_se_rms": 0.0840610781281465,
+    "coverage_count": 65,
+    "coverage": 0.8125,
+    "coverage_mcse": 0.04363825013677794,
+    "interval_below_truth": 13,
+    "interval_above_truth": 2,
+    "standardized_error_mean": -0.5495803053423503,
+    "standardized_error_sd": 2.4312215758385913,
+    "standardized_error_range": [
+      -10.331014959252727,
+      3.1961451317086444
+    ]
+  },
+  "seed_overlap": 0,
+  "limitations": [
+    "two different diagnostic seed sets; no pooling or selection",
+    "standard errors of matched-fit reconstructed from archived symmetric 1.96 intervals",
+    "describes finite-sample calibration, does not identify its cause or validate a repair"
+  ],
+  "accounting": {
+    "model_calls": 0,
+    "tokens": 0,
+    "new_simulated_datasets": 0,
+    "new_fits": 0,
+    "candidate_executions": 0,
+    "paid_usd": 0,
+    "arithmetic_seconds": 0.005807749927043915
+  }
+}

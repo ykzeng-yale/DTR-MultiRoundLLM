@@ -1,5 +1,11 @@
 # Experiment results ledger
 
+## 2026-09-22 — Portfolio and interval-record reconciliation (coordinating lead)
+
+The [current portfolio review](experiment_portfolio_review_20260922.md) consolidates delivered simulation, reused-data, instrument and real-receiver evidence. A fresh static audit verifies87 input hashes and the v1-series/E11 totals:224calls,61,692prompt and14,345completiontokens across only7unique roots. The 42 E12 instrument starts are accepted separately; no E12receiver result is delivered at this checkpoint. Historical studies remain preserved. Inherited ungraded metadata in two graded derivative files is annotated; R1 wording now names its joint context/instruction package.
+
+Independent saved-record E0 arithmetic confirms two disjoint weak-overlap seed sets and their opposite finite DRbias signs; both cover65/80. Matched-study empirical SD .09806 exceeds mean reported SE .07210, and miss direction is asymmetric (13below,2above). This is a post-hoc numerical check, not a new simulated sample or a validated explanation/repair. Source-bound artifacts: `results/experiment_portfolio_audit_20260922.json` and `results/e0_interval_record_audit_20260922.json`. Portfolio recheck .129924seconds (prior .076015seconds separately recorded); interval arithmetic .005808seconds. Zero new receiver/model calls or tokens, candidate/reference executions, fits, sampled datasets or paid spend. Progress55%,delta0; efficacy and submission readiness unchanged.
+
 ## 2026-09-21, 03:24 UTC — Coordinating lead, exact compression diagnostic
 
 Plan/code/config frozen at 5f9febe and provenance completed at 91f9a74 before the

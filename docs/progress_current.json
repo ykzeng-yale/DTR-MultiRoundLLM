@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-22T04:23:21Z",
+  "checkpoint_utc": "2026-09-22T04:28:45Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 55,
   "prior_check_reconstructed_percent": 55,
-  "prior_checked_head": "e518cc146c40e7a1c55c7c20b9f190576a656aff",
+  "prior_checked_head": "7566e9f28074059a922dc04b0981bd2fed84e10e",
   "baseline_note": "Same fixed rubric,55%; manuscript version reconciliation and abstract remain within existing partial manuscript credit. No new model evidence.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker08d63b7 posthoc E11 output counts independently reproduced; structural-unassessable and causal-interpretation defects corrected, preserving original grades. New manuscript abstract and version-specific methods independently reviewed. No E12 receiver outcomes. Worker cafa02f receiver-restart proposal independently reviewed and conditionally released; no replacement receiver independently observed.",
+  "latest_evidence": "Portfolio static reconciliation verified87 input hashes and224 calls/7unique roots; independent E0interval-record arithmetic checked finite calibration and distinct seed sets. No new E12 outcomes.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "cafa02f27a98c8c04fd43eadae8335619ac8521b",
+    "last_seen_worker_revision": "1fdeccffef885b8517e5f6e71f0ccbf5fb37cb11",
     "delivery_type": "post-hoc static descriptors from immutable E11 outputs; no fresh E12 observations",
     "scientific_review_revision": "08d63b73777075fbd4e35469caad4221422c813f",
     "review_record": "docs/e11_mechanism_lead_review_20260922.md",
@@ -71,10 +71,10 @@
     "mrl08_recovery_utc": "2026-09-21T16:28:04Z",
     "mrl08_reported_start_utc": "2026-09-21T18:26:06Z",
     "mrl08_cap_end_utc": "2026-09-21T18:56:06Z",
-    "acknowledgement_review_revision": "85bc81be5ce87ccd1a519c2b8a072026a3cca4d3",
+    "acknowledgement_review_revision": "1fdeccffef885b8517e5f6e71f0ccbf5fb37cb11",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker04:11:30Z reports old receiver absent after local04:10Zcheck; last reported poller tick03:57:30Z. Active delivery, no E12dispatch reported.",
+    "scheduler_status": "Latest worker update04:26:01Z acknowledges acceptedreservation and planned04:35start. Active delivery; no E12executionyet evidenced.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -84,14 +84,15 @@
     "mrl13_recovery_status": "closed; real agreement and run delivered",
     "mrl14_status": "delivered01:43:07Z; reviewed with remaining fault-attribution and design corrections",
     "mrl15_status": "delivered02:18:35Z; implementation/instrument accepted, frame/design corrections incorporated",
-    "mrl16_status": "Prior feedback acknowledged85bc81b; cafa02f requests own-server receiver amendment. Lead conditionally permits one bounded restart/refreeze, preserving shared-hardware window and live guards; latest amendment acknowledgement pending.",
+    "mrl16_status": "Receiver amendment and MRL17 acceptedc5713a5; concrete04:35\u201305:45reservation accepted1fdeccf at04:26:01Z, processedce87bdd. Preparing to start, actualexecutionpending.",
     "mrl16_publication_received": true,
     "mrl16_execution_state": "42 instrument starts accepted; old receiver absent per worker; concrete restart reservation accepted, no E12 receiver calls evidenced.",
     "mrl16_independent_validation_state": "accepted within finite instrument/source scope",
-    "mrl16_latest_feedback_acknowledged": false,
-    "mrl17_status": "Lead accepted reproduced static counts and repaired descriptors/interpretation; bounded optional post-E12 exploratory supplement permitted, acknowledgement pending.",
-    "last_reviewed_operational_proposal_revision": "cafa02f27a98c8c04fd43eadae8335619ac8521b",
+    "mrl16_latest_feedback_acknowledged": true,
+    "mrl17_status": "Acknowledgedacceptedc5713a5 at04:22:55Z; optional post-E12 static supplement only.",
+    "last_reviewed_operational_proposal_revision": "c5713a518065e21d9149ae9ace0210e77754750b",
     "operational_review_record": "docs/e12_receiver_restart_amendment_20260922.md",
-    "resource_reservation": "Accepted04:35\u201305:45UTC via issue#3 comments5771167234/5771177672; workerreceipt/liveguards/freeze pending, no execution evidenced."
-  }
+    "resource_reservation": "04:35\u201305:45UTC acceptedbyworker1fdeccf; startAby04:45, liveguards/freeze stillrequired."
+  },
+  "portfolio_review": "docs/experiment_portfolio_review_20260922.md"
 }
