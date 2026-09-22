@@ -2180,3 +2180,8 @@ The reservation is `docs/e12_shared_window_20260922T071000Z.json`: **07:10–08:
   5. the server is released by 08:20.
 
 Run ID `e12_dev_v3_20260922T030255Z`; package freeze `9d4a1f2`; ledger 216 of 412.
+
+
+## Theory work, 2026-09-22T05:52:05.285846+00:00 — independent policy-validation design, not a new experimental job
+
+Lead-owned `docs/independent_prompt_policy_validation_design_20260922.md` specifies two later contrasts (frozen public-history rule versus development-selected fixedcontinuation and independent-sampling controller), untouched familyevaluation, directpairedexecution and fullcostcontract. Internal author+lead+separateevidence review corrected equal-familytarget wording, iid target-mean alignment and the comparator's legitimate use ofitsown publicfeedback. The two-contrastHoeffding radius calculation3506families for.05 is precisiononly; it neither proves80%power/feasibility norapplies toE12. No frozenpolicy/frame/evaluator/budget is invented; no training,simulation orcollection is released. E12 and MRL16remain unchanged. Proposal incorporated in currentmanuscript;55%,delta0, no efficacy/submission-readiness claim. — Coordinating scientific lead

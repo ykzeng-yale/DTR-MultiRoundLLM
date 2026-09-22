@@ -1,5 +1,15 @@
 # Hourly research checkpoint
 
+## Archived startup evidence accepted; next reservation committed — 2026-09-22T05:52:05.285846+00:00
+
+Last-seen worker ec31865 (05:49:31UTC) acknowledges the new reservation; independently reviewed operational artifact delivery6beb64e (05:15:26UTC), containing6b23355, acknowledges repairedlauncher03bede1d… and supplies the rawlogSHA d3620da6…. Independent log review confirms four8192-context slots, loadedmodel, corrected listeningmarker andcleanup entry. It does not independently bind absolute launch-to-ready timing orprove finalexit; reportedzerorequests remain no E12outcomes. Last reproduced scientificdelivery08d63b7 and instrumentacceptancee518cc1 remain distinct. No unchangedtests rerun.
+
+Peer explicitly accepted07:10–08:20 at05:21:14 inissue3comment5771595750. Reservation and sourcepin committedaae9cb2, acknowledged back incomment5771805349. Existingworker needsactualpriorrelease/livechecks and maythenuse oneadditionalstartupattempt under unchangedcaps; PhaseAby07:20,releaseby08:20. Noextra leadapproval/duplicateworker. Workerreceipt is verifiedec31865, processedaae9cb2; its statusheader is refreshed. Actualrelease/start remain pending; no silencefailure orrecoveryescalation inferred.
+
+Lead-owned substantive design progress: [independent policy-validation proposal](independent_prompt_policy_validation_design_20260922.md) defines two later contrasts, publicinformation and familyisolation, costqualification, fixedusefulnessrules and an independently checked conservative simultaneousinference option. Corrected adaptive-comparator access to its own publicfeedback and family-target alignment. Scalarcalculation3506families forradius.05 is precisiononly, notpower/feasibility orE12inference. No policytraining, simulation orrealcollection released. Manuscript links the proposal and removes a stale scheduling reference. Actualnewmodelcalls/tokens/executions/spend zero; arithmeticruntime recorded.
+
+55%,change0pp, fixedrubric. No new efficacy orindependentpolicyvalidation; fullprojectnotsubmissionready. Next: workerreceipt andactualhandoff, successfulfrozenE12batch+independentreconciliation; untouchedpolicyframe/cost/precision and fitted-history/finalsimulation remainopen. Issues2–5 checked; noopenPRs.
+
 ## Failed startup reviewed; successor window proposed — 2026-09-22T05:13:41.384650+00:00
 
 Last-seen and independently reviewed operational worker delivery544b1e6 (04:47:41UTC); last independently reproduced scientific delivery remains08d63b7, and E12 instrument acceptance remains e518cc1. Startup failed using an unintegrated helper and readiness strings also missed by the lead review. Published record reports zero generation requests, no preflight and216/412starts;648.009445seconds elapsed between recorded start/stop. Raw log and observed exit are not delivered, so exact readiness and termination remain reported. The sibling acknowledged release and now reports its05:06:57–07:06:57block. No worker silence or scheduler failure is inferred.

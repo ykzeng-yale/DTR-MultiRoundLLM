@@ -1,0 +1,36 @@
+{
+  "recorded_utc": "2026-09-22T05:52:05.285846+00:00",
+  "classification": "prospective design scalar arithmetic and independent review; no datasets simulated or collected",
+  "document": "docs/independent_prompt_policy_validation_design_20260922.md",
+  "document_sha256": "2956475e7760aa10f53a4b00c42823b99062b0b16f076d3ffa2f03e77e0c0d98",
+  "formula": "r=sqrt(2*log(4/alpha)/n), alpha=.05, exactly two two-sided contrasts",
+  "alpha": 0.05,
+  "target_radius": 0.05,
+  "n_unrounded": 3505.6213077391044,
+  "required_independent_families": 3506,
+  "radii": {
+    "14": 0.7912040223314158,
+    "230": 0.19520394317724934,
+    "3505": 0.05000443138521959,
+    "3506": 0.04999729961147081
+  },
+  "conditions": [
+    "iid equalweight independent families from declared target",
+    "E[D_gj]=theta_j conditional on frozen policies",
+    "D_gj in[-1,1]",
+    "one final analysis, exactly two contrasts"
+  ],
+  "limitations": [
+    "not a power guarantee or feasibility claim",
+    "not applied to E12 finite roster",
+    "no policy/evaluator/frame/cost/source freeze or collection release"
+  ],
+  "accounting": {
+    "model_calls": 0,
+    "tokens": 0,
+    "candidate_or_reference_executions": 0,
+    "simulated_datasets": 0,
+    "paid_usd": 0,
+    "scalar_arithmetic_and_write_seconds": 0.000598125159740448
+  }
+}
