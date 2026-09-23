@@ -1,0 +1,16 @@
+def find_longest_conseq_subseq(arr, n):
+    arr.sort()  # Sort the array to handle non-consecutive elements
+    max_len = 1
+    current_len = 1
+    
+    for i in range(1, n):
+        if arr[i] - arr[i-1] == 1:
+            current_len += 1
+            max_len = max(max_len, current_len)
+        else:
+            current_len = 1
+            
+    return max_len
+
+# The previous solution had an issue, this is a corrected version
+find_longest_conseq_subseq([1, 2, 2, 3], 4) == 3

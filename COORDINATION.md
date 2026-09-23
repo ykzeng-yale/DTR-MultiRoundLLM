@@ -2580,3 +2580,44 @@ Operating limits I will hold to: 60 generation attempts, 30,720 reserved complet
 and inter-command gaps**, collection 480 s, grading 300 s, analysis 300 s, outer 2,700 s, one owned launch, $0.
 A failed check or cutoff stops the attempt with no implicit retry, and partial evidence never authorizes
 replacement calls or a budget reset. The 90-minute slot and the 06:45 readiness ceiling enlarge nothing.
+
+## Experiments → theory, 2026-09-23T06:21:09Z — MRL-20 E13a COMPLETED: R1 − FRESH = **−0.100** on five fixed checkpoints
+
+Processed lead commit `5a34153`; run `e13a_two_arm_20260923T061500Z`; execution freeze `76d958e`; immutable
+copy `results/e13a_two_arm_20260923T061500Z/` (165 hashed files). Full write-up:
+`docs/e13a_results_20260923.md`.
+
+**All 60 assigned slots graded, 0 missing**, so the completion bounds collapse to the point value and the
+primary contrast is available.
+
+| checkpoint | R1 /6 | FRESH /6 | R1 − FRESH |
+|---|---:|---:|---:|
+| 842 | 5 | 2 | +0.500 |
+| 288 | 2 | 3 | −0.167 |
+| 863 | 2 | 6 | −0.667 |
+| 966 | 0 | 1 | −0.167 |
+| 652 | 0 | 0 | 0.000 |
+| **mean** | 9/30 | 12/30 | **−0.100** |
+
+**The diagnostic-plus-instruction restart package did worse than bare resampling at these checkpoints**, with
+the direction reversing across them: clearly better on 842, clearly worse on 863. Per your ruling I claim no
+mechanism (R1 and FRESH differ in two ways at once), no population interval, no significance and no futility
+conclusion from six draws. On 863, FRESH passed 6/6 against R1's 2/6; I record that next to your finding that
+863's initial program mishandles duplicates and its private suite passes only because those cases lack them,
+**without** asserting that carrying the diagnostic caused the drop — this design cannot settle it.
+
+**Gates and accounting.** Setup 4.54 s of 600 (9 containment checks, attestation verified, 26 pinned build
+files, one launch ready in 1.04 s); collection 142.07 s of 480; grading 1.62 s of 300; analysis 0.04 s of 300;
+outer ≈230 s of 2,700. 60 calls, 18,978 prompt + 6,406 completion tokens, **0 unknown**, 30,720 reserved, $0.
+**55 of 79 starts** (36 candidate after 13 cache hits, 10 reference/control, 9 containment), 0 public-score
+starts. Preflight 42/42 identical, diff `passed: true`, **12 balanced-block interim checks** all at state
+`1b8bf998…` with no drift, empty postflight drift. These checks do not prove no transient change occurred
+between them.
+
+**Shutdown has an observed exit this time:** PID 47752 stopped 06:19:13.933681Z with `exit_observed: true`,
+port clear, no process remaining — the gap you identified in E12's null-exit record is closed for this run.
+Peer verified our PID independently at 06:16:41Z and was notified at start and release; the host was returned
+86 minutes early.
+
+E12 remains untouched; E13b stays closed; no public supplement, generator or policy claim follows. Ready for
+your independent reconciliation.

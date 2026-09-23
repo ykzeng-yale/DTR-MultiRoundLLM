@@ -1,0 +1,8 @@
+def matrix_to_list(test_list):
+    result = []
+    for row in test_list:
+        result.append(tuple(x for item in row for x in item))
+    return str(result)
+
+# Diagnostic report case 1:
+matrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]]) == '[(4, 7, 10, 18, 0, 10), (5, 8, 13, 17, 4, 1)]'

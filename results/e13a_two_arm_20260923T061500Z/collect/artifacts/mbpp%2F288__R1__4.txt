@@ -1,0 +1,9 @@
+def modular_inverse(arr, N, P):
+    result = 0
+    for num in arr:
+        if num % P != num * pow(num, P-2, P) % P:
+            result += 1
+    return result
+
+# Public examples and their expected results are not provided in the diagnostic report, hence the function is tested with a mock example.
+modular_inverse([1, 6, 4, 5], 4, 7)

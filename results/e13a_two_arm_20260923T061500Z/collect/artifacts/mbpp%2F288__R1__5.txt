@@ -1,0 +1,11 @@
+def modular_inverse(arr, N, P):
+    count = 0
+    for num in arr:
+        if num % P != 0 and pow(num, -1, P) == num % P:
+            count += 1
+    return count
+
+# Public examples (inputs and required outputs):
+# modular_inverse([1, 6, 4, 5], 4, 7) == 2
+# modular_inverse([2, 3, 4], 3, 5) == 0
+# modular_inverse([1, 2, 3], 3, 7) == 1

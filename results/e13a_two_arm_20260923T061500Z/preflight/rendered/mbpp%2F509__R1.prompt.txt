@@ -1,0 +1,20 @@
+<|im_start|>system
+Complete the public task. Use only the information supplied in this conversation.<|im_end|>
+<|im_start|>user
+Task:
+Return the arithmetic mean of all positive odd integers from 1 through n, including n. n is a positive odd integer. This mean is an integer; return that exact integer value. Behavior for even, zero or negative n is outside this task contract.
+
+Public information:
+Required function interface: def average_Odd(n):
+Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.
+
+Public examples (inputs and required outputs):
+average_Odd(13) == 7
+average_Odd(21) == 11
+average_Odd(31) == 16<|im_end|>
+<|im_start|>user
+Public diagnostic report for the previous answer (execution status is recorded per case):
+{"cases":[{"call":"average_Odd(13)","case_id":"public-509-1","expected":7,"reason":null,"returned":null,"status":"timeout","value_kind":"none"},{"call":"average_Odd(21)","case_id":"public-509-2","expected":11,"reason":"not_attempted_after_termination","returned":null,"status":"unavailable","value_kind":"none"},{"call":"average_Odd(31)","case_id":"public-509-3","expected":16,"reason":"not_attempted_after_termination","returned":null,"status":"unavailable","value_kind":"none"}],"initial_artifact_sha256":"3ccac61365fe3be892502706acf558160c78e82a23d6a8c241b557c3f1cee966","root_id":"mbpp/509","schema_version":"public-diagnostic-v1"}<|im_end|>
+<|im_start|>user
+Solve the original task using the public information and diagnostic observations. Return your best complete answer.<|im_end|>
+<|im_start|>assistant

@@ -1,0 +1,5 @@
+def get_odd_occurence(arr, arr_size):
+    xor_result = 0
+    for num in arr:
+        xor_result ^= num
+    return xor_result

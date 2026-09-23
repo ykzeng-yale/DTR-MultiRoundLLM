@@ -1,0 +1,2 @@
+Public diagnostic report for the new answer (execution status is recorded per case):
+{"cases":[{"call":"remove_empty([(), (), ('',), ('a', 'b'), ('a', 'b', 'c'), 'd'])","case_id":"public-966-1","expected":"[('',), ('a', 'b'), ('a', 'b', 'c'), 'd']","reason":null,"returned":"[('',), ('a', 'b'), ('a', 'b', 'c'), 'd']","status":"correct_value","value_kind":"literal"}],"initial_artifact_sha256":"1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae","root_id":"mbpp/966","schema_version":"public-diagnostic-v2"}

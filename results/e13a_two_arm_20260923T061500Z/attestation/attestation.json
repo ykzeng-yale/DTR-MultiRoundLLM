@@ -1,0 +1,275 @@
+{
+  "schema_version": "landmark-containment-v1",
+  "checked_at": "2026-09-23T06:15:32.312635+00:00",
+  "binding": {
+    "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+    "python_sha256": "a395f264e5612a2819662ed3e37fd30d39ed61179b98e5f86c3c783a008d8623",
+    "host_sha256": "e6626654e78211ef1aab3f691c1812d0f48f05d2a7057737dcf3469d57d48189",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "sandbox_kind": "seatbelt"
+  },
+  "checks": [
+    {
+      "name": "own_run_read_write",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\nfrom pathlib import Path\np=Path('owned');p.write_text('ok');assert p.read_text()=='ok'\nprint('OK',flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nOK\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nOK\n",
+        "timed_out": false,
+        "seconds": 0.0429521668702364,
+        "executed": true,
+        "pid": 47721,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "d07bdc47caa6cc72828ede0f305c71579874dc0c60335cf1a13a49f7fdc68c01",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "home_read",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\ntry:\n    open('/Users/yukangzengcmac/DTR-MultiRoundLLM/work/landmark_canary_w1gzp08o/read_fixture').read()\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.02221099939197302,
+        "executed": true,
+        "pid": 47722,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "cc26cf20c1a8fff8e7d5d3807b36ba3c08288266eaeae05185ff1c16a6b233e8",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "home_write",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\ntry:\n    open('/Users/yukangzengcmac/DTR-MultiRoundLLM/work/landmark_canary_w1gzp08o/write_marker', 'w').write('controlled marker')\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.02419370785355568,
+        "executed": true,
+        "pid": 47723,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "0306a765f883957050d7e3881c3402be71f65b2fd2eff625ef2ff5570dad1081",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "peer_run_read",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\ntry:\n    open('/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/audit_peer_eg7faulg/read_fixture').read()\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.024184499867260456,
+        "executed": true,
+        "pid": 47724,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "93bdcb8f2cc8526f8fed3d4faca972bec2e9484231755361f01cda2e5a56e826",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "outside_home_tmp_write",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\ntry:\n    open('/Users/Shared/landmark_canary_frjmfupe/write_marker', 'w').write('controlled marker')\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.02406887523829937,
+        "executed": true,
+        "pid": 47725,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "0743a9ac291fc389671e807275edf3addbf00b7148916e1970a9077a88de9c78",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "loopback_network",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\nimport socket\ns=socket.socket();s.settimeout(0.2)\ntry:\n    s.connect(('127.0.0.1',54118))\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.02229904104024172,
+        "executed": true,
+        "pid": 47726,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "bc00dd4248e8dd623e61a6a8daa9afd9bbbabe7f2bcec6382a2c83d2c0fc329f",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "system_subprocess",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\nimport subprocess\ntry:\n    subprocess.run(['/bin/echo','controlled'],check=True)\nexcept OSError:\n    print('BLOCKED', flush=True)\nelse:\n    print('ALLOWED', flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.02394908294081688,
+        "executed": true,
+        "pid": 47727,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "e0db923e94fbf84e62a9082ac626c5fec4f1fa7e4843e119f76fab2b62fd77ce",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "fork_creation",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\nimport os\ntry:\n    pid=os.fork()\nexcept OSError:\n    print('BLOCKED',flush=True)\nelse:\n    if pid==0: os._exit(0)\n    os.waitpid(pid,0)\n    print('ALLOWED',flush=True)\n",
+      "result": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nBLOCKED\n",
+        "timed_out": false,
+        "seconds": 0.022916792891919613,
+        "executed": true,
+        "pid": 47728,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "dffdd738ecf9c2a7cdd6b8a0872cd22d206f047edec8d82f4c2ec0218ef98c84",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      }
+    },
+    {
+      "name": "timeout_and_process_cleanup",
+      "passed": true,
+      "executed": true,
+      "payload_started": true,
+      "program": "print('__LANDMARK_CANARY_STARTED__',flush=True)\nimport os,time\nprint('PID',os.getpid(),flush=True)\ntime.sleep(3)\n",
+      "result": {
+        "passed": false,
+        "returncode": -9,
+        "stdout": "__LANDMARK_CANARY_STARTED__\nPID 47729\n",
+        "stderr": "",
+        "stdout_tail": "__LANDMARK_CANARY_STARTED__\nPID 47729\n",
+        "timed_out": true,
+        "seconds": 0.3098491672426462,
+        "executed": true,
+        "pid": 47729,
+        "sandbox_kind": "seatbelt",
+        "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+        "rendered_profile_sha256": "a525bf81015fe5f7f1c319030267914e9303e67e362c9282d8b2f0e4239c7bde",
+        "limits_applied": {
+          "cpu_seconds": 1,
+          "nproc": 1,
+          "file_bytes": 4096,
+          "memory": "best_effort"
+        }
+      },
+      "executed_process_pid": 47729,
+      "alive_after_runner_return": false
+    }
+  ],
+  "passed": true,
+  "script_sha256": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+  "benchmark_executions": 0,
+  "model_calls": 0,
+  "sandbox_executions": 9,
+  "sandbox_launch_attempts": 9,
+  "payload_executions": 9,
+  "sandbox_seconds": 0.5166243333369493,
+  "wall_seconds": 0.5236027911305428,
+  "limitations": [
+    "Controlled containment checks, not an adversarial escape proof",
+    "Only fork/subprocess attempts tested; descendants were not permitted in the passing configuration",
+    "Timeout check verifies launched process reaped; no independently created descendant was available to test cleanup",
+    "No general denial-of-service, kernel isolation, or grade-integrity guarantee"
+  ]
+}

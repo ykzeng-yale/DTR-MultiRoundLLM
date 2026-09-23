@@ -1,0 +1,1129 @@
+{
+ "analysis_version": "e13a-finite-checkpoint-contrast-v2",
+ "evidence_class": "post-hoc-motivated development follow-up on the fixed development-selected checkpoints named by the stage descriptor; NOT a test of the selected gated rule; NOT a test of a diagnostic-only effect; not pooled with E12; descriptive only",
+ "stage_id": "E13a",
+ "stage_status_as_recorded": "PROPOSED, NOT RELEASED. This file declares stage bindings and bookkeeping limits only; it authorizes no receiver call and no candidate execution.",
+ "stage_evidence_class_as_recorded": "development_followup_post_hoc_motivated",
+ "stage_not_a_test_of_as_recorded": [
+  "the selected gated rule",
+  "a diagnostic-only effect"
+ ],
+ "stage_interpretation_rules_as_recorded": [
+  "A tie is inconclusive and does not evidence a resampling mechanism.",
+  "No pooling with E12.",
+  "No significance-driven escalation and no futility claim from six draws per arm."
+ ],
+ "primary_endpoint": "frozen private-suite-plus-format score as recorded in the grades file; checkpoint selection and gating derive from frozen public diagnostics only",
+ "inputs": {
+  "grades": {
+   "path": "work/e13a_20260923T061532Z/grade/grades.jsonl",
+   "sha256": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+   "records": 60
+  },
+  "stage_descriptor": {
+   "path": "experiments/landmark/e13a_stage.json",
+   "sha256": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348"
+  }
+ },
+ "plan_validated_against": {
+  "root_order": [
+   "mbpp/842",
+   "mbpp/288",
+   "mbpp/863",
+   "mbpp/966",
+   "mbpp/652"
+  ],
+  "arms": [
+   "FRESH",
+   "R1"
+  ],
+  "treatment_arm": "R1",
+  "reference_arm": "FRESH",
+  "assigned_replicates": {
+   "mbpp/842": {
+    "FRESH": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "R1": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "mbpp/288": {
+    "FRESH": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "R1": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "mbpp/863": {
+    "FRESH": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "R1": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "mbpp/966": {
+    "FRESH": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "R1": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "mbpp/652": {
+    "FRESH": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "R1": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   }
+  }
+ },
+ "metric_definitions": {
+  "outcome": "Frozen primary endpoint as recorded in the grades file (private-suite-plus-format score in {0,1}); this script never grades, executes or re-derives it.",
+  "assigned": "Number of root-arm-replicate slots the stage descriptor assigns. Inclusion probability is 1 for every root-arm; ordering is scheduling only.",
+  "graded": "Number of assigned slots with an available outcome in {0,1}. graded + missing == assigned.",
+  "passes": "Number of graded slots with outcome == 1. Slots with an unavailable outcome are NOT counted as failures.",
+  "missing": "Number of assigned slots whose outcome is unavailable, each with an explicit missing_reason; never zero-filled and never folded into failures.",
+  "mean": "passes / assigned when every assigned outcome in the cell is observed; null if any outcome is missing. It is not a zero-filled estimate.",
+  "available_case_mean": "passes / graded over AVAILABLE outcomes only, reported as a secondary description. null when graded == 0; no missing-at-random assumption or all-assigned interpretation is implied.",
+  "completion_bounds": "For a cell: [passes / assigned, (passes + missing) / assigned]. For a root contrast: [L_treatment - U_reference, U_treatment - L_reference]. Finite-checkpoint bounds equally average the root bounds. These are finite completion bounds for all assigned binary outcomes, NOT confidence intervals or population uncertainty bounds; missing values are not imputed.",
+  "per_root_difference": "Per root, mean(treatment arm) - mean(reference arm) over all assigned outcomes at that single fixed checkpoint. null if either contrast arm has any missing outcome at that root.",
+  "finite_checkpoint_contrast": "Equally weighted mean of the per-root differences over the fixed development-selected checkpoints in the stage descriptor. A finite-checkpoint DESCRIPTIVE quantity about these checkpoints only: no population interval, no standard error, no test, no p-value, no significance claim and no futility claim. null if any assigned grade is missing.",
+  "available_case_secondary": "Equally weighted mean of per-root available-case differences, only when both arms have an observed outcome at every checkpoint. Never drops a checkpoint; null otherwise. Secondary observed-only description, not the all-assigned contrast.",
+  "interpretation_tie": "A tie (contrast at or near zero) is INCONCLUSIVE: it does not identify a resampling mechanism, does not establish a diagnostic-only effect, and does not license a futility claim from this many draws.",
+  "interpretation_direction": "A nonzero contrast describes these fixed checkpoints under this development stage only; it is not a test of the selected gated rule and must not be pooled with E12 or escalated on the basis of its size.",
+  "calls_known_sum": "Sum of recorded nonnegative integer 'calls' values only; records without the field contribute to calls_unknown_count and are not assumed zero.",
+  "prompt_tokens_known_sum": "Sum of recorded nonnegative integer prompt_tokens only; unknown counts are reported separately and never assumed zero.",
+  "completion_tokens_known_sum": "Sum of recorded nonnegative integer completion_tokens only; unknown counts are reported separately and never assumed zero.",
+  "executor_starts_known_sum": "Sum of recorded nonnegative integer executor_starts (private-grading executor starts) only; unknown counts reported separately.",
+  "executor_seconds_known_sum": "Sum of recorded nonnegative executor_seconds only; unknown counts reported separately."
+ },
+ "statements": {
+  "no_significance": "No hypothesis test, p-value, confidence interval, significance claim or futility claim is computed or implied; no significance-driven escalation follows from this report.",
+  "tie_inconclusive": "A tie (contrast at or near zero) is INCONCLUSIVE: it does not identify a resampling mechanism, does not establish a diagnostic-only effect, and does not license a futility claim from this many draws."
+ },
+ "per_root": {
+  "mbpp/842": {
+   "FRESH": {
+    "assigned": 6,
+    "assigned_replicates": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "graded": 6,
+    "passes": 2,
+    "failures": 4,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.3333333333333333,
+    "available_case_mean": 0.3333333333333333,
+    "completion_bounds": {
+     "lower": 0.3333333333333333,
+     "upper": 0.3333333333333333,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   },
+   "R1": {
+    "assigned": 6,
+    "assigned_replicates": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "graded": 6,
+    "passes": 5,
+    "failures": 1,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.8333333333333334,
+    "available_case_mean": 0.8333333333333334,
+    "completion_bounds": {
+     "lower": 0.8333333333333334,
+     "upper": 0.8333333333333334,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   }
+  },
+  "mbpp/288": {
+   "FRESH": {
+    "assigned": 6,
+    "assigned_replicates": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "graded": 6,
+    "passes": 3,
+    "failures": 3,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.5,
+    "available_case_mean": 0.5,
+    "completion_bounds": {
+     "lower": 0.5,
+     "upper": 0.5,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   },
+   "R1": {
+    "assigned": 6,
+    "assigned_replicates": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "graded": 6,
+    "passes": 2,
+    "failures": 4,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.3333333333333333,
+    "available_case_mean": 0.3333333333333333,
+    "completion_bounds": {
+     "lower": 0.3333333333333333,
+     "upper": 0.3333333333333333,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   }
+  },
+  "mbpp/863": {
+   "FRESH": {
+    "assigned": 6,
+    "assigned_replicates": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "graded": 6,
+    "passes": 6,
+    "failures": 0,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 1.0,
+    "available_case_mean": 1.0,
+    "completion_bounds": {
+     "lower": 1.0,
+     "upper": 1.0,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   },
+   "R1": {
+    "assigned": 6,
+    "assigned_replicates": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "graded": 6,
+    "passes": 2,
+    "failures": 4,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.3333333333333333,
+    "available_case_mean": 0.3333333333333333,
+    "completion_bounds": {
+     "lower": 0.3333333333333333,
+     "upper": 0.3333333333333333,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   }
+  },
+  "mbpp/966": {
+   "FRESH": {
+    "assigned": 6,
+    "assigned_replicates": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "graded": 6,
+    "passes": 1,
+    "failures": 5,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.16666666666666666,
+    "available_case_mean": 0.16666666666666666,
+    "completion_bounds": {
+     "lower": 0.16666666666666666,
+     "upper": 0.16666666666666666,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   },
+   "R1": {
+    "assigned": 6,
+    "assigned_replicates": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "graded": 6,
+    "passes": 0,
+    "failures": 6,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.0,
+    "available_case_mean": 0.0,
+    "completion_bounds": {
+     "lower": 0.0,
+     "upper": 0.0,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   }
+  },
+  "mbpp/652": {
+   "FRESH": {
+    "assigned": 6,
+    "assigned_replicates": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5
+    ],
+    "graded": 6,
+    "passes": 0,
+    "failures": 6,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.0,
+    "available_case_mean": 0.0,
+    "completion_bounds": {
+     "lower": 0.0,
+     "upper": 0.0,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   },
+   "R1": {
+    "assigned": 6,
+    "assigned_replicates": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "graded": 6,
+    "passes": 0,
+    "failures": 6,
+    "missing": 0,
+    "missing_reasons": {},
+    "missing_replicates": [],
+    "mean": 0.0,
+    "available_case_mean": 0.0,
+    "completion_bounds": {
+     "lower": 0.0,
+     "upper": 0.0,
+     "kind": "finite_completion_bounds",
+     "is_confidence_interval": false
+    }
+   }
+  }
+ },
+ "per_root_contrasts": [
+  {
+   "root_id": "mbpp/842",
+   "R1_passes": 5,
+   "R1_graded": 6,
+   "R1_assigned": 6,
+   "R1_missing": 0,
+   "R1_mean": 0.8333333333333334,
+   "R1_available_case_mean": 0.8333333333333334,
+   "FRESH_passes": 2,
+   "FRESH_graded": 6,
+   "FRESH_assigned": 6,
+   "FRESH_missing": 0,
+   "FRESH_mean": 0.3333333333333333,
+   "FRESH_available_case_mean": 0.3333333333333333,
+   "difference": 0.5,
+   "difference_unavailable_reason": null,
+   "available_case_difference": 0.5,
+   "completion_bounds": {
+    "lower": 0.5,
+    "upper": 0.5,
+    "kind": "finite_completion_bounds",
+    "is_confidence_interval": false
+   }
+  },
+  {
+   "root_id": "mbpp/288",
+   "R1_passes": 2,
+   "R1_graded": 6,
+   "R1_assigned": 6,
+   "R1_missing": 0,
+   "R1_mean": 0.3333333333333333,
+   "R1_available_case_mean": 0.3333333333333333,
+   "FRESH_passes": 3,
+   "FRESH_graded": 6,
+   "FRESH_assigned": 6,
+   "FRESH_missing": 0,
+   "FRESH_mean": 0.5,
+   "FRESH_available_case_mean": 0.5,
+   "difference": -0.16666666666666669,
+   "difference_unavailable_reason": null,
+   "available_case_difference": -0.16666666666666669,
+   "completion_bounds": {
+    "lower": -0.16666666666666669,
+    "upper": -0.16666666666666669,
+    "kind": "finite_completion_bounds",
+    "is_confidence_interval": false
+   }
+  },
+  {
+   "root_id": "mbpp/863",
+   "R1_passes": 2,
+   "R1_graded": 6,
+   "R1_assigned": 6,
+   "R1_missing": 0,
+   "R1_mean": 0.3333333333333333,
+   "R1_available_case_mean": 0.3333333333333333,
+   "FRESH_passes": 6,
+   "FRESH_graded": 6,
+   "FRESH_assigned": 6,
+   "FRESH_missing": 0,
+   "FRESH_mean": 1.0,
+   "FRESH_available_case_mean": 1.0,
+   "difference": -0.6666666666666667,
+   "difference_unavailable_reason": null,
+   "available_case_difference": -0.6666666666666667,
+   "completion_bounds": {
+    "lower": -0.6666666666666667,
+    "upper": -0.6666666666666667,
+    "kind": "finite_completion_bounds",
+    "is_confidence_interval": false
+   }
+  },
+  {
+   "root_id": "mbpp/966",
+   "R1_passes": 0,
+   "R1_graded": 6,
+   "R1_assigned": 6,
+   "R1_missing": 0,
+   "R1_mean": 0.0,
+   "R1_available_case_mean": 0.0,
+   "FRESH_passes": 1,
+   "FRESH_graded": 6,
+   "FRESH_assigned": 6,
+   "FRESH_missing": 0,
+   "FRESH_mean": 0.16666666666666666,
+   "FRESH_available_case_mean": 0.16666666666666666,
+   "difference": -0.16666666666666666,
+   "difference_unavailable_reason": null,
+   "available_case_difference": -0.16666666666666666,
+   "completion_bounds": {
+    "lower": -0.16666666666666666,
+    "upper": -0.16666666666666666,
+    "kind": "finite_completion_bounds",
+    "is_confidence_interval": false
+   }
+  },
+  {
+   "root_id": "mbpp/652",
+   "R1_passes": 0,
+   "R1_graded": 6,
+   "R1_assigned": 6,
+   "R1_missing": 0,
+   "R1_mean": 0.0,
+   "R1_available_case_mean": 0.0,
+   "FRESH_passes": 0,
+   "FRESH_graded": 6,
+   "FRESH_assigned": 6,
+   "FRESH_missing": 0,
+   "FRESH_mean": 0.0,
+   "FRESH_available_case_mean": 0.0,
+   "difference": 0.0,
+   "difference_unavailable_reason": null,
+   "available_case_difference": 0.0,
+   "completion_bounds": {
+    "lower": 0.0,
+    "upper": 0.0,
+    "kind": "finite_completion_bounds",
+    "is_confidence_interval": false
+   }
+  }
+ ],
+ "finite_checkpoint_contrast": {
+  "label": "equally weighted mean of the per-root R1-minus-FRESH differences over the 5 fixed development-selected checkpoints",
+  "quantity_type": "finite-checkpoint descriptive quantity (no population target, no inference)",
+  "checkpoints": [
+   "mbpp/842",
+   "mbpp/288",
+   "mbpp/863",
+   "mbpp/966",
+   "mbpp/652"
+  ],
+  "n_checkpoints": 5,
+  "contrast": -0.10000000000000002,
+  "contrast_unavailable_reason": null,
+  "per_root_differences": {
+   "mbpp/842": 0.5,
+   "mbpp/288": -0.16666666666666669,
+   "mbpp/863": -0.6666666666666667,
+   "mbpp/966": -0.16666666666666666,
+   "mbpp/652": 0.0
+  },
+  "completion_bounds": {
+   "lower": -0.10000000000000002,
+   "upper": -0.10000000000000002,
+   "kind": "finite_completion_bounds",
+   "is_confidence_interval": false
+  },
+  "no_population_interval": true,
+  "no_test": true,
+  "no_p_value": true,
+  "no_significance_language": "No hypothesis test, p-value, confidence interval, significance claim or futility claim is computed or implied; no significance-driven escalation follows from this report.",
+  "tie_is_inconclusive": "A tie (contrast at or near zero) is INCONCLUSIVE: it does not identify a resampling mechanism, does not establish a diagnostic-only effect, and does not license a futility claim from this many draws.",
+  "pooling": "not pooled with E12; E12 replicates are a separate frozen stage"
+ },
+ "available_case_secondary": {
+  "label": "secondary available-case description; not the all-assigned contrast",
+  "contrast": -0.10000000000000002,
+  "contrast_unavailable_reason": null,
+  "per_root_differences": {
+   "mbpp/842": 0.5,
+   "mbpp/288": -0.16666666666666669,
+   "mbpp/863": -0.6666666666666667,
+   "mbpp/966": -0.16666666666666666,
+   "mbpp/652": 0.0
+  },
+  "checkpoints": [
+   "mbpp/842",
+   "mbpp/288",
+   "mbpp/863",
+   "mbpp/966",
+   "mbpp/652"
+  ],
+  "no_missingness_identification_assumption": true
+ },
+ "accounting": {
+  "assigned_slots": 60,
+  "graded_slots": 60,
+  "missing_slots": [],
+  "assigned_by_arm": {
+   "FRESH": 30,
+   "R1": 30
+  },
+  "graded_by_arm": {
+   "FRESH": 30,
+   "R1": 30
+  },
+  "usage_totals": {
+   "calls_known_sum": 60,
+   "calls_unknown_count": 0,
+   "prompt_tokens_known_sum": 18978,
+   "prompt_tokens_unknown_count": 0,
+   "completion_tokens_known_sum": 6406,
+   "completion_tokens_unknown_count": 0,
+   "executor_starts_known_sum": 36,
+   "executor_starts_unknown_count": 0,
+   "executor_seconds_known_sum": 0.861249,
+   "executor_seconds_unknown_count": 0
+  },
+  "usage_by_arm": {
+   "FRESH": {
+    "calls_known_sum": 30,
+    "calls_unknown_count": 0,
+    "prompt_tokens_known_sum": 6174,
+    "prompt_tokens_unknown_count": 0,
+    "completion_tokens_known_sum": 1388,
+    "completion_tokens_unknown_count": 0,
+    "executor_starts_known_sum": 21,
+    "executor_starts_unknown_count": 0,
+    "executor_seconds_known_sum": 0.501656,
+    "executor_seconds_unknown_count": 0
+   },
+   "R1": {
+    "calls_known_sum": 30,
+    "calls_unknown_count": 0,
+    "prompt_tokens_known_sum": 12804,
+    "prompt_tokens_unknown_count": 0,
+    "completion_tokens_known_sum": 5018,
+    "completion_tokens_unknown_count": 0,
+    "executor_starts_known_sum": 15,
+    "executor_starts_unknown_count": 0,
+    "executor_seconds_known_sum": 0.359593,
+    "executor_seconds_unknown_count": 0
+   }
+  }
+ },
+ "slots": [
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 0,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "aed475ed3af56f2c0e8e91397bd8fd1a0a92e660d0daf896f8face4fc93849af"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 1,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "d1f05406eda132f76a7414933db4b2faff9e3184de431e27c384492cc997d727"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "56b4ccc2c5176d4389d3642d07aca1290a487e684ac2bb24494e9d0c33e62958"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "56b4ccc2c5176d4389d3642d07aca1290a487e684ac2bb24494e9d0c33e62958"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "56b4ccc2c5176d4389d3642d07aca1290a487e684ac2bb24494e9d0c33e62958"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "FRESH",
+   "replicate": 5,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "c90b8d2060cf7b8341ff829780e3dcdf0f9065ac1d8371a83fd7f39381438df7"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 2,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "e9bc16471f6b1144d15d6ccbcbae307d5c80e75712e0879b99d0fd5d0877fbcf"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 3,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "d5c587f19d043aa37893eb2fedb4b5bd6e871f9ccc46f81189d4103d2a0881b3"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "07a77a0f0045e6447e1dee54a0351f332848fefa118401fe6aea03996c394f38"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 5,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "e9bc16471f6b1144d15d6ccbcbae307d5c80e75712e0879b99d0fd5d0877fbcf"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 6,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "a219936b53b12a9b4aa00f16b2afafc5f4881f5ccf8abb80f460b2babe04ccb5"
+  },
+  {
+   "root_id": "mbpp/842",
+   "arm": "R1",
+   "replicate": 7,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "e9bc16471f6b1144d15d6ccbcbae307d5c80e75712e0879b99d0fd5d0877fbcf"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 0,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "e3e8b25f160860ae42a0d4ec99093ebb577da995dc68e23e09ffcab11d52346b"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 1,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "d2ac55e95c42d1c0d54c71b451d3deaa10b1f234bc0aae12722b0b3cc24ceae4"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "cc40ed3fd0b630a3d433711808fec4a56cc81b02a049560eb5cb09a0dcd78ca2"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 3,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "a8d0c04ba779d3ea1936d8167b0a1307b3c09b1707132eef66ee707295926ab9"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 4,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "4452f61c89f188d87cf2becd2d8ac56aa0c90f60107ec1f0fb965fee5cc245ff"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "FRESH",
+   "replicate": 5,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "fffd99bb0c6e23b31f862662f0fad58111875dd6c0759622bb03e4cfe347c035"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "c209d95ff5860a9c2913a5760d44ca8c3c0efc8cd4e9a2db80b37d87db9b2e1c"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 3,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "4928a8db9c5a7db33dd94c509053ed80ab6a5d10ca536fc4922897a9e3c5a65d"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "e3c317ed18e290af3f218baebc935f11fe1be9893d9680e13f3b33c564ca2c41"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 5,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "333f52b483586e1e3e779212060ed88d091ccd50d022b2601a87352a8b67d4ae"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 6,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "f3124fc83d3b30643c6e4fedf9945d9f32e4f7812135c073c04b803e5faaf6c6"
+  },
+  {
+   "root_id": "mbpp/288",
+   "arm": "R1",
+   "replicate": 7,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "c952804a52750ba29b759b01cd5b8b93b07c5d931ac91c734010d9f3025f6162"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 0,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "d9134aded862384978cee55e82d8aa68ba524ba86721eb62411f85c136160653"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 1,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "95b1d580ef755bb62fc87435eca450a7cd82113785968597a5672499b894ba08"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 2,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "95b1d580ef755bb62fc87435eca450a7cd82113785968597a5672499b894ba08"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 3,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "d9134aded862384978cee55e82d8aa68ba524ba86721eb62411f85c136160653"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 4,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "2ca24aef90a1a567fa66c6a34d4ef464ad9727c7496b2eb685f9be80cd3831bc"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "FRESH",
+   "replicate": 5,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "01956050fe4998662095e397a67dc8a415cd5f9132fbd5168ac95fa893aeaab6"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "349135f06a2e2a837d13d86b9b00baff2f21624cf20291dcb6d0418070fc1c96"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "dd0de43ad45a7435e9a068c75a73f2545907a067d10a73e0e5bd1e0c4d0327c6"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 4,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "771e230ae8fe194d2cb6401387990a4412908c22fc9d2c465ab512762b2826cc"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 5,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "1dc547b6210dc83f771116a30e390bfec61241a551b22f46deb296141d9e1a94"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 6,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "3bc70eb5ea9c5241985df363457921d21d5c3b0c0583c8c5267408193c63f44f"
+  },
+  {
+   "root_id": "mbpp/863",
+   "arm": "R1",
+   "replicate": 7,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "f5369934ddbb6e52e78907138b53f70673740c8b975ded3b0c213c56126cca76"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 0,
+   "outcome": 1,
+   "missing_reason": null,
+   "output_sha256": "edada03bf9c5f9bf5f468e9f4dba8b0258fffcbb45a8464355d3881e152771a3"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 1,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "FRESH",
+   "replicate": 5,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "514a346ecccc82c029b22dd768557acbadb2fc797f2063a56831ac66949f6325"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "1014cfeeaf35bb175da1aa16306e88fc2e75bbec4e660957795be3a9374b6391"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "01ea3fb7a78db404ce5d0ed1e012f3522505b9ef7ba10fd58ac68e2ed0bebeba"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "1014cfeeaf35bb175da1aa16306e88fc2e75bbec4e660957795be3a9374b6391"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 5,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "9bcd83e52e2318446650c39a79b3ac2b3a6753546256510257c7d1a82cf96f51"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 6,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "01ea3fb7a78db404ce5d0ed1e012f3522505b9ef7ba10fd58ac68e2ed0bebeba"
+  },
+  {
+   "root_id": "mbpp/966",
+   "arm": "R1",
+   "replicate": 7,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "33ac053dfdf23969b7f919fd1e382120bab7f82c7aea7009a15554d35491c509"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 0,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "28c41090c0ad09adb400ee1aaa503f6a76be1232483e782fe594597b8c08a891"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 1,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "4e67d75dade6fa6395d806fa25c9119d1776e5b83448927981e80513987f6c53"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "43e3c7972c4146303eb3a2f3f571f5d613a1e87d06898cb7fd047554bff6e522"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "dc8ab20e32d6f7ec5b68cdbbef72a73ebbaa73c0e3903eee3d883d6a7579ea28"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "43e3c7972c4146303eb3a2f3f571f5d613a1e87d06898cb7fd047554bff6e522"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "FRESH",
+   "replicate": 5,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "5a0641d37354a44a07a1169953da87e216baf30532a9ce9e119f7ba58467c12b"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 2,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "b8aeff91c229e01fb8dc37822a6d2e3d8883eaa51b866dade4183fc656f777d1"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 3,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "31c2ae1a54087bf847ca79243ee8555b97baafa20dc62ebb817df08d6bfbd510"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 4,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "cf16f4c8224e716325be48e518601aa630947fe511803f6369ffcd07c2e4124d"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 5,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "64209efaab4fb856582e985713fa45b1cc39166cba11c50a68245d899144fe7b"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 6,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "2813b2664d9cb76e19acf6754526c1c362b3c507aaafed9105db00fae05dae95"
+  },
+  {
+   "root_id": "mbpp/652",
+   "arm": "R1",
+   "replicate": 7,
+   "outcome": 0,
+   "missing_reason": null,
+   "output_sha256": "b7a664fc7f45cae32c4e84929272c3c9edfc83241ebafb43cf7de25fb0e9a390"
+  }
+ ]
+}

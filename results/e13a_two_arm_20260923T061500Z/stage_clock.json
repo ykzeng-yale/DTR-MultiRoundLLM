@@ -1,0 +1,36 @@
+{
+  "active_phase": null,
+  "caps": {
+    "analysis": 300.0,
+    "collection": 480.0,
+    "private_grading": 300.0,
+    "setup": 600.0
+  },
+  "failed_phases": [],
+  "last_phase": {
+    "elapsed_seconds": 0.042080290615558624,
+    "ended_utc": "2026-09-23T06:19:41.268350+00:00",
+    "error": null,
+    "phase": "analysis",
+    "pid": 48708,
+    "started_utc": "2026-09-23T06:19:41.226300+00:00",
+    "status": "completed",
+    "token": "ee11df3a228595aa86f5d7c699e4c8d1"
+  },
+  "last_teardown": null,
+  "outer_seconds": 2700.0,
+  "persists": 18,
+  "reloads": 8,
+  "run_dir": "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/e13a_20260923T061532Z",
+  "schema_version": "e13a-stage-clock-v2",
+  "setup_complete_utc": "2026-09-23T06:16:36.998237+00:00",
+  "setup_completed_commands": 5,
+  "spent": {
+    "analysis": 0.042022207751870155,
+    "collection": 142.0739362500608,
+    "private_grading": 1.6172284167259932,
+    "setup": 4.538668998517096
+  },
+  "stage_sha256": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348",
+  "start_utc": "2026-09-23T06:15:32.260762Z"
+}

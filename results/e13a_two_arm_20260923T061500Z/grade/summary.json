@@ -1,0 +1,116 @@
+{
+ "grade_driver_version": "e13a-private-grading-driver-v1",
+ "evidence_class": "post-hoc-motivated development follow-up grading at the five development-selected checkpoints named by the E13a stage descriptor; NOT a test of the selected gated rule; not pooled with E12",
+ "status": "complete",
+ "abort_reason": null,
+ "stage": "E13a",
+ "real": true,
+ "transport_only": false,
+ "transport_only_note": "real private execution under the frozen containment gate",
+ "executor": "function",
+ "pins": {
+  "stage_descriptor_path": "experiments/landmark/e13a_stage.json",
+  "stage_descriptor_sha256": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348",
+  "request_plan_path": "results/e13a_request_plan_20260922.json",
+  "request_plan_sha256": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7",
+  "release_manifest_path": "/Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/landmark/e13a_release/release_manifest.json",
+  "release_manifest_sha256": "bf043846c93cc392be7398b5a87c984e83816b519f2920329ca518337c6b6297",
+  "grader_version": "landmark-grader-v5-parse-and-compile-fault-attribution",
+  "collection_manifest_sha256": "e04e9e58e5397f35e56887811f4055607dcb0995c847be717b0c043afd49453d",
+  "collection_calls_sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+  "collection_completion_sha256": "a226a501a658a8a97534501086682ddf0417dc932559232690679a29398780ca",
+  "execution_source_hashes": {
+   "scripts/e13a_collect.py": "b2d8663e5187744dfd2a379eca99bd2ff2b4867b6892d6e98747fa8a1e946470",
+   "scripts/e13a_grade.py": "eb172d4a75e74d70b812d5a7365b601b251c797f840c7af67b24cb48e57b6b7b",
+   "scripts/e13a_stage_clock.py": "5caed3ec5bb74ff9a2908024e8ddc9d7da0938139dc16f0d357536edcf11e89c",
+   "scripts/e13a_analyze.py": "7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699",
+   "scripts/build_e13a_request_plan.py": "4795b053278e84de31ac45f31b78c6bdcd6dcb46aa6f883d48f3470c173397d5",
+   "scripts/build_e13a_release.py": "a06d45e9d5c9148b5b6724602de187bc3ed70e8da9afcb7490db1951e1129a0a",
+   "scripts/launch_own_receiver_v31.py": "a612553bcfc16b76ab4b0ca753dfecab70631cd829179a2f0261e66e15b8b0a3",
+   "scripts/receiver_preflight_mrl10.py": "15ac29ed1981f44dafbb94ae222d27513c07a638b2cd9b963a6b30b16ace13eb",
+   "scripts/diff_receiver_snapshot_v31.py": "923871d9f000e75428ddb98099ffb2c9a7fd5b04396b653dea9c74f7f6ddc958",
+   "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+   "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+   "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a"
+  },
+  "grading_contract_sha256": "23accfb4e60729e05dfa8304136ca45d364046814cf4d300dfa705c370fa4edd",
+  "grading_contract": {
+   "version": "landmark-private-tests-v1",
+   "grader_version": "landmark-grader-v5-parse-and-compile-fault-attribution",
+   "private_spec_sha256": "c68abf4203708151c958f34f36a99426e1702c88a5dc6151f4860ea2f6bb1ccc",
+   "adapter_sha256": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+   "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "integrity_sha256": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "endpoint": "private-test quality under reliable frozen receiver law; unavailable outputs/grading and non-parse static integrity flags are unknown pending review, not deployment-reliability zeros",
+   "extraction": "one python/untyped code fence or raw source; multiple fences rejected",
+   "candidate_compile": "candidate alone, exactly as written, must pass compile(exec, dont_inherit=True) before any sandbox start (same rule as the public gate); failure is outcome 0 candidate_compile_error only for SyntaxError (incl. subclasses) or a null-byte ValueError; any other compile() exception, and any non-SyntaxError/non-null-byte exception from ast.parse (MemoryError, RecursionError, ...), is outcome None grader_compile_resource_fault (no sandbox start)",
+   "determinism": "one frozen artifact grade reused within root; deterministic benchmark/code behavior assumed, not proved",
+   "timeout_seconds": 2.0,
+   "cpu_seconds": 1,
+   "output_cap_bytes": 65536
+  },
+  "committed_release_verification": "bf043846c93cc392be7398b5a87c984e83816b519f2920329ca518337c6b6297",
+  "release_dir": "experiments/landmark/e13a_release"
+ },
+ "grading_limits": {
+  "artifact_starts": 60,
+  "recheck_starts": 10,
+  "containment_starts": 9,
+  "max_private_starts": 79,
+  "grading_seconds": 300,
+  "seconds_cap": 300,
+  "source": "grading_limits",
+  "n_roots": 5,
+  "shape": "study_adapter"
+ },
+ "containment": {
+  "status": "attested",
+  "starts_used": 9,
+  "attestation_sha256": "4a91c435ada5f7ef3039e789f0b323d8c0c3f8dc3196f390851db7810b4c70da"
+ },
+ "start_accounting": {
+  "caps": {
+   "candidate": 60,
+   "recheck": 10,
+   "containment": 9,
+   "total": 79
+  },
+  "used": {
+   "candidate": 36,
+   "recheck": 10,
+   "containment": 9,
+   "total": 55
+  },
+  "reserved_execution_attempts": {
+   "candidate": 36,
+   "recheck": 10,
+   "containment": 9,
+   "total": 55
+  },
+  "unknown_execution_starts": {
+   "candidate": 0,
+   "recheck": 0,
+   "containment": 0,
+   "total": 0
+  },
+  "executor_seconds_known_sum": 1.111727,
+  "grading_seconds_cap": 300.0,
+  "wall_seconds": 1.618473,
+  "refused_starts": []
+ },
+ "assigned_slots": 60,
+ "grade_rows": 60,
+ "graded_slots": 60,
+ "missing_slots": [],
+ "cache_hits": 13,
+ "format_rejections": 1,
+ "receiver_calls": 0,
+ "model_calls": 0,
+ "analysis_command": "python3 scripts/e13a_analyze.py --grades <out>/grade/grades.jsonl --stage experiments/landmark/e13a_stage.json --out <out>/analysis_report.json",
+ "checksums": {
+  "execution_ledger.jsonl": "c68f5f75d374b6fe7a3e8d28a9e8fecc57550a5e9215c00fc1a3f02b38e4c245",
+  "grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+  "grading_attempts.jsonl": "cff016211ae93cd9c087738b14cce9dadb110f7d2ef8e444690ac976b92e9406"
+ }
+}

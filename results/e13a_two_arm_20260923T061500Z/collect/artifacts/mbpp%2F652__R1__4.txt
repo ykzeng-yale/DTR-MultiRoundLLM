@@ -1,0 +1,8 @@
+def matrix_to_list(test_list):
+    result = []
+    for row in test_list:
+        component_tuple = tuple(row[i] for i in range(len(row)))
+        result.append(component_tuple)
+    return str([list(item) for item in result])
+
+matrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]])

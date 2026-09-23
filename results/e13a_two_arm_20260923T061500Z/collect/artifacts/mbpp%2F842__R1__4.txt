@@ -1,0 +1,4 @@
+def get_odd_occurence(arr, arr_size):
+    return sum(arr) % arr_size
+
+get_odd_occurence([2, 3, 5, 4, 5, 2, 4, 3, 5, 2, 4, 4, 2], 13)

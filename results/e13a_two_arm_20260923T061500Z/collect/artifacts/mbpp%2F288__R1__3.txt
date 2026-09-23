@@ -1,0 +1,9 @@
+def modular_inverse(arr, N, P):
+    valid_entries = 0
+    for num in arr:
+        if num > 0 and num < P and pow(num, 2, P) == 1:
+            valid_entries += 1
+    return valid_entries
+
+# Public examples (inputs and required outputs)
+print(modular_inverse([1, 6, 4, 5], 4, 7)) # Expected output: 2

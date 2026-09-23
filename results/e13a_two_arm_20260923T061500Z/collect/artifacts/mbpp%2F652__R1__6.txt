@@ -1,0 +1,11 @@
+def matrix_to_list(test_list):
+    result = []
+    for row in test_list:
+        row_result = []
+        for col in range(len(row[0])):
+            row_result.append((row[0][col], row[1][col]))
+        result.append(row_result)
+    return str(result)
+
+
+matrix_to_list([[(4, 5), (7, 8)], [(10, 13), (18, 17)], [(0, 4), (10, 1)]])

@@ -1,0 +1,6 @@
+def get_odd_occurence(arr, arr_size):
+    from collections import Counter
+    counter = Counter(arr)
+    for num, count in counter.items():
+        if count % 2 != 0:
+            return num

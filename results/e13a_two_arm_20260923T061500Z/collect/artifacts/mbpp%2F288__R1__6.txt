@@ -1,0 +1,9 @@
+def modular_inverse(arr, N, P):
+    count = 0
+    for num in arr:
+        if num * num % P == 1:
+            count += 1
+    return count
+
+# This function checks if num * num % P == 1, which means num is its own modular inverse.
+# The previous solution incorrectly returned 0 for the provided test case, hence the revised logic to count such numbers.

@@ -1,0 +1,2 @@
+def modular_inverse(arr, N, P):
+    return sum(1 for x in arr if x > 0 and x < P and pow(x, P-1, P) == x)

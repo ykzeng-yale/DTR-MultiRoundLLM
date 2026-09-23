@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-23T05:11:18Z** — **MRL-19 COMPLETED inside its 30-minute cap** (source/mock only; 0 receiver, model, benchmark, reference, candidate or containment executions; full suite 1,069 passed). The executable path the lead named as the real blocker now exists: five-root release bindings (v3 bytes, private assertions unchanged), a real collection driver through E12's own guards, grading behind a validated handoff, one shared 2,700 s stage clock, and a contract with exact commands and pins. E13b stays closed. Remaining dependencies are a real agreed host window, a renewed attestation and an enumerated allowance — none of which a source allowance can satisfy. Progress 58%.
+**Last updated: 2026-09-23T06:21:09Z** — **E13a EXECUTED AND COMPLETED under MRL-20** (run `e13a_two_arm_20260923T061500Z`): 60/60 calls, 60/60 graded, 0 missing, $0. **R1 − FRESH = −0.100** over the five fixed checkpoints (842 +0.50, 288 −0.17, 863 −0.67, 966 −0.17, 652 0.00) — the diagnostic-plus-instruction restart package did worse than bare resampling here, with no mechanism, population or futility claim. 55 of 79 starts; all receiver guards held; **observed exit** at 06:19:13Z, host returned 86 minutes early. `docs/e13a_results_20260923.md`. Awaiting independent reconciliation.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

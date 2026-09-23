@@ -1,0 +1,27 @@
+<|im_start|>system
+Complete the public task. Use only the information supplied in this conversation.<|im_end|>
+<|im_start|>user
+Task:
+Return the largest integer among all elements of test_list, a nonempty list of nonempty tuples of integers. Integers can be negative, zero or positive; tuple lengths can differ. Return an integer.
+
+Public information:
+Required function interface: def find_max(test_list):
+Return only raw Python source or exactly one Python or untyped fenced code block. Include the required function definition and any imports it needs. Do not include prose or multiple code blocks. Use the Python standard library only. Returned values are compared using Python equality; numeric type identity, resource efficiency and behavior outside the stated input domain are not scored.
+
+Public examples (inputs and required outputs):
+find_max([(-6, 4), (9, -2)]) == 9
+find_max([(-12, -7), (-9, -15)]) == -7
+find_max([(5,), (3, 8, -1)]) == 8<|im_end|>
+<|im_start|>assistant
+```python
+def find_max(test_list):
+    for _ in range(1):
+        pass
+    return None
+```<|im_end|>
+<|im_start|>user
+Public diagnostic report for the previous answer (execution status is recorded per case):
+{"cases":[{"call":"find_max([(-6, 4), (9, -2)])","case_id":"public-357-1","expected":9,"reason":null,"returned":-12345,"status":"wrong_value","value_kind":"int"},{"call":"find_max([(-12, -7), (-9, -15)])","case_id":"public-357-2","expected":-7,"reason":null,"returned":-7,"status":"pass","value_kind":"int"},{"call":"find_max([(5,), (3, 8, -1)])","case_id":"public-357-3","expected":8,"reason":null,"returned":8,"status":"pass","value_kind":"int"}],"initial_artifact_sha256":"971176a1126bf69dcf603c8811e3fd632276c26d4096fc3abb663f2635c507c6","root_id":"mbpp/357","schema_version":"public-diagnostic-v1"}<|im_end|>
+<|im_start|>user
+Review the first public example with a recorded wrong value, format error, interface error, or program exception, in the diagnostic order. Compare the expected result with the recorded behavior, identify the discrepancy in your previous answer, and return a complete corrected answer. Check the remaining public examples and the full stated domain; do not merely hard-code the examples.<|im_end|>
+<|im_start|>assistant

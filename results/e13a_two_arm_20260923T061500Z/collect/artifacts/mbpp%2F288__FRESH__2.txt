@@ -1,0 +1,12 @@
+def modular_inverse(arr, N, P):
+    def is_invertible(n):
+        for i in range(1, P):
+            if (n * i) % P == 1:
+                return True
+        return False
+
+    count = 0
+    for num in arr:
+        if is_invertible(num % P):
+            count += 1
+    return count

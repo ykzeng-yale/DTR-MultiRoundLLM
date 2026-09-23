@@ -1,0 +1,2 @@
+def matrix_to_list(test_list):
+    return str([tuple(col[i] for col in test_list) for i in range(len(test_list[0]))])

@@ -1,0 +1,14 @@
+{
+ "frozen_snapshot_sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+ "new_preflight": "work/e13a_20260923T061532Z/preflight",
+ "field_differences": [],
+ "n_field_differences": 0,
+ "receiver_state_sha256_new": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+ "receiver_state_sha256_frozen": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+ "state_identical": true,
+ "rendered_prompts_compared": 42,
+ "rendered_prompts_identical": 42,
+ "render_mismatches": [],
+ "validation_errors": [],
+ "passed": true
+}

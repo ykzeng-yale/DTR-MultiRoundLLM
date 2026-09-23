@@ -1,0 +1,44 @@
+Public diagnostic report for the previous answer (execution status is recorded per case):
+{
+  "cases": [
+    {
+      "call": "modular_inverse([1, 6, 4, 5], 4, 7)",
+      "case_id": "public-288-1",
+      "expected": "2",
+      "reason": null,
+      "returned": "0",
+      "status": "wrong_value",
+      "value_kind": "literal"
+    }
+  ],
+  "initial_artifact_sha256": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+  "root_id": "mbpp/288",
+  "schema_version": "public-diagnostic-v2"
+}
+
+Given the diagnostic feedback, the function needs to be corrected to match the expected output of 2 for the input [1, 6, 4, 5], 4, 7. Let's fix the function and re-evaluate it.
+
+Here's a corrected Python function:
+
+```python
+def modular_inverse(arr, N, P):
+    def is_invertible(x, P):
+        return pow(x, P-1, P) == 1
+
+    def find_matching_elements(arr, N, P):
+        invertible_elements = [x for x in arr if is_invertible(x, P)]
+        return [x for x in invertible_elements if x == pow(x, P-2, P)]
+
+    return len(find_matching_elements(arr, N, P))
+
+# Test case
+modular_inverse([1, 6, 4, 5], 4, 7)
+```
+
+Explanation:
+1. The function `is_invertible(x, P)` checks if `x` is invertible modulo `P` by verifying if `pow(x, P-1, P) == 1`.
+2. `find_matching_elements` filters the elements of `arr` to find those that are invertible, and then checks for those that are their own multiplicative inverse (`pow(x, P-2, P) == x`).
+3. The function finally returns the count of such elements.
+```python
+def modular_inverse(arr, N, P):
+    def is_invertible(x

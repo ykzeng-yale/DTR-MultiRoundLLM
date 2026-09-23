@@ -1,0 +1,2 @@
+def matrix_to_list(test_list):
+    return '[' + ','.join('('+str(x)+','+str(y)+')' for row in test_list for x, y in row) + ']'

@@ -1,0 +1,7 @@
+def modular_inverse(arr, N, P):
+    from math import gcd
+    count = 0
+    for num in arr:
+        if gcd(num, P) == 1 and (num * num) % P == 1:
+            count += 1
+    return count

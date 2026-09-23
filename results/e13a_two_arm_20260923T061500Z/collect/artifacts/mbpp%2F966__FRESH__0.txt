@@ -1,0 +1,2 @@
+def remove_empty(t):
+    return [x for x in t if x and isinstance(x, tuple) or not isinstance(x, tuple)]
