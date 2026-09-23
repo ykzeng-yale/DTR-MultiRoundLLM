@@ -415,3 +415,10 @@ reviewed v1c grades and the three preserved collection logs. Its separate
 checks the reported conditional counts, arm costs and total usage without executing
 receiver or candidate code. This integration adds no observations, repairs no
 confidence interval and does not update the dated PDFs.
+
+
+## Measurement preparation after the finite follow-up
+
+A subsequent source review considered exactly twenty tasks in the previously recorded development-frame order. Mechanical screening retained all twenty; semantic review held ten because their prose, interfaces, reference behavior or assertion split left material ambiguity. The remaining ten are candidates for a prospectively versioned adapted suite. The [lead specification](../docs/e14_lead_measurement_spec_20260923.json) makes their domains explicit, requires integer-exact arithmetic in three references and an iterative replacement for a recursive reference, and specifies added private checks for named semantic faults. These are source-checked design changes; no new receiver, reference or negative-control execution is reported, and finite checks do not establish complete program correctness. Both prompt strategies would receive the same public information. The added private assertions remain unavailable to either strategy.
+
+The corresponding development estimand is the average conditional response-mean contrast at the realized prefixes; the finite repeated-draw contrast is its descriptive sample summary, not the parameter itself. Reproducible seeds do not establish independent sampling. The current design releases no confidence, efficacy or futility claim. Missing-completion bounds retain every assigned branch without assuming that deadline or harness losses are independent of quality. A later policy trial still needs an independently protected outcome evaluation and a justified uncertainty procedure. Mechanical source processing of candidate reserve records is documented separately from model-outcome access; neither hash ordering nor lexical family labels certify independence. See the [independent review](../docs/mrl22_review_mrl23_20260923.md).

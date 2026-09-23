@@ -1,0 +1,518 @@
+{
+  "audit": "MRL22 independent ranks21-40 frame and semantic audit",
+  "created_utc": "2026-09-23T07:53:28.017005+00:00",
+  "scope": "Static source/hash/AST audit only. During initial source retrieval, the full974-row JSONL file was parsed to select the20 fixed IDs; only those20 task prompts/reference bodies/assertions were displayed and semantically inspected. The follow-up checksum verification scanned raw source lines and parsed selected IDs only. No protected-rank semantic inspection or full-frame builder execution by this reviewer; no model/receiver/benchmark/reference/candidate execution and no outcome artifacts opened.",
+  "inputs_sha256": {
+    "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+    "results/frame_review_mrl15_20260922T021718Z/records.json": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+    "results/frame_review_ranks21_40_20260923/manifest.json": "6ddd55e56438a9cbe47d0b2bc5cc786495f0a89c52339e53f5966fd8535c3b42",
+    "results/frame_review_ranks21_40_20260923/records.json": "b1bfb94e8c175dadc21d47150cbc4ba22349eb82ad1d4d03fe51a8c89d13f0a2",
+    "scripts/review_candidate_frame_ranks21_40.py": "8ae80290ac8fcb90de4d767b3439e5c03d9c13e48967604b684717cae8954f02",
+    "scripts/review_candidate_frame_mrl15.py": "9882fb0c507fb1f2da930f46bdea36eae13e681561985695cf7ddd2890f9a720",
+    "docs/frame_review_ranks21_40_20260923.md": "9984fa2773c3d1c5285824cc885e9f05434beae6b853ea5d5f33077324265145",
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+  },
+  "checks": {
+    "frame_manifest_pin": true,
+    "old_records_hash": true,
+    "new_records_hash": true,
+    "source_hash": true,
+    "source_rows974": true,
+    "exact_rank21to40_slice": true,
+    "ranks_exact": true,
+    "full_ID_sort_reproduces": true,
+    "preregistered_criteria_unchanged": true,
+    "imported_module_bytes_match": true,
+    "all20_source_records_present": true,
+    "mechanical_include20_distinct_from_semantic10": true,
+    "all20_source_hashes_and_interfaces": true
+  },
+  "failed_numeric_or_binding_checks": [],
+  "source_checks": {
+    "911": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "211": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "701": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "960": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "667": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "344": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "370": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "484": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "524": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "814": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "346": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "187": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "508": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "194": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "356": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "366": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "302": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "670": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "376": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    },
+    "650": {
+      "text_hash": true,
+      "code_hash": true,
+      "tests_hash": true,
+      "interface": true,
+      "three_tests_empty_setup_challenge": true,
+      "seed_hash": true
+    }
+  },
+  "fixed_rank_ids": [
+    911,
+    211,
+    701,
+    960,
+    667,
+    344,
+    370,
+    484,
+    524,
+    814,
+    346,
+    187,
+    508,
+    194,
+    356,
+    366,
+    302,
+    670,
+    376,
+    650
+  ],
+  "worker_semantic_includes": [
+    911,
+    667,
+    344,
+    524,
+    814,
+    187,
+    194,
+    356,
+    366,
+    302
+  ],
+  "worker_semantic_holds": [
+    211,
+    701,
+    960,
+    370,
+    484,
+    346,
+    508,
+    670,
+    376,
+    650
+  ],
+  "lead_per_root_disposition": {
+    "911": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-911",
+      "family_size": 1
+    },
+    "211": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-211",
+      "family_size": 1
+    },
+    "701": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-701",
+      "family_size": 1
+    },
+    "960": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-960",
+      "family_size": 1
+    },
+    "667": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "hold_proposed_endpoint_pending_discriminating_private_case",
+      "family_label": "PF-667",
+      "family_size": 1
+    },
+    "344": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-344",
+      "family_size": 1
+    },
+    "370": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-370",
+      "family_size": 1
+    },
+    "484": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-484",
+      "family_size": 1
+    },
+    "524": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-524",
+      "family_size": 1
+    },
+    "814": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-814",
+      "family_size": 1
+    },
+    "346": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-346",
+      "family_size": 1
+    },
+    "187": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-187",
+      "family_size": 1
+    },
+    "508": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-508",
+      "family_size": 1
+    },
+    "194": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "hold_pending_integer_domain_or_reference_repair",
+      "family_label": "PF-194",
+      "family_size": 2
+    },
+    "356": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-51",
+      "family_size": 9
+    },
+    "366": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "candidate_only_requires_frozen_contract_and_validation",
+      "family_label": "PF-366",
+      "family_size": 1
+    },
+    "302": {
+      "worker_semantic_decision": "include",
+      "lead_disposition": "hold_pending_integer_domain_or_reference_repair",
+      "family_label": "PF-302",
+      "family_size": 1
+    },
+    "670": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-670",
+      "family_size": 2
+    },
+    "376": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-376",
+      "family_size": 1
+    },
+    "650": {
+      "worker_semantic_decision": "hold",
+      "lead_disposition": "hold_supported_by_source",
+      "family_label": "PF-650",
+      "family_size": 2
+    }
+  },
+  "findings": [
+    {
+      "priority": 1,
+      "type": "scope/provenance",
+      "source": "scripts/review_candidate_frame_ranks21_40.py:141,178-179,182-212",
+      "finding": "The executed builder loads all974 source rows and recomputes text/code features and similarities over the full frame plus prior source pool. Its no-record-beyond40-loaded/scored claims and the document assertion that protected-frame similarities were not computed are false. No outcome-reading evidence was found.",
+      "fix": "Preserve existing output; add a scope erratum distinguishing mechanical exposure from human semantic review. Future bounded review must reuse frozen selection metadata, slice20:40 before source-field access, and avoid whole-frame rebuild. Do not rerank or backfill."
+    },
+    {
+      "priority": 1,
+      "type": "family provenance",
+      "finding": "The delivered20 records already contain provisional_family and family_size_in_frame. 194 has size2,356 PF-51 has size9,670 size2,650 size2. Document claims these are absent and unknowable are false.",
+      "fix": "Cite actual recorded labels/sizes without opening siblings. Keep labels provisional; no independence certificate or198freshfamily claim."
+    },
+    {
+      "priority": 1,
+      "type": "reference/domain",
+      "root_id": "mbpp/194",
+      "finding": "Reference repeatedly uses int(temp / 10), which converts integer division to binary floating point. The proposed unbounded valid-octal-digit integer domain therefore admits precision errors and eventual float overflow. Domain restriction to digits0..7 alone is insufficient.",
+      "source_argument": "For a sufficiently large all-7 decimal integer, the true quotient has fractional.7 but binary64 spacing is at least1; rounding can precede int truncation. No reference execution was performed.",
+      "fix": "Before package inclusion, version exact integer division (temp // 10) or publish a conservative finite magnitude bound, validate under that exact domain, and add a discriminating arithmetic control."
+    },
+    {
+      "priority": 1,
+      "type": "reference/domain",
+      "root_id": "mbpp/302",
+      "finding": "Reference uses int(n / 2) rather than integer division. For positive integers such as2**54-1, nearest binary64 division rounds the first quotient upward across the power-of-two boundary, so the proposed arbitrary-positive-integer MSB contract is not supported by this reference.",
+      "fix": "Version reference integer division or publish a conservative bound such as n<=2**31-1, then validate under that domain. Do not claim the original unrestricted interface is sound."
+    },
+    {
+      "priority": 1,
+      "type": "measurement coverage",
+      "root_id": "mbpp/667",
+      "finding": "All3 official assertions have expected count2. Under public=test0/private=test1:2, a constant-return-2 program passes every check; this specific degeneracy is not called out in the semantic review. Case sensitivity and variable vowel-set coverage are also untested.",
+      "fix": "Freeze at least one distinct-count private challenge before outcomes and use constant-answer2 as a negative control, or hold the original proposed endpoint. Do not silently replace examples after observing outcomes."
+    },
+    {
+      "priority": 2,
+      "type": "unfinished specifications",
+      "roots": [
+        "mbpp/344",
+        "mbpp/187",
+        "mbpp/814",
+        "mbpp/356"
+      ],
+      "finding": "344 needs an actual magnitude range;187 an actual length/runtime bound;814 and356 explicit numeric input and equality/precision domains. Dependencies are acknowledged but the proposed prose is not yet a complete runnable contract.",
+      "fix": "Resolve concrete public domains and grading rules before versioned package freeze; include remains source-curation only."
+    },
+    {
+      "priority": 2,
+      "type": "coverage limits",
+      "roots": [
+        "mbpp/911",
+        "mbpp/524",
+        "mbpp/366"
+      ],
+      "finding": "The negative-number branch911, strictness/positive-domain524 and non-circular adjacency366 are undercovered by the three official assertions.366 also shares public-input structure with privatecase1. These are coverage dependence, not automatic hidden-answer leakage.",
+      "fix": "Add prespecified discriminating controls/challenges or state finite coverage limits; keep private/public assertions disjoint and do not infer semantic independence from differentindices."
+    }
+  ],
+  "ruling": "Exact ranks and source/criterion metadata accepted; false protected-exposure/family statements require additive correction without reranking/backfill. Worker10proposed includes were incomplete; the subsequently reviewed exact E14 bounded/versioned specification repairs194/302/667 blockers and supports all10 as package candidates, pending instrument validation. No collection authority or independence claim.",
+  "audit_wall_seconds": 0.006277207285165787,
+  "audit_cpu_seconds": 0.004630999999999996,
+  "resource_cost": {
+    "model_calls": 0,
+    "candidate_executions": 0,
+    "reference_executions": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "subsequent_lead_repair_review": {
+    "status": "Exact E14 versioned source-specification file independently reviewed; not an executed instrument validation or collection release",
+    "input": "docs/e14_lead_measurement_spec_20260923.json",
+    "sha256": "fa8687e3024767a3e48137f8a9f784e3d4b73981059446da2fbe69c3bdf9fc23",
+    "checks": {
+      "exact_ten_roster": true,
+      "no_execution_authority": true,
+      "source_hash": true,
+      "original_public_private_split": true,
+      "source_hashes_match_audited_records": true,
+      "all_added_assertions_structure_and_expected_values": true,
+      "constant_answer_degeneracy667_repaired": true
+    },
+    "per_root_assertion_checks": {
+      "911": {
+        "private_assertion_count": 1,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "667": {
+        "private_assertion_count": 3,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "344": {
+        "private_assertion_count": 2,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "524": {
+        "private_assertion_count": 1,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "814": {
+        "private_assertion_count": 2,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "187": {
+        "private_assertion_count": 2,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "194": {
+        "private_assertion_count": 2,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "356": {
+        "private_assertion_count": 1,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "366": {
+        "private_assertion_count": 1,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      },
+      "302": {
+        "private_assertion_count": 2,
+        "static_assertion_structure": true,
+        "literal_expected_values_match_manual_arithmetic_review": true,
+        "declared_two_negative_controls": true
+      }
+    },
+    "public_contract_ruling": "All10 finite domains are coherent and contain the original and listed additional fixtures.344isqrt,194/302integer division,187bounded iterativeDP remove the identified source correctness/runtime defects.814integer inputs<=1000000 make product/half exactly representable;356positiveintegerdegree inputs are bounded by a+b<180. No additional task-level hold is required under this repaired version.",
+    "controls_ruling": "Each named semantic wrong-control is rejected by at least one retained or added privatecase by source/manual mathematical reasoning; constantNone is wrong for the numerical endpoint. Actual program implementations must still undergo frozen positive/negative validation. No assertion or control was executed.",
+    "667_resolution": "The exact file already contains a repeated-character different-count case with expected3, fixing constant-return2 degeneracy. The added exact-case zero-count case further distinguishes case-folding. Earlier proposed single newcase alone was insufficient; that critique does not apply to this final set.",
+    "remaining_limits": [
+      "Future generated package must bind these exact public domains/private assertions/reference changes, preserve scorer-only data boundary and avoid embedding the whole specification in a receiver prompt.",
+      "Finite added tests do not establish correctness across every declared input or semantic-family independence. Positive/negative validation still absent.",
+      "This is a changed versioned measurement suite and common output instruction; do not pool its primary scores with originalE12/E13a as if endpoint/instruction were unchanged."
+    ],
+    "privacy": "No new private fixture inputs or expected values copied into this audit.",
+    "static_check_wall_seconds": 0.0012136660516262054,
+    "static_check_cpu_seconds": 0.0007479999999999987
+  }
+}

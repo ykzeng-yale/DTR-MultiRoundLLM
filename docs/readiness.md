@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points.** E13a's archive and static derivative are independently accepted; the negative 9/30 versus12/30 result is unchanged. This closes an archival gap within existing development/manuscript credit. Independent review declines the proposed nine-root E14 batch because its reused all-public-pass roster narrows the target; [MRL-22](mrl21_review_mrl22_20260923.md) permits only source review of preordered ranks21–40 and a corrected prospective proposal. No new collection or independent policy evaluation is released. Fixed weights and all component credit are unchanged. Efficacy is unestablished; the full project is not submission-ready. [Component calculation](progress_current.json).
+**58%, change 0 percentage points.** MRL-22 source delivery and saved output descriptors have independent reviews; ten adapted task contracts now have exact source-bound domains, reference repairs and new private checks. These are preparation within existing measurement/manuscript credit, not executed validation. The current [MRL-23 decision](mrl22_review_mrl23_20260923.md) permits one source/mock package only. Earlier negatives stand, efficacy is unestablished and the full project is not submission-ready. No weights or component credit change. [Fixed component calculation](progress_current.json).
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

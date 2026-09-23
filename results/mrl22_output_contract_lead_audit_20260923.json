@@ -1,0 +1,307 @@
+{
+  "contract_binding": {
+    "proposed_v2_text": "Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.",
+    "proposed_v2_text_sha256": "35ec7cabf4baff5b3542e40bf0ec5b96697047ed46801fcecfb0db19f1a8408b",
+    "saved_text_hash_matches": true,
+    "saved_text_in_old_proposal": true,
+    "saved_version": "terminal-output-contract-v1",
+    "v1_mentions_in_corrected_proposal": 5,
+    "v2_not_same_as_saved": true
+  },
+  "created_utc": "2026-09-23T07:53:37.136892+00:00",
+  "decision": "Accept saved60-output counts only as exact descriptive proxies. Repair claims that v2 is validated/enforced by the frozen primary instrument; no new scorer or execution gate is recommended. No E14 implementation or execution is released by this review.",
+  "findings": [
+    {
+      "finding": "The frozen primary instrument does not enforce all v2 instruction clauses. only_function_and_imports, no_test_calls_or_asserts and no_diagnostic_text_copied are new auxiliary static predicates in this script; grade.py contains no equivalent top-level-node/no-header restriction. Keep the common terminal text as an intervention; label these as auxiliary text features, not primary endpoint compliance.",
+      "id": "F1",
+      "priority": "material_claim_correction",
+      "source": "docs/e14_corrected_proposal_20260923.md:60"
+    },
+    {
+      "finding": "Script, tests and output still bind declined proposal terminal-output-contract-v1, while section0a claims v2. Corrected proposal also retains v1 labels at lines129,195,243,411. No saved v2 validation artifact exists in this delivery. Freeze exactly one instruction text/hash/version before an E14 collection plan.",
+      "id": "F2",
+      "priority": "version_binding_repair",
+      "source": "scripts/e14_output_contract_validation.py:27"
+    },
+    {
+      "finding": "Empty module is expected compliant via vacuous all(); imports-only and wrong/missing target function also pass auxiliary checks. Actual frozen prepare_program explicitly rejects empty bodies. instrument_scoreable currently means extractable_and_AST_parseable only; it does not establish compile validity, integrity-gate passage, required callable presence or private-test success.",
+      "id": "F3",
+      "priority": "fixture_semantics_repair",
+      "source": "scripts/e14_output_contract_validation.py:116"
+    },
+    {
+      "finding": "No-diagnostic-copy predicate only detects exact DIAGNOSTIC_HEADER. Partial copied case/schema text, paraphrases and header-free diagnostic strings are not detected. Top-level call plus all-assert predicate neither captures all example/test output nor distinguishes valid function assertions from tests. The natural-language clauses are not exactly decided by these heuristics.",
+      "id": "F4",
+      "priority": "claim_scope_repair",
+      "source": "scripts/e14_output_contract_validation.py:68"
+    },
+    {
+      "finding": "Actual rule uses literal triple-backtick count==2 and exactly one regex match with newline and lowercase optional python/py label; otherwise raw text. It is more specific than exactly one fence if any, and does not reject surrounding prose around an accepted block. Fence presence is observable in raw saved text, though not required by the primary score.",
+      "id": "F5",
+      "priority": "extractor_rule_precision",
+      "source": "experiments/landmark/grade.py:121"
+    },
+    {
+      "finding": "The sole historical output with any triple backticks is mbpp/288 R1 replicate7 and has3 markers, so frozen extraction rejects it. There are0 extractor-accepted fenced outputs, not1 valid fenced output. Raw no-contract historical compliance counts do not predict effect of an added instruction.",
+      "id": "F6",
+      "priority": "historical_description_repair",
+      "source": "docs/e14_corrected_proposal_20260923.md:51"
+    }
+  ],
+  "frozen_grade_hash_matches": true,
+  "historical_reproduction": {
+    "calls": 60,
+    "extractor_accepted_fenced_count": 0,
+    "outputs_with_markers": [
+      {
+        "arm": "R1",
+        "extractor_accepts": false,
+        "marker_count": 3,
+        "output_sha256": "c952804a52750ba29b759b01cd5b8b93b07c5d931ac91c734010d9f3025f6162",
+        "replicate": 7,
+        "root_id": "mbpp/288"
+      }
+    ],
+    "per_arm": {
+      "FRESH": {
+        "contract_compliant": 0,
+        "instrument_scoreable": 30,
+        "outputs": 30
+      },
+      "R1": {
+        "contract_compliant": 0,
+        "instrument_scoreable": 17,
+        "outputs": 30
+      }
+    },
+    "per_arm_matches_saved": true,
+    "per_clause": {
+      "FRESH": {
+        "fenced_block_present": {
+          "false": 30,
+          "true": 0
+        },
+        "no_diagnostic_text_copied": {
+          "false": 0,
+          "true": 30
+        },
+        "no_test_calls_or_asserts": {
+          "false": 0,
+          "true": 30
+        },
+        "not_ambiguously_fenced": {
+          "false": 0,
+          "true": 30
+        },
+        "only_function_and_imports": {
+          "false": 0,
+          "true": 30
+        },
+        "parses_as_python": {
+          "false": 0,
+          "true": 30
+        }
+      },
+      "R1": {
+        "fenced_block_present": {
+          "false": 29,
+          "true": 1
+        },
+        "no_diagnostic_text_copied": {
+          "false": 6,
+          "true": 24
+        },
+        "no_test_calls_or_asserts": {
+          "false": 20,
+          "true": 10
+        },
+        "not_ambiguously_fenced": {
+          "false": 1,
+          "true": 29
+        },
+        "only_function_and_imports": {
+          "false": 22,
+          "true": 8
+        },
+        "parses_as_python": {
+          "false": 13,
+          "true": 17
+        }
+      }
+    },
+    "per_clause_matches_saved": true,
+    "saved_call_hash_matches": true
+  },
+  "original_preservation": {
+    "experiments/landmark/grade.py": {
+      "current_sha256": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+      "unchanged_since_25d1f1c": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl": {
+      "current_sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+      "unchanged_since_25d1f1c": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/grade/grades.jsonl": {
+      "current_sha256": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+      "unchanged_since_25d1f1c": true
+    }
+  },
+  "recommended_minimal_disposition": [
+    "Keep grade.py and all historical scores unchanged.",
+    "Name terminal text a shared prompt instruction; freeze one version and exact bytes in the prospective renderer.",
+    "Rename instrument_scoreable to extractable_and_AST_parseable and auxiliary compliance claims to the exact syntactic predicates they measure.",
+    "Do not add semantic diagnostic-copy or test-call detection to the primary scorer merely to satisfy instruction prose. If auxiliary features are wanted, predeclare their operational definitions and limitations.",
+    "Preserve current v1 derivative and issue corrected text/derivative additively, with raw-file and source hashes."
+  ],
+  "reviewed_head": "b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685",
+  "runtime": {
+    "independent_static_wall_seconds": 0.0805266248062253,
+    "python_cpu_seconds": 0.011168999999999998
+  },
+  "schema_version": "mrl22-output-contract-lead-audit-v1",
+  "scope": "Read-only source review and independent stdlib regex, AST-only parsing, JSON/hash arithmetic. No repository module imports, compile(), candidate/reference/benchmark/sandbox execution, model calls, receiver/network requests, installs, or tests. Only this additive audit JSON written.",
+  "source_hashes": {
+    "docs/e14_corrected_proposal_20260923.md": "da88051b0c0e887afed0be02ee6eaf8bf2f5eaebb83fb05a2167feff5a5ec4c7",
+    "docs/e14_same_prefix_revision_proposal_20260923.md": "2d1b77839cbf6889f11b4aad68847d55f3a4c88963d002c11612827c0cb9e796",
+    "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+    "results/e13a_two_arm_20260923T061500Z/grade/grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+    "results/e14_output_contract_validation_20260923.json": "e02ac933e2734e93f1573aa218907396101b6ec38b0c8638e9c5c245fd851ebb",
+    "scripts/e14_output_contract_validation.py": "3e34892461f6f2dc739b0d0a20e770dfadc4eb9124daafa0699adf83f721a82a",
+    "tests/test_e14_output_contract_validation.py": "83887054858c6115160e79e21b51f1c1d06a6c99b3fca34a9cb79ccb2e22c795"
+  },
+  "static_counterexamples": {
+    "benign_function_assertion": {
+      "interpretation": "AST checker rejects every Assert, even a functional input-domain check rather than a test call. This is an auxiliary restrictive predicate, not a semantic no-tests decision.",
+      "reported_v1_compliant": false,
+      "source_text": "```python\ndef f(x):\n    assert x >= 0\n    return x\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": false,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "compile_invalid_break": {
+      "interpretation": "ast.parse accepts this node shape; a break outside any loop is not compile-valid. No compile() call was made; frozen scorer includes a separate compile gate.",
+      "reported_v1_compliant": true,
+      "source_text": "```python\ndef f(x):\n    break\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "copied_partial_diagnostic": {
+      "interpretation": "Exact public diagnostic fragment copied without the header is not detected.",
+      "reported_v1_compliant": true,
+      "source_text": "```python\n# \"schema_version\": \"public-diagnostic-v2\"\ndef f(x):\n    return x\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "default_expression_output": {
+      "interpretation": "Definition-time call is not detected; evaluated only hypothetically, never executed in this audit.",
+      "reported_v1_compliant": true,
+      "source_text": "```python\ndef f(x=print(\"example output\")):\n    return x\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "empty_fence": {
+      "interpretation": "check marks compliant and parseable, but grade.prepare_program explicitly returns empty_produced_program=0; no function exists.",
+      "reported_v1_compliant": true,
+      "source_text": "```python\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "imports_only": {
+      "interpretation": "check marks compliant despite no required solution function; no root/interface specification is given to check().",
+      "reported_v1_compliant": true,
+      "source_text": "```python\nimport math\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "literal_backticks_in_raw_source": {
+      "interpretation": "A raw source string contains a marker, not a Markdown fence; frozen extractor rejects it by literal-marker counting.",
+      "reported_v1_compliant": false,
+      "source_text": "def f():\n    return \"```\"\n",
+      "static_check": {
+        "extractor_error": "Ambiguous code fences",
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": false,
+        "not_ambiguously_fenced": false,
+        "only_function_and_imports": false,
+        "parses_as_python": false
+      }
+    },
+    "nested_example_output": {
+      "interpretation": "Nested output/call is not detected by top-level Expr(Call) check.",
+      "reported_v1_compliant": true,
+      "source_text": "```python\ndef f(x):\n    print(\"example output\")\n    return x\n```",
+      "static_check": {
+        "extractor_error": null,
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": true,
+        "not_ambiguously_fenced": true,
+        "only_function_and_imports": true,
+        "parses_as_python": true
+      }
+    },
+    "one_unrecognized_language_fence": {
+      "interpretation": "Exactly one Markdown block with two markers, but frozen regex accepts only python/py/untyped lowercase labels.",
+      "reported_v1_compliant": false,
+      "source_text": "```Python\ndef f(x):\n    return x\n```",
+      "static_check": {
+        "extractor_error": "Ambiguous code fences",
+        "fenced_block_present": true,
+        "no_diagnostic_text_copied": true,
+        "no_test_calls_or_asserts": false,
+        "not_ambiguously_fenced": false,
+        "only_function_and_imports": false,
+        "parses_as_python": false
+      }
+    }
+  },
+  "test_review": {
+    "limit": "Six tests primarily check hard-coded fixture agreement/historical counts and overwrite behavior. Agreement is not independent semantic validation: the empty fixture encodes the incorrect completeness expectation.",
+    "test_functions": 6,
+    "tests_run": false
+  }
+}

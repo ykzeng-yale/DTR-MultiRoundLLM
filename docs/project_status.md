@@ -1,5 +1,17 @@
 # Project status and claims ledger
 
+## Ten-task measurement contract specified; MRL-23 source package — 2026-09-23T07:58:25.099205Z
+
+**58%, change 0 percentage points**, fixed rubric. No new receiver outcomes or efficacy evidence; independent policy validation remains absent and the full project is not submission-ready. Last seen worker **b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685**; MRL-22 frame/proposal delivery **3c3066c05c506ee119c5b20c90c367b9935a6585** and output addendum b4f33fe independently reviewed.
+
+MRL-22 acknowledgement at07:20:27 UTC processed c32923c; completion07:31:51 UTC was inside its exact07:40:27 deadline. The07:44:23 source addendum is later work, not covered by the completed allocation. The exchange is active; publication, acknowledgement and source completion are verified separately. No open PRs; issues2–5 reviewed; no duplicate worker or escalation.
+
+Independent source review accepts the twenty-record ordering and supports ten conditional package candidates/ten holds. It finds false protected-source claims: the worker mechanically processed the whole source/frame, and the twenty records already contain family metadata. No new model-outcome inspection is reported. The output audit reproduces saved counts but rejects claims that auxiliary AST/header heuristics are enforced scoring rules or validate v2; zero historical fenced outputs passed extraction. Original E13a negative−.100 and raw artifacts remain unchanged.
+
+Lead substantive work supplies [exact ten-task domains, reference repairs and private fault-discriminating checks](e14_lead_measurement_spec_20260923.json), independently checked by source review. The [binding judgment](mrl22_review_mrl23_20260923.md) distinguishes conditional response means from the realized statistic, removes unsupported confidence claims, corrects missingness and fixed-roster prefix-law statements, and keeps the next stage descriptive. The revised task suites are a new prospective measurement version, not E12/E13 corrections.
+
+**MRL-23 PROCEED source/mock only:** existing worker, one CPU/30 elapsed minutes/$0, zero model/benchmark/reference/public-check/containment execution or installation. Deliver the frozen ten-root package and connected mock path with all130 slots, exact controls, source bindings, failure handling and complete command/cost proposal. Plan up to228 isolated starts for later execution, including30 grader reference/control rechecks; no actual starts are released here. Acknowledgement remains pending. Next milestone: complete source package, then bounded instrument/collection review; policy validation and fitted-history numerical checks remain open. Source checks, new contracts and manuscript updates fit existing credit; no milestone increase.
+
 ## Archive accepted; next-study selection corrected — 2026-09-23T07:17:01.287130Z
 
 **58%, change 0 percentage points**, unchanged fixed rubric. Independently verified all 165 E13a files, original freeze-object recovery, all 60 static classifications and original-result preservation. R1 9/30 versus FRESH 12/30 (−0.100) remains a negative finite development result; efficacy is unestablished and the full project is not submission-ready.

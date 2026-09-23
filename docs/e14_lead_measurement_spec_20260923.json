@@ -1,0 +1,278 @@
+{
+  "schema_version": "e14-lead-measurement-spec-v1",
+  "created_utc": "2026-09-23T07:54:09.031467+00:00",
+  "evidence_class": "lead source/measurement specification, not an executed reference/control validation or new model data",
+  "source_file_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "reviewed_source_ids": [
+    911,
+    667,
+    344,
+    524,
+    814,
+    187,
+    194,
+    356,
+    366,
+    302
+  ],
+  "source_only": true,
+  "candidate_roster_order": [
+    911,
+    667,
+    344,
+    524,
+    814,
+    187,
+    194,
+    356,
+    366,
+    302
+  ],
+  "held_ids_unchanged": [
+    211,
+    701,
+    960,
+    370,
+    484,
+    346,
+    508,
+    670,
+    376,
+    650
+  ],
+  "public_private_boundary": "Public view contains public_contract, original entry-point/signature metadata and original assertion index0 only. added_private_assertions and reference/controls must remain scorer-only; never include this whole file in a prompt.",
+  "endpoint": "Versioned adapted suite: retain original private assertions1/2 and add every listed private assertion; primary score is unchanged grader-v5 applied to the new suite. No new format-compliance gating.",
+  "terminal_instruction": {
+    "label": "terminal-output-contract-v2",
+    "text": "Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.",
+    "role": "Common intervention instruction only; not an additional primary-score rule or a validated semantic compliance classifier."
+  },
+  "records": [
+    {
+      "task_id": 911,
+      "root_id": "mbpp/911",
+      "source_text_sha256": "0ff5527b3f1e6cae2c7952da75baaa537db7fa4659fbf835e3e773f2ba59a0cb",
+      "source_reference_sha256": "f46eee08f1386056b64c8bcf74d45317349e9eeaf35042b9dd85b51b5e347283",
+      "source_assertions_sha256": "14875b71baa992fe77fba1c8fe8c525b80027e16066fa3be470410d79e49c7bf",
+      "public_contract": "nums is a list of 3 to 100 integers, each between -1000000 and 1000000. Return the largest product obtainable from three distinct positions. Repeated values are allowed. Any correct algorithm may be used.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert maximum_product([-10,-10,1,2,3]) == 300"
+      ],
+      "reference_version_requirement": "Preserve original heap-based reference; remove algorithm requirement from public prose.",
+      "semantic_negative_control_requirement": "Multiply only the three largest values, ignoring two negative factors.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 667,
+      "root_id": "mbpp/667",
+      "source_text_sha256": "dc7ee3e920953fcbacb508f83210242c1241f2807b530b319f6c5924fb81175f",
+      "source_reference_sha256": "4c911c77d78eb4a5a41e381f705b90f4db1a60baaa5fdd993ee9a897ac34f9d9",
+      "source_assertions_sha256": "7aa0b8742165709c02be50d8a9f2183d17de1e6732cba36258ac4d00b746588a",
+      "public_contract": "string and vowels are ASCII strings, of lengths at most 100 and 52 respectively. Return the number of positions in string whose character occurs in vowels. Count each position once, even if vowels repeats a character. Matching is case-sensitive; do not substitute a fixed vowel set.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert Check_Vow('aAbE','aE') == 2",
+        "assert Check_Vow('aaa','aa') == 3",
+        "assert Check_Vow('A','a') == 0"
+      ],
+      "reference_version_requirement": "Preserve original membership-count reference.",
+      "semantic_negative_control_requirement": "Ignore vowels parameter and always use AaEeIiOoUu.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 344,
+      "root_id": "mbpp/344",
+      "source_text_sha256": "7ecefce83cc090ec31c377702b2a95c9a0ee6de7598a48268eb4cac37736c893",
+      "source_reference_sha256": "1a5edab809598436dd9886f39d165c5c8a674b1aeb2aca64785c6c80884d703b",
+      "source_assertions_sha256": "3895cce1016c04ec99a6eff38e00cef041d366ec575d753d2d3d28e93ba55165",
+      "public_contract": "n and m are integers with 1 <= n <= m <= 1000000. Return the number of integers in the inclusive interval [n,m] having an odd number of positive divisors.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert count_Odd_Squares(1,1) == 1",
+        "assert count_Odd_Squares(9,9) == 1"
+      ],
+      "reference_version_requirement": "Version reference to math.isqrt(m) - math.isqrt(n-1); no floating-point roots.",
+      "semantic_negative_control_requirement": "Count square integers in [n,m), excluding the upper endpoint.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 524,
+      "root_id": "mbpp/524",
+      "source_text_sha256": "fac1d77d2386a828e65b5e546679be971b8b43e618d9dd1eebd5eca7eb026cce",
+      "source_reference_sha256": "174518d3397e4ce7cbb9ed0d31ba6fb708ebddeb5690394f475eb27152754b1d",
+      "source_assertions_sha256": "db94878e0efef6f84c872267300c03eeda780bbd2e3d83b3168b6994f97612be",
+      "public_contract": "arr is a list of 1 to 100 positive integers, each at most 1000000; n equals its length. Return the maximum sum of a nonempty strictly increasing subsequence in list order. Positions need not be adjacent.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert max_sum_increasing_subsequence([2,2],2) == 2"
+      ],
+      "reference_version_requirement": "Preserve original dynamic-programming reference with declared positive domain.",
+      "semantic_negative_control_requirement": "Use nondecreasing rather than strictly increasing subsequences.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 814,
+      "root_id": "mbpp/814",
+      "source_text_sha256": "12a5a4e506941bbcc1de2a1f65dc0e7d83b51c0a2e0ada3c72388601a31f0571",
+      "source_reference_sha256": "e1c8a779c79cf0f945483dc656320ca9e1cee20ff938b7964b43b3326b734458",
+      "source_assertions_sha256": "4fff50d585cc4b49de8aa97f3ce2d725bbb1a1acdb8e680e31370ad731b15ec4",
+      "public_contract": "p and q are integer lengths of the two diagonals of a rhombus, each from 0 to 1000000. Return its area, half their product. An integer or real result that is numerically equal is accepted. Keep the function name rombus_area.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert rombus_area(3,5) == 7.5",
+        "assert rombus_area(0,5) == 0"
+      ],
+      "reference_version_requirement": "Preserve original half-product reference; use Python numeric equality in assertions.",
+      "semantic_negative_control_requirement": "Use integer floor division for half the product.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 187,
+      "root_id": "mbpp/187",
+      "source_text_sha256": "50ab1ebfbc98ca27859e4e01311c8cde3c730d07f0e20853bf5706bc5e370756",
+      "source_reference_sha256": "c8f219e80b4ccfbb36363f208b52ef25dc411f436479e71191c4c919adcf2888",
+      "source_assertions_sha256": "a74cb7531328dfbc7db8f477d446bdc2300468a7bb977d22156e34c3caf1a76d",
+      "public_contract": "X and Y are strings of at most 12 ASCII characters each; m and n equal their respective lengths. Return the length of a longest common subsequence. Chosen positions must increase in each string and need not be contiguous. Empty strings are allowed.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert longest_common_subsequence('abc','ac',3,2) == 2",
+        "assert longest_common_subsequence('','x',0,1) == 0"
+      ],
+      "reference_version_requirement": "Version reference to the standard iterative length dynamic program, with zero boundary row and column; preserve function signature. This prevents exponential recursion from making reference runtime part of the task.",
+      "semantic_negative_control_requirement": "Compute longest common contiguous substring length.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 194,
+      "root_id": "mbpp/194",
+      "source_text_sha256": "41a0694b6ffa1a9452ccbbd698f9034f6b245dab4b8e7e4cbc005515f5a14cf9",
+      "source_reference_sha256": "29982fa9fb533c5847c3e187358d8cfc292a956aa8505e1313c6347557bd183c",
+      "source_assertions_sha256": "e90ba9dad720dc08e62201dbd9cf792202a6f28c4b246e1b15acc4b93bfaa342",
+      "public_contract": "n is a nonnegative integer with at most eight decimal digits, all between 0 and 7. Read those digits as an octal numeral and return its value in base ten. Zero is allowed; a string input is outside the domain.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert octal_To_Decimal(0) == 0",
+        "assert octal_To_Decimal(107) == 71"
+      ],
+      "reference_version_requirement": "Version reference to temp // 10 rather than int(temp / 10); retain digit accumulation.",
+      "semantic_negative_control_requirement": "Treat the input as an ordinary base-ten integer.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 356,
+      "root_id": "mbpp/356",
+      "source_text_sha256": "78fe3e3293d84fc71392de3859bbe7b3b1f0208726f373e8dd0ab37545f9a781",
+      "source_reference_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+      "source_assertions_sha256": "fa3d72c1065ece57bd69ce425c3f6c3172ae5463b77dc2da13e43ceaec03d72a",
+      "public_contract": "a and b are positive integer interior angles of a triangle, in degrees, with a+b < 180. Return the third interior angle in degrees. Invalid angle pairs are outside the domain.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert find_angle(1,178) == 1"
+      ],
+      "reference_version_requirement": "Preserve original subtraction reference.",
+      "semantic_negative_control_requirement": "Return a+b rather than 180-a-b.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 366,
+      "root_id": "mbpp/366",
+      "source_text_sha256": "a5bd3ec55b8d9a9043320454cd076ee86a5187248e8d8017b2ab7fffe34a4389",
+      "source_reference_sha256": "7db1293f563250835309d4103260ccce6d6c5f5b649844e71ee421d9e0c6eabf",
+      "source_assertions_sha256": "0e940da006098b74a5c83fccbbc7219b4e21fe6b50f6a6429679fc586a9bf15c",
+      "public_contract": "list_nums is a list of 2 to 100 integers, each between -1000000 and 1000000. Return the largest product of two neighboring positions in the given order. The list is not circular.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert adjacent_num_product([9,1,1,8]) == 9"
+      ],
+      "reference_version_requirement": "Preserve original adjacent-pair reference.",
+      "semantic_negative_control_requirement": "Also compare the last and first positions as a circular pair.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    },
+    {
+      "task_id": 302,
+      "root_id": "mbpp/302",
+      "source_text_sha256": "c6131bacf3cf1bdabd17fecfdd0315b9b13ee90602344c088684d257c9c054b1",
+      "source_reference_sha256": "882c9542e66ac8eca2cd0a3a7a3d86269ea49cdfe6da2884a34c379c00ef6684",
+      "source_assertions_sha256": "7ab76080e696df2a787bdaee4e292962aa08eddb64c2c9ad7f53b5fb96bd3a77",
+      "public_contract": "n is an integer with 1 <= n <= 2147483647. Return the value of its highest set bit, that is the largest power of two no greater than n. Return the value, not its position; zero and negative inputs are outside the domain.",
+      "public_assertion_indices": [
+        0
+      ],
+      "retained_private_assertion_indices": [
+        1,
+        2
+      ],
+      "added_private_assertions": [
+        "assert set_Bit_Number(1) == 1",
+        "assert set_Bit_Number(16) == 16"
+      ],
+      "reference_version_requirement": "Version reference to integer division n // 2 in both locations, preserving the algorithm.",
+      "semantic_negative_control_requirement": "Return the bit position rather than the bit value.",
+      "second_negative_control_requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite."
+    }
+  ],
+  "execution_authorized": false,
+  "resources": {
+    "model_calls": 0,
+    "model_tokens": 0,
+    "benchmark_reference_candidate_public_check_containment_starts": 0,
+    "paid_cost_usd": 0,
+    "source_spec_build_wall_seconds": 0.004450500011444092,
+    "python_cpu_seconds": 0.0038529999999999953
+  }
+}

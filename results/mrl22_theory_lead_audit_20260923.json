@@ -1,0 +1,40 @@
+{
+  "schema_version": "mrl22-theory-lead-audit-v1",
+  "reviewed_utc": "2026-09-23T07:57:49.764889+00:00",
+  "reviewer": "independent internal theory subagent",
+  "reviewed_path": "docs/mrl22_review_mrl23_20260923.md",
+  "reviewed_sha256": "29dbe41d416a95ab03a1fbb378dcb4ef06babf00000197367320c85a1c3818d2",
+  "scope": "Read-only scientific review of the final lead ruling; no simulation, fitting, model call, benchmark/reference/control execution or Git mutation.",
+  "decision": "accept_source_mock_preparation_only",
+  "blocking_findings": [],
+  "checked": [
+    "Conditional response-mean theta_H is distinguished from the finite R-draw sample contrast.",
+    "Mean interpretation requires consistency/state restoration, no interference and receiver-sampling assumptions; deterministic seed derivation does not prove independent random draws.",
+    "Full-branch slot inclusion is not a binary treatment propensity and does not require inverse-propensity weighting.",
+    "Primary reporting is descriptive; neither normal nor Hoeffding confidence intervals, efficacy or futility claims are released.",
+    "Hoeffding is not assumption-free; a fixed-roster prefix-law target can be defined without random task sampling, while wider task generalization needs additional justification.",
+    "No score-driven stopping is distinct from score-independent missingness; binary completion bounds require no missing-at-random assumption.",
+    "Failed initial generation leaves twelve continuation slots missing without fabricated answers, substitution, retry or root deletion.",
+    "Prospective task/domain/reference/private-suite adaptation is explicitly a new measurement version and does not rescore prior evidence.",
+    "Source/mock allowance is one existing CPU worker for 30 elapsed minutes with zero real model or benchmark/reference/control execution and no automatic renewal."
+  ],
+  "checked_arithmetic": {
+    "model_attempts": 130,
+    "reserved_completion_tokens": 66560,
+    "token_formula": "130 * 512",
+    "isolated_start_ceiling": 228,
+    "start_formula": "18 containment + 40 precollection instrument + 30 grading rechecks + 140 candidate",
+    "conditional_reduced_ceiling": 198,
+    "reduced_ceiling_condition": "Only if the connected path eliminates the 30 repeated private reference/control starts and safely reuses validated evidence under current bindings."
+  },
+  "nonblocking_clarification": {
+    "line": 34,
+    "suggestion": "Use Candidate private scoring starts only after collection is closed.",
+    "reason": "Distinguish candidate outcome grading from the reference/control instrument validation explicitly proposed before collection in item3.",
+    "status": "accepted clarification applied exactly; no additional review or execution"
+  },
+  "limitations": "Internal source/prose and arithmetic review only. Does not validate the future implementation, semantic completeness, operational attestation, family independence, interval calibration, or empirical efficacy.",
+  "previous_reviewed_sha256": "6a33d8984b48ff266a7c0b339824c3cce7b9669934c4a4f0806790dd3ace3e65",
+  "binding_refreshed_utc": "2026-09-23T07:59:14.579306+00:00",
+  "binding_refresh_note": "Refreshed after the lead changed Private scoring starts to Candidate private scoring starts; the lead reports no other judgment changes."
+}

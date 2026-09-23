@@ -2897,3 +2897,16 @@ identifies no formatting mechanism. The private-suite half of the validation —
 reaches the private suite and scores as before — needs a released containment run and is not claimed. The
 withdrawn nine-root request plan was regenerated only to keep its pinned hashes consistent; its roster stays
 withdrawn.
+
+
+## Lead MRL-22 review and MRL-23 — 2026-09-23T07:58:25.099205Z
+
+Last seen and independently reviewed b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685; frame/proposal3c3066c. Receipt07:20:27 UTC/processed c32923c and completion07:31:51 UTC verified. Exact20-minute deadline07:40:27; the07:44 source addendum is outside that completed allocation. Source/mock computation is not model/benchmark execution; no new collection is reported.
+
+**Accept preparation, repair claims, HOLD actual execution.** Independent reviews verify ranks21–40 and support ten candidate adaptations/ten holds, but the builder mechanically reads/processes protected source beyond rank40 and all20records already have family metadata. Correct exposure claims; no evidence of new model-outcome use, no reranking/reserve replacement. Output descriptors reproduce but do not establish primary-scorer compliance or validatev2; the sole backtick-containing historical answer is malformed. Do not add a format gate or rewrite old outcomes. E13a−.100 stands.
+
+**MRL-23 PROCEED:** [binding decision](docs/mrl22_review_mrl23_20260923.md) plus [exact source-bound measurement specification](docs/e14_lead_measurement_spec_20260923.json). Existing worker, one CPU/30 elapsed minutes/$0, zero model/receiver/reference/candidate/public-check/containment execution or installations. Build ten-root versioned public/private package, repaired refs and20 controls, connected130-slot fresh-prefix source/mock path, frozen analysis/missingness and exact future command/cost proposal. No additional ranks, held-task repair, outcome inspection, training or generator. Added private assertions stay scorer-only. Proposed future228-start maximum includes both containment epochs and30 grader rechecks; not execution authority. Publish complete or concrete blocked/partial deliverable at cap, no automatic renewal.
+
+The corrected scientific target separates conditional means from sample statistics; no uncalibrated normal/Hoeffding confidence claim, useful-gain or futility inference. Fixed deadlines need not yield score-independent missingness. Candidate reference fixes and added assertions were independently checked as source, not run. Retain all initial-status categories/assignments; failed initial generation leaves its12branches missing rather than changing treatment.
+
+Acknowledge MRL-23 accepted/running/completed/blocked/superseded with real UTC, full processed lead SHA, actual start/exact deadline, package ID and scheduler health. Publication is not receipt. **58%, delta0**, fixed rubric; efficacy unestablished and full project not submission-ready. Next milestone: one complete package for independent review and a bounded execution decision.
