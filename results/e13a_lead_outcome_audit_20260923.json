@@ -1,0 +1,722 @@
+{
+  "audit": "independent static/descriptive E13a outcome reconciliation",
+  "auditor": "lead evidence reviewer",
+  "created_utc": "2026-09-23T06:31:54.908992+00:00",
+  "scope": "Saved-artifact JSON arithmetic, hashes, AST parsing only. No experiment driver imports, benchmark compile/eval/exec, tests, model/receiver/reference/candidate/containment execution. Recorded grade validity is not independently re-executed. Lifecycle and freeze-commit history reviewed separately by lead.",
+  "inputs_sha256": {
+    "results/e13a_two_arm_20260923T061500Z/ARTIFACT_SHA256SUMS.json": "2f6e4ffe106e6fdb9691c8e5325806832b653bb739e4f6f2c6389aed470d663d",
+    "results/e13a_two_arm_20260923T061500Z/collect/manifest.json": "e04e9e58e5397f35e56887811f4055607dcb0995c847be717b0c043afd49453d",
+    "results/e13a_two_arm_20260923T061500Z/collect/completion.json": "a226a501a658a8a97534501086682ddf0417dc932559232690679a29398780ca",
+    "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+    "results/e13a_two_arm_20260923T061500Z/grade/grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+    "results/e13a_two_arm_20260923T061500Z/grade/summary.json": "93555fabf412450b359831f78b5298ee3191a4a93e04aa12873ef0a0b92ae9fb",
+    "results/e13a_two_arm_20260923T061500Z/grade/grading_attempts.jsonl": "cff016211ae93cd9c087738b14cce9dadb110f7d2ef8e444690ac976b92e9406",
+    "results/e13a_two_arm_20260923T061500Z/grade/execution_ledger.jsonl": "c68f5f75d374b6fe7a3e8d28a9e8fecc57550a5e9215c00fc1a3f02b38e4c245",
+    "results/e13a_two_arm_20260923T061500Z/analysis_report.json": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708",
+    "results/e13a_two_arm_20260923T061500Z/stage_clock.json": "0274332dc00d94ad7fd9a52126caf3e275f6a6bba1c92896221824a8faa5a563",
+    "experiments/landmark/e13a_stage.json": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348",
+    "results/e13a_request_plan_20260922.json": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7",
+    "experiments/landmark/e13a_release/release_manifest.json": "bf043846c93cc392be7398b5a87c984e83816b519f2920329ca518337c6b6297",
+    "results/e13a_static_description_20260923.json": "63459f5d231ed7b81576e207641e5bd4eac1281f831044c1dfea6a7b58c42830",
+    "scripts/e13a_static_description.py": "13354f3d2264b502e0a0357e6e9fe489702be21438aab86f9b6a3c65ddc779d0",
+    "docs/e13a_results_20260923.md": "0401400f381065d78eb69be1194b259fa47df9f1b5833afd239ddd5876984ba3"
+  },
+  "archive_declared_files": 165,
+  "archive_present_files": 164,
+  "archive_missing": {
+    "receiver/llama_server.log": "4575730fe1e126a8f3e151d6f69cb0fb8ef79645353de20203eef995b58784dc"
+  },
+  "archive_present_mismatches": [],
+  "checks": {
+    "all_declared_archive_files_present": false,
+    "all_present_archive_hashes_match": true,
+    "collect_hashes": true,
+    "collect_inventory": true,
+    "grade_hashes": true,
+    "grade_inventory": true,
+    "freeze18_bytes": true,
+    "execution13_bytes": true,
+    "stage_plan_release_hashes": true,
+    "package_hashes": true,
+    "60_calls_grades_assignments": true,
+    "call_order": true,
+    "all_call_grade_outputs_match": true,
+    "60_request_plan_matches": true,
+    "receiver_request_law": true,
+    "60_raw_artifacts_match": true,
+    "messages_equal_frozen_E12_requests": true,
+    "new_seeds_disjoint_by_root": true,
+    "all_grades_binary_complete": true,
+    "primary_and_LOO": true,
+    "analysis_input_and_slots": true,
+    "static13versus0": true,
+    "static_failures_all_zero_grade_zero_start": true,
+    "all_static_saved_cell_counts": true,
+    "usage_call_grade_analysis": true,
+    "46_prestart_results_matched": true,
+    "5_positive_5_negative_controls": true,
+    "cache_and_execution_totals": true,
+    "receiver_guard_record_passed": true
+  },
+  "failed_checks": [
+    "all_declared_archive_files_present"
+  ],
+  "assignments_calls_grades": {
+    "assigned": 60,
+    "calls": 60,
+    "grades": 60,
+    "missing": 0
+  },
+  "per_root": {
+    "mbpp/842": {
+      "R1": {
+        "n": 6,
+        "passes": 5
+      },
+      "FRESH": {
+        "n": 6,
+        "passes": 2
+      }
+    },
+    "mbpp/288": {
+      "R1": {
+        "n": 6,
+        "passes": 2
+      },
+      "FRESH": {
+        "n": 6,
+        "passes": 3
+      }
+    },
+    "mbpp/863": {
+      "R1": {
+        "n": 6,
+        "passes": 2
+      },
+      "FRESH": {
+        "n": 6,
+        "passes": 6
+      }
+    },
+    "mbpp/966": {
+      "R1": {
+        "n": 6,
+        "passes": 0
+      },
+      "FRESH": {
+        "n": 6,
+        "passes": 1
+      }
+    },
+    "mbpp/652": {
+      "R1": {
+        "n": 6,
+        "passes": 0
+      },
+      "FRESH": {
+        "n": 6,
+        "passes": 0
+      }
+    }
+  },
+  "per_root_contrasts": {
+    "mbpp/842": 0.5,
+    "mbpp/288": -0.16666666666666666,
+    "mbpp/863": -0.6666666666666666,
+    "mbpp/966": -0.16666666666666666,
+    "mbpp/652": 0.0
+  },
+  "equally_weighted_contrast": -0.09999999999999999,
+  "leave_one_root_out": {
+    "mbpp/842": -0.25,
+    "mbpp/288": -0.08333333333333331,
+    "mbpp/863": 0.04166666666666667,
+    "mbpp/966": -0.08333333333333331,
+    "mbpp/652": -0.12499999999999999
+  },
+  "static_shape_counts": {
+    "R1": {
+      "parses": 17,
+      "parse_fail": 12,
+      "extract_fail": 1
+    },
+    "FRESH": {
+      "parses": 30
+    }
+  },
+  "static_slot_details": [
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 6,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 0,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 4,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 0,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 6,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 5,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 5,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 7,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 6,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 3,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 0,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 3,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 1,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 1,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 1,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 7,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 2,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 6,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "R1",
+      "replicate": 6,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "FRESH",
+      "replicate": 1,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "R1",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 0,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 7,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 3,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 7,
+      "static_failure": "extract_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "R1",
+      "replicate": 7,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "FRESH",
+      "replicate": 0,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 2,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/288",
+      "arm": "R1",
+      "replicate": 2,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/863",
+      "arm": "FRESH",
+      "replicate": 4,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/966",
+      "arm": "R1",
+      "replicate": 3,
+      "static_failure": "parse_fail",
+      "outcome": 0,
+      "executor_starts": 0
+    },
+    {
+      "root_id": "mbpp/652",
+      "arm": "FRESH",
+      "replicate": 5,
+      "static_failure": null,
+      "outcome": 0,
+      "executor_starts": 1
+    },
+    {
+      "root_id": "mbpp/842",
+      "arm": "FRESH",
+      "replicate": 1,
+      "static_failure": null,
+      "outcome": 1,
+      "executor_starts": 1
+    }
+  ],
+  "usage_by_arm": {
+    "R1": {
+      "prompt_tokens": 12804,
+      "completion_tokens": 5018,
+      "seconds": 108.15378111973405
+    },
+    "FRESH": {
+      "prompt_tokens": 6174,
+      "completion_tokens": 1388,
+      "seconds": 31.90025537740439
+    }
+  },
+  "token_totals": {
+    "prompt_tokens": 18978,
+    "completion_tokens": 6406
+  },
+  "unknown_token_records": 0,
+  "reserved_completion_tokens": 30720,
+  "execution_start_receipts": {
+    "reference": 5,
+    "negative_control": 5,
+    "candidate": 36
+  },
+  "containment_recorded_starts": 9,
+  "total_isolated_recorded_starts": 55,
+  "cache_hits": 13,
+  "candidate_seconds_known_sum": 0.861249,
+  "control_reference_seconds_known_sum": 0.25047808326780796,
+  "http_collection_recorded": {
+    "generation_attempts": 60,
+    "metadata_attempts": 29,
+    "successes": 89,
+    "errors": 0,
+    "endpoints": {
+      "/props": 16,
+      "/slots": 13,
+      "/v1/chat/completions": 60
+    },
+    "generation_cap": 60,
+    "metadata_cap": 31,
+    "metadata_timeout_seconds": 10,
+    "scope": "collection only; excludes separately capped setup metadata/template requests",
+    "status": "http_boundary_counted"
+  },
+  "stage_clock_spent_recorded": {
+    "analysis": 0.042022207751870155,
+    "collection": 142.0739362500608,
+    "private_grading": 1.6172284167259932,
+    "setup": 4.538668998517096
+  },
+  "setup_wallspan_seconds": 64.737475,
+  "outer_initialization_to_analysis_end_seconds": 249.007588,
+  "findings": [
+    {
+      "severity": "delivery",
+      "finding": "Checksum manifest declares165 files; receiver/llama_server.log is absent locally.164 available hashes match. Preserve manifest and obtain exact missing bytes.",
+      "missing": {
+        "receiver/llama_server.log": "4575730fe1e126a8f3e151d6f69cb0fb8ef79645353de20203eef995b58784dc"
+      }
+    },
+    {
+      "severity": "interpretation",
+      "finding": "Replace helped/hurt clearly with observed higher/lower pass fraction; six draws do not establish expected benefit or harm."
+    },
+    {
+      "severity": "interpretation",
+      "finding": "Observed0/6 or6/6 is sample saturation, not proof of structural floor/ceiling; 652 can express nothing is unsupported."
+    },
+    {
+      "severity": "measurement",
+      "finding": "Nonconstant text/scores refute a constant observed record only; they do not establish verifier discrimination or prompt-policy utility."
+    },
+    {
+      "severity": "measurement",
+      "finding": "13 R1 static failures include extraction ambiguity and Python syntax failure; not all are multiple-fence presentation errors. No causal solution-quality decomposition."
+    },
+    {
+      "severity": "accounting",
+      "finding": "Setup command-time sum differs from initialization-to-setup-complete wallspan. Lifecycle reviewer must reconcile required inclusion of setup/refreeze gaps.",
+      "recorded_setup_seconds": 4.538668998517096,
+      "setup_wallspan_seconds": 64.737475
+    }
+  ],
+  "ruling": "All-assigned observed frozen-endpoint contrast -0.10 and saved descriptive calculations accepted subject to exact checks; full165-file delivery not verified because one log is missing. No population/policy/mechanism/futility claim. Lifecycle deviations require separate disposition without editing originals.",
+  "audit_wall_seconds": 0.038759250193834305,
+  "audit_cpu_seconds": 0.027839999999999997,
+  "audit_resource_cost": {
+    "model_calls": 0,
+    "candidate_executions": 0,
+    "reference_executions": 0,
+    "containment_executions": 0,
+    "paid_usd": 0
+  }
+}

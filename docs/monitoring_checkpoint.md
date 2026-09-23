@@ -1,5 +1,18 @@
 # Hourly research checkpoint
 
+## E13a finite result reviewed; archive closure and MRL-21 design — 2026-09-23T06:35:02.498946Z
+
+**58%, change 0 percentage points**, unchanged fixed rubric. E13a is completed development execution on five reused checkpoints, not independent policy validation. Its saved endpoint result is negative: R1 9/30 versus FRESH 12/30, an equally weighted −0.100. Efficacy remains unestablished and the full project is not submission-ready.
+
+Last seen worker **56e05306d4562fdc48270952b67457dc26079a6d**; independently checked outcome delivery **297749d9a1012782c9387dab108e75882caae753**, freeze erratum429c59d and static description56e0530. MRL-20 acknowledgement at 05:53:30 UTC processed 5a34153; completed delivery at 06:21:09 UTC. Publication, receipt and completed execution records are verified separately. All 60 call/grade/request slots reconcile;164 delivered hashes match, but one listed receiver log and the original freeze-object archive remain missing. The original dispatch commit 76d958e was rebased to d7382cc; recorded source-content matches are not full-tree identity. Complete reproducibility acceptance remains open. No open PRs; issues2–5 reviewed. No repeated recovery or duplicate worker.
+
+Independent static review separates 1 extraction rejection from 12 Python syntax failures in R1, versus 0 in FRESH. The all-assigned joint table retains every zero and does not condition success on parseability. Diagnostic-report echoes are not established correct solutions; no format-mediated effect or conditional sign is identified. Dropping 863 gives +1/24 but changes the target; observed 0/6 and 6/6 are not structural response limits. The [current judgment](e13a_lead_judgment_20260923.md) preserves E12/E13 raw records and corrects the interpretation.
+
+Recorded resource use: 60 calls, 18,978 prompt + 6,406 completion tokens, zero unknown usage, 30,720 reserved tokens, 55 isolated starts (9 containment + 10 reference/control + 36 candidate), $0. Setup wall 64.737475s (not 4.538669 active-command seconds), collection 142.073936s, grading 1.617228s, analysis 0.042022s, outer 249.007588s—all within declared caps. Saved receiver cleanup observes PID 47752 absent at 06:19:13.933681 UTC; no exit code, no lead live-host observation. Peer communication remains worker-reported.
+
+**MRL-21 PROCEED, source/archive/design only:** existing worker, one CPU, 20 elapsed minutes, $0, zero model/receiver/benchmark/containment execution or installations. Restore exact missing log and original freeze-object evidence additively; correct reporting; deliver one exact information-matched same-prefix neutral-versus-directed proposal with common terminal-output contract, new predeclared development roster and untouched future policy split. No same-five tuning/rerun or 178-record bulk review. New collection, E13b, public supplement and generators remain held. Publication of MRL-21 is not acknowledgement. Next milestone: archive closure and reviewable prospective design. Lead work integrated the manuscript and independently checked saved artifacts; no new experiment or test-count credit.
+
+
 ## MRL-19 connected path repaired; MRL-20 conditional bundle — 2026-09-23T05:54:50.273755Z
 
 **58%, change 0 percentage points**, unchanged fixed rubric. New source/mock integration supplies no efficacy or independent-policy evidence; the full project remains not submission-ready. E12's independently accepted negative result is preserved.

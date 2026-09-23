@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points** since the preceding58% check. MRL-19 connected-path/source repairs add no empirical credit and do not change component weights or credit. E12's negative development evidence remains accepted. Efficacy is unestablished, independent policy validation remains0, and the full project is not submission-ready. [Current review and conditional MRL-20](mrl19_review_mrl20_20260923.md); [component calculation](progress_current.json). A tested execution path is separate from a completed experiment. Earlier dated checkpoints retain their historical numbers.
+**58%, change0percentage points.** E13a's completed60-call follow-up at five reused development checkpoints is independently reconciled at the saved-endpoint level: R1 9/30 versus FRESH12/30. This falls within existing development/manuscript credit; no ranking, independent-policy or final measurement/frame milestone is closed. One manifest-listed receiver log and the original rebased freeze archive remain pending. The fixed denominator and all component credit are unchanged. Efficacy is unestablished and the full project is not submission-ready. [Current judgment and MRL-21](e13a_lead_judgment_20260923.md); [component calculation](progress_current.json). Earlier checkpoints retain historical values.
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

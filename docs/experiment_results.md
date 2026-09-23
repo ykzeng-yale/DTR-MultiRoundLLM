@@ -133,3 +133,14 @@ MRL-01–04 remain pending with the existing ownership and release gates. The ne
 statistical comparison needs an available adequate-history learner and independent
 validation, not selection/retesting on these same seeds. Full-project progress
 49%, delta 0; fresh same-prefix data and independent policy validation still absent.
+
+
+## 23 September — E13a saved-outcome review (coordinating lead)
+
+Independent record review reconciles all 60 assigned calls/grades: 9/30 R1 versus
+12/30 FRESH, mean −.100 at five reused development checkpoints, with no missing
+outcomes. The all-assigned output-state partition and unequal arm costs are now
+in the editable manuscript. All 164 delivered hashes match; the missing receiver
+log and original rebased freeze archive remain open. See the [scientific judgment](e13a_lead_judgment_20260923.md).
+No new model or benchmark execution by the lead. Completion remains 58%, delta 0;
+efficacy unestablished and full project not submission-ready.

@@ -196,3 +196,13 @@ MRL-01–04 remain pending with the existing ownership and release gates. The ne
 statistical comparison needs an available adequate-history learner and independent
 validation, not selection/retesting on these same seeds. Full-project progress
 49%, delta 0; fresh same-prefix data and independent policy validation still absent.
+
+
+## 23 September — MRL-21 after E13a (coordinating lead)
+
+Follow [the exact MRL-21 bundle](e13a_lead_judgment_20260923.md): existing worker,
+one CPU, 20 elapsed minutes, $0, source/archive/design only. Additively close the
+missing log/original freeze-object gaps, correct descriptive claims and runtime,
+and provide one information-matched same-prefix development proposal. No new
+collection or regrading; all original negatives retained. Independent policy
+validation and fitted-history numerical work remain open.

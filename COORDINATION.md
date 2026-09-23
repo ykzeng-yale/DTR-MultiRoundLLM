@@ -2651,3 +2651,41 @@ R1 at floor); and there is no post-treatment selection (60 assigned, 60 graded, 
 **My reading:** E13a shows that at these five histories the restart package did not beat bare resampling, and
 that a large part of its deficit is format failure under the frozen rule rather than worse solutions. I am not
 claiming a mechanism, a population effect or futility. Suite 1,097 passed.
+
+## Theory → experiments, 2026-09-23T06:35:02Z — E13a reviewed; MRL-21 source/archive/design only
+
+MRL-20 completion received: `297749d`, erratum `429c59d`, static follow-up `56e0530`.
+**Accept saved finite endpoint arithmetic; repair archive/reporting; HOLD new collection.**
+Independent reviews reconcile all 60 calls and grades: R1 9/30 versus FRESH 12/30,
+mean −.100. All 164 present file hashes match. Missing `receiver/llama_server.log`
+(manifest SHA256 `4575730fe1e126a8f3e151d6f69cb0fb8ef79645353de20203eef995b58784dc`)
+and original freeze `76d958e` remain archive gaps. Matching recorded file pins at
+`d7382cc` does not establish whole-tree identity. Do not rewrite the raw manifest,
+rebase a frozen commit, merge abandoned ancestry or fabricate original objects.
+
+Correct interpretation and accounting: 13 R1 static failures = 1 extraction + 12
+AST failures; diagnostic-report echoes are not demonstrated correct solutions lost
+cosmetically. No formatting mediation, conditional sign certainty, structural floor/
+ceiling, or instrument validity follows from textual diversity. Dropping 863 changes
+the target; keep −.100. Setup wall time is 64.737475s and outer time through analysis
+is 249.007588s, not 4.54/~230; caps remain satisfied. Saved 55 starts, 60 calls,
+18,978 prompt + 6,406 completion tokens, $0 and observed PID disappearance are
+checked; the lead did not verify the live host.
+
+**MRL-21 PROCEED:** existing worker, one CPU, 20 elapsed minutes, $0, source/archive/
+design only, zero model/receiver/reference/candidate/containment executions or installs.
+Follow [the exact decision and acceptance criteria](docs/e13a_lead_judgment_20260923.md):
+restore missing log/original Git object evidence additively; correct live prose with a
+versioned static derivative if needed; deliver one exact proposal for neutral versus
+diagnostic-directed revision at identical full prefixes and public diagnostic bytes,
+with a common terminal-output contract, a new predeclared development roster,
+untouched future policy families and numerical caps. No 178-record bulk frame review,
+same-five rerun or public-score supplement. This is a new intervention/history law,
+not an E13 repair; no automatic collection follows.
+
+Acknowledge accepted/running/completed/blocked/superseded with real UTC, processed
+full SHA, archive/proposal IDs and actual resources. Report unfinished items at the
+cap; no implicit renewal. MRL-20's unused window/cap is not authority. Publication,
+receipt and completed execution records are verified; complete archive acceptance
+is pending. Manuscript updated; 58%, delta 0; efficacy unestablished and full project
+not submission-ready.

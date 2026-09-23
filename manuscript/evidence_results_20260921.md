@@ -1,9 +1,9 @@
 # Diagnostic evidence and limits of adaptive-prompt claims
 
-**Editable results and discussion section, 21 September 2026; E11/E12 status updated 22 September.** This section
+**Editable results and discussion section, 21 September 2026; E11/E12/E13a status updated 23 September.** This section
 updates the interpretation of the dated research PDFs and accompanies the
 [landmark methods](landmark_methods_20260920.md). It integrates the historical corpus diagnostics, the subsequently collected
-seven-task development studies and the prospective E12 contract. No additional receiver data were generated for this
+seven-task development studies, completed E12 and the fixed-checkpoint E13a follow-up. No additional receiver data were generated for this
 manuscript integration. A complete manuscript and independent prospective policy
 validation remain pending.
 
@@ -321,7 +321,74 @@ Root 863 illustrates the distinction. The initial program failed a valid public 
 
 The batch used 53,670 prompt and 12,198 completion tokens, with zero unknown usage, 314.258 seconds of collection, and 117 public/private execution starts. The [independent review](../docs/e12_lead_judgment_20260923.md) and [record-level reconciliation](../results/e12_outcome_lead_reconciliation_20260923.json) verify the saved evidence without new model execution or regrading. Neither the unresolved family label nor the provisional duplicate screen supports population inference. The negative observed primary contrast is not equivalence or proof that predictable conditional effects are absent. E11's null remains intact; the future five-point usefulness criterion was not an E12 stopping threshold.
 
-A public-fail-gated R1 rule was selected after inspecting E12 and has apparent in-sample value 0.750 versus STOP's 0.714. This is development selection on the same outcomes, not policy validation. A proposed five-checkpoint R1-versus-FRESH follow-up would compare diagnostic-plus-instruction restart with bare resampling. Its source preparation is permitted, but execution and a larger policy study remain held pending their separate committed contracts.
+A public-fail-gated R1 rule was selected after inspecting E12 and has apparent in-sample value 0.750 versus STOP's 0.714. This is development selection on the same outcomes, not policy validation. The subsequent E13a follow-up compared diagnostic-plus-instruction restart with bare resampling at the five E12 histories with a public failure. Its fixed-checkpoint findings are reported next; this does not evaluate the selected rule on independent histories.
+
+## Fixed-checkpoint E13a restart-package follow-up
+
+E13a collected six fresh continuations per arm at five already inspected E12
+checkpoints under the separately frozen MRL-20 contract. R1 retained the original
+task and public diagnostics but removed the previous answer; FRESH retained only
+the task and its public information. The instructions also differed. Thus the
+contrast concerns these complete restart packages, not the diagnostic alone or
+information-matched instruction choice. Both arms were executed at every checkpoint;
+the balanced randomized order is scheduling, not an action-selection propensity.
+These development-selected histories are not an untouched policy-evaluation set.
+
+All 60 assigned outputs had frozen grades. R1 passed on 9/30 and FRESH on 12/30,
+for an equally weighted five-checkpoint difference of −0.100. The checkpoint counts
+were 5/6 versus 2/6 (842), 2/6 versus 3/6 (288), 2/6 versus 6/6 (863), 0/6 versus
+1/6 (966), and 0/6 versus 0/6 (652). These are observed finite-draw contrasts;
+no population interval, conditional-mean sign, equivalence, or useful-gain futility
+claim follows. Removing 863 changes the mean to +1/24, but also changes the target;
+all five checkpoints remain in the primary result. Observed 0/6 and 6/6 cells do
+not establish structural response floors or ceilings.
+
+The saved outputs support the following descriptive partition. Every denominator
+is all 30 assigned outputs in that arm, so this table does not condition the
+success contrast on a post-treatment parse result.
+
+| Joint recorded state | R1 | FRESH |
+|---|---:|---:|
+| Primary-score success | 9/30 | 12/30 |
+| Extraction or Python syntax failure | 13/30 | 0/30 |
+| Extractable, parseable output with primary-score failure | 8/30 | 18/30 |
+
+The 13 static failures are not 13 extractor rejections: the grader records one
+extraction rejection, and the broader static check also includes Python parsing.
+All six R1 outputs at 966 failed to produce parseable Python; diagnostic-report
+echoes are among the saved failures. They are not established to be semantically
+correct solutions rejected by a cosmetic convention. This partition neither
+identifies mediation nor estimates how the score would change after repairing
+formatting. The original extraction rule and all zero grades remain unchanged.
+Textual diversity and a nonconstant score do not establish the sensitivity or
+semantic completeness of the thin private suites.
+
+R1 used 12,804 prompt and 5,018 completion tokens; FRESH used 6,174 and 1,388,
+respectively. Both received a 512-completion-token ceiling per call, but actual
+costs were unequal. The study used 60 calls, 30,720 reserved completion tokens,
+55 isolated starts (9 containment, 10 reference/control, 36 candidate), and $0;
+unknown token/start counts were zero. The setup wall interval including gaps was
+64.737 seconds; the 4.539-second active-command sum is a distinct quantity.
+Collection took 142.074 seconds, grading 1.617 seconds, and supervised analysis
+0.042 seconds. The saved shutdown record observes the owned PID absent; the lead
+did not independently observe the live host.
+
+[Independent review](../docs/e13a_lead_judgment_20260923.md) checks the saved outcomes,
+request bindings, accounting and interpretation without regrading. Complete
+archive acceptance remains pending: 164 delivered file hashes match, but the
+165-file manifest names a missing receiver log; the recorded execution commit
+was rebased after dispatch and requires an additive object archive. Matching
+recorded source hashes to the published replacement does not establish identity
+of the entire original commit/tree. These provenance limitations accompany the
+finite result; they are not repaired by editing its immutable manifest.
+
+The next substantive empirical question remains whether public history supports
+useful prompt choice. Any follow-up with a common terminal-output instruction
+must be frozen as a new intervention law, preserving E13a rather than relabeling
+it as corrected data. An information-matched same-prefix comparison on a new
+predeclared development roster would address that question more directly than
+repeatedly tuning these five checkpoints. Independent evaluation of a locked
+public-history policy remains a separate unfinished milestone.
 
 ## Numerical traceability of this section
 
