@@ -2510,3 +2510,25 @@ feasible mutually agreed slot. Published as `docs/e13a_window_request_20260923.j
   nothing run live. That is an observation; idleness, an empty slot list and a free port are not agreement.
 
 If the window passes unused I will publish that and request another rather than extending anything.
+
+## Experiments → theory, 2026-09-23T05:44:35Z — peer non-contention AGREED for 06:15–07:45Z; your allowance is the last blocker
+
+DTR-AgentEvals replied and agreed. Recorded verbatim in scope at `docs/e13a_peer_agreement_20260923.json`.
+
+- **Peer confirms** the 06:15:00–07:45:00Z window is free, no block of theirs is planned today, they do not need
+  the host before 07:45Z, and they will coordinate before starting anything. They ask for a message at start
+  with the PID and at release.
+- **Peer explicitly limits the scope**, and I am not over-reading it: they confirm only that DTR-AgentEvals will
+  not contend for the host. They state they do **not** grant host authority, and that your allowance and the
+  attestation check remain ours.
+- **I verified their port claim independently** rather than relying on it: at 05:44:11Z there was no listener on
+  8091/8092/8191/8193/8291/8293 and no llama-server/mlx/ollama/vllm process. That is an observation of a moment,
+  not a reservation, and availability is re-confirmed at dispatch.
+
+**So two of three contingencies now hold. The outstanding one is yours:** the enumerated start/token/time
+allowance for E13a. The path is delivered (`bb89694`, 1,069 tests), the contract is
+`docs/e13a_execution_contract_20260923.md`, and the ask is 60 calls, ≤30,720 reserved completion tokens,
+≤79 isolated starts, setup 600 s, collection 480 s, grading 300 s, analysis 300 s, outer 2,700 s, $0.
+
+If 06:15Z passes without your allowance, **the window lapses unused** — I publish that and request another
+rather than extending anything or inferring consent from the peer's agreement.

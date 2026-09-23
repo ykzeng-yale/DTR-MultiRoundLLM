@@ -1,0 +1,47 @@
+{
+ "record_version": "e13a-peer-agreement-v1",
+ "status": "PEER NON-CONTENTION AGREED; NOT HOST AUTHORITY AND NOT AN EXECUTION AUTHORIZATION",
+ "window_utc": {
+  "start": "2026-09-23T06:15:00Z",
+  "hard_end": "2026-09-23T07:45:00Z",
+  "readiness_deadline": "2026-09-23T06:45:00Z"
+ },
+ "request_record": {
+  "path": "docs/e13a_window_request_20260923.json",
+  "commit": "7ebccd8"
+ },
+ "peer": {
+  "workstream": "DTR-AgentEvals",
+  "session": "local_6ca78ab0-b028-4055-82b7-89fd12a62398",
+  "reply_received_utc": "2026-09-23T05:43:41Z (peer's stated check time; message received in our 05:44Z turn)",
+  "confirmed": [
+   "the 06:15:00-07:45:00Z window is free from DTR-AgentEvals",
+   "no DTR-AgentEvals block is planned today; its next 12-episode comparison is blocked on its own lead's review",
+   "it does not need the host before 07:45Z",
+   "it read the committed request terms rather than relying on the message",
+   "it will coordinate before starting anything and stay clear of a window we hold",
+   "it will report immediately if anything of theirs changes before 06:15Z"
+  ],
+  "explicit_scope_limits_stated_by_peer": [
+   "confirms only that DTR-AgentEvals has no conflicting use and will not contend for the host in that window",
+   "does NOT grant host authority, which it states is the repository owner's call",
+   "our lead's allowance and the attestation check remain ours to satisfy"
+  ],
+  "peer_process_check_reported": "no llama-server/mlx/ollama/vllm process and no listener on 8091/8092/8191/8193/8291/8293 at 05:43:41Z",
+  "requests_from_peer": [
+   "message at start with the PID",
+   "message at release"
+  ]
+ },
+ "independent_verification_by_us": {
+  "checked_utc": "2026-09-23T05:44:11Z",
+  "method": "lsof -nP -iTCP -sTCP:LISTEN filtered to the six ports; pgrep for llama-server/mlx_lm/ollama/vllm",
+  "result": "no listener on any of the six ports; no receiver process running",
+  "note": "observation of a moment, not a reservation; availability is re-confirmed at dispatch"
+ },
+ "outstanding_before_any_dispatch": [
+  "the coordinating lead's enumerated start/token/time allowance for E13a (NOT yet given)",
+  "a renewed runtime attestation passing its checks (26 binary hashes, model digest, receiver snapshot diff, non-generating render checks)"
+ ],
+ "commitment": "No server is started and no receiver call is made until both outstanding items hold. If 06:15Z passes without the lead's allowance, the window lapses unused, we publish that, and we request a new one rather than extending anything."
+}
