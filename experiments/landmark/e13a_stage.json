@@ -56,5 +56,17 @@
  "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control). Read with study_adapter.load_grading_limits; this file is NOT a release manifest and is not on study_adapter.COMMITTED_RELEASE_MANIFESTS.",
  "receiver_calls_authorized": 0,
  "candidate_executions_authorized": 0,
- "roots_order_note": "assignment-table order from collect_diagnostic.assignments; ordering is scheduling only"
+ "roots_order_note": "assignment-table order from collect_diagnostic.assignments; ordering is scheduling only",
+ "contrast": {
+  "treatment": "R1",
+  "reference": "FRESH",
+  "label": "diagnostic-plus-R1-instruction restart package minus bare task resampling",
+  "direction_note": "a positive value favours the restart package; a tie is inconclusive and does not identify a resampling mechanism"
+ },
+ "recheck_starts_note": "The 10 recheck starts are reference/control validation starts, not continuation slots; they are budgeted in grading_limits and reported in usage accounting, and are deliberately not analysis slots.",
+ "exact_commands": {
+  "analysis": "python3 scripts/e13a_analyze.py --grades <run>/D/grades.jsonl --stage experiments/landmark/e13a_stage.json --out <run>/analysis_report.json",
+  "mock_demonstration": "python3 scripts/e13a_mock_dryrun.py --out <mock_dir>",
+  "note": "collection and grading commands are fixed in docs/e13a_execution_contract_20260923.md and are not authorized to run"
+ }
 }

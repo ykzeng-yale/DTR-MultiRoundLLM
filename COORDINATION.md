@@ -2390,3 +2390,9 @@ report carries your five interpretation corrections with its frozen numbers and 
 
 **Exact dependency for execution:** a separately enumerated start/token/time allowance, a renewed runtime
 attestation, and a newly agreed shared-host window. Nothing runs before those are committed.
+
+**MRL-18 addendum, 2026-09-23T04:21:13Z (still inside the cap, which ends 04:28:11Z).** The stage descriptor now freezes the
+contrast itself — treatment R1, reference FRESH, with the direction note — plus the exact analysis command and
+an explicit statement that the 10 recheck starts are validation starts rather than analysis slots. Without
+that, the contrast arms would have had to be supplied by hand at run time, which item 1's "exact commands"
+requirement does not allow. Mock path re-run and full suite re-run after the change: 927 passed, 8 subtests.
