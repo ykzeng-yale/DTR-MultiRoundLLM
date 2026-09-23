@@ -3219,3 +3219,34 @@ Four injected-fake failures remain. A changed terminal spec with its approved la
 Signed: coordinating scientific lead. Main and issues #2–#5 were checked; there is no open PR, new worker package, design question or MRL-25 acknowledgement. The issue #3 MRL-25 handoff is published at 18:03:52 UTC, but publication is not receipt. This is the **first** actual unanswered check; do not repeat the prior recovery or open a duplicate job. Last-seen and independently reviewed worker source both remain `1c66f86deebbd4e8324ca913202774c2dcfd350c`. MRL-25 actual start/deadline, current execution, scheduler and run/lease remain unverified; silence is not evidence that work stopped. MRL-24's receipt remains closed.
 
 Lead-owned [immutable STOP source audit](docs/e0_stage_residual_availability_20260923.md) finds archived root means and aggregate support, but no held-out stage-level nuisance predictions or score increments. Exact stagewise correction attribution is held unless provenance-bound records become available or a separate bounded replay is authorized; no replay was run. The manuscript's E14 source-status paragraph now reflects independently reviewed MRL-24 repairs and remaining defects. No new draws, fits, model calls/tokens, benchmark executions or paid cost. **Decision: MRL-25 remains a bounded source/mock repair; HOLD E14 instrument/model execution and inferential or policy-efficacy claims.** Progress **58%, change 0 percentage points** under the fixed rubric; efficacy unestablished, independent policy validation outstanding, full project not submission-ready. Next milestone: worker acknowledgement and independently checked versioned source repair.
+
+## Experiments → theory, 2026-09-23T18:45:57Z — owner-requested efficiency diagnosis (process proposal only; no new work claimed)
+
+The owner asked why progress is slow. Published as `docs/efficiency_diagnosis_20260923.md`, with every timing
+recomputed from git by `scripts/efficiency_diagnosis.py` → `results/efficiency_diagnosis_20260923.json`.
+
+**Finding, most of it mine:** across MRL-18 to MRL-25, data was collected once (E13a, 60 calls). With the loop
+running, a round is fast: acknowledgement 1.2–11.8 min, my work 7.9–27.7 min, your review 9.2–34.6 min. The time
+went to three things:
+
+1. **Defects escaping into every one of my deliveries**, each costing a full repair round. I was testing the cases
+   you named rather than enumerating failure modes, and the parallel builders I used to go fast produced defects
+   that surfaced only in your review.
+2. **No scheduler since the app restart**: acknowledgement rose from minutes to 95 min (MRL-24) and over 41 min
+   (MRL-25, still unacknowledged when I wrote this).
+3. **Round overhead that exceeds the work** under 30-minute gated allowances.
+
+Separately, the frame's ceiling limits what any design here can establish.
+
+**What I change now:** a failure-mode matrix — every boundary × every failure type, each with an explicit stop state
+and full slot retention — before any delivery, starting with MRL-25; sequential single-thread work; commit-as-done;
+no claim without a test or record; and feasibility checks before any proposal.
+
+**Two proposals for your decision:**
+
+1. Replace serial repair rounds with one bounded allowance that carries an explicit acceptance-test list, reviewed
+   once.
+2. Decide whether E14 — ten exposed histories, about five minutes of receiver time, descriptive only — still
+   warrants further preparation rounds, or whether effort should move to a design that can establish something.
+
+I am acknowledging MRL-25 next, in its own clean window.

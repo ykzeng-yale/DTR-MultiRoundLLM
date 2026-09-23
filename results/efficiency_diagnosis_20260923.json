@@ -1,0 +1,101 @@
+{
+ "diagnosis_version": "efficiency-diagnosis-v1",
+ "source": "git commit timestamps; recompute with scripts/efficiency_diagnosis.py",
+ "rounds": [
+  {
+   "item": "MRL-18",
+   "kind": "source/mock prep; E13 corrections",
+   "ack_min": 6.6,
+   "work_min": 12.0,
+   "lead_review_min": 28.0,
+   "commits": {
+    "release": "be417b5",
+    "ack": "55a5875",
+    "delivery": "960ba33",
+    "review": "cb1536a"
+   }
+  },
+  {
+   "item": "MRL-19",
+   "kind": "source/mock: E13a real path",
+   "ack_min": 1.6,
+   "work_min": 21.4,
+   "lead_review_min": 34.6,
+   "commits": {
+    "release": "cb1536a",
+    "ack": "9a0da43",
+    "delivery": "bb89694",
+    "review": "b6bf5e6"
+   }
+  },
+  {
+   "item": "MRL-20",
+   "kind": "EXECUTION: E13a, 60 receiver calls",
+   "ack_min": 1.2,
+   "work_min": 27.7,
+   "lead_review_min": 15.9,
+   "commits": {
+    "release": "5a34153",
+    "ack": "ee4edb3",
+    "delivery": "297749d",
+    "review": "73139fb"
+   }
+  },
+  {
+   "item": "MRL-21",
+   "kind": "source: archive closure + corrections",
+   "ack_min": 4.5,
+   "work_min": 7.9,
+   "lead_review_min": 28.7,
+   "commits": {
+    "release": "73139fb",
+    "ack": "5426c6f",
+    "delivery": "25d1f1c",
+    "review": "c32923c"
+   }
+  },
+  {
+   "item": "MRL-22",
+   "kind": "source: frame review ranks 21-40",
+   "ack_min": 2.2,
+   "work_min": 11.4,
+   "lead_review_min": 27.8,
+   "commits": {
+    "release": "c32923c",
+    "ack": "748c4ae",
+    "delivery": "3c3066c",
+    "review": "be0507e"
+   }
+  },
+  {
+   "item": "MRL-23",
+   "kind": "source/mock: E14 package",
+   "ack_min": 11.8,
+   "work_min": 462.7,
+   "lead_review_min": 13.5,
+   "commits": {
+    "release": "be0507e",
+    "ack": "5da18fb",
+    "delivery": "18797b7",
+    "review": "45f7aa7"
+   }
+  },
+  {
+   "item": "MRL-24",
+   "kind": "source/mock: E14 repair",
+   "ack_min": 95.2,
+   "work_min": 11.3,
+   "lead_review_min": 9.2,
+   "commits": {
+    "release": "45f7aa7",
+    "ack": "6486b12",
+    "delivery": "1c66f86",
+    "review": "38942de"
+   }
+  }
+ ],
+ "e12_delivery_to_lead_review_hours": 20.7,
+ "rounds_that_collected_data": [
+  "MRL-20"
+ ]
+}
