@@ -57,7 +57,8 @@ def test_v1_package_is_preserved_and_still_carries_its_known_defect():
 def test_connected_path_accepts_the_real_v2_package(tmp_path):
     tasks = [json.loads(x) for x in (V2 / "tasks.jsonl").read_text().splitlines() if x.strip()]
     inv = {"complete": True, "roots": {t["root_id"]: {"labels": [], "numeric": []} for t in tasks}}
-    binding = cm.load_release(V2, ROOT / "docs/e14_lead_measurement_spec_20260923.json")
+    binding = cm.load_release(V2, ROOT / "docs/e14_lead_measurement_spec_20260923.json",
+                              cm.committed_manifest_sha256())
     slots, _ = cm.plan_slots(binding, inv)
     assert len(slots) == 130
 

@@ -1,58 +1,78 @@
 #!/usr/bin/env python3
-"""E14 connected SOURCE/MOCK path, repaired under MRL-24 (lead 45f7aa7): criteria 1-3.
+"""E14 connected SOURCE/MOCK path, version 3 (MRL-25, lead 38942de). Version 2 was reviewed at 1c66f86.
 
 Evidence class: source/mock only. Transport, public checker and private scorer are INJECTED fakes in every test;
 nothing here calls a receiver, runs a reference, control or candidate program, or starts a container. A passed
 mock is not execution evidence and not efficacy evidence.
 
-Repairs relative to scripts/e14_mock_path.py (MRL-23 partial, preserved unchanged at 18797b7):
-  1. Collection and quality are separate. Transport completion is reported on its own; private success comes
-     only from an injected scorer that consumes the exact bound answer bytes AFTER collection is closed. A
-     score of 0 is an observed failure, never missing. Any unavailable primary grade suppresses the point
-     contrast; completion bounds are [(S_D-S_N-M_N)/60, (S_D+M_D-S_N)/60] with no missing-at-random assumption.
-  2. Failures are retained at the real entry point. All 130 planned slots are persisted before dispatch, and an
-     attempt is recorded BEFORE each transport or checker call. Exceptions keep the plan, partial outputs,
-     attempted/unknown usage and explicit remaining states. No retry, no silent resume. An integrity,
-     receiver-law or environment fault stops every later transport AND public-check call, including
-     diagnostics for answers already collected.
-  3. One bound release. Tasks, config and public examples are read from the release directory the future
-     adapter consumes, with the same public-context bytes and the same seed law; the lead spec is hashed from
-     the path actually supplied. The E14 schema is the config's `e14` block, and a conflicting legacy field
-     (e.g. an inherited `branch_replicates`) is refused as drift. Seed labels AND numeric seeds are checked
-     against a declared historical inventory; an incomplete inventory is reported as an unresolved dependency,
-     never read as "no collision". Reproducible, non-colliding seeds do not establish independent draws.
+v3 repairs, each with a fixture that fails on the reviewed v2 module and passes here:
+  1. Exact binding BEFORE any dispatch. The release manifest's sha256 must equal a trusted committed identity
+     supplied by the caller; every package file must match its manifest pin; the supplied spec must match the
+     manifest's approved spec hash. A changed terminal text under the same label, a changed task prompt, a
+     changed manifest, or a relocated copy holding different bytes is refused with zero transport calls. A
+     relocated copy holding identical bytes is accepted: identity is by content, not path.
+  2. Explicit stop state at every boundary. Malformed transport returns, invalid public diagnostics or renders,
+     request-byte violations, prefix drift and preflight receiver faults all leave a classified slot and a named
+     stop reason, never an `attempting` slot or `stopped: null`.
+  3. Scoring is durable. Each scoring attempt is persisted BEFORE the scorer is called and its result persisted
+     before the next call; every attempted private-scoring start is counted in the same bounded start ledger. A
+     scorer exception or invalid return stops scoring, keeps prior grades on disk, marks the rest unavailable
+     (never zero), and leaves the point contrast suppressed with completion bounds still reported.
+
+v2 behaviour retained: collection and quality separated; 130 slots persisted before dispatch; attempts recorded
+before each boundary; no retry; resume refused; seed labels and numeric seeds checked against a declared
+inventory, with an incomplete inventory reported as an unresolved dependency.
 """
 from __future__ import annotations
-import hashlib, json, os, sys, tempfile
+import hashlib, json, os, subprocess, sys, tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from experiments.landmark import collect, diagnostic  # noqa: E402
 
+VERSION = "e14-connected-mock-v3"
 ARMS = ("NEUTRAL", "DIRECTED")
-STOPPING_FAULTS = ("IntegrityFault", "ReceiverLawFault", "EnvironmentFault")
+STOPPING_FAULTS = ("IntegrityFault", "ReceiverLawFault", "EnvironmentFault", "MalformedTransportReturn")
+RELEASE_MANIFEST_PATH = "experiments/landmark/e14_release_v2/release_manifest.json"
+START_INVENTORY = {"containment": 18, "instrument": 40, "grader_rechecks": 30, "candidate": 140}
+RECEIVER_FIELDS = ("model", "model_digest", "server_build", "receiver_state_sha256")
 
 
 class IntegrityFault(RuntimeError): ...
 class ReceiverLawFault(RuntimeError): ...
 class EnvironmentFault(RuntimeError): ...
+class MalformedTransportReturn(RuntimeError): ...
 class DriftRefused(ValueError): ...
+class StartCapExceeded(RuntimeError): ...
 
 
 def _sha(b: bytes) -> str:
     return hashlib.sha256(b).hexdigest()
 
 
-def _jsonl(p: Path):
-    return [json.loads(x) for x in p.read_text().splitlines() if x.strip()]
+def committed_manifest_sha256(rev: str = "HEAD", path: str = RELEASE_MANIFEST_PATH) -> str:
+    """The trusted identity: the manifest's bytes as COMMITTED at a git revision, not as found on disk."""
+    blob = subprocess.run(["git", "show", f"{rev}:{path}"], cwd=ROOT, capture_output=True, check=True).stdout
+    return _sha(blob)
 
 
-# ---------------------------------------------------------------- criterion 3: one bound release
-def load_release(release_dir: Path, spec_path: Path) -> dict:
+# ---------------------------------------------------------------- repair 1: exact binding before dispatch
+def load_release(release_dir, spec_path, trusted_manifest_sha256: str) -> dict:
     release_dir, spec_path = Path(release_dir), Path(spec_path)
-    raw = {n: (release_dir / n).read_bytes() for n in ("tasks.jsonl", "config.json", "public_examples_v3.json")}
+    if not isinstance(trusted_manifest_sha256, str) or len(trusted_manifest_sha256) != 64:
+        raise DriftRefused("a trusted committed manifest sha256 is required; a hash recorded after reading is not a guard")
+    manifest_bytes = (release_dir / "release_manifest.json").read_bytes()
+    if _sha(manifest_bytes) != trusted_manifest_sha256:
+        raise DriftRefused("release manifest differs from the trusted committed identity")
+    manifest = json.loads(manifest_bytes)
+    for name, pin in manifest["package"].items():
+        if _sha((release_dir / name).read_bytes()) != pin:
+            raise DriftRefused(f"{name} differs from its manifest pin")
     spec_bytes = spec_path.read_bytes()
+    if _sha(spec_bytes) != manifest["lead_specification"]["sha256"]:
+        raise DriftRefused("supplied spec differs from the manifest's approved spec hash")
+    raw = {n: (release_dir / n).read_bytes() for n in ("tasks.jsonl", "config.json", "public_examples_v3.json")}
     config = json.loads(raw["config.json"])
     e14 = config.get("e14")
     if not isinstance(e14, dict):
@@ -66,41 +86,35 @@ def load_release(release_dir: Path, spec_path: Path) -> dict:
         raise DriftRefused(f"e14.arms {e14['arms']} != {list(ARMS)}")
     legacy = config.get("branch_replicates")
     if legacy is not None and legacy != e14["draws_per_arm"]:
-        raise DriftRefused(f"legacy branch_replicates={legacy} conflicts with e14.draws_per_arm="
-                           f"{e14['draws_per_arm']}; inherited field must be removed, not silently overridden")
+        raise DriftRefused(f"legacy branch_replicates={legacy} conflicts with e14.draws_per_arm={e14['draws_per_arm']}")
     tasks = [json.loads(x) for x in raw["tasks.jsonl"].decode().splitlines() if x.strip()]
-    order = [f"mbpp/{i}" for i in e14["roster_order"]]
-    if [t["root_id"] for t in tasks] != order:
+    if [t["root_id"] for t in tasks] != [f"mbpp/{i}" for i in e14["roster_order"]]:
         raise DriftRefused("tasks.jsonl order differs from e14.roster_order")
     if e14["n_roots"] != len(tasks) or e14["call_slots"] != len(tasks) * (1 + len(ARMS) * e14["draws_per_arm"]):
         raise DriftRefused("slot arithmetic in the e14 block does not match the roster")
-    spec = json.loads(spec_bytes)
-    term = spec.get("terminal_instruction", {})
+    term = json.loads(spec_bytes).get("terminal_instruction", {})
     if term.get("label") != e14["terminal_instruction_label"] or not isinstance(term.get("text"), str):
         raise DriftRefused("terminal instruction label/text do not match between spec and release")
-    return {"release_dir": str(release_dir), "spec_path": str(spec_path), "config": config, "e14": e14,
-            "tasks": tasks, "terminal_text": term["text"],
-            "hashes": {**{n: _sha(b) for n, b in raw.items()}, "spec_as_supplied": _sha(spec_bytes)}}
+    return {"config": config, "e14": e14, "tasks": tasks, "terminal_text": term["text"],
+            "hashes": {"release_manifest": trusted_manifest_sha256, **{n: _sha(b) for n, b in raw.items()},
+                       "spec": _sha(spec_bytes)}}
 
 
-def plan_slots(binding: dict, inventory: dict) -> tuple[list[dict], dict]:
-    """All 130 slots, fixed before collection, with seed-collision evidence against a declared inventory."""
+def plan_slots(binding: dict, inventory: dict):
     cfg, draws = binding["config"], binding["e14"]["draws_per_arm"]
     slots, collisions, unresolved = [], [], []
     for t in binding["tasks"]:
         rid = t["root_id"]
-        labels = ["initial"] + [f"{a}:{r}" for a in ARMS for r in range(draws)]
         spent = inventory.get("roots", {}).get(rid)
         if spent is None:
             unresolved.append(rid)
-        for lab in labels:
+        for lab in ["initial"] + [f"{a}:{r}" for a in ARMS for r in range(draws)]:
             seed = collect.seeded(cfg, rid, lab)
             if spent is not None and (lab in spent.get("labels", ()) or seed in spent.get("numeric", ())):
                 collisions.append({"root_id": rid, "label": lab, "seed": seed})
             slots.append({"slot": f"{rid}|{lab}", "root_id": rid, "label": lab, "seed": seed,
                           "kind": "initial" if lab == "initial" else "continuation",
-                          "arm": None if lab == "initial" else lab.split(":")[0],
-                          "state": "planned"})
+                          "arm": None if lab == "initial" else lab.split(":")[0], "state": "planned"})
     if collisions:
         raise DriftRefused(f"seed collision with the declared inventory: {collisions[:3]}")
     return slots, {"inventory_complete": bool(inventory.get("complete")) and not unresolved,
@@ -109,21 +123,49 @@ def plan_slots(binding: dict, inventory: dict) -> tuple[list[dict], dict]:
                             "reproducible non-colliding seeds do not establish independent draws")}
 
 
-# ---------------------------------------------------------------- criterion 2: durable ledger
+class StartLedger:
+    """Every attempted or uncertain isolated start counts against its category and the 228 total."""
+
+    def __init__(self, inventory=START_INVENTORY):
+        self.caps, self.used, self.events = dict(inventory), {k: 0 for k in inventory}, []
+
+    def record(self, kind, state, note=None):
+        if kind not in self.caps:
+            raise KeyError(f"undeclared start category {kind!r}")
+        if state not in ("attempted", "uncertain"):
+            raise ValueError("only attempted or uncertain starts are recorded; both count")
+        if self.used[kind] >= self.caps[kind]:
+            raise StartCapExceeded(f"{kind} start cap {self.caps[kind]} reached")
+        self.used[kind] += 1
+        self.events.append({"kind": kind, "state": state, "note": note})
+
+    def summary(self):
+        return {"caps": self.caps, "used": self.used, "total_cap": sum(self.caps.values()),
+                "total_used": sum(self.used.values()), "actual_program_starts": 0}
+
+
+def check_receiver(binding, observed, when):
+    cfg = binding["config"]
+    bad = {k: (cfg.get(k), observed.get(k)) for k in RECEIVER_FIELDS if observed.get(k) != cfg.get(k)}
+    if bad:
+        raise ReceiverLawFault(f"{when} receiver mismatch: {bad}")
+
+
 class Ledger:
-    def __init__(self, run_dir: Path, header: dict, slots: list[dict]):
-        self.path = Path(run_dir) / "ledger.json"
+    def __init__(self, run_dir, header, slots, starts):
+        self.path, self.starts = Path(run_dir) / "ledger.json", starts
         self.doc = {"header": header, "slots": {s["slot"]: s for s in slots}, "collection_closed": False,
-                    "stopped": None, "events": []}
+                    "stopped": None, "scoring_stopped": None, "events": [], "start_ledger": starts.summary()}
         self.flush()
 
     def flush(self):
+        self.doc["start_ledger"] = self.starts.summary()
         fd, tmp = tempfile.mkstemp(dir=self.path.parent)
         with os.fdopen(fd, "w") as f:
             json.dump(self.doc, f, indent=1)
-        os.replace(tmp, self.path)        # atomic: an abort never leaves a torn record
+        os.replace(tmp, self.path)
 
-    def set(self, slot: str, **fields):
+    def set(self, slot, **fields):
         self.doc["slots"][slot].update(fields)
         self.flush()
 
@@ -132,106 +174,75 @@ class Ledger:
         self.flush()
 
 
-# ---------------------------------------------------------------- criterion 4: guards and total accounting
-START_INVENTORY = {"containment": 18, "instrument": 40, "grader_rechecks": 30, "candidate": 140}
-RECEIVER_FIELDS = ("model", "model_digest", "server_build", "receiver_state_sha256")
+def _stop(led, reason):
+    led.doc["stopped"] = led.doc["stopped"] or reason
+    for s in led.doc["slots"].values():
+        if s["state"] in ("planned", "attempting"):
+            s["reason"] = s.get("reason") or f"stopped:{reason}"
+            s["state"] = "not_attempted" if s["state"] == "planned" else "failed"
+    led.flush()
 
 
-class StartCapExceeded(RuntimeError): ...
-
-
-class StartLedger:
-    """Every attempted or uncertain isolated start counts against its category and the 228 total.
-    Fake boundary events exercise it here; actual starts in this mock remain zero."""
-
-    def __init__(self, inventory=START_INVENTORY):
-        self.caps, self.used, self.events = dict(inventory), {k: 0 for k in inventory}, []
-
-    def record(self, kind, state):
-        if kind not in self.caps:
-            raise KeyError(f"undeclared start category {kind!r}")
-        if state not in ("attempted", "uncertain"):
-            raise ValueError("only attempted or uncertain starts are recorded; both count")
-        if self.used[kind] >= self.caps[kind]:
-            raise StartCapExceeded(f"{kind} start cap {self.caps[kind]} reached")
-        self.used[kind] += 1
-        self.events.append({"kind": kind, "state": state})
-
-    def summary(self):
-        return {"caps": self.caps, "used": self.used, "total_cap": sum(self.caps.values()),
-                "total_used": sum(self.used.values()), "actual_program_starts": 0}
-
-
-def check_receiver(binding: dict, observed: dict, when: str):
-    """Refuse on any model/template/server/state mismatch; metadata alone is not a guard."""
-    cfg = binding["config"]
-    bad = {k: (cfg.get(k), observed.get(k)) for k in RECEIVER_FIELDS if observed.get(k) != cfg.get(k)}
-    if bad:
-        raise ReceiverLawFault(f"{when} receiver mismatch: {bad}")
-
-
-def _fault_name(exc) -> str | None:
-    return type(exc).__name__ if type(exc).__name__ in STOPPING_FAULTS else None
-
-
-def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, inventory, max_calls=130,
-        receiver_state=None, clock=None, starts=None):
-    """The single entry point. Writes the partial record at every step; refuses to resume."""
+# ---------------------------------------------------------------- repair 2: explicit stop at every boundary
+def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, inventory,
+        trusted_manifest_sha256, max_calls=130, receiver_state=None, clock=None, starts=None):
     run_dir = Path(run_dir)
     if run_dir.exists():
         raise FileExistsError(f"{run_dir} exists: resume is refused; a new run needs a new directory")
-    run_dir.mkdir(parents=True)
-    binding = load_release(release_dir, spec_path)
+    binding = load_release(release_dir, spec_path, trusted_manifest_sha256)     # refuses BEFORE any dispatch
     slots, seed_evidence = plan_slots(binding, inventory)
-    led = Ledger(run_dir, {"evidence_type": "mock_transport_only", "hashes": binding["hashes"],
-                           "seed_evidence": seed_evidence, "max_calls": max_calls}, slots)
-    calls = 0
-    draws = binding["e14"]["draws_per_arm"]
-    cfg = binding["config"]
-    limits = binding["e14"].get("phase_limits_seconds") or {"collection": cfg.get("max_seconds"), "outer": None}
-    max_bytes = cfg.get("max_request_bytes")
-    t0 = clock() if clock else None
+    run_dir.mkdir(parents=True)
     starts = starts if starts is not None else StartLedger()
-    led.doc["start_ledger"] = starts.summary()
-    if receiver_state is not None:                              # preflight: refuse before ANY dispatch
-        check_receiver(binding, receiver_state(), "preflight")
+    led = Ledger(run_dir, {"version": VERSION, "evidence_type": "mock_transport_only", "hashes": binding["hashes"],
+                           "seed_evidence": seed_evidence, "max_calls": max_calls}, slots, starts)
+    cfg, draws = binding["config"], binding["e14"]["draws_per_arm"]
+    limits = binding["e14"].get("phase_limits_seconds") or {"collection": cfg.get("max_seconds"), "outer": None}
+    max_bytes, t0 = cfg.get("max_request_bytes"), (clock() if clock else None)
+    calls = 0
 
-    def stop(reason):
-        led.doc["stopped"] = reason
-        for s in led.doc["slots"].values():
-            if s["state"] == "planned":
-                s["state"], s["reason"] = "not_attempted", f"stopped:{reason}"
-        led.flush()
+    if receiver_state is not None:
+        try:
+            check_receiver(binding, receiver_state(), "preflight")
+        except ReceiverLawFault:
+            _stop(led, "ReceiverLawFault:preflight")
+            led.doc["collection_closed"] = True
+            led.flush()
+            raise
 
     def call(slot, messages):
         nonlocal calls
         if calls >= max_calls:
-            stop("call_cap_exhausted")
+            _stop(led, "call_cap_exhausted")
             return None
         if clock is not None:
             el = clock() - t0
             if limits.get("outer") is not None and el >= limits["outer"]:
-                stop("outer_limit_exhausted")
+                _stop(led, "outer_limit_exhausted")
                 return None
             if limits.get("collection") is not None and el >= limits["collection"]:
-                stop("collection_phase_limit_exhausted")
+                _stop(led, "collection_phase_limit_exhausted")
                 return None
         size = len(json.dumps(messages, ensure_ascii=False).encode("utf-8"))
-        if max_bytes is not None and size > max_bytes:          # per-request byte/context guard
+        if max_bytes is not None and size > max_bytes:          # request-law violation: stop the batch now
             led.set(slot, state="not_attempted", reason=f"request_bytes_exceeded:{size}>{max_bytes}")
+            _stop(led, "RequestByteLimit")
             return None
-        led.set(slot, state="attempting")          # recorded BEFORE the boundary
+        led.set(slot, state="attempting")
         calls += 1
         try:
             out = transport(messages, led.doc["slots"][slot]["seed"])
-        except Exception as exc:  # noqa: BLE001 - every exception is retained, never retried
+            text = out.get("text") if isinstance(out, dict) else None   # never index: a missing key is malformed
+            if not isinstance(text, str):
+                raise MalformedTransportReturn(f"transport returned {type(out).__name__} without a str 'text'")
+        except Exception as exc:  # noqa: BLE001 - retained, classified, never retried
+            name = type(exc).__name__ if type(exc).__name__ in STOPPING_FAULTS else None
             led.set(slot, state="failed", reason=type(exc).__name__, usage="unknown")
-            if _fault_name(exc):
-                stop(_fault_name(exc))
+            if name:
+                _stop(led, name)
             return None
-        led.set(slot, state="completed", output=out["text"], output_sha256=_sha(out["text"].encode()),
+        led.set(slot, state="completed", output=text, output_sha256=_sha(text.encode()),
                 usage=out.get("usage", "unknown"))
-        return out["text"]
+        return text
 
     for task in binding["tasks"]:
         if led.doc["stopped"]:
@@ -248,25 +259,32 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
             continue
         if led.doc["stopped"]:
             break
-        led.event(kind="public_check_attempt", root_id=rid)          # recorded BEFORE the boundary
+        led.event(kind="public_check_attempt", root_id=rid)
         try:
-            starts.record("candidate", "attempted")                  # initial-public start
+            starts.record("candidate", "attempted", "initial-public")
         except StartCapExceeded:
-            stop("start_cap_exhausted")
+            _stop(led, "start_cap_exhausted")
             break
         try:
             diag = public_checker(rid, answer)
         except Exception as exc:  # noqa: BLE001
             led.event(kind="public_check_failed", root_id=rid, reason=type(exc).__name__)
-            stop(_fault_name(exc) or "EnvironmentFault")               # checker failure is environmental
+            _stop(led, type(exc).__name__ if type(exc).__name__ in STOPPING_FAULTS else "EnvironmentFault")
             break
-        shared = diagnostic.diagnostic_message(diag)
+        try:                                                    # an invalid diagnostic or render stops the batch
+            shared = diagnostic.diagnostic_message(diag)
+            directed = diagnostic.select_s1(diag)
+        except Exception as exc:  # noqa: BLE001
+            led.event(kind="public_diagnostic_invalid", root_id=rid, reason=f"{type(exc).__name__}: {exc}"[:200])
+            _stop(led, "InvalidPublicDiagnostic")
+            break
         prefix = [*base, {"role": "assistant", "content": answer}, dict(shared)]
-        instr = {"NEUTRAL": diagnostic.N_INSTRUCTION, "DIRECTED": diagnostic.select_s1(diag)}
+        instr = {"NEUTRAL": diagnostic.N_INSTRUCTION, "DIRECTED": directed}
         msgs = {a: [*prefix, {"role": "user", "content": instr[a] + "\n\n" + binding["terminal_text"]}] for a in ARMS}
         if collect.digest(msgs["NEUTRAL"][:4]) != collect.digest(msgs["DIRECTED"][:4]):
-            raise DriftRefused(f"shared prefix differs between arms at {rid}")
-        led.event(kind="directed_instruction", root_id=rid, index=diagnostic.S1_STRINGS.index(instr["DIRECTED"]))
+            _stop(led, "SharedPrefixDrift")
+            break
+        led.event(kind="directed_instruction", root_id=rid, index=diagnostic.S1_STRINGS.index(directed))
         for r in range(draws):
             for a in ARMS:
                 if led.doc["stopped"]:
@@ -274,49 +292,67 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
                 call(f"{rid}|{a}:{r}", msgs[a])
 
     if receiver_state is not None and not led.doc["stopped"]:
-        try:                                                      # postflight drift is recorded, not hidden
+        try:
             check_receiver(binding, receiver_state(), "postflight")
         except ReceiverLawFault as exc:
             led.doc["postflight_drift"] = str(exc)
-    led.doc["start_ledger"] = starts.summary()
-    led.doc["collection_closed"] = True                          # scoring may start only after this
+    led.doc["collection_closed"] = True
     led.flush()
     return led
 
 
-# ---------------------------------------------------------------- criterion 1: private scoring after close
-def score_private(led: Ledger, scorer) -> dict:
+# ---------------------------------------------------------------- repair 3: durable, counted scoring
+def score_private(led, scorer):
     if not led.doc["collection_closed"]:
         raise RuntimeError("private scoring may start only after collection is closed")
+    halted = None
     for s in led.doc["slots"].values():
         if s["kind"] != "continuation":
             continue
         if s["state"] != "completed":
             s["grade"], s["grade_state"] = None, f"unavailable:{s['state']}"
             continue
-        text = s["output"]
-        if _sha(text.encode()) != s["output_sha256"]:
-            raise DriftRefused(f"bound answer bytes changed for {s['slot']}")
-        g = scorer(s["root_id"], text)                            # consumes the exact bound artifact
-        if g not in (0, 1, None):
-            raise ValueError(f"scorer returned {g!r}; must be 0, 1 or None (unavailable)")
+        if halted:
+            s["grade"], s["grade_state"] = None, f"unavailable:not_scored_after_{halted}"
+            continue
+        if _sha(s["output"].encode()) != s["output_sha256"]:
+            halted = "bound_answer_drift"
+            s["grade"], s["grade_state"] = None, "unavailable:bound_answer_drift"
+            continue
+        try:
+            led.starts.record("candidate", "attempted", "continuation-private")
+        except StartCapExceeded:
+            halted = "start_cap_exhausted"
+            s["grade"], s["grade_state"] = None, "unavailable:start_cap_exhausted"
+            continue
+        s["grade_state"] = "scoring_attempt"                      # persisted BEFORE the scorer boundary
+        led.flush()
+        try:
+            g = scorer(s["root_id"], s["output"])
+            if g not in (0, 1, None) or isinstance(g, bool):
+                raise ValueError(f"invalid scorer return {g!r}")
+        except Exception as exc:  # noqa: BLE001 - kept, classified, never converted to zero
+            halted = type(exc).__name__
+            s["grade"], s["grade_state"] = None, f"unavailable:scorer_{type(exc).__name__}"
+            led.flush()
+            continue
         s["grade"], s["grade_state"] = g, ("unavailable:scorer" if g is None else "graded")
+        led.flush()                                              # persisted BEFORE the next scorer call
+    led.doc["scoring_stopped"] = halted
     led.flush()
     return analyse(led)
 
 
-def analyse(led: Ledger, per_arm: int = 60) -> dict:
+def analyse(led, per_arm: int = 60):
     cont = [s for s in led.doc["slots"].values() if s["kind"] == "continuation"]
     S = {a: sum(1 for s in cont if s["arm"] == a and s.get("grade") == 1) for a in ARMS}
     M = {a: sum(1 for s in cont if s["arm"] == a and s.get("grade") is None) for a in ARMS}
     transport = {a: sum(1 for s in cont if s["arm"] == a and s["state"] == "completed") for a in ARMS}
     sd, sn, md, mn = S["DIRECTED"], S["NEUTRAL"], M["DIRECTED"], M["NEUTRAL"]
     complete = md == 0 and mn == 0
-    return {
-        "successes": S, "unavailable_grades": M, "transport_completed": transport,
-        "point_contrast": (sd - sn) / per_arm if complete else None,
-        "point_contrast_suppressed": not complete,
-        "completion_bounds": [(sd - sn - mn) / per_arm, (sd + md - sn) / per_arm],
-        "bounds_kind": "finite all-assigned completion bounds; not a confidence interval for conditional means",
-        "note": "a score of 0 is an observed failure, never missing; transport completion is not correctness",
-    }
+    return {"successes": S, "unavailable_grades": M, "transport_completed": transport,
+            "point_contrast": (sd - sn) / per_arm if complete else None,
+            "point_contrast_suppressed": not complete,
+            "completion_bounds": [(sd - sn - mn) / per_arm, (sd + md - sn) / per_arm],
+            "bounds_kind": "finite all-assigned completion bounds; not a confidence interval for conditional means",
+            "note": "a score of 0 is an observed failure, never missing; transport completion is not correctness"}

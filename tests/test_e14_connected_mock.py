@@ -20,13 +20,11 @@ FULL_INV = {"complete": True, "roots": {}}
 
 @pytest.fixture
 def release(tmp_path):
-    """The MRL-23 package with ONLY the inherited legacy replicate field removed (the v2 correction)."""
-    d = tmp_path / "rel"
-    shutil.copytree(RELEASE, d)
-    cfg = json.loads((d / "config.json").read_text())
-    cfg.pop("branch_replicates")
-    (d / "config.json").write_text(json.dumps(cfg))
-    return d
+    """v3: the committed v2 package itself. An edited copy is refused by the binding guard, by design."""
+    return ROOT / "experiments/landmark/e14_release_v2"
+
+
+TRUSTED = cm.committed_manifest_sha256()
 
 
 @pytest.fixture
@@ -75,14 +73,15 @@ def grade_by_seed(led, plan):
 
 def run(release, tmp_path, fakes, inv, **kw):
     return cm.run(release, SPEC, tmp_path / "run", transport=fakes.transport,
-                  public_checker=fakes.checker, scorer=None, inventory=inv, **kw)
+                  public_checker=fakes.checker, scorer=None, inventory=inv, trusted_manifest_sha256=TRUSTED, **kw)
 
 
 # ---------------- criterion 3
 def test_actual_mrl23_package_is_refused_for_inherited_replicate_drift(tmp_path):
+    v1_trusted = cm.committed_manifest_sha256(path="experiments/landmark/e14_release/release_manifest.json")
     with pytest.raises(cm.DriftRefused, match="branch_replicates=2 conflicts with e14.draws_per_arm=6"):
         cm.run(RELEASE, SPEC, tmp_path / "r", transport=None, public_checker=None, scorer=None,
-               inventory=FULL_INV)
+               inventory=FULL_INV, trusted_manifest_sha256=v1_trusted)
 
 
 def test_binds_release_prompt_bytes_and_seed_law(release, tmp_path, full_inventory):
@@ -92,21 +91,21 @@ def test_binds_release_prompt_bytes_and_seed_law(release, tmp_path, full_invento
     first = json.loads((release / "tasks.jsonl").read_text().splitlines()[0])
     s0 = led.doc["slots"][f"{first['root_id']}|initial"]
     assert s0["seed"] == collect.seeded(cfg, first["root_id"], "initial") == f.transport_calls[0]
-    assert led.doc["header"]["hashes"]["spec_as_supplied"]
+    assert led.doc["header"]["hashes"]["spec"] and led.doc["header"]["hashes"]["release_manifest"] == TRUSTED
 
 
 def test_spec_drift_and_seed_collision_are_refused(release, tmp_path, full_inventory):
     bad = tmp_path / "spec.json"
     s = json.loads(SPEC.read_text()); s["terminal_instruction"]["label"] = "other"
     bad.write_text(json.dumps(s))
-    with pytest.raises(cm.DriftRefused, match="terminal instruction"):
+    with pytest.raises(cm.DriftRefused, match="spec"):
         cm.run(release, bad, tmp_path / "a", transport=None, public_checker=None, scorer=None,
-               inventory=full_inventory)
+               inventory=full_inventory, trusted_manifest_sha256=TRUSTED)
     rid = next(iter(full_inventory["roots"]))
     full_inventory["roots"][rid]["labels"] = ["NEUTRAL:0"]
     with pytest.raises(cm.DriftRefused, match="seed collision"):
         cm.run(release, SPEC, tmp_path / "b", transport=None, public_checker=None, scorer=None,
-               inventory=full_inventory)
+               inventory=full_inventory, trusted_manifest_sha256=TRUSTED)
 
 
 def test_incomplete_inventory_is_an_unresolved_dependency_not_no_collision(release, tmp_path):
@@ -246,7 +245,7 @@ def _good_state():
 
 def _run_v2(tmp_path, fakes, **kw):
     return cm.run(V2, SPEC, tmp_path / "run", transport=fakes.transport, public_checker=fakes.checker,
-                  scorer=None, inventory=_v2_inventory(), **kw)
+                  scorer=None, inventory=_v2_inventory(), trusted_manifest_sha256=TRUSTED, **kw)
 
 
 def test_preflight_receiver_mismatch_is_refused_before_any_dispatch(tmp_path):
@@ -256,7 +255,8 @@ def test_preflight_receiver_mismatch_is_refused_before_any_dispatch(tmp_path):
         _run_v2(tmp_path, f, receiver_state=lambda: bad)
     assert f.transport_calls == [] and f.checker_calls == []
     doc = json.loads((tmp_path / "run" / "ledger.json").read_text())
-    assert sum(1 for s in doc["slots"].values() if s["state"] == "planned") == 130   # plan kept, nothing sent
+    assert doc["stopped"] == "ReceiverLawFault:preflight" and doc["collection_closed"] is True
+    assert sum(1 for s in doc["slots"].values() if s["state"] == "not_attempted") == 130   # plan kept, nothing sent
 
 
 def test_postflight_drift_is_recorded_not_hidden(tmp_path):
@@ -266,16 +266,21 @@ def test_postflight_drift_is_recorded_not_hidden(tmp_path):
 
 
 def test_per_request_byte_limit_blocks_the_request_without_calling_transport(tmp_path):
+    import hashlib
     rel = tmp_path / "rel"
     shutil.copytree(V2, rel)
     cfg = json.loads((rel / "config.json").read_text()); cfg["max_request_bytes"] = 50
     (rel / "config.json").write_text(json.dumps(cfg))
+    m = json.loads((rel / "release_manifest.json").read_text())
+    m["package"]["config.json"] = hashlib.sha256((rel / "config.json").read_bytes()).hexdigest()
+    (rel / "release_manifest.json").write_text(json.dumps(m))
     f = Fakes()
     led = cm.run(rel, SPEC, tmp_path / "run", transport=f.transport, public_checker=f.checker, scorer=None,
-                 inventory=_v2_inventory())
-    assert f.transport_calls == []
-    reasons = {s.get("reason", "").split(":")[0] for s in led.doc["slots"].values() if s["kind"] == "initial"}
-    assert reasons == {"request_bytes_exceeded"}
+                 inventory=_v2_inventory(),
+                 trusted_manifest_sha256=hashlib.sha256((rel / "release_manifest.json").read_bytes()).hexdigest())
+    assert f.transport_calls == [] and led.doc["stopped"] == "RequestByteLimit"
+    first = next(iter(led.doc["slots"].values()))
+    assert first["reason"].startswith("request_bytes_exceeded")
 
 
 def test_collection_phase_limit_binds_through_the_clock(tmp_path):
