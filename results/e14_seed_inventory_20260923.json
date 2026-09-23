@@ -1,0 +1,228 @@
+{
+ "inventory_version": "e14-seed-inventory-v1",
+ "evidence_class": "static scan of this project's receiver call logs; zero executions",
+ "complete": true,
+ "roots": {
+  "mbpp/911": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/667": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/344": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/524": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/814": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/187": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/194": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/356": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/366": {
+   "labels": [],
+   "numeric": []
+  },
+  "mbpp/302": {
+   "labels": [],
+   "numeric": []
+  }
+ },
+ "sources": [
+  {
+   "path": "experiments/landmark/mock_run_v1/calls.jsonl",
+   "sha256": "8a66bf425b61cf3ecab00521a353e53d529ff83187272bfbf3efb9793a363cda",
+   "records": 14,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "results/collector_smoke_v1/calls.jsonl",
+   "sha256": "453ac23ca046199e98c10601dc0ee0d1d5f4a1644d9f3516db3b1e34f091a32f",
+   "records": 14,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+   "sha256": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+   "records": 7,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+   "sha256": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+   "records": 70,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+   "sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+   "records": 14,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+   "sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+   "records": 140,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e13a_two_arm_20260923T061500Z/collect/attempt_ledger.jsonl",
+   "sha256": "b99b34fc012d666e687964833a0823407c018e965f19664d23fa366cf170c9a1",
+   "records": 122,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl",
+   "sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+   "records": 60,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl",
+   "sha256": "1c450864da8515278c66fcc09327bac890ddd1b0953cf0ac7a97c9201c5eb2ab",
+   "records": 49,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl",
+   "sha256": "9940704e9aa62ba549818b63311644aadcbaae2bd34d1e46dc79f8260926f6c5",
+   "records": 49,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl",
+   "sha256": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+   "records": 49,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection/calls.jsonl",
+   "sha256": "cfa4ce1d13190288a8dc06f9168c3984c636e6e093baea02c07e1ef6bc8e6030",
+   "records": 4,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection_v2/calls.jsonl",
+   "sha256": "68ddc619e5efe26ceb58e975e9a421e0c21ae402f722b5d9254756c03cc5e889",
+   "records": 4,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": true,
+   "role": "committed immutable call log"
+  },
+  {
+   "path": "work/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+   "sha256": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+   "records": 7,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "work/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+   "sha256": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+   "records": 70,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "work/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+   "sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+   "records": 14,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "work/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+   "sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+   "records": 140,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "work/e13a_20260923T061532Z/collect/attempt_ledger.jsonl",
+   "sha256": "b99b34fc012d666e687964833a0823407c018e965f19664d23fa366cf170c9a1",
+   "records": 122,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  },
+  {
+   "path": "work/e13a_20260923T061532Z/collect/calls.jsonl",
+   "sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+   "records": 60,
+   "unparsed_lines": 0,
+   "e14_roots_present": [],
+   "immutable": false,
+   "role": "working-copy duplicate or fixture, scanned for completeness"
+  }
+ ],
+ "n_sources": 19,
+ "n_records": 1009,
+ "prior_spend_found_for_any_e14_root": false,
+ "scope_limits": [
+  "Covers every file named calls.jsonl or attempt_ledger.jsonl in this repository. Logs of the sibling project DTR-AgentEvals are NOT scanned: they use a different harness and seed law, so a numeric match there would not be the same request law. If that exposure matters, it is an unresolved dependency.",
+  "Separately, all ten roots lie inside the MRL-15 frame, whose construction removed the 441 prior-seen MBPP ids; that is a source-exposure fact, not a seed inventory.",
+  "An empty inventory for a root means no recorded spend in the scanned logs; it does not establish that future draws are independent."
+ ]
+}
