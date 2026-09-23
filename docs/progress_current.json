@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T18:01:30Z",
+  "checkpoint_utc": "2026-09-23T18:36:54Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "774d4dee3687a89e4f0438cf19fb65db9563a1e2",
-  "baseline_note": "Fixed weights and credit unchanged: MRL24 source/mock corrections are independently scoped, but release binding and failure records still need repair; no new experimental evidence.",
+  "prior_checked_head": "38942de32a266fc91e57c8479a064ec351a2b71a",
+  "baseline_note": "Fixed weights and credit unchanged: first unanswered MRL25 check and saved-source availability clarification add no empirical or calibration validation.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL24 source/mock delivered at 1c66f86, acknowledged17:42:51UTC and independently reviewed. 14hashes,32focused tests and portable rebuild check; injected-fake probes expose unrefused terminal-spec drift and incomplete fault records. No real E14 calls or efficacy evidence.",
+  "latest_evidence": "MRL25 published on issue3 at18:03:52UTC but no worker acknowledgement or new delivery by18:36:54UTC. Immutable STOP archives lack stage-level held-out nuisances/score increments; exact residual attribution held. No new draws, fits, model calls/tokens, benchmark executions or paid cost.",
   "latest_worker_review": {
     "last_seen_worker_revision": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
     "delivery_type": "MRL24 completed source/mock package with disclosed gaps; no E14 empirical execution",
@@ -200,7 +200,12 @@
     "mrl24_independent_validation": "results/mrl24_lead_independent_review_20260923.json",
     "mrl23_one_worker_condition": "not met; 79 recorded local intervals,9 cross-builder overlaps,peak2 simultaneously; CPU load not determined",
     "mrl25_status": "One new bounded source/mock repair authorized by lead judgment; acknowledgement pending; no empirical execution",
-    "mrl25_source_limit": {"local_execution_workers": 1, "threads": 1, "elapsed_minutes_from_acknowledged_start": 30, "paid_usd": 0, "model_calls": 0, "program_executions": 0}
+    "mrl25_source_limit": {"local_execution_workers": 1, "threads": 1, "elapsed_minutes_from_acknowledged_start": 30, "paid_usd": 0, "model_calls": 0, "program_executions": 0},
+    "mrl25_acknowledgement_received": false,
+    "mrl25_consecutive_missing_acknowledgement_checks": 1,
+    "mrl25_latest_check_utc": "2026-09-23T18:36:54Z",
+    "mrl25_publication_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5800202601",
+    "mrl25_execution_state": "Unverified; no acknowledged start/deadline and no current run/lease observation."
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -296,5 +301,10 @@
     "retained_dr_methods": 12,
     "datasets_per_method": 96,
     "decision": "Accept descriptive diagnosis; mechanism inconclusive; hold calibrated inference and new collection."
+  },
+  "stop_anchor_stage_residual_availability": {
+    "record": "docs/e0_stage_residual_availability_20260923.md",
+    "classification": "Read-only immutable-source availability audit; no new estimates or data.",
+    "decision": "Exact stagewise attribution held because saved archive omits stage-level held-out nuisance predictions and score increments; requires provenance-bound records or separately authorized replay."
   }
 }

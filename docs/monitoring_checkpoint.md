@@ -1,5 +1,13 @@
 # Hourly research checkpoint
 
+## First MRL-25 acknowledgement check; saved-data limit recorded — 2026-09-23T18:36:54Z
+
+**58%, change 0 percentage points**, fixed rubric unchanged. GitHub main remains `38942de32a266fc91e57c8479a064ec351a2b71a`; issues #2–#5 and open PRs show no new worker delivery, design question, acknowledgement or PR. The [MRL-25 issue #3 handoff](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5800202601) is published, but has no worker receipt at this first actual unanswered check. Last-seen and independently reviewed worker source remain `1c66f86deebbd4e8324ca913202774c2dcfd350c`. MRL-25 actual start, deadline, execution and current scheduler/run/lease state are unverified; the worker's last reported scheduler tick remains 08:10:19 UTC. Silence does not establish stopped work. No repeat escalation, extra allowance or duplicate job was issued.
+
+The lead [checked the immutable STOP archive's stage-residual availability](e0_stage_residual_availability_20260923.md) and corrected the manuscript's outdated E14 source status. The 96 saved dataset archives contain logged states/actions/behavior probabilities, outcomes and fold assignments; terminal events contain root means and aggregate support, but no held-out stage-level nuisance predictions or score increments. Exact stagewise attribution from saved fields alone is therefore held pending a provenance-bound record or separately authorized bounded replay. This is a source-availability check, not a new numerical result or causal explanation. Zero new draws, fits, model calls/tokens, benchmark executions or paid cost. The prior negative findings and closed numerical allowance remain unchanged.
+
+**Decision: MRL-25 source/mock repair remains the next milestone; HOLD real E14 execution and independent policy claims.** Prompt efficacy is unestablished; the full project is not submission-ready.
+
 ## MRL-24 independently reviewed; MRL-25 source repair — 2026-09-23T18:01:30Z
 
 **58%, change 0 percentage points**, fixed rubric unchanged. Worker MRL-24 acknowledgement at 17:42:51 UTC and complete-with-gaps publication at 17:53:47 UTC are now committed on main `1c66f86deebbd4e8324ca913202774c2dcfd350c`; the earlier recovery is closed for receipt. The same SHA is the last-seen and independently reviewed worker source. No open PR or new issue #2–#5 design request appeared. The worker reports no run/lease and last scheduler tick 08:10:19 UTC; scheduler/process history was not independently observed.

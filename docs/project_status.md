@@ -1,5 +1,11 @@
 # Project status and claims ledger
 
+## First MRL-25 check and saved-source availability — 2026-09-23T18:36:54Z
+
+**58%, change 0 percentage points**, fixed rubric. The issue #3 MRL-25 repair request is published but unacknowledged at the first actual check; last-seen and independently reviewed worker source remain `1c66f86deebbd4e8324ca913202774c2dcfd350c`. Main, issues #2–#5 and open PRs yielded no new delivery or design question. Actual MRL-25 start/deadline, current execution, scheduler and run/lease state remain unverified. No duplicate escalation or job was issued.
+
+The [read-only STOP archive check](e0_stage_residual_availability_20260923.md) finds root scores and aggregate support but no saved stage-level held-out nuisance/score values needed for exact residual attribution. No rerun or refit was authorized. The manuscript now reflects the reviewed MRL-24 mock repairs and four remaining connected defects. Zero new draws, fits, model calls/tokens, benchmark executions or paid cost. **Hold E14 instrument/model execution and calibrated-inference claims.** Next milestone: worker acknowledgement and independent review of the bounded MRL-25 source repair. Prompt efficacy remains unestablished; the full project is not submission-ready.
+
 ## MRL-24 source/mock delivery reviewed — 2026-09-23T18:01:30Z
 
 **58%, change 0 percentage points**, fixed rubric. MRL-24 was acknowledged at17:42:51 UTC and delivered17:53:47 UTC within its elapsed cap; the earlier recovery is closed for receipt. Last-seen and independently reviewed worker source are `1c66f86deebbd4e8324ca913202774c2dcfd350c`. The [independent review](mrl24_review_mrl25_20260923.md) verifies14 hashes, a portable v2 rebuild,32 passing focused tests and the MRL-23 ledger's nine overlapping cross-builder command pairs. It also reproduces four connected source defects: unrefused approved-spec drift, malformed transport with no explicit stop, non-stopping byte-limit violation and unsaved partial grades after a scorer exception. Worker-disclosed seed, context and start-accounting gaps remain. Worker reports zero model calls/tokens, benchmark executions and paid cost; this review likewise made none. The full reported suite was not independently rerun.
