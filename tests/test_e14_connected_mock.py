@@ -228,3 +228,89 @@ def test_scoring_before_close_is_refused(release, tmp_path, full_inventory):
     led.doc["collection_closed"] = False
     with pytest.raises(RuntimeError, match="only after collection is closed"):
         cm.score_private(led, lambda r, t: 1)
+
+
+# ---------------- criterion 4: guards must REJECT, limits must bind, every start counts
+V2 = ROOT / "experiments/landmark/e14_release_v2"
+
+
+def _v2_inventory():
+    tasks = [json.loads(x) for x in (V2 / "tasks.jsonl").read_text().splitlines() if x.strip()]
+    return {"complete": True, "roots": {t["root_id"]: {"labels": [], "numeric": []} for t in tasks}}
+
+
+def _good_state():
+    cfg = json.loads((V2 / "config.json").read_text())
+    return {k: cfg[k] for k in cm.RECEIVER_FIELDS}
+
+
+def _run_v2(tmp_path, fakes, **kw):
+    return cm.run(V2, SPEC, tmp_path / "run", transport=fakes.transport, public_checker=fakes.checker,
+                  scorer=None, inventory=_v2_inventory(), **kw)
+
+
+def test_preflight_receiver_mismatch_is_refused_before_any_dispatch(tmp_path):
+    f = Fakes()
+    bad = {**_good_state(), "model_digest": "0" * 64}
+    with pytest.raises(cm.ReceiverLawFault, match="preflight receiver mismatch"):
+        _run_v2(tmp_path, f, receiver_state=lambda: bad)
+    assert f.transport_calls == [] and f.checker_calls == []
+    doc = json.loads((tmp_path / "run" / "ledger.json").read_text())
+    assert sum(1 for s in doc["slots"].values() if s["state"] == "planned") == 130   # plan kept, nothing sent
+
+
+def test_postflight_drift_is_recorded_not_hidden(tmp_path):
+    states = iter([_good_state(), {**_good_state(), "server_build": "b2-changed"}])
+    led = _run_v2(tmp_path, Fakes(), receiver_state=lambda: next(states))
+    assert "postflight receiver mismatch" in led.doc["postflight_drift"]
+
+
+def test_per_request_byte_limit_blocks_the_request_without_calling_transport(tmp_path):
+    rel = tmp_path / "rel"
+    shutil.copytree(V2, rel)
+    cfg = json.loads((rel / "config.json").read_text()); cfg["max_request_bytes"] = 50
+    (rel / "config.json").write_text(json.dumps(cfg))
+    f = Fakes()
+    led = cm.run(rel, SPEC, tmp_path / "run", transport=f.transport, public_checker=f.checker, scorer=None,
+                 inventory=_v2_inventory())
+    assert f.transport_calls == []
+    reasons = {s.get("reason", "").split(":")[0] for s in led.doc["slots"].values() if s["kind"] == "initial"}
+    assert reasons == {"request_bytes_exceeded"}
+
+
+def test_collection_phase_limit_binds_through_the_clock(tmp_path):
+    t = {"now": 0.0}
+
+    def clock():
+        t["now"] += 10.0          # every guard check advances 10 s
+        return t["now"]
+    led = _run_v2(tmp_path, Fakes(), clock=clock)
+    assert led.doc["stopped"] == "collection_phase_limit_exhausted"
+    assert 0 < sum(1 for s in led.doc["slots"].values() if s["state"] == "completed") < 130
+
+
+def test_outer_limit_binds(tmp_path):
+    t = iter([0.0] + [5000.0] * 500)
+    led = _run_v2(tmp_path, Fakes(), clock=lambda: next(t))
+    assert led.doc["stopped"] == "outer_limit_exhausted"
+
+
+def test_start_ledger_inventory_is_228_and_uncertain_starts_count():
+    sl = cm.StartLedger()
+    assert sl.summary()["total_cap"] == 228 == 18 + 40 + 30 + 140
+    sl.record("candidate", "uncertain")
+    assert sl.summary()["used"]["candidate"] == 1 and sl.summary()["actual_program_starts"] == 0
+    with pytest.raises(KeyError):
+        sl.record("public_score", "attempted")
+    small = cm.StartLedger({"containment": 1, "instrument": 0, "grader_rechecks": 0, "candidate": 0})
+    small.record("containment", "attempted")
+    with pytest.raises(cm.StartCapExceeded):
+        small.record("containment", "uncertain")
+
+
+def test_start_cap_stops_the_connected_run(tmp_path):
+    sl = cm.StartLedger({"containment": 18, "instrument": 40, "grader_rechecks": 30, "candidate": 3})
+    f = Fakes()
+    led = _run_v2(tmp_path, f, starts=sl)
+    assert led.doc["stopped"] == "start_cap_exhausted" and len(f.checker_calls) == 3
+    assert led.doc["start_ledger"]["used"]["candidate"] == 3

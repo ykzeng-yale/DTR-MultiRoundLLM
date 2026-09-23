@@ -132,11 +132,50 @@ class Ledger:
         self.flush()
 
 
+# ---------------------------------------------------------------- criterion 4: guards and total accounting
+START_INVENTORY = {"containment": 18, "instrument": 40, "grader_rechecks": 30, "candidate": 140}
+RECEIVER_FIELDS = ("model", "model_digest", "server_build", "receiver_state_sha256")
+
+
+class StartCapExceeded(RuntimeError): ...
+
+
+class StartLedger:
+    """Every attempted or uncertain isolated start counts against its category and the 228 total.
+    Fake boundary events exercise it here; actual starts in this mock remain zero."""
+
+    def __init__(self, inventory=START_INVENTORY):
+        self.caps, self.used, self.events = dict(inventory), {k: 0 for k in inventory}, []
+
+    def record(self, kind, state):
+        if kind not in self.caps:
+            raise KeyError(f"undeclared start category {kind!r}")
+        if state not in ("attempted", "uncertain"):
+            raise ValueError("only attempted or uncertain starts are recorded; both count")
+        if self.used[kind] >= self.caps[kind]:
+            raise StartCapExceeded(f"{kind} start cap {self.caps[kind]} reached")
+        self.used[kind] += 1
+        self.events.append({"kind": kind, "state": state})
+
+    def summary(self):
+        return {"caps": self.caps, "used": self.used, "total_cap": sum(self.caps.values()),
+                "total_used": sum(self.used.values()), "actual_program_starts": 0}
+
+
+def check_receiver(binding: dict, observed: dict, when: str):
+    """Refuse on any model/template/server/state mismatch; metadata alone is not a guard."""
+    cfg = binding["config"]
+    bad = {k: (cfg.get(k), observed.get(k)) for k in RECEIVER_FIELDS if observed.get(k) != cfg.get(k)}
+    if bad:
+        raise ReceiverLawFault(f"{when} receiver mismatch: {bad}")
+
+
 def _fault_name(exc) -> str | None:
     return type(exc).__name__ if type(exc).__name__ in STOPPING_FAULTS else None
 
 
-def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, inventory, max_calls=130):
+def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, inventory, max_calls=130,
+        receiver_state=None, clock=None, starts=None):
     """The single entry point. Writes the partial record at every step; refuses to resume."""
     run_dir = Path(run_dir)
     if run_dir.exists():
@@ -148,6 +187,14 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
                            "seed_evidence": seed_evidence, "max_calls": max_calls}, slots)
     calls = 0
     draws = binding["e14"]["draws_per_arm"]
+    cfg = binding["config"]
+    limits = binding["e14"].get("phase_limits_seconds") or {"collection": cfg.get("max_seconds"), "outer": None}
+    max_bytes = cfg.get("max_request_bytes")
+    t0 = clock() if clock else None
+    starts = starts if starts is not None else StartLedger()
+    led.doc["start_ledger"] = starts.summary()
+    if receiver_state is not None:                              # preflight: refuse before ANY dispatch
+        check_receiver(binding, receiver_state(), "preflight")
 
     def stop(reason):
         led.doc["stopped"] = reason
@@ -160,6 +207,18 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
         nonlocal calls
         if calls >= max_calls:
             stop("call_cap_exhausted")
+            return None
+        if clock is not None:
+            el = clock() - t0
+            if limits.get("outer") is not None and el >= limits["outer"]:
+                stop("outer_limit_exhausted")
+                return None
+            if limits.get("collection") is not None and el >= limits["collection"]:
+                stop("collection_phase_limit_exhausted")
+                return None
+        size = len(json.dumps(messages, ensure_ascii=False).encode("utf-8"))
+        if max_bytes is not None and size > max_bytes:          # per-request byte/context guard
+            led.set(slot, state="not_attempted", reason=f"request_bytes_exceeded:{size}>{max_bytes}")
             return None
         led.set(slot, state="attempting")          # recorded BEFORE the boundary
         calls += 1
@@ -191,6 +250,11 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
             break
         led.event(kind="public_check_attempt", root_id=rid)          # recorded BEFORE the boundary
         try:
+            starts.record("candidate", "attempted")                  # initial-public start
+        except StartCapExceeded:
+            stop("start_cap_exhausted")
+            break
+        try:
             diag = public_checker(rid, answer)
         except Exception as exc:  # noqa: BLE001
             led.event(kind="public_check_failed", root_id=rid, reason=type(exc).__name__)
@@ -209,6 +273,12 @@ def run(release_dir, spec_path, run_dir, *, transport, public_checker, scorer, i
                     break
                 call(f"{rid}|{a}:{r}", msgs[a])
 
+    if receiver_state is not None and not led.doc["stopped"]:
+        try:                                                      # postflight drift is recorded, not hidden
+            check_receiver(binding, receiver_state(), "postflight")
+        except ReceiverLawFault as exc:
+            led.doc["postflight_drift"] = str(exc)
+    led.doc["start_ledger"] = starts.summary()
     led.doc["collection_closed"] = True                          # scoring may start only after this
     led.flush()
     return led
