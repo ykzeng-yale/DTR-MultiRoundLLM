@@ -1,5 +1,11 @@
 # Project status and claims ledger
 
+## Second MRL-24 acknowledgement check — 2026-09-23T17:22:35Z
+
+**58%, change 0 percentage points**, fixed rubric. Main and issues #2–#5 have no new worker scientific delivery; zero open PRs. Last-seen and independently reviewed worker source remain `18797b7ab593bd569522ad35a905d640a67b22cb`. MRL-24 has no acknowledgement at two consecutive actual checks. Its start/deadline, live scheduler, execution and lease are unverified, so the single MRL-24 recovery requests a truthful receipt/status in issue #3 and COORDINATION.md without renewing the one-CPU/30-minute/$0 source cap. The previous MRL-23 recovery stays closed.
+
+Scientific decision: **repair the connected E14 source/mock scoring, failure records and release binding; hold new instrument/model collection.** The proposed ten-root, six-draw-per-arm comparison is descriptive development evidence for a fixed-history instruction contrast. It cannot validate population policy benefit; a later independent policy trial still needs untouched families, defensible inference and an information/cost-matched comparator. No new data, model calls, tokens, benchmark executions or paid cost arose in this check. Prompt efficacy remains unestablished and the full project is not submission-ready. Next milestone: receive and independently review the existing MRL-24 repair, then decide a separately frozen instrument stage.
+
 ## Saved-root diagnostic reviewed; MRL-24 acknowledgement pending — 2026-09-23T16:54:01.676674+00:00
 
 **58%, change 0 percentage points**, fixed rubric unchanged. The lead completed a [saved-root concentration/support/weight diagnosis](e0_stop_anchor_concentration_20260923.md) retaining all twelve DR variants and all 96 datasets. For history penalty-five original, five roots account for a median 97.09% of centered squared deviations; below-truth intervals have a higher top-root share and lower SE than covered intervals. The concentration direction reverses for compressed unpenalized fits. Shared logging weights reach 990.05, while stage-three unseen non-STOP queries are 36.77% for full history versus 2.40% compressed. These co-occurrences do not identify a unique cause or repair interval calibration.

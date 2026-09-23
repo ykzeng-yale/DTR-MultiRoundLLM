@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T16:54:01.676674+00:00",
+  "checkpoint_utc": "2026-09-23T17:22:35Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
-  "baseline_note": "Fixed weights and credit unchanged: saved-root concentration/support/weight diagnosis refines existing numerical/manuscript credit; calibrated inference and independent policy validation remain unresolved.",
+  "prior_checked_head": "2c1398c8152c1d4260ee5411c21d083309bec1b0",
+  "baseline_note": "Fixed weights and credit unchanged: no new worker delivery at second MRL24 check; source/mock repair and independent policy validation remain unresolved.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "All12DRmethods\u00d796saved datasets retained;22tests and separate arithmetic pass. Concentration, weight tails and sparse full-history support co-occur without identifying the cause of undercoverage. No new draws/fits/model data; MRL24acknowledgement pending at first check.",
+  "latest_evidence": "No new worker scientific delivery since independently reviewed partial MRL23 source 18797b7. Saved-root diagnostic remains valid descriptive reused-data evidence. MRL24 acknowledgement missing at second check; one recovery request published; no new collection or efficacy evidence.",
   "latest_worker_review": {
     "last_seen_worker_revision": "18797b7ab593bd569522ad35a905d640a67b22cb",
     "delivery_type": "Late partial MRL23 source package plus recovery acknowledgement",
@@ -173,7 +173,7 @@
       "local_session_ref": "8864ab",
       "direct_local_lookup": "No matching transcript found in local Claude project records; no unrelated task contacted."
     },
-    "mrl24_status": "Source/mock repair published; no acknowledgement at first actual check. Actual start/deadline unverified; no repeated recovery.",
+    "mrl24_status": "Source/mock repair published; no acknowledgement at second consecutive actual check. One MRL24 recovery requested; actual start/deadline and live execution unverified.",
     "mrl24_acknowledgement_received": false,
     "mrl24_execution_released": false,
     "mrl24_source_mock_repair_authorized": true,
@@ -187,8 +187,10 @@
     },
     "mrl24_actual_start_utc": null,
     "mrl24_actual_cap_deadline_utc": null,
-    "mrl24_consecutive_missing_acknowledgement_checks": 1,
-    "mrl24_latest_acknowledgement_check_utc": "2026-09-23T16:54:01.676674+00:00",
+    "mrl24_consecutive_missing_acknowledgement_checks": 2,
+    "mrl24_latest_acknowledgement_check_utc": "2026-09-23T17:22:35Z",
+    "mrl24_recovery_requested_utc": "2026-09-23T17:22:35Z",
+    "mrl24_recovery_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5799542611",
     "mrl24_request_publication_revision": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
     "mrl24_request_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5798304093"
   },
