@@ -1,0 +1,168 @@
+{
+  "schema_version": "e0-stop-calibration-validation-v1",
+  "decision_id": "LEAD-E0-CAL-01",
+  "source_base_commit": "1d26e9f96df34f6ee0ba1defe021bd493c17a0da",
+  "test_count": 32,
+  "tests": {
+    "returncode": 0,
+    "wall_seconds": 0.6620754590258002,
+    "cpu_seconds": 0.500456
+  },
+  "analysis": {
+    "returncode": 0,
+    "wall_seconds": 0.13596349954605103,
+    "cpu_seconds": 0.110494,
+    "stdout": "",
+    "stderr": ""
+  },
+  "derived_output_bytes": 364668,
+  "resource_cap": {
+    "cpu_workers": 1,
+    "analysis_wall_seconds": 60,
+    "derived_output_bytes": 10485760,
+    "paid_usd": 0
+  },
+  "independent_parent_checks": 68,
+  "parent_earlier_arithmetic": {
+    "input_sha256": "2f5fee670034389e619e2b8a79eb716456ef39ee50b7fb28c94f785c346cdbd8",
+    "scope": "Independent stdlib check of four variants declared before this diagnostic; no fits/draws/model calls.",
+    "wall_seconds": 0.04217783361673355,
+    "cpu_seconds": 0.041687999999999996,
+    "metrics": {
+      "compressed_lambda0_original:dr": {
+        "bias": 0.007550393808085496,
+        "error_sd": 0.08131557800152604,
+        "rms_se": 0.07805584774540816,
+        "error_se_correlation": 0.3567715185187715,
+        "abs_error_se_correlation": 0.47720656017380797,
+        "error_skew": -0.1441329150585148,
+        "z_skew": -1.7822116410497408,
+        "z_quantiles": [
+          -4.0301562646049,
+          1.8297595717638155
+        ],
+        "frozen_covered": 81,
+        "rms_fixed_covered": 91,
+        "sd_fixed_covered": 91
+      },
+      "compressed_lambda0_recursive:dr": {
+        "bias": 0.0083390547378747,
+        "error_sd": 0.08042310532226303,
+        "rms_se": 0.07776324217474472,
+        "error_se_correlation": 0.3718437215782969,
+        "abs_error_se_correlation": 0.4696647061383356,
+        "error_skew": -0.14022406290375353,
+        "z_skew": -1.7941219031954878,
+        "z_quantiles": [
+          -4.968906814612979,
+          1.8208525804506028
+        ],
+        "frozen_covered": 81,
+        "rms_fixed_covered": 91,
+        "sd_fixed_covered": 91
+      },
+      "history_lambda5_original:dr": {
+        "bias": -0.009076459995893658,
+        "error_sd": 0.1519175601117115,
+        "rms_se": 0.15091692835537798,
+        "error_se_correlation": 0.9280380970936009,
+        "abs_error_se_correlation": -0.0911133233960588,
+        "error_skew": 0.35163439389782325,
+        "z_skew": -5.017971874566939,
+        "z_quantiles": [
+          -8.44509841848011,
+          1.4123363647493996
+        ],
+        "frozen_covered": 85,
+        "rms_fixed_covered": 89,
+        "sd_fixed_covered": 89
+      },
+      "history_lambda5_recursive:dr": {
+        "bias": -0.008138250856885547,
+        "error_sd": 0.15463821357972113,
+        "rms_se": 0.151785649475081,
+        "error_se_correlation": 0.9469052925900199,
+        "abs_error_se_correlation": -0.08338089048722792,
+        "error_skew": 0.3283672319669559,
+        "z_skew": -4.802950576700069,
+        "z_quantiles": [
+          -14.091805265134997,
+          1.3466827353345334
+        ],
+        "frozen_covered": 84,
+        "rms_fixed_covered": 89,
+        "sd_fixed_covered": 90
+      }
+    }
+  },
+  "parent_product_arithmetic": {
+    "wall_seconds": 0.011660083197057247,
+    "cpu_seconds": 0.011316,
+    "metrics": {
+      "compressed_lambda0_original:dr": {
+        "total": 9216,
+        "low": 939,
+        "high": 1112,
+        "covered": 7165,
+        "coverage": 0.7774522569444444
+      },
+      "compressed_lambda0_recursive:dr": {
+        "total": 9216,
+        "low": 936,
+        "high": 1134,
+        "covered": 7146,
+        "coverage": 0.775390625
+      },
+      "history_lambda5_original:dr": {
+        "total": 9216,
+        "low": 532,
+        "high": 555,
+        "covered": 8129,
+        "coverage": 0.8820529513888888
+      },
+      "history_lambda5_recursive:dr": {
+        "total": 9216,
+        "low": 558,
+        "high": 612,
+        "covered": 8046,
+        "coverage": 0.873046875
+      }
+    },
+    "scope": "Independent exact product-empirical pairing; no new observations or independence claim."
+  },
+  "check_wall_seconds": 0.006582250818610191,
+  "check_cpu_seconds": 0.003845000000000001,
+  "frozen_source_hashes_unchanged": {
+    "experiments/e0/stop_anchor_job.py": true,
+    "experiments/e0/stop_anchor_estimators.py": true,
+    "experiments/e0/stop_anchor_journal.py": true,
+    "experiments/e0/stop_anchor_report.py": true,
+    "experiments/e0/regularization_job.py": true,
+    "experiments/e0/regularization_report.py": true,
+    "experiments/e0/regularized_history_estimators.py": true,
+    "experiments/e0/history_estimators.py": true,
+    "experiments/e0/estimators.py": true,
+    "experiments/e0/simulator.py": true,
+    "experiments/e0/stop_anchor_comparison_plan_v1.json": true,
+    "experiments/e0/stop_anchor_seed_plan_v1.csv": true,
+    "scripts/run_stop_anchor_comparison.py": true,
+    "scripts/check_regularization_truth.py": true,
+    "scripts/reconcile_stop_anchor_run.py": true
+  },
+  "retained_dr_methods": 12,
+  "retained_replicates_per_method": 96,
+  "retained_pairs": 1152,
+  "sampled_datasets": 0,
+  "estimator_fits": 0,
+  "model_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "benchmark_executions": 0,
+  "paid_usd": 0,
+  "independent_mathematical_review": "Theory reviewer accepted formulas, product-empirical normalization and scientific limitations without executing project code.",
+  "scope": "Post-result arithmetic on two pinned committed summaries; raw arrays and estimator fits are not regenerated or independently replayed in this diagnostic.",
+  "checked_utc": "2026-09-23T15:22:56.128933+00:00",
+  "diagnostic_utility_sha256": "138876cde7ef34b1d71ff77998121988f2f5c80304fe8d16f0e517674adcd125",
+  "test_source_sha256": "d24c7b6fc605e103a2cf4f118bdd2cc21563c80e02ab82ffc63a2b867b789219",
+  "diagnostic_sha256": "c1947123199307575446b7cd2c4bf7f6b730a2e44ffb27ba094fa3eb5e5f8b9e"
+}

@@ -254,3 +254,12 @@ LEAD-E0-STOP-01 completed all96frozen datasets. Accept the [independently checke
 MRL-23 remains undelivered at this eighth actual post-deadline review; this is the result addendum to the same review, not another missing-update count. Last seen worker `8866186f6c87abd98e98f2db51043463fb8e504f` (08:13:14UTC) and independently reviewed scientific source `b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685` are unchanged. Original publication/acknowledgement are verified; current execution, scheduler health, complete/partial package and recovery receipt remain unverified. The single recovery is not reposted or renewed. Delivery cannot be verified without the existing worker's exact app/task link or ID, still the missing routing detail. No unrelated task contacted or duplicate created.
 
 **58%, delta0**; efficacy unestablished, independent policy validation outstanding, full project not submission-ready.
+
+
+## 23 September — calibration cause remains unresolved — 2026-09-23T15:23:58.468468+00:00
+
+LEAD-E0-CAL-01 [saved-result analysis](e0_stop_anchor_calibration_20260923.md) is accepted within its descriptive scope. Strong error–SE association and directional tails do not by themselves explain total undercoverage: full-history re-pairing leaves coverage near 88%. Do not deploy hindsight fixed widths, tune intervals on these 96 results or reopen numerical/model collection. Next bounded lead discriminator: link saved root-score concentration to recorded support and archived logging weights, preserving all methods and immutable artifacts.
+
+MRL-23 has no completed or partial package at this ninth actual post-deadline review. Last seen worker `8866186f6c87abd98e98f2db51043463fb8e504f` (status08:13:14UTC) and last independently reviewed scientific source `b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685` remain distinct and unchanged. Original publication and acknowledgement are verified; current execution, scheduler health, package completion and recovery receipt remain unverified. Main, issues #2–#5 and open PRs were checked: no new worker delivery or open PR. Accessible tasks still do not identify the experiment worker. Delivery cannot be verified; its existing exact app/task link or ID remains the missing routing detail. The single recovery is not reposted or renewed; no unrelated task contacted or duplicate created.
+
+**58%, delta 0**; efficacy unestablished, independent policy validation outstanding and full project not submission-ready.
