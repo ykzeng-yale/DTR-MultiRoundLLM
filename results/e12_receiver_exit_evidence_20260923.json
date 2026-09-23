@@ -1,0 +1,36 @@
+{
+ "record_version": "e12-receiver-exit-evidence-v1",
+ "authority": "MRL-18 item 5, lead commit be417b5: supply retained original exit/release evidence if it exists",
+ "run": "e12_dev_v3_20260922T030255Z",
+ "receiver_dir": "results/e12_receiver_v31_20260922T071000Z",
+ "archived_log": {
+  "path": "results/e12_receiver_v31_20260922T071000Z/llama_server_log_archive.txt",
+  "sha256": "a4cafa751392a75a6c43235945b4bd5b98dff21c46e8267b0fb7e2129ea2e893",
+  "bytes": 129491,
+  "source": "results/e12_receiver_v31_20260922T071000Z/llama_server.log",
+  "why_not_previously_committed": "*.log is gitignored (.gitignore:12); only the failed 04:35Z attempt had been archived",
+  "content_check": "0 occurrences of 'assert'; no request/response bodies; slot timing lines only, so no private assertion or candidate text is published"
+ },
+ "what_it_evidences": {
+  "generation_count": {
+   "prompt_eval_lines": 154,
+   "reconciles_with": "154 recorded receiver calls (server-side corroboration)"
+  },
+  "shutdown_initiation": {
+   "final_log_line": "5.28.059.208 I srv    operator(): operator(): cleaning up before exit...",
+   "relative_offset": "0:05:28.059208",
+   "derived_utc": "2026-09-22T07:15:30.232615+00:00",
+   "recorded_stopped_utc": "2026-09-22T07:15:30.254657+00:00",
+   "difference_seconds": 0.022042
+  },
+  "pid": 35499,
+  "ownership_record": "docs/e12_shared_window_20260922T071000Z.json",
+  "ownership_sha256": "e198e01a9db858605bb8a79f4869df06137de148c738be19ad52cb1b67f26714"
+ },
+ "what_remains_unevidenced": [
+  "Process exit status: launch.json 'exited' is null and the log records no exit code, so orderly shutdown was initiated but completed exit is not receipted.",
+  "Current host availability, which this record does not address and which must be re-agreed at dispatch.",
+  "A/C absolute phase boundaries and the final-report time, which are not logged in their own artifacts."
+ ],
+ "method": "Copied the retained log byte-for-byte and read it. Nothing was restarted, reconstructed or re-run."
+}
