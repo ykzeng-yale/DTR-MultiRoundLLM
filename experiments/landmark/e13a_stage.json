@@ -50,10 +50,11 @@
   "n_roots": 5,
   "artifact_starts": 60,
   "recheck_starts": 10,
-  "max_private_starts": 70,
+  "containment_starts": 9,
+  "max_private_starts": 79,
   "grading_seconds": 300
  },
- "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control). Read with study_adapter.load_grading_limits; this file is NOT a release manifest and is not on study_adapter.COMMITTED_RELEASE_MANIFESTS.",
+ "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control); containment_starts = 9 containment-gate payloads. 79 is a MAXIMUM: cache hits or pre-execution format rejection reduce actual starts without dropping any assigned grade row. These values match experiments/landmark/e13a_release/release_manifest.json exactly and are read through study_adapter.load_grading_limits; this file is not a release manifest.",
  "receiver_calls_authorized": 0,
  "candidate_executions_authorized": 0,
  "roots_order_note": "assignment-table order from collect_diagnostic.assignments; ordering is scheduling only",
@@ -65,9 +66,13 @@
  },
  "recheck_starts_note": "The 10 recheck starts are reference/control validation starts, not continuation slots; they are budgeted in grading_limits and reported in usage accounting, and are deliberately not analysis slots.",
  "exact_commands": {
-  "analysis": "python3 scripts/e13a_analyze.py --grades <run>/D/grades.jsonl --stage experiments/landmark/e13a_stage.json --out <run>/analysis_report.json",
-  "mock_demonstration": "python3 scripts/e13a_mock_dryrun.py --out <mock_dir>",
-  "note": "Real collection and grading commands are not implemented in this delivery. The mock demonstration is not a real dispatcher. MRL-19 requires a separately bound real adapter/release and exact commands; execution remains held."
+  "clock_init": "python3 scripts/e13a_stage_clock.py --run-dir <run> --init",
+  "collection": "python3 scripts/e13a_collect.py --run-dir <run> --stage experiments/landmark/e13a_stage.json --plan results/e13a_request_plan_20260922.json --real",
+  "grading": "python3 scripts/e13a_grade.py --run-dir <run> --collect-dir <run>/collect --release experiments/landmark/e13a_release/release_manifest.json --real",
+  "analysis_check": "python3 scripts/e13a_stage_clock.py --run-dir <run> --check analysis",
+  "analysis": "python3 scripts/e13a_analyze.py --grades <run>/grade/grades.jsonl --stage experiments/landmark/e13a_stage.json --out <run>/analysis_report.json",
+  "analysis_charge": "python3 scripts/e13a_stage_clock.py --run-dir <run> --charge analysis --seconds <elapsed>",
+  "note": "The analyzer takes no clock, so its 300 s phase cap is enforced from the shell by --check before and --charge after. Grades are read from <run>/grade/grades.jsonl, which is where scripts/e13a_grade.py writes them. Every command reloads the one persisted stage_clock.json, so none of them resets the 2700 s outer deadline. Authoritative caps and pins: docs/e13a_execution_contract_20260923.md."
  },
  "analysis_missingness": "If any assigned grade is unavailable, report no primary point contrast; show finite all-assigned completion bounds and label available-case summaries as secondary. Bounds are not confidence intervals."
 }

@@ -249,7 +249,15 @@ def main(argv=None):
     ap.add_argument("--init", action="store_true", help="anchor a new clock (refuses to re-anchor an existing one)")
     ap.add_argument("--start-utc", help="--init: the stage start timestamp (default: now)")
     ap.add_argument("--phase", choices=sorted(PHASE_CAPS), help="also print this phase's remaining seconds")
+    # MRL-19: a phase whose work runs in a separate command (e.g. the analyzer, which takes no clock) is
+    # enforced from the shell: --check before it, --charge after it. Both persist, so the outer deadline is
+    # shared and a reload can only shrink the remaining budget.
+    ap.add_argument("--check", choices=sorted(PHASE_CAPS), help="exit non-zero if this phase has no budget left")
+    ap.add_argument("--charge", choices=sorted(PHASE_CAPS), help="record seconds spent by an external command")
+    ap.add_argument("--seconds", type=float, help="--charge: seconds to record")
     args = ap.parse_args(argv)
+    if args.charge and args.seconds is None:
+        ap.error("--charge requires --seconds")
     path = args.run_dir / CLOCK_FILE
     if args.init:
         if path.exists():
@@ -260,6 +268,15 @@ def main(argv=None):
         if not path.exists():
             raise SystemExit(f"No stage clock at {path}; run with --init first")
         clock = StageClock.load(path)
+    if args.check:
+        try:
+            clock.check(args.check)
+        except CapExhausted as exc:
+            clock.persist(path)
+            raise SystemExit(f"Stage cap exhausted for {args.check}: {exc}")
+    if args.charge:
+        clock.charge(args.charge, args.seconds)
+        clock.persist(path)
     report = clock.report()
     if args.phase:
         report["queried_phase"] = {"phase": args.phase, "remaining_seconds": clock.remaining(args.phase),

@@ -192,3 +192,17 @@ def test_nothing_is_written_inside_results(tmp_path):
     c, _ = clock()
     c.persist(tmp_path)
     assert sorted(p.name for p in (ROOT / "results").iterdir()) == before
+
+
+def test_cli_check_and_charge_enforce_an_external_phase(tmp_path):
+    """MRL-19: the analyzer takes no clock, so its cap is enforced by --check before and --charge after."""
+    run = tmp_path / "run"
+    run.mkdir()
+    sc.main(["--run-dir", str(run), "--init", "--start-utc", "2026-09-23T05:00:00Z"])
+    sc.main(["--run-dir", str(run), "--check", "analysis"])          # budget available
+    sc.main(["--run-dir", str(run), "--charge", "analysis", "--seconds", "120"])
+    spent = json.loads((run / sc.CLOCK_FILE).read_text())["spent"]["analysis"]
+    assert spent == pytest.approx(120, abs=1)
+    sc.main(["--run-dir", str(run), "--charge", "analysis", "--seconds", "200"])   # 320 > 300 cap
+    with pytest.raises(SystemExit, match="Stage cap exhausted for analysis"):
+        sc.main(["--run-dir", str(run), "--check", "analysis"])

@@ -47,7 +47,7 @@
    "No significance-driven escalation and no futility claim from six draws per arm."
   ],
   "descriptor_path": "experiments/landmark/e13a_stage.json",
-  "descriptor_sha256": "53a3bddc8fe07bba53b03287ed1f29df3928db6f0f2c0e685766a8df8df9624c"
+  "descriptor_sha256": "44e4ff0a734caebb5c756dcaec81253464988665ad8f5eb535f7e66f21a280c8"
  },
  "roots": [
   "mbpp/842",
