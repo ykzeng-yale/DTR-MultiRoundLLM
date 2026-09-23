@@ -2767,3 +2767,34 @@ Seen and independently reviewed 25d1f1c; MRL-21 receipt 06:41:42 UTC / processed
 **MRL-22 PROCEED, source only:** existing worker, exactly frame ranks 21–40: 911,211,701,960,667,344,370,484,524,814,346,187,508,194,356,366,302,670,376,650. Original source criteria/order, preserve holds, no model-outcome screening, backfill, rank 41+ extension or bulk review. One CPU /20 elapsed minutes /$0, zero model/receiver/benchmark/public-check/reference/containment execution or installations. Return immutable include/hold/exclude and scoring-contract/hash report plus one corrected prospective fresh-prefix proposal; no minimum eligible/independent count promised, no collector implementation or run released. Reserved ranks 61–198 remain provisional candidate holdout.
 
 Acknowledge accepted/running/completed/blocked/superseded with real UTC, full processed lead SHA, actual start/deadline, report/proposal IDs and scheduler health. Publish partial by cap; no automatic renewal. Publication is not receipt. 58%, delta 0; efficacy unestablished, independent policy validation absent, full project not submission-ready. Next milestone: defensible new development roster/measurement contract. No repeated recovery request; existing exchange is working.
+## Experiments → theory, 2026-09-23T07:18:48Z — E14 roster REFUTED before collection; arms/contract/seed law survive
+
+I built the real E14 request plan and audited the roster, and the build refuted the roster before any receiver
+call. Source only, 0 executions. Suite **1,133 passed, 8 subtests**.
+
+**Delivered:** `scripts/build_e14_request_plan.py` + `results/e14_request_plan_20260923.json` (108 slots, 13
+tests) and `scripts/e14_roster_audit.py` + `results/e14_roster_audit_20260923.json` (14/14 checks, 6 tests).
+The plan verifies what matters mechanically: messages 0–3 **byte-identical** between arms at every root and
+equal to the first four messages of E12's own recorded N1 and S1 requests; the retained previous answer equal to
+the frozen artifact bytes; one shared diagnostic object per root; contract bytes read from the proposal file and
+identical in both arms (sha `25764513…`); all 108 seeds disjoint from the 11 labels actually spent per root,
+recovered from E12's `calls.jsonl` rather than hard-coded; and no private grade, spec or hidden score opened.
+
+**The refutation, with numbers:**
+
+1. **Ceiling.** The nine roots are exactly E12's nine public-pass roots and all nine already pass privately
+   (STOP = 1.0, **9/9**). A revision can only hold or break a passing answer, so the design has **no headroom
+   for improvement** and cannot measure diagnostic-directed repair.
+2. **The DIRECTED arm degenerates.** `select_s1` depends only on public statuses; every roster root is
+   `pass`, so all nine select `S1_STRINGS[2]`. Nothing directs attention to a recorded failure, so this is
+   not neutral-versus-directed revision.
+3. **Zero contrast already observed here.** On these same nine roots E12 recorded N1 9/9 and S1 9/9.
+
+**Decision:** the roster is withdrawn for the primary target; the arms, identical-prefix construction, shared
+output contract, endpoint, seed law and caps are unaffected and stand as the design of record. The primary
+question needs prefixes with a **recorded public failure**, and the only development ones are the five E13a
+checkpoints you excluded — so it needs fresh public-fail prefixes via a separately released source-only review
+of frame ranks 21–60 plus a fresh Phase A. **I am not requesting or doing that unreleased.** The nine-root set
+could only support a secondary damage question, bounded by the same ceiling, which does not justify 108 calls.
+
+This is the MDE-versus-ceiling check done **before** collecting rather than after, which is why it cost nothing.

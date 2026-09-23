@@ -1,0 +1,2256 @@
+{
+ "plan_version": "e14-request-plan-v1-same-prefix",
+ "status": "PROPOSED; NOT RELEASED; no receiver call made; built source-only with zero receiver, candidate, reference, containment or sandbox execution and zero spend",
+ "release_note": "Execution requires a separate explicit lead release, a real host window, renewed attestation, receiver preflight, a resource agreement and an independent design/measurement review. This file authorizes nothing.",
+ "evidence_class": "development-only within-root paired instruction-wording contrast at nine already-seen E12 histories; identifies nothing beyond the wording it varies; no population effect, no policy validation, no repair or reinterpretation of E13a",
+ "endpoint_label": "e14-endpoint-v1",
+ "endpoint": "frozen private-suite-plus-output-validity score in {0,1} per slot; scorer code unchanged; all 108 assigned slots reported, missing stay missing under all-assigned completion bounds",
+ "proposal": {
+  "path": "docs/e14_same_prefix_revision_proposal_20260923.md",
+  "sha256": "0f6a2d3bdb42e9bb86df6235c2ff367ae43a471744df7d069f7c72f786c6431b",
+  "sections_implemented": [
+   1,
+   2,
+   5,
+   6
+  ]
+ },
+ "source_run": "results/e12_dev_v3_20260922T030255Z",
+ "receiver_identity_required_for_prefix_reuse": {
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "num_ctx": 8192,
+  "note": "any receiver or sampler change invalidates the reuse of E12's frozen prefixes"
+ },
+ "inputs": {
+  "A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+  "A/calls.jsonl": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+  "B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+  "C/calls.jsonl": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f"
+ },
+ "package": {
+  "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+  "tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+  "public_examples_v3.json": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2"
+ },
+ "decoding": {
+  "temperature": 0.7,
+  "top_p": 0.95,
+  "num_ctx": 8192,
+  "num_predict": 512
+ },
+ "seed_law": {
+  "seed": 20260921,
+  "derivation": "collect.seeded(config, root_id, \"<arm_label>:<replicate>\") = int(digest([seed, root_id, label])[:15], 16) % 2**31",
+  "spent_labels_source": "E12 A/calls.jsonl and C/calls.jsonl seed_key fields (not hard-coded)"
+ },
+ "contract": {
+  "label": "terminal-output-contract-v1",
+  "text": "Return the complete solution as one Python code block fenced by triple backticks, containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report.",
+  "sha256": "25764513626078ab39193208b69202c03cc32daa2ed1f802d5940a352248a90e",
+  "bytes": 237,
+  "identical_in_both_arms": true,
+  "read_from": "docs/e14_same_prefix_revision_proposal_20260923.md section 2 (bytes, not retyped)",
+  "validation_required_before_primary_collection": true
+ },
+ "arms": {
+  "NEUTRAL": {
+   "seed_label_prefix": "N1",
+   "instruction_source": "diagnostic.N_INSTRUCTION",
+   "replicates": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "message4": "<instruction> + \"\\n\\n\" + terminal-output-contract-v1"
+  },
+  "DIRECTED": {
+   "seed_label_prefix": "S1",
+   "instruction_source": "diagnostic.select_s1(diag) over public statuses only",
+   "replicates": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "message4": "<instruction> + \"\\n\\n\" + terminal-output-contract-v1"
+  }
+ },
+ "neutral_instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+ "s1_strings": [
+  {
+   "index": 0,
+   "sha256": "813aadfd388c75eb02828a85aa9cf2366c451dfa6e0ee458ce1a233ebe9f1f56",
+   "text": "Review the first public example with a recorded wrong value, format error, interface error, or program exception, in the diagnostic order. Compare the expected result with the recorded behavior, identify the discrepancy in your previous answer, and return a complete corrected answer. Check the remaining public examples and the full stated domain; do not merely hard-code the examples."
+  },
+  {
+   "index": 1,
+   "sha256": "9abb912a51405ad041a6a99b07df47fe7af65bed8258bfa6ebed3df77ed384d1",
+   "text": "The public diagnostic is incomplete. Do not interpret an unavailable result as a pass or infer a hidden error. Review your previous answer against the full stated domain and return your best complete answer."
+  },
+  {
+   "index": 2,
+   "sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+   "text": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer."
+  }
+ ],
+ "private_information_barrier": {
+  "no_private_grade_spec_or_hidden_score_read": true,
+  "files_opened": [
+   "experiments/landmark/dev_release_v3/config.json",
+   "experiments/landmark/dev_release_v3/tasks.jsonl",
+   "experiments/landmark/dev_release_v3/public_examples_v3.json",
+   "docs/e14_same_prefix_revision_proposal_20260923.md",
+   "results/e12_dev_v3_20260922T030255Z/ARTIFACT_SHA256SUMS.json",
+   "results/e12_dev_v3_20260922T030255Z/A/manifest.json",
+   "results/e12_dev_v3_20260922T030255Z/A/completion.json",
+   "results/e12_dev_v3_20260922T030255Z/A/roots.jsonl",
+   "results/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+   "results/e12_dev_v3_20260922T030255Z/A/artifacts/*.txt (checksum re-verification)",
+   "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json",
+   "results/e12_dev_v3_20260922T030255Z/C/calls.jsonl"
+  ],
+  "refused_path_tokens": [
+   "private",
+   "grade",
+   "hidden",
+   "reference_solution",
+   "/D/",
+   "analysis_report",
+   "analysis_input",
+   "summary.json",
+   "tests.xml"
+  ],
+  "assertion": "arm assignment, instruction selection, scheduling and seeds are functions of public statuses, public prompts and the receiver's own previous answer only; every private evaluation happens strictly after collection and is never fed back into any prompt"
+ },
+ "checks": [
+  "A bytes and config/dataset/assignment digests re-verified (collect_diagnostic._load_initial)",
+  "A/roots.jsonl, A/calls.jsonl, B/diagnostics.json and C/calls.jsonl match E12 ARTIFACT_SHA256SUMS",
+  "messages 0-3 byte-identical between NEUTRAL and DIRECTED at every root (collect.digest of the 4-message prefix equal, and the message objects equal); refuses otherwise",
+  "assistant turn present at index 2 and equal to E12's frozen initial artifact bytes (sha256 == roots.jsonl artifact_sha256 == ARTIFACT_SHA256SUMS entry)",
+  "message 3 is one shared diagnostic.diagnostic_message(diag) object per root, and each diagnostic passes diagnostic.validate_diagnostic against that root's fixed public examples (entry_point, cases)",
+  "prefix bytes equal the first four messages of both of E12's recorded N1 and S1 requests at each root",
+  "terminal-output-contract-v1 bytes read from the proposal file, identical in both arms, sha256 recorded once",
+  "DIRECTED instruction == diagnostic.select_s1(frozen diagnostic) and == S1_STRINGS[recorded index]; NEUTRAL instruction == diagnostic.N_INSTRUCTION; proposal quotes all four strings verbatim",
+  "all 108 derived seeds disjoint from every seed spent at that root, with spent labels derived from E12's A/calls.jsonl plus C/calls.jsonl seed_key values and cross-checked against E12's assignment table",
+  "no private grade, private spec, private execution record or hidden score opened; the opened-file list is enumerated in the plan and every path is screened against private-artifact tokens",
+  "108 slots = 9 roots x 2 arms x 6 replicates, 54 per arm, inclusion probability 1, root-balanced order recorded as scheduling only",
+  "no E13a outcome-inspected checkpoint (842, 288, 863, 966, 652) is in the roster"
+ ],
+ "assignment": {
+  "n_roots": 9,
+  "n_arms": 2,
+  "replicates_per_cell": 6,
+  "inclusion_probability": 1.0,
+  "per_arm_calls": {
+   "NEUTRAL": 54,
+   "DIRECTED": 54
+  },
+  "total_calls": 108,
+  "adaptive_assignment": false,
+  "propensity": null,
+  "order_role": "scheduling_not_assignment",
+  "order_note": "root-balanced so a truncated window loses whole roots; arm order shuffled within root by collect.seeded(config, root_id, \"order\"); carries no inferential role",
+  "retries_or_backfill": false,
+  "outcome_driven_stopping": false
+ },
+ "roots": [
+  {
+   "root_id": "mbpp/918",
+   "frame_rank": 1,
+   "provisional_family": "PF-918",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+   "base_messages_sha256": "97b8ac83fbd53fe71c0b548d70120d80c4b8142d47fe428adc3800034099f85c",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "1d9a7daa75ae2290df75bbe0332bb8c7fe2680a6a47169a06d92ad9b528da3a4",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "cab0bb2e644edffaef8bb0e5c4eb78f7a0a2d73b5fff6232246e87d479ff60df",
+   "diagnostic_message_bytes": 403,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 2075095269,
+    "N0:1": 143434032,
+    "N1:0": 738936711,
+    "N1:1": 1577585208,
+    "R1:0": 1449281446,
+    "R1:1": 499309634,
+    "S0:0": 63374508,
+    "S0:1": 1100131693,
+    "S1:0": 410230499,
+    "S1:1": 417084153,
+    "initial": 1928852835
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 561997750,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 188649260,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 666969945,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 897461380,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 173060325,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 383808404,
+       "messages_sha256": "1ad7b396f2ffd88bd9ef44b0e4cbe85e9de9a26af0c623e6f683a15c2147fc41"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 1697346793,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 1092116526,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 428099037,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 929418940,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1025546537,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 1870477196,
+       "messages_sha256": "8ce13d908f5de522174e068e886863decf56b90fc571410a50386d9ce65fb140"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/825",
+   "frame_rank": 2,
+   "provisional_family": "PF-825",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+   "base_messages_sha256": "0d08fe2eb4e5178463f05b60f5deb8bef7003e78f4dff0ffb2ff98d0c4b71860",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "1f06f14b574c254a7a702511d3d544000cf56115b21a48a9ecdac64d4dd65b6f",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "77fc8fab800af568bb5cb8bc3e835ec6313c505196845de85c1fa1830713cd21",
+   "diagnostic_message_bytes": 437,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 1488975479,
+    "N0:1": 1886067669,
+    "N1:0": 632947729,
+    "N1:1": 1505881679,
+    "R1:0": 628954956,
+    "R1:1": 1505413724,
+    "S0:0": 1584442630,
+    "S0:1": 1301251218,
+    "S1:0": 1745022611,
+    "S1:1": 788227637,
+    "initial": 1368125338
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 150408279,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 1045927017,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 442803709,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 1289715259,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 1169645884,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 1637978404,
+       "messages_sha256": "14c4ce31871be7020ba4d6f09999284a78edc37546c95e99e1ce8440d2167961"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 374655122,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 197185181,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 1868902890,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 1087514590,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 513318558,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 2139508901,
+       "messages_sha256": "7ee981071a40b675cfa9ab21103ecccc918a844eda9e0ab7056a5f3cc869d442"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/816",
+   "frame_rank": 7,
+   "provisional_family": "PF-816",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+   "base_messages_sha256": "757b9127f1c8bcb48d1579f633c32ce3911c9e07a3bb0b725267cd65e08c0e1b",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "fd685a7744235bd7db81b4339c6202dd30d2edce852d9969739a1a40cb53ce9c",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "7602f3ea8b816c2acd8b801e51283368a796c3565b540c3058601ed0c576ce58",
+   "diagnostic_message_bytes": 405,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 853342743,
+    "N0:1": 1160811369,
+    "N1:0": 1730754519,
+    "N1:1": 1812004049,
+    "R1:0": 1895122699,
+    "R1:1": 1929959239,
+    "S0:0": 610946473,
+    "S0:1": 501251668,
+    "S1:0": 357096675,
+    "S1:1": 676041353,
+    "initial": 894284307
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 785431243,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 1228220782,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 1437185013,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 2094801758,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 182774410,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 2097304802,
+       "messages_sha256": "09189d823375cd4c235655303e04aeff676439899bbebf0cbd2b1f4f599ac9b8"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 539710776,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 1039888862,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 906946249,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 695227537,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1734694014,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 425030550,
+       "messages_sha256": "2cc264c31692dc2de4d01a81b88fbc805505ce892b6ec49aa7939890f1b9823b"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/895",
+   "frame_rank": 8,
+   "provisional_family": "PF-895",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+   "base_messages_sha256": "78b46f8c64ffabd6aa1053dce1a85601f980be9f3855693f063ad4a9721caeaa",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "0e9fb7f2d4b75cc881dda286e73b4018c04089a5cd03d1102fbc19fd314ed304",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "85ad8aeaabdcf898c825230bf2293225b99ee2166738c31f5a21608ff352aaa5",
+   "diagnostic_message_bytes": 421,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 193346903,
+    "N0:1": 126051380,
+    "N1:0": 936166803,
+    "N1:1": 67165588,
+    "R1:0": 205226833,
+    "R1:1": 987963815,
+    "S0:0": 2058443158,
+    "S0:1": 478798302,
+    "S1:0": 755157654,
+    "S1:1": 529296998,
+    "initial": 433028415
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 1294957361,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 211584635,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 1065567483,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 87160147,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 793389949,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 1234293105,
+       "messages_sha256": "69fda6d5965f5f99cb24a8f886f33b5565ddd628f87be8037c51c4d21f08c24c"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 1342825654,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 1361880644,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 1421651854,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 1571869427,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1141011328,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 1996421421,
+       "messages_sha256": "f6a161043cf451f4812ccbe288e56a2d7c4b31364b90314f85998bb73788b9c6"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/868",
+   "frame_rank": 9,
+   "provisional_family": "PF-813",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+   "base_messages_sha256": "222ef244826d153c8c88b50722b4207d0033f0218e34ef6256054ccad52c4dea",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "884b3a044d4e5b09cabe380b15e1ddb3453ff614d94d9b50e6d0d10c2c32d550",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "36d5677f48e29c58a9d64c10730c974f852d48e365c7cf4a4ae257ec37b424c6",
+   "diagnostic_message_bytes": 413,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 259491001,
+    "N0:1": 959903914,
+    "N1:0": 1340592621,
+    "N1:1": 49060846,
+    "R1:0": 1069928067,
+    "R1:1": 1817116847,
+    "S0:0": 1438290461,
+    "S0:1": 1020333922,
+    "S1:0": 821334480,
+    "S1:1": 803492526,
+    "initial": 1415369786
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 1759656021,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 605667014,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 1438888599,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 68991400,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 1315049779,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 1767952883,
+       "messages_sha256": "cd4b525a5004a1c803cdfef0beaf1346d779626584fd9c46ddaa6a328255b3a9"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 346572013,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 438148757,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 1027264817,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 2127470534,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 16536043,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 640576996,
+       "messages_sha256": "08a8c70b8d60108630598c3ad946a2c135a52a257f12fca053dae1076cf4b4d6"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/154",
+   "frame_rank": 11,
+   "provisional_family": "PF-49",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+   "base_messages_sha256": "ee54d85fadfbf97705b2b90e6bb6b660d197f7af82742dc85c284c3e066a76aa",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "3d63a78d4447f350d5a23c11957445c94a4306955bcbe96fb698e3dc9ff67d47",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "35c9e681d43e2e9b9bf5948558fe80b69432d6609314f2072ac0b9867467b9fb",
+   "diagnostic_message_bytes": 455,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 1011657923,
+    "N0:1": 1571903051,
+    "N1:0": 796419745,
+    "N1:1": 1196563944,
+    "R1:0": 563461113,
+    "R1:1": 125270044,
+    "S0:0": 1989337288,
+    "S0:1": 544695306,
+    "S1:0": 1864996501,
+    "S1:1": 896137248,
+    "initial": 1337810025
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 241489485,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 1998440417,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 1720969605,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 1152556638,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 1722231173,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 258360692,
+       "messages_sha256": "5caef897550ec8987814a21975e7dd1516e56f8d7ffafe8c43a9489d77e23bc5"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 1661866775,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 16439071,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 2025940413,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 151558092,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 480800744,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 1380723968,
+       "messages_sha256": "138b80f5852dcc1be4b2c9058a7fd5f74f3ddd5eb04382444cdd631dcd248a8c"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/651",
+   "frame_rank": 18,
+   "provisional_family": "PF-651",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+   "base_messages_sha256": "211944890c0ffba5b1c19d728393795279d7c8c1c50cf6e27aa18af7314ea636",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "e24778ca98ca0d43bed36130c50d4bfbd3350c44c37c46327d27d00a5bb66951",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "6893654b7c6e8a4e0844746a0d2e4c52755b6b1220115bd5b40343390587e5cd",
+   "diagnostic_message_bytes": 417,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 1847781608,
+    "N0:1": 1896755473,
+    "N1:0": 2039597670,
+    "N1:1": 511615815,
+    "R1:0": 561474202,
+    "R1:1": 1512427303,
+    "S0:0": 1072125386,
+    "S0:1": 1640354653,
+    "S1:0": 1362915771,
+    "S1:1": 478836184,
+    "initial": 545897821
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 2124182113,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 871739972,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 981301302,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 1332781183,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 1350202901,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 271637014,
+       "messages_sha256": "6ea4da78a27d298b9e5d270a820f84c1e32b8fc4f8538af6454f5d16d674350f"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 877752576,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 1260653626,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 966933729,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 1185416904,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1404532551,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 370060685,
+       "messages_sha256": "8f680427278522b41b1732c252234fd8a2db599383ef640294e528ee1549fd21"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/499",
+   "frame_rank": 19,
+   "provisional_family": "PF-499",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+   "base_messages_sha256": "75d91502e36867cc708c8683fc69e15086065ee84baf27014dd806abc3acc1d6",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "33e0d6594ee7d0780f012e69bdf05b5748487218f8e304fb3f140c7006180be6",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "100048248d1b4d27c068619d75c3da3823fad39861b96e2486ec3b877af0e6df",
+   "diagnostic_message_bytes": 396,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 1735722378,
+    "N0:1": 292812845,
+    "N1:0": 2088764677,
+    "N1:1": 402148082,
+    "R1:0": 1482414807,
+    "R1:1": 1009802766,
+    "S0:0": 1066665098,
+    "S0:1": 970723098,
+    "S1:0": 1378878569,
+    "S1:1": 1028638691,
+    "initial": 1861676708
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 227811511,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 769899173,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 652110735,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 898847536,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 155206790,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 1162039517,
+       "messages_sha256": "071bbb444ed137359cd1312c41b9d9eb5f1f5c60b81f165185264aff5e9f39b7"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 739082546,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 239153660,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 139744484,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 1640474786,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1474059332,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 842366550,
+       "messages_sha256": "2292147e2a16d5bad14105ace71c612078eb91a1594553ef2a71bf815ed0ef16"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "root_id": "mbpp/974",
+   "frame_rank": 20,
+   "provisional_family": "PF-147",
+   "family_id_in_package": "unresolved_development_family",
+   "label": "development",
+   "initial_artifact_sha256": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+   "base_messages_sha256": "607925a803c94c4ddac0b0a74ba5b9ad124943478d16dbc0d57e40b61fe2ef4f",
+   "prefix_message_count": 4,
+   "prefix_messages_sha256": "bbd493a2b4a456e2c811f578a67567fca754a6589ae19e7446e7f3a1ee3cc7d1",
+   "prefix_roles": [
+    "system",
+    "user",
+    "assistant",
+    "user"
+   ],
+   "diagnostic_message_sha256": "50da72630772d30c17ece1a0741ada08700ca084772edf8eb73cf11734c9879f",
+   "diagnostic_message_bytes": 413,
+   "diagnostic_schema_version": "public-diagnostic-v2",
+   "public_case_statuses": [
+    "pass"
+   ],
+   "directed_s1_index": 2,
+   "directed_selection": {
+    "rule": "every public example passes",
+    "trigger_status": "pass",
+    "trigger_case_id": null
+   },
+   "spent_labels": [
+    "N0:0",
+    "N0:1",
+    "N1:0",
+    "N1:1",
+    "R1:0",
+    "R1:1",
+    "S0:0",
+    "S0:1",
+    "S1:0",
+    "S1:1",
+    "initial"
+   ],
+   "spent_seeds": {
+    "N0:0": 229861609,
+    "N0:1": 1461141092,
+    "N1:0": 191340824,
+    "N1:1": 1974579558,
+    "R1:0": 587236650,
+    "R1:1": 1763649641,
+    "S0:0": 889708536,
+    "S0:1": 2063346611,
+    "S1:0": 1869300113,
+    "S1:1": 83766701,
+    "initial": 988364973
+   },
+   "arms": {
+    "NEUTRAL": {
+     "seed_label_prefix": "N1",
+     "instruction": "Reconsider your previous answer against the original task and public information. Return your best complete answer.",
+     "instruction_sha256": "0b81c6e2bb1117a36f800c6206e15d4b88134b5e744d1bfc77ff329b71e138c5",
+     "message4_sha256": "130e8d50f73c7523aa902fd0cb0d4b03aa2368094d782c86220a6fd7f70ea0f1",
+     "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48",
+     "requests": [
+      {
+       "arm": "NEUTRAL",
+       "replicate": 2,
+       "seed_key": "N1:2",
+       "seed": 520585388,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 3,
+       "seed_key": "N1:3",
+       "seed": 1476309258,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 4,
+       "seed_key": "N1:4",
+       "seed": 2072991048,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 5,
+       "seed_key": "N1:5",
+       "seed": 814873859,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 6,
+       "seed_key": "N1:6",
+       "seed": 1981968149,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      },
+      {
+       "arm": "NEUTRAL",
+       "replicate": 7,
+       "seed_key": "N1:7",
+       "seed": 1080011452,
+       "messages_sha256": "407ee0336340660bc15f7fecc374baaab1caf53d3441e5847b59e6f25e1ffe48"
+      }
+     ]
+    },
+    "DIRECTED": {
+     "seed_label_prefix": "S1",
+     "instruction": "Your previous answer passes the listed public examples, which do not establish correctness on the full stated domain. Check whether any change is needed; preserve correct behavior and return your best complete answer.",
+     "instruction_sha256": "e0a5419f7a57033da9815154dce8910ea625036ec56c4060dc4ddfe06cab703d",
+     "message4_sha256": "cb53cb7835c4a839e422410a02040f344c1090927147c2954e74bd9674cf194f",
+     "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97",
+     "requests": [
+      {
+       "arm": "DIRECTED",
+       "replicate": 2,
+       "seed_key": "S1:2",
+       "seed": 884650317,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 3,
+       "seed_key": "S1:3",
+       "seed": 1075564859,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 4,
+       "seed_key": "S1:4",
+       "seed": 278941897,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 5,
+       "seed_key": "S1:5",
+       "seed": 660869198,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 6,
+       "seed_key": "S1:6",
+       "seed": 1013568635,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      },
+      {
+       "arm": "DIRECTED",
+       "replicate": 7,
+       "seed_key": "S1:7",
+       "seed": 293747531,
+       "messages_sha256": "9c68a32329fbb5c6127edaebbaa1bc869130948fa16fcb627fea485240c74e97"
+      }
+     ]
+    }
+   }
+  }
+ ],
+ "scheduling_order": [
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/918",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/825",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/816",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/895",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/868",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/154",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/651",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/499",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 2,
+   "seed_key": "S1:2"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 3,
+   "seed_key": "S1:3"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 4,
+   "seed_key": "S1:4"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 5,
+   "seed_key": "S1:5"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 6,
+   "seed_key": "S1:6"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "DIRECTED",
+   "replicate": 7,
+   "seed_key": "S1:7"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 2,
+   "seed_key": "N1:2"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 3,
+   "seed_key": "N1:3"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 4,
+   "seed_key": "N1:4"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 5,
+   "seed_key": "N1:5"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 6,
+   "seed_key": "N1:6"
+  },
+  {
+   "root_id": "mbpp/974",
+   "arm": "NEUTRAL",
+   "replicate": 7,
+   "seed_key": "N1:7"
+  }
+ ],
+ "budget": {
+  "receiver_calls": 108,
+  "max_tokens_per_call": 512,
+  "reserved_completion_tokens": 55296,
+  "expected_collection_seconds": 220.4,
+  "max_seconds": 480,
+  "isolated_starts": 153,
+  "paid_spend_usd": 0,
+  "note": "caps are proposed; no allowance, window or attestation is claimed by this file"
+ }
+}

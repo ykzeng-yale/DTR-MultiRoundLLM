@@ -4,6 +4,38 @@
 
 ## Status: this proposes and releases nothing
 
+> ## AMENDMENT, 2026-09-23 — the 9-root roster below CANNOT answer the primary question. Do not run it as specified.
+>
+> Building the actual request plan and auditing the roster refuted the design before any collection, which is
+> why both were done first. Evidence: `results/e14_request_plan_20260923.json`,
+> `results/e14_roster_audit_20260923.json`, and E12's published `analysis_report.json`.
+>
+> 1. **The endpoint is at the ceiling on every roster root.** The nine roots are exactly E12's nine
+>    public-pass roots, and all nine already pass privately: STOP = 1.0 at each, **9/9**. A revision arm can
+>    therefore only hold or break a passing answer. There is **no headroom for improvement at all**, so the
+>    design cannot measure diagnostic-directed repair — only damage.
+> 2. **The DIRECTED arm degenerates to a single constant wording.** `select_s1` is a deterministic function of
+>    public statuses, and every roster root's public status is `pass`, so all nine select `S1_STRINGS[2]`
+>    ("passes the listed public examples … check whether any change is needed"). No root has a recorded public
+>    failure for the instruction to direct attention to, so the contrast is not neutral-versus-directed revision
+>    at all; it is two near-equivalent "nothing observed to be wrong" wordings.
+> 3. **E12 already observed exactly zero contrast at these prefixes.** On these same nine roots N1 scored 9/9
+>    and S1 scored 9/9 with two draws each. Six draws will not make a ceiling informative.
+>
+> **Decision (experiments workstream).** The primary target — neutral versus diagnostic-directed revision at
+> identical full prefixes — requires prefixes carrying a **recorded public failure**. The only development
+> prefixes that have one are the five E13a checkpoints, whose reuse for this comparison the lead has excluded.
+> So E14 needs **fresh public-fail prefixes**, which means a separately released source-only contract review of
+> unreviewed frame ranks (21–60) followed by a fresh Phase A to create prefixes. That is not requested here and
+> must not be done unreleased.
+>
+> What the nine-root roster *could* still measure is a different, secondary question: whether a
+> diagnostic-confirming instruction damages already-passing answers. That is worth stating but it is not the
+> primary target, it is bounded by the same ceiling, and it does not justify 108 calls on its own.
+>
+> Sections 1–8 below are retained unchanged as the design of record for the arms, contract, endpoint, seed law
+> and caps — all of which survive the amendment. Only the roster is refuted.
+
 - **This document proposes and releases nothing.** It authorizes no collection, no
   receiver start, no model call, no candidate/reference/containment execution and no
   spend. It was written with zero such execution.
