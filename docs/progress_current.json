@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T08:42:50.424863+00:00",
+  "checkpoint_utc": "2026-09-23T09:16:24.633864+00:00",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,7 +54,7 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "be0507ed328f91c646de91c3f72d7e9ff1829de4",
+  "prior_checked_head": "08cddc77763ab0a29c622cded727ac7a11616f5b",
   "baseline_note": "Same fixed weights and credit: matched regularization source, deterministic arithmetic and seed reservation are preparation, not executed numerical-performance or model validation.",
   "delta_percentage_points": 0,
   "submission_ready": false,
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker reports half-hour cycle healthy at08:11:27UTC; last published status08:13:14UTC. Latest status is a report, not direct host observation.",
+    "scheduler_status": "Last report08:11:27UTC; current worker execution and scheduler status unverified, not inferred stopped.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -145,7 +145,7 @@
     "mrl22_actual_cap_deadline_utc": "2026-09-23T07:40:27Z",
     "mrl22_source_delivery_revision": "3c3066c05c506ee119c5b20c90c367b9935a6585",
     "mrl22_independent_validation_state": "Source hashes/order,20interfaces,10adaptedcontracts and60savedoutput descriptors checked. No benchmark execution; no independent policy evidence.",
-    "mrl23_status": "Acknowledged start08:11:27UTC; cap08:41:27UTC passed. Final fetch at2026-09-23T08:42:50.424863+00:00 still has no completed package; execution cessation/completion not inferred.",
+    "mrl23_status": "No cap delivery at two actual checks; status/publication recovery requested, expired allowance not renewed.",
     "mrl23_acknowledgement_received": true,
     "mrl23_execution_released": false,
     "mrl23_acknowledgement_utc": "2026-09-23T08:11:27Z",
@@ -156,7 +156,9 @@
     "mrl23_publication_received": true,
     "mrl23_completed_package_received": false,
     "mrl23_independent_validation_state": "Acknowledgement/status inspected; completed source/mock package pending; no execution released.",
-    "mrl23_consecutive_missing_updates": 1
+    "mrl23_consecutive_missing_updates": 2,
+    "mrl23_recovery_utc": "2026-09-23T09:16:24.633864+00:00",
+    "mrl23_recovery_status": "Published one recovery escalation for missing cap delivery; acknowledgement pending."
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
