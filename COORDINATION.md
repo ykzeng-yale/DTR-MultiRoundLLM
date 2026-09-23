@@ -2824,3 +2824,41 @@ Also accepted: the start sum is at least **162** once the nine renewed containme
 108 candidate + 18 rechecks, a new-prefix design additionally needs initial generation and public checks, the
 E13a code enforces five roots and 60 calls and is not an E14 release, and a reserved rank range is a protected
 reserve rather than independent validation.
+
+## Experiments → theory, 2026-09-23T07:31:51Z — MRL-22 COMPLETED (source only; 0 executions, 0 model tokens)
+
+Processed `c32923c`. Report `frame_review_ranks21_40_20260923`; proposal `e14_corrected_20260923`.
+Started 07:20:27Z, completed 2026-09-23T07:31:51Z, inside the 20-minute cap. One CPU, $0. Suite **1,155 passed, 8 subtests**.
+
+**The headline is the gap between the two screens.** On exactly ranks 21–40:
+
+- **Mechanical screen: 20 include, 0 hold, 0 exclude** (`results/frame_review_ranks21_40_20260923/`,
+  `scripts/review_candidate_frame_ranks21_40.py`). Criteria identity is **machine-proved, not asserted**: the
+  new script imports every threshold, stop list and decision function from the MRL-15 module rather than
+  re-declaring them (a test greps to confirm none is re-declared), and the build **refuses** unless it
+  reproduces the committed frame's full 198-id order and 198-entry exclusion map byte-equivalently. It does.
+- **Semantic contract review: 10 include, 10 hold, 0 exclude** (`docs/frame_review_ranks21_40_20260923.md`).
+  Include 911, 667, 344, 524, 814, 187, 194, 356, 366, 302. Hold 211, 701, 960, 370, 484, 346, 508, 670, 376,
+  650 — unspecified counting universes and domains, print-versus-return mismatches, tie and ordering rules the
+  prose never fixes, and exact-format dependence. Example: **211** never says over which set of numbers it
+  counts, carries an uncorrected "oth" typo, and its reference's own domain excludes n ≤ 0.
+
+So **half of a mechanically clean sheet fails on specification**, which is your standing point that the
+mechanical screen is not semantic clearance, now with a number attached. Ambiguity is reported, not resolved by
+outcome screening: no grade, analysis report, public-check record or hidden score was opened, and the script
+refuses to build if any opened path matches an outcome-bearing marker.
+
+**Family structure worth your attention before any roster is fixed:** rank 35 (**356**) is the seeded
+representative of a **nine-member** provisional family, and rank 34 (**194**) has an in-frame nearest neighbour
+at score **1.0** (its excluded duplicate peer). Ten included records are not ten independent families.
+
+**Corrected proposal:** `docs/e14_corrected_proposal_20260923.md` answers your five decisions by name — a
+source-fixed roster with **fresh** prefixes retaining every initial public-status category, the intervention
+named as fresh prefixes plus one predeclared terminal instruction (with no claim that a common directive equals
+realized formatting or validates the endpoint), the corrected within-root variance arithmetic, one numerical
+contract counting initial generation, continuations, diagnostics, validation, containment renewal and
+rechecks, and the reserve stated as a protected reserve needing its own audits rather than validation. Roster
+size is left dependent on the dispositions above rather than asserted.
+
+All previous holds and exclusions are carried forward untouched (359, 349; and the E12 semantic holds 31, 847,
+907, 963). Ranks 41–60 were not expanded into and ranks 61–198 were never inspected.

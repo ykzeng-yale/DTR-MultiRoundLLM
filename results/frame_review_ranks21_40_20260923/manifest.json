@@ -1,0 +1,276 @@
+{
+ "carried_forward": {
+  "mechanical_exclusions_preserved": 198,
+  "mechanical_exclusions_sha256": "ed8132e6f66c677407e0e6db019007f68974bf63b7eee9141965655c8a41e7cd",
+  "mechanical_holds_ranks_1_20": [
+   {
+    "rank": 3,
+    "revisited": false,
+    "status": "hold",
+    "task_id": 359
+   },
+   {
+    "rank": 16,
+    "revisited": false,
+    "status": "hold",
+    "task_id": 349
+   }
+  ],
+  "policy": "no hold is replaced, reopened or re-decided; no backfill beyond rank 40; ranks 41-198 are not inspected",
+  "ranks_1_20_ids": [
+   918,
+   825,
+   359,
+   842,
+   31,
+   847,
+   816,
+   895,
+   868,
+   288,
+   154,
+   907,
+   863,
+   966,
+   652,
+   349,
+   963,
+   651,
+   499,
+   974
+  ],
+  "semantic_holds_ranks_1_20": {
+   "ids": [
+    31,
+    847,
+    907,
+    963
+   ],
+   "revisited": false,
+   "source": "docs/e12_contract_review_20260922.md",
+   "source_sha256": "eceae0c5e9d3c541ecc5ee20d2da1be790662b9880f78090d4d3c1281e6a5cbc",
+   "status": "hold"
+  }
+ },
+ "criteria_identity": {
+  "checked_against_preregistered": [
+   "e11_dev_roots",
+   "family_rule",
+   "mbpp_sha256",
+   "n_review",
+   "order_key",
+   "outcome_information_used",
+   "screen_dir",
+   "seed",
+   "similarity_rule",
+   "similarity_threshold"
+  ],
+  "code_stop_sha256": "befec3dfe4c614c129c1a0d56d55848341dac71ac8433039215dfa02dfbcfd03",
+  "decision_function": "review_candidate_frame_mrl15.spec_review (imported verbatim)",
+  "imported_not_retyped": [
+   "CODE_STOP",
+   "E11_DEV_ROOTS",
+   "MBPP_SHA256",
+   "N_REVIEW",
+   "PRIOR_CONFIG",
+   "SCREEN_DIR",
+   "SEED",
+   "SIM_RULE",
+   "SIM_THRESHOLD",
+   "TEXT_STOP",
+   "UF",
+   "code_tokens",
+   "entry_point",
+   "jac",
+   "map_prior_seen",
+   "seed_key",
+   "sim",
+   "spec_review",
+   "test_features",
+   "text_tokens",
+   "verify_screen"
+  ],
+  "n_code_stop_tokens": 55,
+  "n_text_stop_tokens": 23,
+  "similarity_threshold": 0.5,
+  "source_module": "scripts/review_candidate_frame_mrl15.py",
+  "source_module_sha256": "9882fb0c507fb1f2da930f46bdea36eae13e681561985695cf7ddd2890f9a720",
+  "text_stop_sha256": "ab9c47c9c1a02673c1690676e1d2b326c740c6ccffe3fd5473fd62a16b8897bf"
+ },
+ "criteria_reproduction": {
+  "eligible_ordered_ids_reproduced": true,
+  "excluded_map_reproduced": true,
+  "note": "the MRL-15 selection was re-executed with the imported constants and functions; both the full 198-id order and the exclusion map matched the committed frame, so the criteria are provably unchanged",
+  "threshold_sensitivity": "unchanged from the MRL-15 manifest (reported-not-used; not recomputed, never selective)"
+ },
+ "decision_counts": {
+  "exclude": 0,
+  "hold": 0,
+  "include": 20
+ },
+ "execution": {
+  "exec_eval_subprocess": false,
+  "installs": 0,
+  "model_calls": 0,
+  "model_tokens": 0,
+  "network": false,
+  "static_ops": [
+   "ast.parse",
+   "compile",
+   "hashlib.sha256",
+   "json.loads"
+  ]
+ },
+ "outcome_inspection": {
+  "decision_function": "review_candidate_frame_mrl15.spec_review (imported verbatim)",
+  "decision_function_reads_no_outcome_field": true,
+  "inputs_opened": [
+   "docs/e12_contract_review_20260922.md",
+   "experiments/landmark/dev_release_v1c/config.json",
+   "results/frame_review_mrl15_20260922T021718Z/manifest.json",
+   "results/frame_review_mrl15_20260922T021718Z/records.json",
+   "results/pool_screen_20260921T131231Z/per_candidate.json",
+   "results/pool_screen_20260921T131231Z/summary.json",
+   "results/pool_screen_20260921T131231Z/usable_ids.json",
+   "scripts/review_candidate_frame_mrl15.py",
+   "work/sources/mbpp_full.jsonl"
+  ],
+  "model_outcomes_inspected": false,
+  "note": "the decision function is spec_review, whose inputs are the MBPP task text, the parsed reference signature and the source assertion shapes only. No grades file, analysis report, public-check record, private execution record or hidden score was opened, and no candidate was chosen by expected receiver difficulty.",
+  "outcome_fields_read": [],
+  "source_fields_read": [
+   "task_id",
+   "text",
+   "code",
+   "test_list",
+   "challenge_test_list"
+  ]
+ },
+ "preregistered": {
+  "family_rule": "union-find over within-frame pairs with score >= threshold; keep member with smallest seeded hash",
+  "n_review": 20,
+  "order_key": "sha256(f\"mrl15-frame-seed-20260922:{task_id}\")",
+  "outcome_information_used": "none",
+  "seed": "mrl15-frame-seed-20260922",
+  "similarity_rule": "score = max(Jaccard(text tokens), Jaccard(code identifier tokens)); tokens = lowercase [a-z0-9_]+ ; code tokens exclude Python keywords and builtins-free list below; pairs with score >= threshold are near-duplicates",
+  "similarity_threshold": 0.5
+ },
+ "records_sha256": "b1bfb94e8c175dadc21d47150cbc4ba22349eb82ad1d4d03fe51a8c89d13f0a2",
+ "reproduce": "python3 scripts/review_candidate_frame_ranks21_40.py --out-dir results/frame_review_ranks21_40_20260923",
+ "scope": {
+  "frame_dir": "results/frame_review_mrl15_20260922T021718Z",
+  "frame_eligible_ordered_ids_n": 198,
+  "frame_manifest_sha256": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+  "n_records": 20,
+  "no_backfill_beyond_rank_40": true,
+  "no_rerank": true,
+  "protected_note": "only committed[20:40] was sliced; no record beyond rank 40 was loaded, scored or reported",
+  "ranks": [
+   21,
+   40
+  ],
+  "ranks_41_198_inspected": false,
+  "ranks_reviewed_before": [
+   31,
+   154,
+   288,
+   349,
+   359,
+   499,
+   651,
+   652,
+   816,
+   825,
+   842,
+   847,
+   863,
+   868,
+   895,
+   907,
+   918,
+   963,
+   966,
+   974
+  ],
+  "task_ids_in_committed_order": [
+   911,
+   211,
+   701,
+   960,
+   667,
+   344,
+   370,
+   484,
+   524,
+   814,
+   346,
+   187,
+   508,
+   194,
+   356,
+   366,
+   302,
+   670,
+   376,
+   650
+  ]
+ },
+ "source": {
+  "e11_dev_roots": [
+   52,
+   357,
+   373,
+   378,
+   402,
+   489,
+   509
+  ],
+  "fields_read": [
+   "task_id",
+   "text",
+   "code",
+   "test_list",
+   "challenge_test_list"
+  ],
+  "mbpp_path": "work/sources/mbpp_full.jsonl",
+  "mbpp_path_as_recorded": "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/sources/mbpp_full.jsonl",
+  "mbpp_rows": 974,
+  "mbpp_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "paths_tried": [
+   "work/sources/mbpp_full.jsonl"
+  ],
+  "prior_seen": {
+   "config_sha256": "9b22b94cfdabf48ae36e8bdf27d748adc71465ace2b56e0ae5ff30d1a61b062a",
+   "n_humaneval_not_mbpp": 164,
+   "n_mapped_mbpp": 434,
+   "n_prior_seen_ids": 598,
+   "note": "humaneval/* ids are a different benchmark and cannot map to MBPP task_ids; no HumanEval source is pinned, so they are not similarity-screened (limitation).",
+   "unmappable_other": []
+  },
+  "prior_seen_mbpp_in_source": 441,
+  "screen_verification": {
+   "all_marked_usable": true,
+   "per_candidate_usable": 396,
+   "summary": {
+    "candidates": 544,
+    "first_failing_gate": {
+     "G2_interface": 142,
+     "G3_setup": 6,
+     "USABLE": 396
+    },
+    "model_calls": 0,
+    "reasons": {
+     "G2_interface:not_single_function": 142,
+     "G3_setup:setup_or_challenge_tests_present": 6
+    },
+    "usable_upper_bound": 396,
+    "wall_seconds": 18.9
+   },
+   "usable_ids": 396,
+   "usable_ids_sha256": "b2bab50b0999659309f941174aefa1163f09c28c3a62261d5dc5c9aa5bfd0f55"
+  },
+  "sha256_verified_before_read": true
+ },
+ "status": "mechanical screen only; not a semantic contract review, not collection authorization, not a family-independence certificate",
+ "task": "MRL-22 mechanical screen of candidate-frame ranks 21-40 (lead commit c32923c, docs/mrl21_review_mrl22_20260923.md)"
+}
