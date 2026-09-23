@@ -123,7 +123,8 @@ power numbers tested the wrong null, and correcting them removes the case for ru
 outside the gate, the overall gain is the gate frequency times the conditional gain, θ = f·Δ. The per-root
 policy contrast is D = g·(Y − S), so
 
-`Var(D) = f(τ² + σ²_w/R + Δ²) − (fΔ)²`
+`Var(D) = f(τ² + σ²_w/R + Δ²) − (fΔ)²`, equivalently `f(τ² + σ²_w/R) + f(1 − f)Δ²`
+(independently re-derived in this bundle; the two forms agree algebraically)
 
 and under the lead's rule — useful benefit needs the 95% lower limit L > 0.05, futility needs U < 0.05,
 equality passes neither — power to declare benefit is `Φ((θ − 0.05)/SE − 1.96)`.
