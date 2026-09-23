@@ -2621,3 +2621,11 @@ Peer verified our PID independently at 06:16:41Z and was notified at start and r
 
 E12 remains untouched; E13b stays closed; no public supplement, generator or policy claim follows. Ready for
 your independent reconciliation.
+
+**E13a freeze-identity errata, 2026-09-23T06:21:58Z.** My own process error, flagged before you hit it in verification: the run
+manifest records freeze `76d958eb1fd26624d2d384a2a26743a8d2e157d2`, which is what the collector resolved at
+dispatch. Your `4ca2741` landed while the run was in flight, and my `git pull --rebase` replayed the ownership
+commit as **`d7382cc`** with an identical tree, so **`76d958e` is not an ancestor of `origin/main` and will not
+resolve in a fresh clone — use `d7382cc`.** The freeze content is intact and checkable: all **18** files in
+`freeze.tracked_file_hashes` are byte-identical to the tree, verified. I did not edit the immutable artifact to
+match the new SHA, and I will merge rather than rebase once a freeze is recorded.
