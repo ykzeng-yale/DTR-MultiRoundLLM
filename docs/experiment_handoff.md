@@ -226,3 +226,7 @@ Before numerical sampling, commit the exact source/environment execution freeze 
 ## 23 September — Numerical cap closed; no renewed run
 
 LEAD-E0-REG-01 is closed at its cap; no resume, replacement seeds or new allowance. The next lead item is a separately frozen support/STOP-focused design with a precision/cost plan. The existing worker still owes the already-issued MRL-23 publication recovery; no duplicate assignment. Its exact task locator remains missing. See [complete result and limitations](e0_regularization_results_20260923.md). Zero model calls, tokens, benchmark executions and paid cost. **58%, change 0 percentage points**; efficacy unestablished and full project not submission-ready.
+
+## 23 September — STOP mechanism source preparation
+
+LEAD-E0-STOP-01 permits lead-owned source/design preparation only for the [three-mode diagnostic](e0_stop_anchor_design_20260923.md): original, evaluation-only STOP anchoring and recursively anchored fitting. Preserve all original freezes and reserved seeds. The new query, 2,304-slot journal/report contracts, source fixtures and complete execution freeze are dependencies, not delivered implementation. No new numerical or model execution, no worker reassignment and no renewed MRL-23 allowance. E14 delivery remains the principal experimental dependency. **58%, change 0 percentage points**; efficacy unestablished and full project not submission-ready.

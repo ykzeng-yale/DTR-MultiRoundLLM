@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points.** A frozen matched numerical run produced 432 complete datasets plus one partial before its 600-second cap. Independent saved-root/source audit accepts accounting; sparse full-history and pooling errors and observed interval undercoverage are retained. This incomplete diagnostic remains within existing credit: 200 replicates per condition and unconditional precision were not achieved. MRL-23 recovery remains unanswered; delivery cannot be verified and the existing worker task locator is still needed. Original negatives stand, efficacy is unestablished, independent policy validation remains open, and the full project is not submission-ready. [Fixed rubric](progress_current.json), [scientific result](e0_regularization_results_20260923.md).
+**58%, change 0 percentage points.** Independent STOP-score analysis now distinguishes mean cancellation, direct adjustment and backward propagation; an exact finite-tree check supports the worked examples. The prospective 96-dataset mechanism comparison remains source/design preparation, with no sampling released. The earlier 432-complete-plus-one-partial numerical study and its precision limits stand. MRL-23 recovery remains unanswered and delivery cannot be verified; the existing worker task locator is still needed. This work refines existing credit with no denominator change. Prompt efficacy and independent policy validation remain unestablished; the full project is not submission-ready. [Fixed rubric](progress_current.json), [new analysis and design](e0_stop_anchor_design_20260923.md), [preserved numerical result](e0_regularization_results_20260923.md).
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

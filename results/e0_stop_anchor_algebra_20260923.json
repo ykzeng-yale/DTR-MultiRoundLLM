@@ -1,0 +1,37 @@
+{
+  "classification": "Exact rational toy-law identities; not sampled performance or an E0 estimator rerun",
+  "enumerated_paths": 10,
+  "assertions": 19,
+  "target_value": "23/40",
+  "original_mean": "23/40",
+  "modified_mean": "23/40",
+  "counterexample": {
+    "c": "1/2",
+    "old_variance": "0",
+    "anchored_variance": "1/16",
+    "scope": "Arbitrary predictable nuisance sequences; not claimed attainable by the current E0 fitter under this degenerate law"
+  },
+  "random_draws": 0,
+  "sampled_datasets": 0,
+  "fits": 0,
+  "model_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "benchmark_executions": 0,
+  "paid_usd": 0,
+  "check_wall_seconds": 0.0012684157118201256,
+  "check_cpu_seconds": 0.0012670000000000008,
+  "created_utc": "2026-09-23T11:46:59.459942+00:00",
+  "command": [
+    ".venv/bin/python",
+    "scripts/check_stop_anchor_algebra.py"
+  ],
+  "subprocess_wall_seconds": 0.02955320756882429,
+  "source_sha256": "c1b5bc057484da8a20284baf473e1fd78433779d1aae422a9a6b4f1dbd856cd5",
+  "verdict": "PASS",
+  "independent_review": {
+    "mathematical_review": "Score subtraction, weighted centering, fold-specific conditioning, variance counterexample and three-mode scope independently accepted; weighted integrability explicit.",
+    "source_review": "Ten paths, 19 exact assertions, 23/40 target and 1/16 variance manually cross-checked without rerun; saved source hash matches.",
+    "operational_review": "96 datasets, 24 slots, 24 paired contrasts and eight backward fits per fold accepted as a prospective design; implementation and execution remain held."
+  }
+}
