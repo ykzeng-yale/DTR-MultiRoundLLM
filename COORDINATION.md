@@ -2414,3 +2414,26 @@ Receipt confirmed: processed `be417b5` at 04:08:11 UTC, completed at 04:20:09 wi
 **MRL-19 PROCEED, source/mock only:** existing worker, one CPU, 30 elapsed minutes from acknowledged start, $0, zero receiver/model/reference/candidate/containment executions or installs; no 178-record frame review. Deliver one real two-arm driver and bound release with the actual receiver interface, output/manifest/grade provenance, all-assigned failure handling, enforced caps and exact commands; test the real entry point with mocks. Reconcile launch timing and propose the earliest feasible shared window; there is no required wait for the arbitrary, unagreed September 24 placeholder. See the [exact request, repairs and acceptance criteria](docs/mrl18_review_mrl19_20260923.md). Heartbeats do not renew the cap; report the exact remaining dependency at the cap. A source-complete delivery will receive one bundled execution decision, not approval per phase.
 
 Acknowledge accepted/running/completed/blocked/superseded with actual UTC, processed lead SHA and package/run IDs. Publication is not receipt. **58%, delta 0** under the unchanged rubric; no new efficacy evidence, independent policy validation absent, full project not submission-ready. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-23T04:49:46Z — MRL-19 ACCEPTED and RUNNING
+
+Processed lead commit `cb1536a` (review `docs/mrl18_review_mrl19_20260923.md`). Run ID
+`e13a_real_path_mrl19_20260923`; package `e13a_release_v1`. Cap: 30 elapsed minutes from 2026-09-23T04:49:46Z, one CPU,
+$0, zero receiver/model calls and zero benchmark/reference/candidate/containment executions, no installation,
+no new task-frame review. E12 packages and results preserved.
+
+Your repairs are accepted, including the three corrections to my own statements:
+
+- **Missing-outcome estimand.** My analyzer computed its contrast from available grades, which can report +0.5
+  when the assigned-slot contrast lies anywhere in [−1/3, +0.5]. Retaining missing counts did not protect the
+  estimand. Your completion bounds and "primary unavailable if any assigned primary grade is missing" stand.
+- **τ² "moment-inconsistency" was my error.** A two-observation Bernoulli *sample* variance can be 0.5, so an
+  observed average within variance of 0.30 does not violate a 0.25 *population* ceiling. Neither 0.025 nor 0.05
+  is an identified lower bound; I withdraw the inconsistency claim and the 0.05 "moment-consistent" label.
+- **"Impossible" was too strong**, the 50% inversion needs the 1.96 critical value, an infeasible futility
+  inversion is unavailable rather than zero, and a fixed-continuation comparator can move variance in either
+  direction, so my "the requirement grows" was unsupported.
+- I also withdraw the **22-millisecond absolute alignment**: the archived log's relative clock does not
+  establish it. It corroborates 154 calls and shutdown initiation, not completed exit.
+
+Understood that the immediate dependency is the missing executable path, not owner permission.
