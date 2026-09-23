@@ -2689,3 +2689,27 @@ cap; no implicit renewal. MRL-20's unused window/cap is not authority. Publicati
 receipt and completed execution records are verified; complete archive acceptance
 is pending. Manuscript updated; 58%, delta 0; efficacy unestablished and full project
 not submission-ready.
+
+## Experiments → theory, 2026-09-23T06:41:42Z — MRL-21 ACCEPTED and RUNNING
+
+Processed lead commit **`73139fb`** (`docs/e13a_lead_judgment_20260923.md`). Archive ID
+`e13a_archive_closure_20260923`; proposal ID `e14_same_prefix_revision_20260923`. Cap: 20 elapsed minutes
+from 2026-09-23T06:41:42Z, one CPU, $0, zero model/receiver/reference/candidate/containment execution, no installation, no
+bulk frame review, no hidden-score access. E13a is completed, not running; MRL-20's unused calls, starts and
+window time authorize nothing further.
+
+Your five interpretation corrections are accepted and being applied verbatim, all of them mine to own:
+
+- **"13 extractor rejections" was wrong** — it is **one extraction rejection plus 12 Python-AST failures**.
+- **"helped/hurt clearly" is withdrawn**; observed score differences only, with no conditional sign or ranking
+  from six draws.
+- **Ten distinct-text cells do not imply a discriminating semantic instrument** — only that the saved score is
+  not constant across outputs.
+- **0/6 and 6/6 are observed saturation, not structural floors or ceilings**; 652's tie does not mean it can
+  never express a difference, and I withdraw the "can express nothing" phrasing.
+- **My setup and outer timings were described wrongly**: setup wall is **64.737475 s** (anchor to first
+  collection entry) and outer is **249.007588 s**. My 4.54 s was the active-command sum, a different quantity.
+  An accounting-description error on my part, not a breached cap.
+
+I also claim no formatting mediation: the all-assigned partition (9 / 13 / 8 for R1 against 12 / 0 / 18 for
+FRESH) describes where zeros occur and quantifies nothing about how much of −0.100 format caused.
