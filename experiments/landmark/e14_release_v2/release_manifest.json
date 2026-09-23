@@ -1,0 +1,1214 @@
+{
+ "manifest": "e14-ten-root-versioned-release-v2",
+ "status": "PROPOSED BINDINGS for E14. Not a release decision and not an execution authorization; MRL-23 item 1 source/static work only.",
+ "evidence_class": "source-bound prospective measurement package: bindings, hand-traced control predictions and static validity (ast.parse, compile, integrity.hack_gate). NOT executed reference/control validation and NOT new model data.",
+ "endpoint": "Versioned adapted suite: retain original private assertions1/2 and add every listed private assertion; primary score is unchanged grader-v5 applied to the new suite. No new format-compliance gating.",
+ "roots": [
+  "mbpp/911",
+  "mbpp/667",
+  "mbpp/344",
+  "mbpp/524",
+  "mbpp/814",
+  "mbpp/187",
+  "mbpp/194",
+  "mbpp/356",
+  "mbpp/366",
+  "mbpp/302"
+ ],
+ "n_roots": 10,
+ "roster_order": [
+  911,
+  667,
+  344,
+  524,
+  814,
+  187,
+  194,
+  356,
+  366,
+  302
+ ],
+ "roster_order_note": "exactly the lead's candidate_roster_order; no outcome-based reordering and no new source roster",
+ "held_ids_unchanged": [
+  211,
+  701,
+  960,
+  370,
+  484,
+  346,
+  508,
+  670,
+  376,
+  650
+ ],
+ "public_private_boundary": "Public view contains public_contract, original entry-point/signature metadata and original assertion index0 only. added_private_assertions and reference/controls must remain scorer-only; never include this whole file in a prompt.",
+ "design": {
+  "initial_calls": 10,
+  "arms": [
+   "NEUTRAL",
+   "DIRECTED"
+  ],
+  "draws_per_arm": 6,
+  "continuation_slots": 120,
+  "call_slots": 130,
+  "slots_fixed_before_collection": true,
+  "branch_inclusion_probability": 1,
+  "arm_difference": "only the arm instruction differs; both arms share a byte-identical prefix and the same terminal instruction v2",
+  "missingness_rules": [
+   "Keep every assignment; never drop, retry or replace a slot.",
+   "Suppress the primary point contrast if ANY primary branch grade is missing.",
+   "Report binary completion bounds with NO missing-at-random assumption.",
+   "A failed initial generation leaves its twelve continuation slots missing: do not fabricate an answer, substitute a task-only intervention, retry, or remove the root.",
+   "A valid-but-incomplete public diagnostic uses the predeclared public-only incomplete-information instruction.",
+   "Environment/containment and receiver-law failures keep their existing stop rules.",
+   "Candidate private scoring starts only after collection is closed.",
+   "No outcome-based roster change or tuning mid-batch."
+  ],
+  "reporting_rules": [
+   "Report the finite-sample contrast, per-root counts and all-assigned completion bounds DESCRIPTIVELY.",
+   "No normal confidence interval, no Hoeffding interval, no efficacy declaration, no futility declaration.",
+   "Seeds are reproducibility settings, not proof of independent draws.",
+   "Inclusion probability is 1 for every one of the 130 slots; balanced order is scheduling only and is not a binary treatment propensity requiring inverse-propensity weighting."
+  ]
+ },
+ "authorization": {
+  "receiver_calls_authorized": 0,
+  "model_tokens_authorized": 0,
+  "candidate_executions_authorized": 0,
+  "reference_executions_authorized": 0,
+  "negative_control_executions_authorized": 0,
+  "benchmark_executions_authorized": 0,
+  "public_check_executions_authorized": 0,
+  "containment_executions_authorized": 0,
+  "paid_usd_authorized": 0,
+  "statement": "This package binds inputs, identities, static validity and bookkeeping limits only. It authorizes NO model or receiver call and NO candidate, reference, negative-control, public-check or containment EXECUTION. No reference or control in this package has ever been run, including for a quick correctness check; every control failure prediction is a declared hand trace. E14 instrument validation and model collection remain held pending independent review of this package and satisfaction of its operational gates."
+ },
+ "grading_limits": {
+  "n_roots": 10,
+  "artifact_starts": 140,
+  "recheck_starts": 30,
+  "containment_starts": 18,
+  "max_private_starts": 188,
+  "grading_seconds": 600
+ },
+ "limits_note": "artifact_starts = the lead's 140 candidate starts (10 initial-public + 10 initial-private + 120 continuation-private); recheck_starts = 30 grader-side reference/control rechecks (10 + 20); containment_starts = 18 for two nine-check epochs; max_private_starts = artifact + recheck + containment. Read with study_adapter.load_grading_limits. These are BOOKKEEPING CAPS, not authorization.",
+ "planning_inventory": {
+  "model_attempts": 130,
+  "reserved_completion_tokens": 66560,
+  "total_isolated_starts": 228,
+  "containment_starts": 18,
+  "precollection_instrument_starts": 40,
+  "grader_side_recheck_starts": 30,
+  "candidate_starts": 140,
+  "note": "Upper planning allowance only, NOT execution authority. 18 + 40 + 30 + 140 = 228. Every attempted or uncertain start counts; no cache saving renews a cap. A lower 198-start figure is possible only if the connected path proves the 30 grader-side rechecks are not run and validated reference/control evidence is safely reusable under all current bindings."
+ },
+ "package": {
+  "tasks.jsonl": "43f067f298557d426243f7b0e5852687550f0b89f9e331d591f27eaae1d257dd",
+  "public_examples_v3.json": "900b97fb2f9ee7faa36920fdd44ea92841a86fbf322d01591115a07f6ce4f727",
+  "private_specs.jsonl": "6080ea494ab2c6700781ddfcec1734ad542eb433a574c3969f294fea2fe662e3",
+  "controls_rationale.json": "5246b6d56f48e637460d94ac63551a6567a430ccd97e2f33a11835f7d6c78d00",
+  "config.json": "2ca07c4d267c2f59f5590803ee151949b21ab26e43b29d43ebc74707b6d915e0",
+  "CHANGE_NOTES.md": "cd478ec5f7b098f42b6ef101b86db529555ae97256b8ae33e501ab9388ce256f"
+ },
+ "lead_specification": {
+  "path": "docs/e14_lead_measurement_spec_20260923.json",
+  "sha256": "fa8687e3024767a3e48137f8a9f784e3d4b73981059446da2fbe69c3bdf9fc23",
+  "schema_version": "e14-lead-measurement-spec-v1",
+  "created_utc": "2026-09-23T07:54:09.031467+00:00",
+  "evidence_class": "lead source/measurement specification, not an executed reference/control validation or new model data",
+  "execution_authorized": false,
+  "scorer_only_fields": [
+   "added_private_assertions",
+   "reference_version_requirement",
+   "semantic_negative_control_requirement",
+   "second_negative_control_requirement"
+  ],
+  "never_passed_to_a_prompt": true
+ },
+ "source_pins": {
+  "path": "official MBPP full cache; identity is the file sha256, local path deliberately not recorded",
+  "file_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "expected_file_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "verified_before_reading": true,
+  "assertions_sha256_derivation": "sha256(json.dumps(test_list)) with default separators",
+  "per_root": {
+   "mbpp/911": {
+    "source_text_sha256": "0ff5527b3f1e6cae2c7952da75baaa537db7fa4659fbf835e3e773f2ba59a0cb",
+    "source_reference_sha256": "f46eee08f1386056b64c8bcf74d45317349e9eeaf35042b9dd85b51b5e347283",
+    "source_assertions_sha256": "14875b71baa992fe77fba1c8fe8c525b80027e16066fa3be470410d79e49c7bf"
+   },
+   "mbpp/667": {
+    "source_text_sha256": "dc7ee3e920953fcbacb508f83210242c1241f2807b530b319f6c5924fb81175f",
+    "source_reference_sha256": "4c911c77d78eb4a5a41e381f705b90f4db1a60baaa5fdd993ee9a897ac34f9d9",
+    "source_assertions_sha256": "7aa0b8742165709c02be50d8a9f2183d17de1e6732cba36258ac4d00b746588a"
+   },
+   "mbpp/344": {
+    "source_text_sha256": "7ecefce83cc090ec31c377702b2a95c9a0ee6de7598a48268eb4cac37736c893",
+    "source_reference_sha256": "1a5edab809598436dd9886f39d165c5c8a674b1aeb2aca64785c6c80884d703b",
+    "source_assertions_sha256": "3895cce1016c04ec99a6eff38e00cef041d366ec575d753d2d3d28e93ba55165"
+   },
+   "mbpp/524": {
+    "source_text_sha256": "fac1d77d2386a828e65b5e546679be971b8b43e618d9dd1eebd5eca7eb026cce",
+    "source_reference_sha256": "174518d3397e4ce7cbb9ed0d31ba6fb708ebddeb5690394f475eb27152754b1d",
+    "source_assertions_sha256": "db94878e0efef6f84c872267300c03eeda780bbd2e3d83b3168b6994f97612be"
+   },
+   "mbpp/814": {
+    "source_text_sha256": "12a5a4e506941bbcc1de2a1f65dc0e7d83b51c0a2e0ada3c72388601a31f0571",
+    "source_reference_sha256": "e1c8a779c79cf0f945483dc656320ca9e1cee20ff938b7964b43b3326b734458",
+    "source_assertions_sha256": "4fff50d585cc4b49de8aa97f3ce2d725bbb1a1acdb8e680e31370ad731b15ec4"
+   },
+   "mbpp/187": {
+    "source_text_sha256": "50ab1ebfbc98ca27859e4e01311c8cde3c730d07f0e20853bf5706bc5e370756",
+    "source_reference_sha256": "c8f219e80b4ccfbb36363f208b52ef25dc411f436479e71191c4c919adcf2888",
+    "source_assertions_sha256": "a74cb7531328dfbc7db8f477d446bdc2300468a7bb977d22156e34c3caf1a76d"
+   },
+   "mbpp/194": {
+    "source_text_sha256": "41a0694b6ffa1a9452ccbbd698f9034f6b245dab4b8e7e4cbc005515f5a14cf9",
+    "source_reference_sha256": "29982fa9fb533c5847c3e187358d8cfc292a956aa8505e1313c6347557bd183c",
+    "source_assertions_sha256": "e90ba9dad720dc08e62201dbd9cf792202a6f28c4b246e1b15acc4b93bfaa342"
+   },
+   "mbpp/356": {
+    "source_text_sha256": "78fe3e3293d84fc71392de3859bbe7b3b1f0208726f373e8dd0ab37545f9a781",
+    "source_reference_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+    "source_assertions_sha256": "fa3d72c1065ece57bd69ce425c3f6c3172ae5463b77dc2da13e43ceaec03d72a"
+   },
+   "mbpp/366": {
+    "source_text_sha256": "a5bd3ec55b8d9a9043320454cd076ee86a5187248e8d8017b2ab7fffe34a4389",
+    "source_reference_sha256": "7db1293f563250835309d4103260ccce6d6c5f5b649844e71ee421d9e0c6eabf",
+    "source_assertions_sha256": "0e940da006098b74a5c83fccbbc7219b4e21fe6b50f6a6429679fc586a9bf15c"
+   },
+   "mbpp/302": {
+    "source_text_sha256": "c6131bacf3cf1bdabd17fecfdd0315b9b13ee90602344c088684d257c9c054b1",
+    "source_reference_sha256": "882c9542e66ac8eca2cd0a3a7a3d86269ea49cdfe6da2884a34c379c00ef6684",
+    "source_assertions_sha256": "7ab76080e696df2a787bdaee4e292962aa08eddb64c2c9ad7f53b5fb96bd3a77"
+   }
+  }
+ },
+ "terminal_instruction": {
+  "label": "terminal-output-contract-v2",
+  "text": "Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.",
+  "role": "Common intervention instruction only; not an additional primary-score rule or a validated semantic compliance classifier.",
+  "applied_to": "both arms, byte-identically appended",
+  "is_a_scoring_rule": false
+ },
+ "model": {
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "receiver_state_sha256_expected": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+  "sampler_law": "server_defaults_pinned"
+ },
+ "evaluator": {
+  "grader_version": "landmark-grader-v5-parse-and-compile-fault-attribution",
+  "endpoint": "landmark-private-tests-v1",
+  "diagnostic_schema": "public-diagnostic-v2",
+  "scorer_change": "none; the frozen scorer is unchanged and applied to the new suite"
+ },
+ "diagnostic_schema": "public-diagnostic-v2",
+ "grading_bindings": {
+  "frozen_tasks_path": "experiments/landmark/e14_release/tasks.jsonl",
+  "frozen_tasks_sha256": "43f067f298557d426243f7b0e5852687550f0b89f9e331d591f27eaae1d257dd",
+  "expected_contract_sha256": "69645376fc078fd821c984fc13faeca93072b270340a662230347f973c6b64db",
+  "expected_config_sha256": "6de189a719badfebd8e8062d19151359623b66ff959241e1e32ea18169411f50",
+  "expected_source_hashes": {
+   "experiments/landmark/study_adapter.py": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
+   "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+   "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+   "experiments/landmark/collect_diagnostic.py": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+   "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719"
+  }
+ },
+ "execution_source_hashes": {
+  "scripts/build_e14_release.py": "64bb2f0acf5b9393baa2e1f13e3249f2c546b881f9bf9df3a4a05a945f8af4f1",
+  "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+  "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+  "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "experiments/landmark/study_adapter.py": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
+  "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a"
+ },
+ "receiver_law_source": {
+  "dir": "experiments/landmark/dev_release_v3",
+  "manifest": "dev-release-v3-diagnostic",
+  "manifest_sha256": "c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea",
+  "files": {
+   "tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+   "private_specs.jsonl": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+   "public_examples_v3.json": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+   "controls_rationale.json": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
+   "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6"
+  },
+  "reuse_rule": "config.json inherits dev_release_v3's frozen receiver request law and rebinds only the dataset, grading contract, source hashes and E14 caps. dev_release_v3 is read only and was not modified."
+ },
+ "per_root": {
+  "mbpp/911": {
+   "task_id": 911,
+   "entry_point": "maximum_product",
+   "signature": "def maximum_product(nums):",
+   "source_pins": {
+    "source_text_sha256": "0ff5527b3f1e6cae2c7952da75baaa537db7fa4659fbf835e3e773f2ba59a0cb",
+    "source_reference_sha256": "f46eee08f1386056b64c8bcf74d45317349e9eeaf35042b9dd85b51b5e347283",
+    "source_assertions_sha256": "14875b71baa992fe77fba1c8fe8c525b80027e16066fa3be470410d79e49c7bf"
+   },
+   "reference_version_requirement": "Preserve original heap-based reference; remove algorithm requirement from public prose.",
+   "reference_version_note": "Original heap-based reference preserved verbatim modulo line-ending/whitespace normalization.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 1,
+   "n_private_assertions": 3,
+   "declared_public_domain": "len(nums) in [3,100]; every element an int in [-1000000, 1000000]",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert maximum_product( [12, 74, 9, 50, 61, 41])==225700",
+     "kind": "public_source_index_0",
+     "entry_point": "maximum_product",
+     "args_literal": "[[12, 74, 9, 50, 61, 41]]",
+     "expected_literal": "225700",
+     "domain_rule": "len(nums) in [3,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert maximum_product([25, 35, 22, 85, 14, 65, 75, 25, 58])==414375",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "maximum_product",
+     "args_literal": "[[25, 35, 22, 85, 14, 65, 75, 25, 58]]",
+     "expected_literal": "414375",
+     "domain_rule": "len(nums) in [3,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert maximum_product([18, 14, 10, 9, 8, 7, 9, 3, 2, 4, 1])==2520",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "maximum_product",
+     "args_literal": "[[18, 14, 10, 9, 8, 7, 9, 3, 2, 4, 1]]",
+     "expected_literal": "2520",
+     "domain_rule": "len(nums) in [3,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert maximum_product([-10,-10,1,2,3]) == 300",
+     "kind": "private_added_by_lead",
+     "entry_point": "maximum_product",
+     "args_literal": "[[-10, -10, 1, 2, 3]]",
+     "expected_literal": "300",
+     "domain_rule": "len(nums) in [3,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "0e1abfc13e82c449775f415671255fec86bbacc3f6ad2b52a9ec364c8594dd18",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "56a2cf30194dcd7317c1b5b4c594a778073e1121c85469b253d81cd5955af855",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "8bc5097a9acfb46e085429d6e8ba60c96e2571fa62d24fb2c22dc4131df9ec87",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "72f8080d4ccef61402fc1bbbaa41d7f11751c3148087912f9c6d4e89e9d6d2b4",
+   "private_spec_row_sha256": "0df7f5fbe0b430f6f7c2a94c8d5713a1b5d39e4381d7317d2026f89395105667",
+   "call_slots": 13
+  },
+  "mbpp/667": {
+   "task_id": 667,
+   "entry_point": "Check_Vow",
+   "signature": "def Check_Vow(string, vowels):",
+   "source_pins": {
+    "source_text_sha256": "dc7ee3e920953fcbacb508f83210242c1241f2807b530b319f6c5924fb81175f",
+    "source_reference_sha256": "4c911c77d78eb4a5a41e381f705b90f4db1a60baaa5fdd993ee9a897ac34f9d9",
+    "source_assertions_sha256": "7aa0b8742165709c02be50d8a9f2183d17de1e6732cba36258ac4d00b746588a"
+   },
+   "reference_version_requirement": "Preserve original membership-count reference.",
+   "reference_version_note": "Original membership-count reference preserved (parenthesized return normalized to return len(final)).",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 3,
+   "n_private_assertions": 5,
+   "declared_public_domain": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert Check_Vow('corner','AaEeIiOoUu') == 2",
+     "kind": "public_source_index_0",
+     "entry_point": "Check_Vow",
+     "args_literal": "['corner', 'AaEeIiOoUu']",
+     "expected_literal": "2",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert Check_Vow('valid','AaEeIiOoUu') == 2",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "Check_Vow",
+     "args_literal": "['valid', 'AaEeIiOoUu']",
+     "expected_literal": "2",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert Check_Vow('true','AaEeIiOoUu') ==2",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "Check_Vow",
+     "args_literal": "['true', 'AaEeIiOoUu']",
+     "expected_literal": "2",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert Check_Vow('aAbE','aE') == 2",
+     "kind": "private_added_by_lead",
+     "entry_point": "Check_Vow",
+     "args_literal": "['aAbE', 'aE']",
+     "expected_literal": "2",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert Check_Vow('aaa','aa') == 3",
+     "kind": "private_added_by_lead",
+     "entry_point": "Check_Vow",
+     "args_literal": "['aaa', 'aa']",
+     "expected_literal": "3",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert Check_Vow('A','a') == 0",
+     "kind": "private_added_by_lead",
+     "entry_point": "Check_Vow",
+     "args_literal": "['A', 'a']",
+     "expected_literal": "0",
+     "domain_rule": "len(string) <= 100 ASCII; len(vowels) <= 52 ASCII",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "a1391831a88f9d11b191715af7d2fedbe11736a57ac879aebf5ce5c75b098b56",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "b34ba159751f8c6e0a7cacbbf8f2412f145a09a6145dca68ffed614d2dfba395",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "a739e031cc917172432e7239ae675d6f257eb440c1041496f7e9de7ae93fea65",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "57e97578e487080c2ebba02a0c52455a440b8f96c1e4e5f16105c6c695ddb803",
+   "private_spec_row_sha256": "81838f109274dbe4e45fd9f6412a46af913179dfb785f4de807d9e3c2db8330a",
+   "call_slots": 13
+  },
+  "mbpp/344": {
+   "task_id": 344,
+   "entry_point": "count_Odd_Squares",
+   "signature": "def count_Odd_Squares(n, m):",
+   "source_pins": {
+    "source_text_sha256": "7ecefce83cc090ec31c377702b2a95c9a0ee6de7598a48268eb4cac37736c893",
+    "source_reference_sha256": "1a5edab809598436dd9886f39d165c5c8a674b1aeb2aca64785c6c80884d703b",
+    "source_assertions_sha256": "3895cce1016c04ec99a6eff38e00cef041d366ec575d753d2d3d28e93ba55165"
+   },
+   "reference_version_requirement": "Version reference to math.isqrt(m) - math.isqrt(n-1); no floating-point roots.",
+   "reference_version_note": "Versioned: math.isqrt(m) - math.isqrt(n - 1) replaces int(m**0.5) - int((n-1)**0.5). No floating roots.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 2,
+   "n_private_assertions": 4,
+   "declared_public_domain": "1 <= n <= m <= 1000000, both int",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert count_Odd_Squares(5,100) == 8",
+     "kind": "public_source_index_0",
+     "entry_point": "count_Odd_Squares",
+     "args_literal": "[5, 100]",
+     "expected_literal": "8",
+     "domain_rule": "1 <= n <= m <= 1000000, both int",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(8,65) == 6",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "count_Odd_Squares",
+     "args_literal": "[8, 65]",
+     "expected_literal": "6",
+     "domain_rule": "1 <= n <= m <= 1000000, both int",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(2,5) == 1",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "count_Odd_Squares",
+     "args_literal": "[2, 5]",
+     "expected_literal": "1",
+     "domain_rule": "1 <= n <= m <= 1000000, both int",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(1,1) == 1",
+     "kind": "private_added_by_lead",
+     "entry_point": "count_Odd_Squares",
+     "args_literal": "[1, 1]",
+     "expected_literal": "1",
+     "domain_rule": "1 <= n <= m <= 1000000, both int",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(9,9) == 1",
+     "kind": "private_added_by_lead",
+     "entry_point": "count_Odd_Squares",
+     "args_literal": "[9, 9]",
+     "expected_literal": "1",
+     "domain_rule": "1 <= n <= m <= 1000000, both int",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "9d4d9e1ba6d2f20b935497c2da1d5d107342e7e911bd625b49cf8ee61e3ed2c6",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "9cacfe66a42f14e55cf1a6d1aee59447982ec0e9d3f4151ef4919fe3846c97fa",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "aabce6ea8bb18fb00ba108310c9f5e5f770df137834e73f8ddcab3f08c6864b7",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "80d5536d55e90beb17f010cd394fa7b16ffb41493b8f30ce098eeca062c5923c",
+   "private_spec_row_sha256": "fc5c5418e4ace4c2ccc6b94f9b807672dde4429369c90d8839209774b9c4aa6b",
+   "call_slots": 13
+  },
+  "mbpp/524": {
+   "task_id": 524,
+   "entry_point": "max_sum_increasing_subsequence",
+   "signature": "def max_sum_increasing_subsequence(arr, n):",
+   "source_pins": {
+    "source_text_sha256": "fac1d77d2386a828e65b5e546679be971b8b43e618d9dd1eebd5eca7eb026cce",
+    "source_reference_sha256": "174518d3397e4ce7cbb9ed0d31ba6fb708ebddeb5690394f475eb27152754b1d",
+    "source_assertions_sha256": "db94878e0efef6f84c872267300c03eeda780bbd2e3d83b3168b6994f97612be"
+   },
+   "reference_version_requirement": "Preserve original dynamic-programming reference with declared positive domain.",
+   "reference_version_note": "Original dynamic-programming reference preserved; strict arr[i] > arr[j] kept; positive domain declared.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 1,
+   "n_private_assertions": 3,
+   "declared_public_domain": "len(arr) in [1,100]; every element a positive int <= 1000000; n == len(arr)",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert max_sum_increasing_subsequence([1, 101, 2, 3, 100, 4, 5], 7) == 106",
+     "kind": "public_source_index_0",
+     "entry_point": "max_sum_increasing_subsequence",
+     "args_literal": "[[1, 101, 2, 3, 100, 4, 5], 7]",
+     "expected_literal": "106",
+     "domain_rule": "len(arr) in [1,100]; every element a positive int <= 1000000; n == len(arr)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([3, 4, 5, 10], 4) == 22",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "max_sum_increasing_subsequence",
+     "args_literal": "[[3, 4, 5, 10], 4]",
+     "expected_literal": "22",
+     "domain_rule": "len(arr) in [1,100]; every element a positive int <= 1000000; n == len(arr)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([10, 5, 4, 3], 4) == 10",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "max_sum_increasing_subsequence",
+     "args_literal": "[[10, 5, 4, 3], 4]",
+     "expected_literal": "10",
+     "domain_rule": "len(arr) in [1,100]; every element a positive int <= 1000000; n == len(arr)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([2,2],2) == 2",
+     "kind": "private_added_by_lead",
+     "entry_point": "max_sum_increasing_subsequence",
+     "args_literal": "[[2, 2], 2]",
+     "expected_literal": "2",
+     "domain_rule": "len(arr) in [1,100]; every element a positive int <= 1000000; n == len(arr)",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "cf14a4f66e4eb859ba3b20d249804cf3ac159daf42b624a0c89d6ed51a4346ae",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "fda8690b150d34eb0dc915bc8e640b5a071bf12d46dbdd44094cec4140830ebe",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "34c204001828c981213f2c0bd9eeb380fd303cb48558b86f5dbcd8bf19f0f1f7",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "296c08421deae5aab39e916bb5d4a85cf6ceaeba075d437f1960e8f0c1b26289",
+   "private_spec_row_sha256": "a8a201de5c49e2a064f862f22664bdeabb6402ca06f7a6c6269dd92b954a7364",
+   "call_slots": 13
+  },
+  "mbpp/814": {
+   "task_id": 814,
+   "entry_point": "rombus_area",
+   "signature": "def rombus_area(p, q):",
+   "source_pins": {
+    "source_text_sha256": "12a5a4e506941bbcc1de2a1f65dc0e7d83b51c0a2e0ada3c72388601a31f0571",
+    "source_reference_sha256": "e1c8a779c79cf0f945483dc656320ca9e1cee20ff938b7964b43b3326b734458",
+    "source_assertions_sha256": "4fff50d585cc4b49de8aa97f3ce2d725bbb1a1acdb8e680e31370ad731b15ec4"
+   },
+   "reference_version_requirement": "Preserve original half-product reference; use Python numeric equality in assertions.",
+   "reference_version_note": "Original half-product reference preserved; true division kept so 3,5 -> 7.5.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 2,
+   "n_private_assertions": 4,
+   "declared_public_domain": "p and q int in [0, 1000000]",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert rombus_area(10,20)==100",
+     "kind": "public_source_index_0",
+     "entry_point": "rombus_area",
+     "args_literal": "[10, 20]",
+     "expected_literal": "100",
+     "domain_rule": "p and q int in [0, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert rombus_area(10,5)==25",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "rombus_area",
+     "args_literal": "[10, 5]",
+     "expected_literal": "25",
+     "domain_rule": "p and q int in [0, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert rombus_area(4,2)==4",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "rombus_area",
+     "args_literal": "[4, 2]",
+     "expected_literal": "4",
+     "domain_rule": "p and q int in [0, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert rombus_area(3,5) == 7.5",
+     "kind": "private_added_by_lead",
+     "entry_point": "rombus_area",
+     "args_literal": "[3, 5]",
+     "expected_literal": "7.5",
+     "domain_rule": "p and q int in [0, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert rombus_area(0,5) == 0",
+     "kind": "private_added_by_lead",
+     "entry_point": "rombus_area",
+     "args_literal": "[0, 5]",
+     "expected_literal": "0",
+     "domain_rule": "p and q int in [0, 1000000]",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "2a6a7e8fac02ce730a5be65ff330acd345f0ac6fea48dc0aabd62432b0e94d2e",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "789df88de32c71f2b58963f5601b0e370d128fa49040f65c9ccf28edec868ff1",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "c98c21b27af39c68e4d8ca2d9269403ef75835c0e35442762ddafc3203f5d829",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "4822e52c2ff99752c897484aa49fc27598f846e707a1044b33b8d013727ebaee",
+   "private_spec_row_sha256": "2dc1dd85e7a012d4b67817c12be4f05d18e00ebb003b07f25c3f0f9a94d014e5",
+   "call_slots": 13
+  },
+  "mbpp/187": {
+   "task_id": 187,
+   "entry_point": "longest_common_subsequence",
+   "signature": "def longest_common_subsequence(X, Y, m, n):",
+   "source_pins": {
+    "source_text_sha256": "50ab1ebfbc98ca27859e4e01311c8cde3c730d07f0e20853bf5706bc5e370756",
+    "source_reference_sha256": "c8f219e80b4ccfbb36363f208b52ef25dc411f436479e71191c4c919adcf2888",
+    "source_assertions_sha256": "a74cb7531328dfbc7db8f477d446bdc2300468a7bb977d22156e34c3caf1a76d"
+   },
+   "reference_version_requirement": "Version reference to the standard iterative length dynamic program, with zero boundary row and column; preserve function signature. This prevents exponential recursion from making reference runtime part of the task.",
+   "reference_version_note": "Versioned: standard iterative LCS length DP with a zero boundary row and column replaces the exponential recursion. Signature (X, Y, m, n) preserved, so reference runtime is not part of the task.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 2,
+   "n_private_assertions": 4,
+   "declared_public_domain": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert longest_common_subsequence(\"AGGTAB\" , \"GXTXAYB\", 6, 7) == 4",
+     "kind": "public_source_index_0",
+     "entry_point": "longest_common_subsequence",
+     "args_literal": "['AGGTAB', 'GXTXAYB', 6, 7]",
+     "expected_literal": "4",
+     "domain_rule": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence(\"ABCDGH\" , \"AEDFHR\", 6, 6) == 3",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "longest_common_subsequence",
+     "args_literal": "['ABCDGH', 'AEDFHR', 6, 6]",
+     "expected_literal": "3",
+     "domain_rule": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence(\"AXYT\" , \"AYZX\", 4, 4) == 2",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "longest_common_subsequence",
+     "args_literal": "['AXYT', 'AYZX', 4, 4]",
+     "expected_literal": "2",
+     "domain_rule": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('abc','ac',3,2) == 2",
+     "kind": "private_added_by_lead",
+     "entry_point": "longest_common_subsequence",
+     "args_literal": "['abc', 'ac', 3, 2]",
+     "expected_literal": "2",
+     "domain_rule": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('','x',0,1) == 0",
+     "kind": "private_added_by_lead",
+     "entry_point": "longest_common_subsequence",
+     "args_literal": "['', 'x', 0, 1]",
+     "expected_literal": "0",
+     "domain_rule": "X and Y ASCII strings of length <= 12; m == len(X); n == len(Y)",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "93019b0c647ddb7f54d14b2f99189126ae1d73dcec26e56a2fe9f195dd040afe",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "af5dfb9d32eef5e8bfcb07a143702d2560d7c4805197f6545ec87814c4c2c269",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "1070869b2a83f028a993a58e07c3f6deadc30e10d795e7a423e3aa828c7f44e2",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "cf59e5ea53db05be8a435daeeee9fb50cb8f2129ea9aac0a0fba77af62480f13",
+   "private_spec_row_sha256": "0075144cdd88f0813f52788d93a80fd0323359eaa6ff6b15a7b89d3eac6cb95c",
+   "call_slots": 13
+  },
+  "mbpp/194": {
+   "task_id": 194,
+   "entry_point": "octal_To_Decimal",
+   "signature": "def octal_To_Decimal(n):",
+   "source_pins": {
+    "source_text_sha256": "41a0694b6ffa1a9452ccbbd698f9034f6b245dab4b8e7e4cbc005515f5a14cf9",
+    "source_reference_sha256": "29982fa9fb533c5847c3e187358d8cfc292a956aa8505e1313c6347557bd183c",
+    "source_assertions_sha256": "e90ba9dad720dc08e62201dbd9cf792202a6f28c4b246e1b15acc4b93bfaa342"
+   },
+   "reference_version_requirement": "Version reference to temp // 10 rather than int(temp / 10); retain digit accumulation.",
+   "reference_version_note": "Versioned: temp // 10 replaces int(temp / 10); digit accumulation retained. No float rounding.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 2,
+   "n_private_assertions": 4,
+   "declared_public_domain": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert octal_To_Decimal(25) == 21",
+     "kind": "public_source_index_0",
+     "entry_point": "octal_To_Decimal",
+     "args_literal": "[25]",
+     "expected_literal": "21",
+     "domain_rule": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(30) == 24",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "octal_To_Decimal",
+     "args_literal": "[30]",
+     "expected_literal": "24",
+     "domain_rule": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(40) == 32",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "octal_To_Decimal",
+     "args_literal": "[40]",
+     "expected_literal": "32",
+     "domain_rule": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(0) == 0",
+     "kind": "private_added_by_lead",
+     "entry_point": "octal_To_Decimal",
+     "args_literal": "[0]",
+     "expected_literal": "0",
+     "domain_rule": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(107) == 71",
+     "kind": "private_added_by_lead",
+     "entry_point": "octal_To_Decimal",
+     "args_literal": "[107]",
+     "expected_literal": "71",
+     "domain_rule": "n a nonnegative int of at most 8 decimal digits, every digit in 0..7",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "a8a8a40f67966c88d87be9f351766e5526bf42eda505fc6dbdb28038878fa350",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "3a050e10fd41eadf4fc2cf090f6c27dad86cef2d333cf2eae81d7a5563426bec",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "db61dbb02b8472d680d537a3e3cebf0871d6104f44b4b8b9a58e260163cbce57",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "a0d2d2f3883f65438bade59937326c856c88db22829bcb58e41a5e82e2da259c",
+   "private_spec_row_sha256": "eca6238386f5f22efb161709baee16de44bc511bc4cd8c03305c3c4bd9576a14",
+   "call_slots": 13
+  },
+  "mbpp/356": {
+   "task_id": 356,
+   "entry_point": "find_angle",
+   "signature": "def find_angle(a, b):",
+   "source_pins": {
+    "source_text_sha256": "78fe3e3293d84fc71392de3859bbe7b3b1f0208726f373e8dd0ab37545f9a781",
+    "source_reference_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+    "source_assertions_sha256": "fa3d72c1065ece57bd69ce425c3f6c3172ae5463b77dc2da13e43ceaec03d72a"
+   },
+   "reference_version_requirement": "Preserve original subtraction reference.",
+   "reference_version_note": "Original subtraction reference preserved.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 1,
+   "n_private_assertions": 3,
+   "declared_public_domain": "a and b positive ints in degrees with a + b < 180",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert find_angle(47,89)==44",
+     "kind": "public_source_index_0",
+     "entry_point": "find_angle",
+     "args_literal": "[47, 89]",
+     "expected_literal": "44",
+     "domain_rule": "a and b positive ints in degrees with a + b < 180",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert find_angle(45,95)==40",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "find_angle",
+     "args_literal": "[45, 95]",
+     "expected_literal": "40",
+     "domain_rule": "a and b positive ints in degrees with a + b < 180",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert find_angle(50,40)==90",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "find_angle",
+     "args_literal": "[50, 40]",
+     "expected_literal": "90",
+     "domain_rule": "a and b positive ints in degrees with a + b < 180",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert find_angle(1,178) == 1",
+     "kind": "private_added_by_lead",
+     "entry_point": "find_angle",
+     "args_literal": "[1, 178]",
+     "expected_literal": "1",
+     "domain_rule": "a and b positive ints in degrees with a + b < 180",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "7e4dd0ed493ff823e2b091c8a1894066f2e1aa26c9d3025548ffbc763e4def76",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "2e55f3d61f510423e23aeca48968f6193a6f5ac60e834efdfb9eca56eb588f8a",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "5d41872df51cb4ddd31e5dea3f9715fb62cc3a655d178ff3ff91451ad9b6a748",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "5e87bb13d8a5a85f97dce38e57758e668a43d84bd77c9d42dc7a3f8840ff3760",
+   "private_spec_row_sha256": "1c11ae5430edb1e3b5199b92f0afec08a7c6fc39e568e35d07bc1e0f47e114b8",
+   "call_slots": 13
+  },
+  "mbpp/366": {
+   "task_id": 366,
+   "entry_point": "adjacent_num_product",
+   "signature": "def adjacent_num_product(list_nums):",
+   "source_pins": {
+    "source_text_sha256": "a5bd3ec55b8d9a9043320454cd076ee86a5187248e8d8017b2ab7fffe34a4389",
+    "source_reference_sha256": "7db1293f563250835309d4103260ccce6d6c5f5b649844e71ee421d9e0c6eabf",
+    "source_assertions_sha256": "0e940da006098b74a5c83fccbbc7219b4e21fe6b50f6a6429679fc586a9bf15c"
+   },
+   "reference_version_requirement": "Preserve original adjacent-pair reference.",
+   "reference_version_note": "Original adjacent-pair reference preserved.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 1,
+   "n_private_assertions": 3,
+   "declared_public_domain": "len(list_nums) in [2,100]; every element an int in [-1000000, 1000000]",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert adjacent_num_product([1,2,3,4,5,6]) == 30",
+     "kind": "public_source_index_0",
+     "entry_point": "adjacent_num_product",
+     "args_literal": "[[1, 2, 3, 4, 5, 6]]",
+     "expected_literal": "30",
+     "domain_rule": "len(list_nums) in [2,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert adjacent_num_product([1,2,3,4,5]) == 20",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "adjacent_num_product",
+     "args_literal": "[[1, 2, 3, 4, 5]]",
+     "expected_literal": "20",
+     "domain_rule": "len(list_nums) in [2,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert adjacent_num_product([2,3]) == 6",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "adjacent_num_product",
+     "args_literal": "[[2, 3]]",
+     "expected_literal": "6",
+     "domain_rule": "len(list_nums) in [2,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert adjacent_num_product([9,1,1,8]) == 9",
+     "kind": "private_added_by_lead",
+     "entry_point": "adjacent_num_product",
+     "args_literal": "[[9, 1, 1, 8]]",
+     "expected_literal": "9",
+     "domain_rule": "len(list_nums) in [2,100]; every element an int in [-1000000, 1000000]",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "121012c531206ac2009d725a55ece21b02136421595f0c42e62d51a6f3bf9750",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "402cf00e4842a362d973f5355108204b5c3fdba861cc5cf23f2911d37ad05ec1",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "c5515eb8f5152b3f7e6c0e989d763364c17bd20b3a428d60cb389be5f43baf55",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "f6b22ca42a0991cb8ac73a695ecd10c724dbfbe508c0687b15d09f8a0141d751",
+   "private_spec_row_sha256": "c1355f9d8257a3a144c08f622721653101c3dedf27939ece3f5c8961ecafb4bd",
+   "call_slots": 13
+  },
+  "mbpp/302": {
+   "task_id": 302,
+   "entry_point": "set_Bit_Number",
+   "signature": "def set_Bit_Number(n):",
+   "source_pins": {
+    "source_text_sha256": "c6131bacf3cf1bdabd17fecfdd0315b9b13ee90602344c088684d257c9c054b1",
+    "source_reference_sha256": "882c9542e66ac8eca2cd0a3a7a3d86269ea49cdfe6da2884a34c379c00ef6684",
+    "source_assertions_sha256": "7ab76080e696df2a787bdaee4e292962aa08eddb64c2c9ad7f53b5fb96bd3a77"
+   },
+   "reference_version_requirement": "Version reference to integer division n // 2 in both locations, preserving the algorithm.",
+   "reference_version_note": "Versioned: integer division n // 2 in both locations; algorithm and returned bit VALUE preserved.",
+   "public_assertion_indices": [
+    0
+   ],
+   "retained_private_assertion_indices": [
+    1,
+    2
+   ],
+   "n_added_private_assertions": 2,
+   "n_private_assertions": 4,
+   "declared_public_domain": "n an int with 1 <= n <= 2147483647",
+   "assertion_domain_bindings": [
+    {
+     "assertion": "assert set_Bit_Number(6) == 4",
+     "kind": "public_source_index_0",
+     "entry_point": "set_Bit_Number",
+     "args_literal": "[6]",
+     "expected_literal": "4",
+     "domain_rule": "n an int with 1 <= n <= 2147483647",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(10) == 8",
+     "kind": "private_retained_source_index_1",
+     "entry_point": "set_Bit_Number",
+     "args_literal": "[10]",
+     "expected_literal": "8",
+     "domain_rule": "n an int with 1 <= n <= 2147483647",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(18) == 16",
+     "kind": "private_retained_source_index_2",
+     "entry_point": "set_Bit_Number",
+     "args_literal": "[18]",
+     "expected_literal": "16",
+     "domain_rule": "n an int with 1 <= n <= 2147483647",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(1) == 1",
+     "kind": "private_added_by_lead",
+     "entry_point": "set_Bit_Number",
+     "args_literal": "[1]",
+     "expected_literal": "1",
+     "domain_rule": "n an int with 1 <= n <= 2147483647",
+     "in_declared_public_domain": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(16) == 16",
+     "kind": "private_added_by_lead",
+     "entry_point": "set_Bit_Number",
+     "args_literal": "[16]",
+     "expected_literal": "16",
+     "domain_rule": "n an int with 1 <= n <= 2147483647",
+     "in_declared_public_domain": true
+    }
+   ],
+   "static_validation": {
+    "reference": {
+     "sha256": "7d4d1c00a83365a582d95181e4f158b51f53fdefe94b9276ccad0f18e9d2d4dd",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "semantic_control": {
+     "sha256": "776f563627c5c20d2af1fae80ddfd3c40dcf3b6d08f7bf2ca02f9c7dab9c1037",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    },
+    "none_control": {
+     "sha256": "3a1a772a04611d4f9ae8ca9f5f9fd8076bc38c5328448232daed396be2241d23",
+     "ast_parsed": true,
+     "compiled": true,
+     "hack_gate_hits": [],
+     "hack_gate_clean": true,
+     "executed": false
+    }
+   },
+   "tasks_row_sha256": "bf7c51d23e65535dfd03f47a26fb3afc65493ccc567ceb35811d51e5a4d62697",
+   "private_spec_row_sha256": "94c5a0351014e03fffd64e76cb5b60ae871f1a4c623817b20c1a78a715e4a6d9",
+   "call_slots": 13
+  }
+ },
+ "version_note": "NEW ENDPOINT VERSION, not a rescoring of E12 or E13. Scores against this suite are not comparable to E12/E13 numbers. The E11/E12/E13 negatives stand unchanged.",
+ "source_exposure_limitations": [
+  "whole-source mechanical processing during frame reproduction (full file loaded, features and similarity recomputed beyond rank 40)",
+  "twenty-record semantic review, with all twenty provisional family labels and sizes already recorded; the size-nine and size-two groups are lexical-screen groups, not independent sampling units",
+  "no reported new model-outcome inspection"
+ ],
+ "source_exposure_note": "These are three separate facts; none implies another.",
+ "not_established": "Nothing in this package was executed. Static validity and a clean hack_gate are not executability, integrity clearance or correctness. The references and controls still require later isolated validation.",
+ "builder": {
+  "script": "scripts/build_e14_release_v2.py",
+  "script_sha256": "dadc6cafb04a5411dd21993cd73eba28d5aff6030b5434a8a6f4cebb78e295c3",
+  "deterministic": true,
+  "rebuild_command": ".venv/bin/python scripts/build_e14_release.py --verify"
+ }
+}

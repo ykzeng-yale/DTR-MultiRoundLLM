@@ -1,0 +1,730 @@
+{
+ "version": "e14-release-controls",
+ "controls": [
+  {
+   "root_id": "mbpp/911",
+   "control": "semantic",
+   "entry_point": "maximum_product",
+   "fault": "Multiplies only the three largest values, ignoring the two-negative-factor product.",
+   "requirement": "Multiply only the three largest values, ignoring two negative factors.",
+   "expected_failure_reasoning": "nlargest(3) products: [25,35,22,85,14,65,75,25,58] -> 85*75*65 = 414375 (matches); [18,14,10,...] -> 18*14*10 = 2520 (matches); [-10,-10,1,2,3] -> 3*2*1 = 6, expected 300 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "nlargest(3) products: [25,35,22,85,14,65,75,25,58] -> 85*75*65 = 414375 (matches); [18,14,10,...] -> 18*14*10 = 2520 (matches); [-10,-10,1,2,3] -> 3*2*1 = 6, expected 300 (fails).",
+   "predicted_failing_private_assertions": 1,
+   "private_cases": [
+    {
+     "assertion": "assert maximum_product([25, 35, 22, 85, 14, 65, 75, 25, 58])==414375",
+     "expected": "414375",
+     "predicted_control_return": "414375",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert maximum_product([18, 14, 10, 9, 8, 7, 9, 3, 2, 4, 1])==2520",
+     "expected": "2520",
+     "predicted_control_return": "2520",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert maximum_product([-10,-10,1,2,3]) == 300",
+     "expected": "300",
+     "predicted_control_return": "6",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "56a2cf30194dcd7317c1b5b4c594a778073e1121c85469b253d81cd5955af855"
+  },
+  {
+   "root_id": "mbpp/911",
+   "control": "always_none",
+   "entry_point": "maximum_product",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert maximum_product([25, 35, 22, 85, 14, 65, 75, 25, 58])==414375",
+     "expected": "414375",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert maximum_product([18, 14, 10, 9, 8, 7, 9, 3, 2, 4, 1])==2520",
+     "expected": "2520",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert maximum_product([-10,-10,1,2,3]) == 300",
+     "expected": "300",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "8bc5097a9acfb46e085429d6e8ba60c96e2571fa62d24fb2c22dc4131df9ec87"
+  },
+  {
+   "root_id": "mbpp/667",
+   "control": "semantic",
+   "entry_point": "Check_Vow",
+   "fault": "Ignores the vowels parameter and always uses the fixed set AaEeIiOoUu.",
+   "requirement": "Ignore vowels parameter and always use AaEeIiOoUu.",
+   "expected_failure_reasoning": "Fixed set AaEeIiOoUu: 'valid' -> 2 (matches); 'true' -> 2 (matches); 'aAbE' -> a,A,E = 3, expected 2 (fails); 'aaa' -> 3 (matches); 'A' -> 1, expected 0 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Fixed set AaEeIiOoUu: 'valid' -> 2 (matches); 'true' -> 2 (matches); 'aAbE' -> a,A,E = 3, expected 2 (fails); 'aaa' -> 3 (matches); 'A' -> 1, expected 0 (fails).",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert Check_Vow('valid','AaEeIiOoUu') == 2",
+     "expected": "2",
+     "predicted_control_return": "2",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert Check_Vow('true','AaEeIiOoUu') ==2",
+     "expected": "2",
+     "predicted_control_return": "2",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert Check_Vow('aAbE','aE') == 2",
+     "expected": "2",
+     "predicted_control_return": "3",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert Check_Vow('aaa','aa') == 3",
+     "expected": "3",
+     "predicted_control_return": "3",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert Check_Vow('A','a') == 0",
+     "expected": "0",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "b34ba159751f8c6e0a7cacbbf8f2412f145a09a6145dca68ffed614d2dfba395"
+  },
+  {
+   "root_id": "mbpp/667",
+   "control": "always_none",
+   "entry_point": "Check_Vow",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 5,
+   "private_cases": [
+    {
+     "assertion": "assert Check_Vow('valid','AaEeIiOoUu') == 2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert Check_Vow('true','AaEeIiOoUu') ==2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert Check_Vow('aAbE','aE') == 2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert Check_Vow('aaa','aa') == 3",
+     "expected": "3",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert Check_Vow('A','a') == 0",
+     "expected": "0",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "a739e031cc917172432e7239ae675d6f257eb440c1041496f7e9de7ae93fea65"
+  },
+  {
+   "root_id": "mbpp/344",
+   "control": "semantic",
+   "entry_point": "count_Odd_Squares",
+   "fault": "Counts square integers in the half-open interval [n, m), excluding the upper endpoint.",
+   "requirement": "Count square integers in [n,m), excluding the upper endpoint.",
+   "expected_failure_reasoning": "isqrt(m-1)-isqrt(n-1): (8,65) -> 8-2 = 6 (matches, 65 is not square); (2,5) -> 2-1 = 1 (matches); (1,1) -> 0-0 = 0, expected 1 (fails); (9,9) -> isqrt(8)-isqrt(8) = 0, expected 1 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "isqrt(m-1)-isqrt(n-1): (8,65) -> 8-2 = 6 (matches, 65 is not square); (2,5) -> 2-1 = 1 (matches); (1,1) -> 0-0 = 0, expected 1 (fails); (9,9) -> isqrt(8)-isqrt(8) = 0, expected 1 (fails).",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert count_Odd_Squares(8,65) == 6",
+     "expected": "6",
+     "predicted_control_return": "6",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert count_Odd_Squares(2,5) == 1",
+     "expected": "1",
+     "predicted_control_return": "1",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert count_Odd_Squares(1,1) == 1",
+     "expected": "1",
+     "predicted_control_return": "0",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(9,9) == 1",
+     "expected": "1",
+     "predicted_control_return": "0",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "9cacfe66a42f14e55cf1a6d1aee59447982ec0e9d3f4151ef4919fe3846c97fa"
+  },
+  {
+   "root_id": "mbpp/344",
+   "control": "always_none",
+   "entry_point": "count_Odd_Squares",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert count_Odd_Squares(8,65) == 6",
+     "expected": "6",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(2,5) == 1",
+     "expected": "1",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(1,1) == 1",
+     "expected": "1",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert count_Odd_Squares(9,9) == 1",
+     "expected": "1",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "aabce6ea8bb18fb00ba108310c9f5e5f770df137834e73f8ddcab3f08c6864b7"
+  },
+  {
+   "root_id": "mbpp/524",
+   "control": "semantic",
+   "entry_point": "max_sum_increasing_subsequence",
+   "fault": "Uses nondecreasing (arr[i] >= arr[j]) rather than strictly increasing subsequences.",
+   "requirement": "Use nondecreasing rather than strictly increasing subsequences.",
+   "expected_failure_reasoning": "Nondecreasing: [3,4,5,10] -> 22 (matches); [10,5,4,3] -> 10 (matches); [2,2] -> msis[1] = 2+2 = 4, expected 2 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Nondecreasing: [3,4,5,10] -> 22 (matches); [10,5,4,3] -> 10 (matches); [2,2] -> msis[1] = 2+2 = 4, expected 2 (fails).",
+   "predicted_failing_private_assertions": 1,
+   "private_cases": [
+    {
+     "assertion": "assert max_sum_increasing_subsequence([3, 4, 5, 10], 4) == 22",
+     "expected": "22",
+     "predicted_control_return": "22",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([10, 5, 4, 3], 4) == 10",
+     "expected": "10",
+     "predicted_control_return": "10",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([2,2],2) == 2",
+     "expected": "2",
+     "predicted_control_return": "4",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "fda8690b150d34eb0dc915bc8e640b5a071bf12d46dbdd44094cec4140830ebe"
+  },
+  {
+   "root_id": "mbpp/524",
+   "control": "always_none",
+   "entry_point": "max_sum_increasing_subsequence",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert max_sum_increasing_subsequence([3, 4, 5, 10], 4) == 22",
+     "expected": "22",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([10, 5, 4, 3], 4) == 10",
+     "expected": "10",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert max_sum_increasing_subsequence([2,2],2) == 2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "34c204001828c981213f2c0bd9eeb380fd303cb48558b86f5dbcd8bf19f0f1f7"
+  },
+  {
+   "root_id": "mbpp/814",
+   "control": "semantic",
+   "entry_point": "rombus_area",
+   "fault": "Uses integer floor division for half the product, so an odd product loses the .5.",
+   "requirement": "Use integer floor division for half the product.",
+   "expected_failure_reasoning": "Floor division: (10,5) -> 25 (matches); (4,2) -> 4 (matches); (3,5) -> 15//2 = 7, expected 7.5 (fails); (0,5) -> 0 (matches).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Floor division: (10,5) -> 25 (matches); (4,2) -> 4 (matches); (3,5) -> 15//2 = 7, expected 7.5 (fails); (0,5) -> 0 (matches).",
+   "predicted_failing_private_assertions": 1,
+   "private_cases": [
+    {
+     "assertion": "assert rombus_area(10,5)==25",
+     "expected": "25",
+     "predicted_control_return": "25",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert rombus_area(4,2)==4",
+     "expected": "4",
+     "predicted_control_return": "4",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert rombus_area(3,5) == 7.5",
+     "expected": "7.5",
+     "predicted_control_return": "7",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert rombus_area(0,5) == 0",
+     "expected": "0",
+     "predicted_control_return": "0",
+     "predicted_fails": false
+    }
+   ],
+   "code_sha256": "789df88de32c71f2b58963f5601b0e370d128fa49040f65c9ccf28edec868ff1"
+  },
+  {
+   "root_id": "mbpp/814",
+   "control": "always_none",
+   "entry_point": "rombus_area",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert rombus_area(10,5)==25",
+     "expected": "25",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert rombus_area(4,2)==4",
+     "expected": "4",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert rombus_area(3,5) == 7.5",
+     "expected": "7.5",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert rombus_area(0,5) == 0",
+     "expected": "0",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "c98c21b27af39c68e4d8ca2d9269403ef75835c0e35442762ddafc3203f5d829"
+  },
+  {
+   "root_id": "mbpp/187",
+   "control": "semantic",
+   "entry_point": "longest_common_subsequence",
+   "fault": "Computes the longest common CONTIGUOUS substring length instead of the subsequence length.",
+   "requirement": "Compute longest common contiguous substring length.",
+   "expected_failure_reasoning": "Longest common contiguous substring: ('ABCDGH','AEDFHR') -> 1, expected 3 (fails); ('AXYT','AYZX') -> 1, expected 2 (fails); ('abc','ac') -> 1, expected 2 (fails); ('','x') -> 0 (matches).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Longest common contiguous substring: ('ABCDGH','AEDFHR') -> 1, expected 3 (fails); ('AXYT','AYZX') -> 1, expected 2 (fails); ('abc','ac') -> 1, expected 2 (fails); ('','x') -> 0 (matches).",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert longest_common_subsequence(\"ABCDGH\" , \"AEDFHR\", 6, 6) == 3",
+     "expected": "3",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence(\"AXYT\" , \"AYZX\", 4, 4) == 2",
+     "expected": "2",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('abc','ac',3,2) == 2",
+     "expected": "2",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('','x',0,1) == 0",
+     "expected": "0",
+     "predicted_control_return": "0",
+     "predicted_fails": false
+    }
+   ],
+   "code_sha256": "af5dfb9d32eef5e8bfcb07a143702d2560d7c4805197f6545ec87814c4c2c269"
+  },
+  {
+   "root_id": "mbpp/187",
+   "control": "always_none",
+   "entry_point": "longest_common_subsequence",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert longest_common_subsequence(\"ABCDGH\" , \"AEDFHR\", 6, 6) == 3",
+     "expected": "3",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence(\"AXYT\" , \"AYZX\", 4, 4) == 2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('abc','ac',3,2) == 2",
+     "expected": "2",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert longest_common_subsequence('','x',0,1) == 0",
+     "expected": "0",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "1070869b2a83f028a993a58e07c3f6deadc30e10d795e7a423e3aa828c7f44e2"
+  },
+  {
+   "root_id": "mbpp/194",
+   "control": "semantic",
+   "entry_point": "octal_To_Decimal",
+   "fault": "Treats the input as an ordinary base-ten integer and returns it unchanged.",
+   "requirement": "Treat the input as an ordinary base-ten integer.",
+   "expected_failure_reasoning": "Identity on base ten: 30 -> 30, expected 24 (fails); 40 -> 40, expected 32 (fails); 0 -> 0 (matches); 107 -> 107, expected 71 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Identity on base ten: 30 -> 30, expected 24 (fails); 40 -> 40, expected 32 (fails); 0 -> 0 (matches); 107 -> 107, expected 71 (fails).",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert octal_To_Decimal(30) == 24",
+     "expected": "24",
+     "predicted_control_return": "30",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(40) == 32",
+     "expected": "32",
+     "predicted_control_return": "40",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(0) == 0",
+     "expected": "0",
+     "predicted_control_return": "0",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert octal_To_Decimal(107) == 71",
+     "expected": "71",
+     "predicted_control_return": "107",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "3a050e10fd41eadf4fc2cf090f6c27dad86cef2d333cf2eae81d7a5563426bec"
+  },
+  {
+   "root_id": "mbpp/194",
+   "control": "always_none",
+   "entry_point": "octal_To_Decimal",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert octal_To_Decimal(30) == 24",
+     "expected": "24",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(40) == 32",
+     "expected": "32",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(0) == 0",
+     "expected": "0",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert octal_To_Decimal(107) == 71",
+     "expected": "71",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "db61dbb02b8472d680d537a3e3cebf0871d6104f44b4b8b9a58e260163cbce57"
+  },
+  {
+   "root_id": "mbpp/356",
+   "control": "semantic",
+   "entry_point": "find_angle",
+   "fault": "Returns a + b rather than 180 - a - b.",
+   "requirement": "Return a+b rather than 180-a-b.",
+   "expected_failure_reasoning": "a+b: (45,95) -> 140, expected 40 (fails); (50,40) -> 90, expected 90 (matches, since 50+40 = 180-90); (1,178) -> 179, expected 1 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "a+b: (45,95) -> 140, expected 40 (fails); (50,40) -> 90, expected 90 (matches, since 50+40 = 180-90); (1,178) -> 179, expected 1 (fails).",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert find_angle(45,95)==40",
+     "expected": "40",
+     "predicted_control_return": "140",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert find_angle(50,40)==90",
+     "expected": "90",
+     "predicted_control_return": "90",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert find_angle(1,178) == 1",
+     "expected": "1",
+     "predicted_control_return": "179",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "2e55f3d61f510423e23aeca48968f6193a6f5ac60e834efdfb9eca56eb588f8a"
+  },
+  {
+   "root_id": "mbpp/356",
+   "control": "always_none",
+   "entry_point": "find_angle",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert find_angle(45,95)==40",
+     "expected": "40",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert find_angle(50,40)==90",
+     "expected": "90",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert find_angle(1,178) == 1",
+     "expected": "1",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "5d41872df51cb4ddd31e5dea3f9715fb62cc3a655d178ff3ff91451ad9b6a748"
+  },
+  {
+   "root_id": "mbpp/366",
+   "control": "semantic",
+   "entry_point": "adjacent_num_product",
+   "fault": "Also compares the last and first positions as a circular pair, although the list is not circular.",
+   "requirement": "Also compare the last and first positions as a circular pair.",
+   "expected_failure_reasoning": "Circular pair added: [1,2,3,4,5] -> max(20, 5*1) = 20 (matches); [2,3] -> max(6, 6) = 6 (matches); [9,1,1,8] -> max(9,1,8, 8*9=72) = 72, expected 9 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Circular pair added: [1,2,3,4,5] -> max(20, 5*1) = 20 (matches); [2,3] -> max(6, 6) = 6 (matches); [9,1,1,8] -> max(9,1,8, 8*9=72) = 72, expected 9 (fails).",
+   "predicted_failing_private_assertions": 1,
+   "private_cases": [
+    {
+     "assertion": "assert adjacent_num_product([1,2,3,4,5]) == 20",
+     "expected": "20",
+     "predicted_control_return": "20",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert adjacent_num_product([2,3]) == 6",
+     "expected": "6",
+     "predicted_control_return": "6",
+     "predicted_fails": false
+    },
+    {
+     "assertion": "assert adjacent_num_product([9,1,1,8]) == 9",
+     "expected": "9",
+     "predicted_control_return": "72",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "402cf00e4842a362d973f5355108204b5c3fdba861cc5cf23f2911d37ad05ec1"
+  },
+  {
+   "root_id": "mbpp/366",
+   "control": "always_none",
+   "entry_point": "adjacent_num_product",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 3,
+   "private_cases": [
+    {
+     "assertion": "assert adjacent_num_product([1,2,3,4,5]) == 20",
+     "expected": "20",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert adjacent_num_product([2,3]) == 6",
+     "expected": "6",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert adjacent_num_product([9,1,1,8]) == 9",
+     "expected": "9",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "c5515eb8f5152b3f7e6c0e989d763364c17bd20b3a428d60cb389be5f43baf55"
+  },
+  {
+   "root_id": "mbpp/302",
+   "control": "semantic",
+   "entry_point": "set_Bit_Number",
+   "fault": "Returns the highest set bit's POSITION rather than its value.",
+   "requirement": "Return the bit position rather than the bit value.",
+   "expected_failure_reasoning": "Bit position: 10 -> 3, expected 8 (fails); 18 -> 4, expected 16 (fails); 1 -> 0, expected 1 (fails); 16 -> 4, expected 16 (fails).",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Bit position: 10 -> 3, expected 8 (fails); 18 -> 4, expected 16 (fails); 1 -> 0, expected 1 (fails); 16 -> 4, expected 16 (fails).",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert set_Bit_Number(10) == 8",
+     "expected": "8",
+     "predicted_control_return": "3",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(18) == 16",
+     "expected": "16",
+     "predicted_control_return": "4",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(1) == 1",
+     "expected": "1",
+     "predicted_control_return": "0",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(16) == 16",
+     "expected": "16",
+     "predicted_control_return": "4",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "776f563627c5c20d2af1fae80ddfd3c40dcf3b6d08f7bf2ca02f9c7dab9c1037"
+  },
+  {
+   "root_id": "mbpp/302",
+   "control": "always_none",
+   "entry_point": "set_Bit_Number",
+   "fault": "Correctly interfaced but always returns None. Every declared primary expected output for this root is numerical, so None can equal no expected value and the control must fail every private assertion.",
+   "requirement": "Same entry point and signature; always return None. All declared primary expected outputs are numerical, so this control must fail the private suite.",
+   "expected_failure_reasoning": "Returns None for every input; every declared expected output is numerical.",
+   "method": "hand trace of the control's logic on the declared private inputs; the control text was statically parsed, compiled and hack_gate-checked but NEVER executed",
+   "static_trace": "Returns None for every input; every declared expected output is numerical.",
+   "predicted_failing_private_assertions": 4,
+   "private_cases": [
+    {
+     "assertion": "assert set_Bit_Number(10) == 8",
+     "expected": "8",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(18) == 16",
+     "expected": "16",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(1) == 1",
+     "expected": "1",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert set_Bit_Number(16) == 16",
+     "expected": "16",
+     "predicted_control_return": "None",
+     "predicted_fails": true
+    }
+   ],
+   "code_sha256": "3a1a772a04611d4f9ae8ca9f5f9fd8076bc38c5328448232daed396be2241d23"
+  }
+ ],
+ "execution_note": "No control was executed. Every predicted_control_return is a hand trace declared in scripts/build_e14_release.py."
+}

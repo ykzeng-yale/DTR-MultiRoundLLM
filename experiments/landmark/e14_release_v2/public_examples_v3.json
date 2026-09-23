@@ -1,0 +1,115 @@
+{
+ "version": "public-examples-v3",
+ "cases": [
+  {
+   "root_id": "mbpp/911",
+   "entry_point": "maximum_product",
+   "cases": [
+    {
+     "case_id": "public-911-1",
+     "args_literal": "[[12, 74, 9, 50, 61, 41]]",
+     "expected_literal": "225700"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/667",
+   "entry_point": "Check_Vow",
+   "cases": [
+    {
+     "case_id": "public-667-1",
+     "args_literal": "['corner', 'AaEeIiOoUu']",
+     "expected_literal": "2"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/344",
+   "entry_point": "count_Odd_Squares",
+   "cases": [
+    {
+     "case_id": "public-344-1",
+     "args_literal": "[5, 100]",
+     "expected_literal": "8"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/524",
+   "entry_point": "max_sum_increasing_subsequence",
+   "cases": [
+    {
+     "case_id": "public-524-1",
+     "args_literal": "[[1, 101, 2, 3, 100, 4, 5], 7]",
+     "expected_literal": "106"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/814",
+   "entry_point": "rombus_area",
+   "cases": [
+    {
+     "case_id": "public-814-1",
+     "args_literal": "[10, 20]",
+     "expected_literal": "100"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/187",
+   "entry_point": "longest_common_subsequence",
+   "cases": [
+    {
+     "case_id": "public-187-1",
+     "args_literal": "['AGGTAB', 'GXTXAYB', 6, 7]",
+     "expected_literal": "4"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/194",
+   "entry_point": "octal_To_Decimal",
+   "cases": [
+    {
+     "case_id": "public-194-1",
+     "args_literal": "[25]",
+     "expected_literal": "21"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/356",
+   "entry_point": "find_angle",
+   "cases": [
+    {
+     "case_id": "public-356-1",
+     "args_literal": "[47, 89]",
+     "expected_literal": "44"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/366",
+   "entry_point": "adjacent_num_product",
+   "cases": [
+    {
+     "case_id": "public-366-1",
+     "args_literal": "[[1, 2, 3, 4, 5, 6]]",
+     "expected_literal": "30"
+    }
+   ]
+  },
+  {
+   "root_id": "mbpp/302",
+   "entry_point": "set_Bit_Number",
+   "cases": [
+    {
+     "case_id": "public-302-1",
+     "args_literal": "[6]",
+     "expected_literal": "4"
+    }
+   ]
+  }
+ ]
+}
