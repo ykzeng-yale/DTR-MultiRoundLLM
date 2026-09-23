@@ -1,0 +1,51 @@
+{
+ "record_version": "e13a-window-request-v1",
+ "status": "REQUEST ONLY \u2014 NOT AN AGREEMENT AND NOT AN AUTHORIZATION",
+ "authority": "MRL-19 item 3 (lead cb1536a): seek the earliest feasible mutually agreed slot after source readiness",
+ "requested_by": "experiments workstream, DTR-MultiRoundLLM",
+ "run_id": "e13a_real_path_mrl19_20260923",
+ "source_readiness": {
+  "declared_utc": "2026-09-23T05:11:08Z",
+  "delivery_commit": "bb89694",
+  "full_suite": "1069 passed, 8 subtests",
+  "path": [
+   "scripts/e13a_collect.py",
+   "scripts/e13a_grade.py",
+   "scripts/e13a_stage_clock.py",
+   "scripts/e13a_analyze.py",
+   "experiments/landmark/e13a_release/release_manifest.json"
+  ]
+ },
+ "proposed_window_utc": {
+  "start": "2026-09-23T06:15:00Z",
+  "hard_end": "2026-09-23T07:45:00Z",
+  "readiness_deadline": "2026-09-23T06:45:00Z",
+  "readiness_rule": "the launcher requires setup/readiness by hard_end minus 60 minutes; setup cap is 600 s from start",
+  "why_90_minutes": "phase caps are setup 600 s, collection 480 s, private grading 300 s, analysis 300 s, outer 2700 s (45 min); 90 minutes leaves the launcher's 60-minute readiness margin intact without extending any cap"
+ },
+ "resource_ask_inside_the_window": {
+  "receiver_calls": 60,
+  "reserved_completion_tokens": 30720,
+  "isolated_starts_max": 79,
+  "paid_usd": 0,
+  "port": 8193,
+  "server": "this project's own pinned llama-server build"
+ },
+ "contingent_on_all_of": [
+  "explicit agreement from the DTR-AgentEvals peer that the host is free for this window; idleness, an empty slot list or a free port is NOT agreement",
+  "the coordinating lead committing the enumerated start/token/time allowance for E13a",
+  "a renewed runtime attestation passing its checks before dispatch"
+ ],
+ "peer_state_observed": {
+  "repo": "/Users/yukangzengcmac/DTR-AgentEvals",
+  "head": "ee9a4bc",
+  "head_subject_says": "instrumentation delivered; nothing run live",
+  "interpretation": "no live block is evidenced at this head; this is an observation, not consent"
+ },
+ "commitments": [
+  "no server is started and no receiver call is made before all three contingencies are satisfied",
+  "we will not interrupt any peer job to obtain capacity, and will re-confirm availability at dispatch",
+  "the owned process is released by the hard end, with its exit evidence retained",
+  "if the window passes unused we publish that and request a new one; we do not silently extend"
+ ]
+}
