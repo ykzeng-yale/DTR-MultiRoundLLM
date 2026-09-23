@@ -2,6 +2,8 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
+At 20:04:39 UTC, **58%, change 0 percentage points**. The new [candidate-frame audit](policy_frame_feasibility_20260923.md) narrows feasibility of the proposed independent policy trial but adds no completed empirical or validation milestone. The existing 198-root frame has no certified independent family count and cannot meet the conservative .05-radius planning target even under an optimistic 198-family assumption. E14 and policy collection remain held. Prompt efficacy unestablished; full project not submission-ready.
+
 **23 September 19:28 UTC: 58%, change 0 points.** MRL-25's connected mock correction was independently reproduced, but its seed inventory is host-dependent and no real E14 or independent policy result was added. The proposed E14 collection remains held at the scientific decision-value gate. Fixed weights and component credit remain unchanged. Prompt efficacy is unestablished; the full project is not submission-ready. See [the MRL-25 judgment](mrl25_independent_review_20260923.md).
 
 At 18:48:20 UTC, **58%, change 0 percentage points**. The worker's MRL-25 acknowledgement is now verified at `7922793` with an 18:47–19:17 UTC source/mock window; completion and independent source validation remain pending. The lead reproduced the worker's git publication timing and published a [decision-value audit](progress_efficiency_judgment_20260923.md). No new prompt efficacy evidence or policy evaluation arose. E14 collection and automatic source renewal remain held pending a separate go/no-go. Full-project submission readiness remains **no**.

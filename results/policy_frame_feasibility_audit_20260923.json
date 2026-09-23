@@ -1,0 +1,30 @@
+{
+  "arithmetic_assumptions": "Hypothetical upper bound of one independent family per frame root, equal family weights, complete bounded paired differences in [-1,1], frozen policies and target-aligned sampling; none certified for this frame",
+  "audit_version": "policy-frame-feasibility-static-v1",
+  "benchmark_program_executions": 0,
+  "decision": "Current 198-root convenience frame cannot meet 0.05 radius under the existing conservative two-contrast fallback, even under optimistic independence. This does not rule out detection of a large effect or other prospectively justified inference. No policy trial or new collection released.",
+  "evidence_class": "read-only committed-source/manifest audit and arithmetic reuse; no sampling, model or benchmark execution",
+  "existing_memo_independent_family_count_for_radius_at_most_0p05": 3506,
+  "frame_root_ids": 198,
+  "frame_unique_ids": 198,
+  "hypothetical_simultaneous_two_contrast_95pct_hoeffding_radius_at_198_independent_complete_families": 0.21038748845816896,
+  "model_calls": 0,
+  "paid_usd": 0,
+  "rank_1_20_mechanically_reviewed_count": 20,
+  "rank_21_40_manifest_mechanical_include_count": 20,
+  "rank_21_40_mechanically_reviewed_count": 20,
+  "rank_21_40_narrative_semantic_hold_count": 10,
+  "rank_21_40_narrative_semantic_include_count": 10,
+  "rank_41_198_no_targeted_semantic_review_count": 158,
+  "rank_41_198_status": "mechanically processed as part of full-source screen, no targeted semantic review recorded; not certified independent, endpoint-valid or untouched evaluation families",
+  "semantic_disposition_provenance_limit": "The narrative states 10 include/10 hold, but the committed manifest decision_counts and all records.spec_review.decision still say 20 include mechanically. Those fields are not a machine-readable semantic disposition and must not be treated as a 20-root released roster.",
+  "source_revision": "bf49b2584734edc6b916da6d14db09b280f1cc97",
+  "source_sha256": {
+    "docs/frame_review_ranks21_40_20260923.md": "9984fa2773c3d1c5285824cc885e9f05434beae6b853ea5d5f33077324265145",
+    "docs/independent_prompt_policy_validation_design_20260922.md": "2956475e7760aa10f53a4b00c42823b99062b0b16f076d3ffa2f03e77e0c0d98",
+    "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+    "results/frame_review_ranks21_40_20260923/manifest.json": "6ddd55e56438a9cbe47d0b2bc5cc786495f0a89c52339e53f5966fd8535c3b42",
+    "results/frame_review_ranks21_40_20260923/records.json": "b1bfb94e8c175dadc21d47150cbc4ba22349eb82ad1d4d03fe51a8c89d13f0a2"
+  },
+  "tokens": 0
+}
