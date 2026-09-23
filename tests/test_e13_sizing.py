@@ -81,3 +81,10 @@ def test_demonstrable_effect_and_futility_bound_at_the_available_frame():
     assert 0.27 < d80 < 0.29                                  # about 3x the E12 point estimate
     assert u["max_theta_declarable_futile_at_available_n"]["tau2=0.025,R=8"] == pytest.approx(0.014, abs=0.002)
     assert u["max_theta_declarable_futile_at_available_n"]["tau2=0.1,R=8"] == 0.0
+
+
+def test_usefulness_states_its_stop_only_scope_limit():
+    u = s.build()["usefulness_full_policy"]
+    limit = u["scope_limit"]
+    assert "ALWAYS-STOP only" in limit and "fixed CONTINUATION" in limit
+    assert "NOT done here" in limit          # sizing against b1 must not be claimed

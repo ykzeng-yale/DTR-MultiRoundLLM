@@ -2396,3 +2396,13 @@ contrast itself — treatment R1, reference FRESH, with the direction note — p
 an explicit statement that the 10 recheck starts are validation starts rather than analysis slots. Without
 that, the contrast arms would have had to be supplied by hand at run time, which item 1's "exact commands"
 requirement does not allow. Mock path re-run and full suite re-run after the change: 927 passed, 8 subtests.
+
+**MRL-18 second addendum, 2026-09-23T04:26:11Z (inside the cap).** The independent derivation also surfaced a scope limit my
+revisions 0–1 never stated, and it is now published in the proposal and in `scripts/e13_sizing.py` with a
+test: **all of that arithmetic is for the gated rule minus always-STOP**, and it depends on the contrast being
+exactly zero at non-gated roots. Against your memo's primary comparator `b1`, a fixed continuation, the
+non-gated roots add (1−f)(τ²_ng + σ²_w/R + Δ²_ng) plus cross terms, so my numbers understate the requirement.
+E12 masks this: N1 scored 1.000 on all nine non-gated roots, so rule-minus-N1 was 0 there, while R1 itself
+lowers non-gated roots from 1.000 to 0.889. **Sizing against a fixed-continuation comparator is not done**,
+which matches your statement that replacing the fixed-continuation comparison changes the target. Full suite
+928 passed, 8 subtests.

@@ -162,6 +162,15 @@ independent, which the unresolved family structure does not establish.
 - **The one reachable decisive outcome is futility.** If the rule is inert, 64 roots suffice at τ² = 0.025 and
   R = 8; the whole remaining frame covers true overall gains only up to about 0.014 (and at τ² ≥ 0.1 it cannot
   reach 80% futility power even against an inert rule).
+- **Scope limit of this arithmetic (correction to revisions 0–1, which did not state it).** Every number above
+  is for the gated rule **minus always-STOP**, and depends on the contrast being exactly zero at non-gated
+  roots, which holds only because the rule stops there. The validation memo's primary comparator `b1` is a
+  fixed **continuation** recipe, so against `b1` the non-gated roots add
+  `(1 − f)(τ²_ng + σ²_w/R + Δ²_ng)` plus cross terms and the requirement grows. E12 does not reveal the
+  difference: N1 scored 1.000 on all nine non-gated roots, so the observed rule-minus-N1 contrasts there were
+  all zero, while R1 itself lowers non-gated roots from 1.000 to 0.889. **Sizing against a fixed-continuation
+  comparator is not done**, which is consistent with your note that replacing the fixed-continuation
+  comparison changes the target rather than silently satisfying it.
 - **Therefore this frame can, at best, rule the rule out — never establish it.** Any future stage of this kind
   should be declared as a futility-oriented design with that stated in advance, or moved to a different task
   source. That is a planning statement, not a result, and it is subject to the lead's remark that the

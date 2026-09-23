@@ -162,6 +162,14 @@ def usefulness(f, n_roots_available, tau2s, deltas=(0.0, 0.05, 0.10, 0.14, 0.20,
                 })
     return {
         "threshold": USEFULNESS_THRESHOLD,
+        "scope_limit": (
+            "This variance and every sample size below apply to the gated rule MINUS ALWAYS-STOP only. They rely on "
+            "the contrast being exactly 0 at non-gated roots, which holds because the rule stops there. The lead "
+            "memo's primary comparator b1 is a fixed CONTINUATION recipe, not STOP; against b1 the non-gated roots "
+            "contribute an extra (1-f)(tau2_ng + sw2/R + Delta_ng^2) term plus cross terms, so these numbers "
+            "understate the requirement. E12 does not expose the difference: N1 scored 1.000 on all 9 non-gated roots, "
+            "so the observed rule-minus-N1 contrasts there were all 0, while R1 itself drops non-gated roots from "
+            "1.000 to 0.889. Sizing against a fixed-continuation comparator is NOT done here."),
         "decision_rule": "useful benefit needs L > 0.05; useful-gain futility needs U < 0.05; equality passes neither",
         "target": "full-policy equal-weight contrast theta = f * delta_cond, NOT the gated-subset contrast",
         "n_roots_available": n_roots_available,
