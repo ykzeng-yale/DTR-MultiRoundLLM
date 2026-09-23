@@ -230,3 +230,8 @@ LEAD-E0-REG-01 is closed at its cap; no resume, replacement seeds or new allowan
 ## 23 September — STOP mechanism source preparation
 
 LEAD-E0-STOP-01 permits lead-owned source/design preparation only for the [three-mode diagnostic](e0_stop_anchor_design_20260923.md): original, evaluation-only STOP anchoring and recursively anchored fitting. Preserve all original freezes and reserved seeds. The new query, 2,304-slot journal/report contracts, source fixtures and complete execution freeze are dependencies, not delivered implementation. No new numerical or model execution, no worker reassignment and no renewed MRL-23 allowance. E14 delivery remains the principal experimental dependency. **58%, change 0 percentage points**; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — STOP core accepted; recording path next
+
+LEAD-E0-STOP-01 source preparation now includes independently reviewed core estimators and exact seed/identity contracts. Next lead-owned work: connect the authoritative structural query to the 24-slot job adapter, persist attempts and successful intermediate outputs despite later failures, archive actual minimal estimator arrays/folds, and reconcile all2304 planned slots and24 paired contrasts. Add enforceable resource/output accounting, final environment/source/truth bindings and independent review before a separate numerical release. Legacy Q tables alone cannot represent unseen STOP anchors. Neither the earlier capped run nor MRL-23 is extended. Existing worker recovery still requests its already-existing complete/partial E14 package and factual status, not another experiment. **58%, delta0**; efficacy unestablished, independent policy validation pending, full project not submission-ready.

@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T11:50:42.552257+00:00",
+  "checkpoint_utc": "2026-09-23T12:36:20.664656+00:00",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "23dccd5da2f53f0d3e682640119b13998fcafff0",
-  "baseline_note": "Unchanged fixed weights and credit: theoretical STOP score clarification and a prospective mechanism design refine already credited work. No new empirical efficacy or completed numerical precision milestone.",
+  "prior_checked_head": "920dd115105816e15a4b4793c617d534eb449faa",
+  "baseline_note": "Fixed weights and credit unchanged: STOP core and seed-contract validation refine already credited implementation/design. No new empirical efficacy or completed numerical precision milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Independent score-identity/counterexample review; exact ten-path check with 19 assertions, no draws or fits. New 96-dataset/24-estimator mechanism design is source preparation only. Previous numerical findings unchanged; MRL-23 delivery remains unverified.",
+  "latest_evidence": "Independent final STOP core/source review; 75 focused handcrafted-data checks pass. Exact192 seed inputs reserved/reproduced; old frozen sources and saved-run inputs unchanged. No new sampled data; MRL-23 package still unverified.",
   "latest_worker_review": {
     "last_seen_worker_revision": "8866186f6c87abd98e98f2db51043463fb8e504f",
     "delivery_type": "MRL23 acknowledgement and running-status publication; completed source package pending",
@@ -145,7 +145,7 @@
     "mrl22_actual_cap_deadline_utc": "2026-09-23T07:40:27Z",
     "mrl22_source_delivery_revision": "3c3066c05c506ee119c5b20c90c367b9935a6585",
     "mrl22_independent_validation_state": "Source hashes/order,20interfaces,10adaptedcontracts and60savedoutput descriptors checked. No benchmark execution; no independent policy evidence.",
-    "mrl23_status": "No cap delivery at fifth actual review; existing recovery unanswered, exact worker task locator still missing; expired allowance not renewed.",
+    "mrl23_status": "No cap delivery at sixth actual review; existing recovery unanswered, exact worker task locator still missing; expired allowance not renewed.",
     "mrl23_acknowledgement_received": true,
     "mrl23_execution_released": false,
     "mrl23_acknowledgement_utc": "2026-09-23T08:11:27Z",
@@ -156,7 +156,7 @@
     "mrl23_publication_received": true,
     "mrl23_completed_package_received": false,
     "mrl23_independent_validation_state": "Acknowledgement/status inspected; completed source/mock package pending; no execution released.",
-    "mrl23_consecutive_missing_updates": 5,
+    "mrl23_consecutive_missing_updates": 6,
     "mrl23_recovery_utc": "2026-09-23T09:16:24.633864+00:00",
     "mrl23_recovery_status": "Published once; unanswered at next actual review. Owner explicitly informed delivery cannot be verified and asked for existing worker exact app/task link or identifier.",
     "mrl23_recovery_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5792208049",
@@ -203,8 +203,14 @@
     "nuisance_sequences": 12,
     "estimator_slots_per_dataset": 24,
     "planned_slots": 2304,
-    "classification": "Independently reviewed algebra and prospective synthetic mechanism design; no new sampled results",
+    "classification": "Independently reviewed core and seed/identity contract with handcrafted-data validation; no new sampled results",
     "source_implementation_complete": false,
-    "execution_released": false
+    "execution_released": false,
+    "core_implementation_complete": true,
+    "source_record": "docs/e0_stop_anchor_source_20260923.md",
+    "source_validation": "results/e0_stop_anchor_source_validation_20260923.json",
+    "comparison_plan": "experiments/e0/stop_anchor_comparison_plan_v1.json",
+    "seed_audit": "results/e0_stop_anchor_seed_audit_20260923.json",
+    "remaining_source_dependency": "Connected adapter, failure-preserving journal/report/reconciliation and actual-array archival path are not implemented for these24 identities."
   }
 }

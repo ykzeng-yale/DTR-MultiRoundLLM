@@ -1,0 +1,339 @@
+{
+  "schema_version": "e0-stop-anchor-prospective-plan-v1",
+  "decision_id": "LEAD-E0-STOP-01",
+  "status": "source preparation only; not an execution freeze or release",
+  "execution_released": false,
+  "protocol": "docs/e0_stop_anchor_design_20260923.md",
+  "n_tasks": 230,
+  "trajectories_per_root": 40,
+  "horizon": 3,
+  "effect_multiplier": 1.0,
+  "gz": 0,
+  "mislabel": 0,
+  "template_sd": 0,
+  "target_policy": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "logger": {
+    "cell_index": 0,
+    "name": "weak_overlap",
+    "kappa": 2.5,
+    "action_floor": 0.02
+  },
+  "total_planned_datasets": 96,
+  "folds": 3,
+  "dataset_order": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95
+  ],
+  "variant_order": [
+    "compressed_lambda0_original",
+    "compressed_lambda0_evaluation_only",
+    "compressed_lambda0_recursive",
+    "compressed_lambda5_original",
+    "compressed_lambda5_evaluation_only",
+    "compressed_lambda5_recursive",
+    "history_lambda0_original",
+    "history_lambda0_evaluation_only",
+    "history_lambda0_recursive",
+    "history_lambda5_original",
+    "history_lambda5_evaluation_only",
+    "history_lambda5_recursive"
+  ],
+  "score_methods": [
+    "plugin",
+    "dr"
+  ],
+  "estimator_order": [
+    "compressed_lambda0_original:plugin",
+    "compressed_lambda0_original:dr",
+    "compressed_lambda0_evaluation_only:plugin",
+    "compressed_lambda0_evaluation_only:dr",
+    "compressed_lambda0_recursive:plugin",
+    "compressed_lambda0_recursive:dr",
+    "compressed_lambda5_original:plugin",
+    "compressed_lambda5_original:dr",
+    "compressed_lambda5_evaluation_only:plugin",
+    "compressed_lambda5_evaluation_only:dr",
+    "compressed_lambda5_recursive:plugin",
+    "compressed_lambda5_recursive:dr",
+    "history_lambda0_original:plugin",
+    "history_lambda0_original:dr",
+    "history_lambda0_evaluation_only:plugin",
+    "history_lambda0_evaluation_only:dr",
+    "history_lambda0_recursive:plugin",
+    "history_lambda0_recursive:dr",
+    "history_lambda5_original:plugin",
+    "history_lambda5_original:dr",
+    "history_lambda5_evaluation_only:plugin",
+    "history_lambda5_evaluation_only:dr",
+    "history_lambda5_recursive:plugin",
+    "history_lambda5_recursive:dr"
+  ],
+  "planned_estimator_slots": 2304,
+  "backward_fits_per_fold": 8,
+  "backward_fits_per_dataset": 24,
+  "structural_payoff": "STOP seals the synthetic current quality: Y=1{S_t=3}; no latent or hidden LLM correctness feature is made available",
+  "modes": {
+    "original": "Exact frozen regularized estimator and episode-weighted action/stage fallback",
+    "evaluation_only": "Reuse original fit; change all active STOP queries to known payoff at evaluation, hold nonSTOP Q fixed; direct DR adjustment and initial-v plugin adjustment",
+    "recursive": "Enforce known STOP payoff for all active queries during own backward fitting and evaluation; preserve nonSTOP fitting rules while allowing downstream propagation"
+  },
+  "primary_pair": {
+    "left": "history_lambda5_recursive:dr",
+    "right": "history_lambda5_original:dr",
+    "metric": "paired squared-error difference against fixed exact value"
+  },
+  "paired_comparisons": [
+    {
+      "left": "compressed_lambda0_evaluation_only:plugin",
+      "right": "compressed_lambda0_original:plugin"
+    },
+    {
+      "left": "compressed_lambda0_recursive:plugin",
+      "right": "compressed_lambda0_evaluation_only:plugin"
+    },
+    {
+      "left": "compressed_lambda0_recursive:plugin",
+      "right": "compressed_lambda0_original:plugin"
+    },
+    {
+      "left": "compressed_lambda0_evaluation_only:dr",
+      "right": "compressed_lambda0_original:dr"
+    },
+    {
+      "left": "compressed_lambda0_recursive:dr",
+      "right": "compressed_lambda0_evaluation_only:dr"
+    },
+    {
+      "left": "compressed_lambda0_recursive:dr",
+      "right": "compressed_lambda0_original:dr"
+    },
+    {
+      "left": "compressed_lambda5_evaluation_only:plugin",
+      "right": "compressed_lambda5_original:plugin"
+    },
+    {
+      "left": "compressed_lambda5_recursive:plugin",
+      "right": "compressed_lambda5_evaluation_only:plugin"
+    },
+    {
+      "left": "compressed_lambda5_recursive:plugin",
+      "right": "compressed_lambda5_original:plugin"
+    },
+    {
+      "left": "compressed_lambda5_evaluation_only:dr",
+      "right": "compressed_lambda5_original:dr"
+    },
+    {
+      "left": "compressed_lambda5_recursive:dr",
+      "right": "compressed_lambda5_evaluation_only:dr"
+    },
+    {
+      "left": "compressed_lambda5_recursive:dr",
+      "right": "compressed_lambda5_original:dr"
+    },
+    {
+      "left": "history_lambda0_evaluation_only:plugin",
+      "right": "history_lambda0_original:plugin"
+    },
+    {
+      "left": "history_lambda0_recursive:plugin",
+      "right": "history_lambda0_evaluation_only:plugin"
+    },
+    {
+      "left": "history_lambda0_recursive:plugin",
+      "right": "history_lambda0_original:plugin"
+    },
+    {
+      "left": "history_lambda0_evaluation_only:dr",
+      "right": "history_lambda0_original:dr"
+    },
+    {
+      "left": "history_lambda0_recursive:dr",
+      "right": "history_lambda0_evaluation_only:dr"
+    },
+    {
+      "left": "history_lambda0_recursive:dr",
+      "right": "history_lambda0_original:dr"
+    },
+    {
+      "left": "history_lambda5_evaluation_only:plugin",
+      "right": "history_lambda5_original:plugin"
+    },
+    {
+      "left": "history_lambda5_recursive:plugin",
+      "right": "history_lambda5_evaluation_only:plugin"
+    },
+    {
+      "left": "history_lambda5_recursive:plugin",
+      "right": "history_lambda5_original:plugin"
+    },
+    {
+      "left": "history_lambda5_evaluation_only:dr",
+      "right": "history_lambda5_original:dr"
+    },
+    {
+      "left": "history_lambda5_recursive:dr",
+      "right": "history_lambda5_evaluation_only:dr"
+    },
+    {
+      "left": "history_lambda5_recursive:dr",
+      "right": "history_lambda5_original:dr"
+    }
+  ],
+  "same_dataset_and_folds_for_every_variant": true,
+  "score_summary": "equal root means; all trajectories of each root remain together",
+  "interval_methods": [
+    "dr"
+  ],
+  "plugin_intervals_permitted": false,
+  "precision": {
+    "primary_paired_mse_mcse_threshold": 0.005,
+    "units": "squared policy-value units",
+    "meaning": "diagnostic precision flag only, not significance or efficacy",
+    "requires_complete_fixed_size_sample": true
+  },
+  "stopping": "96 datasets or hard resource cap, whichever first; no outcome-dependent stopping, retries, replacement seeds, tuning or extension",
+  "partial_run": "retain all2304planned slots with attempted/completed/failed/unattempted status; truncated returned results descriptive only",
+  "deterministic_truth_reference": 0.6459770061744536,
+  "seed_table_path": "experiments/e0/stop_anchor_seed_plan_v1.csv",
+  "seed_audit": "results/e0_stop_anchor_seed_audit_20260923.json",
+  "prospective_execution_caps": {
+    "cpu_workers": 1,
+    "outer_seconds": 600,
+    "output_bytes": 268435456,
+    "model_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "candidate_reference_executions": 0,
+    "paid_cost_usd": 0
+  },
+  "required_immutable_outputs": [
+    "actual minimal estimator arrays",
+    "fold assignments",
+    "source/environment/seed hashes",
+    "all planned/attempted/terminal slots",
+    "root score means",
+    "observed and structural support separately",
+    "supervisor and resource accounting"
+  ],
+  "uncompleted_release_requirements": [
+    "connected failure-preserving24slot job runner and reporter",
+    "runtime and output guards plus actual array archive accounting",
+    "complete exact source/environment/seed/truth freeze",
+    "independent connected-path review",
+    "fresh factual host and lease checks",
+    "separate lead release"
+  ],
+  "prohibited_claims": [
+    "seed noncollision establishes independence",
+    "handcrafted source checks establish bias RMSE coverage or prompting benefit",
+    "known synthetic STOP payoff is available to a real LLM policy",
+    "anchoring is guaranteed to reduce DR variance",
+    "a time-truncated prefix has fixed-size unconditional precision",
+    "this source plan authorizes sampling or model collection"
+  ],
+  "seed_table_sha256": "4585c96be1f3cdaa8c8a7f4d64c5665fc0bba480196e314cfef8976ed7c00e9c",
+  "seed_law": "unsigned big-endian integer from first16 SHA256 bytes of ASCII DTR-MultiRoundLLM:LEAD-E0-STOP-01:v1:{data|fold}:{replicate}; decimal replicate0..95 without padding or newline",
+  "seed_encoding": "Exact decimal strings in CSV and future JSON records; parse with arbitrary-precision Python int for RNG construction, never float/int64",
+  "seed_independence_note": "No collision within audited reservations is not evidence of independent or disjoint RNG streams; exact constructor, versions and implementation remain execution-freeze requirements"
+}

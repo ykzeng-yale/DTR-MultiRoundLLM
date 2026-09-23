@@ -168,3 +168,8 @@ The frozen one-CPU run generated 433 datasets, with 432 complete and one partial
 ## 23 September — STOP score clarification (coordinating lead)
 
 Independent mathematical/source review accepts the [STOP score identity and prospective mechanism design](e0_stop_anchor_design_20260923.md). An exact rational, ten-path toy enumeration passes 19 checks, including mean equality and a variance counterexample (0.030 seconds including interpreter launch). This is arithmetic on constructed examples: zero random draws, fitted models, model calls, tokens, benchmark executions and paid cost. It supplies no new E0 performance or LLM efficacy evidence; the general claim rests on the stated proof assumptions. The proposed numerical follow-up remains unexecuted. **58%, change 0 percentage points**; full project not submission-ready.
+
+
+## 23 September — STOP core source validation (coordinating lead)
+
+Independent source review accepts the [three-mode STOP implementation and seed contract](e0_stop_anchor_source_20260923.md). All75 focused deterministic checks pass in1.30seconds (1.641seconds command wall;0.920seconds child CPU). Handcrafted fixtures check original parity, exact backward propagation, direct-score equality, unseen STOP and truthful support counts; no sampled dataset or numerical performance result is produced. All192 exact input derivations and exclusion of1200 earlier reserved inputs reconcile. Frozen source/saved-run hashes remain unchanged. Zero model calls/tokens, benchmark executions and paid cost. **58%, change0percentage points**; efficacy unestablished and full project not submission-ready.

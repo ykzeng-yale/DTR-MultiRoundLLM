@@ -1,0 +1,68 @@
+{
+  "request_id": "LEAD-E0-STOP-01",
+  "classification": "deterministic handcrafted-data source checks; not a sampled numerical study or efficacy evidence",
+  "started_at_utc": "2026-09-23T12:33:48.795713+00:00",
+  "finished_at_utc": "2026-09-23T12:33:50.437352+00:00",
+  "status": "completed",
+  "exit_code": 0,
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_stop_anchor_estimators.py",
+    "tests/test_e0_regularized_history_estimators.py",
+    "tests/test_e0_history_estimators.py"
+  ],
+  "wall_seconds": 1.6414248757064342,
+  "child_cpu_seconds": 0.920258,
+  "timeout_seconds": 60,
+  "numerical_library_threads": 1,
+  "source_sha256": {
+    "experiments/e0/stop_anchor_estimators.py": "23b55bd15cbb2af3e11575250444dec4fd664d35d5ff5389a9d061910333a109",
+    "tests/test_stop_anchor_estimators.py": "712ca5ef736484a7549cbf9ac61fe442a0ed1e8d357b3bd66769222abea3448e",
+    "experiments/e0/stop_anchor_comparison_plan_v1.json": "05de997cb4ddb20d8c7a6699ff314dcd8545825a6e5c42be8bcd235bc46c95b5",
+    "experiments/e0/stop_anchor_seed_plan_v1.csv": "4585c96be1f3cdaa8c8a7f4d64c5665fc0bba480196e314cfef8976ed7c00e9c",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "experiments/e0/regularized_history_estimators.py": "15351c372cf2cca26a426c81360714f4b7b6376923b758d6a731f41655a298f7"
+  },
+  "stdout_stderr": "........................................................................ [ 96%]\n...                                                                      [100%]\n75 passed in 1.30s\n",
+  "synthetic_dataset_draws": 0,
+  "model_calls": 0,
+  "model_tokens": 0,
+  "paid_cost_usd": 0,
+  "scope_notes": [
+    "Handcrafted nuisance fits were executed.",
+    "New fixtures provide explicit folds and guard against sampler and fold-generator calls. Legacy tests may execute deterministic seeded fold permutations.",
+    "The core raises on failure and is not a failure-preserving collection runner.",
+    "No numerical execution release is granted by these checks."
+  ],
+  "independent_source_reviews": [
+    {
+      "reviewer": "theory",
+      "scope": "final core and fixtures; structural and score contracts; no tests or fits rerun",
+      "verdict": "accepted; no substantive blocker",
+      "core_sha256": "23b55bd15cbb2af3e11575250444dec4fd664d35d5ff5389a9d061910333a109",
+      "fixtures_sha256": "712ca5ef736484a7549cbf9ac61fe442a0ed1e8d357b3bd66769222abea3448e"
+    },
+    {
+      "reviewer": "evidence",
+      "scope": "core, manifest identities, shared fits/folds, support partitions and seed contract",
+      "verdict": "accepted; use authoritative query interface in future adapter, not legacy Q tables alone"
+    }
+  ],
+  "post_test_integrity_check": {
+    "finished_at_utc": "2026-09-23T12:35:13.691844+00:00",
+    "frozen_source_files_verified": 11,
+    "prior_saved_run_inputs_verified": 6,
+    "seed_derivations_reproduced": 192,
+    "earlier_reserved_seed_inputs_excluded": 1200,
+    "plan_variants": 12,
+    "plan_estimators": 24,
+    "plan_pairs": 24,
+    "execution_released": false,
+    "wall_seconds": 0.08619649987667799,
+    "cpu_seconds": 0.070252,
+    "classification": "read-only hash and integer arithmetic; no draws or fits"
+  }
+}
