@@ -1,0 +1,11 @@
+{
+ "receiver_base_url": "http://127.0.0.1:8193",
+ "server_pid": 47752,
+ "server_start_utc": "2026-09-23T06:15:34.490879+00:00",
+ "owner_project": "DTR-MultiRoundLLM experiments workstream, run e13a_two_arm_20260923T061500Z",
+ "exclusive_window_start_utc": "2026-09-23T06:15:00Z",
+ "exclusive_window_end_utc": "2026-09-23T07:45:00Z",
+ "agreement_ref": "docs/e13a_shared_window_20260923T061500Z.json (MRL-20 accepted reservation); peer non-contention docs/e13a_peer_agreement_20260923.json",
+ "recorded_by": "experiments worker, MRL-20 run e13a_two_arm_20260923T061500Z",
+ "recorded_utc": "2026-09-23T06:16:24.447106Z"
+}
