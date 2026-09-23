@@ -94,17 +94,14 @@ def load_stage(path=STAGE, specs=None):
 
 # ------------------------------------------------------------------ 1. request construction
 def public_fail_checkpoints(diagnostics):
-    """Checkpoints from the FROZEN PUBLIC DIAGNOSTICS ONLY: any public case whose status is not "pass".
+    """Checkpoints from the FROZEN PUBLIC DIAGNOSTICS ONLY, via E12's canonical gate:
+    analyze_diagnostic.public_status(diag, root) == "any_fail". A timeout/unavailable/output_limit case is
+    "unknown", not a checkpoint, so an unknown public status never silently becomes a gated root.
 
     No private grade, private spec or private execution record is read here or anywhere upstream of dispatch."""
-    out = []
-    for root_id in sorted(diagnostics):
-        cases = diagnostics[root_id]["cases"]
-        if not cases:
-            raise ValueError(f"public diagnostic for {root_id} has no cases")
-        if any(c["status"] != "pass" for c in cases):
-            out.append(root_id)
-    return out
+    from experiments.landmark import analyze_diagnostic as ad
+    statuses = {root_id: ad.public_status(diagnostics[root_id], root_id) for root_id in sorted(diagnostics)}
+    return [root_id for root_id, status in statuses.items() if status == "any_fail"]
 
 
 def build_requests(run=RUN, pkg=PKG, stage_path=STAGE):

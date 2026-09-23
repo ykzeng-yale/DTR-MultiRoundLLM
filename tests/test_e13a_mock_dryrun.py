@@ -48,13 +48,23 @@ def test_checkpoints_come_from_public_diagnostics_only(plan):
     assert "diagnostics.json" in plan["gating_source"] or "case statuses" in plan["gating_source"]
 
 
-def test_public_fail_rule_is_any_non_pass_case():
-    diagnostics = {"r/1": {"cases": [{"status": "pass"}, {"status": "pass"}]},
-                   "r/2": {"cases": [{"status": "pass"}, {"status": "fail"}]},
-                   "r/3": {"cases": [{"status": "error"}]}}
-    assert md.public_fail_checkpoints(diagnostics) == ["r/2", "r/3"]
-    with pytest.raises(ValueError, match="no cases"):
-        md.public_fail_checkpoints({"r/4": {"cases": []}})
+def test_public_fail_gate_is_analyze_diagnostic_public_status():
+    """The canonical gate: any_fail only. An unknown public status (timeout/unavailable/output_limit, or no
+    case at all) is NOT a checkpoint, so it can never be silently gated in."""
+    from experiments.landmark import analyze_diagnostic as ad
+    schema = sorted(ad.SCHEMAS)[-1]
+
+    def diag(root_id, *statuses):
+        return {"schema_version": schema, "root_id": root_id,
+                "cases": [{"status": s} for s in statuses]}
+
+    diagnostics = {"r/1": diag("r/1", "pass", "pass"), "r/2": diag("r/2", "pass", "wrong_value"),
+                   "r/3": diag("r/3", "timeout"), "r/4": diag("r/4")}
+    assert md.public_fail_checkpoints(diagnostics) == ["r/2"]
+    assert [ad.public_status(diagnostics[r], r) for r in sorted(diagnostics)] == \
+        ["all_pass", "any_fail", "unknown", "unknown"]
+    with pytest.raises(ValueError, match="status"):
+        md.public_fail_checkpoints({"r/5": diag("r/5", "not_a_status")})
 
 
 def test_rendered_messages_are_byte_identical_to_e12_requests(plan):
