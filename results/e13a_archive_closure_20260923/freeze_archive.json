@@ -1,0 +1,153 @@
+{
+ "record_version": "e13a-freeze-archive-v1",
+ "authority": "MRL-21 item 1, lead commit 73139fb",
+ "why": "The run manifest names the dispatch freeze; a post-dispatch rebase replayed it, so the original commit is not an ancestor of origin/main. The object is archived additively here.",
+ "original": {
+  "commit_id": "76d958eb1fd26624d2d384a2a26743a8d2e157d2",
+  "tree_id": "51e67c0bf6302ace807d25932c50cc6c7ddb6b14",
+  "parent_id": "ee4edb3fcf239f2f0539d99b5fbd04d12419ec42",
+  "payload_file": "original_freeze_commit_payload.txt",
+  "payload_sha256": "d47c1983a6d140a1b92630276e6c0125979bf573e27693cc4a8ddf3728672ad4",
+  "payload_bytes": 334,
+  "object_id_recomputed_from_payload": "76d958eb1fd26624d2d384a2a26743a8d2e157d2",
+  "is_ancestor_of_origin_main": false
+ },
+ "replacement": {
+  "commit_id": "d7382ccee9b9ab3294b33ac700c7593d9171837d",
+  "tree_id": "7cff86307f67e5f1d4c83f93c6f43c80bd2c9204",
+  "whole_tree_identical_to_original": false,
+  "why_trees_differ": "The rebase replayed the ownership commit onto the lead's 4ca2741, so the replacement tree additionally contains the lead's files. Whole-tree identity is therefore NOT claimed; only the recorded paths are shown to match."
+ },
+ "recorded_paths": {
+  "n": 18,
+  "n_matching": 18,
+  "paths": {
+   "experiments/landmark/e13a_release/config.json": {
+    "blob_id_in_original": "7de2ed406d795a2f569f2df0bb133524b1a608f4",
+    "sha256_in_original": "3cd46d232ff12bbcbe64425fd4bd7538232dae9793f4c6f3bfbd9b56f8f54dcc",
+    "sha256_recorded_in_manifest": "3cd46d232ff12bbcbe64425fd4bd7538232dae9793f4c6f3bfbd9b56f8f54dcc",
+    "matches": true
+   },
+   "experiments/landmark/e13a_release/tasks.jsonl": {
+    "blob_id_in_original": "b416228fbc52a0ad0056f33a5b12b0f220cc51eb",
+    "sha256_in_original": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
+    "sha256_recorded_in_manifest": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
+    "matches": true
+   },
+   "experiments/landmark/__init__.py": {
+    "blob_id_in_original": "27094d99d3b6fbfdad0e209e02264a8c9b566fca",
+    "sha256_in_original": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+    "sha256_recorded_in_manifest": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+    "matches": true
+   },
+   "experiments/landmark/analyze.py": {
+    "blob_id_in_original": "4f3519d89d821af8843e747ba73941f2ebbb7bd2",
+    "sha256_in_original": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+    "sha256_recorded_in_manifest": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+    "matches": true
+   },
+   "experiments/landmark/analyze_diagnostic.py": {
+    "blob_id_in_original": "17c854ca0594929931c0a79d87ff0d4b80a98f0d",
+    "sha256_in_original": "dca7f904b27d615e3f41d2b40e840ccbd0a9d4b88a46a0448a7eb139d5af720a",
+    "sha256_recorded_in_manifest": "dca7f904b27d615e3f41d2b40e840ccbd0a9d4b88a46a0448a7eb139d5af720a",
+    "matches": true
+   },
+   "experiments/landmark/collect.py": {
+    "blob_id_in_original": "9dc4636d42ef799d39c9e973e7dd53a97a4725a4",
+    "sha256_in_original": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+    "sha256_recorded_in_manifest": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+    "matches": true
+   },
+   "experiments/landmark/collect_diagnostic.py": {
+    "blob_id_in_original": "5b546099e3b290983580956c5092042d298d6819",
+    "sha256_in_original": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+    "sha256_recorded_in_manifest": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+    "matches": true
+   },
+   "experiments/landmark/diagnostic.py": {
+    "blob_id_in_original": "d9a87b8cff493c06fee0014cc68fb1ea919f0e5f",
+    "sha256_in_original": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "sha256_recorded_in_manifest": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "matches": true
+   },
+   "experiments/landmark/grade.py": {
+    "blob_id_in_original": "7679f34e3c3df5c223648989f4b380d6fc5d953c",
+    "sha256_in_original": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "sha256_recorded_in_manifest": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "matches": true
+   },
+   "experiments/landmark/graph_adapter.py": {
+    "blob_id_in_original": "d85114cbef08bb789f5c0c3d9450ad5a157c2c6f",
+    "sha256_in_original": "0f22040fbc0f29ceb125ab629f6e390789a5caa1485d127d2127cfa494bacc84",
+    "sha256_recorded_in_manifest": "0f22040fbc0f29ceb125ab629f6e390789a5caa1485d127d2127cfa494bacc84",
+    "matches": true
+   },
+   "experiments/landmark/public_check.py": {
+    "blob_id_in_original": "c672c1fae0bb56b10b89ab2fce7c83579305b928",
+    "sha256_in_original": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+    "sha256_recorded_in_manifest": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+    "matches": true
+   },
+   "experiments/landmark/public_instrument_validation.py": {
+    "blob_id_in_original": "1ad2cc6562dda49ac9a0b2d1e3ac2ef78f74dc83",
+    "sha256_in_original": "ca712b0ed87da938ca5d40c7e8e21211fde79000e54dea920f858e4906b05468",
+    "sha256_recorded_in_manifest": "ca712b0ed87da938ca5d40c7e8e21211fde79000e54dea920f858e4906b05468",
+    "matches": true
+   },
+   "experiments/landmark/public_phase.py": {
+    "blob_id_in_original": "e66888dbe11cddd5f8d817c9a224504ae5e9be93",
+    "sha256_in_original": "dc7712ffda104f91ddb667bda2f59e3b5ae270bc140a395371f0221c22976722",
+    "sha256_recorded_in_manifest": "dc7712ffda104f91ddb667bda2f59e3b5ae270bc140a395371f0221c22976722",
+    "matches": true
+   },
+   "experiments/landmark/sandbox.py": {
+    "blob_id_in_original": "eaa95f2c2df86c898fa0c973310d7e6a535dee5d",
+    "sha256_in_original": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "sha256_recorded_in_manifest": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "matches": true
+   },
+   "experiments/landmark/study_adapter.py": {
+    "blob_id_in_original": "3e6879503c3855df0db2358dec470ea694f7ba37",
+    "sha256_in_original": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
+    "sha256_recorded_in_manifest": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
+    "matches": true
+   },
+   "experiments/landmark/validate_rebound_references.py": {
+    "blob_id_in_original": "120bc1f925a2cb65d164bf1985aa5daa031d8b04",
+    "sha256_in_original": "4ae742191b33a686c4e0d0af645fb67266d7ef249f38fc32ffb592fe4c485601",
+    "sha256_recorded_in_manifest": "4ae742191b33a686c4e0d0af645fb67266d7ef249f38fc32ffb592fe4c485601",
+    "matches": true
+   },
+   "experiments/landmark/validate_references.py": {
+    "blob_id_in_original": "25896efecbea884b1c4532085eaf193f96cbccee",
+    "sha256_in_original": "feb86670ff8b9b26cfb2816ac780d25ba9a214f4649bef9f8ca4a7b729ae953d",
+    "sha256_recorded_in_manifest": "feb86670ff8b9b26cfb2816ac780d25ba9a214f4649bef9f8ca4a7b729ae953d",
+    "matches": true
+   },
+   "experiments/landmark/validation_canaries.py": {
+    "blob_id_in_original": "02aa729a0fb4f567eec1f9435e123d74a163a123",
+    "sha256_in_original": "5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba",
+    "sha256_recorded_in_manifest": "5b57f869801157598d198e8a3bc768114804c8009c194b429553b0edd8bdc6ba",
+    "matches": true
+   }
+  }
+ },
+ "bundle": {
+  "file": "original_freeze.bundle",
+  "contents": "the single commit 76d958eb1fd2 with prerequisite ee4edb3fcf23",
+  "prerequisite_is_in_published_history": true,
+  "import_note": "Import into a SCRATCH clone only. Do not merge this ancestry into main: published history stays as it is."
+ },
+ "verification_recipe": [
+  "1. sha256 of original_freeze_commit_payload.txt equals payload_sha256 below.",
+  "2. Recompute the Git object id: sha1(b'commit ' + str(len(payload)) + b'\\0' + payload) == 76d958eb1fd26624d2d384a2a26743a8d2e157d2. scripts/e13a_freeze_archive.py:git_object_id does exactly this.",
+  "3. git bundle verify original_freeze.bundle  (needs the prerequisite parent, which is in main).",
+  "4. In a scratch clone: git fetch <path>/original_freeze.bundle e13a-original-freeze, then git cat-file commit 76d958eb1fd2 and compare the tree id to tree_id below.",
+  "5. Each recorded path's sha256 in the original tree equals the manifest's tracked_file_hashes."
+ ],
+ "unrecoverable_or_not_claimed": [
+  "Whole-tree identity between the original and replacement commits: the trees genuinely differ.",
+  "Commit identity: the replacement has a different parent and therefore a different object id.",
+  "Nothing was reconstructed or invented; if the original object is ever garbage-collected from this working repository, the archived payload and bundle here remain the only copies."
+ ]
+}
