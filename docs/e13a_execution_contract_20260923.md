@@ -363,10 +363,17 @@ re-derived; hashes below are of the files as they sit on disk.
    stop was **issued and recorded at 07:15:30.254657** and that the server logged `cleaning up before exit...`; what is
    **not** evidenced is that the process finished exiting, when it finished, or with what status. The lead states the
    same limit: the lead "verifies that report and timestamp, not a completed-exit receipt or current host availability".
-2. **A committed archive of the 07:10 run's server log.** The 129,491-byte log exists on disk but is **not tracked at git
-   HEAD**; `git ls-files --error-unmatch` reports it as unknown to git. The only committed archived log is the 04:35
-   attempt's `llama_server_log_archive.txt`, which covers a run that produced no E12 data. Preserving the 07:10 log as a
-   committed artifact is an additive retention action for the parent, and is **not** performed here.
+2. ~~**A committed archive of the 07:10 run's server log.**~~ **RESOLVED by the parent in this same bundle**
+   (commit `77add2d`): the 129,491-byte log is now committed as
+   [results/e12_receiver_v31_20260922T071000Z/llama_server_log_archive.txt](../results/e12_receiver_v31_20260922T071000Z/llama_server_log_archive.txt),
+   byte-identical to the on-disk log (`a4cafa751392a75a6c43235945b4bd5b98dff21c46e8267b0fb7e2129ea2e893`), with
+   [results/e12_receiver_exit_evidence_20260923.json](../results/e12_receiver_exit_evidence_20260923.json) recording
+   what it does and does not evidence. It was copied, never regenerated, and contains no assertion or candidate text
+   (0 occurrences of `assert`, no request or response bodies). It adds two facts: its 154 `prompt eval time` lines
+   corroborate the 154 recorded receiver calls from the server's own side, and its final line places shutdown
+   initiation at 07:15:30.232615, **22.0 ms before** the recorded `stopped_utc`. Item 1 above still stands: a
+   completed-exit receipt does not exist.
+
 3. **An ownership-release artifact.** No file records the release of the 07:10:00Z-08:20:00Z window back to the peer.
    The ownership record's `actual_prior_release_reference`, `actual_server_pid` and `actual_execution_start_utc` are
    null; the peer's `slot_agreement_20260922_0710.json` likewise records "actual DTR release and peer launch are not
