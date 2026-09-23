@@ -13,7 +13,9 @@ The reported contrast is a finite-checkpoint DESCRIPTIVE quantity over the fixed
 checkpoints named by the descriptor: no population interval, no test, no p-value, no significance and no
 futility claim. A tie is inconclusive and does not identify a resampling mechanism.
 
-Unavailable outcomes are kept separate from failures and are never zero-filled; unknown usage counts are
+Unavailable outcomes are kept separate from failures and are never zero-filled. Any missing assigned
+outcome suppresses the primary point contrast; finite completion bounds and an explicitly secondary
+available-case description are reported instead. These bounds are not confidence intervals. Unknown usage counts are
 reported as unknown counts, not as zeros. Any assigned slot absent from the grades file without a
 missing_reason, any unexpected root/arm/replicate, any duplicate slot and any existing --out path is a
 hard refusal rather than a silent drop.
@@ -27,7 +29,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-ANALYSIS_VERSION = "e13a-finite-checkpoint-contrast-v1"
+ANALYSIS_VERSION = "e13a-finite-checkpoint-contrast-v2"
 EVIDENCE_CLASS = (
     "post-hoc-motivated development follow-up on the fixed development-selected checkpoints named by the "
     "stage descriptor; NOT a test of the selected gated rule; NOT a test of a diagnostic-only effect; "
@@ -40,9 +42,12 @@ METRIC_DEFINITIONS = {
     "graded": "Number of assigned slots with an available outcome in {0,1}. graded + missing == assigned.",
     "passes": "Number of graded slots with outcome == 1. Slots with an unavailable outcome are NOT counted as failures.",
     "missing": "Number of assigned slots whose outcome is unavailable, each with an explicit missing_reason; never zero-filled and never folded into failures.",
-    "mean": "passes / graded, i.e. the mean over AVAILABLE outcomes only. null when graded == 0; it is not a zero-filled mean over assigned slots.",
-    "per_root_difference": "Per root, mean(treatment arm) - mean(reference arm) over available outcomes at that single fixed checkpoint. null when either arm has no available outcome at that root.",
-    "finite_checkpoint_contrast": "Equally weighted mean of the per-root differences over the fixed development-selected checkpoints in the stage descriptor. A finite-checkpoint DESCRIPTIVE quantity about these checkpoints only: no population interval, no standard error, no test, no p-value, no significance claim and no futility claim. null when any per-root difference is null.",
+    "mean": "passes / assigned when every assigned outcome in the cell is observed; null if any outcome is missing. It is not a zero-filled estimate.",
+    "available_case_mean": "passes / graded over AVAILABLE outcomes only, reported as a secondary description. null when graded == 0; no missing-at-random assumption or all-assigned interpretation is implied.",
+    "completion_bounds": "For a cell: [passes / assigned, (passes + missing) / assigned]. For a root contrast: [L_treatment - U_reference, U_treatment - L_reference]. Finite-checkpoint bounds equally average the root bounds. These are finite completion bounds for all assigned binary outcomes, NOT confidence intervals or population uncertainty bounds; missing values are not imputed.",
+    "per_root_difference": "Per root, mean(treatment arm) - mean(reference arm) over all assigned outcomes at that single fixed checkpoint. null if either contrast arm has any missing outcome at that root.",
+    "finite_checkpoint_contrast": "Equally weighted mean of the per-root differences over the fixed development-selected checkpoints in the stage descriptor. A finite-checkpoint DESCRIPTIVE quantity about these checkpoints only: no population interval, no standard error, no test, no p-value, no significance claim and no futility claim. null if any assigned grade is missing.",
+    "available_case_secondary": "Equally weighted mean of per-root available-case differences, only when both arms have an observed outcome at every checkpoint. Never drops a checkpoint; null otherwise. Secondary observed-only description, not the all-assigned contrast.",
     "interpretation_tie": "A tie (contrast at or near zero) is INCONCLUSIVE: it does not identify a resampling mechanism, does not establish a diagnostic-only effect, and does not license a futility claim from this many draws.",
     "interpretation_direction": "A nonzero contrast describes these fixed checkpoints under this development stage only; it is not a test of the selected gated rule and must not be pooled with E12 or escalated on the basis of its size.",
     "calls_known_sum": "Sum of recorded nonnegative integer 'calls' values only; records without the field contribute to calls_unknown_count and are not assumed zero.",
@@ -210,6 +215,11 @@ def _accumulate_usage(acc, record, slot):
             raise RefusalError(f"slot {slot} has non-integer {field}={value!r}")
 
 
+def _completion_bounds(lower, upper):
+    return {"lower": lower, "upper": upper, "kind": "finite_completion_bounds",
+            "is_confidence_interval": False}
+
+
 def analyze(grade_rows, plan):
     indexed = index_grades(grade_rows, plan)
     usage_total, usage_by_arm = _usage_accumulator(), {arm: _usage_accumulator() for arm in plan["arms"]}
@@ -219,7 +229,8 @@ def analyze(grade_rows, plan):
         for arm, replicates in plan["roots"][root_id].items():
             cell = {"assigned": len(replicates), "assigned_replicates": list(replicates),
                     "graded": 0, "passes": 0, "failures": 0, "missing": 0,
-                    "missing_reasons": {}, "missing_replicates": [], "mean": None}
+                    "missing_reasons": {}, "missing_replicates": [], "mean": None,
+                    "available_case_mean": None}
             for replicate in replicates:
                 slot = (root_id, arm, replicate)
                 record = indexed[slot]
@@ -238,31 +249,44 @@ def analyze(grade_rows, plan):
                               "outcome": outcome, "missing_reason": reason,
                               "output_sha256": record.get("output_sha256")})
             if cell["graded"]:
-                cell["mean"] = cell["passes"] / cell["graded"]
+                cell["available_case_mean"] = cell["passes"] / cell["graded"]
+            if not cell["missing"]:
+                cell["mean"] = cell["passes"] / cell["assigned"]
+            cell["completion_bounds"] = _completion_bounds(
+                cell["passes"] / cell["assigned"], (cell["passes"] + cell["missing"]) / cell["assigned"])
             cell["missing_reasons"] = dict(sorted(cell["missing_reasons"].items()))
             per_root[root_id][arm] = cell
 
     treatment, reference = plan["treatment_arm"], plan["reference_arm"]
-    contrasts, values = [], []
+    contrasts, values, available_values = [], [], []
     for root_id in plan["root_order"]:
         t, r = per_root[root_id].get(treatment), per_root[root_id].get(reference)
         if t is None or r is None:
             raise RefusalError(f"root {root_id} does not assign both contrast arms {treatment} and {reference}")
         difference = None if t["mean"] is None or r["mean"] is None else t["mean"] - r["mean"]
         unavailable = None if difference is not None else (
-            f"no available outcome for {treatment}" if t["mean"] is None else f"no available outcome for {reference}")
+            "one or more assigned outcomes are missing in a contrast arm")
+        available_difference = (None if t["available_case_mean"] is None or r["available_case_mean"] is None
+                                else t["available_case_mean"] - r["available_case_mean"])
+        t_bounds, r_bounds = t["completion_bounds"], r["completion_bounds"]
         contrasts.append({
             "root_id": root_id,
             f"{treatment}_passes": t["passes"], f"{treatment}_graded": t["graded"],
             f"{treatment}_assigned": t["assigned"], f"{treatment}_missing": t["missing"],
             f"{treatment}_mean": t["mean"],
+            f"{treatment}_available_case_mean": t["available_case_mean"],
             f"{reference}_passes": r["passes"], f"{reference}_graded": r["graded"],
             f"{reference}_assigned": r["assigned"], f"{reference}_missing": r["missing"],
             f"{reference}_mean": r["mean"],
+            f"{reference}_available_case_mean": r["available_case_mean"],
             "difference": difference, "difference_unavailable_reason": unavailable,
+            "available_case_difference": available_difference,
+            "completion_bounds": _completion_bounds(t_bounds["lower"] - r_bounds["upper"],
+                                                     t_bounds["upper"] - r_bounds["lower"]),
         })
         values.append(difference)
-    complete = all(v is not None for v in values)
+        available_values.append(available_difference)
+    complete = all(s["outcome"] is not None for s in slots)
     finite = {
         "label": f"equally weighted mean of the per-root {treatment}-minus-{reference} differences over the "
                  f"{len(values)} fixed development-selected checkpoints",
@@ -270,12 +294,25 @@ def analyze(grade_rows, plan):
         "checkpoints": list(plan["root_order"]),
         "n_checkpoints": len(values),
         "contrast": (sum(values) / len(values)) if complete else None,
-        "contrast_unavailable_reason": None if complete else "one or more per-root differences are unavailable",
+        "contrast_unavailable_reason": None if complete else "one or more assigned grades are missing",
         "per_root_differences": {c["root_id"]: c["difference"] for c in contrasts},
+        "completion_bounds": _completion_bounds(
+            sum(c["completion_bounds"]["lower"] for c in contrasts) / len(contrasts),
+            sum(c["completion_bounds"]["upper"] for c in contrasts) / len(contrasts)),
         "no_population_interval": True, "no_test": True, "no_p_value": True,
         "no_significance_language": NO_SIGNIFICANCE_STATEMENT,
         "tie_is_inconclusive": TIE_STATEMENT,
         "pooling": "not pooled with E12; E12 replicates are a separate frozen stage",
+    }
+    available_complete = all(v is not None for v in available_values)
+    available_secondary = {
+        "label": "secondary available-case description; not the all-assigned contrast",
+        "contrast": sum(available_values) / len(available_values) if available_complete else None,
+        "contrast_unavailable_reason": None if available_complete else
+            "at least one checkpoint has no observed outcome in a contrast arm; no checkpoint is dropped",
+        "per_root_differences": {c["root_id"]: c["available_case_difference"] for c in contrasts},
+        "checkpoints": list(plan["root_order"]),
+        "no_missingness_identification_assumption": True,
     }
     accounting = {
         "assigned_slots": len(slots),
@@ -290,7 +327,8 @@ def analyze(grade_rows, plan):
         "usage_by_arm": usage_by_arm,
     }
     return {"per_root": per_root, "per_root_contrasts": contrasts,
-            "finite_checkpoint_contrast": finite, "accounting": accounting, "slots": slots}
+            "finite_checkpoint_contrast": finite, "available_case_secondary": available_secondary,
+            "accounting": accounting, "slots": slots}
 
 
 def build_report(grades_path, descriptor_path, descriptor, plan, grade_rows, stage_id=None):

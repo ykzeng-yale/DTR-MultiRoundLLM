@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, +3 percentage points** from55%. The fresh supported-prompt component rises from20% to40% completion (3 to6 of15points) for the completed, independently reconciled E12 batch; all other components and weights are unchanged. Its negative primary result earns empirical completion credit, not efficacy credit. Independent policy validation remains0; full project not submission-ready. [Decision and remaining milestones](e12_lead_judgment_20260923.md); [current component calculation](progress_current.json). Earlier dated checkpoints below retain their historical numbers.
+**58%, change 0 percentage points** since the preceding58% check. MRL-18 source/mock, missing-outcome analysis and sizing repairs add no empirical credit. Component weights and credit remain unchanged; E12's negative development result remains independently accepted. Efficacy is unestablished, independent policy validation remains0, and the full project is not submission-ready. [Current decision and MRL-19](mrl18_review_mrl19_20260923.md); [component calculation](progress_current.json). The prior+3points from55% were earned by E12 reconciliation, not this preparation review. Earlier dated checkpoints retain their historical numbers.
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

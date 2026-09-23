@@ -146,3 +146,7 @@ MRL-15 accepted in scope. MRL-16 is the single bundled conditional preparation/v
 ## Current queue after E12 outcome review, 23 September
 
 MRL-16 completed and MRL-17 reproduced. MRL-18 permits one20-minute source/mock preparation bundle only; E13a execution and E13b remain held. Follow [the exact lead decision](e12_lead_judgment_20260923.md). Previous running/conditional-release paragraphs are historical; no expired cap or reservation is renewed.
+
+## Current queue after MRL-18 review, 23 September
+
+MRL-18 was acknowledged and delivered within its source cap. The lead reviewed `b5bbaf1`, repaired missing-outcome analysis/sizing and accepted the E12 archive/metadata annotation. **MRL-19 source/mock completion proceeds:** one CPU, 30 elapsed minutes, $0, zero model/receiver/benchmark/containment executions. Real two-arm dispatch/grading is still missing; follow the [exact bundled request](mrl18_review_mrl19_20260923.md). E13a execution and E13b remain held; receipt of MRL-19 is pending. Do not duplicate the resolved coordination escalation or treat the proposed September 24 time as a reservation.

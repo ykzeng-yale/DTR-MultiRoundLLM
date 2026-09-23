@@ -24,15 +24,9 @@ unvalidated family sampling limit its interpretation. E11's earlier zero contras
 remains a separate negative result. The [editable manuscript](manuscript/current_paper_20260922.md)
 now integrates both studies.
 
-Overall milestone completion is **58%, +3 percentage points** for the newly
-completed and independently reviewed empirical milestone. Efficacy remains
-unestablished, independent policy validation is incomplete, and the full project
-is not submission-ready. The [checkpoint](docs/monitoring_checkpoint.md) and
-[fixed rubric](docs/progress_current.json) govern; older percentages below are
-historical. MRL-18 permits one bounded source/mock preparation bundle for a
-five-checkpoint restart-package versus resampling comparison. Its execution and
-the broader E13b study remain held pending separate complete contracts; expired
-E12 reservations and unused starts provide no new authority.
+Overall milestone completion is **58%, change 0 percentage points** at the latest review. Efficacy remains unestablished, independent policy validation is incomplete, and the full project is not submission-ready. The [checkpoint](docs/monitoring_checkpoint.md) and [fixed rubric](docs/progress_current.json) govern.
+
+The worker acknowledged and delivered MRL-18 source preparation. The [independent review](docs/mrl18_review_mrl19_20260923.md) corrects incomplete-outcome analysis and sizing claims, and accepts the archived E12 evidence annotation. **MRL-19 permits one bounded source/mock completion of the real two-arm path**, which is still missing from the mock-only delivery. E13a execution and the proposed broader E13b study remain held; expired E12 reservations and unused starts provide no new authority.
 
 ## Prior continuation — 21 September 2026
 

@@ -72,6 +72,9 @@ def test_arithmetic_and_finite_checkpoint_contrast(tmp_path):
     assert diffs["mbpp/842"] == pytest.approx(2 / 3 - 1 / 3)
     assert diffs["mbpp/288"] == pytest.approx(1.0)
     assert report["finite_checkpoint_contrast"]["contrast"] == pytest.approx((1 / 3 + 1.0) / 2)
+    bounds = report["finite_checkpoint_contrast"]["completion_bounds"]
+    assert bounds["lower"] == bounds["upper"] == report["finite_checkpoint_contrast"]["contrast"]
+    assert report["available_case_secondary"]["contrast"] == report["finite_checkpoint_contrast"]["contrast"]
     assert report["finite_checkpoint_contrast"]["n_checkpoints"] == 2
     by_root = {c["root_id"]: c for c in report["per_root_contrasts"]}
     assert by_root["mbpp/842"]["R1_passes"] == 2 and by_root["mbpp/842"]["FRESH_passes"] == 1
@@ -91,7 +94,12 @@ def test_missing_outcomes_are_preserved_and_not_zero_filled(tmp_path):
     cell = report["per_root"]["mbpp/842"]["R1"]
     assert (cell["assigned"], cell["graded"], cell["passes"], cell["failures"], cell["missing"]) == (3, 2, 2, 0, 1)
     assert cell["missing_reasons"] == {"grading_unavailable": 1} and cell["missing_replicates"] == [4]
-    assert cell["mean"] == pytest.approx(1.0), "mean must use available outcomes only, not zero-fill the missing slot"
+    assert cell["mean"] is None, "missing assigned outcomes suppress the primary cell point estimate"
+    assert cell["available_case_mean"] == pytest.approx(1.0)
+    assert cell["completion_bounds"]["lower"] == pytest.approx(2 / 3)
+    assert cell["completion_bounds"]["upper"] == 1
+    assert report["finite_checkpoint_contrast"]["contrast"] is None
+    assert report["available_case_secondary"]["contrast"] == pytest.approx((2 / 3 + 1) / 2)
     assert report["accounting"]["graded_slots"] == 11
     assert report["accounting"]["missing_slots"] == [
         {"root_id": "mbpp/842", "arm": "R1", "replicate": 4, "missing_reason": "grading_unavailable"}]
@@ -107,6 +115,73 @@ def test_all_missing_cell_leaves_mean_and_contrast_null(tmp_path):
     assert report["finite_checkpoint_contrast"]["per_root_differences"]["mbpp/288"] is None
     assert report["finite_checkpoint_contrast"]["contrast"] is None
     assert report["finite_checkpoint_contrast"]["contrast_unavailable_reason"]
+    assert report["available_case_secondary"]["contrast"] is None
+    cell_bounds = report["per_root"]["mbpp/288"]["FRESH"]["completion_bounds"]
+    assert (cell_bounds["lower"], cell_bounds["upper"]) == (0, 1)
+    root_bounds = report["per_root_contrasts"][1]["completion_bounds"]
+    assert (root_bounds["lower"], root_bounds["upper"]) == (0, 1)
+
+
+def test_directional_counterexample_has_bounds_crossing_zero(tmp_path):
+    """One observed treatment success must not assert a positive all-assigned contrast with five missing."""
+    root = "synthetic/checkpoint"
+    spec = descriptor(roots=[root], r1_reps=list(range(6)), fresh_reps=list(range(6)))
+    rows = [grade(root, "R1", i, 1 if i == 0 else None,
+                  None if i == 0 else "grading_unavailable") for i in range(6)]
+    rows += [grade(root, "FRESH", i, int(i < 3)) for i in range(6)]
+    report = report_for(tmp_path, rows, spec)
+    finite = report["finite_checkpoint_contrast"]
+    assert finite["contrast"] is None
+    assert report["available_case_secondary"]["contrast"] == 0.5
+    assert finite["completion_bounds"]["lower"] == pytest.approx(-1 / 3)
+    assert finite["completion_bounds"]["upper"] == 0.5
+    assert finite["completion_bounds"]["kind"] == "finite_completion_bounds"
+    assert finite["completion_bounds"]["is_confidence_interval"] is False
+    # Both extrema are attainable completions of the five missing binary scores, not sampling intervals.
+    for fill, bound in ((0, "lower"), (1, "upper")):
+        completed = [{**r, "outcome": fill, "missing_reason": None} if r["outcome"] is None else r for r in rows]
+        completed_report = e13a.analyze(completed, e13a.plan_from_descriptor(spec))
+        assert completed_report["finite_checkpoint_contrast"]["contrast"] == pytest.approx(
+            finite["completion_bounds"][bound])
+
+
+def test_all_missing_five_checkpoint_bounds_are_minus_one_to_one(tmp_path):
+    roots = [f"synthetic/{i}" for i in range(5)]
+    spec = descriptor(roots=roots, r1_reps=list(range(6)), fresh_reps=list(range(6)))
+    rows = [grade(root, arm, i, None, "budget_unattempted")
+            for root in roots for arm in ("R1", "FRESH") for i in range(6)]
+    report = report_for(tmp_path, rows, spec)
+    assert report["accounting"]["assigned_slots"] == 60
+    assert len(report["accounting"]["missing_slots"]) == 60
+    assert report["finite_checkpoint_contrast"]["contrast"] is None
+    assert report["available_case_secondary"]["contrast"] is None
+    for cell in [cell for arms in report["per_root"].values() for cell in arms.values()]:
+        assert cell["mean"] is None and cell["available_case_mean"] is None
+        assert (cell["completion_bounds"]["lower"], cell["completion_bounds"]["upper"]) == (0, 1)
+    bounds = report["finite_checkpoint_contrast"]["completion_bounds"]
+    assert (bounds["lower"], bounds["upper"]) == (-1, 1)
+    assert bounds["is_confidence_interval"] is False
+
+
+def test_five_checkpoint_bounds_weight_roots_equally_not_available_counts(tmp_path):
+    roots = [f"synthetic/{i}" for i in range(5)]
+    spec = descriptor(roots=roots, r1_reps=list(range(6)), fresh_reps=list(range(6)))
+    # First root has one observed treatment pass, five missing and reference mean 1/2.
+    # The other four root contrasts are complete zero, so bounds average over all five roots.
+    rows = []
+    for root in roots:
+        for arm in ("R1", "FRESH"):
+            for i in range(6):
+                missing = root == roots[0] and arm == "R1" and i > 0
+                outcome = None if missing else (int(i < 3) if root == roots[0] else 0)
+                rows.append(grade(root, arm, i, outcome, "receiver_unavailable" if missing else None))
+    report = report_for(tmp_path, rows, spec)
+    finite = report["finite_checkpoint_contrast"]
+    assert finite["contrast"] is None
+    assert finite["n_checkpoints"] == 5
+    assert finite["completion_bounds"]["lower"] == pytest.approx(-1 / 15)
+    assert finite["completion_bounds"]["upper"] == pytest.approx(0.1)
+    assert report["available_case_secondary"]["contrast"] == pytest.approx(0.1)
 
 
 def test_refuses_unexpected_arm_root_replicate_and_duplicate(tmp_path):
@@ -168,7 +243,9 @@ def test_statements_and_evidence_class_present(tmp_path):
     assert "fixed development-selected checkpoints" in finite_label
     assert "no p-value" in report["metric_definitions"]["finite_checkpoint_contrast"].lower()
     assert "no futility claim" in report["metric_definitions"]["finite_checkpoint_contrast"].lower()
-    assert report["metric_definitions"]["mean"].startswith("passes / graded")
+    assert report["metric_definitions"]["mean"].startswith("passes / assigned")
+    assert report["metric_definitions"]["available_case_mean"].startswith("passes / graded")
+    assert "NOT confidence intervals" in report["metric_definitions"]["completion_bounds"]
     assert "never zero-filled" in report["metric_definitions"]["missing"]
 
 
@@ -177,7 +254,7 @@ def test_cli_writes_report_and_refuses_overwrite(tmp_path):
     out = tmp_path / "sub/e13a_report.json"
     e13a.main(["--grades", str(grades), "--stage", str(stage), "--out", str(out)])
     report = json.loads(out.read_text())
-    assert report["analysis_version"] == "e13a-finite-checkpoint-contrast-v1"
+    assert report["analysis_version"] == "e13a-finite-checkpoint-contrast-v2"
     assert report["inputs"]["grades"]["sha256"] and report["inputs"]["stage_descriptor"]["sha256"]
     assert report["inputs"]["grades"]["records"] == 12
     with pytest.raises(SystemExit, match="Refusing to overwrite"):

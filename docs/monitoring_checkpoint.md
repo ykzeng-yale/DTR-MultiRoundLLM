@@ -1,5 +1,15 @@
 # Hourly research checkpoint
 
+## E13 preparation repaired; real dispatch remains pending — 2026-09-23T04:42:56.405620+00:00
+
+**58%, change 0 percentage points.** Fixed component weights and credit are unchanged. E12's independently reconciled negative development result remains valid; prompt efficacy and independent policy benefit remain unestablished, and the full project is not submission-ready.
+
+Last seen and independently reviewed worker delivery: **b5bbaf1316722241d1e245ae3d1c95c022cbe0a3**. MRL-18 acknowledgement at 04:08:11 UTC processed be417b5; completion04:20:09 and addenda through 04:26:11 were inside the 20-minute cap. The file-based exchange is functioning. Receipt and source completion are verified; E13a real execution has not occurred. Issues #2–#5 and open PRs checked (none open); no new worker comment or result outside this source bundle, no recovery escalation or duplicate worker.
+
+Three independent reviews and parent checks found and repaired incomplete-outcome analysis, sizing inversions/variance claims and execution-contract inaccuracies. The primary finite-checkpoint point contrast is withheld for any missing assigned grade; exact binary completion bounds and explicitly secondary available-case summaries are reported. These bounds are not confidence intervals. The E12 archived log/annotation pass a new [static audit](../results/mrl18_lead_static_audit_20260923.json); shutdown initiation is corroborated, completed exit/current availability are not. Source/mock validation is separate from real outcome evidence. Focused checks: 59 passed; full suite: 938 passed, two pre-existing worker-host E2 fixture failures, five skipped, eight subtests passed (5.67 seconds). All 729 synthetic missingness patterns/4,096 binary completions match the finite bounds (0.022 seconds); no sampling inference is claimed.
+
+[MRL-19](mrl18_review_mrl19_20260923.md) permits the existing worker one 30-minute/one-CPU/$0 source/mock completion of the real five-root/two-arm driver, bound release, actual command lines and enforced resource/provenance gates. E13a execution remains held because the current driver is mock-only and the E12 release is incompatible; renewed runtime attestation and an actual shared-host agreement also remain required. E13b as proposed and larger generator work remain held. Publication of this new request is not acknowledgement. Next milestone: one source-complete release candidate, then one bundled execution decision and independent result reconciliation. No model calls, model tokens, benchmark/candidate/reference/containment starts or paid services in this lead check.
+
 ## E12 accepted; E13 source preparation released — 2026-09-23T03:58:52.222545+00:00
 
 **58%, +3 percentage points** since the last published 55% checkpoint. Only the fresh-prompt component changes: .20 to .40 of its 15-point weight, reflecting independent reconciliation of the prospective 14-root/154-call development batch. Fixed denominator; negative results earn completion credit, not efficacy credit. Full project not submission-ready; personalized-prompt efficacy and independent policy benefit unestablished.

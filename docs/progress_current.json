@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T03:58:52.222545+00:00",
+  "checkpoint_utc": "2026-09-23T04:42:56.405620+00:00",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -53,18 +53,18 @@
     }
   ],
   "overall_percent": 58,
-  "prior_check_reconstructed_percent": 55,
-  "prior_checked_head": "2bc8546aff8747ee4a6e73bee84bf7f391d3b30f",
-  "baseline_note": "Unchanged rubric; fresh-prompt component .20 to .40 (3 to6 points) for independently reconciled prospective14-root E12 development batch. Negative outcomes preserved. All other credits unchanged.",
-  "delta_percentage_points": 3,
+  "prior_check_reconstructed_percent": 58,
+  "prior_checked_head": "be417b5e50a3a21341ebb794f0645f6940517141",
+  "baseline_note": "Unchanged fixed rubric and component credit. MRL18 source/mock and sizing repairs do not supply a new empirical milestone; E12 negative result remains accepted.",
+  "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "E12 154calls/154grades independently reconciled; primary\u22121/28, no fixedarm beats STOP. MRL17 static descriptors accepted with metadata/measurement corrections. E13a source preparation MRL18 only; execution/E13b held.",
+  "latest_evidence": "MRL18 public-only plan and archived E12 annotation accepted; missing-outcome analysis and sizing corrected. Real E13a path absent; MRL19 source-only completion authorized; no new efficacy evidence.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "22a0d22c19487d8074d567e31f222598dd5ee931",
-    "delivery_type": "Completed E12 development data; MRL17 static description; E13 source proposal",
-    "scientific_review_revision": "1f654476645662943c0dda1bc3d636116776beb5",
-    "review_record": "docs/e12_lead_judgment_20260923.md",
+    "last_seen_worker_revision": "b5bbaf1316722241d1e245ae3d1c95c022cbe0a3",
+    "delivery_type": "MRL18 completed source/mock preparation and archived E12 evidence",
+    "scientific_review_revision": "b5bbaf1316722241d1e245ae3d1c95c022cbe0a3",
+    "review_record": "docs/mrl18_review_mrl19_20260923.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker published completed E12 Sep22 07:16:47 and latest status Sep23; lead response delayed about20h. No scheduler failure inferred.",
+    "scheduler_status": "Verified MRL18 file acknowledgement04:08:11 and completion/addenda by04:26:11. GitHub/file route functioning; no scheduler failure inferred.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -88,11 +88,11 @@
     "mrl16_publication_received": true,
     "mrl16_execution_state": "154calls,154grades,117newstarts; stop timestamp recorded but exited null; termination reported.",
     "mrl16_independent_validation_state": "Saved call/grade/source/usage and static records reconciled; no livehost rerun.",
-    "mrl16_latest_feedback_acknowledged": false,
-    "mrl17_status": "Completed and independently reproduced; metadata and interpretation corrections issued.",
-    "last_reviewed_operational_proposal_revision": "5096dc3d94902b1fd7554f82351cf00781ebc535",
-    "operational_review_record": "results/e12_execution_lead_review_20260923.json",
-    "resource_reservation": "Prior Sep22 07:10\u201308:20 reservation expired; no new reservation or inference authority.",
+    "mrl16_latest_feedback_acknowledged": true,
+    "mrl17_status": "Original static report preserved; new metadata annotation independently accepted.",
+    "last_reviewed_operational_proposal_revision": "b5bbaf1316722241d1e245ae3d1c95c022cbe0a3",
+    "operational_review_record": "docs/mrl18_review_mrl19_20260923.md",
+    "resource_reservation": "No E13a reservation accepted in this exchange; Sep24 placeholder unagreed and withdrawn as a required wait. Existing worker must obtain actual fresh agreement after source readiness.",
     "mrl16_new_window_acknowledged_by_worker": true,
     "prior_release_receipt": {
       "repository": "ykzeng-yale/DTR-AgentEvals",
@@ -103,13 +103,21 @@
       "lead_review_scope": "Read published pinned receipt and worker873c4e7; did not independently observe remote live host."
     },
     "source_integration_verified_at_startup": "2bc8546aff8747ee4a6e73bee84bf7f391d3b30f",
-    "mrl18_status": "Source/mock preparation released oneCPU20minutes; acknowledgement pending.",
-    "mrl18_acknowledgement_received": false,
-    "mrl18_execution_released": false
+    "mrl18_status": "Acknowledged04:08:11UTC, completed04:20:09 with addenda through04:26:11 inside20-minute cap; reviewed with lead source repairs.",
+    "mrl18_acknowledgement_received": true,
+    "mrl18_execution_released": false,
+    "mrl18_acknowledgement_utc": "2026-09-23T04:08:11Z",
+    "mrl18_processed_commit": "be417b5e50a3a21341ebb794f0645f6940517141",
+    "mrl18_reported_completion_utc": "2026-09-23T04:20:09Z",
+    "mrl18_independent_validation_state": "Source/mock review and archived-record hashes checked; no real E13a receiver or benchmark execution.",
+    "mrl19_status": "OneCPU30minute source/mock completion authorized; receipt pending publication.",
+    "mrl19_acknowledgement_received": false,
+    "mrl19_execution_released": false
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
   "fitted_history_source_validation": "results/e0_history_source_validation_20260922.json",
   "fitted_history_numerical_design": "docs/fitted_history_numerical_design_20260922.md",
-  "current_scientific_judgment": "docs/e12_lead_judgment_20260923.md"
+  "current_scientific_judgment": "docs/mrl18_review_mrl19_20260923.md",
+  "latest_validated_empirical_revision": "1f654476645662943c0dda1bc3d636116776beb5"
 }

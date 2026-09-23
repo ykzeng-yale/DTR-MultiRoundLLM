@@ -1,0 +1,41 @@
+{
+  "evidence_class": "source/mock tests and deterministic finite completion enumeration; not model/benchmark/confirmatory validation",
+  "validated_utc": "2026-09-23T04:47:22.136937+00:00",
+  "full_suite": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 938,
+    "failed": 2,
+    "skipped": 5,
+    "subtests_passed": 8,
+    "runtime_seconds": 5.67,
+    "failures": [
+      "tests/test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts",
+      "tests/test_landmark_public_instrument.py::test_exact_starts_and_preserved_identities[E2-2]"
+    ],
+    "failure_scope": "Previously documented E2 frozen worker-host paths; fixture regeneration differs by host path and worker-specific canary path is absent in lead checkout. Existing fixtures/source untouched; not counted as passing here.",
+    "prior_record": "docs/mrl10_review_mrl11_release_20260921.md"
+  },
+  "targeted_independent_runs": [
+    {
+      "scope": "analyzer/mock/plan",
+      "passed": 35,
+      "runtime_seconds": 0.22
+    },
+    {
+      "scope": "sizing",
+      "passed": 24,
+      "runtime_seconds": 0.12
+    }
+  ],
+  "exhaustive_bounds_record": "results/e13a_completion_bounds_check_20260923.json",
+  "artifact_audit": "results/mrl18_lead_static_audit_20260923.json",
+  "source_sha256": {
+    "scripts/e13a_analyze.py": "7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699",
+    "scripts/e13_sizing.py": "e5e3c97dd428d56c030d277ccc56b747f11c8a080401a0102097033facd714eb",
+    "experiments/landmark/e13a_stage.json": "53a3bddc8fe07bba53b03287ed1f29df3928db6f0f2c0e685766a8df8df9624c"
+  },
+  "model_calls": 0,
+  "model_tokens": 0,
+  "benchmark_candidate_reference_containment_starts": 0,
+  "paid_services_usd": 0
+}

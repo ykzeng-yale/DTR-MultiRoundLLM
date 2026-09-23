@@ -51,7 +51,7 @@
   "artifact_starts": 60,
   "recheck_starts": 10,
   "max_private_starts": 70,
-  "grading_seconds": 240
+  "grading_seconds": 300
  },
  "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control). Read with study_adapter.load_grading_limits; this file is NOT a release manifest and is not on study_adapter.COMMITTED_RELEASE_MANIFESTS.",
  "receiver_calls_authorized": 0,
@@ -67,6 +67,7 @@
  "exact_commands": {
   "analysis": "python3 scripts/e13a_analyze.py --grades <run>/D/grades.jsonl --stage experiments/landmark/e13a_stage.json --out <run>/analysis_report.json",
   "mock_demonstration": "python3 scripts/e13a_mock_dryrun.py --out <mock_dir>",
-  "note": "collection and grading commands are fixed in docs/e13a_execution_contract_20260923.md and are not authorized to run"
- }
+  "note": "Real collection and grading commands are not implemented in this delivery. The mock demonstration is not a real dispatcher. MRL-19 requires a separately bound real adapter/release and exact commands; execution remains held."
+ },
+ "analysis_missingness": "If any assigned grade is unavailable, report no primary point contrast; show finite all-assigned completion bounds and label available-case summaries as secondary. Bounds are not confidence intervals."
 }

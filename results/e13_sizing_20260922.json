@@ -1,6 +1,7 @@
 {
- "analysis_version": "e13-sizing-v2-usefulness",
- "evidence_class": "planning arithmetic from committed files; no execution; scenarios are assumptions",
+ "analysis_version": "e13-sizing-v3-usefulness-repaired",
+ "evidence_class": "planning arithmetic from committed files; no model/benchmark execution; scenarios are assumptions",
+ "source_sha256": "e5e3c97dd428d56c030d277ccc56b747f11c8a080401a0102097033facd714eb",
  "inputs": {
   "results/e12_dev_v3_20260922T030255Z/analysis_report.json": "ca250a3ea3d5bfe275a202f10b58d3c26a247fba5c63798ee56aa53760eaaf8b",
   "results/e12_dev_v3_20260922T030255Z/analysis_input.json": "4a64c49794c3951b28c0e232f8509700278bc057af598ec65599d15e4e516527",
@@ -10,10 +11,6 @@
   "n_roots": 14,
   "n_gated": 5,
   "gate_rate": 0.35714285714285715,
-  "gate_rate_wilson95": [
-   0.1634473175355414,
-   0.612355768960926
-  ],
   "replicates": 2,
   "roots": [
    {
@@ -71,22 +68,17 @@
   "var_root_means": 0.175,
   "mean_within_var_of_root_mean": 0.15,
   "tau2_moment": 0.024999999999999994,
-  "implied_within_var_per_replicate": 0.3,
-  "within_var_exceeds_bernoulli_cap": true,
-  "tau2_moment_consistent_with_cap": 0.04999999999999999,
-  "tau2_note": "Noisy moment estimate from 5 roots, not an identified variance decomposition (lead be417b5). The observed within term implies more per-replicate variance than a Bernoulli allows, so the cap-consistent value is used as the optimistic end."
+  "mean_within_sample_var_per_replicate": 0.3,
+  "tau2_note": "Noisy moment estimate from 5 selected roots, not an identified variance decomposition. An unbiased sample variance from two Bernoulli draws can equal 0.5, despite the population variance bound of 0.25. The observed average sample variance 0.30 does not violate that bound or require replacing tau2=0.025 by 0.05. Both are sensitivity scenarios, not established lower bounds on population heterogeneity."
  },
  "frame": {
   "eligible": 198,
   "reviewed": 20,
   "remaining_unreviewed": 178,
   "e12_retention": 0.7,
-  "expected_retained_full": 124,
-  "expected_gated_full_at_e12_rate": 44,
-  "expected_gated_full_at_wilson_bounds": [
-   20,
-   76
-  ]
+  "retained_root_count_scenario": 124,
+  "gated_root_count_scenario": 44,
+  "interpretation": "Retention and gate-rate extrapolations are planning scenarios, not population estimates or confidence limits for this nonprobability roster."
  },
  "assumptions": {
   "within_replicate_var": 0.25,
@@ -97,67 +89,63 @@
    0.1,
    0.2
   ],
-  "normal_approximation": true
+  "normal_approximation": true,
+  "within_variance_interpretation": "Upper-bound planning plug-in under conditionally independent replicate seeds; scenario moment triples are not asserted to define exact Bernoulli laws."
  },
  "usefulness_full_policy": {
   "threshold": 0.05,
-  "scope_limit": "This variance and every sample size below apply to the gated rule MINUS ALWAYS-STOP only. They rely on the contrast being exactly 0 at non-gated roots, which holds because the rule stops there. The lead memo's primary comparator b1 is a fixed CONTINUATION recipe, not STOP; against b1 the non-gated roots contribute an extra (1-f)(tau2_ng + sw2/R + Delta_ng^2) term plus cross terms, so these numbers understate the requirement. E12 does not expose the difference: N1 scored 1.000 on all 9 non-gated roots, so the observed rule-minus-N1 contrasts there were all 0, while R1 itself drops non-gated roots from 1.000 to 0.889. Sizing against a fixed-continuation comparator is NOT done here.",
-  "decision_rule": "useful benefit needs L > 0.05; useful-gain futility needs U < 0.05; equality passes neither",
+  "scope_limit": "This variance and every sample size below apply to the gated rule MINUS ALWAYS-STOP only. They rely on the contrast being exactly 0 at non-gated roots, which holds because the rule stops there. The lead memo's primary comparator b1 is a fixed CONTINUATION recipe, not STOP. For that contrast, write conditional means mu_g, mu_ng and variances v_g, v_ng: the full variance is f*v_g + (1-f)*v_ng + f*(1-f)*(mu_g-mu_ng)^2. Both strata's contrasts and the target mean may change, so neither the variance nor the required sample size is ordered relative to STOP. E12 does not settle those quantities: N1 scored 1.000 on all 9 non-gated roots, so the observed rule-minus-N1 contrasts there were all 0, while R1 itself drops non-gated roots from 1.000 to 0.889. Sizing against a fixed-continuation comparator is NOT done here.",
+  "decision_rule": "useful benefit needs L > 0.05; useful-gain futility needs U < 0.05; an interval endpoint equal to 0.05 does not meet its strict rule. When the true effect is 0.05, each declaration has probability 0.025 under this Normal approximation.",
   "target": "full-policy equal-weight contrast theta = f * delta_cond, NOT the gated-subset contrast",
   "n_roots_available": 124,
+  "n_roots_available_note": "Hypothetical retained-root count, not a verified independent evaluation frame.",
+  "power_scope": "Assumed-variance Normal approximations for one contrast at one final analysis; not finite-sample calibration, simultaneous two-contrast power, or evidence of real family independence.",
   "min_delta_cond_for_theta_above_threshold": 0.14,
   "min_delta_cond_demonstrable_at_available_n": {
    "tau2=0.025,R=6": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.285199423056142,
-    "expected_estimate_clears_bar": 0.23400127354045636
+    "power_50pct": 0.2340012735404563,
+    "power_80pct": 0.28519942305614193
    },
    "tau2=0.025,R=8": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.276726966295163,
-    "expected_estimate_clears_bar": 0.2282258966715273
+    "power_50pct": 0.22822589667152723,
+    "power_80pct": 0.276726966295163
    },
    "tau2=0.05,R=6": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.30353462423528926,
-    "expected_estimate_clears_bar": 0.24648624683468226
+    "power_50pct": 0.24648624683468223,
+    "power_80pct": 0.30353462423528926
    },
    "tau2=0.05,R=8": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.2961909211927861,
-    "expected_estimate_clears_bar": 0.24148760561157667
+    "power_50pct": 0.24148760561157664,
+    "power_80pct": 0.296190921192786
    },
    "tau2=0.1,R=6": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.3345830440479958,
-    "expected_estimate_clears_bar": 0.2675998255480301
+    "power_50pct": 0.26759982554803,
+    "power_80pct": 0.33458304404799577
    },
    "tau2=0.1,R=8": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.32858130232317495,
-    "expected_estimate_clears_bar": 0.2635205714417168
+    "power_50pct": 0.2635205714417168,
+    "power_80pct": 0.3285813023231749
    },
    "tau2=0.2,R=6": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.384238835072027,
-    "expected_estimate_clears_bar": 0.30132553105528165
+    "power_50pct": 0.30132553105528165,
+    "power_80pct": 0.384238835072027
    },
    "tau2=0.2,R=8": {
-    "power_50pct": 0.14000000000000004,
-    "power_80pct": 0.379586157484164,
-    "expected_estimate_clears_bar": 0.2981668933379599
+    "power_50pct": 0.29816689333795987,
+    "power_80pct": 0.379586157484164
    }
   },
   "max_theta_declarable_futile_at_available_n": {
-   "tau2=0.025,R=6": 0.01100164536527871,
-   "tau2=0.025,R=8": 0.014027522779914045,
-   "tau2=0.05,R=6": 0.004453359229868965,
-   "tau2=0.05,R=8": 0.007076110316477233,
-   "tau2=0.1,R=6": 0.0,
-   "tau2=0.1,R=8": 0.0,
-   "tau2=0.2,R=6": 0.0,
-   "tau2=0.2,R=8": 0.0
+   "tau2=0.025,R=6": 0.011001645365278718,
+   "tau2=0.025,R=8": 0.014027522779914054,
+   "tau2=0.05,R=6": 0.004453359229868971,
+   "tau2=0.05,R=8": 0.007076110316477239,
+   "tau2=0.1,R=6": null,
+   "tau2=0.1,R=8": null,
+   "tau2=0.2,R=6": null,
+   "tau2=0.2,R=8": null
   },
+  "futility_null_note": "null means no nonnegative gain reaches 80% futility power under that scenario; it does not mean zero is an attainable boundary.",
   "rows": [
    {
     "tau2": 0.025,
@@ -166,7 +154,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.1543033499620919,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 75,
     "power_benefit_at_available_n": 1.2862741149977097e-08,
     "power_futility_at_available_n": 0.9503605623457644
@@ -178,7 +166,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.15615218026451166,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 186,
     "power_benefit_at_available_n": 1.0587044564025483e-05,
     "power_futility_at_available_n": 0.6301340339810408
@@ -190,7 +178,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.16157178645070044,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 1005,
     "power_benefit_at_available_n": 0.0016171990928227076,
     "power_futility_at_available_n": 0.16468281376296634
@@ -202,7 +190,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.1682543426171337,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -214,7 +202,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.1816402964072443,
     "n_roots_for_80pct_benefit": 564,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.2590499535423756,
     "power_futility_at_available_n": 0.0005308385151823192
@@ -226,7 +214,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.2108857252533852,
     "n_roots_for_80pct_benefit": 107,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.854832149007384,
     "power_futility_at_available_n": 3.2236437269572704e-07
@@ -238,7 +226,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.24605734633835832,
     "n_roots_for_80pct_benefit": 56,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.9875310336058843,
     "power_futility_at_available_n": 3.5850011848026497e-10
@@ -250,7 +238,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.1417366773784602,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 64,
     "power_benefit_at_available_n": 1.952012773642764e-09,
     "power_futility_at_available_n": 0.9754821605253967
@@ -262,7 +250,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.1437472271249865,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 157,
     "power_benefit_at_available_n": 4.294636066992652e-06,
     "power_futility_at_available_n": 0.7019495587519352
@@ -274,7 +262,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.1496168576118101,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 861,
     "power_benefit_at_available_n": 0.0012505581645763653,
     "power_futility_at_available_n": 0.18493374112374095
@@ -286,7 +274,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.15680971179836317,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -298,7 +286,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.17109342238576405,
     "n_roots_for_80pct_benefit": 501,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.285936133306794,
     "power_futility_at_available_n": 0.0003973535676811135
@@ -310,7 +298,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.20187261087232256,
     "n_roots_for_80pct_benefit": 98,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.8833895068167124,
     "power_futility_at_available_n": 1.59357050444342e-07
@@ -322,7 +310,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.23837780851378917,
     "n_roots_for_80pct_benefit": 52,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.9912905486075564,
     "power_futility_at_available_n": 1.5107426420968295e-10
@@ -334,7 +322,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.18093671611393647,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 103,
     "power_benefit_at_available_n": 2.362538090716626e-07,
     "power_futility_at_available_n": 0.8680508935512371
@@ -346,7 +334,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.1825159577405,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 254,
     "power_benefit_at_available_n": 4.408377030007404e-05,
     "power_futility_at_available_n": 0.5004437275907332
@@ -358,7 +346,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.18717375244793855,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 1348,
     "power_benefit_at_available_n": 0.0024781216484921487,
     "power_futility_at_available_n": 0.1334857387789007
@@ -370,7 +358,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.1929717472535688,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -382,7 +370,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.20474806154755898,
     "n_roots_for_80pct_benefit": 717,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.21344080904501606,
     "power_futility_at_available_n": 0.0008878509462700857
@@ -394,7 +382,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.23108734397239866,
     "n_roots_for_80pct_benefit": 129,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.7862885295953281,
     "power_futility_at_available_n": 1.2172661103537763e-06
@@ -406,7 +394,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.2635769130930216,
     "n_roots_for_80pct_benefit": 64,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.975179259156487,
     "power_futility_at_available_n": 2.0148649970685995e-09
@@ -418,7 +406,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.17034628596731172,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 92,
     "power_benefit_at_available_n": 8.546314400614818e-08,
     "power_futility_at_available_n": 0.9046538190951476
@@ -430,7 +418,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.1720227796970328,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 225,
     "power_benefit_at_available_n": 2.6650098733094207e-05,
     "power_futility_at_available_n": 0.5480497301215523
@@ -442,7 +430,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.17695698774053564,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 1205,
     "power_benefit_at_available_n": 0.0021253377368368187,
     "power_futility_at_available_n": 0.14434626421752983
@@ -454,7 +442,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.18307882767501313,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -466,7 +454,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.19545211846445898,
     "n_roots_for_80pct_benefit": 653,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.22992006381804175,
     "power_futility_at_available_n": 0.0007342997038061183
@@ -478,7 +466,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.2228926253804275,
     "n_roots_for_80pct_benefit": 120,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.8145650935783137,
     "power_futility_at_available_n": 7.368357209935894e-07
@@ -490,7 +478,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.2564226023976985,
     "n_roots_for_80pct_benefit": 60,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.9808903044274964,
     "power_futility_at_available_n": 1.0336929090470903e-09
@@ -502,7 +490,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.22493385271060934,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 159,
     "power_benefit_at_available_n": 4.598197595573339e-06,
     "power_futility_at_available_n": 0.6968372645031278
@@ -514,7 +502,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.22620613980852694,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 389,
     "power_benefit_at_available_n": 0.0001983483595757729,
     "power_futility_at_available_n": 0.3528429605857244
@@ -526,7 +514,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.22998077411510953,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 2035,
     "power_benefit_at_available_n": 0.004004744376185421,
     "power_futility_at_available_n": 0.10235284075386608
@@ -538,7 +526,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.23472374846878638,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -550,7 +538,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.24449726289802481,
     "n_roots_for_80pct_benefit": 1022,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.1625556949693876,
     "power_futility_at_available_n": 0.0016628026107489147
@@ -562,7 +550,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.2669428841556945,
     "n_roots_for_80pct_benefit": 172,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.6641265295396676,
     "power_futility_at_available_n": 7.005790626957165e-06
@@ -574,7 +562,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.29551638190257595,
     "n_roots_for_80pct_benefit": 80,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.9381028929004269,
     "power_futility_at_available_n": 2.39453318284788e-08
@@ -586,7 +574,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.21650635094610965,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 148,
     "power_benefit_at_available_n": 2.926872701258798e-06,
     "power_futility_at_available_n": 0.7296240003543086
@@ -598,7 +586,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.21782786688538439,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 361,
     "power_benefit_at_available_n": 0.00015720308775102332,
     "power_futility_at_available_n": 0.3756990813854698
@@ -610,7 +598,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.22174516537536268,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 1892,
     "power_benefit_at_available_n": 0.0037102486421095593,
     "power_futility_at_available_n": 0.10701344302250448
@@ -622,7 +610,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.22666053913286274,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -634,7 +622,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.23676712919953175,
     "n_roots_for_80pct_benefit": 959,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.17051179448871046,
     "power_futility_at_available_n": 0.0014997788761840214
@@ -646,7 +634,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.2598812523175199,
     "n_roots_for_80pct_benefit": 163,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.6874103670686404,
     "power_futility_at_available_n": 5.205623308190965e-06
@@ -658,7 +646,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.28915340889837526,
     "n_roots_for_80pct_benefit": 77,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.946957032559206,
     "power_futility_at_available_n": 1.547581685024113e-08
@@ -670,7 +658,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.29378482569650155,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 271,
     "power_benefit_at_available_n": 5.7829713553503304e-05,
     "power_futility_at_available_n": 0.4741747721791974
@@ -682,7 +670,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.294760077692622,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 661,
     "power_benefit_at_available_n": 0.0007510802062427047,
     "power_futility_at_available_n": 0.22793577061484993
@@ -694,7 +682,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.29766666285775223,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 3408,
     "power_benefit_at_available_n": 0.0063088004599513026,
     "power_futility_at_available_n": 0.07699999003946656
@@ -706,7 +694,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.30134618598801577,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -718,7 +706,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.309019736066989,
     "n_roots_for_80pct_benefit": 1633,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.11745901601728748,
     "power_futility_at_available_n": 0.0031461937298015163
@@ -730,7 +718,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.3270669489808566,
     "n_roots_for_80pct_benefit": 258,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.49423866064298405,
     "power_futility_at_available_n": 4.701811481722107e-05
@@ -742,7 +730,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.3507765922735935,
     "n_roots_for_80pct_benefit": 113,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.8383794276155454,
     "power_futility_at_available_n": 4.6064228487185943e-07
@@ -754,7 +742,7 @@
     "theta_policy": 0.0,
     "sd_policy": 0.287383516775555,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 260,
     "power_benefit_at_available_n": 4.8622975034551263e-05,
     "power_futility_at_available_n": 0.4909984963097109
@@ -766,7 +754,7 @@
     "theta_policy": 0.01785714285714286,
     "sd_policy": 0.28838041768837647,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 632,
     "power_benefit_at_available_n": 0.0006844509659745812,
     "power_futility_at_available_n": 0.2361324215495536
@@ -778,7 +766,7 @@
     "theta_policy": 0.03571428571428572,
     "sd_policy": 0.2913506548501868,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": 3265,
     "power_benefit_at_available_n": 0.006105812556427503,
     "power_futility_at_available_n": 0.07868700678304485
@@ -790,7 +778,7 @@
     "theta_policy": 0.05,
     "sd_policy": 0.29510893872311916,
     "n_roots_for_80pct_benefit": null,
-    "benefit_unreachable_reason": "theta <= 0.05: no sample size can show L > 0.05",
+    "benefit_80pct_unattainable_reason": "theta <= 0.05: no sample size attains 80% benefit power in this Normal model; a false-positive declaration remains possible (2.5% at equality)",
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.025000000000000022,
     "power_futility_at_available_n": 0.025000000000000022
@@ -802,7 +790,7 @@
     "theta_policy": 0.07142857142857144,
     "sd_policy": 0.3029405208678322,
     "n_roots_for_80pct_benefit": 1569,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.12054039245523929,
     "power_futility_at_available_n": 0.0030013092135446895
@@ -814,7 +802,7 @@
     "theta_policy": 0.10714285714285714,
     "sd_policy": 0.3213293497650163,
     "n_roots_for_80pct_benefit": 249,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.5080967167552165,
     "power_futility_at_available_n": 4.070264097827403e-05
@@ -826,7 +814,7 @@
     "theta_policy": 0.14285714285714288,
     "sd_policy": 0.3454330319929418,
     "n_roots_for_80pct_benefit": 109,
-    "benefit_unreachable_reason": null,
+    "benefit_80pct_unattainable_reason": null,
     "n_roots_for_80pct_futility": null,
     "power_benefit_at_available_n": 0.8492960851537774,
     "power_futility_at_available_n": 3.6473853992635696e-07
@@ -1744,7 +1732,7 @@
    "isolated_starts": 270,
    "est_collection_seconds": 184
   },
-  "E13a_mechanism_variance_pilot_on_E12_gated_roots": {
+  "E13a_restart_package_comparison_on_E12_gated_roots": {
    "retained_roots": 5,
    "continuation_roots": 5,
    "replicates": 6,

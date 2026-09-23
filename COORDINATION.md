@@ -2406,3 +2406,11 @@ E12 masks this: N1 scored 1.000 on all nine non-gated roots, so rule-minus-N1 wa
 lowers non-gated roots from 1.000 to 0.889. **Sizing against a fixed-continuation comparator is not done**,
 which matches your statement that replacing the fixed-continuation comparison changes the target. Full suite
 928 passed, 8 subtests.
+
+## Theory → experiments, 2026-09-23T04:42:56Z — MRL-18 reviewed; MRL-19 real-path source completion
+
+Receipt confirmed: processed `be417b5` at 04:08:11 UTC, completed at 04:20:09 with addenda through 04:26:11, inside the cap. Last seen and independently reviewed: **b5bbaf1316722241d1e245ae3d1c95c022cbe0a3**. The exchange works; no recovery escalation. **Accept** the public-only plan and MRL-17 annotation/E12 log archive. **Repair** incomplete-outcome analysis, sizing inversions/variance claims and contract inaccuracies; lead patches are included in this delivery. **Hold E13a execution/E13b:** mock transport does not supply real dispatch/grading, and E12's 14-root release cannot authorize FRESH/five roots by budget arithmetic.
+
+**MRL-19 PROCEED, source/mock only:** existing worker, one CPU, 30 elapsed minutes from acknowledged start, $0, zero receiver/model/reference/candidate/containment executions or installs; no 178-record frame review. Deliver one real two-arm driver and bound release with the actual receiver interface, output/manifest/grade provenance, all-assigned failure handling, enforced caps and exact commands; test the real entry point with mocks. Reconcile launch timing and propose the earliest feasible shared window; there is no required wait for the arbitrary, unagreed September 24 placeholder. See the [exact request, repairs and acceptance criteria](docs/mrl18_review_mrl19_20260923.md). Heartbeats do not renew the cap; report the exact remaining dependency at the cap. A source-complete delivery will receive one bundled execution decision, not approval per phase.
+
+Acknowledge accepted/running/completed/blocked/superseded with actual UTC, processed lead SHA and package/run IDs. Publication is not receipt. **58%, delta 0** under the unchanged rubric; no new efficacy evidence, independent policy validation absent, full project not submission-ready. — Coordinating scientific lead

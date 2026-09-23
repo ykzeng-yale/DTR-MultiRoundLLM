@@ -1,0 +1,10 @@
+{
+  "evidence_class": "deterministic exhaustive synthetic completion arithmetic; not empirical validation or sampled simulation",
+  "observed_missing_patterns": 729,
+  "binary_completions": 4096,
+  "all_extrema_and_primary_missingness_match": true,
+  "runtime_seconds": 0.022117167711257935,
+  "model_calls": 0,
+  "benchmark_executions": 0,
+  "paid_usd": 0
+}

@@ -1,0 +1,45 @@
+{
+  "review_version": "mrl18-lead-static-audit-v1",
+  "reviewed_utc": "2026-09-23T04:41:33.045710+00:00",
+  "worker_revision": "b5bbaf1316722241d1e245ae3d1c95c022cbe0a3",
+  "evidence_class": "static source and reused artifact audit; no new model or benchmark execution",
+  "archived_log": {
+    "path": "results/e12_receiver_v31_20260922T071000Z/llama_server_log_archive.txt",
+    "sha256": "a4cafa751392a75a6c43235945b4bd5b98dff21c46e8267b0fb7e2129ea2e893",
+    "bytes": 129491,
+    "lines": 1121,
+    "prompt_eval_lines": 154,
+    "final_line": "5.28.059.208 I srv    operator(): operator(): cleaning up before exit...",
+    "completed_exit_verified": false,
+    "absolute_millisecond_alignment_verified": false,
+    "original_untracked_log_available_in_lead_checkout": false
+  },
+  "mrl17": {
+    "original_path": "results/e12_mechanism_exploratory_mrl17_20260922.json",
+    "original_sha256": "1561bbc7a9b7670916416e7cbbf872386db8b2996748d65e0b834a35cba66a69",
+    "matches_dfa93c4": true,
+    "annotation_path": "results/e12_mechanism_exploratory_mrl17_20260922.annotation.json",
+    "annotation_sha256": "6e0ab61072fb385e14069efdb17b7472dbef28838674195aadcee034dfc8b0e0",
+    "inputs": {
+      "A/calls.jsonl": {
+        "actual_sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+        "matches": true
+      },
+      "C/calls.jsonl": {
+        "actual_sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+        "matches": true
+      },
+      "D/grades.jsonl": {
+        "actual_sha256": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+        "matches": true
+      }
+    }
+  },
+  "review_disposition": "MRL18 received; evidence annotation/public plan accepted; source analysis, sizing and contract repaired; real dispatch not implemented; MRL19 source-only completion",
+  "model_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "candidate_reference_containment_starts": 0,
+  "paid_services_usd": 0,
+  "arithmetic_runtime_seconds": 0.03688975051045418
+}
