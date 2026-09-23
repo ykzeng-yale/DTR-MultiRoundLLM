@@ -2,6 +2,8 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
+At 21:44:58 UTC, **58%, change 0 percentage points**. A read-only E12 public-status/grade reconciliation refines what the negative development data can teach a future selector but does not establish conditional ranking or independent policy benefit. The single worker-receipt recovery remains unanswered; no repeated escalation or new collection. Prompt efficacy unestablished; full project not submission-ready.
+
 At 21:11:03 UTC, **58%, change 0 percentage points**. The single recovery remains unanswered at its first post-recovery review, so receipt of the lead's E14 hold cannot be verified without the existing worker's accessible app/task route. The [policy-target decision fork](policy_trial_decision_fork_20260923.md) separates original independent-family validation, a changed finite-frame estimand and instrument-only feasibility; no new empirical milestone or release. Prompt efficacy unestablished; full project not submission-ready.
 
 At 20:37:27 UTC, **58%, change 0 percentage points**. LEAD-MRL25-01 still has no worker acknowledgement after two checks, so one bounded recovery request is published; execution and scheduler health remain unverified. The current manuscript now reflects the independently checked MRL-25 mock repair while retaining real-instrument and independent-policy gaps. No new efficacy or completion milestone. Full project not submission-ready.

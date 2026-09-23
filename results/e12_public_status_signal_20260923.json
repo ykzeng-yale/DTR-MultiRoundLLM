@@ -1,0 +1,231 @@
+{
+  "audit_version": "e12-public-status-signal-v1",
+  "benchmark_program_executions": 0,
+  "evidence_class": "post-result reused E12 grades and public diagnostics; no new model or grader execution",
+  "family_limit": "All 14 roots carry one unresolved_development_family placeholder, not 14 independent families.",
+  "inputs_sha256": {
+    "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "results/e12_dev_v3_20260922T030255Z/analysis_input.json": "4a64c49794c3951b28c0e232f8509700278bc057af598ec65599d15e4e516527",
+    "results/e12_dev_v3_20260922T030255Z/analysis_report.json": "ca250a3ea3d5bfe275a202f10b58d3c26a247fba5c63798ee56aa53760eaaf8b"
+  },
+  "interpretation_limit": "Public status is a pre-continuation feature; in-sample grouping is descriptive, with only two draws per arm and outcome-inspected development roots. No selector was fit or evaluated, and no conditional sign or policy benefit is established.",
+  "model_calls": 0,
+  "overall_S1_minus_N1_half_units": -1,
+  "overall_observed_mean_difference": -0.03571428571428571,
+  "paid_usd": 0,
+  "rows": [
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/918"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/825"
+    },
+    {
+      "N1_grades": [
+        0,
+        0
+      ],
+      "S1_grades": [
+        0,
+        1
+      ],
+      "S1_minus_N1_half_units": 1,
+      "family_id": "unresolved_development_family",
+      "public_status": "wrong_value",
+      "root_id": "mbpp/842"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/816"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/895"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/868"
+    },
+    {
+      "N1_grades": [
+        0,
+        0
+      ],
+      "S1_grades": [
+        0,
+        0
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "wrong_value",
+      "root_id": "mbpp/288"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/154"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        0,
+        0
+      ],
+      "S1_minus_N1_half_units": -2,
+      "family_id": "unresolved_development_family",
+      "public_status": "wrong_value",
+      "root_id": "mbpp/863"
+    },
+    {
+      "N1_grades": [
+        0,
+        0
+      ],
+      "S1_grades": [
+        0,
+        0
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "wrong_value",
+      "root_id": "mbpp/966"
+    },
+    {
+      "N1_grades": [
+        0,
+        0
+      ],
+      "S1_grades": [
+        0,
+        0
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "wrong_value",
+      "root_id": "mbpp/652"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/651"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/499"
+    },
+    {
+      "N1_grades": [
+        1,
+        1
+      ],
+      "S1_grades": [
+        1,
+        1
+      ],
+      "S1_minus_N1_half_units": 0,
+      "family_id": "unresolved_development_family",
+      "public_status": "pass",
+      "root_id": "mbpp/974"
+    }
+  ],
+  "summary": {
+    "pass": {
+      "N1_passes": 18,
+      "S1_minus_N1_half_units": 0,
+      "S1_passes": 18,
+      "observed_mean_difference": 0.0,
+      "roots": 9
+    },
+    "wrong_value": {
+      "N1_passes": 2,
+      "S1_minus_N1_half_units": -1,
+      "S1_passes": 1,
+      "observed_mean_difference": -0.1,
+      "roots": 5
+    }
+  },
+  "tokens": 0
+}

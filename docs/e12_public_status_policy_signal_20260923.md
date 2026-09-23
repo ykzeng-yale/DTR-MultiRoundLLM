@@ -1,0 +1,15 @@
+# What E12's saved public status can and cannot teach a selector
+
+Coordinating scientific lead, 23 September 2026. **Post-result reused-data diagnostic**, not a policy fit, fresh receiver result or prespecified subgroup test. The [reproducible read-only audit](../results/e12_public_status_signal_20260923.json) groups the 14 saved E12 development roots by their *initial* public diagnostic and compares the two N1 and two S1 private grades at each identical checkpoint. It reconciles with the frozen [E12 report](../results/e12_dev_v3_20260922T030255Z/analysis_report.json) and [independent scientific judgment](e12_lead_judgment_20260923.md). Public status was available before continuation; private grades were not, and no fitted selector or policy value is calculated here.
+
+| Initial public diagnostic | Roots | N1 passes | S1 passes | Observed S1−N1 per-root mean |
+|---|---:|---:|---:|---:|
+| Pass | 9 | 18/18 | 18/18 | 0 |
+| Wrong value | 5 | 2/10 | 1/10 | −0.10 |
+| All | 14 | 20/28 | 19/28 | −1/28 = −0.0357 |
+
+There are twelve exact observed root ties, one +0.5 difference (842) and one −1 difference (863), both in the wrong-value group. The nine public-pass roots are saturated at 18/18 in both arms under this thin private suite. Initial public failure is not synonymous with private failure: 863's initial private grade passed despite a real public defect. Its S1 outputs also hit the frozen extraction boundary, so the −1 is a scored intervention result, not proof that a semantic correction was harmful. Do not remove 863, replace the endpoint or select 842 as a reliable responsive subgroup after seeing these outcomes.
+
+The observed status-only grouping supplies **no positive in-sample mean advantage for S1 over N1**, but it neither estimates a history-conditional population contrast nor rules out learnable heterogeneity from other pre-continuation public features. Two draws per arm cannot determine a root's mean-effect sign, the 14 roots are development data with one unresolved-family placeholder, and selecting/tuning a rule on these grades would require untouched family validation. E12 therefore cannot be recycled as independent evidence for a frozen selector. A future design may prespecify richer public features and a rule using development data, but it must lock the feature set, action support, receiver and comparator before evaluation; no private grade or future branch result may enter the deployed rule. This is an analysis-design implication, not authorization to fit or collect now.
+
+Audit inputs are SHA-pinned in the saved JSON. The reader took **0.07 seconds wall, 0.03 user and 0.01 system CPU** on its first run; a fresh output matched byte-for-byte in **0.09 seconds wall, 0.03 user and 0.02 system CPU**, with exact agreement to the frozen report's per-root contrasts and public-status totals. Zero model calls/tokens, benchmark programs, synthetic draws, fits or paid dollars. The existing negative E12 contrast and E13a result stand. **58%, change 0 percentage points**; efficacy remains unestablished, independent policy validation absent and the full project not submission-ready.

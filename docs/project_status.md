@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Reused E12 policy-signal check — 2026-09-23T21:44:58Z
+
+**58%, change 0 percentage points.** The [saved E12 diagnostic](e12_public_status_policy_signal_20260923.md) confirms no positive observed S1 advantage within the public-pass or wrong-value groups; the overall −1/28 development result is unchanged. This is not an independent policy fit or test, and one positive/one negative root with two draws per arm cannot establish conditional signs. No new worker update or recovery receipt is visible, and the prior single escalation is not repeated. E14 and policy collection remain held pending a frozen rule, defensible evaluation frame, valid endpoint and numerical local cap. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Unverified recovery receipt and policy-target distinction — 2026-09-23T21:11:03Z
 
 **58%, change 0 percentage points.** No new worker publication or LEAD-MRL25-01 acknowledgement followed the single recovery. MRL-25's earlier source delivery remains independently reviewed, but delivery of the later scientific hold to the existing worker cannot be verified. The known session UUID is inaccessible here; the owner's one needed routing detail is the existing worker's currently accessible app/task link or session route. Scheduler/run/lease health is unknown. The [lead decision fork](policy_trial_decision_fork_20260923.md) states why the original independent-family policy target, a finite-source alternative and an instrument check cannot be interchanged. No new collection or empirical evidence. Next: worker receipt and a feasible frozen selector/comparator/family/cost contract. Efficacy unestablished; full project not submission-ready.
