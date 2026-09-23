@@ -96,6 +96,13 @@ diagnostic-only effect.
   - Each R1 prompt is **byte-identical** to both of E12's recorded R1 requests, and each FRESH prompt to
     E12's recorded initial request; only the seed differs.
   - All 60 new seeds differ from every seed E12 used at that root.
+- **Formatting instructions are out of scope.** The original public prompt already required one block or raw
+  source and no prose. Strengthening or repeating that requirement would be a **new intervention**, not a
+  restoration, so no formatting instruction changes in this comparison. Any such change belongs to a separate,
+  separately labelled study.
+- **Frozen before dispatch** (in the stage descriptor and the execution contract): root-balanced scheduling,
+  inclusion probability 1 per root-arm-replicate, model and evaluator versions, every source and input hash,
+  the missing-outcome and format rules, the exact A–E commands and the immutable output paths.
 - **What it can show:** per-root and equally weighted finite-checkpoint descriptive contrasts over five fixed
   checkpoints, with all assigned failures and actual usage reported.
 - **What it cannot show:** it is not a test of the rule (these checkpoints selected it); it gives no
