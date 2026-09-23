@@ -7,7 +7,7 @@
  "endpoint": "frozen private-suite-plus-output-validity score in {0,1} per slot; scorer code unchanged; all 108 assigned slots reported, missing stay missing under all-assigned completion bounds",
  "proposal": {
   "path": "docs/e14_same_prefix_revision_proposal_20260923.md",
-  "sha256": "0f6a2d3bdb42e9bb86df6235c2ff367ae43a471744df7d069f7c72f786c6431b",
+  "sha256": "0dbc93a95767e844e0ae1ffe0ab23bd4bd075217b5f359e57137b9f3a5023a7e",
   "sections_implemented": [
    1,
    2,
