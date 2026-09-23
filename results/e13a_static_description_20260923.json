@@ -1,0 +1,219 @@
+{
+ "analysis_version": "e13a-static-description-v1",
+ "evidence_class": "post-hoc exploratory static description of immutable E13a outputs; 0 executions; not a prespecified endpoint, not a mechanism result, not a regrade",
+ "run": "e13a_two_arm_20260923T061500Z",
+ "inputs": {
+  "collect/calls.jsonl": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+  "grade/grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+  "analysis_report.json": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708"
+ },
+ "metric_definitions": {
+  "parses": "extract_code then ast.parse succeeds; a static property of the text, not a correctness claim.",
+  "defines_entry_point": "a top-level FunctionDef with the task's entry-point name exists in the parsed output.",
+  "distinct_outputs": "number of distinct output_sha256 values among that cell's replicates; 1 means the arm reproduced one answer, R means every draw differed. Distinctness is textual, not semantic.",
+  "instrument_inert": "True only if EVERY cell of both arms produced one identical outcome and no textual variation at all; an inert instrument cannot express a difference.",
+  "saturation": "floor = all graded outcomes 0; ceiling = all graded outcomes 1. A saturated cell bounds how far the other arm could move relative to it.",
+  "leave_one_out": "the equally weighted mean recomputed with one checkpoint removed; it shows dependence on a single checkpoint and is descriptive, not an interval.",
+  "post_treatment_selection": "whether any slot was dropped, filtered or reweighted after its continuation was produced. All 60 assigned slots are graded, so no such step exists in this run."
+ },
+ "per_checkpoint": {
+  "mbpp/842": {
+   "R1": {
+    "entry_point": "get_odd_occurence",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 5,
+    "mean": 0.8333333333333334,
+    "distinct_outputs": 4,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "unsaturated"
+   },
+   "FRESH": {
+    "entry_point": "get_odd_occurence",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "mean": 0.3333333333333333,
+    "distinct_outputs": 4,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "unsaturated"
+   }
+  },
+  "mbpp/288": {
+   "R1": {
+    "entry_point": "modular_inverse",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "mean": 0.3333333333333333,
+    "distinct_outputs": 6,
+    "n_parses": 4,
+    "n_defines_entry_point": 4,
+    "static_failures": [
+     "extract_fail",
+     "parse_fail"
+    ],
+    "saturation": "unsaturated"
+   },
+   "FRESH": {
+    "entry_point": "modular_inverse",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 3,
+    "mean": 0.5,
+    "distinct_outputs": 6,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "unsaturated"
+   }
+  },
+  "mbpp/863": {
+   "R1": {
+    "entry_point": "find_longest_conseq_subseq",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "mean": 0.3333333333333333,
+    "distinct_outputs": 6,
+    "n_parses": 3,
+    "n_defines_entry_point": 3,
+    "static_failures": [
+     "parse_fail"
+    ],
+    "saturation": "unsaturated"
+   },
+   "FRESH": {
+    "entry_point": "find_longest_conseq_subseq",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 6,
+    "mean": 1.0,
+    "distinct_outputs": 4,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "ceiling"
+   }
+  },
+  "mbpp/966": {
+   "R1": {
+    "entry_point": "remove_empty",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "mean": 0.0,
+    "distinct_outputs": 4,
+    "n_parses": 0,
+    "n_defines_entry_point": 0,
+    "static_failures": [
+     "parse_fail"
+    ],
+    "saturation": "floor"
+   },
+   "FRESH": {
+    "entry_point": "remove_empty",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 1,
+    "mean": 0.16666666666666666,
+    "distinct_outputs": 2,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "unsaturated"
+   }
+  },
+  "mbpp/652": {
+   "R1": {
+    "entry_point": "matrix_to_list",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "mean": 0.0,
+    "distinct_outputs": 6,
+    "n_parses": 4,
+    "n_defines_entry_point": 4,
+    "static_failures": [
+     "parse_fail"
+    ],
+    "saturation": "floor"
+   },
+   "FRESH": {
+    "entry_point": "matrix_to_list",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "mean": 0.0,
+    "distinct_outputs": 5,
+    "n_parses": 6,
+    "n_defines_entry_point": 6,
+    "static_failures": [],
+    "saturation": "floor"
+   }
+  }
+ },
+ "per_checkpoint_difference": {
+  "mbpp/842": 0.5,
+  "mbpp/288": -0.16666666666666669,
+  "mbpp/863": -0.6666666666666667,
+  "mbpp/966": -0.16666666666666666,
+  "mbpp/652": 0.0
+ },
+ "equally_weighted_mean": -0.10000000000000002,
+ "format_under_the_frozen_rule": {
+  "by_arm": {
+   "R1": {
+    "outputs": 30,
+    "parse": 17,
+    "defines_entry_point": 17,
+    "static_failures": 13
+   },
+   "FRESH": {
+    "outputs": 30,
+    "parse": 30,
+    "defines_entry_point": 30,
+    "static_failures": 0
+   }
+  },
+  "note": "The frozen endpoint is the private-suite-PLUS-FORMAT score, so an output that the frozen extraction rule cannot recover is a legitimate 0. But the arms differ sharply here, so the contrast substantially reflects output format, not only solution quality.",
+  "conditional_contrast_refused": "A pass rate computed among parseable outputs only would condition on a property realised AFTER the continuation was produced. That is post-treatment selection and it is not a causal contrast, so it is deliberately not computed here."
+ },
+ "discipline_checks": {
+  "instrument_inert": false,
+  "instrument_inertness_evidence": {
+   "distinct_outcomes_observed": [
+    0,
+    1
+   ],
+   "cells_with_more_than_one_distinct_output": 10,
+   "largest_single_checkpoint_movement": 0.6666666666666667
+  },
+  "saturated_cells": {
+   "mbpp/863:FRESH": "ceiling",
+   "mbpp/966:R1": "floor",
+   "mbpp/652:R1": "floor",
+   "mbpp/652:FRESH": "floor"
+  },
+  "leave_one_out_mean": {
+   "mbpp/842": -0.25,
+   "mbpp/288": -0.08333333333333334,
+   "mbpp/863": 0.041666666666666664,
+   "mbpp/966": -0.08333333333333336,
+   "mbpp/652": -0.12500000000000003
+  },
+  "sign_flips_when_one_checkpoint_removed": [
+   "mbpp/863"
+  ],
+  "post_treatment_selection": {
+   "slots_assigned": 60,
+   "slots_graded": 60,
+   "slots_dropped_after_continuation": 0,
+   "statement": "whether any slot was dropped, filtered or reweighted after its continuation was produced. All 60 assigned slots are graded, so no such step exists in this run."
+  }
+ }
+}

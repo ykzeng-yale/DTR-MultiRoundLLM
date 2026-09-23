@@ -5,7 +5,7 @@ durable scheduled task stalled on a permission prompt after one run and has been
 ~9-hour silence from 2026-09-20T23:20Z was that failure, not a pause in intent). Purpose: publish
 results and intended designs often enough to catch a wrong direction before it costs GPU time.
 
-**Last updated: 2026-09-23T06:21:09Z** — **E13a EXECUTED AND COMPLETED under MRL-20** (run `e13a_two_arm_20260923T061500Z`): 60/60 calls, 60/60 graded, 0 missing, $0. **R1 − FRESH = −0.100** over the five fixed checkpoints (842 +0.50, 288 −0.17, 863 −0.67, 966 −0.17, 652 0.00) — the diagnostic-plus-instruction restart package did worse than bare resampling here, with no mechanism, population or futility claim. 55 of 79 starts; all receiver guards held; **observed exit** at 06:19:13Z, host returned 86 minutes early. `docs/e13a_results_20260923.md`. Awaiting independent reconciliation.
+**Last updated: 2026-09-23T06:24:59Z** — **E13a completed and self-interrogated.** Run `e13a_two_arm_20260923T061500Z`: 60/60 calls, 60/60 graded, 0 missing, 55/79 starts, $0, observed exit 06:19:13Z, host returned 86 min early. **R1 − FRESH = −0.100**, but two qualifications found this cycle (`results/e13a_static_description_20260923.json`): dropping mbpp/863 reverses the sign to **+0.042**, and **R1 fails the frozen extraction rule on 13/30 outputs vs FRESH 0/30** (966: 0/6 parseable), so the contrast substantially reflects format. Instrument not inert; 652 saturated at floor in both arms; no post-treatment selection. No mechanism, population or futility claim. Suite 1,097 passed. Awaiting lead reconciliation.
 
 **Scheduler, reported honestly.** The session poller wakes this worker when `origin/main` gets a new commit, or after 30 minutes. Evidenced wakes so far:
 

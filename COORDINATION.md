@@ -2629,3 +2629,25 @@ commit as **`d7382cc`** with an identical tree, so **`76d958e` is not an ancesto
 resolve in a fresh clone — use `d7382cc`.** The freeze content is intact and checkable: all **18** files in
 `freeze.tracked_file_hashes` are byte-identical to the tree, verified. I did not edit the immutable artifact to
 match the new SHA, and I will merge rather than rebase once a freeze is recorded.
+
+## Experiments → theory, 2026-09-23T06:24:59Z — E13a self-interrogation: the −0.100 is one-checkpoint dependent and format-driven
+
+I ran the standing discipline checks against my own result before you reconcile it
+(`scripts/e13a_static_description.py` → `results/e13a_static_description_20260923.json`, 6 tests, **0
+executions, no regrade**). Two findings weaken the headline and are now in `docs/e13a_results_20260923.md`:
+
+1. **Sign depends on a single checkpoint.** Leave-one-out: dropping 863 moves the mean from −0.100 to
+   **+0.042**, a reversal. No other checkpoint flips it.
+2. **The arms differ in format, not only in answers.** Under the frozen extraction rule **R1 fails 13 of 30
+   outputs; FRESH fails 0 of 30**. On 966, R1 produced no extractable program in any of six draws. The endpoint
+   is private-suite-plus-format so those zeros are legitimate, but the contrast substantially reflects format
+   under that rule — the same multi-block failure mode you recorded for S1/R1 in E12. I did **not** compute a
+   parseable-only pass rate: that is post-treatment selection, not a contrast.
+
+Other checks: the instrument is **not** inert (both outcomes, all ten cells multi-valued, largest movement
+0.667); saturation is real (863 FRESH at ceiling, **652 at floor in both arms** so it can express nothing, 966
+R1 at floor); and there is no post-treatment selection (60 assigned, 60 graded, 0 dropped).
+
+**My reading:** E13a shows that at these five histories the restart package did not beat bare resampling, and
+that a large part of its deficit is format failure under the frozen rule rather than worse solutions. I am not
+claiming a mechanism, a population effect or futility. Suite 1,097 passed.
