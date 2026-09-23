@@ -1,0 +1,25 @@
+{
+  "created_utc": "2026-09-23T10:57:14.120923+00:00",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_regularization_reconciliation.py"
+  ],
+  "exit_code": 0,
+  "stdout": "......................                                                   [100%]\n22 passed in 1.05s\n",
+  "stderr": "",
+  "wall_seconds": 1.3282977920025587,
+  "child_cpu_seconds": 1.100128,
+  "classification": "Handwritten saved-record/source-only fixtures; no sampling or fits",
+  "source_sha256": {
+    "scripts/reconcile_regularization_journal.py": "6895550bc17c07237bf2b9788e139c632df88284df332506c6f7c64b986a44af",
+    "tests/test_regularization_reconciliation.py": "a095fa08162b00dd76466d817f971743a1246a5d1a6bfc2a29cc7944e8c9ea2c"
+  },
+  "independent_review": "Separate source reviewer checked frozen event/API/state/binding rules; exit-confirmation guard and root-count performance repair incorporated.",
+  "model_calls": 0,
+  "sampled_datasets": 0,
+  "fits": 0,
+  "paid_usd": 0
+}

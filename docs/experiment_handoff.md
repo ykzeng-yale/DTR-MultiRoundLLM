@@ -221,3 +221,8 @@ The lead-owned [reporter](fitted_regularization_reporting_20260923.md) is accept
 ## 23 September — Connected numerical source accepted; execution still pending
 
 Before numerical sampling, commit the exact source/environment execution freeze and record fresh factual local availability/lease inspection. Use the existing600-job order and600second/256MiB/one-worker limits with no retry/extension. If interrupted, preserve and reconcile the immutable planned ledger/journal, including started versus unattempted slots and any incomplete final line; do not rerun seeds. This source delivery does not assign the experimental worker another job. MRL-23 existing recovery remains pending; owner routing detail requested. See [source acceptance](fitted_regularization_runner_20260923.md) and its validation record. **58%, delta0**; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — Numerical cap closed; no renewed run
+
+LEAD-E0-REG-01 is closed at its cap; no resume, replacement seeds or new allowance. The next lead item is a separately frozen support/STOP-focused design with a precision/cost plan. The existing worker still owes the already-issued MRL-23 publication recovery; no duplicate assignment. Its exact task locator remains missing. See [complete result and limitations](e0_regularization_results_20260923.md). Zero model calls, tokens, benchmark executions and paid cost. **58%, change 0 percentage points**; efficacy unestablished and full project not submission-ready.

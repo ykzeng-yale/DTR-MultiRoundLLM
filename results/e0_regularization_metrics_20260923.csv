@@ -1,0 +1,25 @@
+cell,estimator,completed,attempted,unattempted,bias,rmse,empirical_sd,intervals_returned,covered,returned_interval_coverage,scope
+base,compressed_lambda0:dr,144,144,56,-0.0021741591843522706,0.01352675373083876,0.013397483888700738,144,139,0.9652777777777778,time-capped descriptive prefix; no unconditional precision guarantee
+base,compressed_lambda0:plugin,144,144,56,-0.0035935653378398524,0.013949945980379892,0.013526190204373652,,,,time-capped descriptive prefix; no unconditional precision guarantee
+base,compressed_lambda5:dr,144,144,56,-0.0022758903494604016,0.013525099773573307,0.013378775898184059,144,139,0.9652777777777778,time-capped descriptive prefix; no unconditional precision guarantee
+base,compressed_lambda5:plugin,144,144,56,-0.0022295515520932207,0.014182624692891449,0.014055169966870666,,,,time-capped descriptive prefix; no unconditional precision guarantee
+base,history_lambda0:dr,144,144,56,-0.0025237588027316677,0.01379362706405355,0.01360811399988601,144,141,0.9791666666666666,time-capped descriptive prefix; no unconditional precision guarantee
+base,history_lambda0:plugin,144,144,56,0.00903304627492904,0.017065246172939502,0.014529026909280277,,,,time-capped descriptive prefix; no unconditional precision guarantee
+base,history_lambda5:dr,144,144,56,-0.002590290712150662,0.014036411085235246,0.013843485036065131,144,140,0.9722222222222222,time-capped descriptive prefix; no unconditional precision guarantee
+base,history_lambda5:plugin,144,144,56,-0.018609614829162364,0.02417936145384842,0.015491622120357816,,,,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,compressed_lambda0:dr,145,145,55,-0.001803445122650887,0.013064420939870215,0.012984196758473723,145,142,0.9793103448275862,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,compressed_lambda0:plugin,145,145,55,-0.0017565009322641348,0.013083653097085831,0.013010150687640614,,,,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,compressed_lambda5:dr,145,145,55,-0.0017956149046583908,0.013036029926719817,0.012956526478492138,145,143,0.9862068965517241,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,compressed_lambda5:plugin,145,145,55,0.010335758350680829,0.016878969001085053,0.013390605021470547,,,,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,history_lambda0:dr,145,145,55,-0.0019086386943215176,0.013006178577684664,0.0129099654745344,145,142,0.9793103448275862,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,history_lambda0:plugin,145,145,55,0.030544282078369813,0.033443283205156625,0.01366704863777867,,,,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,history_lambda5:dr,144,145,55,-0.0018776694747366087,0.013024657432947374,0.012933588417320197,144,142,0.9861111111111112,time-capped descriptive prefix; no unconditional precision guarantee
+uniform,history_lambda5:plugin,144,145,55,0.08270171837703717,0.08377118972186659,0.013389661157605929,,,,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,compressed_lambda0:dr,144,144,56,-0.007611158994294522,0.07153789487396278,0.07138013353582508,144,118,0.8194444444444444,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,compressed_lambda0:plugin,144,144,56,-0.04404758863871063,0.0631069571643579,0.04534952901297439,,,,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,compressed_lambda5:dr,144,144,56,-0.012797989952414544,0.11099061590210066,0.11063511724813722,144,130,0.9027777777777778,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,compressed_lambda5:plugin,144,144,56,-0.2518482649473996,0.25257284061407276,0.01918455477135718,,,,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,history_lambda0:dr,144,144,56,-0.015404053157923139,0.13778651588049534,0.1374006654814942,144,130,0.9027777777777778,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,history_lambda0:plugin,144,144,56,-0.2756873759933915,0.27601222329364816,0.013433964380819724,,,,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,history_lambda5:dr,144,144,56,-0.014713446652332747,0.13764974586955162,0.1373388248419093,144,130,0.9027777777777778,time-capped descriptive prefix; no unconditional precision guarantee
+weak_overlap,history_lambda5:plugin,144,144,56,-0.29000429402962097,0.29019551973120994,0.010570003992213362,,,,time-capped descriptive prefix; no unconditional precision guarantee

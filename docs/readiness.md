@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points.** Connected matched numerical source now has independent review and37deterministic/source/mock checks; no sampled performance or coverage result exists. MRL-23's single recovery remains unanswered at the next actual review; delivery cannot be verified and the owner has been asked for the existing worker's exact app/task locator. These changes fit existing credit; no weights or component credit change. Original negatives stand, efficacy is unestablished, independent policy validation remains open and the full project is not submission-ready. [Fixed component calculation](progress_current.json), [source scope](fitted_regularization_runner_20260923.md).
+**58%, change 0 percentage points.** A frozen matched numerical run produced 432 complete datasets plus one partial before its 600-second cap. Independent saved-root/source audit accepts accounting; sparse full-history and pooling errors and observed interval undercoverage are retained. This incomplete diagnostic remains within existing credit: 200 replicates per condition and unconditional precision were not achieved. MRL-23 recovery remains unanswered; delivery cannot be verified and the existing worker task locator is still needed. Original negatives stand, efficacy is unestablished, independent policy validation remains open, and the full project is not submission-ready. [Fixed rubric](progress_current.json), [scientific result](e0_regularization_results_20260923.md).
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

@@ -159,3 +159,8 @@ The [failure-preserving reporter](fitted_regularization_reporting_20260923.md) p
 ## 23 September — Connected runner source acceptance (coordinating lead)
 
 Independent review and37targeted source/mock checks pass6.23s. The real600-job plan/journal/reporter path with supplied records retains4,800slots; interruption preserves2completed/6attempted/4,792unattempted. Adapter fixtures perform tabular fits on handcrafted data and deterministic fold permutations. No sampled numerical performance, receiver calls/tokens, benchmark execution or paid cost. Pinned baseline sources remain unchanged. See [source acceptance](fitted_regularization_runner_20260923.md) and its validation record. **58%, delta0**; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — Matched numerical run reviewed (coordinating lead)
+
+The frozen one-CPU run generated 433 datasets, with 432 complete and one partial, ending after 598.008 seconds within the 600-second/256 MiB cap. Independent saved-root arithmetic and source audit pass. Under weak overlap, fuller history and pooling often worsened error, while returned DR coverage was below nominal 95%. Complete tables and interrupted slots are preserved. This time-capped prefix does not establish planned unconditional precision. See [complete result and limitations](e0_regularization_results_20260923.md). Zero model calls, tokens, benchmark executions and paid cost. **58%, change 0 percentage points**; efficacy unestablished and full project not submission-ready.
