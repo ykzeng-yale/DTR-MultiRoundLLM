@@ -1,0 +1,60 @@
+{
+  "schema_version": "e0-stop-anchor-execution-freeze-v1",
+  "execution_released": true,
+  "decision_id": "LEAD-E0-STOP-01",
+  "planned_run_id": "e0_stop_anchor_20260923_lead01",
+  "source_commit": "1fa0dbe6fcc2935911d15f391a3397cf3af9f626",
+  "recorded_utc": "2026-09-23T14:22:02.616911+00:00",
+  "source_sha256": {
+    "experiments/e0/stop_anchor_job.py": "3703a6a6ffe5ab9778e2320780b853075799ce8424baf9e8422a0063bc905a1f",
+    "experiments/e0/stop_anchor_estimators.py": "23b55bd15cbb2af3e11575250444dec4fd664d35d5ff5389a9d061910333a109",
+    "experiments/e0/stop_anchor_journal.py": "f72d4e17e508b711f9fcbf1d3a2c19fd4ea928b8822e9f8aeb5035181ad1e327",
+    "experiments/e0/stop_anchor_report.py": "c3eaca25ac5a0043f7d4679d59ffc7dd742ba6cc09b83032bdb7fe68b3778b20",
+    "experiments/e0/regularization_job.py": "11d3c5a56dce445d520dcc0798b35e17f3f78d70cbddf9f4fbc557720a80b81a",
+    "experiments/e0/regularization_report.py": "8dea474d7b2410e217df114965f8e55c0110df19c248826be068296afc31da3a",
+    "experiments/e0/regularized_history_estimators.py": "15351c372cf2cca26a426c81360714f4b7b6376923b758d6a731f41655a298f7",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/stop_anchor_comparison_plan_v1.json": "05de997cb4ddb20d8c7a6699ff314dcd8545825a6e5c42be8bcd235bc46c95b5",
+    "experiments/e0/stop_anchor_seed_plan_v1.csv": "4585c96be1f3cdaa8c8a7f4d64c5665fc0bba480196e314cfef8976ed7c00e9c",
+    "scripts/run_stop_anchor_comparison.py": "e2465a7d243182e8983f1d30c7a48dba9889549646157445e14939968ccb84cc",
+    "scripts/check_regularization_truth.py": "ee1492288aaa6dc0b5f0d98f0326e352ef6919bd65f3d91b6cab74154a42bf32",
+    "scripts/reconcile_stop_anchor_run.py": "b8a432519d472263be7156bba9dae5cca22bf1d64c7e055d5bd1cc518de69e6b"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "bit_generator": "PCG64"
+  },
+  "deterministic_truth": 0.6459770061744536,
+  "caps": {
+    "cpu_workers": 1,
+    "outer_seconds": 600,
+    "output_bytes": 268435456,
+    "paid_usd": 0,
+    "model_calls": 0,
+    "benchmark_executions": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0
+  },
+  "authority": "Standing owner authorization for bounded justified local numerical work; coordinating lead releases one prespecified synthetic diagnostic after independent source/scientific review. No model, benchmark or worker execution allowance.",
+  "conditions": [
+    "Fresh bound host/CPU/lease inspection before launch; fixed new output path only.",
+    "One run,96fixed datasets and192exact seed strings; no retry/resume/replacement/tuning/outcome stopping.",
+    "600second total budget,256MiB total raw output,oneCPU/one numerical-library thread,$0.",
+    "Use external end-to-end command timing in addition to supervisor receipt before asserting full wall-cap compliance.",
+    "If any gate or runtime/output cap fails, preserve all partial artifacts and report the failure; no renewed allowance.",
+    "Time-truncated or return-selected output remains descriptive with all2304planned slots; .005primaryMCSE is precision only, not efficacy.",
+    "Keep original numerical run and E12/E13 negatives immutable. E14 and independent prompt-policy validation remain separate."
+  ],
+  "classification": "New post-result synthetic weak-overlap STOP mechanism diagnostic; not prior-study completion, confirmatory efficacy, or independent prompt-policy validation.",
+  "independent_review": {
+    "scientific": "Theory reviewer accepts fixed-target bounded diagnostic with full96/inference qualifications.",
+    "source": "Independent evidence review plus cross-review accepts final runner e2465a7d and reconciler b8a43251;212 integrated tests pass.",
+    "record": "docs/e0_stop_anchor_supervision_20260923.md",
+    "validation": "results/e0_stop_anchor_supervision_validation_20260923.json"
+  },
+  "earlier_plan_status_note": "The pinned prospective plan describes source preparation and is not itself release authority. This committed execution freeze supplies the later separate lead release without changing plan, seeds or estimators."
+}
