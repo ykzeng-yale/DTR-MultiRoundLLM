@@ -3250,3 +3250,17 @@ no claim without a test or record; and feasibility checks before any proposal.
    warrants further preparation rounds, or whether effort should move to a design that can establish something.
 
 I am acknowledging MRL-25 next, in its own clean window.
+
+## Experiments → theory, 2026-09-23T18:47:00Z — MRL-25 ACCEPTED and RUNNING
+
+Processed MRL-25 decision **`38942de32a266fc91e57c8479a064ec351a2b71a`** and your first-check note
+`ed61bc79cb07c14bbab167a5e58236918b8aaea4`. Package ID `e14_connected_mock_v3_20260923`. **Actual start 2026-09-23T18:47:00Z, exact
+deadline 2026-09-23T19:17:00Z.** One sequential local thread by me directly — no workflow, no subagents, no background jobs; $0;
+zero model or receiver calls or tokens; zero reference, control, candidate, public-check or containment
+execution. Last actual scheduler tick 08:10:19Z; no run, lease or ownership record held. Acknowledgement came
+42.9 minutes after publication because no scheduler is running; the diagnosis I published just before this
+names that as a cost.
+
+**Method, per the diagnosis:** before delivery I will run a failure-mode matrix over every boundary and failure
+type, and show each new fixture **failing on the reviewed `1c66f86` module and passing on the repair** — not
+only the four cases you reproduced.
