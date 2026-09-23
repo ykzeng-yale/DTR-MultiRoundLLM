@@ -1,0 +1,74 @@
+{
+  "record_version": "mrl24-lead-independent-review-v1",
+  "reviewed_utc": "2026-09-23T18:00:29.867381+00:00",
+  "worker_last_seen_commit": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
+  "worker_source_independently_reviewed_commit": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
+  "evidence_class": "source/mock delivery and read-only archive checks; no model or benchmark execution",
+  "worker_reported_acknowledged_start_utc": "2026-09-23T17:42:51Z",
+  "worker_reported_deadline_utc": "2026-09-23T18:12:51Z",
+  "worker_reported_published_utc": "2026-09-23T17:53:47Z",
+  "recovery_receipt": "verified in commit 6486b1278a11395366a298bb05c5a91275dd07cb and issue handoff; prior escalation closed for receipt",
+  "all_delivery_artifact_hashes_verified": true,
+  "n_verified_artifact_hashes": 14,
+  "focused_tests": {
+    "command": ".venv/bin/python -m pytest -q tests/test_e14_connected_mock.py tests/test_build_e14_release_v2.py",
+    "passed": 32,
+    "skipped": 1,
+    "command_wall_seconds": 4.872663375,
+    "skip_reason": "both original cache locations unavailable on this host; one cached byte source exists"
+  },
+  "independent_portability_rebuild": {
+    "two_copied_paths_of_identical_cached_source_match": true,
+    "matches_committed_package": true
+  },
+  "mrl23_historical_one_worker_ledger": {
+    "interval_count": 79,
+    "independently_recomputed_cross_builder_overlap_pairs": 9,
+    "independently_recomputed_peak_simultaneous_local_commands": 2,
+    "interpretation": "one-worker condition not met; intervals do not measure CPU use"
+  },
+  "independent_fault_probes": {
+    "modified_terminal_spec": {
+      "accepted_modified_spec_with_same_label": true,
+      "modified_spec_hash_mismatches_release_manifest": true,
+      "modified_terminal_text_sent_on_continuation": true,
+      "transport_calls": 2,
+      "no_model_or_benchmark_execution": true
+    },
+    "malformed_transport_result": {
+      "raised": "KeyError",
+      "saved_stopped": null,
+      "saved_collection_closed": false,
+      "saved_states": {
+        "attempting": 1,
+        "planned": 129
+      }
+    },
+    "request_byte_violation": {
+      "sent_calls": 0,
+      "saved_stopped": null,
+      "saved_states": {
+        "not_attempted": 130
+      }
+    },
+    "scorer_exception": {
+      "raised": "RuntimeError",
+      "scorer_calls": 2,
+      "saved_collection_closed": true,
+      "saved_grades": 0,
+      "saved_stopped": null
+    }
+  },
+  "source_probe_wall_seconds": 0.40439325012266636,
+  "source_probe_cpu_seconds": 0.39395800000000003,
+  "actual_study_model_calls": 0,
+  "actual_prompt_tokens": 0,
+  "actual_completion_tokens": 0,
+  "actual_benchmark_program_executions": 0,
+  "actual_paid_usd": 0,
+  "decision": "repair same-target source/mock path; hold real E14 instrument and collection",
+  "local_ignored_probe_source_sha256": {
+    "lead_mrl24_independent_probe_20260923.py": "ef02867fcca5d3f73ec3f666c440606d667779f70ad105d1b854fb9bd090972c",
+    "lead_mrl24_binding_probe_20260923.py": "7e61a050bf01a3e06e76c90b6350d7d56662a692f56ff4f5b7c8df6aa6923b0c"
+  }
+}

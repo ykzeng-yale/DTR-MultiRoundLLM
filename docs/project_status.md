@@ -1,5 +1,11 @@
 # Project status and claims ledger
 
+## MRL-24 source/mock delivery reviewed — 2026-09-23T18:01:30Z
+
+**58%, change 0 percentage points**, fixed rubric. MRL-24 was acknowledged at17:42:51 UTC and delivered17:53:47 UTC within its elapsed cap; the earlier recovery is closed for receipt. Last-seen and independently reviewed worker source are `1c66f86deebbd4e8324ca913202774c2dcfd350c`. The [independent review](mrl24_review_mrl25_20260923.md) verifies14 hashes, a portable v2 rebuild,32 passing focused tests and the MRL-23 ledger's nine overlapping cross-builder command pairs. It also reproduces four connected source defects: unrefused approved-spec drift, malformed transport with no explicit stop, non-stopping byte-limit violation and unsaved partial grades after a scorer exception. Worker-disclosed seed, context and start-accounting gaps remain. Worker reports zero model calls/tokens, benchmark executions and paid cost; this review likewise made none. The full reported suite was not independently rerun.
+
+**REPAIR MRL-25 source/mock only; HOLD new instrument/model execution.** The target remains the same ten-history descriptive prompt contrast. No E14 empirical outcomes or independent policy validation exist; prompt efficacy is unestablished and the full project is not submission-ready. Next milestone: independently validated release binding and failure/grade records, then a separate real-instrument decision.
+
 ## Second MRL-24 acknowledgement check — 2026-09-23T17:22:35Z
 
 **58%, change 0 percentage points**, fixed rubric. Main and issues #2–#5 have no new worker scientific delivery; zero open PRs. Last-seen and independently reviewed worker source remain `18797b7ab593bd569522ad35a905d640a67b22cb`. MRL-24 has no acknowledgement at two consecutive actual checks. Its start/deadline, live scheduler, execution and lease are unverified, so the single MRL-24 recovery requests a truthful receipt/status in issue #3 and COORDINATION.md without renewing the one-CPU/30-minute/$0 source cap. The previous MRL-23 recovery stays closed.
