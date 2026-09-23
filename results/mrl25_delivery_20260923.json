@@ -1,0 +1,92 @@
+{
+ "record_version": "mrl25-delivery-v1",
+ "disposition": "COMPLETED, with open gates carried forward \u2014 inside the cap",
+ "processed_lead_commits": {
+  "mrl25_decision": "38942de32a266fc91e57c8479a064ec351a2b71a",
+  "also_processed": [
+   "ed61bc7",
+   "b5612a9 (efficiency judgment)"
+  ]
+ },
+ "window_utc": {
+  "acknowledged_start": "2026-09-23T18:47:00Z",
+  "exact_deadline": "2026-09-23T19:17:00Z",
+  "published": "2026-09-23T18:54:17Z"
+ },
+ "package_id": "e14_connected_mock_v3_20260923",
+ "commits": {
+  "criteria_1_2": "81aec4e",
+  "criterion_3": "6b92074"
+ },
+ "last_actual_scheduler_tick_utc": "2026-09-23T08:10:19Z",
+ "run_and_lease": {
+  "active_run": null,
+  "receiver_lease": null,
+  "ownership_record": null
+ },
+ "execution_mode": "one sequential local thread, by the worker directly; no workflow, subagents or background jobs",
+ "resources": {
+  "model_or_receiver_calls": 0,
+  "tokens": 0,
+  "paid_usd": 0,
+  "reference_control_candidate_public_check_containment_executions": 0,
+  "fake_transport_calls": "injected fakes inside pytest only; zero real transport; not individually totalled",
+  "measured_commands": [
+   {
+    "command": "pytest tests/ (full, after criteria 1-2)",
+    "real_s": 20.98,
+    "user_s": 15.63,
+    "sys_s": 3.52
+   },
+   {
+    "command": "pytest tests/ (full, after criterion 3)",
+    "real_s": 21.13,
+    "user_s": 15.64,
+    "sys_s": 3.65
+   },
+   {
+    "command": "pytest four focused MRL-25 files (54 tests)",
+    "real_s": 5.68,
+    "user_s": 3.98,
+    "sys_s": 1.56
+   }
+  ],
+  "unmeasured": "fixture-evidence runs, inventory build, file edits and git operations were not individually timed"
+ },
+ "criteria": {
+  "1_exact_binding_before_dispatch": {
+   "status": "complete",
+   "commit": "81aec4e",
+   "evidence": "manifest must equal a trusted committed sha256; every package file must match its pin; the supplied spec must match the approved spec hash. Changed terminal text under the same label, changed task prompt, changed manifest and a relocated copy with different bytes are all refused with zero fake transport calls; a relocated identical copy is accepted"
+  },
+  "2_explicit_stop_state_and_durable_scoring": {
+   "status": "complete",
+   "commit": "81aec4e",
+   "evidence": "malformed returns (missing text, None, non-str text), invalid public diagnostic (bad schema, unknown status), request-byte violation, prefix drift and preflight receiver faults leave named stop states with every slot classified; each scoring attempt is persisted before the scorer runs and every private-scoring start is counted in the same bounded ledger (130 = 10 initial-public + 120 continuation-private); a scorer exception or invalid return keeps prior grades on disk, stops scoring, marks the rest unavailable (never zero), and leaves the point contrast suppressed with bounds reported",
+   "failing_then_passing": "the same 16 fixtures: 15 fail on the reviewed v2 module (1c66f86) for the named defects and 1 positive control passes on both; all 16 pass on v3. Logs in results/mrl25_fixture_evidence_20260923/"
+  },
+  "3_historical_seed_inventory": {
+   "status": "complete for this repository's call logs",
+   "commit": "6b92074",
+   "evidence": "19 call logs, 1,009 records, 0 unparsed; no recorded label or numeric seed at any E14 root; a positive control on mbpp/842 finds 46 labels and seeds, so the empty result is not an extractor artifact",
+   "scope_limit": "sibling-project DTR-AgentEvals logs are not scanned (different harness and seed law); named as a scope limit, not treated as no collision"
+  }
+ },
+ "open_gates_carried_forward": [
+  "token-level context check (only the byte limit is enforced)",
+  "metadata-attempt, launch and cleanup limits are not exercised by the mock",
+  "no real E14 receiver collector, grader, allowlist entry, instrument validator or E14 stage clock exists",
+  "no instrument or model execution is authorized; E14 collection awaits the lead's go/no-go"
+ ],
+ "artifact_sha256": {
+  "scripts/e14_connected_mock.py": "27338377d79de72378e1b7e7799461ab9dfb3e63658d69f9099822f0e27d1f43",
+  "tests/test_e14_connected_mock_v3.py": "c171c5bf89efce95df6217a1dd1839e838477731784f64d7570461155dacd972",
+  "tests/test_e14_connected_mock.py": "1aee33050536b3a7bc8f18e405bcdd198efb369dffee1f67bf7fdf7bad0a8d85",
+  "tests/test_build_e14_release_v2.py": "38f8a73a711956206a5399e6bf2d77af4359ca760be3c506dd7137b8898ad672",
+  "scripts/e14_seed_inventory.py": "7b617eed585f1a02d23139b33e6fb6df63d436e2244173b8ece13441cb0afc63",
+  "tests/test_e14_seed_inventory.py": "a9cdfe5e83462d8338aa2c07c91b38bd0f688b79739a03b7f7f408458febe45b",
+  "results/e14_seed_inventory_20260923.json": "6cdeda3aa9bd0d5328fabf50f7bb825543f44fdc66e724d9fcea55acaf0721e7",
+  "results/mrl25_fixture_evidence_20260923/on_reviewed_v2_1c66f86.log": "3ad18d803ac6dc0b72f6ed09f520ce0a1e23d4dc0a6f10a2ea494aba280a2bd0",
+  "results/mrl25_fixture_evidence_20260923/on_v3.log": "9087edcb6d4bb5957abd1c3c4963b65f7af4242bb7d1dbcee37262a84ad14434"
+ }
+}

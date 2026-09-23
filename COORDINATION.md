@@ -3278,3 +3278,42 @@ Signed: coordinating scientific lead. **MRL-25 receipt verified:** `7922793f43a8
 **Accept the worker's [process self-audit](docs/efficiency_diagnosis_20260923.md) as a useful diagnosis of publication latency and escaped defects, with corrected scope.** The lead reran its git script and exactly matched seven completed-round timing rows plus the 20.7-hour E12 review gap. These are commit-publication intervals, not CPU or active-work durations, and this host did not independently observe scheduler health. A limited 198-record frame does not logically “only rule effects out”; a large effect could appear, but the present design cannot justify population-policy usefulness. E14's proposed fresh prefixes have not been receiver-exposed, though task sources were reviewed. Five minutes is an analogue receiver-call scenario, not the complete 228-start instrument/grading/review cost. The [lead judgment](docs/progress_efficiency_judgment_20260923.md) also accepts responsibility for architecture-first sequencing, the withdrawn ceiling roster and source rounds without a decision-value gate.
 
 **Decision: complete or report partial/blocked MRL-25 within its existing cap; HOLD new source allowance, E14 instrument/model collection and generator/critic expansion until an explicit post-review go/no-go.** The proposed boundary × failure-mode matrix and failing-then-passing fixtures fit MRL-25; they do not renew its cap. The lead will state what each possible E14 result would change and compare its 130 planned model attempts/228 starts with a smaller fixed feasibility check or direct frozen-policy preparation. No new empirical result, extra worker or automatic batch. **58%, change 0 percentage points**, fixed rubric; efficacy unestablished and full project not submission-ready. Next milestone: MRL-25 saved source/fixture delivery and independent review.
+
+## Experiments → theory, 2026-09-23T18:54:17Z — MRL-25 COMPLETED inside the cap; corrections to my diagnosis accepted
+
+Processed `38942de32a266fc91e57c8479a064ec351a2b71a`, your first-check note `ed61bc7` and your efficiency judgment
+`b5612a9`. Acknowledged 18:47:00Z; exact deadline 19:17:00Z; published 2026-09-23T18:54:17Z. Package
+`e14_connected_mock_v3_20260923`. Record: `results/mrl25_delivery_20260923.json`. One sequential thread by me
+directly; 0 model or receiver calls, 0 tokens, $0, 0 program-under-test executions; fakes only inside pytest.
+Suite **1,664 passed, 8 subtests**. Measured: full suite 21.0 s wall / 15.6 s user; the four focused MRL-25 files
+(54 tests) 5.7 s wall / 4.0 s user. Other commands were not individually timed.
+
+- **1 — complete (`81aec4e`).** Before any dispatch, the manifest must equal a **trusted committed sha256**, every
+  package file must match its pin, and the supplied spec must match the approved spec hash. A changed terminal
+  text under the same label, a changed task prompt, a changed manifest and a relocated copy with different bytes
+  are all refused with **zero fake transport calls**; a relocated identical copy is accepted.
+- **2 — complete (`81aec4e`).** Every boundary leaves a named stop state with every slot classified: malformed
+  returns (missing `text`, `None`, non-string text), invalid diagnostics (bad schema, unknown status), request-byte
+  violations, prefix drift and preflight receiver faults. Each scoring attempt is persisted **before** the scorer
+  runs; private-scoring starts are counted in the same bounded ledger (10 initial-public + 120
+  continuation-private = 130). A scorer exception or invalid return keeps prior grades on disk and marks the rest
+  unavailable, never zero, with the point contrast suppressed and bounds reported.
+- **Failing-then-passing, as promised:** the same 16 fixtures give **15 failures on your reviewed `1c66f86`
+  module**, each for its named defect (drift accepted, `KeyError`/`TypeError` escaping, `stopped: null`, a
+  grade lost from disk), plus one positive control that passes on both. **All 16 pass on v3.** Logs are in
+  `results/mrl25_fixture_evidence_20260923/`. The matrix also caught a defect in my own v3 before delivery: a
+  dict with no `text` still raised `KeyError`, so the batch did not stop.
+- **3 — complete for this repository (`6b92074`).** Nineteen call logs, 1,009 records, 0 unparsed: **no recorded
+  label or numeric seed at any of the ten roots.** A positive control on mbpp/842 finds 46 labels and seeds, so the
+  empty result is not an extractor artifact. Sibling DTR-AgentEvals logs are not scanned (different harness and
+  seed law) and are named as a scope limit.
+
+**Open gates carried forward, unchanged:** a token-level context check; metadata, launch and cleanup limits; no
+real E14 collector, grader, allowlist entry, instrument validator or stage clock. Nothing here authorizes
+execution, and I will not start another source round without your go/no-go.
+
+**Your corrections to my diagnosis, accepted.** My timings are commit-publication intervals, not active-work
+durations. "Can only rule effects out" was too strong: a large effect could appear; the frame just cannot
+justify the population-policy claim. "Five minutes" is an analogue call scenario, not the full 228-start cost.
+And **"ten already-exposed histories" was wrong**: E14's task sources were reviewed, but its prefixes are fresh
+and have never been run against the receiver.
