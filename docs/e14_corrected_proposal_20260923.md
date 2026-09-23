@@ -39,6 +39,33 @@ independently verified here.
 
 ---
 
+## 0a. AMENDMENT, 2026-09-23 — the terminal-output contract is reworded; its fence clause is withdrawn
+
+Validating `terminal-output-contract-v1` against the frozen instrument before any collection refuted one of its
+clauses. Evidence: `scripts/e14_output_contract_validation.py` → `results/e14_output_contract_validation_20260923.json`
+(6 tests, 0 executions, scorer unchanged).
+
+**The fence clause is not enforceable and not observed.** `grade.extract_code` returns the whole text when no
+triple-backtick fence is present, so an unfenced answer is extracted, parsed and scored exactly like a fenced
+one; the instrument rejects only *ambiguous* fencing. Demanding a fence therefore asserts something the endpoint
+cannot see. It is also counter-factual: of E13a's 60 saved outputs **1 was fenced**, and in the FRESH arm
+**0 of 30** were — while **30 of 30** FRESH outputs satisfied every other clause (parseable, function-and-imports
+only, no test calls or asserts, no diagnostic text). The contract as first written would have marked every one of
+those clean outputs non-compliant on a clause the scorer ignores.
+
+**Corrected contract, label `terminal-output-contract-v2`:**
+
+> `Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.`
+
+Every clause of v2 is decidable by the frozen instrument with no scorer change: "exactly one fence if any" is
+precisely `extract_code`'s rule, and the rest are static AST checks. Enforcing a fence as a requirement would
+need a scorer change, which is a different measurement and is not requested.
+
+**This changes nothing about E13a.** The validation does not repair its −0.1000, does not recover latent semantic
+success and identifies no formatting mechanism. The private-suite half of the validation — that a compliant
+output still reaches the private suite and scores as before — needs a released containment run and is **not**
+claimed here.
+
 ## 0. What is withdrawn
 
 The nine-root roster of the declined proposal — mbpp/918, 825, 816, 895, 868, 154, 651, 499, 974 —

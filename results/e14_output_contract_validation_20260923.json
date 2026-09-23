@@ -1,0 +1,255 @@
+{
+ "validation_version": "e14-output-contract-validation-v1",
+ "evidence_class": "static measurement-contract validation; 0 executions; the private-suite half is NOT validated here and needs a released containment run",
+ "contract": {
+  "label": "terminal-output-contract-v1",
+  "text": "Return the complete solution as one Python code block fenced by triple backticks, containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report.",
+  "sha256": "25764513626078ab39193208b69202c03cc32daa2ed1f802d5940a352248a90e",
+  "source": "docs/e14_same_prefix_revision_proposal_20260923.md section 2"
+ },
+ "instrument": {
+  "extractor": "experiments.landmark.grade.extract_code",
+  "extractor_rule": "with any '```' present, exactly one block and exactly two markers, else ValueError; otherwise the whole text",
+  "scorer_changed": false,
+  "grade_module_sha256": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f"
+ },
+ "clauses": {
+  "fenced_block_present": "CONTRACT CLAUSE, **NOT ENFORCEABLE BY THE FROZEN INSTRUMENT**: the contract asks for a triple-backtick block, but grade.extract_code returns the whole text when no fence is present, so a completely unfenced answer is accepted and scored normally. Only the weaker 'not ambiguously fenced' is decided by the instrument. Making the fence itself a requirement would need a scorer change, which is not requested.",
+  "not_ambiguously_fenced": "what grade.extract_code actually decides: with any '```' present, exactly one block and exactly two markers, else ValueError. No scorer change needed.",
+  "parses_as_python": "ast.parse accepts the extracted text. Static; no execution.",
+  "only_function_and_imports": "every top-level node is FunctionDef/AsyncFunctionDef/Import/ImportFrom. Static AST check; no scorer change needed.",
+  "no_test_calls_or_asserts": "no top-level Expr/Call and no Assert anywhere. Static AST check.",
+  "no_diagnostic_text_copied": "the diagnostic header string does not appear in the output text."
+ },
+ "enforceability_finding": "The contract's fence clause is NOT enforceable by the frozen instrument. grade.extract_code returns the whole text when no '```' appears, so an unfenced answer is extracted, parsed and scored exactly as a fenced one. The instrument can only reject AMBIGUOUS fencing. Consequence for the design: compliance with the fence clause is unobservable in the endpoint, so the contract must either be reworded to match what the instrument decides, or the fence must be dropped from the asserted requirements. Changing the scorer to enforce it is a different measurement and is not requested.",
+ "not_validated_here": [
+  "That a compliant output still reaches the private suite and scores as it did before: that needs a released containment run with reference and negative-control rechecks, and is not claimed by this script.",
+  "That instructing the contract changes what the receiver emits: unmeasurable without a receiver call.",
+  "That any share of E13a's -0.1000 was caused by formatting: explicitly not claimed."
+ ],
+ "fixtures": {
+  "compliant_minimal": {
+   "expected_contract_compliant": true,
+   "observed_contract_compliant": true,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "compliant_with_import": {
+   "expected_contract_compliant": true,
+   "observed_contract_compliant": true,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "two_blocks": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": false,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": false,
+    "parses_as_python": false,
+    "only_function_and_imports": false,
+    "no_test_calls_or_asserts": false,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": "Ambiguous code fences"
+   },
+   "agrees": true
+  },
+  "unfenced": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": false,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "prose_then_fence": {
+   "expected_contract_compliant": true,
+   "observed_contract_compliant": true,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "test_call_inside": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": false,
+    "no_test_calls_or_asserts": false,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "assert_inside": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": false,
+    "no_test_calls_or_asserts": false,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "unparseable": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": false,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": false,
+    "only_function_and_imports": false,
+    "no_test_calls_or_asserts": false,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": "ast_parse_failed"
+   },
+   "agrees": true
+  },
+  "diagnostic_echo": {
+   "expected_contract_compliant": false,
+   "observed_contract_compliant": false,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": false,
+    "extractor_error": null
+   },
+   "agrees": true
+  },
+  "empty_module": {
+   "expected_contract_compliant": true,
+   "observed_contract_compliant": true,
+   "observed_instrument_scoreable": true,
+   "clauses": {
+    "fenced_block_present": true,
+    "not_ambiguously_fenced": true,
+    "parses_as_python": true,
+    "only_function_and_imports": true,
+    "no_test_calls_or_asserts": true,
+    "no_diagnostic_text_copied": true,
+    "extractor_error": null
+   },
+   "agrees": true
+  }
+ },
+ "all_fixtures_agree": true,
+ "e13a_saved_outputs_descriptive": {
+  "note": "Descriptive only. These outputs were produced under prompts carrying NO contract, so this compliance rate does not predict behaviour under the contract, does not repair E13a's -0.1000 and identifies no formatting mechanism.",
+  "per_arm": {
+   "R1": {
+    "outputs": 30,
+    "contract_compliant": 0,
+    "instrument_scoreable": 17
+   },
+   "FRESH": {
+    "outputs": 30,
+    "contract_compliant": 0,
+    "instrument_scoreable": 30
+   }
+  },
+  "per_clause": {
+   "R1": {
+    "fenced_block_present": {
+     "true": 1,
+     "false": 29
+    },
+    "not_ambiguously_fenced": {
+     "true": 29,
+     "false": 1
+    },
+    "parses_as_python": {
+     "true": 17,
+     "false": 13
+    },
+    "only_function_and_imports": {
+     "true": 8,
+     "false": 22
+    },
+    "no_test_calls_or_asserts": {
+     "true": 10,
+     "false": 20
+    },
+    "no_diagnostic_text_copied": {
+     "true": 24,
+     "false": 6
+    }
+   },
+   "FRESH": {
+    "fenced_block_present": {
+     "true": 0,
+     "false": 30
+    },
+    "not_ambiguously_fenced": {
+     "true": 30,
+     "false": 0
+    },
+    "parses_as_python": {
+     "true": 30,
+     "false": 0
+    },
+    "only_function_and_imports": {
+     "true": 30,
+     "false": 0
+    },
+    "no_test_calls_or_asserts": {
+     "true": 30,
+     "false": 0
+    },
+    "no_diagnostic_text_copied": {
+     "true": 30,
+     "false": 0
+    }
+   }
+  },
+  "inputs": {
+   "collect/calls.jsonl": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9"
+  }
+ }
+}

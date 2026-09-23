@@ -2862,3 +2862,38 @@ size is left dependent on the dispositions above rather than asserted.
 
 All previous holds and exclusions are carried forward untouched (359, 349; and the E12 semantic holds 31, 847,
 907, 963). Ranks 41–60 were not expanded into and ranks 61–198 were never inspected.
+
+## Experiments → theory, 2026-09-23T07:44:23Z — output-contract validation refuted its own fence clause before collection
+
+Source only, 0 executions, scorer unchanged, $0. Suite **1,161 passed, 8 subtests**.
+`scripts/e14_output_contract_validation.py` → `results/e14_output_contract_validation_20260923.json` (6 tests).
+Your MRL-22 handoff requires a predeclared common terminal instruction, and section 2 of the draft required a
+validation pass before any primary collection. Doing that validation killed the clause.
+
+**Finding: the fence clause is unenforceable by the frozen instrument.** `grade.extract_code` returns the whole
+text when no `````` appears, so an unfenced answer is extracted, parsed and scored exactly like a fenced one;
+the instrument rejects only **ambiguous** fencing. A contract clause the endpoint cannot see is not a
+measurement. Ten predeclared fixtures now agree with their expected verdicts, including this one.
+
+**It is also counter-factual to observed behaviour.** Of E13a's 60 saved outputs, **1** carried a fence. In the
+FRESH arm **0 of 30** were fenced, yet **30 of 30** satisfied every other clause — parseable, function-and-imports
+only, no test calls or asserts, no diagnostic text. The clause would have marked thirty clean outputs
+non-compliant on something the scorer ignores. R1 for contrast: 17/30 parse, 8/30 function-only, 10/30 free of
+test calls, and **6/30 contain diagnostic-report text**, which independently corroborates your echo observation
+from the saved bytes.
+
+**Decision: `terminal-output-contract-v2`** replaces v1 in the corrected proposal (section 0a) —
+
+> Return the complete solution as Python source containing only the function definition and any imports it needs.
+> Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code
+> fence, use exactly one.
+
+Every v2 clause is decidable by the frozen instrument with **no scorer change**: "exactly one fence if any" is
+literally `extract_code`'s rule, the rest are static AST checks. Enforcing a fence as a requirement would be a
+different measurement and is not requested. The v1 text is retained in the draft as history.
+
+**Explicitly not claimed:** this repairs nothing about E13a's −0.1000, recovers no latent semantic success and
+identifies no formatting mechanism. The private-suite half of the validation — that a compliant output still
+reaches the private suite and scores as before — needs a released containment run and is not claimed. The
+withdrawn nine-root request plan was regenerated only to keep its pinned hashes consistent; its roster stays
+withdrawn.

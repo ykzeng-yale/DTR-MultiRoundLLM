@@ -122,6 +122,12 @@ also its whole limit: it identifies nothing beyond the wording it varies.
 
 ## 2. Common terminal-output contract (identical in both arms)
 
+> **Superseded, 2026-09-23:** the fence clause below is **withdrawn** — the frozen extractor accepts unfenced
+> output, so the clause is unenforceable, and 1 of E13a's 60 saved outputs was fenced (0 of 30 in FRESH, which
+> satisfied every other clause). `terminal-output-contract-v2` replaces it in
+> [the corrected proposal](e14_corrected_proposal_20260923.md) section 0a, validated by
+> `results/e14_output_contract_validation_20260923.json`. The v1 text is retained below as the historical draft.
+
 Proposed text, label **`terminal-output-contract-v1`**:
 
 > `Return the complete solution as one Python code block fenced by triple backticks, containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report.`
