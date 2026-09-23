@@ -154,3 +154,8 @@ The [matched regularization implementation](fitted_regularization_source_2026092
 ## 23 September — Numerical reporting arithmetic (coordinating lead)
 
 The [failure-preserving reporter](fitted_regularization_reporting_20260923.md) passes24targeted deterministic checks and independent mathematical/hand-arithmetic review. Eight point estimators and twelve paired contrasts keep planned, attempted, failed, interval-returned and jointly completed denominators explicit. The600-job empty-input fixture retains4,800slots; no dataset or fitted estimate was generated. These checks validate reporting mechanics only. Zero receiver calls/tokens, benchmark executions or paid cost;58%,delta0,full project not submission-ready.
+
+
+## 23 September — Connected runner source acceptance (coordinating lead)
+
+Independent review and37targeted source/mock checks pass6.23s. The real600-job plan/journal/reporter path with supplied records retains4,800slots; interruption preserves2completed/6attempted/4,792unattempted. Adapter fixtures perform tabular fits on handcrafted data and deterministic fold permutations. No sampled numerical performance, receiver calls/tokens, benchmark execution or paid cost. Pinned baseline sources remain unchanged. See [source acceptance](fitted_regularization_runner_20260923.md) and its validation record. **58%, delta0**; efficacy unestablished and full project not submission-ready.

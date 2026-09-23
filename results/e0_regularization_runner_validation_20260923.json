@@ -1,0 +1,68 @@
+{
+  "created_utc": "2026-09-23T10:09:29.538197+00:00",
+  "classification": "Source/mock integration and handcrafted-data fits only; no sampled numerical study",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_e0_regularization_job.py",
+    "tests/test_regularization_runner.py"
+  ],
+  "exit_code": 0,
+  "stdout": ".....................................                                    [100%]\n37 passed in 6.23s\n",
+  "stderr": "",
+  "test_child_cpu_seconds": 5.432645,
+  "source_sha256": {
+    "experiments/e0/regularization_job.py": "11d3c5a56dce445d520dcc0798b35e17f3f78d70cbddf9f4fbc557720a80b81a",
+    "scripts/run_regularization_comparison.py": "212743d7eeeebf451c773ce1cee7ac4494bbc2a4c5229ce3fa8ca2c938fc442f",
+    "tests/test_e0_regularization_job.py": "f05803efc3b92c5137b25a76b990e353edb1a410935f11154e919d6968df67e8",
+    "tests/test_regularization_runner.py": "d5deb2262433a6c24ab424103e03e4245d2508602cb8221045532d52a540f92f",
+    "experiments/e0/regularization_comparison_plan_v1.json": "972436a104a635cb77fe0a642140aace796ce9bf901e6f0e82890f7397efe29d",
+    "experiments/e0/regularization_comparison_seed_plan_v1.csv": "65ad251799294ae068150d37a123354c099867cc58063c243324962dba72a698",
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "experiments/e0/regularized_history_estimators.py": "15351c372cf2cca26a426c81360714f4b7b6376923b758d6a731f41655a298f7",
+    "experiments/e0/regularization_report.py": "8dea474d7b2410e217df114965f8e55c0110df19c248826be068296afc31da3a"
+  },
+  "unchanged_against_parent_HEAD": {
+    "experiments/e0/simulator.py": true,
+    "experiments/e0/estimators.py": true,
+    "experiments/e0/history_estimators.py": true,
+    "experiments/e0/regularized_history_estimators.py": true,
+    "experiments/e0/regularization_report.py": true
+  },
+  "parent_HEAD": "d929f26751121afb3b57fafc6397deb80f4d67f3",
+  "connected_fixture": {
+    "scientific_job_replaced_with_supplied_records": true,
+    "planned_jobs": 600,
+    "completed_slots": 4800,
+    "journal_events": 4200,
+    "interrupted_fixture": {
+      "completed": 2,
+      "attempted": 6,
+      "unattempted": 4792,
+      "final_summary_fabricated": false
+    }
+  },
+  "independent_review": {
+    "scientific": "Read-only review accepts declared law/shared root folds and Q/equal-root summaries/failure denominators; no coverage or performance claim. Terminal-status/prepared-event suggestions implemented.",
+    "operational": "Separate reviewer independently wrote and ran24 tests, including real supervisor with tiny synthetic child processes and connected worker with scientific job mocked;24passed5.13s.",
+    "adapter": "Separate implementation source check:13 tests passed2.67s, handcrafted data/mocked sampling; unchanged pinned sources verified."
+  },
+  "resource_usage": {
+    "cpu_workers": 1,
+    "sampled_datasets": 0,
+    "estimator_fitting": "Real tabular fits on handcrafted fixtures; no production sampled jobs",
+    "receiver_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "remaining_gate": "Committed execution freeze with exact source/environment versions and fresh factual resource/lease inspection before bounded sampling; no execution release.",
+  "limits": "Interrupted runs may lack summary; reconcile immutable completed journal lines/allplanned slots without reruns. Partial final lines require documented handling. Resource receipt is operator assertion; byte bounds assume cooperative pinned worker.",
+  "validation_wall_seconds_including_provenance_checks": 6.622345665469766
+}

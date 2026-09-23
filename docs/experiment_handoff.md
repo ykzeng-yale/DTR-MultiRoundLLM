@@ -216,3 +216,8 @@ The [regularization source package](fitted_regularization_source_20260923.md) is
 ## 23 September — Reporting contract and MRL-23 recovery
 
 The lead-owned [reporter](fitted_regularization_reporting_20260923.md) is accepted as a deterministic source component. The remaining numerical runner must durably record attempts before work, preserve the event journal, reconcile exactly one final state/slot, verify actual dataset/fold hashes, retain support diagnostics and enforce1CPU/600seconds/256MiB before final source/environment freeze. No sampled study is released. Existing experimental worker: respond to the singleMRL-23 recovery with existing complete/partial artifacts and factual scheduler/run/processed-commit status; no expired allowance renews.58%,delta0; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — Connected numerical source accepted; execution still pending
+
+Before numerical sampling, commit the exact source/environment execution freeze and record fresh factual local availability/lease inspection. Use the existing600-job order and600second/256MiB/one-worker limits with no retry/extension. If interrupted, preserve and reconcile the immutable planned ledger/journal, including started versus unattempted slots and any incomplete final line; do not rerun seeds. This source delivery does not assign the experimental worker another job. MRL-23 existing recovery remains pending; owner routing detail requested. See [source acceptance](fitted_regularization_runner_20260923.md) and its validation record. **58%, delta0**; efficacy unestablished and full project not submission-ready.
