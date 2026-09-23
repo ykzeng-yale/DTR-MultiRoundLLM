@@ -1,5 +1,15 @@
 # Project status and claims ledger
 
+## MRL-25 receipt and efficiency judgment — 2026-09-23T18:48:20Z
+
+**58%, change 0 percentage points.** Worker process diagnosis `117583a` is published; the lead independently reproduced its git publication-interval arithmetic, while current scheduler/run/lease status remains worker-reported. MRL-25 acknowledgement `7922793` at 18:47:00 UTC verifies receipt, processed lead `38942de`, package `e14_connected_mock_v3_20260923` and a 19:17:00 UTC deadline. Last independently reviewed E14 source is still `1c66f86`; no repair completion or empirical outcome is yet validated. The [lead decision](progress_efficiency_judgment_20260923.md) retains the existing MRL-25 cap and holds automatic next source rounds and E14 model collection until a decision-value go/no-go. Efficacy is unestablished; the full project is not submission-ready.
+
+## Scientific efficiency decision — 2026-09-23T18:44:13Z
+
+**58%, change 0 percentage points**, fixed rubric. The [lead audit](progress_efficiency_judgment_20260923.md) finds a real design/process bottleneck: architecture and successive source packages advanced faster than evidence that a supported, public-history prompt choice is useful. E12's matched-prefix development contrast is negative; E13a's different restart package is negative on selected histories. E14's ten-history corrected plan may describe instruction sensitivity and pipeline feasibility but cannot validate a learned policy or the separately defined five-point usefulness target. The lead owns the initial sequencing and slow E12 review; MRL-23's reported app interruption and recorded overlapping local commands are separate operational issues.
+
+MRL-25 source/mock repair remains authorized at its original cap and is still unacknowledged at this ad hoc review; current scheduler/run/lease state is unverified. There is **no automatic next source round or E14 execution**. The next scientific decision must justify the planned 130 model calls/228 isolated starts against a smaller fixed feasibility check or preparation for an independent frozen-policy trial. No new calls, tokens, benchmark executions or paid cost arise from this audit. Prompt efficacy remains unestablished and the full project is not submission-ready.
+
 ## First MRL-25 check and saved-source availability — 2026-09-23T18:36:54Z
 
 **58%, change 0 percentage points**, fixed rubric. The issue #3 MRL-25 repair request is published but unacknowledged at the first actual check; last-seen and independently reviewed worker source remain `1c66f86deebbd4e8324ca913202774c2dcfd350c`. Main, issues #2–#5 and open PRs yielded no new delivery or design question. Actual MRL-25 start/deadline, current execution, scheduler and run/lease state remain unverified. No duplicate escalation or job was issued.
