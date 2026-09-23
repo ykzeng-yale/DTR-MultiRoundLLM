@@ -2,6 +2,8 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
+**23 September 19:28 UTC: 58%, change 0 points.** MRL-25's connected mock correction was independently reproduced, but its seed inventory is host-dependent and no real E14 or independent policy result was added. The proposed E14 collection remains held at the scientific decision-value gate. Fixed weights and component credit remain unchanged. Prompt efficacy is unestablished; the full project is not submission-ready. See [the MRL-25 judgment](mrl25_independent_review_20260923.md).
+
 At 18:48:20 UTC, **58%, change 0 percentage points**. The worker's MRL-25 acknowledgement is now verified at `7922793` with an 18:47–19:17 UTC source/mock window; completion and independent source validation remain pending. The lead reproduced the worker's git publication timing and published a [decision-value audit](progress_efficiency_judgment_20260923.md). No new prompt efficacy evidence or policy evaluation arose. E14 collection and automatic source renewal remain held pending a separate go/no-go. Full-project submission readiness remains **no**.
 
 At the ad hoc 18:44:13 UTC efficiency audit, **58%, change 0 percentage points** under the unchanged rubric. The lead acknowledged that an architecture-first plan, an invalid first E14 roster and repeated source rounds without a clear decision consequence slowed scientific progress. The corrected ten-history E14 batch is descriptive, while original prompt-choice efficacy and independent policy benefit remain unvalidated. MRL-25 source repair retains its original cap; no new E14 model stage or automatic source round is released. Next milestones are MRL-25 independent review and a justified experiment go/no-go. Full-project submission readiness remains **no**.

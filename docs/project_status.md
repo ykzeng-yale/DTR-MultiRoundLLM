@@ -1,5 +1,11 @@
 # Project status and claims ledger
 
+## MRL-25 source review and next-stage decision — 2026-09-23T19:28:14Z
+
+**58%, change 0 percentage points** on the fixed rubric. Worker MRL-25 delivery `4931cb9` is published and its scoped connected mock repair independently accepted; see the [judgment](mrl25_independent_review_20260923.md) and [machine audit](../results/mrl25_lead_independent_review_20260923.json). The lead reproduced old-v2 failures and 16 v3 fixture passes. The worker's 19-log seed inventory depends on six ignored host-local logs absent here; the lead's immutable Git-blob inventory covers 13 committed logs/596 records with no recorded E14 seed and does not certify other hosts. Two claimed fixture logs are also absent. The source is preparation only, with no E14 empirical result, no independent frozen-policy validation, and no new calls/tokens/program execution or spend.
+
+**HOLD new E14 instrument/model collection:** the planned 130 calls/228 isolated starts lack a useful-benefit/futility decision contract and real-path safeguards. Preserve E12/E13 negatives and the original history-conditional prompt-choice target. Next: specify a frozen public-history selector, fair fixed and independent-sampling comparators, untouched root/family frame, assignment/sampling laws, validated endpoint, precision and numerical cost cap; assess whether an independent trial is feasible before further worker source rounds. Prompt efficacy is unestablished and the full project is not submission-ready.
+
 ## MRL-25 receipt and efficiency judgment — 2026-09-23T18:48:20Z
 
 **58%, change 0 percentage points.** Worker process diagnosis `117583a` is published; the lead independently reproduced its git publication-interval arithmetic, while current scheduler/run/lease status remains worker-reported. MRL-25 acknowledgement `7922793` at 18:47:00 UTC verifies receipt, processed lead `38942de`, package `e14_connected_mock_v3_20260923` and a 19:17:00 UTC deadline. Last independently reviewed E14 source is still `1c66f86`; no repair completion or empirical outcome is yet validated. The [lead decision](progress_efficiency_judgment_20260923.md) retains the existing MRL-25 cap and holds automatic next source rounds and E14 model collection until a decision-value go/no-go. Efficacy is unestablished; the full project is not submission-ready.

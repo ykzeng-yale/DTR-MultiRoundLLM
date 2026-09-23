@@ -1,0 +1,135 @@
+{
+  "audit_version": "mrl25-lead-independent-v1",
+  "worker_delivery_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+  "evidence_class": "independent committed-artifact and source/mock test review; no real receiver/model or benchmark program execution",
+  "decision": "accept scoped mock repair; repair host-dependent seed-inventory claim; hold new E14 instrument/model stage",
+  "artifacts": [
+    {
+      "path": "scripts/e14_connected_mock.py",
+      "claimed_sha256": "27338377d79de72378e1b7e7799461ab9dfb3e63658d69f9099822f0e27d1f43",
+      "independent_sha256": "27338377d79de72378e1b7e7799461ab9dfb3e63658d69f9099822f0e27d1f43",
+      "status": "match"
+    },
+    {
+      "path": "tests/test_e14_connected_mock_v3.py",
+      "claimed_sha256": "c171c5bf89efce95df6217a1dd1839e838477731784f64d7570461155dacd972",
+      "independent_sha256": "c171c5bf89efce95df6217a1dd1839e838477731784f64d7570461155dacd972",
+      "status": "match"
+    },
+    {
+      "path": "tests/test_e14_connected_mock.py",
+      "claimed_sha256": "1aee33050536b3a7bc8f18e405bcdd198efb369dffee1f67bf7fdf7bad0a8d85",
+      "independent_sha256": "1aee33050536b3a7bc8f18e405bcdd198efb369dffee1f67bf7fdf7bad0a8d85",
+      "status": "match"
+    },
+    {
+      "path": "tests/test_build_e14_release_v2.py",
+      "claimed_sha256": "38f8a73a711956206a5399e6bf2d77af4359ca760be3c506dd7137b8898ad672",
+      "independent_sha256": "38f8a73a711956206a5399e6bf2d77af4359ca760be3c506dd7137b8898ad672",
+      "status": "match"
+    },
+    {
+      "path": "scripts/e14_seed_inventory.py",
+      "claimed_sha256": "7b617eed585f1a02d23139b33e6fb6df63d436e2244173b8ece13441cb0afc63",
+      "independent_sha256": "7b617eed585f1a02d23139b33e6fb6df63d436e2244173b8ece13441cb0afc63",
+      "status": "match"
+    },
+    {
+      "path": "tests/test_e14_seed_inventory.py",
+      "claimed_sha256": "a9cdfe5e83462d8338aa2c07c91b38bd0f688b79739a03b7f7f408458febe45b",
+      "independent_sha256": "a9cdfe5e83462d8338aa2c07c91b38bd0f688b79739a03b7f7f408458febe45b",
+      "status": "match"
+    },
+    {
+      "path": "results/e14_seed_inventory_20260923.json",
+      "claimed_sha256": "6cdeda3aa9bd0d5328fabf50f7bb825543f44fdc66e724d9fcea55acaf0721e7",
+      "independent_sha256": "6cdeda3aa9bd0d5328fabf50f7bb825543f44fdc66e724d9fcea55acaf0721e7",
+      "status": "match"
+    },
+    {
+      "path": "results/mrl25_fixture_evidence_20260923/on_reviewed_v2_1c66f86.log",
+      "claimed_sha256": "3ad18d803ac6dc0b72f6ed09f520ce0a1e23d4dc0a6f10a2ea494aba280a2bd0",
+      "independent_sha256": null,
+      "status": "missing"
+    },
+    {
+      "path": "results/mrl25_fixture_evidence_20260923/on_v3.log",
+      "claimed_sha256": "9087edcb6d4bb5957abd1c3c4963b65f7af4242bb7d1dbcee37262a84ad14434",
+      "independent_sha256": null,
+      "status": "missing"
+    }
+  ],
+  "artifact_matches": 7,
+  "artifact_missing": 2,
+  "worker_reported_window_utc": {
+    "acknowledged_start": "2026-09-23T18:47:00Z",
+    "exact_deadline": "2026-09-23T19:17:00Z",
+    "published": "2026-09-23T18:54:17Z"
+  },
+  "worker_reported_resources": {
+    "model_or_receiver_calls": 0,
+    "tokens": 0,
+    "paid_usd": 0,
+    "reference_control_candidate_public_check_containment_executions": 0,
+    "fake_transport_calls": "injected fakes inside pytest only; zero real transport; not individually totalled",
+    "measured_commands": [
+      {
+        "command": "pytest tests/ (full, after criteria 1-2)",
+        "real_s": 20.98,
+        "user_s": 15.63,
+        "sys_s": 3.52
+      },
+      {
+        "command": "pytest tests/ (full, after criterion 3)",
+        "real_s": 21.13,
+        "user_s": 15.64,
+        "sys_s": 3.65
+      },
+      {
+        "command": "pytest four focused MRL-25 files (54 tests)",
+        "real_s": 5.68,
+        "user_s": 3.98,
+        "sys_s": 1.56
+      }
+    ],
+    "unmeasured": "fixture-evidence runs, inventory build, file edits and git operations were not individually timed"
+  },
+  "independently_executed": {
+    "v2_reconstructed_fixture": "15 failed, 1 passed; pytest 3.78 s",
+    "v3_fixture": "16 passed; pytest 2.92 s, command wall 3.16 s, user 2.23 s, sys 0.68 s",
+    "four_focused_files": "52 passed, 1 skipped, 1 failed; pytest 9.92 s, command wall 10.18 s, user 6.61 s, sys 2.64 s",
+    "failing_test": "tests/test_e14_seed_inventory.py::test_every_call_log_in_the_repository_is_covered",
+    "inventory_reader": "0.43 s wall, 0.17 s user, 0.16 s sys",
+    "model_or_receiver_calls": 0,
+    "tokens": 0,
+    "benchmark_program_executions": 0,
+    "paid_usd": 0
+  },
+  "portable_inventory": {
+    "path": "results/e14_seed_inventory_lead_committed_20260923.json",
+    "revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+    "n_committed_logs": 13,
+    "n_committed_records": 596,
+    "missing_published_work_logs": [
+      "work/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+      "work/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+      "work/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+      "work/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+      "work/e13a_20260923T061532Z/collect/attempt_ledger.jsonl",
+      "work/e13a_20260923T061532Z/collect/calls.jsonl"
+    ],
+    "all_shared_path_hashes_match": true,
+    "positive_control_842": {
+      "distinct_labels": 23,
+      "distinct_numeric_seeds": 23,
+      "records": 23
+    }
+  },
+  "limits": [
+    "two named fixture log artifacts absent from checkout and Git",
+    "worker full suite not independently rerun",
+    "source and fake-boundary checks do not validate real adapter, grader or receiver",
+    "host-local and sibling-project logs outside immutable committed-inventory scope",
+    "no independent observation of scheduler health or total worker CPU"
+  ]
+}

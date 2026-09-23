@@ -1,0 +1,148 @@
+{
+  "any_committed_e14_seed_or_label": false,
+  "audit_version": "e14-seed-committed-lead-v1",
+  "committed_source_paths_missing_from_published": [],
+  "evidence_class": "read-only static Git-blob audit; no model or program execution",
+  "n_committed_logs": 13,
+  "n_committed_records": 596,
+  "n_unparsed_lines": 0,
+  "positive_control_842": {
+    "distinct_labels": 23,
+    "distinct_numeric_seeds": 23,
+    "records": 23
+  },
+  "published_inventory_sha256": "6cdeda3aa9bd0d5328fabf50f7bb825543f44fdc66e724d9fcea55acaf0721e7",
+  "published_source_paths_missing_from_revision": [
+    "work/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+    "work/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+    "work/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+    "work/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+    "work/e13a_20260923T061532Z/collect/attempt_ledger.jsonl",
+    "work/e13a_20260923T061532Z/collect/calls.jsonl"
+  ],
+  "roots": {
+    "mbpp/187": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/194": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/302": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/344": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/356": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/366": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/524": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/667": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/814": {
+      "labels": [],
+      "numeric": []
+    },
+    "mbpp/911": {
+      "labels": [],
+      "numeric": []
+    }
+  },
+  "scope_limit": "Absence in committed logs is not absence from ignored host-local or sibling-project logs; it does not establish independent receiver draws or a future frozen seed law.",
+  "shared_path_hash_mismatches": [],
+  "source_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+  "sources": [
+    {
+      "path": "experiments/landmark/mock_run_v1/calls.jsonl",
+      "records": 14,
+      "sha256": "8a66bf425b61cf3ecab00521a353e53d529ff83187272bfbf3efb9793a363cda",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/collector_smoke_v1/calls.jsonl",
+      "records": 14,
+      "sha256": "453ac23ca046199e98c10601dc0ee0d1d5f4a1644d9f3516db3b1e34f091a32f",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+      "records": 7,
+      "sha256": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+      "records": 70,
+      "sha256": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+      "records": 14,
+      "sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+      "records": 140,
+      "sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e13a_two_arm_20260923T061500Z/collect/attempt_ledger.jsonl",
+      "records": 122,
+      "sha256": "b99b34fc012d666e687964833a0823407c018e965f19664d23fa366cf170c9a1",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl",
+      "records": 60,
+      "sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl",
+      "records": 49,
+      "sha256": "1c450864da8515278c66fcc09327bac890ddd1b0953cf0ac7a97c9201c5eb2ab",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl",
+      "records": 49,
+      "sha256": "9940704e9aa62ba549818b63311644aadcbaae2bd34d1e46dc79f8260926f6c5",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl",
+      "records": 49,
+      "sha256": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection/calls.jsonl",
+      "records": 4,
+      "sha256": "cfa4ce1d13190288a8dc06f9168c3984c636e6e093baea02c07e1ef6bc8e6030",
+      "unparsed_lines": 0
+    },
+    {
+      "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection_v2/calls.jsonl",
+      "records": 4,
+      "sha256": "68ddc619e5efe26ceb58e975e9a421e0c21ae402f722b5d9254756c03cc5e889",
+      "unparsed_lines": 0
+    }
+  ]
+}
