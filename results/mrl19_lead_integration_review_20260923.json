@@ -1,7 +1,7 @@
 {
   "review_utc": "2026-09-23T05:51:51.453010Z",
   "evidence_class": "source/mock integration and reused immutable-byte checks; no empirical E13a outcomes",
-  "last_seen_worker_commit": "5d70a9b9ab7b31852f41c5f8289b808b02eb88c7",
+  "last_seen_worker_commit": "ee4edb3fcf239f2f0539d99b5fbd04d12419ec42",
   "independently_reviewed_source_delivery": "bb8969444029e0765a8638b4f1404fab02d85f5e",
   "review_start_tree": "4e2cd4104f085b5e3878bee8a7b7079cbccef24b",
   "latest_validated_empirical_revision": "1f654476645662943c0dda1bc3d636116776beb5",
@@ -102,5 +102,13 @@
   "committed_binding_validation": {
     "at_commit": "bfc810b899382e56b0dc3eb572c77aa90d872c9a",
     "status": "passed actual committed source/release/config/grading binding guards without adapter construction or execution"
+  },
+  "post_publication_mrl20_receipt": {
+    "receipt_commit": "ee4edb3fcf239f2f0539d99b5fbd04d12419ec42",
+    "acknowledgement_utc": "2026-09-23T05:53:30Z",
+    "processed_lead_commit": "5a34153a7a7e7ef049b43836378581c23b2a7238",
+    "planned_run_id": "e13a_two_arm_20260923T061500Z",
+    "state": "blocked on live gates until06:15UTC; no real execution reported",
+    "independent_review_scope": "Published acknowledgement, exact processed commit, adopted caps and unique planned run ID verified. Worker-reported1091passes/8subtests not rerun on its host; source review and empirical acceptance revisions unchanged."
   }
 }

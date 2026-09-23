@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T05:51:51.453010Z",
+  "checkpoint_utc": "2026-09-23T05:54:50.273755Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -61,7 +61,7 @@
   "fresh_prompt_efficacy_established": false,
   "latest_evidence": "MRL19 connected-path repairs independently checked; MRL20 conditional one-run E13a bundle and06:15\u201307:45UTC accepted peer non-contention published. Live runtime/freeze gates pending; no new efficacy evidence.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "5d70a9b9ab7b31852f41c5f8289b808b02eb88c7",
+    "last_seen_worker_revision": "ee4edb3fcf239f2f0539d99b5fbd04d12419ec42",
     "delivery_type": "MRL19 completed source/mock preparation, no E13a model data",
     "scientific_review_revision": "bb8969444029e0765a8638b4f1404fab02d85f5e",
     "review_record": "docs/mrl19_review_mrl20_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "MRL19 acknowledged04:49:46UTC and completed05:11:07UTC with05:11:18status; current GitHub/file exchange functioning. No scheduler failure inferred.",
+    "scheduler_status": "MRL20 receipt verified in ee4edb3 at05:53:30UTC processing5a34153; existing GitHub/file exchange is functioning.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -117,14 +117,18 @@
     "mrl19_processed_commit": "cb1536a1503d1fa84f3e68ce634f99d8fd3c7ca6",
     "mrl19_reported_completion_utc": "2026-09-23T05:11:07Z",
     "mrl19_independent_validation_state": "Real entrypoint orchestration tested with Git/HTTP/platform/sandbox boundaries mocked; no real model or benchmark program executed.",
-    "mrl20_status": "Conditional one-run E13a allowance and accepted window; worker receipt and fresh runtime prerequisites pending.",
-    "mrl20_acknowledgement_received": false,
+    "mrl20_status": "Acknowledged05:53:30UTC; blocked on live gates until06:15UTC window; no execution started.",
+    "mrl20_acknowledgement_received": true,
     "mrl20_execution_authority": "Conditional one run in accepted window after fresh availability, containment, preflight and clean committed ownership/freeze; exact limits unchanged.",
     "mrl20_execution_state": "Not observed or reported started",
     "mrl20_independent_validation_state": "No new E13a empirical delivery",
     "resource_request_commit": "7ebccd8ab63db96565cd58aa6179cf5c5e2dc8f7",
     "resource_agreement_commit": "5d70a9b9ab7b31852f41c5f8289b808b02eb88c7",
-    "resource_reservation_record": "docs/e13a_shared_window_20260923T061500Z.json"
+    "resource_reservation_record": "docs/e13a_shared_window_20260923T061500Z.json",
+    "mrl20_acknowledgement_utc": "2026-09-23T05:53:30Z",
+    "mrl20_processed_commit": "5a34153a7a7e7ef049b43836378581c23b2a7238",
+    "mrl20_planned_run_id": "e13a_two_arm_20260923T061500Z",
+    "mrl20_receipt_commit": "ee4edb3fcf239f2f0539d99b5fbd04d12419ec42"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
