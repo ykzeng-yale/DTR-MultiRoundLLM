@@ -1,0 +1,575 @@
+{
+ "record_version": "mrl23-builder-command-ledger-v2",
+ "source": "existing MRL-23 builder transcripts (workflow wf_afb1a074-149); read, not reconstructed",
+ "correction": "v1 of this computation (unpublished) keyed agents on a metadata field that was absent, so every command compared as the same agent and cross-builder overlap read 0. Agents are now keyed on the unique transcript file; that earlier 0 was an artifact and is not reported.",
+ "agents": [
+  "build:mockpath (agent-aa27e75a47c4589bf)",
+  "build:package (agent-a525b44ff5daeb598)",
+  "build:report (agent-aabf66a6e6ff7db4d)",
+  "build:resources (agent-a1cd0d0b20b70551d)"
+ ],
+ "n_local_bash_commands": 79,
+ "n_completed": 79,
+ "n_issued_never_returned": 0,
+ "peak_concurrent_local_commands": 2,
+ "peak_at_utc": "2026-09-23T08:13:09.408000+00:00",
+ "cross_builder_overlapping_command_pairs": 9,
+ "within_builder_overlapping_command_pairs": 0,
+ "intervals": [
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:06.441Z",
+   "end": "2026-09-23T08:13:06.486Z",
+   "seconds": 0.045,
+   "command_head": "echo \"=== SPEC ===\" && cat docs/e14_lead_measurement_spec_20260923.json"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:08.026Z",
+   "end": "2026-09-23T08:13:08.065Z",
+   "seconds": 0.039,
+   "command_head": "echo \"=== MRL22 REVIEW ===\" && cat docs/mrl22_review_mrl23_20260923.md"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:08.909Z",
+   "end": "2026-09-23T08:13:08.946Z",
+   "seconds": 0.037,
+   "command_head": "cat /Users/yukangzengcmac/DTR-MultiRoundLLM/docs/e14_lead_measurement_spec_20260923.json"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:09.365Z",
+   "end": "2026-09-23T08:13:09.418Z",
+   "seconds": 0.053,
+   "command_head": "date -u +%Y-%m-%dT%H:%M:%SZ && ls docs/ | head -60"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:09.408Z",
+   "end": "2026-09-23T08:13:09.439Z",
+   "seconds": 0.031,
+   "command_head": "ls && echo \"---DOCS---\" && ls docs/ | tail -40 && echo \"---SCRIPTS---\" && ls scripts/ && echo \"---TE"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:10.463Z",
+   "end": "2026-09-23T08:13:10.510Z",
+   "seconds": 0.047,
+   "command_head": "ls -la /Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/ | head -60; echo ---; ls -la /Users/yukangze"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:16.128Z",
+   "end": "2026-09-23T08:13:16.199Z",
+   "seconds": 0.071,
+   "command_head": "ls -la experiments/landmark/e14_release 2>&1 | head -3; echo \"=== E13A RELEASE LS ===\"; ls -la exper"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:16.715Z",
+   "end": "2026-09-23T08:13:16.746Z",
+   "seconds": 0.031,
+   "command_head": "wc -l docs/e14_same_prefix_revision_proposal_20260923.md docs/e14_corrected_proposal_20260923.md doc"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:16.919Z",
+   "end": "2026-09-23T08:13:16.950Z",
+   "seconds": 0.031,
+   "command_head": "date -u && echo \"=== mrl22_review_mrl23 ===\" && cat docs/mrl22_review_mrl23_20260923.md"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:17.470Z",
+   "end": "2026-09-23T08:13:17.514Z",
+   "seconds": 0.044,
+   "command_head": "echo \"=== GRADE.PY ===\"; sed -n '1,140p' experiments/landmark/grade.py; echo \"=== INTEGRITY ===\"; ca"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:18.366Z",
+   "end": "2026-09-23T08:13:18.412Z",
+   "seconds": 0.046,
+   "command_head": "ls -la docs/*e14* experiments/landmark/ scripts/*e14* 2>/dev/null && echo \"=== results dirs ===\" && "
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:18.716Z",
+   "end": "2026-09-23T08:13:18.760Z",
+   "seconds": 0.044,
+   "command_head": "sed -n 1,120p scripts/build_e14_request_plan.py; echo '===== GREP defs'; grep -n '^def \\|^class \\|^["
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:19.765Z",
+   "end": "2026-09-23T08:13:19.804Z",
+   "seconds": 0.039,
+   "command_head": "grep -n '^def \\|^class \\|^[A-Z][A-Z0-9_]* *=' experiments/landmark/diagnostic.py"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:23.298Z",
+   "end": "2026-09-23T08:13:23.422Z",
+   "seconds": 0.124,
+   "command_head": "echo \"=== INTEGRITY ===\"; cat experiments/common/integrity.py; echo \"=== E13A TASKS (1 line) ===\"; h"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:24.038Z",
+   "end": "2026-09-23T08:13:24.072Z",
+   "seconds": 0.034,
+   "command_head": "echo \"=== BUILD_E13A ===\"; cat scripts/build_e13a_release.py"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:24.081Z",
+   "end": "2026-09-23T08:13:24.103Z",
+   "seconds": 0.022,
+   "command_head": "ls results/ | grep -i -E \"mrl22|output_contract\" "
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:27.766Z",
+   "end": "2026-09-23T08:13:27.793Z",
+   "seconds": 0.027,
+   "command_head": "sed -n 222,245p experiments/landmark/diagnostic.py && sed -n 309,380p experiments/landmark/diagnosti"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:27.856Z",
+   "end": "2026-09-23T08:13:27.903Z",
+   "seconds": 0.047,
+   "command_head": "ls -lat scripts/ experiments/landmark/ docs/ tests/ 2>/dev/null | head -50 && echo \"=== e13a exec co"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:28.692Z",
+   "end": "2026-09-23T08:13:28.726Z",
+   "seconds": 0.034,
+   "command_head": "sed -n 120,240p scripts/build_e14_request_plan.py"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:30.669Z",
+   "end": "2026-09-23T08:13:30.723Z",
+   "seconds": 0.054,
+   "command_head": "for f in scripts/e13a_collect.py scripts/e13a_grade.py scripts/e13a_stage_clock.py scripts/e13a_anal"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:31.856Z",
+   "end": "2026-09-23T08:13:31.915Z",
+   "seconds": 0.059,
+   "command_head": "echo \"=== output contract lead audit ===\" && /Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/pytho"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:31.876Z",
+   "end": "2026-09-23T08:13:31.960Z",
+   "seconds": 0.084,
+   "command_head": "echo \"=== public_examples_v3 shape ===\"; python3 -c \"\nimport json;d=json.load(open('experiments/land"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:33.163Z",
+   "end": "2026-09-23T08:13:33.209Z",
+   "seconds": 0.046,
+   "command_head": "echo \"=== frame review ranks21-40 doc (head 90) ===\" && sed -n '1,90p' docs/frame_review_ranks21_40_"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:13:35.881Z",
+   "end": "2026-09-23T08:13:35.942Z",
+   "seconds": 0.061,
+   "command_head": ".venv/bin/python -c \"\nimport json,hashlib\nids=[911,667,344,524,814,187,194,356,366,302]\nrows={}\nfor "
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:38.639Z",
+   "end": "2026-09-23T08:13:38.703Z",
+   "seconds": 0.064,
+   "command_head": "ls -lat scripts/ | head -12 && echo \"=== landmark newest ===\" && ls -lat experiments/landmark/ | hea"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:39.329Z",
+   "end": "2026-09-23T08:13:39.353Z",
+   "seconds": 0.024,
+   "command_head": "cat docs/e13a_execution_contract_20260923.md"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:41.069Z",
+   "end": "2026-09-23T08:13:41.107Z",
+   "seconds": 0.038,
+   "command_head": "echo \"=== tail of frame review doc ===\" && sed -n '150,209p' docs/frame_review_ranks21_40_20260923.m"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:42.683Z",
+   "end": "2026-09-23T08:13:42.739Z",
+   "seconds": 0.056,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -c \"\nimport json\nd=json.load(open('results/"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:43.191Z",
+   "end": "2026-09-23T08:13:43.249Z",
+   "seconds": 0.058,
+   "command_head": "grep -n 'def initial_messages\\|def seeded\\|def digest\\|def branches\\|^TARGETED\\|def assignments\\|SYS"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:45.023Z",
+   "end": "2026-09-23T08:13:45.060Z",
+   "seconds": 0.037,
+   "command_head": "ls experiments/landmark/dev_release_v3 experiments/landmark/e13a_release; echo ===; head -c 900 expe"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:49.440Z",
+   "end": "2026-09-23T08:13:49.515Z",
+   "seconds": 0.075,
+   "command_head": "for f in scripts/check_landmark_sandbox.py scripts/launch_own_receiver_v31.py scripts/receiver_prefl"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:49.649Z",
+   "end": "2026-09-23T08:13:49.676Z",
+   "seconds": 0.027,
+   "command_head": "sed -n 140,200p experiments/landmark/collect.py; echo '--- TARGETED'; sed -n 20,35p experiments/land"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:51.089Z",
+   "end": "2026-09-23T08:13:51.116Z",
+   "seconds": 0.027,
+   "command_head": "grep -n \"PHASE_CAPS\\|OUTER\\|_LIMIT\\|_CAP\\b\" scripts/e13a_stage_clock.py | head -40 && echo \"=== caps"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:13:51.273Z",
+   "end": "2026-09-23T08:13:51.304Z",
+   "seconds": 0.031,
+   "command_head": "head -c 700 experiments/landmark/e13a_release/tasks.jsonl; echo; echo '--- CFG'; cat experiments/lan"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:51.926Z",
+   "end": "2026-09-23T08:13:51.990Z",
+   "seconds": 0.064,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -c \"\nimport json\nd=json.load(open('results/"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:13:55.711Z",
+   "end": "2026-09-23T08:13:55.765Z",
+   "seconds": 0.054,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -c \"\nimport json,hashlib\np='results/frame_r"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:58.739Z",
+   "end": "2026-09-23T08:13:58.761Z",
+   "seconds": 0.022,
+   "command_head": "echo \"=== collect limits ===\" && grep -n -E \"^[A-Z_]+ *=|TIMEOUT|MAX_|timeout=|_ATTEMPTS|TOKENS|max_"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:13:59.650Z",
+   "end": "2026-09-23T08:13:59.665Z",
+   "seconds": 0.015,
+   "command_head": "cat experiments/landmark/e13a_stage.json"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:06.157Z",
+   "end": "2026-09-23T08:14:06.214Z",
+   "seconds": 0.057,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -c \"\nimport json,hashlib\np='results/frame_r"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:08.048Z",
+   "end": "2026-09-23T08:14:08.092Z",
+   "seconds": 0.044,
+   "command_head": "grep -n \"974\\|full_rows\\|all rows\\|for line in\\|SIM_THRESHOLD\\|features\\|eligible_ordered\\|198\" scri"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:09.851Z",
+   "end": "2026-09-23T08:14:09.931Z",
+   "seconds": 0.08,
+   "command_head": "echo \"=== HASH ===\" && .venv/bin/python -c \"\nimport hashlib,pathlib\nfor p in ['work/sources/mbpp_ful"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:14:11.799Z",
+   "end": "2026-09-23T08:14:11.850Z",
+   "seconds": 0.051,
+   "command_head": "grep -n '^def \\|^[A-Z][A-Z0-9_]* *=\\|SOURCE\\|sha256' scripts/e14_roster_audit.py | head -40; echo '="
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:12.195Z",
+   "end": "2026-09-23T08:14:12.252Z",
+   "seconds": 0.057,
+   "command_head": "echo \"=== e13a analysis_report keys ===\" && .venv/bin/python -c \"\nimport json;d=json.load(open('resu"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:13.272Z",
+   "end": "2026-09-23T08:14:13.304Z",
+   "seconds": 0.032,
+   "command_head": "sed -n '130,150p;175,220p' scripts/review_candidate_frame_ranks21_40.py"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:15.551Z",
+   "end": "2026-09-23T08:14:15.626Z",
+   "seconds": 0.075,
+   "command_head": "shasum -a 256 work/sources/mbpp_full.jsonl work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl "
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:14:16.389Z",
+   "end": "2026-09-23T08:14:16.430Z",
+   "seconds": 0.041,
+   "command_head": "grep -n 'mbpp_full\\|task_sources\\|test_list\\|entry_point\\|def ' scripts/build_e13a_release.py | head"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:14:30.546Z",
+   "end": "2026-09-23T08:14:30.663Z",
+   "seconds": 0.117,
+   "command_head": "for p in work/sources/mbpp_full.jsonl work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl; do ["
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:31.413Z",
+   "end": "2026-09-23T08:14:31.471Z",
+   "seconds": 0.058,
+   "command_head": ".venv/bin/python -c \"\nimport json;d=json.load(open('results/e13a_two_arm_20260923T061500Z/analysis_r"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:32.542Z",
+   "end": "2026-09-23T08:14:32.558Z",
+   "seconds": 0.016,
+   "command_head": "grep -rn \"314.258\" --include=*.md --include=*.json docs/ results/ 2>/dev/null | head -8"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:37.363Z",
+   "end": "2026-09-23T08:14:37.409Z",
+   "seconds": 0.046,
+   "command_head": "grep -rn \"314.258\" docs results 2>/dev/null | head -6"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:37.418Z",
+   "end": "2026-09-23T08:14:37.437Z",
+   "seconds": 0.019,
+   "command_head": "sed -n '20,40p;60,130p' scripts/e14_output_contract_validation.py"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:38.933Z",
+   "end": "2026-09-23T08:14:38.966Z",
+   "seconds": 0.033,
+   "command_head": "sed -n '1,60p' scripts/build_e14_request_plan.py && echo \"...\" && grep -n \"N_ROOTS\\|MAX_CALLS\\|130\\|"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:40.719Z",
+   "end": "2026-09-23T08:14:40.795Z",
+   "seconds": 0.076,
+   "command_head": "grep -rn \"08:11:27\\|08:41:27\" docs/ results/ 2>/dev/null | head -10; echo \"---e13a---\"; /Users/yukan"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:50.481Z",
+   "end": "2026-09-23T08:14:50.538Z",
+   "seconds": 0.057,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -c \"\nimport json,collections\nrows=[json.loa"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:14:51.942Z",
+   "end": "2026-09-23T08:14:51.980Z",
+   "seconds": 0.038,
+   "command_head": "grep -n \"N_INSTRUCTION\\s*=\\|^S1_STRINGS\\|def select_s1\\|GRADER_VERSION\\s*=\" experiments/landmark/dia"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:14:53.090Z",
+   "end": "2026-09-23T08:14:53.138Z",
+   "seconds": 0.048,
+   "command_head": "echo \"=== e14 plan sizing ===\" && grep -n \"108\\|total_calls\\|MAX_CALLS\\|n_calls\\|reserved\" scripts/b"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:14:57.961Z",
+   "end": "2026-09-23T08:14:58.015Z",
+   "seconds": 0.054,
+   "command_head": "grep -n \"load_grading_limits\\|COMMITTED_RELEASE_MANIFESTS\\|def verify_committed_release\\|def grading"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:15:02.525Z",
+   "end": "2026-09-23T08:15:02.569Z",
+   "seconds": 0.044,
+   "command_head": "sed -n '32,48p' experiments/landmark/diagnostic.py && echo \"=== select_s1 ===\" && sed -n '334,372p' "
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:15:15.278Z",
+   "end": "2026-09-23T08:15:15.344Z",
+   "seconds": 0.066,
+   "command_head": "grep -n \"terminal-output-contract-v1\" docs/e14_corrected_proposal_20260923.md && /Users/yukangzengcm"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:15:19.367Z",
+   "end": "2026-09-23T08:15:19.431Z",
+   "seconds": 0.064,
+   "command_head": ".venv/bin/python -c \"\nimport json,hashlib\nwant='14875b71baa992fe77fba1c8fe8c525b80027e16066fa3be4704"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:15:27.691Z",
+   "end": "2026-09-23T08:15:27.746Z",
+   "seconds": 0.055,
+   "command_head": "grep -n \"COMMITTED_RELEASE_MANIFESTS\" -A 8 experiments/landmark/study_adapter.py | head -24 && grep "
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:15:28.648Z",
+   "end": "2026-09-23T08:15:28.692Z",
+   "seconds": 0.044,
+   "command_head": "sed -n 33,40p experiments/landmark/diagnostic.py; echo ---; sed -n 114,160p experiments/landmark/dia"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:17:57.827Z",
+   "end": "2026-09-23T08:17:57.871Z",
+   "seconds": 0.044,
+   "command_head": "grep -n \"def hack_gate\" experiments/landmark/common/integrity.py && grep -n \"WITHIN_VAR\\s*=\\|def pre"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:17:59.211Z",
+   "end": "2026-09-23T08:17:59.257Z",
+   "seconds": 0.046,
+   "command_head": "timeout 540 /Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -m pytest tests/ -q 2>&1 | tail"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:18:07.190Z",
+   "end": "2026-09-23T08:18:07.256Z",
+   "seconds": 0.066,
+   "command_head": "ls experiments/landmark/common/ 2>/dev/null; grep -rn \"def hack_gate\" experiments/ | head -3; grep -"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:18:08.027Z",
+   "end": "2026-09-23T08:18:14.481Z",
+   "seconds": 6.454,
+   "command_head": "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python -m pytest tests/ -q 2>&1 | tail -8"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:18:23.448Z",
+   "end": "2026-09-23T08:18:23.485Z",
+   "seconds": 0.037,
+   "command_head": "timeout 540 .venv/bin/python -m pytest tests/ -q 2>&1 | tail -6"
+  },
+  {
+   "agent": "build:resources (agent-a1cd0d0b20b70551d)",
+   "start": "2026-09-23T08:18:28.571Z",
+   "end": "2026-09-23T08:18:34.933Z",
+   "seconds": 6.362,
+   "command_head": ".venv/bin/python -m pytest tests/ -q 2>&1 | tail -6"
+  },
+  {
+   "agent": "build:report (agent-aabf66a6e6ff7db4d)",
+   "start": "2026-09-23T08:18:33.314Z",
+   "end": "2026-09-23T08:18:33.353Z",
+   "seconds": 0.039,
+   "command_head": "ls -l --time-style=+%Y-%m-%dT%H:%M:%SZ docs/e14_same_prefix_revision_proposal_20260923.md docs/e14_c"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:19:44.772Z",
+   "end": "2026-09-23T08:19:44.889Z",
+   "seconds": 0.117,
+   "command_head": "rm -rf /private/tmp/claude-501/-Users-yukangzengcmac-DTR-MultiRoundLLM/becb2798-9298-4306-8e12-77f81"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:20:00.320Z",
+   "end": "2026-09-23T08:20:00.411Z",
+   "seconds": 0.091,
+   "command_head": ".venv/bin/python scripts/build_e14_release.py --out /private/tmp/claude-501/-Users-yukangzengcmac-DT"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T08:20:03.242Z",
+   "end": "2026-09-23T14:59:13.847Z",
+   "seconds": 23950.605,
+   "command_head": "S=/private/tmp/claude-501/-Users-yukangzengcmac-DTR-MultiRoundLLM/becb2798-9298-4306-8e12-77f8152049"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:20:05.423Z",
+   "end": "2026-09-23T08:20:05.608Z",
+   "seconds": 0.185,
+   "command_head": ".venv/bin/python scripts/build_e14_release.py 2>&1 | tail -5 && echo \"--- verify ---\" && .venv/bin/p"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:21:14.248Z",
+   "end": "2026-09-23T08:21:14.504Z",
+   "seconds": 0.256,
+   "command_head": ".venv/bin/python -m pytest tests/test_build_e14_release.py -q 2>&1 | tail -40"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:21:21.969Z",
+   "end": "2026-09-23T08:21:22.194Z",
+   "seconds": 0.225,
+   "command_head": "sed -i '' 's/assert \"never executed\" in c\\[\"method\"\\]/assert \"NEVER executed\" in c[\"method\"]/; s/and"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:21:27.878Z",
+   "end": "2026-09-23T08:21:33.966Z",
+   "seconds": 6.088,
+   "command_head": ".venv/bin/python -m pytest tests/ -q 2>&1 | tail -12"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:21:43.847Z",
+   "end": "2026-09-23T08:21:43.931Z",
+   "seconds": 0.084,
+   "command_head": "echo \"=== protected dirs mtimes (should predate today 04:00) ===\"; ls -ld experiments/landmark/dev_r"
+  },
+  {
+   "agent": "build:package (agent-a525b44ff5daeb598)",
+   "start": "2026-09-23T08:21:58.912Z",
+   "end": "2026-09-23T08:21:58.970Z",
+   "seconds": 0.058,
+   "command_head": "grep -n \"^GRADING_SOURCES\" -A 6 experiments/landmark/study_adapter.py; echo \"--- does dev_release_v3"
+  },
+  {
+   "agent": "build:mockpath (agent-aa27e75a47c4589bf)",
+   "start": "2026-09-23T14:59:25.354Z",
+   "end": "2026-09-23T14:59:25.426Z",
+   "seconds": 0.072,
+   "command_head": ".venv/bin/python -c \"\nimport json,hashlib\nrows={r['task_id']:r for r in (json.loads(l) for l in open"
+  }
+ ],
+ "limits": "Transcript intervals measure when each command was running, not CPU load; a running command may have been mostly waiting. This ledger shows temporal overlap only.",
+ "finding": "The one-worker condition was NOT met in MRL-23: 4 builders ran concurrently and their local commands overlapped in time (9 cross-builder overlapping command pairs; peak 2 concurrent local commands at 2026-09-23T08:13:09.408000+00:00)."
+}

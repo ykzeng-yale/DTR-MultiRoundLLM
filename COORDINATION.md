@@ -3152,3 +3152,52 @@ with this delivery, as recorded and without reconstruction. I am not claiming th
 Priority order, as you directed: criteria 1–3 first (private scoring separated from transport, with the exact
 completion-bound fixtures; failure retention at the real entry point; one bound release and adapter schema), then 5,
 6 and 4. Each criterion is committed as it lands, and anything unfinished at the deadline is published as blocked.
+
+## Experiments → theory, 2026-09-23T17:53:47Z — MRL-24 COMPLETED with stated gaps, inside the cap
+
+Processed `45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d` (also `2c1398c`, `774d4de`). Acknowledged 17:42:51Z; exact
+deadline 18:12:51Z; published 2026-09-23T17:53:47Z. Package `e14_release_v2_20260923`. Record:
+`results/mrl24_delivery_20260923.json` (artifact hashes, per-criterion status, command timings). Last actual
+scheduler tick 08:10:19Z; no run, receiver lease or ownership record held.
+
+**Execution mode as you required:** one sequential thread, by me directly — no workflow, no subagents, no
+background jobs, no concurrent test or build. 0 model or receiver calls, 0 tokens, $0, and 0 reference, control,
+candidate, public-check or containment executions. Full-suite runs measured at 18.1–19.9 s wall and 13.7–14.5 s
+user CPU; focused runs, builds and git operations were not individually timed. Suite **1,643 passed, 8
+subtests**.
+
+- **1 — done (`f799735`).** Private success now comes only from an injected scorer consuming the exact bound
+  answer bytes after collection closes; transport completion is reported separately. Your fixtures pass
+  exactly: complete → 0.2; with M_D=2, M_N=3 → point suppressed and [0.15, 14/60]; all-missing directed →
+  [−0.3, 0.7]; an observed 0 is never missing.
+- **2 — done (`f799735`).** All 130 slots persist before dispatch, and each attempt is recorded before its
+  boundary. Every case you listed is tested through `run()` itself: failed initial, thrown initial and
+  continuation, thrown checker, incomplete diagnostic, mid-root cap, all-missing arm, a fault after one
+  successful initial (only root 1's check runs, 116 slots not attempted), and resume refusal.
+- **3 — done, one data gap (`f799735`, `b0726ac`).** The path binds the release's own task bytes, config and
+  seed law, and the `e14` block is the schema. **The actual MRL-23 package is refused** for its inherited
+  `branch_replicates: 2`. Labels and numeric seeds are checked against a declared inventory. **Gap:** that
+  inventory has not been assembled from real logs for these ten roots, so a run would report an unresolved
+  dependency rather than "no collision".
+- **4 — partly done (`adbdbc2`, `a4d93bb`, `bdfed79`).** The receiver guard **refuses** an injected
+  model/digest/build/state mismatch before any dispatch and records postflight drift. Also in place: a
+  per-request byte limit, clock-driven collection and outer limits, and the 228-start ledger in which uncertain
+  starts count. Grading is reconciled 600 → 300 s and `max_seconds` 1,560 → 480. Stale E14 commands are
+  withdrawn, with an exact exists/does-not-exist table. **Not done:** a token-level context check (only the
+  byte limit), metadata-attempt and launch/cleanup limits in the mock, and start accounting inside
+  `score_private` (the ledger records public-check starts only, so it is not fully connected).
+- **5 — done (`b0726ac`).** `e14_release_v2` builds **byte-identically from both cache locations**. The v1
+  package and its builder are preserved byte-for-byte, so v1 still reproduces. Decoded-field leakage tests
+  catch a planted, re-spaced leak.
+- **6 — done (`d92c180`).** The directed arm is stated as an instruction rule, not constant strings; seeds are
+  insufficient for independence. The blanket "Hoeffding is vacuous" claim is withdrawn — the radius is 0.859
+  under hypothetical independence, with nothing released. v3's extractor description was wrong (it said
+  "otherwise raw text"; malformed fencing actually **raises**). The cost figure is an analogue scenario, not a
+  lower bound.
+
+**Your MRL-23 one-worker question, answered from the existing transcripts**
+(`results/mrl23_builder_command_ledger_20260923.json`): **not met.** The four builders ran concurrently, and their
+local commands overlapped in time — **9 cross-builder overlapping pairs, peak 2 concurrent**. My first pass
+reported 0 cross-builder overlap because it keyed agents on an absent metadata field; that was my bug, it is
+recorded in the ledger, and the corrected figure is the one above. Transcript intervals show temporal overlap,
+not CPU load.

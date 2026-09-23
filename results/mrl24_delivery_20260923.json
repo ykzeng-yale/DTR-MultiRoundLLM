@@ -1,0 +1,124 @@
+{
+ "record_version": "mrl24-delivery-v1",
+ "disposition": "COMPLETED WITH STATED GAPS \u2014 inside the cap",
+ "processed_lead_commits": {
+  "mrl24_decision": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
+  "also_processed": [
+   "2c1398c8152c1d4260ee5411c21d083309bec1b0",
+   "774d4dee3687a89e4f0438cf19fb65db9563a1e2"
+  ]
+ },
+ "window_utc": {
+  "acknowledged_start": "2026-09-23T17:42:51Z",
+  "exact_deadline": "2026-09-23T18:12:51Z",
+  "published": "2026-09-23T17:53:47Z"
+ },
+ "package_id": "e14_release_v2_20260923",
+ "last_actual_scheduler_tick_utc": "2026-09-23T08:10:19Z",
+ "run_and_lease": {
+  "active_run": null,
+  "receiver_lease": null,
+  "ownership_record": null
+ },
+ "execution_mode": "one sequential local thread, by the worker directly; no workflow, no subagents, no background jobs, no concurrent test or build workloads",
+ "resources": {
+  "model_or_receiver_calls": 0,
+  "tokens": 0,
+  "paid_usd": 0,
+  "reference_control_candidate_public_check_containment_executions": 0,
+  "measured_commands": [
+   {
+    "command": "pytest tests/ (full suite, after criteria 1-3)",
+    "real_s": 18.67,
+    "user_s": 13.67,
+    "sys_s": 2.88
+   },
+   {
+    "command": "pytest tests/ (full suite, after criterion 5)",
+    "real_s": 18.13,
+    "user_s": 13.67,
+    "sys_s": 2.81
+   },
+   {
+    "command": "pytest tests/ (full suite, after criterion 4)",
+    "real_s": 19.88,
+    "user_s": 14.47,
+    "sys_s": 3.54
+   },
+   {
+    "command": "build_e14_release_v2.py --verify",
+    "real_s": 0.052
+   },
+   {
+    "command": "build_e14_release.py --verify",
+    "real_s": 0.04
+   }
+  ],
+  "unmeasured": "focused test runs, builds and git operations were not individually timed"
+ },
+ "criteria": {
+  "1_scoring_separated_from_transport": {
+   "status": "done",
+   "commit": "f799735",
+   "evidence": "exact fixtures pass: complete 0.2; with M_D=2,M_N=3 suppressed and [0.15, 14/60]; all-missing directed [-0.3, 0.7]; zero is observed failure"
+  },
+  "2_failure_retention_at_entry_point": {
+   "status": "done",
+   "commit": "f799735",
+   "evidence": "130 slots persisted before dispatch; attempt recorded before each boundary; failed initial, thrown initial/continuation, thrown checker, incomplete diagnostic, mid-root cap, all-missing arm, fault after one successful initial, resume refusal"
+  },
+  "3_one_bound_release": {
+   "status": "done, with one data gap",
+   "commits": [
+    "f799735",
+    "b0726ac"
+   ],
+   "evidence": "binds release tasks/config/seed law; E14 schema is the e14 block; the MRL-23 package is refused for its inherited branch_replicates drift; spec hashed as supplied; labels AND numeric seeds checked",
+   "gap": "the collision MECHANISM exists, but the actual historical seed inventory for these ten roots has not been assembled from logs; until it is, a run reports an unresolved dependency rather than 'no collision'"
+  },
+  "4_guards_and_accounting": {
+   "status": "partly done",
+   "commits": [
+    "adbdbc2",
+    "a4d93bb",
+    "bdfed79"
+   ],
+   "done": "receiver guard refuses injected model/digest/build/state mismatch before dispatch and records postflight drift; per-request byte limit; clock-driven collection and outer limits; 228-start ledger with uncertain starts counting; grading 600->300 and max_seconds 1560->480 reconciled; stale E14 commands withdrawn with an exact exists/does-not-exist table",
+   "not_done": [
+    "token-level context check (only the byte limit is enforced)",
+    "metadata-attempt cap and launch/cleanup limits are not exercised in the mock",
+    "the start ledger records initial-public starts during collection but NOT the private-scoring starts in score_private, so it is not yet fully connected"
+   ]
+  },
+  "5_portable_reproduction_and_leakage": {
+   "status": "done",
+   "commit": "b0726ac",
+   "evidence": "v2 builds byte-identically from both cache locations; v1 package and builder preserved byte-for-byte; decoded-field leakage checks catch a planted re-spaced leak"
+  },
+  "6_prose": {
+   "status": "done",
+   "commit": "d92c180",
+   "evidence": "instruction rule not constant strings; seeds insufficient; blanket Hoeffding-vacuous claim withdrawn (0.859 under hypothetical independence); exact extractor rule; cost is an analogue scenario, not a lower bound"
+  }
+ },
+ "mrl23_one_worker_question": {
+  "ledger": "results/mrl23_builder_command_ledger_20260923.json",
+  "answer": "not met: four builders ran concurrently and their local commands overlapped (9 cross-builder pairs, peak 2 concurrent)"
+ },
+ "artifact_sha256": {
+  "scripts/e14_connected_mock.py": "77568a2534bdb8a7f573674067c93a620a9c1a3dd370d0e739613b830fd99c6d",
+  "tests/test_e14_connected_mock.py": "e485bd80d1623c0d831b8e2d9b740b1e2e7a040a6e4c0825693f63242cba94cb",
+  "scripts/build_e14_release_v2.py": "bd204f90f4c3ce6cc455ebbce09a320e31428badd0cf1b19d3ce7263f2d6c031",
+  "tests/test_build_e14_release_v2.py": "1f96e3cbba39c5081f858e9456e41f3fdd67517ad80ad9d9002186f508d9bbb4",
+  "docs/e14_proposal_v4_20260923.md": "9b366efce42e8fcd533bd1586eaa5c13b527695e483b488614cf1a7c580bae6b",
+  "docs/e14_execution_contract_v2_20260923.md": "ffd4ecf30fc6da3ba9dde08a5ccbb1eda1cbcc616ab38fa52e8fd1917e16e449",
+  "results/mrl23_builder_command_ledger_20260923.json": "e7186a28562b076b95f265bd1e2d8d5c569fd7e8fdb61030cd00810dfe10428d",
+  "experiments/landmark/e14_release_v2/CHANGE_NOTES.md": "cd478ec5f7b098f42b6ef101b86db529555ae97256b8ae33e501ab9388ce256f",
+  "experiments/landmark/e14_release_v2/config.json": "2ca07c4d267c2f59f5590803ee151949b21ab26e43b29d43ebc74707b6d915e0",
+  "experiments/landmark/e14_release_v2/controls_rationale.json": "5246b6d56f48e637460d94ac63551a6567a430ccd97e2f33a11835f7d6c78d00",
+  "experiments/landmark/e14_release_v2/private_specs.jsonl": "6080ea494ab2c6700781ddfcec1734ad542eb433a574c3969f294fea2fe662e3",
+  "experiments/landmark/e14_release_v2/public_examples_v3.json": "900b97fb2f9ee7faa36920fdd44ea92841a86fbf322d01591115a07f6ce4f727",
+  "experiments/landmark/e14_release_v2/release_manifest.json": "d27845a97f13f06caa7c125f5a7e9b4ae2a3ba22f3a2e03b5738b6c59aad85b0",
+  "experiments/landmark/e14_release_v2/tasks.jsonl": "43f067f298557d426243f7b0e5852687550f0b89f9e331d591f27eaae1d257dd"
+ }
+}
