@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Unchanged worker exchange; checkpoint synchronized — 2026-09-23T23:55:50Z
+
+**58%, change 0 percentage points.** Two actual reviews at 23:24:52 and 23:55:50 UTC found no new worker commit, LEAD-MRL25-01 receipt, design question or open PR. The [monitoring checkpoint](monitoring_checkpoint.md) now records both checks and distinguishes the verified MRL-25 source delivery from the unverified later hold receipt and unknown scheduler/run state. The single recovery is not repeated. No scientific release or result changed; prompt efficacy remains unestablished and the full project is not submission-ready. Next: existing-worker receipt and a defensible frozen selector/comparator/family/endpoint/precision/cap contract before collection.
+
 ## Manuscript comparator boundary — 2026-09-23T22:52:58Z
 
 **58%, change 0 percentage points.** Main, issues #2–#5 and open PRs have no new worker delivery, recovery acknowledgement or design request. The current editable [paper](../manuscript/current_paper_20260922.md) now says E13a's 12/30 arm is bare-task resampling and explains why neither it nor the proposed E14 same-prefix contrast validates the future independent-sampling controller. This is a source-based manuscript correction, not new numerical, model or confirmatory evidence. The MRL-25 source is independently reviewed; receipt of the later hold and current scheduler/run/lease remain unverified. The one recovery is not reposted. The existing worker's accessible app/task link or session route remains the routing dependency. Collection stays held pending complete frozen policy/comparator, family frame, endpoint, precision and cap. Efficacy unestablished; full project not submission-ready.

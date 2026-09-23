@@ -2,6 +2,8 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
+At 23:24:52 and 23:55:50 UTC, **58%, change 0 percentage points at each check**. No new worker receipt, empirical result or policy release appeared. The [monitoring checkpoint](monitoring_checkpoint.md) is synchronized after these unchanged reviews; no component earned or lost credit. Prompt efficacy unestablished; full project not submission-ready.
+
 At 22:52:58 UTC, **58%, change 0 percentage points**. The editable manuscript now distinguishes E13a's bare-task resampling from the still-unfrozen independent-sampling policy comparator and E14's same-prefix contrast. This evidence-boundary correction adds no new experiment, efficacy evidence or completed milestone. The one recovery remains unanswered; full project not submission-ready.
 
 At 22:19:40 UTC, **58%, change 0 percentage points**. The [read-only policy-comparator audit](policy_comparator_contract_audit_20260923.md) identifies the still-unfrozen independent-sampling controller: its restart context, public-check and stopping law, information access and total deployment budget cannot be inferred from E13a or E14. The single worker recovery remains unanswered; no new delivery or collection is verified. Prompt efficacy unestablished; full project not submission-ready.
