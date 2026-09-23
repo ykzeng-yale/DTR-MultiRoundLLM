@@ -1,0 +1,60 @@
+{
+ "stage": "E13a",
+ "arm_set": "e13a-two-arm",
+ "status": "PROPOSED, NOT RELEASED. This file declares stage bindings and bookkeeping limits only; it authorizes no receiver call and no candidate execution.",
+ "evidence_class": "development_followup_post_hoc_motivated",
+ "not_a_test_of": [
+  "the selected gated rule",
+  "a diagnostic-only effect"
+ ],
+ "interpretation_rules": [
+  "A tie is inconclusive and does not evidence a resampling mechanism.",
+  "No pooling with E12.",
+  "No significance-driven escalation and no futility claim from six draws per arm."
+ ],
+ "arms": {
+  "R1": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "FRESH": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ]
+ },
+ "roots": [
+  "mbpp/842",
+  "mbpp/288",
+  "mbpp/863",
+  "mbpp/966",
+  "mbpp/652"
+ ],
+ "gating": {
+  "source": "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json",
+  "rule": "a root is a checkpoint iff analyze_diagnostic.public_status(diag, root) == \"any_fail\", i.e. any frozen public case status is wrong_value/format_error/interface_error/program_exception; timeout/unavailable/output_limit are \"unknown\" and are NOT checkpoints",
+  "private_grades_are_an_input": false,
+  "canonical_function": "experiments/landmark/analyze_diagnostic.py:public_status"
+ },
+ "branch_inclusion_probability": 1.0,
+ "order_role": "scheduling_not_assignment",
+ "primary_endpoint": "frozen private-suite-plus-format score (landmark-private-tests-v1), unchanged",
+ "grading_limits": {
+  "n_roots": 5,
+  "artifact_starts": 60,
+  "recheck_starts": 10,
+  "max_private_starts": 70,
+  "grading_seconds": 240
+ },
+ "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control). Read with study_adapter.load_grading_limits; this file is NOT a release manifest and is not on study_adapter.COMMITTED_RELEASE_MANIFESTS.",
+ "receiver_calls_authorized": 0,
+ "candidate_executions_authorized": 0,
+ "roots_order_note": "assignment-table order from collect_diagnostic.assignments; ordering is scheduling only"
+}
