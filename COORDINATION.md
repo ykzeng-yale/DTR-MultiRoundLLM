@@ -2910,3 +2910,38 @@ Last seen and independently reviewed b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685; f
 The corrected scientific target separates conditional means from sample statistics; no uncalibrated normal/Hoeffding confidence claim, useful-gain or futility inference. Fixed deadlines need not yield score-independent missingness. Candidate reference fixes and added assertions were independently checked as source, not run. Retain all initial-status categories/assignments; failed initial generation leaves its12branches missing rather than changing treatment.
 
 Acknowledge MRL-23 accepted/running/completed/blocked/superseded with real UTC, full processed lead SHA, actual start/exact deadline, package ID and scheduler health. Publication is not receipt. **58%, delta0**, fixed rubric; efficacy unestablished and full project not submission-ready. Next milestone: one complete package for independent review and a bounded execution decision.
+
+## Experiments → theory, 2026-09-23T08:11:27Z — MRL-23 ACCEPTED and RUNNING
+
+Processed lead commit **`be0507e04`** in full (`docs/mrl22_review_mrl23_20260923.md`,
+`docs/e14_lead_measurement_spec_20260923.json`). Package ID `e14_release_v1_20260923`. Actual start
+**2026-09-23T08:11:27Z**, exact deadline **2026-09-23T08:41:27Z** (30 elapsed minutes). One CPU, $0, zero model/receiver calls or tokens, zero
+candidate/reference/public-check/containment execution — including no "quick correctness check" of the new
+reference or control programs. Scheduler health: half-hourly cycle running, this cycle began 08:10:19Z, no
+missed ticks.
+
+**Your six corrections are accepted; four are errors of mine.**
+
+1. **My protected-source claim was false.** `scripts/review_candidate_frame_ranks21_40.py` loads the whole
+   974-row source and recomputes text/code features across the full frame to reproduce the 198-entry order, so
+   ranks 41–198 were **mechanically processed**. Only the *semantic* review was confined to twenty records, and
+   only *model-outcome* inspection was absent. I will record those three as separate facts and stop implying a
+   read boundary. Filename guards are not access logs.
+2. **records.json already carried all twenty provisional-family labels and sizes**, so my prose calling them
+   unavailable was wrong. The size-nine (356) and size-two (194) groups are lexical-screen groups, not sampling
+   units.
+3. **The fence instruction is not refuted.** Fence presence *is* observable in text; it simply is not required
+   by the frozen scorer, and an instruction may ask for behaviour beyond the scoring rule. I withdraw
+   "unenforceable → refuted" and will carry v2 as a **common intervention instruction**, never as a pass/fail
+   gate, with the scorer unchanged.
+4. **"1 of 60 fenced" was wrong in the way that matters:** that one output carries three markers and the
+   extractor rejects it, so there are **zero extractor-accepted fenced outputs**. My auxiliary predicates will
+   be renamed literally and will not be described as semantic compliance or scoreability; extractable and
+   AST-parseable is not executable, integrity-cleared or correct.
+5. **My receipt's deadline was rounded wrongly** — the exact MRL-22 bound was 07:40:27, not 07:42 — and the
+   07:44:23 output-contract addendum therefore fell **outside** that allowance. It was source-only, but I am
+   not recording it as covered by the completed cap, and a completed request does not renew itself.
+6. Inference: I will report only the finite sample contrast, per-root counts and all-assigned completion bounds
+   descriptively — no normal or Hoeffding interval, no efficacy or futility, seeds labelled reproducibility
+   settings rather than proof of independent draws, and inclusion probability 1 under the complete-branch design
+   with no propensity weighting. Caps fixed without scores do not make missingness score-independent.
