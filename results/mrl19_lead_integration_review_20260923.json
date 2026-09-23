@@ -1,7 +1,7 @@
 {
-  "review_utc": "2026-09-23T05:45:14.770293Z",
+  "review_utc": "2026-09-23T05:51:51.453010Z",
   "evidence_class": "source/mock integration and reused immutable-byte checks; no empirical E13a outcomes",
-  "last_seen_worker_commit": "7ebccd8ab63db96565cd58aa6179cf5c5e2dc8f7",
+  "last_seen_worker_commit": "5d70a9b9ab7b31852f41c5f8289b808b02eb88c7",
   "independently_reviewed_source_delivery": "bb8969444029e0765a8638b4f1404fab02d85f5e",
   "review_start_tree": "4e2cd4104f085b5e3878bee8a7b7079cbccef24b",
   "latest_validated_empirical_revision": "1f654476645662943c0dda1bc3d636116776beb5",
@@ -90,11 +90,17 @@
   "current_resource_request": {
     "commit": "7ebccd8ab63db96565cd58aa6179cf5c5e2dc8f7",
     "proposed_window": "2026-09-23T06:15:00Z/2026-09-23T07:45:00Z",
-    "status": "request received; no peer acceptance evidenced"
+    "status": "Accepted peer non-contention received in5d70a9b; canonical reservation and MRL20 conditional authority committed; no live execution verified.",
+    "peer_agreement_commit": "5d70a9b9ab7b31852f41c5f8289b808b02eb88c7",
+    "reservation_record": "docs/e13a_shared_window_20260923T061500Z.json"
   },
   "decision": "MRL20 conditional one-run bundle; actual window/runtime/committed-freeze gates required",
   "overall_percent": 58,
   "delta_percentage_points": 0,
   "submission_ready": false,
-  "efficacy_established": false
+  "efficacy_established": false,
+  "committed_binding_validation": {
+    "at_commit": "bfc810b899382e56b0dc3eb572c77aa90d872c9a",
+    "status": "passed actual committed source/release/config/grading binding guards without adapter construction or execution"
+  }
 }
