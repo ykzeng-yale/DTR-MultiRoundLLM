@@ -1,0 +1,317 @@
+{
+  "checked_utc": "2026-09-23T03:59:22.831304+00:00",
+  "evidence_class": "saved-record arithmetic; no model, benchmark execution, or regrading",
+  "source_script_sha256": "709d8629053e366863aeaae48e362da80a1626c4908e2f1d1cbc4c9ad63d0855",
+  "input_hashes": {
+    "A/artifacts/mbpp%2F154.txt": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+    "A/artifacts/mbpp%2F288.txt": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+    "A/artifacts/mbpp%2F499.txt": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+    "A/artifacts/mbpp%2F651.txt": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+    "A/artifacts/mbpp%2F652.txt": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
+    "A/artifacts/mbpp%2F816.txt": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+    "A/artifacts/mbpp%2F825.txt": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+    "A/artifacts/mbpp%2F842.txt": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
+    "A/artifacts/mbpp%2F863.txt": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
+    "A/artifacts/mbpp%2F868.txt": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+    "A/artifacts/mbpp%2F895.txt": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+    "A/artifacts/mbpp%2F918.txt": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+    "A/artifacts/mbpp%2F966.txt": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
+    "A/artifacts/mbpp%2F974.txt": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+    "A/calls.jsonl": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+    "A/completion.json": "bdf071560a34e4b79313e735b46cf4c358d60f4def51e0997f6f69e1be5debc5",
+    "A/manifest.json": "ec6c97ec7069cc671706c908c032a657d6493accd6a4733c7b23a509f8fa164f",
+    "A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+    "B/attempts.jsonl": "92f1c63b4b496ece347a67f452bc694001af5b8e5c715c7ff8d0485d7ec5dfc1",
+    "B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "B/manifest.json": "e7904772293ded59f514790ceb90e99c8cd4ed1c00ac6c07250517479e7ee14c",
+    "C/calls.jsonl": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+    "C/completion.json": "9b81f58cd3a361d79514e70bfeab390e0117d71dbfac0b350fe47c1a95ea1b37",
+    "C/manifest.json": "20dcaa3cfc684bd124ff2458f0b2852fbfe4bb5e9423919cf3b625778d292667",
+    "C/roots.jsonl": "4ab80f09ddce3688cea28f27c96cddde84db58e169ad04d388a157bf43fd14ae",
+    "D/grades.jsonl": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+    "D/grading_attempts.jsonl": "3664a8ac157c6df3f0a00aa92df1c2fe06852131795ceb1578f9a3701f2c70d2",
+    "D/private_execution_records.json": "75b223147b958073f5112778e445068f8ceb96ee282df496ab5c6dcc12a0cc4d",
+    "D/summary.json": "4198c4e34b38c41d92b64c3db1b577e4616bd58919fba4f1441e6e0df449d07a",
+    "D/view/roots.jsonl": "507e4f53ad0631fbfa51a9cd0b0901660f8d4abfb22c11bba626c8aea75b46c9",
+    "D/view/view_manifest.json": "7d5f0094e882919553ac1b56a1ab9be0bf3fbe8f5fe5cfd34f5e6a537d097262",
+    "analysis_input.json": "4a64c49794c3951b28c0e232f8509700278bc057af598ec65599d15e4e516527",
+    "analysis_report.json": "ca250a3ea3d5bfe275a202f10b58d3c26a247fba5c63798ee56aa53760eaaf8b"
+  },
+  "files_checked": 33,
+  "all_assigned_grade_and_call_keys_match": true,
+  "canonical_JSON_output_hashes_bind_all_grades": true,
+  "analysis_input_and_published_contrasts_match_raw_grades": true,
+  "arm_counts": {
+    "STOP": {
+      "passes": 10,
+      "assigned": 14,
+      "mean": 0.7142857142857143
+    },
+    "N0": {
+      "passes": 20,
+      "assigned": 28,
+      "mean": 0.7142857142857143
+    },
+    "S0": {
+      "passes": 19,
+      "assigned": 28,
+      "mean": 0.6785714285714286
+    },
+    "N1": {
+      "passes": 20,
+      "assigned": 28,
+      "mean": 0.7142857142857143
+    },
+    "S1": {
+      "passes": 19,
+      "assigned": 28,
+      "mean": 0.6785714285714286
+    },
+    "R1": {
+      "passes": 19,
+      "assigned": 28,
+      "mean": 0.6785714285714286
+    }
+  },
+  "contrasts": {
+    "S1_minus_N1": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.5,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": -1.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": 0.0,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "N1_minus_N0": {
+      "mean": 0.0,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.0,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": 0.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": 0.0,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "S0_minus_N0": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.0,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": 0.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": -0.5,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "R1_minus_N1": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.5,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": -0.5,
+        "mbpp/288": 0.5,
+        "mbpp/154": 0.0,
+        "mbpp/863": -0.5,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": -0.5,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "N0_minus_STOP": {
+      "mean": 0.0,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.0,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": 0.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": 0.0,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "S0_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.0,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": 0.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": -0.5,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "N1_minus_STOP": {
+      "mean": 0.0,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.0,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": 0.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": 0.0,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "S1_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.5,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": 0.0,
+        "mbpp/288": 0.0,
+        "mbpp/154": 0.0,
+        "mbpp/863": -1.0,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": 0.0,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    },
+    "R1_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "per_root": {
+        "mbpp/918": 0.0,
+        "mbpp/825": 0.0,
+        "mbpp/842": 0.5,
+        "mbpp/816": 0.0,
+        "mbpp/895": 0.0,
+        "mbpp/868": -0.5,
+        "mbpp/288": 0.5,
+        "mbpp/154": 0.0,
+        "mbpp/863": -0.5,
+        "mbpp/966": 0.0,
+        "mbpp/652": 0.0,
+        "mbpp/651": -0.5,
+        "mbpp/499": 0.0,
+        "mbpp/974": 0.0
+      }
+    }
+  },
+  "repair_damage": {
+    "N0": {
+      "repairs": 0,
+      "repair_slots": 8,
+      "damage": 0,
+      "damage_slots": 20
+    },
+    "S0": {
+      "repairs": 0,
+      "repair_slots": 8,
+      "damage": 1,
+      "damage_slots": 20
+    },
+    "N1": {
+      "repairs": 0,
+      "repair_slots": 8,
+      "damage": 0,
+      "damage_slots": 20
+    },
+    "S1": {
+      "repairs": 1,
+      "repair_slots": 8,
+      "damage": 2,
+      "damage_slots": 20
+    },
+    "R1": {
+      "repairs": 2,
+      "repair_slots": 8,
+      "damage": 3,
+      "damage_slots": 20
+    }
+  },
+  "public_fail_roots": [
+    "mbpp/288",
+    "mbpp/652",
+    "mbpp/842",
+    "mbpp/863",
+    "mbpp/966"
+  ],
+  "posthoc_gated_R1_value": 0.75,
+  "posthoc_gated_R1_minus_STOP": 0.0357142857142857,
+  "posthoc_scope": "selected on these same outcomes; not independent policy validation",
+  "usage": {
+    "receiver_calls": 154,
+    "prompt_tokens": 53670,
+    "completion_tokens": 12198,
+    "unknown_usage_calls": 0
+  },
+  "ledger_events": {
+    "B/attempts.jsonl": {
+      "reserved": 1,
+      "start": 14,
+      "result": 14,
+      "classified": 14,
+      "complete": 1
+    },
+    "D/grading_attempts.jsonl": {
+      "reserved": 1,
+      "start": 103,
+      "result": 103,
+      "complete": 1
+    }
+  },
+  "review_runtime_seconds": 0.010615499690175056,
+  "new_model_calls": 0,
+  "new_model_tokens": 0,
+  "new_benchmark_executions": 0,
+  "paid_cost_usd": 0
+}

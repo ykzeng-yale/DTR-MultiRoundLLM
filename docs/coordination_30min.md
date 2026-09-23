@@ -81,7 +81,7 @@ protocol, runtime validation and numerical cap. Preserve shared-hardware jobs.
 The lead's existing heartbeat is now active every 30 minutes. Read
 `docs/readiness.md` and `docs/progress_current.json`; report overall milestone
 completion, change, independently completed/checked work, blockers and next
-milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **55%**, per the fixed rubric.
+milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **58%**, per the fixed rubric.
 Changing coordination frequency earns no research-completion credit. No new
 efficacy evidence is supplied here; the full project remains not submission-ready.
 Measurement/receiver release, fresh prompt data and independent policy validation
@@ -142,3 +142,7 @@ MRL-13 completed and recovery closed. MRL-14 permits source/mock compilation-cla
 ## Current queue after MRL-15 review
 
 MRL-15 accepted in scope. MRL-16 is the single bundled conditional preparation/validation/collection authority in `docs/e12_bundled_release_20260922.md`:14adapted roots,154calls,238new starts, fresh receiver window, exact committed gates, no backfill or retries. No additional lead-review round if all named conditions pass. Prior HOLD paragraphs are historical.
+
+## Current queue after E12 outcome review, 23 September
+
+MRL-16 completed and MRL-17 reproduced. MRL-18 permits one20-minute source/mock preparation bundle only; E13a execution and E13b remain held. Follow [the exact lead decision](e12_lead_judgment_20260923.md). Previous running/conditional-release paragraphs are historical; no expired cap or reservation is renewed.

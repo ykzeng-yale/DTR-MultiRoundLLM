@@ -6,7 +6,7 @@
 
 **New main reconciliation:** the experiments workstream has retracted its blanket STOP recommendation and proposed a compute-efficiency pivot. [Our adjudication](scientific_judgment_v2_pivot_20260920.md) accepts the retraction but finds that its power and certification arguments do not justify replacing the original question. The fixed-bank evidence remains descriptive; no harm certificate has been issued.
 
-**Status cross-reference (22 September):** This dated judgment's scientific boundaries remain authoritative. Its then-pending threshold and instrument work are historical: the later [threshold ruling](worker_issues_resolution_20260921.md) sets a working five-point useful-gain threshold, and the [current portfolio](experiment_portfolio_review_20260922.md) distinguishes accepted finite instrument checks from the still-incomplete E12 receiver batch and independent policy validation. Preserve the dated findings below; they do not reopen completed validation or release another stage.
+**Status cross-reference (22 September):** This dated judgment's scientific boundaries remain authoritative. Its then-pending threshold and instrument work are historical: the later [threshold ruling](worker_issues_resolution_20260921.md) sets a working five-point useful-gain threshold, and the [current portfolio](experiment_portfolio_review_20260922.md) distinguishes the earlier evidence layers. The [September 23 E12 judgment](e12_lead_judgment_20260923.md) accepts the completed 154-call development batch and preserves its negative primary contrast; independent policy validation remains incomplete. Preserve the dated findings below; they do not reopen completed validation or release another stage.
 
 ## 1. What is wrong, unsupported, or genuinely negative?
 

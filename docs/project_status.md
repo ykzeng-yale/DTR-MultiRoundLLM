@@ -1,5 +1,22 @@
 # Project status and claims ledger
 
+## E12 accepted; E13 source preparation released — 2026-09-23T03:58:52.222545+00:00
+
+**58%, +3 percentage points** since the last published 55% checkpoint. Only the fresh-prompt component changes: .20 to .40 of its 15-point weight, reflecting independent reconciliation of the prospective 14-root/154-call development batch. Fixed denominator; negative results earn completion credit, not efficacy credit. Full project not submission-ready; personalized-prompt efficacy and independent policy benefit unestablished.
+
+Last seen worker/status **22a0d22c19487d8074d567e31f222598dd5ee931**; scientific result reviewed **1f65447**, static delivery **dfa93c4**, revised proposal **4817a02**, exact request plan **5096dc3**. Publication, completed execution records and independent validation are now verified separately; receipt of this new lead decision is still pending. Three independent reviews and parent arithmetic reconcile 33 file hashes, all154 grades and nine contrasts, source/usage records and140 static descriptors. Primary S1−N1 is−3.57pp; no fixed arm beats STOP. Corrected863 interpretation, expired authority, provisional-family and E13 power/estimand overclaims are in [the scientific ruling](e12_lead_judgment_20260923.md).
+
+Execution usage:154 calls,53,670 prompt+12,198 completion tokens,117 program starts (ledger333/412),$0; collection314.258s. Stop timestamp07:15:30.254657 Sep22 is saved, but exited=null, so actual termination remains worker-reported. No new model calls, sampled datasets or benchmark executions by the lead. Cached source/preflight and numerical-design work drafted Sep22 is first published now, identified as delayed historical work, not a completed earlier exchange.
+
+The worker had published and waited about20h; the delay was on the lead side. Queued heartbeat triggers do not count as performed reviews. Live issues2–5 and openPRs checked (none open); issue3 receipt posted; no unrelated task messaged and no duplicate worker created. Current app inventory has no identifiable separate experiment-worker task; the existing GitHub/file route is functioning.
+
+**MRL-18 proceed:** existing worker, one20-minute/oneCPU/$0 source/mock preparation bundle for E13a, no model/receiver/benchmark-program execution or178-record frame review. **E13a execution/E13b hold:** need the exact two-arm pipeline, public-only dispatch, corrected target/precision, new runtime renewal/start accounting and shared-host window. Unused E12 starts are not new-study authority. Next milestone is this complete bundled execution contract and worker acknowledgement; independent policy validation and matched fitted-history numerical validation remain open. The manuscript now includes E12's checked negative result.
+
+
+## Historical receiver review drafted September 22, first published September 23 — 2026-09-22T07:19:06.517062+00:00
+
+**55% milestone completion, change0pp; efficacy unestablished and not submission-ready.** Worker9dd683b records successful07:10startup and committed ownership. The [independent preflight review](../results/e12_preflight_lead_review_20260922T071000Z.json) accepts47nongenerating requests,42matching prompts and frozen bindings. Actual collection outcomes remain pending. The [reconciliation contract](e12_reconciliation_contract_20260922.md) and [next synthetic-study specification](fitted_history_numerical_design_20260922.md) advance measurement and design, without new model or simulation data. See the [checkpoint](monitoring_checkpoint.md) for exact seen/reviewed revisions and the next milestone.
+
 ## Current status — 2026-09-22T06:35:15.882253+00:00
 
 **55% milestone completion, change0pp; efficacy unestablished and not submission-ready.** The [current checkpoint](monitoring_checkpoint.md) and [machine-readable rubric](progress_current.json) govern current status; earlier entries below are historical. E12 has accepted14-root instrument evidence and an acknowledged07:10–08:20UTC successor reservation. Prior release is corroborated by published receipts; actual E12 receiver execution remains pending and needs fresh worker checks. The [fitted complete-history comparator](fitted_history_comparator_20260922.md) now has independently reviewed source and21deterministic checks, with no new Monte Carlo/efficacy result. Regularization, final numerical precision, E12 outcome reconciliation and untouched policy validation remain open.

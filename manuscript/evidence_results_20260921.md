@@ -220,7 +220,7 @@ cost rules. Evaluate a frozen public-history selector against competent fixed an
 sampling comparators on independent task/family information. The proposed
 [literature-guided amendment](../docs/literature_guided_design_20260921.md)
 separates diagnostic availability from instruction strategy; its five-arm design
-is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. The E11 development run subsequently completed under a committed receiver-use agreement. Its independently reconciled results are reported below. E12 has a separate conditional release; its changed contract and delivered instrument records are distinguished below from model outcomes.
+is implemented, and its bounded instrument-validation bundle has passed the declared gates on the worker host. Independent review reconciled 13 saved artifact hashes and records accounting for 77 isolated starts, including seven accepted references and 17 privately rejected controls. This establishes the stated finite validation checks, not general evaluator correctness or prompt efficacy. Grading/analysis command-line integration has passed independent source and mock review. The E11 development run subsequently completed under a committed receiver-use agreement. Its independently reconciled results are reported below. E12 subsequently completed under its separate release; its changed contract, instrument records and independently reconciled outcomes are distinguished below.
 The [E11 design](../docs/public_diagnostic_design_20260921.md) gave
 both repair arms identical public diagnostic bytes and compared neutral and
 diagnostic-directed instructions. Its examples were disclosed before the initial
@@ -296,7 +296,7 @@ The run consumed 31,800 prompt and 4,859 completion tokens, seven public-check s
 
 A later [post-hoc static output review](../docs/e11_mechanism_lead_review_20260922.md) found that the two S1 continuations on each of the six public-all-pass roots retained the initial function-definition AST; the other two S1 outputs were unassessable under the frozen extraction rule. R1 had six matching function-definition ASTs, seven different assessable ASTs and one unparseable output. These structural descriptors do not measure semantic equivalence or identify why an intervention helped or harmed. Both displayed S1 implementations on root402 also retain a visible error at the already-public modulus-one example, so format rejection is not evidence of a correct repair obscured by parsing. No candidate was re-executed or regraded. All six public-all-pass roots were privately correct; the hypothesis that a preservation instruction suppresses repair in a public-pass/private-fail stratum therefore remains untested by E11.
 
-## Prospective E12 contract and delivered instrument checks
+## Completed prospective E12 development batch
 
 The [conditional E12 release](../docs/e12_bundled_release_20260922.md) specifies
 14 adapted MBPP roots retained after source-based contract review, without backfill.
@@ -315,11 +315,13 @@ At worker delivery `e518cc1`, the [instrument records](../results/e12_dev_v3_202
 reported 42 checks: 14 private references passing, 14 wrong controls rejected by
 the private suffix, and 14 public references passing. [Independent review](../docs/e12_v3_measurement_review_20260922.md)
 subsequently reconciled all four artifact hashes and all 42 recorded starts, including
-assertion-level rejection of each control. The worker reported no E12 receiver
-calls; collection awaited a fresh receiver-use window under the committed release
-conditions. These delivered checks add no E12 prompt-effect estimate or learned-policy
-validation. E11's observed null remains intact, and the future five-point usefulness
-criterion is not an efficacy or stopping threshold for this descriptive study.
+assertion-level rejection of each control. The subsequent E12 delivery completed all 154 receiver calls and all assigned grades. STOP passed on 10/14 roots; N0 and N1 each passed on 20/28 continuations, while S0, S1 and R1 each passed on 19/28. The primary S1 minus N1 mean was −1/28 (−3.57 percentage points), consisting of +0.5 on root 842, −1 on root 863 and twelve ties. No fixed arm improved on STOP. S1 had one fail-to-pass transition among eight continuations of initially private-failing answers and two pass-to-fail transitions among twenty initially private-passing continuations; R1 had two and three, respectively. These are frozen-score transitions, not complete semantic-correctness assessments.
+
+Root 863 illustrates the distinction. The initial program failed a valid public duplicate-value example but passed two private assertions without duplicates. Both S1 outputs were then rejected for multiple code blocks without candidate execution. The saved outputs do not establish a successful public repair that damaged private behavior. The public diagnostic detected a real domain error; the private pass was incomplete evidence of correctness. All original grades and format penalties remain unchanged. A post-hoc static review reproduced seven unassessable S1 outputs, all on public-fail roots; the association does not identify a causal mechanism, and the base prompt already required a single complete answer.
+
+The batch used 53,670 prompt and 12,198 completion tokens, with zero unknown usage, 314.258 seconds of collection, and 117 public/private execution starts. The [independent review](../docs/e12_lead_judgment_20260923.md) and [record-level reconciliation](../results/e12_outcome_lead_reconciliation_20260923.json) verify the saved evidence without new model execution or regrading. Neither the unresolved family label nor the provisional duplicate screen supports population inference. The negative observed primary contrast is not equivalence or proof that predictable conditional effects are absent. E11's null remains intact; the future five-point usefulness criterion was not an E12 stopping threshold.
+
+A public-fail-gated R1 rule was selected after inspecting E12 and has apparent in-sample value 0.750 versus STOP's 0.714. This is development selection on the same outcomes, not policy validation. A proposed five-checkpoint R1-versus-FRESH follow-up would compare diagnostic-plus-instruction restart with bare resampling. Its source preparation is permitted, but execution and a larger policy study remain held pending their separate committed contracts.
 
 ## Numerical traceability of this section
 

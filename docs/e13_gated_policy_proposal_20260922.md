@@ -1,5 +1,7 @@
 # E13 proposal, revision 1: public-diagnostic-gated R1 (NOT RELEASED)
 
+> Lead review, 23 September: The [September 23 lead decision](e12_lead_judgment_20260923.md) supersedes the release request: MRL-18 permits one 20-minute source/mock preparation bundle only; E13a execution and E13b remain held. Zero-null/gated power, variance, frame, mechanism and unused-budget interpretations below require the named corrections. Original proposal retained.
+
 **Experiments workstream, 22 September 2026.** This revision replaces the sizing and comparators of the first
 version (`34fb797`), which I checked against the lead's
 [validation-design memo](independent_prompt_policy_validation_design_20260922.md) and against E12's own

@@ -14,27 +14,25 @@ Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and
 
 The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. It predates the later scientific self-audit and landmark supplement; the current editable documents govern. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
-## Latest continuation — 22 September 2026
+## Latest continuation — 23 September 2026
 
-The [current abstract and paper structure](manuscript/current_paper_20260922.md)
-connect the theory, version-specific methods and audited results. The completed
-77-call E11 development study found a zero S1–N1 contrast on each of seven inspected
-roots; this is descriptive evidence, not equivalence or policy validation. E12's
-14-task package and 42 instrument checks are independently accepted. At the worker's
-04:11 UTC update, the old receiver was reported absent, with no E12 model calls.
-The [bounded restart amendment](docs/e12_receiver_restart_amendment_20260922.md)
-permits refreezing the same specified receiver setup. The worker acknowledged the
-04:35–05:45 UTC shared-host reservation; actual restart and collection still need
-to be evidenced. No further lead approval round is required if live checks pass.
-The [whole-portfolio review](docs/experiment_portfolio_review_20260922.md) maps each
-completed result to its actual scope and the remaining issues.
+The [independent E12 review](docs/e12_lead_judgment_20260923.md) reconciles all154
+receiver calls and grades on14 prospectively fixed development tasks. The primary
+S1−N1 contrast was **−3.57 percentage points**, and no fixed continuation improved
+on STOP. The result remains descriptive: thin private suites, format failures and
+unvalidated family sampling limit its interpretation. E11's earlier zero contrast
+remains a separate negative result. The [editable manuscript](manuscript/current_paper_20260922.md)
+now integrates both studies.
 
-Overall milestone completion is **55%**, unchanged at this review. Efficacy remains
-unestablished and the full project is not submission-ready. The
-[current checkpoint](docs/monitoring_checkpoint.md) and
-[fixed progress rubric](docs/progress_current.json) govern; the percentages below
-are historical checkpoints. The next empirical milestone is the bounded E12 run,
-followed by independent raw-data review.
+Overall milestone completion is **58%, +3 percentage points** for the newly
+completed and independently reviewed empirical milestone. Efficacy remains
+unestablished, independent policy validation is incomplete, and the full project
+is not submission-ready. The [checkpoint](docs/monitoring_checkpoint.md) and
+[fixed rubric](docs/progress_current.json) govern; older percentages below are
+historical. MRL-18 permits one bounded source/mock preparation bundle for a
+five-checkpoint restart-package versus resampling comparison. Its execution and
+the broader E13b study remain held pending separate complete contracts; expired
+E12 reservations and unused starts provide no new authority.
 
 ## Prior continuation — 21 September 2026
 

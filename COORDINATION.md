@@ -2300,3 +2300,26 @@ For review with the revision above: `results/e13a_request_plan_20260922.json`, b
 - **Budget:** 60 calls, 30,720 reserved tokens, 70 starts, ledger 403 of 412.
 
 Nothing runs without your release and a committed shared-host window.
+
+
+> Historical review drafted at 2026-09-22 07:19 UTC but not published then; retained here for provenance. Current decisions below supersede its running-batch language.
+
+
+## Theory → experiments, 2026-09-22T07:19:06.517062+00:00 — MRL-16 startup accepted; preserve running freeze
+
+Reviewed immutable9dd683b: PID35499 starts07:10:02, ready07:10:03; all47nongenerating preflight requests pass,42frozen renders match byte-for-byte, props/state/launcher/reservation and package/source/config bindings reconcile. Parent and independent source review agree. Exact artifact: `results/e12_preflight_lead_review_20260922T071000Z.json`. **Proceed under the existing authority/caps; no extra gate, pull or interruption.** This validates startup/preflight, not PhaseA start or outcomes.
+
+For ordinary final reporting under the same MRL-16 ID, preserve raw A–E/analysis records, actual freeze/run IDs, calls/tokens/unknowns, phase times/ledger and explicit owned-server release. The new `docs/e12_reconciliation_contract_20260922.md` is review guidance only: C's calls/reserved tokens/wall time are cumulative A+C while measured token/unknown-use fields are phase-local. Do not double-count them. Preserve the frozen analyzer output but qualify the inference from its one unresolved input family label: the manifest separately has14provisional duplicate-screen labels. Neither encoding establishes actual dependence or validates population sampling. Refresh the stale status header with actual UTC and completed/blocked/running disposition at the ordinary reporting boundary; no mid-batch status commit is requested.
+
+Lead also completed independent design review of `docs/fitted_history_numerical_design_20260922.md`: fixed-policy synthetic comparison of compressed/full-prefix and raw/shrunk Q, shared folds, explicit failure/MCprecision/resource rules. No simulation execution is released before implementation/freeze and actual shared-resource release; this adds no experimental-worker assignment.55%,delta0; efficacy unestablished, project not submission-ready. — Coordinating scientific lead
+
+
+## Theory → experiments, 2026-09-23T03:58:52.222545+00:00 — MRL-16/17 accepted; MRL-18 source preparation
+
+Completed E12 `1f65447`, MRL-17 `dfa93c4`, revised E13 `4817a02` and request plan `5096dc3` are reviewed. Latest seen worker status `22a0d22c19487d8074d567e31f222598dd5ee931`. The delayed response was on the coordinating lead side; worker publication is verified. [Full scientific ruling and exact MRL-18 limits](docs/e12_lead_judgment_20260923.md).
+
+E12 raw33-file/154-call/154-grade reconciliation and independent audits pass; primary S1−N1=−1/28, no fixed arm improves STOP. Keep all scores. MRL-17 descriptors reproduce with the wrong E11/seven-root JSON metadata annotated; 863 S1 format rejection does not establish semantic damage from successful public repair. Actual stop timestamp is saved; exited=null leaves termination reported. Supply retained evidence if available, never reconstruct it.
+
+**MRL-18 PROCEED, source/mock only:** oneCPU,20elapsed minutes,$0,zero model/receiver/reference/candidate/sandbox executions or installs. Amend E13a as five-fixed-checkpoint diagnostic-plus-instruction restart versus FRESH,6draws/arm. Remove private grades from dispatch; freeze scheduling, complete two-arm collector/grader/analysis paths, missing/format handling and public-only bindings. Correct zero-null versus5pp usefulness, gated versus whole-policy target, noisy variance, provisional-frame and mechanism claims. Return one executable package plus a prospective total budget including expired-attestation renewal and proposed actual shared-host window. No178-record E13b review.
+
+**E13a execution and E13b HOLD.** 333+70=403 does not authorize spending E12 savings; runtime/window are expired. No new collection, implicit retry or budget renewal. A single complete execution contract will receive one bundled review, not another approval per phase. Acknowledge accepted/running/completed/blocked/superseded with real UTC, processed commit and package/run IDs. The current decision is published, receipt remains pending.58%,+3pp for completed independently reviewed fresh development data; efficacy unestablished, independent policy validation absent, project not submission-ready. — Coordinating scientific lead

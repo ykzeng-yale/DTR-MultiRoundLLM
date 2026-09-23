@@ -1,0 +1,362 @@
+{
+  "schema_version": "e12-measurement-independent-review-v1",
+  "reviewer": "root/evidence independent source-and-arithmetic review",
+  "checked_utc": "2026-09-23T03:56:36.277026+00:00",
+  "reviewed_repository_head": "22a0d22c19487d8074d567e31f222598dd5ee931",
+  "raw_delivery_commit": "1f65447",
+  "mechanism_delivery_commit": "dfa93c4",
+  "evidence_class": "read-only saved-record reconciliation and static AST parsing; no model, benchmark, reference, compiler or sandbox execution",
+  "run_path": "results/e12_dev_v3_20260922T030255Z",
+  "indexed_artifact_hashes": {
+    "A/artifacts/mbpp%2F154.txt": "368f0a6b9ee515ec65bd417cbe6f734ed0dfa602448cf1c40b3cb85f5d253bea",
+    "A/artifacts/mbpp%2F288.txt": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
+    "A/artifacts/mbpp%2F499.txt": "84be5d93a25e91d3dd27dc88266d98ad297a6025945d499338f07e8a16ded7ea",
+    "A/artifacts/mbpp%2F651.txt": "6b342ed9331886a582fce85d5d8e3a727b3f0e49baa6b5ad109ef2a9974791bd",
+    "A/artifacts/mbpp%2F652.txt": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
+    "A/artifacts/mbpp%2F816.txt": "fcbf2c9dfcd09a347ef8d363924e9ba1067ead3b05a33d91bee1196e94d02bd5",
+    "A/artifacts/mbpp%2F825.txt": "ca95d4c4325baa97cc63cf2df2331b7ec683d093142fcd62b1d4f108ce0fb1d7",
+    "A/artifacts/mbpp%2F842.txt": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
+    "A/artifacts/mbpp%2F863.txt": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
+    "A/artifacts/mbpp%2F868.txt": "afd27979019b3d8f8ec810b90a7716e86f5f90596bbea81c9b115aeeedfe3270",
+    "A/artifacts/mbpp%2F895.txt": "9184809d493ed09a75cc593aaa987e91a322a0492774dcf7e4a79c9811985421",
+    "A/artifacts/mbpp%2F918.txt": "4f949b16521783db7611269acac45c68cccdca83b097292519a4e7801c31ebb4",
+    "A/artifacts/mbpp%2F966.txt": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
+    "A/artifacts/mbpp%2F974.txt": "0b0e878f4cf9150823f859cdab4323372d28e935ac8c4456df4f8e30bcb26fc3",
+    "A/calls.jsonl": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+    "A/completion.json": "bdf071560a34e4b79313e735b46cf4c358d60f4def51e0997f6f69e1be5debc5",
+    "A/manifest.json": "ec6c97ec7069cc671706c908c032a657d6493accd6a4733c7b23a509f8fa164f",
+    "A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+    "B/attempts.jsonl": "92f1c63b4b496ece347a67f452bc694001af5b8e5c715c7ff8d0485d7ec5dfc1",
+    "B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "B/manifest.json": "e7904772293ded59f514790ceb90e99c8cd4ed1c00ac6c07250517479e7ee14c",
+    "C/calls.jsonl": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+    "C/completion.json": "9b81f58cd3a361d79514e70bfeab390e0117d71dbfac0b350fe47c1a95ea1b37",
+    "C/manifest.json": "20dcaa3cfc684bd124ff2458f0b2852fbfe4bb5e9423919cf3b625778d292667",
+    "C/roots.jsonl": "4ab80f09ddce3688cea28f27c96cddde84db58e169ad04d388a157bf43fd14ae",
+    "D/grades.jsonl": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+    "D/grading_attempts.jsonl": "3664a8ac157c6df3f0a00aa92df1c2fe06852131795ceb1578f9a3701f2c70d2",
+    "D/private_execution_records.json": "75b223147b958073f5112778e445068f8ceb96ee282df496ab5c6dcc12a0cc4d",
+    "D/summary.json": "4198c4e34b38c41d92b64c3db1b577e4616bd58919fba4f1441e6e0df449d07a",
+    "D/view/roots.jsonl": "507e4f53ad0631fbfa51a9cd0b0901660f8d4abfb22c11bba626c8aea75b46c9",
+    "D/view/view_manifest.json": "7d5f0094e882919553ac1b56a1ab9be0bf3fbe8f5fe5cfd34f5e6a537d097262",
+    "analysis_input.json": "4a64c49794c3951b28c0e232f8509700278bc057af598ec65599d15e4e516527",
+    "analysis_report.json": "ca250a3ea3d5bfe275a202f10b58d3c26a247fba5c63798ee56aa53760eaaf8b"
+  },
+  "indexed_files_checked": 33,
+  "all_33_indexed_hashes_match": true,
+  "additional_input_hashes": {
+    "results/e12_dev_v3_20260922T030255Z/ARTIFACT_SHA256SUMS.json": "ef88758621482906c38cc0d2b6fa8d9c01969be0f24d57b93728d2b6ee660741",
+    "results/e12_mechanism_exploratory_mrl17_20260922.json": "1561bbc7a9b7670916416e7cbbf872386db8b2996748d65e0b834a35cba66a69",
+    "scripts/reconcile_e12_20260923.py": "709d8629053e366863aeaae48e362da80a1626c4908e2f1d1cbc4c9ad63d0855",
+    "scripts/e11_mechanism_analysis.py": "949dbe664a94799404d860a370bdf2ad6b067bb2159d52a6f790ed7ba9770101",
+    "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "experiments/landmark/dev_release_v3/tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+    "experiments/landmark/dev_release_v3/private_specs.jsonl": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305"
+  },
+  "checks": {
+    "154_unique_expected_grade_keys": true,
+    "all154_grades_observed_binary_no_missing": true,
+    "all154_call_canonical_JSON_string_hashes_match_grades": true,
+    "analysis_input_exact154_key_and_grade_match": true,
+    "all_root_means_and_9_contrasts_reproduced": true,
+    "14_raw_UTF8_initial_artifact_hashes_match_diagnostics": true,
+    "all14_diagnostics_one_case_v2_pass_or_wrong_value": true,
+    "all140_AST_detail_rows_exact_match": true,
+    "mechanism_input_and_script_extractor_hashes_match": true
+  },
+  "observed_counts": {
+    "roots": 14,
+    "initial_calls": 14,
+    "continuation_calls": 140,
+    "calls_total": 154,
+    "prompt_tokens": 53670,
+    "completion_tokens": 12198,
+    "missing_grades": 0
+  },
+  "arm_counts": {
+    "STOP": {
+      "passes": 10,
+      "assigned": 14,
+      "root_mean": 0.7142857142857143
+    },
+    "N0": {
+      "passes": 20,
+      "assigned": 28,
+      "root_mean": 0.7142857142857143
+    },
+    "S0": {
+      "passes": 19,
+      "assigned": 28,
+      "root_mean": 0.6785714285714286
+    },
+    "N1": {
+      "passes": 20,
+      "assigned": 28,
+      "root_mean": 0.7142857142857143
+    },
+    "S1": {
+      "passes": 19,
+      "assigned": 28,
+      "root_mean": 0.6785714285714286
+    },
+    "R1": {
+      "passes": 19,
+      "assigned": 28,
+      "root_mean": 0.6785714285714286
+    }
+  },
+  "contrasts": {
+    "S1_minus_N1": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 1,
+      "tie_roots": 12,
+      "loss_roots": 1,
+      "nonzero_root_contrasts": {
+        "mbpp/842": 0.5,
+        "mbpp/863": -1.0
+      }
+    },
+    "N1_minus_N0": {
+      "mean": 0.0,
+      "gain_roots": 0,
+      "tie_roots": 14,
+      "loss_roots": 0,
+      "nonzero_root_contrasts": {}
+    },
+    "S0_minus_N0": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 0,
+      "tie_roots": 13,
+      "loss_roots": 1,
+      "nonzero_root_contrasts": {
+        "mbpp/651": -0.5
+      }
+    },
+    "R1_minus_N1": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 2,
+      "tie_roots": 9,
+      "loss_roots": 3,
+      "nonzero_root_contrasts": {
+        "mbpp/842": 0.5,
+        "mbpp/868": -0.5,
+        "mbpp/288": 0.5,
+        "mbpp/863": -0.5,
+        "mbpp/651": -0.5
+      }
+    },
+    "N0_minus_STOP": {
+      "mean": 0.0,
+      "gain_roots": 0,
+      "tie_roots": 14,
+      "loss_roots": 0,
+      "nonzero_root_contrasts": {}
+    },
+    "S0_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 0,
+      "tie_roots": 13,
+      "loss_roots": 1,
+      "nonzero_root_contrasts": {
+        "mbpp/651": -0.5
+      }
+    },
+    "N1_minus_STOP": {
+      "mean": 0.0,
+      "gain_roots": 0,
+      "tie_roots": 14,
+      "loss_roots": 0,
+      "nonzero_root_contrasts": {}
+    },
+    "S1_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 1,
+      "tie_roots": 12,
+      "loss_roots": 1,
+      "nonzero_root_contrasts": {
+        "mbpp/842": 0.5,
+        "mbpp/863": -1.0
+      }
+    },
+    "R1_minus_STOP": {
+      "mean": -0.03571428571428571,
+      "gain_roots": 2,
+      "tie_roots": 9,
+      "loss_roots": 3,
+      "nonzero_root_contrasts": {
+        "mbpp/842": 0.5,
+        "mbpp/868": -0.5,
+        "mbpp/288": 0.5,
+        "mbpp/863": -0.5,
+        "mbpp/651": -0.5
+      }
+    }
+  },
+  "endpoint_transitions_relative_to_STOP": {
+    "N0": {
+      "fail_to_pass": 0,
+      "initial_fail_slots": 8,
+      "pass_to_fail": 0,
+      "initial_pass_slots": 20
+    },
+    "S0": {
+      "fail_to_pass": 0,
+      "initial_fail_slots": 8,
+      "pass_to_fail": 1,
+      "initial_pass_slots": 20
+    },
+    "N1": {
+      "fail_to_pass": 0,
+      "initial_fail_slots": 8,
+      "pass_to_fail": 0,
+      "initial_pass_slots": 20
+    },
+    "S1": {
+      "fail_to_pass": 1,
+      "initial_fail_slots": 8,
+      "pass_to_fail": 2,
+      "initial_pass_slots": 20
+    },
+    "R1": {
+      "fail_to_pass": 2,
+      "initial_fail_slots": 8,
+      "pass_to_fail": 3,
+      "initial_pass_slots": 20
+    }
+  },
+  "transition_scope": "Pass/fail under frozen two-private-assertion and complete-answer endpoint; not proof of semantic repair or degradation.",
+  "initial_public_private_cross_table": {
+    "public_pass_private_pass": 9,
+    "public_pass_private_fail": 0,
+    "public_fail_private_pass": 1,
+    "public_fail_private_fail": 4
+  },
+  "public_fail_roots": [
+    "mbpp/288",
+    "mbpp/652",
+    "mbpp/842",
+    "mbpp/863",
+    "mbpp/966"
+  ],
+  "posthoc_gated_R1_value": 0.75,
+  "posthoc_policy_scope": "0.750 versus 10/14 STOP selected on these same E12 outcomes; no independent policy validation.",
+  "AST_partition": {
+    "N0": {
+      "n": 28,
+      "same": 22,
+      "changed": 6,
+      "unassessable": 0,
+      "extra_toplevel": 0,
+      "completion_tokens": 1202,
+      "mean_completion_tokens": 42.92857142857143
+    },
+    "S0": {
+      "n": 28,
+      "same": 18,
+      "changed": 10,
+      "unassessable": 0,
+      "extra_toplevel": 7,
+      "completion_tokens": 2247,
+      "mean_completion_tokens": 80.25
+    },
+    "N1": {
+      "n": 28,
+      "same": 17,
+      "changed": 11,
+      "unassessable": 0,
+      "extra_toplevel": 0,
+      "completion_tokens": 1432,
+      "mean_completion_tokens": 51.142857142857146
+    },
+    "S1": {
+      "n": 28,
+      "same": 16,
+      "changed": 5,
+      "unassessable": 7,
+      "extra_toplevel": 2,
+      "completion_tokens": 4288,
+      "mean_completion_tokens": 153.14285714285714
+    },
+    "R1": {
+      "n": 28,
+      "same": 9,
+      "changed": 15,
+      "unassessable": 4,
+      "extra_toplevel": 8,
+      "completion_tokens": 2437,
+      "mean_completion_tokens": 87.03571428571429
+    }
+  },
+  "AST_scope": "Ordered top-level FunctionDef AST identity; includes helper/duplicate definitions, omits imports and module state; not semantic equivalence.",
+  "S1_unassessable": {
+    "count": 7,
+    "on_initial_public_fail_roots": 7,
+    "public_fail_S1_slots": 10,
+    "fence_marker_min": 3,
+    "fence_marker_max": 13,
+    "at_completion_cap512": 3
+  },
+  "metadata_defect": {
+    "field": "evidence_class",
+    "observed": "post-hoc exploratory static analysis of immutable E11 outputs; NOT a prespecified endpoint; 7 reused roots",
+    "correct_scope": "E12;14 development roots;140 continuation outputs. Original immutable artifact should be annotated, not overwritten."
+  },
+  "root863_measurement_ruling": {
+    "initial_public_expected": 3,
+    "initial_public_recorded_returned": 2,
+    "initial_private_grade": 1,
+    "private_test_duplicate_coverage": "Neither private input contains repeated values. Initial code sorts but resets its run at duplicate values, violating the stated domain.",
+    "S1_rep0": {
+      "grade": 0,
+      "executor_starts": 0,
+      "fence_markers": 3,
+      "completion_tokens": 512,
+      "static_note": "First completed function retains the duplicate-reset error; later code block is truncated. No successful public repair demonstrated."
+    },
+    "S1_rep1": {
+      "grade": 0,
+      "executor_starts": 0,
+      "fence_markers": 4,
+      "completion_tokens": 477,
+      "static_note": "Both displayed function bodies retain the same duplicate-reset error as initial; multiple blocks cause extraction failure."
+    },
+    "ruling": "Public diagnostic correctly detected a specification violation. Private STOP pass is a false acceptance relative to the full stated domain. Both S1 grades are frozen format failures, not evidence that a successful public correction caused semantic private regression.",
+    "R1_static_scope": "Rep0 skips duplicate reset; rep1 deduplicates then loops using original n and includes a top-level public-case call. These are static observations, not newly executed outcomes."
+  },
+  "scientific_ruling": "Accept exact frozen-endpoint descriptive results and static counts; do not claim semantic repair/damage, diagnostic-caused semantic regression, population null/futility, or validated prompting policy.",
+  "next_design_notes": [
+    "Future diagnostic-utility endpoints should separately expose public compliance, private generalization, format validity and missingness; prefreeze any changed contract and preserve E12 primary.",
+    "R1 versus FRESH compares diagnostic plus instruction package; six-draw equality does not establish that all E12 gains were caused by resampling.",
+    "Base prompts already impose one raw-source/single-code-block format; any future format arm strengthens or repeats that constraint."
+  ],
+  "review_runtime_seconds_original_arithmetic_and_AST": 0.022386333905160427,
+  "original_runtime_scope": "Independently timed initial audit printed in tool output; excludes manual source reading.",
+  "additive_artifact_static_recheck_seconds": 0.02216375060379505,
+  "execution_accounting": {
+    "model_calls": 0,
+    "model_tokens": 0,
+    "benchmark_candidate_executions": 0,
+    "reference_executions": 0,
+    "sandbox_starts": 0,
+    "tests_executed": 0,
+    "paid_cost_usd": 0
+  },
+  "parent_script_review": {
+    "path": "scripts/reconcile_e12_20260923.py",
+    "verdict": "No numerical blocker for delivered complete immutable batch; canonical output digest and raw diagnostic binding are correct.",
+    "minor_notes": [],
+    "clarifications_resolved": [
+      "Explicit public-diagnostic-v2 schema and pass/wrong_value status assertions added.",
+      "Output-binding field renamed canonical_JSON_output_hashes_bind_all_grades."
+    ]
+  },
+  "source_hash_refresh": {
+    "checked_utc": "2026-09-23T04:00:15.440298+00:00",
+    "path": "scripts/reconcile_e12_20260923.py",
+    "previous_sha256": "c67e07be1511ecb4bb8b015e77988456ccaecdefd73c619bd08998cccb79265a",
+    "current_sha256": "709d8629053e366863aeaae48e362da80a1626c4908e2f1d1cbc4c9ad63d0855",
+    "verification": "Reversing exactly the two named clarifications reconstructs the previously reviewed source SHA256. No other source change.",
+    "numerical_checks_rerun": false,
+    "archived_results_changed": false
+  }
+}

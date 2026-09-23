@@ -1,5 +1,7 @@
 # Experiment portfolio review and current issue dispositions
 
+> September 23 update: this portfolio is a dated pre-E12 snapshot. The [current independent decision](e12_lead_judgment_20260923.md) accepts E12's154-call/14-root completed development batch and primary−3.57pp contrast. MRL-18 source preparation supersedes the pending-run queue below; no E13 collection is released. Current milestone completion58%,+3pp; efficacy and submission readiness remain unestablished.
+
 22 September 2026, coordinating scientific lead. This review covers the project's completed simulation, reused-data, measurement and receiver studies, and the next uncompleted stages. It is a saved-record/source audit, not a rerun of all experiments. Prior independent reviews remain linked; a verified old result is not new efficacy evidence. The original supported history-conditional prompt-effect question remains authoritative.
 
 ## Evidence inventory

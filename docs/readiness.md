@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Current reviewed checkpoint — 23 September 2026
+
+**58%, +3 percentage points** from55%. The fresh supported-prompt component rises from20% to40% completion (3 to6 of15points) for the completed, independently reconciled E12 batch; all other components and weights are unchanged. Its negative primary result earns empirical completion credit, not efficacy credit. Independent policy validation remains0; full project not submission-ready. [Decision and remaining milestones](e12_lead_judgment_20260923.md); [current component calculation](progress_current.json). Earlier dated checkpoints below retain their historical numbers.
+
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 
 **55%, change 0 points.** The 14-root v3 package and 42 saved instrument-validation starts are independently accepted. This and the E11/E12 manuscript clarification fall within existing measurement/harness/manuscript credit. E12 receiver outcomes and independent policy validation remain absent; a fresh shared-receiver window is the current operational dependency. No efficacy or submission-readiness claim is added.

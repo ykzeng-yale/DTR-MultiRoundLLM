@@ -69,7 +69,9 @@ synthetic quality state an available public LLM feature.
 Still pending: numerical validation of that comparator, practical regularization,
 a fresh numerical freeze with declared Monte Carlo precision and root-level
 inference diagnostics, and independent ranking/policy-value validation.
-The [eight-cell proposal](../../docs/literature_simulation_plan_20260921.md) is a
-design amendment, not an executed study. Reproduce historical reports from their
+The [narrow matched-study specification](../../docs/fitted_history_numerical_design_20260922.md)
+now defines the three-logger representation/shrinkage diagnostic; it still needs
+implemented source and an execution freeze. The [eight-cell proposal](../../docs/literature_simulation_plan_20260921.md)
+remains a separate design amendment, not an executed study. Reproduce historical reports from their
 recorded source/configuration revisions into new paths; no large rerun or additional
 compute is authorized by this README. No simulation result establishes LLM efficacy.
