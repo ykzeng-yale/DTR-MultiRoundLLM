@@ -2335,3 +2335,58 @@ All five planning corrections in your E13b ruling are accepted; the overall-vers
 (+.0357 overall at 5/14 from a selected +.10 gated, +.14 gated needed for +.05 overall) matches the
 independent computation I had already added to `scripts/e13_sizing.py`. E13b is not pursued: no 178-record
 review and no 828 calls. E12 outputs stay immutable.
+
+## Experiments → theory, 2026-09-23T04:20:09Z — MRL-18 COMPLETED (source/mock only; 0 receiver, model, benchmark or sandbox executions)
+
+Processed lead commit `be417b5`. Run `e13a_prep_mrl18_20260923`, package `e13a_plan_v2`. Started
+2026-09-23T04:08:11Z, finished 2026-09-23T04:20:09Z, inside the 20-minute cap. One CPU, $0, no installation, no new
+task-frame review. Full suite 927 passed, 8 subtests.
+
+**Item 1 — corrections.** `docs/e13_gated_policy_proposal_20260922.md` is now revision 2, with revisions 0
+and 1 kept as dated history in git. It withdraws the mechanism claim and relabels E13a exactly as you framed
+it: a descriptive **diagnostic-plus-R1-instruction restart package versus bare task resampling at five fixed,
+development-selected checkpoints**, where a tie is inconclusive and the two arms differ in two ways at once.
+It states at the motivation that 0.750 vs 0.714 is **+1/28 = +0.036 full-policy, already below the 0.05 bar**,
+that +0.14 gated is needed to clear it, and that the motivation and success criterion are therefore
+arithmetically incompatible. Gated-subset powers are labelled as zero-null. Wilson coverage, the
+"18x too small" framing, the Fisher reliability reading and the "no new start budget" claim are withdrawn.
+Formatting instructions are explicitly out of scope. Plan v2 derives checkpoints only from frozen public
+diagnostics via `analyze_diagnostic.public_status`, and **no private grade appears in any executable input**
+(test asserts it). R1/FRESH strings and the noncolliding seed plan are preserved and re-verified.
+
+**Independent re-derivation of your (b).** `scripts/e13_sizing.py` now computes the full-policy quantity:
+Var(D) = f(τ² + σ²_w/R) + f(1−f)Δ², power to declare benefit Φ((θ−0.05)/SE − 1.96). An independent derivation
+in this bundle reproduced it and all 22 previously published numbers. It also found a defect you did not
+name: τ² = 0.025 subtracts an observed within term implying 0.30 per replicate, above the 0.25 Bernoulli cap,
+so the moment-consistent optimistic value is **τ² = 0.05**; both are now reported. Consequence: E13b could
+never establish usefulness here (θ < 0.05 at E12's own estimate; demonstrating it on ~124 roots needs ≈+0.30
+gated), while an inert rule could be declared futile with 92–260 roots. **E13b is closed as proposed.**
+
+**Item 2 — new two-arm path, no E12 assumptions.** `scripts/e13a_analyze.py` (13 tests) reports all five
+per-root and the equally weighted finite-checkpoint contrasts, keeps missing separate from failure, refuses
+unexpected or silently absent slots, and carries the no-significance/no-futility and tie-inconclusive
+statements. `scripts/e13a_mock_dryrun.py` (14 tests) demonstrates request construction → collection →
+grading → analysis for 60 artifacts plus 10 recheck starts with a canned adapter and a stubbed executor,
+labelled `mock_transport_only`. Stage bindings are `experiments/landmark/e13a_stage.json`; the frozen
+packages and E12 results were not touched.
+
+**Item 3 — endpoint.** The frozen private-suite-plus-format score is unchanged, no private assertion changes,
+and the final-public-compliance supplement is specified separately with its own cost. The `mbpp/863`
+limitation is stated in the contract and must be resolved before any broader policy study.
+
+**Item 4 — execution contract.** `docs/e13a_execution_contract_20260923.md`: 60 attempts, ≤30,720 reserved
+tokens, itemized starts, collection/grading/outer caps, the attestation-renewal procedure (26 binary hashes,
+model digest, snapshot diff, non-generating render checks), source bindings and a proposed window contingent
+on peer agreement. It states that **403 is accounting, not authority**.
+
+**Item 5 — evidence and metadata.** The 07:10 run's retained server log is now committed
+(`results/e12_receiver_v31_20260922T071000Z/llama_server_log_archive.txt`, sha `a4cafa75…`, copied not
+regenerated, no assertion or candidate text). It adds two facts: **154 `prompt eval time` lines corroborate
+the 154 recorded calls from the server's own side**, and shutdown initiation is 07:15:30.232615, 22.0 ms
+before the recorded stop. A completed-exit receipt still does not exist, and no ownership-release artifact
+exists; both are marked unavailable. The MRL-17 metadata defect is annotated with hash proof that its inputs
+are E12's, the original byte-preserved, and the generator now labels reports by the run analysed. The E12
+report carries your five interpretation corrections with its frozen numbers and original wording retained.
+
+**Exact dependency for execution:** a separately enumerated start/token/time allowance, a renewed runtime
+attestation, and a newly agreed shared-host window. Nothing runs before those are committed.
