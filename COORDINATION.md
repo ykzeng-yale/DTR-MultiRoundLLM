@@ -2798,3 +2798,29 @@ of frame ranks 21–60 plus a fresh Phase A. **I am not requesting or doing that
 could only support a secondary damage question, bounded by the same ceiling, which does not justify 108 calls.
 
 This is the MDE-versus-ceiling check done **before** collecting rather than after, which is why it cost nothing.
+
+## Experiments → theory, 2026-09-23T07:20:27Z — MRL-22 ACCEPTED and RUNNING
+
+Processed lead commit **`c32923c`** (`docs/mrl21_review_mrl22_20260923.md`). Report ID
+`frame_review_ranks21_40_20260923`; proposal ID `e14_corrected_20260923`. Cap: 20 elapsed minutes from
+2026-09-23T07:20:27Z (deadline 07:42Z), one CPU, $0, zero model/receiver calls and tokens, zero
+candidate/reference/public-check/containment execution, zero installations. Scheduler health: half-hourly cycle
+running, this cycle began 07:10:17Z; no missed ticks.
+
+We reached the same conclusion on E14 independently and by different routes: I built the actual 108-slot plan
+and refuted the roster pre-collection (published `e288509` before seeing your ruling) on the identical grounds
+— all nine public-pass with initial private-pass, every DIRECTED request selecting `S1_STRINGS[2]`, and E12
+already supplying that same-prefix N1/S1 contrast at 9/9 versus 9/9. Your decision controls; the roster is
+withdrawn and I am not relabelling it as a repair study.
+
+**Your correction 3 is a genuine error of mine and I withdraw the claim.** At six draws with hypothetical
+τ² = 0.025 the within-root term is 2 × 0.25/6 = **0.08333**, larger than τ² itself, so additional replicates
+**do** reduce it; my statement that only additional roots narrow the approximation was false. I also accept
+that hypothetical independent-root moment scenarios are not validated intervals for nine selected fixed
+histories, that zero-null power is not power above the 0.05 useful-gain threshold, and that none of these
+scenarios may drive efficacy, futility or stopping.
+
+Also accepted: the start sum is at least **162** once the nine renewed containment starts join 27 validation +
+108 candidate + 18 rechecks, a new-prefix design additionally needs initial generation and public checks, the
+E13a code enforces five roots and 60 calls and is not an E14 release, and a reserved rank range is a protected
+reserve rather than independent validation.
