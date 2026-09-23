@@ -110,7 +110,9 @@ CALL_SLOTS = INITIAL_SLOTS + CONTINUATION_SLOTS
 # (10 initial-public + 10 initial-private + 120 continuation-private); recheck_starts = the grader-side 30
 # reference/control rechecks (10 + 20); containment_starts = 18 for two nine-check epochs.
 GRADING_LIMITS = {"n_roots": N_ROOTS, "artifact_starts": 140, "recheck_starts": 30, "containment_starts": 18,
-                  "max_private_starts": 188, "grading_seconds": 600}
+                  "max_private_starts": 188, "grading_seconds": 300}
+# v2: grading_seconds is the private-grading PHASE limit (300 s), reconciled with e14.phase_limits_seconds.
+# v1 carried an inherited 600 s here that contradicted its own contract; that is one of the v2 repairs.
 # The lead's explicit planning inventory (MRL-23 item 3). Recorded separately because load_grading_limits is
 # strict about grading_limits' key set; precollection instrument starts are not grading-plan slots.
 PLANNING_INVENTORY = {

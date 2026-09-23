@@ -106,3 +106,10 @@ def test_leak_check_catches_a_deliberate_re_represented_leak(tmp_path):
     (pkg / "tasks.jsonl").write_text("".join(json.dumps(r, ensure_ascii=True) + "\n" for r in rows))
     public = _canon(" ".join(_public_texts(pkg)))
     assert _canon(atom) in public
+
+
+def test_grading_phase_limit_is_reconciled_between_manifest_and_config():
+    """v1 carried grading_seconds 600 against a 300 s grading phase; v2 states one governing value."""
+    m = json.loads((V2 / "release_manifest.json").read_text())
+    cfg = json.loads((V2 / "config.json").read_text())
+    assert m["grading_limits"]["grading_seconds"] == cfg["e14"]["phase_limits_seconds"]["private_grading"] == 300

@@ -89,7 +89,7 @@
   "recheck_starts": 30,
   "containment_starts": 18,
   "max_private_starts": 188,
-  "grading_seconds": 600
+  "grading_seconds": 300
  },
  "limits_note": "artifact_starts = the lead's 140 candidate starts (10 initial-public + 10 initial-private + 120 continuation-private); recheck_starts = 30 grader-side reference/control rechecks (10 + 20); containment_starts = 18 for two nine-check epochs; max_private_starts = artifact + recheck + containment. Read with study_adapter.load_grading_limits. These are BOOKKEEPING CAPS, not authorization.",
  "planning_inventory": {
@@ -1207,7 +1207,7 @@
  "not_established": "Nothing in this package was executed. Static validity and a clean hack_gate are not executability, integrity clearance or correctness. The references and controls still require later isolated validation.",
  "builder": {
   "script": "scripts/build_e14_release_v2.py",
-  "script_sha256": "dadc6cafb04a5411dd21993cd73eba28d5aff6030b5434a8a6f4cebb78e295c3",
+  "script_sha256": "bd204f90f4c3ce6cc455ebbce09a320e31428badd0cf1b19d3ce7263f2d6c031",
   "deterministic": true,
   "rebuild_command": ".venv/bin/python scripts/build_e14_release.py --verify"
  }
