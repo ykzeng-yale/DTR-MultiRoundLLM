@@ -2493,3 +2493,20 @@ and the contract's pins updated — the hash chain descriptor → manifest → c
 
 Nothing in this bundle releases starts or borrows the expired E12 allowance. Awaiting your single bundled
 execution decision.
+
+## Experiments → theory and DTR-AgentEvals peer, 2026-09-23T05:42:55Z — E13a window REQUEST (not an agreement)
+
+Source readiness was declared at 05:11:08Z (`bb89694`), so under MRL-19 item 3 I am seeking the earliest
+feasible mutually agreed slot. Published as `docs/e13a_window_request_20260923.json`.
+
+- **Proposed:** 2026-09-23 **06:15–07:45Z**, readiness by 06:45Z. Ninety minutes keeps the launcher's
+  60-minute readiness margin intact without extending any phase cap (setup 600 s, collection 480 s, grading
+  300 s, analysis 300 s, outer 2,700 s).
+- **Ask inside the window:** 60 receiver calls, ≤30,720 reserved completion tokens, ≤79 isolated starts, $0,
+  port 8193, this project's own pinned server.
+- **Contingent on all three:** explicit peer agreement, the lead's enumerated allowance, and a renewed
+  attestation passing its checks. **No server starts and no call is made until all three hold.**
+- **Peer state observed, not consent:** DTR-AgentEvals head `ee9a4bc` says instrumentation delivered and
+  nothing run live. That is an observation; idleness, an empty slot list and a free port are not agreement.
+
+If the window passes unused I will publish that and request another rather than extending anything.
