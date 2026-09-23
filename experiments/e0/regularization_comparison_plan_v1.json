@@ -1,0 +1,87 @@
+{
+  "schema_version": "e0-regularization-prospective-plan-v1",
+  "status": "source preparation only; not an execution freeze or release",
+  "protocol": "docs/fitted_history_numerical_design_20260922.md",
+  "n_tasks": 230,
+  "trajectories_per_root": 40,
+  "horizon": 3,
+  "effect_multiplier": 1.0,
+  "gz": 0,
+  "mislabel": 0,
+  "template_sd": 0,
+  "target_policy": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2
+  ],
+  "cells": [
+    {
+      "cell_index": 0,
+      "name": "uniform",
+      "kappa": 0,
+      "action_floor": 0.2
+    },
+    {
+      "cell_index": 1,
+      "name": "base",
+      "kappa": 1,
+      "action_floor": 0.1
+    },
+    {
+      "cell_index": 2,
+      "name": "weak_overlap",
+      "kappa": 2.5,
+      "action_floor": 0.02
+    }
+  ],
+  "replicates_per_cell": 200,
+  "total_planned_datasets": 600,
+  "folds": 3,
+  "representations": [
+    "compressed",
+    "history"
+  ],
+  "shrinkage_lambdas": [
+    0,
+    5
+  ],
+  "score_methods": [
+    "plugin",
+    "dr"
+  ],
+  "same_dataset_and_folds_for_every_variant": true,
+  "distinct_training_roots_for_shrinkage_support": true,
+  "cell_pool_means_episode_weighted": true,
+  "score_summary_equal_root_means": true,
+  "seed_table_path": "experiments/e0/regularization_comparison_seed_plan_v1.csv",
+  "seed_table_sha256": "65ad251799294ae068150d37a123354c099867cc58063c243324962dba72a698",
+  "seed_law": "data=202609220000+1000*cell+replicate;fold=202609320000+1000*cell+replicate",
+  "seed_audit": "results/e0_regularization_seed_audit_20260923.json",
+  "processing_order": "replicate0:uniform,base,weak_overlap;thenreplicate1;nooutcome-drivenreplacement",
+  "deterministic_truth": 0.6459770061744536,
+  "truth_check": "results/e0_regularization_truth_check_20260923.json",
+  "prospective_execution_caps": {
+    "cpu_workers": 1,
+    "outer_seconds": 600,
+    "output_bytes": 268435456,
+    "model_calls": 0,
+    "candidate_reference_executions": 0,
+    "paid_cost_usd": 0
+  },
+  "uncompleted_release_requirements": [
+    "independent source acceptance",
+    "connected numerical runner and failure-preserving output schema",
+    "enforced outer timeout/output cap",
+    "exact source/environment freeze",
+    "fresh resource check and explicit release; no active shared-host lease"
+  ],
+  "prohibited_claims": [
+    "seed noncollision proves independence",
+    "deterministic tests establish bias/RMSE/coverage",
+    "history representation is an available public LLM state",
+    "lambda5 is optimal or STOP pooling necessarily improves Q",
+    "this source plan authorizes sampled simulation or model collection"
+  ]
+}

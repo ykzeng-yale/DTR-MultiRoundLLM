@@ -1,0 +1,29 @@
+{
+  "created_utc": "2026-09-23T08:33:50.493734+00:00",
+  "classification": "deterministic known-law truth arithmetic, not sampled simulation or efficacy evidence",
+  "target": "uniform-five-arm E0 policy including absorbing STOP,T3,effect1,no template mixture change",
+  "backward_dp": 0.6459770061744536,
+  "independent_forward_absorption": 0.6459770061744536,
+  "difference": 0.0,
+  "versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "source_sha256": {
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46"
+  },
+  "resources": {
+    "wall_seconds": 1.0736682498827577,
+    "cpu_seconds": 0.579676,
+    "cpu_workers": 1,
+    "sampled_datasets": 0,
+    "model_calls": 0,
+    "model_tokens": 0,
+    "candidate_reference_executions": 0,
+    "paid_cost_usd": 0
+  }
+}

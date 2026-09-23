@@ -1,0 +1,130 @@
+{
+  "created_utc": "2026-09-23T08:39:04.236490+00:00",
+  "classification": "deterministic handcrafted estimator/source acceptance; not sampled Monte Carlo or LLM evidence",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_e0_regularized_history_estimators.py",
+    "tests/test_e0_history_estimators.py"
+  ],
+  "exit_code": 0,
+  "stdout": "..........................................                               [100%]\n42 passed in 0.80s\n",
+  "stderr": "",
+  "wall_seconds": 1.0832390002906322,
+  "child_cpu_seconds": 0.798192,
+  "cpu_workers": 1,
+  "source_sha256": {
+    "experiments/e0/regularized_history_estimators.py": "15351c372cf2cca26a426c81360714f4b7b6376923b758d6a731f41655a298f7",
+    "tests/test_e0_regularized_history_estimators.py": "b6d0c2c8c326d29486a0c7557e3b82d374000c9e986dd8511094ab71c9739f37",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46",
+    "experiments/e0/regularization_comparison_plan_v1.json": "972436a104a635cb77fe0a642140aace796ce9bf901e6f0e82890f7397efe29d",
+    "experiments/e0/regularization_comparison_seed_plan_v1.csv": "65ad251799294ae068150d37a123354c099867cc58063c243324962dba72a698",
+    "results/e0_regularization_seed_audit_20260923.json": "4d42966168a0433a5e5efdefc5798b586cc8d88a9c71552d3fa1a11e6ad21d57",
+    "results/e0_regularization_truth_check_20260923.json": "7228a0e6fc4e95fcff45da33fccf2344c111a52ff07d6e80a0996d92d8f920c0",
+    "scripts/check_regularization_truth.py": "ee1492288aaa6dc0b5f0d98f0326e352ef6919bd65f3d91b6cab74154a42bf32"
+  },
+  "baseline_sources_unchanged_from_HEAD": true,
+  "resource_usage": {
+    "sampled_datasets": 0,
+    "receiver_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "limits": [
+    "No bias/RMSE/coverage estimate",
+    "No independence guarantee from seeds",
+    "No prompt efficacy or independent policy evidence",
+    "No numerical or model execution release"
+  ],
+  "independent_forward_truth_reproduction": {
+    "command": [
+      ".venv/bin/python",
+      "scripts/check_regularization_truth.py"
+    ],
+    "exit_code": 0,
+    "report": {
+      "classification": "Deterministic synthetic target-value check; not sampled simulation or estimator/LLM efficacy evidence",
+      "target": {
+        "horizon": 3,
+        "policy": [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        "effect_multiplier": 1.0,
+        "template_offsets": null,
+        "stop": "Absorb current success before transition"
+      },
+      "forward": 0.6459770061744536,
+      "backward_dp": 0.6459770061744536,
+      "expected": 0.6459770061744536,
+      "forward_minus_expected": 0.0,
+      "forward_minus_backward": 0.0,
+      "tolerance": 1e-12,
+      "stages": [
+        {
+          "step": 1,
+          "alive_before": 1.0,
+          "stop_mass": 0.2,
+          "stop_success_mass": 0.12000018709064555,
+          "alive_after": 0.8,
+          "cumulative_absorbed_mass": 0.2
+        },
+        {
+          "step": 2,
+          "alive_before": 0.8,
+          "stop_mass": 0.16000000000000003,
+          "stop_success_mass": 0.10434033098029585,
+          "alive_after": 0.6400000000000001,
+          "cumulative_absorbed_mass": 0.36000000000000004
+        },
+        {
+          "step": 3,
+          "alive_before": 0.6400000000000001,
+          "stop_mass": 0.12800000000000003,
+          "stop_success_mass": 0.08467941998402775,
+          "alive_after": 0.5120000000000001,
+          "cumulative_absorbed_mass": 0.4880000000000001
+        }
+      ],
+      "terminal_alive_success_mass": 0.3369570681194845,
+      "source_sha256": {
+        "scripts/check_regularization_truth.py": "ee1492288aaa6dc0b5f0d98f0326e352ef6919bd65f3d91b6cab74154a42bf32",
+        "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9"
+      },
+      "versions": {
+        "python": "3.14.4",
+        "numpy": "2.5.3",
+        "scipy": "1.18.1"
+      },
+      "resources": {
+        "wall_seconds_including_scientific_imports": 0.796641499735415,
+        "cpu_seconds_including_scientific_imports": 0.556757,
+        "random_variates": 0,
+        "sampled_datasets": 0,
+        "fitted_models": 0,
+        "model_calls": 0,
+        "candidate_reference_executions": 0,
+        "paid_cost_usd": 0
+      },
+      "scope": "Same fixed target for all behavior-policy cells; kappa/floor alter logging, not this value. Shared simulator constants and ease probabilities remain common inputs to both recursions."
+    }
+  },
+  "independent_review": {
+    "reviewer": "independent theory subagent",
+    "disposition": "accept within source/fixture scope; no blocking defect",
+    "scope": "Read actual estimator and tests; training-only episode means, distinct-root counts, own recursion, STOP, fallback, shared fits/folds and query support counts",
+    "mean_argument": "With independent roots, exact assignment probabilities, consistency/sequential exchangeability/positivity and fixed target policy, foldwise held-out DR mean follows conditional on that fold training; linearity gives overall mean.",
+    "inference_limit": "Training folds overlap; no mutual score independence or finite-sample normal-interval validity follows. Variance consistency requires additional convergence conditions; coverage untested.",
+    "reviewer_ran_tests": false
+  }
+}

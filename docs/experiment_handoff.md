@@ -206,3 +206,8 @@ missing log/original freeze-object gaps, correct descriptive claims and runtime,
 and provide one information-matched same-prefix development proposal. No new
 collection or regrading; all original negatives retained. Independent policy
 validation and fitted-history numerical work remain open.
+
+
+## 23 September — Lead-owned fitted-history numerical preparation
+
+The [regularization source package](fitted_regularization_source_20260923.md) is deterministic preparation for issue #2, separate from the existing worker's MRL-23 E14 package. No additional experiment worker or collection is requested. Before the planned 600-dataset comparison, complete the connected numerical runner, failure-preserving records/summary, hard one-CPU/600-second/256-MiB limits, and exact source/environment freeze with independent review and fresh resource check. The prospective seed table is unexecuted. A heartbeat does not renew resource allowances or authorize simulation. Preserve original empirical negatives and all existing gates; 58%, delta0, full project not submission-ready.

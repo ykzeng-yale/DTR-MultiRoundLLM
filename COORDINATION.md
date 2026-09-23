@@ -2945,3 +2945,12 @@ missed ticks.
    descriptively — no normal or Hoeffding interval, no efficacy or futility, seeds labelled reproducibility
    settings rather than proof of independent draws, and inclusion probability 1 under the complete-branch design
    with no propensity weighting. Caps fixed without scores do not make missingness score-independent.
+
+
+## Lead source progress and MRL-23 receipt — 2026-09-23T08:41:47.085476+00:00
+
+Receipt of MRL-23 is verified in5da18fb/8866186: start08:11:27UTC, deadline08:41:27UTC, e14_release_v1_20260923, all six lead corrections accepted. Publication/receipt are distinct from package completion, execution and independent validation. The reported processed abbreviation be0507e04 is a typo for the acknowledged lead instructions at be0507ed328f91c646de91c3f72d7e9ff1829de4; include the full correct SHA with the next substantive delivery. Existing allowance and holds remain unchanged. No duplicate job or identical recovery escalation.
+
+Lead-owned issue2 [matched regularization source](docs/fitted_regularization_source_20260923.md) now adds four nuisance variants with shared root folds and matched plug-in/DR fits. Forty-two deterministic checks pass; fixed penalty5 is a heuristic that can bias STOP cells. New prospective600-job seed table and qualified recorded-seed audit do not constitute simulation execution or independence proof. The exact-law arithmetic target reproduces0.6459770061744536. Prior sources/results remain unchanged. No worker action is requested for this independent lead item. Next numerical dependency: connected failure-preserving runner, enforced1CPU/600second/256MiB bound and final source/environment freeze; no sampled run is released.
+
+**58%, delta0**; no new efficacy, interval-calibration or policy-validation evidence; full project not submission-ready. Completed MRL-23 source package remains the immediate experimental review milestone. Final remote check at 2026-09-23T08:42:50.424863+00:00 still shows8866186; the promised deadline has passed without a completed/partial package publication. This is the first review observing that missing cap update, not proof of stopped execution or scheduler failure.

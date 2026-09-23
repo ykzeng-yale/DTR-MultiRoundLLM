@@ -144,3 +144,8 @@ in the editable manuscript. All 164 delivered hashes match; the missing receiver
 log and original rebased freeze archive remain open. See the [scientific judgment](e13a_lead_judgment_20260923.md).
 No new model or benchmark execution by the lead. Completion remains 58%, delta 0;
 efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — Fitted regularization source acceptance (coordinating lead)
+
+The [matched regularization implementation](fitted_regularization_source_20260923.md) adds compressed/full-history nuisance fits at fixed penalties zero and five, sharing root folds and fitted Q between plug-in and DR. The lead reran 42 deterministic acceptance/regression checks (0.80 seconds test time); no sampled dataset or new bias/RMSE/coverage result was produced. A separate forward/backward exact-law arithmetic check agrees at 0.6459770061744536. Seed reservation is qualified to audited records, not proof of independent streams. All original sources/results and weak-overlap negatives are preserved. Zero model calls/tokens, benchmark executions or paid cost. Overall58%, delta0; efficacy unestablished and full project not submission-ready.

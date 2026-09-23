@@ -1,0 +1,1401 @@
+{
+  "audit": "prospective E0 regularization seed source audit",
+  "created_utc": "2026-09-23T08:35:38.989609+00:00",
+  "scope": "Read-only structured seed-field scan of repository results/experiments JSON and JSONL, source literal AST scan of scripts/experiments/tests/src, recorded replicate reconciliation, and deterministic PCG64/SeedSequence initial-state construction only. No random variate draw, fold permutation, simulation, fit, model or benchmark execution. No remote/other-host or gitignored-work census.",
+  "proposed_formula": {
+    "data": "202609220000 + 1000*c + r",
+    "fold": "202609320000 + 1000*c + r",
+    "cells": [
+      0,
+      1,
+      2
+    ],
+    "replicates": [
+      0,
+      199
+    ],
+    "interleaved_order": "replicate outer, cell inner"
+  },
+  "proposed_ranges": [
+    {
+      "cell": 0,
+      "data_min": 202609220000,
+      "data_max": 202609220199,
+      "fold_min": 202609320000,
+      "fold_max": 202609320199
+    },
+    {
+      "cell": 1,
+      "data_min": 202609221000,
+      "data_max": 202609221199,
+      "fold_min": 202609321000,
+      "fold_max": 202609321199
+    },
+    {
+      "cell": 2,
+      "data_min": 202609222000,
+      "data_max": 202609222199,
+      "fold_min": 202609322000,
+      "fold_max": 202609322199
+    }
+  ],
+  "proposed_seed_table_sha256": "25f5561c227506aa63050878ef55872ef096cf427b86f10848a0e3bcece22c2c",
+  "checks": {
+    "600_unique_data_seeds": true,
+    "600_unique_fold_seeds": true,
+    "data_fold_disjoint": true,
+    "no_structured_seed_overlap": true,
+    "no_new_initial_state_collisions": true,
+    "no_recorded_direct_seed_initial_state_collision": true,
+    "no400_spawned_reference_state_collision": true
+  },
+  "structured_scan": {
+    "files_considered": 562,
+    "files_with_seed_fields": 104,
+    "unique_numeric_seed_values": 3435,
+    "min": 0,
+    "max": 4294967295,
+    "skipped": [],
+    "parse_errors": [],
+    "catalog": [
+      {
+        "path": "experiments/collector_config.json",
+        "sha256": "325763847ebd848434055fdbf92a254d49c2bc8f3b4e290727bedb235a5f1d56",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 190926,
+        "max": 190926,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/e0/sparse_cell_config_v1.json",
+        "sha256": "4628fa30037d4afc7388f9b749800480712ee52c80eadce31119aaecbf934aac",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 20660921,
+        "max": 20661000,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v1/config.json",
+        "sha256": "11da8a489b1dc873b3c539643c06a4cb2025ae38978900c7e58efac4e66b91aa",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v1c/config.json",
+        "sha256": "9b22b94cfdabf48ae36e8bdf27d748adc71465ace2b56e0ae5ff30d1a61b062a",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v2/config.json",
+        "sha256": "74bb81549c094ab9c89be6aef04e644ed8d65958c522e17f8ab73c918088c371",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v2_1/config.json",
+        "sha256": "c2c7f428ab990b0e856d8b41ef99c922647dc3b18d08ef7efdcb74e92cd7c875",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v3/config.json",
+        "sha256": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/dev_release_v3/release_manifest.json",
+        "sha256": "c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/e13a_release/config.json",
+        "sha256": "3cd46d232ff12bbcbe64425fd4bd7538232dae9793f4c6f3bfbd9b56f8f54dcc",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/e13a_release/release_manifest.json",
+        "sha256": "bf043846c93cc392be7398b5a87c984e83816b519f2920329ca518337c6b6297",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/graph_fixture_config_v1.json",
+        "sha256": "8fcae6e34fdc7d935fcd5301bfd24efd0cce1ad490e5921ff1db7e8cc831714e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 2026092100,
+        "max": 2026092100,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/mock_config.json",
+        "sha256": "2b7ab1abfdf22eedf7eb868ec9d8f3741b4b3f2a06bd36e5f42db78a81d3a503",
+        "seed_occurrences": 2,
+        "unique_seeds": 2,
+        "min": 731,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/mock_run_v1/calls.jsonl",
+        "sha256": "8a66bf425b61cf3ecab00521a353e53d529ff83187272bfbf3efb9793a363cda",
+        "seed_occurrences": 14,
+        "unique_seeds": 14,
+        "min": 38767001,
+        "max": 2102176306,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/mock_run_v1/manifest.json",
+        "sha256": "5484bbb448a24022b60daf27cbe328d56082be197d957629414a3938027dff85",
+        "seed_occurrences": 2,
+        "unique_seeds": 2,
+        "min": 731,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "experiments/landmark/mock_run_v1/roots.jsonl",
+        "sha256": "233d47f59352bdd36ffb546b987f848cb849ca250d1242181371f7949d90c302",
+        "seed_occurrences": 14,
+        "unique_seeds": 14,
+        "min": 38767001,
+        "max": 2102176306,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/collector_smoke_v1/calls.jsonl",
+        "sha256": "453ac23ca046199e98c10601dc0ee0d1d5f4a1644d9f3516db3b1e34f091a32f",
+        "seed_occurrences": 14,
+        "unique_seeds": 14,
+        "min": 68617058,
+        "max": 2077205209,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/collector_smoke_v1/manifest.json",
+        "sha256": "ab301fcfa9cd18c98302cffda4fedf8c4344cbd22f4b0c6471207bdc8e3d132e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 190926,
+        "max": 190926,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0/20260919T234338Z/grid_manifest.json",
+        "sha256": "4fc06c277ddd2dccd19f6d00df43cf83262f4ba0eb5206513428657f1f760816",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0/20260919T234422Z/grid_manifest.json",
+        "sha256": "0f7d0ab580ff21a3feb7d1872a081b1e475b4ab82cf1de0a318fe3b496b74186",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json",
+        "sha256": "74a1c8df38eb60c02b1ef3b746e189fc3616a4c35c50c61650303199b57a6ee5",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 36260920,
+        "max": 36260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json",
+        "sha256": "d26365868b49107b5f1d8ee6e262b5e9345de398553b29e62161336ab125eb4e",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 34260920,
+        "max": 34260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193602Z/base/replicates.json",
+        "sha256": "0e2fa005ddb4428463847a760757c792b25d958a9c1a72705c7bc7947fb9f403",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 20260920,
+        "max": 20260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193602Z/grid_manifest.json",
+        "sha256": "d5f56e32bc38a5b57b57f032c8cb9d1a49c059c04d912fe19a4b035ea5d82f42",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260920,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json",
+        "sha256": "701d6cae45b4233d669063a3f1a64cb7112548b974c362937d398a9dd39e388a",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 21260920,
+        "max": 21260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json",
+        "sha256": "7745352d6b9508bd5dcef5503bf703dab9b774c03b77ec22331d14d4ba1fff89",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 35260920,
+        "max": 35260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json",
+        "sha256": "f130fc33e4e24093a3638a509afb17c3b10765e0e38261505843192c46616964",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 33260920,
+        "max": 33260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json",
+        "sha256": "9e66a014c7863f309423aac157e992ecf02e7d75d7a4d460c4674a9f11ce6851",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 26260920,
+        "max": 26260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json",
+        "sha256": "85879a1740fdc4733cd97798a2d95274eb79379397375dec69ae72774a2a8c75",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 27260920,
+        "max": 27260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json",
+        "sha256": "cd548ed3db7dfd65cdb349d5e9a9493849c1e36cc2171c10f06c9723cf17ce11",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 25260920,
+        "max": 25260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json",
+        "sha256": "2422034a282b32c1a9033babba4e27e3e951693ff884ab3f97c3b519f8415881",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 24260920,
+        "max": 24260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/grid_manifest.json",
+        "sha256": "ed9c8fac43143a8a1fbc0cd102a860ef9fa76c20825494b3637a8abca5443d2a",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260920,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json",
+        "sha256": "742ab7a12507989b2c8247f95b39ade2a7b38b6c8f3fccd398478176dad1e9ae",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 31260920,
+        "max": 31260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json",
+        "sha256": "4595d9d78030cfefd5b79fa26d3f1d01dd7b1faa44206c41276f4d9e365ee7a0",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 22260920,
+        "max": 22260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json",
+        "sha256": "0fac59398ded911422ea0a27b4d4531faa40ad4d597fb2fb77ff35a0984a9b21",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 23260920,
+        "max": 23260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json",
+        "sha256": "b306f52964c434fb58bd70159b05d2a951400adff35e64835dc54460634246ba",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 32260920,
+        "max": 32260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json",
+        "sha256": "3af3e4a551bfda0fe7e7c8f4e9e0a6854e12580edf8e7c6e7b59446a8262db79",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 28260920,
+        "max": 28260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json",
+        "sha256": "24c89fc4983aaac8ade14baf22dd9d80b2bb73df787a999cea72287a9eb7295c",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 29260920,
+        "max": 29260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json",
+        "sha256": "8f52adf69584358bbd1cbfafb31dffde9bc0a5e1aca470054f8b7959ccce6806",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 30260920,
+        "max": 30260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e0_interval_record_audit_20260922.json",
+        "sha256": "f722d917cd3867358a77aa4df60e7e76f6d62f0900c80f00a4ed1bd51191f59a",
+        "seed_occurrences": 5,
+        "unique_seeds": 5,
+        "min": 0,
+        "max": 33260999,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/A/calls.jsonl",
+        "sha256": "2260c8864d135f4da37b9d5bc47468ecdb5c9f291047a785028c26fc37e61fc3",
+        "seed_occurrences": 7,
+        "unique_seeds": 7,
+        "min": 294028418,
+        "max": 1720043553,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/A/completion.json",
+        "sha256": "4e8aa7b7bd4511ed12fc04c3187eb4e24fae1aaa0291ae5912d794b9d61a406f",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/A/manifest.json",
+        "sha256": "c14808f4cd6c0b6661d855e66c291f9f3519a6691bcf154df8e2b782f096df46",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/A/roots.jsonl",
+        "sha256": "06232cfb8de58e197756089fa1c746b4ce75bf48fcb27e47efd9b7af64c803b3",
+        "seed_occurrences": 7,
+        "unique_seeds": 7,
+        "min": 294028418,
+        "max": 1720043553,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/C/calls.jsonl",
+        "sha256": "adbcb1d45c2bc5de4a335e49c7e30b2d97e401ecc1ce9a0720486bca227af7dc",
+        "seed_occurrences": 70,
+        "unique_seeds": 70,
+        "min": 37274841,
+        "max": 2093080097,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/C/completion.json",
+        "sha256": "0d02131a5d56ac7845015b68d44be9c19d4680d3e724975a89a5f785a24dc9e2",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/C/manifest.json",
+        "sha256": "e8fd39b6a69b7f1a56e65dc2e6a4554e07ed9eeaae264a2168c73f7d58ccb92c",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e11_dev_v2_20260922T010959Z/C/roots.jsonl",
+        "sha256": "f7331cd713709c1c633edb5a45bbc87396fb0426f58f6bad0660b8d64d6c9ae6",
+        "seed_occurrences": 70,
+        "unique_seeds": 70,
+        "min": 37274841,
+        "max": 2093080097,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/A/calls.jsonl",
+        "sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+        "seed_occurrences": 14,
+        "unique_seeds": 14,
+        "min": 173086830,
+        "max": 2074932835,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/A/completion.json",
+        "sha256": "bdf071560a34e4b79313e735b46cf4c358d60f4def51e0997f6f69e1be5debc5",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/A/manifest.json",
+        "sha256": "ec6c97ec7069cc671706c908c032a657d6493accd6a4733c7b23a509f8fa164f",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/A/roots.jsonl",
+        "sha256": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+        "seed_occurrences": 14,
+        "unique_seeds": 14,
+        "min": 173086830,
+        "max": 2074932835,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/C/calls.jsonl",
+        "sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+        "seed_occurrences": 140,
+        "unique_seeds": 140,
+        "min": 42796135,
+        "max": 2147055662,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/C/completion.json",
+        "sha256": "9b81f58cd3a361d79514e70bfeab390e0117d71dbfac0b350fe47c1a95ea1b37",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/C/manifest.json",
+        "sha256": "20dcaa3cfc684bd124ff2458f0b2852fbfe4bb5e9423919cf3b625778d292667",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e12_dev_v3_20260922T030255Z/C/roots.jsonl",
+        "sha256": "4ab80f09ddce3688cea28f27c96cddde84db58e169ad04d388a157bf43fd14ae",
+        "seed_occurrences": 140,
+        "unique_seeds": 140,
+        "min": 42796135,
+        "max": 2147055662,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_request_plan_20260922.json",
+        "sha256": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7",
+        "seed_occurrences": 60,
+        "unique_seeds": 60,
+        "min": 18758817,
+        "max": 2136963246,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/collect/attempt_ledger.jsonl",
+        "sha256": "b99b34fc012d666e687964833a0823407c018e965f19664d23fa366cf170c9a1",
+        "seed_occurrences": 60,
+        "unique_seeds": 60,
+        "min": 18758817,
+        "max": 2136963246,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl",
+        "sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+        "seed_occurrences": 60,
+        "unique_seeds": 60,
+        "min": 18758817,
+        "max": 2136963246,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/collect/completion.json",
+        "sha256": "a226a501a658a8a97534501086682ddf0417dc932559232690679a29398780ca",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/collect/manifest.json",
+        "sha256": "e04e9e58e5397f35e56887811f4055607dcb0995c847be717b0c043afd49453d",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/preflight/props_after.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e13a_two_arm_20260923T061500Z/preflight/props_before.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/e14_request_plan_20260923.json",
+        "sha256": "3c881ade288921d1f794c76f4663284fe4542aa7f83ec2a086dc9b10681ee95a",
+        "seed_occurrences": 109,
+        "unique_seeds": 109,
+        "min": 16439071,
+        "max": 2139508901,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/empty_cell_diagnosis_20260921/manifest.json",
+        "sha256": "7b9498f23c87caee4a8a34c89a4491179512c03250a36470f368ef51f13cf40a",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 20660921,
+        "max": 20661000,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/empty_cell_diagnosis_20260921/replicates.jsonl",
+        "sha256": "f25b8393fe09df398cfe261532501f860cd4e26b9b167d7d7d187e73b2701195",
+        "seed_occurrences": 80,
+        "unique_seeds": 80,
+        "min": 20660921,
+        "max": 20661000,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/independent_audit_20260920/completed/e0_replicates.jsonl",
+        "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+        "seed_occurrences": 72,
+        "unique_seeds": 72,
+        "min": 2026092000,
+        "max": 2026112023,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/independent_audit_20260920/completed/routing_audit.json",
+        "sha256": "78ed7c480c6c16444947c8e9beb0c94c027cee6ec4b9b152ec2dd8108628c1fe",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 0,
+        "max": 0,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/independent_audit_20260920/routing_audit.json",
+        "sha256": "78ed7c480c6c16444947c8e9beb0c94c027cee6ec4b9b152ec2dd8108628c1fe",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 0,
+        "max": 0,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/independent_audit_20260920/verified/e0_replicates.jsonl",
+        "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+        "seed_occurrences": 72,
+        "unique_seeds": 72,
+        "min": 2026092000,
+        "max": 2026112023,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/independent_audit_20260920/verified/routing_audit.json",
+        "sha256": "95e1a6d7f52576b874d096c88f97b0907214da305cd7b58ef292259099c1d787",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 0,
+        "max": 0,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1_20260921T130048Z/calls.jsonl",
+        "sha256": "1c450864da8515278c66fcc09327bac890ddd1b0953cf0ac7a97c9201c5eb2ab",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1_20260921T130048Z/manifest.json",
+        "sha256": "af994fc9b1a56d06db2c1da7dc96bd621b84b3aba124733b606a17f136765016",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1_20260921T130048Z/roots.jsonl",
+        "sha256": "22d080f479456c515cc8db40d254332c9b088b70faabf2d5de59de660c7e3f78",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1b_20260921T130349Z/calls.jsonl",
+        "sha256": "9940704e9aa62ba549818b63311644aadcbaae2bd34d1e46dc79f8260926f6c5",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1b_20260921T130349Z/manifest.json",
+        "sha256": "b8266848842ecd48d711282a18c3cf162573bd3170981d5b64227d14e05c0dba",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1b_20260921T130349Z/roots.jsonl",
+        "sha256": "495023bd6dbc74f3d7112ea875ee53f0abb0ea55acfe9ae09851d12d60331994",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1c_20260921T130757Z/calls.jsonl",
+        "sha256": "c41791c9b1531c1a024978599f198add1eb28ddb9d01a117413d265abaeb4fb3",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1c_20260921T130757Z/manifest.json",
+        "sha256": "8b848b4712413e5467bbe67b33b9b7457cf08827ffdee257258cefae75e07728",
+        "seed_occurrences": 2,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_dev_release_v1c_20260921T130757Z/roots.jsonl",
+        "sha256": "317dbc25d9fe9def74613066d2dbda0b71a8a05c3369a174baec8660874f0cf8",
+        "seed_occurrences": 49,
+        "unique_seeds": 49,
+        "min": 7837119,
+        "max": 2137180481,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection/calls.jsonl",
+        "sha256": "cfa4ce1d13190288a8dc06f9168c3984c636e6e093baea02c07e1ef6bc8e6030",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 374774985,
+        "max": 1886979498,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection/manifest.json",
+        "sha256": "61e15193fcf44e69ec93b4cac36264e12c07c946e5ffe1eaa0c661ffd134eca8",
+        "seed_occurrences": 2,
+        "unique_seeds": 2,
+        "min": 731,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection/roots.jsonl",
+        "sha256": "9e8fef3177d1ca8befa393352329110e6d80b92b67cd709cbcc66c225b85ae82",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 374774985,
+        "max": 1886979498,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection_v2/calls.jsonl",
+        "sha256": "68ddc619e5efe26ceb58e975e9a421e0c21ae402f722b5d9254756c03cc5e889",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 374774985,
+        "max": 1886979498,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection_v2/manifest.json",
+        "sha256": "cfd35725d64a209c38cb6b6f062e677bb7e3b4710f2db1f411f0f7578fba3763",
+        "seed_occurrences": 2,
+        "unique_seeds": 2,
+        "min": 731,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_grading_validation_20260920/blocked_grade_mock_collection_v2/roots.jsonl",
+        "sha256": "d743712e8f57e07373956515102689f7de99d8f834332e9f0b6ab465b83ee020",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 374774985,
+        "max": 1886979498,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/landmark_premise_20260920/replicates.json",
+        "sha256": "6be2abf6b5566dae5ca03e461b1429daa8c5c67128bd8b86adc06ffafc1e3a30",
+        "seed_occurrences": 2400,
+        "unique_seeds": 1200,
+        "min": 2026092100,
+        "max": 2026122399,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/matched_estimator_diagnosis_20260920/manifest.json",
+        "sha256": "a15e657496f77a1c9c226a641f28070f32e1179f13180ebf9f5d16bffa45476f",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260921,
+        "max": 20260921,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+        "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+        "seed_occurrences": 400,
+        "unique_seeds": 400,
+        "min": 20260921,
+        "max": 20661000,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/mrl21_static_lead_audit_20260923.json",
+        "sha256": "0761707a8fefe53cf4cb48aa7cf4686ca85722e10cef6ea6730a623b34be7ef5",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 108,
+        "max": 108,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/premise/20260919T214641Z/summary.json",
+        "sha256": "f0f784f64b0d1ab3d947f497c6efb7cfb953953d090b5cb733a8cad6782eea93",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/premise/P2_20260919T214854Z/summary.json",
+        "sha256": "66066ccf9eee278f540f89c14b1fe4d0b841e957c76b38ab121122ff651dcd0e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/premise/P3_20260919T215057Z/summary.json",
+        "sha256": "0b5b50440457850a8fdea23f55eba602c71a4dbaf4b00f1b87513b2826d258c9",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_mrl10_20260921T194506Z/props_after.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_mrl10_20260921T194506Z/props_before.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_mrl10_20260921T194506Z/slots_after.json",
+        "sha256": "0c0b47af80f23eca69d0d9ad824ee06a780d39603cfcd579a723941bb057ccf3",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 166655266,
+        "max": 1918940741,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_mrl10_20260921T194506Z/slots_before.json",
+        "sha256": "0c0b47af80f23eca69d0d9ad824ee06a780d39603cfcd579a723941bb057ccf3",
+        "seed_occurrences": 4,
+        "unique_seeds": 4,
+        "min": 166655266,
+        "max": 1918940741,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_v31_20260922T071000Z/props_after.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_preflight_v31_20260922T071000Z/props_before.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/receiver_props_snapshot_8193.json",
+        "sha256": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 4294967295,
+        "max": 4294967295,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/selection_corrected_20260920_v2/manifest.json",
+        "sha256": "f220ad7a11efdb87fd74ed17c4f18525beab5d8c5eefbb26fbf60aeff35cbfd9",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260920,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/selection_sensitivity_20260920/fits.json",
+        "sha256": "d0c86fb1878ecf633f367c9feee640d49a705d8a617e6ee3f6f1acf9421fe02c",
+        "seed_occurrences": 26,
+        "unique_seeds": 10,
+        "min": 20260920,
+        "max": 20260929,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/selection_sensitivity_20260920/manifest.json",
+        "sha256": "83fcbbcad2ff9e2d0edefa4bbd2508fd58082859763b0c7c9fa5e70d4e95baa3",
+        "seed_occurrences": 10,
+        "unique_seeds": 10,
+        "min": 20260920,
+        "max": 20260929,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/selection_sensitivity_20260920/summary.json",
+        "sha256": "8d90bd6340e31fa822de1104fe0562b3e219cdc67b92dcca4ce4d27245871274",
+        "seed_occurrences": 8,
+        "unique_seeds": 1,
+        "min": 20260920,
+        "max": 20260920,
+        "proposed_overlap": []
+      },
+      {
+        "path": "results/synthetic_reference_v1/config.json",
+        "sha256": "93d44791b10dc4bce865aa74290fad6156000ae2c70e21cb6add2258a6907b2d",
+        "seed_occurrences": 1,
+        "unique_seeds": 1,
+        "min": 20260919,
+        "max": 20260919,
+        "proposed_overlap": []
+      }
+    ],
+    "overlaps": []
+  },
+  "source_literal_hits_not_evidence_of_execution": [],
+  "recorded_simulation_seed_groups": [
+    {
+      "path": "results/e0_corrected_20260920/20260920T193602Z/FAIL_coarsening/replicates.json",
+      "sha256": "74a1c8df38eb60c02b1ef3b746e189fc3616a4c35c50c61650303199b57a6ee5",
+      "cell": "FAIL_coarsening",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 36260920,
+      "max": 36260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193602Z/kappa0/replicates.json",
+      "sha256": "701d6cae45b4233d669063a3f1a64cb7112548b974c362937d398a9dd39e388a",
+      "cell": "kappa0",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 21260920,
+      "max": 21260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193602Z/FAIL_latent/replicates.json",
+      "sha256": "d26365868b49107b5f1d8ee6e262b5e9345de398553b29e62161336ab125eb4e",
+      "cell": "FAIL_latent",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 34260920,
+      "max": 34260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193602Z/base/replicates.json",
+      "sha256": "0e2fa005ddb4428463847a760757c792b25d958a9c1a72705c7bc7947fb9f403",
+      "cell": "base",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20260920,
+      "max": 20260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/FAIL_mislabel/replicates.json",
+      "sha256": "7745352d6b9508bd5dcef5503bf703dab9b774c03b77ec22331d14d4ba1fff89",
+      "cell": "FAIL_mislabel",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 35260920,
+      "max": 35260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/runs10/replicates.json",
+      "sha256": "24c89fc4983aaac8ade14baf22dd9d80b2bb73df787a999cea72287a9eb7295c",
+      "cell": "runs10",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 29260920,
+      "max": 29260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/half_effect/replicates.json",
+      "sha256": "742ab7a12507989b2c8247f95b39ade2a7b38b6c8f3fccd398478176dad1e9ae",
+      "cell": "half_effect",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 31260920,
+      "max": 31260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/floor0.05/replicates.json",
+      "sha256": "2422034a282b32c1a9033babba4e27e3e951693ff884ab3f97c3b519f8415881",
+      "cell": "floor0.05",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 24260920,
+      "max": 24260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/floor0.02/replicates.json",
+      "sha256": "cd548ed3db7dfd65cdb349d5e9a9493849c1e36cc2171c10f06c9723cf17ce11",
+      "cell": "floor0.02",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 25260920,
+      "max": 25260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/T5/replicates.json",
+      "sha256": "85879a1740fdc4733cd97798a2d95274eb79379397375dec69ae72774a2a8c75",
+      "cell": "T5",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 27260920,
+      "max": 27260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/T2/replicates.json",
+      "sha256": "9e66a014c7863f309423aac157e992ecf02e7d75d7a4d460c4674a9f11ce6851",
+      "cell": "T2",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 26260920,
+      "max": 26260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/latent_track/replicates.json",
+      "sha256": "b306f52964c434fb58bd70159b05d2a951400adff35e64835dc54460634246ba",
+      "cell": "latent_track",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 32260920,
+      "max": 32260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/runs160/replicates.json",
+      "sha256": "8f52adf69584358bbd1cbfafb31dffde9bc0a5e1aca470054f8b7959ccce6806",
+      "cell": "runs160",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 30260920,
+      "max": 30260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/kappa0.5/replicates.json",
+      "sha256": "4595d9d78030cfefd5b79fa26d3f1d01dd7b1faa44206c41276f4d9e365ee7a0",
+      "cell": "kappa0.5",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 22260920,
+      "max": 22260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/n590/replicates.json",
+      "sha256": "3af3e4a551bfda0fe7e7c8f4e9e0a6854e12580edf8e7c6e7b59446a8262db79",
+      "cell": "n590",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 28260920,
+      "max": 28260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/kappa2/replicates.json",
+      "sha256": "0fac59398ded911422ea0a27b4d4531faa40ad4d597fb2fb77ff35a0984a9b21",
+      "cell": "kappa2",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 23260920,
+      "max": 23260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/e0_corrected_20260920/20260920T193853Z/FAIL_positivity/replicates.json",
+      "sha256": "f130fc33e4e24093a3638a509afb17c3b10765e0e38261505843192c46616964",
+      "cell": "FAIL_positivity",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 33260920,
+      "max": 33260999,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "cell": "base",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20260921,
+      "max": 20261000,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "cell": "kappa0",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20360921,
+      "max": 20361000,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "cell": "FAIL_latent",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20460921,
+      "max": 20461000,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "cell": "FAIL_coarsening",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20560921,
+      "max": 20561000,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/matched_estimator_diagnosis_20260920/replicates.json",
+      "sha256": "0b1eda760538961379c3a850c1464d9bedc054cca3febe27e5ddbf3a227c09b3",
+      "cell": "FAIL_positivity",
+      "n_rows": 80,
+      "unique_seeds": 80,
+      "min": 20660921,
+      "max": 20661000,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/completed/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "base",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026092000,
+      "max": 2026092023,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/completed/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "FAIL_latent",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026102000,
+      "max": 2026102023,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/completed/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "FAIL_coarsening",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026112000,
+      "max": 2026112023,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/verified/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "base",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026092000,
+      "max": 2026092023,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/verified/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "FAIL_latent",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026102000,
+      "max": 2026102023,
+      "proposed_overlap": []
+    },
+    {
+      "path": "results/independent_audit_20260920/verified/e0_replicates.jsonl",
+      "sha256": "c01b7a0515bcbcaf844e69fed908ce64f7646cc4dfba7c87a5efaa924a0dabc4",
+      "cell": "FAIL_coarsening",
+      "n_rows": 24,
+      "unique_seeds": 24,
+      "min": 2026112000,
+      "max": 2026112023,
+      "proposed_overlap": []
+    }
+  ],
+  "state_checks": {
+    "algorithm": "Generator(PCG64(SeedSequence(nonnegative Python integer)))",
+    "new_states_checked": 1200,
+    "recorded_direct_seeds_checked": 3435,
+    "spawned_reference": {
+      "config": "results/synthetic_reference_v1/config.json",
+      "config_sha256": "93d44791b10dc4bce865aa74290fad6156000ae2c70e21cb6add2258a6907b2d",
+      "root_seed": 20260919,
+      "spawned_children": 400,
+      "state_overlap": []
+    },
+    "initial_state_collisions": [],
+    "direct_state_overlap": [],
+    "random_variates_drawn": 0,
+    "limitation": "Different integers or distinct initial states do not prove non-overlapping entire PRNG streams or statistical independence. Root/fold reuse is not inferred from result directory names."
+  },
+  "environment": {
+    "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "default_rng_bit_generator_verified_by_constructor": "PCG64",
+    "numpy_random_module_path": "/Users/yukang/Documents/Codex/2026-09-19/f/work/DTR-MultiRoundLLM/.venv/lib/python3.14/site-packages/numpy/random/__init__.py",
+    "numpy_PCG64_extension_sha256": "03763f86aa80650ac35f4ccc661a979403990a37df1afb6e67c499f98d56602e",
+    "uv_lock_sha256": "3d3ad1def798d85d516be237fcfcd81d98545a5f3e7661a071e621d25cd43ede",
+    "historical_recorded_numpy": "2.5.3 in empty-cell and deterministic-history manifests; historical E0 grid manifests do not pin NumPy",
+    "dependency_spec": "pyproject numpy>=2.1 is a lower bound, not exact environment freeze"
+  },
+  "source_seed_rules": [
+    {
+      "source": "experiments/e0/run_grid.py:222",
+      "rule": "seed_base + 1000000 * global CELLS index + replication; current seed_jobs yields contiguous exactly-reps range; historical original driver version/worker chunk behavior must be tied to archived source, not assumed current."
+    },
+    {
+      "source": "scripts/diagnose_matched_estimators.py:42",
+      "rule": "20260921 +100000*index(base,kappa0,FAIL_latent,FAIL_coarsening,FAIL_positivity)+r, r0..79; folds consume same RNG after simulation."
+    },
+    {
+      "source": "scripts/diagnose_empty_cells.py:74",
+      "rule": "Explicit reused80 matched FAIL_positivity seeds20660921..20661000; regenerate dataset then permutation on same advancing RNG."
+    },
+    {
+      "source": "scripts/audit_existing_evidence.py:230",
+      "rule": "2026092000+10000*cell_index+r; actual completed/verified records scanned."
+    },
+    {
+      "source": "scripts/run_synthetic.py:142",
+      "rule": "SeedSequence(root_seed20260919).spawn(400), children are not root_seed+r. Initial states compared separately without draws."
+    },
+    {
+      "source": "experiments/e0/history_estimators.py:59",
+      "rule": "default_rng(fold_seed).permutation(arange(nroots)%3); prior deterministic fixture seed19/default0 does not establish population numerical execution."
+    },
+    {
+      "source": "experiments/landmark/collect.py:152",
+      "rule": "Prompt root/arm seed=sha256(config seed,root,label) prefix mod2**31. Entire possible range lies below proposed E0 data/fold seeds; same numeric seed elsewhere would still not mean same trajectory law."
+    }
+  ],
+  "source_hashes_to_pin": {
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46",
+    "experiments/e0/simulator.py": "67ade8f9b5ed6e558948beab8a1fd6f89bffe4e8f8a969b7cf4dcdfe5c6a6ce9",
+    "experiments/e0/estimators.py": "09b848b350a09badf9759b4574f90f0b362eabb4fdc16b1905db4752ca42037e",
+    "experiments/e0/history_estimators.py": "993eab579c3983dbf78e8792ec24d69540fec35248a2f05b9348baf847f7f478",
+    "experiments/e0/run_grid.py": "f668d1f51f6cf906a94b27071c11fc66051e7f8a97d055d77d90492cf8bf9939",
+    "scripts/check_history_compression.py": "97277f9669585f531ccf80663b347d8c798b1bd6002e032b5ef9c019a78858a5",
+    "scripts/diagnose_matched_estimators.py": "1e696c6f011d4895d4112eed3ec7d05281197dd6374e2938830871b84e0da67a",
+    "scripts/diagnose_empty_cells.py": "bb73f5e9f45f910f85c0a90ca8860e6a82940bbcc192490efed60391b9d66450",
+    "scripts/run_synthetic.py": "1cc622664428b52b7df4c60f7d1195003440b4e244306733409567ebed2f83f1",
+    "scripts/audit_existing_evidence.py": "964bbab372c4409e3a9e24dcef2ce30562aebc64bf37fe358f34fd2e84b273a4",
+    "experiments/e0/history_compression_config_v1.json": "cc4d2b1f315021cad0c78caf3171119e35984bbc6df0c315b22acb2083257005",
+    "experiments/e0/sparse_cell_config_v1.json": "4628fa30037d4afc7388f9b749800480712ee52c80eadce31119aaecbf934aac",
+    "tests/test_e0_history_estimators.py": "9ce7bd11d7ccdff3158abbf202235e367500d90a0707252e59b7adec2a4a0be3",
+    "tests/test_e0_repairs.py": "d72c2b6475d19d3b89654e4947ff98aa012ac8056db9b34275dd65e710a064fd",
+    "tests/test_history_compression.py": "d31b88809e166017d7fd73ba320e1f956db7fceba179be0a3163cb0caa1f0855",
+    "pyproject.toml": "dbd99f0f15f207a87354639a5d3be6e2dc5b61bcae5451d1671e90447120e16d",
+    "uv.lock": "3d3ad1def798d85d516be237fcfcd81d98545a5f3e7661a071e621d25cd43ede"
+  },
+  "future_freeze_requires": [
+    "Pin the exact new regularization runner/estimator source, deterministic acceptance tests, config and failure-preserving output schema. The newly created prospective plan and 600-row data/fold table are verified in the addendum, not accepted as an execution freeze.",
+    "Explicit bit-generator/SeedSequence and exact NumPy/SciPy/Python versions plus environment lock; do not silently cast seeds to32bit.",
+    "Independent data/fold generators; shared fold assignments across all8 estimators; pin simulator call order and root label encoding because same seed alone does not fix results.",
+    "Bind deterministic truth arithmetic and source hashes at freeze. Parent source-only truth record was read and its source hashes matched; this audit did not independently recompute that truth or sample data.",
+    "Use qualified statement: no overlap with audited recorded seed inputs/initial states. Unknown runs, unrecorded CLI overrides, deleted/unpublished artifacts and remote histories are not ruled out."
+  ],
+  "ruling": "Proposed1200 seed inputs are internally unique/disjoint and have no overlap with scanned recorded numeric seed inputs or checked PCG64 initial states. This supports prospective reservation within the audited repository, not a universal untouched/fresh-stream certificate or execution release.",
+  "audit_wall_seconds": 1.0808732090517879,
+  "audit_cpu_seconds": 0.937675,
+  "resource_cost": {
+    "sampled_datasets": 0,
+    "sampled_trajectories": 0,
+    "fitted_models": 0,
+    "receiver_calls": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "prospective_plan_addendum": {
+    "classification": "Prospective same proposal, unexecuted source preparation; seed-table inclusion is not historical consumption or collision evidence.",
+    "files": {
+      "experiments/e0/regularization_comparison_plan_v1.json": "972436a104a635cb77fe0a642140aace796ce9bf901e6f0e82890f7397efe29d",
+      "experiments/e0/regularization_comparison_seed_plan_v1.csv": "65ad251799294ae068150d37a123354c099867cc58063c243324962dba72a698",
+      "results/e0_regularization_truth_check_20260923.json": "7228a0e6fc4e95fcff45da33fccf2344c111a52ff07d6e80a0996d92d8f920c0"
+    },
+    "checks": {
+      "csv_exact_expected_600_rows_in_order": true,
+      "plan_csv_hash_matches": true,
+      "plan_dataset_count_matches": true,
+      "truth_record_source_hashes_match_current_bytes": true,
+      "truth_record_states_no_sampled_datasets": true,
+      "truth_record_two_numbers_equal": true
+    },
+    "csv_rows": 600,
+    "plan_status": "source preparation only; not an execution freeze or release",
+    "truth_record_value": 0.6459770061744536,
+    "truth_record_review_scope": "Read recorded arithmetic and checked source hashes only; independently recomputing the truth was not part of this seed audit.",
+    "followup_wall_seconds": 0.0033817077055573463,
+    "followup_cpu_seconds": 0.002263000000000001,
+    "additional_random_draws": 0,
+    "additional_sampled_datasets": 0
+  }
+}
