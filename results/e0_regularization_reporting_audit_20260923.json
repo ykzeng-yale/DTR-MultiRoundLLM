@@ -1,0 +1,1297 @@
+{
+  "audit": "Independent deterministic reporting arithmetic audit",
+  "created_utc": "2026-09-23T09:20:11.859051+00:00",
+  "source_sha256": {
+    "experiments/e0/regularization_report.py": "0c3b577090b455b6180b2c86470e1d83eb09b73823cacac416a40974ac866159",
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46",
+    "experiments/e0/regularization_comparison_plan_v1.json": "972436a104a635cb77fe0a642140aace796ce9bf901e6f0e82890f7397efe29d"
+  },
+  "scope": "Calls to summary functions on explicitly constructed finite records; no sampler, estimator fit, benchmark candidate/reference, model or containment execution. Only this NEW audit file is written. Input/output record inclusion is tested, not underlying data/fold provenance.",
+  "primary_fixture": {
+    "truth": 0.5,
+    "planned_jobs": [
+      {
+        "cell_id": "hand",
+        "replicate": 0,
+        "pairing_id": "fixed_dataset_and_folds_0"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 1,
+        "pairing_id": "fixed_dataset_and_folds_1"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 2,
+        "pairing_id": "fixed_dataset_and_folds_2"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 3,
+        "pairing_id": "fixed_dataset_and_folds_3"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 4,
+        "pairing_id": "fixed_dataset_and_folds_4"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 5,
+        "pairing_id": "fixed_dataset_and_folds_5"
+      }
+    ],
+    "supplied_records": [
+      {
+        "cell_id": "hand",
+        "replicate": 0,
+        "pairing_id": "fixed_dataset_and_folds_0",
+        "estimator": "compressed_lambda0:dr",
+        "status": "completed",
+        "estimate": 0.25,
+        "interval": {
+          "status": "valid",
+          "se": 0.1,
+          "lo": 0.05399999999999999,
+          "hi": 0.446
+        }
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 1,
+        "pairing_id": "fixed_dataset_and_folds_1",
+        "estimator": "compressed_lambda0:dr",
+        "status": "completed",
+        "estimate": 0.5,
+        "interval": {
+          "status": "valid",
+          "se": 0.2,
+          "lo": 0.10799999999999998,
+          "hi": 0.892
+        }
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 2,
+        "pairing_id": "fixed_dataset_and_folds_2",
+        "estimator": "compressed_lambda0:dr",
+        "status": "completed",
+        "estimate": 1.0,
+        "interval": {
+          "status": "valid",
+          "se": 0.0,
+          "lo": 1.0,
+          "hi": 1.0
+        }
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 3,
+        "pairing_id": "fixed_dataset_and_folds_3",
+        "estimator": "compressed_lambda0:dr",
+        "status": "completed",
+        "estimate": 0.5,
+        "interval": {
+          "status": "failed",
+          "reason": "synthetic interval failure"
+        }
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 4,
+        "pairing_id": "fixed_dataset_and_folds_4",
+        "estimator": "compressed_lambda0:dr",
+        "status": "failed",
+        "reason": "synthetic fit failure"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 5,
+        "pairing_id": "fixed_dataset_and_folds_5",
+        "estimator": "compressed_lambda0:dr",
+        "status": "unattempted",
+        "reason": "cap before attempt"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 0,
+        "pairing_id": "fixed_dataset_and_folds_0",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "completed",
+        "estimate": 0.5
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 1,
+        "pairing_id": "fixed_dataset_and_folds_1",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "completed",
+        "estimate": 0.75
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 2,
+        "pairing_id": "fixed_dataset_and_folds_2",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "failed",
+        "reason": "synthetic fit failure"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 3,
+        "pairing_id": "fixed_dataset_and_folds_3",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "completed",
+        "estimate": 0.25
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 4,
+        "pairing_id": "fixed_dataset_and_folds_4",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "attempted",
+        "reason": "interrupted"
+      },
+      {
+        "cell_id": "hand",
+        "replicate": 5,
+        "pairing_id": "fixed_dataset_and_folds_5",
+        "estimator": "compressed_lambda0:plugin",
+        "status": "unattempted",
+        "reason": "cap before attempt"
+      }
+    ],
+    "hand_derivations": {
+      "point_errors": [
+        -0.25,
+        0,
+        0.5,
+        0
+      ],
+      "bias": "1/16",
+      "mse": "5/64",
+      "sample_variance": "19/192",
+      "bias_mcse_squared": "19/768",
+      "returned_interval_coverage": "1/3",
+      "operational_success": "1/5",
+      "paired_squared_error_differences": [
+        "1/16",
+        "-1/16",
+        "-1/16"
+      ],
+      "paired_mean": "-1/48",
+      "paired_mcse": "1/24",
+      "CP_check": "Direct n=3 binomial polynomials at reported endpoints, no second beta-quantile implementation."
+    }
+  },
+  "checks": [
+    {
+      "check": "hand.planned",
+      "expected": 6,
+      "observed": 6,
+      "passed": true
+    },
+    {
+      "check": "hand.attempted",
+      "expected": 5,
+      "observed": 5,
+      "passed": true
+    },
+    {
+      "check": "hand.point_metric_denominator",
+      "expected": 4,
+      "observed": 4,
+      "passed": true
+    },
+    {
+      "check": "hand.bias",
+      "expected": 0.0625,
+      "observed": 0.0625,
+      "passed": true
+    },
+    {
+      "check": "hand.rmse",
+      "expected": 0.2795084971874737,
+      "observed": 0.2795084971874737,
+      "passed": true
+    },
+    {
+      "check": "hand.empirical_sd",
+      "expected": 0.3145764348029479,
+      "observed": 0.3145764348029479,
+      "passed": true
+    },
+    {
+      "check": "hand.bias_mcse",
+      "expected": 0.15728821740147395,
+      "observed": 0.15728821740147395,
+      "passed": true
+    },
+    {
+      "check": "hand.status_counts",
+      "expected": {
+        "attempted": 0,
+        "completed": 4,
+        "failed": 1,
+        "unattempted": 1
+      },
+      "observed": {
+        "attempted": 0,
+        "completed": 4,
+        "failed": 1,
+        "unattempted": 1
+      },
+      "passed": true
+    },
+    {
+      "check": "hand.interval.returned",
+      "expected": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.failed_after_completed_point",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.no_completed_point",
+      "expected": 2,
+      "observed": 2,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.covered",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.below_truth",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.above_truth",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.returned_interval_coverage",
+      "expected": 0.3333333333333333,
+      "observed": 0.3333333333333333,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.coverage_mcse",
+      "expected": 0.2721655269759087,
+      "observed": 0.2721655269759087,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.mean_width",
+      "expected": 0.392,
+      "observed": 0.39200000000000007,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.mean_se",
+      "expected": 0.1,
+      "observed": 0.10000000000000002,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.rms_se",
+      "expected": 0.12909944487358055,
+      "observed": 0.12909944487358058,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.se_metric_denominator",
+      "expected": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.operational_covering_per_attempted",
+      "expected": 0.2,
+      "observed": 0.2,
+      "passed": true
+    },
+    {
+      "check": "hand.interval.operational_denominator",
+      "expected": 5,
+      "observed": 5,
+      "passed": true
+    },
+    {
+      "check": "CP1of3.lower_direct_binomial_tail",
+      "expected": 0.025,
+      "observed": 0.025000000000000022,
+      "passed": true
+    },
+    {
+      "check": "CP1of3.upper_direct_binomial_tail",
+      "expected": 0.975,
+      "observed": 0.9749999999999999,
+      "passed": true
+    },
+    {
+      "check": "hand.all48slots_retained",
+      "expected": 48,
+      "observed": 48,
+      "passed": true
+    },
+    {
+      "check": "hand.incomplete",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "check": "hand.truncated",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "check": "hand.all12comparisons",
+      "expected": 12,
+      "observed": 12,
+      "passed": true
+    },
+    {
+      "check": "paired.planned_pairs",
+      "expected": 6,
+      "observed": 6,
+      "passed": true
+    },
+    {
+      "check": "paired.joint_completed_pairs",
+      "expected": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "check": "paired.excluded_pairs",
+      "expected": 3,
+      "observed": 3,
+      "passed": true
+    },
+    {
+      "check": "paired.mean_squared_error_difference",
+      "expected": -0.020833333333333332,
+      "observed": -0.020833333333333332,
+      "passed": true
+    },
+    {
+      "check": "paired.paired_mcse",
+      "expected": 0.041666666666666664,
+      "observed": 0.041666666666666664,
+      "passed": true
+    },
+    {
+      "check": "paired.included_replicates",
+      "expected": [
+        0,
+        1,
+        3
+      ],
+      "observed": [
+        0,
+        1,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "check": "paired.excluded_replicates",
+      "expected": [
+        2,
+        4,
+        5
+      ],
+      "observed": [
+        2,
+        4,
+        5
+      ],
+      "passed": true
+    },
+    {
+      "check": "paired.squared_differences",
+      "expected": [
+        0.0625,
+        -0.0625,
+        -0.0625
+      ],
+      "observed": [
+        0.0625,
+        -0.0625,
+        -0.0625
+      ],
+      "passed": true
+    },
+    {
+      "check": "all_failed.bias",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.rmse",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.empirical_sd",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.bias_mcse",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.attempted",
+      "expected": 2,
+      "observed": 2,
+      "passed": true
+    },
+    {
+      "check": "all_failed.returned_coverage",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.coverage_CP",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_failed.operational_zero",
+      "expected": 0.0,
+      "observed": 0.0,
+      "passed": true
+    },
+    {
+      "check": "all_failed.paired_MCSE",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_unattempted.slots",
+      "expected": 16,
+      "observed": 16,
+      "passed": true
+    },
+    {
+      "check": "all_unattempted.attempts",
+      "expected": 0,
+      "observed": 0,
+      "passed": true
+    },
+    {
+      "check": "all_unattempted.operational_undefined",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "all_unattempted.coverage_undefined",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.point_is_complete",
+      "expected": 1,
+      "observed": 1,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.point_bias",
+      "expected": 0.0,
+      "observed": 0.0,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.sd_undefined",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.mcse_undefined",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.coverage_undefined",
+      "expected": null,
+      "observed": null,
+      "passed": true
+    },
+    {
+      "check": "zero_intervals.operational_zero",
+      "expected": 0.0,
+      "observed": 0.0,
+      "passed": true
+    },
+    {
+      "check": "truncated_all_complete.complete_flag",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "check": "truncated_all_complete.incomplete_flag",
+      "expected": true,
+      "observed": true,
+      "passed": true
+    },
+    {
+      "check": "plugin_no_intervals",
+      "expected": false,
+      "observed": false,
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_estimate_nan",
+      "expected": "ValueError",
+      "observed": "estimate must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_truth_nan",
+      "expected": "ValueError",
+      "observed": "truth must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_estimate_posinf",
+      "expected": "ValueError",
+      "observed": "estimate must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_truth_posinf",
+      "expected": "ValueError",
+      "observed": "truth must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_estimate_neginf",
+      "expected": "ValueError",
+      "observed": "estimate must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_truth_neginf",
+      "expected": "ValueError",
+      "observed": "truth must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_estimate_bool",
+      "expected": "ValueError",
+      "observed": "estimate must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_or_bool_truth_bool",
+      "expected": "ValueError",
+      "observed": "truth must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_interval_se",
+      "expected": "ValueError",
+      "observed": "se must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_interval_lo",
+      "expected": "ValueError",
+      "observed": "lo must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_nonfinite_interval_hi",
+      "expected": "ValueError",
+      "observed": "hi must be a finite real number",
+      "passed": true
+    },
+    {
+      "check": "reject_mismatched_pairing",
+      "expected": "ValueError",
+      "observed": "unknown job or mismatched dataset/fold pairing_id",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_record",
+      "expected": "ValueError",
+      "observed": "duplicate estimator record",
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_plan",
+      "expected": "ValueError",
+      "observed": "duplicate planned job",
+      "passed": true
+    },
+    {
+      "check": "reject_missing_failed_reason",
+      "expected": "ValueError",
+      "observed": "a nonempty reason is required",
+      "passed": true
+    },
+    {
+      "check": "CP0of3.lower",
+      "expected": 0.0,
+      "observed": 0.0,
+      "passed": true
+    },
+    {
+      "check": "CP0of3.upper_direct",
+      "expected": 0.7075982261787134,
+      "observed": 0.7075982261787134,
+      "passed": true
+    },
+    {
+      "check": "CP3of3.lower_direct",
+      "expected": 0.2924017738212866,
+      "observed": 0.2924017738212866,
+      "passed": true
+    },
+    {
+      "check": "CP3of3.upper",
+      "expected": 1.0,
+      "observed": 1.0,
+      "passed": true
+    }
+  ],
+  "checks_passed": 77,
+  "checks_failed": 0,
+  "fixtures_scope": [
+    "hand mean/SD/MCSE and paired signed arithmetic",
+    "all point failures",
+    "all unattempted",
+    "one point complete with zero returned intervals",
+    "truncated despite all returned slots complete",
+    "invalid NaN/Inf/bool numbers",
+    "binding/duplicate/reason schema rejection",
+    "exact binomial boundary probabilities"
+  ],
+  "limitations": [
+    "No empirical bias/RMSE/coverage estimated; all numbers describe constructed fixtures.",
+    "Declared pairing_id matching does not verify actual shared dataset/folds.",
+    "Reporting cannot reconstruct undocumented attempted work from omitted records: the future runner must persist attempted/failure slots.",
+    "No unconditional precision or coverage inference for failure-selected or time-truncated completed subsets.",
+    "Root-level SE inputs are accepted scalars after finite/range/interval checks; their estimator validity is not established here.",
+    "Training support and held-out fallback diagnostics require separate runner output; this summary API does not aggregate them."
+  ],
+  "resources": {
+    "wall_seconds_including_scientific_imports": 0.9018082497641444,
+    "cpu_seconds_including_scientific_imports": 0.580285,
+    "cpu_workers": 1,
+    "random_draws": 0,
+    "sampled_datasets": 0,
+    "fitted_models": 0,
+    "model_calls": 0,
+    "benchmark_executions": 0,
+    "paid_cost_usd": 0
+  },
+  "versions": {
+    "python": "3.14.4",
+    "scipy": "1.18.1"
+  },
+  "verdict": "PASS for tested arithmetic, denominators, failure retention and schema checks; source-only component acceptance, not numerical-study release.",
+  "final_source_addendum": {
+    "created_utc": "2026-09-23T09:23:25.674442+00:00",
+    "source_sha256": "8dea474d7b2410e217df114965f8e55c0110df19c248826be068296afc31da3a",
+    "scope": "All original77 independent fixture checks rerun against final source, plus5 rejection guards and3 stable finite aggregation checks. Original audit fields retained as prior phase.",
+    "source_changes_reviewed": [
+      "unique pairing IDs across distinct planned jobs",
+      "finite individual squared-error and interval-width guards",
+      "stable RMS and aggregate mean/SD normalization",
+      "explicit upstream durable-attempt-ledger requirement"
+    ],
+    "checks_passed": 85,
+    "checks_failed": 0,
+    "checks": [
+      {
+        "check": "hand.planned",
+        "observed": 6,
+        "expected": 6,
+        "passed": true
+      },
+      {
+        "check": "hand.attempted",
+        "observed": 5,
+        "expected": 5,
+        "passed": true
+      },
+      {
+        "check": "hand.point_metric_denominator",
+        "observed": 4,
+        "expected": 4,
+        "passed": true
+      },
+      {
+        "check": "hand.bias",
+        "observed": 0.0625,
+        "expected": 0.0625,
+        "passed": true
+      },
+      {
+        "check": "hand.rmse",
+        "observed": 0.2795084971874737,
+        "expected": 0.2795084971874737,
+        "passed": true
+      },
+      {
+        "check": "hand.empirical_sd",
+        "observed": 0.3145764348029479,
+        "expected": 0.3145764348029479,
+        "passed": true
+      },
+      {
+        "check": "hand.bias_mcse",
+        "observed": 0.15728821740147395,
+        "expected": 0.15728821740147395,
+        "passed": true
+      },
+      {
+        "check": "hand.status_counts",
+        "observed": {
+          "attempted": 0,
+          "completed": 4,
+          "failed": 1,
+          "unattempted": 1
+        },
+        "expected": {
+          "attempted": 0,
+          "completed": 4,
+          "failed": 1,
+          "unattempted": 1
+        },
+        "passed": true
+      },
+      {
+        "check": "hand.interval.returned",
+        "observed": 3,
+        "expected": 3,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.failed_after_completed_point",
+        "observed": 1,
+        "expected": 1,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.no_completed_point",
+        "observed": 2,
+        "expected": 2,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.covered",
+        "observed": 1,
+        "expected": 1,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.below_truth",
+        "observed": 1,
+        "expected": 1,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.above_truth",
+        "observed": 1,
+        "expected": 1,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.returned_interval_coverage",
+        "observed": 0.3333333333333333,
+        "expected": 0.3333333333333333,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.coverage_mcse",
+        "observed": 0.2721655269759087,
+        "expected": 0.2721655269759087,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.mean_width",
+        "observed": 0.392,
+        "expected": 0.392,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.mean_se",
+        "observed": 0.1,
+        "expected": 0.1,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.rms_se",
+        "observed": 0.12909944487358058,
+        "expected": 0.12909944487358055,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.se_metric_denominator",
+        "observed": 3,
+        "expected": 3,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.operational_covering_per_attempted",
+        "observed": 0.2,
+        "expected": 0.2,
+        "passed": true
+      },
+      {
+        "check": "hand.interval.operational_denominator",
+        "observed": 5,
+        "expected": 5,
+        "passed": true
+      },
+      {
+        "check": "CP1of3.lower_direct_binomial_tail",
+        "observed": 0.025000000000000022,
+        "expected": 0.025,
+        "passed": true
+      },
+      {
+        "check": "CP1of3.upper_direct_binomial_tail",
+        "observed": 0.9749999999999999,
+        "expected": 0.975,
+        "passed": true
+      },
+      {
+        "check": "hand.all48slots_retained",
+        "observed": 48,
+        "expected": 48,
+        "passed": true
+      },
+      {
+        "check": "hand.incomplete",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "check": "hand.truncated",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "check": "hand.all12comparisons",
+        "observed": 12,
+        "expected": 12,
+        "passed": true
+      },
+      {
+        "check": "paired.planned_pairs",
+        "observed": 6,
+        "expected": 6,
+        "passed": true
+      },
+      {
+        "check": "paired.joint_completed_pairs",
+        "observed": 3,
+        "expected": 3,
+        "passed": true
+      },
+      {
+        "check": "paired.excluded_pairs",
+        "observed": 3,
+        "expected": 3,
+        "passed": true
+      },
+      {
+        "check": "paired.mean_squared_error_difference",
+        "observed": -0.020833333333333332,
+        "expected": -0.020833333333333332,
+        "passed": true
+      },
+      {
+        "check": "paired.paired_mcse",
+        "observed": 0.041666666666666664,
+        "expected": 0.041666666666666664,
+        "passed": true
+      },
+      {
+        "check": "paired.included_replicates",
+        "observed": [
+          0,
+          1,
+          3
+        ],
+        "expected": [
+          0,
+          1,
+          3
+        ],
+        "passed": true
+      },
+      {
+        "check": "paired.excluded_replicates",
+        "observed": [
+          2,
+          4,
+          5
+        ],
+        "expected": [
+          2,
+          4,
+          5
+        ],
+        "passed": true
+      },
+      {
+        "check": "paired.squared_differences",
+        "observed": [
+          0.0625,
+          -0.0625,
+          -0.0625
+        ],
+        "expected": [
+          0.0625,
+          -0.0625,
+          -0.0625
+        ],
+        "passed": true
+      },
+      {
+        "check": "all_failed.bias",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.rmse",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.empirical_sd",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.bias_mcse",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.attempted",
+        "observed": 2,
+        "expected": 2,
+        "passed": true
+      },
+      {
+        "check": "all_failed.returned_coverage",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.coverage_CP",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_failed.operational_zero",
+        "observed": 0.0,
+        "expected": 0.0,
+        "passed": true
+      },
+      {
+        "check": "all_failed.paired_MCSE",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_unattempted.slots",
+        "observed": 16,
+        "expected": 16,
+        "passed": true
+      },
+      {
+        "check": "all_unattempted.attempts",
+        "observed": 0,
+        "expected": 0,
+        "passed": true
+      },
+      {
+        "check": "all_unattempted.operational_undefined",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "all_unattempted.coverage_undefined",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.point_is_complete",
+        "observed": 1,
+        "expected": 1,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.point_bias",
+        "observed": 0.0,
+        "expected": 0.0,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.sd_undefined",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.mcse_undefined",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.coverage_undefined",
+        "observed": null,
+        "expected": null,
+        "passed": true
+      },
+      {
+        "check": "zero_intervals.operational_zero",
+        "observed": 0.0,
+        "expected": 0.0,
+        "passed": true
+      },
+      {
+        "check": "truncated_all_complete.complete_flag",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "check": "truncated_all_complete.incomplete_flag",
+        "observed": true,
+        "expected": true,
+        "passed": true
+      },
+      {
+        "check": "plugin_no_intervals",
+        "observed": false,
+        "expected": false,
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_estimate_nan",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_truth_nan",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_estimate_posinf",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_truth_posinf",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_estimate_neginf",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_truth_neginf",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_estimate_bool",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_or_bool_truth_bool",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_interval_se",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_interval_lo",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_nonfinite_interval_hi",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_mismatched_pairing",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_duplicate_record",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_duplicate_plan",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "reject_missing_failed_reason",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true
+      },
+      {
+        "check": "CP0of3.lower",
+        "observed": 0.0,
+        "expected": 0.0,
+        "passed": true
+      },
+      {
+        "check": "CP0of3.upper_direct",
+        "observed": 0.7075982261787134,
+        "expected": 0.7075982261787134,
+        "passed": true
+      },
+      {
+        "check": "CP3of3.lower_direct",
+        "observed": 0.2924017738212866,
+        "expected": 0.2924017738212866,
+        "passed": true
+      },
+      {
+        "check": "CP3of3.upper",
+        "observed": 1.0,
+        "expected": 1.0,
+        "passed": true
+      },
+      {
+        "check": "new_guard.duplicate_pairing_across_jobs",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true,
+        "message": "pairing_id reused across distinct planned jobs"
+      },
+      {
+        "check": "new_guard.finite_estimate_square_overflow",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true,
+        "message": "nonfinite squared-error arithmetic; record an explicit point failure"
+      },
+      {
+        "check": "new_guard.error_subtraction_overflow",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true,
+        "message": "nonfinite squared-error arithmetic; record an explicit point failure"
+      },
+      {
+        "check": "new_guard.finite_interval_bounds_width_overflow",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true,
+        "message": "nonfinite interval-width arithmetic"
+      },
+      {
+        "check": "new_guard.paired_SD_overflow",
+        "observed": "ValueError",
+        "expected": "ValueError",
+        "passed": true,
+        "message": "aggregate SD arithmetic overflow"
+      },
+      {
+        "check": "stable_large_finite_aggregation.mean_se",
+        "observed": 4e+307,
+        "expected": 4e+307,
+        "passed": true
+      },
+      {
+        "check": "stable_large_finite_aggregation.rms_se",
+        "observed": 4e+307,
+        "expected": 4e+307,
+        "passed": true
+      },
+      {
+        "check": "stable_large_finite_aggregation.mean_width",
+        "observed": 1.568e+308,
+        "expected": 1.568e+308,
+        "passed": true
+      }
+    ],
+    "resources": {
+      "wall_seconds_including_scientific_imports": 0.8360336255282164,
+      "cpu_seconds_including_scientific_imports": 0.593677,
+      "cpu_workers": 1,
+      "random_draws": 0,
+      "sampled_datasets": 0,
+      "fitted_models": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_cost_usd": 0
+    },
+    "verdict": "PASS final source for tested arithmetic/guards; no execution release or empirical coverage claim."
+  }
+}

@@ -211,3 +211,8 @@ validation and fitted-history numerical work remain open.
 ## 23 September — Lead-owned fitted-history numerical preparation
 
 The [regularization source package](fitted_regularization_source_20260923.md) is deterministic preparation for issue #2, separate from the existing worker's MRL-23 E14 package. No additional experiment worker or collection is requested. Before the planned 600-dataset comparison, complete the connected numerical runner, failure-preserving records/summary, hard one-CPU/600-second/256-MiB limits, and exact source/environment freeze with independent review and fresh resource check. The prospective seed table is unexecuted. A heartbeat does not renew resource allowances or authorize simulation. Preserve original empirical negatives and all existing gates; 58%, delta0, full project not submission-ready.
+
+
+## 23 September — Reporting contract and MRL-23 recovery
+
+The lead-owned [reporter](fitted_regularization_reporting_20260923.md) is accepted as a deterministic source component. The remaining numerical runner must durably record attempts before work, preserve the event journal, reconcile exactly one final state/slot, verify actual dataset/fold hashes, retain support diagnostics and enforce1CPU/600seconds/256MiB before final source/environment freeze. No sampled study is released. Existing experimental worker: respond to the singleMRL-23 recovery with existing complete/partial artifacts and factual scheduler/run/processed-commit status; no expired allowance renews.58%,delta0; efficacy unestablished and full project not submission-ready.

@@ -149,3 +149,8 @@ efficacy unestablished and full project not submission-ready.
 ## 23 September — Fitted regularization source acceptance (coordinating lead)
 
 The [matched regularization implementation](fitted_regularization_source_20260923.md) adds compressed/full-history nuisance fits at fixed penalties zero and five, sharing root folds and fitted Q between plug-in and DR. The lead reran 42 deterministic acceptance/regression checks (0.80 seconds test time); no sampled dataset or new bias/RMSE/coverage result was produced. A separate forward/backward exact-law arithmetic check agrees at 0.6459770061744536. Seed reservation is qualified to audited records, not proof of independent streams. All original sources/results and weak-overlap negatives are preserved. Zero model calls/tokens, benchmark executions or paid cost. Overall58%, delta0; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — Numerical reporting arithmetic (coordinating lead)
+
+The [failure-preserving reporter](fitted_regularization_reporting_20260923.md) passes24targeted deterministic checks and independent mathematical/hand-arithmetic review. Eight point estimators and twelve paired contrasts keep planned, attempted, failed, interval-returned and jointly completed denominators explicit. The600-job empty-input fixture retains4,800slots; no dataset or fitted estimate was generated. These checks validate reporting mechanics only. Zero receiver calls/tokens, benchmark executions or paid cost;58%,delta0,full project not submission-ready.

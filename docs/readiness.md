@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points.** MRL-22 source delivery and saved output descriptors have independent reviews; ten adapted task contracts now have exact source-bound domains, reference repairs and new private checks. These are preparation within existing measurement/manuscript credit, not executed validation. The current [MRL-23 decision](mrl22_review_mrl23_20260923.md) permits one source/mock package only. Earlier negatives stand, efficacy is unestablished and the full project is not submission-ready. No weights or component credit change. [Fixed component calculation](progress_current.json).
+**58%, change 0 percentage points.** Matched regularization estimation and failure-preserving reporting now have independent source review and deterministic checks; sampled numerical performance remains untested. MRL-23 receipt is verified, but its promised package was absent at two actual reviews; one [delivery recovery](../COORDINATION.md) is published, with acknowledgement pending. These source/coordination steps fit existing credit. Original negatives stand, efficacy is unestablished, independent policy validation remains open and the full project is not submission-ready. No weights or component credit change. [Fixed component calculation](progress_current.json).
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

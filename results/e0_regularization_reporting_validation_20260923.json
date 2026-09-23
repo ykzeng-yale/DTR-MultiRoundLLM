@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-09-23T09:22:25.828592+00:00",
+  "classification": "Deterministic supplied-record/source verification only; no sampled numerical study",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_e0_regularization_report.py"
+  ],
+  "exit_code": 0,
+  "stdout": "........................                                                 [100%]\n24 passed in 0.75s\n",
+  "stderr": "",
+  "test_wall_seconds": 1.0230643339455128,
+  "test_child_cpu_seconds": 0.773261,
+  "empty_planned_ledger_fixture": {
+    "planned_jobs": 600,
+    "estimator_slots": 4800,
+    "supplied_records": 0,
+    "all_slots_unattempted": true,
+    "cells": 3,
+    "paired_comparisons_per_cell": 12,
+    "strict_json_bytes": 2663366,
+    "wall_seconds": 0.018411999568343163,
+    "meaning": "Injected empty records validate planned denominators only; no jobs sampled or attempted."
+  },
+  "source_sha256": {
+    "experiments/e0/regularization_report.py": "8dea474d7b2410e217df114965f8e55c0110df19c248826be068296afc31da3a",
+    "tests/test_e0_regularization_report.py": "a73b2a241abaf217b3b8f92d0e755b756f065de22dcb51eaa9c55b39cf5ebe99",
+    "experiments/e0/regularization_comparison_plan_v1.json": "972436a104a635cb77fe0a642140aace796ce9bf901e6f0e82890f7397efe29d",
+    "experiments/e0/regularization_comparison_seed_plan_v1.csv": "65ad251799294ae068150d37a123354c099867cc58063c243324962dba72a698",
+    "docs/fitted_history_numerical_design_20260922.md": "e079d7f667a503a32563f5ea72e56fb41a70d4b94b1d563c78058650fa108d46"
+  },
+  "independent_review": {
+    "theory": "Source/formulas/fixtures accepted within deterministic reporting scope; CP iid pointwise only;12paired comparisons, incomplete subset caveat and persistent attempt journal required.",
+    "evidence_artifact": "results/e0_regularization_reporting_audit_20260923.json",
+    "evidence_final_artifact_sha256": "b9f684a987088bd70cfb8f9aea35875f194af8469d654fc275d3de7c1f41cc6d",
+    "evidence_final_checked_source_sha256": "8dea474d7b2410e217df114965f8e55c0110df19c248826be068296afc31da3a"
+  },
+  "resource_usage": {
+    "cpu_workers": 1,
+    "sampled_datasets": 0,
+    "estimator_fits": 0,
+    "receiver_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "remaining_gate": "Connected runner, durable attempt receipts and support records, enforced600s/256MiB cap, source/environment freeze and fresh resources; no execution release."
+}

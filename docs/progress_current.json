@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T09:16:24.633864+00:00",
+  "checkpoint_utc": "2026-09-23T09:23:46.045036+00:00",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -55,11 +55,11 @@
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
   "prior_checked_head": "08cddc77763ab0a29c622cded727ac7a11616f5b",
-  "baseline_note": "Same fixed weights and credit: matched regularization source, deterministic arithmetic and seed reservation are preparation, not executed numerical-performance or model validation.",
+  "baseline_note": "Same fixed weights and credit: estimator/reporting source and deterministic arithmetic are preparation, not sampled numerical-performance, prompt efficacy or policy validation.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL23 source/mock receipt verified, complete package pending at review; lead matched regularization source passes deterministic fixtures. No sampled simulation or fresh model outcomes.",
+  "latest_evidence": "No new worker package after two actual post-deadline reviews; MRL23 recovery published. Independent reporting source/formula audit and24deterministic tests completed; no sampled dataset or model outcomes.",
   "latest_worker_review": {
     "last_seen_worker_revision": "8866186f6c87abd98e98f2db51043463fb8e504f",
     "delivery_type": "MRL23 acknowledgement and running-status publication; completed source package pending",
@@ -158,7 +158,8 @@
     "mrl23_independent_validation_state": "Acknowledgement/status inspected; completed source/mock package pending; no execution released.",
     "mrl23_consecutive_missing_updates": 2,
     "mrl23_recovery_utc": "2026-09-23T09:16:24.633864+00:00",
-    "mrl23_recovery_status": "Published one recovery escalation for missing cap delivery; acknowledgement pending."
+    "mrl23_recovery_status": "Published one recovery escalation for missing cap delivery; acknowledgement pending.",
+    "mrl23_recovery_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5792208049"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -174,5 +175,7 @@
     "archive_review_record": "docs/mrl21_review_mrl22_20260923.md"
   },
   "fitted_regularization_source": "docs/fitted_regularization_source_20260923.md",
-  "fitted_regularization_validation": "results/e0_regularization_source_validation_20260923.json"
+  "fitted_regularization_validation": "results/e0_regularization_source_validation_20260923.json",
+  "fitted_regularization_reporting": "docs/fitted_regularization_reporting_20260923.md",
+  "fitted_regularization_reporting_validation": "results/e0_regularization_reporting_validation_20260923.json"
 }
