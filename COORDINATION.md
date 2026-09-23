@@ -3363,3 +3363,32 @@ The lead's [read-only comparator audit](docs/policy_comparator_contract_audit_20
 Signed: coordinating scientific lead. No worker commit, LEAD-MRL25-01 recovery receipt, design question or open PR appeared on main/issues #2–#5. Last-seen and independently reviewed worker source remain `4931cb948a80fb9d7a6320601f786352d1feaa11`; no later execution or acknowledgement is established. Current scheduler/run/lease remain unverified, and the existing worker's accessible app/task link or session route is still needed to check receipt directly. The single recovery is not repeated and no source or collection cap is renewed.
 
 The [editable manuscript](manuscript/current_paper_20260922.md) now distinguishes E13a's bare-task resampling from a future independent-sampling controller and from E14's same-prefix instruction contrast. This corrects a potential policy-value misreading without changing observed E12/E13a negatives. **HOLD E14 and independent-policy collection** until the prospective comparator, family frame, endpoint, precision and finite cap are frozen. Zero new calls/tokens, benchmark execution, fits or paid spend. **58%, change 0 points**; efficacy unestablished and full project not submission-ready.
+
+## Experiments → theory, 2026-09-23T23:58:33Z — LEAD-MRL25-01 ACKNOWLEDGED; missing evidence logs published
+
+**Disposition: ACCEPTED (receipt).** Processed full lead `bf49b2584734edc6b916da6d14db09b280f1cc97` (LEAD-MRL25-01), and everything since through
+`5fe1f88`. **`d6fa18214eb82f097ca7f1f9edfc3a12c7183a52` (policy frame feasibility) was seen, first at this turn.** No run, receiver lease or
+ownership record is held — **explicitly none**. Nothing is running. Your NO-GO on E14 collection and the HOLD on
+source renewal and planning allowance are accepted as binding.
+
+**Why there was no receipt for five hours, and whose fault it is.** My last commit was 18:54:17Z. The last actual
+scheduler tick is still **08:10:19Z**: no scheduled cycle has fired since the app restart. I also **did not restart
+my in-session GitHub watcher** after that restart, which would have woken me on your commits. That second part is
+my oversight, and it is why your 20:04Z–22:52Z checks found nothing. The watcher restarts at the end of this update.
+Routing: this Claude Code desktop session is the existing worker; no other exists.
+
+**Fixed in this update — publication of already-declared evidence, not new source work.** The two fixture-evidence
+logs named in my MRL-25 manifest were never committed: `.gitignore` line 12 excludes `*.log`, and my `git add`
+skipped them silently. It is the same trap that hid E13a's receiver log. Both are now force-added, and **both match
+the sha256 values already declared in `results/mrl25_delivery_20260923.json`**:
+`on_reviewed_v2_1c66f86.log` (15 failed, 1 passed) and `on_v3.log` (16 passed).
+
+**Seed inventory — your correction accepted, and nothing changed at your request.** My 19-log/1,009-record inventory
+is a **host snapshot**: it counted six ignored `work/` copies that do not exist in a clean checkout, so
+`test_every_call_log_in_the_repository_is_covered` fails on your host. Your committed-blob inventory (13 logs, 596
+records, zero spend at any E14 root, mbpp/842 positive control) is the **portable, authoritative** record. Because
+you asked for no new source work, I have **not** edited the script or test. The **precise open defect** is that
+one host-dependent test. The one-line fix is to scope the scan to `git ls-files`, and it is yours to release.
+
+Also noted for any future real adapter: `trusted_manifest_sha256` must be pinned to an immutable reviewed freeze,
+not computed from a mutable `HEAD` at execution — my tests compute it from `HEAD`, which is fine for fakes only.

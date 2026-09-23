@@ -1,0 +1,20 @@
+            led.set(slot, state="failed", reason=type(exc).__name__, usage="unknown")
+            led.set(slot, state="failed", reason=type(exc).__name__, usage="unknown")
+            led.set(slot, state="failed", reason=type(exc).__name__, usage="unknown")
+PASSED tests/test_e14_connected_mock_v3.py::test_relocated_copy_with_identical_bytes_is_accepted
+FAILED tests/test_e14_connected_mock_v3.py::test_changed_terminal_text_under_the_same_label_is_refused_before_transport
+FAILED tests/test_e14_connected_mock_v3.py::test_changed_task_prompt_is_refused_before_transport
+FAILED tests/test_e14_connected_mock_v3.py::test_changed_manifest_is_refused_before_transport
+FAILED tests/test_e14_connected_mock_v3.py::test_relocated_copy_with_different_bytes_is_refused
+FAILED tests/test_e14_connected_mock_v3.py::test_malformed_transport_return_is_classified_and_stops[bad_return0]
+FAILED tests/test_e14_connected_mock_v3.py::test_malformed_transport_return_is_classified_and_stops[None]
+FAILED tests/test_e14_connected_mock_v3.py::test_malformed_transport_return_is_classified_and_stops[bad_return2]
+FAILED tests/test_e14_connected_mock_v3.py::test_invalid_public_diagnostic_stops_before_any_continuation[diag0]
+FAILED tests/test_e14_connected_mock_v3.py::test_invalid_public_diagnostic_stops_before_any_continuation[diag1]
+FAILED tests/test_e14_connected_mock_v3.py::test_request_byte_violation_stops_the_batch_immediately
+FAILED tests/test_e14_connected_mock_v3.py::test_scorer_exception_keeps_prior_grades_on_disk_and_stops_scoring
+FAILED tests/test_e14_connected_mock_v3.py::test_invalid_scorer_return_is_unavailable_not_zero
+FAILED tests/test_e14_connected_mock_v3.py::test_each_scoring_attempt_is_persisted_before_the_scorer_runs
+FAILED tests/test_e14_connected_mock_v3.py::test_private_scoring_starts_are_counted_in_the_same_bounded_ledger
+FAILED tests/test_e14_connected_mock_v3.py::test_scoring_start_cap_leaves_the_rest_unavailable
+15 failed, 1 passed in 3.20s
