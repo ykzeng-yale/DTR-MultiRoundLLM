@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Comparator-information gate — 2026-09-23T22:19:40Z
+
+**58%, change 0 percentage points.** The [lead audit](policy_comparator_contract_audit_20260923.md) specifies what the original prompt-choice selector, competent fixed continuation and independent-sampling controller must see and spend at decision time. The last controller is still underdefined: bare-task restart and full-prefix redraw are distinct interventions, and E13a/E14 do not supply its frozen deployment algorithm or fair total-cost comparison. No worker commit, LEAD-MRL25-01 recovery receipt or new experiment appeared. The earlier MRL-25 mock source remains independently reviewed; its later lead hold has no verified worker acknowledgement, and current scheduler/run/lease state is unknown. One routing dependency remains the existing worker's accessible app/task link or session route. E14/policy collection remain held. No new calls/tokens, benchmark execution or spend; prompt efficacy unestablished and full project not submission-ready. Next: freeze a valid selector/comparator/frame/precision/cost contract or explicitly narrow the target.
+
 ## Reused E12 policy-signal check — 2026-09-23T21:44:58Z
 
 **58%, change 0 percentage points.** The [saved E12 diagnostic](e12_public_status_policy_signal_20260923.md) confirms no positive observed S1 advantage within the public-pass or wrong-value groups; the overall −1/28 development result is unchanged. This is not an independent policy fit or test, and one positive/one negative root with two draws per arm cannot establish conditional signs. No new worker update or recovery receipt is visible, and the prior single escalation is not repeated. E14 and policy collection remain held pending a frozen rule, defensible evaluation frame, valid endpoint and numerical local cap. Prompt efficacy unestablished; full project not submission-ready.
