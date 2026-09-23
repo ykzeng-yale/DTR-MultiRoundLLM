@@ -1,0 +1,180 @@
+{
+ "audit_version": "e14-roster-audit-v1",
+ "evidence_class": "source-only family/measurement audit of a PROPOSED roster; zero executions; no outcome, private grade, private assertion or hidden score was read",
+ "proposal": {
+  "path": "docs/e14_same_prefix_revision_proposal_20260923.md",
+  "sha256": "0f6a2d3bdb42e9bb86df6235c2ff367ae43a471744df7d069f7c72f786c6431b"
+ },
+ "inputs": {
+  "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+  "results/frame_review_mrl15_20260922T021718Z/records.json": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+  "results/e12_dev_v3_20260922T030255Z/A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+  "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a"
+ },
+ "files_deliberately_not_opened": [
+  "any private_specs.jsonl",
+  "any grades.jsonl",
+  "any analysis_report.json quality block",
+  "any hidden score or private assertion"
+ ],
+ "roster": [
+  "mbpp/918",
+  "mbpp/825",
+  "mbpp/816",
+  "mbpp/895",
+  "mbpp/868",
+  "mbpp/154",
+  "mbpp/651",
+  "mbpp/499",
+  "mbpp/974"
+ ],
+ "per_root": {
+  "mbpp/918": {
+   "frame_rank": 1,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-918",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/825": {
+   "frame_rank": 2,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-825",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/816": {
+   "frame_rank": 7,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-816",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/895": {
+   "frame_rank": 8,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-895",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/868": {
+   "frame_rank": 9,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-813",
+   "family_size_in_frame": 2,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/154": {
+   "frame_rank": 11,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-49",
+   "family_size_in_frame": 2,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/651": {
+   "frame_rank": 18,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-651",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/499": {
+   "frame_rank": 19,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-499",
+   "family_size_in_frame": 1,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  },
+  "mbpp/974": {
+   "frame_rank": 20,
+   "spec_review_decision": "include",
+   "provisional_family": "PF-147",
+   "family_size_in_frame": 2,
+   "has_frozen_initial_artifact": true,
+   "has_frozen_public_diagnostic": true,
+   "public_case_statuses": [
+    "pass"
+   ]
+  }
+ },
+ "untouched_policy_split": {
+  "rank_range": [
+   61,
+   198
+  ],
+  "n": 138,
+  "named_by_rank_only": true,
+  "note": "reserved; no text, outcome or grade of these was read"
+ },
+ "family_multiplicity": {
+  "note": "Descriptive, not a pass/fail requirement. The frame collapsed each provisional family to one representative, so a roster root whose family had more than one frame member stands in for a collapsed sibling. This is where the independence assumption actually rests.",
+  "singleton_families": [
+   "mbpp/499",
+   "mbpp/651",
+   "mbpp/816",
+   "mbpp/825",
+   "mbpp/895",
+   "mbpp/918"
+  ],
+  "multi_member_families": {
+   "mbpp/868": 2,
+   "mbpp/154": 2,
+   "mbpp/974": 2
+  }
+ },
+ "checks": {
+  "roster_equals_e12_retained_minus_e13a_checkpoints": true,
+  "roster_size_is_9": true,
+  "no_e13a_checkpoint_in_roster": true,
+  "all_include_decision": true,
+  "all_have_frozen_initial_artifact": true,
+  "all_have_frozen_public_diagnostic": true,
+  "provisional_family_label_resolved_for_every_root": true,
+  "provisional_families_distinct": true,
+  "no_family_shared_with_e13a_checkpoints": true,
+  "untouched_split_size_138": true,
+  "untouched_split_disjoint_from_roster": true,
+  "untouched_split_disjoint_from_e13a": true,
+  "roster_ranks_all_below_untouched_split": true,
+  "frame_order_used_no_outcome_information": true
+ },
+ "all_checks_pass": true,
+ "limitations": [
+  "Provisional families are MRL-15 union-find labels at a lexical threshold; the frame manifest states it is not a family-independence certificate. Distinct labels are verified; independence is assumed.",
+  "All nine roots are development histories whose E12 outcomes were already seen; this is reuse, not an independent evaluation set, and no design choice here undoes that.",
+  "Three of the nine roots (868, 154, 974) represent two-member provisional families; their siblings were removed by the within-frame collapse, so nine roots are not nine independently sampled families.",
+  "This audit checks roster construction and measurement bindings only. It is not a release, not a power calculation and not evidence about any arm."
+ ]
+}
