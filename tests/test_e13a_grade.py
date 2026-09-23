@@ -560,8 +560,8 @@ def test_cli_validate_only_writes_nothing(tmp_path, handoff, capsys):
     assert not (tmp_path / "cli-out").exists()
 
 
-def test_cli_refuses_real_execution(tmp_path, handoff):
-    with pytest.raises(SystemExit, match="not authorized"):
+def test_cli_refuses_transport_collection_real_execution(tmp_path, handoff):
+    with pytest.raises(SystemExit, match="transport-only collection"):
         e13a_grade.main(["--collect", str(handoff["collect"]), "--release", str(handoff["release"]),
                          "--stage", str(handoff["stage"]), "--plan", str(handoff["plan"]),
                          "--out", str(tmp_path / "cli-real"), "--real"])
@@ -622,3 +622,24 @@ def test_shared_stage_clock_composes(tmp_path, handoff):
     rows = [json.loads(x) for x in (tmp_path / "clock-spent/grade/grades.jsonl").read_text().splitlines()]
     assert summary["status"] == "aborted" and "CapExhausted" in summary["abort_reason"]
     assert len(rows) == 8 and (tmp_path / "clock-spent/grade/failure_report.json").is_file()
+
+
+@pytest.mark.parametrize("event", ["execution_start", "execution_result"])
+def test_durable_write_failure_retains_assignments_without_retry(tmp_path, handoff, monkeypatch, event):
+    original = e13a_grade.study_adapter._DurableLedger.write
+    fired = {"value": False}
+    def fail_once(self, record):
+        if record["event"] == event and not fired["value"]:
+            fired["value"] = True
+            raise OSError("synthetic durable write fault")
+        return original(self, record)
+    monkeypatch.setattr(e13a_grade.study_adapter._DurableLedger, "write", fail_once)
+    executor = e13a_grade.StubPrivateExecutor()
+    summary = run_grade(handoff, tmp_path, executor=executor)
+    rows = [json.loads(x) for x in (tmp_path / "out/grade/grades.jsonl").read_text().splitlines()]
+    assert summary["status"] == "aborted" and len(rows) == len(slots())
+    assert all(r["outcome"] is None and r["missing_reason"] for r in rows)
+    assert len(executor.calls) == (0 if event == "execution_start" else 1)
+    assert summary["start_accounting"]["reserved_execution_attempts"]["total"] == len(executor.calls)
+    assert summary["start_accounting"]["unknown_execution_starts"]["total"] == len(executor.calls)
+    assert (tmp_path / "out/grade/failure_report.json").is_file()

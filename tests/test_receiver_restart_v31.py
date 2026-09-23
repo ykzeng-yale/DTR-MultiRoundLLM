@@ -97,6 +97,7 @@ def test_failed_launch_reaps_mock_child_and_preserves_record(tmp_path, monkeypat
     monkeypatch.setattr(launch, "launcher_provenance", lambda a: {"source_head": "mock-head", "launcher_sha256": "mock-sha"})
     monkeypatch.setattr(launch, "verify", lambda: ({"media_marker": "pinned"}, "/mock/model", 26))
     monkeypatch.setattr(launch, "sh", lambda cmd: "")
+    monkeypatch.setattr(launch, "process_identity", lambda pid: "mock-birth mock-server")
 
     class Clock(datetime):
         @classmethod
@@ -184,6 +185,7 @@ def test_successful_mock_start_records_provenance_and_leaves_child_alive(tmp_pat
     monkeypatch.setattr(launch, "launcher_provenance", lambda a: provenance)
     monkeypatch.setattr(launch, "verify", lambda: ({"media_marker": "pinned"}, "/mock/model", 26))
     monkeypatch.setattr(launch, "sh", lambda cmd: "")
+    monkeypatch.setattr(launch, "process_identity", lambda pid: "mock-birth mock-server")
 
     class Clock(datetime):
         @classmethod
@@ -210,6 +212,69 @@ def test_successful_mock_start_records_provenance_and_leaves_child_alive(tmp_pat
     assert record["ready_utc"] is not None and record["generation_requests"] == 0
     assert record["ownership_sha256"] == "agreement-hash"
     assert not child.terminated and child.poll() is None
+    assert record["process_identity"] == "mock-birth mock-server"
+
+
+def write_launch_record(tmp_path, identity="birth server"):
+    path = tmp_path / "launch.json"
+    path.write_text(json.dumps({"pid": 12345, "process_identity": identity}))
+    return path
+
+
+@pytest.mark.parametrize("identity,actual", [(None, "birth server"), ("old server", "new server")])
+def test_stop_never_signals_missing_or_reused_identity(tmp_path, monkeypatch, identity, actual):
+    write_launch_record(tmp_path, identity)
+    monkeypatch.setattr(launch, "process_identity", lambda pid: actual)
+    monkeypatch.setattr(launch.os, "kill", lambda *a: pytest.fail("must not signal another process"))
+    with pytest.raises(SystemExit, match="identity|another process"):
+        launch.stop_recorded_receiver(tmp_path)
+
+
+def test_stop_records_observed_exit_not_invented_exit_code(tmp_path, monkeypatch):
+    write_launch_record(tmp_path)
+    states = iter(["birth server", "birth server", None, None])
+    monkeypatch.setattr(launch, "process_identity", lambda pid: next(states))
+    signals = []
+    monkeypatch.setattr(launch.os, "kill", lambda pid, sig: signals.append((pid, int(sig))))
+    record = launch.stop_recorded_receiver(tmp_path)
+    assert signals == [(12345, 15)]
+    assert record["exit_observed"] and record["stopped_utc"]
+    assert "exited" not in record
+
+
+def test_stop_escalates_only_unchanged_owned_identity(tmp_path, monkeypatch):
+    write_launch_record(tmp_path)
+    signals = []
+    monkeypatch.setattr(launch.os, "kill", lambda pid, sig: signals.append(int(sig)))
+    monkeypatch.setattr(launch, "process_identity", lambda pid: None if 9 in signals else "birth server")
+    ticks = iter([0, 6, 7, 8])
+    monkeypatch.setattr(launch.time, "monotonic", lambda: next(ticks))
+    record = launch.stop_recorded_receiver(tmp_path)
+    assert signals == [15, 9] and record["exit_observed"]
+
+
+def test_stop_refuses_escalation_after_pid_reuse(tmp_path, monkeypatch):
+    path = write_launch_record(tmp_path)
+    states = iter(["birth server", "birth server", "new process"])
+    monkeypatch.setattr(launch, "process_identity", lambda pid: next(states))
+    signals = []
+    monkeypatch.setattr(launch.os, "kill", lambda pid, sig: signals.append(int(sig)))
+    with pytest.raises(SystemExit, match="identity changed"):
+        launch.stop_recorded_receiver(tmp_path)
+    assert signals == [15]
+    assert "stop_error" in json.loads(path.read_text())
+
+
+def test_process_identity_uses_typed_pid_and_bounded_shell_free_read(monkeypatch):
+    calls = []
+    def run(args, **kwargs):
+        calls.append((args, kwargs))
+        return SimpleNamespace(returncode=0, stdout="Wed Sep 23 05:30:00 2026  /owned/server\n")
+    monkeypatch.setattr(launch.subprocess, "run", run)
+    assert launch.process_identity(12345) == "Wed Sep 23 05:30:00 2026 /owned/server"
+    assert calls[0][1]["timeout"] == 2 and "shell" not in calls[0][1]
+    with pytest.raises(SystemExit, match="Invalid"):
+        launch.process_identity("12345; echo invalid")
 
 
 @pytest.mark.parametrize("defect", ["dirty", "missing_from_commit", "reservation_mismatch"])

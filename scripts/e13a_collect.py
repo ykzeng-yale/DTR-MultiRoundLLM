@@ -48,6 +48,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from experiments.landmark import collect  # noqa: E402
 from experiments.landmark import collect_diagnostic as cd  # noqa: E402
 from e13a_stage_clock import CLOCK_FILE, CapExhausted, StageClock, open_clock, parse_utc, utc_now  # noqa: E402
+from build_e13a_release import EXECUTION_SOURCES  # noqa: E402
 
 RUN = ROOT / "results/e12_dev_v3_20260922T030255Z"          # E12's immutable run (read only)
 PKG = ROOT / "experiments/landmark/dev_release_v3"           # E12's frozen 14-root release (read only)
@@ -65,6 +66,7 @@ MAX_CALLS = 60
 MAX_RESERVED_COMPLETION_TOKENS = 30720
 TOKENS_PER_CALL = 512
 LEDGER = "attempt_ledger.jsonl"
+MAX_COLLECTION_METADATA_HTTP = 31  # preflight <=4, twelve block guards x2, postflight <=3; setup is separate
 # Request-shaping fields that must be identical in E12's frozen package and in E13a's release bindings, or the
 # rebuilt requests would not be the bytes E12 sent.
 REQUEST_SHAPING = ("schema_version", "model", "model_digest", "decoding", "max_tokens_per_call", "sampler",
@@ -160,6 +162,128 @@ def _as_stage(stage):
 
 def _as_plan(plan):
     return plan if isinstance(plan, dict) and "roots" in plan and "plan_sha256" in plan else load_plan(plan)
+
+
+def verify_release(stage, plan, *, real=False):
+    """Bind the actual runtime inputs and scripts to the release, and to committed HEAD in real mode.
+
+    This does not authorize execution. Git/source verification is local and happens before adapter creation.
+    The old E12 package remains usable by transport-only fixtures, never as a real E13a release.
+    """
+    path = stage["release_dir"] / "release_manifest.json"
+    manifest = _strict(path.read_bytes())
+    if manifest.get("manifest") != "e13a-two-arm-release":
+        if real:
+            raise Refusal("Real E13a dispatch requires its five-root e13a_release manifest")
+        return {"release_manifest_path": str(path), "release_manifest_sha256": file_sha(path),
+                "model": manifest.get("model"), "evaluator": manifest.get("evaluator"),
+                "grader_version": manifest.get("evaluator", {}).get("grader_version"),
+                "execution_source_hashes": {}, "release_verification": "legacy_transport_fixture_only"}
+    if real and path.resolve() != (E13A_RELEASE / "release_manifest.json").resolve():
+        raise Refusal("Real E13a dispatch requires the committed e13a_release path")
+    stage_pin, plan_pin = manifest["stage"], manifest["request_plan"]
+    if file_sha(stage["stage_path"]) != stage["stage_sha256"] or \
+            _strict(stage["stage_path"].read_bytes()) != stage["descriptor"]:
+        raise Refusal("Loaded stage descriptor differs from its pinned bytes")
+    loaded_plan = {k: v for k, v in plan.items() if k not in ("plan_path", "plan_sha256")}
+    if file_sha(plan["plan_path"]) != plan["plan_sha256"] or \
+            _strict(Path(plan["plan_path"]).read_bytes()) != loaded_plan:
+        raise Refusal("Loaded request plan differs from its pinned bytes")
+    if stage_pin["descriptor_sha256"] != stage["stage_sha256"] or \
+            plan_pin["sha256"] != plan["plan_sha256"]:
+        raise Refusal("Stage or request plan differs from the E13a release binding")
+    if (ROOT / stage_pin["descriptor_path"]).resolve() != stage["stage_path"].resolve() or \
+            (ROOT / plan_pin["path"]).resolve() != Path(plan["plan_path"]).resolve():
+        raise Refusal("Stage or request plan path differs from the E13a release binding")
+    if manifest["roots"] != stage["descriptor"]["roots"] or \
+            manifest["stage"]["arms"] != stage["descriptor"]["arms"]:
+        raise Refusal("Release assignment differs from stage descriptor")
+    paths = [path, stage["stage_path"], Path(plan["plan_path"])]
+    for name, want in manifest["package"].items():
+        file = stage["release_dir"] / name
+        if file_sha(file) != want:
+            raise Refusal(f"Release package hash mismatch: {name}")
+        paths.append(file)
+    if _strict(stage["release"]["config_path"].read_bytes()) != stage["release"]["config"] or \
+            _jsonl(stage["release"]["tasks_path"]) != stage["release"]["tasks"]:
+        raise Refusal("Loaded release configuration/tasks differ from their pinned bytes")
+    sources = manifest.get("execution_source_hashes", {})
+    if set(sources) != set(EXECUTION_SOURCES):
+        raise Refusal("Release does not bind every E13a executable source")
+    for name, want in sources.items():
+        file = ROOT / name
+        if file_sha(file) != want:
+            raise Refusal(f"Executable source differs from release: {name}")
+        paths.append(file)
+    conditioning = manifest["e12_conditioning"]
+    if stage["run"].resolve() != (ROOT / conditioning["run_dir"]).resolve():
+        raise Refusal("E12 conditioning run differs from the release binding")
+    sums_path = stage["run"] / "ARTIFACT_SHA256SUMS.json"
+    if file_sha(sums_path) != conditioning["sums_sha256"]:
+        raise Refusal("E12 artifact checksum manifest differs from the release binding")
+    paths.append(sums_path)
+    for name, want in conditioning["artifacts"].items():
+        if file_sha(stage["run"] / name) != want:
+            raise Refusal(f"E12 conditioning artifact differs from release: {name}")
+    original = manifest["source_release"]
+    if stage["package"]["config_path"].parent.resolve() != (ROOT / original["dir"]).resolve():
+        raise Refusal("E12 source package path differs from release")
+    original_manifest = ROOT / original["dir"] / "release_manifest.json"
+    if file_sha(original_manifest) != original["manifest_sha256"]:
+        raise Refusal("E12 source release manifest differs from binding")
+    paths.append(original_manifest)
+    for name, want in original["files"].items():
+        if file_sha(ROOT / original["dir"] / name) != want:
+            raise Refusal(f"E12 source package differs from binding: {name}")
+    head = None
+    if real:
+        head = collect.subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        for file in paths:
+            relative = file.resolve().relative_to(ROOT).as_posix()
+            frozen = collect.subprocess.check_output(["git", "show", head + ":" + relative], cwd=ROOT)
+            if frozen != file.read_bytes():
+                raise Refusal(f"Release input/source differs from committed HEAD: {relative}")
+    return {"release_manifest_path": str(path), "release_manifest_sha256": file_sha(path),
+            "model": manifest["model"], "evaluator": manifest["evaluator"],
+            "grader_version": manifest["evaluator"]["grader_version"], "execution_source_hashes": sources,
+            "release_verification": "committed_inputs_verified" if real else "transport_inputs_verified",
+            "release_source_head": head}
+
+
+def bound_http_requests(adapter, *, real):
+    """Count actual HTTP transport attempts separately from logical metadata methods and generation calls."""
+    report = {"generation_attempts": 0, "metadata_attempts": 0, "successes": 0, "errors": 0,
+              "endpoints": {}, "generation_cap": MAX_CALLS, "metadata_cap": MAX_COLLECTION_METADATA_HTTP,
+              "metadata_timeout_seconds": 10,
+              "scope": "collection only; excludes separately capped setup metadata/template requests"}
+    if not hasattr(adapter, "request"):
+        if real:
+            raise Refusal("Real receiver must expose its bounded HTTP transport")
+        return {**report, "status": "injected_adapter_without_http_transport", "generation_attempts": None,
+                "metadata_attempts": None, "successes": None, "errors": None}
+    transport = adapter.request
+
+    def request(endpoint, payload, timeout):
+        generation = endpoint == "/v1/chat/completions"
+        if not generation and endpoint not in ("/props", "/slots", "/v1/models"):
+            raise Refusal(f"Unexpected receiver endpoint: {endpoint}")
+        field, cap = ("generation_attempts", MAX_CALLS) if generation else (
+            "metadata_attempts", MAX_COLLECTION_METADATA_HTTP)
+        if report[field] >= cap:
+            raise Refusal(f"Collection HTTP {field} cap exhausted")
+        report[field] += 1
+        report["endpoints"][endpoint] = report["endpoints"].get(endpoint, 0) + 1
+        try:
+            response = transport(endpoint, payload, timeout if generation else min(timeout, 10))
+        except BaseException:
+            report["errors"] += 1
+            raise
+        report["successes"] += 1
+        return response
+
+    adapter.request = request
+    report["status"] = "http_boundary_counted"
+    return report
 
 
 # ------------------------------------------------------------------ 1. request reconstruction
@@ -325,10 +449,20 @@ class _E13aPhase(cd._Phase):
     per-slot artifact write and ledger line. Every receiver guard, accounting rule and missing_reason is
     _Phase's own: nothing is reimplemented or bypassed."""
 
-    def __init__(self, config, output, adapter, clock, carried, *, stage_clock, ledger, phase_name=PHASE_NAME):
+    def __init__(self, config, output, adapter, clock, carried, *, stage_clock, ledger, phase_name=PHASE_NAME,
+                 enforce_identity=False):
         super().__init__(config, output, adapter, clock, carried)
         self.stage_clock, self.ledger, self.phase_name = stage_clock, ledger, phase_name
         self.artifact_index = {}
+        self.enforce_identity = enforce_identity
+
+    def preflight(self, previous_state=None):
+        super().preflight(previous_state)
+        if self.enforce_identity and self.fatal is None:
+            if self.metadata["before"].get("digest") != self.config["model_digest"] or \
+                    self.metadata["version"].get("version") != self.config["server_build"]:
+                self.fatal = "preflight: receiver weight digest or server build differs from freeze"
+                self.preflight_failure = self.fatal
 
     def remaining(self):
         """The tightest of the run's own time budget, this phase's cap and the ONE shared outer deadline."""
@@ -361,6 +495,29 @@ class _E13aPhase(cd._Phase):
                            "fatal_error": self.fatal})
         return rec
 
+    def record_missing_after_abort(self, messages, root, arm, replicate, *, attempted):
+        """Append one final unknown slot without dispatch or a new reservation; preserve earlier log bytes."""
+        seed_key = f"{arm}:{replicate}"
+        payload = {"model": self.config["model"], "messages": messages, "stream": False,
+                   "options": {**self.config["decoding"], "num_predict": self.config["max_tokens_per_call"],
+                               "seed": root["seeds"][seed_key]}}
+        if "sampler" in self.config:
+            payload["sampler"] = dict(self.config["sampler"])
+        rec = {"phase": PHASE_NAME, "root_id": root["root_id"], "arm": arm, "replicate": replicate,
+               "seed_key": seed_key, "request": payload, "request_sha256": collect.digest(payload),
+               "attempted": attempted, "output": None, "output_sha256": None,
+               "missing_reason": "interrupted_attempt_outcome_unknown" if attempted else self.fatal,
+               "prompt_tokens": None, "completion_tokens": None, "seconds": None if attempted else 0.0}
+        self.calls.append(rec)
+        with (self.output / "calls.jsonl").open("a") as handle:
+            handle.write(json.dumps(rec, ensure_ascii=False) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        self.ledger.write({"event": "abort_slot_result", "slot": f"{root['root_id']}|{arm}|{replicate}",
+                           "attempted": attempted, "missing_reason": rec["missing_reason"],
+                           "request_sha256": rec["request_sha256"]})
+        return rec
+
 
 # ------------------------------------------------------------------ attestation (the same instrument E12 uses)
 def _attestation(ownership, config, now, budget_seconds):
@@ -389,9 +546,12 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
         raise Refusal(f"Refusing to overwrite an existing collection directory: {out}")
     monotonic = time.monotonic
     if clock is None:
-        clock, clock_path = open_clock(out_dir)
+        clock, clock_path = open_clock(out_dir, require_existing=real,
+                                      stage_sha256=stage["stage_sha256"] if real else None)
     else:
         clock_path = out_dir / CLOCK_FILE
+        if real:
+            clock.require_binding(out_dir, stage["stage_sha256"])
     clock.check(PHASE_NAME)  # refuse before any output exists if the shared clock is already exhausted
 
     release, package = stage["release"], stage["package"]
@@ -405,6 +565,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
     if dispatch_config["max_tokens_per_call"] != TOKENS_PER_CALL:
         raise Refusal(f"this stage reserves {TOKENS_PER_CALL} completion tokens per call")
 
+    release_provenance = verify_release(stage, plan, real=real)
     real_extra, attestation = {}, None
     if real:
         adapter, real_extra = cd._real_setup(release["config"], release["tasks"], release["config_path"],
@@ -415,6 +576,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
             raise Refusal("transport-only collection needs an injected adapter; real dispatch needs real=True")
         if ownership is not None:
             attestation = _attestation(ownership, release["config"], utc_now(), phase_seconds)
+    http_usage = bound_http_requests(adapter, real=real)
 
     built = rebuild(stage, plan)
     order = schedule(package["config"], built["roots"])
@@ -443,6 +605,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
         "frozen_config_sha256": collect.digest(release["config"]),
         "caps": {"max_calls": dispatch_config["max_calls"], "max_completion_tokens": dispatch_config["max_completion_tokens"],
                  "max_tokens_per_call": dispatch_config["max_tokens_per_call"], "phase_seconds": phase_seconds,
+                 "collection_metadata_http_attempts": MAX_COLLECTION_METADATA_HTTP,
                  "ceilings": {"max_calls": MAX_CALLS, "max_completion_tokens": MAX_RESERVED_COMPLETION_TOKENS}},
         "stage_clock": clock.report(), "stage_clock_path": str(clock_path),
         "gating": built["gating"], "byte_checks": built["byte_checks"],
@@ -454,7 +617,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
                   "No retries, no backfill and no outcome-driven stopping: a failed or unavailable attempt keeps "
                   "its slot with a missing_reason. Randomized order is scheduling, not treatment assignment.",
         "contrast": stage["descriptor"]["contrast"],
-        "attestation": attestation, **real_extra}
+        "attestation": attestation, **release_provenance, **real_extra}
     (out / "manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
 
     ledger.write({"event": "reserved", "manifest_sha256": file_sha(out / "manifest.json"),
@@ -473,7 +636,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
         deadline = (utc_now, cd._utc(attestation["record"]["exclusive_window_end_utc"], "exclusive_window_end_utc"))
     ph = _E13aPhase(dispatch_config, out, adapter, monotonic,
                     {"attempted_calls": 0, "reserved_completion_tokens": 0, "wall_seconds": 0.0},
-                    stage_clock=clock, ledger=ledger)
+                    stage_clock=clock, ledger=ledger, enforce_identity=real)
     ph.deadline = deadline  # checked before every request; expiry stops FUTURE dispatch only
     try:
         with clock.phase(PHASE_NAME):
@@ -487,10 +650,27 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
                 ph.generate(root["messages"][cell["arm"]], root, PHASE_NAME, cell["arm"], cell["replicate"])
             ph.postflight()
     except BaseException as exc:
+        ph.fatal = f"collection_aborted: {type(exc).__name__}: {exc}"
         ledger.write({"event": "aborted", "error": f"{type(exc).__name__}: {exc}",
                       "attempted_calls": ph.attempted, "reserved_completion_tokens": ph.reserved})
+        # A transport interruption may occur after reservation but before _Phase appends the call row.
+        # Keep that one attempt charged with unknown usage; all later assigned slots remain unattempted.
+        recorded = {(c["root_id"], c["arm"], c["replicate"]) for c in ph.calls}
+        uncertain = ph.attempted - sum(c["attempted"] for c in ph.calls)
+        if uncertain not in (0, 1):
+            raise Refusal("Interrupted dispatch has inconsistent attempt accounting") from exc
+        for cell in order:
+            key = (cell["root_id"], cell["arm"], cell["replicate"])
+            if key in recorded:
+                continue
+            root = by_root[cell["root_id"]]
+            attempted = bool(uncertain)
+            uncertain = 0
+            ph.record_missing_after_abort(root["messages"][cell["arm"]], root, cell["arm"], cell["replicate"],
+                                          attempted=attempted)
+        ledger.write({"event": "abort_slots_preserved", "recorded_slots": len(ph.calls),
+                      "attempted_calls": ph.attempted, "reserved_completion_tokens": ph.reserved})
         clock.persist(clock_path)
-        raise
     if ph.attempted > dispatch_config["max_calls"] or ph.reserved > dispatch_config["max_completion_tokens"]:
         raise Refusal(f"accounting exceeded the caps: {ph.attempted} calls, {ph.reserved} reserved tokens")
 
@@ -531,6 +711,7 @@ def dispatch(stage, plan, out_dir, *, adapter=None, real=False, clock=None, owne
                      "missing": sum(s["artifact"] is None for s in slots if s["arm"] == a)} for a in ARMS},
         artifact_index=ph.artifact_index, slots=slots, ledger_file=LEDGER, ledger_lines=ledger.lines,
         byte_checks=built["byte_checks"], gating=built["gating"], inputs=built["inputs"],
+        http_request_accounting=http_usage,
         attestation_sha256=(attestation or {}).get("sha256"))
     clock.persist(clock_path)
     return completion
@@ -559,6 +740,10 @@ def main(argv=None):
     result = dispatch(stage, plan, args.out, real=args.real, ownership=args.ownership)
     print(json.dumps({k: result[k] for k in ("phase", "evidence_type", "attempted_calls", "reserved_completion_tokens",
                                              "slots_with_output", "slots_missing", "fatal_error")}, indent=2))
+    if args.real and (result["fatal_error"] is not None or result["attempted_calls"] != MAX_CALLS or
+                      result["receiver_verification"]["status"] != "receiver_guard_checks_passed"):
+        raise SystemExit("Collection stopped at an integrity/resource gate; all assigned slots and accounting "
+                         "were retained. No retry or automatic next-phase dispatch.")
     return result
 
 

@@ -47,7 +47,7 @@
    "No significance-driven escalation and no futility claim from six draws per arm."
   ],
   "descriptor_path": "experiments/landmark/e13a_stage.json",
-  "descriptor_sha256": "44e4ff0a734caebb5c756dcaec81253464988665ad8f5eb535f7e66f21a280c8"
+  "descriptor_sha256": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348"
  },
  "roots": [
   "mbpp/842",
@@ -79,13 +79,13 @@
   "private_specs.jsonl": "921d4f61af315cd9374fd9f82193bd3193b8f176a8b20b503851e288fb832b3d",
   "public_examples_v3.json": "1262d7127cde3f996c495d1051a2c487d9ccef2a66ec0f299fe5c14898dc02dd",
   "controls_rationale.json": "aac99597ff33a567eebff352fb95dacc086be8a8e84358d8b718c1ba67910006",
-  "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6"
+  "config.json": "3cd46d232ff12bbcbe64425fd4bd7538232dae9793f4c6f3bfbd9b56f8f54dcc"
  },
  "grading_bindings": {
   "frozen_tasks_path": "experiments/landmark/e13a_release/tasks.jsonl",
   "frozen_tasks_sha256": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
   "expected_contract_sha256": "23accfb4e60729e05dfa8304136ca45d364046814cf4d300dfa705c370fa4edd",
-  "expected_config_sha256": "e3e310f881be370b3cbd8c6d8f3fe086241a99d98ce1db20f5c108a6efd124f4",
+  "expected_config_sha256": "fdad57bf4bac34be085ad29a75657ed08be09d04e06488302194f8fe227cad4e",
   "expected_source_hashes": {
    "experiments/landmark/study_adapter.py": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
    "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
@@ -96,6 +96,21 @@
    "experiments/landmark/collect_diagnostic.py": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
    "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719"
   }
+ },
+ "execution_source_hashes": {
+  "scripts/e13a_collect.py": "b2d8663e5187744dfd2a379eca99bd2ff2b4867b6892d6e98747fa8a1e946470",
+  "scripts/e13a_grade.py": "eb172d4a75e74d70b812d5a7365b601b251c797f840c7af67b24cb48e57b6b7b",
+  "scripts/e13a_stage_clock.py": "5caed3ec5bb74ff9a2908024e8ddc9d7da0938139dc16f0d357536edcf11e89c",
+  "scripts/e13a_analyze.py": "7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699",
+  "scripts/build_e13a_request_plan.py": "4795b053278e84de31ac45f31b78c6bdcd6dcb46aa6f883d48f3470c173397d5",
+  "scripts/build_e13a_release.py": "a06d45e9d5c9148b5b6724602de187bc3ed70e8da9afcb7490db1951e1129a0a",
+  "scripts/launch_own_receiver_v31.py": "a612553bcfc16b76ab4b0ca753dfecab70631cd829179a2f0261e66e15b8b0a3",
+  "scripts/receiver_preflight_mrl10.py": "15ac29ed1981f44dafbb94ae222d27513c07a638b2cd9b963a6b30b16ace13eb",
+  "scripts/diff_receiver_snapshot_v31.py": "923871d9f000e75428ddb98099ffb2c9a7fd5b04396b653dea9c74f7f6ddc958",
+  "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+  "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+  "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+  "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a"
  },
  "source_release": {
   "dir": "experiments/landmark/dev_release_v3",
@@ -109,7 +124,7 @@
    "controls_rationale.json": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
    "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6"
   },
-  "copy_rule": "tasks.jsonl and private_specs.jsonl rows are the dev_release_v3 line bytes unchanged (assignment order only); public_examples_v3.json cases and controls_rationale.json controls are the source records unchanged; config.json is a byte-for-byte copy. No private assertion, control or task frame was edited and no new task-frame review was performed.",
+  "copy_rule": "tasks.jsonl and private_specs.jsonl rows are the dev_release_v3 line bytes unchanged (assignment order only); public_examples_v3.json cases and controls_rationale.json controls are the source records unchanged; config.json rebinds dataset/contract/source hashes and resource caps while preserving the receiver request law. No private assertion, control or task frame was edited and no new task-frame review was performed.",
   "row_provenance": {
    "mbpp/842": {
     "tasks_row_sha256": "037a538abf9757cfcf1519a0bd3fc4e454e89aeda1c6bb1c71585d6822c3b43e",
@@ -192,7 +207,7 @@
  },
  "builder": {
   "script": "scripts/build_e13a_release.py",
-  "script_sha256": "7c5b0409dae27a47555f31bcde9efe8c1c5ad3afaea13f71d4f60f27bf741372",
+  "script_sha256": "a06d45e9d5c9148b5b6724602de187bc3ed70e8da9afcb7490db1951e1129a0a",
   "deterministic": true,
   "rebuild_command": ".venv/bin/python scripts/build_e13a_release.py --verify"
  }

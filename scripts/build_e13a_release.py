@@ -12,9 +12,8 @@ Copy rule (no new task-frame review, no private-assertion edit):
     into the stage's assignment order;
   * public_examples_v3.json and controls_rationale.json keep the source records unchanged (the selected
     records are written back verbatim; per-record canonical digests are pinned in the manifest);
-  * config.json is a byte-for-byte copy, so the model / sampler / dataset / receiver-state pins are the
-    frozen ones (its E12 call and second caps are NOT E13a's budget: E13a's bookkeeping limits live in the
-    manifest's grading_limits and it authorizes zero receiver calls).
+  * config.json preserves the frozen receiver request law, but binds the five-root dataset, its private
+    grading contract, current executable sources and E13a's smaller call/token/time limits.
 
 Every input is sha256-verified before it is used: the dev_release_v3 package hashes come from that frozen
 release's own manifest, and the E12 artifacts this stage conditions on are checked against both the E12 run's
@@ -27,7 +26,6 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-import shutil
 import sys
 import tempfile
 
@@ -35,7 +33,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from experiments.landmark.collect import digest, file_sha  # noqa: E402
+from experiments.landmark.collect import digest, file_sha, source_hashes  # noqa: E402
 
 MANIFEST_ID = "e13a-two-arm-release"
 RELEASE_DIRNAME = "e13a_release"
@@ -47,8 +45,13 @@ DEFAULT_RUN = "results/e12_dev_v3_20260922T030255Z"
 
 COPIED_ROW_FILES = ("tasks.jsonl", "private_specs.jsonl")
 COPIED_RECORD_FILES = ("public_examples_v3.json", "controls_rationale.json")
-COPIED_WHOLE_FILES = ("config.json",)
-PACKAGE_FILES = COPIED_ROW_FILES + COPIED_RECORD_FILES + COPIED_WHOLE_FILES
+PACKAGE_FILES = COPIED_ROW_FILES + COPIED_RECORD_FILES + ("config.json",)
+EXECUTION_SOURCES = ("scripts/e13a_collect.py", "scripts/e13a_grade.py", "scripts/e13a_stage_clock.py",
+                     "scripts/e13a_analyze.py", "scripts/build_e13a_request_plan.py", "scripts/build_e13a_release.py",
+                     "scripts/launch_own_receiver_v31.py", "scripts/receiver_preflight_mrl10.py",
+                     "scripts/diff_receiver_snapshot_v31.py", "scripts/check_landmark_sandbox.py",
+                     "experiments/landmark/grade.py", "experiments/landmark/sandbox.py",
+                     "experiments/common/integrity.py")
 RECORD_LIST_KEY = {"public_examples_v3.json": "cases", "controls_rationale.json": "controls"}
 E12_CONDITIONING_FILES = ("A/roots.jsonl", "B/diagnostics.json")
 
@@ -64,7 +67,8 @@ AUTHORIZATION_STATEMENT = (
 COPY_RULE = (
     "tasks.jsonl and private_specs.jsonl rows are the dev_release_v3 line bytes unchanged (assignment order "
     "only); public_examples_v3.json cases and controls_rationale.json controls are the source records "
-    "unchanged; config.json is a byte-for-byte copy. No private assertion, control or task frame was edited "
+    "unchanged; config.json rebinds dataset/contract/source hashes and resource caps while preserving the "
+    "receiver request law. No private assertion, control or task frame was edited "
     "and no new task-frame review was performed."
 )
 DIAGNOSTIC_SCHEMA = "public-diagnostic-v2"
@@ -159,7 +163,7 @@ def _e12_pins(run_dir, plan_inputs):
     pins = {}
     for name in E12_CONDITIONING_FILES:
         actual = file_sha(run_dir / name)
-        if name in files and files[name] != actual:
+        if files.get(name) != actual:
             raise ValueError(f"E12 artifact {name} does not match ARTIFACT_SHA256SUMS.json")
         if plan_inputs[name] != actual:
             raise ValueError(f"E12 artifact {name} does not match the request plan pin")
@@ -207,10 +211,14 @@ def build(out_dir, source_dir=None, stage_path=None, plan_path=None, run_dir=Non
         key = RECORD_LIST_KEY[name]
         (out_dir / name).write_text(_dump({**{k: v for k, v in data.items() if k != key},
                                            key: [by_root[r] for r in roots]}), encoding="utf-8")
-    for name in COPIED_WHOLE_FILES:
-        shutil.copyfile(source_dir / name, out_dir / name)
-
     contract = grade.contract(specs)
+    config = _read_json(source_dir / "config.json")
+    config.update(dataset_sha256=digest(tasks), source_code_sha256=digest(source_hashes()),
+                  grading_contract_sha256=digest(contract), max_calls=60, max_completion_tokens=30720,
+                  max_seconds=480)
+    # The underlying instrument's protocol_version describes the reused measurement/receiver contract.
+    # The stage/manifest separately identifies E13a and its six draws; no request-shaping field changes.
+    (out_dir / "config.json").write_text(_dump(config), encoding="utf-8")
     from experiments.landmark import study_adapter as sa  # lazy: source hashes only
     written = _rows_by_root(out_dir / "private_specs.jsonl")  # the written rows must be the source rows, byte for byte
     for r in roots:
@@ -257,6 +265,7 @@ def build(out_dir, source_dir=None, stage_path=None, plan_path=None, run_dir=Non
             "expected_config_sha256": digest(sa._strict((out_dir / "config.json").read_bytes())),
             "expected_source_hashes": sa.grading_source_hashes(),
         },
+        "execution_source_hashes": {name: file_sha(ROOT / name) for name in EXECUTION_SOURCES},
         "source_release": {
             "dir": str(source_dir.relative_to(ROOT)), "manifest": src_manifest["manifest"],
             "manifest_sha256": file_sha(source_dir / "release_manifest.json"),

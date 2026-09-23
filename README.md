@@ -26,7 +26,7 @@ now integrates both studies.
 
 Overall milestone completion is **58%, change 0 percentage points** at the latest review. Efficacy remains unestablished, independent policy validation is incomplete, and the full project is not submission-ready. The [checkpoint](docs/monitoring_checkpoint.md) and [fixed rubric](docs/progress_current.json) govern.
 
-The worker acknowledged and delivered MRL-18 source preparation. The [independent review](docs/mrl18_review_mrl19_20260923.md) corrects incomplete-outcome analysis and sizing claims, and accepts the archived E12 evidence annotation. **MRL-19 permits one bounded source/mock completion of the real two-arm path**, which is still missing from the mock-only delivery. E13a execution and the proposed broader E13b study remain held; expired E12 reservations and unused starts provide no new authority.
+The worker acknowledged and delivered MRL-19 source preparation within its cap. The [independent connected-path review](docs/mrl19_review_mrl20_20260923.md) supplies lead repairs to release/configuration bindings, collection-to-grade provenance, interruption accounting and deadline enforcement. **MRL-20 conditionally permits one bounded E13a development run by the existing worker**, after actual shared-host agreement, fresh runtime checks and committed freeze. No E13a outcomes are delivered. E13b and larger generators remain held; old reservations and unused E12 starts provide no new authority.
 
 ## Prior continuation — 21 September 2026
 

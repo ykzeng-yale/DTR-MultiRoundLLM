@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, timezone
 import json
 from pathlib import Path
 import sys
+import tempfile
 
 import pytest
 
@@ -20,6 +21,7 @@ from experiments.landmark import collect  # noqa: E402
 from experiments.landmark import collect_diagnostic as cd  # noqa: E402
 import e13a_collect as ec  # noqa: E402
 import e13a_stage_clock as sc  # noqa: E402
+import build_e13a_release as builder  # noqa: E402
 
 FIVE = ["mbpp/288", "mbpp/652", "mbpp/842", "mbpp/863", "mbpp/966"]
 ASSIGNED = ["mbpp/842", "mbpp/288", "mbpp/863", "mbpp/966", "mbpp/652"]
@@ -75,8 +77,10 @@ def e12_state():
 
 
 @pytest.fixture(scope="module")
-def stage():
-    return ec.load_stage(release_dir=ec.PKG)
+def stage(tmp_path_factory):
+    release = tmp_path_factory.mktemp("five-root-bindings") / "e13a_release"
+    builder.build(release)
+    return ec.load_stage(release_dir=release)
 
 
 @pytest.fixture(scope="module")
@@ -136,7 +140,7 @@ def test_mismatched_rendered_message_is_refused_before_any_dispatch(stage, plan,
     tampered = copy.deepcopy(plan)
     tampered["roots"][0]["r1_messages_sha256"] = "0" * 64
     tampered["roots"][0]["requests"][0]["messages_sha256"] = "0" * 64
-    with pytest.raises(ValueError, match="differ from the reconstruction"):
+    with pytest.raises(ValueError, match="pinned bytes"):
         ec.dispatch(stage, tampered, tmp_path / "run", adapter=fake(e12_state, stage))
     assert not (tmp_path / "run").exists()
 
@@ -147,7 +151,7 @@ def test_colliding_seed_is_refused_before_any_dispatch(stage, plan, tmp_path, e1
     tampered = copy.deepcopy(plan)
     root = tampered["roots"][0]["root_id"]
     tampered["roots"][0]["requests"][0]["seed"] = seeds[root]["initial"]
-    with pytest.raises(ValueError, match="repeats a seed E12 used"):
+    with pytest.raises(ValueError, match="pinned bytes"):
         ec.dispatch(stage, tampered, tmp_path / "run", adapter=fake(e12_state, stage))
     assert not (tmp_path / "run").exists()
 
@@ -155,15 +159,15 @@ def test_colliding_seed_is_refused_before_any_dispatch(stage, plan, tmp_path, e1
 def test_absent_and_duplicate_assignments_are_refused(stage, plan, tmp_path, e12_state):
     absent = copy.deepcopy(plan)
     absent["roots"][1]["requests"] = absent["roots"][1]["requests"][:-1]
-    with pytest.raises(ValueError, match="missing assigned cells"):
+    with pytest.raises(ValueError, match="pinned bytes"):
         ec.dispatch(stage, absent, tmp_path / "absent", adapter=fake(e12_state, stage))
     duplicate = copy.deepcopy(plan)
     duplicate["roots"][1]["requests"].append(copy.deepcopy(duplicate["roots"][1]["requests"][0]))
-    with pytest.raises(ValueError, match="twice"):
+    with pytest.raises(ValueError, match="pinned bytes"):
         ec.dispatch(stage, duplicate, tmp_path / "dup", adapter=fake(e12_state, stage))
     twice = copy.deepcopy(plan)
     twice["roots"].append(copy.deepcopy(twice["roots"][0]))
-    with pytest.raises(ValueError, match="twice"):
+    with pytest.raises(ValueError, match="pinned bytes"):
         ec.dispatch(stage, twice, tmp_path / "root-twice", adapter=fake(e12_state, stage))
     for name in ("absent", "dup", "root-twice"):
         assert not (tmp_path / name).exists()
@@ -303,16 +307,22 @@ def test_transport_failure_mid_run_keeps_every_assigned_slot(tmp_path, stage, pl
 def test_ledger_survives_an_abort_mid_run(tmp_path, stage, plan, e12_state):
     out = tmp_path / "run"
     adapter = fake(e12_state, stage, abort_at=20)
-    with pytest.raises(KeyboardInterrupt):
-        ec.dispatch(stage, plan, out, adapter=adapter)
+    result = ec.dispatch(stage, plan, out, adapter=adapter)
     lines = ledger_lines(out)
-    assert lines[0]["event"] == "reserved" and lines[-1]["event"] == "aborted"
-    assert "KeyboardInterrupt" in lines[-1]["error"]
+    assert lines[0]["event"] == "reserved" and lines[-1]["event"] == "complete"
+    aborted = next(r for r in lines if r["event"] == "aborted")
+    assert "KeyboardInterrupt" in aborted["error"]
     assert sum(1 for x in lines if x["event"] == "dispatch_start") == 20
     assert sum(1 for x in lines if x["event"] == "dispatch_result") == 19
     assert lines[-1]["attempted_calls"] == 20 and lines[-1]["reserved_completion_tokens"] == 20 * 512
-    assert len(calls_lines(out)) == 19                       # append-only, one line per completed attempt
-    assert not (out / "collect" / "completion.json").exists()
+    rows = calls_lines(out)
+    assert len(rows) == 60 and sum(r["attempted"] for r in rows) == 20
+    assert result["recorded_slots"] == 60 and result["slots_missing"] == 41
+    assert rows[19]["missing_reason"] == "interrupted_attempt_outcome_unknown"
+    assert rows[19]["attempted"] and rows[19]["prompt_tokens"] is None
+    assert all(not row["attempted"] for row in rows[20:])
+    assert result["attempted_calls_with_unknown_usage"] == 1
+    assert (out / "collect" / "completion.json").exists()
     assert (out / sc.CLOCK_FILE).exists()                    # the aborted phase is still charged
 
 
@@ -363,7 +373,8 @@ def test_a_valid_attestation_is_recorded_and_bounds_dispatch(tmp_path, stage, pl
 
 def test_real_mode_goes_through_the_e12_real_setup_and_refuses_an_injected_adapter(tmp_path, stage, plan, e12_state):
     ownership = attestation(tmp_path, stage)
-    with pytest.raises(ValueError, match="collect.LlamaServer"):
+    # A real call requires its existing stage clock even when the caller tries to inject a fake adapter.
+    with pytest.raises((ValueError, FileNotFoundError), match="clock|Clock"):
         ec.dispatch(stage, plan, tmp_path / "real", adapter=fake(e12_state, stage), real=True, ownership=ownership)
     assert not (tmp_path / "real").exists()
     with pytest.raises(ValueError, match="needs an injected adapter"):
@@ -380,6 +391,129 @@ def test_release_bindings_may_not_change_the_request_bytes(tmp_path):
     (forged / "tasks.jsonl").write_bytes((ec.PKG / "tasks.jsonl").read_bytes())
     with pytest.raises(ValueError, match="would change the request bytes"):
         ec.load_stage(release_dir=forged)
+
+
+@pytest.fixture
+def real_bound_fixture(monkeypatch, e12_state):
+    """Real guards/adapter, fake external Git/HTTP/model-file boundaries; no model or program executes.
+
+    The temporary release sits under the repository only so verify_freeze's real path checks are exercised.
+    Git reads return a fixed snapshot of those test bytes; no Git ref/config is changed.
+    """
+    (ROOT / "work").mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=ROOT / "work", prefix="e13a-real-guard-test-") as directory:
+        base = Path(directory)
+        release = base / "e13a_release"
+        builder.build(release)
+        stage = ec.load_stage(release_dir=release)
+        monkeypatch.setattr(ec, "E13A_RELEASE", release)
+        manifest = json.loads((release / "release_manifest.json").read_text())
+        files = [*release.iterdir(), stage["stage_path"], ec.PLAN, ec.RUN / "ARTIFACT_SHA256SUMS.json",
+                 ec.PKG / "release_manifest.json", *collect.HERE.glob("*.py"),
+                 *(ROOT / p for p in manifest["execution_source_hashes"])]
+        blobs = {p.relative_to(ROOT).as_posix(): p.read_bytes() for p in files if p.is_file()}
+        git_reads, requests = [], []
+
+        def git_read(args, *, text=False, **kwargs):
+            git_reads.append(args)
+            if args == ["git", "rev-parse", "HEAD"]:
+                value = ("a" * 40 + "\n").encode()
+            elif args == ["git", "rev-parse", "--show-toplevel"]:
+                value = (str(ROOT) + "\n").encode()
+            elif len(args) == 3 and args[:2] == ["git", "show"]:
+                value = blobs[args[2].split(":", 1)[1]]
+            else:
+                raise AssertionError(f"Unexpected external command: {args}")
+            return value.decode() if text else value
+
+        def http(self, endpoint, payload, timeout):
+            requests.append((endpoint, copy.deepcopy(payload), timeout))
+            if endpoint == "/props":
+                return copy.deepcopy(e12_state)
+            if endpoint == "/slots":
+                return [{"id": i, "is_processing": False} for i in range(e12_state["total_slots"])]
+            if endpoint == "/v1/models":
+                return {"data": [{"id": stage["release"]["config"]["model"]}]}
+            if endpoint == "/v1/chat/completions":
+                return {"choices": [{"message": {"content": "def solution():\n    return 0\n"},
+                                     "finish_reason": "stop"}],
+                        "usage": {"prompt_tokens": 11, "completion_tokens": 7}}
+            raise AssertionError(f"Unexpected HTTP endpoint: {endpoint}")
+
+        original_exists = collect.os.path.exists
+        monkeypatch.setattr(collect.subprocess, "check_output", git_read)
+        monkeypatch.setattr(collect.LlamaServer, "request", http)
+        monkeypatch.setattr(collect.os.path, "exists", lambda p: p == e12_state["model_path"] or original_exists(p))
+        monkeypatch.setattr(collect.LlamaServer, "weight_digest",
+                            staticmethod(lambda p: stage["release"]["config"]["model_digest"]))
+        out = base / "run"
+        clock = sc.StageClock.from_start(sc.utc_now(), run_dir=out, stage_sha256=stage["stage_sha256"])
+        clock.persist(out / sc.CLOCK_FILE)
+        with clock.phase("setup"):
+            pass  # mock setup receipt only; no receiver or containment starts
+        ownership = attestation(base, stage)
+        yield {"stage": stage, "out": out, "ownership": ownership, "blobs": blobs,
+               "git_reads": git_reads, "requests": requests}
+
+
+def test_real_true_guard_path_uses_actual_llamaserver_interface(real_bound_fixture, plan):
+    f = real_bound_fixture
+    result = ec.dispatch(f["stage"], plan, f["out"], real=True, ownership=f["ownership"])
+    assert result["real_receiver"] is True  # API mode exercised under mocked external boundaries, not empirical data
+    assert result["adapter"] == "LlamaServer"
+    assert result["attempted_calls"] == result["slots_with_output"] == result["recorded_slots"] == 60
+    assert result["receiver_verification"]["status"] == "receiver_guard_checks_passed"
+    generation = [payload for endpoint, payload, _ in f["requests"] if endpoint == "/v1/chat/completions"]
+    assert len(generation) == 60
+    for payload in generation:
+        assert payload["cache_prompt"] is False and payload["max_tokens"] == 512
+        assert all(payload[k] == v for k, v in f["stage"]["release"]["config"]["sampler"].items())
+    usage = result["http_request_accounting"]
+    assert usage["generation_attempts"] == 60
+    assert usage["metadata_attempts"] == sum(endpoint != "/v1/chat/completions" for endpoint, _, _ in f["requests"])
+    assert usage["metadata_attempts"] <= 31
+    assert all(timeout <= 10 for endpoint, _, timeout in f["requests"] if endpoint != "/v1/chat/completions")
+    checked = {args[2].split(":", 1)[1] for args in f["git_reads"] if args[:2] == ["git", "show"]}
+    assert set(builder.EXECUTION_SOURCES) <= checked
+
+
+def test_real_guard_refuses_uncommitted_execution_source_before_http(real_bound_fixture, plan):
+    f = real_bound_fixture
+    f["blobs"]["scripts/e13a_collect.py"] = b"different committed collector"
+    with pytest.raises(ValueError, match="differs from committed HEAD"):
+        ec.dispatch(f["stage"], plan, f["out"], real=True, ownership=f["ownership"])
+    assert not f["requests"]
+    assert not (f["out"] / "collect").exists()
+
+
+def test_real_preflight_refuses_wrong_weight_digest_preserving_all_slots(real_bound_fixture, plan, monkeypatch):
+    f = real_bound_fixture
+    monkeypatch.setattr(collect.LlamaServer, "weight_digest", staticmethod(lambda p: "0" * 64))
+    result = ec.dispatch(f["stage"], plan, f["out"], real=True, ownership=f["ownership"])
+    assert result["attempted_calls"] == 0 and result["slots_missing"] == 60
+    assert result["recorded_slots"] == 60
+    assert "weight digest" in result["preflight_failure"]
+    assert not any(endpoint == "/v1/chat/completions" for endpoint, _, _ in f["requests"])
+
+
+def test_http_metadata_cap_counts_failed_attempts_without_retry():
+    class FailingTransport:
+        calls = 0
+
+        def request(self, endpoint, payload, timeout):
+            self.calls += 1
+            assert timeout <= 10
+            raise OSError("synthetic HTTP failure")
+
+    adapter = FailingTransport()
+    usage = ec.bound_http_requests(adapter, real=True)
+    for _ in range(ec.MAX_COLLECTION_METADATA_HTTP):
+        with pytest.raises(OSError, match="synthetic HTTP failure"):
+            adapter.request("/props", None, 120)
+    with pytest.raises(ValueError, match="cap exhausted"):
+        adapter.request("/props", None, 120)
+    assert adapter.calls == usage["metadata_attempts"] == usage["errors"] == 31
+    assert usage["generation_attempts"] == 0
 
 
 # ------------------------------------------------------------------ 6. the shared stage clock

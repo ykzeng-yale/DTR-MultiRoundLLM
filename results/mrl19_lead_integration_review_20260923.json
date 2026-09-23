@@ -1,0 +1,100 @@
+{
+  "review_utc": "2026-09-23T05:45:14.770293Z",
+  "evidence_class": "source/mock integration and reused immutable-byte checks; no empirical E13a outcomes",
+  "last_seen_worker_commit": "7ebccd8ab63db96565cd58aa6179cf5c5e2dc8f7",
+  "independently_reviewed_source_delivery": "bb8969444029e0765a8638b4f1404fab02d85f5e",
+  "review_start_tree": "4e2cd4104f085b5e3878bee8a7b7079cbccef24b",
+  "latest_validated_empirical_revision": "1f654476645662943c0dda1bc3d636116776beb5",
+  "worker_acknowledgement_utc": "2026-09-23T04:49:46Z",
+  "worker_completion_utc": "2026-09-23T05:11:07Z",
+  "original_guard_reproduction": {
+    "error": "Dataset or source differs from freeze",
+    "recorded_dataset_sha256": "ca8bd653824dd1a025b4a61840700c8cc51263682e617a22584f8456ea8c7780",
+    "actual_dataset_sha256": "e48a13a8e29e238bef722e1a0e7f5130f934de82c0af13c484fc3d8785704f66"
+  },
+  "repaired_real_config_validation": "passed before any adapter construction",
+  "source_and_package_pins": {
+    "experiments/landmark/e13a_release/tasks.jsonl": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
+    "experiments/landmark/e13a_release/private_specs.jsonl": "921d4f61af315cd9374fd9f82193bd3193b8f176a8b20b503851e288fb832b3d",
+    "experiments/landmark/e13a_release/public_examples_v3.json": "1262d7127cde3f996c495d1051a2c487d9ccef2a66ec0f299fe5c14898dc02dd",
+    "experiments/landmark/e13a_release/controls_rationale.json": "aac99597ff33a567eebff352fb95dacc086be8a8e84358d8b718c1ba67910006",
+    "experiments/landmark/e13a_release/config.json": "3cd46d232ff12bbcbe64425fd4bd7538232dae9793f4c6f3bfbd9b56f8f54dcc",
+    "scripts/e13a_collect.py": "b2d8663e5187744dfd2a379eca99bd2ff2b4867b6892d6e98747fa8a1e946470",
+    "scripts/e13a_grade.py": "eb172d4a75e74d70b812d5a7365b601b251c797f840c7af67b24cb48e57b6b7b",
+    "scripts/e13a_stage_clock.py": "5caed3ec5bb74ff9a2908024e8ddc9d7da0938139dc16f0d357536edcf11e89c",
+    "scripts/e13a_analyze.py": "7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699",
+    "scripts/build_e13a_request_plan.py": "4795b053278e84de31ac45f31b78c6bdcd6dcb46aa6f883d48f3470c173397d5",
+    "scripts/build_e13a_release.py": "a06d45e9d5c9148b5b6724602de187bc3ed70e8da9afcb7490db1951e1129a0a",
+    "scripts/launch_own_receiver_v31.py": "a612553bcfc16b76ab4b0ca753dfecab70631cd829179a2f0261e66e15b8b0a3",
+    "scripts/receiver_preflight_mrl10.py": "15ac29ed1981f44dafbb94ae222d27513c07a638b2cd9b963a6b30b16ace13eb",
+    "scripts/diff_receiver_snapshot_v31.py": "923871d9f000e75428ddb98099ffb2c9a7fd5b04396b653dea9c74f7f6ddc958",
+    "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+    "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+    "experiments/landmark/e13a_stage.json": "25158baf017fc6df94959ccb5d4286c58cb926448f6df178d4fbe21792cc9348",
+    "results/e13a_request_plan_20260922.json": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7"
+  },
+  "pin_count": 20,
+  "release_manifest_sha256": "bf043846c93cc392be7398b5a87c984e83816b519f2920329ca518337c6b6297",
+  "unchanged_E12_task_private_rows": 10,
+  "old_packages_and_E12_results_unchanged_since": "cb1536a1503d1fa84f3e68ce634f99d8fd3c7ca6",
+  "binding_audit_seconds": 0.041231333278119564,
+  "tests": {
+    "parent_full_suite": {
+      "summary": "2 failed, 1084 passed, 5 skipped, 8 subtests passed in 6.94s",
+      "returncode": 1,
+      "wall_seconds": 7.325936917215586,
+      "known_failures": [
+        "tests/test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts",
+        "tests/test_landmark_public_instrument.py::test_exact_starts_and_preserved_identities[E2-2]"
+      ],
+      "failure_scope": "Unchanged worker-host absolute-path fixtures; not containment validation.",
+      "skipped": 5
+    },
+    "final_connected_path_plan_analyzer_release": {
+      "passed": 73,
+      "pytest_seconds": 1.19
+    },
+    "final_contract": {
+      "passed": 10,
+      "pytest_seconds": 0.2
+    },
+    "clock": {
+      "passed": 40,
+      "pytest_seconds": 0.23
+    },
+    "launcher": {
+      "passed": 30,
+      "pytest_seconds": 0.3
+    },
+    "note": "Focused tests overlap full suite; counts are not summed or treated as validation milestones. Stale documentation-snapshot failures found on initial full run were replaced by source-backed contract checks."
+  },
+  "independent_review_scopes": [
+    "collector/builder and grader boundary cross-review",
+    "canonical collection-to-grade-to-analysis integration, missingness and receiver-law refusal",
+    "bound clock, lifecycle and exact command contract",
+    "parent configuration reproduction, pins, immutable bytes and full-suite validation"
+  ],
+  "real_execution_accounting": {
+    "model_calls": 0,
+    "model_tokens": 0,
+    "receiver_http_requests": 0,
+    "benchmark_reference_candidate_starts": 0,
+    "containment_payload_starts": 0,
+    "server_launches": 0,
+    "paid_usd": 0,
+    "installations": 0
+  },
+  "runtime_note": "Only deterministic source/mock test process time and binding audit measured; complete human/agent review wall time not instrumented.",
+  "current_resource_request": {
+    "commit": "7ebccd8ab63db96565cd58aa6179cf5c5e2dc8f7",
+    "proposed_window": "2026-09-23T06:15:00Z/2026-09-23T07:45:00Z",
+    "status": "request received; no peer acceptance evidenced"
+  },
+  "decision": "MRL20 conditional one-run bundle; actual window/runtime/committed-freeze gates required",
+  "overall_percent": 58,
+  "delta_percentage_points": 0,
+  "submission_ready": false,
+  "efficacy_established": false
+}

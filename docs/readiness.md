@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change 0 percentage points** since the preceding58% check. MRL-18 source/mock, missing-outcome analysis and sizing repairs add no empirical credit. Component weights and credit remain unchanged; E12's negative development result remains independently accepted. Efficacy is unestablished, independent policy validation remains0, and the full project is not submission-ready. [Current decision and MRL-19](mrl18_review_mrl19_20260923.md); [component calculation](progress_current.json). The prior+3points from55% were earned by E12 reconciliation, not this preparation review. Earlier dated checkpoints retain their historical numbers.
+**58%, change 0 percentage points** since the preceding58% check. MRL-19 connected-path/source repairs add no empirical credit and do not change component weights or credit. E12's negative development evidence remains accepted. Efficacy is unestablished, independent policy validation remains0, and the full project is not submission-ready. [Current review and conditional MRL-20](mrl19_review_mrl20_20260923.md); [component calculation](progress_current.json). A tested execution path is separate from a completed experiment. Earlier dated checkpoints retain their historical numbers.
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

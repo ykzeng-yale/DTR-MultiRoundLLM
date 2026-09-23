@@ -14,7 +14,7 @@ on success (`--stop` does, only for the PID it recorded). Failed or interrupted 
 and reaps its own child. Readiness does not replace the remaining preflight/refreeze checks.
 """
 from __future__ import annotations
-import argparse, hashlib, json, os, subprocess, sys, time
+import argparse, hashlib, json, os, signal, subprocess, sys, time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -111,6 +111,70 @@ def terminate_owned_child(proc):
         proc.wait(timeout=5)
 
 
+def process_identity(pid):
+    """Read birth time and command without a shell; absence is distinct from an inspection error."""
+    if type(pid) is not int or pid <= 1:
+        raise SystemExit("Invalid recorded receiver PID")
+    result = subprocess.run(["ps", "-p", str(pid), "-o", "lstart=", "-o", "command="],
+                            capture_output=True, text=True, timeout=2)
+    if result.returncode == 1 and not result.stdout.strip():
+        return None
+    if result.returncode != 0 or not result.stdout.strip():
+        raise SystemExit("Cannot inspect recorded receiver identity; refusing to signal")
+    return " ".join(result.stdout.split())
+
+
+def stop_recorded_receiver(out):
+    """Bounded shutdown of the exact process created by this launcher, with an observed-exit receipt.
+
+    A different process at the PID is never signalled. This process is not necessarily our child,
+    so disappearance can be observed but an exit code cannot be reconstructed.
+    """
+    path = Path(out) / "launch.json"
+    rec = json.loads(path.read_text())
+    pid, expected = rec.get("pid"), rec.get("process_identity")
+    if not isinstance(expected, str) or not expected:
+        raise SystemExit("Launch record lacks process identity; do not infer ownership from PID alone")
+    actual = process_identity(pid)
+    if actual is not None and actual != expected:
+        raise SystemExit("Recorded PID now identifies another process; refusing to signal")
+    rec["stop_requested_utc"] = now()
+    rec["stop_signals"] = []
+    for sig in (signal.SIGTERM, signal.SIGKILL):
+        actual = process_identity(pid)
+        if actual is None:
+            break
+        if actual != expected:
+            rec["stop_error"] = "process identity changed during cleanup; no further signal"
+            path.write_text(json.dumps(rec, indent=1) + "\n")
+            raise SystemExit(rec["stop_error"])
+        try:
+            os.kill(pid, sig)
+            rec["stop_signals"].append(int(sig))
+        except ProcessLookupError:
+            break
+        deadline = time.monotonic() + 5
+        while time.monotonic() < deadline:
+            actual = process_identity(pid)
+            if actual is None:
+                break
+            if actual != expected:
+                rec["stop_error"] = "process identity changed during cleanup; no further signal"
+                path.write_text(json.dumps(rec, indent=1) + "\n")
+                raise SystemExit(rec["stop_error"])
+            time.sleep(0.1)
+        if actual is None:
+            break
+    rec["exit_observed"] = process_identity(pid) is None
+    rec["stopped_utc"] = now() if rec["exit_observed"] else None
+    rec["exit_observation_note"] = "PID absent after identity-checked cleanup; exit code unavailable"
+    path.write_text(json.dumps(rec, indent=1) + "\n")
+    if not rec["exit_observed"]:
+        raise SystemExit("Owned receiver exit unverified after bounded cleanup; report blocked")
+    print(json.dumps({"stopped_pid": pid, "utc": rec["stopped_utc"], "exit_observed": True}))
+    return rec
+
+
 def verify():
     m = json.loads(MANIFEST.read_text())
     bad = [n for n, rec in m["files"].items() if not (BIN / n).exists() or hashlib.sha256((BIN / n).read_bytes()).hexdigest() != rec["sha256"]]
@@ -130,15 +194,7 @@ def main(argv=None):
     ap.add_argument("--stop", action="store_true", help="terminate ONLY the PID recorded in <out>/launch.json")
     a = ap.parse_args(argv)
     if a.stop:
-        rec = json.loads((a.out / "launch.json").read_text())
-        pid = rec["pid"]
-        cmdline = sh(f"ps -o command= -p {pid}")
-        if "llama-server" not in cmdline or f"--port {PORT}" not in cmdline:
-            raise SystemExit(f"PID {pid} is not our recorded server; refusing to signal")
-        os.kill(pid, 15)
-        rec["stopped_utc"] = now()
-        (a.out / "launch.json").write_text(json.dumps(rec, indent=1) + "\n")
-        print(json.dumps({"stopped_pid": pid, "utc": rec["stopped_utc"]}))
+        stop_recorded_receiver(a.out)
         return
     if a.ownership is None or not a.ownership.exists():
         raise SystemExit("Refusing to launch: no committed owner agreement (shared-hardware window) supplied")
@@ -179,6 +235,9 @@ def main(argv=None):
            "generation_requests": 0}
     ready = None
     try:
+        rec["process_identity"] = process_identity(proc.pid)
+        if rec["process_identity"] is None:
+            raise SystemExit("Owned receiver exited before its identity could be recorded")
         (a.out / "launch.json").write_text(json.dumps(rec, indent=1) + "\n")
         while time.monotonic() - t0 < 600 and datetime.now(timezone.utc) < setup_deadline:
             if proc.poll() is not None:

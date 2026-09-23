@@ -24,7 +24,7 @@ if str(ROOT) not in sys.path:
 sys.path.insert(0, str(ROOT / "scripts"))
 import build_e13a_release as builder  # noqa: E402
 from experiments.landmark import grade, study_adapter as sa  # noqa: E402
-from experiments.landmark.collect import digest, file_sha  # noqa: E402
+from experiments.landmark.collect import digest, file_sha, validate, source_hashes  # noqa: E402
 
 RELEASE = ROOT / "experiments/landmark/e13a_release"
 SOURCE = ROOT / "experiments/landmark/dev_release_v3"
@@ -98,7 +98,27 @@ def test_rows_are_byte_identical_to_dev_release_v3():
         for r in ROOTS:
             assert digest(new[r]) == digest(src[r]) and new[r] == src[r], f"{name} record for {r} changed"
         assert json.loads((RELEASE / name).read_text())["version"] == json.loads((SOURCE / name).read_text())["version"]
-    assert (RELEASE / "config.json").read_bytes() == (SOURCE / "config.json").read_bytes()
+    old = json.loads((SOURCE / "config.json").read_text())
+    new = json.loads((RELEASE / "config.json").read_text())
+    rebound = {"dataset_sha256", "source_code_sha256", "grading_contract_sha256", "max_calls",
+               "max_completion_tokens", "max_seconds"}
+    assert {k: v for k, v in new.items() if k not in rebound} == {k: v for k, v in old.items() if k not in rebound}
+
+
+def test_rebuilt_five_root_config_passes_actual_real_validation(tmp_path):
+    out = tmp_path / "e13a_release"
+    manifest = builder.build(out)
+    config = json.loads((out / "config.json").read_text())
+    tasks = [json.loads(line) for line in (out / "tasks.jsonl").read_text().splitlines()]
+    specs = [json.loads(line) for line in (out / "private_specs.jsonl").read_text().splitlines()]
+    validate(config, tasks, real=True)  # no transport or executable program: the real static validator itself
+    assert config["dataset_sha256"] == digest(tasks)
+    assert config["source_code_sha256"] == digest(source_hashes())
+    assert config["grading_contract_sha256"] == digest(grade.contract(specs))
+    assert (config["max_calls"], config["max_completion_tokens"], config["max_seconds"]) == (60, 30720, 480)
+    assert set(manifest["execution_source_hashes"]) == set(builder.EXECUTION_SOURCES)
+    for path, want in manifest["execution_source_hashes"].items():
+        assert want == file_sha(ROOT / path)
 
 
 def test_private_assertions_and_controls_unchanged():
@@ -165,9 +185,11 @@ def test_new_manifest_is_allowlisted_and_gets_the_same_committed_check(tmp_path)
     assert MANIFEST_REL in sa.COMMITTED_RELEASE_MANIFESTS
     path = ROOT / MANIFEST_REL
     data = path.read_bytes()
-    if _tracked(MANIFEST_REL):
+    committed = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob", f"HEAD:{MANIFEST_REL}"],
+                               capture_output=True)
+    if committed.returncode == 0 and committed.stdout == data:
         assert sa.verify_committed_release(path, data) == hashlib.sha256(data).hexdigest()
-    else:  # not committed yet: the allowlist entry buys no exemption
+    else:  # absent or changed since HEAD: the allowlist entry buys no exemption
         with pytest.raises(ValueError, match="HEAD"):
             sa.verify_committed_release(path, data)
 
@@ -213,6 +235,9 @@ def test_manifest_pins_sources_and_authorizes_nothing():
     assert m["e12_conditioning"]["private_grades_are_an_input"] is False
     assert m["model"] == json.loads((SOURCE / "release_manifest.json").read_text())["model"]
     assert m["builder"]["script_sha256"] == file_sha(ROOT / "scripts/build_e13a_release.py")
+    assert set(m["execution_source_hashes"]) == set(builder.EXECUTION_SOURCES)
+    for name, want in m["execution_source_hashes"].items():
+        assert want == file_sha(ROOT / name)
     for root, prov in m["source_release"]["row_provenance"].items():
         assert prov["tasks_row_sha256"] == digest(next(t for t in _tasks() if t["root_id"] == root))
         assert prov["private_spec_row_sha256"] == digest(next(s for s in _specs() if s["root_id"] == root))
