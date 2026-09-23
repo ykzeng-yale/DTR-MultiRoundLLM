@@ -1,0 +1,39 @@
+{
+ "annotation_version": "mrl17-metadata-annotation-v1",
+ "annotates": {
+  "path": "results/e12_mechanism_exploratory_mrl17_20260922.json",
+  "sha256": "1561bbc7a9b7670916416e7cbbf872386db8b2996748d65e0b834a35cba66a69",
+  "preserved_unchanged": true
+ },
+ "authority": "MRL-18 item 5, lead commit be417b5 (docs/e12_lead_judgment_20260923.md)",
+ "defect": "The annotated JSON's own metadata labels itself E11 with 7 reused roots. Its analysis_version is 'e11-mechanism-static-v2-tristate' and its evidence_class says 'immutable E11 outputs ... 7 reused roots'. Those labels were hard-coded in the generator and are wrong for this report.",
+ "correct_labels": {
+  "run": "e12_dev_v3_20260922T030255Z",
+  "study": "E12",
+  "n_roots": 14,
+  "evidence_class": "post-hoc exploratory static analysis of immutable outputs of run e12_dev_v3_20260922T030255Z; NOT a prespecified endpoint; 14 roots"
+ },
+ "hash_proof_inputs_are_e12": {
+  "A/calls.jsonl": {
+   "recorded_in_mrl17_json": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+   "e12_artifact_sha256": "b56016edd327eac054ce2fc92f5b83d3d1616dafc13827cd617d8b857b13c43e",
+   "matches_e12": true
+  },
+  "C/calls.jsonl": {
+   "recorded_in_mrl17_json": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+   "e12_artifact_sha256": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
+   "matches_e12": true
+  },
+  "D/grades.jsonl": {
+   "recorded_in_mrl17_json": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+   "e12_artifact_sha256": "c17b30b9a8faa167ce75ffd9d22ffe27971610381e1c6c49393e2116ab7cabbd",
+   "matches_e12": true
+  }
+ },
+ "scope": "Metadata only. The 140 per-continuation descriptions, counts and token sums in the annotated file are unaffected and were reproduced by the lead's review.",
+ "generator_fix": {
+  "path": "scripts/e11_mechanism_analysis.py",
+  "change": "analysis_version and evidence_class are now derived from the analysed run and its observed root count; no run name or root count is hard-coded.",
+  "applies_to": "future reports only; no immutable result is regenerated or replaced"
+ }
+}

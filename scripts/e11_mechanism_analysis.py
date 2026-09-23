@@ -98,8 +98,13 @@ def main(argv=None):
     A = [json.loads(l) for l in open(a.run / "A/calls.jsonl")]
     C = [json.loads(l) for l in open(a.run / "C/calls.jsonl")]
     G = {(g["root_id"], g["arm"], g["replicate"]): g.get("outcome") for g in map(json.loads, open(a.run / "D/grades.jsonl"))}
-    out = {"analysis_version": "e11-mechanism-static-v2-tristate",
-           "evidence_class": "post-hoc exploratory static analysis of immutable E11 outputs; NOT a prespecified endpoint; 7 reused roots",
+    n_roots = len({r["root_id"] for r in A if r.get("root_id")})
+    out = {"analysis_version": "mechanism-static-v3-tristate-run-labelled",
+           "run": a.run.name,
+           # MRL-18: the label is derived from the run actually analysed. The v2 label was hard-coded to E11 and
+           # 7 roots, which mislabelled the E12 report (lead be417b5); it is annotated, not rewritten, in place.
+           "evidence_class": (f"post-hoc exploratory static analysis of immutable outputs of run {a.run.name}; "
+                              f"NOT a prespecified endpoint; {n_roots} roots"),
            "inputs": {p: hashlib.sha256((a.run / p).read_bytes()).hexdigest() for p in ("A/calls.jsonl", "C/calls.jsonl", "D/grades.jsonl")},
            "provenance": source_provenance(), "metric_definitions": METRIC_DEFINITIONS,
            **analyze_records(A, C, G)}

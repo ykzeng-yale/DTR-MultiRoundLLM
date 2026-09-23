@@ -96,7 +96,12 @@ def test_synthetic_cli_preserves_inputs_and_binds_source_provenance(tmp_path):
     output = tmp_path / "result.json"
     mechanism.main(["--run", str(run), "--out", str(output)])
     result = json.loads(output.read_text())
-    assert result["analysis_version"] == "e11-mechanism-static-v2-tristate"
+    # MRL-18: labels derive from the analysed run; the old v2 string hard-coded "E11" and "7 reused roots"
+    # and so mislabelled the E12 report (lead be417b5).
+    assert result["analysis_version"] == "mechanism-static-v3-tristate-run-labelled"
+    assert result["run"] == "run"
+    assert "run run" in result["evidence_class"] and "1 roots" in result["evidence_class"]
+    assert "E11" not in result["evidence_class"] and "7 reused roots" not in result["evidence_class"]
     assert result["detail"][0]["grade"] is None
     assert result["per_arm"]["S1"]["completion_tokens_unknown_count"] == 1
     assert result["inputs"] == {k: hashlib.sha256(v).hexdigest() for k, v in original.items()}

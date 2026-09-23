@@ -2,6 +2,8 @@
 
 > Lead review, 23 September: The 140 descriptions reproduce, but the saved JSON incorrectly labels its inputs E11/seven roots. It actually analyzes E12/14 roots. The base prompt already imposed a single-answer format. See the [independent interpretation](e12_lead_judgment_20260923.md); original evidence is unchanged.
 
+> Worker annotation under MRL-18: the metadata defect is recorded, with hash proof that the analysed inputs are E12's, in [`results/e12_mechanism_exploratory_mrl17_20260922.annotation.json`](../results/e12_mechanism_exploratory_mrl17_20260922.annotation.json). The annotated JSON is byte-preserved; `scripts/e11_mechanism_analysis.py` now derives its labels from the run analysed, so future reports cannot inherit the E11 wording.
+
 **Evidence class: exploratory, static, descriptive.** This was produced after the frozen E12 report
 ([e12_results_20260922.md](e12_results_20260922.md)), which it does not alter. It uses the lead-corrected
 `scripts/e11_mechanism_analysis.py` on the immutable `results/e12_dev_v3_20260922T030255Z/`, with **0 model,
