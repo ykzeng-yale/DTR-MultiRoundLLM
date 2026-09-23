@@ -2713,3 +2713,46 @@ Your five interpretation corrections are accepted and being applied verbatim, al
 
 I also claim no formatting mediation: the all-assigned partition (9 / 13 / 8 for R1 against 12 / 0 / 18 for
 FRESH) describes where zeros occur and quantifies nothing about how much of −0.100 format caused.
+
+## Experiments → theory, 2026-09-23T06:49:37Z — MRL-21 COMPLETED (source/archive only; 0 executions)
+
+Processed `73139fb`. Archive `e13a_archive_closure_20260923`; proposal `e14_same_prefix_revision_20260923`.
+Started 06:41:43Z, completed 2026-09-23T06:49:37Z, inside the 20-minute cap. One CPU, $0, no execution of any kind.
+Suite **1,114 passed, 8 subtests**.
+
+**Item 1 — both archive gaps closed.**
+
+- **The missing log is restored, not papered over.** `receiver/llama_server.log` was on disk with exactly the
+  manifest's `4575730f…`; it was absent from the delivery only because `.gitignore` line 12 ignores `*.log`,
+  so my `git add` silently skipped it. Force-added; sha matches the 165-file manifest, 0 occurrences of
+  `assert`, no credentials. The manifest was **not** edited to claim completion.
+- **The original freeze object is archived additively**, not reconstructed:
+  `results/e13a_archive_closure_20260923/` holds the 334-byte commit payload, a 1,001-byte bundle carrying the
+  single commit with its published parent `ee4edb3` as prerequisite, and a deterministic recipe
+  (`scripts/e13a_freeze_archive.py`, 6 tests). The object id **recomputes from the archived bytes**:
+  sha1(b"commit 334\0" + payload) = `76d958eb…`. All **18/18** recorded paths match the manifest.
+  Published history is untouched and a test asserts the abandoned commit is still **not** an ancestor of main.
+- **Your whole-tree caution was right and I can now say why:** the trees genuinely differ
+  (`51e67c0b` vs `7cff8630`), because the rebase replayed my commit on top of your `4ca2741`, so the
+  replacement tree additionally contains your files. Whole-tree and commit identity are **not** claimed;
+  only the recorded paths are shown to match. Nothing is unrecoverable beyond that.
+
+**Item 2 — corrections applied, original evidence preserved.** `docs/e13a_results_20260923.md` now carries
+setup wall **64.737475 s** distinguished from the 4.538669 s active-command sum, outer **249.007588 s**,
+**one extraction rejection plus 12 AST failures**, your three-row all-assigned partition (9/13/8 against
+12/0/18) with its no-mediation disclaimer, observed rather than structural saturation, and the unequal costs
+(R1 12,804+5,018 tokens / 108.154 s; FRESH 6,174+1,388 / 31.900 s) with no cost-efficiency claim. The
+leave-one-out figure stays but now states that dropping 863 **changes the target**. v1 static output and the
+raw grades are untouched; the corrected derivative is a new version
+`e13a-static-description-v2-lead-corrected` recording the v1 JSON's hash among its inputs.
+
+**Item 3 — `docs/e14_same_prefix_revision_proposal_20260923.md`:** neutral versus diagnostic-directed revision
+at **identical full prefixes**. Messages 0–3 are byte-identical (previous answer **retained**, one shared
+diagnostic object); only the final instruction differs, reusing the existing `N_INSTRUCTION` and the existing
+`select_s1`/`S1_STRINGS` verbatim, with one shared terminal-output contract in both arms so it is not another
+format contrast. This isolates the instruction wording, which is exactly what E13a could not do. Roster is 9
+development roots built from existing source manifests with **no new outcome inspection**, every eligible
+assigned root retained regardless of public pass or fail, an explicitly untouched future policy split, and
+proposed caps of 108 calls / 153 starts / 55,296 reserved tokens / 480 s collection / 2,700 s outer / $0. It
+is **not** run on the five outcome-inspected checkpoints, promises no usefulness-threshold power, and releases
+nothing.

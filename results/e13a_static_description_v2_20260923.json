@@ -1,0 +1,312 @@
+{
+ "analysis_version": "e13a-static-description-v2-lead-corrected",
+ "supersedes": {
+  "analysis_version": "e13a-static-description-v1",
+  "json": "results/e13a_static_description_20260923.json",
+  "script": "scripts/e13a_static_description.py",
+  "note": "v1 output and script are PRESERVED unedited as evidence; this file is an additive derivative, not a regeneration."
+ },
+ "evidence_class": "post-hoc static description of immutable E13a saved outputs; 0 executions; not a prespecified endpoint, not a regrade, not a mechanism or mediation result",
+ "authority": "corrections required by the lead's binding judgment, docs/e13a_lead_judgment_20260923.md",
+ "run": "e13a_two_arm_20260923T061500Z",
+ "inputs": {
+  "collect/calls.jsonl": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+  "grade/grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+  "analysis_report.json": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708"
+ },
+ "preserved_v1_inputs": {
+  "results/e13a_static_description_20260923.json": "63459f5d231ed7b81576e207641e5bd4eac1281f831044c1dfea6a7b58c42830",
+  "scripts/e13a_static_description.py": "13354f3d2264b502e0a0357e6e9fe489702be21438aab86f9b6a3c65ddc779d0",
+  "docs/e13a_lead_judgment_20260923.md": "1ebdda6f8f80948aab1b9bba606ce9c17361eb010ea8c6318d5bb0ea7c64e1a3"
+ },
+ "changelog_against_v1": [
+  {
+   "v1_claim": "R1 had 13 'static failures' under the frozen extraction rule (one lumped count).",
+   "correction": "ONE extraction rejection plus 12 Python-AST failures. Extraction and ast.parse are reported separately here, per cell and in total.",
+   "why_it_mattered": "the lumped count was read in prose as '13 extractor rejections', which suggests correct programs rejected cosmetically. The saved failures include diagnostic-report echoes and are not shown to be correct solutions."
+  },
+  {
+   "v1_claim": "cells were labelled saturation 'floor' / 'ceiling'.",
+   "correction": "observed saturation only: 'all observed scores 0' / 'all observed scores 1'. No structural floor or ceiling is claimed. In particular mbpp/652's observed tie does NOT imply that checkpoint can never express a difference.",
+   "why_it_mattered": "the prose read the labels as limits on what the checkpoint could ever show."
+  },
+  {
+   "v1_claim": "instrument evidence counted 10 cells with more than one distinct output text, reported alongside 'the instrument is not inert'.",
+   "correction": "distinct output TEXTS are not varying binary outcomes and do not establish a discriminating semantic instrument. Cells whose observed SCORES vary are counted separately, and the only claim made is that the saved score is not constant on all outputs.",
+   "why_it_mattered": "text distinctness was overread as semantic discrimination."
+  }
+ ],
+ "metric_definitions": {
+  "extraction_rejection": "the frozen extraction rule (experiments.landmark.grade.extract_code) raised on the saved output text, so no candidate program was recovered.",
+  "ast_failure": "extraction returned text but ast.parse rejected it: no parseable Python module. Counted separately from extraction rejections.",
+  "extractable_and_parseable": "extract_code returned text AND ast.parse accepted it. A static property of the text only.",
+  "observed_saturation": "all observed scores in that cell are 0, or all are 1. OBSERVED only: this is not a structural floor or ceiling and does not bound what the checkpoint could express.",
+  "cells_with_varying_observed_score": "cells whose six observed binary scores are not all equal. This is the only instrument statement supported: the saved score is not constant on all outputs.",
+  "distinct_output_texts": "count of distinct output_sha256 values in the cell. TEXTUAL distinctness; it does NOT imply a varying binary outcome or a discriminating semantic instrument.",
+  "leave_one_out": "the equally weighted mean recomputed with one checkpoint removed. Dropping a checkpoint CHANGES THE TARGET; it is not a corrected estimate of the declared five-checkpoint target."
+ },
+ "output_validity_by_arm": {
+  "R1": {
+   "outputs": 30,
+   "extraction_rejections": 1,
+   "ast_failures": 12,
+   "output_missing": 0,
+   "extractable_and_parseable": 17,
+   "failures_echoing_diagnostic_report": 11
+  },
+  "FRESH": {
+   "outputs": 30,
+   "extraction_rejections": 0,
+   "ast_failures": 0,
+   "output_missing": 0,
+   "extractable_and_parseable": 30,
+   "failures_echoing_diagnostic_report": 0
+  }
+ },
+ "output_validity_split_statement": "R1: 1 extraction rejection(s) plus 12 Python-AST failure(s). FRESH: 0 extraction rejection(s) plus 0 Python-AST failure(s). These are distinct classes and were lumped as one count in v1.",
+ "all_assigned_partition": {
+  "rows": [
+   {
+    "joint_recorded_outcome": "primary-score success",
+    "R1": 9,
+    "FRESH": 12
+   },
+   {
+    "joint_recorded_outcome": "extraction or AST failure",
+    "R1": 13,
+    "FRESH": 0
+   },
+   {
+    "joint_recorded_outcome": "extractable, AST-parseable primary-score failure",
+    "R1": 8,
+    "FRESH": 18
+   }
+  ],
+  "denominator_per_arm": 30,
+  "mutually_exclusive_and_exhaustive": true,
+  "disclaimer": "This description identifies no mediation. It locates where the observed zeros occur and quantifies no share of the -0.100 observed equally weighted difference as caused by output format. It recovers no latent semantic success: the extraction/AST failures are not shown to be correct solutions rejected cosmetically."
+ },
+ "per_checkpoint": {
+  "mbpp/842": {
+   "R1": {
+    "entry_point": "get_odd_occurence",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 5,
+    "observed_mean": 0.8333333333333334,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 4,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   },
+   "FRESH": {
+    "entry_point": "get_odd_occurence",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "observed_mean": 0.3333333333333333,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 4,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   }
+  },
+  "mbpp/288": {
+   "R1": {
+    "entry_point": "modular_inverse",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "observed_mean": 0.3333333333333333,
+    "extraction_rejections": 1,
+    "ast_failures": 1,
+    "output_missing": 0,
+    "extractable_and_parseable": 4,
+    "defines_entry_point": 4,
+    "failures_echoing_diagnostic_report": 2,
+    "distinct_output_texts": 6,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   },
+   "FRESH": {
+    "entry_point": "modular_inverse",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 3,
+    "observed_mean": 0.5,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 6,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   }
+  },
+  "mbpp/863": {
+   "R1": {
+    "entry_point": "find_longest_conseq_subseq",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 2,
+    "observed_mean": 0.3333333333333333,
+    "extraction_rejections": 0,
+    "ast_failures": 3,
+    "output_missing": 0,
+    "extractable_and_parseable": 3,
+    "defines_entry_point": 3,
+    "failures_echoing_diagnostic_report": 3,
+    "distinct_output_texts": 6,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   },
+   "FRESH": {
+    "entry_point": "find_longest_conseq_subseq",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 6,
+    "observed_mean": 1.0,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 4,
+    "observed_saturation": "all_observed_scores_1",
+    "observed_score_varies": false
+   }
+  },
+  "mbpp/966": {
+   "R1": {
+    "entry_point": "remove_empty",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "observed_mean": 0.0,
+    "extraction_rejections": 0,
+    "ast_failures": 6,
+    "output_missing": 0,
+    "extractable_and_parseable": 0,
+    "defines_entry_point": 0,
+    "failures_echoing_diagnostic_report": 6,
+    "distinct_output_texts": 4,
+    "observed_saturation": "all_observed_scores_0",
+    "observed_score_varies": false
+   },
+   "FRESH": {
+    "entry_point": "remove_empty",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 1,
+    "observed_mean": 0.16666666666666666,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 2,
+    "observed_saturation": "not_saturated",
+    "observed_score_varies": true
+   }
+  },
+  "mbpp/652": {
+   "R1": {
+    "entry_point": "matrix_to_list",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "observed_mean": 0.0,
+    "extraction_rejections": 0,
+    "ast_failures": 2,
+    "output_missing": 0,
+    "extractable_and_parseable": 4,
+    "defines_entry_point": 4,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 6,
+    "observed_saturation": "all_observed_scores_0",
+    "observed_score_varies": false
+   },
+   "FRESH": {
+    "entry_point": "matrix_to_list",
+    "assigned": 6,
+    "graded": 6,
+    "passes": 0,
+    "observed_mean": 0.0,
+    "extraction_rejections": 0,
+    "ast_failures": 0,
+    "output_missing": 0,
+    "extractable_and_parseable": 6,
+    "defines_entry_point": 6,
+    "failures_echoing_diagnostic_report": 0,
+    "distinct_output_texts": 5,
+    "observed_saturation": "all_observed_scores_0",
+    "observed_score_varies": false
+   }
+  }
+ },
+ "per_checkpoint_observed_difference": {
+  "mbpp/842": 0.5,
+  "mbpp/288": -0.16666666666666669,
+  "mbpp/863": -0.6666666666666667,
+  "mbpp/966": -0.16666666666666666,
+  "mbpp/652": 0.0
+ },
+ "equally_weighted_mean_observed_difference": -0.10000000000000002,
+ "leave_one_out": {
+  "mean_with_one_checkpoint_removed": {
+   "mbpp/842": -0.25,
+   "mbpp/288": -0.08333333333333334,
+   "mbpp/863": 0.041666666666666664,
+   "mbpp/966": -0.08333333333333336,
+   "mbpp/652": -0.12500000000000003
+  },
+  "sign_differs_from_declared_target": [
+   "mbpp/863"
+  ],
+  "statement": "Dropping a checkpoint CHANGES THE TARGET. The declared target is the equally weighted contrast at exactly the five fixed checkpoints; a four-checkpoint mean is a different quantity, not a corrected estimate of the declared one. Six draws do not establish the sign of any checkpoint's response-mean difference."
+ },
+ "observed_saturation": {
+  "cells": {
+   "mbpp/863:FRESH": "all_observed_scores_1",
+   "mbpp/966:R1": "all_observed_scores_0",
+   "mbpp/652:R1": "all_observed_scores_0",
+   "mbpp/652:FRESH": "all_observed_scores_0"
+  },
+  "statement": "Saturation reported here is OBSERVED saturation over six draws. No structural floor or ceiling is claimed for any checkpoint or arm; mbpp/652's observed tie does not imply it can never express a difference."
+ },
+ "instrument_statement": {
+  "distinct_observed_scores": [
+   0,
+   1
+  ],
+  "cells_with_varying_observed_score": 6,
+  "cells_with_more_than_one_distinct_output_text": 10,
+  "statement": "Nonconstant observed scores establish only that the saved score is not constant on all outputs. Cells with distinct output TEXTS do not imply varying binary-outcome cells or a discriminating semantic instrument, and no such instrument is claimed."
+ },
+ "post_treatment_selection": {
+  "slots_assigned": 60,
+  "slots_graded": 60,
+  "slots_dropped_after_continuation": 0,
+  "conditional_contrast_refused": "A pass rate computed among extractable-and-parseable outputs only would condition on a property realised AFTER the continuation was produced. That is post-treatment selection, not a causal contrast, so it is deliberately not computed here -- in v1 and again in v2."
+ },
+ "limits": [
+  "This description identifies no mediation. It locates where the observed zeros occur and quantifies no share of the -0.100 observed equally weighted difference as caused by output format. It recovers no latent semantic success: the extraction/AST failures are not shown to be correct solutions rejected cosmetically.",
+  "Saturation reported here is OBSERVED saturation over six draws. No structural floor or ceiling is claimed for any checkpoint or arm; mbpp/652's observed tie does not imply it can never express a difference.",
+  "Thin private tests remain the endpoint; mbpp/863's known public defect is missed by its private assertions, so a passing score is not complete semantic correctness.",
+  "Costs are unequal across arms and no cost-efficiency advantage is established; see the lead judgment for the recorded token and second totals."
+ ]
+}
