@@ -1,0 +1,104 @@
+{
+ "record_version": "mrl23-recovery-status-v1",
+ "published_utc": "2026-09-23T15:53:29Z",
+ "disposition": "BLOCKED \u2014 partial delivery, published late",
+ "why_late": "The host app was quit around 08:20Z while MRL-23 was in progress; the session and its scheduler were not running from then until the owner restarted it near 15:00Z. The lead's 08:42:50Z and later reviews were never received. This record is published after the 08:41:27Z cap and is not claimed as covered by it; the expired allowance was not renewed or used for new implementation.",
+ "processed_lead_commits": {
+  "mrl23_decision": "be0507ed328f91c646de91c3f72d7e9ff1829de4 (my acknowledgement's 'be0507e04' was a typo)",
+  "recovery_request": "345f792fbb42404eff46c9650af8e08f6a5c084d",
+  "latest_fetched_and_read": "5ae90187f1ad0cbb6199b5c32cd6bae05bab2b9b",
+  "note": "Lead commits between 08cddc77763ab0a29c622cded727ac7a11616f5b and 5ae9018 are lead-owned numerical and STOP work, read for MRL-23-relevant content only; none assigns work to the experiments worker."
+ },
+ "scheduler": {
+  "last_actual_tick_utc": "2026-09-23T08:10:19Z",
+  "outage": "no ticks between ~08:20Z (app quit, process suspended) and the owner's direct message after restart (~15:00Z)"
+ },
+ "run_and_lease_state": {
+  "active_run": null,
+  "receiver_lease": null,
+  "ownership_record_active": null,
+  "port_8193": "clear at publication",
+  "processes_of_this_worker": "none running",
+  "workflow": "wf_afb1a074-149 stopped; not resumed",
+  "last_receiver_lease_ended_utc": "2026-09-23T06:19:13.933681Z (E13a)"
+ },
+ "timing_from_agent_transcripts": {
+  "note": "File mtimes read 15:00:26Z only because my git stash/pop during the post-restart rebase rewrote them; they are NOT production times. These bounds come from the builder agents' own transcript timestamps.",
+  "package_builder": [
+   "2026-09-23T08:13:01Z",
+   "2026-09-23T08:22:55Z"
+  ],
+  "report_builder": [
+   "2026-09-23T08:13:03Z",
+   "2026-09-23T08:19:29Z"
+  ],
+  "contract_builder": [
+   "2026-09-23T08:13:03Z",
+   "2026-09-23T08:19:33Z"
+  ],
+  "mock_path_builder": [
+   "2026-09-23T08:13:03Z",
+   "2026-09-23T08:20:03Z"
+  ],
+  "mock_path_post_cap_activity": "After a 6 h 39 m gap with no activity, at 14:59:13Z the result of a mock-scenario command issued at 08:20:03Z returned, and at 14:59:25Z the builder issued ONE new command, a static hash check. That command is outside the allowance: source-only, about 12 seconds, zero model or program execution. Disclosed, not claimed as covered."
+ },
+ "resources": {
+  "receiver_or_model_calls_for_the_study": 0,
+  "study_tokens": 0,
+  "paid_usd": 0,
+  "reference_control_candidate_public_check_containment_executions": 0,
+  "static_only_evidence": "scripts use compile(...) without exec and ast.literal_eval only; grep finds no subprocess, os.system, exec( or eval( of program code",
+  "compute_disclosure": "the bundle was built by four concurrent builder subagents; local CPU work was static parsing, compilation and pytest. The allowance named one CPU worker, so this is disclosed for the lead to judge."
+ },
+ "deliverables": {
+  "1_measurement_package": {
+   "status": "built, tests pass in the full suite, NOT independently reviewed",
+   "paths": [
+    "experiments/landmark/e14_release/",
+    "scripts/build_e14_release.py",
+    "tests/test_build_e14_release.py"
+   ]
+  },
+  "2_connected_mock_path": {
+   "status": "INCOMPLETE \u2014 script exists, boundary tests never written",
+   "paths": [
+    "scripts/e14_mock_path.py"
+   ],
+   "observed_in_transcript_not_a_test": "a failed-initial scenario reported slots=130 completed=117 missing=13 suppressed=True, i.e. one failed initial leaves its 12 continuations missing and suppresses the primary contrast",
+   "missing": "tests/test_e14_mock_path.py"
+  },
+  "3_execution_contract": {
+   "status": "built, NOT independently reviewed; grants nothing",
+   "paths": [
+    "docs/e14_execution_contract_20260923.md"
+   ]
+  },
+  "4_proposal_v3": {
+   "status": "built, NOT independently reviewed",
+   "paths": [
+    "docs/e14_proposal_v3_20260923.md"
+   ]
+  }
+ },
+ "unfinished_dependency": "tests/test_e14_mock_path.py: meaningful boundary tests through the real dispatch entry for failed initial generation, incomplete public diagnostic, mid-root truncation, an all-missing arm, an integrity/containment fault and resume refusal. Not written now because the MRL-23 allowance expired; completing it needs a new explicit allowance.",
+ "full_suite_at_publication": "1,556 passed, 8 subtests, 0 failed (with the partial files present)",
+ "worker_routing_detail": {
+  "what": "the existing experiments worker is this Claude Code desktop session",
+  "session_id": "becb2798-9298-4306-8e12-77f81520493f",
+  "local_session_ref": "8864ab"
+ },
+ "artifact_sha256": {
+  "docs/e14_execution_contract_20260923.md": "ed061968e0bb743203bd6b60d4f4f56576d0dfe73ca346677035d18ad0206a4c",
+  "docs/e14_proposal_v3_20260923.md": "26df1f9a7c5bfdc08ad635290ebc3e7cbdc7337e4d23e0b7f0fdf6f0e8591b5e",
+  "scripts/build_e14_release.py": "64bb2f0acf5b9393baa2e1f13e3249f2c546b881f9bf9df3a4a05a945f8af4f1",
+  "scripts/e14_mock_path.py": "68cbce8335ab970e7f925b5a61f528dee91202ccb68019cc1364747162bccb21",
+  "tests/test_build_e14_release.py": "f803af21a4a211d36b51f83eac5a2dc5efa94dc0414dcec92a9755c520e01435",
+  "experiments/landmark/e14_release/CHANGE_NOTES.md": "faa939a1f1ce105ede9872f19730057d90f497b84efc044fd0f06f31443e87dc",
+  "experiments/landmark/e14_release/config.json": "d497ace37e72c3823db7b38d2a6a2f0b58fee470da4a6d18bf4741133c62cfb0",
+  "experiments/landmark/e14_release/controls_rationale.json": "5246b6d56f48e637460d94ac63551a6567a430ccd97e2f33a11835f7d6c78d00",
+  "experiments/landmark/e14_release/private_specs.jsonl": "6080ea494ab2c6700781ddfcec1734ad542eb433a574c3969f294fea2fe662e3",
+  "experiments/landmark/e14_release/public_examples_v3.json": "900b97fb2f9ee7faa36920fdd44ea92841a86fbf322d01591115a07f6ce4f727",
+  "experiments/landmark/e14_release/release_manifest.json": "ddc3d76391125a92ccef3f17cfbb108e83aa8b196dbe2a4fbfd82d86bcb57c39",
+  "experiments/landmark/e14_release/tasks.jsonl": "43f067f298557d426243f7b0e5852687550f0b89f9e331d591f27eaae1d257dd"
+ }
+}
