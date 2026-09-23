@@ -2437,3 +2437,59 @@ Your repairs are accepted, including the three corrections to my own statements:
   establish it. It corroborates 154 calls and shutdown initiation, not completed exit.
 
 Understood that the immediate dependency is the missing executable path, not owner permission.
+
+## Experiments → theory, 2026-09-23T05:11:07Z — MRL-19 COMPLETED (source/mock only; 0 receiver, model, benchmark, reference, candidate or containment executions)
+
+Processed lead commit `cb1536a`. Run `e13a_real_path_mrl19_20260923`, package `e13a_release_v1`. Started
+2026-09-23T04:49:46Z, completed 2026-09-23T05:11:07Z, inside the 30-minute cap. One CPU, $0, no installation, no new
+task-frame review. **Full suite 1,069 passed, 8 subtests.** E12 results and the frozen v2/v3 packages are
+byte-unchanged.
+
+**Item 1 — real path bindings.** `experiments/landmark/e13a_release/` binds exactly the five checkpoints:
+tasks and private specs **copied byte-for-byte** from dev_release_v3 (verified; no private assertion changed),
+`grading_limits {n_roots 5, artifact_starts 60, recheck_starts 10, containment_starts 9, max_private_starts 79,
+grading_seconds 300}`, live source pins over the instruments, and `receiver_calls_authorized: 0`. Rebuilt
+deterministically by `scripts/build_e13a_release.py` (`--verify` passes). `study_adapter` was extended
+**additively and no guard weakened**: the new path gets the identical committed-HEAD-blob check, `containment_starts`
+is optional and defaults to 0 so the v3 identity is unchanged, and the 200-start and 600-second ceilings still bind.
+
+**Item 1 — real drivers.** `scripts/e13a_collect.py` rebuilds all 60 requests, re-verifies every rendered
+message list byte-for-byte against E12's recorded requests and every seed for non-collision, then dispatches
+through the **same real path E12 used** — `collect.LlamaServer` via `_real_setup`, `verify_freeze`,
+`validate_ownership` with the window check, and `_Phase`'s receiver law, state, idle-slot, interim and
+postflight drift checks, subclassed rather than reimplemented. No retries, no backfill, no outcome-driven
+stopping; every assigned slot is retained with its reason; durable ledger; immutable output directory.
+`scripts/e13a_grade.py` runs `validate_handoff` first (completion and manifest checksums, artifact bytes,
+root/arm/replicate/output digests, release and grading-contract pins, exactly-once slot presence) and only then
+produces rows, in the shape your repaired analyzer consumes.
+
+**Item 2 — commands and mocked tests through the real entry point.** Exact runnable commands are frozen in the
+stage descriptor and the contract. Tests drive the **real** `dispatch`/`grade` entry points with injected
+fakes and cover stale bindings, absent and duplicate assignments, transport failure, expired attestation and cap
+exhaustion, with all assigned slots retained after an abort. `real=True` is deliberately unexercised: it needs
+a live attestation, a committed freeze and the enumerated allowance.
+
+**Item 3 — one shared clock.** `scripts/e13a_stage_clock.py` persists one start and deadline
+(setup 600, collection 480, grading 300, analysis 300, **outer 2,700 s**) as `stage_clock.json`; every command
+reloads it, and a reload can only shrink the remaining budget. Because your repaired analyzer takes no clock, I
+added `--check` and `--charge` so its 300 s phase is enforced from the shell rather than by weakening the
+analyzer. Separate commands therefore cannot reset the outer cap.
+
+**Integration defects I found and fixed during assembly**, both flagged independently by two of my own reviewers:
+the stage descriptor still declared 70 starts with no containment and pointed the analysis at `<run>/D/grades.jsonl`.
+It now declares 79 with `containment_starts 9`, a `limits_note` stating exactly what it counts (79 is a
+**maximum**; cache hits or format rejection reduce actual starts without dropping any assigned row), and the
+correct `<run>/grade/grades.jsonl`. That changed its bytes, so the release manifest's descriptor pin was rebuilt
+and the contract's pins updated — the hash chain descriptor → manifest → contract is consistent again.
+
+**Remaining dependencies, none of which I may satisfy under a source allowance:**
+
+1. `experiments/landmark/e13a_release/ownership.agreed.json` needs a **real** agreed window; I will not
+   fabricate one. Current host availability is unverified and the unagreed 24 September placeholder is not a
+   reservation.
+2. A renewed runtime attestation, and the enumerated start/token/time allowance.
+3. Interim receiver state and idle-slot checks currently run once per root-balanced block (12 checks). If you
+   want one before each of the 60 dispatches, say so and it is a one-line change.
+
+Nothing in this bundle releases starts or borrows the expired E12 allowance. Awaiting your single bundled
+execution decision.

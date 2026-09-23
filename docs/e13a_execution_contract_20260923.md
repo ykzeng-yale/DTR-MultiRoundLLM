@@ -59,10 +59,10 @@ Passing a reference and rejecting one known-wrong control establish only those f
 | Source | Figure | Counts |
 |---|---:|---|
 | `results/e13a_request_plan_20260922.json` → `budget.isolated_starts` | 70 | grading-ledger starts only: 60 candidate + 10 reference/control |
-| `experiments/landmark/e13a_stage.json` → `grading_limits.max_private_starts` | 70 | same grading-ledger scope (stage bookkeeping, no containment field) |
+| `experiments/landmark/e13a_stage.json` → `grading_limits.max_private_starts` | **79** | reconciled under MRL-19 to the full isolated-start budget, with `containment_starts 9` declared and the scope recorded in `limits_note`; it now matches the release manifest |
 | `experiments/landmark/e13a_release/release_manifest.json` → `grading_limits` | **79** | `{n_roots 5, artifact_starts 60, recheck_starts 10, containment_starts 9, max_private_starts 79, grading_seconds 300}` — the full isolated-start budget of cap row 8 |
 
-`study_adapter.load_grading_limits` was extended **additively** for E13a, not relaxed: it still requires every key of `GRADING_LIMIT_KEYS` = `{n_roots, artifact_starts, recheck_starts, max_private_starts, grading_seconds}`, allows at most the one optional key `OPTIONAL_GRADING_LIMIT_KEYS` = `{containment_starts}`, requires every value to be an `int`, and now enforces `max_private_starts == artifact_starts + recheck_starts + containment_starts` with `containment_starts` defaulting to 0 — so the v3 rule (`70 == 60 + 10`, `182 == 154 + 28`) is unchanged for every existing release, and the 200-start ceiling `MAX_PRIVATE_STARTS` and the 600-second `MAX_GRADING_SECONDS` still bind. `79 == 60 + 10 + 9` is therefore checked arithmetic, not a waiver. The stage descriptor's 70 remains correct for its own narrower scope; whoever next revises it should say so in `limits_note` rather than raise it to 79 and double-count the containment payloads against grading.
+`study_adapter.load_grading_limits` was extended **additively** for E13a, not relaxed: it still requires every key of `GRADING_LIMIT_KEYS` = `{n_roots, artifact_starts, recheck_starts, max_private_starts, grading_seconds}`, allows at most the one optional key `OPTIONAL_GRADING_LIMIT_KEYS` = `{containment_starts}`, requires every value to be an `int`, and now enforces `max_private_starts == artifact_starts + recheck_starts + containment_starts` with `containment_starts` defaulting to 0 — so the v3 rule (`70 == 60 + 10`, `182 == 154 + 28`) is unchanged for every existing release, and the 200-start ceiling `MAX_PRIVATE_STARTS` and the 600-second `MAX_GRADING_SECONDS` still bind. `79 == 60 + 10 + 9` is therefore checked arithmetic, not a waiver. The stage descriptor has since been reconciled to 79 **with** `containment_starts 9` declared and `limits_note` stating exactly what it counts, so nothing is double-counted: the release manifest and the stage now agree on the full isolated-start budget, while the request plan's 70 remains grading-ledger-only by design. All three figures are maxima.
 
 The historical ledger is 333/412. Although `333 + 79 = 412`, unused E12 capacity is **not authority for another study**; the request plan's own `budget.ledger_note` says the same. A new allowance must enumerate all components explicitly, which rows 1–17 now do.
 
@@ -130,7 +130,7 @@ These are inspected current bytes, not permission to adopt later HEAD contents w
 | [Launcher](../scripts/launch_own_receiver_v31.py) | `03bede1d1de39f376daadcec79c81b2edea9c2c0b56e8e03bb019c321d4a16b5` |
 | [Preflight](../scripts/receiver_preflight_mrl10.py) | `15ac29ed1981f44dafbb94ae222d27513c07a638b2cd9b963a6b30b16ace13eb` |
 | [Snapshot diff](../scripts/diff_receiver_snapshot_v31.py) | `923871d9f000e75428ddb98099ffb2c9a7fd5b04396b653dea9c74f7f6ddc958` |
-| [Stage descriptor](../experiments/landmark/e13a_stage.json) | `53a3bddc8fe07bba53b03287ed1f29df3928db6f0f2c0e685766a8df8df9624c` |
+| [Stage descriptor](../experiments/landmark/e13a_stage.json) | `44e4ff0a734caebb5c756dcaec81253464988665ad8f5eb535f7e66f21a280c8` |
 | [Repaired analyzer](../scripts/e13a_analyze.py) | `7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699` |
 | [Receiver adapter](../experiments/landmark/collect.py) | `49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f` |
 | [E12 phased collector](../experiments/landmark/collect_diagnostic.py) | `7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79` |
@@ -142,7 +142,7 @@ These are inspected current bytes, not permission to adopt later HEAD contents w
 | MRL-10 preflight fixture `dev_release_v2/tasks.jsonl` (7 roots) | `5eda138d6e71c9fb709134e8ad64b259e2a9047cee2029b65b309981bf307372` |
 | [Preflight public fixtures](public_diagnostic_examples_v1.json) | `bf8cf8ed2cc20608d99d782622d9100e319502d57f044a0f0d7dbebd14dfa703` |
 | E12 accepted attestation (**expired**, provenance only) | `74389aa74c588bc4f295ff6d695ca0f4dad4caae721b480f00889e0cba1b9b94` |
-| [E13a release manifest, committed 77a780e](../experiments/landmark/e13a_release/release_manifest.json) | `702ef40054fbea772851454300b02de0fa5a2d7728d3057955cba600565f6638` |
+| [E13a release manifest, committed 77a780e](../experiments/landmark/e13a_release/release_manifest.json) | `9aec700623f1dd1d5f9e2aeef4041731c665174f3c1a2970259b70b55193c209` |
 
 The E12 paths are under `results/e12_dev_v3_20260922T030255Z/` and remain bound by its unchanged `ARTIFACT_SHA256SUMS.json`. The existing [14-root release manifest](../experiments/landmark/dev_release_v3/release_manifest.json), digest `c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea`, is provenance for unchanged task/assertion content, **not** the E13a execution release.
 
@@ -268,7 +268,7 @@ These three flags are the analyzer's real, verified interface (`--treatment-arm`
 | D4 | `scripts/e13a_grade.py` (`validate_handoff(...)` then `grade(collect_dir, release_dir, out_dir, *, executor=None, real=False, clock=None)`) | **delivered this round** |
 | D5 | `experiments/landmark/e13a_release/ownership.agreed.json` — the agreed-window record step 2 requires | **still missing**; it cannot exist before a window is agreed (section 6), and it must not be fabricated to make the launcher pass |
 | D6 | Analysis-phase clock enforcement: `scripts/e13a_analyze.py` has **no** `--clock` flag | **open**. Either the launch wrapper calls `StageClock.check("analysis")` immediately before and after the analyzer, or the analyzer gains the flag. Do not weaken any analyzer guard to add it |
-| D7 | `e13a_stage.json` `exact_commands.analysis` names `<run>/D/grades.jsonl` while `e13a_grade.py` writes `<run>/grade/grades.jsonl`; `grading_limits.max_private_starts` there is 70, the release manifest's is 79 | **open**, for the descriptor's owner: reconcile the path string and record the scope difference in `limits_note`. Do not raise the stage figure to 79 without saying what it counts |
+| D7 | `e13a_stage.json` named `<run>/D/grades.jsonl` and carried a 70-start figure | **RESOLVED** under MRL-19: the analysis command now reads `<run>/grade/grades.jsonl`, the limits were reconciled to 79 with `containment_starts 9` and a scope-stating `limits_note`, and the release manifest's descriptor pin was rebuilt against the new bytes |
 | D8 | Committing the release: `verify_committed_release` refuses a manifest that is untracked or differs from its `git HEAD` blob, so grading cannot run until the parent commits `e13a_release/` | **open by design**; this is the guard working, not a blocker to route around |
 
 Steps 0, 3–7 are now runnable source; step 2 is blocked on D5 and therefore so is any real dispatch, and nothing at all is authorized to run. This section is a specification of what will be run under a future granted allowance.

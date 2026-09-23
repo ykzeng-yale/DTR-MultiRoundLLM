@@ -69,7 +69,7 @@ def test_reserved_tokens_equal_calls_times_release_max_tokens():
 
 
 def test_plan_and_stage_report_seventy_grading_starts():
-    """The 70 vs 79 reconciliation the contract makes must stay true of the real files."""
+    """The plan's grading-ledger 70 vs the stage/release full budget 79 must stay true of the real files."""
     plan = json.loads(PLAN.read_bytes())
     stage = json.loads(STAGE.read_bytes())
     assert plan["budget"]["receiver_calls"] == 60
@@ -78,7 +78,11 @@ def test_plan_and_stage_report_seventy_grading_starts():
     limits = stage["grading_limits"]
     assert limits["artifact_starts"] == 60
     assert limits["recheck_starts"] == 10
-    assert limits["max_private_starts"] == 70 == limits["artifact_starts"] + limits["recheck_starts"]
+    # MRL-19: the stage descriptor was reconciled to the full isolated-start budget, with containment declared
+    # and its scope recorded in limits_note, so it now agrees with the release manifest instead of reading 70.
+    assert limits["max_private_starts"] == 79 == (limits["artifact_starts"] + limits["recheck_starts"]
+                                                 + limits["containment_starts"])
+    assert "MAXIMUM" in limits_note_of_stage().upper()
     assert limits["grading_seconds"] == 300
 
 
@@ -275,3 +279,8 @@ def test_e12_latency_figures_are_reproducible():
     assert sums == {"A": 14.977224, "C": 295.594775}
     doc = DOC.read_text(encoding="utf-8")
     assert "14.977224" in doc and "295.594775" in doc
+
+
+def limits_note_of_stage():
+    import json as _j
+    return _j.loads(STAGE.read_text())["limits_note"]
