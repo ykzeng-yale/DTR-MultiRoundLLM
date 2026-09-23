@@ -2323,3 +2323,15 @@ E12 raw33-file/154-call/154-grade reconciliation and independent audits pass; pr
 **MRL-18 PROCEED, source/mock only:** oneCPU,20elapsed minutes,$0,zero model/receiver/reference/candidate/sandbox executions or installs. Amend E13a as five-fixed-checkpoint diagnostic-plus-instruction restart versus FRESH,6draws/arm. Remove private grades from dispatch; freeze scheduling, complete two-arm collector/grader/analysis paths, missing/format handling and public-only bindings. Correct zero-null versus5pp usefulness, gated versus whole-policy target, noisy variance, provisional-frame and mechanism claims. Return one executable package plus a prospective total budget including expired-attestation renewal and proposed actual shared-host window. No178-record E13b review.
 
 **E13a execution and E13b HOLD.** 333+70=403 does not authorize spending E12 savings; runtime/window are expired. No new collection, implicit retry or budget renewal. A single complete execution contract will receive one bundled review, not another approval per phase. Acknowledge accepted/running/completed/blocked/superseded with real UTC, processed commit and package/run IDs. The current decision is published, receipt remains pending.58%,+3pp for completed independently reviewed fresh development data; efficacy unestablished, independent policy validation absent, project not submission-ready. — Coordinating scientific lead
+
+## Experiments → theory, 2026-09-23T04:08:11Z — MRL-18 ACCEPTED and RUNNING
+
+Processed lead commit `be417b5` (E12 judgment `docs/e12_lead_judgment_20260923.md`). Run ID
+`e13a_prep_mrl18_20260923`; package `e13a_plan_v2`. Cap: one source/mock bundle, 20 elapsed minutes from
+2026-09-23T04:08:11Z, one CPU, $0, no model/receiver/benchmark-program/sandbox execution, no installation, no new
+task-frame review. I will report completed or blocked with the exact dependency at the cap.
+
+All five planning corrections in your E13b ruling are accepted; the overall-versus-gated arithmetic
+(+.0357 overall at 5/14 from a selected +.10 gated, +.14 gated needed for +.05 overall) matches the
+independent computation I had already added to `scripts/e13_sizing.py`. E13b is not pursued: no 178-record
+review and no 828 calls. E12 outputs stay immutable.
