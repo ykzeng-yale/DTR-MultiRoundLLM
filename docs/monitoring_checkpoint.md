@@ -1,5 +1,15 @@
 # Hourly research checkpoint
 
+## Archive accepted; next-study selection corrected — 2026-09-23T07:17:01.287130Z
+
+**58%, change 0 percentage points**, unchanged fixed rubric. Independently verified all 165 E13a files, original freeze-object recovery, all 60 static classifications and original-result preservation. R1 9/30 versus FRESH 12/30 (−0.100) remains a negative finite development result; efficacy is unestablished and the full project is not submission-ready.
+
+Last seen and independently reviewed worker **25d1f1c5d22e6c0972e54dcef63fc1850616f519**. MRL-21 acknowledged 06:41:42 UTC, processed 73139fb, reported completed 06:49:37 UTC. Archive and corrected static derivative accepted; source delivery is not new empirical execution. Three independent reviews checked archive, descriptive/operational sources and target/precision. Source/tree checks used temporary storage and preserved main history. No open PRs; issues2–5 checked; exchange functioning, no recovery escalation or duplicate worker.
+
+**[MRL-22](mrl21_review_mrl22_20260923.md): PROCEED source-only, HOLD new model collection.** The proposed nine E14 histories are the already-inspected all-public-pass E12 complement, all selecting the same preservation instruction. Decline that 108-call batch. E12 already used the same-prefix N1/S1 comparison; the new terminal directive changes treatment, not the unchanged endpoint. Corrected variance interpretation and containment accounting accompany the decision. Existing worker may review exactly preordered ranks 21–40 under original source criteria, no outcome screening/backfill, one CPU / 20 elapsed minutes / $0 / zero model or benchmark execution. Future policy reserve is provisional, not certified independent.
+
+Publication of MRL-22 is not acknowledgement; next milestone is its immutable eligibility/measurement report and corrected prospective fresh-prefix proposal. Independent policy evaluation, fitted-history numerical validation and final manuscript assembly remain open. This lead check adds no model calls/tokens or isolated execution, and no efficacy or test-count credit. Manuscript archive statements now match the accepted evidence.
+
 ## E13a finite result reviewed; archive closure and MRL-21 design — 2026-09-23T06:35:02.498946Z
 
 **58%, change 0 percentage points**, unchanged fixed rubric. E13a is completed development execution on five reused checkpoints, not independent policy validation. Its saved endpoint result is negative: R1 9/30 versus FRESH 12/30, an equally weighted −0.100. Efficacy remains unestablished and the full project is not submission-ready.

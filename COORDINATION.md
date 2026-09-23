@@ -2756,3 +2756,14 @@ assigned root retained regardless of public pass or fail, an explicitly untouche
 proposed caps of 108 calls / 153 starts / 55,296 reserved tokens / 480 s collection / 2,700 s outer / $0. It
 is **not** run on the five outcome-inspected checkpoints, promises no usefulness-threshold power, and releases
 nothing.
+
+
+## Lead MRL-21 closure and MRL-22 handoff — 2026-09-23T07:17:01.287130Z
+
+Seen and independently reviewed 25d1f1c; MRL-21 receipt 06:41:42 UTC / processed 73139fb and completion 06:49:37 UTC verified separately. **Archive/static accepted:**165/165 files, original commit/bundle,18 freeze +13 execution pins; raw negative −.100 unchanged. Source/static evidence, no new model collection.
+
+**E14 HOLD / nine-root batch declined.** All nine proposed reused histories are public-pass (and initial private-pass); every DIRECTED arm uses the same preservation string. E12 already supplied the same-prefix N1/S1 contrast. Common new terminal wording changes intervention, not measurement. Correct precision, partial-root stopping and missing containment accounting. Three independent reviews support the [binding decision](docs/mrl21_review_mrl22_20260923.md).
+
+**MRL-22 PROCEED, source only:** existing worker, exactly frame ranks 21–40: 911,211,701,960,667,344,370,484,524,814,346,187,508,194,356,366,302,670,376,650. Original source criteria/order, preserve holds, no model-outcome screening, backfill, rank 41+ extension or bulk review. One CPU /20 elapsed minutes /$0, zero model/receiver/benchmark/public-check/reference/containment execution or installations. Return immutable include/hold/exclude and scoring-contract/hash report plus one corrected prospective fresh-prefix proposal; no minimum eligible/independent count promised, no collector implementation or run released. Reserved ranks 61–198 remain provisional candidate holdout.
+
+Acknowledge accepted/running/completed/blocked/superseded with real UTC, full processed lead SHA, actual start/deadline, report/proposal IDs and scheduler health. Publish partial by cap; no automatic renewal. Publication is not receipt. 58%, delta 0; efficacy unestablished, independent policy validation absent, full project not submission-ready. Next milestone: defensible new development roster/measurement contract. No repeated recovery request; existing exchange is working.

@@ -2,7 +2,7 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
-**58%, change0percentage points.** E13a's completed60-call follow-up at five reused development checkpoints is independently reconciled at the saved-endpoint level: R1 9/30 versus FRESH12/30. This falls within existing development/manuscript credit; no ranking, independent-policy or final measurement/frame milestone is closed. One manifest-listed receiver log and the original rebased freeze archive remain pending. The fixed denominator and all component credit are unchanged. Efficacy is unestablished and the full project is not submission-ready. [Current judgment and MRL-21](e13a_lead_judgment_20260923.md); [component calculation](progress_current.json). Earlier checkpoints retain historical values.
+**58%, change 0 percentage points.** E13a's archive and static derivative are independently accepted; the negative 9/30 versus12/30 result is unchanged. This closes an archival gap within existing development/manuscript credit. Independent review declines the proposed nine-root E14 batch because its reused all-public-pass roster narrows the target; [MRL-22](mrl21_review_mrl22_20260923.md) permits only source review of preordered ranks21–40 and a corrected prospective proposal. No new collection or independent policy evaluation is released. Fixed weights and all component credit are unchanged. Efficacy is unestablished; the full project is not submission-ready. [Component calculation](progress_current.json).
 
 ## E12 instrument acceptance — 2026-09-22T03:25:08Z
 

@@ -1,0 +1,615 @@
+{
+  "complete_assignment": {
+    "all_stage_slots_exact": true,
+    "call_output_hashes_match": true,
+    "call_unique": 60,
+    "calls": 60,
+    "expected60": 60,
+    "grade_output_hashes_match": true,
+    "grade_unique": 60,
+    "grades": 60
+  },
+  "created_utc": "2026-09-23T07:13:37.082910+00:00",
+  "decision": {
+    "archive": "165/165 declared file bytes now present and hash-matching. Original-object archive validation is assigned to parent; this audit does not import or merge the abandoned commit.",
+    "e14": "Accept as a draft source-only proposal; requires corrected all-public-pass target, explicit containment/validation accounting, exact versioned source/config/plan and bounded release before collection. No experiment implemented or released.",
+    "static_derivative": "Accept saved finite complete-data descriptive counts and corrected runtime/cost accounting. Original v1 and endpoint artifacts unchanged."
+  },
+  "e14_proposal": {
+    "all_roster_public_cases_pass": true,
+    "cited_source_hashes": {
+      "docs/e13a_lead_judgment_20260923.md": {
+        "actual": "1ebdda6f8f80948aab1b9bba606ce9c17361eb010ea8c6318d5bb0ea7c64e1a3",
+        "expected": "1ebdda6f8f80948aab1b9bba606ce9c17361eb010ea8c6318d5bb0ea7c64e1a3",
+        "matches": true
+      },
+      "experiments/landmark/diagnostic.py": {
+        "actual": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+        "expected": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+        "matches": true
+      },
+      "results/e13a_two_arm_20260923T061500Z/analysis_report.json": {
+        "actual": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708",
+        "expected": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708",
+        "matches": true
+      },
+      "results/frame_review_mrl15_20260922T021718Z/manifest.json": {
+        "actual": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+        "expected": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+        "matches": true
+      },
+      "results/frame_review_mrl15_20260922T021718Z/records.json": {
+        "actual": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+        "expected": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+        "matches": true
+      },
+      "scripts/e13_sizing.py": {
+        "actual": "e5e3c97dd428d56c030d277ccc56b747f11c8a080401a0102097033facd714eb",
+        "expected": "e5e3c97dd428d56c030d277ccc56b747f11c8a080401a0102097033facd714eb",
+        "matches": true
+      }
+    },
+    "new_seed_count": 108,
+    "proposed_calls": 108,
+    "proposed_reserved_tokens": 55296,
+    "proposed_start_sum_without_explicit_containment": 153,
+    "public_statuses": {
+      "mbpp/154": [
+        "pass"
+      ],
+      "mbpp/499": [
+        "pass"
+      ],
+      "mbpp/651": [
+        "pass"
+      ],
+      "mbpp/816": [
+        "pass"
+      ],
+      "mbpp/825": [
+        "pass"
+      ],
+      "mbpp/868": [
+        "pass"
+      ],
+      "mbpp/895": [
+        "pass"
+      ],
+      "mbpp/918": [
+        "pass"
+      ],
+      "mbpp/974": [
+        "pass"
+      ]
+    },
+    "roster": [
+      {
+        "family": "PF-918",
+        "rank": 1,
+        "root_id": "mbpp/918",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-825",
+        "rank": 2,
+        "root_id": "mbpp/825",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-816",
+        "rank": 7,
+        "root_id": "mbpp/816",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-895",
+        "rank": 8,
+        "root_id": "mbpp/895",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-813",
+        "rank": 9,
+        "root_id": "mbpp/868",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-49",
+        "rank": 11,
+        "root_id": "mbpp/154",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-651",
+        "rank": 18,
+        "root_id": "mbpp/651",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-499",
+        "rank": 19,
+        "root_id": "mbpp/499",
+        "source_decision": "include"
+      },
+      {
+        "family": "PF-147",
+        "rank": 20,
+        "root_id": "mbpp/974",
+        "source_decision": "include"
+      }
+    ],
+    "seed_collisions_with_declared_spent_labels": {
+      "mbpp/154": [],
+      "mbpp/499": [],
+      "mbpp/651": [],
+      "mbpp/816": [],
+      "mbpp/825": [],
+      "mbpp/868": [],
+      "mbpp/895": [],
+      "mbpp/918": [],
+      "mbpp/974": []
+    },
+    "selected_directed_string_index_per_root": {
+      "mbpp/154": 2,
+      "mbpp/499": 2,
+      "mbpp/651": 2,
+      "mbpp/816": 2,
+      "mbpp/825": 2,
+      "mbpp/868": 2,
+      "mbpp/895": 2,
+      "mbpp/918": 2,
+      "mbpp/974": 2
+    },
+    "start_sum_if_27_validation_excludes_containment": 162
+  },
+  "findings": [
+    {
+      "files": [
+        "scripts/e13a_static_description_v2.py:152",
+        "results/e13a_static_description_v2_20260923.json"
+      ],
+      "finding": "Independent regex extraction plus AST parsing reproduces all60 classes and all10 cells: R1 one extraction rejection,12 AST failures,17 parseable; FRESH30 parseable. All-assigned partition9/13/8 versus12/0/18 is correct. This is a static description, not a regrade or mechanism attribution.",
+      "id": "S1",
+      "severity": "accept_saved_derivative"
+    },
+    {
+      "files": [
+        "scripts/e13a_static_description_v2.py:137",
+        "scripts/e13a_static_description_v2.py:171",
+        "scripts/e13a_static_description_v2.py:209"
+      ],
+      "finding": "The saved-run diagnostic hardcodes30 slots/arm and21 successes and derives assignments from grade rows. It is not a generic all-assigned validator: duplicates overwrite in the call map, and missing outcomes are not handled correctly. Current data were independently checked unique, complete and stage-exact, so this does not invalidate the saved result. Do not reuse it as E14 missingness analysis.",
+      "id": "S2",
+      "severity": "bounded_scope_limit"
+    },
+    {
+      "files": [
+        "scripts/e13a_static_description_v2.py:229"
+      ],
+      "finding": "Derivative records call/grade/report and preserved-v1/lead hashes, but does not embed its own source hash, extract_code module hash, or public_examples file hash. The committed review plus this additive audit binds them; current frozen extraction source still matches the run pin.",
+      "id": "S3",
+      "severity": "provenance_limit"
+    },
+    {
+      "files": [
+        "docs/e13a_results_20260923.md:7"
+      ],
+      "finding": "Freeze erratum still says d7382cc had an identical tree. The newly delivered archive explicitly records original tree51e67c0b versus replacement7cff8630, so replace this sentence with recorded-path identity only.",
+      "id": "D1",
+      "severity": "correct_live_prose"
+    },
+    {
+      "files": [
+        "docs/e14_same_prefix_revision_proposal_20260923.md:175",
+        "docs/e14_same_prefix_revision_proposal_20260923.md:199"
+      ],
+      "finding": "All9 proposed roots have public status pass; all DIRECTED prompts select S1_STRINGS[2], not failure-directed feedback. Roster excludes all5 public-fail E12 checkpoints because they were E13a targets. This is a legitimate reused all-public-pass development target if declared, not a pass/fail-inclusive or failure-repair test.",
+      "id": "E1",
+      "severity": "proposal_target_correction"
+    },
+    {
+      "files": [
+        "docs/e14_same_prefix_revision_proposal_20260923.md:270"
+      ],
+      "finding": "153 starts=27 validation+108 candidate+18 rechecks. Fresh containment9 is not separately allocated; specify whether those9 are inside the27, with the exact remaining18 validation starts, or use162 if27 validation is additional. Validation fixture/command plan, setup<=50 and collection metadata ceilings, guard-block count, supervisor phases and runtime allocation are not yet frozen.",
+      "id": "E2",
+      "severity": "proposal_budget_incomplete"
+    },
+    {
+      "files": [
+        "scripts/e13a_collect.py:65",
+        "scripts/e13a_collect.py:145",
+        "scripts/build_e13a_release.py:60",
+        "scripts/build_e13a_release.py:133",
+        "docs/e14_same_prefix_revision_proposal_20260923.md:359"
+      ],
+      "finding": "No E14 collector, stage/config/release package or exact request plan is delivered. E13a builder/collector pin5 public-fail roots, R1/FRESH,60calls and30720 reserved tokens and cannot run108 N1/S1 calls by changing a document. Reuse diagnostic renderer plus a versioned adapted collector/package and generic analyzer, preserving E13a source/results. Proposal alone authorizes no run.",
+      "id": "E3",
+      "severity": "implementation_not_delivered"
+    },
+    {
+      "files": [
+        "docs/e14_same_prefix_revision_proposal_20260923.md:87",
+        "docs/e14_same_prefix_revision_proposal_20260923.md:329"
+      ],
+      "finding": "Both E13a arms omit the old answer; previous-answer removal is not a between-arm difference. E12 already has N1/S1 at identical full prefixes, so this is not the first wording-only design; new common terminal contract and extra draws create a new intervention version.",
+      "id": "E4",
+      "severity": "proposal_wording_correction"
+    },
+    {
+      "files": [
+        "docs/e14_same_prefix_revision_proposal_20260923.md:237",
+        "docs/e14_same_prefix_revision_proposal_20260923.md:282",
+        "docs/e14_same_prefix_revision_proposal_20260923.md:312"
+      ],
+      "finding": "Root-contiguous ordering does not guarantee a truncation loses whole roots; it can leave a partial root or imbalanced arms. Preserve all assigned missing slots regardless. Retained-answer prompt cost estimates and220.4s runtime are extrapolations, not bounds. Increasing replicates can narrow intervals (as its own table shows); it is false that only adding roots can do so.",
+      "id": "E5",
+      "severity": "proposal_operational_precision"
+    }
+  ],
+  "independent_static": {
+    "cell_checks": [
+      {
+        "arm": "R1",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 4,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.8333333333333334,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 5
+        },
+        "root_id": "mbpp/842",
+        "saved_matches": true
+      },
+      {
+        "arm": "FRESH",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 4,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.3333333333333333,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 2
+        },
+        "root_id": "mbpp/842",
+        "saved_matches": true
+      },
+      {
+        "arm": "R1",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 1,
+          "distinct_output_texts": 6,
+          "extractable_and_parseable": 4,
+          "extraction_rejections": 1,
+          "graded": 6,
+          "observed_mean": 0.3333333333333333,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 2
+        },
+        "root_id": "mbpp/288",
+        "saved_matches": true
+      },
+      {
+        "arm": "FRESH",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 6,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.5,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 3
+        },
+        "root_id": "mbpp/288",
+        "saved_matches": true
+      },
+      {
+        "arm": "R1",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 3,
+          "distinct_output_texts": 6,
+          "extractable_and_parseable": 3,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.3333333333333333,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 2
+        },
+        "root_id": "mbpp/863",
+        "saved_matches": true
+      },
+      {
+        "arm": "FRESH",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 4,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 1.0,
+          "observed_score_varies": false,
+          "output_missing": 0,
+          "passes": 6
+        },
+        "root_id": "mbpp/863",
+        "saved_matches": true
+      },
+      {
+        "arm": "R1",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 6,
+          "distinct_output_texts": 4,
+          "extractable_and_parseable": 0,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.0,
+          "observed_score_varies": false,
+          "output_missing": 0,
+          "passes": 0
+        },
+        "root_id": "mbpp/966",
+        "saved_matches": true
+      },
+      {
+        "arm": "FRESH",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 2,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.16666666666666666,
+          "observed_score_varies": true,
+          "output_missing": 0,
+          "passes": 1
+        },
+        "root_id": "mbpp/966",
+        "saved_matches": true
+      },
+      {
+        "arm": "R1",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 2,
+          "distinct_output_texts": 6,
+          "extractable_and_parseable": 4,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.0,
+          "observed_score_varies": false,
+          "output_missing": 0,
+          "passes": 0
+        },
+        "root_id": "mbpp/652",
+        "saved_matches": true
+      },
+      {
+        "arm": "FRESH",
+        "computed": {
+          "assigned": 6,
+          "ast_failures": 0,
+          "distinct_output_texts": 5,
+          "extractable_and_parseable": 6,
+          "extraction_rejections": 0,
+          "graded": 6,
+          "observed_mean": 0.0,
+          "observed_score_varies": false,
+          "output_missing": 0,
+          "passes": 0
+        },
+        "root_id": "mbpp/652",
+        "saved_matches": true
+      }
+    ],
+    "classes": {
+      "mbpp/288|FRESH|0": "extractable_and_parseable",
+      "mbpp/288|FRESH|1": "extractable_and_parseable",
+      "mbpp/288|FRESH|2": "extractable_and_parseable",
+      "mbpp/288|FRESH|3": "extractable_and_parseable",
+      "mbpp/288|FRESH|4": "extractable_and_parseable",
+      "mbpp/288|FRESH|5": "extractable_and_parseable",
+      "mbpp/288|R1|2": "ast_failure",
+      "mbpp/288|R1|3": "extractable_and_parseable",
+      "mbpp/288|R1|4": "extractable_and_parseable",
+      "mbpp/288|R1|5": "extractable_and_parseable",
+      "mbpp/288|R1|6": "extractable_and_parseable",
+      "mbpp/288|R1|7": "extraction_rejection",
+      "mbpp/652|FRESH|0": "extractable_and_parseable",
+      "mbpp/652|FRESH|1": "extractable_and_parseable",
+      "mbpp/652|FRESH|2": "extractable_and_parseable",
+      "mbpp/652|FRESH|3": "extractable_and_parseable",
+      "mbpp/652|FRESH|4": "extractable_and_parseable",
+      "mbpp/652|FRESH|5": "extractable_and_parseable",
+      "mbpp/652|R1|2": "extractable_and_parseable",
+      "mbpp/652|R1|3": "ast_failure",
+      "mbpp/652|R1|4": "extractable_and_parseable",
+      "mbpp/652|R1|5": "ast_failure",
+      "mbpp/652|R1|6": "extractable_and_parseable",
+      "mbpp/652|R1|7": "extractable_and_parseable",
+      "mbpp/842|FRESH|0": "extractable_and_parseable",
+      "mbpp/842|FRESH|1": "extractable_and_parseable",
+      "mbpp/842|FRESH|2": "extractable_and_parseable",
+      "mbpp/842|FRESH|3": "extractable_and_parseable",
+      "mbpp/842|FRESH|4": "extractable_and_parseable",
+      "mbpp/842|FRESH|5": "extractable_and_parseable",
+      "mbpp/842|R1|2": "extractable_and_parseable",
+      "mbpp/842|R1|3": "extractable_and_parseable",
+      "mbpp/842|R1|4": "extractable_and_parseable",
+      "mbpp/842|R1|5": "extractable_and_parseable",
+      "mbpp/842|R1|6": "extractable_and_parseable",
+      "mbpp/842|R1|7": "extractable_and_parseable",
+      "mbpp/863|FRESH|0": "extractable_and_parseable",
+      "mbpp/863|FRESH|1": "extractable_and_parseable",
+      "mbpp/863|FRESH|2": "extractable_and_parseable",
+      "mbpp/863|FRESH|3": "extractable_and_parseable",
+      "mbpp/863|FRESH|4": "extractable_and_parseable",
+      "mbpp/863|FRESH|5": "extractable_and_parseable",
+      "mbpp/863|R1|2": "extractable_and_parseable",
+      "mbpp/863|R1|3": "ast_failure",
+      "mbpp/863|R1|4": "extractable_and_parseable",
+      "mbpp/863|R1|5": "extractable_and_parseable",
+      "mbpp/863|R1|6": "ast_failure",
+      "mbpp/863|R1|7": "ast_failure",
+      "mbpp/966|FRESH|0": "extractable_and_parseable",
+      "mbpp/966|FRESH|1": "extractable_and_parseable",
+      "mbpp/966|FRESH|2": "extractable_and_parseable",
+      "mbpp/966|FRESH|3": "extractable_and_parseable",
+      "mbpp/966|FRESH|4": "extractable_and_parseable",
+      "mbpp/966|FRESH|5": "extractable_and_parseable",
+      "mbpp/966|R1|2": "ast_failure",
+      "mbpp/966|R1|3": "ast_failure",
+      "mbpp/966|R1|4": "ast_failure",
+      "mbpp/966|R1|5": "ast_failure",
+      "mbpp/966|R1|6": "ast_failure",
+      "mbpp/966|R1|7": "ast_failure"
+    },
+    "distinct_text_cells": 10,
+    "partition_by_arm": {
+      "FRESH": {
+        "extractable, AST-parseable primary-score failure": 18,
+        "primary-score success": 12
+      },
+      "R1": {
+        "extractable, AST-parseable primary-score failure": 8,
+        "extraction or AST failure": 13,
+        "primary-score success": 9
+      }
+    },
+    "partition_saved_matches": true,
+    "totals_by_arm": {
+      "FRESH": {
+        "extractable_and_parseable": 30
+      },
+      "R1": {
+        "ast_failure": 12,
+        "extractable_and_parseable": 17,
+        "extraction_rejection": 1
+      }
+    },
+    "varying_score_cells": 6
+  },
+  "preservation_since_56e0530": {
+    "results/e13a_static_description_20260923.json": {
+      "baseline_56e0530_sha256": "63459f5d231ed7b81576e207641e5bd4eac1281f831044c1dfea6a7b58c42830",
+      "current_sha256": "63459f5d231ed7b81576e207641e5bd4eac1281f831044c1dfea6a7b58c42830",
+      "unchanged": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/ARTIFACT_SHA256SUMS.json": {
+      "baseline_56e0530_sha256": "2f6e4ffe106e6fdb9691c8e5325806832b653bb739e4f6f2c6389aed470d663d",
+      "current_sha256": "2f6e4ffe106e6fdb9691c8e5325806832b653bb739e4f6f2c6389aed470d663d",
+      "unchanged": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/analysis_report.json": {
+      "baseline_56e0530_sha256": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708",
+      "current_sha256": "b1a5af1393e93055b4efba5f79ddb63476cb77fb403623a1cde7d1a91339d708",
+      "unchanged": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/collect/calls.jsonl": {
+      "baseline_56e0530_sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+      "current_sha256": "8e01546ab235fb468eb0731599f43d692e09022cb9e6dddcd8d8bac9d8d9ece9",
+      "unchanged": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/grade/grades.jsonl": {
+      "baseline_56e0530_sha256": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+      "current_sha256": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+      "unchanged": true
+    },
+    "results/e13a_two_arm_20260923T061500Z/grade/summary.json": {
+      "baseline_56e0530_sha256": "93555fabf412450b359831f78b5298ee3191a4a93e04aa12873ef0a0b92ae9fb",
+      "current_sha256": "93555fabf412450b359831f78b5298ee3191a4a93e04aa12873ef0a0b92ae9fb",
+      "unchanged": true
+    },
+    "scripts/e13a_static_description.py": {
+      "baseline_56e0530_sha256": "13354f3d2264b502e0a0357e6e9fe489702be21438aab86f9b6a3c65ddc779d0",
+      "current_sha256": "13354f3d2264b502e0a0357e6e9fe489702be21438aab86f9b6a3c65ddc779d0",
+      "unchanged": true
+    }
+  },
+  "raw_inventory": {
+    "expected": 165,
+    "mismatches": [],
+    "missing": [],
+    "present": 165
+  },
+  "reviewed_head": "25d1f1c5d22e6c0972e54dcef63fc1850616f519",
+  "reviewed_tests": {
+    "file": "tests/test_e13a_static_description_v2.py",
+    "scope": "Assertions on corrected saved-data counts, language limits, hashes and overwrite refusal; no general duplicate/missing-assignment fixtures. Source read only, not rerun.",
+    "test_functions": 11
+  },
+  "runtime": {
+    "independent_arithmetic_wall_seconds": 0.321323124691844,
+    "python_cpu_seconds": 0.037257
+  },
+  "schema_version": "mrl21-static-lead-audit-v1",
+  "scope": "Independent stdlib JSON, SHA256, regex extraction, AST-only parsing, arithmetic and read-only Git. No repository module import, candidate/reference/benchmark execution, model/receiver/network calls, installs, or original artifact writes. No tests rerun.",
+  "source_hashes": {
+    "docs/e13a_results_20260923.md": "58784a65de2903458b1a725b65cf384175082929a983f0e56d1f01a7196dc366",
+    "docs/e14_same_prefix_revision_proposal_20260923.md": "0f6a2d3bdb42e9bb86df6235c2ff367ae43a471744df7d069f7c72f786c6431b",
+    "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+    "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "results/e13a_archive_closure_20260923/freeze_archive.json": "6b4cc123f145704941ba1ce2a772d1f541a2aa958f5d7f3ff4255bd27c62ba40",
+    "results/e13a_static_description_v2_20260923.json": "08d93a616143ffc7341af0dd258397802649026c015427e60281d6a36be7b9cc",
+    "results/frame_review_mrl15_20260922T021718Z/records.json": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+    "scripts/build_e13a_release.py": "a06d45e9d5c9148b5b6724602de187bc3ed70e8da9afcb7490db1951e1129a0a",
+    "scripts/e13a_analyze.py": "7d969d642fcc7222bd6fa110d09b6ea7cc3c55d87400aec9fd3a39dc50ea2699",
+    "scripts/e13a_collect.py": "b2d8663e5187744dfd2a379eca99bd2ff2b4867b6892d6e98747fa8a1e946470",
+    "scripts/e13a_grade.py": "eb172d4a75e74d70b812d5a7365b601b251c797f840c7af67b24cb48e57b6b7b",
+    "scripts/e13a_stage_clock.py": "5caed3ec5bb74ff9a2908024e8ddc9d7da0938139dc16f0d357536edcf11e89c",
+    "scripts/e13a_static_description_v2.py": "509bf004b2f238d2e0ce243b85ede4fad1c0b47e25e0e878245632d47a3d3bcc",
+    "tests/test_e13a_static_description_v2.py": "5064b7aa229183ac2657a1450c0ad7c60c4cd75a36743af534b18db4b0068ea8"
+  },
+  "source_pin_checks": {
+    "execution": {
+      "count": 13,
+      "mismatches": {}
+    },
+    "freeze": {
+      "count": 18,
+      "mismatches": {}
+    }
+  },
+  "timing_seconds": {
+    "analysis": 0.042022207751870155,
+    "collection": 142.0739362500608,
+    "outer_to_analysis_end": 249.007588,
+    "private_grading": 1.6172284167259932,
+    "setup_active_commands": 4.538668998517096,
+    "setup_wall": 64.737475
+  },
+  "usage_by_arm": {
+    "FRESH": {
+      "calls": 30,
+      "completion_tokens": 1388,
+      "prompt_tokens": 6174,
+      "summed_call_seconds": 31.90025537740439
+    },
+    "R1": {
+      "calls": 30,
+      "completion_tokens": 5018,
+      "prompt_tokens": 12804,
+      "summed_call_seconds": 108.15378111973405
+    }
+  },
+  "working_tree_before_new_audit": "?? results/mrl21_archive_lead_audit_20260923.json\n"
+}

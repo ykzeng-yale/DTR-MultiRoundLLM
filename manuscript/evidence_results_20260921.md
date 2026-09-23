@@ -374,13 +374,13 @@ Collection took 142.074 seconds, grading 1.617 seconds, and supervised analysis
 did not independently observe the live host.
 
 [Independent review](../docs/e13a_lead_judgment_20260923.md) checks the saved outcomes,
-request bindings, accounting and interpretation without regrading. Complete
-archive acceptance remains pending: 164 delivered file hashes match, but the
-165-file manifest names a missing receiver log; the recorded execution commit
-was rebased after dispatch and requires an additive object archive. Matching
-recorded source hashes to the published replacement does not establish identity
-of the entire original commit/tree. These provenance limitations accompany the
-finite result; they are not repaired by editing its immutable manifest.
+request bindings, accounting and interpretation without regrading. The subsequent
+[additive archive review](../docs/mrl21_review_mrl22_20260923.md) verifies all 165 file
+hashes, the restored receiver log and recoverable original freeze object. The
+original and post-rebase replacement trees differ in four status/audit files;
+all 18 frozen paths and 13 execution sources match. Original outcomes and the
+manifest remain unchanged. This closes archive availability, while selected
+histories, the package contrast and thin private suites still limit inference.
 
 The next substantive empirical question remains whether public history supports
 useful prompt choice. Any follow-up with a common terminal-output instruction
