@@ -1,0 +1,106 @@
+{
+  "schema_version": "e0-stop-concentration-validation-v1",
+  "decision_id": "LEAD-E0-CONC-01",
+  "source_base_commit": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
+  "resource_cap": {
+    "cpu_workers": 1,
+    "threads": 1,
+    "per_command_seconds": 60,
+    "analysis_output_bytes": 10485760,
+    "paid_usd": 0
+  },
+  "attempts": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_stop_anchor_concentration.py"
+      ],
+      "returncode": 0,
+      "stdout": "......................                                                   [100%]\n22 passed in 0.18s\n",
+      "stderr": "",
+      "wall_seconds": 0.41772395744919777,
+      "child_cpu_seconds": 0.286011
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "scripts/diagnose_stop_anchor_concentration.py",
+        "--run-dir",
+        "work/e0_stop_anchor_20260923_lead01",
+        "--out",
+        "results/e0_stop_anchor_concentration_20260923.json"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "wall_seconds": 3.048310374841094,
+      "child_cpu_seconds": 2.99648
+    }
+  ],
+  "sampled_datasets": 0,
+  "estimator_fits": 0,
+  "model_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "benchmark_executions": 0,
+  "paid_usd": 0,
+  "independent_review": "Source/measurement and mathematical reviewers accepted; parent checks execution and saved-result arithmetic.",
+  "checked_utc": "2026-09-23T16:49:59.445719+00:00",
+  "artifact_sha256": {
+    "scripts/diagnose_stop_anchor_concentration.py": "423103d99d83bbb155f432f7cfed711fae9c008fb8efd05a3b3bf6a782dc49b8",
+    "tests/test_stop_anchor_concentration.py": "087478f4acf1937c8792003404ac3c4ef6c68af2ef546886a4492c7a1d5e4362",
+    "work/e0_stop_anchor_concentration_20260923.json": "2818f5144ef95839edcc0d42655f7a05beb8094816a7b36bcf179bcd01abc2fa",
+    "results/e0_stop_anchor_concentration_summary_20260923.json": "eec481810ac5fb270d69925d23528fa392b5c33b0eaf1b4326f305dc819546cd"
+  },
+  "derived_output_bytes": 7254501,
+  "independent_arithmetic_comparisons": 34752,
+  "support_invariant_comparisons": 7488,
+  "saved_envelope_roots_checked": 264960,
+  "saved_envelope_violations": 0,
+  "frozen_source_hashes_unchanged": {
+    "experiments/e0/stop_anchor_job.py": true,
+    "experiments/e0/stop_anchor_estimators.py": true,
+    "experiments/e0/stop_anchor_journal.py": true,
+    "experiments/e0/stop_anchor_report.py": true,
+    "experiments/e0/regularization_job.py": true,
+    "experiments/e0/regularization_report.py": true,
+    "experiments/e0/regularized_history_estimators.py": true,
+    "experiments/e0/history_estimators.py": true,
+    "experiments/e0/estimators.py": true,
+    "experiments/e0/simulator.py": true,
+    "experiments/e0/stop_anchor_comparison_plan_v1.json": true,
+    "experiments/e0/stop_anchor_seed_plan_v1.csv": true,
+    "scripts/run_stop_anchor_comparison.py": true,
+    "scripts/check_regularization_truth.py": true,
+    "scripts/reconcile_stop_anchor_run.py": true
+  },
+  "parent_independent_root_arithmetic": {
+    "wall_seconds": 1.4406150840222836,
+    "cpu_seconds": 1.420152,
+    "journal_sha256": "980de970926ed17a819eb9c87fbf9db164d39af94fb1b333e6877117630f0928"
+  },
+  "parent_independent_weight_arithmetic": {
+    "wall_seconds": 2.2424085829406977,
+    "cpu_seconds": 2.188874,
+    "archives_verified": 96
+  },
+  "parent_comparison_wall_seconds": 0.06906000059098005,
+  "parent_comparison_cpu_seconds": 0.06298600000000001,
+  "detailed_artifact": {
+    "path": "work/e0_stop_anchor_concentration_20260923.json",
+    "sha256": "2818f5144ef95839edcc0d42655f7a05beb8094816a7b36bcf179bcd01abc2fa",
+    "bytes": 7254501
+  },
+  "compact_artifact": {
+    "path": "results/e0_stop_anchor_concentration_summary_20260923.json",
+    "sha256": "eec481810ac5fb270d69925d23528fa392b5c33b0eaf1b4326f305dc819546cd",
+    "bytes": 1486357
+  },
+  "storage_note": "The successful command output was moved byte-identically from results/ to ignored work/ to keep large derived artifacts out of Git. Compact view retains every1152method/dataset metric and96weight-stage records; full root detail remains hash-bound.",
+  "retained_dataset_method_rows": 1152,
+  "shared_weight_datasets": 96,
+  "test_count": 22
+}

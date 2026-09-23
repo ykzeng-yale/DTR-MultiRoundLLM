@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T16:06:43.509929+00:00",
+  "checkpoint_utc": "2026-09-23T16:54:01.676674+00:00",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "5ae90187f1ad0cbb6199b5c32cd6bae05bab2b9b",
-  "baseline_note": "Fixed weights and credit unchanged: E14 measurement content is accepted as preparation; its newly delivered mock path needs repairs and was not previously credited as runtime-validated. No empirical result is invalidated.",
+  "prior_checked_head": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
+  "baseline_note": "Fixed weights and credit unchanged: saved-root concentration/support/weight diagnosis refines existing numerical/manuscript credit; calibrated inference and independent policy validation remain unresolved.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL23 partial delivery independently reviewed:12receipt hashes match; ten-root measurement accepted as source preparation.52builder checks pass,2fail due to cache-path metadata;3mock boundary defects reproduced. MRL24source/mock repair permitted; all real E14execution held.",
+  "latest_evidence": "All12DRmethods\u00d796saved datasets retained;22tests and separate arithmetic pass. Concentration, weight tails and sparse full-history support co-occur without identifying the cause of undercoverage. No new draws/fits/model data; MRL24acknowledgement pending at first check.",
   "latest_worker_review": {
     "last_seen_worker_revision": "18797b7ab593bd569522ad35a905d640a67b22cb",
     "delivery_type": "Late partial MRL23 source package plus recovery acknowledgement",
@@ -173,7 +173,7 @@
       "local_session_ref": "8864ab",
       "direct_local_lookup": "No matching transcript found in local Claude project records; no unrelated task contacted."
     },
-    "mrl24_status": "Source/mock repair authorized; acknowledgement pending.",
+    "mrl24_status": "Source/mock repair published; no acknowledgement at first actual check. Actual start/deadline unverified; no repeated recovery.",
     "mrl24_acknowledgement_received": false,
     "mrl24_execution_released": false,
     "mrl24_source_mock_repair_authorized": true,
@@ -186,7 +186,11 @@
       "program_executions": 0
     },
     "mrl24_actual_start_utc": null,
-    "mrl24_actual_cap_deadline_utc": null
+    "mrl24_actual_cap_deadline_utc": null,
+    "mrl24_consecutive_missing_acknowledgement_checks": 1,
+    "mrl24_latest_acknowledgement_check_utc": "2026-09-23T16:54:01.676674+00:00",
+    "mrl24_request_publication_revision": "45f7aa72ad75de4fe3dbd8fb4ccbb0b6b605246d",
+    "mrl24_request_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5798304093"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -272,5 +276,15 @@
     "decision": "Accept descriptive diagnosis; cause inconclusive; hold calibrated-inference claims and new collection.",
     "source_independently_reviewed": true,
     "arithmetic_independently_checked": true
+  },
+  "stop_anchor_concentration_diagnosis": {
+    "decision_id": "LEAD-E0-CONC-01",
+    "record": "docs/e0_stop_anchor_concentration_20260923.md",
+    "summary": "results/e0_stop_anchor_concentration_summary_20260923.json",
+    "validation": "results/e0_stop_anchor_concentration_validation_20260923.json",
+    "classification": "Post-result saved-root/support/weight descriptive diagnosis; no draws, refits or interval tuning.",
+    "retained_dr_methods": 12,
+    "datasets_per_method": 96,
+    "decision": "Accept descriptive diagnosis; mechanism inconclusive; hold calibrated inference and new collection."
   }
 }
