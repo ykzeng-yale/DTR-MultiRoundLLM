@@ -2,6 +2,8 @@
 
 ## Current reviewed checkpoint — 23 September 2026
 
+At 21:11:03 UTC, **58%, change 0 percentage points**. The single recovery remains unanswered at its first post-recovery review, so receipt of the lead's E14 hold cannot be verified without the existing worker's accessible app/task route. The [policy-target decision fork](policy_trial_decision_fork_20260923.md) separates original independent-family validation, a changed finite-frame estimand and instrument-only feasibility; no new empirical milestone or release. Prompt efficacy unestablished; full project not submission-ready.
+
 At 20:37:27 UTC, **58%, change 0 percentage points**. LEAD-MRL25-01 still has no worker acknowledgement after two checks, so one bounded recovery request is published; execution and scheduler health remain unverified. The current manuscript now reflects the independently checked MRL-25 mock repair while retaining real-instrument and independent-policy gaps. No new efficacy or completion milestone. Full project not submission-ready.
 
 At 20:04:39 UTC, **58%, change 0 percentage points**. The new [candidate-frame audit](policy_frame_feasibility_20260923.md) narrows feasibility of the proposed independent policy trial but adds no completed empirical or validation milestone. The existing 198-root frame has no certified independent family count and cannot meet the conservative .05-radius planning target even under an optimistic 198-family assumption. E14 and policy collection remain held. Prompt efficacy unestablished; full project not submission-ready.

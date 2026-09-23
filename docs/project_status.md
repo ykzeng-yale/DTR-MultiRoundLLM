@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Unverified recovery receipt and policy-target distinction — 2026-09-23T21:11:03Z
+
+**58%, change 0 percentage points.** No new worker publication or LEAD-MRL25-01 acknowledgement followed the single recovery. MRL-25's earlier source delivery remains independently reviewed, but delivery of the later scientific hold to the existing worker cannot be verified. The known session UUID is inaccessible here; the owner's one needed routing detail is the existing worker's currently accessible app/task link or session route. Scheduler/run/lease health is unknown. The [lead decision fork](policy_trial_decision_fork_20260923.md) states why the original independent-family policy target, a finite-source alternative and an instrument check cannot be interchanged. No new collection or empirical evidence. Next: worker receipt and a feasible frozen selector/comparator/family/cost contract. Efficacy unestablished; full project not submission-ready.
+
 ## One unanswered-decision recovery; manuscript source correction — 2026-09-23T20:37:27Z
 
 **58%, change 0 percentage points.** LEAD-MRL25-01 remains unacknowledged after two actual checks; the single [issue #3 recovery](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5802523436) requests only processed commit, UTC status, scheduler/run/lease and blocker from the existing worker. No new worker delivery, empirical result or open PR; last independently reviewed worker source `4931cb9`. The editable manuscript now credits the verified scoped MRL-25 mock repair and preserves the unvalidated real-instrument, host-dependent inventory and policy-frame limits. E14 and new policy collection remain held. Next: worker receipt and a feasible frozen policy/comparator/family/cost contract. Efficacy unestablished; full project not submission-ready.
