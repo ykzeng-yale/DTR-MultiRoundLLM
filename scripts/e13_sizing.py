@@ -57,7 +57,13 @@ def e12_gated(run=RUN):
     return {"n_roots": n_roots, "n_gated": len(rows), "gate_rate": len(rows) / n_roots,
             "gate_rate_wilson95": wilson(len(rows), n_roots), "replicates": R, "roots": rows,
             "delta_hat": statistics.fmean(means), "var_root_means": between,
-            "mean_within_var_of_root_mean": within, "tau2_moment": max(0.0, between - within)}
+            "mean_within_var_of_root_mean": within, "tau2_moment": max(0.0, between - within),
+            "implied_within_var_per_replicate": within * R,
+            "within_var_exceeds_bernoulli_cap": within * R > WITHIN_VAR,
+            "tau2_moment_consistent_with_cap": max(0.0, between - WITHIN_VAR / R),
+            "tau2_note": ("Noisy moment estimate from 5 roots, not an identified variance decomposition (lead "
+                          "be417b5). The observed within term implies more per-replicate variance than a Bernoulli "
+                          "allows, so the cap-consistent value is used as the optimistic end.")}
 
 
 def precision(n_g, tau2, R, deltas=(0.05, 0.10), arms_varying=1):
@@ -190,7 +196,10 @@ def build(run=RUN, frame=FRAME):
     G_full = math.floor(remaining * retention)
     ng_full = round(G_full * f)
     ng_v1 = round(30 * f)
-    tau2s = sorted({round(e12["tau2_moment"], 6), 0.10, 0.20})
+    # tau2_moment (0.025) subtracts an observed within term of 0.15 per root mean, i.e. 0.30 per replicate, which
+    # exceeds the 0.25 Bernoulli maximum used in the SD. Capping the within term gives the moment-consistent
+    # optimistic value 0.05; 0.025 is retained only for continuity with the withdrawn revision-1 tables.
+    tau2s = sorted({round(e12["tau2_moment"], 6), round(e12["var_root_means"] - WITHIN_VAR / 2, 6), 0.10, 0.20})
     grid = [precision(n, t, R) for n in (e12["n_gated"], ng_v1, ng_full) for t in tau2s for R in (2, 4, 6, 8)]
     # R1 minus FRESH: tau2 here is the between-root variance of that contrast, unmeasured; same scenarios reused.
     mech = [precision(n, t, R, arms_varying=2) for n in (e12["n_gated"], ng_full) for t in tau2s for R in (6, 8)]

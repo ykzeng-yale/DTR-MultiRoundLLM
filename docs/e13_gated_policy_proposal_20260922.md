@@ -23,6 +23,11 @@ and frame files.
 On E12's 14 roots, the rule *"if the initial answer fails any public example, issue R1 (task plus
 diagnostic, previous answer removed); otherwise STOP"* scored **0.750 against STOP's 0.714**.
 
+**That is +1/28 = +0.036 on the full-policy target, already below the 0.05 useful-benefit bar it would be
+proposed to test.** Clearing 0.05 overall needs +0.14 per gated root, 1.4× this selected estimate. The
+motivation and the success criterion are therefore arithmetically incompatible, which revisions 0 and 1 never
+said.
+
 - **It was chosen after seeing E12.** It was the best of the gate-then-arm rules on the same 5 public-fail
   roots, so +0.10 per gated root is an optimistic planning value and cannot be treated as evidence.
 - **Per gated root, R1 − STOP** was −0.5 (863), +0.5 (842), +0.5 (288), 0 (966) and 0 (652).
@@ -38,13 +43,22 @@ diagnostic, previous answer removed); otherwise STOP"* scored **0.750 against ST
 The policy contrast is zero wherever the gate does not fire. All information comes from gated roots, about
 36% of roots (Wilson 95% range 16–61%).
 
-| design | gated roots | R | 95% half-width, rule − STOP per gated root | power at +0.10 | power at +0.05 |
+| design | gated roots | R | 95% half-width, rule − STOP per gated root | power at +0.10 **per gated root, vs a zero null** | power at +0.05 **per gated root, vs a zero null** |
 |---|---:|---:|---:|---:|---:|
 | v1: G = 30, R1 on every root | ≈ 11 | 2 | 0.23 – 0.34 | 0.09 – 0.14 | 0.06 – 0.07 |
 | whole remaining MBPP frame | ≈ 44 | 2 | 0.11 – 0.17 | 0.21 – 0.40 | 0.09 – 0.14 |
 | whole remaining MBPP frame | ≈ 44 | 8 | 0.07 – 0.14 | 0.28 – 0.80 | 0.11 – 0.29 |
 
-Ranges span τ² from 0.20 to 0.025, using the normal approximation (optimistic at small n).
+Ranges span τ² from 0.20 to 0.025, using the normal approximation (optimistic at small n). **These are
+gated-subset powers against a zero null, not usefulness powers**; +0.05 per gated root is only +0.018 overall.
+
+**τ² correction.** The 0.025 moment estimate subtracts an observed within-root term of 0.15 per root mean,
+which implies 0.30 per replicate — more than the 0.25 Bernoulli maximum the SD then adds back. So (τ² = 0.025,
+σ²_w = 0.25) is not moment-consistent; capping the within term gives **τ² = 0.05** as the optimistic end. At
+τ² = 0.05 with R = 8, the inert-rule futility requirement rises from 64 to **92 roots**, the overall gain the
+full frame can declare futile falls from 0.014 to **0.007**, and the conditional effect needed to demonstrate
+usefulness rises from 0.28 to **0.30**. Either way the conclusion is unchanged. τ² remains a noisy five-root
+moment estimate, not an identified decomposition.
 
 - **The frame is the binding limit.**
   - The MRL-15 frame has 198 eligible records. 20 have been reviewed, leaving **178 unreviewed**.
@@ -131,7 +145,7 @@ equality passes neither — power to declare benefit is `Φ((θ − 0.05)/SE −
 
 | conditional gain Δ per gated root | overall θ at f = 5/14 | roots for 80% power to declare **benefit** | roots for 80% power to declare **futility** |
 |---|---|---|---|
-| 0 (inert rule) | 0 | not applicable | **64 – 260** |
+| 0 (inert rule) | 0 | not applicable | **64 – 260** (92 – 260 at moment-consistent τ² ≥ 0.05) |
 | 0.05 | 0.018 | impossible: θ < 0.05 | 157 – 632 |
 | **0.10 (E12's selected estimate)** | **0.036** | **impossible: θ < 0.05** | 861 – 3,265 |
 | 0.14 | 0.050 | equality passes neither rule | equality passes neither rule |
