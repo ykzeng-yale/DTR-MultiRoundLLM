@@ -20,8 +20,23 @@ def test_plan_shape_seeds_and_budget():
         assert len({q["seed"] for q in r["requests"]}) == 12
         assert {q["messages_sha256"] for q in r["requests"] if q["arm"] == "FRESH"} == {r["base_messages_sha256"]}
         assert {q["messages_sha256"] for q in r["requests"] if q["arm"] == "R1"} == {r["r1_messages_sha256"]}
-    assert p["budget"] == {"receiver_calls": 60, "reserved_completion_tokens": 30720, "isolated_starts": 70,
-                           "ledger_after": 403, "ledger_ceiling": 412}
+    bud = p["budget"]
+    assert (bud["receiver_calls"], bud["reserved_completion_tokens"], bud["isolated_starts"]) == (60, 30720, 70)
+    assert bud["cumulative_ledger_if_granted"] == 403 and bud["ledger_ceiling"] == 412
+    assert "not authority" in bud["ledger_note"]
+
+
+def test_checkpoints_come_from_public_diagnostics_and_no_private_grade_leaks():
+    """MRL-18: gate from frozen public diagnostics only; no private grade in the executable input."""
+    p = b.build()
+    blob = json.dumps(p)
+    assert "private_grade" not in blob and "analysis_report" not in blob
+    for r in p["roots"]:
+        assert r["public_status"] == "any_fail"
+        assert r["public_case_statuses"] and all(
+            s in ("wrong_value", "format_error", "interface_error", "program_exception") for s in r["public_case_statuses"])
+    assert any("public_status" in c for c in p["checks"])
+    assert "tie is inconclusive" in p["evidence_class"]
 
 
 def test_committed_plan_matches_rebuild():

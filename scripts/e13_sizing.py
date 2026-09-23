@@ -74,6 +74,103 @@ def precision(n_g, tau2, R, deltas=(0.05, 0.10), arms_varying=1):
     return out
 
 
+USEFULNESS_THRESHOLD = 0.05   # lead's working absolute private-suite gain for "useful benefit" (L > .05)
+
+
+def policy_sd(f, tau2, R, delta_cond, sw2=WITHIN_VAR):
+    """SD of the per-root FULL-POLICY contrast D = g*(Y - S) for the gated rule against always-STOP.
+
+    g is the decision-time public-fail indicator, Y the mean of R replicates of the taken action, S the
+    initial artifact's grade (fixed once the artifact is frozen). With sigma2_cond = tau2 + sw2/R,
+    E[D] = f*delta_cond and E[D^2] = f*(sigma2_cond + delta_cond^2), so
+    Var(D) = f*(sigma2_cond + delta_cond^2) - (f*delta_cond)^2.
+    Roots are assumed independent; this ignores the unresolved family structure.
+    """
+    return math.sqrt(f * (tau2 + sw2 / R + delta_cond ** 2) - (f * delta_cond) ** 2)
+
+
+def _se(sd, n):
+    return sd / math.sqrt(n)
+
+
+def power_benefit(theta, sd, n, threshold=USEFULNESS_THRESHOLD):
+    """P(L > threshold) with L the lower limit of a two-sided 95% interval: declaring useful benefit."""
+    return phi((theta - threshold) / _se(sd, n) - Z95)
+
+
+def power_futility(theta, sd, n, threshold=USEFULNESS_THRESHOLD):
+    """P(U < threshold): declaring useful-gain futility. Equality passes neither rule."""
+    return phi((threshold - theta) / _se(sd, n) - Z95)
+
+
+def n_for_80(effect_gap, sd):
+    """Roots needed for 80% power when the true effect is effect_gap away from the threshold."""
+    if effect_gap <= 0:
+        return None
+    return math.ceil(((Z95 + Z80) * sd / effect_gap) ** 2)
+
+
+def _solve_delta(n, power_z, f, tau2, R, threshold=USEFULNESS_THRESHOLD):
+    """Smallest conditional effect whose policy value clears the threshold at n roots with the given power."""
+    lo, hi = threshold / f, 1.0
+    if hi <= lo:
+        return None
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        if f * mid - power_z * _se(policy_sd(f, tau2, R, mid), n) > threshold:
+            hi = mid
+        else:
+            lo = mid
+    return None if hi > 0.999 else hi
+
+
+def _solve_futile_theta(n, f, tau2, R, threshold=USEFULNESS_THRESHOLD):
+    """Largest true policy gain that can still be declared useful-gain-futile at n roots with 80% power."""
+    lo, hi = 0.0, threshold
+    for _ in range(200):
+        mid = (lo + hi) / 2
+        sd = policy_sd(f, tau2, R, mid / f)
+        if threshold - mid - (Z95 + Z80) * _se(sd, n) > 0:
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
+def usefulness(f, n_roots_available, tau2s, deltas=(0.0, 0.05, 0.10, 0.14, 0.20, 0.30, 0.40), replicates=(6, 8)):
+    """The decision-relevant arithmetic: the lead's threshold applies to the FULL-POLICY contrast, not a subset."""
+    rows = []
+    for tau2 in tau2s:
+        for R in replicates:
+            for d in deltas:
+                theta = f * d
+                sd = policy_sd(f, tau2, R, d)
+                rows.append({
+                    "tau2": tau2, "replicates": R, "delta_cond": d, "theta_policy": theta, "sd_policy": sd,
+                    "n_roots_for_80pct_benefit": n_for_80(theta - USEFULNESS_THRESHOLD, sd),
+                    "benefit_unreachable_reason": None if theta > USEFULNESS_THRESHOLD else
+                        "theta <= 0.05: no sample size can show L > 0.05",
+                    "n_roots_for_80pct_futility": n_for_80(USEFULNESS_THRESHOLD - theta, sd),
+                    "power_benefit_at_available_n": power_benefit(theta, sd, n_roots_available),
+                    "power_futility_at_available_n": power_futility(theta, sd, n_roots_available),
+                })
+    return {
+        "threshold": USEFULNESS_THRESHOLD,
+        "decision_rule": "useful benefit needs L > 0.05; useful-gain futility needs U < 0.05; equality passes neither",
+        "target": "full-policy equal-weight contrast theta = f * delta_cond, NOT the gated-subset contrast",
+        "n_roots_available": n_roots_available,
+        "min_delta_cond_for_theta_above_threshold": USEFULNESS_THRESHOLD / f,
+        "min_delta_cond_demonstrable_at_available_n": {
+            f"tau2={t},R={R}": {"power_50pct": _solve_delta(n_roots_available, 0.0, f, t, R),
+                                 "power_80pct": _solve_delta(n_roots_available, Z95 + Z80, f, t, R),
+                                 "expected_estimate_clears_bar": _solve_delta(n_roots_available, Z95, f, t, R)}
+            for t in tau2s for R in replicates},
+        "max_theta_declarable_futile_at_available_n": {
+            f"tau2={t},R={R}": _solve_futile_theta(n_roots_available, f, t, R) for t in tau2s for R in replicates},
+        "rows": rows,
+    }
+
+
 def cost(G, n_gated, R, arms, validation=True, phase_a=True, audit_all=False):
     cont_roots = G if audit_all else n_gated
     calls = (G if phase_a else 0) + arms * R * cont_roots
@@ -104,7 +201,7 @@ def build(run=RUN, frame=FRAME):
         "E13b_full_remaining_frame": cost(G_full, ng_full, 8, arms=2),
     }
     return {
-        "analysis_version": "e13-sizing-v1",
+        "analysis_version": "e13-sizing-v2-usefulness",
         "evidence_class": "planning arithmetic from committed files; no execution; scenarios are assumptions",
         "inputs": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                    for p in (run / "analysis_report.json", run / "analysis_input.json", frame)},
@@ -115,6 +212,7 @@ def build(run=RUN, frame=FRAME):
                   "expected_gated_full_at_wilson_bounds": [round(G_full * b) for b in e12["gate_rate_wilson95"]]},
         "assumptions": {"within_replicate_var": WITHIN_VAR, "seconds_per_call": E12_SECONDS_PER_CALL,
                         "tau2_scenarios": tau2s, "normal_approximation": True},
+        "usefulness_full_policy": usefulness(f, G_full, tau2s),
         "precision_grid_rule_minus_stop": grid,
         "precision_grid_r1_minus_fresh": mech,
         "designs": designs,

@@ -1,12 +1,12 @@
 {
- "plan_version": "e13a-request-plan-v1",
+ "plan_version": "e13a-request-plan-v2-public-gated",
  "status": "PROPOSED, NOT RELEASED; no receiver call made",
+ "evidence_class": "post-hoc-motivated development follow-up at five fixed public-fail checkpoints; not a test of the selected gated rule and not a diagnostic-only effect; a tie is inconclusive",
  "source_run": "results/e12_dev_v3_20260922T030255Z",
  "inputs": {
   "A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
   "B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
-  "C/calls.jsonl": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f",
-  "analysis_report.json": "ca250a3ea3d5bfe275a202f10b58d3c26a247fba5c63798ee56aa53760eaaf8b"
+  "C/calls.jsonl": "3de109d968098151970a889b4ce8d1b0151413bcdbfc8de566cbb358d0d9223f"
  },
  "package_config_sha256": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6",
  "decoding": {
@@ -17,7 +17,8 @@
  },
  "checks": [
   "A bytes and config/dataset/assignment digests re-verified (collect_diagnostic._load_initial)",
-  "B diagnostics, C calls and analysis report match E12 ARTIFACT_SHA256SUMS",
+  "B diagnostics and C calls match E12 ARTIFACT_SHA256SUMS",
+  "checkpoints derived from frozen public diagnostics via analyze_diagnostic.public_status; no private grade is read",
   "FRESH messages == E12 recorded initial request messages",
   "R1 messages == both E12 recorded R1 request messages",
   "no new seed equals any seed E12 used for the same root"
@@ -25,7 +26,10 @@
  "roots": [
   {
    "root_id": "mbpp/842",
-   "e12_initial_private_grade": 0.0,
+   "public_status": "any_fail",
+   "public_case_statuses": [
+    "wrong_value"
+   ],
    "initial_artifact_sha256": "38d00c8dfa5a8dfdd870f7cdf77ffce0483793374401cd34e0fe1354aedd0378",
    "base_messages_sha256": "7fdc28d031e191605dffd5b489fa7ab0120f7dbd59aaa3d3d0df9ba8ae0ad1aa",
    "r1_messages_sha256": "33261f52f8b7744c1b345116069cd13275a3a5d3080c8fcf64de8d1151ea8144",
@@ -118,7 +122,10 @@
   },
   {
    "root_id": "mbpp/288",
-   "e12_initial_private_grade": 0.0,
+   "public_status": "any_fail",
+   "public_case_statuses": [
+    "wrong_value"
+   ],
    "initial_artifact_sha256": "078cb770643db273b8806180b7107d64e38e8b6c13d7e8414b98f9b9f4c2c9cd",
    "base_messages_sha256": "e793fdb73a495301e58e433ad3550ab5f28e88c6a1508a52a2047b656a161856",
    "r1_messages_sha256": "f6279b7566fbba61ef043c3a77d7ff0cddfad7e3059adf4648aa01a73be315fe",
@@ -211,7 +218,10 @@
   },
   {
    "root_id": "mbpp/863",
-   "e12_initial_private_grade": 1.0,
+   "public_status": "any_fail",
+   "public_case_statuses": [
+    "wrong_value"
+   ],
    "initial_artifact_sha256": "939a87c8fd1a19a6ab333b7ca1a8e73d1ccb0ead04c8f33967b544a37d71481c",
    "base_messages_sha256": "4ce2921d3152a61496aab751dea5c2049b8b7fba10b07b297da03a0470f60f65",
    "r1_messages_sha256": "695055be6d4b25a20c91eed1dee6bbe19a8f8b4f6b9e6613815bb732ea103b79",
@@ -304,7 +314,10 @@
   },
   {
    "root_id": "mbpp/966",
-   "e12_initial_private_grade": 0.0,
+   "public_status": "any_fail",
+   "public_case_statuses": [
+    "wrong_value"
+   ],
    "initial_artifact_sha256": "1392ee4c9023aa5411717f112ee55f3babb3b54f7026734fb3a9f83ef6e8eeae",
    "base_messages_sha256": "e9cf890dd599d05347527e576ff02d3b1727fe59883433214441f8322127aafc",
    "r1_messages_sha256": "118e2040a1a05d2757fcc36a0140a854cd4c35a306e5ff5def6be658d3786688",
@@ -397,7 +410,10 @@
   },
   {
    "root_id": "mbpp/652",
-   "e12_initial_private_grade": 0.0,
+   "public_status": "any_fail",
+   "public_case_statuses": [
+    "wrong_value"
+   ],
    "initial_artifact_sha256": "322104c276e1ede467f493b4acfb874aa5603e00cf9b13787f2de72362793c7e",
    "base_messages_sha256": "69d8ae58dc6f2ecd834d098b105d0a0fb341ca4e2b2ff77f3579f1a7c23212c4",
    "r1_messages_sha256": "152ecaff77f186662dc9a153f9ad8d132aae73fa981c9f37a7571e39bcda6763",
@@ -493,7 +509,8 @@
   "receiver_calls": 60,
   "reserved_completion_tokens": 30720,
   "isolated_starts": 70,
-  "ledger_after": 403,
+  "cumulative_ledger_if_granted": 403,
+  "ledger_note": "accounting only; E12's unused starts are not authority for this stage (lead be417b5), and a separately enumerated allowance plus a renewed attestation and window are required",
   "ledger_ceiling": 412
  }
 }

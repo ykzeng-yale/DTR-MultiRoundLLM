@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Build the exact E13a request plan (PROPOSED, NOT RELEASED) from E12's immutable artifacts. No receiver call.
 
+MRL-18 (lead commit be417b5): the checkpoint set is derived from the FROZEN PUBLIC DIAGNOSTICS ONLY, through
+analyze_diagnostic.public_status, and no private grade appears in this plan. Selection uses public information
+that was available at decision time; it is not a private-outcome selection.
+
 E13a re-samples two arms on E12's public-fail roots, conditioning on E12's initial artifacts and diagnostics:
   R1    : diagnostic.render_arms(...)["R1"], replicates 2..7 (E12 used 0..1), seed key "R1:<r>";
   FRESH : the original public prompt alone (collect.initial_messages), replicates 0..5, seed key "FRESH:<r>".
@@ -15,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from experiments.landmark import collect  # noqa: E402
 from experiments.landmark import collect_diagnostic as cd  # noqa: E402
+from experiments.landmark.analyze_diagnostic import public_status  # noqa: E402
 
 RUN = ROOT / "results/e12_dev_v3_20260922T030255Z"
 PKG = ROOT / "experiments/landmark/dev_release_v3"
@@ -38,14 +43,13 @@ def build(run=RUN, pkg=PKG):
     raw = (run / "B/diagnostics.json").read_bytes()
     if hashlib.sha256(raw).hexdigest() != sums["B/diagnostics.json"]:
         raise ValueError("B/diagnostics.json differs from E12's artifact checksums")
-    for rel in ("C/calls.jsonl", "analysis_report.json"):
+    for rel in ("C/calls.jsonl",):
         if hashlib.sha256((run / rel).read_bytes()).hexdigest() != sums[rel]:
             raise ValueError(f"{rel} differs from E12's artifact checksums")
     dm = cd.diagnostic_module()
     diagnostics = dm.strict_json_loads(raw)
-    report = json.loads((run / "analysis_report.json").read_text())
-    fail = report["initial_status"]["crosstab_roots"]["any_fail"]
-    gated = fail["pass"] + fail["fail"] + fail["unknown"]
+    # Checkpoints: public "any_fail" on the frozen diagnostic. The private grades are deliberately not read.
+    gated = [rid for rid in diagnostics if public_status(diagnostics[rid], rid) == "any_fail"]
     calls = _jsonl(run / "C/calls.jsonl")
     by_task = {t["root_id"]: t for t in tasks}
     seeds_by_root = {p["root_id"]: p["seeds"] for p in plan}
@@ -76,29 +80,34 @@ def build(run=RUN, pkg=PKG):
             used.add(seed)
             reqs.append({"arm": arm, "replicate": r, "seed_key": key, "seed": seed,
                          "messages_sha256": collect.digest(messages)})
-        out_roots.append({"root_id": rid, "e12_initial_private_grade": next(
-                              d["value"] for d in report["quality"]["STOP"]["per_root"] if d["root_id"] == rid),
+        out_roots.append({"root_id": rid,
+                          "public_status": "any_fail",
+                          "public_case_statuses": [c.get("status") for c in diag["cases"]],
                           "initial_artifact_sha256": row["artifact_sha256"],
                           "base_messages_sha256": row["base_messages_sha256"],
                           "r1_messages_sha256": collect.digest(r1), "requests": reqs})
     n_calls = sum(len(r["requests"]) for r in out_roots)
     return {
-        "plan_version": "e13a-request-plan-v1",
+        "plan_version": "e13a-request-plan-v2-public-gated",
         "status": "PROPOSED, NOT RELEASED; no receiver call made",
+        "evidence_class": "post-hoc-motivated development follow-up at five fixed public-fail checkpoints; not a test of the selected gated rule and not a diagnostic-only effect; a tie is inconclusive",
         "source_run": run.relative_to(ROOT).as_posix(),
-        "inputs": {rel: sums[rel] for rel in ("A/roots.jsonl", "B/diagnostics.json", "C/calls.jsonl", "analysis_report.json")
+        "inputs": {rel: sums[rel] for rel in ("A/roots.jsonl", "B/diagnostics.json", "C/calls.jsonl")
                    if rel in sums},
         "package_config_sha256": hashlib.sha256((pkg / "config.json").read_bytes()).hexdigest(),
         "decoding": {**config["decoding"], "num_predict": config["max_tokens_per_call"]},
         "checks": ["A bytes and config/dataset/assignment digests re-verified (collect_diagnostic._load_initial)",
-                   "B diagnostics, C calls and analysis report match E12 ARTIFACT_SHA256SUMS",
+                   "B diagnostics and C calls match E12 ARTIFACT_SHA256SUMS",
+                   "checkpoints derived from frozen public diagnostics via analyze_diagnostic.public_status; no private grade is read",
                    "FRESH messages == E12 recorded initial request messages",
                    "R1 messages == both E12 recorded R1 request messages",
                    "no new seed equals any seed E12 used for the same root"],
         "roots": out_roots,
         "budget": {"receiver_calls": n_calls, "reserved_completion_tokens": TOKENS_PER_CALL * n_calls,
                    "isolated_starts": n_calls + RECHECKS_PER_ROOT * len(out_roots),
-                   "ledger_after": 333 + n_calls + RECHECKS_PER_ROOT * len(out_roots), "ledger_ceiling": 412},
+                   "cumulative_ledger_if_granted": 333 + n_calls + RECHECKS_PER_ROOT * len(out_roots),
+                   "ledger_note": "accounting only; E12's unused starts are not authority for this stage (lead be417b5), and a separately enumerated allowance plus a renewed attestation and window are required",
+                   "ledger_ceiling": 412},
     }
 
 
