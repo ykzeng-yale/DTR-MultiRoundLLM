@@ -1,0 +1,110 @@
+{
+ "version": "dev-release-v3-controls",
+ "controls": [
+  {
+   "fault": "Returns the first element instead of the value occurring an odd number of times.",
+   "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+   "predicted_failing_private_assertions": 1,
+   "private_cases": [
+    {
+     "assertion": "assert get_odd_occurence([1, 2, 3, 2, 3, 1, 3], 7) == 3",
+     "expected": "3",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert get_odd_occurence([5, 7, 2, 7, 5, 2, 5], 7) == 5",
+     "expected": "5",
+     "predicted_control_return": "5",
+     "predicted_fails": false
+    }
+   ],
+   "root_id": "mbpp/842",
+   "static_trace": "[1,2,3,2,3,1,3] -> 1, expected 3. [5,7,2,7,5,2,5] -> 5, expected 5."
+  },
+  {
+   "fault": "Omits the modulus: counts entries with x*x == 1 instead of x*x congruent to 1 modulo P.",
+   "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert modular_inverse([1, 3, 8, 12, 12], 5, 13) == 3",
+     "expected": "3",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert modular_inverse([2, 3, 4, 5], 4, 6) == 1",
+     "expected": "1",
+     "predicted_control_return": "0",
+     "predicted_fails": true
+    }
+   ],
+   "root_id": "mbpp/288",
+   "static_trace": "[1,3,8,12,12] mod 13: only 1 has x*x == 1 -> 1, expected 3 (1, 12, 12). [2,3,4,5] mod 6: none -> 0, expected 1 (5)."
+  },
+  {
+   "fault": "Counts runs of consecutive values in the original order without sorting or deduplicating.",
+   "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert find_longest_conseq_subseq([1, 9, 3, 10, 4, 20, 2], 7) == 4",
+     "expected": "4",
+     "predicted_control_return": "1",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert find_longest_conseq_subseq([36, 41, 56, 35, 44, 33, 34, 92, 43, 32, 42], 11) == 5",
+     "expected": "5",
+     "predicted_control_return": "2",
+     "predicted_fails": true
+    }
+   ],
+   "root_id": "mbpp/863",
+   "static_trace": "[1,9,3,10,4,20,2]: no adjacent pair increases by 1 -> 1, expected 4. [36,41,56,35,44,33,34,92,43,32,42]: only (33,34) -> 2, expected 5."
+  },
+  {
+   "fault": "Removes every tuple (including nonempty ones) instead of only the empty tuples.",
+   "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert remove_empty([(), (), ('',), (\"python\"), (\"program\")])==[('',), (\"python\"), (\"program\")]  ",
+     "expected": "[('',), 'python', 'program']",
+     "predicted_control_return": "['python', 'program']",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert remove_empty([(), (), ('',), (\"java\")])==[('',),(\"java\") ]  ",
+     "expected": "[('',), 'java']",
+     "predicted_control_return": "['java']",
+     "predicted_fails": true
+    }
+   ],
+   "root_id": "mbpp/966",
+   "static_trace": "[(),(),('',),'python','program'] -> ['python', 'program'], expected [('',), 'python', 'program']. [(),(),('',),'java'] -> ['java'], expected [('',), 'java']."
+  },
+  {
+   "fault": "Flattens the tuples in row-major order but omits the transpose into component tuples.",
+   "method": "hand trace of the control's logic on literal private inputs; control text never executed",
+   "predicted_failing_private_assertions": 2,
+   "private_cases": [
+    {
+     "assertion": "assert matrix_to_list([[(5, 6), (8, 9)], [(11, 14), (19, 18)], [(1, 5), (11, 2)]]) == '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'",
+     "expected": "'[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'",
+     "predicted_control_return": "'[(5, 6), (8, 9), (11, 14), (19, 18), (1, 5), (11, 2)]'",
+     "predicted_fails": true
+    },
+    {
+     "assertion": "assert matrix_to_list([[(6, 7), (9, 10)], [(12, 15), (20, 21)], [(23, 7), (15, 8)]]) == '[(6, 9, 12, 20, 23, 15), (7, 10, 15, 21, 7, 8)]'",
+     "expected": "'[(6, 9, 12, 20, 23, 15), (7, 10, 15, 21, 7, 8)]'",
+     "predicted_control_return": "'[(6, 7), (9, 10), (12, 15), (20, 21), (23, 7), (15, 8)]'",
+     "predicted_fails": true
+    }
+   ],
+   "root_id": "mbpp/652",
+   "static_trace": "Second case -> '[(5, 6), (8, 9), (11, 14), (19, 18), (1, 5), (11, 2)]', expected '[(5, 8, 11, 19, 1, 11), (6, 9, 14, 18, 5, 2)]'; third case likewise."
+  }
+ ]
+}

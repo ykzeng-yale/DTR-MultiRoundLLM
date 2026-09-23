@@ -1,0 +1,199 @@
+{
+ "manifest": "e13a-two-arm-release",
+ "status": "PROPOSED BINDINGS for E13a. Not a release decision and not an execution authorization; MRL-19 source/mock work only.",
+ "evidence_class": "development_followup_post_hoc_motivated",
+ "stage": {
+  "stage": "E13a",
+  "arm_set": "e13a-two-arm",
+  "arms": {
+   "R1": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "FRESH": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+   ]
+  },
+  "replicates_per_arm": {
+   "R1": 6,
+   "FRESH": 6
+  },
+  "requests": 60,
+  "branch_inclusion_probability": 1.0,
+  "order_role": "scheduling_not_assignment",
+  "primary_endpoint": "frozen private-suite-plus-format score (landmark-private-tests-v1), unchanged",
+  "contrast": {
+   "treatment": "R1",
+   "reference": "FRESH",
+   "label": "diagnostic-plus-R1-instruction restart package minus bare task resampling",
+   "direction_note": "a positive value favours the restart package; a tie is inconclusive and does not identify a resampling mechanism"
+  },
+  "not_a_test_of": [
+   "the selected gated rule",
+   "a diagnostic-only effect"
+  ],
+  "interpretation_rules": [
+   "A tie is inconclusive and does not evidence a resampling mechanism.",
+   "No pooling with E12.",
+   "No significance-driven escalation and no futility claim from six draws per arm."
+  ],
+  "descriptor_path": "experiments/landmark/e13a_stage.json",
+  "descriptor_sha256": "53a3bddc8fe07bba53b03287ed1f29df3928db6f0f2c0e685766a8df8df9624c"
+ },
+ "roots": [
+  "mbpp/842",
+  "mbpp/288",
+  "mbpp/863",
+  "mbpp/966",
+  "mbpp/652"
+ ],
+ "n_roots": 5,
+ "roots_order_note": "assignment-table order from collect_diagnostic.assignments; ordering is scheduling only",
+ "authorization": {
+  "receiver_calls_authorized": 0,
+  "candidate_executions_authorized": 0,
+  "benchmark_executions_authorized": 0,
+  "paid_usd_authorized": 0,
+  "statement": "This manifest binds inputs, identities and bookkeeping limits only. It authorizes NO receiver or model call and NO candidate, reference, negative-control or containment execution. E13a execution remains held pending a separate release decision by the coordinating lead."
+ },
+ "grading_limits": {
+  "n_roots": 5,
+  "artifact_starts": 60,
+  "recheck_starts": 10,
+  "containment_starts": 9,
+  "max_private_starts": 79,
+  "grading_seconds": 300
+ },
+ "limits_note": "artifact_starts = 5 roots x 2 arms x 6 replicates; recheck_starts = 2 per root (reference + negative control); containment_starts are containment-gate starts, not analysis slots; max_private_starts = artifact + recheck + containment. Read with study_adapter.load_grading_limits.",
+ "package": {
+  "tasks.jsonl": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
+  "private_specs.jsonl": "921d4f61af315cd9374fd9f82193bd3193b8f176a8b20b503851e288fb832b3d",
+  "public_examples_v3.json": "1262d7127cde3f996c495d1051a2c487d9ccef2a66ec0f299fe5c14898dc02dd",
+  "controls_rationale.json": "aac99597ff33a567eebff352fb95dacc086be8a8e84358d8b718c1ba67910006",
+  "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6"
+ },
+ "grading_bindings": {
+  "frozen_tasks_path": "experiments/landmark/e13a_release/tasks.jsonl",
+  "frozen_tasks_sha256": "66e221b1f714a19159871b18d500fe3c6cc6a82032de4ba82c514d62862733f9",
+  "expected_contract_sha256": "23accfb4e60729e05dfa8304136ca45d364046814cf4d300dfa705c370fa4edd",
+  "expected_config_sha256": "e3e310f881be370b3cbd8c6d8f3fe086241a99d98ce1db20f5c108a6efd124f4",
+  "expected_source_hashes": {
+   "experiments/landmark/study_adapter.py": "20ccc6e785d33d4595aa0de393707bed1dc0a88dc23be58efe73391a8da8c0ce",
+   "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+   "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+   "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+   "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+   "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+   "experiments/landmark/collect_diagnostic.py": "7d7eb0a6641c73b87c0ad1c20a5438b9f251653aed95e47dbb034c6498c6eb79",
+   "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719"
+  }
+ },
+ "source_release": {
+  "dir": "experiments/landmark/dev_release_v3",
+  "manifest": "dev-release-v3-diagnostic",
+  "manifest_sha256": "c9d591ffd4a524992ced28c1cc2f68fc5c299cc14ad8022e587eefc5bb67d3ea",
+  "assignment_table_sha256": "9c7b596b78d654c127f53a3e00252a11984da19d91ee9e22dbafde4d5cc5dfaf",
+  "files": {
+   "tasks.jsonl": "c60c01a40d798f169f5a6b98ce9f1ffcb36a701d246b0699680fc0e81e9a431c",
+   "private_specs.jsonl": "24b15d91f70a5a72142315a21c55a4b54859156d8c40074c319972495839e305",
+   "public_examples_v3.json": "004c10d1e708d4e83cb44851a58ce92fb81a9ff439799e2bb657e947c032fea2",
+   "controls_rationale.json": "6c2190eb046401de6e6193e74ef676e6e68a321702c37f8c23d692c32d184e6e",
+   "config.json": "9279c2157ee8f9dd19883e87b17d46b057f11f08ae7c898c6a888783fabc96b6"
+  },
+  "copy_rule": "tasks.jsonl and private_specs.jsonl rows are the dev_release_v3 line bytes unchanged (assignment order only); public_examples_v3.json cases and controls_rationale.json controls are the source records unchanged; config.json is a byte-for-byte copy. No private assertion, control or task frame was edited and no new task-frame review was performed.",
+  "row_provenance": {
+   "mbpp/842": {
+    "tasks_row_sha256": "037a538abf9757cfcf1519a0bd3fc4e454e89aeda1c6bb1c71585d6822c3b43e",
+    "private_spec_row_sha256": "922b57808909e645000c44aadb7e3156d01a4d790697e1717854ec2581737fc0",
+    "public_examples_record_sha256": "8bcb1ba5aac636757595e94366189c89a73a21736e24f871369e0bf362a275e7",
+    "controls_record_sha256": "22b65019066577ecdb94cded601fb8f4e75a0b4c77ed612817bf47d1a8914a68",
+    "provisional_family_id": "PF-29"
+   },
+   "mbpp/288": {
+    "tasks_row_sha256": "c80088b30d4c76fc6c7f6b90f463fb76dfadcf1cdf5de8cbd599397a469e65cd",
+    "private_spec_row_sha256": "587499a5917d91ad85ed3736b0b1f787e9f8f907530591ffe8901b8aaf75cad5",
+    "public_examples_record_sha256": "b3c3bd0a25bddd1a06156cb8e2351ecf25a3532ab1778fd3ef0cef0ef36432f7",
+    "controls_record_sha256": "fd56d7d504369713d0e2f734fe84908cb59b525332a5cd262810624b92314a1b",
+    "provisional_family_id": "PF-288"
+   },
+   "mbpp/863": {
+    "tasks_row_sha256": "7f7cde1e729f7c27d3ee5273cf40183130836ca60832e76ec6e56fce91900f96",
+    "private_spec_row_sha256": "ed8fcebd0d67e3c1f22c571b36bca0a2b7a72a0089917d2e33362dfaddf44615",
+    "public_examples_record_sha256": "aaea6e1661540378df9de1e87a45506feb76ecb0bc02449e20ae278ab3819cb1",
+    "controls_record_sha256": "c2559c14d296944bac72187ce27ecda6202968c3a806dfc9974f878eaf922ba1",
+    "provisional_family_id": "PF-863"
+   },
+   "mbpp/966": {
+    "tasks_row_sha256": "b733126dd4542cecf1b63a800a6c8cd45394d014c73fa46e5789623e0ec653ce",
+    "private_spec_row_sha256": "6f05b22c7208eeb1d6378c9d9722fc265bc418d73f965f83d2c6420c417090ba",
+    "public_examples_record_sha256": "3f684fee80b005347f5ad754e0ac69e29fba7f70fc8bd1d49e2bfef27bb2707b",
+    "controls_record_sha256": "788026158d1e2bdab88f50fb1791cb45aa55543a76bf97944fb9b96dcf5ea3be",
+    "provisional_family_id": "PF-361"
+   },
+   "mbpp/652": {
+    "tasks_row_sha256": "b4070b8ef509f438f6b637681b6200b84d26647e025c8facd56d621c7b77dfdf",
+    "private_spec_row_sha256": "7e0e3c41e1e493635ab1ff6d7f5e65431a35623fdbc20a355c70490dd908e409",
+    "public_examples_record_sha256": "8d2e79b6fc418514bbd6418a37aedc4320e529bfa272916101fee291672eb61a",
+    "controls_record_sha256": "d94c72c7971d659992f832d9fa450ac606516acd278b1ee7ead8877c795240c8",
+    "provisional_family_id": "PF-652"
+   }
+  },
+  "contract_note": "adapted MBPP contracts (docs/e12_contract_review_20260922.md), incl. 288 general-modulus amendment; two private assertions per root; not a benchmark-wide correctness certificate",
+  "frame_review": {
+   "dir": "results/frame_review_mrl15_20260922T021718Z",
+   "records_sha256": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74"
+  }
+ },
+ "e12_conditioning": {
+  "run_id": "e12_dev_v3_20260922T030255Z",
+  "run_dir": "results/e12_dev_v3_20260922T030255Z",
+  "artifacts": {
+   "A/roots.jsonl": "5e26bafac75a07b5bd35df01131533d36ba233b5b6eb8802bdf0e9ae9b851947",
+   "B/diagnostics.json": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a"
+  },
+  "sums_sha256": "ef88758621482906c38cc0d2b6fa8d9c01969be0f24d57b93728d2b6ee660741",
+  "gating_rule": "a root is a checkpoint iff analyze_diagnostic.public_status(diag, root) == \"any_fail\", i.e. any frozen public case status is wrong_value/format_error/interface_error/program_exception; timeout/unavailable/output_limit are \"unknown\" and are NOT checkpoints",
+  "gating_source": "results/e12_dev_v3_20260922T030255Z/B/diagnostics.json",
+  "canonical_function": "experiments/landmark/analyze_diagnostic.py:public_status",
+  "private_grades_are_an_input": false,
+  "pooling": "no pooling with E12"
+ },
+ "request_plan": {
+  "path": "results/e13a_request_plan_20260922.json",
+  "sha256": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7",
+  "plan_version": "e13a-request-plan-v2-public-gated"
+ },
+ "model": {
+  "model": "qwen2.5-3b-instruct-q4_k_m.gguf",
+  "model_digest": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "server_build": "b1-4fea119",
+  "receiver_state_sha256_expected": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+  "sampler_law": "server_defaults_pinned"
+ },
+ "evaluator": {
+  "grader_version": "landmark-grader-v5-parse-and-compile-fault-attribution",
+  "endpoint": "landmark-private-tests-v1",
+  "diagnostic_schema": "public-diagnostic-v2"
+ },
+ "diagnostic_schema": "public-diagnostic-v2",
+ "seed_schedule": {
+  "derivation": "collect.seeded(config, root_id, label) = int(digest([seed, root_id, label])[:15],16) % 2**31; labels 'initial' and '<arm>:<replicate>'; independent streams, NOT common-random-number coupling",
+  "seed": 20260921,
+  "e13a_seed_note": "E13a seeds are the request plan's noncolliding seeds; no new seed equals any seed E12 used for the same root"
+ },
+ "builder": {
+  "script": "scripts/build_e13a_release.py",
+  "script_sha256": "7c5b0409dae27a47555f31bcde9efe8c1c5ad3afaea13f71d4f60f27bf741372",
+  "deterministic": true,
+  "rebuild_command": ".venv/bin/python scripts/build_e13a_release.py --verify"
+ }
+}

@@ -386,8 +386,12 @@ PACKAGE_FILES = ("tasks.jsonl", "private_specs.jsonl", "config.json")
 PLANNED_MAX_ARTIFACTS, PLANNED_MAX_RECHECKS = 77, 24  # v2 defaults (no grading_limits in the v2 manifest)
 GRADING_LEDGER = "grading_attempts.jsonl"
 COMMITTED_RELEASE_MANIFEST = "experiments/landmark/dev_release_v2/release_manifest.json"  # v2 (kept for callers)
-COMMITTED_RELEASE_MANIFESTS = (COMMITTED_RELEASE_MANIFEST, "experiments/landmark/dev_release_v3/release_manifest.json")
+COMMITTED_RELEASE_MANIFESTS = (COMMITTED_RELEASE_MANIFEST, "experiments/landmark/dev_release_v3/release_manifest.json",
+                               "experiments/landmark/e13a_release/release_manifest.json")  # E13a five-root bindings
 GRADING_LIMIT_KEYS = frozenset({"n_roots", "artifact_starts", "recheck_starts", "max_private_starts", "grading_seconds"})
+# Optional, additive limit fields. containment_starts (E13a): private starts budgeted for the containment gate,
+# counted in max_private_starts but not in the artifact/recheck grading plan.
+OPTIONAL_GRADING_LIMIT_KEYS = frozenset({"containment_starts"})
 HEX64 = re.compile(r"[0-9a-f]{64}")
 
 
@@ -448,7 +452,9 @@ def load_release_bindings(release_manifest, specs_path, data=None):
 
 def verify_committed_release(path, data=None):
     """sha256 of a committed release manifest at an ALLOWLISTED path (COMMITTED_RELEASE_MANIFESTS: dev_release_v2,
-    dev_release_v3); refuses any other path, an untracked file, or one modified vs its git HEAD blob.
+    dev_release_v3, e13a_release); refuses any other path, an untracked file, or one modified vs its git HEAD blob.
+    Every allowlisted path gets the identical committed-hash check: a new entry buys no exemption, and an
+    entry that is not yet committed at HEAD is refused like any untracked file.
 
     data: the manifest bytes the caller read once and will parse; they (not a fresh re-read of the path) must
     equal the HEAD blob, so grading limits and the diagnostic schema come from exactly the verified bytes."""
@@ -480,25 +486,31 @@ def _manifest_bytes(release_manifest):
 def load_grading_limits(release_manifest, specs=None):
     """(artifact_starts, recheck_starts, grading_seconds, seconds_cap) from the manifest's grading_limits.
 
-    Absent -> the v2 defaults (77, 24, 240 s, cap 240). Present -> strict: exactly GRADING_LIMIT_KEYS, ints,
-    max_private_starts == artifact_starts + recheck_starts <= 200, 0 < grading_seconds <= 600, n_roots == len(specs).
+    Absent -> the v2 defaults (77, 24, 240 s, cap 240). Present -> strict: every GRADING_LIMIT_KEYS key and at most
+    the additive OPTIONAL_GRADING_LIMIT_KEYS ones, ints, max_private_starts == artifact_starts + recheck_starts +
+    containment_starts (0 when the field is absent, i.e. the v3 rule unchanged) <= 200, 0 < grading_seconds <= 600,
+    n_roots == len(specs).
     release_manifest: a path, or the exact bytes verify_committed_release checked (no re-read)."""
     m = _strict(_manifest_bytes(release_manifest))
     if "grading_limits" not in m:
-        return {"artifact_starts": PLANNED_MAX_ARTIFACTS, "recheck_starts": PLANNED_MAX_RECHECKS,
+        return {"artifact_starts": PLANNED_MAX_ARTIFACTS, "recheck_starts": PLANNED_MAX_RECHECKS, "containment_starts": 0,
                 "grading_seconds": DEFAULT_GRADING_SECONDS, "seconds_cap": DEFAULT_GRADING_SECONDS, "source": "v2_default"}
     lim = m["grading_limits"]
-    if not isinstance(lim, dict) or set(lim) != GRADING_LIMIT_KEYS or not all(_int(lim[k]) for k in GRADING_LIMIT_KEYS):
-        raise ValueError(f"grading_limits must carry exactly int {sorted(GRADING_LIMIT_KEYS)}")
+    if not isinstance(lim, dict) or not GRADING_LIMIT_KEYS <= set(lim) \
+            or not set(lim) <= GRADING_LIMIT_KEYS | OPTIONAL_GRADING_LIMIT_KEYS or not all(_int(v) for v in lim.values()):
+        raise ValueError(f"grading_limits must carry exactly int {sorted(GRADING_LIMIT_KEYS)}"
+                         f" plus at most int {sorted(OPTIONAL_GRADING_LIMIT_KEYS)}")
     a, r, mx, secs = lim["artifact_starts"], lim["recheck_starts"], lim["max_private_starts"], lim["grading_seconds"]
-    if a < 1 or r < 0 or mx != a + r or mx > MAX_PRIVATE_STARTS:
-        raise ValueError(f"grading_limits starts invalid: max_private_starts must equal artifact+recheck and be <= {MAX_PRIVATE_STARTS}")
+    c = lim.get("containment_starts", 0)
+    if a < 1 or r < 0 or c < 0 or mx != a + r + c or mx > MAX_PRIVATE_STARTS:
+        raise ValueError("grading_limits starts invalid: max_private_starts must equal artifact+recheck+containment"
+                         f" and be <= {MAX_PRIVATE_STARTS}")
     if not 0 < secs <= MAX_GRADING_SECONDS:
         raise ValueError(f"grading_limits grading_seconds must be in (0, {MAX_GRADING_SECONDS}]")
     if lim["n_roots"] < 1 or (specs is not None and lim["n_roots"] != len(specs)):
         raise ValueError("grading_limits n_roots does not equal the number of private specs")
-    return {"artifact_starts": a, "recheck_starts": r, "grading_seconds": secs, "seconds_cap": secs,
-            "source": "grading_limits"}
+    return {"artifact_starts": a, "recheck_starts": r, "containment_starts": c, "max_private_starts": mx,
+            "grading_seconds": secs, "seconds_cap": secs, "source": "grading_limits"}
 
 
 def manifest_diagnostic_schema(release_manifest):

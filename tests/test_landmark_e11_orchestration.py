@@ -280,8 +280,10 @@ def _with_manifest_fields(rel, **fields):
 
 
 def test_allowlist_names_v2_and_v3_only(tmp_path):
+    """MRL-19 added the E13a five-root release; every entry still gets the identical committed-hash check."""
     assert sa.COMMITTED_RELEASE_MANIFESTS == ("experiments/landmark/dev_release_v2/release_manifest.json",
-                                              "experiments/landmark/dev_release_v3/release_manifest.json")
+                                              "experiments/landmark/dev_release_v3/release_manifest.json",
+                                              "experiments/landmark/e13a_release/release_manifest.json")
     for bad in (ROOT / "experiments/landmark/dev_release_v2_1/release_manifest.json", tmp_path / "release_manifest.json"):
         with pytest.raises(ValueError, match="committed"):
             sa.verify_committed_release(bad)
