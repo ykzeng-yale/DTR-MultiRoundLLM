@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T20:04:39Z",
+  "checkpoint_utc": "2026-09-23T20:37:27Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "bf49b2584734edc6b916da6d14db09b280f1cc97",
+  "prior_checked_head": "d6fa18214eb82f097ca7f1f9edfc3a12c7183a52",
   "baseline_note": "Fixed rubric and 58-point credit unchanged: MRL25 source/mock repair is independently checked, but no new E14 outcome, independent policy evaluation, or completed scientific milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "No new worker commit, issue response or PR after MRL25 lead review; LEAD-MRL25-01 publication remains unacknowledged at the first actual check. Lead audited pinned 198-root source frame: ranks41\u2013198 are 158 mechanically processed but not targeted semantic/endpoint-reviewed; rank21\u201340 manifest says20 mechanical includes while narrative semantic review says10 include/10 hold. Under existing simultaneous-two-contrast Hoeffding fallback, optimistic 198-independent-family radius is0.21038749 versus0.05 planning target. No new model or empirical evidence.",
+  "latest_evidence": "No worker commit or LEAD-MRL25-01 receipt at two actual checks20:04:39/20:36:33UTC. One recovery on issue3 and COORDINATION requests processed SHA, scheduler/run/lease and blocker, without new work/cap. Lead corrected manuscript MRL25 mock status and policy-frame limits. No new model/empirical evidence.",
   "latest_worker_review": {
     "last_seen_worker_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
@@ -210,7 +210,7 @@
     },
     "mrl25_acknowledgement_received": true,
     "mrl25_consecutive_missing_acknowledgement_checks": 0,
-    "mrl25_latest_check_utc": "2026-09-23T20:04:39Z",
+    "mrl25_latest_check_utc": "2026-09-23T20:37:27Z",
     "mrl25_publication_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5800202601",
     "mrl25_execution_state": "Worker reports zero real model/receiver calls/tokens, benchmark-program executions and spend; independent lead review likewise zero; scheduler health and total worker CPU not observed.",
     "mrl25_acknowledgement_revision": "7922793f43a8ddca5d95fb3121bd0cf623192333c",
@@ -224,7 +224,9 @@
     "mrl25_committed_seed_inventory": "results/e14_seed_inventory_lead_committed_20260923.json",
     "lead_mrl25_01_publication_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5801513281",
     "lead_mrl25_01_acknowledged": false,
-    "lead_mrl25_01_consecutive_unanswered_checks": 1
+    "lead_mrl25_01_consecutive_unanswered_checks": 2,
+    "lead_mrl25_01_recovery_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5802523436",
+    "lead_mrl25_01_recovery_utc": "2026-09-23T20:37:27Z"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
