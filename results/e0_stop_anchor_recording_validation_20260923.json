@@ -1,0 +1,113 @@
+{
+  "decision_id": "LEAD-E0-STOP-01",
+  "classification": "source/mock and handcrafted-data validation; no sampled numerical study",
+  "attempts": [
+    {
+      "started_at_utc": "2026-09-23T13:19:15.975416+00:00",
+      "finished_at_utc": "2026-09-23T13:19:24.646158+00:00",
+      "status": "completed",
+      "exit_code": 0,
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_stop_anchor_job.py",
+        "tests/test_stop_anchor_journal.py",
+        "tests/test_stop_anchor_report.py",
+        "tests/test_stop_anchor_estimators.py"
+      ],
+      "wall_seconds": 8.670525167137384,
+      "child_cpu_seconds": 7.823426,
+      "timeout_seconds": 60,
+      "numerical_library_threads": 1,
+      "source_sha256": {
+        "experiments/e0/stop_anchor_job.py": "3703a6a6ffe5ab9778e2320780b853075799ce8424baf9e8422a0063bc905a1f",
+        "experiments/e0/stop_anchor_journal.py": "0026aa20c9722ace31f7db66ba48c60914c8e8779a13c8c296ed560ee3636461",
+        "experiments/e0/stop_anchor_report.py": "c3eaca25ac5a0043f7d4679d59ffc7dd742ba6cc09b83032bdb7fe68b3778b20",
+        "experiments/e0/stop_anchor_estimators.py": "23b55bd15cbb2af3e11575250444dec4fd664d35d5ff5389a9d061910333a109",
+        "tests/test_stop_anchor_job.py": "8b4d29f689de5b1330de387d933f4415fe7e239d95e1abda819e2c27329f80ee",
+        "tests/test_stop_anchor_journal.py": "cd32cef9ce587127b4428e6debd7b9227a483ecfd6059afc74e33e503d0092da",
+        "tests/test_stop_anchor_report.py": "e9dcf868311292b69b45f8b0f841c8fbd5067685b3020a23c60e18e196c7b3a4",
+        "tests/test_stop_anchor_estimators.py": "712ca5ef736484a7549cbf9ac61fe442a0ed1e8d357b3bd66769222abea3448e"
+      },
+      "stdout_stderr": "........................................................................ [ 54%]\n...........................................................              [100%]\n131 passed in 8.33s\n"
+    },
+    {
+      "started_at_utc": "2026-09-23T13:22:36.910003+00:00",
+      "finished_at_utc": "2026-09-23T13:22:43.596014+00:00",
+      "status": "completed",
+      "exit_code": 0,
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_stop_anchor_journal.py"
+      ],
+      "wall_seconds": 6.685802040621638,
+      "child_cpu_seconds": 6.376965,
+      "timeout_seconds": 60,
+      "numerical_library_threads": 1,
+      "source_sha256": {
+        "experiments/e0/stop_anchor_job.py": "3703a6a6ffe5ab9778e2320780b853075799ce8424baf9e8422a0063bc905a1f",
+        "experiments/e0/stop_anchor_journal.py": "0fb45cbb1d5f82b93cb348b42a9255207df07829b9d7c38b8856db5560f56b42",
+        "experiments/e0/stop_anchor_report.py": "c3eaca25ac5a0043f7d4679d59ffc7dd742ba6cc09b83032bdb7fe68b3778b20",
+        "experiments/e0/stop_anchor_estimators.py": "23b55bd15cbb2af3e11575250444dec4fd664d35d5ff5389a9d061910333a109",
+        "tests/test_stop_anchor_job.py": "8b4d29f689de5b1330de387d933f4415fe7e239d95e1abda819e2c27329f80ee",
+        "tests/test_stop_anchor_journal.py": "01d1aa2b6ecf949a4accc6f0f0704efa4dd9f69cd4c06836aad4941aa7b511de",
+        "tests/test_stop_anchor_report.py": "e9dcf868311292b69b45f8b0f841c8fbd5067685b3020a23c60e18e196c7b3a4",
+        "tests/test_stop_anchor_estimators.py": "712ca5ef736484a7549cbf9ac61fe442a0ed1e8d357b3bd66769222abea3448e"
+      },
+      "stdout_stderr": "............................                                             [100%]\n28 passed in 6.42s\n"
+    }
+  ],
+  "synthetic_dataset_draws": 0,
+  "model_calls": 0,
+  "model_tokens": 0,
+  "benchmark_executions": 0,
+  "paid_cost_usd": 0,
+  "scope_notes": [
+    "Handcrafted nuisance fits and deterministic root-fold permutations occur in the connected fixture.",
+    "Other adapter boundaries use explicit mocks; journal/report fixtures are supplied records.",
+    "No execution freeze, supervised sampler run or statistical improvement is established."
+  ],
+  "independent_source_review": {
+    "reviewer": "evidence",
+    "verdict": "accepted source-only fixture component; no material blocker",
+    "reviewed_sha256": {
+      "experiments/e0/stop_anchor_job.py": "3703a6a6ffe5ab9778e2320780b853075799ce8424baf9e8422a0063bc905a1f",
+      "experiments/e0/stop_anchor_journal.py": "0fb45cbb1d5f82b93cb348b42a9255207df07829b9d7c38b8856db5560f56b42",
+      "experiments/e0/stop_anchor_report.py": "c3eaca25ac5a0043f7d4679d59ffc7dd742ba6cc09b83032bdb7fe68b3778b20"
+    },
+    "scope": "Source-level scientific, arithmetic, provenance, failure-accounting and recording review; no reviewer test rerun",
+    "limitations": [
+      "Saved root means and valid intervals reconcile; fits and episode scores are not recomputed from arrays by the reader.",
+      "Interrupted actual fit counts and writer exit remain unverified.",
+      "No sampling or supervised execution release."
+    ],
+    "initial_reviewed_sha256": {
+      "experiments/e0/stop_anchor_job.py": "3703a6a6ffe5ab9778e2320780b853075799ce8424baf9e8422a0063bc905a1f",
+      "experiments/e0/stop_anchor_journal.py": "0026aa20c9722ace31f7db66ba48c60914c8e8779a13c8c296ed560ee3636461",
+      "experiments/e0/stop_anchor_report.py": "c3eaca25ac5a0043f7d4679d59ffc7dd742ba6cc09b83032bdb7fe68b3778b20"
+    },
+    "final_guard_review": "Accepted exact job field/type/range guard before journal creation; rejects bool/int ambiguity. No reviewer tests rerun."
+  },
+  "baseline_preservation": {
+    "frozen_original_sources_verified": 11,
+    "prior_saved_run_inputs_verified": 6,
+    "prior_stop_core_plan_seed_files_verified": 3,
+    "wall_seconds": 0.07899266574531794,
+    "cpu_seconds": 0.065836,
+    "checked_at_utc": "2026-09-23T13:20:02.130073+00:00"
+  },
+  "validation_summary": {
+    "initial_cases_passed": 131,
+    "affected_cases_passed_after_narrow_guard": 28,
+    "distinct_cases": 132,
+    "failures": 0,
+    "total_command_wall_seconds": 15.356327207759023,
+    "total_child_cpu_seconds": 14.200391,
+    "second_run_reason": "One added malformed-boolean job identity guard; only affected journal suite repeated."
+  }
+}

@@ -173,3 +173,8 @@ Independent mathematical/source review accepts the [STOP score identity and pros
 ## 23 September — STOP core source validation (coordinating lead)
 
 Independent source review accepts the [three-mode STOP implementation and seed contract](e0_stop_anchor_source_20260923.md). All75 focused deterministic checks pass in1.30seconds (1.641seconds command wall;0.920seconds child CPU). Handcrafted fixtures check original parity, exact backward propagation, direct-score equality, unseen STOP and truthful support counts; no sampled dataset or numerical performance result is produced. All192 exact input derivations and exclusion of1200 earlier reserved inputs reconcile. Frozen source/saved-run hashes remain unchanged. Zero model calls/tokens, benchmark executions and paid cost. **58%, change0percentage points**; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — STOP recording/reporting validation (coordinating lead)
+
+The [connected supplied-data components](e0_stop_anchor_recording_20260923.md) pass independent source review and131focused checks (8.33seconds test time;8.671seconds command wall;7.823seconds childCPU), plus28affected rechecks after one added malformed-job guard (6.686seconds command wall;6.377seconds childCPU). Actual handcrafted fits connect to archive/root-score reconciliation; interrupted and full96-job failure fixtures preserve all2304planned slots. Returned-interval coverage, operational success and paired precision have distinct denominators and assumptions. No sampled datasets, new numerical performance, model calls/tokens, benchmark executions or spend. Writer exit and supervised sampling remain unverified/unreleased. **58%, delta0**; efficacy unestablished, full project not submission-ready.
