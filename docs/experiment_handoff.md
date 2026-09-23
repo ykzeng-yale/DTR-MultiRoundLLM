@@ -245,3 +245,12 @@ LEAD-E0-STOP-01 now has independently accepted job/archive/journal/report compon
 ## 23 September — STOP execution release gate — 2026-09-23T14:19:18.547957+00:00
 
 LEAD-E0-STOP-01 has independent supervised-source acceptance and 212 passing integrated checks. Bind all15execution-source hashes, exact versions, deterministic truth, committed release ancestry and existing96-job plan before any draw. Check current local host/lease facts, preserve oneCPU/600seconds/256MiB/$0 caps, retain external command timing and independently audit the closed immutable output. No resume, replacement seeds, automatic tuning or worker reassignment. MRL23 existing recovery awaits its already-existing package and exact task locator; no renewed allowance. **58%, delta0**; efficacy unestablished and full project not submission-ready.
+
+
+## 23 September — STOP diagnostic closed; no numerical renewal — 2026-09-23T14:38:28.307504+00:00
+
+LEAD-E0-STOP-01 completed all96frozen datasets. Accept the [independently checked diagnostic](e0_stop_anchor_results_20260923.md), including its negative/inconclusive primary result, and hold advancement/new collection. The one600second/256MiB allowance is closed normally; no repeat, resume, seed replacement or tuning. The next bounded lead-owned discriminator is a saved-record studentized-error/tail and SE–error audit, followed if needed by matched saved-support/upstream-Q analysis, with no draws or refits. This does not supersede the original same-prefix prompt-choice question.
+
+MRL-23 remains undelivered at this eighth actual post-deadline review; this is the result addendum to the same review, not another missing-update count. Last seen worker `8866186f6c87abd98e98f2db51043463fb8e504f` (08:13:14UTC) and independently reviewed scientific source `b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685` are unchanged. Original publication/acknowledgement are verified; current execution, scheduler health, complete/partial package and recovery receipt remain unverified. The single recovery is not reposted or renewed. Delivery cannot be verified without the existing worker's exact app/task link or ID, still the missing routing detail. No unrelated task contacted or duplicate created.
+
+**58%, delta0**; efficacy unestablished, independent policy validation outstanding, full project not submission-ready.

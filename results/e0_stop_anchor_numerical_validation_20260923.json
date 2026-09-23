@@ -1,0 +1,94 @@
+{
+  "schema_version": "e0-stop-anchor-numerical-validation-v1",
+  "checked_utc": "2026-09-23T14:37:20.961223+00:00",
+  "decision_id": "LEAD-E0-STOP-01",
+  "run_id": "e0_stop_anchor_20260923_lead01",
+  "source_commit": "1fa0dbe6fcc2935911d15f391a3397cf3af9f626",
+  "freeze_commit": "031c5db92674bfffe576fc83d4ea1d502614ffa6",
+  "execution_state": "completed; single allowance closed, no extension",
+  "external_command_runtime": {
+    "schema_version": "e0-stop-external-command-timing-v1",
+    "started_utc": "2026-09-23T14:23:06.834501+00:00",
+    "completed_utc": "2026-09-23T14:28:49.652625+00:00",
+    "command": [
+      ".venv/bin/python",
+      "scripts/run_stop_anchor_comparison.py",
+      "--freeze",
+      "docs/e0_stop_anchor_execution_freeze_20260923.json",
+      "--resource-receipt",
+      "work/e0_stop_anchor_resource_receipt_20260923.json",
+      "--output",
+      "work/e0_stop_anchor_20260923_lead01"
+    ],
+    "command_returncode": 0,
+    "end_to_end_wall_seconds": 342.81413783319294,
+    "child_tree_cpu_seconds": 351.09547699999996,
+    "outer_cap_seconds": 600,
+    "within_end_to_end_cap": true,
+    "scope": "External timing from before Popen through command exit, including final supervisor receipt fsync. This timing receipt is separate validation output, outside the immutable raw run.",
+    "stdout_stderr": ""
+  },
+  "raw_output_bytes": 179658373,
+  "source_hash_checks": {
+    "experiments/e0/stop_anchor_job.py": true,
+    "experiments/e0/stop_anchor_estimators.py": true,
+    "experiments/e0/stop_anchor_journal.py": true,
+    "experiments/e0/stop_anchor_report.py": true,
+    "experiments/e0/regularization_job.py": true,
+    "experiments/e0/regularization_report.py": true,
+    "experiments/e0/regularized_history_estimators.py": true,
+    "experiments/e0/history_estimators.py": true,
+    "experiments/e0/estimators.py": true,
+    "experiments/e0/simulator.py": true,
+    "experiments/e0/stop_anchor_comparison_plan_v1.json": true,
+    "experiments/e0/stop_anchor_seed_plan_v1.csv": true,
+    "scripts/run_stop_anchor_comparison.py": true,
+    "scripts/check_regularization_truth.py": true,
+    "scripts/reconcile_stop_anchor_run.py": true
+  },
+  "postrun_frozen_source_matches": 15,
+  "independent_arithmetic_utility_sha256": "956cdd80e13ccaa35f7094eeb92f9606d46431511615829ce198a0b1ff265aa6",
+  "independent_arithmetic_tests": {
+    "returncode": 0,
+    "wall_seconds": 0.3637504167854786,
+    "cpu_seconds": 0.25510299999999997
+  },
+  "independent_arithmetic_test_count": 25,
+  "final_reconciliation": {
+    "returncode": 0,
+    "wall_seconds": 4.392040584236383,
+    "child_cpu_seconds": 4.026382,
+    "sampler_calls": 0,
+    "fits": 0,
+    "model_calls": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0,
+    "output": ""
+  },
+  "independent_arithmetic": {
+    "returncode": 0,
+    "wall_seconds": 3.157212750054896,
+    "cpu_seconds": 3.049977,
+    "stdout": "",
+    "stderr": ""
+  },
+  "counts": {
+    "planned_datasets": 96,
+    "completed_datasets": 96,
+    "completed_points": 2304,
+    "valid_DR_intervals": 1152,
+    "paired_comparisons": 24,
+    "within_dataset_variance_identities": 2304,
+    "failed_or_missing_slots": 0
+  },
+  "model_calls": 0,
+  "prompt_tokens": 0,
+  "completion_tokens": 0,
+  "benchmark_executions": 0,
+  "paid_usd": 0,
+  "independent_review": {
+    "theory": "Source formulas and descriptive covariance identity accepted by independent theory and evidence reviewers before central execution.",
+    "science": "Completed negative/inconclusive synthetic diagnostic accepted; hold advancement and new collection.",
+    "scope": "Independent saved-score arithmetic, immutable-array/provenance validation and source review; no independent refit, sampler replay or independence proof."
+  }
+}
