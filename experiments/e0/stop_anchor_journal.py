@@ -8,6 +8,7 @@ implies a fitted model. One writer, exclusive new directory, no resume or retry.
 """
 from __future__ import annotations
 
+import copy
 import csv
 import hashlib
 import io
@@ -57,7 +58,8 @@ class Recorder:
         self.root = Path(root)
         self.root.mkdir(parents=False, exist_ok=False)
         self.limit = output_bytes
-        self.events = []
+        self.events = []  # compact receipts only; full payloads live on disk
+        self._state = ({}, {}, None, 0)
         self._write("manifest.json", encoded({"schema_version": "e0-stop-recording-v1", "plan": plan,
             "identities": self.identities, "source_sha256": self.sources,
             "output_bytes_cap": self.limit, "execution_released": False,
@@ -72,7 +74,9 @@ class Recorder:
         path = self.root / name
         if path.parent != self.root or path.exists() or path.is_symlink():
             raise ValueError("artifact must be a new direct child")
-        self._reserve(len(raw))
+        # During exclusive linking both directory entries are visible to the
+        # supervisor. Reserve their summed sizes, including this transient peak.
+        self._reserve(2*len(raw))
         temp = self.root / (name+".tmp")
         with temp.open("xb") as f:
             f.write(raw); f.flush(); os.fsync(f.fileno())
@@ -86,7 +90,7 @@ class Recorder:
     def _append(self, event):
         event = json.loads(encoded({**event, "utc": datetime.now(timezone.utc).isoformat()}))
         # Validate each state transition before persisting it.
-        _reconcile(self.events+[event], self.identities, self.sources)
+        next_state = _transition([event], self.identities, self.sources, self._state)
         raw = encoded(event)
         self._reserve(len(raw))
         path = self.root / "events.jsonl"
@@ -99,7 +103,17 @@ class Recorder:
             fd = os.open(self.root, os.O_RDONLY)
             try: os.fsync(fd)
             finally: os.close(fd)
-        self.events.append(event)
+        self._state = next_state
+        self.events.append({"event": event["event"], "utc": event["utc"],
+                            "replicate": event["identity"]["job"]["replicate"]})
+
+    def snapshot_records(self):
+        """Return detached terminal/attempted records without replaying payloads."""
+        return copy.deepcopy(list(self._state[0].values()))
+
+    @property
+    def completed_jobs(self):
+        return self._state[3]
 
     def start(self, job):
         if (not isinstance(job, dict) or set(job) != {"replicate", "data_seed", "fold_seed"}
@@ -142,7 +156,7 @@ class Recorder:
             _validate_archive(arrays, prov)
             clean = {k:v for k,v in event.items() if k != "arrays"}
             # Refuse bad identity/order/source before writing an orphan archive.
-            _reconcile(self.events+[{**clean, "archive": {}}], self.identities, self.sources)
+            _transition([{**clean, "archive": {}}], self.identities, self.sources, self._state)
             output = io.BytesIO()
             np.savez(output, **arrays)
             raw = output.getvalue()
@@ -194,9 +208,22 @@ def _validate_archive(arrays, prov):
             raise ValueError("fold payload does not describe actual root partition")
 
 
-def _reconcile(events, identities, sources):
-    records, states = {}, {}
-    active, next_rep = None, 0
+def _transition(events, identities, sources, previous=None):
+    """Validate new events transactionally; never mutate the accepted state.
+
+    Closed jobs contain immutable values. Only the active job's mutable lists
+    need copying, so prior root-mean/support payloads are neither replayed nor
+    retained by the writer. Offline reconciliation still starts from empty state.
+    """
+    if previous is None:
+        records, states, active, next_rep = {}, {}, None, 0
+    else:
+        old_records, old_states, active, next_rep = previous
+        records, states = old_records.copy(), old_states.copy()
+        if active is not None:
+            states[active] = {**states[active],
+                "started": list(states[active]["started"]),
+                "returned": list(states[active]["returned"])}
     for event in events:
         ident = event.get("identity")
         if not isinstance(ident, dict) or type(ident.get("job", {}).get("replicate")) is not int:
@@ -276,6 +303,11 @@ def _reconcile(events, identities, sources):
                     raise ValueError("point or interval does not reconcile with saved root means")
             records[rep,row["estimator"]] = row
             state["returned"].append(row["estimator"])
+    return records, states, active, next_rep
+
+
+def _reconcile(events, identities, sources):
+    records, states, _, _ = _transition(events, identities, sources)
     return list(records.values()), states
 
 

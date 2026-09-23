@@ -1,0 +1,131 @@
+{
+  "schema_version": "e0-stop-supervision-source-validation-v1",
+  "created_utc": "2026-09-23T14:19:18.547957+00:00",
+  "decision_id": "LEAD-E0-STOP-01",
+  "classification": "Source, handcrafted-data and mock validation only; no new sampled numerical results",
+  "execution_released": false,
+  "source_sha256": {
+    "experiments/e0/stop_anchor_journal.py": "f72d4e17e508b711f9fcbf1d3a2c19fd4ea928b8822e9f8aeb5035181ad1e327",
+    "scripts/run_stop_anchor_comparison.py": "e2465a7d243182e8983f1d30c7a48dba9889549646157445e14939968ccb84cc",
+    "scripts/reconcile_stop_anchor_run.py": "b8a432519d472263be7156bba9dae5cca22bf1d64c7e055d5bd1cc518de69e6b",
+    "tests/test_stop_anchor_estimators.py": "712ca5ef736484a7549cbf9ac61fe442a0ed1e8d357b3bd66769222abea3448e",
+    "tests/test_stop_anchor_job.py": "8b4d29f689de5b1330de387d933f4415fe7e239d95e1abda819e2c27329f80ee",
+    "tests/test_stop_anchor_journal.py": "78ef5e32269a1f0e30430a0d74cf7f1260ebd4078953e59114324fb097ad84ce",
+    "tests/test_stop_anchor_reconciliation.py": "e70d969f39c0cc86a28dd694e98eaf77616f2bc43b062df2ee08617afaffa3e8",
+    "tests/test_stop_anchor_report.py": "e9dcf868311292b69b45f8b0f841c8fbd5067685b3020a23c60e18e196c7b3a4",
+    "tests/test_stop_anchor_runner.py": "924a640ba0ea10dddfff826150699fc1478ff3d89f1ca971f7f2843c6700acd0"
+  },
+  "test_executions": [
+    {
+      "scope": "incremental journal tests; supplied handcrafted data only",
+      "returncode": 1,
+      "wall_seconds": 6.348234166391194,
+      "child_cpu_seconds": 5.95507,
+      "sampled_datasets": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_usd": 0,
+      "output": ".............................F..                                         [100%]\n=================================== FAILURES ===================================\n___________ test_invalid_second_row_rolls_back_all_incremental_state ___________\n\nbundle = (<stop_anchor_journal.Recorder object at 0x10d754cd0>, {'job_id': '40ad4ca7f19081fdadfd7fd930a9df1153e924d2fdeb52ea9df...  ],\n       [0.91228026, 1.        , 1.        ],\n       [0.91228026, 1.        , 1.        ]], shape=(9200, 3)), ...})\n\n    def test_invalid_second_row_rolls_back_all_incremental_state(bundle):\n        w,i,p,d=start_prepared(bundle)\n        a,b=variant_events(i,p,list(journal.adapter.anchored.VARIANTS)[0]);w.retain(a)\n        before=copy.deepcopy(w._state)\n        raw=(w.root/'events.jsonl').read_bytes()\n        bad=copy.deepcopy(b);bad['records'][1]['estimate']=2\n>       with pytest.raises(ValueError,match='root means'):w.retain(bad)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       AssertionError: Regex pattern did not match.\nE         Expected regex: 'root means'\nE         Actual message: 'invalid SE or interval order'\n\ntests/test_stop_anchor_journal.py:252: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_stop_anchor_journal.py::test_invalid_second_row_rolls_back_all_incremental_state\n1 failed, 31 passed in 6.06s\n"
+    },
+    {
+      "scope": "incremental journal after late-row fault fixture correction",
+      "returncode": 0,
+      "wall_seconds": 6.328619499690831,
+      "child_cpu_seconds": 5.9409719999999995,
+      "sampled_datasets": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_usd": 0,
+      "output": "................................                                         [100%]\n32 passed in 6.05s\n"
+    },
+    {
+      "scope": "release guards, tiny supervisor children, connected mock96-job and interruption; no draws/fits",
+      "returncode": 1,
+      "wall_seconds": 2.69737287517637,
+      "child_cpu_seconds": 1.747942,
+      "sampled_datasets": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_usd": 0,
+      "output": ".....F..................................                                 [100%]\n=================================== FAILURES ===================================\n_______ test_raw_uncooperative_writer_is_detected_not_claimed_contained ________\n\ntmp_path = PosixPath('/private/var/folders/36/0v652_p11r7fv5f1n0h8vcv00000gn/T/pytest-of-yukang/pytest-138/test_raw_uncooperative_writer_0')\n\n    def test_raw_uncooperative_writer_is_detected_not_claimed_contained(tmp_path):\n>       _, final = supervise(tmp_path, \"(root/'uncooperative.bin').write_bytes(b'x'*65536)\", cap=16384)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/test_stop_anchor_runner.py:80: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \ntests/test_stop_anchor_runner.py:28: in supervise\n    result = runner._supervise(output, [sys.executable, \"-c\", code, \"{output}\"],\nscripts/run_stop_anchor_comparison.py:262: in _supervise\n    observed = _kill_and_observe(child, deadline) if child is not None else False\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nchild = <Popen: returncode: None args: ['/Users/yukang/Documents/Codex/2026-09-19/f/...>\ndeadline = 5314810.742447625\n\n    def _kill_and_observe(child, deadline):\n        if child.poll() is not None:\n            return True\n        try:\n>           os.killpg(child.pid, signal.SIGKILL)\nE           PermissionError: [Errno 1] Operation not permitted\n\nscripts/run_stop_anchor_comparison.py:199: PermissionError\n=========================== short test summary info ============================\nFAILED tests/test_stop_anchor_runner.py::test_raw_uncooperative_writer_is_detected_not_claimed_contained\n1 failed, 39 passed in 2.38s\n"
+    },
+    {
+      "scope": "supervisor after signaling-refusal handling and strictfloatguard",
+      "returncode": 0,
+      "wall_seconds": 2.8306627925485373,
+      "child_cpu_seconds": 1.77591,
+      "sampled_datasets": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_usd": 0,
+      "output": "...........................................                              [100%]\n43 passed in 2.52s\n"
+    },
+    {
+      "scope": "integrated STOP source suite; handcrafted data, mocked Git and tiny children only",
+      "files": [
+        "tests/test_stop_anchor_estimators.py",
+        "tests/test_stop_anchor_job.py",
+        "tests/test_stop_anchor_journal.py",
+        "tests/test_stop_anchor_reconciliation.py",
+        "tests/test_stop_anchor_report.py",
+        "tests/test_stop_anchor_runner.py"
+      ],
+      "returncode": 0,
+      "wall_seconds": 9.73055670876056,
+      "child_cpu_seconds": 8.540741,
+      "sampled_datasets": 0,
+      "model_calls": 0,
+      "benchmark_executions": 0,
+      "paid_usd": 0,
+      "output": "........................................................................ [ 33%]\n........................................................................ [ 67%]\n....................................................................     [100%]\n212 passed in 9.40s\n"
+    }
+  ],
+  "final_integrated_tests_passed": 212,
+  "total_test_wall_seconds": 27.93544604256749,
+  "total_test_child_cpu_seconds": 23.960635,
+  "failures_preserved": [
+    "Initial journal fixture expected wrong rejection message; changed late second-row fault to test intended root-mean mismatch;32 checks then pass.",
+    "Initial runner39passed/1failed: real fast-exit signal PermissionError interrupted cleanup. Recorded signaling errors and bounded owned-child observation now preserve truthful exit receipt;43 checks then pass."
+  ],
+  "independent_review": {
+    "scientific": "Accept bounded post-result synthetic diagnostic in principle; hold draws until committed freeze and fresh resource release.",
+    "operational": "Independent read-only review accepts incremental transaction state, final freeze/source ancestry, closed-child and partial-data accounting; final signaling fix reviewed.",
+    "scope": "Review and fixture counts do not establish bias, coverage, independence, prompt efficacy or submission readiness."
+  },
+  "immutable_baseline_check": {
+    "checks": {
+      "experiments/e0/simulator.py": true,
+      "experiments/e0/estimators.py": true,
+      "experiments/e0/history_estimators.py": true,
+      "experiments/e0/regularized_history_estimators.py": true,
+      "experiments/e0/regularization_report.py": true,
+      "experiments/e0/regularization_job.py": true,
+      "scripts/run_regularization_comparison.py": true,
+      "scripts/check_regularization_truth.py": true,
+      "experiments/e0/regularization_comparison_plan_v1.json": true,
+      "experiments/e0/regularization_comparison_seed_plan_v1.csv": true,
+      "docs/fitted_history_numerical_design_20260922.md": true,
+      "work/e0_regularization_20260923_lead01/events.jsonl": true,
+      "work/e0_regularization_20260923_lead01/planned_jobs.json": true,
+      "work/e0_regularization_20260923_lead01/run_manifest.json": true,
+      "work/e0_regularization_20260923_lead01/supervisor.json": true,
+      "results/e0_regularization_reconciled_20260923.json": true,
+      "docs/e0_regularization_execution_freeze_20260923.json": true,
+      "experiments/e0/stop_anchor_comparison_plan_v1.json": true,
+      "experiments/e0/stop_anchor_seed_plan_v1.csv": true,
+      "experiments/e0/stop_anchor_estimators.py": true
+    },
+    "count": 20,
+    "all_unchanged": true,
+    "wall_seconds": 0.1401428747922182
+  },
+  "resources": {
+    "sampled_datasets": 0,
+    "model_calls": 0,
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "benchmark_executions": 0,
+    "paid_usd": 0
+  },
+  "remaining_gate": "Committed exact execution freeze, fresh host/lease inspection and lead release; external end-to-end runtime must supplement saved supervisor timing."
+}

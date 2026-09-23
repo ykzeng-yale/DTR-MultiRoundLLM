@@ -220,3 +220,54 @@ def test_start_rejects_boolean_replicate_before_journal(bundle):
     invalid={**i['job'],'replicate':False}
     with pytest.raises(ValueError):w.start(invalid)
     assert not (w.root/'events.jsonl').exists()
+
+
+def test_incremental_state_matches_full_replay_without_rechecking_history(bundle, monkeypatch):
+    w,i,p,d=start_prepared(bundle)
+    calls=[]
+    original=journal._point_record
+    def counted(*args,**kwargs):
+        calls.append(args[1]);return original(*args,**kwargs)
+    monkeypatch.setattr(journal,'_point_record',counted)
+    for variant in journal.adapter.anchored.VARIANTS:
+        for event in variant_events(i,p,variant):w.retain(event)
+    w.finish(i['job'],{})
+    assert len(calls)==24  # every point checked once by the writer
+    events=[json.loads(line) for line in (w.root/'events.jsonl').read_text().splitlines()]
+    records,states=journal._reconcile(events,w.identities,w.sources)
+    assert len(calls)==48  # independent full replay still checks every point
+    assert w.snapshot_records()==records and w._state[1]==states
+    assert w.completed_jobs==1
+    assert all(set(e)=={'event','utc','replicate'} for e in w.events)
+    detached=w.snapshot_records();detached[0]['estimate']=99
+    assert w.snapshot_records()[0]['estimate']==1
+
+
+def test_invalid_second_row_rolls_back_all_incremental_state(bundle):
+    w,i,p,d=start_prepared(bundle)
+    a,b=variant_events(i,p,list(journal.adapter.anchored.VARIANTS)[0]);w.retain(a)
+    before=copy.deepcopy(w._state)
+    raw=(w.root/'events.jsonl').read_bytes()
+    bad=copy.deepcopy(b);bad['root_means']['dr'][0]=2
+    with pytest.raises(ValueError,match='root means'):w.retain(bad)
+    assert w._state==before and (w.root/'events.jsonl').read_bytes()==raw
+    w.retain(b)
+    assert sum(r['status']=='completed' for r in w.snapshot_records())==2
+
+
+def test_failed_fsync_does_not_promote_memory_state(bundle,monkeypatch):
+    w,i,p,d=bundle
+    before=copy.deepcopy(w._state)
+    def fail(fd):raise OSError('injected durability failure')
+    monkeypatch.setattr(journal.os,'fsync',fail)
+    with pytest.raises(OSError,match='durability'):w.start(i['job'])
+    assert w._state==before and w.events==[]
+    # Bytes may already have reached the file; the writer must not resume/retry.
+
+
+def test_exclusive_link_transient_bytes_are_reserved(bundle):
+    w,*_=bundle
+    used=sum(p.stat().st_size for p in w.root.iterdir())
+    w.limit=used+15
+    with pytest.raises(journal.OutputCap):w._write('probe.bin',b'0123456789')
+    assert not (w.root/'probe.bin').exists() and not (w.root/'probe.bin.tmp').exists()

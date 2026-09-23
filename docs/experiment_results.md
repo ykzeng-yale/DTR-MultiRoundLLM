@@ -178,3 +178,10 @@ Independent source review accepts the [three-mode STOP implementation and seed c
 ## 23 September — STOP recording/reporting validation (coordinating lead)
 
 The [connected supplied-data components](e0_stop_anchor_recording_20260923.md) pass independent source review and131focused checks (8.33seconds test time;8.671seconds command wall;7.823seconds childCPU), plus28affected rechecks after one added malformed-job guard (6.686seconds command wall;6.377seconds childCPU). Actual handcrafted fits connect to archive/root-score reconciliation; interrupted and full96-job failure fixtures preserve all2304planned slots. Returned-interval coverage, operational success and paired precision have distinct denominators and assumptions. No sampled datasets, new numerical performance, model calls/tokens, benchmark executions or spend. Writer exit and supervised sampling remain unverified/unreleased. **58%, delta0**; efficacy unestablished, full project not submission-ready.
+
+
+## 23 September — supervised STOP source checks (coordinating lead) — 2026-09-23T14:19:18.547957+00:00
+
+**58%, change 0 percentage points**, fixed rubric unchanged. The [supervised STOP source](e0_stop_anchor_supervision_20260923.md) now has independent review and 212 passing integrated checks (9.731 seconds command wall;8.541 seconds child CPU). Live journal validation is incremental and transactional; the independent audit retains full replay. A real signaling-error fixture failure was repaired so exit observation and signaling errors remain separate. Final audit binds the archived release to its committed file/ancestry and verifies all2304slots, actual arrays, saved root arithmetic and reported fit counters. Twenty old source/seed/run hash checks pass. Source checks involve handcrafted fits, mocks and tiny controlled child processes; zero sampled datasets, model calls/tokens, benchmark executions or paid cost. Final execution freeze, fresh host/lease check and separate release remain; saved supervisor time excludes final receipt fsync, so external timing is required.
+
+**58%, delta0**; no efficacy or submission-readiness claim.
