@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T19:10:08Z",
+  "checkpoint_utc": "2026-09-24T22:07:12Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "6e77102f3378fa2a1a1682f3ff54af54d4cd426f",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-05 repairs the prospective interpretation of already observed E12 recipe indices without new data or independent-policy validation.",
+  "prior_checked_head": "fc872529627e93ad4af991c70e486dd72c5bd2fc",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-06 rules out the proposed E14 N1/S1 development batch as the next efficacy stage; no new empirical or independent-validation milestone completed.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Six worker status-only commits through 7c10895 at18:41:28Z; ebd6436 at16:09:39Z accepts LEAD-POLICY-04 and flags changed-prefix R1. Lead independently confirms N1/S1 fixed whole-recipe indices at matched E12 prefixes; N1 20/28, S1 19/28. No new model/benchmark run; E14 HOLD.",
+  "latest_evidence": "Six worker status-only commits through 451cbda at 21:44:11Z; f2e226b acknowledges LEAD-POLICY-05. No run/lease or new model data reported. Lead prospectively rules E14 N1/S1 collection NO-GO as next efficacy stage; source/mock retained, no new job.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "7c10895336d73def271e874c1477545bde35c701",
+    "last_seen_worker_revision": "451cbda1dbdcc2a65da17011c8ce8a655fc51025",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 7c10895 at2026-09-24T18:41:28Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
+    "scheduler_status": "Worker 451cbda at 2026-09-24T21:44:11Z reports watcher running, no run/lease and E14 HOLD; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Status commit observed; process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -92,7 +92,7 @@
     "mrl17_status": "Original static report preserved; new metadata annotation independently accepted.",
     "last_reviewed_operational_proposal_revision": "bb8969444029e0765a8638b4f1404fab02d85f5e",
     "operational_review_record": "docs/mrl19_review_mrl20_20260923.md",
-    "resource_reservation": "MRL20window06:15–07:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
+    "resource_reservation": "MRL20window06:15\u201307:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
     "mrl16_new_window_acknowledged_by_worker": true,
     "prior_release_receipt": {
       "repository": "ykzeng-yale/DTR-AgentEvals",
@@ -199,7 +199,7 @@
     "mrl24_delivery_revision": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
     "mrl24_independent_validation": "results/mrl24_lead_independent_review_20260923.json",
     "mrl23_one_worker_condition": "not met; 79 recorded local intervals,9 cross-builder overlaps,peak2 simultaneously; CPU load not determined",
-    "mrl25_status": "Delivered18:54:17UTC within reported18:47–19:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
+    "mrl25_status": "Delivered18:54:17UTC within reported18:47\u201319:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
     "mrl25_source_limit": {
       "local_execution_workers": 1,
       "threads": 1,
@@ -423,5 +423,11 @@
     "worker_lead_policy_04_receipt_revision": "ebd64367b80a3cf2ee53eb4cbac7c414ec6ee626",
     "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "decision": "N1 and S1 are fixed whole-recipe indices at matched E12 prefixes; E12 supports narrow development selection of N1 over S1 but not competent policy or independent benefit. R1 changes prefix. HOLD collection."
+  },
+  "policy_e14_decision_value": {
+    "decision_id": "LEAD-POLICY-06",
+    "record": "docs/policy_e14_decision_value_20260924.md",
+    "classification": "prospective design prioritization using reused E12 development data and reviewed E14 proposal; no new model outcome or statistical futility test",
+    "decision": "NO-GO proposed ten-history N1/S1 E14 model batch as next efficacy stage; retain source/mock artifact, release no new job or allowance. Next lead gate: supported action class and independent-family trial contract."
   }
 }

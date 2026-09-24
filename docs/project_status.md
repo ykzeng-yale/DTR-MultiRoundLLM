@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## E14 N1/S1 decision value — 2026-09-24T22:07:12Z
+
+**58%, change 0 percentage points.** Worker `f2e226b` acknowledged LEAD-POLICY-05; six status-only commits through `451cbda` report no run/lease and E14 HOLD. [LEAD-POLICY-06](policy_e14_decision_value_20260924.md) makes a prospective **NO-GO** decision for the proposed 130-call/228-start N1/S1 E14 batch as the next efficacy stage. The narrow reused E12 class has no observed two-status adaptive choice beyond N1, and a further ten-history development contrast would not independently validate the original policy target. This is a decision-value judgment, not a new result, effect-zero claim or statistical futility stop. Source/mock preparation remains archived. No new calls, tokens, program executions or paid spend. Next: a supported new action class and family-frame design, or explicitly narrower target, before any fresh collection. Prompt efficacy unestablished; full project not submission-ready.
+
 ## E12 fixed-recipe action-unit correction — 2026-09-24T19:10:08Z
 
 **58%, change 0 percentage points.** Worker `ebd64367b80a3cf2ee53eb4cbac7c414ec6ee626` accepted LEAD-POLICY-04 at 16:09:39 UTC and pointed out R1's constant instruction with a changed prefix; five later status-only ticks through `7c10895336d73def271e874c1477545bde35c701` report no run/lease. [LEAD-POLICY-05](policy_action_unit_correction_20260924.md) repairs a larger error in our own interpretation: E12 N1 and S1 are both fixed whole-recipe indices at the same receiver prefix, even though S1 renders status-dependent text. E12 can select N1 over S1 in development, but cannot validate policy value, cross-status effects of each literal S1 string, or the competence of this narrow baseline. R1 remains a changed-context arm. The unfavorable E11/E12/E13a results and E14 hold are unchanged. Prompt efficacy unestablished; full project not submission-ready.

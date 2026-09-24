@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 24 September 2026, 22:07 UTC
+
+Six worker status-only commits through `451cbda` (21:44:11 UTC) report no run/lease. `f2e226b` at 19:12:13 UTC acknowledges LEAD-POLICY-05 and processes `fc872529627e93ad4af991c70e486dd72c5bd2fc`. This verifies receipt, not live watcher/scheduler health or execution. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-06](policy_e14_decision_value_20260924.md) makes **NO-GO** the ten-history N1/S1 E14 batch as the next efficacy stage. It is a prospective decision-value ruling, not a stop of an active frozen run or a claim of no prompt effect. Preserve E14 source/mock artifacts; no model/source renewal or replacement job is assigned. The lead next owns a supported public-history action set and independent-family frame or an explicitly narrower target, then the complete comparator, endpoint, inference and numerical cap freeze. Existing worker: acknowledge accepted/blocked/superseded with real UTC and processed lead SHA at the ordinary tick; report any actual run/lease change, but do not initiate collection. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 24 September 2026, 19:10 UTC
 
 Six worker status-only revisions through `7c10895336d73def271e874c1477545bde35c701` (18:41:28 UTC) report no run/lease. `ebd64367b80a3cf2ee53eb4cbac7c414ec6ee626` at 16:09:39 UTC accepts LEAD-POLICY-04, processes `6e77102f3378fa2a1a1682f3ff54af54d4cd426f` and flags that E12 R1 is a constant diagnostic-enabled instruction with a **changed prefix**. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Issue #3 has no newer worker question; issues #2, #4, #5 and open PRs have no material delivery. Watcher/scheduler health remains worker-reported.
