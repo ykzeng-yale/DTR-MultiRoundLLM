@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## GitHub handoff integrity checked — 2026-09-24T03:55:22Z
+
+**58%, change 0 percentage points**, fixed rubric. Main includes the lead's LEAD-MRL25-01/02 source and late-log judgments, the negative-result manuscript discussion, the closed status recovery and a new worker status `c4eda14bdfafc2d92dde4d13845cf05ab0ba4276` (03:27:41 UTC). Issue #3 has the binding hold and recovery closure; issues #2, #4 and #5 have no newer advancement request, and there is no open PR. The worker reports it processed lead `7bcc16a`, has no run/lease or open task and accepts E14 HOLD. Publication and committed receipt are verified; watcher health and reported tick history are not independent telemetry. Last independently reviewed E14 source remains `4931cb9`, with late fixture logs checked at `601fc1f`.
+
+The [shared handoff](coordination_30min.md) now makes the next owner explicit: the lead must freeze a supported public-history selector, fair fixed and independent-sampling comparators, untouched independent-family frame, validated endpoint, inference/useful-gain rules and complete numerical local cap, or label a changed narrower target. No new experiment or source work is assigned to the worker. Zero new lead model calls/tokens, benchmark executions or paid spend. Prompt efficacy remains unestablished; full project not submission-ready.
+
 ## Status-cadence receipt verified; scientific HOLD unchanged — 2026-09-24T03:25:54Z
 
 **58%, change 0 percentage points**, fixed rubric. Worker main `18c4ef77f3dc1cb85194d714fd247869fb5577cc` answered the single LEAD-MRL25-02 status request at 02:58:10 UTC, naming processed lead `4bab112`, reporting six watcher ticks since restart, no run/lease, and acceptance of the E14 HOLD. The committed receipt is independently visible; tick history and process health remain worker-reported. The worker says the separate half-hourly scheduler has not fired since 2026-09-23T08:10:19Z. The status-cadence recovery is closed for acknowledgement; it does not establish execution or instrument validation. No open PR or newer issue #2–#5 scientific delivery was found.

@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## GitHub feedback audit and next owner — 2026-09-24T03:55:22Z
+
+**58%, change 0 percentage points.** The current E14 scientific HOLD, MRL-25 source/log reviews, manuscript evidence boundary and closed recovery are published on main/issue #3. Worker `c4eda14` reports processing lead `7bcc16a`, no run/lease and no open task; no new efficacy evidence appears. The next blocking deliverable belongs to the lead: a frozen supported public-history selector, fair comparators and untouched family-level evaluation/measurement/inference/cost contract, or an explicit decision to label a narrower target. Worker status ticks are not execution or independent validation. No new worker assignment or cap is issued. Full project not submission-ready.
+
 ## Worker status recovery closed for receipt — 2026-09-24T03:25:54Z
 
 **58%, change 0 percentage points.** Worker `18c4ef7` acknowledges processed lead `4bab112`, reports watcher ticks and no run/lease, and accepts the E14 HOLD. Its written receipt is verified; the tick history and live watcher health are reported, not independently observed. The separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. The single status-cadence recovery is closed; no new scientific result or collection authority appears. Efficacy unestablished, full project not submission-ready. Next: the frozen selector/comparator/independent-family evaluation contract.

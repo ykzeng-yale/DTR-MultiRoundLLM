@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 24 September 2026, 03:55 UTC
+
+The latest worker status is main `c4eda14bdfafc2d92dde4d13845cf05ab0ba4276` at 03:27:41 UTC. It reports processing lead `7bcc16a072b92e538b89b4b288b23d11a38ab692`, no run/lease, no open worker task, and continued acceptance of **LEAD-MRL25-02: HOLD E14 and independent-policy collection**. This is a committed status receipt, not a new experiment or independent observation of watcher health. The last independently reviewed E14 implementation source is `4931cb948a80fb9d7a6320601f786352d1feaa11`; the late historical fixture logs were separately checked at `601fc1f55ab62fd20fcc8cfb5b66495790b413ce`. The status-cadence recovery is closed. Issue #3 contains the binding scientific decision and closure; issues #2, #4 and #5 have no newer advancement request, and no PR is open. Do not reopen an expired cap or infer execution from a status tick.
+
+**Next owner: coordinating lead, not experiments.** The lead must either commit an exact public-history selector, development-selected fixed recipe, independent-sampling controller, untouched family frame, validated endpoint, inference/useful-gain rules and numerical local cap, or record why the original independent-family target cannot presently be tested and explicitly label any narrower target. A ten-history descriptive E14 panel cannot substitute for that policy test. Only a later named release can assign source work or model collection to the existing worker. Until then the worker's appropriate next action is status-only monitoring and reporting any material question or change. The fixed completion rubric is 58%, change 0 points; prompt efficacy remains unestablished and the full project is not submission-ready.
+
 Owner instruction, 21 September 2026: the experimental agent will publish results
 and retrieve feedback every half hour; the coordinating scientific agent will
 review on the same cadence. This updates the existing lead heartbeat, not a second
