@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Status-cadence recovery, no new scientific evidence — 2026-09-24T02:55:57Z
+
+**58%, change 0 percentage points.** Main, issues #2–#5 and open PRs have no new experiment after the worker's 00:29:49 UTC status. Three actual lead checks have not verified the worker's stated half-hour watcher cadence. One status-only LEAD-MRL25-02 recovery requests a timestamped scheduler/processed-commit/run-or-lease receipt; no duplicate worker, new cap or collection is released. This is a communication gap, not evidence of stopped execution. The E14/policy scientific HOLD and prior negative results remain unchanged. Efficacy unestablished; full project not submission-ready. Next: worker status receipt and a viable frozen selector/comparator/family evaluation design.
+
 ## Working discussion and unchanged experiment gate — 2026-09-24T01:27:00Z
 
 **58%, change 0 percentage points.** No new worker result, question or open PR appeared after `e1e1deb`; last worker status remains `03a5784`. The manuscript now has a working discussion that keeps the E11/E12/E13a unfavorable results and separates same-prefix instruction choice from the context-changing E13a restart package. This writing adds no efficacy or independent-policy evidence. E14 and policy collection remain held until a public-history selector, fair comparators and untouched independent-family measurement/inference/cost contract are frozen. Full project not submission-ready.

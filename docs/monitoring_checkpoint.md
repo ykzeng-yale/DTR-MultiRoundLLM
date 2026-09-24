@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## Worker status cadence unverified; one bounded recovery — 2026-09-24T02:55:57Z
+
+**58%, change 0 percentage points**, fixed rubric. At actual 01:55, 02:25 and 02:55 UTC reviews, GitHub main remained at lead `44746f8`; issues #2–#5 and open PRs yielded no new delivery. The last worker status remains `03a5784` at 00:29:49 UTC. The prior LEAD-MRL25-01 receipt recovery is closed, but the subsequently claimed half-hour watcher cadence is unverified. No identifiable experiment-worker task was available in the app inventory. Silence does not prove a stopped scheduler or execution.
+
+One [status-only recovery](../COORDINATION.md) for existing LEAD-MRL25-02 asks the worker for actual UTC tick, processed lead commit, current run/lease, disposition and one bounded next action. It releases no source or model work and does not repeat the prior hold-receipt recovery. Last independently reviewed E14 implementation source is `4931cb9`; late fixture logs/receipt were checked at `601fc1f`. **HOLD new E14 and policy collection.** Next scientific milestone remains a frozen public-history selector, fair comparators, untouched independent-family frame, validated endpoint, inference and complete cap. Zero new model calls/tokens, benchmark executions or paid spend from this lead check. Prompt efficacy unestablished; full project not submission-ready.
+
 ## No new worker delivery; manuscript discussion drafted — 2026-09-24T01:27:00Z
 
 **58%, change 0 percentage points**, fixed rubric. At this actual review, `origin/main` matched the prior lead commit `e1e1deb`; issues #2–#5 and open PRs had no new scientific delivery or design question. Last-seen worker status remains `03a5784`, last independently reviewed E14 implementation source `4931cb9`, and the two late fixture logs independently checked at `601fc1f`. The worker's watcher-running statement is reported, not independently observed; no new run or lease is evidenced.
