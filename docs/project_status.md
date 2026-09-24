@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Status-only selector gate — 2026-09-24T07:05:21Z
+
+**58%, change 0 percentage points.** Six worker status-only commits through `083db9b` report no run/lease, continued E14 HOLD and processing of lead `eff3d93`; no new empirical result or issue/PR question. [LEAD-POLICY-01](policy_selector_pre_freeze_decision_20260924.md) independently rechecks E12's fourteen-row reused-data audit: the observed pass and wrong-value cells would each choose N1 over S1 with a tie-break to N1, so the simple status-only selector does not establish adaptive value. The incomplete-information branch is unsupported in E12. N1 and bare-task resampling are candidate, not frozen, comparators. The original policy study still needs a frozen permitted-feature selector, untouched independent-family frame, validated endpoint, fair comparators, inference and numerical local cap. No new model or benchmark execution. Efficacy unestablished; full project not submission-ready.
+
 ## Three-hour lead cadence; local experiment gate — 2026-09-24T04:02:11Z
 
 **58%, change 0 percentage points.** The owner reduced lead reviews to every three hours, while worker half-hour publication remains separate. Worker `584f3e7` reports no run/lease and E14 HOLD accepted. The lead checked approximately 26 GiB free local disk and 32 GiB physical memory, but no collection was started: the frozen selector, comparators, untouched independent-family frame, validated endpoint, inference/precision rules and numerical cap are not yet complete or released, and current shared-host availability is not verified. Space is not the binding scientific permission. Next: complete the lead-owned design gate, then assess one bounded local run if it would answer the original prompt-choice question. Efficacy unestablished; full project not submission-ready.

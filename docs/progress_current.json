@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T04:02:11Z",
+  "checkpoint_utc": "2026-09-24T07:05:21Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "2e1280f1f3a3d94617f2aa8b28f638fde241d090",
-  "baseline_note": "Fixed rubric and 58-point credit unchanged: schedule and local capacity audit add no completed scientific or empirical milestone.",
+  "prior_checked_head": "eff3d933580d165c733027d4fa5e301defe517e9",
+  "baseline_note": "Fixed rubric and 58-point credit unchanged: status-only selector pre-freeze design decision adds no validated efficacy or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Owner changed lead automation to three hours; worker half-hour status584f3e7 at03:57:11Z reports no run/lease and E14 HOLD accepted. Local capacity read: approx26GiB available disk and32GiB physical RAM, but no complete model-collection freeze/release or verified current shared-host lease; no local run. No new efficacy evidence.",
+  "latest_evidence": "Six worker status-only commits through083db9b at07:05:55Z; no run/lease reported and E14 HOLD accepted. LEAD-POLICY-01 independently checks reused E12 public-status cells; observed N1/S1 status-only empirical choice reduces to N1, not a validated policy. No new model or benchmark run.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "584f3e7cd832ce0861b206d7e75b14547fe8f5b3",
+    "last_seen_worker_revision": "083db9bff73a3a774c55ba6471c65a9c463fe372",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker584f3e7 at2026-09-24T03:57:11Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
+    "scheduler_status": "Worker083db9b at2026-09-24T07:05:55Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed; process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -384,5 +384,12 @@
     "status_cadence_recovery_scope": "One status-only request for processed lead commit, actual scheduler tick, run/lease and disposition; no new source/model authority.",
     "status_cadence_recovery_receipt_commit": "18c4ef77f3dc1cb85194d714fd247869fb5577cc",
     "status_cadence_recovery_closed_for_receipt": true
+  },
+  "policy_selector_pre_freeze": {
+    "decision_id": "LEAD-POLICY-01",
+    "record": "docs/policy_selector_pre_freeze_decision_20260924.md",
+    "input_sha256": "320f6480a7468a955b08a00feaf0aa89293e6e828c773df74065984942ca179e",
+    "classification": "read-only reused E12 development-data and prospective-design judgment; no fitted or evaluated policy",
+    "decision": "Status-only N1/S1 empirical choice with N1 tie-break selects N1 in both observed cells; incomplete branch unsupported. Hold E14/model collection; freeze richer public-only selector, fair comparators and independent family contract first."
   }
 }

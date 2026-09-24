@@ -1,4 +1,10 @@
-# Hourly research checkpoint
+# Research monitoring checkpoint
+
+## Three-hour review: status-only selector gate — 2026-09-24T07:05:21Z
+
+**58%, change 0 percentage points**, fixed rubric. Six intervening worker commits (`3eab504`, `00d35fc`, `5f10c69`, `738ae07`, `657984b`, `083db9b`; latest 07:05:55 UTC) changed status only. The last reports processing lead `eff3d93`, no run/lease, E14 HOLD accepted and a running watcher; the watcher and separate scheduler health are worker-reported, not independently observed. No new scientific delivery, question, issue #2–#5 advancement or open PR. Last-seen worker commit is `083db9bff73a3a774c55ba6471c65a9c463fe372`; last independently reviewed E14 implementation source remains `4931cb948a80fb9d7a6320601f786352d1feaa11`, with late fixture logs checked at `601fc1f55ab62fd20fcc8cfb5b66495790b413ce`.
+
+The lead rechecked the pinned fourteen-row E12 public-status diagnostic and made [LEAD-POLICY-01](policy_selector_pre_freeze_decision_20260924.md): within the two observed status cells, development-sample selection between N1 and S1 with an N1 tie-break chooses N1 in both, so a status-only rule supplies no observed adaptive gain over fixed N1. The incomplete-information branch lacks E12 support. This is a reused-data design check, not an independently evaluated policy or heterogeneity theorem. N1 remains a candidate fixed comparator; the bare-task resampling controller is a candidate practical comparator, both requiring full freezes and fair resource accounting. E14 and all model collection remain held. No new calls/tokens, benchmark execution, fitting or paid spend. Next milestone: permitted-feature selector, fixed/comparator algorithms, untouched family frame, endpoint/inference and numerical cap. Efficacy unestablished; full project not submission-ready.
 
 ## Lead cadence changed; local collection remains gated — 2026-09-24T04:02:11Z
 

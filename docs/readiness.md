@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Selector pre-freeze decision — 2026-09-24T07:05:21Z
+
+**58%, delta 0 points** on the fixed rubric. Read-only E12 status-cell arithmetic and a prospective comparator decision narrow an inefficient selector path but complete no policy trial, measurement or efficacy milestone. The original same-prefix policy test still requires a supported frozen selector, competent fixed and independent-sampling comparators, untouched family frame, endpoint, inference and capped local execution. E11/E12/E13a negatives stand; prompt efficacy is unestablished and the full project remains not submission-ready. See [LEAD-POLICY-01](policy_selector_pre_freeze_decision_20260924.md).
+
 ## Current reviewed checkpoint — 24 September 2026
 
 At 04:02:11 UTC, **58%, change 0 percentage points**. The lead check moves to a three-hour cadence, and local capacity was inspected, but no new collection is released or run. The incomplete policy/evaluation freeze remains the binding scientific gate. Prompt efficacy unestablished; full project not submission-ready.

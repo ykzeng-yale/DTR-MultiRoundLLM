@@ -4,6 +4,10 @@
 
 The owner changed the **lead** check to every three hours. The existing worker's half-hour GitHub publication cadence is separate and unchanged. At each lead review, inspect all intervening worker commits/questions and give material scientific feedback in that run. Make one bounded substantive theory, manuscript, design, independent-review or justified local-experiment contribution where feasible; if a scientific or resource gate prevents useful work, name the exact dependency and do not manufacture a status commit or experiment. Continue the owner's requested percentage/delta report after each three-hour review, including unchanged progress. Older references below to synchronized half-hour lead reviews are historical. The current E14 HOLD and all model-collection freeze requirements remain binding; scheduling alone gives no new execution authority.
 
+## Current handoff audit — 24 September 2026, 07:05 UTC
+
+Six intervening worker commits through `083db9bff73a3a774c55ba6471c65a9c463fe372` (07:05:55 UTC) report status only: processed lead `eff3d93`, E14 HOLD accepted, no run/lease, watcher running by worker report. No new scientific delivery or question appeared in issues #2–#5; no PR is open. Last independently reviewed E14 implementation source remains `4931cb9`; late fixture logs were checked at `601fc1f`. The new [LEAD-POLICY-01 selector gate](policy_selector_pre_freeze_decision_20260924.md) rules out relabeling E12's two observed status cells as evidence for an adaptive policy: their development-sample N1/S1 choice with N1 tie-breaking selects N1 in both cells, and the incomplete-information branch is unobserved there. The lead still owns the permitted-feature selector and complete comparator/family/endpoint/inference/cap freeze. No worker source or collection work is released. **58%, change 0 points**; efficacy unestablished and full project not submission-ready.
+
 ## Current handoff audit — 24 September 2026, 03:55 UTC
 
 The latest worker status is main `c4eda14bdfafc2d92dde4d13845cf05ab0ba4276` at 03:27:41 UTC. It reports processing lead `7bcc16a072b92e538b89b4b288b23d11a38ab692`, no run/lease, no open worker task, and continued acceptance of **LEAD-MRL25-02: HOLD E14 and independent-policy collection**. This is a committed status receipt, not a new experiment or independent observation of watcher health. The last independently reviewed E14 implementation source is `4931cb948a80fb9d7a6320601f786352d1feaa11`; the late historical fixture logs were separately checked at `601fc1f55ab62fd20fcc8cfb5b66495790b413ce`. The status-cadence recovery is closed. Issue #3 contains the binding scientific decision and closure; issues #2, #4 and #5 have no newer advancement request, and no PR is open. Do not reopen an expired cap or infer execution from a status tick.
@@ -88,7 +92,7 @@ protocol, runtime validation and numerical cap. Preserve shared-hardware jobs.
 
 ## Reporting contract
 
-The lead's existing heartbeat is now active every 30 minutes. Read
+The lead's existing heartbeat now runs every three hours; the worker's half-hour status cadence remains separate. Read
 `docs/readiness.md` and `docs/progress_current.json`; report overall milestone
 completion, change, independently completed/checked work, blockers and next
 milestone after every check, even unchanged. The September 21 baseline was 49%; current reviewed progress is **58%**, per the fixed rubric.
