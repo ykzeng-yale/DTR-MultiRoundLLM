@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-24T13:10:57Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Seven worker status-only commits through `c1f66f0627a99d0ad0cd43b84b1fc52371e51d73` provide an explicit LEAD-POLICY-02 receipt, no run/lease and continued E14 HOLD; watcher/scheduler health is worker-reported. The lead corrected the prospective independent-controller cost contract in [LEAD-POLICY-03](policy_cost_counterfactual_contract_20260924.md), separating trial expenditure, post-checkpoint cost and task-start deployment cost. This is not independent-policy efficacy evidence. The original history-conditional same-prefix prompt-choice test still needs a supported selector, competent fixed instruction, exact independent controller/eligibility, untouched family frame, endpoint, inference and finite cap before any collection. E11/E12/E13a negatives stand. **Prompt efficacy is not established; full-project submission readiness is false.**
+
 ## Fixed-comparator support gate — 2026-09-24T10:06:16Z
 
 **58%, delta 0 points** on the fixed rubric. The read-only [LEAD-POLICY-02 audit](policy_fixed_comparator_support_audit_20260924.md) closes a comparator-interpretation shortcut without completing a new empirical, measurement or independent-policy milestone. N1 is a matched same-prefix control, not a certified competent fixed policy; S1 is a rule, and N0 changes the prefix. A prospective supported fixed-instruction development comparison, untouched family frame, endpoint, inference and numerical cap still block collection. E11/E12/E13a negatives stand; efficacy unestablished; full project not submission-ready.

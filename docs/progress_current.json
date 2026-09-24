@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T10:06:16Z",
+  "checkpoint_utc": "2026-09-24T13:10:57Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "6f62aa9374f6762d1ac22425d93e76a300ef889d",
-  "baseline_note": "Fixed 58-point rubric unchanged: E12 fixed-comparator support audit corrects prospective interpretation but adds no new empirical or independent-policy milestone.",
+  "prior_checked_head": "c82506f38e8df7ad03fe821e10e1a1c589268ffd",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-03 corrects prospective cost accounting without adding efficacy or independent-policy completion.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker d0e70d3 acknowledged LEAD-POLICY-01 at07:08:28Z and re-derived E12 status cells; five later status-only commits through ecf58a9 at09:40:32Z report no run/lease. LEAD-POLICY-02 independently checks source/grade/cost: N1 is matched control, not certified competent fixed policy; S1 status-dependent, N0 changes prefix. No new model/benchmark run.",
+  "latest_evidence": "Seven status-only worker commits through c1f66f0 at13:10:49Z; e7bcc31 at10:08:12Z accepts LEAD-POLICY-02 and processed c82506f. LEAD-POLICY-03 repairs prospective trial-versus-deployment cost ledger. No new model/benchmark run; E14 HOLD.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "ecf58a9fba284b1c49728b94e022c7b402925c2a",
+    "last_seen_worker_revision": "c1f66f0627a99d0ad0cd43b84b1fc52371e51d73",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker ecf58a9 at2026-09-24T09:40:32Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
+    "scheduler_status": "Worker c1f66f0 at2026-09-24T13:10:49Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -92,7 +92,7 @@
     "mrl17_status": "Original static report preserved; new metadata annotation independently accepted.",
     "last_reviewed_operational_proposal_revision": "bb8969444029e0765a8638b4f1404fab02d85f5e",
     "operational_review_record": "docs/mrl19_review_mrl20_20260923.md",
-    "resource_reservation": "MRL20window06:15\u201307:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
+    "resource_reservation": "MRL20window06:15–07:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
     "mrl16_new_window_acknowledged_by_worker": true,
     "prior_release_receipt": {
       "repository": "ykzeng-yale/DTR-AgentEvals",
@@ -199,7 +199,7 @@
     "mrl24_delivery_revision": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
     "mrl24_independent_validation": "results/mrl24_lead_independent_review_20260923.json",
     "mrl23_one_worker_condition": "not met; 79 recorded local intervals,9 cross-builder overlaps,peak2 simultaneously; CPU load not determined",
-    "mrl25_status": "Delivered18:54:17UTC within reported18:47\u201319:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
+    "mrl25_status": "Delivered18:54:17UTC within reported18:47–19:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
     "mrl25_source_limit": {
       "local_execution_workers": 1,
       "threads": 1,
@@ -399,5 +399,13 @@
     "worker_lead_policy_01_receipt_revision": "d0e70d3bc0faacba365ce16314c9d46242b92a3d",
     "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "decision": "N1 is same-prefix mechanism control but not certified competent fixed policy; S1 is status-rule and N0 omits diagnostic prefix. Hold collection pending supported fixed-instruction development set and full original-target trial contract."
+  },
+  "policy_cost_counterfactual_contract": {
+    "decision_id": "LEAD-POLICY-03",
+    "record": "docs/policy_cost_counterfactual_contract_20260924.md",
+    "classification": "prospective source/reused-data design correction; no new empirical result or theorem",
+    "worker_lead_policy_02_receipt_revision": "e7bcc31f66c8500123c9a581fac7ac06e1a55aad",
+    "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+    "decision": "Separate trial expenditure, post-checkpoint incremental cost and task-start deployment cost; freeze b2 eligibility and charge only required operations. HOLD E14 and policy collection pending original-target trial contract."
   }
 }

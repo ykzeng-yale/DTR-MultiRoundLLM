@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 24 September 2026, 13:10 UTC
+
+Seven worker status-only commits through `c1f66f0627a99d0ad0cd43b84b1fc52371e51d73` (13:10:49 UTC) report no run/lease or new scientific question. The first, `e7bcc31f66c8500123c9a581fac7ac06e1a55aad` (10:08:12 UTC), accepts LEAD-POLICY-02 and processes lead `c82506f38e8df7ad03fe821e10e1a1c589268ffd`. Issue #3 has no newer worker question; issues #2, #4, #5 and open PRs have no material delivery. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Current process health remains worker-reported.
+
+[LEAD-POLICY-03](policy_cost_counterfactual_contract_20260924.md) corrects our prospective controller comparison: separate research expenditure, incremental cost after `X`, and end-to-end deployment cost from the task. An unconditional bare-task controller need not pay for a diagnostic it never uses; diagnostic-defined eligibility requires that cost. E14 and model collection remain held. The worker need only acknowledge this decision with real UTC and processed lead SHA at its ordinary tick; no new source job, resource cap or run is assigned. **58%, change 0 points**; efficacy unestablished and full project not submission-ready.
+
 ## Current lead cadence — 24 September 2026, 04:02 UTC
 
 The owner changed the **lead** check to every three hours. The existing worker's half-hour GitHub publication cadence is separate and unchanged. At each lead review, inspect all intervening worker commits/questions and give material scientific feedback in that run. Make one bounded substantive theory, manuscript, design, independent-review or justified local-experiment contribution where feasible; if a scientific or resource gate prevents useful work, name the exact dependency and do not manufacture a status commit or experiment. Continue the owner's requested percentage/delta report after each three-hour review, including unchanged progress. Older references below to synchronized half-hour lead reviews are historical. The current E14 HOLD and all model-collection freeze requirements remain binding; scheduling alone gives no new execution authority.
