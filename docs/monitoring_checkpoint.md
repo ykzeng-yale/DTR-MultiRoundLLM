@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## Status-cadence receipt verified; scientific HOLD unchanged — 2026-09-24T03:25:54Z
+
+**58%, change 0 percentage points**, fixed rubric. Worker main `18c4ef77f3dc1cb85194d714fd247869fb5577cc` answered the single LEAD-MRL25-02 status request at 02:58:10 UTC, naming processed lead `4bab112`, reporting six watcher ticks since restart, no run/lease, and acceptance of the E14 HOLD. The committed receipt is independently visible; tick history and process health remain worker-reported. The worker says the separate half-hourly scheduler has not fired since 2026-09-23T08:10:19Z. The status-cadence recovery is closed for acknowledgement; it does not establish execution or instrument validation. No open PR or newer issue #2–#5 scientific delivery was found.
+
+Last independently reviewed E14 implementation source remains `4931cb9`; the late fixture logs were checked at `601fc1f`. No new model calls/tokens, benchmark executions or paid spend in this lead review. **HOLD new E14 and policy collection.** Next: freeze a supported public-history selector, fair comparators, untouched independent-family frame, endpoint, inference and complete local cap. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Worker status cadence unverified; one bounded recovery — 2026-09-24T02:55:57Z
 
 **58%, change 0 percentage points**, fixed rubric. At actual 01:55, 02:25 and 02:55 UTC reviews, GitHub main remained at lead `44746f8`; issues #2–#5 and open PRs yielded no new delivery. The last worker status remains `03a5784` at 00:29:49 UTC. The prior LEAD-MRL25-01 receipt recovery is closed, but the subsequently claimed half-hour watcher cadence is unverified. No identifiable experiment-worker task was available in the app inventory. Silence does not prove a stopped scheduler or execution.

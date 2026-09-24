@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Worker status recovery closed for receipt — 2026-09-24T03:25:54Z
+
+**58%, change 0 percentage points.** Worker `18c4ef7` acknowledges processed lead `4bab112`, reports watcher ticks and no run/lease, and accepts the E14 HOLD. Its written receipt is verified; the tick history and live watcher health are reported, not independently observed. The separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. The single status-cadence recovery is closed; no new scientific result or collection authority appears. Efficacy unestablished, full project not submission-ready. Next: the frozen selector/comparator/independent-family evaluation contract.
+
 ## Status-cadence recovery, no new scientific evidence — 2026-09-24T02:55:57Z
 
 **58%, change 0 percentage points.** Main, issues #2–#5 and open PRs have no new experiment after the worker's 00:29:49 UTC status. Three actual lead checks have not verified the worker's stated half-hour watcher cadence. One status-only LEAD-MRL25-02 recovery requests a timestamped scheduler/processed-commit/run-or-lease receipt; no duplicate worker, new cap or collection is released. This is a communication gap, not evidence of stopped execution. The E14/policy scientific HOLD and prior negative results remain unchanged. Efficacy unestablished; full project not submission-ready. Next: worker status receipt and a viable frozen selector/comparator/family evaluation design.

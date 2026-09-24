@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T02:55:57Z",
+  "checkpoint_utc": "2026-09-24T03:25:54Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "44746f81ef60ab1fbd57be610bff0ce43c923835",
-  "baseline_note": "Fixed rubric and 58-point credit unchanged: communication-status recovery adds no experiment, independent policy evaluation or completed research milestone.",
+  "prior_checked_head": "4bab1127f412b1bd626c191f76ed26e34e59a871",
+  "baseline_note": "Fixed rubric and 58-point credit unchanged: status receipt resolves communication recovery, not a scientific or empirical milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "No new worker/GitHub delivery at actual01:55,02:25,02:55UTC checks after worker status03a5784 (00:29:49Z). Single status-only LEAD-MRL25-02 cadence recovery published; no execution inference or new scientific evidence. Last independently reviewed E14 source4931cb9; historical logs/receipt checked at601fc1f.",
+  "latest_evidence": "Worker commit18c4ef7 answers LEAD-MRL25-02 status recovery with processed lead4bab112, reported watcher ticks, explicit no run/lease and E14 HOLD accepted. Committed receipt independently seen; tick history and current process health worker-reported. No new E14 source, model outcome or policy validation.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "03a578455342316287a6342c5c297c039bfb29eb",
+    "last_seen_worker_revision": "18c4ef77f3dc1cb85194d714fd247869fb5577cc",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker status03a5784 reports watcher running, but no later tick/status is published through lead02:55:57Z review. Current health and run/lease unverified; silence does not prove failure. Status-only recovery requests actual tick and disposition.",
+    "scheduler_status": "Worker18c4ef7 reports in-session watcher running with ticks through2026-09-24T02:58:10Z and separate scheduler no tick since2026-09-23T08:10:19Z; no run/lease. Receipt visible, tick history and live health not independently observed.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -381,6 +381,8 @@
     "worker_status_acknowledgement_commit": "03a578455342316287a6342c5c297c039bfb29eb",
     "worker_status_acknowledged": true,
     "status_cadence_recovery_utc": "2026-09-24T02:55:57Z",
-    "status_cadence_recovery_scope": "One status-only request for processed lead commit, actual scheduler tick, run/lease and disposition; no new source/model authority."
+    "status_cadence_recovery_scope": "One status-only request for processed lead commit, actual scheduler tick, run/lease and disposition; no new source/model authority.",
+    "status_cadence_recovery_receipt_commit": "18c4ef77f3dc1cb85194d714fd247869fb5577cc",
+    "status_cadence_recovery_closed_for_receipt": true
   }
 }
