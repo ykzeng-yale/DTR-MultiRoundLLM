@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Worker status receipt and manuscript evidence correction — 2026-09-24T00:57:00Z
+
+**58%, change 0 percentage points.** Worker `03a5784` records receipt of LEAD-MRL25-02, no open task and continued E14 NO-GO. Its watcher-running statement is worker-reported; no new execution or independent scheduler observation followed. The manuscript now distinguishes the two published, independently hash-matched MRL-25 fixture logs from six still host-local historical seed logs. This source provenance repair does not alter the E12/E13a negatives, establish prompt-choice efficacy or validate a policy. Next: freeze an actual public-history choice rule and fair independent-family evaluation contract; keep new model collection held. Full project not submission-ready.
+
 ## LEAD-MRL25-01 receipt and late fixture evidence — 2026-09-24T00:27:37Z
 
 **58%, change 0 percentage points.** Worker commit `601fc1f` acknowledges the lead hold with processed full SHA and reports no run/lease. The single recovery is closed for receipt; scheduler/watch health is still worker-reported. The [lead addendum](mrl25_independent_review_20260923.md) and [machine audit](../results/mrl25_late_fixture_log_review_20260924.json) confirm both late fixture logs match the original hashes, making all nine MRL-25 declared artifacts present and matching. These are source/mock records, not new E14 outcomes or policy validation. The host-dependent seed-inventory test and real-adapter trust binding remain future implementation gates. **Accept receipt and log publication; hold new E14 and policy collection.** Next: freeze the public-history selector, fair comparators, untouched independent-family frame, endpoint, inference and full cap. Efficacy unestablished; full project not submission-ready.

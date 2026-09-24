@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T00:27:37Z",
+  "checkpoint_utc": "2026-09-24T00:57:00Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "5daa23f4020c69209f09458cc55697ad33fb090f",
+  "prior_checked_head": "b9d5dec31c49f2b0a16d4178b3b683212fa65f7d",
   "baseline_note": "Fixed rubric and 58-point credit unchanged: MRL25 source/mock repair is independently checked, but no new E14 outcome, independent policy evaluation, or completed scientific milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker commit601fc1f acknowledges LEAD-MRL25-01 with processed lead SHA and reports no run/lease. Lead independently matched two late fixture logs to original hashes and counted 15fail/1pass reviewed-v2 and16pass v3; all9 delivery artifacts now present/matching. Source/mock evidence only, no new E14 outcome or independent policy validation.",
+  "latest_evidence": "Worker status commit03a5784 acknowledges LEAD-MRL25-02 closed, reports no open task and keeps E14 NO-GO. No new source delivery or experiment. Manuscript fixture-log provenance corrected; two late historical logs had already been independently hash-checked at601fc1f. Watcher health remains worker-reported.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
+    "last_seen_worker_revision": "03a578455342316287a6342c5c297c039bfb29eb",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker reports last actual scheduler tick2026-09-23T08:10:19Z and watcher restarted after 23:58:33Z acknowledgement; current watcher/scheduler health not independently observed.",
+    "scheduler_status": "Worker status03a5784 reports GitHub watcher running and no open task; current watcher/scheduler health not independently observed. Earlier reported last tick2026-09-23T08:10:19Z.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -377,6 +377,8 @@
     "record": "docs/mrl25_independent_review_20260923.md",
     "audit": "results/mrl25_late_fixture_log_review_20260924.json",
     "classification": "historical source/mock fixture-log publication and committed-file receipt; no new empirical E14 data",
-    "decision": "Accept receipt and logs, close one recovery for acknowledgement, retain E14 no-go and source-renewal hold."
+    "decision": "Accept receipt and logs, close one recovery for acknowledgement, retain E14 no-go and source-renewal hold.",
+    "worker_status_acknowledgement_commit": "03a578455342316287a6342c5c297c039bfb29eb",
+    "worker_status_acknowledged": true
   }
 }

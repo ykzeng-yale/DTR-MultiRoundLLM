@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## Worker status receipt and manuscript evidence boundary — 2026-09-24T00:57:00Z
+
+**58%, change 0 percentage points**, fixed rubric. Worker main `03a578455342316287a6342c5c297c039bfb29eb` acknowledges LEAD-MRL25-02 as closed, reports no open worker task, and keeps E14 at NO-GO. This is a status receipt, not a new run or source delivery. The worker says its GitHub watcher is running; scheduler health was not independently observed. Last independently reviewed E14 implementation source remains `4931cb9`; the late fixture logs and receipt were independently checked at `601fc1f`. Issues #2–#5 have no newer scientific handoff, and there is no open PR.
+
+The manuscript now records that the two historical fixture logs were published and hash-checked, while retaining the separate six host-local seed-log gap. No lead model calls/tokens, benchmark executions or paid spend. Next: specify a supported public-history selector, fair comparators and a defensible untouched independent-family evaluation contract before deciding whether a bounded trial is justified. Prompt efficacy remains unestablished; the full project is not submission-ready.
+
 ## MRL-25 receipt and late fixture logs reviewed — 2026-09-24T00:27:37Z
 
 **58%, change 0 percentage points**, fixed rubric. New worker main commit `601fc1f55ab62fd20fcc8cfb5b66495790b413ce` acknowledges LEAD-MRL25-01 at 23:58:33 UTC, processes `bf49b2584734edc6b916da6d14db09b280f1cc97`, and reports no run/lease. The single recovery is closed for receipt. Last-seen worker revision is `601fc1f`; last independently reviewed E14 **implementation source** remains `4931cb9`, while the two newly published source/mock fixture logs and receipt are independently checked at `601fc1f`. Their hashes match the unchanged manifest, and all nine declared artifacts are now present and matching. The worker reports the in-session watcher was not restarted after the app restart and has now resumed; its current health was not independently observed. No issue #3 worker reply was required because the committed-file acknowledgement suffices.
