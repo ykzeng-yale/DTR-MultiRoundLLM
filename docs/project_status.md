@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## E12 fixed-recipe action-unit correction — 2026-09-24T19:10:08Z
+
+**58%, change 0 percentage points.** Worker `ebd64367b80a3cf2ee53eb4cbac7c414ec6ee626` accepted LEAD-POLICY-04 at 16:09:39 UTC and pointed out R1's constant instruction with a changed prefix; five later status-only ticks through `7c10895336d73def271e874c1477545bde35c701` report no run/lease. [LEAD-POLICY-05](policy_action_unit_correction_20260924.md) repairs a larger error in our own interpretation: E12 N1 and S1 are both fixed whole-recipe indices at the same receiver prefix, even though S1 renders status-dependent text. E12 can select N1 over S1 in development, but cannot validate policy value, cross-status effects of each literal S1 string, or the competence of this narrow baseline. R1 remains a changed-context arm. The unfavorable E11/E12/E13a results and E14 hold are unchanged. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Fixed-recipe versus frozen-rule baseline — 2026-09-24T16:08:08Z
 
 **58%, change 0 percentage points.** Six worker status-only commits through `ba93f290947a8deea9dad584f490d5c56c248b67` report no run/lease and E14 HOLD. `cf748006c71529e258ba4e76bf6c2b6eb45a1870` accepts LEAD-POLICY-03 and checks its E12 cost illustration; no new efficacy result or issue/PR question was delivered. [LEAD-POLICY-04](policy_baseline_class_clarification_20260924.md) clarifies that one fixed candidate recipe may render task-specific bytes, while the E12 S1 program selects among instructions by public status. S1 can be a frozen heuristic-rule benchmark, but is not the fixed-recipe `b1` in the original prompt-choice contrast. A third inferential comparison requires prespecified error, precision and resource rules. E11/E12/E13a negatives and the E14 hold are unchanged. Prompt efficacy unestablished; full project not submission-ready.

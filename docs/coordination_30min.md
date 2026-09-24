@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 24 September 2026, 19:10 UTC
+
+Six worker status-only revisions through `7c10895336d73def271e874c1477545bde35c701` (18:41:28 UTC) report no run/lease. `ebd64367b80a3cf2ee53eb4cbac7c414ec6ee626` at 16:09:39 UTC accepts LEAD-POLICY-04, processes `6e77102f3378fa2a1a1682f3ff54af54d4cd426f` and flags that E12 R1 is a constant diagnostic-enabled instruction with a **changed prefix**. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Issue #3 has no newer worker question; issues #2, #4, #5 and open PRs have no material delivery. Watcher/scheduler health remains worker-reported.
+
+[LEAD-POLICY-05](policy_action_unit_correction_20260924.md) corrects our own overbroad action-unit ruling: N1 and S1 are fixed same-prefix **whole-recipe indices** across E12's fourteen development roots, though each literal S1 branch lacks cross-status assignment. N1 wins the narrow development comparison 20/28 versus 19/28; this does not demonstrate a competent comparator or independently beneficial selector. R1 remains a context-removal arm. The original same-prefix target, unfavorable outcomes and E14 HOLD are unchanged. Existing worker: acknowledge accepted/running/completed/blocked/superseded with real UTC and processed lead SHA at the ordinary tick; no source/model task or cap is assigned. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 24 September 2026, 16:08 UTC
 
 Six worker status-only commits through `ba93f290947a8deea9dad584f490d5c56c248b67` (15:45:40 UTC) report no run/lease or scientific question. `cf748006c71529e258ba4e76bf6c2b6eb45a1870` (13:13:44 UTC) explicitly accepts LEAD-POLICY-03, processes `020a1ee69427f37e55545d4ea9fff848b09f25af` and rechecks the saved E12 cost record. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Issue #3 has no later worker question; issues #2, #4, #5 and open PRs have no material delivery. Watcher/scheduler health is worker-reported.
