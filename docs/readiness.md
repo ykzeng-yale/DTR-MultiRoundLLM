@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Fixed-comparator support gate — 2026-09-24T10:06:16Z
+
+**58%, delta 0 points** on the fixed rubric. The read-only [LEAD-POLICY-02 audit](policy_fixed_comparator_support_audit_20260924.md) closes a comparator-interpretation shortcut without completing a new empirical, measurement or independent-policy milestone. N1 is a matched same-prefix control, not a certified competent fixed policy; S1 is a rule, and N0 changes the prefix. A prospective supported fixed-instruction development comparison, untouched family frame, endpoint, inference and numerical cap still block collection. E11/E12/E13a negatives stand; efficacy unestablished; full project not submission-ready.
+
 ## Selector pre-freeze decision — 2026-09-24T07:05:21Z
 
 **58%, delta 0 points** on the fixed rubric. Read-only E12 status-cell arithmetic and a prospective comparator decision narrow an inefficient selector path but complete no policy trial, measurement or efficacy milestone. The original same-prefix policy test still requires a supported frozen selector, competent fixed and independent-sampling comparators, untouched family frame, endpoint, inference and capped local execution. E11/E12/E13a negatives stand; prompt efficacy is unestablished and the full project remains not submission-ready. See [LEAD-POLICY-01](policy_selector_pre_freeze_decision_20260924.md).
