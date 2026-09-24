@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T13:10:57Z",
+  "checkpoint_utc": "2026-09-24T16:08:08Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "c82506f38e8df7ad03fe821e10e1a1c589268ffd",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-03 corrects prospective cost accounting without adding efficacy or independent-policy completion.",
+  "prior_checked_head": "020a1ee69427f37e55545d4ea9fff848b09f25af",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-04 clarifies prospective baseline classes; no new empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Seven status-only worker commits through c1f66f0 at13:10:49Z; e7bcc31 at10:08:12Z accepts LEAD-POLICY-02 and processed c82506f. LEAD-POLICY-03 repairs prospective trial-versus-deployment cost ledger. No new model/benchmark run; E14 HOLD.",
+  "latest_evidence": "Six worker status-only commits through ba93f29 at15:45:40Z; cf74800 at13:13:44Z accepts LEAD-POLICY-03 and rechecks E12 cost accounting. LEAD-POLICY-04 separates fixed recipe index from frozen status-dependent heuristic rule. No new model/benchmark run; E14 HOLD.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "c1f66f0627a99d0ad0cd43b84b1fc52371e51d73",
+    "last_seen_worker_revision": "ba93f290947a8deea9dad584f490d5c56c248b67",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker c1f66f0 at2026-09-24T13:10:49Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
+    "scheduler_status": "Worker ba93f29 at2026-09-24T15:45:40Z reports watcher running and no run/lease; separate scheduler reportedly has not fired since2026-09-23T08:10:19Z. Committed status observed, process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -407,5 +407,13 @@
     "worker_lead_policy_02_receipt_revision": "e7bcc31f66c8500123c9a581fac7ac06e1a55aad",
     "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "decision": "Separate trial expenditure, post-checkpoint incremental cost and task-start deployment cost; freeze b2 eligibility and charge only required operations. HOLD E14 and policy collection pending original-target trial contract."
+  },
+  "policy_baseline_class_clarification": {
+    "decision_id": "LEAD-POLICY-04",
+    "record": "docs/policy_baseline_class_clarification_20260924.md",
+    "classification": "read-only theory/source and prospective comparator-class judgment; no theorem, new model data or policy evaluation",
+    "worker_lead_policy_03_receipt_revision": "cf748006c71529e258ba4e76bf6c2b6eb45a1870",
+    "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+    "decision": "Keep d versus development-selected fixed recipe b1 and separately frozen b2; S1-like public-status rule may be a distinct secondary heuristic benchmark with prospective multiplicity/precision/cap if inferential. HOLD new collection."
   }
 }

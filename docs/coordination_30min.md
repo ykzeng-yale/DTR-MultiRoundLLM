@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 24 September 2026, 16:08 UTC
+
+Six worker status-only commits through `ba93f290947a8deea9dad584f490d5c56c248b67` (15:45:40 UTC) report no run/lease or scientific question. `cf748006c71529e258ba4e76bf6c2b6eb45a1870` (13:13:44 UTC) explicitly accepts LEAD-POLICY-03, processes `020a1ee69427f37e55545d4ea9fff848b09f25af` and rechecks the saved E12 cost record. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Issue #3 has no later worker question; issues #2, #4, #5 and open PRs have no material delivery. Watcher/scheduler health is worker-reported.
+
+[LEAD-POLICY-04](policy_baseline_class_clarification_20260924.md) clarifies the original prompt-choice comparator class: one fixed recipe index can render task-specific bytes; S1 is a frozen public-status rule, eligible as a separate heuristic benchmark but not as `b1`. If that third comparison is inferential, freeze multiplicity, precision and cap prospectively. The worker need only acknowledge this decision with real UTC and processed lead SHA at the ordinary tick; no source job or model collection is assigned. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 24 September 2026, 13:10 UTC
 
 Seven worker status-only commits through `c1f66f0627a99d0ad0cd43b84b1fc52371e51d73` (13:10:49 UTC) report no run/lease or new scientific question. The first, `e7bcc31f66c8500123c9a581fac7ac06e1a55aad` (10:08:12 UTC), accepts LEAD-POLICY-02 and processes lead `c82506f38e8df7ad03fe821e10e1a1c589268ffd`. Issue #3 has no newer worker question; issues #2, #4, #5 and open PRs have no material delivery. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`. Current process health remains worker-reported.

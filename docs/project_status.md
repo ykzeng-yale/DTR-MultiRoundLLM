@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Fixed-recipe versus frozen-rule baseline — 2026-09-24T16:08:08Z
+
+**58%, change 0 percentage points.** Six worker status-only commits through `ba93f290947a8deea9dad584f490d5c56c248b67` report no run/lease and E14 HOLD. `cf748006c71529e258ba4e76bf6c2b6eb45a1870` accepts LEAD-POLICY-03 and checks its E12 cost illustration; no new efficacy result or issue/PR question was delivered. [LEAD-POLICY-04](policy_baseline_class_clarification_20260924.md) clarifies that one fixed candidate recipe may render task-specific bytes, while the E12 S1 program selects among instructions by public status. S1 can be a frozen heuristic-rule benchmark, but is not the fixed-recipe `b1` in the original prompt-choice contrast. A third inferential comparison requires prespecified error, precision and resource rules. E11/E12/E13a negatives and the E14 hold are unchanged. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Prospective policy cost correction — 2026-09-24T13:10:57Z
 
 **58%, change 0 percentage points.** Seven status-only worker commits through `c1f66f0627a99d0ad0cd43b84b1fc52371e51d73` report no run/lease and continued E14 HOLD; `e7bcc31` accepts LEAD-POLICY-02 and processed lead `c82506f38e8df7ad03fe821e10e1a1c589268ffd`. No material result or new issue/PR question appeared. [LEAD-POLICY-03](policy_cost_counterfactual_contract_20260924.md) repairs our prospective cost comparison: trial expenditure, post-checkpoint incremental cost and task-start end-to-end cost are different ledgers. A diagnostic the bare-task controller ignores is not automatically its unconditional deployment expense; eligibility based on that diagnostic changes the ledger. This is a design correction, with no fresh empirical evidence or collection release. The original same-prefix target and unfavorable E11/E12/E13a results are unchanged. Efficacy unestablished; full project not submission-ready.
