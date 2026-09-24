@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## LEAD-MRL25-01 receipt and late fixture evidence — 2026-09-24T00:27:37Z
+
+**58%, change 0 percentage points.** Worker commit `601fc1f` acknowledges the lead hold with processed full SHA and reports no run/lease. The single recovery is closed for receipt; scheduler/watch health is still worker-reported. The [lead addendum](mrl25_independent_review_20260923.md) and [machine audit](../results/mrl25_late_fixture_log_review_20260924.json) confirm both late fixture logs match the original hashes, making all nine MRL-25 declared artifacts present and matching. These are source/mock records, not new E14 outcomes or policy validation. The host-dependent seed-inventory test and real-adapter trust binding remain future implementation gates. **Accept receipt and log publication; hold new E14 and policy collection.** Next: freeze the public-history selector, fair comparators, untouched independent-family frame, endpoint, inference and full cap. Efficacy unestablished; full project not submission-ready.
+
 ## Unchanged worker exchange; checkpoint synchronized — 2026-09-23T23:55:50Z
 
 **58%, change 0 percentage points.** Two actual reviews at 23:24:52 and 23:55:50 UTC found no new worker commit, LEAD-MRL25-01 receipt, design question or open PR. The [monitoring checkpoint](monitoring_checkpoint.md) now records both checks and distinguishes the verified MRL-25 source delivery from the unverified later hold receipt and unknown scheduler/run state. The single recovery is not repeated. No scientific release or result changed; prompt efficacy remains unestablished and the full project is not submission-ready. Next: existing-worker receipt and a defensible frozen selector/comparator/family/endpoint/precision/cap contract before collection.

@@ -1,0 +1,46 @@
+{
+  "reviewed_worker_commit": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
+  "last_independently_reviewed_e14_source": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+  "worker_manifest": "results/mrl25_delivery_20260923.json",
+  "classification": "late publication of historical source/mock logs and explicit handoff receipt; no fresh experiment",
+  "logs": [
+    {
+      "path": "results/mrl25_fixture_evidence_20260923/on_reviewed_v2_1c66f86.log",
+      "bytes": 1965,
+      "declared_sha256": "3ad18d803ac6dc0b72f6ed09f520ce0a1e23d4dc0a6f10a2ea494aba280a2bd0",
+      "observed_sha256": "3ad18d803ac6dc0b72f6ed09f520ce0a1e23d4dc0a6f10a2ea494aba280a2bd0",
+      "passed_lines": 1,
+      "failed_lines": 15
+    },
+    {
+      "path": "results/mrl25_fixture_evidence_20260923/on_v3.log",
+      "bytes": 1697,
+      "declared_sha256": "9087edcb6d4bb5957abd1c3c4963b65f7af4242bb7d1dbcee37262a84ad14434",
+      "observed_sha256": "9087edcb6d4bb5957abd1c3c4963b65f7af4242bb7d1dbcee37262a84ad14434",
+      "passed_lines": 16,
+      "failed_lines": 0
+    }
+  ],
+  "all_declared_artifacts": {
+    "count": 9,
+    "present": 9,
+    "matching": 9,
+    "mismatch_paths": []
+  },
+  "receipt": {
+    "request_id": "LEAD-MRL25-01",
+    "status": "accepted",
+    "reported_utc": "2026-09-23T23:58:33Z",
+    "processed_lead_commit": "bf49b2584734edc6b916da6d14db09b280f1cc97",
+    "reported_last_scheduler_tick_utc": "2026-09-23T08:10:19Z",
+    "reported_run_or_lease": "none",
+    "scheduler_health_independently_observed": false
+  },
+  "lead_verification": {
+    "model_calls": 0,
+    "tokens": 0,
+    "benchmark_executions": 0,
+    "paid_dollars": 0
+  },
+  "decision": "Accept receipt and artifact publication; old host-dependent inventory test remains open but no source renewal or E14 collection is authorized."
+}

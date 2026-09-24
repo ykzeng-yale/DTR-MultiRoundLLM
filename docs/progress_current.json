@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-23T23:55:50Z",
+  "checkpoint_utc": "2026-09-24T00:27:37Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "5fe1f88b953b988293619e892de56a2c5d843f33",
+  "prior_checked_head": "5daa23f4020c69209f09458cc55697ad33fb090f",
   "baseline_note": "Fixed rubric and 58-point credit unchanged: MRL25 source/mock repair is independently checked, but no new E14 outcome, independent policy evaluation, or completed scientific milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Two actual unchanged checks at23:24:52 and23:55:50UTC: no new worker commit, LEAD-MRL25-01 recovery receipt, design question or PR. Last independently reviewed worker source4931cb9. Existing E12 mechanism review already covers format/root863; no further analysis or collection. Monitoring checkpoint reconciled; efficacy and policy validation unchanged.",
+  "latest_evidence": "Worker commit601fc1f acknowledges LEAD-MRL25-01 with processed lead SHA and reports no run/lease. Lead independently matched two late fixture logs to original hashes and counted 15fail/1pass reviewed-v2 and16pass v3; all9 delivery artifacts now present/matching. Source/mock evidence only, no new E14 outcome or independent policy validation.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
+    "last_seen_worker_revision": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker reports last actual tick08:10:19UTC; MRL24 was delivered via direct session work. Current scheduler health not independently observed.",
+    "scheduler_status": "Worker reports last actual scheduler tick2026-09-23T08:10:19Z and watcher restarted after 23:58:33Z acknowledgement; current watcher/scheduler health not independently observed.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -210,7 +210,7 @@
     },
     "mrl25_acknowledgement_received": true,
     "mrl25_consecutive_missing_acknowledgement_checks": 0,
-    "mrl25_latest_check_utc": "2026-09-23T21:44:58Z",
+    "mrl25_latest_check_utc": "2026-09-24T00:27:37Z",
     "mrl25_publication_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5800202601",
     "mrl25_execution_state": "Worker reports zero real model/receiver calls/tokens, benchmark-program executions and spend; independent lead review likewise zero; scheduler health and total worker CPU not observed.",
     "mrl25_acknowledgement_revision": "7922793f43a8ddca5d95fb3121bd0cf623192333c",
@@ -223,13 +223,16 @@
     "mrl25_independent_review": "results/mrl25_lead_independent_review_20260923.json",
     "mrl25_committed_seed_inventory": "results/e14_seed_inventory_lead_committed_20260923.json",
     "lead_mrl25_01_publication_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5801513281",
-    "lead_mrl25_01_acknowledged": false,
+    "lead_mrl25_01_acknowledged": true,
     "lead_mrl25_01_consecutive_unanswered_checks": 2,
     "lead_mrl25_01_recovery_url": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5802523436",
     "lead_mrl25_01_recovery_utc": "2026-09-23T20:37:27Z",
-    "lead_mrl25_01_recovery_received": false,
-    "lead_mrl25_01_post_recovery_unanswered_checks": 6,
-    "worker_route_dependency": "Exact currently accessible app/task link or session route for existing Claude Code experiment worker; prior UUID is not accessible from this host."
+    "lead_mrl25_01_recovery_received": true,
+    "lead_mrl25_01_post_recovery_unanswered_checks": 0,
+    "worker_route_dependency": "Closed for LEAD-MRL25-01 receipt by committed-file acknowledgement; direct app/task access remains unavailable but is not required for this verified handoff.",
+    "lead_mrl25_01_acknowledgement_revision": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
+    "lead_mrl25_01_acknowledgement_utc": "2026-09-23T23:58:33Z",
+    "mrl25_late_logs_review": "results/mrl25_late_fixture_log_review_20260924.json"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -367,5 +370,13 @@
     "source": "docs/policy_comparator_contract_audit_20260923.md",
     "classification": "source-based manuscript evidence-boundary correction; no new experiment or theorem",
     "decision": "Preserve E12/E13a negatives; E14 and policy collection held pending complete freeze."
+  },
+  "mrl25_late_evidence_review": {
+    "decision_id": "LEAD-MRL25-02",
+    "worker_commit": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
+    "record": "docs/mrl25_independent_review_20260923.md",
+    "audit": "results/mrl25_late_fixture_log_review_20260924.json",
+    "classification": "historical source/mock fixture-log publication and committed-file receipt; no new empirical E14 data",
+    "decision": "Accept receipt and logs, close one recovery for acknowledgement, retain E14 no-go and source-renewal hold."
   }
 }
