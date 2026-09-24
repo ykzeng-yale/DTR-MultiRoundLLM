@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## No new worker delivery; manuscript discussion drafted — 2026-09-24T01:27:00Z
+
+**58%, change 0 percentage points**, fixed rubric. At this actual review, `origin/main` matched the prior lead commit `e1e1deb`; issues #2–#5 and open PRs had no new scientific delivery or design question. Last-seen worker status remains `03a5784`, last independently reviewed E14 implementation source `4931cb9`, and the two late fixture logs independently checked at `601fc1f`. The worker's watcher-running statement is reported, not independently observed; no new run or lease is evidenced.
+
+The lead added a working [manuscript discussion](../manuscript/current_paper_20260922.md) that preserves the E11/E12/E13a negatives, distinguishes same-prefix prompt wording from restart packages, and specifies the decision-time information and measurement limits that independent policy validation must address. This is synthesis of existing evidence, with zero new model calls/tokens, benchmark executions, simulated draws, fits or paid spend. **HOLD E14 and new policy collection.** Next: a defensible frozen public-history selector, fair comparator laws and untouched independent-family evaluation frame with a complete resource/precision contract. Prompt efficacy remains unestablished; the full project is not submission-ready.
+
 ## Worker status receipt and manuscript evidence boundary — 2026-09-24T00:57:00Z
 
 **58%, change 0 percentage points**, fixed rubric. Worker main `03a578455342316287a6342c5c297c039bfb29eb` acknowledges LEAD-MRL25-02 as closed, reports no open worker task, and keeps E14 at NO-GO. This is a status receipt, not a new run or source delivery. The worker says its GitHub watcher is running; scheduler health was not independently observed. Last independently reviewed E14 implementation source remains `4931cb9`; the late fixture logs and receipt were independently checked at `601fc1f`. Issues #2–#5 have no newer scientific handoff, and there is no open PR.
