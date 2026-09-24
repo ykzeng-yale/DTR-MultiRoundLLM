@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Three-hour lead cadence; local experiment gate — 2026-09-24T04:02:11Z
+
+**58%, change 0 percentage points.** The owner reduced lead reviews to every three hours, while worker half-hour publication remains separate. Worker `584f3e7` reports no run/lease and E14 HOLD accepted. The lead checked approximately 26 GiB free local disk and 32 GiB physical memory, but no collection was started: the frozen selector, comparators, untouched independent-family frame, validated endpoint, inference/precision rules and numerical cap are not yet complete or released, and current shared-host availability is not verified. Space is not the binding scientific permission. Next: complete the lead-owned design gate, then assess one bounded local run if it would answer the original prompt-choice question. Efficacy unestablished; full project not submission-ready.
+
 ## GitHub feedback audit and next owner — 2026-09-24T03:55:22Z
 
 **58%, change 0 percentage points.** The current E14 scientific HOLD, MRL-25 source/log reviews, manuscript evidence boundary and closed recovery are published on main/issue #3. Worker `c4eda14` reports processing lead `7bcc16a`, no run/lease and no open task; no new efficacy evidence appears. The next blocking deliverable belongs to the lead: a frozen supported public-history selector, fair comparators and untouched family-level evaluation/measurement/inference/cost contract, or an explicit decision to label a narrower target. Worker status ticks are not execution or independent validation. No new worker assignment or cap is issued. Full project not submission-ready.

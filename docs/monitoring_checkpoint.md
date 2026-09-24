@@ -1,5 +1,11 @@
 # Hourly research checkpoint
 
+## Lead cadence changed; local collection remains gated — 2026-09-24T04:02:11Z
+
+**58%, change 0 percentage points**, fixed rubric. The owner changed the lead's existing automation from 30 minutes to three hours, while the existing worker's half-hour GitHub updates remain separate. The latest worker status `584f3e7cd832ce0861b206d7e75b14547fe8f5b3` (03:57:11 UTC) reports no run/lease and E14 HOLD accepted; this is status, not new scientific evidence. No open PR or new issue #2–#5 result appeared. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+The lead checked local capacity: approximately 26 GiB free disk and 32 GiB physical memory at this instant. Capacity alone does not authorize collection. There is no complete frozen selector/comparator/independent-family/measurement/inference/resource contract, no released E14 model stage, and no verified current shared-host lease. Therefore no local model or benchmark experiment was started. Next contribution is the lead-owned complete policy design or an explicit narrower-target decision; only then can a capped local feasibility or efficacy run be considered. Zero new calls/tokens, benchmark executions or paid spend in this check. Prompt efficacy unestablished; full project not submission-ready.
+
 ## GitHub handoff integrity checked — 2026-09-24T03:55:22Z
 
 **58%, change 0 percentage points**, fixed rubric. Main includes the lead's LEAD-MRL25-01/02 source and late-log judgments, the negative-result manuscript discussion, the closed status recovery and a new worker status `c4eda14bdfafc2d92dde4d13845cf05ab0ba4276` (03:27:41 UTC). Issue #3 has the binding hold and recovery closure; issues #2, #4 and #5 have no newer advancement request, and there is no open PR. The worker reports it processed lead `7bcc16a`, has no run/lease or open task and accepts E14 HOLD. Publication and committed receipt are verified; watcher health and reported tick history are not independent telemetry. Last independently reviewed E14 source remains `4931cb9`, with late fixture logs checked at `601fc1f`.
