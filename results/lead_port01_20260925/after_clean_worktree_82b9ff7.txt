@@ -1,0 +1,68 @@
+..s.ssssss.......ss........s...........................................s [  4%]
+.s...................................................................... [  8%]
+........................................................................ [ 12%]
+........................................................................ [ 17%]
+........................................................................ [ 21%]
+........................................................................ [ 25%]
+.................................................................sssss.. [ 30%]
+........................................................................ [ 34%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+........................................................................ [ 47%]
+...................................................................... [ 51%]
+.................................................................. [ 55%]
+........................................................................ [ 59%]
+........................................................................ [ 64%]
+........................................................................ [ 68%]
+........................................................................ [ 72%]
+........................................................................ [ 76%]
+.............................................................sssssssssss [ 81%]
+sssssssssss............................................................. [ 85%]
+........................................................................ [ 89%]
+........................................................................ [ 94%]
+........................................................................ [ 98%]
+.........................                                                [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_build_dev_release_v3.py:50: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:74: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:84: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:93: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:107: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:115: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_dev_release_v3.py:129: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_e14_release.py:81: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_e14_release.py:95: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_e14_release.py:166: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_build_e14_release_v2.py:22: both cache locations are needed on this host to test portability
+SKIPPED [1] tests/test_build_e14_release_v2.py:38: pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package
+SKIPPED [1] tests/test_frame_review_mrl15.py:23: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:30: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:50: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:58: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:73: pinned MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:49: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:55: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:63: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:74: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:81: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:95: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:112: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:129: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:138: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:148: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:159: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:169: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:180: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:193: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:202: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:212: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:235: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:268: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:282: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:306: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:319: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:337: pinned MRL-15 frame or MBPP source absent
+1634 passed, 39 skipped, 8 subtests passed in 21.80s
+real 21.95
+user 14.71
+sys 4.69

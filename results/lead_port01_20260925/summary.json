@@ -1,0 +1,79 @@
+{
+ "decision_id": "LEAD-PORT-01",
+ "processed_lead_commit": "7c5ed08c127b200f77cbbe76b35db1bd68cf8c04",
+ "started_utc": "2026-09-25T22:16:25Z",
+ "repair_commit": "82b9ff7",
+ "evidence_class": "source/test reproducibility on this host; no model/receiver call, no download, no benchmark execution, $0",
+ "before_clean_worktree_7c5ed08": {
+  "passed": 1625,
+  "failed": 6,
+  "errors": 7,
+  "skipped": 28,
+  "failed_tests": [
+   "tests/test_build_e14_release.py::test_rebuild_is_deterministic_and_equals_committed_bytes",
+   "tests/test_build_e14_release.py::test_verify_entrypoint_passes_on_the_committed_package",
+   "tests/test_build_e14_release.py::test_retained_and_added_assertions_match_the_lead_json_exactly",
+   "tests/test_build_e14_release_v2.py::test_v2_rebuild_equals_committed_bytes",
+   "tests/test_e14_seed_inventory.py::test_every_call_log_in_the_repository_is_covered",
+   "tests/test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts"
+  ],
+  "error_tests": "all 7 tests/test_build_dev_release_v3.py tests (FileNotFoundError at fixture setup)",
+  "log": "before_clean_worktree_7c5ed08.txt"
+ },
+ "after_clean_worktree_82b9ff7": {
+  "passed": 1634,
+  "failed": 0,
+  "errors": 0,
+  "skipped": 39,
+  "skipped_by_reason": {
+   "pinned MBPP source cache absent (new explicit skips)": {
+    "tests/test_build_dev_release_v3.py": 7,
+    "tests/test_build_e14_release.py": 3,
+    "tests/test_build_e14_release_v2.py::test_v2_rebuild_equals_committed_bytes": 1
+   },
+   "pre-existing skips (unchanged)": {
+    "tests/test_frame_review_mrl15.py": 5,
+    "tests/test_review_candidate_frame_ranks21_40.py": 22,
+    "tests/test_build_e14_release_v2.py portability (needs both cache locations)": 1
+   }
+  },
+  "e2_path": "runtime-rebound projection exercised (clean worktree path differs from the recorded executing checkout)",
+  "log": "after_clean_worktree_82b9ff7.txt"
+ },
+ "after_populated_checkout_82b9ff7": {
+  "passed": 1673,
+  "failed": 0,
+  "note": "1,666 before plus 7 new tests"
+ },
+ "new_tests": [
+  "dev_release_v3: builder fails closed without source; builder fails closed on wrong source hash",
+  "e14 v1: build and verify fail closed without source; build fails closed on wrong source hash",
+  "e14 v2: build fails closed without source",
+  "seed inventory: committed logs are covered by the host-local 19-log record (extras only ignored work/ logs); lead 13-log Git-blob inventory equals the committed logs",
+  "E2: executed fixture fails closed when its recorded canary target is absent"
+ ],
+ "frozen_artifacts": {
+  "tracked_files_checked": 920,
+  "scope": "every git-tracked file under experiments/ and results/ except this evidence directory",
+  "identical_before_after": true,
+  "experiments_or_scripts_changed": false
+ },
+ "unchanged_by_design": [
+  "public_instrument_items_v1.json (executed, hash-bound E2 fixture)",
+  "results/e14_seed_inventory_20260923.json (host-local 19-log record)",
+  "results/e14_seed_inventory_lead_committed_20260923.json (lead 13-log Git-blob record)",
+  "all builders and verify entrypoints (already verify the source sha256 before reading)"
+ ],
+ "remaining_gaps": [
+  "Rebuilding or re-verifying the committed E14 v1/v2 and dev-release v3 packages still requires the external pinned MBPP file (docs/mbpp_source_acquisition_20260925.md); no download was authorized or made. A skip does not reproduce a package.",
+  "The 27 frame-review tests still skip without the same source (pre-existing behaviour)."
+ ],
+ "resources": {
+  "cpu_test_workers": 1,
+  "model_calls": 0,
+  "receiver_calls": 0,
+  "downloads": 0,
+  "paid_usd": 0,
+  "retained_test_output_bytes": 33893
+ }
+}

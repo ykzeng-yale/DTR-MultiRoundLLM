@@ -3520,3 +3520,24 @@ Signed: experiments worker. **LEAD-E0-RUNNER-02 ACCEPTED** (processed `5d80ce248
 (b) The ignored `work/` call logs cause `test_e14_seed_inventory.py::test_every_call_log_in_the_repository_is_covered` to fail, as already known.
 (c) The absolute checkout path embedded through E2's `permitted_path` makes `test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts` fail in any other directory.
 **Proposed repair, if you release it:** make every source-cache-dependent builder test skip with a reason, as the frame-review tests already do. Pin the MBPP cache acquisition (URL plus sha256) in one documented command. Scope the inventory scan to `git ls-files`. Make the E2 path repository-relative. Show each test failing or erroring on a clean worktree before the fix and passing or skipping after it, on one sequential thread. The status page (§0, §1, §4, §5.1, §5.2, §8) is updated in this same commit. Run/lease: none.
+
+## Experiments → theory, 2026-09-25T22:21:33Z — LEAD-PORT-01 COMPLETED
+
+Signed: experiments worker. Processed `7c5ed08c127b200f77cbbe76b35db1bd68cf8c04` at 22:15:50 UTC. ACCEPTED/RUNNING at 22:16:25 UTC (`6449340`). **COMPLETED** at 2026-09-25T22:21:33Z, inside the 15-minute wall cap, on one sequential CPU test worker. There were 0 model/receiver calls, 0 downloads, $0, and 33,893 bytes of new retained evidence (cap 256 MiB). Repair commit: `82b9ff7`. Evidence: [results/lead_port01_20260925/summary.json](results/lead_port01_20260925/summary.json), with the before and after pytest logs.
+
+- **Before (clean worktree of `7c5ed08`):** 1,625 passed, **6 failed, 7 errors**, 28 skipped.
+  - Failed: `test_build_e14_release.py` {rebuild_is_deterministic…, verify_entrypoint…, retained_and_added_assertions…}; `test_build_e14_release_v2.py::test_v2_rebuild_equals_committed_bytes`; `test_e14_seed_inventory.py::test_every_call_log_in_the_repository_is_covered`; `test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts`.
+  - Errors: all 7 `test_build_dev_release_v3.py` tests.
+- **After (clean worktree of `82b9ff7`):** **1,634 passed, 0 failed, 0 errors, 39 skipped.** The 11 new skips all read "pinned MBPP source cache absent … A skip does NOT reproduce the committed package": 7 dev-release v3, 3 E14 v1 and 1 E14 v2 rebuild. The 28 older skips are unchanged: 27 frame-review tests and the v2 two-location portability test.
+- **Populated checkout:** 1,673 passed, 0 failed. That is the previous 1,666 plus 7 new tests:
+  - v3 builder fails closed without source, and on a wrong hash;
+  - E14 v1 build and `verify` fail closed without source, and build fails on a wrong hash;
+  - E14 v2 build fails closed without source;
+  - the committed-log inventory claim, and the lead-inventory equality;
+  - the E2 executed fixture fails closed off its bound paths.
+- **What changed:**
+  - (a) Only tests changed. The builders already verify the pinned sha256 `ccf64cea…` before reading and still exit without it. [docs/mbpp_source_acquisition_20260925.md](docs/mbpp_source_acquisition_20260925.md) documents the URL at google-research commit `4700efb9`, the license, the SHA256 and one fetch-and-check command, which was **not run**.
+  - (b) The inventory test now claims only committed files. The 13 committed logs are covered by the unchanged host-local 19-log record, whose six extras are all ignored `work/` logs, and they equal the lead's 13-log Git-blob inventory. Both artifacts are untouched.
+  - (c) E2: `public_instrument_items_v1.json` is untouched. The determinism test rebuilds with the *recorded* paths, rebinding only the hash of the committed rebound specs. Starts/identity tests use a runtime-rebound projection whenever the recorded paths do not hold on the running checkout; the clean worktree exercised this path.
+- **Frozen artifacts:** all 920 git-tracked files under `experiments/` and `results/` (outside the new evidence directory) are byte-identical before and after. No file in `experiments/` or `scripts/` changed.
+- **Unresolved, kept visible:** re-verifying the committed E14 v1/v2 and dev-release v3 packages from a clean checkout still needs the external pinned MBPP file. Per the allowance, any download needs a separate lead review. Run/lease: none.
