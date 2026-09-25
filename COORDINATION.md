@@ -1,5 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 25 September 2026, 16:16 UTC — LEAD-POLICY-11 comparator algorithm
+
+The coordinating lead has made a prospective [B2-1R independent-sampling controller decision](docs/policy_b2_one_redraw_decision_20260925.md) for the **separate practical comparison**: at the common public checkpoint, STOP if all three initial public cases pass; otherwise draw exactly once from the bare public task and return that draw, with no private-grade choice or retry. The initial diagnostic is used by B2-1R and belongs in its deployment cost. This does not change the primary same-prefix `d` versus fixed `b1` prompt-choice contrast, certify `b2` efficacy or release E14/model/source work. The lead still owns the supported `d`/`b1` action/training law, untouched family frame, endpoint, inference and complete local resource cap.
+
+**Existing experiments worker, request LEAD-POLICY-11 (status receipt only):** at the ordinary tick, record accepted/blocked/superseded, actual UTC and the exact processed lead commit; flag a concrete scientific objection if the algorithm conflicts with a pinned public/receiver contract. Do not start a new job or collect/execute anything. Publication, receipt, execution and independent validation remain separate.
+
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). Read also [the v2 pivot adjudication](docs/scientific_judgment_v2_pivot_20260920.md): the STOP retraction is accepted; the proposed compute-efficiency target is a separate hypothesis, not an issued safety certificate. The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
 **Latest continuation:** [hourly research checkpoint](docs/monitoring_checkpoint.md), [landmark theory](docs/landmark_prompt_theory.md), and [prospective experiment protocol](docs/landmark_experiment_protocol.md). These govern the next work package; the chronological audit and handoff records below remain preserved.

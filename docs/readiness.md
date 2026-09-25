@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-25T16:16:05Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Six worker status-only commits through `96ccbf3` (15:47:14 UTC) processed the prior manuscript update and report no run/lease; E14 remains NO-GO. [LEAD-POLICY-11](policy_b2_one_redraw_decision_20260925.md) fixes a bounded algorithm-level independent-resampling controller using the common public diagnostic, STOP on all-pass, and one bare-task redraw otherwise. It settles one prospective comparator choice without completing a trial freeze or adding empirical/policy-validation credit. Next: supported same-prefix selector and fixed recipe, untouched family frame, endpoint, seed/inference rules and complete local cap/lease. **Prompt efficacy is unestablished; full-project submission readiness is false.**
+
 ## Three-hour lead review — 2026-09-25T13:13:44Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `855727d` accepted LEAD-POLICY-10 at 10:13:51 UTC and independently recomputed its saved E12 arithmetic; five later status-only commits through `3005186` (12:45:44 UTC) report no run/lease and retain E14 NO-GO. The working manuscript now incorporates the 1/28 outcome-informed E12 N1/S1 envelope with its two-draw, in-sample and unresolved-family limitations. This is checked development evidence, not new efficacy or independent policy validation. The next milestone remains a mechanism-backed same-prefix action set and defensible untouched-family, endpoint, comparator, inference and local-cap freeze. **Prompt efficacy is unestablished; full-project submission readiness is false.**

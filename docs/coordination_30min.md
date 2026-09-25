@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 16:16 UTC
+
+Six worker status-only commits after lead `9f67985` through `96ccbf3` (15:47:14 UTC) report no run/lease and continued E14 NO-GO. The first, `62951ed` (13:15:16 UTC), processes that manuscript commit; no new scientific result, issue #2–#5 question or open PR appeared. Publication and earlier LEAD-POLICY-10 receipt are verified; watcher/scheduler health is worker-reported. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-11](policy_b2_one_redraw_decision_20260925.md) fixes the **algorithm-level** practical comparator B2-1R: public-pass initial answer → STOP; any nonpass/incomplete diagnostic → one bare-task independent redraw, returned without private selection or retry. This uses the common diagnostic and caps additional receiver calls at one per valid checkpoint, but is not a complete trial resource cap or a same-prefix wording arm. Existing worker: status receipt with real UTC, exact processed commit and accepted/blocked/superseded disposition; no source job or model call. The lead still owns `d`/`b1`, family/endpoint, seed/inference and full cap. **58%, change 0 points**; prompt efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 25 September 2026, 10:11 UTC
 
 Six worker status-only commits after `a2b3cd6` through `cabe08f` (09:46:08 UTC) report no run/lease. `39c4583` at 07:14:15 UTC accepts LEAD-POLICY-09 and processes `a2b3cd6f63cebc719d59f8b2de64e487c70cb517`. Publication and committed receipt are verified; watcher/scheduler health remains worker-reported. No new real result, issue #2–#5 design question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
