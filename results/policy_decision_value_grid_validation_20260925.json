@@ -1,0 +1,21 @@
+{
+  "classification": "independent read-only numerical validation by conditional-binomial mixture, plus raw-metadata provenance check",
+  "freeze_commit": "01ef056fe664de4b77bd108de823dc36e7b51cc3",
+  "result_sha256": "4a3b11eb6af256f89aa9b913924567614a0f68ecfdcbd83877f2c6db77532087",
+  "raw_metadata_error_sha256": "ba1f27f870cfbb308cfde72e0319597d1c71cdd29f441110e2e45c00ce0bfa43",
+  "cells_checked": 18,
+  "max_absolute_probability_difference": 2.9531932455029164e-14,
+  "numeric_rows_identical_between_raw_and_corrected": true,
+  "plan_and_source_hashes_match_frozen_files": true,
+  "new_model_calls": 0,
+  "benchmark_program_executions": 0,
+  "synthetic_draws": 0,
+  "paid_usd": 0,
+  "frozen_git_blob_sha256": {
+    "docs/policy_decision_value_grid_plan_20260925.md": "2da252e67d389996f2064f61539734f658b5984020a40efd026cdec3baac8f6d",
+    "scripts/policy_decision_value_grid.py": "9f560d67f921b922d2f22d7b2c329924be44b55312905e9da5cbd6ce89335e24"
+  },
+  "frozen_git_blob_hashes_match_result": true,
+  "worker_independent_source_review_commit": "c368c007b2eaf3ef72b36ed515514bdfeb1ebd34",
+  "worker_source_review_scope": "Source-only: convolution indexing, brute-force indexing, variance and strict decision rules; worker did not execute."
+}

@@ -1,0 +1,183 @@
+{
+  "classification": "exact known-truth stylized numerical planning; not a real policy, receiver result, forecast or trial power guarantee",
+  "freeze_commit": "01ef056fe664de4b77bd108de823dc36e7b51cc3",
+  "plan_sha256": "2da252e67d389996f2064f61539734f658b5984020a40efd026cdec3baac8f6d",
+  "source_sha256": "9f560d67f921b922d2f22d7b2c329924be44b55312905e9da5cbd6ce89335e24",
+  "elapsed_wall_seconds": 0.020598250441253185,
+  "self_check": "brute force n=0..4 and finite-n probability/moment checks passed",
+  "rows": [
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.05,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 4.7726002044120016e-11,
+      "probability_useful_gain_futility": 1.680109198917271e-11,
+      "probability_inconclusive": 0.9999999999354835
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.1,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 2.749727305246795e-07,
+      "probability_useful_gain_futility": 6.437296315094504e-18,
+      "probability_inconclusive": 0.9999997250272826
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.2,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 0.019646804649750278,
+      "probability_useful_gain_futility": 0.0,
+      "probability_inconclusive": 0.980353195350261
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.05,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 1.2312362608717333e-06,
+      "probability_useful_gain_futility": 1.5166918104554085e-06,
+      "probability_inconclusive": 0.9999972520719289
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.1,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 0.00014509989249529865,
+      "probability_useful_gain_futility": 2.7750424187850698e-09,
+      "probability_inconclusive": 0.9998548973324625
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.2,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 0.07905231136079019,
+      "probability_useful_gain_futility": 2.6730672448100762e-17,
+      "probability_inconclusive": 0.9209476886392167
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.05,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 5.8325830454618275e-05,
+      "probability_useful_gain_futility": 7.058117130611199e-05,
+      "probability_inconclusive": 0.9998710929982388
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.1,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 0.0015656474968457484,
+      "probability_useful_gain_futility": 1.1224692234688536e-06,
+      "probability_inconclusive": 0.9984332300339306
+    },
+    {
+      "n_hypothetical_families": 198,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.2,
+      "radius": 0.21038748845816896,
+      "probability_useful_benefit": 0.12899543475210304,
+      "probability_useful_gain_futility": 1.4303798203105264e-11,
+      "probability_inconclusive": 0.8710045652335985
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.05,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 2.258031758167795e-11,
+      "probability_useful_gain_futility": 1.375894280673697e-11,
+      "probability_inconclusive": 0.99999999996369
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.1,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 2.242897084625796e-05,
+      "probability_useful_gain_futility": 2.731608689676757e-22,
+      "probability_inconclusive": 0.9999775710291893
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.2,
+      "true_mean_delta": 0.2,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 0.9077451979035656,
+      "probability_useful_gain_futility": 0.0,
+      "probability_inconclusive": 0.09225480209646553
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.05,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 1.1618410105576168e-06,
+      "probability_useful_gain_futility": 1.5040300479793702e-06,
+      "probability_inconclusive": 0.9999973341289418
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.1,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 0.0018933416958341926,
+      "probability_useful_gain_futility": 2.4749958983528605e-11,
+      "probability_inconclusive": 0.998106658279416
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.4,
+      "true_mean_delta": 0.2,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 0.8103616654491889,
+      "probability_useful_gain_futility": 5.836130024763356e-27,
+      "probability_inconclusive": 0.1896383345508289
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.05,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 5.726035724980513e-05,
+      "probability_useful_gain_futility": 7.027258054679191e-05,
+      "probability_inconclusive": 0.9998724670622029
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.1,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 0.009224879516017396,
+      "probability_useful_gain_futility": 4.8126830485947676e-08,
+      "probability_inconclusive": 0.9907750723571518
+    },
+    {
+      "n_hypothetical_families": 544,
+      "discordance_q": 0.6,
+      "true_mean_delta": 0.2,
+      "radius": 0.12692671916992976,
+      "probability_useful_benefit": 0.7598650220818929,
+      "probability_useful_gain_futility": 9.8052514339708e-18,
+      "probability_inconclusive": 0.24013497791812222
+    }
+  ],
+  "model_calls": 0,
+  "tokens": 0,
+  "benchmark_program_executions": 0,
+  "synthetic_draws": 0,
+  "paid_usd": 0,
+  "metadata_correction": {
+    "field": "freeze_commit",
+    "original_record": "results/policy_decision_value_grid_20260925_raw_metadata_error.json",
+    "original_sha256": "ba1f27f870cfbb308cfde72e0319597d1c71cdd29f441110e2e45c00ce0bfa43",
+    "reason": "The caller supplied a nonresolving guessed full SHA after the source/plan freeze; the actual Git commit is 01ef056fe664de4b77bd108de823dc36e7b51cc3. Numerical rows, timing, source and plan hashes are unchanged."
+  }
+}

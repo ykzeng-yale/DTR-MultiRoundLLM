@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-25T04:09:00Z",
+  "checkpoint_utc": "2026-09-25T07:11:43Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "de19b3947dc42f5281c6d35e53fbae81973ca213",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-08 corrects a prospective precision-versus-decision interpretation but completes no empirical or independent-policy milestone.",
+  "prior_checked_head": "77a86f94cd78d21521b085cdddf1284b85045194",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-09 completes a precommitted stylized numerical decision-value check but no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Six worker status-only commits through a1aec82 at 03:42:03Z; c92fe69 acknowledges LEAD-POLICY-07 and reports no run/lease. Lead distinguishes 0.05-radius planning goal from useful-benefit threshold under hypothetical n=544; no new data.",
+  "latest_evidence": "Six worker status-only commits through a752c29 at 06:42:32Z; 7276fce acknowledges LEAD-POLICY-08. Worker c368c00 independently reviews frozen grid source and flags provenance gap; lead preserves raw bad-SHA metadata, checks actual frozen Git blobs and validates 18-cell exact grid independently. No run/lease or model data.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "a1aec82d154afdc56b3a4ea6084d734ca5393d83",
+    "last_seen_worker_revision": "c368c007b2eaf3ef72b36ed515514bdfeb1ebd34",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker a1aec82 at 2026-09-25T03:42:03Z reports watcher running, no run/lease and E14 N1/S1 NO-GO; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Status commit observed; process health not independently verified.",
+    "scheduler_status": "Worker c368c00 at 2026-09-25T07:11:27Z reports watcher running, no run/lease and E14 N1/S1 NO-GO; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Source-only review observed; process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -443,5 +443,17 @@
     "audit": "results/policy_precision_decision_20260925.json",
     "classification": "prospective algebra using previously reviewed inference rule; no model data or theorem",
     "decision": "0.05 radius is a planning goal, not a logical admission gate. Smaller original-target trial could decide extreme effect if fully frozen and independently sampled; no collection released."
+  },
+  "policy_decision_value_grid": {
+    "decision_id": "LEAD-POLICY-09",
+    "freeze_commit": "01ef056fe664de4b77bd108de823dc36e7b51cc3",
+    "plan": "docs/policy_decision_value_grid_plan_20260925.md",
+    "source": "scripts/policy_decision_value_grid.py",
+    "result": "results/policy_decision_value_grid_20260925.json",
+    "raw_metadata_error": "results/policy_decision_value_grid_20260925_raw_metadata_error.json",
+    "validation": "results/policy_decision_value_grid_validation_20260925.json",
+    "classification": "precommitted exact stylized known-truth numerical planning; not model evidence or empirical power",
+    "worker_source_review_commit": "c368c007b2eaf3ef72b36ed515514bdfeb1ebd34",
+    "decision": "Accept numerical grid and provenance correction; hold E14 and all model collection pending supported action set, valid family frame and complete trial contract."
   }
 }

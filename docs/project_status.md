@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Frozen policy decision-value grid — 2026-09-25T07:11:43Z
+
+**58%, change 0 percentage points.** Six status-only worker commits through `a752c29` report no run/lease and acceptance of LEAD-POLICY-08. Worker `c368c00` then reviewed the frozen grid source, not its execution, and flagged an unchecked caller-supplied freeze SHA. The lead's [LEAD-POLICY-09 result](policy_decision_value_grid_results_20260925.md) preserves the original metadata error, verifies actual frozen Git blob hashes, and independently reproduces all 18 numerical cells. Stylized gains of 0.10 rarely clear the current conservative usefulness decision at hypothetical 198/544 families; 0.20 could at 544, but neither the gain nor the families are observed/certified. This is known-truth planning only. No model or benchmark calls and no experiment release. Next: supported action class, defensible frame, validated endpoint and complete policy/cost/inference cap. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Policy precision versus decision — 2026-09-25T04:09:00Z
 
 **58%, change 0 percentage points.** Worker `c92fe69` accepted LEAD-POLICY-07; six status-only commits through `a1aec82` report no run/lease and E14 NO-GO. [LEAD-POLICY-08](policy_precision_decision_20260925.md) repairs our planning interpretation: failing a desired 0.05 interval radius does not logically prevent an original-target trial from declaring a sufficiently large useful gain or futility under the same frozen rule. A hypothetical 544-family trial would need observed mean above 0.17693 for useful benefit; this is not observed efficacy and does not establish feasible independent families. No collection released. Next: supported selector/action set, family law and prospective decision-value scenarios with complete comparator/endpoint/inference/cap contract. Prompt efficacy unestablished; full project not submission-ready.

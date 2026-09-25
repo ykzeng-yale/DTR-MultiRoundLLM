@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 07:12 UTC
+
+Six worker status-only commits through `a752c29` (06:42:32 UTC) report no run/lease; `7276fce` (04:10:42 UTC) accepts LEAD-POLICY-08 and processes `77a86f94cd78d21521b085cdddf1284b85045194`. Worker `c368c00` at 07:11:27 UTC independently reviewed the committed LEAD-POLICY-09 source without executing it, and identified an unchecked caller-supplied freeze SHA. Receipt/source review are visible; live watcher/scheduler health is worker-reported. No new real result, material issue #2–#5 question or open PR. Last independently reviewed E14 implementation remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-09](policy_decision_value_grid_results_20260925.md) accepts the frozen known-truth 18-cell numerical grid only. The lead preserved the bad-SHA raw output, corrected only final metadata, matched plan/source hashes against the actual frozen Git blobs, and independently reproduced all cells by conditional-binomial calculation (maximum discrepancy <3e-14). Under stipulated scenarios, 0.10 gains almost always remain inconclusive at n=198/544 under the conservative rule; a 0.20 gain could be decisive at hypothetical n=544. No real-family sample, policy value, E14 run or source/model release follows. The lead next owns action support, family law, endpoint, comparators and complete cap. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 25 September 2026, 04:09 UTC
 
 Six worker status-only commits through `a1aec82` (03:42:03 UTC) report no run/lease; `c92fe69` at 01:10:13 UTC accepts LEAD-POLICY-07 and processes `de19b3947dc42f5281c6d35e53fbae81973ca213`. Receipt is verified; live watcher/scheduler health is worker-reported. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
