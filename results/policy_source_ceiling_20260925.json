@@ -1,0 +1,26 @@
+{
+  "decision_id": "LEAD-POLICY-07",
+  "evidence_class": "read-only committed source census and substitution into previously reviewed two-contrast Hoeffding planning fallback; no new theorem, outcome or policy validation",
+  "source_sha256": {
+    "results/landmark_task_source_candidates_20260920.json": "87aa26bd6cc7153b2e2db1ec426424b9dcab9b6202428800291a680f93e610e4",
+    "docs/independent_prompt_policy_validation_design_20260922.md": "fce017209dc6b28edd0700561f7f5a0da59b2acff34d7314fb1d1c0c67a06058"
+  },
+  "official_full_mbpp_ids": 974,
+  "prior_canonical_mbpp_ids": 427,
+  "outside_prior_ids": 547,
+  "prior_description_duplicates": 3,
+  "hypothetical_max_independent_complete_equal_weight_families": 544,
+  "simultaneous_two_contrast_radius_at_optimistic_ceiling": 0.12692671916992976,
+  "radius_at_optimistic_ceiling_50_digit_decimal": "0.12692671916992974812867773509320837693231373702688",
+  "families_needed_for_radius_at_most_0p05": 3506,
+  "independence_sampling_endpoint_validity_certified": false,
+  "decision": "Do not screen more MBPP-only roots as a path to the original family-population trial under the current conservative 0.05 half-width; broaden a valid source or prospectively justify a different uncertainty/target contract before any collection.",
+  "model_calls": 0,
+  "tokens": 0,
+  "benchmark_program_executions": 0,
+  "synthetic_draws": 0,
+  "paid_usd": 0,
+  "outside_prior_canonical_after_literal_exclusion_ids": 544,
+  "later_development_or_preparation_exposure_removed": false,
+  "hypothetical_max_independent_complete_equal_weight_families_note": "Deliberately optimistic arithmetic ceiling; some candidates later entered E11/E12 development or E14 preparation and are not untouched evaluation families."
+}

@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## MBPP-only source ceiling — 2026-09-25T01:07:58Z
+
+**58%, change 0 percentage points.** Worker `06e80fc` acknowledged LEAD-POLICY-06; seven status-only commits through `701b5a1` report no run/lease and E14 N1/S1 NO-GO. [LEAD-POLICY-07](policy_source_ceiling_20260925.md) independently checks the committed full-MBPP candidate census and applies the existing reviewed two-contrast conservative precision formula. Its optimistic 544-family radius is 0.12693, above the frozen planning target 0.05; eligibility and independence remain unverified. Thus additional MBPP-only screening cannot solve this particular original-target precision contract. No new experiment, run or new efficacy evidence. Next: a broader defensible family source or prospectively revised inference/target, followed by the complete trial freeze. Prompt efficacy unestablished; full project not submission-ready.
+
 ## E14 N1/S1 decision value — 2026-09-24T22:07:12Z
 
 **58%, change 0 percentage points.** Worker `f2e226b` acknowledged LEAD-POLICY-05; six status-only commits through `451cbda` report no run/lease and E14 HOLD. [LEAD-POLICY-06](policy_e14_decision_value_20260924.md) makes a prospective **NO-GO** decision for the proposed 130-call/228-start N1/S1 E14 batch as the next efficacy stage. The narrow reused E12 class has no observed two-status adaptive choice beyond N1, and a further ten-history development contrast would not independently validate the original policy target. This is a decision-value judgment, not a new result, effect-zero claim or statistical futility stop. Source/mock preparation remains archived. No new calls, tokens, program executions or paid spend. Next: a supported new action class and family-frame design, or explicitly narrower target, before any fresh collection. Prompt efficacy unestablished; full project not submission-ready.

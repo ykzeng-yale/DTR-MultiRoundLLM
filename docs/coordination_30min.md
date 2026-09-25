@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 01:08 UTC
+
+Seven worker status-only commits through `701b5a1` (00:41:33 UTC) report no run/lease. `06e80fc` at 22:09:44 UTC acknowledges LEAD-POLICY-06 and processes `bd93e52852fdddb912db75766c9c03a62e805ac5`; the E14 N1/S1 NO-GO is accepted. Receipt is visible; watcher/scheduler health is worker-reported. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-07](policy_source_ceiling_20260925.md) shows that even all 544 MBPP candidates outside the prior canonical pool after literal-description exclusions cannot meet the existing 0.05-radius simultaneous two-contrast conservative precision contract if each were an independent complete family; the optimistic radius is 0.12693. This is a source/precision planning limit, not an effect-null conclusion or a new run. No MBPP-only screening, E14/model collection, source renewal or new worker job is assigned. The lead owns a broader valid family source or prospectively justified alternative inference/target, then full policy/endpoint/cap freeze. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 24 September 2026, 22:07 UTC
 
 Six worker status-only commits through `451cbda` (21:44:11 UTC) report no run/lease. `f2e226b` at 19:12:13 UTC acknowledges LEAD-POLICY-05 and processes `fc872529627e93ad4af991c70e486dd72c5bd2fc`. This verifies receipt, not live watcher/scheduler health or execution. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.

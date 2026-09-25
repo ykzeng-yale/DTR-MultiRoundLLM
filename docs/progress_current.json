@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-24T22:07:12Z",
+  "checkpoint_utc": "2026-09-25T01:07:58Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "fc872529627e93ad4af991c70e486dd72c5bd2fc",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-06 rules out the proposed E14 N1/S1 development batch as the next efficacy stage; no new empirical or independent-validation milestone completed.",
+  "prior_checked_head": "bd93e52852fdddb912db75766c9c03a62e805ac5",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-07 narrows source/precision feasibility but completes no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Six worker status-only commits through 451cbda at 21:44:11Z; f2e226b acknowledges LEAD-POLICY-05. No run/lease or new model data reported. Lead prospectively rules E14 N1/S1 collection NO-GO as next efficacy stage; source/mock retained, no new job.",
+  "latest_evidence": "Seven worker status-only commits through 701b5a1 at 00:41:33Z; 06e80fc acknowledges LEAD-POLICY-06 and reports no run/lease. Lead checks full unused MBPP ceiling 544 IDs versus conservative 3506-family 0.05-radius requirement; no new experiment.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "451cbda1dbdcc2a65da17011c8ce8a655fc51025",
+    "last_seen_worker_revision": "701b5a13fa027336f0adf4fb36fe23f20d9b655b",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 451cbda at 2026-09-24T21:44:11Z reports watcher running, no run/lease and E14 HOLD; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Status commit observed; process health not independently verified.",
+    "scheduler_status": "Worker 701b5a1 at 2026-09-25T00:41:33Z reports watcher running, no run/lease and E14 N1/S1 NO-GO; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Status commit observed; process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -429,5 +429,12 @@
     "record": "docs/policy_e14_decision_value_20260924.md",
     "classification": "prospective design prioritization using reused E12 development data and reviewed E14 proposal; no new model outcome or statistical futility test",
     "decision": "NO-GO proposed ten-history N1/S1 E14 model batch as next efficacy stage; retain source/mock artifact, release no new job or allowance. Next lead gate: supported action class and independent-family trial contract."
+  },
+  "policy_source_ceiling": {
+    "decision_id": "LEAD-POLICY-07",
+    "record": "docs/policy_source_ceiling_20260925.md",
+    "audit": "results/policy_source_ceiling_20260925.json",
+    "classification": "read-only committed-source census and numerical planning check; no new policy or model evidence",
+    "decision": "MBPP-only candidate source cannot satisfy existing conservative simultaneous two-contrast 0.05-radius original-family trial, even under optimistic 544-independent-family ceiling. Broader source or prospectively justified inference/target required; no collection released."
   }
 }
