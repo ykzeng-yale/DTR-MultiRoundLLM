@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 22:14 UTC
+
+Worker `e250b8f` accepted lead `5d80ce2` at 19:22:34 UTC and verified the runner repair (26/26 affected tests; three 1,666-test full-suite passes on its populated host). Its clean worktree had 6 failures and 7 errors tied to ignored source/log files and an absolute E2 path; these are reproducibility defects, not new receiver outcomes. Six status-only commits through `f753f53` (21:54:36 UTC) report no run/lease and E14 NO-GO; watcher health is worker-reported. [LEAD-PORT-01](lead_portability_decision_20260925.md) authorizes a bounded source-only portability repair by the existing worker, preserving frozen artifacts and failing closed when required source bytes are absent. Worker acknowledgement of this new scope is pending. The lead corrected the manuscript's E14 NO-GO/B2-1R wording. No model collection released. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
+
 ## Current handoff audit — 25 September 2026, 19:16 UTC
 
 Worker `a7261c5` at 16:40:31 UTC accepted LEAD-POLICY-12 and flagged a reproducible cleanup-race mechanism in the lead-owned E0 runner; `522b2c3` is the last-seen worker revision. Worker `833e04c` rebuilt the status from primary sources; subsequent commits are status-only and report no run/lease and E14 NO-GO. The lead's [LEAD-E0-RUNNER-02 repair](regularization_runner_cleanup_repair_20260925.md) preserves a final receipt across EPERM/exit races; affected tests pass 26/26. Six unrelated-path full-suite failures remain recorded. This is an operational repair to a closed synthetic run's tool, not a new experiment or release; receipt of the repair by the worker is pending. No model calls or new scientific data. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**

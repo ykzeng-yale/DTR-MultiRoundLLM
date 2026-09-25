@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-25T19:16:14Z",
+  "checkpoint_utc": "2026-09-25T22:14:28Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "522b2c3076e84fd8de5ea9bb1cef2961fac3ba40",
-  "baseline_note": "Fixed 58-point rubric unchanged: worker accepted B2 repair; lead repaired a bounded synthetic runner cleanup race and reconciled the current readiness table, with no new empirical or policy-validation credit.",
+  "prior_checked_head": "f753f5319bc80edc00307a86cd8a9e4eeb5390b7",
+  "baseline_note": "Fixed 58-point rubric unchanged: clean-checkout source/test portability scope and manuscript E14/B2 accuracy repair add no empirical or independent-policy milestone credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker a7261c5 accepted LEAD-POLICY-12 and reported a killpg EPERM race; status rebuilt at 833e04c. Lead repaired future E0 runner cleanup with two deterministic fixtures; 26/26 affected tests pass. Full suite: 1654 passed, 6 separate-path failures, 6 skipped. No new run/lease or model data.",
+  "latest_evidence": "Worker e250b8f accepted E0 runner repair and verified 26/26 affected tests plus three 1666/1666 populated-host full suites; its clean worktree had 6 failed, 7 errors, 28 skipped. Lead released source-only LEAD-PORT-01 and corrected E14/B2 manuscript wording. No new run/lease or model data.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "522b2c3076e84fd8de5ea9bb1cef2961fac3ba40",
+    "last_seen_worker_revision": "f753f5319bc80edc00307a86cd8a9e4eeb5390b7",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 522b2c3 at 2026-09-25T19:12:59Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker f753f53 at 2026-09-25T21:54:36Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -492,6 +492,20 @@
     "full_suite": "1654 passed, 6 failures outside modified runner/test paths, 6 skipped",
     "execution_released": false,
     "new_model_calls": 0,
-    "new_datasets": 0
+    "new_datasets": 0,
+    "worker_receipt": "accepted/source-reviewed at e250b8f, 2026-09-25T19:22:34Z; populated-host 26/26 affected and 1666/1666 full suite three times"
+  },
+  "lead_portability_decision": {
+    "decision_id": "LEAD-PORT-01",
+    "record": "docs/lead_portability_decision_20260925.md",
+    "worker_report_revision": "e250b8f8f448a4fc1a2beec1cc75db20e95eee2a",
+    "classification": "source-only reproducibility repair allowance; no scientific/model collection",
+    "worker_receipt": "pending",
+    "execution_released": false,
+    "model_call_cap": 0,
+    "paid_usd_cap": 0,
+    "local_cpu_workers_cap": 1,
+    "local_wall_seconds_cap": 900,
+    "new_retained_output_bytes_cap": 268435456
   }
 }
