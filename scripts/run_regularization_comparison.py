@@ -125,6 +125,26 @@ def validate_release(freeze_path, receipt_path):
     return freeze, receipt
 
 
+def _stop_child_group(child, deadline):
+    """Reap an owned child even if it exits between poll and group signaling."""
+    if child.poll() is not None:
+        return
+    try:
+        os.killpg(child.pid, signal.SIGKILL)
+    except OSError:
+        # On macOS an already-exited, unreaped group leader may yield EPERM.
+        # If the child is still live, signal it directly as a fallback.
+        if child.poll() is None:
+            try:
+                child.kill()
+            except OSError:
+                pass
+    try:
+        child.wait(timeout=max(.001, deadline - time.monotonic()))
+    except subprocess.TimeoutExpired:
+        pass
+
+
 def _supervise(output, command, *, total_seconds, output_bytes, manifest, started_monotonic=None):
     """One owned process group; cleanup time and final receipt are within the cap.
 
@@ -166,14 +186,15 @@ def _supervise(output, command, *, total_seconds, output_bytes, manifest, starte
                 reason = ("child_complete" if child.returncode == 0 else
                           "output_cap_reached" if child.returncode == 3 else "child_failed")
             if child.poll() is None:
-                os.killpg(child.pid, signal.SIGKILL)
-                child.wait(timeout=max(.001, deadline - time.monotonic()))
-            returncode = child.returncode
+                _stop_child_group(child, deadline)
+            returncode = child.poll()
             if budget.used() > budget.limit:
                 reason = "output_cap_violation"
     finally:
         if child is not None and child.poll() is None:
-            os.killpg(child.pid, signal.SIGKILL)
+            _stop_child_group(child, deadline)
+        if child is not None:
+            returncode = child.poll()
         final = {"schema_version": "e0-supervisor-v1", "stop_reason": reason,
                  "child_returncode": returncode, "child_exit_observed": child is None or child.poll() is not None,
                  "wall_seconds": time.monotonic() - started, "outer_seconds_cap": total_seconds,

@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-25T16:36:42Z",
+  "checkpoint_utc": "2026-09-25T19:16:14Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "198f1fc510b7ddef94e6993dc51332083db73743",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-12 repairs a lead-authored B2 public-case contract error and reconciles existing experiment evidence; no new empirical or policy-validation credit.",
+  "prior_checked_head": "522b2c3076e84fd8de5ea9bb1cef2961fac3ba40",
+  "baseline_note": "Fixed 58-point rubric unchanged: worker accepted B2 repair; lead repaired a bounded synthetic runner cleanup race and reconciled the current readiness table, with no new empirical or policy-validation credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker 3253fe2 accepted B2-1R at algorithm level and flagged one-public-case contract conflict. Lead independently checked E12 14/14 and E14 10/10 public case lists and repaired STOP. No new run/lease or model data.",
+  "latest_evidence": "Worker a7261c5 accepted LEAD-POLICY-12 and reported a killpg EPERM race; status rebuilt at 833e04c. Lead repaired future E0 runner cleanup with two deterministic fixtures; 26/26 affected tests pass. Full suite: 1654 passed, 6 separate-path failures, 6 skipped. No new run/lease or model data.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "198f1fc510b7ddef94e6993dc51332083db73743",
+    "last_seen_worker_revision": "522b2c3076e84fd8de5ea9bb1cef2961fac3ba40",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker d5c8ad9 at 2026-09-25T16:18:49Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker 522b2c3 at 2026-09-25T19:12:59Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -477,10 +477,21 @@
     "bare_task_renderer_source_sha256": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
     "rule": "STOP iff every case in the nonempty frozen initial public-case list passes; otherwise one bare-task independent redraw returned without private selection or retry",
     "max_additional_receiver_calls_per_valid_checkpoint": 1,
-    "worker_receipt": "LEAD-POLICY-11 accepted with source-contract objection by worker 3253fe2 at 2026-09-25T16:18:39Z; LEAD-POLICY-12 repair receipt pending",
+    "worker_receipt": "LEAD-POLICY-12 accepted by worker a7261c5 at 2026-09-25T16:40:31Z after processing 53fe134 at 16:40:04Z; no collection",
     "execution_released": false,
     "remaining_freeze": "d/b1 supported actions and training, untouched family frame, public-case/source lists and hashes, task/diagnostic and endpoint versions, distinct B2 redraw seed and assignment, inference, complete numerical local cap and resource lease",
     "public_case_e12_sha256": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
     "public_case_e14_sha256": "900b97fb2f9ee7faa36920fdd44ea92841a86fbf322d01591115a07f6ce4f727"
+  },
+  "lead_e0_runner_cleanup": {
+    "decision_id": "LEAD-E0-RUNNER-02",
+    "record": "docs/regularization_runner_cleanup_repair_20260925.md",
+    "source": "scripts/run_regularization_comparison.py",
+    "worker_report_revision": "a7261c589f5d7beef626cc68f204ddc4d1f1ab88",
+    "affected_tests": "26 passed",
+    "full_suite": "1654 passed, 6 failures outside modified runner/test paths, 6 skipped",
+    "execution_released": false,
+    "new_model_calls": 0,
+    "new_datasets": 0
   }
 }

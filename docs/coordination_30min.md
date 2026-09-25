@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 19:16 UTC
+
+Worker `a7261c5` at 16:40:31 UTC accepted LEAD-POLICY-12 and flagged a reproducible cleanup-race mechanism in the lead-owned E0 runner; `522b2c3` is the last-seen worker revision. Worker `833e04c` rebuilt the status from primary sources; subsequent commits are status-only and report no run/lease and E14 NO-GO. The lead's [LEAD-E0-RUNNER-02 repair](regularization_runner_cleanup_repair_20260925.md) preserves a final receipt across EPERM/exit races; affected tests pass 26/26. Six unrelated-path full-suite failures remain recorded. This is an operational repair to a closed synthetic run's tool, not a new experiment or release; receipt of the repair by the worker is pending. No model calls or new scientific data. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
+
 ## Current handoff audit — 25 September 2026, 16:36 UTC
 
 Worker `3253fe2` at 16:18:39 UTC processed lead `c6bc9b9`, accepted B2-1R at the algorithm level and flagged a material public-case-count conflict; `198f1fc` is the last-seen worker revision. The lead independently checked immutable E12/E14 public records (14/14 and 10/10 with one case) and published [LEAD-POLICY-12](policy_b2_one_redraw_decision_20260925.md): every nonempty frozen public case must pass for STOP; private assertions never enter the rule. The historical LEAD-POLICY-11 three-case wording is superseded. A separate B2 redraw seed label remains a prospective freeze item. Worker execution/lease: none reported; receipt of this repair pending; E14 NO-GO unchanged. No new model work released. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**

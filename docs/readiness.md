@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-25T19:16:14Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `a7261c5` accepted LEAD-POLICY-12 at 16:40:31 UTC; the last-seen worker revision is `522b2c3` (19:12:59 UTC). The worker rebuilt its [live status](experiments_status.md) at `833e04c`, preserving the E14 NO-GO and reporting no run/lease; watcher health remains worker-reported. Its new full-suite report identified a `killpg` EPERM race in the lead-owned bounded E0 runner. [LEAD-E0-RUNNER-02](regularization_runner_cleanup_repair_20260925.md) repairs receipt-preserving cleanup, with two deterministic race fixtures and 26/26 affected tests passing. The full local suite had 1,654 passed, six failures in other paths and six skipped; those failures remain open. No experimental receiver/model calls, new datasets, E14 execution or paid spend. Next: supported same-prefix selector and fair fixed comparator, untouched family frame, endpoint, assignment/inference and complete cap/lease. **Prompt efficacy is unestablished; full-project submission readiness is false.**
+
 ## Three-hour lead review — 2026-09-25T16:36:42Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Independently checked the worker's E12/E14 public-case contract objection and repaired B2-1R STOP to every frozen public case passing; a distinct B2 redraw seed label and full trial freeze remain open. The refreshed [experiment portfolio](experiment_portfolio_review_20260922.md) preserves E0/E11/E12/E13a finite negatives and E14 source/mock NO-GO. This corrects our design without adding efficacy or independent-policy credit. No model calls or paid spend. Next: supported same-prefix policy and fixed comparator, untouched family frame, endpoint, assignment/inference and full local cap. **Prompt efficacy is unestablished; full-project submission readiness is false.**
@@ -238,10 +242,10 @@ most half credit until independently checked. Lost validity can decrease credit.
 | Experiment and measurement design | 15% | 60% | 9 points | Exact arms, curation and versioned public/private proposals; no valid receiver/evaluator/family/assignment release freeze yet. |
 | Implemented measurement and collection | 10% | 90% | 9 points | Scoped executed instrument validation independently reconciled; CLI and first development execution checked; compilation-classification repair and prospective validation remain open. |
 | Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
-| Fresh supported-prompt experiment | 15% | 20% | 3 points | Fresh seven-root development contrasts independently reconciled; primary tie retained. Broader prospective sampling, precision and validation remain open. |
+| Fresh supported-prompt experiment | 15% | 40% | 6 points | E11 seven-root, E12 fourteen-root and E13a five-checkpoint development collections independently reconciled; null/negative contrasts retained. Untouched-family policy validation, population precision and useful-gain decision remain open. |
 | Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
 | Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
-| **Total** | **100%** | | **55 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+| **Total** | **100%** | | **58 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
 
 The last five columns of evidence are judgments, not automatically generated
 scores. Keep these eight weights and component meanings fixed for subsequent

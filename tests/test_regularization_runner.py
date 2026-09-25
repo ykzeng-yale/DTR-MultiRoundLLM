@@ -132,6 +132,46 @@ def test_hanging_child_is_killed_and_no_completion_is_invented(tmp_path):
     assert result["wall_seconds"] < 1.0
 
 
+def test_group_signal_permission_race_preserves_final_receipt(tmp_path, monkeypatch):
+    def raced_killpg(pid, sig):
+        raise PermissionError(1, "group leader exited between poll and signal")
+
+    monkeypatch.setattr(runner.os, "killpg", raced_killpg)
+    output, result = supervise(tmp_path, "time.sleep(30)\n", seconds=.8)
+    assert result["stop_reason"] == "outer_time_cap"
+    assert result["child_returncode"] < 0
+    assert result["child_exit_observed"]
+    assert json.loads((output / "supervisor.json").read_text()) == result
+
+
+def test_group_leader_exit_between_poll_and_kill_is_reaped(monkeypatch):
+    class ExitedChild:
+        pid = 12345
+        killed = False
+        polled = 0
+        waited = False
+
+        def poll(self):
+            self.polled += 1
+            return None if self.polled == 1 else 0
+
+        def kill(self):
+            self.killed = True
+
+        def wait(self, timeout):
+            self.waited = True
+            return 0
+
+    def raced_killpg(pid, sig):
+        raise PermissionError(1, "already exited")
+
+    monkeypatch.setattr(runner.os, "killpg", raced_killpg)
+    child = ExitedChild()
+    runner._stop_child_group(child, time.monotonic() + 1)
+    assert child.waited
+    assert not child.killed
+
+
 def test_fast_raw_writer_cannot_be_reported_complete_above_cap(tmp_path):
     # Deliberately bypass the cooperative writer to test the post-exit monitor.
     # This tests detection, not hard containment of arbitrary malicious writers.
