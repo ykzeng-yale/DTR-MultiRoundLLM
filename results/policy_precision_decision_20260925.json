@@ -1,0 +1,31 @@
+{
+  "decision_id": "LEAD-POLICY-08",
+  "classification": "prospective algebraic decision-threshold check under previously independently reviewed two-contrast fallback; no new theorem or result",
+  "assumptions": "independent complete target-aligned equally weighted family contrasts in [-1,1], frozen policies, exactly two prespecified contrasts; hypothetical n only, not certified for MBPP",
+  "input_sha256": {
+    "docs/independent_prompt_policy_validation_design_20260922.md": "fce017209dc6b28edd0700561f7f5a0da59b2acff34d7314fb1d1c0c67a06058",
+    "docs/policy_source_ceiling_20260925.md": "6f1feb3ba7517cc4ea298e5aa500528fc35b74ad69dda1bb82c6535ace64cd61"
+  },
+  "useful_gain": 0.05,
+  "scenarios": [
+    {
+      "hypothetical_independent_families": 198,
+      "radius": 0.21038748845816896,
+      "observed_mean_must_exceed_for_useful_benefit": 0.26038748845816895,
+      "observed_mean_must_be_below_for_useful_gain_futility": -0.16038748845816897,
+      "candidate_family_assumptions_verified": false
+    },
+    {
+      "hypothetical_independent_families": 544,
+      "radius": 0.12692671916992976,
+      "observed_mean_must_exceed_for_useful_benefit": 0.17692671916992975,
+      "observed_mean_must_be_below_for_useful_gain_futility": -0.07692671916992974,
+      "candidate_family_assumptions_verified": false
+    }
+  ],
+  "calls": 0,
+  "tokens": 0,
+  "benchmark_program_executions": 0,
+  "synthetic_draws": 0,
+  "paid_usd": 0
+}

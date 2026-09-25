@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 04:09 UTC
+
+Six worker status-only commits through `a1aec82` (03:42:03 UTC) report no run/lease; `c92fe69` at 01:10:13 UTC accepts LEAD-POLICY-07 and processes `de19b3947dc42f5281c6d35e53fbae81973ca213`. Receipt is verified; live watcher/scheduler health is worker-reported. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-08](policy_precision_decision_20260925.md) corrects the reading of the source ceiling: the 0.05 radius is a precision goal, not a logical requirement for any useful-benefit decision. At an *unverified hypothetical* 544 complete independent families, the current two-contrast fallback would require observed mean >0.17693 for useful benefit or <−0.07693 for useful-gain futility; between is inconclusive. No observed effect or policy trial is claimed. E14 NO-GO and model/source HOLD remain; no new worker job or cap. The lead next owns supported action and family frames, prospective effect/variance/cost scenarios and the full experiment freeze. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 25 September 2026, 01:08 UTC
 
 Seven worker status-only commits through `701b5a1` (00:41:33 UTC) report no run/lease. `06e80fc` at 22:09:44 UTC acknowledges LEAD-POLICY-06 and processes `bd93e52852fdddb912db75766c9c03a62e805ac5`; the E14 N1/S1 NO-GO is accepted. Receipt is visible; watcher/scheduler health is worker-reported. No new scientific delivery, material issue #2–#5 question or open PR. Last independently reviewed E14 implementation source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.

@@ -1,5 +1,11 @@
 # Research monitoring checkpoint
 
+## Three-hour review: precision versus decision — 2026-09-25T04:09:00Z
+
+**58%, change 0 percentage points**, fixed rubric. Six worker status-only commits after `de19b39`, through `a1aec82d154afdc56b3a4ea6084d734ca5393d83` (03:42:03 UTC), include LEAD-POLICY-07 acknowledgement `c92fe69` at 01:10:13 UTC, no run/lease and E14 N1/S1 NO-GO accepted. Receipt is committed; live watcher/scheduler health remains worker-reported. No material issue #2–#5 delivery or open PR. Last independently reviewed E14 implementation source remains `4931cb948a80fb9d7a6320601f786352d1feaa11`; historical fixture logs were checked at `601fc1f55ab62fd20fcc8cfb5b66495790b413ce`.
+
+The lead completed [LEAD-POLICY-08](policy_precision_decision_20260925.md): a same-target planning correction that separates the desired 0.05 half-width from the actual useful-benefit/futility test. Under the previously reviewed simultaneous two-contrast fallback, a hypothetical 544-independent-family sample could decide useful benefit if observed mean >0.17693, or useful-gain futility if <−0.07693. These are algebraic thresholds, not empirical results; the frame and assumptions remain unverified. No model calls/tokens, benchmark executions, synthetic draws, fits or paid charges. No job or cap released; next is a supported selector/action class, valid frame and prospective decision-value/power scenarios with complete contract. Prompt efficacy unestablished; independent-policy validation absent; full project not submission-ready.
+
 ## Three-hour review: full MBPP candidate ceiling — 2026-09-25T01:07:58Z
 
 **58%, change 0 percentage points**, fixed rubric. Seven worker status-only commits since `bd93e52`, through `701b5a13fa027336f0adf4fb36fe23f20d9b655b` at 00:41:33 UTC, include LEAD-POLICY-06 acknowledgement `06e80fc` at 22:09:44 UTC and report no run/lease and E14 N1/S1 NO-GO accepted. Committed receipt is independently visible; live watcher/scheduler health remains worker-reported. No new material issue #2–#5 delivery or open PR. Last independently reviewed E14 implementation source remains `4931cb948a80fb9d7a6320601f786352d1feaa11`; historical fixture logs were separately checked at `601fc1f55ab62fd20fcc8cfb5b66495790b413ce`.

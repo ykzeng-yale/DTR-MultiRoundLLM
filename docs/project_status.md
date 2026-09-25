@@ -1,5 +1,9 @@
 # Project status and claims ledger
 
+## Policy precision versus decision — 2026-09-25T04:09:00Z
+
+**58%, change 0 percentage points.** Worker `c92fe69` accepted LEAD-POLICY-07; six status-only commits through `a1aec82` report no run/lease and E14 NO-GO. [LEAD-POLICY-08](policy_precision_decision_20260925.md) repairs our planning interpretation: failing a desired 0.05 interval radius does not logically prevent an original-target trial from declaring a sufficiently large useful gain or futility under the same frozen rule. A hypothetical 544-family trial would need observed mean above 0.17693 for useful benefit; this is not observed efficacy and does not establish feasible independent families. No collection released. Next: supported selector/action set, family law and prospective decision-value scenarios with complete comparator/endpoint/inference/cap contract. Prompt efficacy unestablished; full project not submission-ready.
+
 ## MBPP-only source ceiling — 2026-09-25T01:07:58Z
 
 **58%, change 0 percentage points.** Worker `06e80fc` acknowledged LEAD-POLICY-06; seven status-only commits through `701b5a1` report no run/lease and E14 N1/S1 NO-GO. [LEAD-POLICY-07](policy_source_ceiling_20260925.md) independently checks the committed full-MBPP candidate census and applies the existing reviewed two-contrast conservative precision formula. Its optimistic 544-family radius is 0.12693, above the frozen planning target 0.05; eligibility and independence remain unverified. Thus additional MBPP-only screening cannot solve this particular original-target precision contract. No new experiment, run or new efficacy evidence. Next: a broader defensible family source or prospectively revised inference/target, followed by the complete trial freeze. Prompt efficacy unestablished; full project not submission-ready.
