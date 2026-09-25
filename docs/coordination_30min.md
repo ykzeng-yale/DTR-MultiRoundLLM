@@ -1,5 +1,11 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 25 September 2026, 10:11 UTC
+
+Six worker status-only commits after `a2b3cd6` through `cabe08f` (09:46:08 UTC) report no run/lease. `39c4583` at 07:14:15 UTC accepts LEAD-POLICY-09 and processes `a2b3cd6f63cebc719d59f8b2de64e487c70cb517`. Publication and committed receipt are verified; watcher/scheduler health remains worker-reported. No new real result, issue #2–#5 design question or open PR. Last independently reviewed E14 source remains `4931cb9`; historical fixture logs were checked at `601fc1f`.
+
+[LEAD-POLICY-10](policy_e12_observed_envelope_20260925.md) independently checks the saved E12 two-recipe observed envelope: a hindsight per-root N1/S1 choice exceeds fixed N1 by only 1/28 (3.57 points) on inspected development grades. This is not a true-effect or population bound. The unchanged E14 N1/S1 efficacy-stage NO-GO stands; no new worker job or model collection is released. The lead next owns an exact mechanism-backed same-prefix development action set, untouched family frame, endpoint, comparators, inference and cap. **58%, change 0 points**; efficacy unestablished, full project not submission-ready.
+
 ## Current handoff audit — 25 September 2026, 07:12 UTC
 
 Six worker status-only commits through `a752c29` (06:42:32 UTC) report no run/lease; `7276fce` (04:10:42 UTC) accepts LEAD-POLICY-08 and processes `77a86f94cd78d21521b085cdddf1284b85045194`. Worker `c368c00` at 07:11:27 UTC independently reviewed the committed LEAD-POLICY-09 source without executing it, and identified an unchecked caller-supplied freeze SHA. Receipt/source review are visible; live watcher/scheduler health is worker-reported. No new real result, material issue #2–#5 question or open PR. Last independently reviewed E14 implementation remains `4931cb9`; historical fixture logs were checked at `601fc1f`.

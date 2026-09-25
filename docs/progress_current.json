@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-25T07:11:43Z",
+  "checkpoint_utc": "2026-09-25T10:11:28Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "77a86f94cd78d21521b085cdddf1284b85045194",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-09 completes a precommitted stylized numerical decision-value check but no empirical or independent-policy milestone.",
+  "prior_checked_head": "a2b3cd6f63cebc719d59f8b2de64e487c70cb517",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-10 is a reused-development-data design-priority calculation; no new empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Six worker status-only commits through a752c29 at 06:42:32Z; 7276fce acknowledges LEAD-POLICY-08. Worker c368c00 independently reviews frozen grid source and flags provenance gap; lead preserves raw bad-SHA metadata, checks actual frozen Git blobs and validates 18-cell exact grid independently. No run/lease or model data.",
+  "latest_evidence": "Six worker status-only commits through cabe08f at 09:46:08Z; 39c4583 acknowledges LEAD-POLICY-09 and processes a2b3cd6. Direct E12 input audit finds observed hindsight N1/S1 root-mean envelope 10.5/14 versus fixed N1 10/14; no run/lease or new model data.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "c368c007b2eaf3ef72b36ed515514bdfeb1ebd34",
+    "last_seen_worker_revision": "cabe08f9846c2ff80bc452a96dd1c812fa128eda",
     "delivery_type": "MRL25 source/mock delivery; no empirical E14 execution",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker c368c00 at 2026-09-25T07:11:27Z reports watcher running, no run/lease and E14 N1/S1 NO-GO; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Source-only review observed; process health not independently verified.",
+    "scheduler_status": "Worker cabe08f at 2026-09-25T09:46:08Z reports watcher running, no run/lease and E14 N1/S1 NO-GO; separate scheduler reportedly has not fired since 2026-09-23T08:10:19Z. Receipt commit 39c4583 observed; live process health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -455,5 +455,16 @@
     "classification": "precommitted exact stylized known-truth numerical planning; not model evidence or empirical power",
     "worker_source_review_commit": "c368c007b2eaf3ef72b36ed515514bdfeb1ebd34",
     "decision": "Accept numerical grid and provenance correction; hold E14 and all model collection pending supported action set, valid family frame and complete trial contract."
+  },
+  "policy_e12_observed_envelope": {
+    "decision_id": "LEAD-POLICY-10",
+    "record": "docs/policy_e12_observed_envelope_20260925.md",
+    "source_sha256": "4a64c49794c3951b28c0e232f8509700278bc057af598ec65599d15e4e516527",
+    "classification": "post-result reused development grades; observed plug-in envelope only, not a population or true-effect bound",
+    "fixed_n1_root_mean_total": 10.0,
+    "hindsight_n1_s1_root_mean_total": 10.5,
+    "n_inspected_roots": 14,
+    "observed_gain_over_n1": 0.03571428571428571,
+    "decision": "Retain E14 N1/S1 next-efficacy-stage NO-GO; lead owns a mechanism-backed new development action set and independent family/endpoint contract; no collection released."
   }
 }
