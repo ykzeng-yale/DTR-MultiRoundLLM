@@ -1,7 +1,10 @@
 """MRL-25 criterion 3: the seed inventory is built from every call log and is not vacuous. Static only."""
 import json
+import subprocess
 import sys
 from pathlib import Path
+
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -11,11 +14,28 @@ import e14_connected_mock as cm  # noqa: E402
 REC = json.loads((ROOT / "results/e14_seed_inventory_20260923.json").read_text())
 
 
-def test_every_call_log_in_the_repository_is_covered():
-    logs = {p.relative_to(ROOT).as_posix() for n in inv.LOG_NAMES for p in ROOT.rglob(n)
-            if ".git" not in p.parts and ".venv" not in p.parts}
-    assert {s["path"] for s in REC["sources"]} == logs
+def _committed_call_logs():
+    try:
+        out = subprocess.run(["git", "-C", str(ROOT), "ls-files", "-z"], capture_output=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        pytest.skip("not a git checkout: the committed-file inventory claim cannot be evaluated")
+    return {p for p in out.decode().split("\0") if p and Path(p).name in inv.LOG_NAMES}
+
+
+def test_every_committed_call_log_is_covered():
+    """LEAD-PORT-01: the claim is about COMMITTED call logs. REC is the original host-local inventory (19 logs:
+    the 13 committed ones plus six ignored work/ logs on the worker host); it is kept as recorded, not rewritten."""
+    committed = _committed_call_logs()
+    covered = {s["path"] for s in REC["sources"]}
+    assert committed and committed <= covered
+    assert all(p.startswith("work/") for p in covered - committed)  # extras are host-local ignored logs only
     assert REC["complete"] is True and all(s["unparsed_lines"] == 0 for s in REC["sources"])
+
+
+def test_lead_git_blob_inventory_is_a_separate_artifact_matching_committed_logs():
+    lead = json.loads((ROOT / "results/e14_seed_inventory_lead_committed_20260923.json").read_text())
+    assert {s["path"] for s in lead["sources"]} == _committed_call_logs()
+    assert lead["n_committed_logs"] == 13 and len(REC["sources"]) == 19
 
 
 def test_extractor_is_not_vacuous_positive_control(monkeypatch):

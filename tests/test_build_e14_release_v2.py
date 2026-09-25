@@ -34,6 +34,8 @@ def test_no_local_cache_path_is_recorded_anywhere_in_v2():
 
 
 def test_v2_rebuild_equals_committed_bytes(tmp_path):
+    if not any(p.is_file() for p in SOURCES):
+        pytest.skip("pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package")
     fresh = tmp_path / "v2"
     b2.build(fresh)
     for name in sorted(p.name for p in fresh.iterdir()):
@@ -114,3 +116,10 @@ def test_grading_phase_limit_is_reconciled_between_manifest_and_config():
     m = json.loads((V2 / "release_manifest.json").read_text())
     cfg = json.loads((V2 / "config.json").read_text())
     assert m["grading_limits"]["grading_seconds"] == cfg["e14"]["phase_limits_seconds"]["private_grading"] == 300
+
+
+def test_v2_build_fails_closed_without_the_pinned_source(tmp_path, monkeypatch):
+    monkeypatch.setattr(b2, "DEFAULT_SOURCE_FILE", "work/port01_absent_a.jsonl")
+    monkeypatch.setattr(b2, "ALT_SOURCE_FILE", "work/port01_absent_b.jsonl")
+    with pytest.raises(SystemExit, match="cached MBPP source not found"):
+        b2.build(tmp_path / "out")

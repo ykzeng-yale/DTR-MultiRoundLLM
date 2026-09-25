@@ -30,6 +30,8 @@ from scripts import build_e14_release as b  # noqa: E402
 RELEASE = ROOT / "experiments/landmark/e14_release"
 ROSTER = (911, 667, 344, 524, 814, 187, 194, 356, 366, 302)
 ROOT_IDS = tuple(f"mbpp/{t}" for t in ROSTER)
+SOURCE_PRESENT = any((ROOT / p).is_file() for p in (b.DEFAULT_SOURCE_FILE, b.ALT_SOURCE_FILE))
+needs_source = pytest.mark.skipif(not SOURCE_PRESENT, reason="pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package")
 
 
 def _lines(name):
@@ -76,6 +78,7 @@ def test_roster_order_is_exactly_the_lead_order(tasks, specs, manifest, spec_jso
 
 
 # ------------------------------------------------------------------ determinism against the committed bytes
+@needs_source
 def test_rebuild_is_deterministic_and_equals_committed_bytes():
     with tempfile.TemporaryDirectory() as tmp:
         one, two = Path(tmp) / "a", Path(tmp) / "bb"
@@ -89,6 +92,7 @@ def test_rebuild_is_deterministic_and_equals_committed_bytes():
             assert fresh == (RELEASE / name).read_bytes(), f"{name} differs from the committed bytes"
 
 
+@needs_source
 def test_verify_entrypoint_passes_on_the_committed_package():
     assert b.verify(RELEASE)["verified"] is True
 
@@ -159,6 +163,7 @@ def test_grading_limits_load_and_authorize_no_execution(manifest, specs):
 
 
 # ------------------------------------------------------------------ retained + added assertions
+@needs_source
 def test_retained_and_added_assertions_match_the_lead_json_exactly(specs, spec_json):
     rows, records = {}, {r["task_id"]: r for r in spec_json["records"]}
     source_sha = spec_json["source_file_sha256"]
@@ -346,3 +351,21 @@ def test_historical_packages_are_not_referenced_as_writable(manifest):
     assert reuse["dir"] == "experiments/landmark/dev_release_v3"
     assert "read only and was not modified" in reuse["reuse_rule"]
     assert reuse["manifest_sha256"] == file_sha(ROOT / "experiments/landmark/dev_release_v3/release_manifest.json")
+
+
+def test_build_and_verify_fail_closed_without_the_pinned_source(tmp_path, monkeypatch):
+    """LEAD-PORT-01: a missing cache must stop the builder and verify, never degrade to a partial package."""
+    monkeypatch.setattr(b, "DEFAULT_SOURCE_FILE", "work/port01_absent_a.jsonl")
+    monkeypatch.setattr(b, "ALT_SOURCE_FILE", "work/port01_absent_b.jsonl")
+    with pytest.raises(SystemExit, match="cached MBPP source not found"):
+        b.build(tmp_path / "out")
+    assert not (tmp_path / "out").exists() or not any((tmp_path / "out").iterdir())
+    with pytest.raises(SystemExit, match="cached MBPP source not found"):
+        b.verify(RELEASE)
+
+
+def test_build_fails_closed_on_a_wrong_source_hash(tmp_path):
+    bogus = tmp_path / "mbpp.jsonl"
+    bogus.write_text('{"task_id": 1}\n')
+    with pytest.raises(ValueError, match="sha256 mismatch"):
+        b.build(tmp_path / "out", source_path=bogus)

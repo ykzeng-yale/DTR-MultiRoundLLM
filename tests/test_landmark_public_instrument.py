@@ -13,6 +13,22 @@ from experiments.landmark import public_instrument_validation as piv
 
 ITEMS = piv.ITEMS_PATH
 SHA = piv.sha256_bytes(ITEMS.read_bytes())
+# LEAD-PORT-01: the executed E2 items bind the canary and positive control to absolute paths of the checkout and
+# interpreter that ran them. Those bytes stay frozen; tests rebind them at runtime for any other checkout.
+_E2 = {it["kind"]: it for it in json.loads(ITEMS.read_bytes())["gates"]["E2"]}
+RECORDED_PRIVATE = _E2["private_read_canary"]["private_path"]
+RECORDED_PERMITTED = _E2["permitted_read_positive_control"]["permitted_path"]
+E2_BOUND_HERE = (RECORDED_PRIVATE == str(piv.REBOUND_SPECS)
+                 and Path(RECORDED_PERMITTED).is_relative_to(Path(sandbox.base_interpreter()).parent.parent))
+
+
+def _items_for(gate, tmp_path):
+    """The executed fixture where its E2 paths hold; otherwise a runtime-rebound projection for THIS checkout."""
+    if gate != "E2" or E2_BOUND_HERE:
+        return ITEMS, SHA
+    p = tmp_path / "items_rebound_e2.json"
+    p.write_bytes(piv.items_bytes(piv.build_items()))
+    return p, piv.sha256_bytes(p.read_bytes())
 
 
 @pytest.fixture(autouse=True)
@@ -47,8 +63,13 @@ def ledger(out):
     return [json.loads(l) for l in (out / "ledger.jsonl").read_text().splitlines()]
 
 
-def test_fixture_is_deterministic_and_counts():
-    assert piv.items_bytes(piv.build_items(permitted_path=json.loads(ITEMS.read_bytes())["gates"]["E2"][1]["permitted_path"])) == ITEMS.read_bytes()
+def test_fixture_is_deterministic_and_counts(monkeypatch):
+    # Rebuild with the RECORDED E2 paths, hashing this checkout's committed rebound specs in place of the recorded
+    # absolute file, so byte equality with the executed fixture holds in any checkout without rewriting it.
+    real_sha = piv.file_sha
+    monkeypatch.setattr(piv, "file_sha", lambda p: real_sha(piv.REBOUND_SPECS if str(p) == RECORDED_PRIVATE else p))
+    build = lambda: piv.items_bytes(piv.build_items(private_path=Path(RECORDED_PRIVATE), permitted_path=RECORDED_PERMITTED))
+    assert build() == ITEMS.read_bytes() and build() == build()
     doc = json.loads(ITEMS.read_bytes())
     assert {g: len(v) for g, v in doc["gates"].items()} == {"E2": 2, "E6": 7, "E7": 17}
     e7 = doc["gates"]["E7"]
@@ -61,19 +82,33 @@ def test_fixture_is_deterministic_and_counts():
         for it in gate:
             assert public_check.static_code(piv._fence(it["code"])) is not None  # parse only
     canary = doc["gates"]["E2"][0]
-    assert str(piv.REBOUND_SPECS) in canary["code"] and canary["private_path"] == str(piv.REBOUND_SPECS)
+    assert RECORDED_PRIVATE in canary["code"] and canary["private_path"] == RECORDED_PRIVATE
+    assert RECORDED_PRIVATE.endswith("experiments/landmark/dev_release_v2/private_specs.jsonl")
+
+
+def test_executed_e2_fixture_fails_closed_off_its_bound_paths(tmp_path, att):
+    """Where the recorded canary target is absent, the driver must refuse the executed fixture, not run it."""
+    doc = json.loads(ITEMS.read_bytes())
+    for it in doc["gates"]["E2"]:
+        if it["kind"] == "private_read_canary":
+            it["private_path"] = str(tmp_path / "absent" / "private_specs.jsonl")
+    p = tmp_path / "items_foreign.json"
+    p.write_bytes(piv.items_bytes(doc))
+    with pytest.raises(SystemExit, match="canary target"):
+        piv.run(p, piv.sha256_bytes(p.read_bytes()), "E2", tmp_path / "out", att, True, runner=FakeRunner())
 
 
 @pytest.mark.parametrize("gate,n", [("E2", 2), ("E6", 7), ("E7", 17)])
 def test_exact_starts_and_preserved_identities(tmp_path, att, gate, n):
     out, fake = tmp_path / "out", FakeRunner()
-    res = piv.run(ITEMS, SHA, gate, out, att, True, runner=fake)
+    items_path, items_sha = _items_for(gate, tmp_path)
+    res = piv.run(items_path, items_sha, gate, out, att, True, runner=fake)
     assert fake.calls == n and res["actual_starts"] == n and res["planned_max_starts"] == n
     recs = ledger(out)
     assert recs[0]["event"] == "reserved" and recs[0]["fake_runner"] is True and recs[-1]["event"] == "complete"
     assert set(recs[0]["source_sha256"]) == set(piv.PROVENANCE_SOURCES)
     assert [r["event"] for r in recs[1:-1]] == ["start", "result"] * n
-    items = json.loads(ITEMS.read_bytes())["gates"][gate]
+    items = json.loads(items_path.read_bytes())["gates"][gate]
     assert [(r["item_id"], r["root_id"], r["control_index"], r["code_sha256"]) for r in res["rows"]] == \
         [(i["item_id"], i["root_id"], i.get("control_index"), i["code_sha256"]) for i in items]
     if gate == "E7":  # fake gives unavailable everywhere; disagreement is reported, not tuned

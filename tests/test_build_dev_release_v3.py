@@ -21,7 +21,23 @@ NAMES = ("tasks.jsonl", "private_specs.jsonl", "public_examples_v3.json", "contr
 
 @pytest.fixture(scope="module")
 def files():
+    if not b.MBPP.is_file():  # LEAD-PORT-01: explicit skip on a clean checkout; the builder itself fails closed
+        pytest.skip("pinned MBPP source cache absent (work/ is gitignored); acquire and verify it with docs/mbpp_source_acquisition_20260925.md. A skip does NOT reproduce the committed package")
     return b.build()
+
+
+def test_builder_fails_closed_without_the_pinned_source(tmp_path, monkeypatch):
+    monkeypatch.setattr(b, "MBPP", tmp_path / "absent.jsonl")
+    with pytest.raises(FileNotFoundError):
+        b.build()
+
+
+def test_builder_fails_closed_on_a_wrong_source_hash(tmp_path, monkeypatch):
+    bogus = tmp_path / "mbpp.jsonl"
+    bogus.write_text('{"task_id": 1}\n')
+    monkeypatch.setattr(b, "MBPP", bogus)
+    with pytest.raises(SystemExit, match="hash mismatch"):
+        b.build()
 
 
 def _jsonl(text):

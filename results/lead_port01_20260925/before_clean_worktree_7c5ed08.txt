@@ -1,0 +1,465 @@
+E.EEEEEE.......FF........F.........................................s.F.. [  4%]
+........................................................................ [  8%]
+........................................................................ [ 12%]
+........................................................................ [ 17%]
+........................................................................ [ 21%]
+........................................................................ [ 25%]
+..............................................F............sssss........ [ 30%]
+........................................................................ [ 34%]
+........................................................................ [ 38%]
+........................................................................ [ 43%]
+........................................................................ [ 47%]
+...................................................................... [ 51%]
+.................................................................. [ 55%]
+........................................................................ [ 60%]
+......................................F................................. [ 64%]
+........................................................................ [ 68%]
+........................................................................ [ 72%]
+........................................................................ [ 77%]
+......................................................ssssssssssssssssss [ 81%]
+ssss.................................................................... [ 85%]
+........................................................................ [ 90%]
+........................................................................ [ 94%]
+........................................................................ [ 98%]
+..................                                                       [100%]
+==================================== ERRORS ====================================
+______ ERROR at setup of test_deterministic_and_matches_committed_package ______
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+___________ ERROR at setup of test_roster_order_and_held_accounting ____________
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+________________ ERROR at setup of test_specs_validate_and_bind ________________
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_ ERROR at setup of test_controls_compile_pass_hack_gate_and_predicted_to_fail _
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+__________ ERROR at setup of test_no_private_text_in_public_material ___________
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+___________ ERROR at setup of test_public_examples_shape_and_source ____________
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+_________________ ERROR at setup of test_overlap_audit_present _________________
+
+    @pytest.fixture(scope="module")
+    def files():
+>       return b.build()
+               ^^^^^^^^^
+
+tests/test_build_dev_release_v3.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_dev_release_v3.py:172: in build
+    if fsha(MBPP) != MBPP_SHA256:
+       ^^^^^^^^^^
+scripts/build_dev_release_v3.py:97: in fsha
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+                          ^^^^^^^^^^^^^^^^^^^^
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl'
+
+/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/pathlib.py:1013: FileNotFoundError
+=================================== FAILURES ===================================
+___________ test_rebuild_is_deterministic_and_equals_committed_bytes ___________
+
+    def test_rebuild_is_deterministic_and_equals_committed_bytes():
+        with tempfile.TemporaryDirectory() as tmp:
+            one, two = Path(tmp) / "a", Path(tmp) / "bb"
+>           b.build(one)
+
+tests/test_build_e14_release.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+out_dir = PosixPath('/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/tmpekp81bgc/a')
+spec_path = PosixPath('<clean-worktree>/docs/e14_lead_measurement_spec_20260923.json')
+source_path = None
+law_dir = PosixPath('<clean-worktree>/experiments/landmark/dev_release_v3')
+
+    def build(out_dir, spec_path=None, source_path=None, law_dir=None):
+        """Write the ten-root E14 package into out_dir (which must not exist). Returns the manifest dict."""
+        out_dir = Path(out_dir)
+        spec_path = Path(spec_path or ROOT / DEFAULT_SPEC)
+        law_dir = Path(law_dir or ROOT / DEFAULT_LAW_RELEASE)
+        if out_dir.exists():
+            raise SystemExit(f"refusing to overwrite existing output: {out_dir}")
+    
+        spec, records, spec_sha = _load_spec(spec_path)
+        if source_path is None:
+            candidates = [ROOT / DEFAULT_SOURCE_FILE, ROOT / ALT_SOURCE_FILE]
+            source_path = next((p for p in candidates if p.is_file()), None)
+            if source_path is None:
+>               raise SystemExit(f"cached MBPP source not found at any of {[str(p) for p in candidates]}")
+E               SystemExit: cached MBPP source not found at any of ['<clean-worktree>/work/sources/mbpp_full.jsonl', '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl']
+
+scripts/build_e14_release.py:597: SystemExit
+____________ test_verify_entrypoint_passes_on_the_committed_package ____________
+
+    def test_verify_entrypoint_passes_on_the_committed_package():
+>       assert b.verify(RELEASE)["verified"] is True
+               ^^^^^^^^^^^^^^^^^
+
+tests/test_build_e14_release.py:93: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/build_e14_release.py:876: in verify
+    build(fresh, **kw)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+out_dir = PosixPath('/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/tmpmkppd6l3/e14_release')
+spec_path = PosixPath('<clean-worktree>/docs/e14_lead_measurement_spec_20260923.json')
+source_path = None
+law_dir = PosixPath('<clean-worktree>/experiments/landmark/dev_release_v3')
+
+    def build(out_dir, spec_path=None, source_path=None, law_dir=None):
+        """Write the ten-root E14 package into out_dir (which must not exist). Returns the manifest dict."""
+        out_dir = Path(out_dir)
+        spec_path = Path(spec_path or ROOT / DEFAULT_SPEC)
+        law_dir = Path(law_dir or ROOT / DEFAULT_LAW_RELEASE)
+        if out_dir.exists():
+            raise SystemExit(f"refusing to overwrite existing output: {out_dir}")
+    
+        spec, records, spec_sha = _load_spec(spec_path)
+        if source_path is None:
+            candidates = [ROOT / DEFAULT_SOURCE_FILE, ROOT / ALT_SOURCE_FILE]
+            source_path = next((p for p in candidates if p.is_file()), None)
+            if source_path is None:
+>               raise SystemExit(f"cached MBPP source not found at any of {[str(p) for p in candidates]}")
+E               SystemExit: cached MBPP source not found at any of ['<clean-worktree>/work/sources/mbpp_full.jsonl', '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl']
+
+scripts/build_e14_release.py:597: SystemExit
+________ test_retained_and_added_assertions_match_the_lead_json_exactly ________
+
+specs = [{'entry_point': 'maximum_product', 'negative_controls': [{'code': 'def maximum_product(nums):\n    import heapq\n    ...ert longest_common_subsequence('abc','ac',3,2) == 2", "assert longest_common_subsequence('','x',0,1) == 0"], ...}, ...]
+spec_json = {'schema_version': 'e14-lead-measurement-spec-v1', 'created_utc': '2026-09-23T07:54:09.031467+00:00', 'evidence_class'...tion or new model data', 'source_file_sha256': 'ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f', ...}
+
+    def test_retained_and_added_assertions_match_the_lead_json_exactly(specs, spec_json):
+        rows, records = {}, {r["task_id"]: r for r in spec_json["records"]}
+        source_sha = spec_json["source_file_sha256"]
+>       path = next(p for p in (ROOT / b.DEFAULT_SOURCE_FILE, ROOT / b.ALT_SOURCE_FILE) if p.is_file())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       StopIteration
+
+tests/test_build_e14_release.py:165: StopIteration
+____________________ test_v2_rebuild_equals_committed_bytes ____________________
+
+tmp_path = PosixPath('/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/pytest-of-yukangzengcmac/pytest-5871/test_v2_rebuild_equals_committ0')
+
+    def test_v2_rebuild_equals_committed_bytes(tmp_path):
+        fresh = tmp_path / "v2"
+>       b2.build(fresh)
+
+tests/test_build_e14_release_v2.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+out_dir = PosixPath('/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/pytest-of-yukangzengcmac/pytest-5871/test_v2_rebuild_equals_committ0/v2')
+spec_path = PosixPath('<clean-worktree>/docs/e14_lead_measurement_spec_20260923.json')
+source_path = None
+law_dir = PosixPath('<clean-worktree>/experiments/landmark/dev_release_v3')
+version = 'v2'
+
+    def build(out_dir, spec_path=None, source_path=None, law_dir=None, version="v2"):
+        """Write the ten-root E14 package into out_dir (which must not exist). Returns the manifest dict."""
+        out_dir = Path(out_dir)
+        spec_path = Path(spec_path or ROOT / DEFAULT_SPEC)
+        law_dir = Path(law_dir or ROOT / DEFAULT_LAW_RELEASE)
+        if out_dir.exists():
+            raise SystemExit(f"refusing to overwrite existing output: {out_dir}")
+    
+        spec, records, spec_sha = _load_spec(spec_path)
+        if source_path is None:
+            candidates = [ROOT / DEFAULT_SOURCE_FILE, ROOT / ALT_SOURCE_FILE]
+            source_path = next((p for p in candidates if p.is_file()), None)
+            if source_path is None:
+>               raise SystemExit(f"cached MBPP source not found at any of {[str(p) for p in candidates]}")
+E               SystemExit: cached MBPP source not found at any of ['<clean-worktree>/work/sources/mbpp_full.jsonl', '<clean-worktree>/work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl']
+
+scripts/build_e14_release_v2.py:625: SystemExit
+_______________ test_every_call_log_in_the_repository_is_covered _______________
+
+    def test_every_call_log_in_the_repository_is_covered():
+        logs = {p.relative_to(ROOT).as_posix() for n in inv.LOG_NAMES for p in ROOT.rglob(n)
+                if ".git" not in p.parts and ".venv" not in p.parts}
+>       assert {s["path"] for s in REC["sources"]} == logs
+E       AssertionError: assert {'experiments...s.jsonl', ...} == {'experiments...s.jsonl', ...}
+E         
+E         Extra items in the left set:
+E         'work/e13a_20260923T061532Z/collect/attempt_ledger.jsonl'
+E         'work/e11_dev_v2_20260922T010959Z/A/calls.jsonl'
+E         'work/e12_dev_v3_20260922T030255Z/C/calls.jsonl'
+E         'work/e13a_20260923T061532Z/collect/calls.jsonl'
+E         'work/e11_dev_v2_20260922T010959Z/C/calls.jsonl'
+E         'work/e12_dev_v3_20260922T030255Z/A/calls.jsonl'
+E         Use -v to get more diff
+
+tests/test_e14_seed_inventory.py:17: AssertionError
+___________________ test_fixture_is_deterministic_and_counts ___________________
+
+    def test_fixture_is_deterministic_and_counts():
+>       assert piv.items_bytes(piv.build_items(permitted_path=json.loads(ITEMS.read_bytes())["gates"]["E2"][1]["permitted_path"])) == ITEMS.read_bytes()
+E       assert b'{\n "eviden...tems-v1"\n}\n' == b'{\n "eviden...tems-v1"\n}\n'
+E         
+E         At index 550 diff: b'p' != b'U'
+E         Use -v to get more diff
+
+tests/test_landmark_public_instrument.py:51: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_build_e14_release.py::test_rebuild_is_deterministic_and_equals_committed_bytes
+FAILED tests/test_build_e14_release.py::test_verify_entrypoint_passes_on_the_committed_package
+FAILED tests/test_build_e14_release.py::test_retained_and_added_assertions_match_the_lead_json_exactly
+FAILED tests/test_build_e14_release_v2.py::test_v2_rebuild_equals_committed_bytes
+FAILED tests/test_e14_seed_inventory.py::test_every_call_log_in_the_repository_is_covered
+FAILED tests/test_landmark_public_instrument.py::test_fixture_is_deterministic_and_counts
+ERROR tests/test_build_dev_release_v3.py::test_deterministic_and_matches_committed_package
+ERROR tests/test_build_dev_release_v3.py::test_roster_order_and_held_accounting
+ERROR tests/test_build_dev_release_v3.py::test_specs_validate_and_bind - File...
+ERROR tests/test_build_dev_release_v3.py::test_controls_compile_pass_hack_gate_and_predicted_to_fail
+ERROR tests/test_build_dev_release_v3.py::test_no_private_text_in_public_material
+ERROR tests/test_build_dev_release_v3.py::test_public_examples_shape_and_source
+ERROR tests/test_build_dev_release_v3.py::test_overlap_audit_present - FileNo...
+SKIPPED [1] tests/test_build_e14_release_v2.py:22: both cache locations are needed on this host to test portability
+SKIPPED [1] tests/test_frame_review_mrl15.py:23: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:30: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:50: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:58: pinned MBPP source absent
+SKIPPED [1] tests/test_frame_review_mrl15.py:73: pinned MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:49: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:55: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:63: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:74: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:81: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:95: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:112: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:129: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:138: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:148: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:159: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:169: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:180: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:193: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:202: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:212: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:235: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:268: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:282: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:306: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:319: pinned MRL-15 frame or MBPP source absent
+SKIPPED [1] tests/test_review_candidate_frame_ranks21_40.py:337: pinned MRL-15 frame or MBPP source absent
+6 failed, 1625 passed, 28 skipped, 7 errors, 8 subtests passed in 20.75s
+real 20.91
+user 14.65
+sys 3.69
