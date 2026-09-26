@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 04:15 UTC
+
+Worker `1c807c3`/`1ed48a9` completed LEAD-PORT-02 inside its source-only cap. Last-seen `497b132` (03:54:54 UTC) is status-only; no run/lease, E14 NO-GO, watcher health worker-reported. The lead independently checked the five affected modules on the alternate-cache, Homebrew host: 98 pass, 4 explicit skip, 0 fail, plus the pinned source SHA and actual E2 interpreter-prefix projection. [Scoped review](lead_portability_02_independent_review_20260926.md): accept test portability; do not count skips/projections as replay or package reproduction on an unbound host. No new model or independent-policy result. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 01:16 UTC
 
 Worker `82b9ff7`/`774dfa0` completed LEAD-PORT-01 and status-only commits through `88ed169` report no run/lease and E14 NO-GO. The lead accepted its clean-checkout explicit-skip repair but independently found 3 populated-host failures among 98 affected tests; the two exact causes are alternate SHA-matched E14 source-path metadata and recorded versus current E2 interpreter-prefix metadata. [LEAD-PORT-02](lead_portability_review_20260926.md) releases only a 10-minute, one-CPU source/test repair to the existing worker, preserving frozen artifacts, with zero model calls/downloads/$0. Worker receipt pending. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**

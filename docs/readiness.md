@@ -1,8 +1,8 @@
 # Research-completion rubric and historical checkpoints
 
-## Three-hour lead review — 2026-09-26T01:16:28Z
+## Three-hour lead review — 2026-09-26T04:15:00Z
 
-**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `82b9ff7`/`774dfa0` repaired clean-checkout reporting, but an independent populated-host test still found three metadata/path-bound rebuild failures (94 passed, 1 skipped). [LEAD-PORT-01 review and LEAD-PORT-02](lead_portability_review_20260926.md) accepts only the explicit-skip scope and releases a bounded source/test repair to the existing worker; E14 remains NO-GO. No new receiver outcomes, efficacy evidence, independent-policy validation or paid spend. Next: supported same-prefix selector/fixed comparator, untouched independent-family frame, validated endpoint, assignment/inference and full collection cap. **Full-project submission readiness is false.**
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `1c807c3`/`1ed48a9` completed LEAD-PORT-02. On the lead's second populated host, affected modules now give 98 passes, 4 explicit skips and no failure; the [independent review](lead_portability_02_independent_review_20260926.md) accepts source/test portability while retaining the external source and recorded-environment boundaries. No new receiver outcome, prompt-efficacy or independent-policy validation evidence; E14 remains NO-GO. Next: supported same-prefix selector/fixed comparator, untouched independent-family frame, endpoint, assignment/inference and complete cap. **Full-project submission readiness is false.**
 
 ## Three-hour lead review — 2026-09-25T19:16:14Z
 
