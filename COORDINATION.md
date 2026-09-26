@@ -3790,3 +3790,52 @@ The config pins:
 Spot mutation checks: flipping the tie rule, pooling by root, or scoring missing slots as zero each make a test fail. The full suite, run once on an intermediate revision (before the per-root report addition): **1,774 passed, 0 failed**.
 
 **Limitations:** toy fixtures only; not a real-data fit, sampled simulation or policy evidence. The API validates internal completeness only; planned-roster reconciliation, provenance and family independence stay release gates. The prediction path trusts caller-supplied Boolean features; a future collector must compute them with the accepted MRL-26 renderer.
+
+## Experiments → theory, 2026-09-26T21:26:11Z — MRL-29 COMPLETED (source only), for Codex source and numerical review
+
+Signed: experiments worker. Processed Codex `2ed2abb…` (LEAD-INFERENCE-01 / MRL-29). **Accepted 21:22:07Z; deadline 21:42:07Z; completed 2026-09-26T21:26:11Z.** One sequential CPU. Zero experimental calls, candidate/reference execution, downloads, paid spend, Monte Carlo or historical reanalysis. About 27 KB of new retained output (cap 32 MiB). Run/lease: none. The lead-only commit `b6b3a44` (frame review), which landed during the task, was read and assigns no worker work.
+
+**Files and raw SHA256:**
+- `experiments/prompt_choice/paired_inference.py` `fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79`
+- `experiments/prompt_choice/paired_inference_source_v1.json` `03e2149fd732595750be78730933ceaaced9175577f4602ba5080e1eee656499`, pinning the contract at `2ed2abb` (`01bb88090bf2bc848a6dc2957c96f986560660d4ca1045a84993822ac78ee47c`)
+- `tests/test_prompt_paired_inference.py` `a4af0c3c46583ada4b214d9aad9162474205acd8aa9ec58a73d6afaf7223e1ed`
+
+**API (pure; exact int/Fraction only; Boolean, float and NaN refused, never rounded):**
+- (a) `score_bounds(terms, primitives)` consolidates each primitive ID to one coefficient and returns sharp rectangular [L, U].
+- (a') `policy_contrast_bounds(plus, minus, primitives)` takes nonnegative weights summing to exactly 1 on each side; shared primitives cancel exactly.
+- (b) `kl_interval(xbar, n, alpha)` returns outward-conservative (l_n, u_n) with delta = alpha/8.
+- (c) `paired_contrasts(families, alpha)` covers exactly `d_minus_b1` and `d_minus_b2`. It applies the missingness envelope: -L on the lower negative part, -U on the upper negative part, intersected with [-1, 1]. Empty input returns a labelled no-data [-1, 1] and never evaluates KL at n = 0.
+
+**Numerical policy (no epsilon):**
+- 100-digit Decimal, with floor/ceiling conversion of rationals and outward interval +/×.
+- Correctly rounded ln/exp, each enclosed by next_minus/next_plus.
+- At most 64 exact-Fraction bisections; an undecided comparison stops and keeps the bracket.
+- Returns the lower exterior endpoint for l and the upper exterior endpoint for u; x = 0/1 use outward boundary formulas.
+- Bisections used are reported per endpoint.
+
+**Defect found and fixed during the task:** the boundary formula first computed `exp(-c/n)` from `-cn_hi`. Python's unary minus on a Decimal rounds in the *global* 28-digit context, which made u_n(0) about 4e-29 **below** the true value, so it was not outward. The independent 150-digit reference tests caught it at n = 1, α = 1/100. It is fixed with the exact `copy_negate()`; no other bare Decimal operator remains.
+
+**Interpretation choices to flag:**
+- "Exact reference completeness" means every term references a declared primitive **and** every declared primitive is referenced.
+- The per-side policy weights must each sum to exactly 1.
+- Contrast intervals are intersected with [-1, 1].
+- The useful-gain decision rule is recorded in the config but not implemented, since it is lead-owned.
+
+**Tests (43), all exact and synthetic:**
+- outward-and-close comparison against an independent 150-digit plain-bisection inversion on a fixed grid (x ∈ {0, 1/7, 3/10, 1/2, 9/10, 1}, n ∈ {1, 5, 98, 99}, α ∈ {1/20, 1/100}), requiring l ≤ reference and u ≥ reference, within 1e-15;
+- the n = 98/99 radius at α = .05 (0.0504693679 > .05 > 0.0499725328, with outward u at 99 still below .05) and the all-zero contrast interval ±u_99(0);
+- reflection and monotonicity on a 41-point grid;
+- shared-missing cancellation versus distinct draws, and fractional/zero weights;
+- 11 score-bookkeeping refusals (undeclared or unreferenced primitive, duplicate, out of [0,1], a > b, float, Boolean, NaN, invalid UTF-8, bad weight sums, negative weights);
+- missingness widening and the all-missing [-1, 1] result;
+- no-data without KL evaluation;
+- 9 malformed-family refusals and 5 alpha-domain refusals;
+- exact enumeration of a 24-outcome joint law over 4 independent, nonidentical, non-Bernoulli families with within-family dependence between the contrasts, at α ∈ {1/2, 9/10}, with coverage ≥ 1-α (labelled an exact synthetic unit check, not universal coverage);
+- the config pin and the no-discovery/network/execution AST check.
+
+Full suite, run once: **1,819 passed, 0 failed**.
+
+**Limitations:**
+- The component does not establish family independence, pathwise-bound validity, shared-execution identity or population transport.
+- Coverage checks are finite exact examples.
+- The 64-bisection cap leaves brackets about 2^-64 of the initial width. The reported endpoints are exterior, so this costs width, not validity.

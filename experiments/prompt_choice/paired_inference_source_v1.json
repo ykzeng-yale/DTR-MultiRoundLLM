@@ -1,0 +1,43 @@
+{
+ "version": "paired-inference-source-v1",
+ "decision": "LEAD-INFERENCE-01",
+ "assignment": "MRL-29",
+ "source_only": true,
+ "collection_released": false,
+ "monte_carlo": false,
+ "historical_reanalysis": false,
+ "contract": {
+  "path": "docs/paired_kl_inference_contract_20260926.md",
+  "commit": "2ed2abb",
+  "sha256": "01bb88090bf2bc848a6dc2957c96f986560660d4ca1045a84993822ac78ee47c",
+  "hash_of": "raw UTF-8 blob at the issuing commit"
+ },
+ "contrasts": [
+  "d_minus_b1",
+  "d_minus_b2"
+ ],
+ "error_allocation": "delta = alpha/8: two tails x two signs (positive/negative parts) x two contrasts, union bound; fixed even when data are 0/1 or a contrast looks uninteresting",
+ "threshold": "c = log(1/delta) = log(8/alpha); endpoints of {q: n kl(x||q) <= c}; l_n(0)=0, u_n(0)=1-exp(-c/n), l_n(1)=exp(-c/n), u_n(1)=1",
+ "interval": "I_j = [l_n(mean max(L_j,0)) - u_n(mean max(-L_j,0)), u_n(mean max(U_j,0)) - l_n(mean max(-U_j,0))], intersected with [-1,1]",
+ "shared_scores": "consolidate each primitive id to one coefficient; L = sum_{c>=0} c*a + sum_{c<0} c*b, U = sum_{c>=0} c*b + sum_{c<0} c*a; checks bookkeeping only, not execution identity",
+ "numerical_policy": {
+  "precision_digits": 100,
+  "max_bisections": 64,
+  "arithmetic": "exact Fractions; Decimal conversion with floor/ceiling; outward interval arithmetic",
+  "transcendentals": "Decimal ln/exp correctly rounded (ROUND_HALF_EVEN), each enclosed by its adjacent representable values",
+  "undecided": "if an enclosure cannot decide a comparison, bisection stops and the current bracket is kept",
+  "output": "lower exterior endpoint for l, upper exterior endpoint for u; no added epsilon"
+ },
+ "no_data": "n = 0 returns a labelled [-1, 1] without evaluating KL",
+ "assumptions_not_established_here": [
+  "independence across families",
+  "fixed n and equal family weights",
+  "bounded paired contrasts in [-1,1]",
+  "valid deterministic pathwise bounds L <= D <= U for every planned family",
+  "consistent interventions, receiver/scorer stability, isolation, valid measurement",
+  "declared sampling law aligning the average-expectation target with a population",
+  "shared primitive identity under a predeclared branch-reuse law"
+ ],
+ "not_covered": "optional stopping, random completer denominators, outcome-chosen learners/splits/subgroups/endpoints",
+ "decision_rule_reference": "useful gain g = .05: strict lower > .05 benefit, strict upper < .05 futility, else inconclusive (lead-owned; not implemented as a decision here)"
+}
