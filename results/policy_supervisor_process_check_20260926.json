@@ -1,0 +1,42 @@
+{
+  "classification": "harmless real-process operational check, not endpoint or policy evidence",
+  "at": "2026-09-26T23:01:58.602324+00:00",
+  "pins": {
+    "scripts/run_policy_endpoint_audit.py": "bd30976a65b1e2728e4038ab5176ebbc63189f3ac8d690c8c95f72aa68ef05a6",
+    "/usr/bin/true": "a73efca930c2adb1f52eef0d1d3b17d375ee40290fc796653c91c33abf381938",
+    "/bin/sleep": "a2be9ba33f4fbf10a4f2702cd9b687ac98274ad28de509109ee86f2f4b0e2beb"
+  },
+  "elapsed_seconds": 0.40627949964255095,
+  "passed": true,
+  "rows": [
+    {
+      "child_pid": 47331,
+      "child_exit": 0,
+      "killed_at_deadline": false,
+      "adapter_group_cleanup": "confirmed: owned adapter process group gone",
+      "child_elapsed_seconds": 0.003022,
+      "deadline_monotonic": 5611278.994992292,
+      "case": "normal_exit",
+      "command": [
+        "/usr/bin/true"
+      ],
+      "independently_observed_group_absent": true
+    },
+    {
+      "child_pid": 47332,
+      "child_exit": -15,
+      "killed_at_deadline": true,
+      "adapter_group_cleanup": "confirmed: owned adapter process group gone",
+      "child_elapsed_seconds": 0.403176,
+      "deadline_monotonic": 5611278.998045917,
+      "case": "term_timeout",
+      "command": [
+        "/bin/sleep",
+        "10"
+      ],
+      "independently_observed_group_absent": true
+    }
+  ],
+  "benchmark_reference_control_model_launches": 0,
+  "scope_limit": "normal exit and TERM of owned groups only; watchdog/SIGKILL/detached-sandbox paths untested here"
+}

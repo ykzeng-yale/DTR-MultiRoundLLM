@@ -1,0 +1,407 @@
+{
+ "attestation": {
+  "path": "results/policy_endpoint_containment_20260926T2217Z/attestation.json",
+  "sha256": "c6dfe4c3ab675c862405adbc4a3839fee5a172d7c1338f6b00efa4939ee8fde2"
+ },
+ "binding": {
+  "host_sha256": "e6626654e78211ef1aab3f691c1812d0f48f05d2a7057737dcf3469d57d48189",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+  "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+  "python_sha256": "a395f264e5612a2819662ed3e37fd30d39ed61179b98e5f86c3c783a008d8623",
+  "sandbox_kind": "seatbelt",
+  "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c"
+ },
+ "bound_sources": {
+  "experiments/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+  "experiments/landmark/__init__.py": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+  "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+  "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+  "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+  "experiments/landmark/public_check.py": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+  "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+  "experiments/prompt_choice/endpoint_audit.py": "aa6a4d2ed6fce474a9a0defb721e5ec6e547161aaa592e1e87a36c07978acad1",
+  "experiments/prompt_choice/endpoint_audit_source_v1.json": "cf3885d50d8393d6c68f9750775beb994f104f548b81c43ff62bae50e4b55c51",
+  "experiments/prompt_choice/endpoint_execution_source_v1.json": "cec9e6525e600a2a0dc22666f8cd0c7c9d5a91989f7c7836ef0aa14882161186",
+  "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+  "scripts/run_policy_endpoint_audit.py": "bd30976a65b1e2728e4038ab5176ebbc63189f3ac8d690c8c95f72aa68ef05a6"
+ },
+ "decision": "LEAD-ENDPOINT-03",
+ "limits": {
+  "downloads": 0,
+  "max_sandbox_starts": 36,
+  "model_calls": 0,
+  "paid_spend": 0,
+  "retained_output_bytes": 8388608,
+  "total_elapsed_seconds": 180
+ },
+ "output_directory": "work/policy_endpoint_audit_20260926T2303Z",
+ "package": {
+  "builder_sha256": "aa6a4d2ed6fce474a9a0defb721e5ec6e547161aaa592e1e87a36c07978acad1",
+  "config_sha256": "cf3885d50d8393d6c68f9750775beb994f104f548b81c43ff62bae50e4b55c51",
+  "private_record_sha256": {
+   "mbpp/345": "20d4defc48000d4e9fa5bbf37b3687961c0db17c5af1f5cd75cfcbb3ef319b55",
+   "mbpp/877": "4619699141efe87be10688478b43b400d14dfe5b9e9b8dbcde06fb94baadbb7b"
+  },
+  "public_record_sha256": {
+   "mbpp/345": "afa9822bd522fba27130be374f72c66689a48d901ee71abb9820e23b1b1d4b45",
+   "mbpp/877": "fc906f9537fe4cb900e63894a149fcba4618843857d063cb824b72f4ecfb2183"
+  }
+ },
+ "package_designation": "production",
+ "per_call_bound_seconds": {
+  "original_private": 2,
+  "public": 10,
+  "supplement_v1": 2
+ },
+ "predictions": {
+  "lookup_original_examples": "public pass; original_private pass; supplement_v1 fail",
+  "nonlookup_control": "original_private fail (at least one original-private assertion fails)",
+  "reference": "public pass; original_private pass; supplement_v1 pass"
+ },
+ "retained_bytes_rule": {
+  "finalization_reserve_bytes": 262144,
+  "worst_slot_bytes": 802816
+ },
+ "slots": [
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5",
+   "slot_id": "mbpp/877|reference|public",
+   "slot_index": 0,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5",
+   "slot_id": "mbpp/877|reference|original_private",
+   "slot_index": 1,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5",
+   "slot_id": "mbpp/877|reference|supplement_v1",
+   "slot_index": 2,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "public",
+   "code_sha256": "5e0ad2be4933b922a59897c191518627289c5fe594d1ba1c4d2f0cd27a6f3dc7",
+   "slot_id": "mbpp/877|mbpp/877/control/return_input_unchanged|public",
+   "slot_index": 3,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "original_private",
+   "code_sha256": "5e0ad2be4933b922a59897c191518627289c5fe594d1ba1c4d2f0cd27a6f3dc7",
+   "slot_id": "mbpp/877|mbpp/877/control/return_input_unchanged|original_private",
+   "slot_index": 4,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "supplement_v1",
+   "code_sha256": "5e0ad2be4933b922a59897c191518627289c5fe594d1ba1c4d2f0cd27a6f3dc7",
+   "slot_id": "mbpp/877|mbpp/877/control/return_input_unchanged|supplement_v1",
+   "slot_index": 5,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/reverse_input",
+   "artifact_kind": "reverse_input",
+   "check": "public",
+   "code_sha256": "c9d94dd2cb4d5a8b361f75238e07d698417f33bac987ac56cceef4a6abad9837",
+   "slot_id": "mbpp/877|mbpp/877/control/reverse_input|public",
+   "slot_index": 6,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/reverse_input",
+   "artifact_kind": "reverse_input",
+   "check": "original_private",
+   "code_sha256": "c9d94dd2cb4d5a8b361f75238e07d698417f33bac987ac56cceef4a6abad9837",
+   "slot_id": "mbpp/877|mbpp/877/control/reverse_input|original_private",
+   "slot_index": 7,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/reverse_input",
+   "artifact_kind": "reverse_input",
+   "check": "supplement_v1",
+   "code_sha256": "c9d94dd2cb4d5a8b361f75238e07d698417f33bac987ac56cceef4a6abad9837",
+   "slot_id": "mbpp/877|mbpp/877/control/reverse_input|supplement_v1",
+   "slot_index": 8,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/sorted_unique_characters",
+   "artifact_kind": "sorted_unique_characters",
+   "check": "public",
+   "code_sha256": "3dbac57c0ef35a882ac7028275b31a966986afb611d88466656ce8405d68f97a",
+   "slot_id": "mbpp/877|mbpp/877/control/sorted_unique_characters|public",
+   "slot_index": 9,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/sorted_unique_characters",
+   "artifact_kind": "sorted_unique_characters",
+   "check": "original_private",
+   "code_sha256": "3dbac57c0ef35a882ac7028275b31a966986afb611d88466656ce8405d68f97a",
+   "slot_id": "mbpp/877|mbpp/877/control/sorted_unique_characters|original_private",
+   "slot_index": 10,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/sorted_unique_characters",
+   "artifact_kind": "sorted_unique_characters",
+   "check": "supplement_v1",
+   "code_sha256": "3dbac57c0ef35a882ac7028275b31a966986afb611d88466656ce8405d68f97a",
+   "slot_id": "mbpp/877|mbpp/877/control/sorted_unique_characters|supplement_v1",
+   "slot_index": 11,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "bf3c1f97620bd0072fd977b11bb8121c0de550a3a973da17aa0210ba501af013",
+   "slot_id": "mbpp/877|mbpp/877/control/constant_public_expected|public",
+   "slot_index": 12,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "bf3c1f97620bd0072fd977b11bb8121c0de550a3a973da17aa0210ba501af013",
+   "slot_id": "mbpp/877|mbpp/877/control/constant_public_expected|original_private",
+   "slot_index": 13,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "bf3c1f97620bd0072fd977b11bb8121c0de550a3a973da17aa0210ba501af013",
+   "slot_id": "mbpp/877|mbpp/877/control/constant_public_expected|supplement_v1",
+   "slot_index": 14,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "8e4f9f6bd9caa21d7659af8871a538ace4ff8e30c71109438f5790b52211ab29",
+   "slot_id": "mbpp/877|mbpp/877/control/lookup_original_examples|public",
+   "slot_index": 15,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "8e4f9f6bd9caa21d7659af8871a538ace4ff8e30c71109438f5790b52211ab29",
+   "slot_id": "mbpp/877|mbpp/877/control/lookup_original_examples|original_private",
+   "slot_index": 16,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "mbpp/877/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "8e4f9f6bd9caa21d7659af8871a538ace4ff8e30c71109438f5790b52211ab29",
+   "slot_id": "mbpp/877|mbpp/877/control/lookup_original_examples|supplement_v1",
+   "slot_index": 17,
+   "task_id": "mbpp/877"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825",
+   "slot_id": "mbpp/345|reference|public",
+   "slot_index": 18,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825",
+   "slot_id": "mbpp/345|reference|original_private",
+   "slot_index": 19,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825",
+   "slot_id": "mbpp/345|reference|supplement_v1",
+   "slot_index": 20,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "public",
+   "code_sha256": "6935b07c8ae6b5be3dde4ede69c6ae4d3423ec68b09f987c36e601cb136244b0",
+   "slot_id": "mbpp/345|mbpp/345/control/return_input_unchanged|public",
+   "slot_index": 21,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "original_private",
+   "code_sha256": "6935b07c8ae6b5be3dde4ede69c6ae4d3423ec68b09f987c36e601cb136244b0",
+   "slot_id": "mbpp/345|mbpp/345/control/return_input_unchanged|original_private",
+   "slot_index": 22,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/return_input_unchanged",
+   "artifact_kind": "return_input_unchanged",
+   "check": "supplement_v1",
+   "code_sha256": "6935b07c8ae6b5be3dde4ede69c6ae4d3423ec68b09f987c36e601cb136244b0",
+   "slot_id": "mbpp/345|mbpp/345/control/return_input_unchanged|supplement_v1",
+   "slot_index": 23,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/absolute_adjacent_differences",
+   "artifact_kind": "absolute_adjacent_differences",
+   "check": "public",
+   "code_sha256": "2e7671d54ccd42a74057789958b6247bf834974b3b23b3313d81d74dfcb4d33b",
+   "slot_id": "mbpp/345|mbpp/345/control/absolute_adjacent_differences|public",
+   "slot_index": 24,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/absolute_adjacent_differences",
+   "artifact_kind": "absolute_adjacent_differences",
+   "check": "original_private",
+   "code_sha256": "2e7671d54ccd42a74057789958b6247bf834974b3b23b3313d81d74dfcb4d33b",
+   "slot_id": "mbpp/345|mbpp/345/control/absolute_adjacent_differences|original_private",
+   "slot_index": 25,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/absolute_adjacent_differences",
+   "artifact_kind": "absolute_adjacent_differences",
+   "check": "supplement_v1",
+   "code_sha256": "2e7671d54ccd42a74057789958b6247bf834974b3b23b3313d81d74dfcb4d33b",
+   "slot_id": "mbpp/345|mbpp/345/control/absolute_adjacent_differences|supplement_v1",
+   "slot_index": 26,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/previous_minus_next",
+   "artifact_kind": "previous_minus_next",
+   "check": "public",
+   "code_sha256": "aa020c8ebba0297849109b83517e4566892f85d88255d86a560409529d5e04ff",
+   "slot_id": "mbpp/345|mbpp/345/control/previous_minus_next|public",
+   "slot_index": 27,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/previous_minus_next",
+   "artifact_kind": "previous_minus_next",
+   "check": "original_private",
+   "code_sha256": "aa020c8ebba0297849109b83517e4566892f85d88255d86a560409529d5e04ff",
+   "slot_id": "mbpp/345|mbpp/345/control/previous_minus_next|original_private",
+   "slot_index": 28,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/previous_minus_next",
+   "artifact_kind": "previous_minus_next",
+   "check": "supplement_v1",
+   "code_sha256": "aa020c8ebba0297849109b83517e4566892f85d88255d86a560409529d5e04ff",
+   "slot_id": "mbpp/345|mbpp/345/control/previous_minus_next|supplement_v1",
+   "slot_index": 29,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "88374f03156f284d74e02e2765829b78d2b67380bd572bb28e7d30c8b147fcca",
+   "slot_id": "mbpp/345|mbpp/345/control/constant_public_expected|public",
+   "slot_index": 30,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "88374f03156f284d74e02e2765829b78d2b67380bd572bb28e7d30c8b147fcca",
+   "slot_id": "mbpp/345|mbpp/345/control/constant_public_expected|original_private",
+   "slot_index": 31,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "88374f03156f284d74e02e2765829b78d2b67380bd572bb28e7d30c8b147fcca",
+   "slot_id": "mbpp/345|mbpp/345/control/constant_public_expected|supplement_v1",
+   "slot_index": 32,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "2f15ef195492ec4136f7b146331861b03e52432b75ffb4a864075969c64f532d",
+   "slot_id": "mbpp/345|mbpp/345/control/lookup_original_examples|public",
+   "slot_index": 33,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "2f15ef195492ec4136f7b146331861b03e52432b75ffb4a864075969c64f532d",
+   "slot_id": "mbpp/345|mbpp/345/control/lookup_original_examples|original_private",
+   "slot_index": 34,
+   "task_id": "mbpp/345"
+  },
+  {
+   "artifact_id": "mbpp/345/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "2f15ef195492ec4136f7b146331861b03e52432b75ffb4a864075969c64f532d",
+   "slot_id": "mbpp/345|mbpp/345/control/lookup_original_examples|supplement_v1",
+   "slot_index": 35,
+   "task_id": "mbpp/345"
+  }
+ ],
+ "source": {
+  "path": "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl",
+  "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+ },
+ "status": "prepared_not_released",
+ "supervisor": {
+  "finalization_seconds": 15,
+  "kill_reserve_seconds": 5,
+  "slot_budget_seconds": 160,
+  "term_grace_seconds": 2,
+  "total_seconds": 180
+ },
+ "version": "prompt-choice-endpoint-execution-v1"
+}
