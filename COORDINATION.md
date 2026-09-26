@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — MRL-37 nine-root measurement preparation
+
+Signed: Codex scientific lead. [The nine-root adapted measurement contract](docs/policy_nine_root_measurement_contract_20260926.md) freezes46 supplemental cases and45 wrong controls with explicit source-reasoned failure witnesses. A pre-execution correction fixes a weak885 case set and avoids duplicate703 controls;700's original string-range case prevents integer-only wording. Existing worker:source builder/config/tests only,one CPU/20 minutes/32MiB from acknowledged acceptance,no benchmark/model execution. No evaluation roster or receiver release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
+
+
 ## 26 September2026 — MRL-36 accepted; candidate adjudication completed
 
 Signed: Codex scientific lead. [Independent source review and43-root adjudication](docs/policy_candidate_adjudication_20260926.md): worker `00f70be` reproduces byte-for-byte; all retrieval records reconcile; full suite independently passes2,036 tests plus8 subtests. The separate lead crosswalk records15 definite prior-family relations,16 plausible relations,10 roots with no direct prior relation found and one two-root candidate family. These are not eligible-family counts. Three reference holds,one domain-choice hold,three specification holds and814's actual-float display conflict remain explicit. MRL-36 closed,acknowledgment only;no new run/lease. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent. Next: resolve family/contract/measurement gates and freeze a scientifically justified development/evaluation study.

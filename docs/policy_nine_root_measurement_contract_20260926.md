@@ -31,7 +31,7 @@ Arguments below are positional literal tuples. Expected values are lead-authored
 |Root|Supplement arguments → expected|
 |---|---|
 |356|`(60,60) → 60`;`(1,1) → 178`;`(89,90) → 1`;`(30,120) → 30`|
-|885|`("","") → True`;`("a","") → False`;`("foo","bar") → False`;`("egg","add") → True`;`("abca","zbxz") → True`;`("abc","xyy") → False`|
+|885|`("","") → True`;`("a","") → False`;`("foo","bar") → False`;`("egg","add") → True`;`("abca","zbxz") → True`;`("abc","xyy") → False`;`("aab","abb") → False`|
 |354|`(3,1,7) → 3`;`(5,4,0) → 5`;`(10,4,-3) → 1`;`(-2,3,4) → 6`|
 |901|`(3,) → 6`;`(4,) → 12`;`(5,) → 60`;`(7,) → 420`;`(8,) → 840`|
 |654|`(0,7) → 14`;`(3,3) → 12`;`(2,9) → 22`;`(1,0) → 2`|
@@ -40,7 +40,7 @@ Arguments below are positional literal tuples. Expected values are lead-authored
 |656|`([1,4],[2,8],2) → 5`;`([-3,1],[2,-2],2) → 2`;`([],[],0) → 0`;`([5,5,1],[5,1,1],3) → 4`;`([1,10],[10,1],2) → 0`;`([0,10],[4,6],2) → 8`|
 |36|`(1,8,1) → 1`;`(1,8,2) → 2`;`(1,8,3) → 5`;`(1,8,4) → 0`;`(2,7,3) → 5`;`(0,3,2) → 0`|
 
-Total45 supplemental cases. No runtime-generated cases or post-result edits under this version.
+Total46 supplemental cases. No runtime-generated cases or post-result edits under this version.
 
 ## Fixed controls
 
@@ -53,7 +53,7 @@ For each root prepare the original reference plus exactly five controls in this 
 |354|a+n*d|a+(n-1)|a*n*d|
 |901|n|n*(n-1)|0|
 |654|length*width|length+width|4*length|
-|703|Membership among dictionary values|Whether dictionary is nonempty|Always True|
+|703|Membership among dictionary values|Whether dictionary is nonempty|Always False|
 |700|Strict rather than inclusive bounds|Count distinct qualifying entries|Length of the input list|
 |656|Sum of absolute differences in original zipped order|Absolute difference of the two array sums|Sum of both arrays|
 |36|First decimal digit regardless of N|Digit at N+1 rather than N|Integer quotient of p*10**N by q without taking the last decimal digit|
@@ -68,6 +68,25 @@ Add `experiments/prompt_choice/nine_root_endpoint_audit.py`,`experiments/prompt_
 
 Output must fit the existing private grading schema through pure validation; explain any adapter changes required. Do not implement or launch an execution runner in this assignment. Expected later inventory is54 artifacts(reference plus five controls per root),with public,original-private and supplemental checks separately:162 slots,not162 independent observations. That arithmetic is planning only. A later lead-owned audit needs an exact plan,host containment/provenance check,finite runtime/output cap and explicit release.
 
-Tests must cover exact roots/order,all45 literal supplemental cases,all45 control identities,unchanged original bytes,adapted700 string-domain wording,public/private separation,deterministic reproduction,input refusal and no overwrite. No tests may execute benchmark/reference/control source. Report actual affected/full test commands,count,runtime and any unfinished checks. Commit directly to main under repository identity rules; fetch/inspect before push,preserve concurrent work and the existing lock-file deletion. Codex independently reviews and owns all scientific/release decisions.
+Tests must cover exact roots/order,all46 literal supplemental cases,all45 control identities,unchanged original bytes,adapted700 string-domain wording,public/private separation,deterministic reproduction,input refusal and no overwrite. No tests may execute benchmark/reference/control source. Report actual affected/full test commands,count,runtime and any unfinished checks. Commit directly to main under repository identity rules; fetch/inspect before push,preserve concurrent work and the existing lock-file deletion. Codex independently reviews and owns all scientific/release decisions.
 
 Full-project submission readiness58%,change0 percentage points. No efficacy or independent-policy credit. Measurement validity,remaining family/sampling decisions and a complete prospective development/evaluation/resource freeze remain the largest milestones. E14 N1/S1 stays NO-GO; the full history-conditional learned-prompt research goal remains active.
+
+
+## Pre-execution source correction and discrimination witnesses
+
+The original preparation draft `f418699` was not executed or dispatched as an active worker assignment. Static lead review found that its six885 supplemental cases did not reject the equal-distinct-count control. This revision adds the seventh885 case(aab,abb),which has equal distinct counts but different equality patterns,and changes703's third control to Always False to avoid duplicating its constant-public-True control. The exact total is46 supplemental cases;54 artifacts/162 planned slots are unchanged. This is a disclosed source correction before any payload or model execution,not an outcome-selected amendment.
+
+For each root,the following are source-reasoned failure witnesses for wrong rules1–3,constant-public and original-example lookup,in that order. Case numbers are one-based within the frozen supplement table. Values are predictions,not observed executions.
+
+|Root|Rule1|Rule2|Rule3|Constant|Lookup|
+|---|---|---|---|---|---|
+|356|case1:120≠60|case1:240≠60|case1:180≠60|case1:44≠60|case1:None≠60|
+|885|case3:True≠False|case7:True≠False|case6:True≠False|case2:True≠False|case1:None≠True|
+|354|case1:10≠3|case2:8≠5|case1:21≠3|case1:9≠3|case1:None≠3|
+|901|case1:3≠6|case3:20≠60|case1:0≠6|case1:360360≠6|case1:None≠6|
+|654|case1:0≠14|case1:7≠14|case1:0≠14|case1:60≠14|case1:None≠14|
+|703|case2:False≠True|case3:True≠False|case2:False≠True|case1:True≠False|case1:None≠False|
+|700|case1:0≠3|case1:2≠3|case1:5≠3|case1:6≠3|case1:None≠3|
+|656|case2:8≠2|case6:0≠8|case1:15≠5|case1:0≠5|case1:None≠5|
+|36|case2:1≠2|case1:2≠1|case2:12≠2|case1:5≠1|case1:None≠1|
