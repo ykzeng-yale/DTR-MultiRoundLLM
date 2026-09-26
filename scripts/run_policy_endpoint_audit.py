@@ -540,8 +540,15 @@ def _run_directory_bound(out, token) -> bool:
         return False
 
 
+def _fail_closed_watchdog(delay, action):
+    import threading
+    timer = threading.Timer(delay, action)
+    timer.daemon = True
+    return timer
+
+
 def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monotonic,
-                       detached=detached_payload_cleanup, supervisor_root=None) -> tuple:
+                       detached=detached_payload_cleanup, supervisor_root=None, watchdog=_fail_closed_watchdog) -> tuple:
     """Parent. Operational boundary (under a responsive OS): the monotonic total deadline starts HERE, before reading the
     plan and before any verification, which runs inside the supervised child ahead of any payload launch. The parent writes
     only into a freshly created supervisor directory of its own, never into the plan's (unverified) output path; it
@@ -549,6 +556,10 @@ def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen
     totals write boundary, and success is declared only after that. Returns (exit code, supervisor record, totals)."""
     t0 = clock()
     deadline = t0 + SUPERVISOR["total_seconds"]
+    # Fail-closed lifecycle watchdog: if the parent (including finalization) is still running at the deadline, the process
+    # exits with status 5 immediately; it is cancelled only after the post-finalizer elapsed check.
+    guard = watchdog(max(0.0, deadline - clock()), lambda: os._exit(5))
+    guard.start()
     token = secrets.token_hex(16)
     sup_root = Path(SUPERVISOR_ROOT if supervisor_root is None else supervisor_root)
     sup_root.mkdir(parents=False, exist_ok=True)
@@ -581,11 +592,14 @@ def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen
     record["audit_complete"] = bool(receipt and receipt.get("audit_complete"))
     with open(sup / "supervisor.json", "x", encoding="utf-8") as fh:
         fh.write(json.dumps(record, sort_keys=True, default=str) + "\n")
-    elapsed = clock() - t0  # measured after every read and write except the final totals file itself
+    before = clock() - t0
     totals = finalize_totals(sup, [f for f in out.iterdir() if f.is_file()] if bound else [],
-                             extra={"elapsed_seconds_through_final_boundary": round(elapsed, 6),
-                                    "within_total_deadline": t0 + elapsed <= deadline,
-                                    "boundary": "monotonic, from before the plan read to just before this totals file is written"})
+                             extra={"elapsed_seconds_before_totals_write": round(before, 6),
+                                    "deadline_verdict": "decided after this file is written (post-finalizer check); see the exit code"})
+    final_elapsed = clock() - t0  # post-finalizer check: the whole lifecycle, including the totals write
+    guard.cancel()
+    totals = dict(totals, final_elapsed_seconds=round(final_elapsed, 6),
+                  within_total_deadline=final_elapsed <= SUPERVISOR["total_seconds"])  # returned, not claimed on disk early
     ok = (bound and record["child_exit"] == 0 and not record["killed_at_deadline"]
           and record["adapter_group_cleanup"].startswith("confirmed")
           and record["detached_payload_cleanup"]["status"].startswith("confirmed")

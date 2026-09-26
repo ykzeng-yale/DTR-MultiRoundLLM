@@ -418,6 +418,20 @@ def test_mrl35_detached_payload_cleanup_needs_completion_evidence(tmp_path, line
     assert ad.detached_payload_cleanup(tmp_path / "nolog")["status"] == "unresolved"
 
 
+class _Guard:
+    made = []
+
+    def __init__(self, delay):
+        self.delay, self.started, self.cancelled = delay, False, False
+        _Guard.made.append(self)
+
+    def start(self):
+        self.started = True
+
+    def cancel(self):
+        self.cancelled = True
+
+
 class _Child:
     pid = 5151
 
@@ -452,7 +466,8 @@ def _supervised(tmp_path, *, group_gone=True, detached="confirmed_by_normal_runn
     sup = tmp_path / "sup"
     result = ad.execute_supervised("src.jsonl", plan, "a" * 40, popen=popen, killpg=killpg,
                                    clock=clock or iter(range(0, 1000, 1)).__next__,
-                                   detached=detached_fn or (lambda o: {"status": detached}), supervisor_root=sup)
+                                   detached=detached_fn or (lambda o: {"status": detached}), supervisor_root=sup,
+                                   watchdog=lambda delay, action: _Guard(delay))
     return result, out, sup
 
 
@@ -476,7 +491,9 @@ def test_mrl35_final_on_disk_totals_equal_measured_files_including_supervisor_an
     measured.update({f.as_posix(): f.stat().st_size for f in out.iterdir()})
     assert set(totals["files"]) == set(measured) - {"retained_totals.json"} and "supervisor.json" in totals["files"]
     assert totals["total_bytes"] == sum(measured.values()) and totals["totals_file_bytes"] == measured["retained_totals.json"]
-    assert json.loads((run / "retained_totals.json").read_text()) == totals
+    saved = json.loads((run / "retained_totals.json").read_text())
+    assert saved == {k: v for k, v in totals.items() if k not in ("final_elapsed_seconds", "within_total_deadline")}
+    assert "within_total_deadline" not in saved  # never claimed on disk before the post-finalizer check
 
 
 def test_mrl35_r1_lead_refusal_counterexample_never_mutates_an_unverified_existing_directory(tmp_path):
@@ -519,7 +536,7 @@ def test_mrl35_r1_finalization_overrun_is_measured_and_never_success(tmp_path):
         return {"status": "confirmed_by_normal_runner_returns"}
     (code, record, totals), out, sup = _supervised(tmp_path, clock=lambda: now[0], detached_fn=slow_detached)
     assert code == 3 and totals["within_total_deadline"] is False
-    assert totals["elapsed_seconds_through_final_boundary"] > ad.SUPERVISOR["total_seconds"]
+    assert totals["final_elapsed_seconds"] > ad.SUPERVISOR["total_seconds"]
 
 
 def test_mrl35_preparation_delay_counts_against_the_total_deadline(package, tmp_path):
@@ -560,3 +577,35 @@ def test_mrl35_finalization_itself_cannot_breach_the_cap(package, tmp_path, monk
     stored = json.loads((tmp_path / "run/receipt_private.json").read_text())
     assert stored["slots_omitted_for_cap"] is True and stored["audit_complete"] is False
     assert len([x for x in (tmp_path / "run/slots_private.jsonl").read_text().splitlines() if '"event": "slot"' in x]) == 36
+
+
+def test_mrl35_r2_lead_slow_finalizer_counterexample_is_never_success(tmp_path, monkeypatch):
+    # The lead's probe: the clock advances 181 s inside a wrapper around the real finalize_totals.
+    now = [0.0]
+    real = ad.finalize_totals
+
+    def slow(*a, **kw):
+        result = real(*a, **kw)
+        now[0] += 181.0
+        return result
+    monkeypatch.setattr(ad, "finalize_totals", slow)
+    _Guard.made.clear()
+    (code, record, totals), out, sup = _supervised(tmp_path, clock=lambda: now[0])
+    assert code == 3 and totals["within_total_deadline"] is False and totals["final_elapsed_seconds"] >= 181
+    (run,) = sup.iterdir()
+    assert "within_total_deadline" not in json.loads((run / "retained_totals.json").read_text())
+    (guard,) = _Guard.made
+    assert guard.started and guard.cancelled and guard.delay == ad.SUPERVISOR["total_seconds"]
+
+
+def test_mrl35_r2_watchdog_is_fail_closed_by_default():
+    import inspect
+    assert inspect.signature(ad.execute_supervised).parameters["watchdog"].default is ad._fail_closed_watchdog
+    fired = []
+    timer = ad._fail_closed_watchdog(0.01, lambda: fired.append(True))
+    assert timer.daemon
+    timer.start()
+    timer.join(1)
+    assert fired == [True]
+    src = (ROOT / "scripts/run_policy_endpoint_audit.py").read_text()
+    assert "guard = watchdog(max(0.0, deadline - clock()), lambda: os._exit(5))" in src
