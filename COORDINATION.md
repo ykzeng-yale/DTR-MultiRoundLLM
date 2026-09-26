@@ -3866,3 +3866,55 @@ Signed: experiments worker. Processed Codex `d2d17d6…` (LEAD-INFERENCE-02 / MR
 - **Invariance:** after clearing `_kl_interval_cached` and `_threshold`, results under a hostile global context (prec 5, ROUND_UP) equal the default-context results exactly.
 - **Injection:** a 1e-60 inward stand-in is rejected at the boundary (both directions) and in the interior.
 - **Tests:** 46 focused tests pass. The documented full suite, run once after the lead's corrections: **1,822 passed, 0 failed**. A pre-correction draft run also gave 1,822 passed; it is superseded.
+
+## Experiments → theory, 2026-09-26T21:52:00Z — MRL-31 COMPLETED (v2 learner with unavailable histories), for Codex review
+
+Signed: experiments worker. Processed Codex `23c652b6fae9dd839c890a803049f22f64f92d09` (LEAD-MEASUREMENT-01 / MRL-31) and the lead's mid-run draft review, which asked for an independent integer oracle. Also processed `6afc027` (LEAD-MEASUREMENT-02). It is a design decision with no worker assignment, and nothing was run for it. **Accepted 21:45:42Z; deadline 22:05:42Z; completed 2026-09-26T21:52:00Z.** One sequential CPU, no cap extension. Zero experimental calls, candidate execution, sampling, downloads, real-data or historical fits, or spend. Run/lease: none.
+
+- **New files (34,756 bytes):**
+  - `experiments/prompt_choice/empirical_policy_v2.py`: `56ac0792a9190524e750b06a03cf3862305ccb20c849b66369c5994c515fda09`
+  - `experiments/prompt_choice/empirical_policy_source_v2.json`: `14a6ca92dc074470a7ddf50916c75fcb8601405e95b260fda73a2cc6349e471a`. It pins the contract at `23c652b`, sha256 `35483d23…ad7b`, and records the v1 hashes as preserved but not a dependency.
+  - `tests/test_prompt_empirical_policy_v2.py`: `ce309c16b9cd212952907d97714bed2b4d624ba586230036b7daccb55d1f7e33`
+- **Preserved byte-identical:**
+  - `empirical_policy.py` `4097903742c0…053f`
+  - `empirical_policy_source_v1.json` `a3d65d06dda8…8507`
+  - `tests/test_prompt_empirical_policy.py` `861bea215834…613a`
+  - `patch_rethink.py` `1774d0de4116…fecd`
+  - `paired_inference.py` `fe11639fb0df…1d79`
+  - `paired_inference_source_v1.json` `03e2149fd732…6499`
+  - `tests/test_prompt_paired_inference.py` `56ce67c2e961…d07f`
+
+  Hashes were checked before and after.
+- **Rule:** an unavailable-history root keeps its weight w = 1/(G·m_g). For every map it adds 0 to the lower criterion and w to the upper. It enters no cell's support and no b1/d comparison. Accepted reasons are `initial_transport_missing`, `history_record_unavailable` and `collection_cap_unattempted`.
+- **What the fit does not return:** no shared outcome and no contrast.
+- **Report:** `known_history_roots`, `verified_common_rows` and `unavailable_history_roots` are separate lists. Each unavailable row carries its reason, `planned_slots_per_action`, the marginal interval [0,1] and the label "not a shared outcome". The report also gives `unavailable_history_count` and `unavailable_history_weight`. `missing_slots_total` counts known histories only; `missing_common_outcomes` counts common rows only.
+- **Tests (24 focused, all pass):**
+  - **Lead oracle:** R=1 with families A=[known 00] (weight 6/18), B=[known 01, unavailable] (3/18 each) and C=[known 10, known 11, common null] (2/18 each). All 3^8 = 6,561 assignments of 0/1/null are checked against a separate `itertools.product` 16-map enumeration with integer weights [6,3,2,2]. It uses no `_rows`, `value` or `all_maps`. Checked: b1, the d tie law, the optimality of d, the exact lower/upper of d, b1 and both constants, missing counts, per-cell tie flags, and the retained unknown weight of 3/18 versus the common weight of 2/18. Runtime 0.67 s.
+  - **Mixed-row check:** a second, implementation-level 16-map check on mixed rows confirms that every map's upper bound is the known/common upper plus the unavailable weight.
+  - **Denominator retention:** keeping the unavailable root ties the constants at 1/4 each, giving PATCH. Dropping it gives RETHINK.
+  - **All-unavailable:** PATCH everywhere, [0,1], zero support.
+  - **v1 compatibility:** on three old-form fixtures, v1 and v2 give equal d, b1, cells, values and missing counts.
+  - **Report and bookkeeping:** separate report lists; an observed `has_incomplete` is treated as a known state; informative-loss bookkeeping with upper − lower equal to the unavailable weight and no MAR assumption.
+  - **Rejections:** 11 malformed inputs are refused. They cover an unknown or non-string reason, a non-null state with a reason, `common_outcome` or `outcomes` alongside a reason, extra fields, a duplicate, a lone surrogate, an incomplete shape, the evaluation partition and Boolean replicates.
+  - **Isolation:** inputs are immutable. Prediction is label-free with no file I/O (reads monkeypatched). A v1 identity or artifact is refused by v2, and v1 refuses a v2 artifact.
+  - **Structural checks:** an AST check shows v2 does not import v1; the config pin is verified by `git show`.
+  - **Non-cancellation counterexample:** in `paired_inference.score_bounds`, distinct unknown primitives give [−1,1], and only a shared primitive gives (0,0). The v2 artifact has no contrast field.
+- **Fail-then-pass:** mutations were applied to temporary copies, and the source was restored byte-identical after each.
+  - Unavailable counted as a success: 3 failures, including the oracle.
+  - Denominator shrink: 4 failures.
+  - Unavailable counted as a failure: 3 failures.
+  - Tie resolved to PATCH instead of b1: the oracle fails.
+- **Full suite (run once):** 1,846 passed, 0 failed, in 34.4 s.
+- **Interpretation choices, for the lead's review:**
+  1. The v1 report keys `actionable_roots`/`nonactionable_roots` are named `known_history_roots`/`verified_common_rows` in v2 only.
+  2. `nonactionable()` is kept as in v1.
+  3. v2 is a self-contained copy, not an import of v1.
+  4. An unavailable root with any extra field is refused, not coerced.
+  5. A root whose `has_incomplete` is observed stays a known history.
+- **Limitations:**
+  - Toy supplied data only.
+  - The reason label is caller-supplied and unverified.
+  - Identity checks do not prove external roster provenance or a future freeze.
+  - The output is a training criterion, not a confidence bound, selected-policy value or efficacy evidence.
+
+Readiness 58%, change 0 points; no collection release.

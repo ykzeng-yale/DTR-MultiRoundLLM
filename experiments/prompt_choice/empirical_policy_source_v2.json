@@ -1,0 +1,52 @@
+{
+ "version": "empirical-policy-source-v2",
+ "decision": "LEAD-MEASUREMENT-01",
+ "assignment": "MRL-31",
+ "extends": "LEAD-POLICY-17 (v1 learner, preserved unchanged)",
+ "source_only": true,
+ "collection_enabled": false,
+ "real_data_fit_authorized": false,
+ "receiver_calls_authorized": 0,
+ "not_a_trial_freeze": "Neither this config nor a fit artifact is a full trial freeze.",
+ "contract": {
+  "path": "docs/policy_unavailable_history_contract_20260926.md",
+  "commit": "23c652b",
+  "sha256": "35483d23237a927c1561d81d6aea52f342bfcc3c66e6ffa990a4829b3988ad7b",
+  "hash_of": "raw UTF-8 blob at the issuing commit"
+ },
+ "self_contained": "empirical_policy_v2.py imports no project module; its artifact identities cover exactly its own source and this config",
+ "v1_preserved_not_a_dependency": {
+  "experiments/prompt_choice/empirical_policy.py": "4097903742c0a03af9023b61de9817bc2fcbc54ae060bd023bf144e2f294053f",
+  "experiments/prompt_choice/empirical_policy_source_v1.json": "a3d65d06dda83581af1f7648b1e2c62c51beac4200c5401878941bed5f028507"
+ },
+ "hash_conventions": {
+  "raw": "sha256 of raw UTF-8 bytes of a file or text",
+  "object": "sha256 of json.dumps(obj, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+  "artifact_identities": "source_sha256/config_sha256 are raw-byte hashes of empirical_policy_v2.py and this config"
+ },
+ "root_shapes": {
+  "known_history": "{root_id, state: {has_payload_failure, has_incomplete}, outcomes: {PATCH, RETHINK}}",
+  "verified_common": "{root_id, state: null, common_outcome, invalid_disposition} (requires a verified common law outside the API)",
+  "unavailable_history": "{root_id, state: null, history_unavailable_reason}"
+ },
+ "unavailable_history_reasons": [
+  "initial_transport_missing",
+  "history_record_unavailable",
+  "collection_cap_unattempted"
+ ],
+ "unavailable_history_rule": "keeps its original weight w; marginal interval [0,1] for every policy; adds 0 to the lower and w to the upper criterion of every map; no imputed state, cell, action, grade or primitive; not a shared outcome; no contrast returned",
+ "observed_incomplete": "a known history with has_incomplete true is an observed INCOMPLETE state, never reinterpreted as unavailable",
+ "weights": "w_gi = 1/(G*m_g) over all supplied families and planned roots, including verified-common and unavailable-history roots",
+ "cell_label": "f'{int(has_payload_failure)}{int(has_incomplete)}'; ordered cells 00, 01, 10, 11",
+ "b1_rule": "RETHINK iff J(constant RETHINK) > J(constant PATCH), else PATCH",
+ "d_rule": "per known-history cell, strictly larger weighted lower sum; tie or unseen -> b1",
+ "all_unavailable": "PATCH everywhere, lower 0, upper 1, no observed support, no efficacy inference",
+ "prediction_artifact": [
+  "version",
+  "source_sha256",
+  "config_sha256",
+  "map",
+  "b1"
+ ],
+ "limits": "J(d) >= J(b1) is exact algebra on the lower criterion, not correct ranking, improvement or an estimate on the latent quality target; not MAR"
+}
