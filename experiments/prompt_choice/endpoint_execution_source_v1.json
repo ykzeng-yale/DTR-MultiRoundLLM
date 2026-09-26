@@ -49,7 +49,11 @@
   "supplement_v1": 2
  },
  "supervisor": {
-  "in_process_deadline_seconds": 210
+  "total_seconds": 180,
+  "kill_reserve_seconds": 5,
+  "term_grace_seconds": 2,
+  "slot_budget_seconds": 160,
+  "kind": "external owned-child supervisor: the parent starts the audit child in a new session and kills only that process group at total - kill_reserve; the child stops starting slots at slot_budget; observed exit and group cleanup are recorded"
  },
  "attestation_path": "results/policy_endpoint_containment_20260926T2217Z/attestation.json",
  "predictions": {
@@ -76,5 +80,11 @@
   "elapsed_minutes_from_acceptance": 20,
   "retained_output_mib": 32,
   "sandbox_program_model_launches": 0
- }
+ },
+ "retained_bytes_rule": {
+  "worst_slot_bytes": 802816,
+  "finalization_reserve_bytes": 262144,
+  "rule": "before each launch: bytes of all retained files + worst-case next slot + finalization reserve <= retained cap; raw runner results only in the private JSONL"
+ },
+ "mrl34_r1": "lead draft review 3545832 applied: external supervisor, all-file byte accounting, whole canonical plan validation, raw private runner records"
 }

@@ -220,8 +220,8 @@ def gated(package, work_dir, mutate=None, *, git_blob=True, ancestor=True, attes
     def attest(p):
         if not attest_ok:
             raise ValueError("Containment attestation must be from the last 24 hours")
-    return lambda commit="a" * 40: ad.verify_release(path, commit, "synthetic.jsonl", git=git, binding=binding,
-                                                     attest=attest, package=package)
+    return lambda commit="a" * 40, allow=True: ad.verify_release(path, commit, "synthetic.jsonl", git=git, binding=binding,
+                                                                 attest=attest, package=package, allow_synthetic=allow)
 
 
 def test_release_gate_passes_only_when_everything_matches(package, work_dir):
@@ -293,7 +293,88 @@ def test_config_mirrors_adapter_and_pins_contract():
     assert cfg["version"] == ad.VERSION and cfg["execution_released"] is False and cfg["runs_authorized"] == 0
     assert cfg["package_identities"] == ad.PACKAGE_IDENTITIES and cfg["future_run_limits"] == ad.LIMITS
     assert cfg["planned_slots"] == 36 and cfg["predictions"] == ad.PREDICTIONS
+    assert {k: v for k, v in cfg["supervisor"].items() if k != "kind"} == ad.SUPERVISOR
+    assert cfg["retained_bytes_rule"]["worst_slot_bytes"] == ad.WORST_SLOT_BYTES
     review = (ROOT / "docs/policy_endpoint_source_review_20260926.md").read_text()
     for h in [*ad.PACKAGE_IDENTITIES["public_record_sha256"].values(), *ad.PACKAGE_IDENTITIES["private_record_sha256"].values(),
               ad.PACKAGE_IDENTITIES["builder_sha256"], ad.PACKAGE_IDENTITIES["config_sha256"]]:
         assert h in review
+
+
+# ---------------------------------------------------------------- MRL-34-R1 regressions
+@pytest.mark.parametrize("case", ["extra_field", "predictions", "supervisor", "source_path", "per_call", "retained_rule"])
+def test_r1_whole_canonical_plan_is_validated(package, work_dir, case):
+    mutate = {"extra_field": lambda p: p.update(note="committed metadata is not its own proof"),
+              "predictions": lambda p: p["predictions"].update(reference="anything"),
+              "supervisor": lambda p: p["supervisor"].update(total_seconds=900),
+              "source_path": lambda p: p["source"].update(path="other.jsonl"),
+              "per_call": lambda p: p["per_call_bound_seconds"].update(public=1),
+              "retained_rule": lambda p: p["retained_bytes_rule"].update(worst_slot_bytes=1)}[case]
+    with pytest.raises(ad.ReleaseRefused):
+        gated(package, work_dir, mutate)()
+
+
+def test_r1_synthetic_package_and_output_outside_work_are_refused(package, work_dir, tmp_path):
+    with pytest.raises(ad.ReleaseRefused, match="production"):
+        gated(package, work_dir)(allow=False)
+    with pytest.raises(ad.ReleaseRefused, match="inside work"):
+        gated(package, work_dir, lambda p: p.update(output_directory=str(tmp_path / "outside")))()
+
+
+def test_r1_retained_bytes_bound_all_files_and_worst_case_next_slot(package, tmp_path):
+    cap = ad.WORST_SLOT_BYTES + ad.FINALIZATION_RESERVE_BYTES + 20_000
+    receipt = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", private_runner([]), designation=ad.MOCK_DESIGNATION,
+                           limits=dict(ad.LIMITS, retained_output_bytes=cap))
+    statuses = [r["status"] for r in receipt["slots"]]
+    assert "output_cap_unattempted" in statuses and len(statuses) == 36
+    assert sum(f.stat().st_size for f in (tmp_path / "run").iterdir()) <= cap
+    assert receipt["totals"]["retained_bytes_total"] == sum(f.stat().st_size for f in (tmp_path / "run").iterdir())
+    full = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run2", private_runner([]), designation=ad.MOCK_DESIGNATION)
+    assert full["totals"]["retained_bytes_total"] <= ad.LIMITS["retained_output_bytes"]
+    stored = json.loads((tmp_path / "run2/receipt_private.json").read_text())
+    assert not any(k in r for r in stored["slots"] for k in ad.RAW_FIELDS)  # no raw duplication in the receipt
+
+
+def test_r1_raw_runner_results_program_hash_and_public_nonce_are_kept_privately(package, tmp_path):
+    ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", private_runner([]), designation=ad.MOCK_DESIGNATION)
+    rows = [json.loads(x) for x in (tmp_path / "run/slots_private.jsonl").read_text().splitlines()]
+    public = [r for r in rows if r["event"] == "slot" and r["check"] == "public"]
+    assert len(public) == 12
+    for r in public:
+        assert re.fullmatch(r"[0-9a-f]{32}", r["public_nonce"])
+        (call,) = r["private_runner_calls"]
+        assert re.fullmatch(r"[0-9a-f]{64}", call["program_sha256"]) and call["result"] == {"stdout": "", "returncode": 0, "timed_out": False}
+    private = [r for r in rows if r["event"] == "slot" and r["check"] != "public"]
+    assert all(r["private_runner_calls"][0]["result"]["sandbox_kind"] == "seatbelt" for r in private)
+    projection = (tmp_path / "run/public_projection.json").read_text()
+    for r in public:
+        assert r["public_nonce"] not in projection and r["private_runner_calls"][0]["program_sha256"] not in projection
+
+
+class FakeChild:
+    def __init__(self, waits):
+        self.pid, self.waits = 4242, list(waits)
+
+    def wait(self, timeout):
+        w = self.waits.pop(0)
+        if w is None:
+            raise subprocess.TimeoutExpired("child", timeout)
+        return w
+
+
+@pytest.mark.parametrize("waits,group_gone,killed,exit_code,cleanup", [
+    ([0], True, False, 0, "confirmed"), ([None, -15], True, True, -15, "confirmed"),
+    ([None, None, -9], False, True, -9, "unresolved"), ([None, None, None], False, True, None, "unresolved"),
+])
+def test_r1_external_supervisor_kills_only_its_owned_group_and_records_observed_cleanup(waits, group_gone, killed, exit_code, cleanup):
+    sent, child = [], FakeChild(waits)
+
+    def killpg(pid, sig):
+        sent.append((pid, sig))
+        if sig == 0 and group_gone:
+            raise ProcessLookupError
+    started = []
+    record = ad.supervise(["child"], popen=lambda cmd, **kw: started.append(kw) or child, killpg=killpg, clock=iter(range(100)).__next__)
+    assert started == [{"start_new_session": True}] and all(pid == 4242 for pid, _ in sent)
+    assert record["killed_at_deadline"] is killed and record["child_exit"] == exit_code and record["cleanup"].startswith(cleanup)
+    assert ad.SUPERVISOR["total_seconds"] == 180 and ad.SUPERVISOR["slot_budget_seconds"] < 180 - ad.SUPERVISOR["kill_reserve_seconds"]

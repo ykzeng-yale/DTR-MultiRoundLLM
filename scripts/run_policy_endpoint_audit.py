@@ -44,7 +44,14 @@ CHECKS = ("public", "original_private", "supplement_v1")
 LIMITS = {"max_sandbox_starts": 36, "total_elapsed_seconds": 180, "retained_output_bytes": 8 * 1024 * 1024,
           "model_calls": 0, "downloads": 0, "paid_spend": 0}
 SLOT_BOUND_SECONDS = {"public": pc.PUBLIC_LIMITS["parent_wall_seconds"], "original_private": 2, "supplement_v1": 2}
-SUPERVISOR_GRACE_SECONDS = 30
+# External owned-child supervisor (MRL-34-R1): the parent kills the child's process group at total - kill_reserve; the
+# child stops starting slots at slot_budget, leaving time inside the 180 s total for finalization and cleanup.
+SUPERVISOR = {"total_seconds": 180, "kill_reserve_seconds": 5, "term_grace_seconds": 2, "slot_budget_seconds": 160}
+# Worst case retained bytes for one more slot: stdout and stderr up to 65,536 bytes each, JSON-escaped up to 6x, plus
+# record overhead; finalization (summary receipt and projection, no raw duplication) is reserved separately.
+WORST_SLOT_BYTES = 6 * 2 * 65536 + 16384
+FINALIZATION_RESERVE_BYTES = 256 * 1024
+RAW_FIELDS = ("private_results", "private_run", "private_runner_calls", "public_nonce", "public_reasons")
 # Exact MRL-33 production identities independently reproduced by the lead (docs/policy_endpoint_source_review_20260926.md).
 PACKAGE_IDENTITIES = {
     "public_record_sha256": {"mbpp/877": "fc906f9537fe4cb900e63894a149fcba4618843857d063cb824b72f4ecfb2183",
@@ -66,10 +73,6 @@ PUBLIC_UNKNOWN = ("timeout", "unavailable", "output_limit")
 
 class ReleaseRefused(RuntimeError):
     """A plan, binding, attestation, source or output check failed; nothing was launched."""
-
-
-class SupervisorDeadline(BaseException):
-    """The in-process supervisor deadline fired; the run is recorded as interrupted, never as complete."""
 
 
 # ---------------------------------------------------------------- slots, specs, identities (pure)
@@ -160,8 +163,8 @@ def make_plan(source_path, out_dir, *, package=None, binding=None) -> dict:
             "attestation": {"path": ATTESTATION_PATH.relative_to(ROOT).as_posix(), "sha256": file_sha(ATTESTATION_PATH)
                             if ATTESTATION_PATH.exists() else None},
             "slots": slot_plan(package), "output_directory": out.as_posix(),
-            "limits": LIMITS, "per_call_bound_seconds": SLOT_BOUND_SECONDS,
-            "supervisor": {"in_process_deadline_seconds": LIMITS["total_elapsed_seconds"] + SUPERVISOR_GRACE_SECONDS},
+            "limits": LIMITS, "per_call_bound_seconds": SLOT_BOUND_SECONDS, "supervisor": SUPERVISOR,
+            "retained_bytes_rule": {"worst_slot_bytes": WORST_SLOT_BYTES, "finalization_reserve_bytes": FINALIZATION_RESERVE_BYTES},
             "predictions": PREDICTIONS}
     return json.loads(json.dumps(plan))  # detached JSON copy: editing a plan never aliases module constants or the package
 
@@ -172,7 +175,7 @@ PREDICTIONS = {"reference": "public pass; original_private pass; supplement_v1 p
 
 
 def verify_release(plan_path, plan_commit, source_path, *, git=_git, binding=None, attest=grade.verify_attestation,
-                   package=None) -> dict:
+                   package=None, allow_synthetic=False) -> dict:
     """Every gate before any launch; raises ReleaseRefused naming the first failure."""
     plan_path = Path(plan_path)
     try:
@@ -219,6 +222,15 @@ def verify_release(plan_path, plan_commit, source_path, *, git=_git, binding=Non
         raise ReleaseRefused(f"attestation invalid now: {e}") from None
     if Path(plan["output_directory"]).exists():
         raise ReleaseRefused("output directory already exists")
+    out = Path(plan["output_directory"]).resolve()
+    if (ROOT / "work").resolve() not in out.parents:
+        raise ReleaseRefused("output directory must be inside work/")
+    if package["manifest"]["designation"] != "production" and not allow_synthetic:
+        raise ReleaseRefused("only the production package can be released")
+    expected = make_plan(source_path, Path(plan["output_directory"]), package=package,
+                         binding=grade.current_binding() if binding is None else binding)
+    if plan != expected:  # the whole canonical plan, exact field set included
+        raise ReleaseRefused("plan differs from the reconstructed canonical plan")
     return plan
 
 
@@ -293,7 +305,9 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
     start_manifest = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "limits": limits,
                       "started_at": datetime.now(timezone.utc).isoformat(), "slots": slots}
     with open(out / "start_manifest.json", "x", encoding="utf-8") as fh:
-        fh.write(json.dumps(start_manifest, sort_keys=True) + "\n")
+        text = json.dumps(start_manifest, sort_keys=True) + "\n"
+        fh.write(text)
+    written += len(text.encode("utf-8"))
     log = open(out / "slots_private.jsonl", "x", encoding="utf-8")
 
     def persist(obj):
@@ -311,30 +325,40 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
             rec = dict(slot)
             elapsed = clock() - started
             if stop_reason is None and (launches >= limits["max_sandbox_starts"]
-                                        or elapsed + SLOT_BOUND_SECONDS[slot["check"]] > limits["total_elapsed_seconds"]):
+                                        or elapsed + SLOT_BOUND_SECONDS[slot["check"]] > SUPERVISOR["slot_budget_seconds"]):
                 stop_reason = "cap_unattempted"
-            if stop_reason is None and written >= limits["retained_output_bytes"]:
+            if stop_reason is None and written + WORST_SLOT_BYTES + FINALIZATION_RESERVE_BYTES > limits["retained_output_bytes"]:
                 stop_reason = "output_cap_unattempted"
             if stop_reason is not None:
                 rec.update(status=stop_reason, launched=False, outcome=None, reason=stop_reason)
                 persist({"event": "slot", **rec})
                 records.append(rec)
                 continue
-            launched = []
+            launched, raw_calls = [], []
 
             def counted(program, **kw):
                 nonlocal launches
                 launches += 1  # counted and persisted before the runner is invoked
                 launched.append(True)
-                persist({"event": "launch_attempt", "slot_id": slot["slot_id"], "launch_number": launches})
-                return runner(program, **kw)
+                call = {"program_sha256": hashlib.sha256(program.encode("utf-8")).hexdigest(), "bounds": kw}
+                persist({"event": "launch_attempt", "slot_id": slot["slot_id"], "launch_number": launches,
+                         "program_sha256": call["program_sha256"]})
+                try:
+                    result = runner(program, **kw)
+                except BaseException as e:
+                    call["exception"] = f"{type(e).__name__}: {e}"
+                    raw_calls.append(call)
+                    raise
+                call["result"] = result  # raw runner result (stdout, stderr, return code) kept privately
+                raw_calls.append(call)
+                return result
 
             code, t0 = codes[(slot["task_id"], slot["artifact_id"])], clock()
             pub = by_task[slot["task_id"]][0]
             if slot["check"] == "public":
-                results = pc.check_artifact(code, pub["entry_point"], [dict(pub["public_case"])], counted,
-                                            secrets.token_hex(16), display="v2")
-                rec.update(outcome=public_outcome(results), reason="public_check",
+                nonce = secrets.token_hex(16)
+                results = pc.check_artifact(code, pub["entry_point"], [dict(pub["public_case"])], counted, nonce, display="v2")
+                rec.update(outcome=public_outcome(results), reason="public_check", public_nonce=nonce,
                            public_statuses=[r["status"] for r in results],
                            public_reasons=[r["reason"] for r in results], private_results=results)
             else:
@@ -343,7 +367,7 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
                 rec.update(outcome=res["outcome"], reason=res["reason"], returncode=run.get("returncode"),
                            private_results={k: v for k, v in res.items() if k != "run"}, private_run=run)
             rec.update(status="launched" if launched else "static_decision", launched=bool(launched),
-                       seconds=round(clock() - t0, 6))
+                       seconds=round(clock() - t0, 6), private_runner_calls=raw_calls)
             persist({"event": "slot", **rec})
             records.append(rec)
             current = None
@@ -369,18 +393,51 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
 
 def _finish(out, log, records, designation, plan_sha256, run_status, launches, elapsed, written):
     log.close()
+    summaries = [{k: v for k, v in r.items() if k not in RAW_FIELDS} for r in records]  # raw results stay only in the JSONL
     receipt = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "run_status": run_status,
                "totals": {"slots": len(records), "sandbox_launch_attempts": launches, "elapsed_seconds": round(elapsed, 6),
-                          "private_log_bytes": written, "model_calls": 0,
+                          "retained_bytes_before_finalization": written, "model_calls": 0,
                           "by_status": {s: sum(r["status"] == s for r in records) for s in ADAPTER_STATUSES}},
-               "slots": records, "classification": classify(records),
-               "cleanup": "sandbox.run_program owns each child process group; unresolved cleanup is reported by its run record"}
+               "slots": summaries, "classification": classify(records),
+               "raw_records": "slots_private.jsonl (runner results, program hashes, public nonces)"}
     with open(out / "receipt_private.json", "x", encoding="utf-8") as fh:
         fh.write(json.dumps(receipt, sort_keys=True, default=str, indent=1) + "\n")
     projection = public_projection(receipt)
     with open(out / "public_projection.json", "x", encoding="utf-8") as fh:
         fh.write(json.dumps(projection, sort_keys=True, indent=1) + "\n")
+    receipt["totals"]["retained_bytes_total"] = sum(f.stat().st_size for f in out.iterdir() if f.is_file())
     return receipt
+
+
+def supervise(cmd, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monotonic) -> dict:
+    """External owned-child supervisor: start the audit child in its own session, kill only that owned process group at
+    total - kill_reserve, and record the observed exit and whether the group is gone (never assumed)."""
+    t0 = clock()
+    child = popen(cmd, start_new_session=True)
+    killed, rc = False, None
+    try:
+        rc = child.wait(timeout=SUPERVISOR["total_seconds"] - SUPERVISOR["kill_reserve_seconds"])
+    except subprocess.TimeoutExpired:
+        killed = True
+        for sig, wait in ((signal.SIGTERM, SUPERVISOR["term_grace_seconds"]), (signal.SIGKILL, 1)):
+            try:
+                killpg(child.pid, sig)
+            except ProcessLookupError:
+                pass
+            try:
+                rc = child.wait(timeout=wait)
+                break
+            except subprocess.TimeoutExpired:
+                continue
+    try:
+        killpg(child.pid, 0)
+        cleanup = "unresolved: owned process group still present"
+    except ProcessLookupError:
+        cleanup = "confirmed: owned process group gone"
+    except PermissionError:
+        cleanup = "unresolved: cannot signal owned process group"
+    return {"child_pid": child.pid, "child_exit": rc, "killed_at_deadline": killed, "cleanup": cleanup,
+            "elapsed_seconds": round(clock() - t0, 6), "total_seconds": SUPERVISOR["total_seconds"]}
 
 
 # ---------------------------------------------------------------- CLI
@@ -395,6 +452,10 @@ def main(argv=None) -> int:
     x.add_argument("--source", required=True)
     x.add_argument("--plan", required=True)
     x.add_argument("--plan-commit", required=True)
+    c = sub.add_parser("_child", help=argparse.SUPPRESS)
+    c.add_argument("--source", required=True)
+    c.add_argument("--plan", required=True)
+    c.add_argument("--plan-commit", required=True)
     a = ap.parse_args(argv)
     if a.mode == "plan":
         out = Path(a.out_dir).resolve()
@@ -415,18 +476,18 @@ def main(argv=None) -> int:
     except ReleaseRefused as e:
         print(f"refused before any launch: {e}", file=sys.stderr)
         return 2
-    from experiments.landmark import sandbox  # imported only after every gate has passed
-    package = ea.build(a.source)
-
-    def deadline(signum, frame):
-        raise SupervisorDeadline("supervisor deadline")
-    signal.signal(signal.SIGALRM, deadline)
-    signal.alarm(plan["supervisor"]["in_process_deadline_seconds"])
-    try:
-        receipt = run_audit(package, plan["slots"], plan["output_directory"], sandbox.run_program,
-                            designation="released_audit", plan_sha256=file_sha(a.plan))
-    finally:
-        signal.alarm(0)
+    if a.mode == "execute":  # parent: supervise the owned child and record its observed exit and cleanup
+        record = supervise([sys.executable, str(Path(__file__).resolve()), "_child", "--source", a.source, "--plan", a.plan,
+                            "--plan-commit", a.plan_commit])
+        out = Path(plan["output_directory"])
+        target = out / "supervisor.json" if out.is_dir() else out.with_name(out.name + ".supervisor.json")
+        with open(target, "x", encoding="utf-8") as fh:
+            fh.write(json.dumps(record, sort_keys=True) + "\n")
+        print(json.dumps(record, sort_keys=True))
+        return 0 if record["child_exit"] == 0 and not record["killed_at_deadline"] else 3
+    from experiments.landmark import sandbox  # child only, imported after every gate has passed
+    receipt = run_audit(ea.build(a.source), plan["slots"], plan["output_directory"], sandbox.run_program,
+                        designation="released_audit", plan_sha256=file_sha(a.plan))
     print(json.dumps(receipt["totals"], sort_keys=True))
     return 0
 

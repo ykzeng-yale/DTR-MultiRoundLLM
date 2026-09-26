@@ -4229,3 +4229,51 @@ Signed: experiments worker. Processed issuing commit `5f5ec8bebcf9810aced137fc11
 - The real audit needs Codex to commit an exact plan and give an explicit release.
 
 **STOPPED for independent lead review; no real audit will be run by this worker without a separate release.** Readiness 58%, change 0 points; no policy efficacy claim.
+
+## Experiments → theory, 2026-09-26T22:33:39Z — MRL-34-R1 corrections delivered (lead draft review `3545832`), for Codex review; STOPPED before any real audit
+
+Signed: experiments worker. Processed `3545832` (MRL-34-R1). The lead reviewed script `c7c1187f…`, which was delivered as `7f441f3` at 22:29:15Z. All four findings are corrected within the unchanged MRL-34 cap (deadline 22:42:27Z; corrections completed 2026-09-26T22:33:39Z). Zero sandbox, program or model launches; fake runners and fake child processes only.
+
+**Files:**
+- `scripts/run_policy_endpoint_audit.py`: `bad866d28a3faf6ddba760a482319617c56ed39cf440bccf1b588a110d66c6ea`
+- `experiments/prompt_choice/endpoint_execution_source_v1.json`: `37ca844e41c49c629041a0aaddfb9e653a167be19680ca97ede5ad747af1846e`
+- `tests/test_prompt_endpoint_execution.py`: `0041d5954c96e994d4b176e5ea092c6fe48547e7006481d09d4d1d19d8123501`
+
+**The four corrections:**
+1. **External supervisor.** The in-process `SIGALRM` is removed. `execute` now runs the gates, then `supervise()` starts the audit as a `_child` in a new session (`start_new_session=True`) and waits up to 180 − 5 s. On timeout it sends `SIGTERM` to the owned process group, waits 2 s, then sends `SIGKILL`. It records the observed child exit and whether the group is gone, checked with `killpg(pid, 0)` and reported as `confirmed` or `unresolved`, never assumed. The record goes to `supervisor.json`, opened in exclusive-create mode. The child stops starting slots at 160 s, leaving finalization and cleanup inside the 180 s total.
+2. **Retained bytes.** Every retained file is counted: the start manifest, the private JSONL, the receipt and the projection. Before each launch, the bytes so far plus the worst-case next slot (6 × 2 × 65,536 + 16,384 = 802,816 bytes, allowing for JSON escaping) plus a 256 KiB finalization reserve must fit within 8 MiB. Otherwise the slot and all later ones are recorded as `output_cap_unattempted`. Raw runner data is stored once, in the JSONL. The receipt holds summaries only and reports `retained_bytes_total`.
+3. **Whole canonical plan.** `verify_release` keeps the specific gates and then:
+   - requires the output directory to be inside `work/`;
+   - requires designation `production` (synthetic packages need an explicit test-only `allow_synthetic`);
+   - rebuilds the complete expected plan and requires exact equality, so the field set, source path, supervisor, per-call bounds, byte rule, predictions and slots all count.
+4. **Raw private records.** Every runner call records the program SHA256, its bounds and the raw runner result, or the exception. Public slots also keep their nonce and raw stdout and return code. None of this appears in the public projection.
+
+**Regressions (13 new; 56 mocked tests pass):**
+- Six whole-plan drifts are refused: an extra field, predictions, supervisor, source path, per-call bound, byte rule.
+- A synthetic package without the explicit flag, and an output directory outside `work/`, are refused.
+- The byte cap retains unattempted slots, keeps the total of all files within the cap, and the receipt holds no raw duplication.
+- Raw results, program hashes and nonces are kept privately and are absent from the projection.
+- Four supervisor paths with fake children:
+  - clean exit;
+  - `SIGTERM` succeeds;
+  - `SIGKILL` needed, with cleanup unresolved;
+  - no exit observed.
+
+  The supervisor always signals only its own group.
+
+**Fail-then-pass:**
+- Whole-plan comparison removed: 6 failures.
+- Raw results duplicated into the receipt: 1 failure.
+- Child not in its own session: 4 failures.
+- Byte check ignoring the worst-case next slot: 1 failure.
+
+**Full suite, rerun after the config update: 2,004 passed, 0 failed, plus 8 subtests.**
+
+**Draft plan:** a new hash-only draft is at gitignored `work/endpoint_execution_plan_draft_20260926_r1.json` (sha256 `c2ee62c04ae3308cd0575833142754a5d21b084e8e722cefb61631741fefe69d`). It replaces the earlier draft `e4ec3333…`, which is left in place because nothing is overwritten. Nothing is released.
+
+**Remaining limitations:**
+- If `sandbox.run_program` starts its own session for grandchildren, the supervisor's owned-group kill does not reach them. Those are bounded by the sandbox's own per-call timeouts. The supervisor records only what it observes.
+- The fake public runner still yields unavailable, so a public pass is not exercised end to end.
+- Nothing real has run.
+
+**STOPPED for independent lead review; no real audit without a separate committed-plan release.** Readiness 58%, change 0 points.
