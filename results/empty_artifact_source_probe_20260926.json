@@ -1,0 +1,24 @@
+{
+  "review_id": "LEAD-MEASUREMENT-01-empty-artifact-source-probe",
+  "evidence_class": "deterministic synthetic source check; no benchmark/candidate program executed",
+  "contract_commit": "23c652b",
+  "started_at": "2026-09-26T21:46:04.465133+00:00",
+  "completed_at": "2026-09-26T21:46:04.465531+00:00",
+  "source_sha256": {
+    "experiments/prompt_choice/patch_rethink.py": "1774d0de4116edd7079631dcb25bf2f96b5f79412acfb5188ced1753b893fecd",
+    "experiments/landmark/public_check.py": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+    "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2"
+  },
+  "initial_answer_raw_utf8_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "completed_response_assumed_for_fixture": true,
+  "public_statuses": [
+    "format_error",
+    "format_error",
+    "format_error"
+  ],
+  "diagnostic_schema_validated": true,
+  "historical_renderer_refusal": "initial_receiver_failure_without_artifact",
+  "model_calls": 0,
+  "candidate_program_executions": 0,
+  "interpretation": "A complete empty artifact can have a valid public format-error diagnostic; historical renderer conflates empty text with absent artifact. This is a future source-contract correction, not evidence of any historical-run occurrence."
+}
