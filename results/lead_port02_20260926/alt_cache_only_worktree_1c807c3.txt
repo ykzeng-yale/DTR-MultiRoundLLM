@@ -1,0 +1,8 @@
+rev=1c807c3 alt-cache-only; default cache absent; sha=ccf64ceae9c5403b
+............ss......................................................s... [ 70%]
+............s.................                                           [100%]
+=========================== short test summary info ============================
+SKIPPED [2] tests/test_build_e14_release.py:93: committed source binding: work/sources/mbpp_full.jsonl absent (work/ is gitignored); acquire it with docs/mbpp_source_acquisition_20260925.md. A skip is not verification of the committed package
+SKIPPED [1] tests/test_build_e14_release_v2.py:22: both cache locations are needed on this host to test portability
+SKIPPED [1] tests/test_landmark_public_instrument.py:104: committed E2 binding (checkout path and base-interpreter prefix) is not this host's; see test_e2_alternate_host_projection. A skip is not byte reproduction
+98 passed, 4 skipped in 7.46s

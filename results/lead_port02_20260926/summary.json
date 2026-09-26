@@ -1,0 +1,82 @@
+{
+ "decision_id": "LEAD-PORT-02",
+ "processed_lead_commit": "c43fe399611c7a229d7c69f206b86b87ce1607c4",
+ "started_utc": "2026-09-26T01:19:31Z",
+ "repair_commit": "1c807c3",
+ "evidence_class": "source/test reproducibility; no model/receiver call, no download, $0",
+ "lead_host_mismatch_reproduced_here": {
+  "e14_v1_built_from_alternate_cache": {
+   "differing_files": [
+    "CHANGE_NOTES.md",
+    "release_manifest.json"
+   ],
+   "differing_fields": [
+    "CHANGE_NOTES.md 'Source file:' path line",
+    "release_manifest.json package['CHANGE_NOTES.md'] sha256 (derived)",
+    "release_manifest.json source_pins.path"
+   ]
+  },
+  "e2_interpreter_prefix": "this host's prefix equals the recorded one; the lead-host mismatch is reproduced in-test by forcing an alternate prefix, which differs from the executed fixture only at inputs.e2_base_interpreter_prefix"
+ },
+ "contracts": {
+  "committed_binding_byte_reproduction": [
+   "test_committed_binding_rebuild_is_deterministic_and_equals_committed_bytes",
+   "test_committed_binding_verify_entrypoint_passes_on_the_committed_package",
+   "test_e2_committed_binding_byte_reproduction"
+  ],
+  "labeled_alternate_host_projection": [
+   "test_alternate_cache_projection_reproduces_committed_bytes (rebinds only the recorded source path and its dependent notes hash; raw diff must be confined to CHANGE_NOTES.md/release_manifest.json)",
+   "test_verify_from_the_alternate_cache_fails_closed_without_projection",
+   "test_e2_alternate_host_projection (rebinds only the recorded private-spec path hash and interpreter prefix; raw diff must equal {inputs.e2_base_interpreter_prefix})"
+  ]
+ },
+ "alt_cache_only_worktree_emulating_lead_host": {
+  "before_c43fe39": {
+   "passed": 95,
+   "failed": 2,
+   "skipped": 1,
+   "failed_tests": [
+    "test_build_e14_release.py::test_rebuild_is_deterministic_and_equals_committed_bytes",
+    "test_build_e14_release.py::test_verify_entrypoint_passes_on_the_committed_package"
+   ],
+   "log": "alt_cache_only_worktree_c43fe39.txt"
+  },
+  "after_1c807c3": {
+   "passed": 98,
+   "failed": 0,
+   "skipped": 4,
+   "skips": {
+    "E14 v1 committed-binding rebuild + verify (default cache absent)": 2,
+    "E14 v2 two-location portability (pre-existing)": 1,
+    "E2 committed binding (different checkout path)": 1
+   },
+   "log": "alt_cache_only_worktree_1c807c3.txt"
+  }
+ },
+ "populated_checkout": {
+  "affected_modules": "102 passed",
+  "full_suite": "1677 passed, 0 failed (1673 + 4 new)"
+ },
+ "frozen_artifacts": {
+  "tracked_files_checked": 920,
+  "identical_since_before_LEAD_PORT_01": true,
+  "files_changed": [
+   "tests/test_build_e14_release.py",
+   "tests/test_landmark_public_instrument.py"
+  ]
+ },
+ "remaining_limitations": [
+  "Committed-byte reproduction of E14 v1 still requires the source at work/sources/mbpp_full.jsonl; elsewhere only the labeled projection runs, which is not byte reproduction.",
+  "E2 committed-binding bytes are reproducible only in the executing checkout path with the recorded uv CPython 3.12.13 prefix; elsewhere only the labeled projection runs.",
+  "The lead host's Homebrew Python 3.14 run of the E2 projection is not observed here; it is emulated by forcing an alternate prefix in-test.",
+  "Clean checkouts without any MBPP cache still skip rebuilds (LEAD-PORT-01); a download needs a separate review."
+ ],
+ "resources": {
+  "cpu_test_workers": 1,
+  "model_calls": 0,
+  "receiver_calls": 0,
+  "downloads": 0,
+  "paid_usd": 0,
+  "retained_output_bytes": 4243
+ }
+}

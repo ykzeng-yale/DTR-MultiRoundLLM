@@ -1,0 +1,61 @@
+rev=c43fe39 alt-cache-only; default cache absent; sha=ccf64ceae9c5403b
+............FF....................................................s..... [ 73%]
+..........................                                               [100%]
+=================================== FAILURES ===================================
+___________ test_rebuild_is_deterministic_and_equals_committed_bytes ___________
+
+    @needs_source
+    def test_rebuild_is_deterministic_and_equals_committed_bytes():
+        with tempfile.TemporaryDirectory() as tmp:
+            one, two = Path(tmp) / "a", Path(tmp) / "bb"
+            b.build(one)
+            b.build(two)
+            names = sorted(p.name for p in one.iterdir())
+            assert names == sorted(p.name for p in two.iterdir())
+            for name in names:
+                fresh = (one / name).read_bytes()
+                assert fresh == (two / name).read_bytes(), f"{name} is not deterministic"
+>               assert fresh == (RELEASE / name).read_bytes(), f"{name} differs from the committed bytes"
+E               AssertionError: CHANGE_NOTES.md differs from the committed bytes
+E               assert b'# E14 relea...y efficacy.\n' == b'# E14 relea...y efficacy.\n'
+E                 
+E                 At index 288 diff: b't' != b's'
+E                 Use -v to get more diff
+
+tests/test_build_e14_release.py:92: AssertionError
+____________ test_verify_entrypoint_passes_on_the_committed_package ____________
+
+    @needs_source
+    def test_verify_entrypoint_passes_on_the_committed_package():
+>       assert b.verify(RELEASE)["verified"] is True
+               ^^^^^^^^^^^^^^^^^
+
+tests/test_build_e14_release.py:97: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+out_dir = PosixPath('<alt-cache-worktree>/experiments/landmark/e14_release')
+kw = {}
+
+    def verify(out_dir, **kw):
+        """Rebuild into a temporary directory and compare every byte with the committed package."""
+        out_dir = Path(out_dir)
+        if not out_dir.is_dir():
+            raise SystemExit(f"nothing to verify: {out_dir} does not exist")
+        with tempfile.TemporaryDirectory() as tmp:
+            fresh = Path(tmp) / RELEASE_DIRNAME
+            build(fresh, **kw)
+            names = sorted(p.name for p in fresh.iterdir())
+            committed = sorted(p.name for p in out_dir.iterdir())
+            if names != committed:
+                raise SystemExit(f"rebuild file set differs: rebuilt {names} vs committed {committed}")
+            bad = [n for n in names if (fresh / n).read_bytes() != (out_dir / n).read_bytes()]
+            if bad:
+>               raise SystemExit(f"rebuild differs from the committed bytes: {bad}")
+E               SystemExit: rebuild differs from the committed bytes: ['CHANGE_NOTES.md', 'release_manifest.json']
+
+scripts/build_e14_release.py:883: SystemExit
+=========================== short test summary info ============================
+FAILED tests/test_build_e14_release.py::test_rebuild_is_deterministic_and_equals_committed_bytes
+FAILED tests/test_build_e14_release.py::test_verify_entrypoint_passes_on_the_committed_package
+SKIPPED [1] tests/test_build_e14_release_v2.py:22: both cache locations are needed on this host to test portability
+2 failed, 95 passed, 1 skipped in 3.34s
