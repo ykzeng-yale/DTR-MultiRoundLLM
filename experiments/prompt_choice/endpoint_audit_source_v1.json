@@ -1,0 +1,194 @@
+{
+ "version": "prompt-choice-endpoint-audit-v1",
+ "decision": "LEAD-ENDPOINT-01",
+ "assignment": "MRL-33",
+ "status": "source_only",
+ "collection": "unreleased",
+ "execution_authorized": false,
+ "experimental_calls_authorized": 0,
+ "runner": null,
+ "lead_contract": {
+  "path": "docs/policy_endpoint_audit_contract_20260926.md",
+  "commit": "c83555c7b8d5add17eda3a42de078d855da44b6a",
+  "sha256": "358f1a0d210be40afddfff002a5178aa302ae1b5f476758cef234fc2dd50b3a2",
+  "hash_convention": "raw sha256 of the file bytes at the issuing commit (git show <commit>:<path>)"
+ },
+ "source": {
+  "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "location": "gitignored work/ (explicit --source path); never committed or downloaded"
+ },
+ "roots_in_order": [
+  "mbpp/877",
+  "mbpp/345"
+ ],
+ "public_case_id": "public-0",
+ "held_roots": {
+  "mbpp/945": "unsupported_set_public_display_hold (LEAD-FRAME-03): not an executable task; no replacement"
+ },
+ "record_pins": {
+  "mbpp/877": {
+   "entry_point": "sort_String",
+   "text_sha256": "2a1082a4f144e9d2ec98564974fcbb29c0133574450ea2d4644c432ee2049839",
+   "reference_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5",
+   "assertion_sha256": [
+    "e53a2ba7fef43c1024cca1c41d31ab3d3483a37f74d4da9fe7bd52795c8b0db5",
+    "eaf729dd6b9f534449bb2931103e066ea1a2cd2d414c59609eb92dafdcf912f4",
+    "0025a59973d620dc2c45749c5ca9080b40123d1e2edd9c7424772ad1faf148d3"
+   ]
+  },
+  "mbpp/345": {
+   "entry_point": "diff_consecutivenums",
+   "text_sha256": "cbf0e9e214fe1c5c6ba1547e9d76c41093c8138d68d2be9775c03c64a02c3915",
+   "reference_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825",
+   "assertion_sha256": [
+    "c08474c9010d01f807e5dc8583e82fc48c5c06a446be0d93f85f98b4bb00268b",
+    "74351d019afc273394e2d60f456376fe2483d84ddf73d24a1679adfb9f93906f",
+    "d57814e9734ac0652f97abf43d3b725ecc15460973213dde0efbddcc353f73c9"
+   ]
+  }
+ },
+ "record_keys": [
+  "challenge_test_list",
+  "code",
+  "task_id",
+  "test_list",
+  "test_setup_code",
+  "text"
+ ],
+ "public_assertion_index": 0,
+ "original_private_assertion_indices": [
+  1,
+  2
+ ],
+ "batteries": {
+  "original_private": "unchanged original MBPP assertions 2 and 3 (indices 1 and 2); historical meaning kept separate",
+  "supplement_v1": "exact lead-authored diagnostic coverage; not proof of correctness or of benchmark secrecy"
+ },
+ "supplement_v1": {
+  "mbpp/877": [
+   {
+    "args_literal": "['']",
+    "expected_literal": "''"
+   },
+   {
+    "args_literal": "['q']",
+    "expected_literal": "'q'"
+   },
+   {
+    "args_literal": "['bbaca']",
+    "expected_literal": "'aabbc'"
+   },
+   {
+    "args_literal": "['fedcab']",
+    "expected_literal": "'abcdef'"
+   }
+  ],
+  "mbpp/345": [
+   {
+    "args_literal": "[[]]",
+    "expected_literal": "[]"
+   },
+   {
+    "args_literal": "[[8]]",
+    "expected_literal": "[]"
+   },
+   {
+    "args_literal": "[[5, 2, -2, 4]]",
+    "expected_literal": "[-3, -4, 6]"
+   },
+   {
+    "args_literal": "[[-3, -3, 0, -5]]",
+    "expected_literal": "[0, 3, -5]"
+   }
+  ]
+ },
+ "controls": {
+  "mbpp/877": [
+   {
+    "kind": "return_input_unchanged",
+    "rationale": "identity: returns the input, ignoring the stated transformation",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "5e0ad2be4933b922a59897c191518627289c5fe594d1ba1c4d2f0cd27a6f3dc7"
+   },
+   {
+    "kind": "reverse_input",
+    "rationale": "reverses the string instead of sorting it",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "c9d94dd2cb4d5a8b361f75238e07d698417f33bac987ac56cceef4a6abad9837"
+   },
+   {
+    "kind": "sorted_unique_characters",
+    "rationale": "sorts but drops repeated characters",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "3dbac57c0ef35a882ac7028275b31a966986afb611d88466656ce8405d68f97a"
+   },
+   {
+    "kind": "constant_public_expected",
+    "rationale": "returns the original public expected result for every input",
+    "lead_prediction": "rejected by at least one original_private case",
+    "generated_from": "parsed literals of the original assertions (never executed)"
+   },
+   {
+    "kind": "lookup_original_examples",
+    "rationale": "returns the expected value of the three original examples and None on unseen input; predicted by the lead to pass the original examples and fail the supplement, an explicit measurement limitation of the old finite suite, not observed memorization",
+    "lead_prediction": "pass original examples; fail supplement_v1",
+    "generated_from": "parsed literals of the original assertions (never executed)"
+   }
+  ],
+  "mbpp/345": [
+   {
+    "kind": "return_input_unchanged",
+    "rationale": "identity: returns the input, ignoring the stated transformation",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "6935b07c8ae6b5be3dde4ede69c6ae4d3423ec68b09f987c36e601cb136244b0"
+   },
+   {
+    "kind": "absolute_adjacent_differences",
+    "rationale": "loses the sign of next minus previous",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "2e7671d54ccd42a74057789958b6247bf834974b3b23b3313d81d74dfcb4d33b"
+   },
+   {
+    "kind": "previous_minus_next",
+    "rationale": "reverses the difference direction (previous minus next)",
+    "lead_prediction": "rejected by at least one original_private case",
+    "code_raw_sha256": "aa020c8ebba0297849109b83517e4566892f85d88255d86a560409529d5e04ff"
+   },
+   {
+    "kind": "constant_public_expected",
+    "rationale": "returns the original public expected result for every input",
+    "lead_prediction": "rejected by at least one original_private case",
+    "generated_from": "parsed literals of the original assertions (never executed)"
+   },
+   {
+    "kind": "lookup_original_examples",
+    "rationale": "returns the expected value of the three original examples and None on unseen input; predicted by the lead to pass the original examples and fail the supplement, an explicit measurement limitation of the old finite suite, not observed memorization",
+    "lead_prediction": "pass original examples; fail supplement_v1",
+    "generated_from": "parsed literals of the original assertions (never executed)"
+   }
+  ]
+ },
+ "endpoint": "proposed prompt-choice-endpoint-audit-v1: acceptance of the union of original_private and supplement_v1, with each battery outcome reported separately; finite-suite acceptance, not full-domain correctness",
+ "grader_adapter_note": "The existing landmark grader validates one private_assertions list per root and returns one outcome. It does not produce battery-specific results. A later reviewed adapter must grade original_private and supplement_v1 as separately labeled batteries (for example two frozen specs per root, or a battery-aware grader version) and report both; this module adds no runner.",
+ "hash_conventions": {
+  "raw": "sha256 of the exact UTF-8 bytes of a text",
+  "canonical": "sha256 of json.dumps(sort_keys=True, ensure_ascii=False, separators=(',', ':')) UTF-8 (collect.digest rule)",
+  "normalized_ast": "sha256 of ast.dump(ast.parse(text), include_attributes=False) UTF-8"
+ },
+ "not_claimed": [
+  "no reference, control or assertion has been executed",
+  "no battery outcome exists",
+  "the supplement is diagnostic coverage, not correctness proof or benchmark secrecy",
+  "877/345 are a measurement-development panel, not independent evaluation families"
+ ],
+ "limits": {
+  "cpu": 1,
+  "elapsed_minutes_from_acceptance": 20,
+  "retained_output_mib": 32,
+  "model_calls": 0,
+  "candidate_reference_assertion_executions": 0,
+  "sandbox_launches": 0,
+  "downloads": 0,
+  "paid_spend": 0
+ }
+}

@@ -4012,3 +4012,114 @@ Where a binding error and an overflow coincide, v2 reports the binding error; v1
 - A bound overflow still has no supported path. A complete trial must rule it out on its declared input support or define one.
 
 Readiness 58%, change 0 points; no collection release.
+
+## Experiments → theory, 2026-09-26T22:18:39Z — MRL-33 COMPLETED (endpoint-audit package builder, source only), for Codex review
+
+Signed: experiments worker. Processed issuing commit `c83555c7b8d5add17eda3a42de078d855da44b6a` (LEAD-ENDPOINT-01 / MRL-33) and the lead's early source review within the same cap. Also noted, with no change to this job: `ba0d99b`/`88c17e0` (LEAD-FRAME-04) and `b54c5e6` (the containment plan). **Accepted 22:10:51Z; deadline 22:30:51Z; completed 2026-09-26T22:18:39Z.** One sequential CPU, no cap extension.
+
+**What was not done:**
+- Zero model calls; no candidate, reference or assertion execution; no sandbox launch; no downloads, installations or spend.
+- Run/lease: none.
+- The lock-file deletion is preserved. Codex's untracked `results/policy_endpoint_containment_*` files were not staged.
+
+**Committed files (50,073 bytes):**
+- `experiments/prompt_choice/endpoint_audit.py`: `aa6a4d2ed6fce474a9a0defb721e5ec6e547161aaa592e1e87a36c07978acad1`
+- `experiments/prompt_choice/endpoint_audit_source_v1.json`: `cf3885d50d8393d6c68f9750775beb994f104f548b81c43ff62bae50e4b55c51`. It pins the contract at `c83555c` (sha256 `358f1a0d…b3a2`).
+- `tests/test_prompt_endpoint_audit.py`: `5bf80ce378453654172be2be96d01f17d0b6943bbe319f678002770fbe02aecc`
+
+**Source pins:**
+- File SHA256 `ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f`.
+- **877:**
+  - reference `ce8de2c8…f1d5`
+  - assertions `e53a2ba7…0db5` (public), `eaf729dd…12f4`, `0025a599…48d3`
+  - description `2a1082a4…9839`
+- **345:**
+  - reference `bb61aa52…6825`
+  - assertions `c08474c9…268b` (public), `74351d01…906f`, `d57814e9…73c9`
+  - description `cbf0e9e2…3915`
+
+**Generated package** (gitignored `work/endpoint_audit_v1_20260926/`, 28 KiB, not committed; built once by the CLI):
+- The manifest file is `5b2012e3…e523`, with designation `production` and version `prompt-choice-endpoint-audit-v1`.
+- The builder and config hashes recorded in it equal the committed files.
+- Canonical record hashes:
+
+  | Record | 877 | 345 |
+  |---|---|---|
+  | Public | `fc906f9537fe4cb900e63894a149fcba4618843857d063cb824b72f4ecfb2183` | `afa9822bd522fba27130be374f72c66689a48d901ee71abb9820e23b1b1d4b45` |
+  | Private | `4619699141efe87be10688478b43b400d14dfe5b9e9b8dbcde06fb94baadbb7b` | `20d4defc48000d4e9fa5bbf37b3687961c0db17c5af1f5cd75cfcbb3ef319b55` |
+
+- A second CLI run refused with exit code 2 and nothing was overwritten.
+
+**Hash conventions (in the manifest and config):**
+- `raw`: SHA256 of the exact UTF-8 bytes.
+- `canonical`: SHA256 of sorted-key compact JSON with `ensure_ascii=False` (the `collect.digest` rule).
+- `normalized_ast`: SHA256 of `ast.dump(include_attributes=False)`, the grader's `normalize_assertion` form.
+
+**Builder:**
+- **Imports:** standard library only. It never imports `collect`, `diagnostic` or `grade`; `collect` imports `urllib` and `subprocess`.
+- **Nothing is executed:** no `exec`, `eval`, `compile`, dynamic import, subprocess or network. Literals come from `ast.literal_eval` on single literal nodes only.
+- **Fail-closed:** it refuses on:
+  - a missing file or a file hash mismatch;
+  - non-UTF-8 input or a duplicate JSON key;
+  - a duplicate `task_id` anywhere, or a missing root;
+  - changed record keys or structure (three assertions, empty setup and challenge lists);
+  - any description, reference or assertion byte change;
+  - a non-literal, multi-argument, non-equality, wrong-entry-point or messaged assertion;
+  - a reference that is not exactly one single-parameter definition.
+- **Public records** hold only: description, signature, entry point, `public-0` case and public assertion.
+- **Private records** bind the public canonical hash and contain:
+  - the exact reference;
+  - `original_private` (assertions 2 and 3, raw bytes kept separately from the normalized and literal forms);
+  - `supplement_v1` (the lead's eight literals, with generated assertion text);
+  - five labeled controls per root.
+- **Root 945** appears only as a held, non-executable root.
+- **Output:** a new directory inside `work/`, created with `mkdir(exist_ok=False)`, and files opened with `open("x")`.
+
+**The lead's early review, applied:**
+1. The lookup table now lives inside its function, so every control is a single function definition, as the terminal output contract requires.
+2. `build(source_path)` takes no pin or hash overrides. It uses the module pins and hashes the actual builder and config files; neither hash can be null.
+3. Caller-supplied pins go only through the private `_build_synthetic_for_tests`. Its manifest and every record are labeled `prompt-choice-endpoint-audit-v1-SYNTHETIC-TEST-FIXTURE` / `synthetic_test_fixture_not_the_v1_package`.
+4. The tests keep these distinctions: the production signature is exactly `(source_path)`, a synthetic file can never be built as v1, and the designations are checked in both packages.
+
+**Tests (35 focused, all pass):**
+- **Determinism:** regeneration is byte-for-byte identical.
+- **Fail-closed:** 19 source mutations and the file-pin failures are all refused.
+- **Roots:** exact roots and order; 945 held.
+- **Separation:** no private text in public records; public-hash binding.
+- **Original bytes:** reference and assertion bytes unchanged, including original spacing.
+- **Supplement:** equals the table parsed from the contract at `c83555c` and is literal-only in the source.
+- **Controls:**
+  - ten distinct controls, each a single definition with one parameter;
+  - the lookup table equals the parsed original examples and ends in `return None`;
+  - the constant control returns the public expected value.
+- **Isolation and output:** AST import and call bans; a new directory with no overwrite; a CLI refusal that writes nothing.
+- **Config:** mirrors the module.
+- **Grader schema:** the grader's pure `validate_specs` accepts `original_private`, `supplement_v1` and their union, each as a separate spec. `diagnostic.public_skeleton` (schema v2) accepts both public cases. Both checks run on the synthetic package and on the real package.
+- **Real source:** a test reads the real pinned cache when it is present (skipped on a fresh clone).
+
+**Fail-then-pass:** mutations were applied to temporary copies, and the source was restored byte-identical after each.
+- Lookup table at module level: 1 failure.
+- Production build accepting overrides: 1 failure.
+- Supplement literal altered: 2 failures.
+- Private assertion leaked into a public record: 1 failure.
+- Every overwrite guard removed: 1 failure.
+- Removing only the top-level `exist_ok` guard was not a defect, since the other guards still block writes.
+
+**Full suite (run once): 1,948 passed, 0 failed, plus 8 subtests (30.5 s).**
+
+**Grader adapter still required:** the unchanged grader takes one `private_assertions` list per root and returns one outcome. A reviewed adapter must grade `original_private` and `supplement_v1` as separately labeled batteries and report both. Two frozen specs per root, or a battery-aware grader version, would work. No runner was added.
+
+**Interpretation choices, for the lead's review:**
+1. Supplement assertion text is generated as `assert <entry>(<repr args>) == <repr expected>`. Canonical literals are `repr` of parsed values, and raw original bytes are kept separately.
+2. Control parameters are named `s` and `nums`. The lookup compares with `==` and returns `None` on unseen input.
+3. The public signature is the reference's name and parameter, taken from the AST: `sort_String(str)` and `diff_consecutivenums(nums)`.
+4. A duplicate `task_id` anywhere in the file fails closed.
+5. The lead's predictions are stored as labels, not results.
+6. Output is restricted to `work/`.
+
+**Limitations:**
+- Nothing was executed, so reference acceptance on both batteries, control rejection and the lookup-control prediction are all unverified. They await a separately frozen, contained audit bound to the interpreter and host.
+- The supplement is diagnostic coverage, not correctness proof or benchmark secrecy.
+- 877 and 345 are a measurement-development panel, not independent families.
+
+Readiness 58%, change 0 points; no runner, roster or collection release.
