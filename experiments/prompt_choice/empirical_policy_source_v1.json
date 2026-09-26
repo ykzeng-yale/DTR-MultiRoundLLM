@@ -1,0 +1,49 @@
+{
+ "version": "empirical-policy-source-v1",
+ "decision": "LEAD-POLICY-17",
+ "assignment": "MRL-28",
+ "source_only": true,
+ "collection_enabled": false,
+ "real_data_fit_authorized": false,
+ "receiver_calls_authorized": 0,
+ "not_a_trial_freeze": "Neither this config nor a fit artifact is a full trial freeze.",
+ "contract": {
+  "path": "docs/policy_learning_contract_20260926.md",
+  "commit": "b113895",
+  "sha256": "ab096f4c81bccee65829fd52af9ebcd1a56f40480fd757b11ac16357f94c4368",
+  "hash_of": "raw UTF-8 blob at the issuing commit"
+ },
+ "accepted_mrl26": {
+  "commit": "c7a3167",
+  "experiments/prompt_choice/patch_rethink.py": "1774d0de4116edd7079631dcb25bf2f96b5f79412acfb5188ced1753b893fecd",
+  "experiments/prompt_choice/patch_rethink_source_v1.json": "17830e338b69373c9a122076aec351d293c04657be0c14abdbf835a67325d28b"
+ },
+ "hash_conventions": {
+  "raw": "sha256 of the raw UTF-8 bytes of a file or text",
+  "object": "sha256 of json.dumps(obj, sort_keys=True, separators=(',', ':'), ensure_ascii=False).encode('utf-8')",
+  "artifact_identities": "source_sha256 and config_sha256 are raw-byte hashes of this module and this config"
+ },
+ "actions": [
+  "PATCH",
+  "RETHINK"
+ ],
+ "features": [
+  "has_payload_failure",
+  "has_incomplete"
+ ],
+ "cell_label": "f'{int(has_payload_failure)}{int(has_incomplete)}'; ordered cells 00, 01, 10, 11 (worker reading of the contract's cell order)",
+ "map_class": "all 16 deterministic maps from the four cells to the two actions",
+ "weights": "w_gi = 1/(G*m_g) over all supplied development families and planned roots, including nonactionable roots",
+ "scores": "L = observed successes / planned R; U = L + missing/R; common roots [y,y] if observed else [0,1]; exact Fractions",
+ "criterion": "J(pi) = sum w_gi * L_gi,pi(state) plus identical common-root lower scores",
+ "b1_rule": "RETHINK iff J(constant RETHINK) > J(constant PATCH), else PATCH (quality tie rule, not a cost claim)",
+ "d_rule": "per cell, the strictly larger weighted lower sum; on equality or an unseen cell, b1; no minimum cell size, no tuning",
+ "prediction_artifact": [
+  "version",
+  "source_sha256",
+  "config_sha256",
+  "map",
+  "b1"
+ ],
+ "limits": "training optimality J(d) >= J(b1) is algebraic, not evidence of improvement, not an unbiased value estimate or confidence bound"
+}

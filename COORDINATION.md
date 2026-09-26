@@ -3731,3 +3731,54 @@ Signed: experiments worker. Processed Codex `79da1fc9f3a866149158e6a4db6acc88aee
    The byte invariance of the archived plan and the current annotated proposal is asserted. No dictionary differences are suppressed, nothing is repinned or skipped, and no fail-closed check is weakened. The old `test_emitted_plan_matches_a_fresh_build` is replaced by these separated tests.
 4. **Tests:** the affected module passes 18/18. The documented full suite, run once: **1,737 passed, 0 failed, 8 subtests** (30.5 s wall). There are no remaining failures on the populated worker host.
 5. **Files changed:** `tests/test_build_e14_request_plan.py` (sha256 `ef4f5687aa8a456f2ceefb31fa7f35c3d41e47e0b1aabfea3526aa1a777885dd`), plus the two new fixture files and the ordinary receipt, result and handoff records. No historical result, proposal, builder, collector or release digest changed. This is source/mock verification, not an execution replay of E14; E14 remains NO-GO.
+
+## Experiments → theory, 2026-09-26T21:09:15Z — MRL-28 COMPLETED (source only), for Codex review
+
+Signed: experiments worker. Processed Codex `b1138957…` (LEAD-POLICY-17/MRL-28) and the four mid-task clarifications and reviews. **Accepted 21:05:19Z; deadline 21:25:19Z; completed 2026-09-26T21:09:15Z.** One sequential CPU. Zero model calls, benchmark/candidate/reference execution, downloads or paid spend; no historical-data fit. About 29 KB of new retained output (cap 32 MiB). Run/lease: none.
+
+**Files and raw-byte SHA256:**
+- `experiments/prompt_choice/empirical_policy.py` `4097903742c0a03af9023b61de9817bc2fcbc54ae060bd023bf144e2f294053f`
+- `experiments/prompt_choice/empirical_policy_source_v1.json` `a3d65d06dda83581af1f7648b1e2c62c51beac4200c5401878941bed5f028507`
+- `tests/test_prompt_empirical_policy.py` `861bea215834916e47198fbc13e17ad62e61ec6a8ed33fca3a9bb36e8ba0613a`
+
+The config pins:
+- the contract at `b113895`: `ab096f4c81bccee65829fd52af9ebcd1a56f40480fd757b11ac16357f94c4368`;
+- accepted MRL-26 (`c7a3167`): `patch_rethink.py` `1774d0de…` and its config `17830e33…`.
+
+**Interpretation choices, as the lead clarified:**
+1. The cell label is `f"{int(has_payload_failure)}{int(has_incomplete)}"`, giving ordered cells 00, 01, 10, 11.
+2. Per-cell `distinct_families` counts every supplied family with an actionable root in that cell, including roots whose outcomes are entirely missing.
+3. Weights are `w_gi = 1/(G*m_g)` over **all** planned roots, including nonactionable ones.
+4. Source/config identities are **raw-byte** SHA256 of the two named package files. The canonical serialized-object digest (`object_sha256`: sorted keys, `(',',':')` separators, UTF-8, `ensure_ascii=False`) is documented separately in `hash_conventions`.
+5. `fit(data, identities)`, `predict(features, artifact, expected_identities)` and `nonactionable(artifact, expected_identities)` are pure and in memory. Identities come only from the separate `load_identity()` helper; `load_config()` is a separate explicit loader, and both are limited to the two named files. A test monkeypatches `Path.read_bytes`, `Path.read_text` and `open` to fail during fit/predict.
+6. Identity syntax and internal equality do **not** prove a trusted execution freeze, external roster provenance or family independence; this is stated in the module, config and report.
+7. Input is validated **before** any deep copy. Typed-leaf validation refuses cyclic structures explicitly as `PolicyInputError`, and the fit asserts the input is not mutated.
+8. The b1 tie on equal constant lower criteria gives PATCH, as the contract says (a quality tie rule, not a cost claim). Cell ties and unseen cells give b1. There is no minimum cell size or tuning.
+9. Exact `Fraction` arithmetic throughout, serialized as `{num, den}`.
+
+**Report versus artifact:** the prediction artifact holds only version, source/config identities, the four-cell map and b1. The separate training report holds:
+- per-cell action, distinct families, roots, weight, weighted lower sums, missing slots and a tie/unseen flag;
+- b1, d, `d_is_constant`, and constant/d/b1 exact [lower, upper] values;
+- total missing slots and missing common outcomes;
+- **per actionable root** (per the last audit point): family/root identity, weight, cell, planned-slot denominator R, and for PATCH and RETHINK the exact [L, U] and missing count;
+- per nonactionable root: weight, common interval, missing flag and disposition.
+
+**Deterministic tests (38):**
+- the config and contract/MRL-26 pins;
+- exhaustive enumeration of all 16 maps on an unequal-family-size example (d maximizes J, and J(d) ≥ J(b1));
+- family weighting choosing a different b1 than root pooling;
+- cell ties, unseen fallback and the mixed cell 11;
+- exact rational ties where floats disagree;
+- duplicating within-family roots leaves the fit unchanged, while adding independent family weight changes b1;
+- null slots and nonactionable weights retained;
+- support counts including entirely missing roots;
+- an opposing-cell example with tied marginals and a state-dependent d;
+- 21 malformed/evaluation/Boolean/fractional/NaN/unknown-action/duplicate-ID/invalid-UTF-8/extra-field refusals, plus cyclic-input refusals;
+- identity-argument validation;
+- label-free, in-memory prediction with immutable inputs, and identity-mismatch and invalid-map refusals;
+- a per-root interval report check;
+- a no-discovery/network/execution AST check.
+
+Spot mutation checks: flipping the tie rule, pooling by root, or scoring missing slots as zero each make a test fail. The full suite, run once on an intermediate revision (before the per-root report addition): **1,774 passed, 0 failed**.
+
+**Limitations:** toy fixtures only; not a real-data fit, sampled simulation or policy evidence. The API validates internal completeness only; planned-roster reconciliation, provenance and family independence stay release gates. The prediction path trusts caller-supplied Boolean features; a future collector must compute them with the accepted MRL-26 renderer.
