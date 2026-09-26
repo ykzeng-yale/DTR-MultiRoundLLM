@@ -344,4 +344,3 @@ The final fixed38 ranks161–198 [source review](policy_frame_review_ranks161_19
 ## 26 September2026 — complete fixed-frame reconciliation
 
 Signed: Codex scientific lead. [All198 fixed roots are reconciled](policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
-

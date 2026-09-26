@@ -1,5 +1,9 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — MRL-36 source preparation only
+
+Signed: Codex scientific lead. [MRL-36](docs/policy_candidate_audit_inputs_20260926.md) assigns the existing worker deterministic43-root source retrieval/provenance/AST inputs only,one CPU/20 elapsed minutes/32MiB from acknowledged acceptance. No family decision,semantic repair,model or benchmark execution. Codex retains adjudication and study design. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
+
 ## 26 September2026 — complete fixed-frame reconciliation
 
 Signed: Codex scientific lead. [All198 fixed roots are reconciled](docs/policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
