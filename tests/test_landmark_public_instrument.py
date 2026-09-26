@@ -63,13 +63,61 @@ def ledger(out):
     return [json.loads(l) for l in (out / "ledger.jsonl").read_text().splitlines()]
 
 
-def test_fixture_is_deterministic_and_counts(monkeypatch):
-    # Rebuild with the RECORDED E2 paths, hashing this checkout's committed rebound specs in place of the recorded
-    # absolute file, so byte equality with the executed fixture holds in any checkout without rewriting it.
+# LEAD-PORT-02: two distinct contracts for the executed E2 fixture. (1) COMMITTED-BINDING byte reproduction, only
+# where this checkout path and base-interpreter prefix are the recorded ones; no field is rebound. (2) ALTERNATE-HOST
+# PROJECTION: rebind only the declared binding (the recorded private-spec path, hashed from this checkout's committed
+# copy, and the recorded interpreter prefix) and require exact bytes; any other difference fails. A skip is not
+# verification.
+RECORDED_PREFIX = json.loads(ITEMS.read_bytes())["inputs"]["e2_base_interpreter_prefix"]
+E2_BINDING_FIELDS = {("inputs", "e2_base_interpreter_prefix")}
+
+
+def _current_prefix():
+    return str(Path(sandbox.base_interpreter()).parent.parent)
+
+
+def _diff_paths(a, b, path=()):
+    if isinstance(a, dict) and isinstance(b, dict):
+        out = set()
+        for k in set(a) | set(b):
+            out |= _diff_paths(a.get(k), b.get(k), path + (k,))
+        return out
+    if isinstance(a, list) and isinstance(b, list) and len(a) == len(b):
+        out = set()
+        for i, (x, y) in enumerate(zip(a, b)):
+            out |= _diff_paths(x, y, path + (i,))
+        return out
+    return set() if a == b else {path}
+
+
+def _rebind_private(monkeypatch):
     real_sha = piv.file_sha
     monkeypatch.setattr(piv, "file_sha", lambda p: real_sha(piv.REBOUND_SPECS if str(p) == RECORDED_PRIVATE else p))
-    build = lambda: piv.items_bytes(piv.build_items(private_path=Path(RECORDED_PRIVATE), permitted_path=RECORDED_PERMITTED))
-    assert build() == ITEMS.read_bytes() and build() == build()
+
+
+def _build_recorded_paths():
+    return piv.items_bytes(piv.build_items(private_path=Path(RECORDED_PRIVATE), permitted_path=RECORDED_PERMITTED))
+
+
+def test_e2_committed_binding_byte_reproduction():
+    if RECORDED_PRIVATE != str(piv.REBOUND_SPECS) or _current_prefix() != RECORDED_PREFIX:
+        pytest.skip("committed E2 binding (checkout path and base-interpreter prefix) is not this host's; "
+                    "see test_e2_alternate_host_projection. A skip is not byte reproduction")
+    assert piv.items_bytes(piv.build_items(permitted_path=RECORDED_PERMITTED)) == ITEMS.read_bytes()
+
+
+def test_e2_alternate_host_projection(monkeypatch):
+    _rebind_private(monkeypatch)
+    # Unrebound interpreter: an alternate prefix may differ from the executed fixture ONLY in the declared field.
+    monkeypatch.setattr(piv.sandbox, "base_interpreter", lambda: "/opt/port02-alternate-python/bin/python3")
+    alt = json.loads(_build_recorded_paths())
+    assert _diff_paths(alt, json.loads(ITEMS.read_bytes())) == E2_BINDING_FIELDS
+    # Labeled projection: rebind exactly the declared interpreter prefix, then require the executed bytes.
+    monkeypatch.setattr(piv.sandbox, "base_interpreter", lambda: str(Path(RECORDED_PREFIX) / "bin" / "python3"))
+    assert _build_recorded_paths() == ITEMS.read_bytes() and _build_recorded_paths() == _build_recorded_paths()
+
+
+def test_fixture_is_deterministic_and_counts():
     doc = json.loads(ITEMS.read_bytes())
     assert {g: len(v) for g, v in doc["gates"].items()} == {"E2": 2, "E6": 7, "E7": 17}
     e7 = doc["gates"]["E7"]

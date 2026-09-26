@@ -78,23 +78,68 @@ def test_roster_order_is_exactly_the_lead_order(tasks, specs, manifest, spec_jso
 
 
 # ------------------------------------------------------------------ determinism against the committed bytes
-@needs_source
-def test_rebuild_is_deterministic_and_equals_committed_bytes():
-    with tempfile.TemporaryDirectory() as tmp:
-        one, two = Path(tmp) / "a", Path(tmp) / "bb"
-        b.build(one)
-        b.build(two)
-        names = sorted(p.name for p in one.iterdir())
-        assert names == sorted(p.name for p in two.iterdir())
-        for name in names:
-            fresh = (one / name).read_bytes()
-            assert fresh == (two / name).read_bytes(), f"{name} is not deterministic"
-            assert fresh == (RELEASE / name).read_bytes(), f"{name} differs from the committed bytes"
+# LEAD-PORT-02: two distinct contracts. (1) COMMITTED-BINDING byte reproduction: the package was built from the
+# source at DEFAULT_SOURCE_FILE, and the builder records that path, so exact bytes are claimed only from that path.
+# (2) ALTERNATE-CACHE PROJECTION: the same SHA-verified bytes at ALT_SOURCE_FILE rebuild a package that differs only in
+# the declared binding (the recorded source path and the CHANGE_NOTES.md hash derived from it); rebinding exactly
+# those fields must give the committed bytes. A skip of either test is not verification.
+COMMITTED_SOURCE = ROOT / b.DEFAULT_SOURCE_FILE
+ALT_SOURCE = ROOT / b.ALT_SOURCE_FILE
+BINDING_FILES = {"CHANGE_NOTES.md", "release_manifest.json"}
 
 
-@needs_source
-def test_verify_entrypoint_passes_on_the_committed_package():
-    assert b.verify(RELEASE)["verified"] is True
+def _require(path, contract):
+    if not path.is_file():
+        pytest.skip(f"{contract}: {path.relative_to(ROOT)} absent (work/ is gitignored); acquire it with "
+                    "docs/mbpp_source_acquisition_20260925.md. A skip is not verification of the committed package")
+
+
+def test_committed_binding_rebuild_is_deterministic_and_equals_committed_bytes(tmp_path):
+    _require(COMMITTED_SOURCE, "committed source binding")
+    one, two = tmp_path / "one", tmp_path / "two"
+    b.build(one, source_path=COMMITTED_SOURCE)
+    b.build(two, source_path=COMMITTED_SOURCE)
+    assert sorted(p.name for p in one.iterdir()) == sorted(p.name for p in RELEASE.iterdir())
+    for p in sorted(one.iterdir()):
+        fresh = p.read_bytes()
+        assert fresh == (two / p.name).read_bytes(), f"{p.name} is not deterministic"
+        assert fresh == (RELEASE / p.name).read_bytes(), f"{p.name} differs from the committed bytes"
+
+
+def test_committed_binding_verify_entrypoint_passes_on_the_committed_package():
+    _require(COMMITTED_SOURCE, "committed source binding")
+    assert b.verify(RELEASE, source_path=COMMITTED_SOURCE)["verified"] is True
+
+
+def _project_alternate_cache(out):
+    """Labeled alternate-cache projection: rebind ONLY the recorded source path and its dependent notes hash."""
+    alt_rel, com_rel = b.ALT_SOURCE_FILE, b.DEFAULT_SOURCE_FILE
+    notes = (out / "CHANGE_NOTES.md").read_text()
+    assert notes.count(f"`{alt_rel}`") == 1
+    projected_notes = notes.replace(f"`{alt_rel}`", f"`{com_rel}`")
+    manifest = (out / "release_manifest.json").read_text()
+    old_h, new_h = file_sha(out / "CHANGE_NOTES.md"), hashlib.sha256(projected_notes.encode()).hexdigest()
+    assert manifest.count(f'"{alt_rel}"') == 1 and manifest.count(old_h) == 1
+    return {"CHANGE_NOTES.md": projected_notes.encode(),
+            "release_manifest.json": manifest.replace(f'"{alt_rel}"', f'"{com_rel}"').replace(old_h, new_h).encode()}
+
+
+def test_alternate_cache_projection_reproduces_committed_bytes(tmp_path):
+    _require(ALT_SOURCE, "alternate-cache projection")
+    out = tmp_path / "alt"
+    b.build(out, source_path=ALT_SOURCE)  # the builder verifies the source SHA256 before reading
+    raw_diff = {p.name for p in out.iterdir() if p.read_bytes() != (RELEASE / p.name).read_bytes()}
+    assert raw_diff <= BINDING_FILES, f"alternate-cache rebuild differs outside the declared binding: {raw_diff}"
+    projected = _project_alternate_cache(out)
+    for p in sorted(out.iterdir()):
+        got = projected.get(p.name, p.read_bytes())
+        assert got == (RELEASE / p.name).read_bytes(), f"{p.name}: projection does not reproduce the committed bytes"
+
+
+def test_verify_from_the_alternate_cache_fails_closed_without_projection():
+    _require(ALT_SOURCE, "alternate-cache projection")
+    with pytest.raises(SystemExit, match="differs from the committed bytes"):
+        b.verify(RELEASE, source_path=ALT_SOURCE)
 
 
 def test_builder_refuses_to_overwrite():
