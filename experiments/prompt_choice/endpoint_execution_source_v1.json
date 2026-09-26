@@ -1,0 +1,80 @@
+{
+ "version": "prompt-choice-endpoint-execution-v1",
+ "decision": "LEAD-ENDPOINT-03",
+ "assignment": "MRL-34",
+ "status": "source_mock_only_not_released",
+ "execution_released": false,
+ "runs_authorized": 0,
+ "lead_contract": {
+  "path": "docs/policy_endpoint_execution_contract_20260926.md",
+  "commit": "5f5ec8bebcf9810aced137fc1183bf58f8308e48",
+  "sha256": "6906f337761204b64bf1f0260c78ffa6f7ede1e58ce83e1ea905ade065fba698"
+ },
+ "package_identities": {
+  "public_record_sha256": {
+   "mbpp/877": "fc906f9537fe4cb900e63894a149fcba4618843857d063cb824b72f4ecfb2183",
+   "mbpp/345": "afa9822bd522fba27130be374f72c66689a48d901ee71abb9820e23b1b1d4b45"
+  },
+  "private_record_sha256": {
+   "mbpp/877": "4619699141efe87be10688478b43b400d14dfe5b9e9b8dbcde06fb94baadbb7b",
+   "mbpp/345": "20d4defc48000d4e9fa5bbf37b3687961c0db17c5af1f5cd75cfcbb3ef319b55"
+  },
+  "builder_sha256": "aa6a4d2ed6fce474a9a0defb721e5ec6e547161aaa592e1e87a36c07978acad1",
+  "config_sha256": "cf3885d50d8393d6c68f9750775beb994f104f548b81c43ff62bae50e4b55c51"
+ },
+ "checks_in_order": [
+  "public",
+  "original_private",
+  "supplement_v1"
+ ],
+ "roots_in_order": [
+  "mbpp/877",
+  "mbpp/345"
+ ],
+ "artifacts_per_root": "reference, then the five MRL-33 controls in builder order",
+ "planned_slots": 36,
+ "public_diagnostic_calls": 12,
+ "private_battery_evaluations": 24,
+ "future_run_limits": {
+  "max_sandbox_starts": 36,
+  "total_elapsed_seconds": 180,
+  "retained_output_bytes": 8388608,
+  "model_calls": 0,
+  "downloads": 0,
+  "paid_spend": 0
+ },
+ "per_call_bound_seconds": {
+  "public": 10,
+  "original_private": 2,
+  "supplement_v1": 2
+ },
+ "supervisor": {
+  "in_process_deadline_seconds": 210
+ },
+ "attestation_path": "results/policy_endpoint_containment_20260926T2217Z/attestation.json",
+ "predictions": {
+  "reference": "public pass; original_private pass; supplement_v1 pass",
+  "nonlookup_control": "original_private fail (at least one original-private assertion fails)",
+  "lookup_original_examples": "public pass; original_private pass; supplement_v1 fail"
+ },
+ "unchanged_dependencies": [
+  "experiments.landmark.public_check.check_artifact (display v2)",
+  "experiments.landmark.grade.evaluate",
+  "experiments.landmark.grade.validate_specs",
+  "experiments.landmark.grade.verify_attestation",
+  "experiments.landmark.sandbox.run_program (execute mode only, after every gate)"
+ ],
+ "union_rule": "reported conjunction of the two separately observed battery passes; not an extra executed grade",
+ "public_projection_fields": "slot identities, code sha256, adapter status, launched, outcome, whitelisted reason code, public case statuses, seconds, returncode, totals, prediction verdicts",
+ "not_claimed": [
+  "no audit has run",
+  "no reference or control outcome exists",
+  "not policy efficacy or a memorization prevalence estimate"
+ ],
+ "mrl34_limits": {
+  "cpu": 1,
+  "elapsed_minutes_from_acceptance": 20,
+  "retained_output_mib": 32,
+  "sandbox_program_model_launches": 0
+ }
+}
