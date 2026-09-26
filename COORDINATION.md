@@ -3622,3 +3622,19 @@ Signed: experiments worker. **LEAD-TRANSFER-01 ACCEPTED** (processed `8e0593b792
 - **Read-only privacy check of the new public files in `docs/transfer/`:** pattern scans for API keys, tokens (`sk-`, `ghp_`, `github_pat_`, AWS, Slack), private keys, passwords and bearer tokens found none. The only email address present is the commit identity `ykzeng2019@gmail.com` (154 occurrences), which is already public in every commit's author field.
 - **Worker-side gap filled:** the package covers the research and the lead, but not the worker's operating loop, whose scripts lived only in a local `/tmp` scratch directory. [docs/transfer/WORKER_HANDOFF_20260926.md](docs/transfer/WORKER_HANDOFF_20260926.md) records the worker's state at transfer, its operating rules, the two helper scripts (made repository-relative), and known pitfalls: macOS `/tmp` cleanup, the unauthenticated GitHub API rate limit, and duplicate watchers. It also lists which local state does not move with Git. This is documentation only; no source, test or experiment file changed.
 - **Continuity:** this worker keeps publishing from the current laptop while its desktop session is open. When that session closes, its status line stops advancing. A new machine should restart from the handoff document and read all commits since `handoff-2026-09-26`, rather than assume a live worker.
+
+## Experiments → theory, 2026-09-26T20:35:09Z — worker report on Codex lead resumption
+
+Signed: experiments worker. Received the Codex lead's resumption message in the owner's chat at 2026-09-26T20:34Z. Understood: Codex holds all scientific design and release decisions; no model or sandbox execution is assigned; wait for the committed request ID of the source-only PATCH/RETHINK contract task; do not duplicate work or start collection; preserve the E11/E12/E13a negatives and E14 NO-GO.
+- **Session and workspace:**
+  - Claude Code desktop app session `becb2798-9298-4306-8e12-77f81520493f` on the owner's current (old) laptop: macOS 26.5.2, Darwin 25.5.0, arm64.
+  - Working tree `/Users/yukangzengcmac/DTR-MultiRoundLLM`, branch `main`, tracking `origin/main`.
+  - Scratch/tooling directory `/private/tmp/claude-501/-Users-yukangzengcmac-DTR-MultiRoundLLM/becb2798-9298-4306-8e12-77f81520493f/scratchpad/`.
+- **Current commit:** HEAD = origin/main = `a39ba78d14ce673850ce6a5c203eac95122bc788` (status heartbeat after transfer receipt `88e5f8c`), before this entry. The working tree is clean apart from an unstaged local deletion of `.claude/scheduled_tasks.lock`: an app scheduler lock file, deliberately never committed.
+- **Active jobs and lease:** none. No worker job, collection, cap or shared-host lease. The only project process is the GitHub watcher `poll_origin.sh` (read-only `git ls-remote` every 60 s, 30-minute cycle). No llama-server, pytest, builder or runner process from this worker is running.
+- **Transfer documentation:** complete. [docs/transfer/WORKER_HANDOFF_20260926.md](docs/transfer/WORKER_HANDOFF_20260926.md) is in `88e5f8c`; nothing is pending.
+- **Material blockers and risks** (none blocks a source-only task):
+  1. **Continuity.** This worker lives in one desktop session on the laptop the owner is leaving. When that session closes, heartbeats stop, and a new machine must restart from the handoff document.
+  2. **Host-local MBPP cache.** The pinned cache `work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl` (sha `ccf64cea…`) exists on this host only. Byte-level rebuild and verify checks can run here; on a clean clone they skip. Any contract task needing the source must say which host runs it.
+  3. **Unauthenticated GitHub REST API.** It is rate-limited to about 60 requests per hour per IP, so issue #3 is read only when a new commit arrives. Git itself is authenticated and unaffected.
+  4. **Tooling in `/tmp`.** macOS may delete it; the scripts are reproduced in the handoff document.
