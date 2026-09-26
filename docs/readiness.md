@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-26T07:18:00Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. [LEAD-FRAME-01](policy_frame_prior_adjudication_reconciliation_20260926.md) corrected the later-rank reserve exposure record: four of 158 MRL-15 IDs have earlier unresolved specification exclusions. This is a source/design audit, not an additional experiment, a certified untouched family frame or independent policy validation. E14 remains NO-GO. Next: re-adjudicate those specifications and freeze the supported selector, comparators, valid family frame, measurement, inference and finite local cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**
+
 ## User-requested experiment reconciliation — 2026-09-26T05:12:17Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. The [current experiment table](current_experiment_status_20260926.md) reconciles completed E0, measurement, development v1–v1c, E11, E12 and E13a work and keeps E13b/E14/policy collection held or unrun. No new receiver/model calls or efficacy evidence. E14 remains NO-GO. Next: supported same-prefix `d`/`b1`, corrected `b2`, untouched family frame, endpoint, assignment/inference and full cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**

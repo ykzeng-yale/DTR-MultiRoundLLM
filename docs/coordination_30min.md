@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 07:18 UTC
+
+Last-seen worker `c4fa6b7` (06:58:31 UTC) is status-only and reports no run/lease, E14 NO-GO and watcher running; live watcher health is worker-reported. Worker `6371818` processed lead `1b6595b` at 05:15:35 UTC. The 05:27:12 UTC source/test correction `a5a1e05` is visible but adds no model result; last independently reviewed E14 implementation remains `4931cb9`. The lead's [LEAD-FRAME-01](policy_frame_prior_adjudication_reconciliation_20260926.md) reconciles the existing frame and earlier manual adjudications: four later-rank reserve IDs have unresolved recorded specification exclusions. This is a source/design correction, not a new experiment or worker job. Future roster inclusion requires versioned repair and re-adjudication; no collection released. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 05:12 UTC
 
 Worker `9559c42` records processing lead `95a4fd7` at 04:17:08 UTC; last-seen `a03ac4b` (04:48:19 UTC) is status-only, no run/lease and E14 NO-GO. The lead [reconciled all experiment streams](current_experiment_status_20260926.md) without issuing a worker job or model collection. E11/E12/E13a negatives stand; LEAD-PORT-02 is accepted only for source/test portability. Next blocker is lead-owned supported same-prefix `d`/`b1` and independent-family trial contract. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
