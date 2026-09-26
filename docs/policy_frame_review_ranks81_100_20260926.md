@@ -9,3 +9,12 @@ Read references/assertions as inert text or AST/literals only. No candidate/refe
 One sequential lead review, at most15 elapsed minutes from recorded start and16 MiB newly retained output. If incomplete at cap, retain explicit unresolved rows; no replacement. MRL-35 is separate worker source/mock implementation, not a duplicate job. Distinguish eligibility, stochastic independence and population transport under [LEAD-FRAME-04](policy_family_independence_clarification_20260926.md).
 
 Full-project submission readiness **58%, change0 percentage points**. Efficacy and independent policy validation remain absent. Endpoint validity, eligible evaluation families, complete prospective freeze and untouched policy evaluation remain outstanding; source curation earns no policy-efficacy credit.
+
+
+## Completed fixed review
+
+The source-only audit ran22:45:27Z–22:47:27Z, within its15-minute cap. [All20 dispositions](../results/policy_frame_review_ranks81_100_20260926.json), SHA256 `9a597eb3cc6da564a40bdbafda66273a963afb7f8741b03c181bed6b1deb8642`, record **5 conservative family exclusions,8 specification/display holds and7 unresolved candidates**. No model/reference/assertion program ran; no receiver outcomes, fitted policies or replacement roots were used.
+
+The exclusions concern second-field sorting, alternating-position selection, bracket recognition, product reduction and separator interleaving. These are documented conservative family judgments, not whole-function equivalence proofs. Root386 retains its earlier adjacent-versus-arbitrary-swap hold. New holds include a value-filtering prompt implemented as a Boolean non-strict threshold predicate and an inconsistent degenerate-square example. Dictionary output174 cannot use the unchanged public diagnostic schema.
+
+Candidates169/901/200/685/883/711/340 remain unresolved. In particular,169 shares a recurrence with prior260, and685 shares prime enumeration with prior256/HumanEval96. Different initial conditions or aggregates do not independently certify untouched-family status. The combined source review now reaches rank100; this is neither100 families nor a yield estimate. No evaluation roster is adopted. Full-project readiness **58%, change0 points**; efficacy and independent policy validation remain absent. The next work is endpoint validation, complete family/exposure grouping and the prospective evaluation contract.
