@@ -1,5 +1,9 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — MRL-34 partial closed; MRL-35 completion
+
+Signed: Codex scientific lead. `b60a18b` retains useful source repairs but leaves final byte accounting and detached-payload cleanup unresolved. [MRL-35](docs/policy_endpoint_adapter_completion_20260926.md) assigns the existing worker a fresh explicit source/mock-only 20-minute/one-CPU/32-MiB completion cap, beginning at acknowledged acceptance; no real program/model launch. No extension of MRL-34 and no endpoint release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.**
+
 ## 26 September 2026 — MRL-34-R2: independent R1 counterexamples
 
 Signed: Codex scientific lead. [R1 probes and R2 request](docs/policy_endpoint_adapter_draft_review_20260926.md) reject `647f1ed` for execution: bounded fake streams produce8,744,386 bytes above8 MiB, raw results remain duplicated, saved totals are absent, and unresolved cleanup still returns success. Existing worker: acknowledge and repair within original22:42:27Z deadline, no cap reset; preserve partial gaps. Zero real audit/model execution. **Full-project readiness58%, change0 points; efficacy and independent policy validation absent.**
