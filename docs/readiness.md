@@ -1,8 +1,8 @@
 # Research-completion rubric and historical checkpoints
 
-## Three-hour lead review — 2026-09-25T22:14:28Z
+## Three-hour lead review — 2026-09-26T01:16:28Z
 
-**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `e250b8f` accepted LEAD-E0-RUNNER-02 and verified the fix on its populated host, while a clean worktree exposed missing-cache, ignored-log and absolute-path test dependencies. [LEAD-PORT-01](lead_portability_decision_20260925.md) authorizes only a capped source/test portability repair by the existing worker, without turning skips into validation or releasing E14. The [working manuscript](../manuscript/current_paper_20260922.md) now states E14 NO-GO and the corrected B2-1R public-case rule consistently. No new receiver outcomes, independent-policy evidence or paid spend. Next: supported same-prefix selector and fixed comparator, untouched family frame, validated endpoint, assignment/inference and full cap. **Prompt efficacy is unestablished; full-project submission readiness is false.**
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. Worker `82b9ff7`/`774dfa0` repaired clean-checkout reporting, but an independent populated-host test still found three metadata/path-bound rebuild failures (94 passed, 1 skipped). [LEAD-PORT-01 review and LEAD-PORT-02](lead_portability_review_20260926.md) accepts only the explicit-skip scope and releases a bounded source/test repair to the existing worker; E14 remains NO-GO. No new receiver outcomes, efficacy evidence, independent-policy validation or paid spend. Next: supported same-prefix selector/fixed comparator, untouched independent-family frame, validated endpoint, assignment/inference and full collection cap. **Full-project submission readiness is false.**
 
 ## Three-hour lead review — 2026-09-25T19:16:14Z
 

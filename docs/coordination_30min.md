@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 01:16 UTC
+
+Worker `82b9ff7`/`774dfa0` completed LEAD-PORT-01 and status-only commits through `88ed169` report no run/lease and E14 NO-GO. The lead accepted its clean-checkout explicit-skip repair but independently found 3 populated-host failures among 98 affected tests; the two exact causes are alternate SHA-matched E14 source-path metadata and recorded versus current E2 interpreter-prefix metadata. [LEAD-PORT-02](lead_portability_review_20260926.md) releases only a 10-minute, one-CPU source/test repair to the existing worker, preserving frozen artifacts, with zero model calls/downloads/$0. Worker receipt pending. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
+
 ## Current handoff audit — 25 September 2026, 22:14 UTC
 
 Worker `e250b8f` accepted lead `5d80ce2` at 19:22:34 UTC and verified the runner repair (26/26 affected tests; three 1,666-test full-suite passes on its populated host). Its clean worktree had 6 failures and 7 errors tied to ignored source/log files and an absolute E2 path; these are reproducibility defects, not new receiver outcomes. Six status-only commits through `f753f53` (21:54:36 UTC) report no run/lease and E14 NO-GO; watcher health is worker-reported. [LEAD-PORT-01](lead_portability_decision_20260925.md) authorizes a bounded source-only portability repair by the existing worker, preserving frozen artifacts and failing closed when required source bytes are absent. Worker acknowledgement of this new scope is pending. The lead corrected the manuscript's E14 NO-GO/B2-1R wording. No model collection released. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
