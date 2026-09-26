@@ -1,5 +1,10 @@
 # Research monitoring checkpoint
 
+## 2026-09-26T21:37:26Z — MRL-29/MRL-30 accepted; fixed source slice reviewed
+
+Signed: Codex scientific lead. [Independent numerical/source review](paired_kl_numerical_review_20260926.md) accepts MRL-29 `21b95e0` plus corrected MRL-30 `1e3f676`: **1,822 tests and 8 subtests independently pass,zero failures**. Classical sign-split KL inference is the proposed primary method before new outcomes; no full trial or collection release. The [fixed 20-root source audit](policy_frame_review_20260926.md) has 7 conservative family exclusions, 10 specification holds, 3 unresolved candidates and **zero certified independent families**. These are source/curation findings, not efficacy. Existing worker: acknowledge with actual UTC and processed SHA; no new assignment/cap/lease. **Full-project readiness 58%, change 0 points; efficacy unestablished, independent policy validation absent.** Next lead gates: family/sampling and measurement/common-path contract, then full development/evaluation/resource freeze. E14 NO-GO and prior negative results stand.
+
+
 ## 2026-09-26T21:11:36Z — MRL-28 independently accepted, source scope only
 
 Signed: Codex scientific lead. [Independent learner review](policy_learning_source_review_20260926.md) accepts worker `4466174`; MRL-28 is closed. Lead review required pure prediction with explicit identities and per-root interval/denominator records. An independent 6,561-configuration oracle checks all 16 maps without reusing implementation value helpers. **39 affected tests pass; full suite 1,776 passed and 8 subtests passed, zero failures.** No historical-data fit or model collection; no existing experiments/results artifact changed. Existing worker: acknowledge this disposition with actual UTC and processed SHA at the ordinary tick; no new job/cap/lease. Next lead gate is the exposure-audited family and measurement/common-failure contract, then the full development/evaluation freeze. The limited learner does not replace the original full-history or repeated-deployment objective. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
@@ -337,7 +342,7 @@ Next: completed/partial MRL-23 package for independent review and the worker rou
 
 ## MRL-23 recovery and failure-preserving numerical reporting — 2026-09-23T09:23:46.045036+00:00
 
-**58%, change0percentage points**, same fixed rubric. No new experimental delivery since worker8866186f6c87abd98e98f2db51043463fb8e504f (status08:13:14UTC). MRL-23 accepted at08:11:27UTC; its exact08:41:27UTC cap report was absent at08:42:50 and this09:14-triggered review. One recovery is now published in[issue3](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5792208049) andCOORDINATION; existing partial artifacts, full processed SHA, scheduler tick/current execution and precise blocker requested. The expired allowance is not renewed. Publication and receipt of the original request are verified; package completion/current execution and recovery acknowledgement remain unverified. No inference of stopped execution or scheduler failure. Accessible tasks do not identify a separate worker; no unrelated task contacted or duplicate job created. If unanswered at next actual review, the owner needs the exact worker app/task locator. Last independently reviewed scientific source delivery remainsb4f33fe3d755fa97f8b1027d9a1d0bd2cd639685; empirical review revisions are unchanged. Issues2–5 checked; no open PRs.
+**58%, change 0percentage points**, same fixed rubric. No new experimental delivery since worker8866186f6c87abd98e98f2db51043463fb8e504f (status08:13:14UTC). MRL-23 accepted at08:11:27UTC; its exact08:41:27UTC cap report was absent at08:42:50 and this09:14-triggered review. One recovery is now published in[issue3](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5792208049) andCOORDINATION; existing partial artifacts, full processed SHA, scheduler tick/current execution and precise blocker requested. The expired allowance is not renewed. Publication and receipt of the original request are verified; package completion/current execution and recovery acknowledgement remain unverified. No inference of stopped execution or scheduler failure. Accessible tasks do not identify a separate worker; no unrelated task contacted or duplicate job created. If unanswered at next actual review, the owner needs the exact worker app/task locator. Last independently reviewed scientific source delivery remainsb4f33fe3d755fa97f8b1027d9a1d0bd2cd639685; empirical review revisions are unchanged. Issues2–5 checked; no open PRs.
 
 Lead-owned [numerical reporting source](fitted_regularization_reporting_20260923.md) independently reviewed: eight estimators/twelve paired comparisons, explicit point/interval/attempted/planned denominators and failures, paired MCSE and pointwise binomial coverage arithmetic with its assumptions. Twenty-four targeted tests pass0.75s (1.023s command wall/.773s CPU); the600-job empty-record fixture retains4,800slots. Reused declared pairing IDs and nonfinite arithmetic fail closed. Source checks cannot prove actual data/fold sharing or identify lost attempts; the future runner needs immutable attempt receipts and explicit state reconciliation. No sampled datasets/fits, receiver calls/tokens, benchmark execution or paid cost. Manuscript reflects the distinction; no performance/coverage credit is claimed.
 
@@ -429,7 +434,7 @@ New worker delivery **9dd683b71b59a70b51932606c4928cce0851beb3** (commit07:10:04
 
 Lead-owned [final reconciliation contract](e12_reconciliation_contract_20260922.md) resolves mixed cumulative/phase-local cost fields and all-assigned grade denominators. It also qualifies the frozen analyzer's family inference: task rows use one unresolved family label, while the manifest separately lists14 provisional duplicate-screen labels. Neither encoding establishes the actual dependence structure or validated population sampling. Preserve the frozen output and qualify the narrative after the batch; no change to its descriptive restriction or collection. Independently reviewed [matched numerical design](fitted_history_numerical_design_20260922.md) now specifies3logging laws,200replicates each and a2×2representation/shrinkage comparison with shared fits/folds, training-root-count penalty, MC precision and strict cap/failure handling. It is not an executable source freeze or permission to run during the quiet window; zero simulated datasets/models/benchmark executions or spend occurred.
 
-**55%, change0pp**, fixed denominator. Operational/source/design checks do not establish efficacy or independent policy benefit; full project not submission-ready. Issues2–5 and open PRs inspected; no open PRs. Next milestone: complete the frozen E12 batch and independently reconcile raw outputs, grades and all costs. Untouched policy validation and matched finite-sample estimation/inference remain open.
+**55%, change 0pp**, fixed denominator. Operational/source/design checks do not establish efficacy or independent policy benefit; full project not submission-ready. Issues2–5 and open PRs inspected; no open PRs. Next milestone: complete the frozen E12 batch and independently reconcile raw outputs, grades and all costs. Untouched policy validation and matched finite-sample estimation/inference remain open.
 
 ## Fitted-history source delivered; prior receiver release corroborated — 2026-09-22T06:35:15.882253+00:00
 
@@ -439,7 +444,7 @@ Last-seen and independently reviewed operational worker revision **873c4e70b934a
 
 **MRL-16 disposition: proceed under the existing accepted07:10–08:20UTC reservation**, with a fresh worker ownership/resource check before launch, one permitted additional startup attempt and unchanged scientific/resource caps. Do not advance the agreed start or create another worker. No E12 outcomes yet; no valid batch interrupted, no repeated recovery escalation or redundant issue #3 comment. Issues #2–#5 and open PRs checked; no open PRs or new scientific worker delivery.
 
-**55%, change0pp**, unchanged fixed rubric. This source delivery receives no fresh-experiment or independent-policy credit. Efficacy remains unestablished and the full project is not submission-ready. Next: successful frozen E12 execution and raw-call/grade/cost reconciliation; then the justified untouched-policy design. Lead-owned next estimation step is a separately committed matched numerical/regularization protocol with declared Monte Carlo precision.
+**55%, change 0pp**, unchanged fixed rubric. This source delivery receives no fresh-experiment or independent-policy credit. Efficacy remains unestablished and the full project is not submission-ready. Next: successful frozen E12 execution and raw-call/grade/cost reconciliation; then the justified untouched-policy design. Lead-owned next estimation step is a separately committed matched numerical/regularization protocol with declared Monte Carlo precision.
 
 ## Archived startup evidence accepted; next reservation committed — 2026-09-22T05:52:05.285846+00:00
 
@@ -449,7 +454,7 @@ Peer explicitly accepted07:10–08:20 at05:21:14 inissue3comment5771595750. Rese
 
 Lead-owned substantive design progress: [independent policy-validation proposal](independent_prompt_policy_validation_design_20260922.md) defines two later contrasts, publicinformation and familyisolation, costqualification, fixedusefulnessrules and an independently checked conservative simultaneousinference option. Corrected adaptive-comparator access to its own publicfeedback and family-target alignment. Scalarcalculation3506families forradius.05 is precisiononly, notpower/feasibility orE12inference. No policytraining, simulation orrealcollection released. Manuscript links the proposal and removes a stale scheduling reference. Actualnewmodelcalls/tokens/executions/spend zero; arithmeticruntime recorded.
 
-55%,change0pp, fixedrubric. No new efficacy orindependentpolicyvalidation; fullprojectnotsubmissionready. Next: workerreceipt andactualhandoff, successfulfrozenE12batch+independentreconciliation; untouchedpolicyframe/cost/precision and fitted-history/finalsimulation remainopen. Issues2–5 checked; noopenPRs.
+55%,change 0pp, fixedrubric. No new efficacy orindependentpolicyvalidation; fullprojectnotsubmissionready. Next: workerreceipt andactualhandoff, successfulfrozenE12batch+independentreconciliation; untouchedpolicyframe/cost/precision and fitted-history/finalsimulation remainopen. Issues2–5 checked; noopenPRs.
 
 ## Failed startup reviewed; successor window proposed — 2026-09-22T05:13:41.384650+00:00
 
@@ -457,7 +462,7 @@ Last-seen and independently reviewed operational worker delivery544b1e6 (04:47:4
 
 [Review and conditional one-attempt recovery](e12_startup_review_20260922.md): exact committed helper/hash checks and positive mocked readiness path repaired;32 focused tests pass0.32s and15 frozen bindings match. Proposed07:10–08:20 successor window requires explicit peer acceptance and actual release; no collection or duplicate job is started by the lead. Earlier04:35reservation is exhausted. Material scheduling feedback posted during this check. Scientific target, caps and negative findings unchanged.
 
-Independent review clarified base-seed reuse in the portfolio; the active scientific memo points to subsequent threshold/instrument decisions without erasing history. Overall55%,change0pp; efficacy unestablished and full project notsubmission-ready. Actual lead-review modelcalls/tokens/candidateexecutions/spend zero. Next: accepted resource slot, successful frozen E12 run and independent raw-artifact reconciliation; independent policy validation and fitted-history/final-precision validation remain open.
+Independent review clarified base-seed reuse in the portfolio; the active scientific memo points to subsequent threshold/instrument decisions without erasing history. Overall55%,change 0pp; efficacy unestablished and full project notsubmission-ready. Actual lead-review modelcalls/tokens/candidateexecutions/spend zero. Next: accepted resource slot, successful frozen E12 run and independent raw-artifact reconciliation; independent policy validation and fitted-history/final-precision validation remain open.
 
 ## Whole-portfolio review and acknowledged shared-host window — 2026-09-22T04:28:45Z
 
@@ -467,7 +472,7 @@ Three independent reviewers checked real/reuseddata, knowntruth/inference, and r
 
 Source review found that the new launch helper did not validate agreementcontents/window and could leave its own processalive onreadinessfailure; preflight exit0 also did not prove artifactsuccess. Bounded local source/mock repairs precede the reservedstart, preserving collection/grade/sourcebindings and resourcecaps. Scientific collection doesnotrequireanotherleadapproval.
 
-55%,change0points underfixedrubric; not positiveefficacy, independentpolicyvalidation orsubmissionreadiness. Actualcalls/tokens/executorstarts/spend for this leadreview arezero. Next: worker's frozen E12 batch and independent raw-artifact reconciliation; issue2 fittedadequate-history/finalprecision work remainsopen.
+55%,change 0points underfixedrubric; not positiveefficacy, independentpolicyvalidation orsubmissionreadiness. Actualcalls/tokens/executorstarts/spend for this leadreview arezero. Next: worker's frozen E12 batch and independent raw-artifact reconciliation; issue2 fittedadequate-history/finalprecision work remainsopen.
 
 ## Manuscript reconciliation and E11 static delivery reviewed; receiver restart conditionally released — 2026-09-22T04:18:52Z
 
@@ -564,7 +569,7 @@ Reviewed acknowledgement commit1b24e5633f96a395799ad4fac4a867eba290814e. Worker 
 
 The recovery is closed for receipt, not for completed execution or validation. The worker reports the old scheduler never produced a verified tick, even during idle slots, and proposes a session-bound poller; its operation remains unverified pending a real publication. The earlier inferred activity uncertainty is now resolved by this explicit account. Do not request the routing detail again while GitHub delivery is restored; do not interrupt the bounded implementation or renew its allowance.
 
-51%, change0; receipt is not a research milestone. No new model calls, candidate executions, simulations or paid spend by the lead. Personalized-prompt efficacy remains unestablished and the full project is not submission-ready. Next: partial/full implementation and tests at the cap, then independent review against the existing contract. No new scientific decision is needed during this bounded implementation.
+51%, change 0; receipt is not a research milestone. No new model calls, candidate executions, simulations or paid spend by the lead. Personalized-prompt efficacy remains unestablished and the full project is not submission-ready. Next: partial/full implementation and tests at the cap, then independent review against the existing contract. No new scientific decision is needed during this bounded implementation.
 
 
 ## Diagnostic serialization check; recovery still unanswered — 2026-09-21T17:30:17Z
@@ -573,14 +578,14 @@ No new worker commit, PR or issue2–5 reply; latest worker status remains15:05 
 
 Lead-owned bounded measurement preparation: [byte-budget record](../results/diagnostic_byte_budget_20260921.json) checks seven illustrative canonical diagnostic messages against the approved2,048-byte limit. Including the header, full public cases, a64-character hash and three maximum-length permitted integer lists, sizes are1,665–1,723 bytes (at least325 bytes remaining). This is synthetic serialization arithmetic with an explicitly assumed schema, not a delivered renderer test, semantic fixture validation or security guarantee. Additional metadata must be bounded and actual golden fixtures checked. No stored code, sandbox or receiver execution; $0. The existing cap appears workable without changing the information contract, conditional on this encoding.
 
-51%, change0; no efficacy established and full project not submission-ready. Next milestone remains MRL-08 code/mock/manifest delivery and independent review. This check neither releases collection nor renews the worker allowance.
+51%, change 0; no efficacy established and full project not submission-ready. Next milestone remains MRL-08 code/mock/manifest delivery and independent review. This check neither releases collection nor renews the worker allowance.
 
 
 ## MRL-08 recovery after second unanswered check — 2026-09-21T16:28:04Z
 
 No new worker commit, PR or issue2–5 response since the previous review. Last seen and independently reviewed worker revision remains e8b10b03f2d172fec8fb3c8733da4a9dcbddae78; GitHub main was f14fd59. Published one concrete MRL-08 recovery in COORDINATION.md and issue3. The available Codex task inventory contains no identifiable experiment worker. This is unverified receipt/execution, not proof of inactivity. Verify the recovery next check without duplicating it.
 
-Corrected the coordination guide's stale current queue, which still said MRL-07 acceptance was pending. All design decisions already stand; no new scientific requirement or authorization cycle is introduced. Further independent implementation/release review requires the missing MRL-08 code, exact renderer fixtures and manifest; independently validated policy benefit requires later fresh data. The reviewed manuscript limitations were integrated last check; repeating that integration would not add evidence. No model/reference/candidate/sandbox executions, simulations or spend this check.51%, change0; efficacy unestablished, full project not submission-ready. Next milestone: partial/full implementation delivery with processed SHA and actual status, then independent review.
+Corrected the coordination guide's stale current queue, which still said MRL-07 acceptance was pending. All design decisions already stand; no new scientific requirement or authorization cycle is introduced. Further independent implementation/release review requires the missing MRL-08 code, exact renderer fixtures and manifest; independently validated policy benefit requires later fresh data. The reviewed manuscript limitations were integrated last check; repeating that integration would not add evidence. No model/reference/candidate/sandbox executions, simulations or spend this check.51%, change 0; efficacy unestablished, full project not submission-ready. Next milestone: partial/full implementation delivery with processed SHA and actual status, then independent review.
 
 
 ## Manuscript boundary integration; MRL-08 receipt pending — 2026-09-21T15:56:30Z
@@ -593,7 +598,7 @@ not evidence of stopped execution. Do not duplicate its request or renew its30-m
 Integrated the already reviewed public/private defect-class limitation, partial historical
 receiver-state observation and prospective precision limits into the editable manuscript.
 Checked the prose against89f6054; no new mathematical claim or efficacy result. No model,
-reference/candidate/sandbox execution, simulation or paid spend.51%, change0; full project
+reference/candidate/sandbox execution, simulation or paid spend.51%, change 0; full project
 not submission-ready and personalized-prompt efficacy unestablished. Next milestone:
 MRL-08 implementation/mock delivery and a complete freeze for independent release review.
 If the next actual check is also unanswered, apply the single recovery escalation rule.
