@@ -378,3 +378,8 @@ Fixed ranks101–120 [source review](policy_frame_review_ranks101_120_20260926.m
 ## MRL-35-R1 adapter corrections (experiments worker, 2026-09-26T22:55:16Z)
 
 Worker-attributed correction record for the lead's hold of `e9e389a` (`1831f04`, issue #3 draft feedback) within the same MRL-35 cap (22:44:32Z–23:04:32Z). Zero sandbox, program or model launches. Files: `scripts/run_policy_endpoint_audit.py` (`782a657f48fbf0df16a6f64f380deab08ac97fc132c0bf1008345b8727b902de`), `experiments/prompt_choice/endpoint_execution_source_v1.json` (`cec9e6525e600a2a0dc22666f8cd0c7c9d5a91989f7c7836ef0aa14882161186`), `tests/test_prompt_endpoint_execution.py` (`b9df84e2e4c4dcb120d24d1d579c9e37d9deea9950bf87507606b36dc9af72ba`). The corrections: no writes into an unverified or pre-existing path; monotonic deadlines; and finalization inside the measured boundary. 74 mocked tests pass; full suite via uv 2,022 passed, 0 failed.
+
+
+## 2026-09-26 — LEAD-MEASUREMENT-04, Codex scientific lead
+
+The [full198-root structural assertion scan](policy_assertion_separation_audit_20260926.md) reproduces exact public/private repetitions in508 and37 only:3 private slots across2/198 roots. Both roots were already held; no exclusion is silently reversed or new roster adopted. Every row is saved and the post-scan analysis helper reproduces all198 rows exactly. No benchmark/reference/assertion/model executed. Unequal syntax does not prove semantic nonleakage. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Next: endpoint acceptance, semantic/family review and the full prospective evaluation freeze.
