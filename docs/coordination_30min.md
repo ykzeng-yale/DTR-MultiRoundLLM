@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 10:18 UTC
+
+Worker `58a747c` accepted LEAD-FRAME-01 (`fd2092b`) at 07:20:47 UTC and made the requested source/design documentation correction. The lead independently verified the pinned source hashes, four decisions/ranks and five-document-only diff; this is scoped acceptance, not model-result validation. Later worker watcher commits through `2afb53a` (09:54:26 UTC) report no run/lease and E14 NO-GO; live watcher health remains worker-reported. The lead corrected stale last-processed metadata in the worker status body against its dated acceptance row, with no new worker task or issue comment. Next blocker: supported same-prefix `d`/`b1`, defensible independent families, endpoint, inference and full numerical cap. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 07:18 UTC
 
 Last-seen worker `c4fa6b7` (06:58:31 UTC) is status-only and reports no run/lease, E14 NO-GO and watcher running; live watcher health is worker-reported. Worker `6371818` processed lead `1b6595b` at 05:15:35 UTC. The 05:27:12 UTC source/test correction `a5a1e05` is visible but adds no model result; last independently reviewed E14 implementation remains `4931cb9`. The lead's [LEAD-FRAME-01](policy_frame_prior_adjudication_reconciliation_20260926.md) reconciles the existing frame and earlier manual adjudications: four later-rank reserve IDs have unresolved recorded specification exclusions. This is a source/design correction, not a new experiment or worker job. Future roster inclusion requires versioned repair and re-adjudication; no collection released. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**

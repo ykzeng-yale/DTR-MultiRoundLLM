@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T07:18:00Z",
+  "checkpoint_utc": "2026-09-26T10:18:00Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,15 +54,16 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "c4fa6b77de2261d4a872444c425f0d978552ba21",
-  "baseline_note": "Fixed 58-point rubric unchanged: the reserve exposure/specification correction adds no empirical or independent-policy milestone credit.",
+  "prior_checked_head": "2afb53aad514e768a085d6d9ca86d721be6cd190",
+  "baseline_note": "Fixed 58-point rubric unchanged: independent acceptance of the worker's frame-documentation correction adds no empirical or independent-policy milestone credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "LEAD-FRAME-01 cross-source audit found four MRL-15 reserve IDs with earlier specification exclusions; source/design reporting corrected without new model/efficacy data. Worker c4fa6b7 last seen, no run/lease reported, E14 NO-GO.",
+  "latest_evidence": "Worker 58a747c accepted LEAD-FRAME-01 and repaired frame documentation; lead independently verified hashes, exact four exclusions/ranks and documentation-only diff. Watcher 2afb53a reports no run/lease; no new model/efficacy data, E14 NO-GO.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "c4fa6b77de2261d4a872444c425f0d978552ba21",
-    "delivery_type": "Source/test correction a5a1e05 and later status-only; no new real model result",
+    "last_seen_worker_revision": "2afb53aad514e768a085d6d9ca86d721be6cd190",
+    "delivery_type": "LEAD-FRAME-01 accepted in documentation correction 58a747c; later status-only, no new real model result",
+    "last_independently_reviewed_worker_documentation_revision": "58a747c5fa57f2e8424f01a108a7aad6f6e5aa0e",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
     "acknowledgement_received": true,
@@ -74,7 +75,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker c4fa6b7 at 2026-09-26T06:58:31Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker 2afb53a at 2026-09-26T09:54:26Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
