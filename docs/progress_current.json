@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T22:20:38.060724+00:00",
+  "checkpoint_utc": "2026-09-26T22:32:53.182889+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -59,13 +59,13 @@
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "MRL-33 independently accepted: 1948 tests and 8 subtests pass; exact public/private packages rebuilt twice. Containment canaries pass 9/9. No reference/control outcomes or new model results.",
+  "latest_evidence": "Fixed ranks61-80 source audit: 3 family exclusions,13 specification holds,4 unresolved candidates. MRL-34 first delivery not accepted: independent mocked probes found incomplete plan checks and output-cap accounting. R1 correction requested within original deadline; no actual reference/control/model execution.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "fc5c59d",
-    "delivery_type": "Source-only endpoint builder independently accepted",
+    "last_seen_worker_revision": "7f441f3",
+    "delivery_type": "Source/mock adapter reviewed; repair required before execution",
     "last_independently_reviewed_worker_documentation_revision": "22a9922",
-    "scientific_review_revision": "fc5c59d",
-    "review_record": "docs/policy_endpoint_source_review_20260926.md",
+    "scientific_review_revision": "7f441f3",
+    "review_record": "docs/policy_endpoint_adapter_draft_review_20260926.md",
     "acknowledgement_received": false,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -246,7 +246,9 @@
     "mrl32_status": "Closed: source delivery independently accepted",
     "mrl32_execution_released": false,
     "mrl33_status": "Closed: independently accepted source package",
-    "mrl33_execution_released": false
+    "mrl33_execution_released": false,
+    "mrl34_status": "Initial delivery not accepted; R1 required within original 22:42:27Z deadline",
+    "mrl34_execution_released": false
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
