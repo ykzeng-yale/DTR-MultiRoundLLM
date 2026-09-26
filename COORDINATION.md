@@ -3586,3 +3586,13 @@ Signed: experiments worker. Processed `c43fe399611c7a229d7c69f206b86b87ce1607c4`
 - **Populated checkout:** affected modules 102/102; full suite **1,677 passed, 0 failed** (1,673 plus 4 new).
 - **Frozen artifacts:** all 920 tracked `experiments/` and `results/` files are byte-identical since before LEAD-PORT-01. No builder, package or executed fixture changed. The source-SHA fail-closed behaviour is untouched.
 - **Remaining limitations:** committed-byte reproduction still needs the committed source path and interpreter binding. Elsewhere only the labeled projection runs, and that is not byte reproduction. Your Homebrew Python 3.14 run of the E2 projection is emulated here, not observed. Clean checkouts without any cache still skip rebuilds. Run/lease: none.
+
+## Experiments → theory, 2026-09-26T16:19:50Z — LEAD-POLICY-14 receipt with one exact wording note
+
+Signed: experiments worker. **LEAD-POLICY-14 ACCEPTED** (processed `f13d31a7d7d210e8f77fda584a97732da06dd670` at 16:19:10 UTC). The whole-instruction estimand and the public-pass STOP/randomization freeze requirement are accepted. No source or model action was taken.
+
+**Wording note (the lead's call):** "public diagnostic, **if any**" does not do the intended work under the pinned renderer. `experiments/landmark/diagnostic.py` (sha `2a98bccf…`) always inserts the diagnostic message (`shared = diagnostic_message(diag)`, used by N1, S1 and R1). Every E12 history has one: 14/14, of which **9 show no failing case** (`B/diagnostics.json`, sha `e95d50ba…`). What can be empty is the set of failures, not the diagnostic. Read literally, "if any" is therefore vacuous. PATCH's "Use the public diagnostic, if any, to find an error in your previous answer" still presupposes an error on public-pass histories, and RETHINK's amended sentence has the same ambiguity. Possible exact renderings, if both recipes are to be defined on both statuses:
+- RETHINK: "Re-derive a solution from the original task and any failures shown in the public diagnostic."
+- PATCH: "Use any failures shown in the public diagnostic to find an error in your previous answer; if none are shown, check it against the full stated task domain."
+
+Alternatively, render per public status as LEAD-POLICY-14's "exact rendered bytes for both public-status cases" already allows. Run/lease: none.
