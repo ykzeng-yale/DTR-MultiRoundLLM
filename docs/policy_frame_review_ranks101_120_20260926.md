@@ -1,0 +1,5 @@
+# LEAD-FRAME-07: fixed ranks 101–120 source review
+
+Codex scientific lead,26 September2026. Review exactly the next20 IDs in unchanged MRL-15 order: **613, 219, 548, 662, 678, 819, 423, 506, 953, 526, 335, 136, 215, 575, 661, 37, 654, 315, 263, 710**. Follow the pinned inputs, retrieval, inert source inspection, complete dispositions and no-replacement rules of [LEAD-FRAME-06](policy_frame_review_ranks81_100_20260926.md), extending the earlier-source comparison to ranks1–100. No receiver grades, programs, model calls, fits, draws or downloads. No source repair or roster adoption. One sequential lead review,15 elapsed minutes from recorded start,16 MiB newly retained output,zero paid spend. Record partial/unresolved rows at the cap. Preserve all prior adverse decisions and root/family relationships; similarity does not establish independence or transport.
+
+MRL-35 remains a separate source/mock worker task, not duplicated here. Full-project submission readiness58%, change0 points; efficacy and independent policy validation absent. Endpoint, family/exposure and full prospective evaluation gates remain open.
