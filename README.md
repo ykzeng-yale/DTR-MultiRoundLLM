@@ -24,6 +24,8 @@ The [lead experiment status](docs/current_experiment_status_20260926.md) reconci
 
 The latest [source and provenance review](docs/lead_resumption_review_20260926.md) independently passed the full local suite: **1,737 tests and 8 subtests, zero failures**. Both fixed prompt recipes now have source support across valid public diagnostic statuses; the historical plan test uses its exact original input bytes. All 928 prior experiment/result files remain unchanged. Source tests do not establish policy efficacy or replay past receiver execution; no new model collection was released.
 
+The [supplied-data learner is now independently accepted](docs/policy_learning_source_review_20260926.md): a four-cell public-status rule and fixed recipe use identical family weights and preserve missing-score bounds. An independent 6,561-configuration oracle passes; the latest full local suite passes **1,776 tests and 8 subtests**. This is source verification, with no fit on real development data or policy evidence.
+
 Overall milestone completion is **58%, change 0 percentage points** under the [fixed rubric](docs/progress_current.json). Prompt efficacy is unestablished, independent policy validation is absent, and the full project is not submission-ready. The next milestone is a frozen supported same-prefix selector and fair comparators on untouched independent families, with endpoint, inference and complete finite resource cap.
 
 ## Historical continuation — 23 September 2026

@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T21:01:05Z",
+  "checkpoint_utc": "2026-09-26T21:11:36Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,18 +54,18 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "79da1fc",
+  "prior_checked_head": "9ddc5788689fc0d8db71242773df119ae07a1417",
   "baseline_note": "Fixed 58-point rubric unchanged: scientific resumption, new source/mock setup and classical inference specialization add no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Codex scientific resumption; MRL26 source and MRL27 historical-input provenance repair independently accepted. 1737 tests and 8 subtests pass, zero failures; all 928 prior experiments/results files unchanged. Paired-family inference mathematically reviewed only. No collection released.",
+  "latest_evidence": "MRL28 source-only empirical learner accepted at 4466174 with independent 6561-configuration integer oracle. 39 affected tests and 1776 full-suite tests plus 8 subtests pass. No real-data fit or collection; historical artifacts unchanged.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "03f71dc",
-    "delivery_type": "MRL26 source/mock and MRL27 provenance-test repair; independently accepted",
-    "last_independently_reviewed_worker_documentation_revision": "c36a7c6",
-    "scientific_review_revision": "c36a7c6",
-    "review_record": "docs/lead_resumption_review_20260926.md",
+    "last_seen_worker_revision": "d5097d1",
+    "delivery_type": "MRL28 supplied-data empirical learner and source config; independently accepted",
+    "last_independently_reviewed_worker_documentation_revision": "4466174",
+    "scientific_review_revision": "4466174",
+    "review_record": "docs/policy_learning_source_review_20260926.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -237,7 +237,9 @@
     "e14_scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "mrl26_status": "accepted source/mock at c7a3167; closed",
     "mrl27_status": "accepted provenance-test repair at c36a7c6; closed",
-    "mrl27_execution_released": false
+    "mrl27_execution_released": false,
+    "mrl28_status": "accepted source-only at 4466174; closed; no real-data fit or collection",
+    "mrl28_execution_released": false
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -548,10 +550,20 @@
     "scientific_lead": "Codex",
     "experiment_implementation": "existing Claude Code worker",
     "mrl26_accepted_revision": "c7a3167",
-    "independent_tests": "1737 passed, 8 subtests passed, zero failures in 26.49 seconds",
+    "independent_tests": "1776 passed, 8 subtests passed, zero failures in 34.25 seconds",
     "experimental_receiver_calls": 0,
     "mrl27": "accepted c36a7c6 within provenance-test scope; closed",
     "recurring_automation_created": false,
-    "next_scientific_milestone": "Complete permitted-feature learning rule and fixed comparator, development/untouched family frame, measurement/missingness/inference and finite resource contract before receiver calls."
+    "next_scientific_milestone": "Exposure-audited family population and versioned measurement/common-failure contract, then full finite development/evaluation resource and inference freeze."
+  },
+  "policy_learning_source": {
+    "decision_id": "LEAD-POLICY-17 / MRL-28",
+    "contract": "docs/policy_learning_contract_20260926.md",
+    "review": "docs/policy_learning_source_review_20260926.md",
+    "accepted_revision": "44661747cbabd489ba547b0bb06761f8d789faa9",
+    "classification": "supplied synthetic-data source checks, not a real-data fit or policy evidence",
+    "independent_checks": "39 affected; 1776 full suite and 8 subtests; 6561 deterministic oracle configurations",
+    "real_data_fit_released": false,
+    "receiver_collection_released": false
   }
 }
