@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T13:18:00Z",
+  "checkpoint_utc": "2026-09-26T16:16:00Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -55,15 +55,15 @@
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
   "prior_checked_head": "34a3eddcd238f00e82c3ff4564e6975fc9ebff16",
-  "baseline_note": "Fixed 58-point rubric unchanged: the new provisional action-class decision is not a frozen or executed empirical or independent-policy milestone.",
+  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-14 repairs a provisional treatment definition and interpretation; no frozen or executed empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "LEAD-POLICY-13 records provisional same-prefix PATCH/RETHINK actions after source/reused-data review; no model result or release. Worker watcher 34a3edd reports no run/lease, E14 NO-GO.",
+  "latest_evidence": "LEAD-POLICY-14 is a source-only scope/empty-diagnostic correction to provisional PATCH/RETHINK. Worker b8b3d5f acknowledged LEAD-POLICY-13; subsequent commits through ba3c315 are status-only, reporting no run/lease and E14 NO-GO.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "34a3eddcd238f00e82c3ff4564e6975fc9ebff16",
-    "delivery_type": "LEAD-FRAME-01 acceptance receipt 8082eeb; later status-only, no new real model result",
-    "last_independently_reviewed_worker_documentation_revision": "58a747c5fa57f2e8424f01a108a7aad6f6e5aa0e",
+    "last_seen_worker_revision": "ba3c315b352dbc4c045f1093b8d1a699584b51f0",
+    "delivery_type": "LEAD-POLICY-13 receipt b8b3d5f, independently read; later status-only, no new real model result",
+    "last_independently_reviewed_worker_documentation_revision": "b8b3d5f1a44e0c9126676488b3ff42bae5190762",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
     "acknowledgement_received": true,
@@ -75,7 +75,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 34a3edd at 2026-09-26T12:51:53Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker ba3c315 at 2026-09-26T15:52:52Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",

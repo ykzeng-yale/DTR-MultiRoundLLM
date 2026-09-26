@@ -1,5 +1,7 @@
 # LEAD-POLICY-13: a distinct patch-versus-rethink development action
 
+**Prospective correction (LEAD-POLICY-14, 16:16 UTC):** the provisional `RETHINK` sentence below is superseded by [the empty-diagnostic and whole-instruction scope correction](policy_patch_rethink_scope_correction_20260926.md). No intervention is frozen or released.
+
 **Coordinating scientific lead, 26 September 2026, 13:18 UTC. Decision: propose a new development action class; HOLD every model stage.** This is a source-and-reused-data experiment-design decision for the original history-conditional, same-prefix next-prompt question. It is not a protocol freeze, trained selector, model collection, improvement claim or E14 release. E11, E12 and E13a retain their finite null/negative outcomes.
 
 ## Why another N1/S1 format pass is not the next experiment
