@@ -4451,3 +4451,82 @@ Signed: experiments worker. Processed `10c66de` (the slow-finalizer false-succes
 - **Real processes untested.** Kill behaviour against real processes has not been exercised.
 
 **STOPPED for independent Codex review; no exact plan or real audit released.** Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-26T23:30:03Z — MRL-36 COMPLETED (candidate-audit source inputs; preparation only), for Codex review
+
+Signed: experiments worker. Processed issuing commit `1312391` (MRL-36); `ec3cb97` (the lead's adjudication plan) was noted. **Accepted 23:24:31Z; deadline 23:44:31Z; completed 2026-09-26T23:30:03Z** (about 5 minutes; one sequential CPU; 279,776 bytes new; $0).
+
+**What was not done:**
+- No benchmark, reference or assertion execution, no model/receiver calls, no server start, no downloads, no fits.
+- Nothing was eval'd, exec'd or compiled; literal flags come from `ast.literal_eval` on single nodes only.
+- No family or eligibility decisions and no repairs.
+- The lock-file deletion is preserved.
+
+**Issue #3 acknowledgment:** this environment has no `gh` CLI or GitHub token, and I will not extract credentials, so I could not post to issue #3. This entry and the status heartbeat carry the acknowledgment and the delivery; please relay them to the issue if needed.
+
+**Files:**
+- `scripts/prepare_policy_candidate_audit.py`: `5192b7d96b06347c3588b15e72b5e0c058ef89d5ca10be44629cf804d4116011`
+- `tests/test_policy_candidate_audit.py`: `ff1c64d3744476ea72277feac98162a6be288d90d4c6ebe5278ce20d2c62a31c`
+- `results/policy_candidate_audit_inputs_20260926.json`: `3507c9ff33b1359224b5c9eea26d932db7906686a7f528546de4fe2812d31f67` (43 records, 255 KB)
+
+**Commands:**
+- `.venv/bin/python scripts/prepare_policy_candidate_audit.py --out results/policy_candidate_audit_inputs_20260926.json` (under 1 s). A second run refuses (exit 2), and the output is byte-identical to an earlier trial run apart from the added script hash.
+- `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,036 passed, 0 failed, plus 8 subtests (31.9 s)**.
+
+**Input pins verified before use (SHA256):**
+- reconciliation JSON `744b0f39…cbfbff`, as committed at `7acbcba`;
+- ranks 161–198 review `e9dea0d1…e00e`;
+- MBPP `ccf64cea…a92a9f` (`work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl`);
+- canonical pool `23727895…01c2ce` (`work/data/tasks.json`, 591 unique UIDs: 427 MBPP, 164 HumanEval);
+- helper `scripts/review_candidate_frame_mrl15.py` `9882fb0c…a9f720`, verified before import and cross-checked against the ranks 161–198 record.
+
+All input hashes and the script's own hash are recorded in the output's provenance.
+
+**Selection:** the rows with historical_class=candidate, prior_receiver_development=false and current_overlay=none, in rank order. They equal the 43 fixed IDs exactly; otherwise the script refuses.
+
+**Each record contains:**
+- ranks and IDs;
+- description, reference and three assertion SHA256s;
+- the earlier source review (source_record, disposition, basis, class, overlay), copied with provenance;
+- exposure tags: prior_receiver_development, canonical-pool membership, E11 membership, and the 877/345 measurement-development labels;
+- `prior_neighbors_top6`, from the canonical pool plus the 7 E11 roots as a separate `e11_dev` scope. Each entry has UID, scope, winning variant, score and public description. The score is the helper's max(text, code) Jaccard, taken as the maximum over that UID's variants: canonical prompt/reference and, for MBPP UIDs, the original MBPP text/code.
+- `frame_neighbors_top6`: all 198 fixed-frame roots, self excluded, with source rank, historical class and disposition, overlay, score and description;
+- `public_first_assertion`: AST shape, the entry-point call flag, argument and keyword counts, and per-node literal flags with type name, container size and value-repr SHA256 only. Nonliteral nodes are marked `nonliteral_unsupported`.
+- `family_adjudication: pending` and `approved: false`.
+
+**Observations (inert, for your review; not decisions):**
+- None of the 43 roots and none of the E11 roots appear in the canonical pool.
+- All 43 public first assertions parse as a single `assert <call> == <literal>` with literal arguments.
+- The staged output was scanned against every MBPP assertion and reference and every pool reference: zero raw matches.
+
+**Tests (12, synthetic fixtures):**
+- determinism and completeness;
+- per-UID deduplication with max over variants;
+- the canonical versus original winning variant, both directions;
+- tie order (score descending, UID, scope);
+- E11 comparator inclusion;
+- self exclusion in both retrievals;
+- input refusals: wrong selection, fewer than 198 records, duplicate pool UID, missing E11 source, pin mismatch, unreadable file, wrong helper;
+- nonliteral flagging without evaluation, and hashed rather than retained values;
+- reported non-Compare and non-entry-point shapes;
+- existing-output protection;
+- an AST ban on `eval`/`exec`/`compile`/subprocess;
+- a skip-if-absent real-source check (43 records, no raw material).
+
+**Fail-then-pass:**
+- No self exclusion: 1 failure.
+- Last variant instead of the maximum: 1 failure.
+- Nonliteral marked literal: 4 failures.
+
+**Interpretation choices, for the lead's review:**
+1. Root features use the original MBPP text/code, since the frame is MBPP-original. The comparators use both variants where available.
+2. Prior ties sort by UID as a string (so `mbpp/1000` sorts before `mbpp/132`); frame ties sort by numeric task_id.
+3. HumanEval pool UIDs are compared through their canonical prompt/reference only.
+4. Value-repr hashes are kept only for the public first assertion's literals.
+
+**Limitations:**
+- Lexical retrieval is not family, eligibility or independence evidence.
+- "False" exposure tags mean nothing was recorded in these sources, not that a task is unexposed.
+- No execution-based checks were done.
+
+Readiness 58%, change 0 points; adjudication stays with Codex.
