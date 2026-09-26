@@ -1,0 +1,32 @@
+{
+  "plan_commit": "b54c5e6",
+  "started_at": "2026-09-26T22:17:05.687051+00:00",
+  "finished_at": "2026-09-26T22:17:06.263429+00:00",
+  "elapsed_seconds": 0.5762359574437141,
+  "command": [
+    "uv",
+    "run",
+    "--offline",
+    "--frozen",
+    "--extra",
+    "dev",
+    "python",
+    "scripts/check_landmark_sandbox.py",
+    "--runner",
+    "landmark",
+    "--output",
+    "results/policy_endpoint_containment_20260926T2217Z"
+  ],
+  "source_pins": {
+    "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c"
+  },
+  "returncode": 0,
+  "external_deadline_triggered": false,
+  "stdout": "{\n  \"passed\": true,\n  \"sandbox_executions\": 9,\n  \"sandbox_seconds\": 0.49985370971262455,\n  \"wall_seconds\": 0.5076685836538672,\n  \"blocked_reason\": null\n}\n",
+  "stderr": "",
+  "receiver_calls": 0,
+  "benchmark_reference_control_executions": 0,
+  "paid_usd": 0,
+  "retained_output_bytes": 11315
+}

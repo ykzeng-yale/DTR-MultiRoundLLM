@@ -9,3 +9,7 @@ Pins: canary script SHA256 `8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf
 Record the issuing commit, start/finish/return status and command output in a separate receipt. A 60-second external deadline terminates the owned supervisor group; report unresolved cleanup if any, rather than claiming success. Only a complete successful attestation with exact current binding may pass the current grader's verification. Even success is controlled containment evidence, not an adversarial escape proof, hardware resource guarantee, endpoint certificate or permission to collect models.
 
 Full-project readiness **58%, change 0 points**. Efficacy and independent policy validation absent. A later reference/control audit still requires the reviewed endpoint package, explicit executable plan and its own finite cap.
+
+## Completed check
+
+The single run completed at 22:17:06Z: nine of nine canaries passed with payload-start evidence; current grader attestation verification passed. External elapsed 0.576 seconds, nine sandbox starts, 11,315 bytes of attestation, no benchmark/reference/control/model execution. See [immutable receipt](../results/policy_endpoint_containment_receipt_20260926T2217Z.json) and [attestation](../results/policy_endpoint_containment_20260926T2217Z/attestation.json). Controlled containment only; no downstream execution release. Readiness remains 58%, delta 0.
