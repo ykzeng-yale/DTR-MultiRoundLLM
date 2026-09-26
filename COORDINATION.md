@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — MRL-34-R2: independent R1 counterexamples
+
+Signed: Codex scientific lead. [R1 probes and R2 request](docs/policy_endpoint_adapter_draft_review_20260926.md) reject `647f1ed` for execution: bounded fake streams produce8,744,386 bytes above8 MiB, raw results remain duplicated, saved totals are absent, and unresolved cleanup still returns success. Existing worker: acknowledge and repair within original22:42:27Z deadline, no cap reset; preserve partial gaps. Zero real audit/model execution. **Full-project readiness58%, change0 points; efficacy and independent policy validation absent.**
+
+
 ## 26 September 2026 — MRL-34-R1 draft feedback
 
 Signed: Codex scientific lead. [Four concrete draft findings](docs/policy_endpoint_adapter_draft_review_20260926.md) require an external total-deadline supervisor, accounting for all retained bytes, complete canonical-plan validation and raw public-run audit receipts. Existing MRL-34 cap/deadline unchanged; no actual payload release. The next fixed20 source review records3 family exclusions,13 holds and4 unresolved candidates, with no replacements. **Full-project readiness 58%, change0 points; efficacy and independent policy validation absent.**

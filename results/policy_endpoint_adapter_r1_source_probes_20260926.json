@@ -1,0 +1,16 @@
+{
+  "at": "2026-09-26T22:35:55.350570+00:00",
+  "source_sha256": "bad866d28a3faf6ddba760a482319617c56ed39cf440bccf1b588a110d66c6ea",
+  "classification": "independent mocked R1 source probes; no actual child or payload launched",
+  "byte_probe": {
+    "configured_cap": 8388608,
+    "actual_all_files_bytes": 8744386,
+    "cap_exceeded": true,
+    "total_bytes_persisted_in_receipt": false,
+    "mock_runner_calls": 9
+  },
+  "raw_runner_serialized_twice": true,
+  "cli_exit_with_unresolved_cleanup": 0,
+  "post_source_sha256": "bad866d28a3faf6ddba760a482319617c56ed39cf440bccf1b588a110d66c6ea",
+  "actual_sandbox_program_model_launches": 0
+}

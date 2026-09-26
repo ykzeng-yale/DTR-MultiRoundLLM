@@ -1,0 +1,234 @@
+{
+  "classification": "read-only local artifact identity check; no launch or receiver request",
+  "started_at": "2026-09-26T22:34:36.727366+00:00",
+  "finished_at": "2026-09-26T22:34:37.663085+00:00",
+  "elapsed_seconds": 0.935602792,
+  "build_manifest_sha256": "63d8e03bcea39031e4d5d4334ccf58e09159a4304f609f2bd320f4538922c2b8",
+  "historical_launch_sha256": "03ce761cde709618f93f2dca926f7e39871d20c19042630a3690d5e1ace8256d",
+  "build_files": [
+    {
+      "relative_path": "work/bin/libggml-base.0.24.0.dylib",
+      "present": true,
+      "bytes": 733208,
+      "expected_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "actual_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-base.0.dylib",
+      "present": true,
+      "bytes": 733208,
+      "expected_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "actual_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-base.dylib",
+      "present": true,
+      "bytes": 733208,
+      "expected_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "actual_sha256": "69a7e516de840f55acaecd47fa797961d157325058f5773ebc51ffc10bfcaf14",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-blas.0.24.0.dylib",
+      "present": true,
+      "bytes": 58776,
+      "expected_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "actual_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-blas.0.dylib",
+      "present": true,
+      "bytes": 58776,
+      "expected_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "actual_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-blas.dylib",
+      "present": true,
+      "bytes": 58776,
+      "expected_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "actual_sha256": "c67e9a6dac662a8681ce54571b2e24de3dac8094cffb19346fdf994c7a5708b0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-cpu.0.24.0.dylib",
+      "present": true,
+      "bytes": 1001776,
+      "expected_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "actual_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-cpu.0.dylib",
+      "present": true,
+      "bytes": 1001776,
+      "expected_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "actual_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-cpu.dylib",
+      "present": true,
+      "bytes": 1001776,
+      "expected_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "actual_sha256": "dbed91cd24d48a26b72448310eba013d9598a3a274a8efb617f65bf99c13c0f7",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-metal.0.24.0.dylib",
+      "present": true,
+      "bytes": 2163544,
+      "expected_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "actual_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-metal.0.dylib",
+      "present": true,
+      "bytes": 2163544,
+      "expected_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "actual_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml-metal.dylib",
+      "present": true,
+      "bytes": 2163544,
+      "expected_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "actual_sha256": "f3495bdc5cc70dac71d0d2bc2e9ffac5f9ea235825fe89cd8ca0807e00cbb992",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml.0.24.0.dylib",
+      "present": true,
+      "bytes": 60064,
+      "expected_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "actual_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml.0.dylib",
+      "present": true,
+      "bytes": 60064,
+      "expected_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "actual_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libggml.dylib",
+      "present": true,
+      "bytes": 60064,
+      "expected_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "actual_sha256": "d83d853734a44ba28e9ac14dd9e8c8a7e2fb73ade825071778471db118afb5ce",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama-common.0.4.1.dylib",
+      "present": true,
+      "bytes": 4948792,
+      "expected_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "actual_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama-common.0.dylib",
+      "present": true,
+      "bytes": 4948792,
+      "expected_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "actual_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama-common.dylib",
+      "present": true,
+      "bytes": 4948792,
+      "expected_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "actual_sha256": "50653baff9b32ec38cecb25c39d972fe8e02260d3e2edff2071bf41356bd0dae",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama-server-impl.dylib",
+      "present": true,
+      "bytes": 6305000,
+      "expected_sha256": "2b1a935d0f8451a5c61e414f390c982868345506caf94dc1b1b5b42c36e2bda8",
+      "actual_sha256": "2b1a935d0f8451a5c61e414f390c982868345506caf94dc1b1b5b42c36e2bda8",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama.0.4.1.dylib",
+      "present": true,
+      "bytes": 3148928,
+      "expected_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "actual_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama.0.dylib",
+      "present": true,
+      "bytes": 3148928,
+      "expected_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "actual_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libllama.dylib",
+      "present": true,
+      "bytes": 3148928,
+      "expected_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "actual_sha256": "3d6f39611cb8c8baa595efe98f8aa1d5e503848bb86eb9c30d608f8e0c7ca4b2",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libmtmd.0.4.1.dylib",
+      "present": true,
+      "bytes": 1378576,
+      "expected_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "actual_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libmtmd.0.dylib",
+      "present": true,
+      "bytes": 1378576,
+      "expected_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "actual_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/libmtmd.dylib",
+      "present": true,
+      "bytes": 1378576,
+      "expected_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "actual_sha256": "ef5f680825f16a450d53a4c7ac4e766d6f4d87f61108a8603a7ee026af4baaf0",
+      "matches": true
+    },
+    {
+      "relative_path": "work/bin/llama-server",
+      "present": true,
+      "bytes": 33472,
+      "expected_sha256": "f124807ba31de5a65ea22fd624f33fd4dfe3c837d1c014dcf4a516b66812ffd7",
+      "actual_sha256": "f124807ba31de5a65ea22fd624f33fd4dfe3c837d1c014dcf4a516b66812ffd7",
+      "matches": true
+    }
+  ],
+  "model": {
+    "path_reference": "same path as pinned historical launch command index2",
+    "present": true,
+    "bytes": 2104932768,
+    "expected_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "actual_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "matches": true
+  },
+  "receiver_calls": 0,
+  "server_launches": 0,
+  "downloads": 0,
+  "paid_usd": 0,
+  "limitations": [
+    "Does not establish live server state, decoding law, seed behavior, lease, resource availability or permission to collect.",
+    "Future launch must reverify files and bind the actual server properties and ownership window."
+  ]
+}
