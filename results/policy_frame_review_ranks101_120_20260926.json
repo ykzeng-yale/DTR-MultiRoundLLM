@@ -1,0 +1,828 @@
+{
+  "review_id": "LEAD-FRAME-07",
+  "plan_commit": "2e7be98",
+  "started_at": "2026-09-26T22:53:16.478796+00:00",
+  "completed_at": "2026-09-26T22:54:39.702892+00:00",
+  "inputs": {
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+    "work/data/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce"
+  },
+  "retrieval_helper_sha256": "9882fb0c507fb1f2da930f46bdea36eae13e681561985695cf7ddd2890f9a720",
+  "records": [
+    {
+      "rank": 101,
+      "task_id": 613,
+      "public_description": "Write a function to find the maximum value in record list as tuple attribute in the given tuple list.",
+      "reference_sha256": "d9b6e3294aa2d04a62f53de09966325c81816a7a95d630512be58202e9287ae7",
+      "test_list_canonical_json_sha256": "04f0086bc51df5f69f6aea965955a52da80acdcf97ca8f348016141b1db19772",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/294",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to find the maximum value in a given heterogeneous list."
+        },
+        {
+          "uid": "mbpp/357",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find the maximum element of all the given tuple records."
+        },
+        {
+          "uid": "mbpp/611",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to find the maximum of nth column from the given tuple list."
+        },
+        {
+          "uid": "mbpp/615",
+          "scope": "canonical_prior",
+          "score": 0.3077,
+          "description": "Write a function which takes a tuple of tuples and returns the average value for each tuple as a list."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "key-preserving per-record maximum",
+      "reason": "Reference preserves each key and replaces its list by its maximum. Earlier357 uses a global maximum and prior611 a column maximum; these are related reductions, not established separate families. Empty inner lists, output representation, endpoint discrimination and full grouping remain open.",
+      "manual_related_uids": [
+        "mbpp/357",
+        "mbpp/611"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 102,
+      "task_id": 219,
+      "public_description": "Write a function to extract maximum and minimum k elements in the given tuple.",
+      "reference_sha256": "c99caff0b433eccc26bada085f45a89e05924feacda210aa445f10eb26bb1e7c",
+      "test_list_canonical_json_sha256": "c937fa981df94040610dbe447fe7d3ddfeba4793613c770b600da07923005163",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/753",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a function to find minimum k records from tuple list."
+        },
+        {
+          "uid": "mbpp/140",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to extract elements that occur singly in the given tuple list."
+        },
+        {
+          "uid": "mbpp/363",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to add the k elements to each element in the tuple."
+        },
+        {
+          "uid": "mbpp/580",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to extract the even elements in the nested mixed tuple."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "union of lower and upper order statistics",
+      "reason": "The reference sorts ascending and returns each position once if it lies in either extreme K segment. The prose does not fix output order or whether overlapping extreme selections are deduplicated. The third source example requires the union convention. No silent specification repair is adopted.",
+      "manual_related_uids": [
+        "mbpp/753"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 103,
+      "task_id": 548,
+      "public_description": "Write a function to find the length of the longest increasing subsequence of the given sequence.",
+      "reference_sha256": "728f240a07184cfb417c2af68798afa9a679112e11dfaca1f064b2c656ac6b1b",
+      "test_list_canonical_json_sha256": "13ec3de6e8602fdb54809ffbe4f5a8c8ab9b46bd921a6bfc6f9e06f00eca2601",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/247",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a function to find the length of the longest palindromic subsequence in the given string."
+        },
+        {
+          "uid": "mbpp/747",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a function to find the longest common subsequence for the given three string sequence."
+        },
+        {
+          "uid": "mbpp/149",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find the longest subsequence such that the difference between adjacents is one for the given array."
+        },
+        {
+          "uid": "mbpp/158",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to find k number of operations required to make all elements equal."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "strict longest increasing subsequence",
+      "reason": "Source computes strict-increase subsequence length and returns zero for empty input. Prior sum/product increasing-subsequence objectives and earlier524 are concrete related families. Different objective values do not independently establish untouched-family status; endpoint and full grouping remain open.",
+      "manual_related_uids": [
+        "mbpp/306",
+        "mbpp/468",
+        "mbpp/524"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 104,
+      "task_id": 662,
+      "public_description": "Write a function to sort a list in a dictionary.",
+      "reference_sha256": "3b81b91cbd180dedbc2c0fa022bd0f2912fda55dc47903636e631425d5434030",
+      "test_list_canonical_json_sha256": "25ef74c918b0f5876516c1c6e743d90336c446f0aca0fcaee674f549d8442b3b",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/635",
+          "scope": "canonical_prior",
+          "score": 0.6667,
+          "description": "Write a function to sort the given list."
+        },
+        {
+          "uid": "mbpp/141",
+          "scope": "canonical_prior",
+          "score": 0.5,
+          "description": "Write a function to sort a list of elements."
+        },
+        {
+          "uid": "mbpp/475",
+          "scope": "canonical_prior",
+          "score": 0.5,
+          "description": "Write a function to sort a dictionary by value."
+        },
+        {
+          "uid": "mbpp/71",
+          "scope": "canonical_prior",
+          "score": 0.5,
+          "description": "Write a function to sort a list of elements."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "sort dictionary list values",
+      "reason": "The first public expected result is a dictionary unsupported by the unchanged diagnostic-v2 schema. Preserve the display/interface hold; do not convert the answer type. Prior list/dictionary sorting relationships also remain unresolved.",
+      "manual_related_uids": [
+        "mbpp/635",
+        "mbpp/475"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 105,
+      "task_id": 678,
+      "public_description": "Write a python function to remove spaces from a given string.",
+      "reference_sha256": "db5da597541821efcc48c85e51eb7c95421629132afc604a3ec227b1cc33ad89",
+      "test_list_canonical_json_sha256": "554b5a0d04e1ba38fe63dac90ecd49d2c0ac484b29e038d728bb33710e534aab",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/437",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to remove odd characters in a string."
+        },
+        {
+          "uid": "mbpp/451",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to remove all whitespaces from the given string."
+        },
+        {
+          "uid": "mbpp/459",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to remove uppercase substrings from a given string."
+        },
+        {
+          "uid": "mbpp/478",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to remove lowercase substrings from a given string."
+        }
+      ],
+      "disposition": "exclude_prior_family",
+      "provisional_family": "whitespace deletion",
+      "reason": "Space-only replacement is a narrower variant of prior451/800 whitespace removal. This is a conservative same-family exclusion; tabs and other whitespace prevent whole-function equivalence.",
+      "manual_related_uids": [
+        "mbpp/451",
+        "mbpp/800"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 106,
+      "task_id": 819,
+      "public_description": "Write a function to count the frequency of consecutive duplicate elements in a given list of numbers.",
+      "reference_sha256": "80a598d1b0df00a219f2bf94a5b0260cae464a6740704dc00ff1769ee08feba6",
+      "test_list_canonical_json_sha256": "ce4d2f21526f070ffa471b3c60262fa5d13c91b8eab57899d68f05c74991880e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/66",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a python function to count positive numbers in a list."
+        },
+        {
+          "uid": "mbpp/88",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a function to get the frequency of the elements in a list."
+        },
+        {
+          "uid": "mbpp/97",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a function to find frequency count of list of lists."
+        },
+        {
+          "uid": "mbpp/472",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to check whether the given list contains consecutive numbers or not."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "consecutive run frequencies",
+      "reason": "For a singleton input the loop has no iteration, but the final element append reads i, which is unbound. This is a static source trace, not an executed failure. Empty input also returns a list while nonempty examples return paired lists in a tuple. The unstated output convention and prior run-length relation remain unresolved.",
+      "manual_related_uids": [
+        "mbpp/157"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 107,
+      "task_id": 423,
+      "public_description": "Write a function to solve gold mine problem.",
+      "reference_sha256": "117a836469d9aa589bfa8bc84220d483ab1c5bf25d402fd753d18fd75a5f1dc6",
+      "test_list_canonical_json_sha256": "e2dc69335f71aca3181583601e819b02a3712a58a08930f7cfca543936c671bf",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/960",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4,
+          "description": "Write a function to solve tiling problem."
+        },
+        {
+          "uid": "mbpp/187",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.1667,
+          "description": "Write a function to find the longest common subsequence for the given two sequences."
+        },
+        {
+          "uid": "mbpp/721",
+          "scope": "original_public_variant",
+          "score": 0.1429,
+          "description": "Write a function to find a path with the maximum average over all existing paths for the given square matrix of size n*n."
+        },
+        {
+          "uid": "mbpp/873",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.1429,
+          "description": "Write a function to solve the fibonacci sequence using recursion."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "grid gold-path maximization",
+      "reason": "The prompt names a gold mine problem without defining start/end positions, allowed moves or value domain. The reference assumes right/right-up/right-down moves and substitutes zero for unavailable paths, which also depends on score-domain assumptions. These rules cannot be silently supplied.",
+      "manual_related_uids": [
+        "mbpp/721"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 108,
+      "task_id": 506,
+      "public_description": "Write a function to calculate the permutation coefficient of given p(n, k).",
+      "reference_sha256": "1bf368d85b99cbff27b46f516ae6994aaad03fbe57a71b869d5bff295061abf9",
+      "test_list_canonical_json_sha256": "048e47c5bf3f4c34cf0547e833668634431f7a04790077aa3913c3895969e746",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/402",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to compute the value of ncr%p."
+        },
+        {
+          "uid": "mbpp/248",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to calculate the harmonic sum of n-1."
+        },
+        {
+          "uid": "mbpp/346",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2222,
+          "description": "Write a function to find entringer number e(n, k)."
+        },
+        {
+          "uid": "mbpp/738",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to calculate the geometric sum of n-1."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "permutation coefficient",
+      "reason": "The reference uses P(i,j)=P(i-1,j)+j P(i-1,j-1), with j=0 equal to1; source examples use n10 and k1/2/3. Earlier402 concerns modular combinations, a related but different combinatorial target. Integer domain, runtime/output limits, endpoint discrimination and full grouping remain open.",
+      "manual_related_uids": [
+        "mbpp/402"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 109,
+      "task_id": 953,
+      "public_description": "Write a python function to find the minimun number of subsets with distinct elements.",
+      "reference_sha256": "af01744503414d0e4169476bdda1eb1aa4a7736c3b7b20751a51f52ef7d21e0f",
+      "test_list_canonical_json_sha256": "6fe4a3120e7b11a2b90ce42bf799b66657792acd901624a2a0697b5aa07578a8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/540",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3,
+          "description": "Write a python function to find the difference between highest and least frequencies in a given array."
+        },
+        {
+          "uid": "mbpp/863",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3,
+          "description": "Write a function to find the length of the longest sub-sequence such that elements in the subsequences are consecutive integers."
+        },
+        {
+          "uid": "mbpp/253",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function that returns the number of integer elements in a given list."
+        },
+        {
+          "uid": "mbpp/344",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a python function to find number of elements with odd factors in a given range."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "distinct-element subset partition count",
+      "reason": "The nested loops repeatedly count only the initial equal run after sorting. On the inert hand-traced array [1,2,2], it returns1 although partition into distinct-element subsets needs2. No domain restriction excludes that pattern. Preserve the source defect rather than repair the reference.",
+      "manual_related_uids": [
+        "mbpp/540"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 110,
+      "task_id": 526,
+      "public_description": "Write a python function to capitalize first and last letters of each word of a given string.",
+      "reference_sha256": "9363988c5c03fae7ce865bec8fab34b9f991d5b5548b4b2756db59500f77c18f",
+      "test_list_canonical_json_sha256": "12beef979c5c043562de80081579cfac55c744c8034ed20998b3202e867c605e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/868",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.375,
+          "description": "Write a python function to find the length of the last word in a given string."
+        },
+        {
+          "uid": "mbpp/11",
+          "scope": "canonical_prior",
+          "score": 0.3,
+          "description": "Write a python function to remove first and last occurrence of a given character from the string."
+        },
+        {
+          "uid": "mbpp/565",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to split a string into characters."
+        },
+        {
+          "uid": "mbpp/602",
+          "scope": "canonical_prior",
+          "score": 0.2222,
+          "description": "Write a python function to find the first repeated character in a given string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "capitalize word boundaries",
+      "reason": "Calling title() lowercases interior letters before uppercasing the last character; split/join also collapses whitespace. Neither transformation is requested by capitalizing the first and last letters. Original examples cover only a single word. No lowercase-only domain or whitespace rewrite is adopted.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 111,
+      "task_id": 335,
+      "public_description": "Write a function to find the sum of arithmetic progression.",
+      "reference_sha256": "30a6c37f4f8a4e806c76b08e558c4e64aefc7249297999fb8a7a3c3fa5ecf366",
+      "test_list_canonical_json_sha256": "03e9546bf04f3e6da1fcaaf7df3e52d45c0ad48b2ab78eb04267bfa7964b63d0",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/354",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find t-nth term of arithemetic progression."
+        },
+        {
+          "uid": "mbpp/798",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find the sum of an array."
+        },
+        {
+          "uid": "mbpp/617",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to check for the number of jumps required of given length to reach a point of form (d, 0) from origin in a 2d plane."
+        },
+        {
+          "uid": "mbpp/448",
+          "scope": "canonical_prior",
+          "score": 0.2,
+          "description": "Write a function to calculate the sum of perrin numbers."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "arithmetic progression sum",
+      "reason": "The source reference uses true division and therefore returns a float even for the integer expected values in all original assertions. The unchanged public diagnostic rejects float results. This is an operational measurement hold, not proof that arithmetic progression summation is ill-defined; changing reference or display requires a versioned contract. Earlier354/552 remain related targets.",
+      "manual_related_uids": [
+        "mbpp/354",
+        "mbpp/552"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 112,
+      "task_id": 136,
+      "public_description": "Write a function to calculate electricity bill.",
+      "reference_sha256": "d4c53a31bc00227995df9215d9db6d5207dff3aad7dd879b2fb7abb55d8a6743",
+      "test_list_canonical_json_sha256": "d18f7b29592b34b3c3e62aa975c9c795988dd99e2cec567c2f4b54e91a2ecf2e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/129",
+          "scope": "original_public_variant",
+          "score": 0.2,
+          "description": "Write a function to calculate magic square."
+        },
+        {
+          "uid": "mbpp/963",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2,
+          "description": "Write a function to calculate the discriminant value."
+        },
+        {
+          "uid": "mbpp/163",
+          "scope": "original_public_variant",
+          "score": 0.1667,
+          "description": "Write a function to calculate the area of a regular polygon."
+        },
+        {
+          "uid": "mbpp/169",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.1667,
+          "description": "Write a function to calculate the nth pell number."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "tiered electricity charge",
+      "reason": "The prompt omits every rate, breakpoint and surcharge used by the reference, so the result is underdetermined. The float-valued first public expected output also violates the frozen display schema. No inferred tariff or output conversion is adopted.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 113,
+      "task_id": 215,
+      "public_description": "Write a function to decode a run-length encoded given list.",
+      "reference_sha256": "1cf493453a78ed0b866c21fde307b89a394317c3b199ed134d2069bc79836644",
+      "test_list_canonical_json_sha256": "de98428900ad8d852c2fbe87643119e498536bfd5cb9dc34a58a90f1ec699759",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/393",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find the list with maximum length."
+        },
+        {
+          "uid": "mbpp/290",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to find the list of maximum length in a list of lists."
+        },
+        {
+          "uid": "mbpp/95",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the length of the smallest list in a list of lists."
+        },
+        {
+          "uid": "mbpp/418",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find the element of a list having maximum length."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "mixed run-length decoding",
+      "reason": "The reference treats any list item as [count,value] but nonlist items as unencoded singletons. The prose does not define that mixed representation, ordering or permitted literal-list values. Earlier run-length encoding/frequency targets add family relationships; no encoding convention is silently imposed.",
+      "manual_related_uids": [
+        "mbpp/157",
+        "mbpp/819"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 114,
+      "task_id": 575,
+      "public_description": "Write a python function to find nth number in a sequence which is not a multiple of a given number.",
+      "reference_sha256": "98984c73ade92f446936537dfbc1e2eac958cff2cf442afb0607980d41e9337c",
+      "test_list_canonical_json_sha256": "36884c4c2b8e39a743b91bff22fb27c8cacb026abb479540a5da21b816082774",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/583",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function which returns nth catalan number."
+        },
+        {
+          "uid": "mbpp/84",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to find the nth number in the newman conway sequence."
+        },
+        {
+          "uid": "mbpp/166",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function that counts the number of pairs of integers in a list that xor to an even number."
+        },
+        {
+          "uid": "mbpp/168",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to count the number of occurrences of a number in a given list."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "nth nonmultiple in a bounded interval",
+      "reason": "The source searches the inclusive L..R interval and returns the final loop value if fewer than N eligible values exist; an empty interval leaves i unbound. The prose does not define interval roles, rank origin or failure behavior. No success-only domain is silently introduced.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 115,
+      "task_id": 661,
+      "public_description": "Write a function to find the maximum sum that can be formed which has no three consecutive elements present.",
+      "reference_sha256": "523cca1676c85a70429eb72d54ca433e69b2c724234280814e4c3f9a59c4d061",
+      "test_list_canonical_json_sha256": "a8c25e2f74586b6782d0b4813929be4607a4b081f692ec4b21ceceb4fb217d1c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/270",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find the sum of even numbers at even positions of a list."
+        },
+        {
+          "uid": "mbpp/798",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find the sum of an array."
+        },
+        {
+          "uid": "mbpp/149",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a function to find the longest subsequence such that the difference between adjacents is one for the given array."
+        },
+        {
+          "uid": "mbpp/158",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a python function to find k number of operations required to make all elements equal."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "maximum sum without three consecutive selections",
+      "reason": "The two-element initialization forces both values into the sum. With negative values this need not maximize over allowed subsets; the prompt supplies no nonnegative restriction. Empty-input and n/length conventions are also absent. Source issue only, no execution or repair.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 116,
+      "task_id": 37,
+      "public_description": "Write a function to sort a given mixed list of integers and strings.",
+      "reference_sha256": "288057037e1c952c28b0ed67e11294c5d758f150ba722877cd529eea64ef32c3",
+      "test_list_canonical_json_sha256": "bf029469ff1bba0468b7a8fea7a963620c21503f8393144ebd949e43e158caac",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/749",
+          "scope": "original_public_variant",
+          "score": 0.4286,
+          "description": "Write a function to sort a given list of strings of numbers numerically."
+        },
+        {
+          "uid": "mbpp/635",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to sort the given list."
+        },
+        {
+          "uid": "mbpp/104",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to sort each sublist of strings in a given list of lists."
+        },
+        {
+          "uid": "mbpp/569",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to sort each sublist of strings in a given list of lists."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "mixed-type sorting",
+      "reason": "Integers-before-strings ordering is absent from the prose. More importantly, all three original assertions are identical, so the proposed first-public/rest-private split would repeat the public answer exactly in both private slots. Preserve this direct measurement/leakage defect; no deduplication or replacement battery is adopted.",
+      "manual_related_uids": [
+        "mbpp/635",
+        "mbpp/749"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 117,
+      "task_id": 654,
+      "public_description": "Write a function to find the perimeter of a rectangle.",
+      "reference_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+      "test_list_canonical_json_sha256": "1dc421c4cb61510a8673e67ce5e4a671ba44db56e5038df428970419ceb10e0e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/14",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find the volume of a triangular prism."
+        },
+        {
+          "uid": "mbpp/17",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to find the perimeter of a square."
+        },
+        {
+          "uid": "mbpp/171",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to find the perimeter of a pentagon."
+        },
+        {
+          "uid": "mbpp/176",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find the perimeter of a triangle."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "rectangle perimeter",
+      "reason": "The reference computes twice the sum of the two supplied side lengths, consistent with the original examples. Square/pentagon prior tasks and earlier triangle perimeter176 create an unresolved broad perimeter-family relationship. Conventional formula alone does not establish an untouched evaluation family or validated endpoint.",
+      "manual_related_uids": [
+        "mbpp/17",
+        "mbpp/171",
+        "mbpp/176"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 118,
+      "task_id": 315,
+      "public_description": "Write a python function to find the first maximum length of even word.",
+      "reference_sha256": "802def16161eff58887cec776d73a613348100450e2af75c38df0c28880b5cff",
+      "test_list_canonical_json_sha256": "cd6268d51f4d7f3e86753814b544a8cd7cd5e916c8ceee72cf89222ed3296f0a",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/393",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find the list with maximum length."
+        },
+        {
+          "uid": "mbpp/562",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a python function to find the maximum length of sublist."
+        },
+        {
+          "uid": "mbpp/90",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find the length of the longest word."
+        },
+        {
+          "uid": "mbpp/290",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to find the list of maximum length in a list of lists."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "first longest even-length word",
+      "reason": "The reference returns a word rather than its length and uses the exact string -1 when no eligible word exists. Prose does not specify that sentinel or space-only tokenization. Existing longest-word/first-tie targets add unresolved family overlap. Preserve the interface hold.",
+      "manual_related_uids": [
+        "mbpp/90",
+        "humaneval/12"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 119,
+      "task_id": 263,
+      "public_description": "Write a function to merge two dictionaries.",
+      "reference_sha256": "8c2a853220a2795c6a659d0cec69665d21091090cabeafb0ffa124daa94639d4",
+      "test_list_canonical_json_sha256": "7a879d029e67cdac01671906ede6a1ff7047ed83dbccb2dcfc257ebb9fda18c8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/87",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to merge three dictionaries into a single dictionary."
+        },
+        {
+          "uid": "mbpp/127",
+          "scope": "canonical_prior",
+          "score": 0.2,
+          "description": "Write a function to multiply two integers."
+        },
+        {
+          "uid": "mbpp/249",
+          "scope": "canonical_prior",
+          "score": 0.2,
+          "description": "Write a function to find the intersection of two arrays."
+        },
+        {
+          "uid": "mbpp/257",
+          "scope": "original_public_variant",
+          "score": 0.2,
+          "description": "Write a function to swap two numbers."
+        }
+      ],
+      "disposition": "exclude_prior_family",
+      "provisional_family": "dictionary merging",
+      "reason": "Prior87 merges three dictionaries;263 merges two. Conservatively treat this as the same dictionary-merging family. Conflict precedence differs (ChainMap versus update), so this is not whole-function equivalence. Dictionary-valued public output also remains unsupported.",
+      "manual_related_uids": [
+        "mbpp/87"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 120,
+      "task_id": 710,
+      "public_description": "Write a function to access the initial and last data of the given tuple record.",
+      "reference_sha256": "1ff76e28016ed0bf0ece40516a5bfdf3b2c8826cd37128e0354fff7c81f880fe",
+      "test_list_canonical_json_sha256": "b93899d15143f930dfc4263ee49407520d6c6f9035cb9b43901b33bfc4238a75",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/193",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to remove the duplicates from the given tuple."
+        },
+        {
+          "uid": "mbpp/106",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to append the given list to the given tuples."
+        },
+        {
+          "uid": "mbpp/470",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to find the pairwise addition of the neighboring elements of the given tuple."
+        },
+        {
+          "uid": "mbpp/726",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function that takes as input a tuple of numbers (t_1,...,t_{N+1}) and returns a tuple of length N where the i-th element of the tuple is equal to t_i * t_{i+1}."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "first and last tuple elements",
+      "reason": "Reference returns the first and last tuple elements, consistent with examples. Prior591/625 swap list endpoints, a related positional-access operation with a different output. Empty-input domain, endpoint discrimination and complete family grouping remain unresolved.",
+      "manual_related_uids": [
+        "mbpp/591",
+        "mbpp/625"
+      ],
+      "approved": false
+    }
+  ],
+  "counts": {
+    "exclude_prior_family": 2,
+    "specification_hold": 13,
+    "candidate_pending_endpoint_and_crossframe_family_review": 5
+  },
+  "source_review_only": true,
+  "actual_program_model_executions": 0,
+  "replacement_roots": 0,
+  "approved_evaluation_roster": false,
+  "limitation": "Single-lead source curation; no blinded adjudication, semantic independence certificate, endpoint execution or treatment effect evidence. Conditional sampling/execution independence and population transport remain separate unresolved gates."
+}

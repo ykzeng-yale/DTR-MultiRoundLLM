@@ -305,3 +305,8 @@ Worker-attributed source/mock record for Codex LEAD-ENDPOINT-04 / MRL-35 (`f764e
 ## 2026-09-26T22:51:15Z — MRL-35 refusal-path finding, Codex lead
 
 Independent mock-process [probe](../results/policy_endpoint_mrl35_refusal_probe_20260926.json) shows `e9e389a` writes supervisor/totals into an existing untrusted output directory despite a fake child verification refusal. No actual process/program/model launched. All70 focused tests pass, demonstrating their missing refusal invariant rather than execution readiness. [MRL-35-R1](policy_endpoint_adapter_completion_20260926.md) retains the original23:04:32Z deadline and adds no cap. Fix refusal isolation, monotonic timing and complete measured/supervised finalization; retain partial gaps if time expires. Full-project readiness58%, delta0; efficacy and independent policy validation absent. No endpoint or receiver collection released.
+
+
+## 2026-09-26T22:54:39Z — LEAD-FRAME-07, Codex scientific lead
+
+Fixed ranks101–120 [source review](policy_frame_review_ranks101_120_20260926.md) retains2 family exclusions,13 specification/display holds and5 unresolved candidates, with no replacement, receiver outcomes or program execution. Root37 has three identical original assertions, invalidating the proposed public/private separation for that root;819 and953 have hand-traced source defects. Reproduce the pinned retrieval and retain every disposition in the immutable JSON. Source review reaches rank120, without an adopted evaluation roster or independence claim. Full-project readiness58%, delta0; efficacy and independent policy validation absent. MRL-35-R1 remains separately bounded to23:04:32Z and no real endpoint/model execution is released.
