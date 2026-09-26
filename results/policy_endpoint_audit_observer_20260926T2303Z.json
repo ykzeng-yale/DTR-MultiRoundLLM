@@ -1,0 +1,43 @@
+{
+  "classification": "one released strict-sandbox reference/control measurement audit; no model evaluation",
+  "freeze_commit": "3af5c2282c94c125aff39a63b8f7d313b98d4610",
+  "plan_sha256": "fc82e6e2ae41ea057b19dbd4caa2b63d5ce143c34959ae6f23b4b06ac5d87f60",
+  "started_at": "2026-09-26T23:04:32.777398+00:00",
+  "finished_at": "2026-09-26T23:04:34.025759+00:00",
+  "external_elapsed_seconds": 1.2476639589294791,
+  "adapter_exit": 0,
+  "observer_timed_out": false,
+  "adapter_pid": 47870,
+  "new_supervisor_directories": [
+    "work/endpoint_supervisor_runs/20260926T230432814759Z_a6d07f77b36d"
+  ],
+  "files_sha256": {
+    "work/policy_endpoint_audit_20260926T2303Z/receipt_private.json": "0f73dcf09d1383b7f93512d90b9f679b131ed4beef56ee5b7a9c7b2765b5573e",
+    "work/policy_endpoint_audit_20260926T2303Z/slots_private.jsonl": "2f260c88110f7c2601741f1eb5fa0fc8878681cc98447267247aa16049666b8f",
+    "work/policy_endpoint_audit_20260926T2303Z/start_manifest.json": "808316feda98d05234dc7e1ea0e6453d18a11fa0035c28da0d8f409b365bcb00",
+    "work/policy_endpoint_audit_20260926T2303Z/public_projection.json": "319e818dd2c2066d0dc2dc91dd5a58e27ac87070ed8972af37c39bf13d684783",
+    "work/endpoint_supervisor_runs/20260926T230432814759Z_a6d07f77b36d/supervisor.json": "d21f5cd17c592d31f6f8d53157d266f6e4e09a5f6c451a2c33f4b63ffb4b3c78",
+    "work/endpoint_supervisor_runs/20260926T230432814759Z_a6d07f77b36d/retained_totals.json": "4cbacf6aa48bd71140c16b688507762cd792985ece1c53bc757c137e81ef8826"
+  },
+  "files_bytes": {
+    "work/policy_endpoint_audit_20260926T2303Z/receipt_private.json": 23330,
+    "work/policy_endpoint_audit_20260926T2303Z/slots_private.jsonl": 70105,
+    "work/policy_endpoint_audit_20260926T2303Z/start_manifest.json": 11811,
+    "work/policy_endpoint_audit_20260926T2303Z/public_projection.json": 20157,
+    "work/endpoint_supervisor_runs/20260926T230432814759Z_a6d07f77b36d/supervisor.json": 594,
+    "work/endpoint_supervisor_runs/20260926T230432814759Z_a6d07f77b36d/retained_totals.json": 685
+  },
+  "stdout_sha256": "8838e12ac8921fbc778423265bf879082c6cbb98775e7cfa273ca4243f661453",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_bytes": 1676,
+  "stderr_bytes": 0,
+  "raw_observer_directory": "work/policy_endpoint_observer_20260926T2303Z",
+  "model_calls": 0,
+  "paid_spend": 0,
+  "limits": {
+    "adapter_seconds": 180,
+    "observer_total_seconds": 185,
+    "all_retained_bytes": 8388608
+  },
+  "all_retained_bytes_including_observer": 151036
+}

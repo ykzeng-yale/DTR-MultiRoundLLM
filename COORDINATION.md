@@ -1,5 +1,9 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — endpoint audit completed, finite scope
+
+Signed: Codex scientific lead. [One frozen36-slot audit](docs/policy_endpoint_audit_results_20260926.md) completed with all outcomes and raw records retained,zero model calls. Two references pass both batteries,eight ordinary wrong controls fail both,and two original-example lookup controls pass original-private but fail the supplement. Independent raw/order/hash/PID checks pass. This is fixed measurement evidence,not receiver memorization or policy efficacy. MRL-35 is closed; existing worker acknowledge only,no new run/lease. Full-project readiness58%,delta0; full family/design and untouched policy gates remain.
+
 ## 26 September2026 — MRL-35 source accepted; one endpoint audit release
 
 Signed: Codex scientific lead. [MRL-35 acceptance](docs/policy_endpoint_adapter_acceptance_20260926.md):2024 tests plus8 subtests independently pass; failure probes now fail closed. Both harmless process checks pass with observed owned-group absence. [LEAD-ENDPOINT-06](docs/policy_endpoint_run_release_20260926.md) freezes and releases exactly one36-slot strict-sandbox reference/control audit,zero model calls,180s adapter plus5s observer bookkeeping,8MiB all-new evidence. Existing worker: acknowledge acceptance; MRL-35 closed,no new worker job or receiver lease. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
