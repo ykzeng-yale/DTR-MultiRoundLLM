@@ -1,0 +1,686 @@
+{
+ "version": "prompt-choice-nine-root-measurement-v1",
+ "decision": "LEAD-ENDPOINT-07",
+ "assignment": "MRL-37",
+ "status": "source_only",
+ "collection": "unreleased",
+ "execution_authorized": false,
+ "experimental_calls_authorized": 0,
+ "runner": null,
+ "lead_contract": {
+  "path": "docs/policy_nine_root_measurement_contract_20260926.md",
+  "commit": "b6b7a31",
+  "sha256": "4747e94cbda047c8db4465049803811ee045b1b5ff22825ec9a52601023eee91",
+  "issued_at": "f418699",
+  "corrected_at": [
+   "c3a4c29",
+   "b6b7a31"
+  ],
+  "hash_convention": "raw sha256 of the file bytes at that commit (git show <commit>:<path>)"
+ },
+ "source": {
+  "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+  "location": "gitignored work/ (explicit --source path)"
+ },
+ "roots_in_order": [
+  "mbpp/356",
+  "mbpp/885",
+  "mbpp/354",
+  "mbpp/901",
+  "mbpp/654",
+  "mbpp/703",
+  "mbpp/700",
+  "mbpp/656",
+  "mbpp/36"
+ ],
+ "adapted_public_contracts": {
+  "mbpp/356": "Given two positive interior angles of a triangle in degrees whose sum is below 180, return the third interior angle in degrees. Units and valid domain are explicit.",
+  "mbpp/885": "Return whether two strings have equal length and the same equality pattern of characters: a bijective character renaming converts one to the other. The empty strings match.",
+  "mbpp/354": "Given first term a, positive one-based index n and common difference d, return the nth arithmetic-progression term. For this adapted contract a, d are integers; zero and negative differences are permitted.",
+  "mbpp/901": "For a positive integer n, return the least positive integer divisible by every integer from 1 through n. No arbitrary large-n correctness or runtime guarantee follows from the finite cases.",
+  "mbpp/654": "Given nonnegative integer length and width, return the rectangle perimeter; degenerate zero dimensions are permitted in this adapted arithmetic contract. This domain is explicit and is not a claim that every geometric interpretation permits degeneracy.",
+  "mbpp/703": "Return whether the supplied hashable key is present in the dictionary; do not test membership among values.",
+  "mbpp/700": "Count entries in the inclusive interval between the supplied bounds, including repeated entries. The list entries and bounds are all integers or all strings, with ordinary Python ordering; an empty list or reversed bounds yields zero.",
+  "mbpp/656": "For two equal-length integer arrays and their length n, return the minimum sum of absolute differences over bijective pairings. Empty arrays return zero. Only the returned value is scored; no promise of preserving caller inputs is added.",
+  "mbpp/36": "For integers 0 <= p < q with q>0 and positive one-based N, return the Nth decimal digit after the point in p/q. Terminating fractions have trailing zeros."
+ },
+ "supplement_v1": {
+  "mbpp/356": [
+   {
+    "args_literal": "[60, 60]",
+    "expected_literal": "60"
+   },
+   {
+    "args_literal": "[1, 1]",
+    "expected_literal": "178"
+   },
+   {
+    "args_literal": "[89, 90]",
+    "expected_literal": "1"
+   },
+   {
+    "args_literal": "[30, 120]",
+    "expected_literal": "30"
+   }
+  ],
+  "mbpp/885": [
+   {
+    "args_literal": "['', '']",
+    "expected_literal": "True"
+   },
+   {
+    "args_literal": "['a', '']",
+    "expected_literal": "False"
+   },
+   {
+    "args_literal": "['foo', 'bar']",
+    "expected_literal": "False"
+   },
+   {
+    "args_literal": "['egg', 'add']",
+    "expected_literal": "True"
+   },
+   {
+    "args_literal": "['abca', 'zbxz']",
+    "expected_literal": "True"
+   },
+   {
+    "args_literal": "['abc', 'xyy']",
+    "expected_literal": "False"
+   },
+   {
+    "args_literal": "['aab', 'abb']",
+    "expected_literal": "False"
+   }
+  ],
+  "mbpp/354": [
+   {
+    "args_literal": "[3, 1, 7]",
+    "expected_literal": "3"
+   },
+   {
+    "args_literal": "[5, 4, 0]",
+    "expected_literal": "5"
+   },
+   {
+    "args_literal": "[10, 4, -3]",
+    "expected_literal": "1"
+   },
+   {
+    "args_literal": "[-2, 3, 4]",
+    "expected_literal": "6"
+   }
+  ],
+  "mbpp/901": [
+   {
+    "args_literal": "[3]",
+    "expected_literal": "6"
+   },
+   {
+    "args_literal": "[4]",
+    "expected_literal": "12"
+   },
+   {
+    "args_literal": "[5]",
+    "expected_literal": "60"
+   },
+   {
+    "args_literal": "[7]",
+    "expected_literal": "420"
+   },
+   {
+    "args_literal": "[8]",
+    "expected_literal": "840"
+   }
+  ],
+  "mbpp/654": [
+   {
+    "args_literal": "[0, 7]",
+    "expected_literal": "14"
+   },
+   {
+    "args_literal": "[3, 3]",
+    "expected_literal": "12"
+   },
+   {
+    "args_literal": "[2, 9]",
+    "expected_literal": "22"
+   },
+   {
+    "args_literal": "[1, 0]",
+    "expected_literal": "2"
+   }
+  ],
+  "mbpp/703": [
+   {
+    "args_literal": "[{}, 1]",
+    "expected_literal": "False"
+   },
+   {
+    "args_literal": "[{'a': 1}, 'a']",
+    "expected_literal": "True"
+   },
+   {
+    "args_literal": "[{'a': 1}, 1]",
+    "expected_literal": "False"
+   },
+   {
+    "args_literal": "[{0: False}, 0]",
+    "expected_literal": "True"
+   },
+   {
+    "args_literal": "[{1: 'x'}, 2]",
+    "expected_literal": "False"
+   }
+  ],
+  "mbpp/700": [
+   {
+    "args_literal": "[[0, 1, 2, 2, 3], 1, 2]",
+    "expected_literal": "3"
+   },
+   {
+    "args_literal": "[['aa', 'b', 'c', 'za'], 'b', 'z']",
+    "expected_literal": "2"
+   },
+   {
+    "args_literal": "[[], 0, 1]",
+    "expected_literal": "0"
+   },
+   {
+    "args_literal": "[[2, 2, 2], 2, 2]",
+    "expected_literal": "3"
+   },
+   {
+    "args_literal": "[[1, 2, 3], 3, 1]",
+    "expected_literal": "0"
+   }
+  ],
+  "mbpp/656": [
+   {
+    "args_literal": "[[1, 4], [2, 8], 2]",
+    "expected_literal": "5"
+   },
+   {
+    "args_literal": "[[-3, 1], [2, -2], 2]",
+    "expected_literal": "2"
+   },
+   {
+    "args_literal": "[[], [], 0]",
+    "expected_literal": "0"
+   },
+   {
+    "args_literal": "[[5, 5, 1], [5, 1, 1], 3]",
+    "expected_literal": "4"
+   },
+   {
+    "args_literal": "[[1, 10], [10, 1], 2]",
+    "expected_literal": "0"
+   },
+   {
+    "args_literal": "[[0, 10], [4, 6], 2]",
+    "expected_literal": "8"
+   }
+  ],
+  "mbpp/36": [
+   {
+    "args_literal": "[1, 8, 1]",
+    "expected_literal": "1"
+   },
+   {
+    "args_literal": "[1, 8, 2]",
+    "expected_literal": "2"
+   },
+   {
+    "args_literal": "[1, 8, 3]",
+    "expected_literal": "5"
+   },
+   {
+    "args_literal": "[1, 8, 4]",
+    "expected_literal": "0"
+   },
+   {
+    "args_literal": "[2, 7, 3]",
+    "expected_literal": "5"
+   },
+   {
+    "args_literal": "[0, 3, 2]",
+    "expected_literal": "0"
+   }
+  ]
+ },
+ "controls": {
+  "mbpp/356": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "sum_a_plus_b"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "three_sixty_minus"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "one_eighty_minus_abs_diff"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/885": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "equal_lengths_only"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "equal_distinct_character_counts_only"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "many_to_one_map_with_equal_lengths"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/354": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "a_plus_n_times_d"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "a_plus_n_minus_one"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "a_times_n_times_d"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/901": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "return_n"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "n_times_n_minus_one"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "return_zero"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/654": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "area"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "half_perimeter"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "four_times_length"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/703": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "membership_among_values"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "dictionary_nonempty"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "always_false"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/700": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "strict_bounds"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "distinct_qualifying_entries"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "input_length"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/656": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "zipped_order_abs_differences"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "abs_difference_of_sums"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "sum_of_both_arrays"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ],
+  "mbpp/36": [
+   {
+    "kind": "wrong_rule_1",
+    "rule": "first_digit_regardless_of_n"
+   },
+   {
+    "kind": "wrong_rule_2",
+    "rule": "digit_n_plus_one"
+   },
+   {
+    "kind": "wrong_rule_3",
+    "rule": "integer_quotient_without_last_digit"
+   },
+   {
+    "kind": "constant_public_expected"
+   },
+   {
+    "kind": "lookup_original_examples"
+   }
+  ]
+ },
+ "source_reasoned_predictions": {
+  "mbpp/356": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/885": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": true,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/354": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/901": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": true,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/654": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/703": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/700": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": true,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/656": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  },
+  "mbpp/36": {
+   "reference": {
+    "original_private": true,
+    "supplement_v1": true
+   },
+   "wrong_rule_1": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_2": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "wrong_rule_3": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "constant_public_expected": {
+    "original_private": false,
+    "supplement_v1": false
+   },
+   "lookup_original_examples": {
+    "original_private": true,
+    "supplement_v1": false
+   }
+  }
+ },
+ "prediction_findings": [
+  "Worker source reading before the lead's correction c3a4c29 independently found that 885 wrong_rule_2 passed all six original supplement cases; the lead's seventh case ('aab','abb') -> False (distinct counts 2 = 2) now rejects it.",
+  "885 wrong_rule_2 is predicted to pass original_private (('ab','ba') 2=2 True; ('ab','aa') 2 vs 1 False), beyond the 901/700 original-private weaknesses named in the contract; it fails supplement case 7.",
+  "901 wrong_rule_1 (return n) and 700 wrong_rule_2 (distinct count) pass original_private, as the contract states; both are predicted to fail supplement_v1 ((3,)->3 vs 6; [0,1,2,2,3] distinct 2 vs 3).",
+  "Before the correction, 703 constant_public_expected (return True) duplicated wrong_rule_3 (always True); with the lead's Always False rule the 45 control codes are now pairwise distinct.",
+  "Every original case is consistent with its adapted public contract by source reading (no additional contradiction)."
+ ],
+ "limits": {
+  "cpu": 1,
+  "elapsed_minutes_from_acceptance": 20,
+  "retained_output_mib": 32,
+  "model_calls": 0,
+  "benchmark_reference_control_assertion_executions": 0,
+  "sandbox_starts": 0,
+  "downloads": 0,
+  "paid_spend": 0
+ }
+}

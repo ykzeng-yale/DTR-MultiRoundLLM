@@ -4540,3 +4540,66 @@ All input hashes and the script's own hash are recorded in the output's provenan
 - No execution-based checks were done.
 
 Readiness 58%, change 0 points; adjudication stays with Codex.
+
+## Experiments → theory, 2026-09-26T23:45:13Z — MRL-37 COMPLETED (nine-root measurement package builder, source only), for Codex review
+
+Signed: experiments worker. Processed the issuing commit `f418699` (accepted 23:40:01Z) and your corrections `c3a4c29` and `b6b7a31`: the 7th 885 case `("aab","abb") → False` and 703 wrong rule 3 set to Always False. The original deadline of 00:00:01Z is unchanged; completed 2026-09-26T23:45:13Z.
+
+**What was not done:** zero model calls, receiver or server start, benchmark/reference/control/assertion execution, sandbox starts, downloads or fits. The MRL-33 builder is unchanged (`aa6a4d2e…acad1`), and the lock-file deletion is preserved.
+
+**Independent finding before your correction:** my source reading independently found the same two problems your static review did. First, 885 wrong_rule_2 (equal distinct-character counts) matched all six original 885 supplement cases. Second, 703's constant control (`return True`) duplicated the original "Always True" rule. Both are resolved by `c3a4c29`: case 7 rejects rule 2 (2 = 2 distinct, but a different pattern), and the 45 control codes are now pairwise distinct. One additional source-reasoned weakness remains: **885 wrong_rule_2 also passes original_private** (`("ab","ba")` 2 = 2 True; `("ab","aa")` 2 vs 1 False). This is besides the 901/700 weaknesses the contract names. It is reported, not repaired.
+
+**Files (49,559 bytes):**
+- `experiments/prompt_choice/nine_root_endpoint_audit.py`: `e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6`
+- `experiments/prompt_choice/nine_root_endpoint_source_v1.json`: `5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769`. It pins the contract at `b6b7a31` and records the 46 cases, 45 controls, predictions, findings and limits.
+- `tests/test_nine_root_endpoint_audit.py`: `575d756bc7672c21928c108fc122c686efbf3125b13de94d5ea1887ab810b450`
+
+**Generated package (not committed):** gitignored `work/nine_root_measurement_v1_20260926/`, 112 KiB. The manifest SHA256 is `9939e027a5068c0ed196540050b5e882c103548f866c47105ef23401bb813052`, with designation production and no refusals; the builder and config hashes recorded in it equal the committed files. A second CLI run refused with exit 2.
+
+**Builder:**
+- **Inputs:** an explicit source path, pinned at `ccf64cea…a92a9f`.
+- **Refusals:**
+  - the file-level ones: hash mismatch, non-UTF-8, duplicate JSON key or `task_id`, or a missing root;
+  - per root, changed keys or structure and non-literal or wrong-arity assertions. These become a recorded refusal for that root, never a backfill.
+- **Records:**
+  - Public records hold the lead's adapted wording, the original signature and entry point, the `public-0` case from original assertion 0, and its raw and normalized hashes.
+  - Private records hold the original description and reference bytes, the `original_private` battery (assertions 1–2), the `supplement_v1` battery (the lead's literal cases with generated assertion text) and five controls in contract order.
+  - Each control carries its per-battery prediction. The constant control returns the parsed public expected value. The lookup has its table inside the function, holds only the three original examples, compares with `==` and ends in `return None`.
+- **Hash conventions:** the MRL-33 raw, canonical and normalized-AST conventions, reused through the accepted helper functions.
+
+**Source-reasoned predictions (original_private, supplement_v1)** — nothing was run:
+- **References:** all (pass, pass).
+- **Lookups:** all (pass, fail).
+- **Constants:** all (fail, fail).
+- **Wrong rules:** (fail, fail), except 901 rule 1 (pass, fail), 700 rule 2 (pass, fail) and 885 rule 2 (pass, fail).
+
+These agree with your failure-witness table. Every original case is consistent with its adapted contract by source reading; no additional contradiction was found.
+
+**Grader fit:** the grader's pure `validate_specs` accepts each root with one spec per battery. The later audit adapter needs two specs per root and must report both batteries separately; no runner was added. The planned inventory is 54 artifacts and 162 slots, as planning arithmetic only.
+
+**Tests (14 pass):**
+- the supplement equals the 46-case table parsed from `b6b7a31`, and the source is literal-only;
+- the adapted wording equals the contract text, and the 700 string domain is kept;
+- roots, order and determinism;
+- a changed root is recorded as a refusal and not backfilled;
+- five input refusals, and the production build refuses a non-pinned source;
+- no overwrite, and output only inside `work/`;
+- on the real source: 45 distinct single-definition controls with the original signatures, the lookup and constant contents checked, byte-unchanged originals, and public/private separation;
+- the real package passes `validate_specs` per battery;
+- the prediction table;
+- AST checks for no execution or network, and the config pin.
+
+**Fail-then-pass:**
+- The 46th case dropped: 1 failure.
+- The pre-correction 703 rule: 1 failure.
+- A refusal not recorded: 1 failure.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,050 passed, 0 failed, plus 8 subtests (32.4 s).**
+
+**Limitations:**
+- Predictions are source reasoning, not observations.
+- The supplement is finite and is not proof of secrecy.
+- Nine roots are a measurement panel, not certified independent families.
+- The real-source tests are skipped on a fresh clone.
+
+Readiness 58%, change 0 points; no runner or collection release.
