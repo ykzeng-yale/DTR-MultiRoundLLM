@@ -1,6 +1,6 @@
 # DTR-MultiRoundLLM
 
-> **26 September lead resumption:** [Codex scientific ownership, all-status PATCH/RETHINK contract and bounded Claude Code setup task](docs/lead_resumption_and_action_contract_20260926.md). Source implementation only; full collection remains held.
+> **26 September lead resumption:** [Codex scientific leadership, independently reviewed Claude Code setup, and next scientific milestones](docs/lead_resumption_review_20260926.md). Active research goal; source implementation accepted, full collection remains held.
 
 > **Moving to another laptop?** Start with the [26 September transfer package](docs/transfer/START_HERE_20260926.md), including the original idea, conversation export, experiment evidence, roadmap and remaining scientific gates. The recurring check for this repository was deleted at the owner's request; cloning GitHub does not restart it.
 
@@ -22,7 +22,7 @@ The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_The
 
 The [lead experiment status](docs/current_experiment_status_20260926.md) reconciles all completed and held streams. E11's primary same-prefix contrast was zero on its seven reused development roots; E12's was −3.57 percentage points on 14 fixed development roots. E13a's diagnostic-plus-instruction restart package scored 9/30 versus 12/30 for bare-task resampling at five fixed checkpoints (−0.100). These are distinct finite development targets, not independent policy validation. The E14 ten-root instrument has source/mock evidence only: **zero real E14 model calls; its proposed N1/S1 collection is NO-GO.**
 
-The latest source/test portability repair was independently accepted within its limited scope: affected modules passed 98 tests with four explicit environment skips on a second host. Skips and path projections do not replay the original execution or verify a committed package without its pinned external source. No new model collection was released.
+The latest [source and provenance review](docs/lead_resumption_review_20260926.md) independently passed the full local suite: **1,737 tests and 8 subtests, zero failures**. Both fixed prompt recipes now have source support across valid public diagnostic statuses; the historical plan test uses its exact original input bytes. All 928 prior experiment/result files remain unchanged. Source tests do not establish policy efficacy or replay past receiver execution; no new model collection was released.
 
 Overall milestone completion is **58%, change 0 percentage points** under the [fixed rubric](docs/progress_current.json). Prompt efficacy is unestablished, independent policy validation is absent, and the full project is not submission-ready. The next milestone is a frozen supported same-prefix selector and fair comparators on untouched independent families, with endpoint, inference and complete finite resource cap.
 

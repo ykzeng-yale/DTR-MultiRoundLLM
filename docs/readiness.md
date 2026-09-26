@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Final manual resumption review — 2026-09-26T21:01:05Z
+
+**58%, change 0 percentage points.** [MRL-26/MRL-27 source acceptance](lead_resumption_review_20260926.md): the full local suite independently passes **1,737 tests and 8 subtests**, with no failures. Exact historical-input replay repairs the prior provenance-test failure while preserving all 928 old experiment/result files. These source and mathematical reviews earn no additional empirical or independent-policy credit under the fixed rubric. Prompt efficacy remains unestablished and the full project is not submission-ready. Largest remaining milestones: complete development/family/measurement/learning/inference/resource freeze, new development data, frozen-policy evaluation on untouched families, and integrated manuscript/reproducibility package. No recurring automation was created.
+
 ## Manual lead resumption review — 2026-09-26T20:54:09Z
 
 **58%, change 0 percentage points.** [MRL-26 source acceptance and MRL-27 bounded repair](lead_resumption_review_20260926.md): 174 independent focused tests pass and 928 historical experiment/result files remain unchanged. The inference option is mathematically reviewed, not a sampled result. Prompt efficacy and independent policy validation remain absent. Full-project submission readiness is false; the development/family/measurement/learning/inference freeze, untouched policy trial and manuscript/reproducibility package remain open. No recurring automation was created.

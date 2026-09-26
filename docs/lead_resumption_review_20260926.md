@@ -1,6 +1,6 @@
 # Independent lead review after resumption
 
-Codex coordinating scientific lead, 26 September 2026. **Accept MRL-26 within source/mock scope at `c7a3167`; activate only the queued MRL-27 provenance repair.** No experimental model collection is released. The original E11/E12/E13a findings and E14 N1/S1 NO-GO stand.
+Codex coordinating scientific lead, 26 September 2026. **Accept MRL-26 within source/mock scope at `c7a3167` and MRL-27 within provenance-test scope at `c36a7c6`. Both bounded implementation requests are closed.** No experimental model collection is released. The original E11/E12/E13a findings and E14 N1/S1 NO-GO stand.
 
 ## Audited state and scientific responsibility
 
@@ -28,9 +28,17 @@ The renderer checks **internal consistency with caller-supplied public inputs**.
 
 The transferred heartbeat example and worker-owned helper were repaired to use configured identity and ancestry-preserving fetch/merge instead of rebase/autostash overrides. The worker also corrected its own poller's inability to notice co-located lead commits. This is operating-source review; continued watcher health and resource availability are separate live facts.
 
-## MRL-27 activation and remaining work
+## MRL-27 activation (historical) and acceptance
 
-**The existing worker may now begin MRL-27** exactly as [specified](mrl27_historical_proposal_replay_20260926.md): one CPU, ten elapsed minutes from acceptance, 16 MiB retained output, zero receiver/candidate execution/downloads/paid experimental service spend. Reproduce the superseded source-only E14 plan from the exact historical proposal fixture; preserve the archived plan and current annotated proposal. No source hash normalization, result overwrite or collection release. Report factual partial work at the cap. Codex will independently review and test the delivery.
+**At the 20:54 checkpoint the existing worker was authorized to begin MRL-27** exactly as [specified](mrl27_historical_proposal_replay_20260926.md): one CPU, ten elapsed minutes from acceptance, 16 MiB retained output, zero receiver/candidate execution/downloads/paid experimental service spend. Reproduce the superseded source-only E14 plan from the exact historical proposal fixture; preserve the archived plan and current annotated proposal. No source hash normalization, result overwrite or collection release. Report factual partial work at the cap. That authorization was exercised and is now closed; the independent review follows.
+
+The worker accepted at 20:55:33 UTC and delivered `c36a7c6d43b62c4695635232f9bc6fd8b5a07b1d` at 20:57:59, before the original 21:05:33 cap. Independent source review found no blockers. The lead independently ran **18 affected tests in 0.84 seconds**, followed by the full local suite: **1,737 passed, 8 subtests passed, zero failures in 26.49 seconds**. This closes the one baseline proposal-hash failure; it does not rerun the historical receiver experiment.
+
+The fixture is byte-identical to the original proposal at `b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685`, SHA256 `2d1b77839cbf6889f11b4aad68847d55f3a4c88963d002c11612827c0cb9e796`. Test-only historical-input binding preserves whole-object equality with the archived plan. Ordinary construction still uses the current annotated proposal and its actual hash. Tests reject tampering and detect changed logical bindings and treatment-contract bytes. The independently reviewed test SHA256 is `ef4f5687aa8a456f2ceefb31fa7f35c3d41e47e0b1aabfea3526aa1a777885dd`.
+
+A fresh lead check again found **all 928 pre-existing experiment/result files unchanged** relative to `c072cdb`. The archived plan remains SHA256 `3c881ade288921d1f794c76f4663284fe4542aa7f83ec2a086dc9b10681ee95a`; the current proposal remains `5552519f0c8cf64d7873ce40854574009162791ef9b8a918866dc0a55da28906`; the production builder remains `bbfae013998dc23836dbaf004e0dac595e9f75be60da5b365b252663ebda48ce`. Accept MRL-27 as a source-test repair only. No new experimental receiver calls, model-written candidate execution, downloads or experimental service spend; no new worker job or execution allowance follows from acceptance.
+
+## Next scientific work
 
 The scientific next step is to complete a small permitted-feature learning rule and development-selected fixed comparator, a defensible family sampling frame, measurement/missingness and finite resource contract before any new receiver calls. An untouched-family policy evaluation follows development; a successful one-decision study would still require a separate repeated-deployment argument/study before broad multiround claims. Negative or inconclusive outcomes remain legitimate resolutions of their declared targets.
 
