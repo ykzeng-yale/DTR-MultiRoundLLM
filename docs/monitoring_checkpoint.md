@@ -1,5 +1,10 @@
 # Research monitoring checkpoint
 
+## Manual lead resumption review — 2026-09-26T20:54:09Z
+
+**58%, change 0 percentage points.** [MRL-26 source acceptance and MRL-27 bounded repair](lead_resumption_review_20260926.md): 174 independent focused tests pass and 928 historical experiment/result files remain unchanged. The inference option is mathematically reviewed, not a sampled result. Prompt efficacy and independent policy validation remain absent. Full-project submission readiness is false; the development/family/measurement/learning/inference freeze, untouched policy trial and manuscript/reproducibility package remain open. No recurring automation was created.
+
+
 ## Laptop transfer and INCOMPLETE-status review — 2026-09-26T20:29:00Z
 
 **58%, change 0 percentage points**, fixed rubric. The owner requested a portable [GitHub transfer package](transfer/START_HERE_20260926.md) and removal of this thread's recurring check; the app reports that automation deleted. Worker `32e20b7` accepted LEAD-POLICY-15 at 19:19:58 UTC and raised an `INCOMPLETE`-status design issue. The lead independently checked the three pinned diagnostic classes and S1's separate incomplete branch; the saved E12 histories contain zero incomplete cases. **Decision: hold protocol freeze and all model collection until public-pass and incomplete-class support, eligibility, assignment, text, missingness and cost are prespecified.** Status through `40e0650` (20:21:31 UTC) reports no run/lease and E14 NO-GO; live health is worker-reported. No new model calls/tokens, benchmark executions, downloads or paid spend were made for this transfer. Prompt efficacy unestablished; independent policy validation absent; full project not submission-ready.

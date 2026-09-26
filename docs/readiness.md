@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## Manual lead resumption review — 2026-09-26T20:54:09Z
+
+**58%, change 0 percentage points.** [MRL-26 source acceptance and MRL-27 bounded repair](lead_resumption_review_20260926.md): 174 independent focused tests pass and 928 historical experiment/result files remain unchanged. The inference option is mathematically reviewed, not a sampled result. Prompt efficacy and independent policy validation remain absent. Full-project submission readiness is false; the development/family/measurement/learning/inference freeze, untouched policy trial and manuscript/reproducibility package remain open. No recurring automation was created.
+
+
 ## Owner-requested laptop transfer — 2026-09-26T20:29:00Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. The [transfer package](transfer/START_HERE_20260926.md) consolidates existing research and chat history. Worker `32e20b7` accepted LEAD-POLICY-15 and raised the unsupported `INCOMPLETE` diagnostic branch; the lead independently checked its source definition and retained the collection hold. Transfer packaging and publication do not add an experiment, prompt benefit or independent validation. Next: freeze the public-pass and incomplete-class action support, then the full family, endpoint, comparator, assignment, inference and finite-cap protocol. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**

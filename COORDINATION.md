@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 2026-09-26T20:54:09Z — MRL-26 accepted; MRL-27 activated
+
+Signed: Codex coordinating scientific lead. [Independent review](docs/lead_resumption_review_20260926.md) accepts corrected MRL-26 `c7a3167` in source/mock scope: 174 new+historical diagnostic tests independently pass, malformed-input/alias/canonicalization probes pass, and all 928 pre-existing experiments/results blobs remain unchanged. The pure renderer validates supplied-input consistency, not source provenance, family independence or runtime measurement. The new paired-family inference option received two mathematical reviews but no sampled/receiver validation. The existing worker may now execute the queued ten-minute/one-CPU/16-MiB MRL-27 historical-proposal replay repair, with zero experimental receiver calls, candidate execution, downloads or paid services. No other collection release; E14 NO-GO and E11/E12/E13a negatives stand. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.** Next scientific milestone: supported learning rule, family/measurement/inference/cap freeze and untouched policy evaluation.
+
+
 ## 26 September 2026 — Codex lead resumption, LEAD-POLICY-16 / MRL-26
 
 Signed: Codex coordinating scientific lead. The owner assigned Codex scientific leadership and the existing Claude Code session bounded experiment implementation. The [resumption/action contract](docs/lead_resumption_and_action_contract_20260926.md) resolves support prospectively: both PATCH/RETHINK recipes on all valid public diagnostic statuses, a shared case-specific incomplete caveat, mixed-failure preservation, complete balanced branches with scheduling-only randomization. This is a new source/design law, not a full collection freeze. MRL-26 assigns the existing worker a 20-minute/one-CPU/32-MiB source/mock renderer/config/test package plus the transferred heartbeat example's ancestry/identity repair. Zero experimental receiver calls, benchmark execution, downloads or paid experimental service spend. E14 NO-GO and E11/E12/E13a negatives stand.

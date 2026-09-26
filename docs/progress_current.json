@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T20:29:00Z",
+  "checkpoint_utc": "2026-09-26T20:54:09Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,18 +54,18 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "13fcdaf47652e255d7eefc24b3b06d8812379852",
-  "baseline_note": "Fixed 58-point rubric unchanged: transfer packaging and an unsupported diagnostic-class source review add no empirical or independent-policy milestone.",
+  "prior_checked_head": "8e0593b792d32b37f6d7635f2c8b6c4c1633258e",
+  "baseline_note": "Fixed 58-point rubric unchanged: scientific resumption, new source/mock setup and classical inference specialization add no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker 32e20b7 accepted LEAD-POLICY-15, took no model action, and flagged INCOMPLETE diagnostic support. Lead checked source tri-state definitions; E12 observed zero incomplete histories. Status through 40e0650 reports no run/lease and E14 NO-GO. GitHub transfer package assembled; thread automation deleted.",
+  "latest_evidence": "Codex resumption; raw development arithmetic independently reconciled; MRL26 c7a3167 source accepted after 174 independent tests and all 928 historical experiments/results blobs unchanged. Paired-family inference option mathematically reviewed only. MRL27 provenance repair activated; no collection released.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "40e06506054d2abde7392b06dbb6eb3f27fb2b22",
-    "delivery_type": "LEAD-POLICY-15 acceptance and INCOMPLETE-class design question 32e20b7, independently source-checked; later status-only",
-    "last_independently_reviewed_worker_documentation_revision": "32e20b70b909e52f5365f80c7829304abf0499c0",
-    "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
-    "review_record": "docs/mrl25_independent_review_20260923.md",
+    "last_seen_worker_revision": "6f4d952",
+    "delivery_type": "MRL26 renderer/config/tests plus structured-rejection guard repair; independently reviewed",
+    "last_independently_reviewed_worker_documentation_revision": "c7a3167",
+    "scientific_review_revision": "c7a3167",
+    "review_record": "docs/lead_resumption_review_20260926.md",
     "acknowledgement_received": true,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -75,7 +75,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 40e0650 at 2026-09-26T20:21:31Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified. Lead-thread recurring check was deleted in the app at owner request.",
+    "scheduler_status": "Existing Claude desktop worker contacted and delivery independently reviewed. Live watcher availability remains distinct; prior lead recurring automation was deleted and not recreated.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -93,7 +93,7 @@
     "mrl17_status": "Original static report preserved; new metadata annotation independently accepted.",
     "last_reviewed_operational_proposal_revision": "bb8969444029e0765a8638b4f1404fab02d85f5e",
     "operational_review_record": "docs/mrl19_review_mrl20_20260923.md",
-    "resource_reservation": "MRL20window06:15–07:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
+    "resource_reservation": "MRL20window06:15\u201307:45UTC; ownedreceiverexitobserved06:19:13.933681UTC in savedrecord. Workerreportspeerrelease. No new executionauthority from remainingwindow.",
     "mrl16_new_window_acknowledged_by_worker": true,
     "prior_release_receipt": {
       "repository": "ykzeng-yale/DTR-AgentEvals",
@@ -200,7 +200,7 @@
     "mrl24_delivery_revision": "1c66f86deebbd4e8324ca913202774c2dcfd350c",
     "mrl24_independent_validation": "results/mrl24_lead_independent_review_20260923.json",
     "mrl23_one_worker_condition": "not met; 79 recorded local intervals,9 cross-builder overlaps,peak2 simultaneously; CPU load not determined",
-    "mrl25_status": "Delivered18:54:17UTC within reported18:47–19:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
+    "mrl25_status": "Delivered18:54:17UTC within reported18:47\u201319:17cap; scoped source/mock repair independently accepted; seed-inventory portability repair required; no E14 execution authority.",
     "mrl25_source_limit": {
       "local_execution_workers": 1,
       "threads": 1,
@@ -233,7 +233,8 @@
     "worker_route_dependency": "Closed for LEAD-MRL25-01 receipt by committed-file acknowledgement; direct app/task access remains unavailable but is not required for this verified handoff.",
     "lead_mrl25_01_acknowledgement_revision": "601fc1f55ab62fd20fcc8cfb5b66495790b413ce",
     "lead_mrl25_01_acknowledgement_utc": "2026-09-23T23:58:33Z",
-    "mrl25_late_logs_review": "results/mrl25_late_fixture_log_review_20260924.json"
+    "mrl25_late_logs_review": "results/mrl25_late_fixture_log_review_20260924.json",
+    "e14_scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11"
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
@@ -537,5 +538,16 @@
     "recurring_check_deleted": true,
     "new_model_calls": 0,
     "new_paid_usd": 0
+  },
+  "codex_lead_resumption": {
+    "record": "docs/lead_resumption_review_20260926.md",
+    "goal_status": "active",
+    "scientific_lead": "Codex",
+    "experiment_implementation": "existing Claude Code worker",
+    "mrl26_accepted_revision": "c7a3167",
+    "independent_tests": "174 passed",
+    "experimental_receiver_calls": 0,
+    "mrl27": "activated bounded historical-proposal replay repair",
+    "recurring_automation_created": false
   }
 }
