@@ -1,0 +1,23 @@
+{
+  "source_sha256": "b7c0deedb76cd63aff9ee145b10c117b892aaccaa78ed07a4d395ce3f3af4642",
+  "at": "2026-09-26T22:51:15.241391+00:00",
+  "classification": "independent mock process-boundary probe; no actual process or payload launched",
+  "fake_child_exit": 2,
+  "unverified_plan_outside_work": true,
+  "output_existed_before": true,
+  "before_files": [
+    "original.txt"
+  ],
+  "after_files": [
+    "original.txt",
+    "retained_totals.json",
+    "supervisor.json"
+  ],
+  "new_files_despite_refusal": [
+    "retained_totals.json",
+    "supervisor.json"
+  ],
+  "cli_helper_exit": 3,
+  "actual_program_model_launches": 0,
+  "post_source_sha256": "b7c0deedb76cd63aff9ee145b10c117b892aaccaa78ed07a4d395ce3f3af4642"
+}
