@@ -1,0 +1,3464 @@
+Okay. So previously we were discussing about using the dynamic treatment regime to apply on the routing policy of agent system. In that case, in my current understanding is that we will fix the user input and the task, which is the prompt, and then the whole system, including model, toolset. The only thing we change is the routing policy. And we have already explicit outcome metrics to measure that. When we want to compare different routing policies or a change of the routing policy, we will mainly, like, just using this dynamic treatment regime to assess whether this treatment regime, which is the routing policy, will make the outcome better. But now when we're thinking about LLM, actually naturally the multi-round conversation itself, like when the user asks an initial prompt or task or questions, and the LLM or the agent provides a result as an intermediate outcome, and then user will continue to add feedback or add further instructions, which basically the second treatment, and agent will work again on the same task for the same type of the outcome, and then they will continue for the next round, etc. So this kind of multi-round feedback or multi-round interventions is actually also a kind of dynamic treatment regime applicable scenarios where each treatment is like each prompt being sent over by user. Maybe not necessarily prompt, but a very composite instruction, including maybe potential files or other new tools added, etc. But, like, maybe for now just as a prompt. So is there any research paper that actually using dynamic treatment regime to understanding how these different prompt as a treatment will cause the quality of the final outcome of the task, of the outcome metrics?
+
+Yes. I searched specifically for the formulation you mean—not merely “DTR + LLM,” but:
+
+> **user prompt/feedback at turn** **`t`** **= time-varying treatment** **`A_t`****; conversation/task state =** **`H_t`****; later LLM output quality = outcome; study the causal effect of alternative sequences/adaptive policies of user prompts.**
+
+The interesting finding is: **I can find several papers that touch almost every component of this idea, but I do not find a paper that cleanly formulates multi-turn human→LLM prompting as a longitudinal causal/DTR problem in this exact way.** That makes your formulation substantially more interesting than just applying DTR terminology to an existing problem.
+
+### 1. Your formulation is genuinely a DTR
+
+Suppose the initial task is `X`, and freeze the LLM/agent system `M`.
+
+Then the interaction is
+
+```math
+X
+\rightarrow A_1
+\rightarrow Y_1
+\rightarrow A_2
+\rightarrow Y_2
+\rightarrow \cdots
+\rightarrow A_T
+\rightarrow Y_T,
+```
+
+where `A_t` is the **user intervention at turn** **`t`**—prompt, correction, clarification, critique, additional constraint, etc.—and `Y_t` is the resulting agent output or intermediate quality.
+
+More correctly, define history
+
+```math
+H_t=(X,A_1,Y_1,\ldots,A_{t-1},Y_{t-1}),
+```
+
+and a prompting policy
+
+```math
+\boxed{
+\pi_t(A_t\mid H_t)
+}
+```
+
+that decides **what feedback/instruction should be supplied next given everything that has happened so far**.
+
+That is almost exactly the mathematical object DTR calls
+
+```math
+d_t:H_t\rightarrow A_t.
+```
+
+Classical DTRs define a regime as sequential decision rules mapping evolving histories to treatments, with the objective of maximizing a downstream/cumulative outcome. 
+
+So I would actually sharpen your idea:
+
+**The scientific object isn't “the causal effect of prompts.”**
+
+It is:
+
+```math
+\boxed{\text{causal effect / value of an adaptive prompting regime}}
+```
+
+or even
+
+```math
+\boxed{
+\pi^*=\arg\max_\pi
+E[Y_T(\pi)]
+}
+```
+
+—the **optimal dynamic prompting regime**.
+
+---
+
+## 2. Closest paper I found: Causal Prompt Optimization (2026)
+
+A very relevant new paper is Chen et al., **“Optimizing Prompts for Large Language Models: A Causal Approach” (2026).** They explicitly argue that prompt optimization is confounded because different prompts get applied to queries with different characteristics, and treat the prompt as a treatment. They use Double Machine Learning to estimate prompt effects conditional on query features and then select query-specific prompts. 
+
+[Optimizing Prompts for Large Language Models: A Causal Approach](https://arxiv.org/abs/2602.01711?utm_source=chatgpt.com)
+
+Conceptually they have
+
+```math
+X=\text{query},
+\qquad
+A=\text{prompt},
+\qquad
+Y=\text{performance}.
+```
+
+That's remarkably close to what you're proposing.
+
+**But the key gap is that their setup is essentially single-stage:**
+
+```math
+X\rightarrow A\rightarrow Y.
+```
+
+Your problem is longitudinal:
+
+```math
+X\rightarrow A_1\rightarrow Y_1
+\rightarrow A_2(Y_1)\rightarrow Y_2
+\rightarrow\cdots\rightarrow Y_T.
+```
+
+And that distinction is huge because `Y_1` simultaneously becomes:
+
+1.  an intermediate outcome, 
+2.  part of the state for subsequent prompting, 
+3.  something that causally affects `A_2`, 
+4.  and something affected by `A_1`. 
+
+That is exactly the **time-varying treatment/time-varying confounding** structure for which longitudinal causal inference/DTR methods become necessary.
+
+---
+
+## 3. There is another causal-prompt paper, but again single-stage
+
+Wang et al., AAAI 2025, **“Eliciting Causal Abilities in Large Language Models for Reasoning Tasks,”** explicitly treat instructions as treatments and estimate relationships between instruction characteristics and downstream performance. 
+
+[AAAI paper: Eliciting Causal Abilities in Large Language Models for Reasoning Tasks](https://ojs.aaai.org/index.php/AAAI/article/view/33669?utm_source=chatgpt.com)
+
+Again, this establishes an important precedent:
+
+```math
+\text{prompt/instruction}=\text{treatment}
+```
+
+is already defensible in the literature.
+
+But it doesn't give the **longitudinal potential-outcomes / dynamic-regime formulation** you're describing.
+
+---
+
+# 4. Meanwhile, the LLM community is independently moving toward exactly your *data structure*
+
+There are several extremely relevant multi-turn papers.
+
+### Multi-turn RL from human preference
+
+Shani et al. formulate multi-turn LLM interaction as sequential decision-making and optimize preference over **whole conversations**, rather than treating every turn independently. 
+
+This is close computationally, but their framework is RL/preference optimization rather than asking causal estimands such as
+
+```math
+E[Y_T(\bar a)]-E[Y_T(\bar a')]
+```
+
+or the value of a dynamic prompting policy.
+
+### Unary Feedback / “Try Again”
+
+The 2025 work **“A Simple ‘Try Again’ Can Elicit Multi-Turn LLM Reasoning”** is even closer to your motivating example. The model produces an answer, receives minimal user feedback, revises, receives feedback again, etc. They explicitly formulate multi-turn problem solving as an MDP. 
+
+Think:
+
+```math
+\text{answer}_1
+\xrightarrow{\text{“try again”}}
+\text{answer}_2
+\xrightarrow{\text{feedback}}
+\text{answer}_3.
+```
+
+But again, the question is **learning an RL policy**, not estimating counterfactual effects of alternative user-feedback regimes.
+
+---
+
+### Prompt Reinforcing for Long-Term Planning
+
+Lin et al. optimize prompts using **turn-by-turn feedback and experience replay** for multi-turn tasks such as text-to-SQL and task-oriented dialogue. 
+
+Their setup already implicitly asks:
+
+> Given what happened in previous turns, how should the instruction be modified to improve future performance?
+
+Very close structurally; still RL-inspired prompt optimization rather than DTR causal inference.
+
+---
+
+### And there is an August 2026 paper particularly relevant to us
+
+A very recent work, **“Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context,”** argues that the *next user turn itself* provides a temporally local feedback signal about what the agent just did. Their Feedback-Aware Credit Assignment associates user reactions with preceding agent segments rather than giving the entire conversation only one terminal reward. 
+
+This is important because it validates one of the central intuitions behind your proposal:
+
+```math
+\boxed{\text{user turn is not merely context}}
+```
+
+It contains information about—and changes—the subsequent trajectory.
+
+Their solution, however, is **credit assignment/RL**, not longitudinal causal inference.
+
+---
+
+# 5. So I think there is a very clean research gap here
+
+The existing landscape looks approximately like this:
+
+| LiteraturePrompt = treatment?Multi-turn?Counterfactual causal inference?Dynamic regime? |                 |       |                         |           |
+| --------------------------------------------------------------------------------------- | --------------- | ----- | ----------------------- | --------- |
+| Causal Prompt Optimization                                                              | ✓               | ✗     | ✓                       | ✗         |
+| SCIE / causal instructions                                                              | ✓               | ✗     | partial                 | ✗         |
+| Multi-turn RLHF                                                                         | —               | ✓     | ✗                       | RL policy |
+| Unary Feedback                                                                          | feedback/action | ✓     | ✗                       | MDP       |
+| Prompt Reinforcing                                                                      | ✓               | ✓     | ✗                       | RL-like   |
+| FACA                                                                                    | user reaction   | ✓     | ✓/local-credit-inspired | ✗         |
+| **Your formulation**                                                                    | **✓**           | **✓** | **✓**                   | **✓**     |
+
+That's why I wouldn't frame the contribution as simply:
+
+> “Use DTR for LLMs.”
+
+Instead:
+
+> **Longitudinal causal inference for multi-turn human–LLM interaction: treating user interventions as sequential treatments and learning/evaluating dynamic prompting regimes.**
+
+That is much more distinctive.
+
+---
+
+# 6. And there is an important causal problem that RL papers largely sidestep
+
+Imagine the model gives a terrible answer at turn 1.
+
+The user is then much more likely to issue:
+
+```math
+A_2=\text{strong correction / detailed instruction}.
+```
+
+Whereas after a good answer:
+
+```math
+A_2=\text{minor refinement}
+```
+
+or the conversation terminates.
+
+So observationally you might discover
+
+```math
+E[Y_2\mid A_2=\text{strong correction}]
+<
+E[Y_2\mid A_2=\text{minor refinement}],
+```
+
+and incorrectly conclude that strong corrections hurt performance.
+
+Actually:
+
+```math
+Y_1
+\rightarrow A_2
+```
+
+and
+
+```math
+Y_1
+\rightarrow Y_2.
+```
+
+Thus previous output quality is a **time-varying confounder affected by prior treatment**:
+
+```math
+A_1\rightarrow Y_1\rightarrow A_2,
+```
+
+while
+
+```math
+Y_1\rightarrow Y_2.
+```
+
+This is textbook longitudinal causal structure—the setting motivating the g-formula, MSM/IPTW, SNMMs, Q-learning/A-learning, DTRs, etc. The modern DTR literature explicitly focuses on evolving histories and treatment-effect heterogeneity both between individuals and across time. 
+
+And **this gives causal inference something genuinely different from just applying RL to conversations.**
+
+---
+
+## 7. Even more interesting: the treatment space is language
+
+This is where I think the methodology could become genuinely novel rather than an application paper.
+
+Classical DTR:
+
+```math
+A_t\in\{0,1,2\}.
+```
+
+Here:
+
+```math
+A_t=\text{arbitrary natural-language intervention}.
+```
+
+So treatment is **high-dimensional, structured, semantically continuous**.
+
+You need something like
+
+```math
+Z_t=f_{\theta}(A_t)
+```
+
+with prompt representation `Z_t`, followed by
+
+```math
+Y_T(\bar Z_T).
+```
+
+But two prompts can be linguistically different while representing essentially the same intervention:
+
+> “Check your calculation.”
+
+versus
+
+> “Verify the numerical result before continuing.”
+
+Therefore we may want a **semantic treatment representation**:
+
+```math
+A_t
+\rightarrow
+(\text{feedback type},
+\text{specificity},
+\text{information added},
+\text{constraint},
+\text{criticism severity},
+\text{requested operation},\ldots).
+```
+
+Then the estimand becomes considerably more scientifically meaningful:
+
+```math
+\tau_t(a,a'\mid H_t)
+=
+E[
+Y_T(\bar A_{t-1},a,\pi_{t+1:T})
+-
+Y_T(\bar A_{t-1},a',\pi_{t+1:T})
+\mid H_t
+].
+```
+
+In plain English:
+
+> **Given exactly where the conversation currently is, what is the causal effect on final task quality of giving feedback** **`a`** **rather than** **`a'`****, assuming subsequent interaction follows policy** **`\pi`****?**
+
+That's an excellent causal estimand.
+
+---
+
+# 8. There's also a beautiful SMART experiment hiding here
+
+Rather than only mining ChatGPT logs, we could design a **Sequential Multiple Assignment Randomized Trial** for LLM interaction.
+
+Classical SMARTs repeatedly randomize intervention options at decision points to learn adaptive interventions/DTRs. 
+
+For example:
+
+```math
+\text{Task}
+\rightarrow
+\text{LLM output}_1
+```
+
+randomize:
+
+```math
+A_2=
+\begin{cases}
+\text{generic retry}\\
+\text{error-specific feedback}\\
+\text{verification instruction}\\
+\text{alternative-strategy instruction}
+\end{cases}
+```
+
+then observe `Y_2`.
+
+Based on `Y_2`, randomize again:
+
+```math
+A_3=
+\begin{cases}
+\text{critique}\\
+\text{decomposition}\\
+\text{tool-use suggestion}\\
+\text{additional information}
+\end{cases}.
+```
+
+Then final outcome could combine correctness, robustness, cost, latency, tool use, etc.
+
+We could therefore experimentally identify:
+
+```math
+V(\pi)=E[Y_T^\pi]
+```
+
+for different **adaptive human-feedback policies**.
+
+And this connects very naturally to our other discussion about **multi-dimensional agent outcomes / win-ratio-type evaluation**: `Y_T` doesn't even have to collapse into one arbitrary scalar reward. We could study a multivariate or prioritized terminal outcome.
+
+---
+
+## The research space I now see
+
+There are actually **two complementary DTR papers hiding in our discussions**:
+
+**Agent-side DTR**
+
+```math
+H_t
+\rightarrow
+\boxed{\text{routing/tool/model decision}}
+\rightarrow H_{t+1}
+```
+
+Learn the optimal **agent policy**.
+
+**User-side DTR**
+
+```math
+H_t
+\rightarrow
+\boxed{\text{prompt / feedback intervention}}
+\rightarrow H_{t+1}
+```
+
+Learn the optimal **interaction/intervention policy**.
+
+And ultimately these combine into a two-player longitudinal system:
+
+```math
+\boxed{
+\text{User intervention}
+\leftrightarrow
+\text{Agent policy}
+}
+```
+
+where user prompting changes the agent trajectory, and agent outputs change subsequent user behavior.
+
+That latter formulation starts moving beyond ordinary DTR into **multi-agent/sequential causal decision-making**, and could potentially become a much deeper methodological program.
+
+Based on the literature I found, **the user-side longitudinal causal formulation looks less occupied than the agent-routing idea**. There is already substantial RL work on agent policies, whereas the bridge
+
+```math
+\boxed{
+\text{multi-turn prompting}
++
+\text{time-varying treatments}
++
+\text{potential outcomes}
++
+\text{DTR/SMART}
+}
+```
+
+appears surprisingly open. The 2026 Causal Prompt Optimization paper gives us a particularly useful jumping-off point: conceptually, our work could be viewed as taking **causal prompt optimization from one decision point to an entire adaptive conversation trajectory**. 
+
+If we're selecting an **AI/ML + causal inference methodological research direction**, I think this version is substantially stronger than merely “apply DTR to routing,” because the longitudinal confounding, language-valued treatment, adaptive stopping, and trajectory-level outcome create actual **new statistical problems**, rather than just changing the application domain of an existing DTR estimator.
+
+Great. But actually one further question is that, how can we dynamically estimate individual treatment effect? Basically means when a new user starts a new prompt on the same model we've evaluated, when they send out the prompt, how can we estimate that step of the prompt treatment effect on the outcome of the task? And when they send out, for example, when they get the first result and send out the second prompt, based on the previous rounds of the prompts and history of the results, and this new prompt as a new treatment, how can we estimate the new outcome? And even do some training on that as a value model paradigm, a new value model paradigm. Also, a side application can also be estimating the treatment itself, like when we have a new outcome from the last iterations, how can we predict what would be the best optimal outcome corresponding treatment choice, right? Basically means we can actually, when we get the last round of the outcome, we can actually predict what would be the best prompt to be sent out in the next round, even have a separate prompt generating model to generate that best prompt. So basically when we establish this dynamic treatment regime and get a lot of data, we can even train a prompt optimization, like above causal prompt optimization idea. We can even train a prompt generating model as the treatment selection model. Here it's not like select a fixed several sets of the category of the treatment, but actually as a more high-dimensional deep-learning way of choosing from the prompt space to generating or selecting the best prompt for the best next steps outcome estimation or predictions, right? So I think, can you further search about this kind of usage or their paper? This can be a better outcome or formulation of these problems rather than just extend it to using rather than just formulate these problems, but actually can be useful for model training, task optimization, even in some sense that based on the initial prompt and outcome of the model, we can directly let this prompt generating model to interact as the new user to the receiver model itself. Basically means they can iterate without human intervening to get the best results, so that in the future whenever a prompt is being sent out, if we require multiple steps of iterations, then all of this can be automated as a more dynamic scale itself rather than a pre-fixed scale steps of the guidance, right? This can also be a very good agent skill, dynamic agent skill formulations that actually as a prompt generating model of specific task rather than a fixed pre-specified skill that being adding that much more limited and not generalizable.
+
+Yes. After searching further, I think your upgraded formulation is **much stronger than simply “DTR for multi-turn prompting.”** It naturally becomes a **causal value model + generative treatment policy** for language-valued actions.
+
+The key caveat first: for a brand-new conversation, we generally cannot identify the literal individual treatment effect `Y_i(a)-Y_i(a')` for that one exact trajectory because only one counterfactual is observed. What we *can* learn is a highly individualized **history-conditional treatment effect / blip effect**, conditioned on the complete conversation state. This distinction actually gives us a clean statistical formulation.
+
+## 1. The object you want is essentially a **Causal Prompt Value Model**
+
+At turn `t`, define
+
+```math
+H_t=
+\{
+X,\,
+A_1,O_1,\,
+A_2,O_2,\ldots,
+A_{t-1},O_{t-1}
+\},
+```
+
+where:
+
+- `X`: initial task/user request + fixed model/tool environment; 
+- `A_t`: the prompt/intervention sent at turn `t`; 
+- `O_t`: receiver model's response / intermediate outcome; 
+- `Y`: eventual task-level outcome. 
+
+Then for a candidate prompt `a`, define
+
+```math
+\boxed{
+Q_t(h,a)
+=
+E\left[
+Y^{A_t=a,\pi_{t+1:T}}
+\mid H_t=h
+\right]
+}
+```
+
+This says:
+
+> Given exactly the conversation we currently have, if I send prompt `a` now and then behave according to some future policy `\pi`, what final outcome should I expect?
+
+This is almost literally the classical DTR `Q`-function. Q-learning in the DTR literature defines Q-functions as the expected quality of taking a treatment now given current history and then following an optimal regime afterward. 
+
+But the more causal object is the **blip / advantage effect**:
+
+```math
+\boxed{
+\tau_t(h;a,a')
+=
+Q_t(h,a)-Q_t(h,a')
+}
+```
+
+which answers:
+
+> 对现在这个 exact conversation state，send prompt `a` instead of `a'` 会让最终结果 improve 多少？
+
+A-learning/DTR explicitly models these treatment contrasts as blip or advantage functions. 
+
+So yes — your proposed “new value-model paradigm” has a very clean causal interpretation:
+
+```math
+\text{ordinary reward model}
+\quad
+r(H,A)
+```
+
+versus
+
+```math
+\boxed{
+\text{causal value model}
+\quad
+Q(H,A)
+\text{ or }
+\tau(H,A,A')
+}
+```
+
+The latter asks about **counterfactual improvement**, not just whether a prompt tends to co-occur with good outcomes.
+
+---
+
+# 2. And there is a very new paper that is almost the statistical backbone we need: **DeepBlip**
+
+The strongest methodology match I found is **DeepBlip: Estimating Conditional Average Treatment Effects Over Time**, accepted at ICML 2026.
+
+DeepBlip develops a neural structural nested mean model specifically to estimate localized, **time-specific blip effects** under time-varying treatments. It can use LSTMs/Transformers and uses Neyman-orthogonal objectives to reduce bias from nuisance-model errors. 
+
+Their setup is basically:
+
+```math
+H_t
+\rightarrow A_t
+\rightarrow
+\text{future outcome}
+```
+
+and they learn
+
+```math
+\gamma_t(H_t,A_t),
+```
+
+the incremental causal contribution of treatment `A_t`.
+
+Replace
+
+```math
+A_t=\text{medical treatment}
+```
+
+with
+
+```math
+A_t=\text{natural-language intervention}
+```
+
+and we are remarkably close to your problem.
+
+**But DeepBlip assumes conventional treatment spaces. It does not solve the free-form language-action problem.**
+
+That is probably one of our methodological openings.
+
+---
+
+## 3. There is an even closer 2026 paper for your “value model” interpretation
+
+ICLR 2026 has **“An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes.”**
+
+The authors explicitly formulate sequential individualized potential outcome estimation as **estimating Q-functions from observational trajectories through a causal-inference lens**. Their DRQ-learner is doubly robust, Neyman-orthogonal, and compatible with neural networks. 
+
+That is extremely relevant.
+
+Conceptually:
+
+```math
+Q^\pi(h,a)
+=
+E[
+Y^\pi
+\mid H=h,A=a
+]
+```
+
+is precisely the model you are describing.
+
+Imagine training
+
+```math
+f_\phi(
+\underbrace{\text{conversation history}}_{H_t},
+\underbrace{\text{candidate next prompt}}_{A_t}
+)
+\rightarrow
+\widehat Q_t.
+```
+
+At inference time:
+
+**Conversation**
+
+```math
+h_t
+```
+
+**candidate treatment**
+
+```math
+a
+```
+
+→ **causal value model**
+
+```math
+f_\phi(h_t,a)
+```
+
+→ predicted eventual task quality.
+
+So the idea isn't just philosophically compatible with DTR. There is now cutting-edge causal ML specifically developing the statistical technology necessary for this kind of **individualized sequential Q estimation**. 
+
+---
+
+# 4. Then your next step is the interesting one: don't merely evaluate the treatment — **generate it**
+
+Suppose we have learned
+
+```math
+Q_\phi(H_t,A_t).
+```
+
+For ordinary DTR with 3 treatments:
+
+```math
+A_t\in\{a_1,a_2,a_3\},
+```
+
+we simply calculate
+
+```math
+a_t^*
+=
+\arg\max_a Q_\phi(H_t,a).
+```
+
+But prompts live in
+
+```math
+\boxed{
+A_t\in\mathcal L
+}
+```
+
+where `\mathcal L` is essentially the entire natural-language space.
+
+Therefore:
+
+```math
+\arg\max_{a\in\mathcal L}
+Q_\phi(H_t,a)
+```
+
+becomes a **language generation problem**.
+
+And that creates your second model:
+
+```math
+\boxed{
+G_\theta(A_t\mid H_t)
+}
+```
+
+where `G_\theta` is a **prompt-generating treatment policy**.
+
+The complete system is therefore:
+
+```math
+H_t
+\xrightarrow{G_\theta}
+A_t
+\xrightarrow{\text{receiver LLM}}
+O_t
+\rightarrow
+H_{t+1}.
+```
+
+And the generator is trained using
+
+```math
+Q_\phi(H_t,A_t)
+```
+
+as its optimization signal.
+
+That is basically an **actor–critic architecture**, except:
+
+-  actor = natural-language treatment generator; 
+-  critic = causal treatment-effect/value estimator; 
+-  environment = fixed receiver LLM/agent; 
+-  action = prompt; 
+-  state = entire interaction history. 
+
+The causal layer is important because an ordinary critic can learn observational associations between types of feedback and difficult cases.
+
+---
+
+# 5. This is where your proposal differs importantly from ordinary reward models
+
+Imagine historically:
+
+bad response → humans send very detailed corrective prompt.
+
+So detailed corrective prompts are disproportionately observed after failures.
+
+A naïve value model may learn
+
+```math
+E[Y\mid A=\text{detailed correction}]
+<
+E[Y\mid A=\text{minor correction}],
+```
+
+even if detailed corrections are actually much more beneficial.
+
+Why?
+
+```math
+O_{t-1}
+\rightarrow A_t
+```
+
+and
+
+```math
+O_{t-1}
+\rightarrow Y.
+```
+
+Previous output quality is a **time-varying confounder**.
+
+And it was itself affected by earlier prompts:
+
+```math
+A_{t-1}
+\rightarrow O_{t-1}
+\rightarrow A_t.
+```
+
+That's exactly where ordinary outcome prediction differs from causal Q/blip estimation.
+
+DeepBlip, Causal Transformer, Counterfactual Recurrent Networks, etc. are designed around this kind of time-varying-treatment problem. 
+
+---
+
+# 6. There is already an interesting single-turn precursor: **Causal Prompt Optimization**
+
+The 2026 **Causal Prompt Optimization (CPO)** paper is now even more relevant to this idea than it was to our earlier discussion.
+
+CPO learns an offline causal reward model using DML on semantic embeddings of prompts and queries, then uses that model to search for **query-specific prompts** without repeatedly executing the expensive target model. 
+
+Its conceptual architecture is approximately:
+
+```math
+(\text{query},\text{prompt})
+\xrightarrow{\text{causal reward model}}
+\widehat Y
+```
+
+followed by
+
+```math
+\text{search prompt space}
+\rightarrow
+\arg\max_A \widehat Y.
+```
+
+That's already very close to:
+
+```math
+A^*(X)
+=
+\arg\max_A Q(X,A).
+```
+
+### But your proposal upgrades CPO in three major dimensions
+
+CPO:
+
+```math
+X
+\rightarrow A
+\rightarrow Y.
+```
+
+Ours:
+
+```math
+H_1
+\rightarrow A_1
+\rightarrow O_1
+\rightarrow H_2
+\rightarrow A_2
+\rightarrow O_2
+\rightarrow\cdots
+\rightarrow Y.
+```
+
+Second, CPO **searches** candidate prompts.
+
+You are proposing to learn
+
+```math
+G_\theta(A_t\mid H_t),
+```
+
+so the treatment policy itself is a **generative model**.
+
+Third, CPO's causal model is mainly a prompt evaluator.
+
+Ours could simultaneously produce:
+
+```math
+\widehat{Q}(H,a)
+```
+
+and
+
+```math
+\widehat{\tau}(H;a,a')
+```
+
+plus uncertainty.
+
+That is substantially richer.
+
+---
+
+# 7. There is already a huge noncausal literature doing pieces of this optimization loop
+
+This is important because it means the engineering premise is clearly feasible.
+
+### PromptAgent
+
+ICLR 2024 **PromptAgent** treats prompts as states/actions in an MCTS optimization process. It observes errors, generates constructive textual feedback, proposes refinements, simulates future rewards, and searches for high-performing prompt trajectories. 
+
+Very close computational structure.
+
+But:
+
+```math
+\text{reward-based search}
+\neq
+\text{causal treatment effect estimation}.
+```
+
+---
+
+### OPRO
+
+**Large Language Models as Optimizers / OPRO** repeatedly feeds an optimizer LLM previous candidate prompts and their scores, asking it to generate better candidates. 
+
+Again:
+
+```math
+\{A_j,Y_j\}_{j=1}^{k}
+\rightarrow
+G_{\mathrm{LLM}}
+\rightarrow A_{k+1}.
+```
+
+That's very close to your generator architecture.
+
+But it is primarily **task-level offline prompt search**, not history-specific sequential causal optimization.
+
+---
+
+### ProTeGi / TextGrad / GEPA
+
+ProTeGi generates textual “gradients” from errors and modifies prompts accordingly. 
+
+TextGrad generalizes this idea into textual backpropagation across arbitrary compound AI systems. 
+
+GEPA uses trajectory-level natural-language reflection to diagnose failures and evolve prompts; it can optimize multiple components in compound systems. 
+
+Again, they demonstrate that this mapping
+
+```math
+(H_t,O_t,\text{evaluation})
+\rightarrow
+\text{new text instruction}
+```
+
+works extremely well.
+
+But none of them asks:
+
+```math
+\text{What is the counterfactual effect of this intervention at this state?}
+```
+
+---
+
+# 8. There is also something *very* close to your automated “fake user” idea: Self-Refine
+
+Self-Refine performs:
+
+```math
+X
+\rightarrow O_1
+\rightarrow \text{feedback}_1
+\rightarrow O_2
+\rightarrow
+\text{feedback}_2
+\rightarrow O_3.
+```
+
+The same LLM generates feedback and then refines its answer, iteratively, without further human input. 
+
+This demonstrates exactly your deployment concept:
+
+> Once the real user submits the initial task, another model can take over the “user feedback” role and iteratively interact with the receiver model.
+
+But Self-Refine's feedback generator is essentially heuristic/prompted.
+
+It does **not learn from historical intervention-outcome data**:
+
+```math
+(H_t,A_t,Y)\rightarrow
+\tau(H_t,A_t).
+```
+
+So your prompt generator could be interpreted as:
+
+```math
+\boxed{
+\text{learned causal version of Self-Refine's feedback model}
+}
+```
+
+That is a much clearer positioning.
+
+---
+
+# 9. ProRefine is even closer operationally
+
+2025/26 **ProRefine: Inference-Time Prompt Refinement with Textual Feedback** explicitly uses three components:
+
+```math
+\text{Task LLM}
+```
+
+```math
+\text{Feedback LLM}
+```
+
+```math
+\text{Optimizer LLM}
+```
+
+where the feedback model critiques the current output and the optimizer model dynamically modifies the next prompt. 
+
+So your deployment architecture already has a strong precedent.
+
+But again ProRefine does not learn
+
+```math
+\widehat{\tau}_t(H_t,A_t)
+```
+
+from population interaction data.
+
+That separation is becoming very important:
+
+**Existing systems ask**
+
+> “What feedback sounds useful?”
+
+Your causal formulation asks:
+
+> “For histories like this one, which feedback actually caused higher downstream task performance?”
+
+Those are fundamentally different.
+
+---
+
+# 10. Progressive-Hint Prompting is another very revealing precursor
+
+**Progressive-Hint Prompting** explicitly automates repeated “user–LLM” interaction by using prior generated answers as hints for subsequent calls. 
+
+So again:
+
+```math
+O_t\rightarrow A_{t+1}
+```
+
+is already known to be useful.
+
+However, its policy is hand-designed.
+
+Your proposal replaces:
+
+```math
+A_{t+1}=f_{\text{fixed heuristic}}(O_t)
+```
+
+with
+
+```math
+\boxed{
+A_{t+1}\sim
+G_\theta(
+A\mid H_{t+1}
+)
+}
+```
+
+where `G_\theta` is learned from causal value information.
+
+---
+
+# 11. And there's a fascinating new LLM line from 2025–2026 coming extremely close
+
+I found several very recent papers that make this research direction much more timely.
+
+### T²PAM / ROSA
+
+**Test-Time Policy Adaptation for Enhanced Multi-Turn Interactions with LLMs** uses live user feedback as a reward to estimate a latent optimal policy and adapts the model during the conversation. 
+
+That's highly relevant, but its “treatment” is primarily **updating model parameters**, not selecting a counterfactually optimal next user prompt.
+
+---
+
+### ROSA² — Words & Weights
+
+Even closer is ICML 2026 **“Words & Weights: Streamlining Multi-Turn Interactions via Co-Adaptation.”**
+
+ROSA² jointly changes:
+
+```math
+\text{Words}
++
+\text{Weights}.
+```
+
+It uses textual gradients to modify interaction context while also updating parameters. 
+
+The code is public. 
+
+This is probably one of the most important comparison papers for us.
+
+But their formulation is still mainly:
+
+```math
+\text{test-time adaptation / optimization}.
+```
+
+Not
+
+```math
+\text{sequential causal treatment-effect learning}.
+```
+
+---
+
+# 12. Another extremely relevant new result: T-POP
+
+ICML 2026 **T-POP: Test-Time Personalization with Online Preference Feedback** trains a lightweight reward model online from user preference feedback and then steers a frozen LLM's decoding, explicitly addressing **cold-start new users**. 
+
+The official code implements an online reward model + multi-armed bandit exploration/exploitation process. 
+
+This is close to your question:
+
+> New user appears. How can we dynamically learn what action will improve their outcome?
+
+But T-POP learns **user preference reward**, rather than the causal effect of a free-form intervention prompt on downstream task success.
+
+---
+
+# 13. And the prompt-generator/solver split already exists in **EVA**
+
+ICML 2025's **Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs** is another important precursor.
+
+EVA sets up two players:
+
+```math
+\boxed{\text{Creator}}
+\rightarrow
+\text{generates prompts}
+```
+
+and
+
+```math
+\boxed{\text{Solver}}
+\rightarrow
+\text{responds to them}.
+```
+
+The creator adaptively generates useful prompts from reward signals, thereby creating an automatic curriculum for the solver. 
+
+This is almost exactly your architecture:
+
+```math
+\text{Prompt Generator}
+\leftrightarrow
+\text{Receiver Model}.
+```
+
+However EVA's creator generates **training problems/prompts to improve the solver during RL**.
+
+Your proposed generator instead produces **interventions on an existing instance**:
+
+```math
+A_t
+=
+G_\theta(H_t)
+```
+
+to improve the same task trajectory.
+
+That's a crucial distinction.
+
+---
+
+# 14. So I think there are actually **three models**, not two
+
+I would formulate the architecture like this.
+
+### Model 1 — Interaction State Encoder
+
+```math
+S_t
+=
+E_\psi(H_t)
+```
+
+A Transformer takes
+
+-  initial task; 
+-  previous prompts; 
+-  receiver outputs; 
+-  evaluator scores; 
+-  tool trajectories if relevant; 
+-  intermediate correctness/error information; 
+
+and creates a state representation.
+
+---
+
+### Model 2 — Causal Prompt Value Model
+
+```math
+\boxed{
+Q_\phi(S_t,A)
+}
+```
+
+predicts:
+
+```math
+E[
+Y_T
+\mid
+do(A_t=A),
+S_t
+].
+```
+
+And/or
+
+```math
+\boxed{
+B_\phi(S_t,A,A')
+}
+```
+
+predicts the prompt's **blip effect**:
+
+```math
+E[
+Y_T(A)-Y_T(A')
+\mid S_t
+].
+```
+
+This is your treatment-effect/value model.
+
+---
+
+### Model 3 — Generative Treatment Policy
+
+```math
+\boxed{
+G_\theta(A\mid S_t)
+}
+```
+
+generates candidate natural-language interventions.
+
+The policy is trained to maximize
+
+```math
+J(\theta)
+=
+E_{A\sim G_\theta(\cdot\mid S)}
+[
+Q_\phi(S,A)
+].
+```
+
+Now the entire system is
+
+```math
+S_t
+\xrightarrow{G_\theta}
+A_t
+\xrightarrow{\text{receiver}}
+O_t
+\xrightarrow{E_\psi}
+S_{t+1}.
+```
+
+Repeat until
+
+```math
+\text{stop}.
+```
+
+That is literally an **autonomous learned interaction policy**.
+
+---
+
+# 15. We may actually need a fourth model: a causal/world outcome model
+
+Another version is to learn
+
+```math
+P_\eta(
+O_{t+1},
+R_{t+1},
+S_{t+1}
+\mid
+S_t,
+do(A_t)
+).
+```
+
+Then instead of directly estimating only terminal value, we have an interaction simulator.
+
+For any candidate prompt:
+
+```math
+A_t^{(1)},\ldots,A_t^{(K)}
+```
+
+we simulate
+
+```math
+S_t
+\rightarrow
+A_t^{(k)}
+\rightarrow
+\widehat O_{t+1}^{(k)}
+\rightarrow\cdots
+```
+
+and estimate future trajectory value.
+
+Then prompt selection can use:
+
+-  beam search; 
+-  MCTS; 
+-  best-of-`N`; 
+-  latent-space optimization; 
+-  tree search; 
+-  policy gradients. 
+
+This connects directly to PromptAgent's MCTS and LATS's LM-powered value functions/tree search. 
+
+But our transition/value models would have an explicit **causal interpretation**.
+
+---
+
+# 16. There are two ways to handle the gigantic language treatment space
+
+This is probably one of the genuinely novel methodological pieces.
+
+## Option A — Treatment embeddings
+
+Encode the prompt:
+
+```math
+Z_t=f_\omega(A_t)\in\mathbb R^d.
+```
+
+Then learn
+
+```math
+Q(H_t,Z_t).
+```
+
+Optimize
+
+```math
+Z_t^*
+=
+\arg\max_z Q(H_t,z)
+```
+
+and decode
+
+```math
+A_t^*
+=
+D(Z_t^*,H_t).
+```
+
+This resembles continuous-treatment policy learning.
+
+There is already substantial causal work on continuous/high-dimensional treatments and individualized dose policies, including neural outcome models. 
+
+And 2026 **Causal Effect Estimation with Latent Textual Treatments** is particularly relevant: it explicitly treats text as a high-dimensional intervention and shows that naïvely conditioning on text embeddings can induce bias because text mixes treatment and nuisance information; it proposes residualization for causal estimation. 
+
+That is almost certainly relevant to our prompt embedding design.
+
+---
+
+## Option B — Direct generative policy
+
+Don't reduce treatment to a vector.
+
+Let the actor itself be an autoregressive LLM:
+
+```math
+p_\theta(
+a_1,\ldots,a_L
+\mid H_t
+).
+```
+
+Then train it against causal Q estimates:
+
+```math
+\nabla_\theta
+E_{A\sim p_\theta}
+[
+Q_\phi(H,A)
+].
+```
+
+This lets the policy generate entirely new interventions rather than choosing among predefined classes.
+
+I think this is closer to your real vision.
+
+---
+
+# 17. But I'd use both
+
+I would probably build:
+
+```math
+A
+\xrightarrow{f}
+Z_A
+```
+
+for **causal estimation**, while maintaining
+
+```math
+G_\theta(\text{text}\mid H)
+```
+
+for **action generation**.
+
+Then:
+
+```math
+G_\theta
+\rightarrow
+A^{(1)},\dots,A^{(K)}
+```
+
+```math
+f(A^{(k)})
+\rightarrow
+Z^{(k)}
+```
+
+```math
+Q_\phi(H,Z^{(k)})
+\rightarrow
+\text{causal values}.
+```
+
+Choose
+
+```math
+A^*
+=
+\arg\max_k Q_\phi(H,Z^{(k)}).
+```
+
+This gives an immediately implementable first system without needing to differentiate through language.
+
+Later we can train `G_\theta` using high-value selected prompts.
+
+---
+
+# 18. This gives you the automated “new user” you were describing
+
+A real user only has to provide:
+
+```math
+X=\text{initial task}.
+```
+
+Then:
+
+```math
+\text{Receiver}(X)\rightarrow O_1.
+```
+
+Instead of asking the human for a second prompt:
+
+```math
+G_\theta(X,O_1)
+\rightarrow A_2.
+```
+
+Then
+
+```math
+\text{Receiver}(X,O_1,A_2)
+\rightarrow O_2.
+```
+
+Again:
+
+```math
+G_\theta(H_3)
+\rightarrow A_3.
+```
+
+Eventually:
+
+```math
+O_T.
+```
+
+So we create
+
+```math
+\boxed{
+\text{virtual adaptive user / intervention agent}
+}
+```
+
+whose purpose is not to solve the problem itself but to **causally elicit better performance from another model**.
+
+That is subtly but importantly different from ordinary multi-agent systems.
+
+The generator need not know how to solve the problem itself.
+
+It needs to learn:
+
+```math
+\boxed{
+\text{what intervention makes THIS receiver perform better from THIS state?}
+}
+```
+
+This separation is conceptually very clean.
+
+---
+
+# 19. I really like your “dynamic skill” interpretation
+
+Today, an agent skill often looks like:
+
+```math
+\text{fixed instructions}
++
+\text{fixed workflow}
++
+\text{tools}.
+```
+
+For example:
+
+> retrieve → critique → rewrite → verify.
+
+That's effectively a hand-coded policy:
+
+```math
+\pi_{\mathrm{fixed}}.
+```
+
+Your framework instead learns:
+
+```math
+\boxed{
+\pi_\theta(A_t\mid H_t,\text{task},\text{receiver})
+}
+```
+
+and therefore the “skill” becomes a **dynamic treatment policy** rather than a fixed script.
+
+One task may require:
+
+```math
+\text{ask model to verify calculation}
+```
+
+then
+
+```math
+\text{use Python}
+```
+
+then
+
+```math
+\text{shorten answer}.
+```
+
+Another trajectory—even for the same task type—may optimally require:
+
+```math
+\text{request alternative reasoning}
+\rightarrow
+\text{provide missing constraint}
+\rightarrow
+\text{cross-check citation}.
+```
+
+That's substantially more generalizable than:
+
+```math
+\text{Skill.md}=
+\text{fixed sequence of instructions}.
+```
+
+A useful way to describe it would be:
+
+```math
+\boxed{
+\textbf{Skill as Policy, not Skill as Prompt}
+}
+```
+
+or more technically:
+
+```math
+\boxed{
+\textbf{Dynamic Skill = learned policy over language-valued interventions}
+}
+```
+
+---
+
+# 20. There is another subtle methodological point: optimizing CATE is not necessarily the same as optimizing decisions
+
+A very timely NeurIPS 2025 paper, **Treatment Effect Estimation for Optimal Decision-Making**, shows that a model optimized for accurate CATE estimation can actually be suboptimal for downstream treatment decisions; they therefore derive objectives that retarget treatment-effect learning toward decision quality. 
+
+This is extremely relevant for us.
+
+We should probably distinguish two objectives.
+
+**Scientific/interpretability objective**
+
+```math
+\min
+E[
+(\hat\tau-\tau)^2
+].
+```
+
+**Prompt-policy objective**
+
+```math
+\max_\pi
+E[
+Y^\pi
+].
+```
+
+They are not identical.
+
+So we could simultaneously learn:
+
+```math
+\boxed{\tau_\phi(H,A)}
+```
+
+for causal interpretation and
+
+```math
+\boxed{\pi_\theta(A\mid H)}
+```
+
+for optimal intervention.
+
+That's stronger than forcing one model to solve both perfectly.
+
+---
+
+# 21. What I think is already occupied versus genuinely open
+
+After this broader search, I'd map the landscape like this:
+
+| ComponentExisting workHow occupied?                               |                                     |                          |
+| ----------------------------------------------------------------- | ----------------------------------- | ------------------------ |
+| Iterative automatic feedback                                      | Self-Refine / Reflexion             | **crowded**              |
+| LLM generates improved prompts                                    | OPRO / ProTeGi / PromptAgent / GEPA | **crowded**              |
+| Dynamic inference-time prompt refinement                          | ProRefine / ROSA²                   | **increasingly crowded** |
+| Prompt creator interacting with solver                            | EVA                                 | **exists**               |
+| User simulator for multi-turn interaction                         | SMTPO etc.                          | **exists**               |
+| Single-stage causal prompt reward                                 | CPO                                 | **very new**             |
+| Text-valued causal treatments                                     | latent textual treatment papers     | **very new**             |
+| Sequential individualized causal Q-values                         | DRQ-learner                         | **very new**             |
+| Neural time-localized causal effects                              | DeepBlip                            | **very new**             |
+| **Sequential causal effect of natural-language prompts**          | I did not find a direct method      | **open**                 |
+| **Causal Q model over conversation history × free-form prompt**   | no direct paper found               | **open**                 |
+| **Generative prompt policy trained from causal blip/Q estimates** | no clean match found                | **open**                 |
+| **Autonomous virtual-user intervention agent trained as a DTR**   | no clean match found                | **open**                 |
+
+That's a much more precise novelty claim than saying “nobody has optimized prompts before.”
+
+---
+
+# 22. If we wrote the core methodological problem today
+
+I would formulate it as:
+
+```math
+\mathcal D=
+\{
+H_{it},A_{it},O_{it},Y_i
+\}_{i,t}
+```
+
+collected from historical human–LLM interactions.
+
+### Problem 1: Sequential causal prompt-effect estimation
+
+Learn
+
+```math
+\tau_t(
+H_t;
+A_t,A_t'
+)
+=
+E[
+Y(A_t,\pi_{>t})
+-
+Y(A_t',\pi_{>t})
+\mid H_t
+].
+```
+
+---
+
+### Problem 2: Causal prompt value learning
+
+Learn
+
+```math
+Q_t(H_t,A_t)
+=
+E[
+Y^{A_t,\pi_{>t}}
+\mid H_t
+].
+```
+
+---
+
+### Problem 3: Language-valued policy learning
+
+Learn
+
+```math
+\pi_\theta^*
+=
+\arg\max_\pi
+E[
+Y^\pi-\lambda C^\pi
+].
+```
+
+Here `C` could include:
+
+```math
+\text{tokens}
++
+\text{latency}
++
+\text{tool cost}
++
+\text{number of iterations}.
+```
+
+---
+
+### Problem 4: Generative treatment policy
+
+```math
+A_t
+\sim
+G_\theta(\cdot\mid H_t),
+```
+
+with
+
+```math
+G_\theta
+\approx
+\pi^*.
+```
+
+---
+
+### Problem 5: Adaptive stopping
+
+At every round include:
+
+```math
+A_t=\texttt{STOP}
+```
+
+as another action.
+
+Then the policy learns:
+
+```math
+\text{continue iterating}
+\quad\text{vs}\quad
+\text{accept current output}.
+```
+
+That is important because otherwise the system can improve quality indefinitely while exploding cost.
+
+---
+
+# 23. The full architecture becomes surprisingly elegant
+
+```math
+\boxed{
+\begin{array}{ccccc}
+&&\text{Prompt Policy }G_\theta&&\\
+&&\downarrow A_t&&\\
+H_t&\rightarrow&\text{Receiver LLM}&\rightarrow&O_t\\
+\uparrow&&&&\downarrow\\
+&&\text{Causal Value }Q_\phi(H_t,A_t)&&\\
+&&\downarrow&&\\
+&&\text{effect/value + uncertainty}&&
+\end{array}
+}
+```
+
+and after `O_t`:
+
+```math
+H_{t+1}
+=
+(H_t,A_t,O_t).
+```
+
+Repeat:
+
+```math
+G_\theta(H_{t+1})
+\rightarrow
+A_{t+1}.
+```
+
+The user only initializes the process.
+
+---
+
+# 24. What I'd make the **first paper**
+
+I wouldn't initially attempt everything.
+
+I think the strongest first methodological paper is:
+
+> **Causal Value Models for Adaptive Prompting: Estimating and Optimizing Sequential Language-Valued Interventions in LLM Interactions**
+
+Core contribution:
+
+```math
+\boxed{
+(H_t,\text{free-form }A_t)
+\rightarrow
+\widehat{\tau}_t,\widehat Q_t
+}
+```
+
+with a treatment encoder + Transformer history encoder + orthogonal/DR objective inspired by DeepBlip/DRQ.
+
+Then demonstrate:
+
+1. **counterfactual prompt-value estimation**; 
+2. **prompt ranking**; 
+3.  use the value model to guide a generator; 
+4.  automatic multi-turn improvement; 
+5.  compare against Self-Refine, ProRefine, OPRO, GEPA, PromptAgent; 
+6.  compare causal critic vs ordinary correlational reward model. 
+
+The killer experiment would be intentionally generating observational confounding:
+
+```math
+\text{hard output}
+\Rightarrow
+\text{more aggressive feedback},
+```
+
+so the naïve reward model learns the wrong prompt effect while causal correction recovers the correct intervention ordering.
+
+That would make the **causal necessity** very clear, rather than causal inference merely being decorative.
+
+---
+
+## And then Paper 2 can be the bigger “dynamic skill” idea
+
+```math
+\boxed{
+\text{Causal Dynamic Skills:
+Generative Policies over Language Interventions for Autonomous Agent Improvement}
+}
+```
+
+Here the system takes any frozen receiver model:
+
+```math
+M
+```
+
+and learns a task/domain-specific **interaction policy**
+
+```math
+\pi_\theta(A_t\mid H_t,M)
+```
+
+that repeatedly elicits better outputs.
+
+That could generalize beyond prompting to:
+
+```math
+A_t=
+\{
+\text{prompt},
+\text{tool suggestion},
+\text{new context},
+\text{retrieval result},
+\text{critique},
+\text{constraint},
+\text{model switch},
+\text{stop}
+\}.
+```
+
+At that point your “treatment” becomes an entire **intervention object**, and the framework becomes a genuine dynamic agent skill learner.
+
+The research opportunity I see now is therefore narrower—and stronger—than our original idea: **not DTR as an analogy for LLM conversations, but a causal learning framework in which natural-language interventions are actions, causal Q/blip models predict their counterfactual downstream value, and a generative policy learns to produce the optimal next intervention.** DeepBlip + DRQ provide the newest causal-statistical backbone; CPO provides the single-step causal-prompt precedent; Self-Refine/ProRefine/GEPA/PromptAgent/ROSA²/EVA provide the engineering precedents. I still do not find a paper that combines all three pieces into this exact system. 
+
+svg
+
+svg
+
+svg
+
+svgYes. I searched specifically for the formulation you mean—not merely “DTR + LLM,” but:
+
+> **user prompt/feedback at turn** **`t`** **= time-varying treatment** **`A_t`****; conversation/task state =** **`H_t`****; later LLM output quality = outcome; study the causal effect of alternative sequences/adaptive policies of user prompts.**
+
+The interesting finding is: **I can find several papers that touch almost every component of this idea, but I do not find a paper that cleanly formulates multi-turn human→LLM prompting as a longitudinal causal/DTR problem in this exact way.** That makes your formulation substantially more interesting than just applying DTR terminology to an existing problem.
+
+### 1. Your formulation is genuinely a DTR
+
+Suppose the initial task is `X`, and freeze the LLM/agent system `M`.
+
+Then the interaction is
+
+```math
+X \rightarrow A_1 \rightarrow Y_1 \rightarrow A_2 \rightarrow Y_2 \rightarrow \cdots \rightarrow A_T \rightarrow Y_T,
+```
+
+where `A_t` is the **user intervention at turn** **`t`**—prompt, correction, clarification, critique, additional constraint, etc.—and `Y_t` is the resulting agent output or intermediate quality.
+
+More correctly, define history
+
+```math
+H_t=(X,A_1,Y_1,\ldots,A_{t-1},Y_{t-1}),
+```
+
+and a prompting policy
+
+```math
+\boxed{ \pi_t(A_t\mid H_t) }
+```
+
+that decides **what feedback/instruction should be supplied next given everything that has happened so far**.
+
+That is almost exactly the mathematical object DTR calls
+
+```math
+d_t:H_t\rightarrow A_t.
+```
+
+Classical DTRs define a regime as sequential decision rules mapping evolving histories to treatments, with the objective of maximizing a downstream/cumulative outcome. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4209714/?utm_source=chatgpt.com "Dynamic treatment regimes: technical challenges and applications - PMC"))
+
+So I would actually sharpen your idea:
+
+**The scientific object isn't “the causal effect of prompts.”**
+
+It is:
+
+```math
+\boxed{\text{causal effect / value of an adaptive prompting regime}}
+```
+
+or even
+
+```math
+\boxed{ \pi^*=\arg\max_\pi E[Y_T(\pi)] }
+```
+
+—the **optimal dynamic prompting regime**.
+
+---
+
+## 2. Closest paper I found: Causal Prompt Optimization (2026)
+
+A very relevant new paper is Chen et al., **“Optimizing Prompts for Large Language Models: A Causal Approach” (2026).** They explicitly argue that prompt optimization is confounded because different prompts get applied to queries with different characteristics, and treat the prompt as a treatment. They use Double Machine Learning to estimate prompt effects conditional on query features and then select query-specific prompts. ([arXiv](https://arxiv.org/abs/2602.01711?utm_source=chatgpt.com "Optimizing Prompts for Large Language Models: A Causal Approach"))
+
+[Optimizing Prompts for Large Language Models: A Causal Approach](https://arxiv.org/abs/2602.01711?utm_source=chatgpt.com)
+
+Conceptually they have
+
+```math
+X=\text{query}, \qquad A=\text{prompt}, \qquad Y=\text{performance}.
+```
+
+That's remarkably close to what you're proposing.
+
+**But the key gap is that their setup is essentially single-stage:**
+
+```math
+X\rightarrow A\rightarrow Y.
+```
+
+Your problem is longitudinal:
+
+```math
+X\rightarrow A_1\rightarrow Y_1 \rightarrow A_2(Y_1)\rightarrow Y_2 \rightarrow\cdots\rightarrow Y_T.
+```
+
+And that distinction is huge because `Y_1` simultaneously becomes:
+
+1. an intermediate outcome,
+2. part of the state for subsequent prompting,
+3. something that causally affects `A_2`,
+4. and something affected by `A_1`.
+
+That is exactly the **time-varying treatment/time-varying confounding** structure for which longitudinal causal inference/DTR methods become necessary.
+
+---
+
+## 3. There is another causal-prompt paper, but again single-stage
+
+Wang et al., AAAI 2025, **“Eliciting Causal Abilities in Large Language Models for Reasoning Tasks,”** explicitly treat instructions as treatments and estimate relationships between instruction characteristics and downstream performance. ([AAAI Publications](https://ojs.aaai.org/index.php/AAAI/article/view/33669?utm_source=chatgpt.com "Eliciting Causal Abilities in Large Language Models for Reasoning Tasks | Proceedings of the AAAI Conference on Artificial Intelligence"))
+
+[AAAI paper: Eliciting Causal Abilities in Large Language Models for Reasoning Tasks](https://ojs.aaai.org/index.php/AAAI/article/view/33669?utm_source=chatgpt.com)
+
+Again, this establishes an important precedent:
+
+```math
+\text{prompt/instruction}=\text{treatment}
+```
+
+is already defensible in the literature.
+
+But it doesn't give the **longitudinal potential-outcomes / dynamic-regime formulation** you're describing.
+
+---
+
+# 4. Meanwhile, the LLM community is independently moving toward exactly your *data structure*
+
+There are several extremely relevant multi-turn papers.
+
+### Multi-turn RL from human preference
+
+Shani et al. formulate multi-turn LLM interaction as sequential decision-making and optimize preference over **whole conversations**, rather than treating every turn independently. ([arXiv](https://arxiv.org/abs/2405.14655?utm_source=chatgpt.com "Multi-turn Reinforcement Learning from Preference Human Feedback"))
+
+This is close computationally, but their framework is RL/preference optimization rather than asking causal estimands such as
+
+```math
+E[Y_T(\bar a)]-E[Y_T(\bar a')]
+```
+
+or the value of a dynamic prompting policy.
+
+### Unary Feedback / “Try Again”
+
+The 2025 work **“A Simple ‘Try Again’ Can Elicit Multi-Turn LLM Reasoning”** is even closer to your motivating example. The model produces an answer, receives minimal user feedback, revises, receives feedback again, etc. They explicitly formulate multi-turn problem solving as an MDP. ([Hugging Face](https://huggingface.co/papers/2507.14295?utm_source=chatgpt.com "Paper page - A Simple \"Try Again\" Can Elicit Multi-Turn LLM Reasoning"))
+
+Think:
+
+```math
+\text{answer}_1 \xrightarrow{\text{“try again”}} \text{answer}_2 \xrightarrow{\text{feedback}} \text{answer}_3.
+```
+
+But again, the question is **learning an RL policy**, not estimating counterfactual effects of alternative user-feedback regimes.
+
+---
+
+### Prompt Reinforcing for Long-Term Planning
+
+Lin et al. optimize prompts using **turn-by-turn feedback and experience replay** for multi-turn tasks such as text-to-SQL and task-oriented dialogue. ([arXiv](https://arxiv.org/abs/2510.05921?utm_source=chatgpt.com "Prompt reinforcing for long-term planning of large language models"))
+
+Their setup already implicitly asks:
+
+> Given what happened in previous turns, how should the instruction be modified to improve future performance?
+
+Very close structurally; still RL-inspired prompt optimization rather than DTR causal inference.
+
+---
+
+### And there is an August 2026 paper particularly relevant to us
+
+A very recent work, **“Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context,”** argues that the *next user turn itself* provides a temporally local feedback signal about what the agent just did. Their Feedback-Aware Credit Assignment associates user reactions with preceding agent segments rather than giving the entire conversation only one terminal reward. ([ArcXiv](https://arcxiv.org/abs/2608.17499?utm_source=chatgpt.com "Towards Better Agents for Multi-Turn User Interaction: The Next User Turn Is More Than Context | ArcXiv"))
+
+This is important because it validates one of the central intuitions behind your proposal:
+
+```math
+\boxed{\text{user turn is not merely context}}
+```
+
+It contains information about—and changes—the subsequent trajectory.
+
+Their solution, however, is **credit assignment/RL**, not longitudinal causal inference.
+
+---
+
+# 5. So I think there is a very clean research gap here
+
+The existing landscape looks approximately like this:
+
+| LiteraturePrompt = treatment?Multi-turn?Counterfactual causal inference?Dynamic regime? |                 |       |                         |           |
+| --------------------------------------------------------------------------------------- | --------------- | ----- | ----------------------- | --------- |
+| Causal Prompt Optimization                                                              | ✓               | ✗     | ✓                       | ✗         |
+| SCIE / causal instructions                                                              | ✓               | ✗     | partial                 | ✗         |
+| Multi-turn RLHF                                                                         | —               | ✓     | ✗                       | RL policy |
+| Unary Feedback                                                                          | feedback/action | ✓     | ✗                       | MDP       |
+| Prompt Reinforcing                                                                      | ✓               | ✓     | ✗                       | RL-like   |
+| FACA                                                                                    | user reaction   | ✓     | ✓/local-credit-inspired | ✗         |
+| **Your formulation**                                                                    | **✓**           | **✓** | **✓**                   | **✓**     |
+
+That's why I wouldn't frame the contribution as simply:
+
+> “Use DTR for LLMs.”
+
+Instead:
+
+> **Longitudinal causal inference for multi-turn human–LLM interaction: treating user interventions as sequential treatments and learning/evaluating dynamic prompting regimes.**
+
+That is much more distinctive.
+
+---
+
+# 6. And there is an important causal problem that RL papers largely sidestep
+
+Imagine the model gives a terrible answer at turn 1.
+
+The user is then much more likely to issue:
+
+```math
+A_2=\text{strong correction / detailed instruction}.
+```
+
+Whereas after a good answer:
+
+```math
+A_2=\text{minor refinement}
+```
+
+or the conversation terminates.
+
+So observationally you might discover
+
+```math
+E[Y_2\mid A_2=\text{strong correction}] < E[Y_2\mid A_2=\text{minor refinement}],
+```
+
+and incorrectly conclude that strong corrections hurt performance.
+
+Actually:
+
+```math
+Y_1 \rightarrow A_2
+```
+
+and
+
+```math
+Y_1 \rightarrow Y_2.
+```
+
+Thus previous output quality is a **time-varying confounder affected by prior treatment**:
+
+```math
+A_1\rightarrow Y_1\rightarrow A_2,
+```
+
+while
+
+```math
+Y_1\rightarrow Y_2.
+```
+
+This is textbook longitudinal causal structure—the setting motivating the g-formula, MSM/IPTW, SNMMs, Q-learning/A-learning, DTRs, etc. The modern DTR literature explicitly focuses on evolving histories and treatment-effect heterogeneity both between individuals and across time. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12872042/?utm_source=chatgpt.com "A Tutorial on Optimal Dynamic Treatment Regimes - PMC"))
+
+And **this gives causal inference something genuinely different from just applying RL to conversations.**
+
+---
+
+## 7. Even more interesting: the treatment space is language
+
+This is where I think the methodology could become genuinely novel rather than an application paper.
+
+Classical DTR:
+
+```math
+A_t\in\{0,1,2\}.
+```
+
+Here:
+
+```math
+A_t=\text{arbitrary natural-language intervention}.
+```
+
+So treatment is **high-dimensional, structured, semantically continuous**.
+
+You need something like
+
+```math
+Z_t=f_{\theta}(A_t)
+```
+
+with prompt representation `Z_t`, followed by
+
+```math
+Y_T(\bar Z_T).
+```
+
+But two prompts can be linguistically different while representing essentially the same intervention:
+
+> “Check your calculation.”
+
+versus
+
+> “Verify the numerical result before continuing.”
+
+Therefore we may want a **semantic treatment representation**:
+
+```math
+A_t \rightarrow (\text{feedback type}, \text{specificity}, \text{information added}, \text{constraint}, \text{criticism severity}, \text{requested operation},\ldots).
+```
+
+Then the estimand becomes considerably more scientifically meaningful:
+
+```math
+\tau_t(a,a'\mid H_t) = E[ Y_T(\bar A_{t-1},a,\pi_{t+1:T}) - Y_T(\bar A_{t-1},a',\pi_{t+1:T}) \mid H_t ].
+```
+
+In plain English:
+
+> **Given exactly where the conversation currently is, what is the causal effect on final task quality of giving feedback** **`a`** **rather than** **`a'`****, assuming subsequent interaction follows policy** **`\pi`****?**
+
+That's an excellent causal estimand.
+
+---
+
+# 8. There's also a beautiful SMART experiment hiding here
+
+Rather than only mining ChatGPT logs, we could design a **Sequential Multiple Assignment Randomized Trial** for LLM interaction.
+
+Classical SMARTs repeatedly randomize intervention options at decision points to learn adaptive interventions/DTRs. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7480232/?utm_source=chatgpt.com "SMART Longitudinal Analysis: A Tutorial for Using Repeated Outcome Measures from SMART Studies to Compare Adaptive Interventions - PMC"))
+
+For example:
+
+```math
+\text{Task} \rightarrow \text{LLM output}_1
+```
+
+randomize:
+
+```math
+A_2= \begin{cases} \text{generic retry}\\ \text{error-specific feedback}\\ \text{verification instruction}\\ \text{alternative-strategy instruction} \end{cases}
+```
+
+then observe `Y_2`.
+
+Based on `Y_2`, randomize again:
+
+```math
+A_3= \begin{cases} \text{critique}\\ \text{decomposition}\\ \text{tool-use suggestion}\\ \text{additional information} \end{cases}.
+```
+
+Then final outcome could combine correctness, robustness, cost, latency, tool use, etc.
+
+We could therefore experimentally identify:
+
+```math
+V(\pi)=E[Y_T^\pi]
+```
+
+for different **adaptive human-feedback policies**.
+
+And this connects very naturally to our other discussion about **multi-dimensional agent outcomes / win-ratio-type evaluation**: `Y_T` doesn't even have to collapse into one arbitrary scalar reward. We could study a multivariate or prioritized terminal outcome.
+
+---
+
+## The research space I now see
+
+There are actually **two complementary DTR papers hiding in our discussions**:
+
+**Agent-side DTR**
+
+```math
+H_t \rightarrow \boxed{\text{routing/tool/model decision}} \rightarrow H_{t+1}
+```
+
+Learn the optimal **agent policy**.
+
+**User-side DTR**
+
+```math
+H_t \rightarrow \boxed{\text{prompt / feedback intervention}} \rightarrow H_{t+1}
+```
+
+Learn the optimal **interaction/intervention policy**.
+
+And ultimately these combine into a two-player longitudinal system:
+
+```math
+\boxed{ \text{User intervention} \leftrightarrow \text{Agent policy} }
+```
+
+where user prompting changes the agent trajectory, and agent outputs change subsequent user behavior.
+
+That latter formulation starts moving beyond ordinary DTR into **multi-agent/sequential causal decision-making**, and could potentially become a much deeper methodological program.
+
+Based on the literature I found, **the user-side longitudinal causal formulation looks less occupied than the agent-routing idea**. There is already substantial RL work on agent policies, whereas the bridge
+
+```math
+\boxed{ \text{multi-turn prompting} + \text{time-varying treatments} + \text{potential outcomes} + \text{DTR/SMART} }
+```
+
+appears surprisingly open. The 2026 Causal Prompt Optimization paper gives us a particularly useful jumping-off point: conceptually, our work could be viewed as taking **causal prompt optimization from one decision point to an entire adaptive conversation trajectory**. ([arXiv](https://arxiv.org/abs/2602.01711?utm_source=chatgpt.com "Optimizing Prompts for Large Language Models: A Causal Approach"))
+
+If we're selecting an **AI/ML + causal inference methodological research direction**, I think this version is substantially stronger than merely “apply DTR to routing,” because the longitudinal confounding, language-valued treatment, adaptive stopping, and trajectory-level outcome create actual **new statistical problems**, rather than just changing the application domain of an existing DTR estimator.Yes. After searching further, I think your upgraded formulation is **much stronger than simply “DTR for multi-turn prompting.”** It naturally becomes a **causal value model + generative treatment policy** for language-valued actions.
+
+The key caveat first: for a brand-new conversation, we generally cannot identify the literal individual treatment effect `Y_i(a)-Y_i(a')` for that one exact trajectory because only one counterfactual is observed. What we *can* learn is a highly individualized **history-conditional treatment effect / blip effect**, conditioned on the complete conversation state. This distinction actually gives us a clean statistical formulation.
+
+## 1. The object you want is essentially a **Causal Prompt Value Model**
+
+At turn `t`, define
+
+```math
+H_t= \{ X,\, A_1,O_1,\, A_2,O_2,\ldots, A_{t-1},O_{t-1} \},
+```
+
+where:
+
+- `X`: initial task/user request + fixed model/tool environment;
+- `A_t`: the prompt/intervention sent at turn `t`;
+- `O_t`: receiver model's response / intermediate outcome;
+- `Y`: eventual task-level outcome.
+
+Then for a candidate prompt `a`, define
+
+```math
+\boxed{ Q_t(h,a) = E\left[ Y^{A_t=a,\pi_{t+1:T}} \mid H_t=h \right] }
+```
+
+This says:
+
+> Given exactly the conversation we currently have, if I send prompt `a` now and then behave according to some future policy `\pi`, what final outcome should I expect?
+
+This is almost literally the classical DTR `Q`-function. Q-learning in the DTR literature defines Q-functions as the expected quality of taking a treatment now given current history and then following an optimal regime afterward. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4300556/?utm_source=chatgpt.com "Q- and A-learning Methods for Estimating Optimal Dynamic Treatment Regimes - PMC"))
+
+But the more causal object is the **blip / advantage effect**:
+
+```math
+\boxed{ \tau_t(h;a,a') = Q_t(h,a)-Q_t(h,a') }
+```
+
+which answers:
+
+> 对现在这个 exact conversation state，send prompt `a` instead of `a'` 会让最终结果 improve 多少？
+
+A-learning/DTR explicitly models these treatment contrasts as blip or advantage functions. ([PubMed Central (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC4300556/?utm_source=chatgpt.com "Q- and A-learning Methods for Estimating Optimal Dynamic Treatment Regimes - PMC"))
+
+So yes — your proposed “new value-model paradigm” has a very clean causal interpretation:
+
+```math
+\text{ordinary reward model} \quad r(H,A)
+```
+
+versus
+
+```math
+\boxed{ \text{causal value model} \quad Q(H,A) \text{ or } \tau(H,A,A') }
+```
+
+The latter asks about **counterfactual improvement**, not just whether a prompt tends to co-occur with good outcomes.
+
+---
+
+# 2. And there is a very new paper that is almost the statistical backbone we need: **DeepBlip**
+
+The strongest methodology match I found is **DeepBlip: Estimating Conditional Average Treatment Effects Over Time**, accepted at ICML 2026.
+
+DeepBlip develops a neural structural nested mean model specifically to estimate localized, **time-specific blip effects** under time-varying treatments. It can use LSTMs/Transformers and uses Neyman-orthogonal objectives to reduce bias from nuisance-model errors. ([arXiv](https://arxiv.org/abs/2511.14545?utm_source=chatgpt.com "DeepBlip: Estimating Conditional Average Treatment Effects Over Time"))
+
+Their setup is basically:
+
+```math
+H_t \rightarrow A_t \rightarrow \text{future outcome}
+```
+
+and they learn
+
+```math
+\gamma_t(H_t,A_t),
+```
+
+the incremental causal contribution of treatment `A_t`.
+
+Replace
+
+```math
+A_t=\text{medical treatment}
+```
+
+with
+
+```math
+A_t=\text{natural-language intervention}
+```
+
+and we are remarkably close to your problem.
+
+**But DeepBlip assumes conventional treatment spaces. It does not solve the free-form language-action problem.**
+
+That is probably one of our methodological openings.
+
+---
+
+## 3. There is an even closer 2026 paper for your “value model” interpretation
+
+ICLR 2026 has **“An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes.”**
+
+The authors explicitly formulate sequential individualized potential outcome estimation as **estimating Q-functions from observational trajectories through a causal-inference lens**. Their DRQ-learner is doubly robust, Neyman-orthogonal, and compatible with neural networks. ([arXiv](https://arxiv.org/abs/2509.26429?utm_source=chatgpt.com "An Orthogonal Learner for Individualized Outcomes in Markov Decision Processes"))
+
+That is extremely relevant.
+
+Conceptually:
+
+```math
+Q^\pi(h,a) = E[ Y^\pi \mid H=h,A=a ]
+```
+
+is precisely the model you are describing.
+
+Imagine training
+
+```math
+f_\phi( \underbrace{\text{conversation history}}_{H_t}, \underbrace{\text{candidate next prompt}}_{A_t} ) \rightarrow \widehat Q_t.
+```
+
+At inference time:
+
+**Conversation**
+
+```math
+h_t
+```
+
+**candidate treatment**
+
+```math
+a
+```
+
+→ **causal value model**
+
+```math
+f_\phi(h_t,a)
+```
+
+→ predicted eventual task quality.
+
+So the idea isn't just philosophically compatible with DTR. There is now cutting-edge causal ML specifically developing the statistical technology necessary for this kind of **individualized sequential Q estimation**. ([OpenReview](https://openreview.net/pdf?id=PRu8Sybp1j\&utm_source=chatgpt.com "Published as a conference paper at ICLR 2026"))
+
+---
+
+# 4. Then your next step is the interesting one: don't merely evaluate the treatment — **generate it**
+
+Suppose we have learned
+
+```math
+Q_\phi(H_t,A_t).
+```
+
+For ordinary DTR with 3 treatments:
+
+```math
+A_t\in\{a_1,a_2,a_3\},
+```
+
+we simply calculate
+
+```math
+a_t^* = \arg\max_a Q_\phi(H_t,a).
+```
+
+But prompts live in
+
+```math
+\boxed{ A_t\in\mathcal L }
+```
+
+where `\mathcal L` is essentially the entire natural-language space.
+
+Therefore:
+
+```math
+\arg\max_{a\in\mathcal L} Q_\phi(H_t,a)
+```
+
+becomes a **language generation problem**.
+
+And that creates your second model:
+
+```math
+\boxed{ G_\theta(A_t\mid H_t) }
+```
+
+where `G_\theta` is a **prompt-generating treatment policy**.
+
+The complete system is therefore:
+
+```math
+H_t \xrightarrow{G_\theta} A_t \xrightarrow{\text{receiver LLM}} O_t \rightarrow H_{t+1}.
+```
+
+And the generator is trained using
+
+```math
+Q_\phi(H_t,A_t)
+```
+
+as its optimization signal.
+
+That is basically an **actor–critic architecture**, except:
+
+- actor = natural-language treatment generator;
+- critic = causal treatment-effect/value estimator;
+- environment = fixed receiver LLM/agent;
+- action = prompt;
+- state = entire interaction history.
+
+The causal layer is important because an ordinary critic can learn observational associations between types of feedback and difficult cases.
+
+---
+
+# 5. This is where your proposal differs importantly from ordinary reward models
+
+Imagine historically:
+
+bad response → humans send very detailed corrective prompt.
+
+So detailed corrective prompts are disproportionately observed after failures.
+
+A naïve value model may learn
+
+```math
+E[Y\mid A=\text{detailed correction}] < E[Y\mid A=\text{minor correction}],
+```
+
+even if detailed corrections are actually much more beneficial.
+
+Why?
+
+```math
+O_{t-1} \rightarrow A_t
+```
+
+and
+
+```math
+O_{t-1} \rightarrow Y.
+```
+
+Previous output quality is a **time-varying confounder**.
+
+And it was itself affected by earlier prompts:
+
+```math
+A_{t-1} \rightarrow O_{t-1} \rightarrow A_t.
+```
+
+That's exactly where ordinary outcome prediction differs from causal Q/blip estimation.
+
+DeepBlip, Causal Transformer, Counterfactual Recurrent Networks, etc. are designed around this kind of time-varying-treatment problem. ([Proceedings of Machine Learning Research](https://proceedings.mlr.press/v162/melnychuk22a?utm_source=chatgpt.com "Causal Transformer for Estimating Counterfactual Outcomes"))
+
+---
+
+# 6. There is already an interesting single-turn precursor: **Causal Prompt Optimization**
+
+The 2026 **Causal Prompt Optimization (CPO)** paper is now even more relevant to this idea than it was to our earlier discussion.
+
+CPO learns an offline causal reward model using DML on semantic embeddings of prompts and queries, then uses that model to search for **query-specific prompts** without repeatedly executing the expensive target model. ([arXiv](https://arxiv.org/abs/2602.01711?utm_source=chatgpt.com "Optimizing Prompts for Large Language Models: A Causal Approach"))
+
+Its conceptual architecture is approximately:
+
+```math
+(\text{query},\text{prompt}) \xrightarrow{\text{causal reward model}} \widehat Y
+```
+
+followed by
+
+```math
+\text{search prompt space} \rightarrow \arg\max_A \widehat Y.
+```
+
+That's already very close to:
+
+```math
+A^*(X) = \arg\max_A Q(X,A).
+```
+
+### But your proposal upgrades CPO in three major dimensions
+
+CPO:
+
+```math
+X \rightarrow A \rightarrow Y.
+```
+
+Ours:
+
+```math
+H_1 \rightarrow A_1 \rightarrow O_1 \rightarrow H_2 \rightarrow A_2 \rightarrow O_2 \rightarrow\cdots \rightarrow Y.
+```
+
+Second, CPO **searches** candidate prompts.
+
+You are proposing to learn
+
+```math
+G_\theta(A_t\mid H_t),
+```
+
+so the treatment policy itself is a **generative model**.
+
+Third, CPO's causal model is mainly a prompt evaluator.
+
+Ours could simultaneously produce:
+
+```math
+\widehat{Q}(H,a)
+```
+
+and
+
+```math
+\widehat{\tau}(H;a,a')
+```
+
+plus uncertainty.
+
+That is substantially richer.
+
+---
+
+# 7. There is already a huge noncausal literature doing pieces of this optimization loop
+
+This is important because it means the engineering premise is clearly feasible.
+
+### PromptAgent
+
+ICLR 2024 **PromptAgent** treats prompts as states/actions in an MCTS optimization process. It observes errors, generates constructive textual feedback, proposes refinements, simulates future rewards, and searches for high-performing prompt trajectories. ([arXiv](https://arxiv.org/abs/2310.16427?utm_source=chatgpt.com "PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization"))
+
+Very close computational structure.
+
+But:
+
+```math
+\text{reward-based search} \neq \text{causal treatment effect estimation}.
+```
+
+---
+
+### OPRO
+
+**Large Language Models as Optimizers / OPRO** repeatedly feeds an optimizer LLM previous candidate prompts and their scores, asking it to generate better candidates. ([arXiv](https://arxiv.org/abs/2309.03409?utm_source=chatgpt.com "Large Language Models as Optimizers"))
+
+Again:
+
+```math
+\{A_j,Y_j\}_{j=1}^{k} \rightarrow G_{\mathrm{LLM}} \rightarrow A_{k+1}.
+```
+
+That's very close to your generator architecture.
+
+But it is primarily **task-level offline prompt search**, not history-specific sequential causal optimization.
+
+---
+
+### ProTeGi / TextGrad / GEPA
+
+ProTeGi generates textual “gradients” from errors and modifies prompts accordingly. ([ACL Anthology](https://aclanthology.org/2023.emnlp-main.494/?utm_source=chatgpt.com "Automatic Prompt Optimization with “Gradient Descent” and Beam Search - ACL Anthology"))
+
+TextGrad generalizes this idea into textual backpropagation across arbitrary compound AI systems. ([arXiv](https://arxiv.org/abs/2406.07496?utm_source=chatgpt.com "TextGrad: Automatic \"Differentiation\" via Text"))
+
+GEPA uses trajectory-level natural-language reflection to diagnose failures and evolve prompts; it can optimize multiple components in compound systems. ([arXiv](https://arxiv.org/abs/2507.19457?utm_source=chatgpt.com "GEPA: Reflective Prompt Evolution Can Outperform Reinforcement Learning"))
+
+Again, they demonstrate that this mapping
+
+```math
+(H_t,O_t,\text{evaluation}) \rightarrow \text{new text instruction}
+```
+
+works extremely well.
+
+But none of them asks:
+
+```math
+\text{What is the counterfactual effect of this intervention at this state?}
+```
+
+---
+
+# 8. There is also something *very* close to your automated “fake user” idea: Self-Refine
+
+Self-Refine performs:
+
+```math
+X \rightarrow O_1 \rightarrow \text{feedback}_1 \rightarrow O_2 \rightarrow \text{feedback}_2 \rightarrow O_3.
+```
+
+The same LLM generates feedback and then refines its answer, iteratively, without further human input. ([arXiv](https://arxiv.org/abs/2303.17651?utm_source=chatgpt.com "Self-Refine: Iterative Refinement with Self-Feedback"))
+
+This demonstrates exactly your deployment concept:
+
+> Once the real user submits the initial task, another model can take over the “user feedback” role and iteratively interact with the receiver model.
+
+But Self-Refine's feedback generator is essentially heuristic/prompted.
+
+It does **not learn from historical intervention-outcome data**:
+
+```math
+(H_t,A_t,Y)\rightarrow \tau(H_t,A_t).
+```
+
+So your prompt generator could be interpreted as:
+
+```math
+\boxed{ \text{learned causal version of Self-Refine's feedback model} }
+```
+
+That is a much clearer positioning.
+
+---
+
+# 9. ProRefine is even closer operationally
+
+2025/26 **ProRefine: Inference-Time Prompt Refinement with Textual Feedback** explicitly uses three components:
+
+```math
+\text{Task LLM}
+```
+
+```math
+\text{Feedback LLM}
+```
+
+```math
+\text{Optimizer LLM}
+```
+
+where the feedback model critiques the current output and the optimizer model dynamically modifies the next prompt. ([arXiv](https://arxiv.org/abs/2506.05305?utm_source=chatgpt.com "ProRefine: Inference-time Prompt Refinement with Textual Feedback"))
+
+So your deployment architecture already has a strong precedent.
+
+But again ProRefine does not learn
+
+```math
+\widehat{\tau}_t(H_t,A_t)
+```
+
+from population interaction data.
+
+That separation is becoming very important:
+
+**Existing systems ask**
+
+> “What feedback sounds useful?”
+
+Your causal formulation asks:
+
+> “For histories like this one, which feedback actually caused higher downstream task performance?”
+
+Those are fundamentally different.
+
+---
+
+# 10. Progressive-Hint Prompting is another very revealing precursor
+
+**Progressive-Hint Prompting** explicitly automates repeated “user–LLM” interaction by using prior generated answers as hints for subsequent calls. ([arXiv](https://arxiv.org/abs/2304.09797?utm_source=chatgpt.com "Progressive-Hint Prompting Improves Reasoning in Large Language Models"))
+
+So again:
+
+```math
+O_t\rightarrow A_{t+1}
+```
+
+is already known to be useful.
+
+However, its policy is hand-designed.
+
+Your proposal replaces:
+
+```math
+A_{t+1}=f_{\text{fixed heuristic}}(O_t)
+```
+
+with
+
+```math
+\boxed{ A_{t+1}\sim G_\theta( A\mid H_{t+1} ) }
+```
+
+where `G_\theta` is learned from causal value information.
+
+---
+
+# 11. And there's a fascinating new LLM line from 2025–2026 coming extremely close
+
+I found several very recent papers that make this research direction much more timely.
+
+### T²PAM / ROSA
+
+**Test-Time Policy Adaptation for Enhanced Multi-Turn Interactions with LLMs** uses live user feedback as a reward to estimate a latent optimal policy and adapts the model during the conversation. ([arXiv](https://arxiv.org/abs/2509.23166?utm_source=chatgpt.com "Test-Time Policy Adaptation for Enhanced Multi-Turn Interactions with LLMs"))
+
+That's highly relevant, but its “treatment” is primarily **updating model parameters**, not selecting a counterfactually optimal next user prompt.
+
+---
+
+### ROSA² — Words & Weights
+
+Even closer is ICML 2026 **“Words & Weights: Streamlining Multi-Turn Interactions via Co-Adaptation.”**
+
+ROSA² jointly changes:
+
+```math
+\text{Words} + \text{Weights}.
+```
+
+It uses textual gradients to modify interaction context while also updating parameters. ([arXiv](https://arxiv.org/abs/2603.01375?utm_source=chatgpt.com "Words & Weights: Streamlining Multi-Turn Interactions via Co-Adaptation"))
+
+The code is public. ([GitHub](https://github.com/kithib/ROSA2?utm_source=chatgpt.com "GitHub - kithib/ROSA2 · GitHub"))
+
+This is probably one of the most important comparison papers for us.
+
+But their formulation is still mainly:
+
+```math
+\text{test-time adaptation / optimization}.
+```
+
+Not
+
+```math
+\text{sequential causal treatment-effect learning}.
+```
+
+---
+
+# 12. Another extremely relevant new result: T-POP
+
+ICML 2026 **T-POP: Test-Time Personalization with Online Preference Feedback** trains a lightweight reward model online from user preference feedback and then steers a frozen LLM's decoding, explicitly addressing **cold-start new users**. ([arXiv](https://arxiv.org/abs/2509.24696?utm_source=chatgpt.com "T-POP: Test-Time Personalization with Online Preference Feedback"))
+
+The official code implements an online reward model + multi-armed bandit exploration/exploitation process. ([GitHub](https://github.com/QuZikun/T-POP?utm_source=chatgpt.com "GitHub - QuZikun/T-POP: Official repository for ICML 2026 paper \"T-POP: Test-Time Personalization with Online Preference Feedback\" · GitHub"))
+
+This is close to your question:
+
+> New user appears. How can we dynamically learn what action will improve their outcome?
+
+But T-POP learns **user preference reward**, rather than the causal effect of a free-form intervention prompt on downstream task success.
+
+---
+
+# 13. And the prompt-generator/solver split already exists in **EVA**
+
+ICML 2025's **Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs** is another important precursor.
+
+EVA sets up two players:
+
+```math
+\boxed{\text{Creator}} \rightarrow \text{generates prompts}
+```
+
+and
+
+```math
+\boxed{\text{Solver}} \rightarrow \text{responds to them}.
+```
+
+The creator adaptively generates useful prompts from reward signals, thereby creating an automatic curriculum for the solver. ([Proceedings of Machine Learning Research](https://proceedings.mlr.press/v267/ye25a.html?utm_source=chatgpt.com "Reward-Guided Prompt Evolving in Reinforcement Learning for LLMs"))
+
+This is almost exactly your architecture:
+
+```math
+\text{Prompt Generator} \leftrightarrow \text{Receiver Model}.
+```
+
+However EVA's creator generates **training problems/prompts to improve the solver during RL**.
+
+Your proposed generator instead produces **interventions on an existing instance**:
+
+```math
+A_t = G_\theta(H_t)
+```
+
+to improve the same task trajectory.
+
+That's a crucial distinction.
+
+---
+
+# 14. So I think there are actually **three models**, not two
+
+I would formulate the architecture like this.
+
+### Model 1 — Interaction State Encoder
+
+```math
+S_t = E_\psi(H_t)
+```
+
+A Transformer takes
+
+- initial task;
+- previous prompts;
+- receiver outputs;
+- evaluator scores;
+- tool trajectories if relevant;
+- intermediate correctness/error information;
+
+and creates a state representation.
+
+---
+
+### Model 2 — Causal Prompt Value Model
+
+```math
+\boxed{ Q_\phi(S_t,A) }
+```
+
+predicts:
+
+```math
+E[ Y_T \mid do(A_t=A), S_t ].
+```
+
+And/or
+
+```math
+\boxed{ B_\phi(S_t,A,A') }
+```
+
+predicts the prompt's **blip effect**:
+
+```math
+E[ Y_T(A)-Y_T(A') \mid S_t ].
+```
+
+This is your treatment-effect/value model.
+
+---
+
+### Model 3 — Generative Treatment Policy
+
+```math
+\boxed{ G_\theta(A\mid S_t) }
+```
+
+generates candidate natural-language interventions.
+
+The policy is trained to maximize
+
+```math
+J(\theta) = E_{A\sim G_\theta(\cdot\mid S)} [ Q_\phi(S,A) ].
+```
+
+Now the entire system is
+
+```math
+S_t \xrightarrow{G_\theta} A_t \xrightarrow{\text{receiver}} O_t \xrightarrow{E_\psi} S_{t+1}.
+```
+
+Repeat until
+
+```math
+\text{stop}.
+```
+
+That is literally an **autonomous learned interaction policy**.
+
+---
+
+# 15. We may actually need a fourth model: a causal/world outcome model
+
+Another version is to learn
+
+```math
+P_\eta( O_{t+1}, R_{t+1}, S_{t+1} \mid S_t, do(A_t) ).
+```
+
+Then instead of directly estimating only terminal value, we have an interaction simulator.
+
+For any candidate prompt:
+
+```math
+A_t^{(1)},\ldots,A_t^{(K)}
+```
+
+we simulate
+
+```math
+S_t \rightarrow A_t^{(k)} \rightarrow \widehat O_{t+1}^{(k)} \rightarrow\cdots
+```
+
+and estimate future trajectory value.
+
+Then prompt selection can use:
+
+- beam search;
+- MCTS;
+- best-of-`N`;
+- latent-space optimization;
+- tree search;
+- policy gradients.
+
+This connects directly to PromptAgent's MCTS and LATS's LM-powered value functions/tree search. ([arXiv](https://arxiv.org/abs/2310.16427?utm_source=chatgpt.com "PromptAgent: Strategic Planning with Language Models Enables Expert-level Prompt Optimization"))
+
+But our transition/value models would have an explicit **causal interpretation**.
+
+---
+
+# 16. There are two ways to handle the gigantic language treatment space
+
+This is probably one of the genuinely novel methodological pieces.
+
+## Option A — Treatment embeddings
+
+Encode the prompt:
+
+```math
+Z_t=f_\omega(A_t)\in\mathbb R^d.
+```
+
+Then learn
+
+```math
+Q(H_t,Z_t).
+```
+
+Optimize
+
+```math
+Z_t^* = \arg\max_z Q(H_t,z)
+```
+
+and decode
+
+```math
+A_t^* = D(Z_t^*,H_t).
+```
+
+This resembles continuous-treatment policy learning.
+
+There is already substantial causal work on continuous/high-dimensional treatments and individualized dose policies, including neural outcome models. ([Proceedings of Machine Learning Research](https://proceedings.mlr.press/v151/chen22c.html?utm_source=chatgpt.com "Policy Learning for Optimal Individualized Dose Intervals"))
+
+And 2026 **Causal Effect Estimation with Latent Textual Treatments** is particularly relevant: it explicitly treats text as a high-dimensional intervention and shows that naïvely conditioning on text embeddings can induce bias because text mixes treatment and nuisance information; it proposes residualization for causal estimation. ([arXiv](https://arxiv.org/abs/2602.15730?utm_source=chatgpt.com "Causal Effect Estimation with Latent Textual Treatments"))
+
+That is almost certainly relevant to our prompt embedding design.
+
+---
+
+## Option B — Direct generative policy
+
+Don't reduce treatment to a vector.
+
+Let the actor itself be an autoregressive LLM:
+
+```math
+p_\theta( a_1,\ldots,a_L \mid H_t ).
+```
+
+Then train it against causal Q estimates:
+
+```math
+\nabla_\theta E_{A\sim p_\theta} [ Q_\phi(H,A) ].
+```
+
+This lets the policy generate entirely new interventions rather than choosing among predefined classes.
+
+I think this is closer to your real vision.
+
+---
+
+# 17. But I'd use both
+
+I would probably build:
+
+```math
+A \xrightarrow{f} Z_A
+```
+
+for **causal estimation**, while maintaining
+
+```math
+G_\theta(\text{text}\mid H)
+```
+
+for **action generation**.
+
+Then:
+
+```math
+G_\theta \rightarrow A^{(1)},\dots,A^{(K)}
+```
+
+```math
+f(A^{(k)}) \rightarrow Z^{(k)}
+```
+
+```math
+Q_\phi(H,Z^{(k)}) \rightarrow \text{causal values}.
+```
+
+Choose
+
+```math
+A^* = \arg\max_k Q_\phi(H,Z^{(k)}).
+```
+
+This gives an immediately implementable first system without needing to differentiate through language.
+
+Later we can train `G_\theta` using high-value selected prompts.
+
+---
+
+# 18. This gives you the automated “new user” you were describing
+
+A real user only has to provide:
+
+```math
+X=\text{initial task}.
+```
+
+Then:
+
+```math
+\text{Receiver}(X)\rightarrow O_1.
+```
+
+Instead of asking the human for a second prompt:
+
+```math
+G_\theta(X,O_1) \rightarrow A_2.
+```
+
+Then
+
+```math
+\text{Receiver}(X,O_1,A_2) \rightarrow O_2.
+```
+
+Again:
+
+```math
+G_\theta(H_3) \rightarrow A_3.
+```
+
+Eventually:
+
+```math
+O_T.
+```
+
+So we create
+
+```math
+\boxed{ \text{virtual adaptive user / intervention agent} }
+```
+
+whose purpose is not to solve the problem itself but to **causally elicit better performance from another model**.
+
+That is subtly but importantly different from ordinary multi-agent systems.
+
+The generator need not know how to solve the problem itself.
+
+It needs to learn:
+
+```math
+\boxed{ \text{what intervention makes THIS receiver perform better from THIS state?} }
+```
+
+This separation is conceptually very clean.
+
+---
+
+# 19. I really like your “dynamic skill” interpretation
+
+Today, an agent skill often looks like:
+
+```math
+\text{fixed instructions} + \text{fixed workflow} + \text{tools}.
+```
+
+For example:
+
+> retrieve → critique → rewrite → verify.
+
+That's effectively a hand-coded policy:
+
+```math
+\pi_{\mathrm{fixed}}.
+```
+
+Your framework instead learns:
+
+```math
+\boxed{ \pi_\theta(A_t\mid H_t,\text{task},\text{receiver}) }
+```
+
+and therefore the “skill” becomes a **dynamic treatment policy** rather than a fixed script.
+
+One task may require:
+
+```math
+\text{ask model to verify calculation}
+```
+
+then
+
+```math
+\text{use Python}
+```
+
+then
+
+```math
+\text{shorten answer}.
+```
+
+Another trajectory—even for the same task type—may optimally require:
+
+```math
+\text{request alternative reasoning} \rightarrow \text{provide missing constraint} \rightarrow \text{cross-check citation}.
+```
+
+That's substantially more generalizable than:
+
+```math
+\text{Skill.md}= \text{fixed sequence of instructions}.
+```
+
+A useful way to describe it would be:
+
+```math
+\boxed{ \textbf{Skill as Policy, not Skill as Prompt} }
+```
+
+or more technically:
+
+```math
+\boxed{ \textbf{Dynamic Skill = learned policy over language-valued interventions} }
+```
+
+---
+
+# 20. There is another subtle methodological point: optimizing CATE is not necessarily the same as optimizing decisions
+
+A very timely NeurIPS 2025 paper, **Treatment Effect Estimation for Optimal Decision-Making**, shows that a model optimized for accurate CATE estimation can actually be suboptimal for downstream treatment decisions; they therefore derive objectives that retarget treatment-effect learning toward decision quality. ([arXiv](https://arxiv.org/abs/2505.13092?utm_source=chatgpt.com "Treatment Effect Estimation for Optimal Decision-Making"))
+
+This is extremely relevant for us.
+
+We should probably distinguish two objectives.
+
+**Scientific/interpretability objective**
+
+```math
+\min E[ (\hat\tau-\tau)^2 ].
+```
+
+**Prompt-policy objective**
+
+```math
+\max_\pi E[ Y^\pi ].
+```
+
+They are not identical.
+
+So we could simultaneously learn:
+
+```math
+\boxed{\tau_\phi(H,A)}
+```
+
+for causal interpretation and
+
+```math
+\boxed{\pi_\theta(A\mid H)}
+```
+
+for optimal intervention.
+
+That's stronger than forcing one model to solve both perfectly.
+
+---
+
+# 21. What I think is already occupied versus genuinely open
+
+After this broader search, I'd map the landscape like this:
+
+| ComponentExisting workHow occupied?                               |                                     |                          |
+| ----------------------------------------------------------------- | ----------------------------------- | ------------------------ |
+| Iterative automatic feedback                                      | Self-Refine / Reflexion             | **crowded**              |
+| LLM generates improved prompts                                    | OPRO / ProTeGi / PromptAgent / GEPA | **crowded**              |
+| Dynamic inference-time prompt refinement                          | ProRefine / ROSA²                   | **increasingly crowded** |
+| Prompt creator interacting with solver                            | EVA                                 | **exists**               |
+| User simulator for multi-turn interaction                         | SMTPO etc.                          | **exists**               |
+| Single-stage causal prompt reward                                 | CPO                                 | **very new**             |
+| Text-valued causal treatments                                     | latent textual treatment papers     | **very new**             |
+| Sequential individualized causal Q-values                         | DRQ-learner                         | **very new**             |
+| Neural time-localized causal effects                              | DeepBlip                            | **very new**             |
+| **Sequential causal effect of natural-language prompts**          | I did not find a direct method      | **open**                 |
+| **Causal Q model over conversation history × free-form prompt**   | no direct paper found               | **open**                 |
+| **Generative prompt policy trained from causal blip/Q estimates** | no clean match found                | **open**                 |
+| **Autonomous virtual-user intervention agent trained as a DTR**   | no clean match found                | **open**                 |
+
+That's a much more precise novelty claim than saying “nobody has optimized prompts before.”
+
+---
+
+# 22. If we wrote the core methodological problem today
+
+I would formulate it as:
+
+```math
+\mathcal D= \{ H_{it},A_{it},O_{it},Y_i \}_{i,t}
+```
+
+collected from historical human–LLM interactions.
+
+### Problem 1: Sequential causal prompt-effect estimation
+
+Learn
+
+```math
+\tau_t( H_t; A_t,A_t' ) = E[ Y(A_t,\pi_{>t}) - Y(A_t',\pi_{>t}) \mid H_t ].
+```
+
+---
+
+### Problem 2: Causal prompt value learning
+
+Learn
+
+```math
+Q_t(H_t,A_t) = E[ Y^{A_t,\pi_{>t}} \mid H_t ].
+```
+
+---
+
+### Problem 3: Language-valued policy learning
+
+Learn
+
+```math
+\pi_\theta^* = \arg\max_\pi E[ Y^\pi-\lambda C^\pi ].
+```
+
+Here `C` could include:
+
+```math
+\text{tokens} + \text{latency} + \text{tool cost} + \text{number of iterations}.
+```
+
+---
+
+### Problem 4: Generative treatment policy
+
+```math
+A_t \sim G_\theta(\cdot\mid H_t),
+```
+
+with
+
+```math
+G_\theta \approx \pi^*.
+```
+
+---
+
+### Problem 5: Adaptive stopping
+
+At every round include:
+
+```math
+A_t=\texttt{STOP}
+```
+
+as another action.
+
+Then the policy learns:
+
+```math
+\text{continue iterating} \quad\text{vs}\quad \text{accept current output}.
+```
+
+That is important because otherwise the system can improve quality indefinitely while exploding cost.
+
+---
+
+# 23. The full architecture becomes surprisingly elegant
+
+```math
+\boxed{ \begin{array}{ccccc} &&\text{Prompt Policy }G_\theta&&\\ &&\downarrow A_t&&\\ H_t&\rightarrow&\text{Receiver LLM}&\rightarrow&O_t\\ \uparrow&&&&\downarrow\\ &&\text{Causal Value }Q_\phi(H_t,A_t)&&\\ &&\downarrow&&\\ &&\text{effect/value + uncertainty}&& \end{array} }
+```
+
+and after `O_t`:
+
+```math
+H_{t+1} = (H_t,A_t,O_t).
+```
+
+Repeat:
+
+```math
+G_\theta(H_{t+1}) \rightarrow A_{t+1}.
+```
+
+The user only initializes the process.
+
+---
+
+# 24. What I'd make the **first paper**
+
+I wouldn't initially attempt everything.
+
+I think the strongest first methodological paper is:
+
+> **Causal Value Models for Adaptive Prompting: Estimating and Optimizing Sequential Language-Valued Interventions in LLM Interactions**
+
+Core contribution:
+
+```math
+\boxed{ (H_t,\text{free-form }A_t) \rightarrow \widehat{\tau}_t,\widehat Q_t }
+```
+
+with a treatment encoder + Transformer history encoder + orthogonal/DR objective inspired by DeepBlip/DRQ.
+
+Then demonstrate:
+
+1. **counterfactual prompt-value estimation**;
+2. **prompt ranking**;
+3. use the value model to guide a generator;
+4. automatic multi-turn improvement;
+5. compare against Self-Refine, ProRefine, OPRO, GEPA, PromptAgent;
+6. compare causal critic vs ordinary correlational reward model.
+
+The killer experiment would be intentionally generating observational confounding:
+
+```math
+\text{hard output} \Rightarrow \text{more aggressive feedback},
+```
+
+so the naïve reward model learns the wrong prompt effect while causal correction recovers the correct intervention ordering.
+
+That would make the **causal necessity** very clear, rather than causal inference merely being decorative.
+
+---
+
+## And then Paper 2 can be the bigger “dynamic skill” idea
+
+```math
+\boxed{ \text{Causal Dynamic Skills: Generative Policies over Language Interventions for Autonomous Agent Improvement} }
+```
+
+Here the system takes any frozen receiver model:
+
+```math
+M
+```
+
+and learns a task/domain-specific **interaction policy**
+
+```math
+\pi_\theta(A_t\mid H_t,M)
+```
+
+that repeatedly elicits better outputs.
+
+That could generalize beyond prompting to:
+
+```math
+A_t= \{ \text{prompt}, \text{tool suggestion}, \text{new context}, \text{retrieval result}, \text{critique}, \text{constraint}, \text{model switch}, \text{stop} \}.
+```
+
+At that point your “treatment” becomes an entire **intervention object**, and the framework becomes a genuine dynamic agent skill learner.
+
+The research opportunity I see now is therefore narrower—and stronger—than our original idea: **not DTR as an analogy for LLM conversations, but a causal learning framework in which natural-language interventions are actions, causal Q/blip models predict their counterfactual downstream value, and a generative policy learns to produce the optimal next intervention.** DeepBlip + DRQ provide the newest causal-statistical backbone; CPO provides the single-step causal-prompt precedent; Self-Refine/ProRefine/GEPA/PromptAgent/ROSA²/EVA provide the engineering precedents. I still do not find a paper that combines all three pieces into this exact system. ([arXiv](https://arxiv.org/abs/2511.14545?utm_source=chatgpt.com "DeepBlip: Estimating Conditional Average Treatment Effects Over Time"))

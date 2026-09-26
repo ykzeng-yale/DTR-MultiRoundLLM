@@ -1,5 +1,7 @@
 # DTR-MultiRoundLLM
 
+> **Moving to another laptop?** Start with the [26 September transfer package](docs/transfer/START_HERE_20260926.md), including the original idea, conversation export, experiment evidence, roadmap and remaining scientific gates. The recurring check for this repository was deleted at the owner's request; cloning GitHub does not restart it.
+
 > **Current research status:** [family/specification audit](docs/landmark_family_audit_20260920.md), [inference review](docs/landmark_inference_review_20260920.md), [grading validation](docs/landmark_grading_validation_20260920.md), [manuscript methods](manuscript/landmark_methods_20260920.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
 
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.

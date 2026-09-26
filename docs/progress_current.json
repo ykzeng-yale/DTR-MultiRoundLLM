@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T19:18:00Z",
+  "checkpoint_utc": "2026-09-26T20:29:00Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,16 +54,16 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "f13d31a7d7d210e8f77fda584a97732da06dd670",
-  "baseline_note": "Fixed 58-point rubric unchanged: independently accepted source/reused-record correction to unfrozen candidate instructions, with no empirical or independent-policy milestone.",
+  "prior_checked_head": "13fcdaf47652e255d7eefc24b3b06d8812379852",
+  "baseline_note": "Fixed 58-point rubric unchanged: transfer packaging and an unsupported diagnostic-class source review add no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker 2e1d716 correction independently checked against pinned renderer and E12 diagnostics: all 14 diagnostic messages exist, nine show no public failure. LEAD-POLICY-15 replaces both provisional texts. Status through 7e6e06e reports no run/lease, E14 NO-GO.",
+  "latest_evidence": "Worker 32e20b7 accepted LEAD-POLICY-15, took no model action, and flagged INCOMPLETE diagnostic support. Lead checked source tri-state definitions; E12 observed zero incomplete histories. Status through 40e0650 reports no run/lease and E14 NO-GO. GitHub transfer package assembled; thread automation deleted.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "7e6e06ec3f6bcc176a6efe2354429b7104bc1845",
-    "delivery_type": "LEAD-POLICY-14 receipt and source-specific wording correction 2e1d716, independently checked; later status-only",
-    "last_independently_reviewed_worker_documentation_revision": "2e1d7161399795012213c01c3a73a98a475b299e",
+    "last_seen_worker_revision": "40e06506054d2abde7392b06dbb6eb3f27fb2b22",
+    "delivery_type": "LEAD-POLICY-15 acceptance and INCOMPLETE-class design question 32e20b7, independently source-checked; later status-only",
+    "last_independently_reviewed_worker_documentation_revision": "32e20b70b909e52f5365f80c7829304abf0499c0",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
     "acknowledgement_received": true,
@@ -75,7 +75,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 7e6e06e at 2026-09-26T18:51:41Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker 40e0650 at 2026-09-26T20:21:31Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified. Lead-thread recurring check was deleted in the app at owner request.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -527,5 +527,15 @@
     "public_fail_roots": 5,
     "worker_correction_revision": "2e1d7161399795012213c01c3a73a98a475b299e",
     "decision": "Accept correction and replace both provisional instructions; hold all model collection pending public-pass support and complete protocol freeze."
+  },
+  "laptop_transfer_20260926": {
+    "record": "docs/transfer/START_HERE_20260926.md",
+    "chat": "docs/transfer/user_visible_chat_through_20260926.jsonl",
+    "original_idea": "docs/transfer/original_idea_and_prior_discussion_20260919.txt",
+    "worker_incomplete_note": "32e20b70b909e52f5365f80c7829304abf0499c0",
+    "decision": "HOLD protocol freeze and model collection; incomplete diagnostic class and public-pass assignment must be prespecified.",
+    "recurring_check_deleted": true,
+    "new_model_calls": 0,
+    "new_paid_usd": 0
   }
 }

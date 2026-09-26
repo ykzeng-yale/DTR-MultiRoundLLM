@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Owner-requested laptop transfer — 2026-09-26T20:29:00Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. The [transfer package](transfer/START_HERE_20260926.md) consolidates existing research and chat history. Worker `32e20b7` accepted LEAD-POLICY-15 and raised the unsupported `INCOMPLETE` diagnostic branch; the lead independently checked its source definition and retained the collection hold. Transfer packaging and publication do not add an experiment, prompt benefit or independent validation. Next: freeze the public-pass and incomplete-class action support, then the full family, endpoint, comparator, assignment, inference and finite-cap protocol. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**
+
 ## Three-hour lead review — 2026-09-26T19:18:00Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. I independently verified worker `2e1d716`'s renderer/diagnostic correction and published [LEAD-POLICY-15](policy_patch_rethink_failure_scope_20260926.md), which replaces both unfrozen prompt texts. No model result or independent policy validation was added; worker status through `7e6e06e` reports no run/lease and E14 NO-GO. Next: decide the public-pass action support and freeze exact renderings, families, comparators, endpoint, assignment, inference and finite local cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**

@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Transfer handoff — 26 September 2026, 20:29 UTC
+
+The owner asked to move work to another laptop and delete this thread's recurring check; the app reports deletion. [START_HERE](transfer/START_HERE_20260926.md) packages the current idea, conversation, evidence and roadmap. Worker `32e20b7` accepted LEAD-POLICY-15 and flagged the unsupported `INCOMPLETE` diagnostic branch; the lead independently checked the pinned status definitions and **holds** action/assignment freeze until this branch and the public-pass rule are explicit. Worker status through `40e0650` reports no run/lease, E14 NO-GO, with watcher health reported rather than independently observed. No new experimental job or collection is released. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 19:18 UTC
 
 Worker `2e1d716` accepted LEAD-POLICY-14 and supplied a source-specific correction; the lead independently checked the renderer and all 14 saved E12 diagnostics and [replaced both provisional texts](policy_patch_rethink_failure_scope_20260926.md). Later watcher commits through `7e6e06e` (18:51:41 UTC) report no run/lease and E14 NO-GO, with health worker-reported. No new real outcome, issue #2–#5 scientific question or open PR appeared. This is a source/reused-record treatment-definition repair, not a model-stage release. Next: decide the public-pass STOP/randomization support and freeze the full family, endpoint, assignment, comparator, inference and local-cap contract. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**

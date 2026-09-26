@@ -1,0 +1,31 @@
+{
+  "schema": "dtr-multiroundllm-transfer-v1",
+  "generated_utc": "2026-09-26T20:30:00Z",
+  "repository": "https://github.com/ykzeng-yale/DTR-MultiRoundLLM",
+  "public_repository": true,
+  "source_main_head_before_transfer_commit": "40e06506054d2abde7392b06dbb6eb3f27fb2b22",
+  "chat_export": {
+    "path": "user_visible_chat_through_20260926.jsonl",
+    "sha256": "47bb0c0674fea999554db1ec208812857bb6f28bc3cd97247c48d6530c3d8362",
+    "bytes": 1261094,
+    "records": 791,
+    "counts": {
+      "user": 200,
+      "assistant_commentary": 463,
+      "assistant_final_answer": 128
+    },
+    "first_message_utc": "2026-09-19T21:23:58.413Z",
+    "last_message_utc": "2026-09-26T20:26:06.082Z",
+    "scope": "user text and assistant commentary/final text; excludes system/developer, internal reasoning, tool calls/outputs and binary attachments"
+  },
+  "original_idea": {
+    "path": "original_idea_and_prior_discussion_20260919.txt",
+    "sha256": "cdfd745b49e14ff9950db5583016d7bf62baba32ab208e0cdfeb353fa8440d7e",
+    "bytes": 95541,
+    "scope": "user-supplied pasted historical discussion; citations and claims require current verification"
+  },
+  "automations": {
+    "deleted": "dtr-multiroundllm-hourly-research-follow-up",
+    "other_repo_automation_unchanged": "dtr-theory-and-github-coordination"
+  }
+}
