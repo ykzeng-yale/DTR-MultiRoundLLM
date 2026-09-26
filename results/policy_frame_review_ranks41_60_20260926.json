@@ -1,0 +1,842 @@
+{
+  "review_id": "LEAD-FRAME-02",
+  "author": "Codex scientific lead",
+  "status": "completed source curation; no experimental or family-eligibility release",
+  "plan_commit": "b6b3a44",
+  "started_at": "2026-09-26T21:23:08.951854+00:00",
+  "completed_at": "2026-09-26T21:29:59.815175+00:00",
+  "deadline": "2026-09-26T21:38:08Z",
+  "inputs": {
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+    "results/frame_review_mrl15_20260922T021718Z/records.json": "96dad5032cd9b346e1f4056fba6d8a3ab52533b9a702f0e791d710cd5efa0e74",
+    "work/data/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce",
+    "scripts/review_candidate_frame_mrl15.py": "9882fb0c507fb1f2da930f46bdea36eae13e681561985695cf7ddd2890f9a720"
+  },
+  "execution": {
+    "model_calls": 0,
+    "candidate_or_reference_program_executions": 0,
+    "fits": 0,
+    "sampled_draws": 0,
+    "paid_spend_usd": 0,
+    "new_network_acquisition": false
+  },
+  "retrieval_recipe": "max(text-token Jaccard, code-token Jaccard) via pinned MRL15 helpers; canonical 591 prior rows plus original public MBPP variants plus ordered ranks1-40 plus seven E11 IDs; top4 unique UID by descending score then UID. Targeted public-prompt keyword review supplements retrieval. Scores retrieve evidence, not semantic certificates. No historical grades read.",
+  "counts": {
+    "specification_hold": 10,
+    "exclude_prior_family": 7,
+    "candidate_pending_endpoint_and_crossframe_family_review": 3
+  },
+  "eligible_independent_families_certified": 0,
+  "limitations": [
+    "Single lead source review, not independently adjudicated.",
+    "No full semantic census; unflagged relationships may remain.",
+    "Candidate means unresolved endpoint/cross-frame family review; three candidate roots are not three certified families.",
+    "Missing public specifications need versioned repair; no repair or new target was released.",
+    "Raw third-party code and assertions remain in gitignored work.",
+    "Source curation access is not receiver/policy access.",
+    "No root substituted, no extrapolated yield, no action-outcome selection."
+  ],
+  "records": [
+    {
+      "rank": 41,
+      "task_id": 193,
+      "disposition": "specification_hold",
+      "provisional_family": "tuple deduplication",
+      "reason": "The reference converts through set and back to tuple, while assertions require a particular ascending tuple order. The public task gives no order rule; set iteration is not a portable ordering contract. This is a specification/endpoint hold, not a measured execution failure.",
+      "public_description": "Write a function to remove the duplicates from the given tuple.",
+      "reference_sha256": "6b49491588a352e024f38e21117af2597ab1246ba346485f00e7a19058778a9d",
+      "test_list_canonical_json_sha256": "ffcee0c804eb51edbe8debe5ff1de1c92f48a2076a943296f9ddd542824fa67a",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/791",
+          "scope": "canonical_prior",
+          "score": 0.5
+        },
+        {
+          "uid": "mbpp/730",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/394",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/966",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333
+        }
+      ],
+      "manual_related_evidence": [],
+      "approved": false
+    },
+    {
+      "rank": 42,
+      "task_id": 540,
+      "disposition": "specification_hold",
+      "provisional_family": "frequency range",
+      "reason": "The reference never flushes the last sorted group. A static trace of [1,2,2,2], n=4 gives 0 rather than frequency range 2; [1,1], n=2 gives -2 rather than 0. These are hand traces, not executed tests. The n interface is also unspecified.",
+      "public_description": "Write a python function to find the difference between highest and least frequencies in a given array.",
+      "reference_sha256": "e3ac01168a87bf94f5597c43d7ddc79c0a07c21c4a53218a362aa6f00751f02c",
+      "test_list_canonical_json_sha256": "bc0a6432e5b9a36797aafcbfc5f1837f09865271a1b529c63ea26dcb425ebe64",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/588",
+          "scope": "original_public_variant",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/863",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/145",
+          "scope": "canonical_prior",
+          "score": 0.3
+        },
+        {
+          "uid": "mbpp/763",
+          "scope": "original_public_variant",
+          "score": 0.3
+        }
+      ],
+      "manual_related_evidence": [],
+      "approved": false
+    },
+    {
+      "rank": 43,
+      "task_id": 923,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "common subsequence/supersequence dynamic programming",
+      "reason": "Conservative family exclusion: two-string shortest common supersequence length is m+n minus two-string LCS length (mbpp/187 in earlier source review); old mbpp/747 is the three-string LCS variant. Functions are not identical; this is a shared algorithmic family, not a claim of identical tasks or observed receiver exposure to 187.",
+      "public_description": "Write a function to find the length of the shortest string that has both str1 and str2 as subsequences.",
+      "reference_sha256": "f1e2aa16eff279ecb5fd43d258e3ffba22ab66c9b56a9b6d155f0304aef68e0f",
+      "test_list_canonical_json_sha256": "9c2b1cf4e5d308d195cbd7f56209bb9937fff9ab610c192c145c3b97a037f56d",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/187",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/918",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857
+        },
+        {
+          "uid": "mbpp/409",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/747",
+          "scope": "canonical_prior",
+          "score": 0.2222
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/747",
+          "scope": "original_public_variant",
+          "description": "Write a function to find the longest common subsequence for the given three string sequence."
+        },
+        {
+          "uid": "mbpp/187",
+          "scope": "earlier_source_slice_or_E11",
+          "description": "Write a function to find the longest common subsequence for the given two sequences."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 44,
+      "task_id": 890,
+      "disposition": "specification_hold",
+      "provisional_family": "extra element in sorted arrays",
+      "reason": "All supplied assertions place the extra element at the end, so returning n passes that visible set. The task omits which array is longer, meaning of n and indexing convention. General-position endpoint discrimination needs independent validation.",
+      "public_description": "Write a python function to find the index of an extra element present in one sorted array.",
+      "reference_sha256": "36c0c1fbb6961e97283d3e3c59433793098d683f57b317598cfc125245b3f8ae",
+      "test_list_canonical_json_sha256": "802e69e173a7396d7ae593a9e0ae3de1104c388a7a821a4bc4a32545d58ef28c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/223",
+          "scope": "original_public_variant",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/793",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/119",
+          "scope": "canonical_prior",
+          "score": 0.3
+        },
+        {
+          "uid": "mbpp/733",
+          "scope": "canonical_prior",
+          "score": 0.3
+        }
+      ],
+      "manual_related_evidence": [],
+      "approved": false
+    },
+    {
+      "rank": 45,
+      "task_id": 839,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "keyed tuple sorting",
+      "reason": "Same keyed tuple-sort family as prior second-coordinate sorting; first-coordinate alphabetic sorting changes the key, not the family. Conservative source family exclusion, not exact duplicate assertion.",
+      "public_description": "Write a function to sort the tuples alphabetically by the first item of each tuple.",
+      "reference_sha256": "7aed00d1a75103faa7029c5456cb110cbbcfe8e03f60807ed1f31dc98d34f95e",
+      "test_list_canonical_json_sha256": "ad9236ced0bdf87a2f93c2fdf7b745c79beb23e31833c7f3943d8f5b7eff3c1e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/64",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/791",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/94",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/272",
+          "scope": "canonical_prior",
+          "score": 0.2308
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/64",
+          "scope": "original_public_variant",
+          "description": "Write a function to sort a list of tuples using lambda."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 46,
+      "task_id": 697,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "even-value list filtering/counting",
+      "reason": "Counting the even-number list is an aggregation of the prior even-number filter. Lambda is a requested mechanism not established by functional assertions; source family exclusion is conservative.",
+      "public_description": "Write a function to find number of even elements in the given list using lambda function.",
+      "reference_sha256": "a19a9ca83e6773f3c93e9892be15a14bf5b9d02389377bf34cfa7d4c55db612f",
+      "test_list_canonical_json_sha256": "7412d33a9d1e95b625adb024ff2f23b373b7736f7d1992fafa28852f04ffca7f",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/253",
+          "scope": "canonical_prior",
+          "score": 0.4286
+        },
+        {
+          "uid": "mbpp/447",
+          "scope": "original_public_variant",
+          "score": 0.4286
+        },
+        {
+          "uid": "mbpp/8",
+          "scope": "original_public_variant",
+          "score": 0.4286
+        },
+        {
+          "uid": "mbpp/594",
+          "scope": "canonical_prior",
+          "score": 0.375
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/629",
+          "scope": "original_public_variant",
+          "description": "Write a python function to find even numbers from a mixed list."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 47,
+      "task_id": 375,
+      "disposition": "specification_hold",
+      "provisional_family": "rounding to a multiple",
+      "reason": "The reference resolves equidistant multiples downward; that tie rule and the domain/sign/nonzero restriction on m are absent from the task. These choices need an explicit versioned contract, not a silent repair.",
+      "public_description": "Write a function to round the given number to the nearest multiple of a specific number.",
+      "reference_sha256": "10bae1d404c246f4bafddcc02fb70657a6f355a39af7876c69154e0efd7df971",
+      "test_list_canonical_json_sha256": "06de92ba116f8130b5daaf034b6efba524ac3164fec1a78ac3e57ff450d04be6",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/576",
+          "scope": "canonical_prior",
+          "score": 0.4286
+        },
+        {
+          "uid": "mbpp/309",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/404",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/586",
+          "scope": "original_public_variant",
+          "score": 0.4
+        }
+      ],
+      "manual_related_evidence": [],
+      "approved": false
+    },
+    {
+      "rank": 48,
+      "task_id": 243,
+      "disposition": "specification_hold",
+      "provisional_family": "grouped tuples with unique values and counts",
+      "reason": "The reference groups first keys in insertion order, retains unique second values and appends the total occurrence count. The prose says to sort based on first-element occurrences and does not define this variable-length output or ordering.",
+      "public_description": "Write a function to sort the given list based on the occurrence of first element of tuples.",
+      "reference_sha256": "74c9e513a00f49b97ec904faf51680d1d660add417cfe9f961efd08dd32045c8",
+      "test_list_canonical_json_sha256": "28471cacfe2b336a8d2349c4fd4847a1835371ba1ea79d397d6fe1b4836f57fb",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/64",
+          "scope": "original_public_variant",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/413",
+          "scope": "canonical_prior",
+          "score": 0.3
+        },
+        {
+          "uid": "mbpp/417",
+          "scope": "canonical_prior",
+          "score": 0.3
+        },
+        {
+          "uid": "mbpp/625",
+          "scope": "canonical_prior",
+          "score": 0.3
+        }
+      ],
+      "manual_related_evidence": [],
+      "approved": false
+    },
+    {
+      "rank": 49,
+      "task_id": 877,
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "character sorting",
+      "reason": "Public description and lowercase examples agree on sorted characters. Prior list sorting is related but not enough here to certify a shared or independent family. Character domain, Unicode ordering, endpoint discrimination and full cross-frame adjudication remain open.",
+      "public_description": "Write a python function to sort the given string.",
+      "reference_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5",
+      "test_list_canonical_json_sha256": "1f5dec4aec1660b6dfcfa9031a7f7e8289a8ba9181a4c0decac35f31776f424d",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/635",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/132",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/141",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/310",
+          "scope": "original_public_variant",
+          "score": 0.25
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/635",
+          "scope": "original_public_variant",
+          "description": "Write a function to push all values into a heap and then pop off the smallest values one at a time."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 50,
+      "task_id": 539,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "elementwise exponentiation",
+      "reason": "Conservative extension of prior n-th power of every number in a list: the exponent is now paired per element. Unequal-length and exponent-domain rules are also unspecified; exclusion does not validate the endpoint.",
+      "public_description": "Write a function to create a list containing the power of said number in bases raised to the corresponding number in the index using map function.",
+      "reference_sha256": "54219afe0d47ae69dc0d14588a84c2f58d59c31709cb7e190b3711389d2e6b5e",
+      "test_list_canonical_json_sha256": "4f0fef9b23dd09679edc8baba4914ca4fc80dea7943b978c01bd2bd16c3ee4d6",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/623",
+          "scope": "canonical_prior",
+          "score": 0.2
+        },
+        {
+          "uid": "mbpp/62",
+          "scope": "canonical_prior",
+          "score": 0.1667
+        },
+        {
+          "uid": "mbpp/738",
+          "scope": "canonical_prior",
+          "score": 0.1667
+        },
+        {
+          "uid": "mbpp/168",
+          "scope": "canonical_prior",
+          "score": 0.1538
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/623",
+          "scope": "original_public_variant",
+          "description": "Write a function to find the n-th power of individual elements in a list using lambda function."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 51,
+      "task_id": 363,
+      "disposition": "specification_hold",
+      "provisional_family": "broadcast addition on nested tuples",
+      "reason": "The implementation adds scalar K inside a list of tuples, but the terse tuple/k-elements prose does not determine nested container shape and domain. Prior nested tuple addition is related and must remain in cross-frame review.",
+      "public_description": "Write a function to add the k elements to each element in the tuple.",
+      "reference_sha256": "d3bf4736e5d104bf05bd49feca526b6d1811f65a56d71f856792663397238c34",
+      "test_list_canonical_json_sha256": "65faabb0cacbfe742d88267a69be752ff1253c1c7d04c7985e26c613679212f4",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/400",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/611",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/421",
+          "scope": "canonical_prior",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/444",
+          "scope": "canonical_prior",
+          "score": 0.375
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/401",
+          "scope": "original_public_variant",
+          "description": "Write a function to perform index wise addition of tuple elements in the given two nested tuples."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 52,
+      "task_id": 318,
+      "disposition": "specification_hold",
+      "provisional_family": "integer cuboid volume optimization",
+      "reason": "Assertions/reference optimize nonnegative integer side lengths, whereas that restriction is absent from the task. For sum 8 the integer answer is 18, unlike the real-valued optimum (8/3)^3; sum 1 returns 0. Prior cuboid-volume evaluation is related but not identical optimization.",
+      "public_description": "Write a python function to find the maximum volume of a cuboid with given sum of sides.",
+      "reference_sha256": "0ac5c403b2b000e0fcf0fb93188b40bff8f75134f5d27f8b254ceeff96f92321",
+      "test_list_canonical_json_sha256": "5c76d9817d256459ee863b8c11705536bafe917aa357cadead38ee1c77984818",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/373",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/524",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/245",
+          "scope": "original_public_variant",
+          "score": 0.2
+        },
+        {
+          "uid": "mbpp/555",
+          "scope": "canonical_prior",
+          "score": 0.2
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/373",
+          "scope": "earlier_source_slice_or_E11",
+          "description": "Write a function to find the volume of a cuboid."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 53,
+      "task_id": 681,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "prime factorization",
+      "reason": "Smallest prime divisor is the first/minimum element of prior prime factorization on n>=2, and related to largest-prime-factor tasks. Conservative family exclusion; n<=1 behavior is not specified.",
+      "public_description": "Write a python function to find the smallest prime divisor of a number.",
+      "reference_sha256": "e6ff8eb6ecef59331320e3f25d25878d4caeaf7e2a20b69e799cd485afac2136",
+      "test_list_canonical_json_sha256": "28ae383b7d6035efcb708cca0385dea43abc768319c735f1a021e1609f2fcca7",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/62",
+          "scope": "canonical_prior",
+          "score": 0.4
+        },
+        {
+          "uid": "mbpp/287",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/59",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/605",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "humaneval/25",
+          "scope": "canonical_prior",
+          "description": "from typing import List\n\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer in the order from smallest to largest.\n    Each of the factors should be listed number of times corresponding to how many times it appeares in factorization.\n    Input number should be equal to the product of all factors\n    >>> factorize(8)\n    [2, 2, 2]\n    >>> factorize(25)\n    [5, 5]\n    >>> factorize(70)\n    [2, 5, 7]\n    \"\"\"\n"
+        },
+        {
+          "uid": "humaneval/59",
+          "scope": "canonical_prior",
+          "description": "\n\ndef largest_prime_factor(n: int):\n    \"\"\"Return the largest prime factor of n. Assume n > 1 and is not a prime.\n    >>> largest_prime_factor(13195)\n    29\n    >>> largest_prime_factor(2048)\n    2\n    \"\"\"\n"
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 54,
+      "task_id": 570,
+      "disposition": "specification_hold",
+      "provisional_family": "word filtering by contained characters",
+      "reason": "Reference removes a word containing any element of a phrase list, tokenizes/normalizes whitespace and preserves one output string per input string. The prose character-or-string description does not specify that API or whitespace policy. Neighbor tasks are related, not an exact duplicate proof.",
+      "public_description": "Write a function to remove words from a given list of strings containing a character or string.",
+      "reference_sha256": "56fa37a4a0e361348b08afde89d295bdac791c887ee92c68c3c1bc8465a37028",
+      "test_list_canonical_json_sha256": "448bc08786d808330b4a13d5fbe9ec8c6d18858b40c6789faf3abc51b9232624",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/118",
+          "scope": "canonical_prior",
+          "score": 0.3636
+        },
+        {
+          "uid": "mbpp/456",
+          "scope": "original_public_variant",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/11",
+          "scope": "canonical_prior",
+          "score": 0.3
+        },
+        {
+          "uid": "mbpp/757",
+          "scope": "original_public_variant",
+          "score": 0.3
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "humaneval/7",
+          "scope": "canonical_prior",
+          "description": "from typing import List\n\n\ndef filter_by_substring(strings: List[str], substring: str) -> List[str]:\n    \"\"\" Filter an input list of strings only for ones that contain given substring\n    >>> filter_by_substring([], 'a')\n    []\n    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')\n    ['abc', 'bacd', 'array']\n    \"\"\"\n"
+        },
+        {
+          "uid": "mbpp/772",
+          "scope": "original_public_variant",
+          "description": "Write a function to remove all the words with k length in the given string."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 55,
+      "task_id": 936,
+      "disposition": "specification_hold",
+      "provisional_family": "tuple lookup by requested key sequence",
+      "reason": "Assertions repeat a key and omit unused keys: this is lookup with repetition, not simply rearrangement. Reference silently keeps last duplicate input key. Output multiplicity and duplicate-key rules are absent from the task.",
+      "public_description": "Write a function to re-arrange the given tuples based on the given ordered list.",
+      "reference_sha256": "d71d1935126c2826ff2c60bfa1dce38cfe6182522b27e80fb7b6b0c8d02644e7",
+      "test_list_canonical_json_sha256": "4eb492405b60d659370097854b62fdf9ef5be035875c295071034cf03e6f229d",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/753",
+          "scope": "canonical_prior",
+          "score": 0.2857
+        },
+        {
+          "uid": "mbpp/106",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/64",
+          "scope": "original_public_variant",
+          "score": 0.2222
+        },
+        {
+          "uid": "mbpp/652",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2222
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/64",
+          "scope": "original_public_variant",
+          "description": "Write a function to sort a list of tuples using lambda."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 56,
+      "task_id": 345,
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "adjacent directed differences",
+      "reason": "Reference and examples agree on successive b-a differences. Nearby adjacent-addition and adjacent-product tasks are related operations, not a demonstrated same target. Numeric domain, empty/singleton endpoints and complete cross-frame family review remain open.",
+      "public_description": "Write a function to find the difference between two consecutive numbers in a given list.",
+      "reference_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825",
+      "test_list_canonical_json_sha256": "ecae85cadc7c2493866ad5f0774a6b661174b45b4da08752a95f69eaa7b8548c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/366",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/472",
+          "scope": "canonical_prior",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/589",
+          "scope": "canonical_prior",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/769",
+          "scope": "canonical_prior",
+          "score": 0.375
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/470",
+          "scope": "original_public_variant",
+          "description": "Write a function to find the pairwise addition of the elements of the given tuples."
+        },
+        {
+          "uid": "mbpp/366",
+          "scope": "earlier_source_slice_or_E11",
+          "description": "Write a python function to find the largest product of the pair of adjacent elements from a given list of integers."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 57,
+      "task_id": 343,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "character category counting",
+      "reason": "Extends prior digit counting by adding letter counting. Conservative family exclusion; output order and Unicode character categories also require a declared contract.",
+      "public_description": "Write a function to calculate the number of digits and letters in a string.",
+      "reference_sha256": "91b4e558ffde43965249226c4e062ba8f082488c0c0a60ff0326d5a6d5a1a29e",
+      "test_list_canonical_json_sha256": "922d0804d8f7963f7d3cf964ebdb6569492c380f329fc1a696eb6b5357791de2",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/764",
+          "scope": "canonical_prior",
+          "score": 0.5
+        },
+        {
+          "uid": "mbpp/667",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857
+        },
+        {
+          "uid": "mbpp/172",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/242",
+          "scope": "canonical_prior",
+          "score": 0.25
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/764",
+          "scope": "original_public_variant",
+          "description": "Write a python function to count numeric values in a given string."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 58,
+      "task_id": 945,
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "set conversion and deduplication",
+      "reason": "Tuple-to-set examples match the stated operation. Hashable input domain and order-insensitive endpoint remain to be pinned. Strong cross-slice relationship to held mbpp/193 means this row cannot be counted as an independent new family; 193 is not claimed as prior experimental exposure.",
+      "public_description": "Write a function to convert the given tuples into set.",
+      "reference_sha256": "9f82b1c3b1f44f0c1b4d9110a8f25c4598a21ca022533ac62472f081bce0978e",
+      "test_list_canonical_json_sha256": "72b5214bba4600b0677908787a3867c25608944616ed14c1531e59383e37d07c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/172",
+          "scope": "canonical_prior",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/116",
+          "scope": "original_public_variant",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/555",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/140",
+          "scope": "canonical_prior",
+          "score": 0.2222
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/140",
+          "scope": "original_public_variant",
+          "description": "Write a function to extract elements that occur singly in the given tuple list."
+        },
+        {
+          "uid": "mbpp/193",
+          "scope": "current_fixed_source_slice",
+          "description": "Write a function to remove the duplicates from the given tuple."
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 59,
+      "task_id": 864,
+      "disposition": "exclude_prior_family",
+      "provisional_family": "palindrome predicate and filtering",
+      "reason": "Filtering a list with the prior exact string-palindrome predicate is a wrapper/aggregation family extension. Lambda is not certified by functional assertions. Conservative family exclusion.",
+      "public_description": "Write a function to find palindromes in a given list of strings using lambda function.",
+      "reference_sha256": "c4a40d6537a5cf6d78c7a27889d262693c0fe532bb74a0291947817620d1be7c",
+      "test_list_canonical_json_sha256": "402909a7ab2a80fd39efde5e8c005c11d7c4c3d449ecaebc99bc76af36ff6075",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/104",
+          "scope": "original_public_variant",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/393",
+          "scope": "original_public_variant",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/64",
+          "scope": "original_public_variant",
+          "score": 0.3333
+        },
+        {
+          "uid": "mbpp/447",
+          "scope": "original_public_variant",
+          "score": 0.2857
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "humaneval/48",
+          "scope": "canonical_prior",
+          "description": "\n\ndef is_palindrome(text: str):\n    \"\"\"\n    Checks if given string is a palindrome\n    >>> is_palindrome('')\n    True\n    >>> is_palindrome('aba')\n    True\n    >>> is_palindrome('aaaaa')\n    True\n    >>> is_palindrome('zbcd')\n    False\n    \"\"\"\n"
+        }
+      ],
+      "approved": false
+    },
+    {
+      "rank": 60,
+      "task_id": 878,
+      "disposition": "specification_hold",
+      "provisional_family": "membership of every tuple element in allowed values",
+      "reason": "The reference checks all tuple elements for membership in a list K, while only k elements can mean cardinality or a scalar value. Allowed-value container, vacuous empty-tuple rule and domain require an explicit public contract.",
+      "public_description": "Write a function to check if the given tuple contains only k elements.",
+      "reference_sha256": "e0b1959d0bdc65c8e8cba1c21df8d95f16ca8e29bacd6e0ee0c905cd1603e6a4",
+      "test_list_canonical_json_sha256": "ef2b2ec18d74e8f744fd1807929dca6641f5fa07f61684b743b86b2b45bf661d",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/394",
+          "scope": "canonical_prior",
+          "score": 0.375
+        },
+        {
+          "uid": "mbpp/75",
+          "scope": "canonical_prior",
+          "score": 0.2857
+        },
+        {
+          "uid": "mbpp/222",
+          "scope": "canonical_prior",
+          "score": 0.25
+        },
+        {
+          "uid": "mbpp/580",
+          "scope": "canonical_prior",
+          "score": 0.25
+        }
+      ],
+      "manual_related_evidence": [
+        {
+          "uid": "mbpp/394",
+          "scope": "original_public_variant",
+          "description": "Write a function to check if given tuple is distinct or not."
+        },
+        {
+          "uid": "mbpp/75",
+          "scope": "original_public_variant",
+          "description": "Write a function to find tuples which have all elements divisible by k from the given list of tuples."
+        }
+      ],
+      "approved": false
+    }
+  ]
+}
