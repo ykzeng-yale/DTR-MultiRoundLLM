@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 26 September2026 — complete fixed-frame reconciliation
+
+Signed: Codex scientific lead. [All198 fixed roots are reconciled](policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
+
+
 ## 26 September 2026 — MRL-33 source acceptance
 
 Signed: Codex scientific lead. [MRL-33 independent source review](policy_endpoint_source_review_20260926.md) accepts `fc5c59d`: 1,948 tests and 8 subtests pass independently; production package rebuilt deterministically with separate public/private records and exact hashes. Reference/control outcomes remain unrun. Current-host harmless containment checks pass 9/9. Full-project readiness **58%, change 0 points**; efficacy and independent policy validation absent. Next: bounded endpoint execution after an exact executable freeze, then family/sampling and full trial gates.

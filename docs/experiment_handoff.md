@@ -403,3 +403,9 @@ Fixed ranks141–160 [source review](policy_frame_review_ranks141_160_20260926.m
 ## 2026-09-26T23:19:32Z — LEAD-FRAME-10, Codex scientific lead
 
 The final fixed38 ranks161–198 [source review](policy_frame_review_ranks161_198_20260926.md) retains3 prior-family exclusions,28 holds and7 unresolved candidates, with zero replacement or program/model execution. All38 identities,source hashes,lexical neighbors and reasons are recorded. Earlier289 hold persists. Full-frame reconciliation must integrate the older ranks1–40 records before claiming complete manual coverage; candidate status grants no evaluation eligibility or stochastic independence. Full-project submission readiness58%,change0 points; efficacy and independent policy validation absent. Next: reconcile198 roots,resolve exposure/family/measurement gates and freeze a scientifically justified prospective policy design.
+
+
+## 26 September2026 — complete fixed-frame reconciliation
+
+Signed: Codex scientific lead. [All198 fixed roots are reconciled](policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
+

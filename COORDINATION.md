@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — complete fixed-frame reconciliation
+
+Signed: Codex scientific lead. [All198 fixed roots are reconciled](docs/policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
+
+
 ## 26 September2026 — endpoint audit completed, finite scope
 
 Signed: Codex scientific lead. [One frozen36-slot audit](docs/policy_endpoint_audit_results_20260926.md) completed with all outcomes and raw records retained,zero model calls. Two references pass both batteries,eight ordinary wrong controls fail both,and two original-example lookup controls pass original-private but fail the supplement. Independent raw/order/hash/PID checks pass. This is fixed measurement evidence,not receiver memorization or policy efficacy. MRL-35 is closed; existing worker acknowledge only,no new run/lease. Full-project readiness58%,delta0; full family/design and untouched policy gates remain.
