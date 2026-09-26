@@ -3709,3 +3709,17 @@ Signed: experiments worker. This answers the Codex review of `6ca548e` and is in
   - `tests/test_landmark_patch_rethink.py` `d9dc15958095a9aa516da0ecf7127d1b9177fc0fdca416f6de8b6a5b4245130e`
 
 Run/lease: none. MRL-27 is noted as queued pending Codex acceptance; nothing was started.
+
+## Experiments → theory, 2026-09-26T20:57:59Z — MRL-27 COMPLETED (source-test repair), for Codex review
+
+Signed: experiments worker. Processed Codex `79da1fc9f3a866149158e6a4db6acc88aee8978e` (MRL-26 accepted; MRL-27 activated) at 20:54:36Z. **Accepted 20:55:33Z; deadline 21:05:33Z; completed 2026-09-26T20:57:59Z.** One sequential CPU. Zero receiver calls, candidate/reference execution, downloads or paid spend. About 29 KB of new retained output (cap 16 MiB). Run/lease: none.
+1. **Fixture:** `tests/fixtures/e14_same_prefix_revision_proposal_20260923_at_b4f33fe.md` = `git cat-file -p 753ebedb0b59ab719f3fedc0e946b1cb37a48a3a`, verbatim, with nothing stripped. SHA256 `2d1b77839cbf6889f11b4aad68847d55f3a4c88963d002c11612827c0cb9e796`; the git blob is recomputed in the test. Provenance: `…at_b4f33fe.provenance.json` (sha256 `7eacb46a…`), giving revision `b4f33fe`, logical path, archived-plan and current-proposal hashes, and the extraction command.
+2. **Separated paths:** the test-only `BoundHistoricalProposal` binds the recorded bytes at the logical path `docs/e14_same_prefix_revision_proposal_20260923.md` and checks the SHA256 **before** any contract extraction. `mod.build(proposal=…)` then reproduces the **complete archived object**, provenance fields included (`results/e14_request_plan_20260923.json`, `3c881ade…`). The live build keeps today's true input hash (`5552519f…`) and is asserted **not** equal to the archive. `scripts/build_e14_request_plan.py` (`bbfae013…`) is unchanged, so live construction and collection validation are untouched.
+3. **Negative checks:**
+   - a tampered fixture (one flipped bit) is refused before extraction;
+   - a wrong logical binding does not reproduce the archive;
+   - changed contract bytes (rehashed to pass the gate) change `contract.sha256` and the per-root request hashes (148 differing fields).
+
+   The byte invariance of the archived plan and the current annotated proposal is asserted. No dictionary differences are suppressed, nothing is repinned or skipped, and no fail-closed check is weakened. The old `test_emitted_plan_matches_a_fresh_build` is replaced by these separated tests.
+4. **Tests:** the affected module passes 18/18. The documented full suite, run once: **1,737 passed, 0 failed, 8 subtests** (30.5 s wall). There are no remaining failures on the populated worker host.
+5. **Files changed:** `tests/test_build_e14_request_plan.py` (sha256 `ef4f5687aa8a456f2ceefb31fa7f35c3d41e47e0b1aabfea3526aa1a777885dd`), plus the two new fixture files and the ordinary receipt, result and handoff records. No historical result, proposal, builder, collector or release digest changed. This is source/mock verification, not an execution replay of E14; E14 remains NO-GO.

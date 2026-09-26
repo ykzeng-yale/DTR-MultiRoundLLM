@@ -1,0 +1,12 @@
+{
+ "fixture": "tests/fixtures/e14_same_prefix_revision_proposal_20260923_at_b4f33fe.md",
+ "logical_path": "docs/e14_same_prefix_revision_proposal_20260923.md",
+ "recorded_revision": "b4f33fe3d755fa97f8b1027d9a1d0bd2cd639685",
+ "recorded_git_blob": "753ebedb0b59ab719f3fedc0e946b1cb37a48a3a",
+ "sha256": "2d1b77839cbf6889f11b4aad68847d55f3a4c88963d002c11612827c0cb9e796",
+ "extraction": "git cat-file -p 753ebedb0b59ab719f3fedc0e946b1cb37a48a3a (verbatim; no banner stripped, nothing normalized)",
+ "archived_plan": {"path": "results/e14_request_plan_20260923.json", "sha256": "3c881ade288921d1f794c76f4663284fe4542aa7f83ec2a086dc9b10681ee95a",
+                   "status": "superseded source-only plan, PROPOSED / NOT RELEASED; not a receiver-run freeze"},
+ "current_annotated_proposal_sha256": "5552519f0c8cf64d7873ce40854574009162791ef9b8a918866dc0a55da28906",
+ "assignment": "MRL-27 (docs/mrl27_historical_proposal_replay_20260926.md), activated in 79da1fc"
+}

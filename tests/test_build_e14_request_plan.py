@@ -44,10 +44,90 @@ def plan(mod):
     return mod.build()
 
 
-def test_emitted_plan_matches_a_fresh_build(plan):
-    assert PLAN_PATH.exists(), "run scripts/build_e14_request_plan.py --out results/e14_request_plan_20260923.json"
-    on_disk = json.loads(PLAN_PATH.read_text())
-    assert on_disk == plan
+# MRL-27: HISTORICAL-INPUT REPLAY is kept separate from CURRENT-DOCUMENT CONSTRUCTION. The archived plan was built from the
+# proposal bytes recorded at b4f33fe (blob 753ebedb). A later frame-correction annotation (58a747c) changed today's
+# document, so today's build keeps today's true input hash and is NOT byte reproduction of the archive. The substitution
+# below is test-only and binds the recorded bytes at the logical proposal path; live construction is unchanged.
+FIXTURE = ROOT / "tests/fixtures/e14_same_prefix_revision_proposal_20260923_at_b4f33fe.md"
+PROVENANCE = json.loads((ROOT / "tests/fixtures/e14_same_prefix_revision_proposal_20260923_at_b4f33fe.provenance.json").read_text())
+ARCHIVED_PLAN_SHA256 = "3c881ade288921d1f794c76f4663284fe4542aa7f83ec2a086dc9b10681ee95a"
+CURRENT_PROPOSAL_SHA256 = "5552519f0c8cf64d7873ce40854574009162791ef9b8a918866dc0a55da28906"
+
+
+class BoundHistoricalProposal:
+    """Recorded proposal bytes bound to the logical path; the hash is checked BEFORE any contract is extracted."""
+
+    def __init__(self, data: bytes, expected_sha256: str, logical_path: str):
+        if hashlib.sha256(data).hexdigest() != expected_sha256:
+            raise ValueError("historical proposal fixture hash mismatch")
+        self._data, self._logical = data, ROOT / logical_path
+        self.name = self._logical.name
+
+    def relative_to(self, root):
+        return self._logical.relative_to(root)
+
+    def read_bytes(self):
+        return self._data
+
+    def read_text(self, encoding="utf-8"):
+        return self._data.decode(encoding)
+
+
+def _historical():
+    return BoundHistoricalProposal(FIXTURE.read_bytes(), PROVENANCE["sha256"], PROVENANCE["logical_path"])
+
+
+def test_fixture_is_the_verbatim_recorded_blob_and_the_archives_are_byte_invariant():
+    data = FIXTURE.read_bytes()
+    assert hashlib.sha256(data).hexdigest() == PROVENANCE["sha256"] == "2d1b77839cbf6889f11b4aad68847d55f3a4c88963d002c11612827c0cb9e796"
+    assert hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest() == PROVENANCE["recorded_git_blob"]
+    assert hashlib.sha256(PLAN_PATH.read_bytes()).hexdigest() == ARCHIVED_PLAN_SHA256  # archived plan untouched
+    assert hashlib.sha256(PROPOSAL.read_bytes()).hexdigest() == CURRENT_PROPOSAL_SHA256  # current annotation untouched
+
+
+def test_historical_input_replay_reproduces_the_complete_archived_plan(mod):
+    assert PLAN_PATH.exists(), "archived plan missing"
+    archived = json.loads(PLAN_PATH.read_text())
+    replay = mod.build(proposal=_historical())
+    assert replay == archived  # the complete object, provenance fields included
+    assert replay["proposal"] == {"path": PROVENANCE["logical_path"], "sha256": PROVENANCE["sha256"], "sections_implemented": [1, 2, 5, 6]}
+
+
+def test_current_document_build_keeps_its_true_input_hash_and_is_not_archive_reproduction(plan):
+    archived = json.loads(PLAN_PATH.read_text())
+    assert plan["proposal"]["sha256"] == CURRENT_PROPOSAL_SHA256 != archived["proposal"]["sha256"]
+    assert plan != archived  # today's document is a different input; this build is not byte reproduction
+
+
+def test_tampered_historical_source_is_refused_before_extraction(mod):
+    data = bytearray(FIXTURE.read_bytes())
+    data[-2] ^= 1
+    with pytest.raises(ValueError, match="fixture hash mismatch"):
+        BoundHistoricalProposal(bytes(data), PROVENANCE["sha256"], PROVENANCE["logical_path"])
+
+
+def test_wrong_logical_binding_does_not_reproduce_the_archive(mod):
+    archived = json.loads(PLAN_PATH.read_text())
+    wrong = BoundHistoricalProposal(FIXTURE.read_bytes(), PROVENANCE["sha256"], "docs/e14_corrected_proposal_20260923.md")
+    assert mod.build(proposal=wrong)["proposal"]["path"] != archived["proposal"]["path"]
+    assert mod.build(proposal=wrong) != archived
+
+
+def test_changed_contract_bytes_fail_or_change_the_requests(mod):
+    archived = json.loads(PLAN_PATH.read_text())
+    text = FIXTURE.read_text()
+    contract = mod.contract_text(_historical())
+    assert contract in text
+    changed = text.replace(contract, contract.replace("Return", "Emit", 1), 1).encode("utf-8")
+    assert changed != FIXTURE.read_bytes()
+    altered = BoundHistoricalProposal(changed, hashlib.sha256(changed).hexdigest(), PROVENANCE["logical_path"])
+    try:
+        rebuilt = mod.build(proposal=altered)
+    except ValueError:
+        return  # a fail-closed refusal is acceptable
+    assert rebuilt["contract"]["sha256"] != archived["contract"]["sha256"]  # the changed bytes reach the contract...
+    assert json.dumps(rebuilt["roots"], sort_keys=True) != json.dumps(archived["roots"], sort_keys=True)  # ...and every request
+    assert rebuilt != archived
 
 
 def test_status_is_proposed_not_released(plan):
