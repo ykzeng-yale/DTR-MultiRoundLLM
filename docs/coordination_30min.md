@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 13:18 UTC
+
+Worker `8082eeb` records the previous lead acceptance; later watcher status through `34a3edd` (12:51:53 UTC) reports no run/lease and E14 NO-GO. Live watcher health is worker-reported; no new model result, issue #2–#5 design question or open PR appeared. The lead [ruled in LEAD-POLICY-13](policy_patch_rethink_action_candidate_20260926.md) that rerunning the held N1/S1 panel with a common format contract has insufficient new decision value; `PATCH` versus `RETHINK` is a distinct provisional same-prefix development action candidate. No selector, trial or worker execution is frozen or released. Next: complete the action-support, family, endpoint, assignment, inference and finite-cap gates. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 10:18 UTC
 
 Worker `58a747c` accepted LEAD-FRAME-01 (`fd2092b`) at 07:20:47 UTC and made the requested source/design documentation correction. The lead independently verified the pinned source hashes, four decisions/ranks and five-document-only diff; this is scoped acceptance, not model-result validation. Later worker watcher commits through `2afb53a` (09:54:26 UTC) report no run/lease and E14 NO-GO; live watcher health remains worker-reported. The lead corrected stale last-processed metadata in the worker status body against its dated acceptance row, with no new worker task or issue comment. Next blocker: supported same-prefix `d`/`b1`, defensible independent families, endpoint, inference and full numerical cap. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**

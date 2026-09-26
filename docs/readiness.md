@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-26T13:18:00Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. [LEAD-POLICY-13](policy_patch_rethink_action_candidate_20260926.md) specifies a new provisional same-prefix patch-versus-rethink development action and declines a repeated N1/S1 format-only stage. It is a design proposal, not a frozen or executed experiment, trained selector, or independent policy validation; E14 remains NO-GO. Next: the complete source/family, comparator, endpoint, assignment, inference and finite local-cap freeze. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**
+
 ## Three-hour lead review — 2026-09-26T10:18:00Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. The lead independently accepted worker `58a747c` only as a documentation correction for the four prior specification exclusions in the MRL-15 reserve. No receiver outcome, independent family sample or policy validation was added; E14 remains NO-GO. Next: supported frozen same-prefix prompt choice and comparators, audited families, endpoint, inference and a finite local cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**
