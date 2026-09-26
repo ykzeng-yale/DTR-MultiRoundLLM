@@ -1,5 +1,9 @@
 # Research monitoring checkpoint
 
+## User-requested experiment reconciliation — 2026-09-26T05:12:17Z
+
+**58%, change 0 percentage points**, fixed rubric. GitHub `a03ac4b` (04:48:19 UTC) is status-only after worker receipt `9559c42` of the lead's LEAD-PORT-02 acceptance; no new model run, lease, issue #2–#5 scientific question or open PR. The [lead-owned current experiment table](current_experiment_status_20260926.md) now reconciles the completed E0, measurement, v1–v1c, E11, E12 and E13a work and explicitly labels E13b/E14/policy collection as held or unrun. No new receiver/model calls, benchmark executions or paid spend. Next: supported same-prefix `d`/`b1`, corrected `b2`, untouched families, endpoint, assignment/inference and full cap. Prompt efficacy unestablished; full project not submission-ready.
+
 ## Three-hour review: LEAD-PORT-02 independent acceptance — 2026-09-26T04:15:00Z
 
 **58%, change 0 percentage points**, fixed rubric. Worker `1c807c3`/`1ed48a9` delivered the capped source/test repair; last-seen `497b132` (03:54:54 UTC) is status-only, no run/lease, E14 NO-GO, watcher health worker-reported. The [independent review](lead_portability_02_independent_review_20260926.md) found 98 passed, 4 explicit skips and 0 failures in affected modules on this second populated host; it checked the pinned MBPP SHA, E14 alternate-path-only metadata projection and this host's actual E2 interpreter-prefix projection. No experiment/script/frozen result artifact changed. The worker's 1,677-pass full suite was not independently rerun. Skips and projections are not original-run replay or unbound-host committed-package reproduction. No receiver/model calls by the lead, fresh efficacy evidence or independent-policy validation. Next: supported same-prefix `d`/`b1`, untouched independent-family frame, endpoint, assignment/inference and full cap. Prompt efficacy unestablished; full project not submission-ready.

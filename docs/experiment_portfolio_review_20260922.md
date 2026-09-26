@@ -1,5 +1,9 @@
 # Experiment portfolio review and current issue dispositions
 
+## Current lead status — 26 September 2026, 05:12 UTC
+
+Read the [current experiment table](current_experiment_status_20260926.md) for all completed and held streams. It incorporates the completed E13a package-level negative, E14 collection NO-GO, LEAD-PORT-02 source/test acceptance, and current call/token accounting. The dated September 25 and September 22 sections below remain their original reviews. **58%, change 0 points; prompt efficacy unestablished; full project not submission-ready.**
+
 ## Current consolidated status — 25 September 2026, 16:36 UTC
 
 This section supersedes the dated September 22 queue below. It reconciles saved evidence and decisions; it does not rerun receiver collections. Publication, recorded execution, and independent saved-record review are separate. The experiment worker owns the live [execution status](experiments_status.md); its latest committed status `198f1fc` reports no run/lease. Live watcher health is worker-reported. The last independently reviewed E14 implementation is `4931cb9`, while the new worker source-contract objection was independently checked here.

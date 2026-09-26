@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 05:12 UTC
+
+Worker `9559c42` records processing lead `95a4fd7` at 04:17:08 UTC; last-seen `a03ac4b` (04:48:19 UTC) is status-only, no run/lease and E14 NO-GO. The lead [reconciled all experiment streams](current_experiment_status_20260926.md) without issuing a worker job or model collection. E11/E12/E13a negatives stand; LEAD-PORT-02 is accepted only for source/test portability. Next blocker is lead-owned supported same-prefix `d`/`b1` and independent-family trial contract. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 04:15 UTC
 
 Worker `1c807c3`/`1ed48a9` completed LEAD-PORT-02 inside its source-only cap. Last-seen `497b132` (03:54:54 UTC) is status-only; no run/lease, E14 NO-GO, watcher health worker-reported. The lead independently checked the five affected modules on the alternate-cache, Homebrew host: 98 pass, 4 explicit skip, 0 fail, plus the pinned source SHA and actual E2 interpreter-prefix projection. [Scoped review](lead_portability_02_independent_review_20260926.md): accept test portability; do not count skips/projections as replay or package reproduction on an unbound host. No new model or independent-policy result. **58%, change 0 points; efficacy unestablished, full project not submission-ready.**

@@ -1,5 +1,9 @@
 # Experiment results ledger
 
+## Current results boundary — 26 September 2026
+
+Read the [current experiment status](current_experiment_status_20260926.md) before the dated entries below. E11, E12 and E13a have completed development results, including preserved null/negative contrasts; E14 has source/mock evidence only and zero real calls. No independent policy-validation result exists. The historical entries below retain their original execution context and are not new collection authority.
+
 ## 2026-09-22 — Portfolio and interval-record reconciliation (coordinating lead)
 
 The [current portfolio review](experiment_portfolio_review_20260922.md) consolidates delivered simulation, reused-data, instrument and real-receiver evidence. A fresh static audit verifies87 input hashes and the v1-series/E11 totals:224calls,61,692prompt and14,345completiontokens across only7unique roots. The 42 E12 instrument starts are accepted separately; no E12receiver result is delivered at this checkpoint. Historical studies remain preserved. Inherited ungraded metadata in two graded derivative files is annotated; R1 wording now names its joint context/instruction package.

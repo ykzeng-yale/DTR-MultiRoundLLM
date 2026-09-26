@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T04:15:00Z",
+  "checkpoint_utc": "2026-09-26T05:12:17Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,14 +54,14 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "497b132dea2273a2d8850389aaca2b90b8a21dcb",
+  "prior_checked_head": "a03ac4b5e671af05bb4c75705186497747ceb898",
   "baseline_note": "Fixed 58-point rubric unchanged: clean-checkout source/test portability scope and manuscript E14/B2 accuracy repair add no empirical or independent-policy milestone credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Worker LEAD-PORT-02 source/test repair 1c807c3 and receipt 1ed48a9 independently reviewed on second host: 98 pass, 4 explicit skip, 0 fail in five affected modules. Pinned MBPP SHA and actual E2 interpreter-prefix projection checked. No new model or efficacy data.",
+  "latest_evidence": "Lead-owned current experiment status reconciles prior E0, v1-v1c, E1-E10, E11, E12, E13a and held E13b/E14/policy streams. Worker 9559c42 processed LEAD-PORT-02 acceptance; a03ac4b is status-only, no run/lease. No new model/efficacy data.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "497b132dea2273a2d8850389aaca2b90b8a21dcb",
+    "last_seen_worker_revision": "a03ac4b5e671af05bb4c75705186497747ceb898",
     "delivery_type": "LEAD-PORT-02 source/test repair 1c807c3, receipt 1ed48a9; later status-only",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
@@ -74,7 +74,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker 497b132 at 2026-09-26T03:54:54Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker a03ac4b at 2026-09-26T04:48:19Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -514,5 +514,6 @@
     "followup_receipt": "accepted/running 2026-09-26T01:19:31Z; completed 01:22:57Z in 1c807c3/1ed48a9",
     "followup_independent_review": "docs/lead_portability_02_independent_review_20260926.md",
     "followup_lead_result": "98 pass, 4 explicit skip, 0 fail in five affected modules on second populated host; accepted source/test scope only"
-  }
+  },
+  "current_experiment_status": "docs/current_experiment_status_20260926.md"
 }

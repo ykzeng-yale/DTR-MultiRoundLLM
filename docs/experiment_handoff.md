@@ -1,5 +1,9 @@
 # Handoff to the experimental agent
 
+## Current handoff — 26 September 2026
+
+The [current experiment status](current_experiment_status_20260926.md) and [coordination channel](../COORDINATION.md) supersede the dated assignments below. LEAD-PORT-02 is completed and accepted within its source/test scope. No worker job, model collection cap or shared-host lease is open; E14 N1/S1 remains NO-GO. The next scientific contract is lead-owned and must be committed before any model call. Do not interpret historical MRL-20 or other allowances below as active.
+
 ## 21 September, 03:24 UTC — Population compression diagnostic and update health
 
 Use [the exact compression results](history_compression_results_20260921.md) to

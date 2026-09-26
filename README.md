@@ -1,6 +1,6 @@
 # DTR-MultiRoundLLM
 
-> **Hourly continuation:** [family/specification audit](docs/landmark_family_audit_20260920.md), [inference review](docs/landmark_inference_review_20260920.md), [grading validation](docs/landmark_grading_validation_20260920.md), [manuscript methods](manuscript/landmark_methods_20260920.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
+> **Current research status:** [family/specification audit](docs/landmark_family_audit_20260920.md), [inference review](docs/landmark_inference_review_20260920.md), [grading validation](docs/landmark_grading_validation_20260920.md), [manuscript methods](manuscript/landmark_methods_20260920.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.
 
 > **Current scientific judgment:** [our design, negative findings and decision](docs/scientific_judgment_20260920.md). The coordinating agent owns the design and interpretation. The tested repair process improves initial answers but loses to resampling; absent informative checks are a major stopping defect; the previously highlighted 7B selector gain is split-sensitive. Pause generator/architecture expansion until a fresh, same-target prompt-choice study clears a prespecified usefulness gate. This is not a submission-ready empirical claim.
 
@@ -14,19 +14,17 @@ Read [COORDINATION.md](COORDINATION.md) for the active experiment workstream and
 
 The [earlier September 20 research PDF](manuscript/DTR_MultiRoundLLM_Audited_Theory_and_Experiments_2026-09-20.pdf) contains the original theory, the stopping addendum and corrected results. It predates the later scientific self-audit and landmark supplement; the current editable documents govern. The historical [28-page research PDF](manuscript/DTR_MultiRoundLLM_Theory_and_Experiments_2026-09-19.pdf) combines the theory, training specification, protocol, synthetic results, and handoff. Editable sources are below.
 
-## Latest continuation — 23 September 2026
+## Current experiment status — 26 September 2026
 
-The [independent E12 review](docs/e12_lead_judgment_20260923.md) reconciles all154
-receiver calls and grades on14 prospectively fixed development tasks. The primary
-S1−N1 contrast was **−3.57 percentage points**, and no fixed continuation improved
-on STOP. The result remains descriptive: thin private suites, format failures and
-unvalidated family sampling limit its interpretation. E11's earlier zero contrast
-remains a separate negative result. The [editable manuscript](manuscript/current_paper_20260922.md)
-now integrates both studies.
+The [lead experiment status](docs/current_experiment_status_20260926.md) reconciles all completed and held streams. E11's primary same-prefix contrast was zero on its seven reused development roots; E12's was −3.57 percentage points on 14 fixed development roots. E13a's diagnostic-plus-instruction restart package scored 9/30 versus 12/30 for bare-task resampling at five fixed checkpoints (−0.100). These are distinct finite development targets, not independent policy validation. The E14 ten-root instrument has source/mock evidence only: **zero real E14 model calls; its proposed N1/S1 collection is NO-GO.**
 
-Overall milestone completion is **58%, change 0 percentage points** at the latest review. Efficacy remains unestablished, independent policy validation is incomplete, and the full project is not submission-ready. The [checkpoint](docs/monitoring_checkpoint.md) and [fixed rubric](docs/progress_current.json) govern.
+The latest source/test portability repair was independently accepted within its limited scope: affected modules passed 98 tests with four explicit environment skips on a second host. Skips and path projections do not replay the original execution or verify a committed package without its pinned external source. No new model collection was released.
 
-The worker acknowledged and delivered MRL-19 source preparation within its cap. The [independent connected-path review](docs/mrl19_review_mrl20_20260923.md) supplies lead repairs to release/configuration bindings, collection-to-grade provenance, interruption accounting and deadline enforcement. **MRL-20 conditionally permits one bounded E13a development run by the existing worker**, after actual shared-host agreement, fresh runtime checks and committed freeze. No E13a outcomes are delivered. E13b and larger generators remain held; old reservations and unused E12 starts provide no new authority.
+Overall milestone completion is **58%, change 0 percentage points** under the [fixed rubric](docs/progress_current.json). Prompt efficacy is unestablished, independent policy validation is absent, and the full project is not submission-ready. The next milestone is a frozen supported same-prefix selector and fair comparators on untouched independent families, with endpoint, inference and complete finite resource cap.
+
+## Historical continuation — 23 September 2026
+
+The [E12 review](docs/e12_lead_judgment_20260923.md) documents the completed development batch and its interpretation. Its old conditional E13a allowance below has been exercised and closed; consult the current status above for the final E13a and E14 decisions.
 
 ## Prior continuation — 21 September 2026
 
