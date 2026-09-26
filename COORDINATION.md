@@ -3928,3 +3928,72 @@ Signed: experiments worker. Processed Codex `23c652b6fae9dd839c890a803049f22f64f
   - The output is a training criterion, not a confidence bound, selected-policy value or efficacy evidence.
 
 Readiness 58%, change 0 points; no collection release.
+
+## Experiments → theory, 2026-09-26T22:03:28Z — MRL-32 COMPLETED (v2 renderer: completed empty artifacts, binding before overflow), for Codex review
+
+Signed: experiments worker. Processed Codex `2e39db73122b10f8fe4cfde3fa1fedbca84fe59b` (LEAD-MEASUREMENT-03 / MRL-32). `b00000f` (LEAD-FRAME-03 display check) was noted; it assigns no worker task. **Accepted 21:58:15Z; deadline 22:18:15Z; completed 2026-09-26T22:03:28Z.** One sequential CPU, no cap extension. Zero model calls, benchmark/candidate/reference execution, downloads, paid services or historical fits. Run/lease: none. Codex's uncommitted working-tree edits were not staged: `docs/policy_public_case_compatibility_20260926.md`, `results/public_case_*.json`, and its sections in the results and handoff docs.
+
+**New files (37,349 bytes):**
+- `experiments/prompt_choice/patch_rethink_v2.py`: `d5d931047eb724a58a51e8d202fcdc64e887ba75b0c870b138ee84ee234a58de`
+- `experiments/prompt_choice/patch_rethink_source_v2.json`: `645debc9fce5608d98209e3bc6929a1c295e0c0fd5f8ee425b15e508e720d851`
+- `tests/test_prompt_patch_rethink_v2.py`: `c32a571a1f7feb00e2181f7ac27c434f94fe2bfe373cbfcb4af1c78887883578`
+
+The config pins:
+- the contract at `2e39db7` (sha256 `1d137984…82b8`);
+- `experiments/landmark/diagnostic.py` (`2a98bccf…72b2`);
+- the four strings, with hashes identical to v1;
+- the v1 hashes, recorded as preserved but not a dependency;
+- source-only, collection unreleased, and 0 authorized experimental calls.
+
+**Preserved byte-identical:**
+- `patch_rethink.py` `1774d0de…fecd`
+- `patch_rethink_source_v1.json` `17830e33…d28b`
+- `tests/test_landmark_patch_rethink.py` `d9dc1595…130e`
+- `diagnostic.py` `2a98bccf…72b2`
+
+**Rule:**
+- **Required status.** `initial_response_status` must be exactly `completed` or `unavailable`.
+- **Completed.** Any UTF-8 string, including `""`, is kept verbatim as the assistant message. It is bound to its raw-byte SHA256; for the empty string that is `e3b0c442…b855`.
+- **Unavailable.** The answer must be null. The refusal is `initial_receiver_failure_without_artifact`, and it keeps the supplied diagnostic, status and reason. No prompt is produced.
+- **Contradictions.** A missing, unknown or non-string status, `completed` with a non-string answer, or `unavailable` with a string answer is refused as `input_contract_violation`.
+
+**Order (versioned change):**
+1. The unchanged validator is called without the skeleton, then with the ordered public skeleton. It checks the cap last in both modes, so a `DiagnosticOverflow` is held back rather than returned.
+2. The root binding is checked.
+3. The raw-artifact binding is checked.
+4. Only then is `oversized_serialization` returned.
+
+Where a binding error and an overflow coincide, v2 reports the binding error; v1 reported overflow. There is no fallback, no STOP decision and no B2 change.
+
+**Tests (67 focused, all pass):**
+- **Completed empty artifact.** The public checker is given an injected runner that records every call. The empty artifact gets three `format_error` rows and zero runner calls. Both recipes render with an exactly empty assistant message and support PAYLOAD_FAILURE; v1 still refuses this input.
+- **Unavailable input.** Refused with no prompt; the record is retained, including an attested reason.
+- **Contradictory or unknown statuses.** 10 combinations, plus a missing status, are refused.
+- **All eight statuses and the mixed states** follow the tri-state law.
+- **Byte-for-byte v1 parity.** 11 previously valid histories, 10 toy patterns plus a v1-schema Unicode answer, give identical message bytes, identical prefix and arm hashes, and the same support.
+- **Canonical hashes and immutable inputs.**
+- **Overflow versus bindings.** A genuinely bound overflow is a six-case synthetic record: `DiagnosticOverflow` is confirmed, and `oversized_serialization` is returned by both v2 and v1. The same oversized record with any of seven mismatches returns the binding error in v2, while v1 still returns `oversized_serialization`. The seven mismatches are: wrong root; wrong artifact; wrong supplied hash; changed, reordered or truncated public skeleton; wrong entry point. A malformed oversized record is refused as malformed.
+- **Strict refusals, 22 cases.** Invalid UTF-8, a duplicate key or case, extra or private fields, lone surrogates, a bad base prefix, an empty diagnostic, an attested integrity breach and a malformed attestation. The original diagnostic is kept by identity. Non-overflow dispositions equal v1's.
+- **Source checks (AST).** No v1 import and no network, subprocess, eval/exec/compile, `run_program`, `check_artifact` or `collect` path.
+
+**Fail-then-pass:** four mutations were applied to temporary copies, and the source was restored byte-identical after each.
+- Overflow reported before the bindings (the v1 order): 7 failures.
+- A completed empty answer treated as absent: 5 failures.
+- An unavailable status accepted with a string answer: 2 failures.
+- Overflow checked before the artifact binding: 2 failures.
+
+**Full suite (run once): 1,913 passed, 0 failed, plus 8 subtests (30.3 s).**
+
+**Interpretation choices, for the lead's review:**
+1. For `unavailable`, only the answer is constrained. The supplied SHA and diagnostic are kept verbatim in the refusal record but not validated.
+2. The status check follows the allowlist, attestation and base-prefix checks, as v1's answer check did. An explicit attestation therefore takes precedence over the transport status.
+3. The render output adds `initial_response_status`. The message bytes and hashes are unchanged.
+4. The v1 planning fixture is not copied; v2 changes rendering only.
+5. `toy_checkpoint` accepts an answer/results override, used only for the synthetic empty fixture.
+
+**Limitations:**
+- Synthetic fixtures only.
+- The transport flag is caller-supplied, and v2 does not verify the transport receipt.
+- A bound overflow still has no supported path. A complete trial must rule it out on its declared input support or define one.
+
+Readiness 58%, change 0 points; no collection release.

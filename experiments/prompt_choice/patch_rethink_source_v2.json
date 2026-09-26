@@ -1,0 +1,127 @@
+{
+ "version": "patch-rethink-source-v2",
+ "decision": "LEAD-MEASUREMENT-03",
+ "assignment": "MRL-32",
+ "status": "source_only",
+ "collection": "unreleased",
+ "experimental_calls_authorized": 0,
+ "receiver_calls_authorized": 0,
+ "lead_contract": {
+  "path": "docs/policy_renderer_v2_contract_20260926.md",
+  "commit": "2e39db73122b10f8fe4cfde3fa1fedbca84fe59b",
+  "sha256": "1d137984cab0ed5c90b724b3c516f6bdd2306be0612644d86245b5275782a8b2",
+  "hash_convention": "sha256 of the raw file bytes at the issuing commit (git show <commit>:<path>)"
+ },
+ "strings": {
+  "PATCH": {
+   "text": "Review your previous answer against the original task and any failures shown in the public diagnostic. Preserve its correct behavior; change only what is needed for the full stated task domain. If no public failure is shown, do not infer that the answer is correct on hidden cases. Do not hard-code the public examples. Return one complete solution.",
+   "sha256": "d1132662fd55f3efb81cf8c56d8e043e09c4a3e1436d9852e74b852aee5bb4c4"
+  },
+  "RETHINK": {
+   "text": "Re-derive a solution from the original task. Treat any failures shown in the public diagnostic as evidence about the previous answer. Do not assume the previous algorithm is correct; use the previous answer only to avoid witnessed errors. Check the full stated task domain, not only the public examples. Return one complete solution.",
+   "sha256": "a95c8bbc3e9f5c1be32c7c0746c6b71689d2317230dfaafaa539ac3b0e807498"
+  },
+  "COMMON_CAVEAT": {
+   "text": "For any check marked timeout, unavailable, or output_limit, the required result was not fully observed; do not treat that status as a pass or as proof that the answer is wrong. Completed results retain their recorded meaning, including failures when other checks are incomplete. Passing the public examples does not establish correctness on the full stated task domain.",
+   "sha256": "277849824e8074b24a73f892b1ff61b040390711db12fbf9f9d567594dc9fb9d"
+  },
+  "TERMINAL_OUTPUT_CONTRACT": {
+   "text": "Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.",
+   "sha256": "35ec7cabf4baff5b3542e40bf0ec5b96697047ed46801fcecfb0db19f1a8408b"
+  }
+ },
+ "string_note": "The four strings and their sha256 (raw UTF-8 bytes) are byte-identical to patch_rethink_source_v1.json.",
+ "terminal_output_contract_name": "terminal-output-contract-v2 (intervention instruction, not a scoring rule)",
+ "message_layout": [
+  "system (public task prefix)",
+  "user (public task)",
+  "assistant (exact saved initial answer)",
+  "user (canonical diagnostic message, historical serialization and 2048-byte cap)",
+  "user (COMMON_CAVEAT, identical in both arms)",
+  "user (RECIPE + two newlines + TERMINAL_OUTPUT_CONTRACT)"
+ ],
+ "pinned_dependency": {
+  "path": "experiments/landmark/diagnostic.py",
+  "sha256": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "use": "unchanged pure validators (validate_diagnostic, strict_json_loads) and canonical diagnostic_message; never modified or monkeypatched"
+ },
+ "self_contained": "patch_rethink_v2.py is a self-contained copy of the renderer; it does not import the v1 module.",
+ "v1_preserved_not_a_dependency": {
+  "experiments/prompt_choice/patch_rethink.py": "1774d0de4116edd7079631dcb25bf2f96b5f79412acfb5188ced1753b893fecd",
+  "experiments/prompt_choice/patch_rethink_source_v1.json": "17830e338b69373c9a122076aec351d293c04657be0c14abdbf835a67325d28b",
+  "tests/test_landmark_patch_rethink.py": "d9dc15958095a9aa516da0ecf7127d1b9177fc0fdca416f6de8b6a5b4245130e"
+ },
+ "initial_response_status": {
+  "required": true,
+  "values": [
+   "completed",
+   "unavailable"
+  ],
+  "meaning": "public deployment-visible transport metadata, not a private grade; checked for internal consistency only; a future collector must bind it to the actual transport receipt and raw artifact",
+  "completed": "initial_answer is any valid UTF-8 string, including the empty string; kept verbatim as the assistant message; supplied SHA256 and diagnostic artifact SHA256 must equal the actual raw-byte digest (empty string: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)",
+  "unavailable": "initial_answer must be null; refused as initial_receiver_failure_without_artifact with the supplied diagnostic, status and reason retained; no prompt",
+  "input_contract_violation": "missing/unknown/non-string status, completed with a non-string answer, unavailable with a string answer"
+ },
+ "refusal_order": [
+  "input allowlist",
+  "explicit checkpoint attestation",
+  "base messages",
+  "transport status and answer",
+  "UTF-8/string types",
+  "diagnostic parse (strict JSON, duplicate keys)",
+  "case ids",
+  "schema/content (overflow deferred)",
+  "ordered public skeleton (overflow deferred)",
+  "root binding",
+  "raw initial-artifact binding",
+  "oversized_serialization"
+ ],
+ "versioned_change_from_v1": "Where a binding error and an overflow both occur, v2 reports the binding error (public_binding_mismatch, artifact_binding_mismatch or malformed_or_empty_diagnostic); v1 reported oversized_serialization first. An overflow refusal produces no prompt and establishes neither a common terminal outcome nor a STOP decision.",
+ "support_law": {
+  "actions_on_every_well_formed_history": [
+   "PATCH",
+   "RETHINK"
+  ],
+  "forced_stop": false,
+  "drop_or_retry_on_pass_or_incomplete": false,
+  "aggregate": {
+   "PASS": "every case passes",
+   "INCOMPLETE": "any case is timeout, unavailable or output_limit",
+   "PAYLOAD_FAILURE": "otherwise"
+  },
+  "retained_flags": [
+   "has_payload_failure",
+   "has_incomplete",
+   "per-case status and reason (unavailable reasons verbatim)"
+  ],
+  "select_s1_used": false
+ },
+ "invalid_checkpoint_dispositions": [
+  "initial_receiver_failure_without_artifact",
+  "malformed_or_empty_diagnostic",
+  "oversized_serialization",
+  "integrity_breach",
+  "public_binding_mismatch",
+  "artifact_binding_mismatch",
+  "input_contract_violation"
+ ],
+ "not_changed": [
+  "task outcomes",
+  "recipe/caveat/terminal strings",
+  "B2",
+  "diagnostic schema",
+  "2048-byte cap",
+  "private endpoint"
+ ],
+ "no_common_fallback": true,
+ "limits": {
+  "cpu": 1,
+  "elapsed_minutes_from_acceptance": 20,
+  "retained_output_mib": 32,
+  "model_calls": 0,
+  "candidate_or_reference_execution": 0,
+  "downloads": 0,
+  "paid_services": 0,
+  "historical_fits": 0
+ }
+}
