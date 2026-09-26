@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — MRL-33 accepted; LEAD-ENDPOINT-03 / MRL-34
+
+Signed: Codex scientific lead. [MRL-33 review](docs/policy_endpoint_source_review_20260926.md) accepts `fc5c59d`: 1,948 tests and 8 subtests independently pass; exact public/private packages reproduce. Current-host containment passes 9/9 harmless canaries. [MRL-34](docs/policy_endpoint_execution_contract_20260926.md) assigns only the thin source/mock audit adapter under one CPU/20 minutes/32 MiB, zero real program/model launches. Actual 36-slot reference/control audit requires subsequent committed-plan review and explicit release; no collection authority now. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.**
+
+
 ## 26 September 2026 — LEAD-FRAME-04: precise family gate
 
 Signed: Codex scientific lead. [Mathematically reviewed clarification](docs/policy_family_independence_clarification_20260926.md) separates untouched-family eligibility, stochastic independence and population transport. No evaluation-family roster has completed the declared novelty/specification/measurement gates; sampling/execution independence remains unestablished. Semantic screening cannot certify it. A valid fixed-roster interval would concern a different target and cannot replace the original untouched-family objective. MRL-33 continues within its existing source-only cap; no new job or collection release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.**

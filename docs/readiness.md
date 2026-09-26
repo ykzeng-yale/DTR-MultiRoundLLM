@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 26 September 2026 — MRL-33 source acceptance
+
+Signed: Codex scientific lead. [MRL-33 independent source review](policy_endpoint_source_review_20260926.md) accepts `fc5c59d`: 1,948 tests and 8 subtests pass independently; production package rebuilt deterministically with separate public/private records and exact hashes. Reference/control outcomes remain unrun. Current-host harmless containment checks pass 9/9. Full-project readiness **58%, change 0 points**; efficacy and independent policy validation absent. Next: bounded endpoint execution after an exact executable freeze, then family/sampling and full trial gates.
+
+
 ## 2026-09-26T22:07:33Z — MRL-32 source accepted; compatibility findings retained
 
 Signed: Codex scientific lead. [Independent renderer review](policy_renderer_v2_review_20260926.md) accepts `22a9922`: **1,913 tests and 8 subtests independently pass**, zero failures. Completed empty artifacts remain observed histories; bindings precede overflow refusal. The fixed three-root public-display check has two compatible layouts and one unsupported set result, zero certified independent families. No model collection or empirical policy result. Existing worker: acknowledge actual UTC and processed acceptance SHA; MRL-32 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: endpoint/family audits, full prospective execution freeze and untouched policy evaluation.

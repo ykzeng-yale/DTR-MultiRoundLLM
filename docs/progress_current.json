@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T22:17:06Z",
+  "checkpoint_utc": "2026-09-26T22:20:38.060724+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -59,13 +59,13 @@
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Current-host strict containment: 9/9 harmless canaries pass and current grader binding verification passes. MRL-33 endpoint source preparation remains pending independent review. Family eligibility, stochastic independence and transport separated in a mathematically reviewed clarification. No new policy or reference/control outcome.",
+  "latest_evidence": "MRL-33 independently accepted: 1948 tests and 8 subtests pass; exact public/private packages rebuilt twice. Containment canaries pass 9/9. No reference/control outcomes or new model results.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "22a9922",
-    "delivery_type": "Source-only v2 renderer independently accepted",
+    "last_seen_worker_revision": "fc5c59d",
+    "delivery_type": "Source-only endpoint builder independently accepted",
     "last_independently_reviewed_worker_documentation_revision": "22a9922",
-    "scientific_review_revision": "22a9922",
-    "review_record": "docs/policy_renderer_v2_review_20260926.md",
+    "scientific_review_revision": "fc5c59d",
+    "review_record": "docs/policy_endpoint_source_review_20260926.md",
     "acknowledgement_received": false,
     "mrl08_acknowledgement_received": true,
     "mrl08_consecutive_unanswered_checks": 0,
@@ -244,7 +244,9 @@
     "mrl30_status": "Corrected test/source validation accepted; no production change",
     "mrl31_status": "Source accepted; no real-data fit or collection release",
     "mrl32_status": "Closed: source delivery independently accepted",
-    "mrl32_execution_released": false
+    "mrl32_execution_released": false,
+    "mrl33_status": "Closed: independently accepted source package",
+    "mrl33_execution_released": false
   },
   "portfolio_review": "docs/experiment_portfolio_review_20260922.md",
   "independent_policy_design": "docs/independent_prompt_policy_validation_design_20260922.md",
