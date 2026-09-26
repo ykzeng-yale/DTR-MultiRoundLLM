@@ -9,6 +9,7 @@ import json
 import re
 import shutil
 import subprocess
+import time
 import uuid
 from pathlib import Path
 
@@ -427,41 +428,98 @@ class _Child:
         return self.rc
 
 
-def _supervised(tmp_path, *, group_gone=True, detached="confirmed_by_normal_runner_returns", audit_complete=True, rc=0):
+def _supervised(tmp_path, *, group_gone=True, detached="confirmed_by_normal_runner_returns", audit_complete=True, rc=0,
+                create_run=True, out=None, clock=None, detached_fn=None):
     work = tmp_path / "w"
     work.mkdir(exist_ok=True)
-    out = work / "out"
-    out.mkdir()
-    (out / "receipt_private.json").write_text(json.dumps({"audit_complete": audit_complete}))
+    out = work / "out" if out is None else out
     plan = tmp_path / "plan.json"
     plan.write_text(json.dumps({"output_directory": str(out)}))
+
+    def popen(cmd, **kw):  # a fake child: when it "runs", it creates the bound run directory with this execution's token
+        token = cmd[cmd.index("--run-token") + 1]
+        assert "--deadline-monotonic" in cmd
+        if create_run:
+            out.mkdir()
+            (out / "start_manifest.json").write_text(json.dumps({"run_token": token}))
+            (out / "receipt_private.json").write_text(json.dumps({"audit_complete": audit_complete}))
+        return _Child(rc)
 
     def killpg(pid, sig):
         assert pid == 5151
         if sig == 0 and group_gone:
             raise ProcessLookupError
-    return ad.execute_supervised("src.jsonl", plan, "a" * 40, popen=lambda cmd, **kw: _Child(rc), killpg=killpg,
-                                 clock=iter(range(0, 1000, 1)).__next__, detached=lambda o: {"status": detached}), out
+    sup = tmp_path / "sup"
+    result = ad.execute_supervised("src.jsonl", plan, "a" * 40, popen=popen, killpg=killpg,
+                                   clock=clock or iter(range(0, 1000, 1)).__next__,
+                                   detached=detached_fn or (lambda o: {"status": detached}), supervisor_root=sup)
+    return result, out, sup
 
 
 def test_mrl35_cli_success_requires_every_piece_of_evidence(tmp_path):
-    code, record, totals = _supervised(tmp_path)[0]
-    assert code == 0 and record["within_total_deadline"] and totals["within_cap"]
+    (code, record, totals), out, sup = _supervised(tmp_path)
+    assert code == 0 and record["run_directory_bound"] and totals["within_total_deadline"] and totals["within_cap"]
 
 
 @pytest.mark.parametrize("kw", [dict(group_gone=False), dict(detached="unresolved"), dict(audit_complete=False), dict(rc=4)])
 def test_mrl35_cli_is_nonzero_when_cleanup_or_completeness_is_unresolved(tmp_path, kw):
-    (code, record, totals), out = _supervised(tmp_path, **kw)
+    (code, record, totals), out, sup = _supervised(tmp_path, **kw)
     assert code == 3
-    assert json.loads((out / "supervisor.json").read_text())["child_pid"] == 5151
+    (run,) = sup.iterdir()
+    assert json.loads((run / "supervisor.json").read_text())["child_pid"] == 5151
 
 
 def test_mrl35_final_on_disk_totals_equal_measured_files_including_supervisor_and_itself(tmp_path):
-    (code, record, totals), out = _supervised(tmp_path)
-    measured = {f.name: f.stat().st_size for f in out.iterdir()}
+    (code, record, totals), out, sup = _supervised(tmp_path)
+    (run,) = sup.iterdir()
+    measured = {f.name: f.stat().st_size for f in run.iterdir()}
+    measured.update({f.as_posix(): f.stat().st_size for f in out.iterdir()})
     assert set(totals["files"]) == set(measured) - {"retained_totals.json"} and "supervisor.json" in totals["files"]
     assert totals["total_bytes"] == sum(measured.values()) and totals["totals_file_bytes"] == measured["retained_totals.json"]
-    assert json.loads((out / "retained_totals.json").read_text()) == totals
+    assert json.loads((run / "retained_totals.json").read_text()) == totals
+
+
+def test_mrl35_r1_lead_refusal_counterexample_never_mutates_an_unverified_existing_directory(tmp_path):
+    # The lead's probe: an unverified plan points to an existing directory outside work/, and the child refuses (exit 2).
+    existing = tmp_path / "elsewhere"
+    existing.mkdir()
+    (existing / "original.txt").write_text("original")
+    (code, record, totals), out, sup = _supervised(tmp_path, rc=2, create_run=False, out=existing)
+    assert code == 3 and sorted(p.name for p in existing.iterdir()) == ["original.txt"]
+    assert (existing / "original.txt").read_text() == "original"
+    assert record["run_directory_bound"] is False and record["detached_payload_cleanup"]["status"] == "unresolved"
+    (run,) = sup.iterdir()
+    assert sorted(p.name for p in run.iterdir()) == ["retained_totals.json", "supervisor.json"]
+
+
+def test_mrl35_r1_replayed_existing_run_is_not_bound_or_mutated(tmp_path):
+    old = tmp_path / "w" / "out"
+    old.mkdir(parents=True)
+    (old / "start_manifest.json").write_text(json.dumps({"run_token": "0" * 32}))
+    before = {p.name: p.read_bytes() for p in old.iterdir()}
+    (code, record, totals), out, sup = _supervised(tmp_path, rc=0, create_run=False, out=old)
+    assert code == 3 and record["run_directory_existed_at_start"] and not record["run_directory_bound"]
+    assert {p.name: p.read_bytes() for p in old.iterdir()} == before
+
+
+def test_mrl35_r1_deadlines_use_the_monotonic_clock():
+    import inspect
+    for fn in (ad.execute_supervised, ad.supervise, ad.run_child, ad.run_audit):
+        assert inspect.signature(fn).parameters["clock"].default is time.monotonic
+    tree = ast.parse((ROOT / "scripts/run_policy_endpoint_audit.py").read_text())
+    assert not [n for n in ast.walk(tree) if isinstance(n, ast.Attribute) and n.attr == "time"
+                and isinstance(n.value, ast.Name) and n.value.id == "time"]
+
+
+def test_mrl35_r1_finalization_overrun_is_measured_and_never_success(tmp_path):
+    now = [0.0]
+
+    def slow_detached(out):  # parent finalization work runs past the total deadline
+        now[0] += ad.SUPERVISOR["total_seconds"] + 1
+        return {"status": "confirmed_by_normal_runner_returns"}
+    (code, record, totals), out, sup = _supervised(tmp_path, clock=lambda: now[0], detached_fn=slow_detached)
+    assert code == 3 and totals["within_total_deadline"] is False
+    assert totals["elapsed_seconds_through_final_boundary"] > ad.SUPERVISOR["total_seconds"]
 
 
 def test_mrl35_preparation_delay_counts_against_the_total_deadline(package, tmp_path):

@@ -299,7 +299,7 @@ class RetainedCapReached(RuntimeError):
 
 
 def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None, clock=time.monotonic, limits=LIMITS,
-              deadline=None) -> dict:
+              deadline=None, run_token=None) -> dict:
     """Run the 36 slots once each in order with the given runner, persisting a start manifest and one flushed record per
     slot. `deadline` is absolute in `clock` units (default: start + slot budget); a slot starts only if clock() plus its
     per-call bound fits. Caps convert remaining slots to recorded unattempted slots; an interrupt records the run as
@@ -315,7 +315,7 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
     cap = limits["retained_output_bytes"]
     started, launches, written, records, omitted = clock(), 0, 0, [], []
     deadline = started + SUPERVISOR["slot_budget_seconds"] if deadline is None else deadline
-    start_manifest = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "limits": limits,
+    start_manifest = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "limits": limits, "run_token": run_token,
                       "started_at": datetime.now(timezone.utc).isoformat(), "slots": slots}
     text = json.dumps(start_manifest, sort_keys=True) + "\n"
     with open(out / "start_manifest.json", "x", encoding="utf-8") as fh:
@@ -474,7 +474,7 @@ def detached_payload_cleanup(out_dir) -> dict:
             "limitation": "relies on the unchanged sandbox.run_program finally cleanup; not an absolute guarantee"}
 
 
-def finalize_totals(out_dir, extra_files=(), *, cap=LIMITS["retained_output_bytes"]) -> dict:
+def finalize_totals(out_dir, extra_files=(), *, cap=LIMITS["retained_output_bytes"], extra=None) -> dict:
     """Write the final all-file byte accounting last. Scope: every file in the output directory, any sibling supervisor
     record, and this totals file itself (its own size is included by fixed-point iteration)."""
     out = Path(out_dir)
@@ -486,7 +486,8 @@ def finalize_totals(out_dir, extra_files=(), *, cap=LIMITS["retained_output_byte
     for _ in range(8):
         total = sum(sizes.values()) + own
         doc = {"scope": "all newly retained files of this run: the output directory, any sibling supervisor record, and this file",
-               "files": sizes, "totals_file_bytes": own, "total_bytes": total, "cap_bytes": cap, "within_cap": total <= cap}
+               "files": sizes, "totals_file_bytes": own, "total_bytes": total, "cap_bytes": cap, "within_cap": total <= cap,
+               **(extra or {})}
         text = json.dumps(doc, sort_keys=True) + "\n"
         if len(text.encode("utf-8")) == own:
             break
@@ -496,7 +497,7 @@ def finalize_totals(out_dir, extra_files=(), *, cap=LIMITS["retained_output_byte
     return doc
 
 
-def supervise(cmd, deadline, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.time) -> dict:
+def supervise(cmd, deadline, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monotonic) -> dict:
     """External owned-child supervisor: start the child in its own session, kill only that owned process group at
     deadline - kill_reserve, and record the observed exit and whether the ADAPTER group is gone (never assumed)."""
     t0 = clock()
@@ -524,46 +525,78 @@ def supervise(cmd, deadline, *, popen=subprocess.Popen, killpg=os.killpg, clock=
     except PermissionError:
         cleanup = "unresolved: cannot signal owned adapter process group"
     return {"child_pid": child.pid, "child_exit": rc, "killed_at_deadline": killed, "adapter_group_cleanup": cleanup,
-            "elapsed_seconds": round(clock() - t0, 6), "deadline_epoch": deadline}
+            "child_elapsed_seconds": round(clock() - t0, 6), "deadline_monotonic": deadline}
 
 
-def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.time,
-                       detached=detached_payload_cleanup) -> tuple:
-    """Parent: the total deadline starts HERE, before any verification (which runs inside the supervised child, before any
-    payload launch). Returns (exit code, supervisor record, totals); success needs every piece of evidence."""
+SUPERVISOR_ROOT = ROOT / "work" / "endpoint_supervisor_runs"
+
+
+def _run_directory_bound(out, token) -> bool:
+    """The plan's output directory is trusted only if its start manifest carries this execution's fresh run token, i.e. the
+    supervised child created it for this execution. An unverified, replayed or arbitrary path is never trusted."""
+    try:
+        return json.loads((Path(out) / "start_manifest.json").read_text()).get("run_token") == token
+    except (OSError, ValueError, AttributeError, TypeError):
+        return False
+
+
+def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monotonic,
+                       detached=detached_payload_cleanup, supervisor_root=None) -> tuple:
+    """Parent. Operational boundary (under a responsive OS): the monotonic total deadline starts HERE, before reading the
+    plan and before any verification, which runs inside the supervised child ahead of any payload launch. The parent writes
+    only into a freshly created supervisor directory of its own, never into the plan's (unverified) output path; it
+    measures the run directory only when bound by this execution's run token. Elapsed time is measured through the final
+    totals write boundary, and success is declared only after that. Returns (exit code, supervisor record, totals)."""
     t0 = clock()
     deadline = t0 + SUPERVISOR["total_seconds"]
+    token = secrets.token_hex(16)
+    sup_root = Path(SUPERVISOR_ROOT if supervisor_root is None else supervisor_root)
+    sup_root.mkdir(parents=False, exist_ok=True)
+    sup = sup_root / f"{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')}_{token[:12]}"
+    sup.mkdir(parents=False, exist_ok=False)  # freshly owned and bounded refusal/completion evidence destination
     try:
         out = Path(json.loads(Path(plan_path).read_text())["output_directory"])
     except (OSError, ValueError, KeyError, TypeError):
         out = None
+    existed_at_start = out is not None and out.exists()
     cmd = [sys.executable, str(Path(__file__).resolve()), "_child", "--source", str(source), "--plan", str(plan_path),
-           "--plan-commit", str(plan_commit), "--deadline", repr(deadline)]
+           "--plan-commit", str(plan_commit), "--deadline-monotonic", repr(deadline), "--run-token", token]
     record = supervise(cmd, deadline, popen=popen, killpg=killpg, clock=clock)
-    record["detached_payload_cleanup"] = detached(out)
-    receipt_path = out / "receipt_private.json" if out is not None else None
-    receipt = json.loads(receipt_path.read_text()) if receipt_path is not None and receipt_path.exists() else None
+    bound = out is not None and not existed_at_start and _run_directory_bound(out, token)
+    record.update(run_directory=None if out is None else out.as_posix(), run_directory_existed_at_start=existed_at_start,
+                  run_directory_bound=bound)
+    if bound:
+        record["detached_payload_cleanup"] = detached(out)
+        try:
+            receipt = json.loads((out / "receipt_private.json").read_text())
+        except (OSError, ValueError):
+            receipt = None
+    else:
+        receipt = None
+        record["detached_payload_cleanup"] = (
+            {"status": "no_launch_possible", "detail": "run directory never created; every launch is logged in it first"}
+            if out is not None and not existed_at_start and not out.exists() else
+            {"status": "unresolved", "detail": "run directory not bound to this execution (unverified, replayed or pre-existing)"})
     record["receipt_present"] = receipt is not None
     record["audit_complete"] = bool(receipt and receipt.get("audit_complete"))
-    record["started_epoch"], record["finished_epoch"] = t0, clock()
-    record["within_total_deadline"] = record["finished_epoch"] <= deadline
-    totals = None
-    if out is not None:
-        target = out / "supervisor.json" if out.is_dir() else out.with_name(out.name + ".supervisor.json")
-        with open(target, "x", encoding="utf-8") as fh:
-            fh.write(json.dumps(record, sort_keys=True, default=str) + "\n")
-        totals = finalize_totals(out, [] if out.is_dir() else [target])
-    ok = (record["child_exit"] == 0 and not record["killed_at_deadline"]
+    with open(sup / "supervisor.json", "x", encoding="utf-8") as fh:
+        fh.write(json.dumps(record, sort_keys=True, default=str) + "\n")
+    elapsed = clock() - t0  # measured after every read and write except the final totals file itself
+    totals = finalize_totals(sup, [f for f in out.iterdir() if f.is_file()] if bound else [],
+                             extra={"elapsed_seconds_through_final_boundary": round(elapsed, 6),
+                                    "within_total_deadline": t0 + elapsed <= deadline,
+                                    "boundary": "monotonic, from before the plan read to just before this totals file is written"})
+    ok = (bound and record["child_exit"] == 0 and not record["killed_at_deadline"]
           and record["adapter_group_cleanup"].startswith("confirmed")
           and record["detached_payload_cleanup"]["status"].startswith("confirmed")
-          and record["audit_complete"] and record["within_total_deadline"] and totals is not None and totals["within_cap"])
-    return (0 if ok else 3), record, totals  # never success while any cleanup, byte or completeness evidence is missing
+          and record["audit_complete"] and totals["within_total_deadline"] and totals["within_cap"])
+    return (0 if ok else 3), record, totals  # never success while any cleanup, byte, binding or deadline evidence is missing
 
 
-def run_child(source, plan_path, plan_commit, deadline, *, clock=time.time, verify=verify_release, runner=None,
-              build=ea.build) -> dict:
-    """Child: verification first (before any payload launch), then the slots against the parent's absolute deadline minus
-    the finalization reserve, so slow preparation consumes the same budget."""
+def run_child(source, plan_path, plan_commit, deadline, *, run_token=None, clock=time.monotonic, verify=verify_release,
+              runner=None, build=ea.build) -> dict:
+    """Child: verification first (before any payload launch), then the slots against the parent's absolute monotonic
+    deadline minus the kill and finalization reserves, so slow preparation consumes the same budget."""
     plan = verify(plan_path, plan_commit, source)
     designation = "released_audit"
     if runner is None:
@@ -572,7 +605,7 @@ def run_child(source, plan_path, plan_commit, deadline, *, clock=time.time, veri
     else:
         designation = MOCK_DESIGNATION
     return run_audit(build(source), plan["slots"], plan["output_directory"], runner, designation=designation,
-                     plan_sha256=file_sha(plan_path), clock=clock,
+                     plan_sha256=file_sha(plan_path), clock=clock, run_token=run_token,
                      deadline=deadline - SUPERVISOR["kill_reserve_seconds"] - SUPERVISOR["finalization_seconds"])
 
 
@@ -592,7 +625,8 @@ def main(argv=None) -> int:
     c.add_argument("--source", required=True)
     c.add_argument("--plan", required=True)
     c.add_argument("--plan-commit", required=True)
-    c.add_argument("--deadline", required=True, type=float)
+    c.add_argument("--deadline-monotonic", required=True, type=float)
+    c.add_argument("--run-token", required=True)
     a = ap.parse_args(argv)
     if a.mode == "plan":
         out = Path(a.out_dir).resolve()
@@ -617,7 +651,7 @@ def main(argv=None) -> int:
         raise KeyboardInterrupt("supervisor SIGTERM")
     signal.signal(signal.SIGTERM, unwind)
     try:
-        receipt = run_child(a.source, a.plan, a.plan_commit, a.deadline)
+        receipt = run_child(a.source, a.plan, a.plan_commit, a.deadline_monotonic, run_token=a.run_token)
     except ReleaseRefused as e:
         print(f"refused before any launch: {e}", file=sys.stderr)
         return 2

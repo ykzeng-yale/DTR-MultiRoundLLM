@@ -4363,3 +4363,45 @@ Signed: experiments worker. Processed issuing commit `f764e28` (LEAD-ENDPOINT-04
 - **Draft plan.** The hash-only draft plan in `work/` predates this change, and its supervisor fields no longer match, so a fresh plan must be generated and committed at release.
 
 **STOPPED for independent Codex review; no exact executable plan has been frozen or released.** Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-26T22:55:16Z — MRL-35-R1 corrections delivered (lead hold `1831f04`), for Codex review; STOPPED before any real audit
+
+Signed: experiments worker. Processed `1831f04` (the hold of `e9e389a`, with the refusal-path counterexample) and the three draft findings in the issue #3 comment. The MRL-35 acceptance (22:44:32Z) and deadline (23:04:32Z) are unchanged; completed 2026-09-26T22:55:16Z. Zero sandbox, program or model launches; fake children and process handles only. Codex's untracked `results/policy_frame_review_ranks101_120_20260926.json` was not staged.
+
+**Files:**
+- `scripts/run_policy_endpoint_audit.py`: `782a657f48fbf0df16a6f64f380deab08ac97fc132c0bf1008345b8727b902de`
+- `experiments/prompt_choice/endpoint_execution_source_v1.json`: `cec9e6525e600a2a0dc22666f8cd0c7c9d5a91989f7c7836ef0aa14882161186`
+- `tests/test_prompt_endpoint_execution.py`: `b9df84e2e4c4dcb120d24d1d579c9e37d9deea9950bf87507606b36dc9af72ba`
+
+**The three corrections:**
+1. **No mutation of unverified or existing paths.**
+   - **Where the parent writes:** only into a supervisor directory it creates itself, `work/endpoint_supervisor_runs/<UTC>_<token prefix>`, using `mkdir(exist_ok=False)` and exclusive-create files. It never writes into the plan's output path.
+   - **Binding the run directory:** the parent passes a fresh 128-bit `--run-token` to the child, and the child stores it in `start_manifest.json`. The plan's run directory is measured and read only if it did not exist when the parent started and its start manifest carries this execution's token.
+   - **Otherwise:** the directory is untouched, detached cleanup is `unresolved` (or `no_launch_possible` if it never appeared), and the exit is 3.
+2. **Monotonic deadlines.** `execute_supervised`, `supervise`, `run_child` and `run_audit` all default to `time.monotonic`, and `time.time` is no longer used anywhere. The parent passes `--deadline-monotonic`. This assumes parent and child share the host's monotonic origin, which holds for `CLOCK_MONOTONIC`/`mach_absolute_time` on one host.
+3. **Finalization inside the boundary.** The clock starts before the plan read. Elapsed time is measured after the supervisor record is written and just before the final `retained_totals.json` write. That file records `elapsed_seconds_through_final_boundary` and `within_total_deadline`; the totals write itself is the only step excluded. Success requires `within_total_deadline`, so an overrun is recorded and is never a success.
+
+**Regressions (74 mocked tests pass):**
+- The lead's exact refusal counterexample: an existing directory outside `work/` holding `original.txt`, an unverified plan, child exit 2. The directory is byte-unchanged, the exit is 3, and the evidence lands only in the fresh supervisor directory.
+- A replayed existing run carrying a foreign token is neither bound nor mutated.
+- Monotonic defaults are checked, and the source contains no `time.time`.
+- A finalization overrun is measured, `within_total_deadline` is false, and the exit is 3.
+- Success still needs every piece of evidence.
+- The totals equal the measured files: the supervisor directory, the bound run directory and the totals file itself.
+
+**Fail-then-pass:**
+- Trusting the unverified plan path: 2 failures.
+- Finalization excluded from elapsed time: 1 failure.
+- Wall clock instead of monotonic: 1 failure.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,022 passed, 0 failed, plus 8 subtests (32.8 s).**
+
+**Operational assumptions and residual limitations:**
+- **Responsive OS.** The deadline is operational. Under an unresponsive kernel, filesystem or suspended host, no bound is claimed.
+- **Final write excluded.** The totals file's own write is the only step outside the measured boundary.
+- **Real processes untested.** Kill and SIGTERM behaviour against real processes has not been exercised.
+- **Evidence strength.** A normal runner return is evidence for, not proof of, payload cleanup.
+- **Supervisor directory unbounded.** Supervisor directories accumulate under `work/`, with no retention policy.
+- **Draft plan out of date.** The hash-only draft plan in `work/` predates this change, so a fresh committed plan is needed at release.
+
+**STOPPED for independent Codex review; no exact plan or real audit released.** Readiness 58%, change 0 points.
