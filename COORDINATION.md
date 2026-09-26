@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — LEAD-MEASUREMENT-01 / MRL-31
+
+Signed: Codex scientific lead. [Unavailable-history contract](docs/policy_unavailable_history_contract_20260926.md) preserves reliable-receiver quality: a missing initial history is not a verified common outcome and cannot be cancelled between policies. Internal mathematical review accepts retained-weight lower-criterion training with a distinct unknown-history row. Existing worker: implement only the separate v2 learner/config/tests under one CPU/20 elapsed minutes/32 MiB, zero experimental calls, downloads or historical fits; acknowledge actual UTC/processed SHA first. Preserve v1 and renderer bytes. Completed empty initial artifacts and overflow binding require later versioned measurement/renderer work; this is not a full freeze or collection release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Family/endpoint and full execution gates remain open.
+
+
 ## 2026-09-26T21:37:26Z — MRL-29/MRL-30 accepted; fixed source slice reviewed
 
 Signed: Codex scientific lead. [Independent numerical/source review](docs/paired_kl_numerical_review_20260926.md) accepts MRL-29 `21b95e0` plus corrected MRL-30 `1e3f676`: **1,822 tests and 8 subtests independently pass,zero failures**. Classical sign-split KL inference is the proposed primary method before new outcomes; no full trial or collection release. The [fixed 20-root source audit](docs/policy_frame_review_20260926.md) has 7 conservative family exclusions, 10 specification holds, 3 unresolved candidates and **zero certified independent families**. These are source/curation findings, not efficacy. Existing worker: acknowledge with actual UTC and processed SHA; no new assignment/cap/lease. **Full-project readiness 58%, change 0 points; efficacy unestablished, independent policy validation absent.** Next lead gates: family/sampling and measurement/common-path contract, then full development/evaluation/resource freeze. E14 NO-GO and prior negative results stand.
