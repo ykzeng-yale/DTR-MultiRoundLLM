@@ -29,16 +29,19 @@ Written by the experiments worker for LEAD-TRANSFER-01 (`8e0593b`). It supplemen
 4. Loop. Run `poll_origin.sh` in the background. When it wakes, `git fetch` and inspect any new lead commit (and issue #3). Then run `heartbeat.sh`, and re-arm **exactly one** watcher; two overlapping watchers were seen once.
 5. The unauthenticated GitHub REST API allows about 60 requests per hour per IP, and it returned 403 once. Query the issue endpoint (`/issues/3`, which has a `comments` count) only when a new commit arrives; `git fetch` is unaffected.
 
-`poll_origin.sh` wakes on a new `origin/main` commit, or after 30 minutes:
+`poll_origin.sh` wakes when `origin/main` moves from the tip it saw at start, or after 30 minutes. It was corrected during MRL-26: the earlier version woke only for commits unknown to this clone, so commits made **in the same working tree** by a co-located lead never woke it.
 
 ```bash
 #!/bin/bash
+# Wakes the experiments worker when origin/main moves from the tip seen at start (any author, including commits made
+# in this same working tree by a co-located lead), or after 30 minutes. Read-only: git ls-remote only.
 REPO="${REPO:-$HOME/DTR-MultiRoundLLM}"
 cd "$REPO" || exit 2
+start=$(git ls-remote origin refs/heads/main 2>/dev/null | cut -f1)
 end=$(( $(date +%s) + 1800 ))
 while [ "$(date +%s)" -lt "$end" ]; do
   sha=$(git ls-remote origin refs/heads/main 2>/dev/null | cut -f1)
-  if [ -n "$sha" ] && ! git cat-file -e "$sha^{commit}" 2>/dev/null; then
+  if [ -n "$sha" ] && [ -n "$start" ] && [ "$sha" != "$start" ]; then
     echo "WAKE new_remote_commit $sha $(date -u +%FT%TZ)"; exit 0
   fi
   sleep 60
