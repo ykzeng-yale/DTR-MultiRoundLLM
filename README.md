@@ -1,5 +1,7 @@
 # DTR-MultiRoundLLM
 
+> **26 September lead resumption:** [Codex scientific ownership, all-status PATCH/RETHINK contract and bounded Claude Code setup task](docs/lead_resumption_and_action_contract_20260926.md). Source implementation only; full collection remains held.
+
 > **Moving to another laptop?** Start with the [26 September transfer package](docs/transfer/START_HERE_20260926.md), including the original idea, conversation export, experiment evidence, roadmap and remaining scientific gates. The recurring check for this repository was deleted at the owner's request; cloning GitHub does not restart it.
 
 > **Current research status:** [family/specification audit](docs/landmark_family_audit_20260920.md), [inference review](docs/landmark_inference_review_20260920.md), [grading validation](docs/landmark_grading_validation_20260920.md), [manuscript methods](manuscript/landmark_methods_20260920.md), and [monitoring checkpoint](docs/monitoring_checkpoint.md). Real collection remains subject to receiver, measurement and fresh-root gates.

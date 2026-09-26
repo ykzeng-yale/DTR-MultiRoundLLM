@@ -1,0 +1,69 @@
+# Scientific lead resumption and all-status action contract
+
+Codex coordinating scientific lead, 26 September 2026. **LEAD-POLICY-16; MRL-26 source-only implementation assignment.** This records a prospective design decision and an executable setup task, not a complete collection freeze or an experimental result. The owner assigned Codex theory and overall scientific coordination, with the existing Claude Code worker providing experiment setup/implementation. The [issue #3 claim](https://github.com/ykzeng-yale/DTR-MultiRoundLLM/issues/3#issuecomment-5849666950) records scope, main integration, budget and outputs.
+
+## Scientific ownership and current evidence
+
+Codex owns the research question, estimand, permitted information, source/family population, measurement, comparator fairness, inference, advancement and manuscript. Claude Code implements explicitly scoped experimental packages and reports factual objections; implementation does not transfer scientific responsibility. The existing desktop worker was located and contacted; do not create a second worker. The `/goal` is active in the new lead chat: scientifically resolve supported adaptive prompt choice and assemble a reproducible paper, including an honest negative or inconclusive resolution. The previous recurring automation was deleted at transfer and has not been recreated.
+
+The local and GitHub audit includes current main, open issues #2–#5, no open PR, the theory and landmark proofs, working manuscript, transfer records, protocols, saved grade/call rows and source contracts. Independent readers reproduced E11 N1=S1=12/14, E12 N1=20/28 versus S1=19/28, and E13a R1=9/30 versus FRESH=12/30. These are separate development targets, not independent validation. The present lead also ran the full local suite: **1,676 passed, one failed, eight subtests passed** in 25.59 seconds. The failure is `test_emitted_plan_matches_a_fresh_build`: the saved E14 plan pins an older proposal-document SHA, while later frame-status annotations changed that document. Do not overwrite the frozen plan to make this pass. No experimental receiver calls or benchmark programs were run by this audit.
+
+The full-project rubric stays **58%, change 0 percentage points**. Prompt efficacy is unestablished; independent policy validation is absent; the project is not submission-ready. The largest remaining milestones are a feasible development/family/measurement freeze, a supported learned selector and competent fixed comparator, independent policy evaluation, and integrated reproducibility/manuscript review. The landmark study is one decision within a conversation: success there would not by itself establish the original repeated-deployment objective.
+
+## LEAD-POLICY-16: choose support now
+
+For the **new development action class**, retain both PATCH and RETHINK on every well-formed public diagnostic history, including all-pass, payload-failure, incomplete and mixed records. Do not force STOP, drop a history or retry a diagnostic merely because a public check passes or is incomplete. This is a prospective design choice within the original question; it changes the actions relative to E12 and supplies no new efficacy evidence.
+
+Keep all per-case statuses. Aggregate status is PASS iff every case passes; INCOMPLETE if any case is timeout, unavailable or output_limit; otherwise PAYLOAD_FAILURE. Independently retain `has_payload_failure` and `has_incomplete`, so a mixed record never loses its witnessed failures. Existing `select_s1` has different precedence and must not select a new recipe. Preserve unavailable reasons, including `protocol_integrity_review`, verbatim. The reason string alone records a review state; it does not itself attest a breach. This source contract does not adjudicate checkpoint trustworthiness. An explicitly attested invalid checkpoint must be refused, with the original diagnostic/reason retained in its rejection record.
+
+The *provisional collection law* will make one bounded diagnostic attempt, with ordinary unavailable cases represented as incomplete, no automatic retries and all original roots accounted for. Initial receiver failure without an artifact, malformed/empty diagnostic, oversized serialization and integrity breach are separate invalid-checkpoint dispositions; they are not STOP or public pass. MRL-26 must reject them explicitly before rendering. The later full trial freeze must specify their deployment endpoint, missingness bounds, inclusion/denominator and realized costs before any receiver call. No eligible-only performance claim is licensed by a renderer rejection.
+
+Both recipes receive an identical public task/system prefix, exact saved initial answer, canonical diagnostic message, and separate common caveat. This keeps the old diagnostic byte cap and historical serialization unchanged. Append the following caveat as an identical user message in both arms:
+
+> For any check marked timeout, unavailable, or output_limit, the required result was not fully observed; do not treat that status as a pass or as proof that the answer is wrong. Completed results retain their recorded meaning, including failures when other checks are incomplete. Passing the public examples does not establish correctness on the full stated task domain.
+
+This distinguishes missing functional evidence from witnessed failure; timeout/output-limit remain observed resource events to be charged in their own ledger. Candidate program exceptions remain recorded payload failures. The caveat does not reclassify old outcomes.
+
+Use these exact fixed recipe strings, copied from LEAD-POLICY-15, for every diagnostic status:
+
+**PATCH**
+
+> Review your previous answer against the original task and any failures shown in the public diagnostic. Preserve its correct behavior; change only what is needed for the full stated task domain. If no public failure is shown, do not infer that the answer is correct on hidden cases. Do not hard-code the public examples. Return one complete solution.
+
+**RETHINK**
+
+> Re-derive a solution from the original task. Treat any failures shown in the public diagnostic as evidence about the previous answer. Do not assume the previous algorithm is correct; use the previous answer only to avoid witnessed errors. Check the full stated task domain, not only the public examples. Return one complete solution.
+
+Append two newlines and this identical terminal instruction to each recipe's final user message:
+
+> Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.
+
+This is the existing `terminal-output-contract-v2` text, an intervention instruction **not a new scoring rule**. The contrast is the total effect of the two complete recipe messages. RETHINK retains the initial answer; it is neither R1 nor bare-task FRESH. The shared caveat is additional common public information relative to prior runs, and all new messages need new hashes.
+
+## Identification and complete-branch plan
+
+Plan complete balanced execution of both recipes with a predeclared number of replicates per valid checkpoint. Randomize execution order only. Each planned action/replicate slot has inclusion probability one, and order metadata must say `scheduling_not_assignment`; a probability of one-half is not a treatment propensity here. Root/family grouping, replicate counts and receiver seed marginal laws still need the full experiment freeze. A planning fixture must never be mistaken for an assigned real task or reserved receiver seed.
+
+Under consistency, frozen receiver/continuation, isolation, a valid endpoint and fixed counts, action-specific branch means are unbiased for their checkpoint means. Taking expectations over the declared checkpoint distribution gives public-history conditional means as in [landmark Proposition L1](landmark_prompt_theory.md). Complete action coverage is by construction; branch isolation, receiver stability and sampling assumptions still need validation. Root/family independence is not created by replication or scheduling. A cap-truncated real run must retain unattempted/missing slots and never replace them to restore balance.
+
+STOP remains the separately scored saved initial artifact; reuse requires artifact/scorer invariance. B2-1R remains a separate practical controller with its own fresh seed and end-to-end cost law. Neither becomes a same-prefix PATCH/RETHINK recipe. Development selects `b1` and fits `d` before untouched-family evaluation; the source package defines neither a trained selector nor evidence for one.
+
+## MRL-26: exact worker scope and acceptance
+
+Use the existing Claude Code session. One sequential CPU, **20 elapsed minutes from acceptance**, at most **32 MiB new retained output**, zero experimental receiver/model calls, benchmark/reference/candidate/public-check execution, downloads/installations or paid experimental service spend. Ordinary Claude Code assistance is the owner-requested implementation channel, not experimental receiver data. At the cap, publish partial work and the actual state; no automatic extension. Preserve all old experiment/source/result bytes.
+
+Add `experiments/landmark/patch_rethink.py`, `experiments/landmark/patch_rethink_source_v1.json`, and `tests/test_landmark_patch_rethink.py`. Config must say source-only, collection unreleased, and record the exact strings, their hashes, tri-state/support law and source versions. A pure renderer must take only allowlisted public inputs; validate diagnostic cases/count/order/expected values against the fixed public skeleton, root ID and **SHA256 of the initial answer's raw UTF-8 bytes**, not JSON-encoded `collect.digest(text)`. Reject extra/private fields, duplicate JSON keys/case IDs, malformed/empty cases, invalid/mismatched artifact hashes and overflow. No network, subprocess, code execution or receiver-dispatch path may exist in this module.
+
+Provide a deterministic **synthetic-only** complete-branch planning fixture, with both recipes once per replicate, unique toy seed identities/namespaces for initial/PATCH/RETHINK/B2, explicit scheduling-not-assignment metadata, and collection disabled. Do not import a held E14 runner or populate a real task roster. Include all eight statuses, mixed failure/incomplete records and pass fixtures. Verify exact constant instructions, byte-identical common prefix/output contract, semantic schema/source binding, action completeness, deterministic order/identity uniqueness and historical renderer/result hashes. These are source/mock checks, not a model pilot.
+
+Also repair the newly published `docs/transfer/WORKER_HANDOFF_20260926.md` helper example: configure the required identity once per clone, remove `git -c` identity overrides and `pull --rebase --autostash ... || true`. Use fetch plus explicit main/destination inspection, fast-forward when possible or an ordinary ancestry-preserving merge when needed; on conflict or unrelated working changes stop with a factual report. Do not mask errors, auto-stash someone else's work, force-push or alter any running job. Report whether the live helper requires the same repair, and repair only the worker-owned helper if applicable.
+
+Commit directly to main using the configured owner identity, with only assigned files and ordinary worker receipt/status records. No Co-Authored-By trailer. Fetch before push, inspect main/destination and preserve concurrent changes. Report actual UTC/processed lead SHA, start/deadline, exact files/source hashes, affected tests, limitations, final commit and run/lease state. Append an attributed source-test entry and next steps to the experiment results/handoff logs. Codex will review the diff and independently test it before accepting. The unrelated E14 proposal-hash failure must be reported; it has no repair allowance in MRL-26.
+
+## Independent design review
+
+A separate scientific reader accepted this document within source-only scope before release: complete-branch identification is correctly conditional on consistency, isolation, fixed endpoint/counts/seed laws; scheduling is not assignment; incomplete observations retain their resource-event meaning and mixed completed failures. Its clarification about an integrity-review reason versus an attested breach is incorporated above. This review does not validate sampling, runtime containment, measurement or receiver outcomes.
+
+## Next scientific decisions
+
+After the source package, the lead must finish the public-only feature/selector/tie law and development-selected fixed comparator; audit a defensible untouched family sampling frame; fix measurement and missingness; and choose a prospectively justified precision rule and complete numerical cap. The current Hoeffding fallback is valid under its assumptions but the optimistic 544-family ceiling cannot provide a 0.05 simultaneous radius. Study a valid variance-sensitive paired-family procedure without changing targets or selecting an interval after outcomes. Classical DTR/DR and concentration results must be cited, not relabeled as new theory. Only a committed, independently reviewed full contract can release a bounded new development stage. E14 N1/S1 remains NO-GO; generator expansion remains conditional.
