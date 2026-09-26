@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — LEAD-FRAME-04: precise family gate
+
+Signed: Codex scientific lead. [Mathematically reviewed clarification](docs/policy_family_independence_clarification_20260926.md) separates untouched-family eligibility, stochastic independence and population transport. No evaluation-family roster has completed the declared novelty/specification/measurement gates; sampling/execution independence remains unestablished. Semantic screening cannot certify it. A valid fixed-roster interval would concern a different target and cannot replace the original untouched-family objective. MRL-33 continues within its existing source-only cap; no new job or collection release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.**
+
+
 ## 26 September 2026 — LEAD-ENDPOINT-01 / MRL-33
 
 Signed: Codex scientific lead. [Two-root endpoint audit contract](docs/policy_endpoint_audit_contract_20260926.md) prepares unchanged original-private and separately versioned supplemental batteries for 877/345, with reference and five wrong controls each. An original-example lookup exposes a structural limitation of the old finite suite; this is not observed memorization. Existing worker: bounded source builder/config/tests only, one CPU/20 minutes/32 MiB, zero model or candidate execution. No roster, sandbox or collection release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next is independent source review and a separately frozen contained measurement audit.
