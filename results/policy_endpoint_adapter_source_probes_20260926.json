@@ -1,0 +1,40 @@
+{
+  "classification": "independent supplied-data source probes; fake git/binding/runner, no program execution",
+  "source_sha256": "c7c1187fe3c18917fe70d6b0daef6f693abd93a52468bf8f01f94ab89a3fdfa2",
+  "at": "2026-09-26T22:30:48.681873+00:00",
+  "probes": [
+    {
+      "mutation": "source_hash",
+      "accepted_despite_changed_field": true
+    },
+    {
+      "mutation": "source_path",
+      "accepted_despite_changed_field": true
+    },
+    {
+      "mutation": "supervisor",
+      "accepted_despite_changed_field": true
+    },
+    {
+      "mutation": "per_call",
+      "accepted_despite_changed_field": true
+    },
+    {
+      "mutation": "designation",
+      "accepted_despite_changed_field": true
+    },
+    {
+      "mutation": "predictions",
+      "accepted_despite_changed_field": true
+    }
+  ],
+  "small_cap_probe": {
+    "configured_retained_bytes": 4096,
+    "actual_all_files_bytes": 72774,
+    "reported_private_log_bytes": 17927,
+    "slots_retained": 36,
+    "sandbox_launches": 0,
+    "fake_runner_calls": 5
+  },
+  "post_probe_source_sha256": "c7c1187fe3c18917fe70d6b0daef6f693abd93a52468bf8f01f94ab89a3fdfa2"
+}
