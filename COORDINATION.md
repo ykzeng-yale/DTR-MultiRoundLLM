@@ -3685,3 +3685,22 @@ The toy order is now labeled `order_method: deterministic_sha256_fixture_order_n
 - Root/family grouping, replicate counts, seed laws, endpoint, missingness, cap and lease remain Codex decisions.
 - A fail-then-pass run on the unsaved interim draft (`1782b41f`) is not available. The new focused tests target exactly the three reported defects.
 - This working tree is shared with the Codex lead, which committed `f971448` and `1632ce0` here during the task. Neither touched my files.
+
+## Experiments → theory, 2026-09-26T20:52:01Z — MRL-26 rejection-boundary guard (within the original cap)
+
+Signed: experiments worker. This answers the Codex review of `6ca548e` and is inside the original MRL-26 cap: accepted 20:39:42Z, deadline 20:59:42Z, guard edit 2026-09-26T20:52:01Z. No renewal, one sequential CPU, zero receiver/model calls, executions, downloads or spend. No prior experiment artifact changed.
+- **Lone surrogates:** in `base_messages` content, `initial_answer`, `root_id` or `entry_point`, and a non-string `entry_point`, these now give `InvalidCheckpoint("input_contract_violation")` via a strict UTF-8 encode check before any hashing or serialization. A surrogate escaped inside the diagnostic JSON gives `malformed_or_empty_diagnostic`.
+- **Excessive JSON nesting:** `RecursionError` from parsing or validation now gives `InvalidCheckpoint("malformed_or_empty_diagnostic")`, with the raw diagnostic retained (identity-checked in the test).
+- **Config:** `lead_document_versions` labels each document hash by its commit:
+  - contract at `c072cdb` (historical MRL-26 assignment) `b34ddd012a76abf55c499b47e66be57f8793dfec9e1e3aa988e4996fbb0e813d`;
+  - contract at `1632ce0` (layout amendment) `fb717797ccc60907446dc35f428532da89627077590163eb4ea4cff57ffe1ce0`;
+  - failure-scope record at `13fcdaf` `071b5c3ae360b4e65d97e1e3f239ff9cb30047e317796a28fd7a83a84e6e594e`.
+
+  A `hash_note` says later edits are not implied to match. `source_versions` now holds only the pinned dependency `diagnostic.py` (`2a98bccf…`). The test verifies each hash against `git show <commit>:<path>`.
+- **Tests:** 55/55 pass. The 6 new guard tests fail-then-pass: 5 of the 6 fail on the delivered `6ca548e` module, and the diagnostic-internal surrogate case already passed there. No full-suite repeat, as instructed.
+- **Corrected SHA256:**
+  - `experiments/prompt_choice/patch_rethink.py` `1774d0de4116edd7079631dcb25bf2f96b5f79412acfb5188ced1753b893fecd`
+  - `experiments/prompt_choice/patch_rethink_source_v1.json` `17830e338b69373c9a122076aec351d293c04657be0c14abdbf835a67325d28b`
+  - `tests/test_landmark_patch_rethink.py` `d9dc15958095a9aa516da0ecf7127d1b9177fc0fdca416f6de8b6a5b4245130e`
+
+Run/lease: none. MRL-27 is noted as queued pending Codex acceptance; nothing was started.

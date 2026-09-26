@@ -78,9 +78,10 @@
   "fixture_order": "deterministic SHA256-sorted fixture order for scheduling only; not a sampled randomization law"
  },
  "source_versions": {
-  "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
-  "docs/lead_resumption_and_action_contract_20260926.md": "b34ddd012a76abf55c499b47e66be57f8793dfec9e1e3aa988e4996fbb0e813d",
-  "docs/policy_patch_rethink_failure_scope_20260926.md": "071b5c3ae360b4e65d97e1e3f239ff9cb30047e317796a28fd7a83a84e6e594e"
+  "experiments/landmark/diagnostic.py": {
+   "sha256": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+   "role": "pinned dependency (the historical E12 renderer; unchanged)"
+  }
  },
  "byte_cap": "2048 bytes on the canonical diagnostic message (historical diagnostic_message), not raw transport bytes",
  "refusals": "every refusal raises InvalidCheckpoint(disposition, record) retaining the original diagnostic_json and reason",
@@ -89,5 +90,26 @@
   "experiments/prompt_choice/patch_rethink.py",
   "experiments/prompt_choice/patch_rethink_source_v1.json",
   "experiments/landmark/diagnostic.py"
- ]
+ ],
+ "lead_document_versions": [
+  {
+   "path": "docs/lead_resumption_and_action_contract_20260926.md",
+   "commit": "c072cdb",
+   "sha256": "b34ddd012a76abf55c499b47e66be57f8793dfec9e1e3aa988e4996fbb0e813d",
+   "role": "historical version: LEAD-POLICY-16 / MRL-26 assignment as originally issued (flat experiments/landmark/ paths)"
+  },
+  {
+   "path": "docs/lead_resumption_and_action_contract_20260926.md",
+   "commit": "1632ce0",
+   "sha256": "fb717797ccc60907446dc35f428532da89627077590163eb4ea4cff57ffe1ce0",
+   "role": "layout amendment: new package in experiments/prompt_choice/, outside collect.source_hashes(); interim-review corrections"
+  },
+  {
+   "path": "docs/policy_patch_rethink_failure_scope_20260926.md",
+   "commit": "13fcdaf",
+   "sha256": "071b5c3ae360b4e65d97e1e3f239ff9cb30047e317796a28fd7a83a84e6e594e",
+   "role": "LEAD-POLICY-15 recipe texts (copied verbatim)"
+  }
+ ],
+ "hash_note": "Each document hash is the blob at the named commit; later edits to a document do not change these records and are not implied to match."
 }

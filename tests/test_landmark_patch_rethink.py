@@ -35,7 +35,12 @@ def test_exact_constant_strings_match_the_committed_contract_and_config():
     assert pr.TERMINAL_OUTPUT_CONTRACT in json.dumps(e14)  # the existing terminal-output-contract-v2 text, unchanged
     cfg = pr.load_config()
     assert cfg["status"] == "source_only" and cfg["collection"] == "unreleased" and cfg["receiver_calls_authorized"] == 0
-    assert cfg["source_versions"]["experiments/landmark/diagnostic.py"] == fsha(ROOT / "experiments/landmark/diagnostic.py")
+    assert cfg["source_versions"]["experiments/landmark/diagnostic.py"]["sha256"] == fsha(ROOT / "experiments/landmark/diagnostic.py")
+    import subprocess
+    for v in cfg["lead_document_versions"]:  # each hash is the blob at its named commit, not an assertion about the current file
+        blob = subprocess.run(["git", "-C", str(ROOT), "show", f"{v['commit']}:{v['path']}"], capture_output=True, check=True).stdout
+        assert hashlib.sha256(blob).hexdigest() == v["sha256"], v["commit"]
+    assert [v["commit"] for v in cfg["lead_document_versions"][:2]] == ["c072cdb", "1632ce0"]
 
 
 @pytest.mark.parametrize("pattern", sorted(pr.TOY_PATTERNS))
@@ -210,3 +215,30 @@ def test_new_package_is_outside_the_historical_flat_landmark_inventory():
     assert "patch_rethink.py" not in collect.source_hashes()  # old release identities are not changed by this package
     assert pr.CONFIG_PATH == ROOT / "experiments/prompt_choice/patch_rethink_source_v1.json"
     assert pr.load_config()["future_execution_must_pin"][0] == "experiments/prompt_choice/patch_rethink.py"
+
+
+@pytest.mark.parametrize("change", [
+    lambda i: i.update(initial_answer="def f():\n    return '\ud800'\n"),  # lone surrogate in the saved answer
+    lambda i: i.update(base_messages=[i["base_messages"][0], {"role": "user", "content": "Task \udfff"}]),
+    lambda i: i.update(root_id="synthetic/\ud800"),
+    lambda i: i.update(entry_point=7),
+])
+def test_unencodable_or_mistyped_text_inputs_are_structured_refusals(change):
+    inp = pr.toy_checkpoint("wrong_value")
+    change(inp)
+    _refused(inp, "input_contract_violation")
+
+
+def test_lone_surrogate_inside_the_diagnostic_is_a_structured_refusal():
+    inp = pr.toy_checkpoint("wrong_value")
+    raw = inp["diagnostic_json"].replace('"root_id": "synthetic/toy-wrong_value"', '"root_id": "synthetic/toy-wrong_value\\ud800"')
+    assert raw != inp["diagnostic_json"]
+    _refused({**inp, "diagnostic_json": raw}, "malformed_or_empty_diagnostic")
+
+
+@pytest.mark.parametrize("depth", [100_000])
+def test_excessive_json_nesting_is_a_structured_refusal(depth):
+    inp = pr.toy_checkpoint("wrong_value")
+    deep = '{"cases": ' + "[" * depth + "]" * depth + "}"
+    err = _refused({**inp, "diagnostic_json": deep}, "malformed_or_empty_diagnostic")
+    assert err.record["diagnostic_json"] is deep  # raw diagnostic retained, not re-serialized

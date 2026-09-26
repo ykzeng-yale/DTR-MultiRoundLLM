@@ -114,17 +114,30 @@ def render(inputs: dict) -> dict:
         refuse(attestation["disposition"], "explicitly attested invalid checkpoint", attestation["reason"])
     try:
         base = _base(inputs["base_messages"])
-    except ValueError as e:
-        refuse("input_contract_violation", str(e))
+        for m in base:
+            m["content"].encode("utf-8")  # strict: a lone surrogate cannot be serialized or hashed
+    except (ValueError, TypeError, RecursionError) as e:
+        refuse("input_contract_violation", f"base_messages: {type(e).__name__}: {e}")
     answer = inputs["initial_answer"]
     if not isinstance(answer, str) or not answer:
         refuse("initial_receiver_failure_without_artifact", "no saved initial answer")
+    try:
+        answer.encode("utf-8")
+    except UnicodeEncodeError as e:
+        refuse("input_contract_violation", f"initial_answer is not valid UTF-8 text: {e}")
+    for key in ("root_id", "entry_point", "initial_answer_sha256"):
+        if not isinstance(inputs[key], str):
+            refuse("input_contract_violation", f"{key} must be a string")
+        try:
+            inputs[key].encode("utf-8")
+        except UnicodeEncodeError as e:
+            refuse("input_contract_violation", f"{key} is not valid UTF-8 text: {e}")
     if not isinstance(raw, (str, bytes)) or not raw:
         refuse("malformed_or_empty_diagnostic", "empty or non-text diagnostic")
     try:
         diag = dg.strict_json_loads(raw)  # duplicate keys at any depth are refused
-    except ValueError as e:
-        refuse("malformed_or_empty_diagnostic", str(e))
+    except (ValueError, RecursionError) as e:  # includes UnicodeDecodeError; excessive nesting is a structured refusal
+        refuse("malformed_or_empty_diagnostic", f"{type(e).__name__}: {e}")
     if not isinstance(diag, dict) or not isinstance(diag.get("cases"), list) or not diag["cases"]:
         refuse("malformed_or_empty_diagnostic", "diagnostic must be an object with a nonempty case list")
     ids = [c.get("case_id") if isinstance(c, dict) else None for c in diag["cases"]]
@@ -136,12 +149,12 @@ def render(inputs: dict) -> dict:
         dg.validate_diagnostic(diag)  # exact keys, bounded values, schema; the 2048-byte cap applies to the canonical message
     except dg.DiagnosticOverflow as e:
         refuse("oversized_serialization", str(e))
-    except (ValueError, TypeError) as e:
-        refuse("malformed_or_empty_diagnostic", str(e))
+    except (ValueError, TypeError, RecursionError) as e:  # includes UnicodeEncodeError from lone surrogates
+        refuse("malformed_or_empty_diagnostic", f"{type(e).__name__}: {e}")
     try:
         dg.validate_diagnostic(diag, inputs["entry_point"], inputs["public_cases"])  # fixed public skeleton
-    except (ValueError, TypeError) as e:
-        refuse("public_binding_mismatch", str(e))
+    except (ValueError, TypeError, RecursionError) as e:
+        refuse("public_binding_mismatch", f"{type(e).__name__}: {e}")
     if diag["root_id"] != inputs["root_id"]:
         refuse("public_binding_mismatch", "diagnostic root_id differs from the checkpoint root_id")
     if not (inputs["initial_answer_sha256"] == diag["initial_artifact_sha256"] == sha256_text(answer)):
