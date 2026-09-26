@@ -346,6 +346,7 @@ def test_r1_raw_runner_results_program_hash_and_public_nonce_are_kept_privately(
         assert re.fullmatch(r"[0-9a-f]{64}", call["program_sha256"]) and call["result"] == {"stdout": "", "returncode": 0, "timed_out": False}
     private = [r for r in rows if r["event"] == "slot" and r["check"] != "public"]
     assert all(r["private_runner_calls"][0]["result"]["sandbox_kind"] == "seatbelt" for r in private)
+    assert not any("private_run" in r for r in rows)  # R2: the raw run is serialized once, not twice
     projection = (tmp_path / "run/public_projection.json").read_text()
     for r in public:
         assert r["public_nonce"] not in projection and r["private_runner_calls"][0]["program_sha256"] not in projection
@@ -378,3 +379,16 @@ def test_r1_external_supervisor_kills_only_its_owned_group_and_records_observed_
     assert started == [{"start_new_session": True}] and all(pid == 4242 for pid, _ in sent)
     assert record["killed_at_deadline"] is killed and record["child_exit"] == exit_code and record["cleanup"].startswith(cleanup)
     assert ad.SUPERVISOR["total_seconds"] == 180 and ad.SUPERVISOR["slot_budget_seconds"] < 180 - ad.SUPERVISOR["kill_reserve_seconds"]
+
+
+def test_r2_high_escaping_bounded_stream_witness_stays_within_the_cap(package, tmp_path):
+    def noisy(program, **kw):  # lead's witness: 60,000-byte streams of an ASCII control byte, authentic markers
+        start = re.search(r"__LANDMARK_GRADER_STARTED__[0-9a-f]{24}", program)
+        if start is None:
+            return {"stdout": "\x01" * 60000, "stderr": "\x01" * 60000, "returncode": 0, "timed_out": False}
+        sentinel = re.search(r"__LANDMARK_PRIVATE_OK__[0-9a-f]{24}", program).group(0)
+        return {"stdout": start.group(0) + "\n" + "\x01" * 59900, "stderr": "\x01" * 60000, "stdout_tail": sentinel,
+                "timed_out": False, "returncode": 0, "sandbox_kind": "seatbelt", "passed": True, "executed": True}
+    receipt = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", noisy, designation=ad.MOCK_DESIGNATION)
+    total = sum(f.stat().st_size for f in (tmp_path / "run").iterdir())
+    assert total <= ad.LIMITS["retained_output_bytes"] and len(receipt["slots"]) == 36

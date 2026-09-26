@@ -365,9 +365,13 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
                 res = grade.evaluate(specs[slot["task_id"]][slot["check"]], code, counted)
                 run = res.get("run") or {}
                 rec.update(outcome=res["outcome"], reason=res["reason"], returncode=run.get("returncode"),
-                           private_results={k: v for k, v in res.items() if k != "run"}, private_run=run)
+                           private_results={k: v for k, v in res.items() if k != "run"})  # raw run kept once, in private_runner_calls
             rec.update(status="launched" if launched else "static_decision", launched=bool(launched),
                        seconds=round(clock() - t0, 6), private_runner_calls=raw_calls)
+            size = len((json.dumps({"event": "slot", **rec}, sort_keys=True, default=str) + "\n").encode("utf-8"))
+            if written + size + FINALIZATION_RESERVE_BYTES > limits["retained_output_bytes"]:  # hard cap, whatever the estimate
+                raw = json.dumps({k: rec.pop(k) for k in RAW_FIELDS if k in rec}, sort_keys=True, default=str).encode("utf-8")
+                rec.update(raw_omitted_for_cap=True, raw_sha256=hashlib.sha256(raw).hexdigest(), raw_bytes=len(raw))
             persist({"event": "slot", **rec})
             records.append(rec)
             current = None
@@ -484,8 +488,13 @@ def main(argv=None) -> int:
         with open(target, "x", encoding="utf-8") as fh:
             fh.write(json.dumps(record, sort_keys=True) + "\n")
         print(json.dumps(record, sort_keys=True))
-        return 0 if record["child_exit"] == 0 and not record["killed_at_deadline"] else 3
+        ok = record["child_exit"] == 0 and not record["killed_at_deadline"] and record["cleanup"].startswith("confirmed")
+        return 0 if ok else 3  # never success while cleanup is unresolved
     from experiments.landmark import sandbox  # child only, imported after every gate has passed
+
+    def unwind(signum, frame):  # supervisor SIGTERM: unwind through run_audit's interrupted-receipt path
+        raise KeyboardInterrupt("supervisor SIGTERM")
+    signal.signal(signal.SIGTERM, unwind)
     receipt = run_audit(ea.build(a.source), plan["slots"], plan["output_directory"], sandbox.run_program,
                         designation="released_audit", plan_sha256=file_sha(a.plan))
     print(json.dumps(receipt["totals"], sort_keys=True))

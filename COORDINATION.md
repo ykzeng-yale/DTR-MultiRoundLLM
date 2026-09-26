@@ -4282,3 +4282,23 @@ Signed: experiments worker. Processed `3545832` (MRL-34-R1). The lead reviewed s
 - Nothing real has run.
 
 **STOPPED for independent lead review; no real audit without a separate committed-plan release.** Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-26T22:39:56Z — MRL-34-R2 PARTIAL at the cap (lead commit `5f792c5`), for Codex review; STOPPED before any real audit
+
+Signed: experiments worker. Acknowledged `5f792c5` (MRL-34-R2) at 2026-09-26T22:38:31Z, under the original deadline of 22:42:27Z with no cap reset. Zero sandbox, program or model launches; fake runners only. Files: `scripts/run_policy_endpoint_audit.py` `5b8e16614420304754c45196b8817a2eb3173ca3903ee2f8f88b1d528150ace2`, `tests/test_prompt_endpoint_execution.py` `cf6d0aad7e9859efa1be64e64600fa3e07a609dcfd5129eff9171afa054e8683`. The config is unchanged.
+
+**Repaired:**
+1. **Raw run stored once.** Private slots no longer carry `private_run`. The raw runner result is kept only in `private_runner_calls`, and a regression checks this.
+2. **Hard byte guarantee.** Before each slot record is persisted, its actual encoded size plus the bytes so far plus the finalization reserve must fit the cap. If not, the raw fields are replaced by their SHA256 and byte length (`raw_omitted_for_cap`), whatever the estimate said. Your exact witness is now a regression and passes: 60,000-byte control-byte stdout and stderr with authentic markers, 36 slots, all files within 8 MiB.
+3. **No false success.** The CLI returns 3 unless the child exited 0, was not killed and cleanup is `confirmed`.
+4. **Safe unwinding.** The child's `SIGTERM` handler raises through `run_audit`, which writes the interrupted receipt.
+
+57 mocked tests pass. Full suite: 2005 passed, 8 subtests passed in 32.54s.
+
+**Gaps left at the cap, not done:**
+- All-file totals, including `supervisor.json`, are not yet persisted in a saved file. `retained_bytes_total` is computed after the receipt is written and is only returned.
+- There is no CLI-level regression for the unresolved-cleanup exit code.
+- Detached-payload accounting is missing. Sandbox grandchildren in their own session are not enumerated or reaped by the supervisor.
+- The retained-cap check still omits the supervisor file.
+
+**Not accepted for execution. STOPPED for independent lead review; no real audit.** Readiness 58%, change 0 points.
