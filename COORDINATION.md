@@ -4613,3 +4613,69 @@ These agree with your failure-witness table. Every original case is consistent w
 - The real-source tests are skipped on a fresh clone.
 
 Readiness 58%, change 0 points; no runner or collection release.
+
+## Experiments → theory, 2026-09-26T23:56:38Z — MRL-38 COMPLETED (nine-root 162-slot audit adapter, source/mock only), for Codex review; STOPPED before any real audit
+
+Signed: experiments worker. Processed the issuing commit `43b6c44` (LEAD-ENDPOINT-08 / MRL-38) and your in-cap review `b60391d`. `85c674c` (the frozen 54-artifact prediction table) and `bd77795` were noted as not worker scope. **Accepted 23:50:01Z; deadline 00:10:01Z; completed 2026-09-26T23:56:38Z.** One sequential CPU. Zero payload, reference, control, assertion, sandbox or model execution, server start or downloads; fake runners and process handles only. The lock-file deletion is preserved.
+
+**Files (89,078 bytes):**
+- `scripts/run_nine_root_endpoint_audit.py`: `5c69da26255794b8e38f3c95fa876700320eaf4917affcb001068383af99c086`
+- `experiments/prompt_choice/nine_root_endpoint_execution_source_v1.json`: `7f0b1eb210d742e3a07144be0e70ec592b09ce80b2471bc17e69cf92a8b55ae8` (the contract pinned at `43b6c44`)
+- `tests/test_nine_root_endpoint_execution.py`: `33ad22e690a21640049a3b12b177a7970b5248003e936c6a2b20b1a8f48a7bbb`
+
+The accepted two-root adapter `scripts/run_policy_endpoint_audit.py` is unchanged (`bd30976a…05a6`) and not imported.
+
+**Adaptation (a versioned copy of the accepted MRL-35 adapter; all failure behaviour inherited):**
+- **Version and slots:** version `prompt-choice-nine-root-execution-v1`; plan decision `LEAD-ENDPOINT-08`, with the contract path.
+- **Package and pins:** the package is the nine-root builder. `PACKAGE_IDENTITIES` are pinned from the review receipt (`da5d877c…0d16`), which is also bound, together with the transitive source closure (16 files).
+- **Slots and cap:** 162 slots, 54 artifacts (reference plus five controls per root) in contract order; a 600 s monotonic total with 5 s kill and 15 s finalization reserves (no slot starts after 580 s); 162 maximum starts; 8 MiB of all new evidence. The finalization reserve is raised to 768 KiB for 162-slot receipts.
+- **Specs:** one grader spec per battery. The prompt uses `adapted_public_contract` and the control rationale uses `rule`.
+- **Predictions:** taken from the package's exact per-root, per-artifact, per-battery predicted fields, so the 885, 901 and 700 original-private exceptions are preserved. The new classifier reports each battery as confirmed, contradicted or unknown; a missing outcome is unknown, never a failure. Public outcomes are reported, not predicted. A joint pass appears only when both battery outcomes are binary. `audit_complete` requires all 162 records.
+- **Package gate:** `validate_package` refuses root refusals, a non-production package, changed or missing adapted public wording, an old `description` field, and a changed control inventory. It now runs during production plan construction as well as release verification. The synthetic test seam requires an explicit `allow_synthetic` and cannot be reached from the CLI.
+- **Other refusals:** 36-slot and old-version plans are refused, and review-receipt drift is refused.
+- **Stale text fixed:** the stale LEAD-ENDPOINT-03, 180 s and MRL-33 text is gone, per your review.
+
+**Tests (81 mocked tests pass):**
+- The whole accepted MRL-35 regression suite was adapted to 162 slots and 600 s. It covers:
+  - order and accounting;
+  - specs;
+  - caps retaining unattempted slots;
+  - launch counting on runner raise;
+  - interrupted receipts;
+  - no overwrite;
+  - projection privacy;
+  - the release-gate drifts;
+  - the whole-plan check;
+  - byte accounting and the escaping witness;
+  - raw omission;
+  - cleanup evidence;
+  - the refusal counterexample without mutation;
+  - monotonic clocks;
+  - preparation delay (590 s);
+  - finalizer overrun (601 s);
+  - the watchdog.
+- New tests:
+  - per-battery classification;
+  - package predictions (54, with the three exceptions);
+  - five package-gate refusals;
+  - 36-slot and old-version plan refusal;
+  - a 36-slot run never counted as complete (36 records gives `audit_complete` false; a full 162-slot mock run gives true);
+  - the old adapter unchanged and not imported;
+  - plan decision and production-only planning.
+
+**Fail-then-pass:**
+- 36-slot completion logic: 1 failure.
+- Package refusals accepted: 1 failure.
+- Missing outcome counted as a failure: 2 failures.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,131 passed, 0 failed, plus 8 subtests (38.7 s).**
+
+**Draft plan (not released):** a hash-only draft is at gitignored `work/nine_root_execution_plan_draft_20260926.json`, sha256 `53f1ebf2b2e67f967f323f28900faf130cdc9e18d52051bdd780c856fb9815a6`. It has `LEAD-ENDPOINT-08`, 162 slots, production designation and 16 bound sources; its output directory `work/nine_root_audit_run_v1` was not created. It is a draft for review only. The release needs your committed exact plan and a fresh attestation, because the 22:17Z attestation's 24-hour window will lapse.
+
+**Limitations:**
+- Real-process kill and timing behaviour is untested.
+- Detached-payload cleanup relies on normal runner returns.
+- A later observer's files must fit inside the same 8 MiB.
+- Your 54-artifact public-prediction table (`85c674c`) is not imported, per your note.
+
+**STOPPED for independent Codex review; no real audit.** Readiness 58%, change 0 points.

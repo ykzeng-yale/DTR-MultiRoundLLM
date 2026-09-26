@@ -1,0 +1,108 @@
+{
+ "version": "prompt-choice-nine-root-execution-v1",
+ "decision": "LEAD-ENDPOINT-08",
+ "assignment": "MRL-38",
+ "status": "source_mock_only_not_released",
+ "execution_released": false,
+ "runs_authorized": 0,
+ "lead_contract": {
+  "path": "docs/nine_root_measurement_execution_contract_20260926.md",
+  "commit": "43b6c44",
+  "sha256": "d55d72a2ce8b96a7571bbbc840d248c85a513b579a153e6920da5853a1c75f74"
+ },
+ "review_receipt": {
+  "path": "results/nine_root_measurement_source_review_20260926.json",
+  "sha256": "da5d877c5c39b15d33619fbe379d8bc31b7324a27875977c2444772963190d16"
+ },
+ "package_identities": {
+  "builder_sha256": "e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6",
+  "config_sha256": "5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769",
+  "private_record_sha256": {
+   "mbpp/354": "a605c0b9bf2369478f9c5ed4e26c52b7d68575aac05fd421ed0a76d8a3323c48",
+   "mbpp/356": "a8a30b1079e410f2e64e26c4a2c5f6051fb3bb3484e7a19be3af31ac2360302f",
+   "mbpp/36": "efef0c1624a7ccaaad92079d9680b2ad2a3ff73c4a0f07e2876eded428aef28b",
+   "mbpp/654": "3ece0954bfccd0570a9143bd4dd65f31f8fb2f5b329dbd268cec284d48b9fade",
+   "mbpp/656": "85db9065ecf01e2d48bba41b59077a06de3ce6b2f66dbb7d254512683c592746",
+   "mbpp/700": "ea60e506d659aea08d23a9aac9d5482b7f4d211a37f640a29f29861cee9995cf",
+   "mbpp/703": "c0d74c3a0aa8bd2d5a7301092b9510fa2970f647faeaedd7315d1c09b644c93a",
+   "mbpp/885": "c16bb160ac867417fc6d6b1cdccc8023533c8e6acfc0c72170a0ebf97aa3659f",
+   "mbpp/901": "92cc7b662b38b13a8f6301e154dc3b0edf1ac4bfc87ae08e6b29d85c3c158c7b"
+  },
+  "public_record_sha256": {
+   "mbpp/354": "a8a3b41b6617083eac41f5af3d9138dcd0f9603f8bca76433c9cf885a11b4a90",
+   "mbpp/356": "b83357be2a27ac7ea0647ab7d507972072229857d5d3de88faefd9afe6047287",
+   "mbpp/36": "bbfde8ec3045fa8b2970d3c08ec484b51604d0baa50a56ad74a2ce19ce1b626e",
+   "mbpp/654": "82de1da12382c7809ccd31401731bffa4bf8107fe916f0524acd731b6b993c27",
+   "mbpp/656": "8126fc9df6511629fe4f7554e147a212553247e67c972b2f3bff55fd4fa2fdce",
+   "mbpp/700": "cd8911d4ddf01dc7b1da9139a2f9b572a4bd934c047f65c5199e8f69d60ca315",
+   "mbpp/703": "92aa0af0c26117658a3958b5fec646f804dfbc6536b6d24476ce2a40735d173f",
+   "mbpp/885": "4b6bdd23632e2e7dca2a5aebf767d0d434baa78df086da04b8551a9a6059b4d6",
+   "mbpp/901": "b82c659f47ce60a3d6e21d4a0e803ba021b8d688a46ddccc2f5e7567039acbca"
+  }
+ },
+ "roots_in_order": [
+  "mbpp/356",
+  "mbpp/885",
+  "mbpp/354",
+  "mbpp/901",
+  "mbpp/654",
+  "mbpp/703",
+  "mbpp/700",
+  "mbpp/656",
+  "mbpp/36"
+ ],
+ "artifacts_per_root": [
+  "reference",
+  "wrong_rule_1",
+  "wrong_rule_2",
+  "wrong_rule_3",
+  "constant_public_expected",
+  "lookup_original_examples"
+ ],
+ "checks_in_order": [
+  "public",
+  "original_private",
+  "supplement_v1"
+ ],
+ "planned_artifacts": 54,
+ "planned_slots": 162,
+ "future_run_limits": {
+  "max_sandbox_starts": 162,
+  "total_elapsed_seconds": 600,
+  "retained_output_bytes": 8388608,
+  "model_calls": 0,
+  "downloads": 0,
+  "paid_spend": 0
+ },
+ "per_call_bound_seconds": {
+  "public": 10,
+  "original_private": 2,
+  "supplement_v1": 2
+ },
+ "supervisor": {
+  "total_seconds": 600,
+  "kill_reserve_seconds": 5,
+  "term_grace_seconds": 2,
+  "finalization_seconds": 15,
+  "slot_budget_seconds": 580,
+  "kind": "external owned-child supervisor with fail-closed lifecycle watchdog; monotonic deadline from before the plan read through finalization; no slot starts after 580 s"
+ },
+ "retained_bytes_rule": {
+  "worst_slot_bytes": 802816,
+  "finalization_reserve_bytes": 786432,
+  "scope": "all newly retained evidence: run directory, fresh supervisor directory and totals file (a later observer's files also count toward 8 MiB)"
+ },
+ "predictions_source": "the accepted package's per-root/per-artifact/per-battery predicted fields (885/901/700 original_private exceptions preserved)",
+ "old_adapter_unchanged": "scripts/run_policy_endpoint_audit.py (36-slot, two-root) is preserved and not imported",
+ "not_claimed": [
+  "no audit has run",
+  "no reference or control outcome exists",
+  "slots are not independent tasks or families"
+ ],
+ "mrl38_limits": {
+  "cpu": 1,
+  "elapsed_minutes_from_acceptance": 20,
+  "retained_output_mib": 32,
+  "sandbox_program_model_launches": 0
+ }
+}
