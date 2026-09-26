@@ -1,0 +1,1771 @@
+{
+ "attestation": {
+  "path": "results/policy_endpoint_containment_20260926T2217Z/attestation.json",
+  "sha256": "c6dfe4c3ab675c862405adbc4a3839fee5a172d7c1338f6b00efa4939ee8fde2"
+ },
+ "binding": {
+  "host_sha256": "e6626654e78211ef1aab3f691c1812d0f48f05d2a7057737dcf3469d57d48189",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+  "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+  "python_sha256": "a395f264e5612a2819662ed3e37fd30d39ed61179b98e5f86c3c783a008d8623",
+  "sandbox_kind": "seatbelt",
+  "sandbox_sha256": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c"
+ },
+ "bound_sources": {
+  "experiments/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "experiments/common/integrity.py": "173c8cedeceb0f788849ce68b3535df5da04be72ca302ff1e7e66bfeb1fb504a",
+  "experiments/landmark/__init__.py": "e465afd6c76a233ffffed27c89089fdff0ea519aa95a4addc9f4682c74f10acb",
+  "experiments/landmark/analyze.py": "f05c786b01ab8b92e8a4bfb0fb166171272977858ccb89875545723104f10719",
+  "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+  "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "experiments/landmark/grade.py": "fb1c470fffe988353b36aa1cecc4fa96fa401f929e0182e5f4ae01e995559c4f",
+  "experiments/landmark/public_check.py": "eadc6440f63e58b9ab19fb4169f9e0a30b51c58d7f862deec07f93b091ba515a",
+  "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+  "experiments/prompt_choice/endpoint_audit.py": "aa6a4d2ed6fce474a9a0defb721e5ec6e547161aaa592e1e87a36c07978acad1",
+  "experiments/prompt_choice/nine_root_endpoint_audit.py": "e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6",
+  "experiments/prompt_choice/nine_root_endpoint_execution_source_v1.json": "7f0b1eb210d742e3a07144be0e70ec592b09ce80b2471bc17e69cf92a8b55ae8",
+  "experiments/prompt_choice/nine_root_endpoint_source_v1.json": "5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769",
+  "results/nine_root_measurement_source_review_20260926.json": "da5d877c5c39b15d33619fbe379d8bc31b7324a27875977c2444772963190d16",
+  "scripts/check_landmark_sandbox.py": "8683429158451a82662f618e65b73b3d13c87e4c8e9ca709f1bf61cc0e17f83b",
+  "scripts/run_nine_root_endpoint_audit.py": "5c69da26255794b8e38f3c95fa876700320eaf4917affcb001068383af99c086"
+ },
+ "contract": "docs/nine_root_measurement_execution_contract_20260926.md",
+ "decision": "LEAD-ENDPOINT-08",
+ "limits": {
+  "downloads": 0,
+  "max_sandbox_starts": 162,
+  "model_calls": 0,
+  "paid_spend": 0,
+  "retained_output_bytes": 8388608,
+  "total_elapsed_seconds": 600
+ },
+ "output_directory": "work/nine_root_endpoint_audit_20260926T2359Z",
+ "package": {
+  "builder_sha256": "e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6",
+  "config_sha256": "5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769",
+  "private_record_sha256": {
+   "mbpp/354": "a605c0b9bf2369478f9c5ed4e26c52b7d68575aac05fd421ed0a76d8a3323c48",
+   "mbpp/356": "a8a30b1079e410f2e64e26c4a2c5f6051fb3bb3484e7a19be3af31ac2360302f",
+   "mbpp/36": "efef0c1624a7ccaaad92079d9680b2ad2a3ff73c4a0f07e2876eded428aef28b",
+   "mbpp/654": "3ece0954bfccd0570a9143bd4dd65f31f8fb2f5b329dbd268cec284d48b9fade",
+   "mbpp/656": "85db9065ecf01e2d48bba41b59077a06de3ce6b2f66dbb7d254512683c592746",
+   "mbpp/700": "ea60e506d659aea08d23a9aac9d5482b7f4d211a37f640a29f29861cee9995cf",
+   "mbpp/703": "c0d74c3a0aa8bd2d5a7301092b9510fa2970f647faeaedd7315d1c09b644c93a",
+   "mbpp/885": "c16bb160ac867417fc6d6b1cdccc8023533c8e6acfc0c72170a0ebf97aa3659f",
+   "mbpp/901": "92cc7b662b38b13a8f6301e154dc3b0edf1ac4bfc87ae08e6b29d85c3c158c7b"
+  },
+  "public_record_sha256": {
+   "mbpp/354": "a8a3b41b6617083eac41f5af3d9138dcd0f9603f8bca76433c9cf885a11b4a90",
+   "mbpp/356": "b83357be2a27ac7ea0647ab7d507972072229857d5d3de88faefd9afe6047287",
+   "mbpp/36": "bbfde8ec3045fa8b2970d3c08ec484b51604d0baa50a56ad74a2ce19ce1b626e",
+   "mbpp/654": "82de1da12382c7809ccd31401731bffa4bf8107fe916f0524acd731b6b993c27",
+   "mbpp/656": "8126fc9df6511629fe4f7554e147a212553247e67c972b2f3bff55fd4fa2fdce",
+   "mbpp/700": "cd8911d4ddf01dc7b1da9139a2f9b572a4bd934c047f65c5199e8f69d60ca315",
+   "mbpp/703": "92aa0af0c26117658a3958b5fec646f804dfbc6536b6d24476ce2a40735d173f",
+   "mbpp/885": "4b6bdd23632e2e7dca2a5aebf767d0d434baa78df086da04b8551a9a6059b4d6",
+   "mbpp/901": "b82c659f47ce60a3d6e21d4a0e803ba021b8d688a46ddccc2f5e7567039acbca"
+  }
+ },
+ "package_designation": "production",
+ "per_call_bound_seconds": {
+  "original_private": 2,
+  "public": 10,
+  "supplement_v1": 2
+ },
+ "predictions": {
+  "mbpp/354|mbpp/354/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/354|mbpp/354/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/354|mbpp/354/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/354|mbpp/354/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/354|mbpp/354/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/354|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/356|mbpp/356/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/356|mbpp/356/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/356|mbpp/356/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/356|mbpp/356/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/356|mbpp/356/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/356|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/36|mbpp/36/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/36|mbpp/36/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/36|mbpp/36/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/36|mbpp/36/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/36|mbpp/36/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/36|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/654|mbpp/654/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/654|mbpp/654/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/654|mbpp/654/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/654|mbpp/654/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/654|mbpp/654/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/654|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/656|mbpp/656/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/656|mbpp/656/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/656|mbpp/656/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/656|mbpp/656/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/656|mbpp/656/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/656|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/700|mbpp/700/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/700|mbpp/700/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/700|mbpp/700/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/700|mbpp/700/control/wrong_rule_2": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/700|mbpp/700/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/700|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/703|mbpp/703/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/703|mbpp/703/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/703|mbpp/703/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/703|mbpp/703/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/703|mbpp/703/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/703|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/885|mbpp/885/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/885|mbpp/885/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/885|mbpp/885/control/wrong_rule_1": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/885|mbpp/885/control/wrong_rule_2": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/885|mbpp/885/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/885|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  },
+  "mbpp/901|mbpp/901/control/constant_public_expected": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/901|mbpp/901/control/lookup_original_examples": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/901|mbpp/901/control/wrong_rule_1": {
+   "original_private": true,
+   "supplement_v1": false
+  },
+  "mbpp/901|mbpp/901/control/wrong_rule_2": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/901|mbpp/901/control/wrong_rule_3": {
+   "original_private": false,
+   "supplement_v1": false
+  },
+  "mbpp/901|reference": {
+   "original_private": true,
+   "supplement_v1": true
+  }
+ },
+ "retained_bytes_rule": {
+  "finalization_reserve_bytes": 786432,
+  "worst_slot_bytes": 802816
+ },
+ "slots": [
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+   "slot_id": "mbpp/356|reference|public",
+   "slot_index": 0,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+   "slot_id": "mbpp/356|reference|original_private",
+   "slot_index": 1,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+   "slot_id": "mbpp/356|reference|supplement_v1",
+   "slot_index": 2,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_1|public",
+   "slot_index": 3,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_1|original_private",
+   "slot_index": 4,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_1|supplement_v1",
+   "slot_index": 5,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_2|public",
+   "slot_index": 6,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_2|original_private",
+   "slot_index": 7,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_2|supplement_v1",
+   "slot_index": 8,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_3|public",
+   "slot_index": 9,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_3|original_private",
+   "slot_index": 10,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+   "slot_id": "mbpp/356|mbpp/356/control/wrong_rule_3|supplement_v1",
+   "slot_index": 11,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+   "slot_id": "mbpp/356|mbpp/356/control/constant_public_expected|public",
+   "slot_index": 12,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+   "slot_id": "mbpp/356|mbpp/356/control/constant_public_expected|original_private",
+   "slot_index": 13,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+   "slot_id": "mbpp/356|mbpp/356/control/constant_public_expected|supplement_v1",
+   "slot_index": 14,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+   "slot_id": "mbpp/356|mbpp/356/control/lookup_original_examples|public",
+   "slot_index": 15,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+   "slot_id": "mbpp/356|mbpp/356/control/lookup_original_examples|original_private",
+   "slot_index": 16,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "mbpp/356/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+   "slot_id": "mbpp/356|mbpp/356/control/lookup_original_examples|supplement_v1",
+   "slot_index": 17,
+   "task_id": "mbpp/356"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+   "slot_id": "mbpp/885|reference|public",
+   "slot_index": 18,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+   "slot_id": "mbpp/885|reference|original_private",
+   "slot_index": 19,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+   "slot_id": "mbpp/885|reference|supplement_v1",
+   "slot_index": 20,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_1|public",
+   "slot_index": 21,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_1|original_private",
+   "slot_index": 22,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_1|supplement_v1",
+   "slot_index": 23,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_2|public",
+   "slot_index": 24,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_2|original_private",
+   "slot_index": 25,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_2|supplement_v1",
+   "slot_index": 26,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_3|public",
+   "slot_index": 27,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_3|original_private",
+   "slot_index": 28,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+   "slot_id": "mbpp/885|mbpp/885/control/wrong_rule_3|supplement_v1",
+   "slot_index": 29,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+   "slot_id": "mbpp/885|mbpp/885/control/constant_public_expected|public",
+   "slot_index": 30,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+   "slot_id": "mbpp/885|mbpp/885/control/constant_public_expected|original_private",
+   "slot_index": 31,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+   "slot_id": "mbpp/885|mbpp/885/control/constant_public_expected|supplement_v1",
+   "slot_index": 32,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+   "slot_id": "mbpp/885|mbpp/885/control/lookup_original_examples|public",
+   "slot_index": 33,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+   "slot_id": "mbpp/885|mbpp/885/control/lookup_original_examples|original_private",
+   "slot_index": 34,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "mbpp/885/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+   "slot_id": "mbpp/885|mbpp/885/control/lookup_original_examples|supplement_v1",
+   "slot_index": 35,
+   "task_id": "mbpp/885"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+   "slot_id": "mbpp/354|reference|public",
+   "slot_index": 36,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+   "slot_id": "mbpp/354|reference|original_private",
+   "slot_index": 37,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+   "slot_id": "mbpp/354|reference|supplement_v1",
+   "slot_index": 38,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_1|public",
+   "slot_index": 39,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_1|original_private",
+   "slot_index": 40,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_1|supplement_v1",
+   "slot_index": 41,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_2|public",
+   "slot_index": 42,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_2|original_private",
+   "slot_index": 43,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_2|supplement_v1",
+   "slot_index": 44,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_3|public",
+   "slot_index": 45,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_3|original_private",
+   "slot_index": 46,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+   "slot_id": "mbpp/354|mbpp/354/control/wrong_rule_3|supplement_v1",
+   "slot_index": 47,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+   "slot_id": "mbpp/354|mbpp/354/control/constant_public_expected|public",
+   "slot_index": 48,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+   "slot_id": "mbpp/354|mbpp/354/control/constant_public_expected|original_private",
+   "slot_index": 49,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+   "slot_id": "mbpp/354|mbpp/354/control/constant_public_expected|supplement_v1",
+   "slot_index": 50,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+   "slot_id": "mbpp/354|mbpp/354/control/lookup_original_examples|public",
+   "slot_index": 51,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+   "slot_id": "mbpp/354|mbpp/354/control/lookup_original_examples|original_private",
+   "slot_index": 52,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "mbpp/354/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+   "slot_id": "mbpp/354|mbpp/354/control/lookup_original_examples|supplement_v1",
+   "slot_index": 53,
+   "task_id": "mbpp/354"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+   "slot_id": "mbpp/901|reference|public",
+   "slot_index": 54,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+   "slot_id": "mbpp/901|reference|original_private",
+   "slot_index": 55,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+   "slot_id": "mbpp/901|reference|supplement_v1",
+   "slot_index": 56,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_1|public",
+   "slot_index": 57,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_1|original_private",
+   "slot_index": 58,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_1|supplement_v1",
+   "slot_index": 59,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_2|public",
+   "slot_index": 60,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_2|original_private",
+   "slot_index": 61,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_2|supplement_v1",
+   "slot_index": 62,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_3|public",
+   "slot_index": 63,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_3|original_private",
+   "slot_index": 64,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+   "slot_id": "mbpp/901|mbpp/901/control/wrong_rule_3|supplement_v1",
+   "slot_index": 65,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+   "slot_id": "mbpp/901|mbpp/901/control/constant_public_expected|public",
+   "slot_index": 66,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+   "slot_id": "mbpp/901|mbpp/901/control/constant_public_expected|original_private",
+   "slot_index": 67,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+   "slot_id": "mbpp/901|mbpp/901/control/constant_public_expected|supplement_v1",
+   "slot_index": 68,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+   "slot_id": "mbpp/901|mbpp/901/control/lookup_original_examples|public",
+   "slot_index": 69,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+   "slot_id": "mbpp/901|mbpp/901/control/lookup_original_examples|original_private",
+   "slot_index": 70,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "mbpp/901/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+   "slot_id": "mbpp/901|mbpp/901/control/lookup_original_examples|supplement_v1",
+   "slot_index": 71,
+   "task_id": "mbpp/901"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+   "slot_id": "mbpp/654|reference|public",
+   "slot_index": 72,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+   "slot_id": "mbpp/654|reference|original_private",
+   "slot_index": 73,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+   "slot_id": "mbpp/654|reference|supplement_v1",
+   "slot_index": 74,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_1|public",
+   "slot_index": 75,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_1|original_private",
+   "slot_index": 76,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_1|supplement_v1",
+   "slot_index": 77,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_2|public",
+   "slot_index": 78,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_2|original_private",
+   "slot_index": 79,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_2|supplement_v1",
+   "slot_index": 80,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_3|public",
+   "slot_index": 81,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_3|original_private",
+   "slot_index": 82,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+   "slot_id": "mbpp/654|mbpp/654/control/wrong_rule_3|supplement_v1",
+   "slot_index": 83,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+   "slot_id": "mbpp/654|mbpp/654/control/constant_public_expected|public",
+   "slot_index": 84,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+   "slot_id": "mbpp/654|mbpp/654/control/constant_public_expected|original_private",
+   "slot_index": 85,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+   "slot_id": "mbpp/654|mbpp/654/control/constant_public_expected|supplement_v1",
+   "slot_index": 86,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+   "slot_id": "mbpp/654|mbpp/654/control/lookup_original_examples|public",
+   "slot_index": 87,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+   "slot_id": "mbpp/654|mbpp/654/control/lookup_original_examples|original_private",
+   "slot_index": 88,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "mbpp/654/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+   "slot_id": "mbpp/654|mbpp/654/control/lookup_original_examples|supplement_v1",
+   "slot_index": 89,
+   "task_id": "mbpp/654"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+   "slot_id": "mbpp/703|reference|public",
+   "slot_index": 90,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+   "slot_id": "mbpp/703|reference|original_private",
+   "slot_index": 91,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+   "slot_id": "mbpp/703|reference|supplement_v1",
+   "slot_index": 92,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_1|public",
+   "slot_index": 93,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_1|original_private",
+   "slot_index": 94,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_1|supplement_v1",
+   "slot_index": 95,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_2|public",
+   "slot_index": 96,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_2|original_private",
+   "slot_index": 97,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_2|supplement_v1",
+   "slot_index": 98,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_3|public",
+   "slot_index": 99,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_3|original_private",
+   "slot_index": 100,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+   "slot_id": "mbpp/703|mbpp/703/control/wrong_rule_3|supplement_v1",
+   "slot_index": 101,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+   "slot_id": "mbpp/703|mbpp/703/control/constant_public_expected|public",
+   "slot_index": 102,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+   "slot_id": "mbpp/703|mbpp/703/control/constant_public_expected|original_private",
+   "slot_index": 103,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+   "slot_id": "mbpp/703|mbpp/703/control/constant_public_expected|supplement_v1",
+   "slot_index": 104,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+   "slot_id": "mbpp/703|mbpp/703/control/lookup_original_examples|public",
+   "slot_index": 105,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+   "slot_id": "mbpp/703|mbpp/703/control/lookup_original_examples|original_private",
+   "slot_index": 106,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "mbpp/703/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+   "slot_id": "mbpp/703|mbpp/703/control/lookup_original_examples|supplement_v1",
+   "slot_index": 107,
+   "task_id": "mbpp/703"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+   "slot_id": "mbpp/700|reference|public",
+   "slot_index": 108,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+   "slot_id": "mbpp/700|reference|original_private",
+   "slot_index": 109,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+   "slot_id": "mbpp/700|reference|supplement_v1",
+   "slot_index": 110,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_1|public",
+   "slot_index": 111,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_1|original_private",
+   "slot_index": 112,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_1|supplement_v1",
+   "slot_index": 113,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_2|public",
+   "slot_index": 114,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_2|original_private",
+   "slot_index": 115,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_2|supplement_v1",
+   "slot_index": 116,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_3|public",
+   "slot_index": 117,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_3|original_private",
+   "slot_index": 118,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+   "slot_id": "mbpp/700|mbpp/700/control/wrong_rule_3|supplement_v1",
+   "slot_index": 119,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+   "slot_id": "mbpp/700|mbpp/700/control/constant_public_expected|public",
+   "slot_index": 120,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+   "slot_id": "mbpp/700|mbpp/700/control/constant_public_expected|original_private",
+   "slot_index": 121,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+   "slot_id": "mbpp/700|mbpp/700/control/constant_public_expected|supplement_v1",
+   "slot_index": 122,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+   "slot_id": "mbpp/700|mbpp/700/control/lookup_original_examples|public",
+   "slot_index": 123,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+   "slot_id": "mbpp/700|mbpp/700/control/lookup_original_examples|original_private",
+   "slot_index": 124,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "mbpp/700/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+   "slot_id": "mbpp/700|mbpp/700/control/lookup_original_examples|supplement_v1",
+   "slot_index": 125,
+   "task_id": "mbpp/700"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+   "slot_id": "mbpp/656|reference|public",
+   "slot_index": 126,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+   "slot_id": "mbpp/656|reference|original_private",
+   "slot_index": 127,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+   "slot_id": "mbpp/656|reference|supplement_v1",
+   "slot_index": 128,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_1|public",
+   "slot_index": 129,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_1|original_private",
+   "slot_index": 130,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_1|supplement_v1",
+   "slot_index": 131,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_2|public",
+   "slot_index": 132,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_2|original_private",
+   "slot_index": 133,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_2|supplement_v1",
+   "slot_index": 134,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_3|public",
+   "slot_index": 135,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_3|original_private",
+   "slot_index": 136,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+   "slot_id": "mbpp/656|mbpp/656/control/wrong_rule_3|supplement_v1",
+   "slot_index": 137,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+   "slot_id": "mbpp/656|mbpp/656/control/constant_public_expected|public",
+   "slot_index": 138,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+   "slot_id": "mbpp/656|mbpp/656/control/constant_public_expected|original_private",
+   "slot_index": 139,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+   "slot_id": "mbpp/656|mbpp/656/control/constant_public_expected|supplement_v1",
+   "slot_index": 140,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+   "slot_id": "mbpp/656|mbpp/656/control/lookup_original_examples|public",
+   "slot_index": 141,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+   "slot_id": "mbpp/656|mbpp/656/control/lookup_original_examples|original_private",
+   "slot_index": 142,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "mbpp/656/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+   "slot_id": "mbpp/656|mbpp/656/control/lookup_original_examples|supplement_v1",
+   "slot_index": 143,
+   "task_id": "mbpp/656"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "public",
+   "code_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+   "slot_id": "mbpp/36|reference|public",
+   "slot_index": 144,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "original_private",
+   "code_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+   "slot_id": "mbpp/36|reference|original_private",
+   "slot_index": 145,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "reference",
+   "artifact_kind": "reference",
+   "check": "supplement_v1",
+   "code_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+   "slot_id": "mbpp/36|reference|supplement_v1",
+   "slot_index": 146,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "public",
+   "code_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_1|public",
+   "slot_index": 147,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "original_private",
+   "code_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_1|original_private",
+   "slot_index": 148,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_1",
+   "artifact_kind": "wrong_rule_1",
+   "check": "supplement_v1",
+   "code_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_1|supplement_v1",
+   "slot_index": 149,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "public",
+   "code_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_2|public",
+   "slot_index": 150,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "original_private",
+   "code_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_2|original_private",
+   "slot_index": 151,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_2",
+   "artifact_kind": "wrong_rule_2",
+   "check": "supplement_v1",
+   "code_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_2|supplement_v1",
+   "slot_index": 152,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "public",
+   "code_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_3|public",
+   "slot_index": 153,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "original_private",
+   "code_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_3|original_private",
+   "slot_index": 154,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/wrong_rule_3",
+   "artifact_kind": "wrong_rule_3",
+   "check": "supplement_v1",
+   "code_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+   "slot_id": "mbpp/36|mbpp/36/control/wrong_rule_3|supplement_v1",
+   "slot_index": 155,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "public",
+   "code_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+   "slot_id": "mbpp/36|mbpp/36/control/constant_public_expected|public",
+   "slot_index": 156,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "original_private",
+   "code_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+   "slot_id": "mbpp/36|mbpp/36/control/constant_public_expected|original_private",
+   "slot_index": 157,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/constant_public_expected",
+   "artifact_kind": "constant_public_expected",
+   "check": "supplement_v1",
+   "code_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+   "slot_id": "mbpp/36|mbpp/36/control/constant_public_expected|supplement_v1",
+   "slot_index": 158,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "public",
+   "code_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+   "slot_id": "mbpp/36|mbpp/36/control/lookup_original_examples|public",
+   "slot_index": 159,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "original_private",
+   "code_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+   "slot_id": "mbpp/36|mbpp/36/control/lookup_original_examples|original_private",
+   "slot_index": 160,
+   "task_id": "mbpp/36"
+  },
+  {
+   "artifact_id": "mbpp/36/control/lookup_original_examples",
+   "artifact_kind": "lookup_original_examples",
+   "check": "supplement_v1",
+   "code_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+   "slot_id": "mbpp/36|mbpp/36/control/lookup_original_examples|supplement_v1",
+   "slot_index": 161,
+   "task_id": "mbpp/36"
+  }
+ ],
+ "source": {
+  "path": "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl",
+  "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+ },
+ "status": "prepared_not_released",
+ "supervisor": {
+  "finalization_seconds": 15,
+  "kill_reserve_seconds": 5,
+  "slot_budget_seconds": 580,
+  "term_grace_seconds": 2,
+  "total_seconds": 600
+ },
+ "version": "prompt-choice-nine-root-execution-v1"
+}
