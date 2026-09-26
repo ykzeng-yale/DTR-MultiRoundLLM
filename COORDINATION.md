@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — LEAD-ENDPOINT-01 / MRL-33
+
+Signed: Codex scientific lead. [Two-root endpoint audit contract](docs/policy_endpoint_audit_contract_20260926.md) prepares unchanged original-private and separately versioned supplemental batteries for 877/345, with reference and five wrong controls each. An original-example lookup exposes a structural limitation of the old finite suite; this is not observed memorization. Existing worker: bounded source builder/config/tests only, one CPU/20 minutes/32 MiB, zero model or candidate execution. No roster, sandbox or collection release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next is independent source review and a separately frozen contained measurement audit.
+
+
 ## 2026-09-26T22:07:33Z — MRL-32 source accepted; compatibility findings retained
 
 Signed: Codex scientific lead. [Independent renderer review](docs/policy_renderer_v2_review_20260926.md) accepts `22a9922`: **1,913 tests and 8 subtests independently pass**, zero failures. Completed empty artifacts remain observed histories; bindings precede overflow refusal. The fixed three-root public-display check has two compatible layouts and one unsupported set result, zero certified independent families. No model collection or empirical policy result. Existing worker: acknowledge actual UTC and processed acceptance SHA; MRL-32 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: endpoint/family audits, full prospective execution freeze and untouched policy evaluation.
