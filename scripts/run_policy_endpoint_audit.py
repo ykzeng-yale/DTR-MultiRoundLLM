@@ -46,7 +46,8 @@ LIMITS = {"max_sandbox_starts": 36, "total_elapsed_seconds": 180, "retained_outp
 SLOT_BOUND_SECONDS = {"public": pc.PUBLIC_LIMITS["parent_wall_seconds"], "original_private": 2, "supplement_v1": 2}
 # External owned-child supervisor (MRL-34-R1): the parent kills the child's process group at total - kill_reserve; the
 # child stops starting slots at slot_budget, leaving time inside the 180 s total for finalization and cleanup.
-SUPERVISOR = {"total_seconds": 180, "kill_reserve_seconds": 5, "term_grace_seconds": 2, "slot_budget_seconds": 160}
+SUPERVISOR = {"total_seconds": 180, "kill_reserve_seconds": 5, "term_grace_seconds": 2, "finalization_seconds": 15,
+              "slot_budget_seconds": 160}  # 160 = 180 - kill reserve - finalization
 # Worst case retained bytes for one more slot: stdout and stderr up to 65,536 bytes each, JSON-escaped up to 6x, plus
 # record overhead; finalization (summary receipt and projection, no raw duplication) is reserved separately.
 WORST_SLOT_BYTES = 6 * 2 * 65536 + 16384
@@ -289,23 +290,35 @@ def public_projection(receipt: dict) -> dict:
 
 
 # ---------------------------------------------------------------- execution loop
-def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None, clock=time.monotonic, limits=LIMITS) -> dict:
+MIN_SLOT_RECORD_BYTES = 16384  # a slot record without raw runner fields, plus its launch events
+SUPERVISOR_RECORD_RESERVE_BYTES = 16384  # parent supervisor record and the final totals file (inside the finalization reserve)
+
+
+class RetainedCapReached(RuntimeError):
+    """Persisting would exceed the retained-output cap after reserving finalization bytes."""
+
+
+def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None, clock=time.monotonic, limits=LIMITS,
+              deadline=None) -> dict:
     """Run the 36 slots once each in order with the given runner, persisting a start manifest and one flushed record per
-    slot. Caps convert remaining slots to recorded unattempted slots; an interrupt records the run as interrupted."""
+    slot. `deadline` is absolute in `clock` units (default: start + slot budget); a slot starts only if clock() plus its
+    per-call bound fits. Caps convert remaining slots to recorded unattempted slots; an interrupt records the run as
+    interrupted. Launch attempts and runner returns are persisted around every runner call (cleanup evidence)."""
     out = Path(out_dir)
     out.mkdir(parents=False, exist_ok=False)
     by_task = {p["task_id"]: (p, q) for p, q in zip(package["public_records"], package["private_records"])}
-    codes = {}
-    specs = {}
+    codes, specs = {}, {}
     for task, (pub, priv) in by_task.items():
         codes[(task, "reference")] = priv["reference"]["code"]
         codes.update({(task, c["control_id"]): c["code"] for c in priv["controls"]})
         specs[task] = task_and_specs(pub, priv)[1]
-    started, launches, written, records = clock(), 0, 0, []
+    cap = limits["retained_output_bytes"]
+    started, launches, written, records, omitted = clock(), 0, 0, [], []
+    deadline = started + SUPERVISOR["slot_budget_seconds"] if deadline is None else deadline
     start_manifest = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "limits": limits,
                       "started_at": datetime.now(timezone.utc).isoformat(), "slots": slots}
+    text = json.dumps(start_manifest, sort_keys=True) + "\n"
     with open(out / "start_manifest.json", "x", encoding="utf-8") as fh:
-        text = json.dumps(start_manifest, sort_keys=True) + "\n"
         fh.write(text)
     written += len(text.encode("utf-8"))
     log = open(out / "slots_private.jsonl", "x", encoding="utf-8")
@@ -313,21 +326,23 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
     def persist(obj):
         nonlocal written
         line = json.dumps(obj, sort_keys=True, default=str) + "\n"
+        size = len(line.encode("utf-8"))
+        if written + size + FINALIZATION_RESERVE_BYTES > cap:
+            raise RetainedCapReached(f"{written + size} bytes plus the finalization reserve would exceed {cap}")
         log.write(line)
         log.flush()
         os.fsync(log.fileno())
-        written += len(line.encode("utf-8"))
+        written += size
 
     stop_reason, current, run_status = None, None, "completed"
     try:
         for slot in slots:
             current = slot
             rec = dict(slot)
-            elapsed = clock() - started
             if stop_reason is None and (launches >= limits["max_sandbox_starts"]
-                                        or elapsed + SLOT_BOUND_SECONDS[slot["check"]] > SUPERVISOR["slot_budget_seconds"]):
+                                        or clock() + SLOT_BOUND_SECONDS[slot["check"]] > deadline):
                 stop_reason = "cap_unattempted"
-            if stop_reason is None and written + WORST_SLOT_BYTES + FINALIZATION_RESERVE_BYTES > limits["retained_output_bytes"]:
+            if stop_reason is None and written + WORST_SLOT_BYTES + FINALIZATION_RESERVE_BYTES > cap:
                 stop_reason = "output_cap_unattempted"
             if stop_reason is not None:
                 rec.update(status=stop_reason, launched=False, outcome=None, reason=stop_reason)
@@ -339,18 +354,22 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
             def counted(program, **kw):
                 nonlocal launches
                 launches += 1  # counted and persisted before the runner is invoked
+                n = launches
                 launched.append(True)
                 call = {"program_sha256": hashlib.sha256(program.encode("utf-8")).hexdigest(), "bounds": kw}
-                persist({"event": "launch_attempt", "slot_id": slot["slot_id"], "launch_number": launches,
+                persist({"event": "launch_attempt", "slot_id": slot["slot_id"], "launch_number": n,
                          "program_sha256": call["program_sha256"]})
                 try:
                     result = runner(program, **kw)
                 except BaseException as e:
                     call["exception"] = f"{type(e).__name__}: {e}"
                     raw_calls.append(call)
+                    persist({"event": "launch_return", "launch_number": n, "returned": "raised", "exception": type(e).__name__})
                     raise
-                call["result"] = result  # raw runner result (stdout, stderr, return code) kept privately
+                call["result"] = result  # raw runner result (stdout, stderr, return code) kept privately, once
                 raw_calls.append(call)
+                persist({"event": "launch_return", "launch_number": n, "returned": "normal",
+                         "payload_pid": result.get("pid") if isinstance(result, dict) else None})
                 return result
 
             code, t0 = codes[(slot["task_id"], slot["artifact_id"])], clock()
@@ -367,15 +386,18 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
                 rec.update(outcome=res["outcome"], reason=res["reason"], returncode=run.get("returncode"),
                            private_results={k: v for k, v in res.items() if k != "run"})  # raw run kept once, in private_runner_calls
             rec.update(status="launched" if launched else "static_decision", launched=bool(launched),
-                       seconds=round(clock() - t0, 6), private_runner_calls=raw_calls)
+                       seconds=round(clock() - t0, 6), private_runner_calls=raw_calls, raw_retained=True)
             size = len((json.dumps({"event": "slot", **rec}, sort_keys=True, default=str) + "\n").encode("utf-8"))
-            if written + size + FINALIZATION_RESERVE_BYTES > limits["retained_output_bytes"]:  # hard cap, whatever the estimate
-                raw = json.dumps({k: rec.pop(k) for k in RAW_FIELDS if k in rec}, sort_keys=True, default=str).encode("utf-8")
-                rec.update(raw_omitted_for_cap=True, raw_sha256=hashlib.sha256(raw).hexdigest(), raw_bytes=len(raw))
+            if written + size + FINALIZATION_RESERVE_BYTES > cap:  # hard cap on the actual encoded size
+                blob = json.dumps({k: rec.pop(k) for k in RAW_FIELDS if k in rec}, sort_keys=True, default=str).encode("utf-8")
+                # A digest is NOT a retained raw record: the slot's raw evidence is missing and the audit is incomplete.
+                rec.update(raw_retained=False, omitted_raw_digest_sha256=hashlib.sha256(blob).hexdigest(),
+                           omitted_raw_bytes=len(blob))
+                omitted.append(slot["slot_id"])
             persist({"event": "slot", **rec})
             records.append(rec)
             current = None
-    except BaseException as exc:  # interrupt, supervisor deadline or adapter fault: never declared complete
+    except BaseException as exc:  # interrupt, supervisor SIGTERM, cap or adapter fault: never declared complete
         run_status = f"interrupted:{type(exc).__name__}"
         done = {r["slot_id"] for r in records}
         for slot in slots:
@@ -390,37 +412,98 @@ def run_audit(package, slots, out_dir, runner, *, designation, plan_sha256=None,
             except Exception:
                 pass
             records.append(rec)
-        _finish(out, log, records, designation, plan_sha256, run_status, launches, clock() - started, written)
+        _finish(out, log, records, designation, plan_sha256, run_status, launches, clock() - started, written, omitted)
         raise
-    return _finish(out, log, records, designation, plan_sha256, run_status, launches, clock() - started, written)
+    return _finish(out, log, records, designation, plan_sha256, run_status, launches, clock() - started, written, omitted)
 
 
-def _finish(out, log, records, designation, plan_sha256, run_status, launches, elapsed, written):
+def _finish(out, log, records, designation, plan_sha256, run_status, launches, elapsed, written, omitted):
     log.close()
     summaries = [{k: v for k, v in r.items() if k not in RAW_FIELDS} for r in records]  # raw results stay only in the JSONL
+    attempted_all = all(r["status"] in ("launched", "static_decision") for r in records)
     receipt = {"version": VERSION, "designation": designation, "plan_sha256": plan_sha256, "run_status": run_status,
+               "raw_records_complete": not omitted, "raw_omitted_slots": list(omitted), "all_slots_attempted": attempted_all,
+               "audit_complete": run_status == "completed" and not omitted and attempted_all and len(records) == 36,
                "totals": {"slots": len(records), "sandbox_launch_attempts": launches, "elapsed_seconds": round(elapsed, 6),
                           "retained_bytes_before_finalization": written, "model_calls": 0,
                           "by_status": {s: sum(r["status"] == s for r in records) for s in ADAPTER_STATUSES}},
                "slots": summaries, "classification": classify(records),
-               "raw_records": "slots_private.jsonl (runner results, program hashes, public nonces)"}
-    with open(out / "receipt_private.json", "x", encoding="utf-8") as fh:
-        fh.write(json.dumps(receipt, sort_keys=True, default=str, indent=1) + "\n")
+               "raw_records": "slots_private.jsonl (launch attempts/returns, runner results, program hashes, public nonces)",
+               "byte_accounting": "final all-file totals are in retained_totals.json, written last by the supervisor"}
     projection = public_projection(receipt)
-    with open(out / "public_projection.json", "x", encoding="utf-8") as fh:
-        fh.write(json.dumps(projection, sort_keys=True, indent=1) + "\n")
-    receipt["totals"]["retained_bytes_total"] = sum(f.stat().st_size for f in out.iterdir() if f.is_file())
+    projection.update(audit_complete=receipt["audit_complete"], raw_records_complete=receipt["raw_records_complete"])
+    texts = [json.dumps(receipt, sort_keys=True, default=str, indent=1) + "\n", json.dumps(projection, sort_keys=True, indent=1) + "\n"]
+    budget = LIMITS["retained_output_bytes"] - written - SUPERVISOR_RECORD_RESERVE_BYTES
+    if sum(len(t.encode("utf-8")) for t in texts) > budget:  # finalization must fit too: drop per-slot summaries, never the cap
+        for doc in (receipt, projection):
+            doc.update(slots=[], slots_omitted_for_cap=True, audit_complete=False)
+        texts = [json.dumps(receipt, sort_keys=True, default=str, indent=1) + "\n",
+                 json.dumps(projection, sort_keys=True, indent=1) + "\n"]
+    for name, text in zip(("receipt_private.json", "public_projection.json"), texts):
+        with open(out / name, "x", encoding="utf-8") as fh:
+            fh.write(text)
     return receipt
 
 
-def supervise(cmd, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monotonic) -> dict:
-    """External owned-child supervisor: start the audit child in its own session, kill only that owned process group at
-    total - kill_reserve, and record the observed exit and whether the group is gone (never assumed)."""
+def detached_payload_cleanup(out_dir) -> dict:
+    """Evidence for the sandbox payloads, which run in their own sessions (never inferred from the adapter group). Confirmed
+    only if the launch log parses completely and every persisted launch attempt has a NORMAL runner return: the unchanged
+    run_program executes its finally cleanup before returning normally. A raised return, a missing return, a truncated log
+    or a missing log after launches were possible leaves it unresolved. No process is signalled here."""
+    out = Path(out_dir) if out_dir is not None else None
+    if out is None or not out.exists():
+        return {"status": "no_launch_possible", "detail": "output directory absent; every launch is logged in it first"}
+    log = out / "slots_private.jsonl"
+    if not log.exists():
+        return {"status": "unresolved", "detail": "launch log absent"}
+    attempts, normal, raised = set(), set(), set()
+    try:
+        for line in log.read_text(encoding="utf-8").splitlines():
+            ev = json.loads(line)
+            if ev.get("event") == "launch_attempt":
+                attempts.add(ev["launch_number"])
+            elif ev.get("event") == "launch_return":
+                (normal if ev["returned"] == "normal" else raised).add(ev["launch_number"])
+    except (ValueError, KeyError, UnicodeDecodeError) as e:
+        return {"status": "unresolved", "detail": f"launch log unreadable or truncated: {type(e).__name__}"}
+    missing = sorted(attempts - normal - raised)
+    if missing or raised:
+        return {"status": "unresolved", "detail": "attempts without a normal runner return",
+                "missing_returns": missing, "raised_returns": sorted(raised), "attempts": len(attempts)}
+    return {"status": "confirmed_by_normal_runner_returns", "attempts": len(attempts),
+            "limitation": "relies on the unchanged sandbox.run_program finally cleanup; not an absolute guarantee"}
+
+
+def finalize_totals(out_dir, extra_files=(), *, cap=LIMITS["retained_output_bytes"]) -> dict:
+    """Write the final all-file byte accounting last. Scope: every file in the output directory, any sibling supervisor
+    record, and this totals file itself (its own size is included by fixed-point iteration)."""
+    out = Path(out_dir)
+    files = [f for f in out.iterdir() if f.is_file()] if out.is_dir() else []
+    files += [Path(f) for f in extra_files if Path(f).is_file()]
+    sizes = {f.name if f.parent == out else f.as_posix(): f.stat().st_size for f in files}
+    target = out / "retained_totals.json" if out.is_dir() else out.with_name(out.name + ".retained_totals.json")
+    own = 0
+    for _ in range(8):
+        total = sum(sizes.values()) + own
+        doc = {"scope": "all newly retained files of this run: the output directory, any sibling supervisor record, and this file",
+               "files": sizes, "totals_file_bytes": own, "total_bytes": total, "cap_bytes": cap, "within_cap": total <= cap}
+        text = json.dumps(doc, sort_keys=True) + "\n"
+        if len(text.encode("utf-8")) == own:
+            break
+        own = len(text.encode("utf-8"))
+    with open(target, "x", encoding="utf-8") as fh:
+        fh.write(text)
+    return doc
+
+
+def supervise(cmd, deadline, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.time) -> dict:
+    """External owned-child supervisor: start the child in its own session, kill only that owned process group at
+    deadline - kill_reserve, and record the observed exit and whether the ADAPTER group is gone (never assumed)."""
     t0 = clock()
     child = popen(cmd, start_new_session=True)
     killed, rc = False, None
     try:
-        rc = child.wait(timeout=SUPERVISOR["total_seconds"] - SUPERVISOR["kill_reserve_seconds"])
+        rc = child.wait(timeout=max(0.0, deadline - SUPERVISOR["kill_reserve_seconds"] - clock()))
     except subprocess.TimeoutExpired:
         killed = True
         for sig, wait in ((signal.SIGTERM, SUPERVISOR["term_grace_seconds"]), (signal.SIGKILL, 1)):
@@ -435,13 +518,62 @@ def supervise(cmd, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.monot
                 continue
     try:
         killpg(child.pid, 0)
-        cleanup = "unresolved: owned process group still present"
+        cleanup = "unresolved: owned adapter process group still present"
     except ProcessLookupError:
-        cleanup = "confirmed: owned process group gone"
+        cleanup = "confirmed: owned adapter process group gone"
     except PermissionError:
-        cleanup = "unresolved: cannot signal owned process group"
-    return {"child_pid": child.pid, "child_exit": rc, "killed_at_deadline": killed, "cleanup": cleanup,
-            "elapsed_seconds": round(clock() - t0, 6), "total_seconds": SUPERVISOR["total_seconds"]}
+        cleanup = "unresolved: cannot signal owned adapter process group"
+    return {"child_pid": child.pid, "child_exit": rc, "killed_at_deadline": killed, "adapter_group_cleanup": cleanup,
+            "elapsed_seconds": round(clock() - t0, 6), "deadline_epoch": deadline}
+
+
+def execute_supervised(source, plan_path, plan_commit, *, popen=subprocess.Popen, killpg=os.killpg, clock=time.time,
+                       detached=detached_payload_cleanup) -> tuple:
+    """Parent: the total deadline starts HERE, before any verification (which runs inside the supervised child, before any
+    payload launch). Returns (exit code, supervisor record, totals); success needs every piece of evidence."""
+    t0 = clock()
+    deadline = t0 + SUPERVISOR["total_seconds"]
+    try:
+        out = Path(json.loads(Path(plan_path).read_text())["output_directory"])
+    except (OSError, ValueError, KeyError, TypeError):
+        out = None
+    cmd = [sys.executable, str(Path(__file__).resolve()), "_child", "--source", str(source), "--plan", str(plan_path),
+           "--plan-commit", str(plan_commit), "--deadline", repr(deadline)]
+    record = supervise(cmd, deadline, popen=popen, killpg=killpg, clock=clock)
+    record["detached_payload_cleanup"] = detached(out)
+    receipt_path = out / "receipt_private.json" if out is not None else None
+    receipt = json.loads(receipt_path.read_text()) if receipt_path is not None and receipt_path.exists() else None
+    record["receipt_present"] = receipt is not None
+    record["audit_complete"] = bool(receipt and receipt.get("audit_complete"))
+    record["started_epoch"], record["finished_epoch"] = t0, clock()
+    record["within_total_deadline"] = record["finished_epoch"] <= deadline
+    totals = None
+    if out is not None:
+        target = out / "supervisor.json" if out.is_dir() else out.with_name(out.name + ".supervisor.json")
+        with open(target, "x", encoding="utf-8") as fh:
+            fh.write(json.dumps(record, sort_keys=True, default=str) + "\n")
+        totals = finalize_totals(out, [] if out.is_dir() else [target])
+    ok = (record["child_exit"] == 0 and not record["killed_at_deadline"]
+          and record["adapter_group_cleanup"].startswith("confirmed")
+          and record["detached_payload_cleanup"]["status"].startswith("confirmed")
+          and record["audit_complete"] and record["within_total_deadline"] and totals is not None and totals["within_cap"])
+    return (0 if ok else 3), record, totals  # never success while any cleanup, byte or completeness evidence is missing
+
+
+def run_child(source, plan_path, plan_commit, deadline, *, clock=time.time, verify=verify_release, runner=None,
+              build=ea.build) -> dict:
+    """Child: verification first (before any payload launch), then the slots against the parent's absolute deadline minus
+    the finalization reserve, so slow preparation consumes the same budget."""
+    plan = verify(plan_path, plan_commit, source)
+    designation = "released_audit"
+    if runner is None:
+        from experiments.landmark import sandbox  # child only, imported after every gate has passed
+        runner = sandbox.run_program
+    else:
+        designation = MOCK_DESIGNATION
+    return run_audit(build(source), plan["slots"], plan["output_directory"], runner, designation=designation,
+                     plan_sha256=file_sha(plan_path), clock=clock,
+                     deadline=deadline - SUPERVISOR["kill_reserve_seconds"] - SUPERVISOR["finalization_seconds"])
 
 
 # ---------------------------------------------------------------- CLI
@@ -460,6 +592,7 @@ def main(argv=None) -> int:
     c.add_argument("--source", required=True)
     c.add_argument("--plan", required=True)
     c.add_argument("--plan-commit", required=True)
+    c.add_argument("--deadline", required=True, type=float)
     a = ap.parse_args(argv)
     if a.mode == "plan":
         out = Path(a.out_dir).resolve()
@@ -475,30 +608,21 @@ def main(argv=None) -> int:
             return 2
         print(a.plan)
         return 0
-    try:
-        plan = verify_release(a.plan, a.plan_commit, a.source)
-    except ReleaseRefused as e:
-        print(f"refused before any launch: {e}", file=sys.stderr)
-        return 2
-    if a.mode == "execute":  # parent: supervise the owned child and record its observed exit and cleanup
-        record = supervise([sys.executable, str(Path(__file__).resolve()), "_child", "--source", a.source, "--plan", a.plan,
-                            "--plan-commit", a.plan_commit])
-        out = Path(plan["output_directory"])
-        target = out / "supervisor.json" if out.is_dir() else out.with_name(out.name + ".supervisor.json")
-        with open(target, "x", encoding="utf-8") as fh:
-            fh.write(json.dumps(record, sort_keys=True) + "\n")
-        print(json.dumps(record, sort_keys=True))
-        ok = record["child_exit"] == 0 and not record["killed_at_deadline"] and record["cleanup"].startswith("confirmed")
-        return 0 if ok else 3  # never success while cleanup is unresolved
-    from experiments.landmark import sandbox  # child only, imported after every gate has passed
+    if a.mode == "execute":  # parent: the clock starts before any verification; the child verifies before any launch
+        code, record, totals = execute_supervised(a.source, a.plan, a.plan_commit)
+        print(json.dumps({"supervisor": record, "totals": totals}, sort_keys=True, default=str))
+        return code
 
     def unwind(signum, frame):  # supervisor SIGTERM: unwind through run_audit's interrupted-receipt path
         raise KeyboardInterrupt("supervisor SIGTERM")
     signal.signal(signal.SIGTERM, unwind)
-    receipt = run_audit(ea.build(a.source), plan["slots"], plan["output_directory"], sandbox.run_program,
-                        designation="released_audit", plan_sha256=file_sha(a.plan))
+    try:
+        receipt = run_child(a.source, a.plan, a.plan_commit, a.deadline)
+    except ReleaseRefused as e:
+        print(f"refused before any launch: {e}", file=sys.stderr)
+        return 2
     print(json.dumps(receipt["totals"], sort_keys=True))
-    return 0
+    return 0 if receipt["audit_complete"] else 4
 
 
 if __name__ == "__main__":

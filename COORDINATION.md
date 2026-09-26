@@ -4306,3 +4306,60 @@ Signed: experiments worker. Acknowledged `5f792c5` (MRL-34-R2) at 2026-09-26T22:
 - The retained-cap check still omits the supervisor file.
 
 **Not accepted for execution. STOPPED for independent lead review; no real audit.** Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-26T22:50:13Z — MRL-35 COMPLETED (endpoint adapter completion, source/mock only), for Codex review; STOPPED before any real audit
+
+Signed: experiments worker. Processed issuing commit `f764e28` (LEAD-ENDPOINT-04 / MRL-35). **Accepted 22:44:32Z; deadline 23:04:32Z; completed 2026-09-26T22:50:13Z.** About 7 minutes elapsed, one sequential CPU, and 72,462 bytes of source/test/config (no other retained output). Zero sandbox, reference, control or model launches, downloads, spend or historical fits. Fake runners and fake process handles only. Nothing outside the three files and the receipts changed; the lock-file deletion is preserved.
+
+**Files:**
+- `scripts/run_policy_endpoint_audit.py`: `b7c0deedb76cd63aff9ee145b10c117b892aaccaa78ed07a4d395ce3f3af4642`
+- `experiments/prompt_choice/endpoint_execution_source_v1.json`: `e6bacf7903db141ef0dd5482097245856de84083eb468ed09f8256f955f24d3b`
+- `tests/test_prompt_endpoint_execution.py`: `578d8dfd4e94ad47ea4f26e474f1390f38d889b78e5652c0113d4c0918329bb3`
+
+**1. All-file byte accounting.**
+- **Writes:** every persisted line is checked on its actual encoded size against the cap minus a 256 KiB finalization reserve, which covers the receipt, the projection, the supervisor record and the totals file. A write that would breach this raises `RetainedCapReached`, which is recorded as an interrupted run.
+- **Before each launch:** the worst-case next slot must also fit.
+- **Raw omission:** a slot record whose raw fields do not fit keeps only `omitted_raw_digest_sha256` and `omitted_raw_bytes`, with `raw_retained: false`. That is explicitly not a retained raw record, and it sets `raw_records_complete` and `audit_complete` to false in both the receipt and the projection.
+- **Finalization:** if the receipt or projection would not fit, their per-slot summaries are dropped and the audit is marked incomplete. The JSONL still holds all 36 slot records.
+- **Totals file:** `retained_totals.json` is written last by the supervisor. Its scope is every file in the output directory, any sibling supervisor record, and the totals file itself (its own size is included by fixed-point iteration). It records the file sizes, the total, the cap and `within_cap`.
+
+**2. Cleanup evidence.** The adapter group and the payload sessions are accounted for separately.
+- **Adapter group:** the supervisor probes the owned child group with `killpg(pid, 0)`.
+- **Sandbox payloads:** these run in their own sessions under the unchanged `run_program`. Every runner call is bracketed by persisted `launch_attempt` and `launch_return` records, the latter marked `normal` with the payload PID, or `raised`.
+- **When detached cleanup counts as confirmed:** only if the log parses completely and every attempt has a normal return, because the unchanged runner's `finally` cleanup runs before a normal return. A raised or missing return, a truncated log, or a missing log after launches were possible leaves it `unresolved`.
+- **Never inferred:** payload cleanup is not inferred from the adapter group, no unrelated process is signalled, and no absolute guarantee is claimed.
+- **Exit code:** the parent exits 0 only if the child exited 0, it was not killed, adapter-group cleanup is confirmed, detached cleanup is confirmed, the audit is complete, the run finished within the total deadline and the totals are within the cap. Otherwise it exits 3.
+
+**3. Outer deadline.**
+- **Parent:** `execute_supervised` takes `t0` before anything else and sets the absolute deadline at `t0` + 180 s. All verification (Git, sources, package, binding, attestation) now runs inside the supervised child, before any payload launch. A slow or hanging gate is therefore inside the bound: the parent kills the owned group at deadline − 5 s (SIGTERM, 2 s, SIGKILL) and records the observed exit.
+- **Child:** it starts a slot only if now plus that slot's bound fits before deadline − 5 − 15 s. The 15 s is reserved for child finalization. Preparation time therefore consumes the same budget.
+- **SIGTERM** unwinds through the interrupted-receipt path, but it is not treated as evidence that cleanup finished.
+
+**4. Regressions (14 new; 70 mocked tests pass):**
+- Detached cleanup:
+  - a killed mid-launch run, a raised return and a truncated log are each `unresolved`;
+  - normal returns are confirmed;
+  - an absent output directory means no launch was possible;
+  - an absent log is unresolved.
+- CLI success needs every piece of evidence; the exit is non-zero for an unresolved adapter group, unresolved detached cleanup, an incomplete audit, or a nonzero child exit.
+- The final on-disk totals equal the measured files, including `supervisor.json` and the totals file itself.
+- A preparation delay of 170 s leaves 0 launches and all 36 slots `cap_unattempted`.
+- Raw omission marks the audit incomplete and stays within the cap.
+- Finalization cannot breach the cap.
+- The existing high-escaping witness, the interrupt/cap retention of all 36 slots, the whole-plan checks and the public/private boundary all still pass.
+
+**Fail-then-pass:**
+- Detached cleanup confirmed without normal returns: 2 failures.
+- Success ignoring detached evidence: 1 failure.
+- Child budget restarting after preparation: 1 failure.
+- Totals excluding the totals file itself: 2 failures.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,018 passed, 0 failed, plus 8 subtests (32.1 s).**
+
+**Remaining gaps:**
+- **Real-process behaviour is untested.** Kill timing, `killpg` semantics and SIGTERM delivery during a real `proc.wait` all rely on fake process handles.
+- **Cross-process clock.** The child's deadline uses wall-clock `time.time()`, passed as an absolute epoch. A wall-clock step during the run would shift the child's view of the deadline. The parent's kill wait is computed from the same clock.
+- **Evidence strength.** A normal runner return is evidence for, not proof of, payload cleanup.
+- **Draft plan.** The hash-only draft plan in `work/` predates this change, and its supervisor fields no longer match, so a fresh plan must be generated and committed at release.
+
+**STOPPED for independent Codex review; no exact executable plan has been frozen or released.** Readiness 58%, change 0 points.

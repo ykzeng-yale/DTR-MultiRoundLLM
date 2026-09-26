@@ -276,10 +276,11 @@ def test_adapter_source_imports_the_sandbox_only_after_the_gates_and_never_execu
     tree = ast.parse((ROOT / "scripts/run_policy_endpoint_audit.py").read_text())
     top = {a.name for n in tree.body if isinstance(n, ast.ImportFrom) for a in n.names}
     assert "sandbox" not in top
-    main = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "main")
-    lines = [n.lineno for n in ast.walk(main) if isinstance(n, ast.ImportFrom) and any(a.name == "sandbox" for a in n.names)]
-    gate = [n.lineno for n in ast.walk(main) if isinstance(n, ast.Call) and getattr(n.func, "id", None) == "verify_release"]
-    assert len(lines) == 1 and gate and gate[0] < lines[0]
+    child = next(n for n in tree.body if isinstance(n, ast.FunctionDef) and n.name == "run_child")
+    lines = [n.lineno for n in ast.walk(tree) if isinstance(n, ast.ImportFrom) and any(a.name == "sandbox" for a in n.names)]
+    inside = [n.lineno for n in ast.walk(child) if isinstance(n, ast.ImportFrom) and any(a.name == "sandbox" for a in n.names)]
+    gate = [n.lineno for n in ast.walk(child) if isinstance(n, ast.Call) and getattr(n.func, "id", None) == "verify"]
+    assert lines == inside and len(lines) == 1 and gate and gate[0] < lines[0]
     called = {n.func.id if isinstance(n.func, ast.Name) else n.func.attr for n in ast.walk(tree)
               if isinstance(n, ast.Call) and isinstance(n.func, (ast.Name, ast.Attribute))}
     assert not called & {"eval", "exec", "compile", "__import__", "Popen", "system"}
@@ -327,10 +328,10 @@ def test_r1_retained_bytes_bound_all_files_and_worst_case_next_slot(package, tmp
                            limits=dict(ad.LIMITS, retained_output_bytes=cap))
     statuses = [r["status"] for r in receipt["slots"]]
     assert "output_cap_unattempted" in statuses and len(statuses) == 36
-    assert sum(f.stat().st_size for f in (tmp_path / "run").iterdir()) <= cap
-    assert receipt["totals"]["retained_bytes_total"] == sum(f.stat().st_size for f in (tmp_path / "run").iterdir())
-    full = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run2", private_runner([]), designation=ad.MOCK_DESIGNATION)
-    assert full["totals"]["retained_bytes_total"] <= ad.LIMITS["retained_output_bytes"]
+    totals = ad.finalize_totals(tmp_path / "run", cap=cap)
+    assert totals["within_cap"] and totals["total_bytes"] == sum(f.stat().st_size for f in (tmp_path / "run").iterdir()) <= cap
+    ad.run_audit(package, ad.slot_plan(package), tmp_path / "run2", private_runner([]), designation=ad.MOCK_DESIGNATION)
+    assert ad.finalize_totals(tmp_path / "run2")["within_cap"]
     stored = json.loads((tmp_path / "run2/receipt_private.json").read_text())
     assert not any(k in r for r in stored["slots"] for k in ad.RAW_FIELDS)  # no raw duplication in the receipt
 
@@ -375,9 +376,10 @@ def test_r1_external_supervisor_kills_only_its_owned_group_and_records_observed_
         if sig == 0 and group_gone:
             raise ProcessLookupError
     started = []
-    record = ad.supervise(["child"], popen=lambda cmd, **kw: started.append(kw) or child, killpg=killpg, clock=iter(range(100)).__next__)
+    record = ad.supervise(["child"], 180, popen=lambda cmd, **kw: started.append(kw) or child, killpg=killpg, clock=iter(range(100)).__next__)
     assert started == [{"start_new_session": True}] and all(pid == 4242 for pid, _ in sent)
-    assert record["killed_at_deadline"] is killed and record["child_exit"] == exit_code and record["cleanup"].startswith(cleanup)
+    assert record["killed_at_deadline"] is killed and record["child_exit"] == exit_code
+    assert record["adapter_group_cleanup"].startswith(cleanup)
     assert ad.SUPERVISOR["total_seconds"] == 180 and ad.SUPERVISOR["slot_budget_seconds"] < 180 - ad.SUPERVISOR["kill_reserve_seconds"]
 
 
@@ -392,3 +394,111 @@ def test_r2_high_escaping_bounded_stream_witness_stays_within_the_cap(package, t
     receipt = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", noisy, designation=ad.MOCK_DESIGNATION)
     total = sum(f.stat().st_size for f in (tmp_path / "run").iterdir())
     assert total <= ad.LIMITS["retained_output_bytes"] and len(receipt["slots"]) == 36
+
+
+# ---------------------------------------------------------------- MRL-35 regressions
+def _write_log(out, lines):
+    out.mkdir()
+    (out / "slots_private.jsonl").write_text(lines)
+
+
+@pytest.mark.parametrize("lines,status", [
+    ('{"event": "launch_attempt", "launch_number": 1}\n', "unresolved"),                                   # killed mid-launch
+    ('{"event": "launch_attempt", "launch_number": 1}\n{"event": "launch_return", "launch_number": 1, "returned": "raised"}\n', "unresolved"),
+    ('{"event": "launch_attempt", "launch_number": 1}\n{"event": "launch_ret', "unresolved"),               # truncated log
+    ('{"event": "launch_attempt", "launch_number": 1}\n{"event": "launch_return", "launch_number": 1, "returned": "normal"}\n',
+     "confirmed_by_normal_runner_returns"),
+])
+def test_mrl35_detached_payload_cleanup_needs_completion_evidence(tmp_path, lines, status):
+    _write_log(tmp_path / "run", lines)
+    assert ad.detached_payload_cleanup(tmp_path / "run")["status"] == status
+    assert ad.detached_payload_cleanup(tmp_path / "absent")["status"] == "no_launch_possible"
+    (tmp_path / "nolog").mkdir()
+    assert ad.detached_payload_cleanup(tmp_path / "nolog")["status"] == "unresolved"
+
+
+class _Child:
+    pid = 5151
+
+    def __init__(self, rc):
+        self.rc = rc
+
+    def wait(self, timeout):
+        return self.rc
+
+
+def _supervised(tmp_path, *, group_gone=True, detached="confirmed_by_normal_runner_returns", audit_complete=True, rc=0):
+    work = tmp_path / "w"
+    work.mkdir(exist_ok=True)
+    out = work / "out"
+    out.mkdir()
+    (out / "receipt_private.json").write_text(json.dumps({"audit_complete": audit_complete}))
+    plan = tmp_path / "plan.json"
+    plan.write_text(json.dumps({"output_directory": str(out)}))
+
+    def killpg(pid, sig):
+        assert pid == 5151
+        if sig == 0 and group_gone:
+            raise ProcessLookupError
+    return ad.execute_supervised("src.jsonl", plan, "a" * 40, popen=lambda cmd, **kw: _Child(rc), killpg=killpg,
+                                 clock=iter(range(0, 1000, 1)).__next__, detached=lambda o: {"status": detached}), out
+
+
+def test_mrl35_cli_success_requires_every_piece_of_evidence(tmp_path):
+    code, record, totals = _supervised(tmp_path)[0]
+    assert code == 0 and record["within_total_deadline"] and totals["within_cap"]
+
+
+@pytest.mark.parametrize("kw", [dict(group_gone=False), dict(detached="unresolved"), dict(audit_complete=False), dict(rc=4)])
+def test_mrl35_cli_is_nonzero_when_cleanup_or_completeness_is_unresolved(tmp_path, kw):
+    (code, record, totals), out = _supervised(tmp_path, **kw)
+    assert code == 3
+    assert json.loads((out / "supervisor.json").read_text())["child_pid"] == 5151
+
+
+def test_mrl35_final_on_disk_totals_equal_measured_files_including_supervisor_and_itself(tmp_path):
+    (code, record, totals), out = _supervised(tmp_path)
+    measured = {f.name: f.stat().st_size for f in out.iterdir()}
+    assert set(totals["files"]) == set(measured) - {"retained_totals.json"} and "supervisor.json" in totals["files"]
+    assert totals["total_bytes"] == sum(measured.values()) and totals["totals_file_bytes"] == measured["retained_totals.json"]
+    assert json.loads((out / "retained_totals.json").read_text()) == totals
+
+
+def test_mrl35_preparation_delay_counts_against_the_total_deadline(package, tmp_path):
+    now = [1000.0]
+    plan = tmp_path / "plan.json"
+    plan.write_text("{}")
+
+    def slow_verify(plan_path, commit, source):
+        now[0] += 170.0  # a slow gate: the outer deadline keeps running
+        return {"slots": ad.slot_plan(package), "output_directory": str(tmp_path / "run")}
+    receipt = ad.run_child("src", plan, "a" * 40, 1000.0 + ad.SUPERVISOR["total_seconds"], clock=lambda: now[0],
+                           verify=slow_verify, runner=private_runner([]), build=lambda s: package)
+    assert receipt["totals"]["sandbox_launch_attempts"] == 0 and len(receipt["slots"]) == 36
+    assert {r["status"] for r in receipt["slots"]} == {"cap_unattempted"} and receipt["audit_complete"] is False
+
+
+def test_mrl35_raw_omission_marks_the_audit_incomplete_and_stays_within_the_cap(package, tmp_path):
+    def oversize(program, **kw):  # outside the sandbox bound on purpose: forces the hard cap path
+        start = re.search(r"__LANDMARK_GRADER_STARTED__[0-9a-f]{24}", program)
+        if start is None:
+            return {"stdout": "\x01" * 400000, "stderr": "", "returncode": 0, "timed_out": False}
+        sentinel = re.search(r"__LANDMARK_PRIVATE_OK__[0-9a-f]{24}", program).group(0)
+        return {"stdout": start.group(0) + "\n" + "\x01" * 400000, "stderr": "", "stdout_tail": sentinel, "timed_out": False,
+                "returncode": 0, "sandbox_kind": "seatbelt", "passed": True, "executed": True}
+    receipt = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", oversize, designation=ad.MOCK_DESIGNATION)
+    assert receipt["raw_records_complete"] is False and receipt["audit_complete"] is False and receipt["raw_omitted_slots"]
+    rows = [json.loads(x) for x in (tmp_path / "run/slots_private.jsonl").read_text().splitlines()]
+    omitted = [r for r in rows if r.get("raw_retained") is False]
+    assert omitted and all("private_runner_calls" not in r and r["omitted_raw_digest_sha256"] for r in omitted)
+    assert ad.finalize_totals(tmp_path / "run")["within_cap"] and len(receipt["slots"]) == 36
+    assert json.loads((tmp_path / "run/public_projection.json").read_text())["audit_complete"] is False
+
+
+def test_mrl35_finalization_itself_cannot_breach_the_cap(package, tmp_path, monkeypatch):
+    monkeypatch.setitem(ad.LIMITS, "retained_output_bytes", 40_000)  # finalization budget smaller than the full receipt
+    receipt = ad.run_audit(package, ad.slot_plan(package), tmp_path / "run", private_runner([]), designation=ad.MOCK_DESIGNATION,
+                           limits=dict(ad.LIMITS, retained_output_bytes=10**9))
+    stored = json.loads((tmp_path / "run/receipt_private.json").read_text())
+    assert stored["slots_omitted_for_cap"] is True and stored["audit_complete"] is False
+    assert len([x for x in (tmp_path / "run/slots_private.jsonl").read_text().splitlines() if '"event": "slot"' in x]) == 36

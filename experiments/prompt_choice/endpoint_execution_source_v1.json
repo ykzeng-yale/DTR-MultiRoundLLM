@@ -52,8 +52,9 @@
   "total_seconds": 180,
   "kill_reserve_seconds": 5,
   "term_grace_seconds": 2,
+  "finalization_seconds": 15,
   "slot_budget_seconds": 160,
-  "kind": "external owned-child supervisor: the parent starts the audit child in a new session and kills only that process group at total - kill_reserve; the child stops starting slots at slot_budget; observed exit and group cleanup are recorded"
+  "kind": "external owned-child supervisor: the total deadline starts in the parent before any verification; the child verifies before any payload launch and starts slots only before deadline - kill_reserve - finalization; the parent kills only its owned adapter group at deadline - kill_reserve and records observed exit, adapter-group cleanup and separate detached-payload cleanup evidence"
  },
  "attestation_path": "results/policy_endpoint_containment_20260926T2217Z/attestation.json",
  "predictions": {
@@ -84,7 +85,8 @@
  "retained_bytes_rule": {
   "worst_slot_bytes": 802816,
   "finalization_reserve_bytes": 262144,
-  "rule": "before each launch: bytes of all retained files + worst-case next slot + finalization reserve <= retained cap; raw runner results only in the private JSONL"
+  "rule": "every persisted line is checked on its actual encoded size against cap - finalization reserve; a slot record whose raw fields do not fit keeps only a digest, is marked raw_retained false and makes the audit incomplete; retained_totals.json (written last) covers all files including supervisor records and itself"
  },
- "mrl34_r1": "lead draft review 3545832 applied: external supervisor, all-file byte accounting, whole canonical plan validation, raw private runner records"
+ "mrl34_r1": "lead draft review 3545832 applied: external supervisor, all-file byte accounting, whole canonical plan validation, raw private runner records",
+ "mrl35": "LEAD-ENDPOINT-04 completion: all-file totals, detached-payload cleanup evidence, outer deadline covering preparation, regressions"
 }
