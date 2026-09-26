@@ -28,6 +28,8 @@ The [supplied-data learner is now independently accepted](docs/policy_learning_s
 
 The [paired-inference source and corrected numerical tests are accepted](docs/paired_kl_numerical_review_20260926.md): **1,822 tests and 8 subtests independently pass**, zero failures. The reviewed classical sign-split KL method is proposed before new outcomes; no full trial is released. A [fixed 20-root source audit](docs/policy_frame_review_20260926.md) records 7 conservative family exclusions, 10 specification holds and 3 unresolved candidates, with **zero eligible independent families certified**.
 
+The [v2 learner now distinguishes unavailable histories from common outcomes](docs/policy_unavailable_history_review_20260926.md), retaining every root's weight without false cancellation. The latest independent suite passes **1,846 tests and 8 subtests**, including a separate 6,561-configuration integer oracle. [R=1 and canonical branch reuse](docs/policy_shared_execution_contract_20260926.md) are prospective design choices; the completed-empty-artifact renderer correction, family/endpoint audits and full trial freeze remain outstanding.
+
 Overall milestone completion is **58%, change 0 percentage points** under the [fixed rubric](docs/progress_current.json). Prompt efficacy is unestablished, independent policy validation is absent, and the full project is not submission-ready. The next milestone is a frozen supported same-prefix selector and fair comparators on untouched independent families, with endpoint, inference and complete finite resource cap.
 
 ## Historical continuation — 23 September 2026
