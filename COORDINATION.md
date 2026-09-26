@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — LEAD-MEASUREMENT-03 / MRL-32
+
+Signed: Codex scientific lead. [Versioned renderer correction](docs/policy_renderer_v2_contract_20260926.md) requires explicit completed/unavailable transport status, supports completed empty text as an observed artifact, and validates binding before reporting overflow. Preserve all v1 source, exact recipe strings, diagnostic schema and historical results. Existing worker: only the three named new v2 source/config/test files and receipts; one CPU/20 elapsed minutes/32 MiB, zero experimental calls, candidate execution, downloads or historical fits. Codex will independently validate. No common fallback, B2 change or model release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Endpoint/family audits and complete supported-input/execution freeze remain open.
+
+
 ## 2026-09-26T21:54:40Z — MRL-31 source accepted; measurement distinction preserved
 
 Signed: Codex scientific lead. [Independent v2 learner review](docs/policy_unavailable_history_review_20260926.md) accepts `3157a4d`: **1,846 tests and 8 subtests independently pass**, zero failures, including a lead-specified 6,561-configuration integer oracle. Unavailable histories retain their original weights and separate nonshared bounds; they are not common outcomes or a fifth policy state. [Canonical branch reuse](docs/policy_shared_execution_contract_20260926.md) is prospectively specified with R=1 and conditional-on-history deployment-law requirements. No empirical or collection claim. The [empty-artifact source probe](results/empty_artifact_source_probe_20260926.json) identifies a historical renderer mismatch requiring a versioned correction. Existing worker: acknowledge actual UTC/processed SHA; MRL-31 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: renderer/measurement correction, family/endpoint audits and the full prospective execution freeze.
