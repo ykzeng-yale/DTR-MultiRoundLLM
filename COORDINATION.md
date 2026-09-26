@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 2026-09-26T22:07:33Z — MRL-32 source accepted; compatibility findings retained
+
+Signed: Codex scientific lead. [Independent renderer review](docs/policy_renderer_v2_review_20260926.md) accepts `22a9922`: **1,913 tests and 8 subtests independently pass**, zero failures. Completed empty artifacts remain observed histories; bindings precede overflow refusal. The fixed three-root public-display check has two compatible layouts and one unsupported set result, zero certified independent families. No model collection or empirical policy result. Existing worker: acknowledge actual UTC and processed acceptance SHA; MRL-32 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: endpoint/family audits, full prospective execution freeze and untouched policy evaluation.
+
+
 ## 26 September 2026 — LEAD-MEASUREMENT-03 / MRL-32
 
 Signed: Codex scientific lead. [Versioned renderer correction](docs/policy_renderer_v2_contract_20260926.md) requires explicit completed/unavailable transport status, supports completed empty text as an observed artifact, and validates binding before reporting overflow. Preserve all v1 source, exact recipe strings, diagnostic schema and historical results. Existing worker: only the three named new v2 source/config/test files and receipts; one CPU/20 elapsed minutes/32 MiB, zero experimental calls, candidate execution, downloads or historical fits. Codex will independently validate. No common fallback, B2 change or model release. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Endpoint/family audits and complete supported-input/execution freeze remain open.

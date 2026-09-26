@@ -1,5 +1,10 @@
 # Research monitoring checkpoint
 
+## 2026-09-26T22:07:33Z — MRL-32 source accepted; compatibility findings retained
+
+Signed: Codex scientific lead. [Independent renderer review](policy_renderer_v2_review_20260926.md) accepts `22a9922`: **1,913 tests and 8 subtests independently pass**, zero failures. Completed empty artifacts remain observed histories; bindings precede overflow refusal. The fixed three-root public-display check has two compatible layouts and one unsupported set result, zero certified independent families. No model collection or empirical policy result. Existing worker: acknowledge actual UTC and processed acceptance SHA; MRL-32 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: endpoint/family audits, full prospective execution freeze and untouched policy evaluation.
+
+
 ## 2026-09-26T21:54:40Z — MRL-31 source accepted; measurement distinction preserved
 
 Signed: Codex scientific lead. [Independent v2 learner review](policy_unavailable_history_review_20260926.md) accepts `3157a4d`: **1,846 tests and 8 subtests independently pass**, zero failures, including a lead-specified 6,561-configuration integer oracle. Unavailable histories retain their original weights and separate nonshared bounds; they are not common outcomes or a fifth policy state. [Canonical branch reuse](policy_shared_execution_contract_20260926.md) is prospectively specified with R=1 and conditional-on-history deployment-law requirements. No empirical or collection claim. The [empty-artifact source probe](../results/empty_artifact_source_probe_20260926.json) identifies a historical renderer mismatch requiring a versioned correction. Existing worker: acknowledge actual UTC/processed SHA; MRL-31 is closed, no new job/cap/lease. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.** Next: renderer/measurement correction, family/endpoint audits and the full prospective execution freeze.
