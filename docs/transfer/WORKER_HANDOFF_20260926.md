@@ -4,10 +4,10 @@ Written by the experiments worker for LEAD-TRANSFER-01 (`8e0593b`). It supplemen
 
 ## State at transfer
 
-- **Worker jobs:** none open. The last worker work was LEAD-PORT-02 (repair `1c807c3`, receipt `1ed48a9`), which the lead accepted in `95a4fd7`. The last MRL job was MRL-25 (`4931cb9`). MRL-26 was never issued.
+- **Worker jobs:** none open. The last worker work was LEAD-PORT-02 (repair `1c807c3`, receipt `1ed48a9`), which the lead accepted in `95a4fd7`. The last MRL job before transfer was MRL-25 (`4931cb9`). *Update:* after transfer, Codex issued MRL-26 (`c072cdb`, LEAD-POLICY-16), a source-only PATCH/RETHINK renderer task; see COORDINATION.md for its status.
 - **Run and lease:** none. No receiver process is owned by this project, and no shared-host lease is held.
 - **E14:** NO-GO as the next efficacy stage. There have been zero real E14 receiver calls.
-- **Protocol:** freeze HOLD. The lead is holding every model stage until it sets how public-pass and INCOMPLETE diagnostic histories are handled, both in eligibility and assignment and in the recipe wording (LEAD-TRANSFER-01; worker notes `2e1d716` and `32e20b7`).
+- **Protocol:** at transfer, freeze was on HOLD until the handling of public-pass and INCOMPLETE histories was set (LEAD-TRANSFER-01; worker notes `2e1d716` and `32e20b7`). *Update:* LEAD-POLICY-16 (`c072cdb`) keeps both recipes on every well-formed history and fixes the tri-state support law. Collection remains unreleased.
 - **Worker's live record:** [experiments_status.md](../experiments_status.md). Its body is current, and its first `**Last updated:` line is the heartbeat, which a script rewrites every tick.
 - **Health at transfer:** the full suite passed 1,677/1,677 on the populated worker host. A clean clone gives 1,635 passed, 0 failed and 42 explicit skips; the skips are missing-MBPP-source skips, not verification.
 
@@ -46,14 +46,28 @@ done
 echo "WAKE half_hour_tick $(date -u +%FT%TZ)"
 ```
 
-`heartbeat.sh` rewrites only the status line, then commits and pushes. Usage: `heartbeat.sh "<last processed lead sha>" "<one-line news>"`. Edit the fixed wording in the Python block whenever the E14 status or the blocker changes.
+`heartbeat.sh` rewrites only the status line, then commits and pushes. Usage: `heartbeat.sh "<last processed lead sha>" "<one-line news>"`. **Repaired in MRL-26:** the author identity comes from the clone's own configuration, set **once per clone** (`git config user.name "Yukang Zeng"` and `git config user.email "ykzeng2019@gmail.com"`, as in START_HERE). There are no `git -c` overrides and no `pull --rebase --autostash … || true`. The script fetches, then inspects `main` against `origin/main`. It fast-forwards when possible and makes an ordinary ancestry-preserving merge when needed. It stops with a factual report on the wrong branch or identity, on unrelated working changes or a merge conflict (after `git merge --abort`), and if `origin/main` moved before the push. It never auto-stashes, force-pushes or masks an error. The single tolerated working-tree line is the old host's pre-existing, app-owned deletion of `.claude/scheduled_tasks.lock`, which is never staged; a fresh clone will not have it. Edit the fixed wording in the Python block when the E14 status changes.
 
 ```bash
 #!/bin/bash
-set -e
+# Status heartbeat (MRL-26 repaired): rewrite only the status line of docs/experiments_status.md, commit, push.
+# Identity comes from the clone's configured user.name/user.email; no -c overrides. No autostash, no masked errors,
+# no force-push. Stops with a factual report on wrong branch/identity, unrelated working changes or a merge conflict.
+# Usage: heartbeat.sh "<last processed lead sha>" "<one-line news>"
+set -euo pipefail
 REPO="${REPO:-$HOME/DTR-MultiRoundLLM}"
 cd "$REPO"
-git pull -q --rebase --autostash origin main >/dev/null 2>&1 || true
+[ "$(git config user.name)" = "Yukang Zeng" ] && [ "$(git config user.email)" = "ykzeng2019@gmail.com" ] || { echo "STOP: clone identity is not configured (git config user.name/user.email)"; exit 3; }
+[ "$(git rev-parse --abbrev-ref HEAD)" = "main" ] || { echo "STOP: not on main"; exit 3; }
+# The only tolerated change: this host's pre-existing, app-owned deletion of .claude/scheduled_tasks.lock (never staged).
+dirty=$(git status --porcelain | grep -v '^ D \.claude/scheduled_tasks\.lock$' || true)
+[ -z "$dirty" ] || { echo "STOP: unrelated working changes present:"; echo "$dirty"; exit 3; }
+git fetch -q origin main
+if git merge-base --is-ancestor HEAD origin/main; then
+  git merge -q --ff-only origin/main
+elif ! git merge-base --is-ancestor origin/main HEAD; then
+  git merge -q --no-edit origin/main || { git merge --abort; echo "STOP: merge conflict with origin/main; nothing committed"; exit 3; }
+fi
 NOW=$(date -u +%FT%TZ)
 .venv/bin/python - "$NOW" "$1" "$2" <<'PYEOF'
 import re, sys
@@ -61,13 +75,17 @@ from pathlib import Path
 now, lead, news = sys.argv[1:4]
 p = Path("docs/experiments_status.md"); s = p.read_text()
 new = (f"**Last updated: {now}** — **Heartbeat (watcher tick {now}).** Last lead commit processed: `{lead}`. {news} "
-       "Run/lease: **none**. E14 N1/S1 batch: **NO-GO accepted** (LEAD-POLICY-06). Next bounded action: none open on the "
-       "worker side; **blocker** for any experiment work is the lead's protocol freeze.")
+       "Watcher: **running**, re-armed each tick, wakes on every lead commit and at most every 30 min while this desktop "
+       "session is open; the separate half-hourly scheduler has not fired since 2026-09-23T08:10:19Z. Run/lease: **none**. "
+       "E14 N1/S1 batch: **NO-GO accepted** (LEAD-POLICY-06); source/mock kept as an instrument artifact with no execution allowance. "
+       "Codex owns all scientific design and release decisions.")
 s, n = re.subn(r"^\*\*Last updated: .*$", new, s, count=1, flags=re.M)
 assert n == 1; p.write_text(s)
 PYEOF
 git add docs/experiments_status.md
-git -c user.name="Yukang Zeng" -c user.email="ykzeng2019@gmail.com" commit -q -m "Status heartbeat $NOW: watcher running, no run/lease, E14 NO-GO accepted"
+git commit -q -m "Status heartbeat $NOW: watcher running, no run/lease, E14 NO-GO accepted"
+git fetch -q origin main
+git merge-base --is-ancestor origin/main HEAD || { echo "STOP: origin/main moved during the heartbeat; committed locally, not pushed"; exit 3; }
 git push -q origin main
 git log --oneline -1
 ```

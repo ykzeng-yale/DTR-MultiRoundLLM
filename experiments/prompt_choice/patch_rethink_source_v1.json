@@ -1,0 +1,93 @@
+{
+ "version": "patch-rethink-source-v1",
+ "decision": "LEAD-POLICY-16",
+ "assignment": "MRL-26",
+ "status": "source_only",
+ "collection": "unreleased",
+ "receiver_calls_authorized": 0,
+ "lead_contract": "docs/lead_resumption_and_action_contract_20260926.md",
+ "strings": {
+  "PATCH": {
+   "text": "Review your previous answer against the original task and any failures shown in the public diagnostic. Preserve its correct behavior; change only what is needed for the full stated task domain. If no public failure is shown, do not infer that the answer is correct on hidden cases. Do not hard-code the public examples. Return one complete solution.",
+   "sha256": "d1132662fd55f3efb81cf8c56d8e043e09c4a3e1436d9852e74b852aee5bb4c4"
+  },
+  "RETHINK": {
+   "text": "Re-derive a solution from the original task. Treat any failures shown in the public diagnostic as evidence about the previous answer. Do not assume the previous algorithm is correct; use the previous answer only to avoid witnessed errors. Check the full stated task domain, not only the public examples. Return one complete solution.",
+   "sha256": "a95c8bbc3e9f5c1be32c7c0746c6b71689d2317230dfaafaa539ac3b0e807498"
+  },
+  "COMMON_CAVEAT": {
+   "text": "For any check marked timeout, unavailable, or output_limit, the required result was not fully observed; do not treat that status as a pass or as proof that the answer is wrong. Completed results retain their recorded meaning, including failures when other checks are incomplete. Passing the public examples does not establish correctness on the full stated task domain.",
+   "sha256": "277849824e8074b24a73f892b1ff61b040390711db12fbf9f9d567594dc9fb9d"
+  },
+  "TERMINAL_OUTPUT_CONTRACT": {
+   "text": "Return the complete solution as Python source containing only the function definition and any imports it needs. Do not include test calls, example output, or any text copied from the diagnostic report. If you use a code fence, use exactly one.",
+   "sha256": "35ec7cabf4baff5b3542e40bf0ec5b96697047ed46801fcecfb0db19f1a8408b"
+  }
+ },
+ "terminal_output_contract_name": "terminal-output-contract-v2 (intervention instruction, not a scoring rule)",
+ "message_layout": [
+  "system (public task prefix)",
+  "user (public task)",
+  "assistant (exact saved initial answer)",
+  "user (canonical diagnostic message, historical serialization and 2048-byte cap)",
+  "user (COMMON_CAVEAT, identical in both arms)",
+  "user (RECIPE + two newlines + TERMINAL_OUTPUT_CONTRACT)"
+ ],
+ "support_law": {
+  "actions_on_every_well_formed_history": [
+   "PATCH",
+   "RETHINK"
+  ],
+  "forced_stop": false,
+  "drop_or_retry_on_pass_or_incomplete": false,
+  "aggregate": {
+   "PASS": "every case passes",
+   "INCOMPLETE": "any case is timeout, unavailable or output_limit",
+   "PAYLOAD_FAILURE": "otherwise"
+  },
+  "retained_flags": [
+   "has_payload_failure",
+   "has_incomplete",
+   "per-case status and reason (unavailable reasons verbatim)"
+  ],
+  "select_s1_used": false
+ },
+ "invalid_checkpoint_dispositions": [
+  "initial_receiver_failure_without_artifact",
+  "malformed_or_empty_diagnostic",
+  "oversized_serialization",
+  "integrity_breach",
+  "public_binding_mismatch",
+  "artifact_binding_mismatch",
+  "input_contract_violation"
+ ],
+ "artifact_hash": "SHA256 of the initial answer's raw UTF-8 bytes (not collect.digest)",
+ "identification": {
+  "plan": "complete balanced branches, both recipes once per replicate",
+  "inclusion_probability": 1,
+  "order_metadata": "scheduling_not_assignment",
+  "treatment_propensity": null,
+  "unfrozen": [
+   "root/family grouping",
+   "replicate counts",
+   "receiver seed marginal laws",
+   "endpoint",
+   "missingness",
+   "cap and lease"
+  ],
+  "fixture_order": "deterministic SHA256-sorted fixture order for scheduling only; not a sampled randomization law"
+ },
+ "source_versions": {
+  "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "docs/lead_resumption_and_action_contract_20260926.md": "b34ddd012a76abf55c499b47e66be57f8793dfec9e1e3aa988e4996fbb0e813d",
+  "docs/policy_patch_rethink_failure_scope_20260926.md": "071b5c3ae360b4e65d97e1e3f239ff9cb30047e317796a28fd7a83a84e6e594e"
+ },
+ "byte_cap": "2048 bytes on the canonical diagnostic message (historical diagnostic_message), not raw transport bytes",
+ "refusals": "every refusal raises InvalidCheckpoint(disposition, record) retaining the original diagnostic_json and reason",
+ "package": "experiments/prompt_choice (outside the flat experiments/landmark/*.py inventory hashed by collect.source_hashes)",
+ "future_execution_must_pin": [
+  "experiments/prompt_choice/patch_rethink.py",
+  "experiments/prompt_choice/patch_rethink_source_v1.json",
+  "experiments/landmark/diagnostic.py"
+ ]
+}
