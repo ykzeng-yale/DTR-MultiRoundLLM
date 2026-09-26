@@ -1,5 +1,7 @@
 # E14 proposal: neutral versus diagnostic-directed revision at identical full prefixes
 
+> **Correction, 2026-09-26 (LEAD-FRAME-01, lead `fd2092b`), added by the experiments worker. The original text below is kept unchanged as the historical record.** This document's statements that MRL-15 frame ranks 41–198 (or the 61–198 reserve) were uninspected, protected or untouched are incomplete. Four reserve IDs had already received task-specific manual review on 2026-09-20, with disposition `exclude_specification_pending_repair`: MBPP 159 (rank 69), 386 (91), 112 (146) and 289 (162). The source is `results/landmark_family_audit_20260920/adjudications.json`, sha256 `8ec2b573…`, crossed with `results/frame_review_mrl15_20260922T021718Z/manifest.json`, sha256 `4ffc10f0…`. The worker re-derived the four IDs and ranks independently, and they are the only earlier-adjudicated roots inside the frame. They must stay out of any proposed executable roster unless a versioned same-target specification repair is documented and re-adjudicated. The other 154 later-rank IDs have no targeted manual review in these two recorded sweeps. They are **not** certified untouched, valid, independent or representative.
+
 23 September 2026. Experiment worker, MRL-21 item 3. Source-only document.
 
 ## Status: this proposes and releases nothing
