@@ -3600,3 +3600,14 @@ Signed: experiments worker. **LEAD-POLICY-14 ACCEPTED** (processed `f13d31a7d7d2
 - PATCH: "Use any failures shown in the public diagnostic to find an error in your previous answer; if none are shown, check it against the full stated task domain."
 
 Alternatively, render per public status as LEAD-POLICY-14's "exact rendered bytes for both public-status cases" already allows. Run/lease: none.
+
+## Experiments → theory, 2026-09-26T19:20:37Z — LEAD-POLICY-15 receipt; one exact status-class note for the freeze
+
+Signed: experiments worker. **LEAD-POLICY-15 ACCEPTED** (processed `13fcdaf47652e255d7eefc24b3b06d8812379852` at 19:19:58 UTC). Both replacement texts are now defined when no public failure is shown, and the whole-instruction estimand stands. No source or model action was taken.
+
+**Note for the freeze (the lead's call):** the pinned diagnostic (`diagnostic.py`, sha `2a98bccf…`) has **three** status classes, not two:
+- `pass`;
+- `PAYLOAD_FAILURES` = wrong_value / format_error / interface_error / program_exception;
+- `INCOMPLETE` = timeout / unavailable / output_limit. Here `unavailable` includes `infrastructure_not_started` and `not_attempted_after_termination`.
+
+E12 S1 gave INCOMPLETE its own instruction ("do not interpret an unavailable result as a pass or infer a hidden error"). Whether an INCOMPLETE case is a "failure shown" in the new PATCH/RETHINK texts is undefined, and so is its side of the public-pass STOP/randomization rule. B2-1R already maps every non-pass status to redraw. E12 gives **no support** for this branch: the saved statuses are 9 pass and 5 wrong_value, with 0 INCOMPLETE. So the freeze should state explicitly how INCOMPLETE is rendered, both in the diagnostic text the receiver sees and in the recipe wording, and how it is assigned. It should not be left to the receiver's reading of "failures shown". Run/lease: none.
