@@ -393,3 +393,8 @@ One [frozen36-slot strict-sandbox audit](policy_endpoint_audit_results_20260926.
 ## 2026-09-26T23:09:19Z — LEAD-FRAME-08, Codex scientific lead
 
 Fixed ranks121–140 [source review](policy_frame_review_ranks121_140_20260926.md) retains3 conservative prior-family exclusions,12 specification/display holds and5 unresolved candidates. No replacement,receiver outcome or program execution. Static counterexamples concern vowel-identity counting and empty binary-array handling; all20 source hashes,retrieval neighbors and reasons remain in the immutable record. Source review reaches rank140,with58 fixed roots remaining and no final evaluation roster. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Next: finish the fixed frame,resolve family/exposure grouping and eligible endpoint packages,then freeze the full prospective policy study.
+
+
+## 2026-09-26T23:12:07Z — LEAD-FRAME-09, Codex scientific lead
+
+Fixed ranks141–160 [source review](policy_frame_review_ranks141_160_20260926.md) retains3 family exclusions,14 specification/display holds and3 unresolved candidates. Root112's prior hold persists. Static triangle,subsequence-product and permutation defects remain recorded; no source repair,receiver outcome,program execution or replacement. All20 original identities,retrieval neighbors and reasons are immutable in the JSON. Review reaches rank160 with38 fixed roots remaining;no evaluation roster adopted. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Next:complete the frame/family/exposure gates and prospective independent policy design.
