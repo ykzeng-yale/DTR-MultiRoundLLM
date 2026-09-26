@@ -4,7 +4,7 @@ not prove universal coverage and are not empirical validation."""
 import ast
 import hashlib
 import subprocess
-from decimal import Context, Decimal, localcontext
+from decimal import ROUND_CEILING, ROUND_FLOOR, Context, Decimal, localcontext
 from fractions import Fraction as Fr
 from itertools import product
 from pathlib import Path
@@ -17,54 +17,121 @@ ROOT = Path(__file__).resolve().parents[1]
 ALPHA = Fr(1, 20)
 F = lambda d: Fr(d["num"], d["den"])
 
-# ---- independent reference inversion (a separate code path: 150 digits, plain bisection, point values)
-_R = Context(prec=150)
+# ---- independent reference (MRL-30 repair). Every Decimal operation runs inside an explicit 150-digit local context,
+# and results convert to EXACT Fractions before any comparison. No ambient 28-digit rounding and no epsilon.
+# The certificate is the production directed arithmetic. This reference is a separate numerical CROSS-CHECK:
+#  * boundaries x=0/1: closed forms ENCLOSED with directed 150-digit rounding and correctly rounded exp/ln widened
+#    by one representable step, so [lo, hi] contains the true value;
+#  * interior x: a 150-digit point-valued bisection keeps BOTH bracket ends (inside end, outside end). Its meaning:
+#    under the reference's own ~1e-148 evaluation error, the true endpoint lies between them. It is not relabelled
+#    as a rigorous enclosure.
+_P = 150
+_NEAR = Context(prec=_P)
+_DOWN = Context(prec=_P, rounding=ROUND_FLOOR)
+_UP = Context(prec=_P, rounding=ROUND_CEILING)
+
+
+def _frac_to_dec(x, ctx):
+    return ctx.divide(Decimal(x.numerator), Decimal(x.denominator))
+
+
+def _c_enclosure(alpha):
+    r = Fr(8) / alpha
+    return _NEAR.next_minus(_NEAR.ln(_frac_to_dec(r, _DOWN))), _NEAR.next_plus(_NEAR.ln(_frac_to_dec(r, _UP)))
+
+
+def _boundary_enclosure(n, alpha):
+    """Enclosure [e_lo, e_hi] of E = exp(-c/n); u_n(0) = 1 - E lies in [1 - e_hi, 1 - e_lo] and l_n(1) = E."""
+    c_lo, c_hi = _c_enclosure(alpha)
+    e_lo = _NEAR.next_minus(_NEAR.exp(_UP.divide(c_hi, Decimal(n)).copy_negate()))    # largest c/n -> smallest E
+    e_hi = _NEAR.next_plus(_NEAR.exp(_DOWN.divide(c_lo, Decimal(n)).copy_negate()))   # smallest c/n -> largest E
+    return Fr(e_lo), Fr(e_hi)
 
 
 def _ref_kl(x, q):
-    x, q = Decimal(x.numerator) / Decimal(x.denominator), Decimal(q)
+    xd = _frac_to_dec(x, _NEAR)
     one = Decimal(1)
-    return x * _R.ln(x / q) + (one - x) * _R.ln((one - x) / (one - q))
+    return _NEAR.add(_NEAR.multiply(xd, _NEAR.ln(_NEAR.divide(xd, q))),
+                     _NEAR.multiply(_NEAR.subtract(one, xd), _NEAR.ln(_NEAR.divide(_NEAR.subtract(one, xd), _NEAR.subtract(one, q)))))
 
 
-def _ref_interval(x, n, alpha):
-    with localcontext(_R):  # every reference operation at 150 digits, not the global 28-digit context
-        return _ref_interval_150(x, n, alpha)
-
-
-def _ref_interval_150(x, n, alpha):
-    c = _R.ln(Decimal(8 * alpha.denominator) / Decimal(alpha.numerator))
-    if x == 0:
-        return Decimal(0), 1 - _R.exp(-c / n)
-    if x == 1:
-        return _R.exp(-c / n), Decimal(1)
-    xd = Decimal(x.numerator) / Decimal(x.denominator)
-    out = []
-    for inner, outer in ((xd, Decimal(0)), (xd, Decimal(1))):
-        for _ in range(220):
-            mid = (inner + outer) / 2
-            if n * _ref_kl(x, mid) <= c:
-                inner = mid
-            else:
-                outer = mid
-        out.append(inner)
-    return out[0], out[1]
+def _ref_brackets(x, n, alpha):
+    """Returns ((l_inside, l_outside), (u_inside, u_outside)) as exact Fractions; inside ends satisfy n*kl <= c."""
+    with localcontext(_NEAR):
+        c = _NEAR.ln(_frac_to_dec(Fr(8) / alpha, _NEAR))
+        xd = _frac_to_dec(x, _NEAR)
+        out = []
+        for inner, outer in ((xd, Decimal(0)), (xd, Decimal(1))):
+            for _ in range(220):
+                mid = _NEAR.divide(_NEAR.add(inner, outer), Decimal(2))
+                if _NEAR.multiply(Decimal(n), _ref_kl(x, mid)) <= c:
+                    inner = mid
+                else:
+                    outer = mid
+            out.append((Fr(inner), Fr(outer)))
+        return out[0], out[1]
 
 
 GRID_X = [Fr(0), Fr(1, 7), Fr(3, 10), Fr(1, 2), Fr(9, 10), Fr(1)]
+CLOSE = Fr(1, 10 ** 15)
 
 
 @pytest.mark.parametrize("n", [1, 5, 98, 99])
 @pytest.mark.parametrize("alpha", [Fr(1, 20), Fr(1, 100)])
-def test_endpoints_are_outward_and_close_to_an_independent_high_precision_inversion(n, alpha):
+def test_endpoints_are_outward_and_close_to_an_independent_high_precision_reference(n, alpha):
     for x in GRID_X:
         l, u, rep = pi.kl_interval(x, n, alpha)
-        rl, ru = _ref_interval(x, n, alpha)
-        assert Decimal(l.numerator) / Decimal(l.denominator) <= rl + Decimal("1e-120")  # l never above the true endpoint
-        assert Decimal(u.numerator) / Decimal(u.denominator) >= ru - Decimal("1e-120")  # u never below it
-        assert rl - Decimal(l.numerator) / Decimal(l.denominator) < Decimal("1e-15")
-        assert Decimal(u.numerator) / Decimal(u.denominator) - ru < Decimal("1e-15")
-        assert 0 <= l <= x <= u <= 1 and rep["precision_digits"] >= 80 and rep["max_bisections"] == 64
+        assert type(l) is Fr and type(u) is Fr and 0 <= l <= x <= u <= 1
+        assert rep["precision_digits"] >= 80 and rep["max_bisections"] == 64
+        if x in (0, 1):
+            e_lo, e_hi = _boundary_enclosure(n, alpha)
+            if x == 0:  # production u beyond the whole enclosure [1 - e_hi, 1 - e_lo] of the true u
+                assert l == 0 and u >= 1 - e_lo and u - (1 - e_lo) < CLOSE
+            else:       # production l beyond the whole enclosure [e_lo, e_hi] of the true l
+                assert u == 1 and l <= e_lo and e_lo - l < CLOSE
+            continue
+        # Interior numerical cross-check: production beyond the whole reference bracket (both ends kept).
+        (l_in, l_out), (u_in, u_out) = _ref_brackets(x, n, alpha)
+        assert l_out < l_in and u_in < u_out and l_in - l_out < Fr(1, 10 ** 60) and u_out - u_in < Fr(1, 10 ** 60)
+        assert l <= l_out and u >= u_out
+        assert l_out - l < CLOSE and u - u_out < CLOSE
+
+
+def _load_mutant(old, new):
+    """A copy of the production module with one exact textual change. Test-only; production files are untouched."""
+    import types
+    src = (ROOT / "experiments/prompt_choice/paired_inference.py").read_text()
+    assert src.count(old) == 1
+    mod = types.ModuleType("paired_inference_mutant")
+    exec(compile(src.replace(old, new), "paired_inference_mutant", "exec"), mod.__dict__)
+    return mod
+
+
+def test_old_unary_minus_boundary_mutation_fails_the_outward_check_at_n5():
+    mutant = _load_mutant("        neg = cn_hi.copy_negate()", "        neg = -cn_hi")
+    e_lo, e_hi = _boundary_enclosure(5, Fr(1, 20))
+    with localcontext(Context(prec=28)):  # the ambient 28-digit context the old unary minus rounded in
+        _, u0, _ = mutant.kl_interval(0, 5, Fr(1, 20))
+        l1, _, _ = mutant.kl_interval(1, 5, Fr(1, 20))
+    assert u0 < 1 - e_hi  # decisively inside: below the whole enclosure of the true u_n(0)
+    assert l1 > e_hi      # decisively inside: above the whole enclosure of the true l_n(1)
+    _, u0p, _ = pi.kl_interval(0, 5, Fr(1, 20))
+    l1p, _, _ = pi.kl_interval(1, 5, Fr(1, 20))
+    assert u0p >= 1 - e_lo and l1p <= e_lo  # production passes the outward checks
+
+
+def test_results_are_invariant_to_the_global_decimal_context_after_clearing_caches():
+    from decimal import ROUND_UP, getcontext
+    probes = [(Fr(0), 5), (Fr(1), 5), (Fr(3, 10), 5), (Fr(1, 7), 98), (Fr(9, 10), 99)]
+    pi._kl_interval_cached.cache_clear(); pi._threshold.cache_clear()
+    base = [pi.kl_interval(x, n, ALPHA) for x, n in probes]
+    with localcontext() as ctx:
+        ctx.prec, ctx.rounding = 5, ROUND_UP
+        assert getcontext().prec == 5
+        pi._kl_interval_cached.cache_clear(); pi._threshold.cache_clear()
+        hostile = [pi.kl_interval(x, n, ALPHA) for x, n in probes]
+    pi._kl_interval_cached.cache_clear(); pi._threshold.cache_clear()
+    assert hostile == base
 
 
 def test_boundary_means_and_the_98_99_zero_difference_radius():
@@ -211,3 +278,15 @@ def test_module_has_no_discovery_network_or_execution_path():
     assert imported <= {"__future__", "decimal", "fractions", "functools"}
     names = {n.id for n in ast.walk(tree) if isinstance(n, ast.Name)} | {n.attr for n in ast.walk(tree) if isinstance(n, ast.Attribute)}
     assert not names & {"open", "glob", "listdir", "exec", "eval", "system", "Popen", "urlopen", "socket", "random", "float"}
+
+
+def test_an_injected_1e60_inward_error_is_detected_at_the_boundary_and_in_the_interior():
+    """Each injected value lies 1e-60 inside the true endpoint (per the reference); the repaired checks reject it."""
+    tiny = Fr(1, 10 ** 60)
+    e_lo, e_hi = _boundary_enclosure(5, ALPHA)
+    u_injected = (1 - e_lo) - tiny  # an upper stand-in for (true u_n(0)) - 1e-60
+    assert not u_injected >= 1 - e_lo
+    l1_injected = e_hi + tiny       # a lower stand-in for (true l_n(1)) + 1e-60
+    assert not l1_injected <= e_lo
+    (l_in, l_out), (u_in, u_out) = _ref_brackets(Fr(3, 10), 5, ALPHA)
+    assert not (l_out + tiny <= l_out) and not (u_out - tiny >= u_out)  # interior injections fail the checks

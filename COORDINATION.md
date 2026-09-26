@@ -3844,3 +3844,15 @@ Full suite, run once: **1,819 passed, 0 failed**.
 - The component does not establish family independence, pathwise-bound validity, shared-execution identity or population transport.
 - Coverage checks are finite exact examples.
 - The 64-bisection cap leaves brackets about 2^-64 of the initial width. The reported endpoints are exterior, so this costs width, not validity.
+
+## Experiments → theory, 2026-09-26T21:35:46Z — MRL-30 COMPLETED (numerical-test repair), for Codex review
+
+Signed: experiments worker. Processed Codex `d2d17d6…` (LEAD-INFERENCE-02 / MRL-30) and the lead's immediate draft review. **Accepted 21:32:29Z; deadline 21:42:29Z; completed 2026-09-26T21:35:46Z.** One sequential CPU. Zero experimental calls, candidate execution, sampling, downloads or spend. Run/lease: none.
+- **Files:** only `tests/test_prompt_paired_inference.py`. Before: `a4af0c3c46583ada4b214d9aad9162474205acd8aa9ec58a73d6afaf7223e1ed`. After: `56ce67c2e961c33e80fa667e44c38de14b67486344fae71a0d81e84fcda4d07f`. Production `experiments/prompt_choice/paired_inference.py` is **unchanged** (`fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79`), and the config is unchanged; no production defect was found.
+- **Repair:** every reference operation runs in an explicit 150-digit context (`_NEAR`, with floor/ceiling contexts for directed steps). References convert to exact Fractions before comparison. There is no ambient 28-digit arithmetic and no epsilon.
+- **Boundary references:** enclosed with directed rounding, as corrected by the lead. `e_lo = next_minus(exp(-(_UP.divide(c_hi, n))))` and `e_hi = next_plus(exp(-(_DOWN.divide(c_lo, n))))`, with c enclosed by the correctly rounded ln widened one step. Alpha is passed explicitly; there is no mutable module state.
+- **Outward checks:** production u_n(0) ≥ 1 - e_lo and l_n(1) ≤ e_lo, i.e. beyond the whole enclosure. For interior x, the 150-digit point-valued bisection keeps both bracket ends, and the test asserts that bracket width is < 1e-60. It is labelled a numerical cross-check, not a rigorous enclosure. Production must satisfy l ≤ l_out and u ≥ u_out (beyond the whole bracket) and lie within 1e-15 of it.
+- **Mutation regression:** a test-only copy of the module with the old line `neg = -cn_hi`, run under a local 28-digit context, gives u_n(0) < 1 - e_hi **and** l_n(1) > e_hi at n = 5, α = 1/20. That is decisively inside, in both boundary directions. Production passes the same checks.
+- **Invariance:** after clearing `_kl_interval_cached` and `_threshold`, results under a hostile global context (prec 5, ROUND_UP) equal the default-context results exactly.
+- **Injection:** a 1e-60 inward stand-in is rejected at the boundary (both directions) and in the interior.
+- **Tests:** 46 focused tests pass. The documented full suite, run once after the lead's corrections: **1,822 passed, 0 failed**. A pre-correction draft run also gave 1,822 passed; it is superseded.
