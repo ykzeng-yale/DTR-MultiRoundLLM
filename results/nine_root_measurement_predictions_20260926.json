@@ -1,0 +1,607 @@
+{
+  "type": "pre_execution_source_reasoned_predictions_not_observed_results",
+  "created_at": "2026-09-26T23:52:01.989969+00:00",
+  "accepted_worker_commit": "2f2ed5c",
+  "source_acceptance_receipt_sha256": "da5d877c5c39b15d33619fbe379d8bc31b7324a27875977c2444772963190d16",
+  "package_identities": {
+    "public_record_sha256": {
+      "mbpp/354": "a8a3b41b6617083eac41f5af3d9138dcd0f9603f8bca76433c9cf885a11b4a90",
+      "mbpp/356": "b83357be2a27ac7ea0647ab7d507972072229857d5d3de88faefd9afe6047287",
+      "mbpp/36": "bbfde8ec3045fa8b2970d3c08ec484b51604d0baa50a56ad74a2ce19ce1b626e",
+      "mbpp/654": "82de1da12382c7809ccd31401731bffa4bf8107fe916f0524acd731b6b993c27",
+      "mbpp/656": "8126fc9df6511629fe4f7554e147a212553247e67c972b2f3bff55fd4fa2fdce",
+      "mbpp/700": "cd8911d4ddf01dc7b1da9139a2f9b572a4bd934c047f65c5199e8f69d60ca315",
+      "mbpp/703": "92aa0af0c26117658a3958b5fec646f804dfbc6536b6d24476ce2a40735d173f",
+      "mbpp/885": "4b6bdd23632e2e7dca2a5aebf767d0d434baa78df086da04b8551a9a6059b4d6",
+      "mbpp/901": "b82c659f47ce60a3d6e21d4a0e803ba021b8d688a46ddccc2f5e7567039acbca"
+    },
+    "private_record_sha256": {
+      "mbpp/354": "a605c0b9bf2369478f9c5ed4e26c52b7d68575aac05fd421ed0a76d8a3323c48",
+      "mbpp/356": "a8a30b1079e410f2e64e26c4a2c5f6051fb3bb3484e7a19be3af31ac2360302f",
+      "mbpp/36": "efef0c1624a7ccaaad92079d9680b2ad2a3ff73c4a0f07e2876eded428aef28b",
+      "mbpp/654": "3ece0954bfccd0570a9143bd4dd65f31f8fb2f5b329dbd268cec284d48b9fade",
+      "mbpp/656": "85db9065ecf01e2d48bba41b59077a06de3ce6b2f66dbb7d254512683c592746",
+      "mbpp/700": "ea60e506d659aea08d23a9aac9d5482b7f4d211a37f640a29f29861cee9995cf",
+      "mbpp/703": "c0d74c3a0aa8bd2d5a7301092b9510fa2970f647faeaedd7315d1c09b644c93a",
+      "mbpp/885": "c16bb160ac867417fc6d6b1cdccc8023533c8e6acfc0c72170a0ebf97aa3659f",
+      "mbpp/901": "92cc7b662b38b13a8f6301e154dc3b0edf1ac4bfc87ae08e6b29d85c3c158c7b"
+    },
+    "builder_sha256": "e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6",
+    "config_sha256": "5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769",
+    "source_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+  },
+  "records": [
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "reference",
+      "code_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/356",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "reference",
+      "code_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/885",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "reference",
+      "code_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/354",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "reference",
+      "code_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+      "predicted": {
+        "public": false,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/901",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "reference",
+      "code_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/654",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "reference",
+      "code_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/703",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "reference",
+      "code_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+      "predicted": {
+        "public": false,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/700",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "reference",
+      "code_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/656",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "reference",
+      "code_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": true
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "wrong_rule_1",
+      "code_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "wrong_rule_2",
+      "code_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+      "predicted": {
+        "public": false,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "wrong_rule_3",
+      "code_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "constant_public_expected",
+      "code_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+      "predicted": {
+        "public": true,
+        "original_private": false,
+        "supplement_v1": false
+      }
+    },
+    {
+      "task_id": "mbpp/36",
+      "artifact_kind": "lookup_original_examples",
+      "code_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+      "predicted": {
+        "public": true,
+        "original_private": true,
+        "supplement_v1": false
+      }
+    }
+  ],
+  "public_reasoning": {
+    "356": "Wrong rules give136,224,138 rather than44.",
+    "885": "All three shortcuts agree on the original paper/title example.",
+    "354": "Wrong rules give11,5,10 rather than9.",
+    "901": "Wrong rules give13,156,0 rather than360360.",
+    "654": "Wrong rules give200,30,40 rather than60.",
+    "703": "Value membership is false; nonempty-dictionary is true; Always False is false; expected true.",
+    "700": "Strict-range,distinct-count and list-length rules give3,4,9 rather than6.",
+    "656": "Zipped difference gives4,absolute sum difference0,total sum12; expected0.",
+    "36": "First digit5,next digit0,unmodded quotient5; expected5."
+  },
+  "predicted_totals": {
+    "public": {
+      "pass": 34,
+      "fail": 20
+    },
+    "original_private": {
+      "pass": 21,
+      "fail": 33
+    },
+    "supplement_v1": {
+      "pass": 9,
+      "fail": 45
+    }
+  },
+  "payload_model_executions": 0,
+  "assumptions": [
+    "Exact accepted source and fixtures; ordinary Python semantics under frozen interpreter.",
+    "Predictions concern fully observed correctly functioning checks; infrastructure unknowns/timeouts remain unknown, never recoded to predicted labels."
+  ],
+  "approved_roster": false,
+  "execution_released": false
+}

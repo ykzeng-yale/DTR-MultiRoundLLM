@@ -424,3 +424,7 @@ Worker-attributed source-preparation record for Codex LEAD-ENDPOINT-07 / MRL-37 
 ## 26 September2026 — MRL-37 accepted; MRL-38 source/mock adapter
 
 Signed: Codex scientific lead. [Nine-root source review](nine_root_measurement_source_review_20260926.md) independently reproduces all19 package files and46 cases; full suite passes2,050 tests plus8 subtests. No payload/model execution. [MRL-38](nine_root_measurement_execution_contract_20260926.md) assigns the existing worker a separately versioned162-slot adapter,source/mocks only,one CPU/20 minutes/32MiB from acknowledged acceptance. Encode a later600-second/8MiB audit cap without executing it;preserve exact predictions and all prior supervision fixes. No evaluation roster or receiver release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
+
+## 26 September2026 — prospective exposure distinction and audit predictions
+
+Signed: Codex scientific lead. [Exposure contract](policy_evaluation_exposure_contract_20260926.md) separates source inspection,reference/control audits,receiver development and evaluation-outcome access without waiving family or population gates. [Pre-execution predictions](nine_root_measurement_predictions_20260926.md) bind54 artifacts/162 checks:34 public,21 original-private and9 supplemental predicted passes. These are source predictions,not results. MRL-38 continues under its original23:50:01Z–00:10:01Z cap;no new worker assignment or execution release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
