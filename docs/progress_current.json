@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T16:16:00Z",
+  "checkpoint_utc": "2026-09-26T19:18:00Z",
   "meaning": "subjective milestone-completion planning estimate, not efficacy or submission readiness",
   "components": [
     {
@@ -54,16 +54,16 @@
   ],
   "overall_percent": 58,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "34a3eddcd238f00e82c3ff4564e6975fc9ebff16",
-  "baseline_note": "Fixed 58-point rubric unchanged: LEAD-POLICY-14 repairs a provisional treatment definition and interpretation; no frozen or executed empirical or independent-policy milestone.",
+  "prior_checked_head": "f13d31a7d7d210e8f77fda584a97732da06dd670",
+  "baseline_note": "Fixed 58-point rubric unchanged: independently accepted source/reused-record correction to unfrozen candidate instructions, with no empirical or independent-policy milestone.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "LEAD-POLICY-14 is a source-only scope/empty-diagnostic correction to provisional PATCH/RETHINK. Worker b8b3d5f acknowledged LEAD-POLICY-13; subsequent commits through ba3c315 are status-only, reporting no run/lease and E14 NO-GO.",
+  "latest_evidence": "Worker 2e1d716 correction independently checked against pinned renderer and E12 diagnostics: all 14 diagnostic messages exist, nine show no public failure. LEAD-POLICY-15 replaces both provisional texts. Status through 7e6e06e reports no run/lease, E14 NO-GO.",
   "latest_worker_review": {
-    "last_seen_worker_revision": "ba3c315b352dbc4c045f1093b8d1a699584b51f0",
-    "delivery_type": "LEAD-POLICY-13 receipt b8b3d5f, independently read; later status-only, no new real model result",
-    "last_independently_reviewed_worker_documentation_revision": "b8b3d5f1a44e0c9126676488b3ff42bae5190762",
+    "last_seen_worker_revision": "7e6e06ec3f6bcc176a6efe2354429b7104bc1845",
+    "delivery_type": "LEAD-POLICY-14 receipt and source-specific wording correction 2e1d716, independently checked; later status-only",
+    "last_independently_reviewed_worker_documentation_revision": "2e1d7161399795012213c01c3a73a98a475b299e",
     "scientific_review_revision": "4931cb948a80fb9d7a6320601f786352d1feaa11",
     "review_record": "docs/mrl25_independent_review_20260923.md",
     "acknowledgement_received": true,
@@ -75,7 +75,7 @@
     "acknowledgement_review_revision": "ec318651e0393d9ae6bee13aeb7984709aa2e0a7",
     "mrl08_execution_status": "source/mock delivery reviewed; operational validation not released",
     "mrl09_status": "delivered and reviewed source/mock; execution plan repairs required",
-    "scheduler_status": "Worker ba3c315 at 2026-09-26T15:52:52Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
+    "scheduler_status": "Worker 7e6e06e at 2026-09-26T18:51:41Z reports watcher running, no run/lease and E14 NO-GO. Live watcher health not independently verified.",
     "mrl10_status": "preparation delivered and reviewed;68local tests pass2host-specific failures recorded",
     "mrl11_status": "delivered and independently reconciled; accepted within finite instrument scope",
     "mrl12_status": "acknowledged and completed21:00:32Z; independently reviewed",
@@ -516,5 +516,16 @@
     "followup_independent_review": "docs/lead_portability_02_independent_review_20260926.md",
     "followup_lead_result": "98 pass, 4 explicit skip, 0 fail in five affected modules on second populated host; accepted source/test scope only"
   },
-  "current_experiment_status": "docs/current_experiment_status_20260926.md"
+  "current_experiment_status": "docs/current_experiment_status_20260926.md",
+  "policy_patch_rethink_failure_scope": {
+    "decision_id": "LEAD-POLICY-15",
+    "record": "docs/policy_patch_rethink_failure_scope_20260926.md",
+    "classification": "source and reused-record correction to unfrozen action wording; no model or efficacy evidence",
+    "renderer_sha256": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "e12_diagnostics_sha256": "e95d50bae632f73a96094673a03aff9401993c5c3d986086f63c5fe3cf8bd94a",
+    "public_pass_roots": 9,
+    "public_fail_roots": 5,
+    "worker_correction_revision": "2e1d7161399795012213c01c3a73a98a475b299e",
+    "decision": "Accept correction and replace both provisional instructions; hold all model collection pending public-pass support and complete protocol freeze."
+  }
 }

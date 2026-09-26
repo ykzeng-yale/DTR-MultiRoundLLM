@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## Three-hour lead review — 2026-09-26T19:18:00Z
+
+**Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. I independently verified worker `2e1d716`'s renderer/diagnostic correction and published [LEAD-POLICY-15](policy_patch_rethink_failure_scope_20260926.md), which replaces both unfrozen prompt texts. No model result or independent policy validation was added; worker status through `7e6e06e` reports no run/lease and E14 NO-GO. Next: decide the public-pass action support and freeze exact renderings, families, comparators, endpoint, assignment, inference and finite local cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**
+
 ## Three-hour lead review — 2026-09-26T16:16:00Z
 
 **Overall milestone completion: 58%, change 0 percentage points** under the fixed rubric. [LEAD-POLICY-14](policy_patch_rethink_scope_correction_20260926.md) repairs the provisional `RETHINK` action for empty diagnostics and limits any future interpretation to a whole-instruction effect. Worker `b8b3d5f` acknowledged LEAD-POLICY-13; later commits through `ba3c315` report no run/lease and E14 NO-GO. No new efficacy or independent policy evidence was produced. Next: freeze the supported action renderings, public-pass rule, comparator, family frame, endpoint, assignment, inference and finite local cap. **Prompt efficacy unestablished; independent policy validation absent; full-project submission readiness false.**

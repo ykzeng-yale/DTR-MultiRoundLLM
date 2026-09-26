@@ -1,5 +1,9 @@
 # Half-hour experiment–theory exchange
 
+## Current handoff audit — 26 September 2026, 19:18 UTC
+
+Worker `2e1d716` accepted LEAD-POLICY-14 and supplied a source-specific correction; the lead independently checked the renderer and all 14 saved E12 diagnostics and [replaced both provisional texts](policy_patch_rethink_failure_scope_20260926.md). Later watcher commits through `7e6e06e` (18:51:41 UTC) report no run/lease and E14 NO-GO, with health worker-reported. No new real outcome, issue #2–#5 scientific question or open PR appeared. This is a source/reused-record treatment-definition repair, not a model-stage release. Next: decide the public-pass STOP/randomization support and freeze the full family, endpoint, assignment, comparator, inference and local-cap contract. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**
+
 ## Current handoff audit — 26 September 2026, 13:18 UTC
 
 Worker `8082eeb` records the previous lead acceptance; later watcher status through `34a3edd` (12:51:53 UTC) reports no run/lease and E14 NO-GO. Live watcher health is worker-reported; no new model result, issue #2–#5 design question or open PR appeared. The lead [ruled in LEAD-POLICY-13](policy_patch_rethink_action_candidate_20260926.md) that rerunning the held N1/S1 panel with a common format contract has insufficient new decision value; `PATCH` versus `RETHINK` is a distinct provisional same-prefix development action candidate. No selector, trial or worker execution is frozen or released. Next: complete the action-support, family, endpoint, assignment, inference and finite-cap gates. **58%, change 0 points; efficacy unestablished, independent policy validation absent, full project not submission-ready.**

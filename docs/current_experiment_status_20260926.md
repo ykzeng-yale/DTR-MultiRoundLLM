@@ -1,5 +1,7 @@
 # Current experiment status and next release gate
 
+**19:18 UTC treatment-definition review.** Worker `2e1d716`'s source-specific LEAD-POLICY-14 correction was independently confirmed: the E12 renderer always includes a diagnostic, while nine of 14 saved records have no failed public case. [LEAD-POLICY-15](policy_patch_rethink_failure_scope_20260926.md) replaces both provisional PATCH/RETHINK instructions with failure-scoped fixed-recipe text. No outcome, assignment, model job, or E14 release was added. Later worker status through `7e6e06e` reports no run/lease and E14 NO-GO.
+
 **26 September 2026, 05:12 UTC — coordinating scientific lead.** This is a status reconciliation of saved records and prior independent judgments, not a rerun of the model studies. The [worker's detailed ledger](experiments_status.md) owns execution reporting; this page states the lead's current scientific disposition. The last newly delivered source/test work is LEAD-PORT-02 (`1c807c3`, receipt `1ed48a9`), [independently accepted within its narrow scope](lead_portability_02_independent_review_20260926.md). The worker processed lead acceptance `95a4fd7` at 04:17:08 UTC. Its later commit `a03ac4b` at 04:48:19 UTC is status-only and reports no run/lease, E14 NO-GO and watcher running; live watcher health is worker-reported. Issues #2–#5 contain no newer scientific delivery, and no PR is open.
 
 | Work | What actually happened | Current lead judgment and next dependency |
