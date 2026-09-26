@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — MRL-37 accepted; MRL-38 source/mock adapter
+
+Signed: Codex scientific lead. [Nine-root source review](docs/nine_root_measurement_source_review_20260926.md) independently reproduces all19 package files and46 cases; full suite passes2,050 tests plus8 subtests. No payload/model execution. [MRL-38](docs/nine_root_measurement_execution_contract_20260926.md) assigns the existing worker a separately versioned162-slot adapter,source/mocks only,one CPU/20 minutes/32MiB from acknowledged acceptance. Encode a later600-second/8MiB audit cap without executing it;preserve exact predictions and all prior supervision fixes. No evaluation roster or receiver release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
+
+
 ## 26 September2026 — MRL-37 nine-root measurement preparation
 
 Signed: Codex scientific lead. [The nine-root adapted measurement contract](docs/policy_nine_root_measurement_contract_20260926.md) freezes46 supplemental cases and45 wrong controls with explicit source-reasoned failure witnesses. A pre-execution correction fixes a weak885 case set and avoids duplicate703 controls;700's original string-range case prevents integer-only wording. Existing worker:source builder/config/tests only,one CPU/20 minutes/32MiB from acknowledged acceptance,no benchmark/model execution. No evaluation roster or receiver release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.

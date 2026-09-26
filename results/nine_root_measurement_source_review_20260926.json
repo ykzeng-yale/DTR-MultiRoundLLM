@@ -1,0 +1,167 @@
+{
+  "review": "MRL-37 independent source acceptance",
+  "worker_commit": "2f2ed5c",
+  "completed_at": "2026-09-26T23:46:59.335170+00:00",
+  "package_identities": {
+    "public_record_sha256": {
+      "mbpp/354": "a8a3b41b6617083eac41f5af3d9138dcd0f9603f8bca76433c9cf885a11b4a90",
+      "mbpp/356": "b83357be2a27ac7ea0647ab7d507972072229857d5d3de88faefd9afe6047287",
+      "mbpp/36": "bbfde8ec3045fa8b2970d3c08ec484b51604d0baa50a56ad74a2ce19ce1b626e",
+      "mbpp/654": "82de1da12382c7809ccd31401731bffa4bf8107fe916f0524acd731b6b993c27",
+      "mbpp/656": "8126fc9df6511629fe4f7554e147a212553247e67c972b2f3bff55fd4fa2fdce",
+      "mbpp/700": "cd8911d4ddf01dc7b1da9139a2f9b572a4bd934c047f65c5199e8f69d60ca315",
+      "mbpp/703": "92aa0af0c26117658a3958b5fec646f804dfbc6536b6d24476ce2a40735d173f",
+      "mbpp/885": "4b6bdd23632e2e7dca2a5aebf767d0d434baa78df086da04b8551a9a6059b4d6",
+      "mbpp/901": "b82c659f47ce60a3d6e21d4a0e803ba021b8d688a46ddccc2f5e7567039acbca"
+    },
+    "private_record_sha256": {
+      "mbpp/354": "a605c0b9bf2369478f9c5ed4e26c52b7d68575aac05fd421ed0a76d8a3323c48",
+      "mbpp/356": "a8a30b1079e410f2e64e26c4a2c5f6051fb3bb3484e7a19be3af31ac2360302f",
+      "mbpp/36": "efef0c1624a7ccaaad92079d9680b2ad2a3ff73c4a0f07e2876eded428aef28b",
+      "mbpp/654": "3ece0954bfccd0570a9143bd4dd65f31f8fb2f5b329dbd268cec284d48b9fade",
+      "mbpp/656": "85db9065ecf01e2d48bba41b59077a06de3ce6b2f66dbb7d254512683c592746",
+      "mbpp/700": "ea60e506d659aea08d23a9aac9d5482b7f4d211a37f640a29f29861cee9995cf",
+      "mbpp/703": "c0d74c3a0aa8bd2d5a7301092b9510fa2970f647faeaedd7315d1c09b644c93a",
+      "mbpp/885": "c16bb160ac867417fc6d6b1cdccc8023533c8e6acfc0c72170a0ebf97aa3659f",
+      "mbpp/901": "92cc7b662b38b13a8f6301e154dc3b0edf1ac4bfc87ae08e6b29d85c3c158c7b"
+    },
+    "builder_sha256": "e2485aa805b6cf98e4760430961ac7065f8c763a04a83605b81baf27f337c8f6",
+    "config_sha256": "5f54f094b094db3f156dc4461e4926aa5d1f61a7ec9679572bb8abaf8768c769",
+    "source_sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+  },
+  "file_sha256": {
+    "manifest.json": "9939e027a5068c0ed196540050b5e882c103548f866c47105ef23401bb813052",
+    "public/mbpp_700.json": "695e44e7d80de920d15c41175f422a17c7d4c04f78e9415131fe8291ef5032c7",
+    "public/mbpp_901.json": "a0ccec68327a007bb9e4fa44838e6505ce88dd94a844bc96509c314e8f76048a",
+    "public/mbpp_356.json": "1d5a83a363f36ae7a40b2bed3297fd06543e8c87ee58cda03099efb9042750e7",
+    "public/mbpp_36.json": "dddf8e81217d4a8c401ea71686606f852e95caa1b6f11b6ec237343cc9c9cec1",
+    "public/mbpp_654.json": "b432e797a6c8160c5d71efbb1e4f309214b7c0a4a96d42acbafb387a7e332c24",
+    "public/mbpp_354.json": "e1933686aec6778246ec47558ea56b941eea1a691ce40c4673eea4d64cdf8f51",
+    "public/mbpp_656.json": "7323c35ebf06842ad1cab4f62a28c59795369019588205dedb30f6a6de2868c3",
+    "public/mbpp_885.json": "12fc8bdb10375c5d64ea3bbbd6b8c50703ac5047f0dd0f66a9b76735fcdf3df8",
+    "public/mbpp_703.json": "be3851c8486f74ed1147567ea0997cc22b2d7cb8422616b9c9f83d31012b0b63",
+    "private/mbpp_700.json": "fa5fd3333bd984c71e47d6f0e4e6fedebd8cc1e793250916dc65913696e4dcf6",
+    "private/mbpp_901.json": "36c4a00afdb46e75c810aedda88354c479a629e5603ae33e79b61907524bef52",
+    "private/mbpp_356.json": "53bc878883ab7ad2d439151d880ee07202620f272d412c90010e3fea2a346904",
+    "private/mbpp_36.json": "b93597797b8a30993c042b788b31d8eec1c11d0f8a3e355f5f24d8348efed69e",
+    "private/mbpp_654.json": "513770d2485135fd37ed5b0d3fa6479c803e389d9639112f28890adacecc9ca6",
+    "private/mbpp_354.json": "d96841306f515bf8b91d0bd5dbbaf08046dd6eb98890e04c6ae264565e5955d1",
+    "private/mbpp_656.json": "e23e9f8850dc41fbdeb6568bf4e7f070c77e5b6b2f00b1446076b1aa28958d65",
+    "private/mbpp_885.json": "c2f9d8edd1a4ad2b993a70c7750efe9bacfa6fac59114db3f476283b01fb2073",
+    "private/mbpp_703.json": "d73bfe6b55990ea2fb9d86aeccf9a8737b69db2d44bb488ff3a16cb8b04b80f6"
+  },
+  "reference_control_assertion_executions": 0,
+  "model_calls": 0,
+  "tests": {
+    "command": "uv run --offline --frozen --extra dev python -m pytest -q",
+    "passed": 2050,
+    "subtests_passed": 8,
+    "seconds": 34.56
+  },
+  "records": [
+    {
+      "root_id": "mbpp/356",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 4,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/885",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 7,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "wrong_rule_2",
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/354",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 4,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/901",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 5,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "wrong_rule_1",
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/654",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 4,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/703",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 5,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/700",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 5,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "wrong_rule_2",
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/656",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 6,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    },
+    {
+      "root_id": "mbpp/36",
+      "original_bytes_match": true,
+      "supplement_matches_committed_lead_table": true,
+      "supplement_cases": 6,
+      "distinct_controls": 5,
+      "predicted_original_private_control_passes": [
+        "lookup_original_examples"
+      ],
+      "predictions_are_not_observations": true
+    }
+  ],
+  "approved_evaluation_roster": false,
+  "execution_released": false
+}
