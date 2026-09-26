@@ -1,0 +1,363 @@
+{
+  "review": "MRL-36 independent lead source reproduction",
+  "worker_commit": "00f70be",
+  "completed_at": "2026-09-26T23:31:58.221446+00:00",
+  "script_sha256": "5192b7d96b06347c3588b15e72b5e0c058ef89d5ca10be44629cf804d4116011",
+  "output_sha256": "3507c9ff33b1359224b5c9eea26d932db7906686a7f528546de4fe2812d31f67",
+  "reproduced_output_sha256": "3507c9ff33b1359224b5c9eea26d932db7906686a7f528546de4fe2812d31f67",
+  "diagnostic_sha256": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+  "independent_scope": "Raw-sort/deduplicate retrieval reconciliation using pinned trusted token/score helper, separate AST literals and trusted display function; no candidate/reference/assertion execution. Frame equal-score ties are numeric task ID, prior ties are lexical UID/scope/variant.",
+  "full_suite": {
+    "passed": 2036,
+    "subtests_passed": 8,
+    "seconds": 32.61
+  },
+  "records": [
+    {
+      "task_id": 911,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 667,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 344,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 524,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 814,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "reference true division yields float; unsupported by display despite literal integer expected value"
+    },
+    {
+      "task_id": 187,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 194,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 356,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 366,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 302,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 877,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 345,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 885,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 679,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 176,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 354,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 169,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 901,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 200,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 685,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 883,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 711,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 340,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 613,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 548,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 506,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 654,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 710,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 955,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 298,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 827,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 547,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 828,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 192,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 703,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 700,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 811,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 961,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 833,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 903,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 656,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 36,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    },
+    {
+      "task_id": 921,
+      "prior_top6_verified": true,
+      "frame_top6_and_metadata_verified": true,
+      "literal_arguments_verified": true,
+      "expected_display_status": "literal",
+      "static_actual_return_note": "no general runtime type guarantee"
+    }
+  ],
+  "model_calls": 0,
+  "approved_roster": false
+}

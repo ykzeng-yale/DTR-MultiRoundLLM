@@ -1,0 +1,1877 @@
+{
+  "review_id": "LEAD-FRAME-11",
+  "plan_commit": "ec3cb97",
+  "started_at": "2026-09-26T23:25:08.879559+00:00",
+  "completed_at": "2026-09-26T23:32:59.180007+00:00",
+  "inputs": {
+    "results/policy_candidate_audit_inputs_20260926.json": "3507c9ff33b1359224b5c9eea26d932db7906686a7f528546de4fe2812d31f67",
+    "results/policy_candidate_audit_independent_review_20260926.json": "c528e3b0671ca57e09b12e2d1b7b9ab0f490cd2364ccfef0627a7b8685eb43eb",
+    "work/data/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce",
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/policy_full_frame_reconciliation_20260926.json": "744b0f393ba7b739ed64087d190d406908fe8f8b6063032a6b300cd1f4cbfbff",
+    "docs/e12_contract_review_20260922.md": "eceae0c5e9d3c541ecc5ee20d2da1be790662b9880f78090d4d3c1281e6a5cbc",
+    "docs/frame_review_ranks21_40_20260923.md": "258a5e1e10943cb91854922d2ced339b726b1bf9ca25524847db19ad0669ce39",
+    "docs/policy_candidate_adjudication_plan_20260926.md": "d06694f3a2e47d185e7a254a0611ee192f520a350a2fd997e8cb091ea16b5e91"
+  },
+  "family_axis_counts": {
+    "plausible_shared_family": 16,
+    "definite_prior_family": 15,
+    "no_direct_prior_relation_found": 10,
+    "within_candidate_family": 2
+  },
+  "contract_axis_counts": {
+    "clarification_required": 36,
+    "reference_hold": 3,
+    "domain_change_pending": 1,
+    "specification_hold": 3
+  },
+  "records": [
+    {
+      "rank": 21,
+      "task_id": 911,
+      "source_hashes": {
+        "assertion_sha256": [
+          "dfe9c42f0bd288b45331ba384bedb3584649fcaccec181a41fe6ebd743659aa2",
+          "ec58483f46d82da258efb5c7f9052c6cdf436f034e43107100ed1016c93f3072",
+          "abd684a9e6f2190f0b789ddbb5292204dc4fe640bdd07c869dd6af34bc171dcb"
+        ],
+        "description_sha256": "0ff5527b3f1e6cae2c7952da75baaa537db7fa4659fbf835e3e773f2ba59a0cb",
+        "reference_sha256": "f46eee08f1386056b64c8bcf74d45317349e9eeaf35042b9dd85b51b5e347283"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "order_statistics_product",
+      "manual_related_uids": [
+        "mbpp/4",
+        "mbpp/366"
+      ],
+      "family_reason": "Uses extrema selection, but maximal triple product is not the same output as top-k or adjacent-pair product. Do not merge on scalar/list types alone.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Given at least three integers, return the maximum product of three distinct positions; repeated values are allowed.",
+      "contract_changes_or_limitations": "State minimum length and positions; heap usage is not established by output equality.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 25,
+      "task_id": 667,
+      "source_hashes": {
+        "assertion_sha256": [
+          "f20e7998ee65b2119ac09fcbf369f15e2d293eafde43f89a2c96f0f43d3ee40b",
+          "aa13b38f82774efbf7f0c9accdad548d5ef305e1c76ba45b19fe00b15f4aca9a",
+          "b7a38390065b5689196effccc28d251ba784f37512d9cc737d6c78b3796ce91d"
+        ],
+        "description_sha256": "dc7ee3e920953fcbacb508f83210242c1241f2807b530b319f6c5924fb81175f",
+        "reference_sha256": "4c911c77d78eb4a5a41e381f705b90f4db1a60baaa5fdd993ee9a897ac34f9d9"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "character_membership_count",
+      "manual_related_uids": [
+        "humaneval/64",
+        "mbpp/828",
+        "mbpp/192"
+      ],
+      "family_reason": "Prior vowel count has a terminal-y convention; this task adds a supplied character set. Shared counting core is plausible, not exact equality.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Count occurrences in string whose character belongs to the supplied vowels string, using exact character matching.",
+      "contract_changes_or_limitations": "Publishes the second parameter and matching rule; varying the set extends beyond the original fixed-set fixtures.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 26,
+      "task_id": 344,
+      "source_hashes": {
+        "assertion_sha256": [
+          "1ff0b48b7f44608da67d146bcf8a197887143efbf87bbdd14065908d52e971f1",
+          "aa29862a734d75cd0219b10db9306b9bd93714e382a1ff37acd483e348e43089",
+          "2c1f9795e3d029ba15c2ebabaea1b553e3daeaf09330dcb7ed37356bb4d09861"
+        ],
+        "description_sha256": "7ecefce83cc090ec31c377702b2a95c9a0ee6de7598a48268eb4cac37736c893",
+        "reference_sha256": "1a5edab809598436dd9886f39d165c5c8a674b1aeb2aca64785c6c80884d703b"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "divisor_parity_count",
+      "manual_related_uids": [
+        "mbpp/96",
+        "mbpp/781"
+      ],
+      "family_reason": "Counting integers with odd divisor count aggregates the complement of prior even-divisor-count testing; both reduce to square recognition. Broad magnitude correctness remains unresolved.",
+      "contract_axis": "reference_hold",
+      "proposed_public_contract_not_adopted": "For positive integers n <= m, count integers in the inclusive range having an odd number of positive divisors.",
+      "contract_changes_or_limitations": "Clarifies odd number of divisors, rather than existence of odd factors. Floating square-root rounding can violate exact integer semantics; do not silently shrink magnitude.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 29,
+      "task_id": 524,
+      "source_hashes": {
+        "assertion_sha256": [
+          "289295a633b9bfa3d4b2cad6e1e19a3ff6777c75c546818fc9de9215201eb9a8",
+          "011fe80b05789e1c566afbbc483d6fe0fc1422bdcf47085e85a397fa5fc4b3d5",
+          "260366d1236e2e4387c6ef1e8c95b54c142d2b25ee10065fd9be82766c913df3"
+        ],
+        "description_sha256": "fac1d77d2386a828e65b5e546679be971b8b43e618d9dd1eebd5eca7eb026cce",
+        "reference_sha256": "174518d3397e4ce7cbb9ed0d31ba6fb708ebddeb5690394f475eb27152754b1d"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "increasing_subsequence_dynamic_program",
+      "manual_related_uids": [
+        "mbpp/306",
+        "mbpp/548",
+        "mbpp/468"
+      ],
+      "family_reason": "Prior306 and this root share increasing-index/increasing-value maximum-sum recurrence with different endpoint restrictions. Prior468 prose is related but its reference follows contiguous runs, so it alone is not sound equivalence evidence.",
+      "contract_axis": "domain_change_pending",
+      "proposed_public_contract_not_adopted": "For an integer list, return the maximum sum of a strictly increasing subsequence in original index order.",
+      "contract_changes_or_limitations": "Original meaning leaves empty subsequences unresolved; earlier positive-only adaptation avoids all-negative cases and is a domain choice, not proof of the unrestricted target.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 30,
+      "task_id": 814,
+      "source_hashes": {
+        "assertion_sha256": [
+          "68f9b5ad8ec0d11c91a563be0daf302f14e30a1fa050e97751c24af6d043d89a",
+          "ef3cd994eb9fd51680b646df83b2ae12326eff4172fa1aecdc63d0ca6aa4b5ec",
+          "6ce10c9cd89bebfc9da557f4d1e1ae690fe66c83b68787a23cf8502a76281c04"
+        ],
+        "description_sha256": "12a5a4e506941bbcc1de2a1f65dc0e7d83b51c0a2e0ada3c72388601a31f0571",
+        "reference_sha256": "e1c8a779c79cf0f945483dc656320ca9e1cee20ff938b7964b43b3326b734458"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "half_product_area",
+      "manual_related_uids": [
+        "humaneval/45"
+      ],
+      "family_reason": "With diagonal/side-height roles supplied, both area functions compute the same half-product map.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Given two nonnegative diagonal lengths of a rhombus, return half their product, accepting numerically equal integer or real outputs.",
+      "contract_changes_or_limitations": "Earlier adapted contract explicitly accepts real outputs; reference true division returns float, unsupported by the unchanged diagnostic display.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "known_reference_float_incompatible",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 32,
+      "task_id": 187,
+      "source_hashes": {
+        "assertion_sha256": [
+          "13bb23418a65e7480b26439abd25e6b3df38b31e931bda23444fe9cdfb5cd14b",
+          "378cc3cd238312ce026df4dc207274d4cd37850c4050f2c9523bd993ab83ff16",
+          "35cca37ddb8f97ec22bd108f4f21dc939b112b03f4a10a4425b757d1cfbe6a8d"
+        ],
+        "description_sha256": "50ab1ebfbc98ca27859e4e01311c8cde3c730d07f0e20853bf5706bc5e370756",
+        "reference_sha256": "c8f219e80b4ccfbb36363f208b52ef25dc411f436479e71191c4c919adcf2888"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "longest_common_subsequence",
+      "manual_related_uids": [
+        "mbpp/747"
+      ],
+      "family_reason": "Two-string LCS length equals the prior three-string target on (X,Y,X), a direct repeated-argument specialization.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For strings X,Y and their lengths m,n, return the length of a longest common subsequence; contiguity is unnecessary.",
+      "contract_changes_or_limitations": "Clarifies length output and redundant length parameters; reference runtime and endpoint boundaries remain unvalidated.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 34,
+      "task_id": 194,
+      "source_hashes": {
+        "assertion_sha256": [
+          "5ee707d9a7622dae571644b67a50624b6dec74ed14b438fc1e0453e9df6b59cf",
+          "c24c7f86e3cb67a3814d75a90fdcded8543aba641df4f30ab46756a768898b1d",
+          "6fd4114f0d6e802f84314dd3376f1feff8b688445b2849ae932311ecf43ad998"
+        ],
+        "description_sha256": "41a0694b6ffa1a9452ccbbd698f9034f6b245dab4b8e7e4cbc005515f5a14cf9",
+        "reference_sha256": "29982fa9fb533c5847c3e187358d8cfc292a956aa8505e1313c6347557bd183c"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "positional_numeral_conversion",
+      "manual_related_uids": [
+        "mbpp/99",
+        "humaneval/79"
+      ],
+      "family_reason": "Prior decimal-to-binary conversion changes base and direction. Shared positional-conversion schema needs an explicit family decision.",
+      "contract_axis": "reference_hold",
+      "proposed_public_contract_not_adopted": "Interpret the decimal digits of a nonnegative integer, all in 0..7, as an octal numeral and return its integer value.",
+      "contract_changes_or_limitations": "Clarifies representation and valid digit domain. Reference int(temp / 10) uses floating division, so arbitrary large valid inputs are not covered by an exact-integer correctness claim.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 35,
+      "task_id": 356,
+      "source_hashes": {
+        "assertion_sha256": [
+          "0dfae220606a03a1fae2713b53500b8b6b24256f8c6f336b3b8c9e5f8911801b",
+          "bb5cd9596186c2ca14e9d6273732df07909c571185798390e93ed08b1d106779",
+          "7fa254af8c123a5736f31eda081a8f6f23cfa8f73e1a857ee4230a2dd349531a"
+        ],
+        "description_sha256": "78fe3e3293d84fc71392de3859bbe7b3b1f0208726f373e8dd0ab37545f9a781",
+        "reference_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "triangle_angle_completion",
+      "manual_related_uids": [
+        "mbpp/176",
+        "mbpp/359"
+      ],
+      "family_reason": "Triangle perimeter is a different target, and retrieved359 is a quadratic-root relation, not triangle validity. Generic geometry or three-scalar arguments do not establish the same family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Given two positive interior angles in degrees with sum below 180, return the third interior angle in degrees.",
+      "contract_changes_or_limitations": "Declare units and triangle domain; original private coverage and diagnostic numeric support still need validation.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 36,
+      "task_id": 366,
+      "source_hashes": {
+        "assertion_sha256": [
+          "3dc92631192918f3c78b3d685ba335673f741b4d8e2ace9d2e913a7d5e5be13f",
+          "fc1859b454ac66a87f77e632726d056eea029f50fb929327b341eeb7bfad4990",
+          "96dc9755669fa561acb6ec95b987765c7aaaf798a9b23ed57bb540ac0a546128"
+        ],
+        "description_sha256": "a5bd3ec55b8d9a9043320454cd076ee86a5187248e8d8017b2ab7fffe34a4389",
+        "reference_sha256": "7db1293f563250835309d4103260ccce6d6c5f5b649844e71ee421d9e0c6eabf"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "adjacent_product_maximum",
+      "manual_related_uids": [
+        "mbpp/463",
+        "mbpp/766",
+        "mbpp/911",
+        "mbpp/345"
+      ],
+      "family_reason": "Constrained length-two maximum product shares a subarray family with prior463 and adjacent traversal with766; these relations do not establish exact task equality.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For at least two integers, return the largest product of neighboring positions, without wraparound.",
+      "contract_changes_or_limitations": "State minimum length and noncircular interpretation.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 37,
+      "task_id": 302,
+      "source_hashes": {
+        "assertion_sha256": [
+          "52a486238d16e68504311dfbf7a10c0e42f3464c95cd3aec66d141466af55703",
+          "a2672ef0a313e854fa1918dd7da2db7352041a74590165d620893a36049392e4",
+          "65b42d0d62a2f86e0c11bcc5f51d72ea3903b0a6348d0f225e69eb955fd3498c"
+        ],
+        "description_sha256": "c6131bacf3cf1bdabd17fecfdd0315b9b13ee90602344c088684d257c9c054b1",
+        "reference_sha256": "882c9542e66ac8eca2cd0a3a7a3d86269ea49cdfe6da2884a34c379c00ef6684"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "adapted_contract_candidate",
+        "source_record": "docs/frame_review_ranks21_40_20260923.md",
+        "source_review_basis": "earlier semantic contract review; original mechanical labels superseded"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "power_of_two_rounding",
+      "manual_related_uids": [
+        "mbpp/167"
+      ],
+      "family_reason": "For positive n, floor power of two equals prior ceiling-power target at n+1 divided by two; direct target transformation.",
+      "contract_axis": "reference_hold",
+      "proposed_public_contract_not_adopted": "For a positive integer n, return the value of its most significant set bit.",
+      "contract_changes_or_limitations": "Value versus bit index must be explicit. Reference repeatedly uses int(n / 2); at sufficiently large integers rounding can cross a power-of-two boundary, so earlier unbounded domain is not verified.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 49,
+      "task_id": 877,
+      "source_hashes": {
+        "assertion_sha256": [
+          "e53a2ba7fef43c1024cca1c41d31ab3d3483a37f74d4da9fe7bd52795c8b0db5",
+          "eaf729dd6b9f534449bb2931103e066ea1a2cd2d414c59609eb92dafdcf912f4",
+          "0025a59973d620dc2c45749c5ca9080b40123d1e2edd9c7424772ad1faf148d3"
+        ],
+        "description_sha256": "2a1082a4f144e9d2ec98564974fcbb29c0133574450ea2d4644c432ee2049839",
+        "reference_sha256": "ce8de2c84a0fee936257bfe9330221be20a61130561da95ae24b43514bb9f1d5"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks41_60_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": "measurement_development (LEAD-ENDPOINT-01/06 panel)",
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "character_sorting",
+      "manual_related_uids": [
+        "humaneval/86",
+        "mbpp/635"
+      ],
+      "family_reason": "Prior635 sorts a list; splitting a string into characters and joining the sorted list gives this target. Prior86 also contains the same character-sorting core within words. Container/global-space differences do not establish an untouched sorting family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return all characters of the input string sorted by Python character order, retaining repetitions.",
+      "contract_changes_or_limitations": "Specify ordering; endpoint-development evidence already exists, not policy evidence.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "finite original/supplement reference-control panel accepted; development only",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 56,
+      "task_id": 345,
+      "source_hashes": {
+        "assertion_sha256": [
+          "c08474c9010d01f807e5dc8583e82fc48c5c06a446be0d93f85f98b4bb00268b",
+          "74351d019afc273394e2d60f456376fe2483d84ddf73d24a1679adfb9f93906f",
+          "d57814e9734ac0652f97abf43d3b725ecc15460973213dde0efbddcc353f73c9"
+        ],
+        "description_sha256": "cbf0e9e214fe1c5c6ba1547e9d76c41093c8138d68d2be9775c03c64a02c3915",
+        "reference_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks41_60_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": "measurement_development (LEAD-ENDPOINT-01/06 panel)",
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "adjacent_difference",
+      "manual_related_uids": [
+        "mbpp/766",
+        "mbpp/366"
+      ],
+      "family_reason": "Differences are an arithmetic map over prior consecutive-pair output. Shared traversal is explicit, but pair enumeration and differences are distinct output targets.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return next minus previous for every adjacent pair of integers in order; lists of length zero or one produce an empty list.",
+      "contract_changes_or_limitations": "Specify subtraction direction and short-list behavior. Existing finite measurement audit is development only.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "finite original/supplement reference-control panel accepted; development only",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 61,
+      "task_id": 885,
+      "source_hashes": {
+        "assertion_sha256": [
+          "eaf9305327cd80f2ad5a0115db8ad2abdaeab7b027f29bf9e9f0df6fd8069d78",
+          "462dee42f37c3118b3265576ebc1b379b478f4f5f1478c8f504ad525c2062da1",
+          "9a29a036a40d6ee19af736547829779a4c79ee38e7d09426e3d1824ddfed16a9"
+        ],
+        "description_sha256": "b629b7edad105d9eb02c9d8ada090aae056a01b20d1a8810de104b380222f10f",
+        "reference_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks61_80_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "string_equality_pattern",
+      "manual_related_uids": [],
+      "family_reason": "Position-equivalence patterns define a bijection between observed characters. No definite prior match found in the targeted manual checks; retrieval remains necessary.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return whether two strings have the same length and their character equality patterns agree, equivalently a bijective character renaming.",
+      "contract_changes_or_limitations": "Makes isomorphism and empty-string behavior explicit; endpoints not validated.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 67,
+      "task_id": 679,
+      "source_hashes": {
+        "assertion_sha256": [
+          "343f4c59a59c3e80096e949cc343cf5d2cadcf66ac6d9b044dbec3b9502d26b4",
+          "f3fa782741ac915459f67de463e882f39bc8a2c518db685cac47227e817be192",
+          "c11a2868664c1832bff7cf967bfa9d217281e4c6a929de4b5445ae74dc3df6a4"
+        ],
+        "description_sha256": "e5ea2dc1807302feea5630f9a22a164e328c8a00e9eef30a6f02f671db02b507",
+        "reference_sha256": "8cb6b1968eaa4a8b58b237d5975aac71de8ad52ef1049df2e26645892cf164bd"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks61_80_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "within_candidate_family",
+      "provisional_computational_family": "ordered_dictionary_keys",
+      "manual_related_uids": [
+        "mbpp/833"
+      ],
+      "family_reason": "Indexing the list of dictionary keys is a direct postprocessing of candidate833; keep these together in any future split.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return the dictionary key at a valid Python sequence index in insertion order.",
+      "contract_changes_or_limitations": "Declares key rather than value, insertion ordering and valid index domain.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 70,
+      "task_id": 176,
+      "source_hashes": {
+        "assertion_sha256": [
+          "9dc5f5e4b71578726a4be9e784b8307ecf20058311a6ba5cf9fd67adad853dc6",
+          "3d244a6ad580ce8b49966af9229f7045e1b07908336b6924f89f099473769a08",
+          "59666b9daf04893fb94624e58389b4fc279f2b89ed0507192f12c2806158270d"
+        ],
+        "description_sha256": "38d858e936a4fee665f278323b21531d305cef4b23bee578f5eb33d34b378beb",
+        "reference_sha256": "3b6ae5afbc07a30ff9521d4eceda05855b248f056b1897fabd65af05b12af92b"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks61_80_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "triangle_perimeter",
+      "manual_related_uids": [
+        "mbpp/654",
+        "humaneval/71"
+      ],
+      "family_reason": "Perimeter is not area or rectangle perimeter merely because all are geometry. No definite prior computational match demonstrated.",
+      "contract_axis": "specification_hold",
+      "proposed_public_contract_not_adopted": "Return the sum of three supplied side lengths as a perimeter calculation.",
+      "contract_changes_or_limitations": "The original public example uses a degenerate triple. Restricting to strict triangles would discard an original case; decide and version the intended validity convention rather than silently narrowing.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 71,
+      "task_id": 354,
+      "source_hashes": {
+        "assertion_sha256": [
+          "e71d26edb7720893ff6c055f16be1b24171b5cc5e9ae4ff4427b47c93aa5b7af",
+          "d054ac47f12c93ae9041b5660b16430bc73ad828571ba506c638e6fc157462f7",
+          "532f4ebce0741ef6144f97739410659ae0b373f75229c142578595234e0aa63e"
+        ],
+        "description_sha256": "44a1c52755380c92bcd13552af8cc0807125d01340446383864dee4487886e0a",
+        "reference_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks61_80_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "arithmetic_progression_term",
+      "manual_related_uids": [
+        "mbpp/335"
+      ],
+      "family_reason": "Frame335 computes arithmetic-progression sums and shares the sequence definition; keep this relationship explicit. It is a held source root, not evidence of prior receiver exposure. No direct prior computational target was located in the targeted progression search.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Given first term a, positive one-based index n and common difference d, return a+(n-1)d.",
+      "contract_changes_or_limitations": "Publishes parameter roles and indexing; exact numeric domain and endpoint still pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 82,
+      "task_id": 169,
+      "source_hashes": {
+        "assertion_sha256": [
+          "58741ce887749b64e9e6b2da468e83e58b8f892c2a883098deec911cd1b422ee",
+          "16c6f993a0b170eb1a06af006a3eea1bdb7542e5164f3844bbe7da9631c67185",
+          "e871cffb2a6c5d9d614a14219c15f61d309c7fff8ceee4227ca746384aa78387"
+        ],
+        "description_sha256": "dc02c6fba458dcb278300615b3e1a6d36f6e17a3504284e749201b68c520d867",
+        "reference_sha256": "c037593715c2f10b928285b0fd51cdfce7c16563f4b713bf46dff53b14e8a6a4"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "second_order_two_one_recurrence",
+      "manual_related_uids": [
+        "mbpp/260"
+      ],
+      "family_reason": "Pell and prior Newman-Shanks-Williams reference use the same recurrence x_n=2x_(n-1)+x_(n-2), with different initial conditions. Treat as the same recurrence template family, not identical sequences.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return the Pell sequence term with P0=0,P1=1 and Pn=2P(n-1)+P(n-2) for nonnegative n.",
+      "contract_changes_or_limitations": "States indexing and initial values; output-size/runtime limits pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 83,
+      "task_id": 901,
+      "source_hashes": {
+        "assertion_sha256": [
+          "cf539c083b5eb445e23a093562e14ced3f75348a135f0660ab0bb5690246dba8",
+          "0bbfcdd120c9b311aba6cdcee4bd45380ff7bf1271924b036aa83f289c2315d1",
+          "b754c23789064ec7e03fa2dbd15089de952efc2b8c0fe624f6acb52fa950bc43"
+        ],
+        "description_sha256": "85ca3ac8ebcb42cb0a92f3fc9da89d001988e8ebf0008441be0e1025fa54d410",
+        "reference_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "initial_integer_lcm",
+      "manual_related_uids": [
+        "humaneval/13",
+        "mbpp/177"
+      ],
+      "family_reason": "GCD is an arithmetic ingredient and177 a witness problem; neither alone establishes the same initial-range LCM target.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a positive integer n, return the least positive integer divisible by every integer from 1 through n.",
+      "contract_changes_or_limitations": "Explicit positivity avoids zero convention; naive reference runtime requires validation before a finite execution domain is adopted.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 87,
+      "task_id": 200,
+      "source_hashes": {
+        "assertion_sha256": [
+          "c819914f5290e4a95ad8ef9cce1560413fe6bb43cc4f7b533e5bc6c826d91553",
+          "01080d394cff1b6fbc0aeb766e45bc18e132874bff054f37ad5cef4d9309692a",
+          "dbe212fddd58f03a7301daf7ca44b9c7bfcd2fc18d3a281c269c4c85ff3b21a6"
+        ],
+        "description_sha256": "7d1606ae38adc786dbfbbf1a9fe1cd33d1d3742bfcff897b86f62e8bd0dcdb3d",
+        "reference_sha256": "76d9910db6312571ec440c753c85ffb4d5d7353a3af968b4ad54169ab97cad25"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "argmax_all_positions",
+      "manual_related_uids": [
+        "humaneval/35",
+        "mbpp/294"
+      ],
+      "family_reason": "Uses the exposed maximum operation plus an all-position equality filter; different output and tie handling prevent calling it an exact duplicate.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a nonempty integer list, return all zero-based positions of its largest value, in index order.",
+      "contract_changes_or_limitations": "States nonempty domain, tie completeness and output order.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 88,
+      "task_id": 685,
+      "source_hashes": {
+        "assertion_sha256": [
+          "c37c50f12c9365dd33185ecd8a237650cea069bf1794a013c7f0737ec6992117",
+          "060ca332fbada27a17204a0c06c07590a1883f9cc5a3978804f34ed2dacdedb0",
+          "e6d35e93517f6c8842d84802ce8f3dd48d5532ed92b14c8a9c3bccfdfe4aba4d"
+        ],
+        "description_sha256": "4b49752cdb9d3f302373fed333d2166655d4af6e169db46dff81a712660ebec3",
+        "reference_sha256": "2d7c3345d5d993913d56ccd834e37b79bd26e5dd45da7c6be204e7b05631ee5d"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "prime_enumeration_aggregation",
+      "manual_related_uids": [
+        "humaneval/96",
+        "mbpp/256"
+      ],
+      "family_reason": "Sum of primes through n is the sum of prior96's prime-list target at n+1. Aggregation does not remove the exposed prime-enumeration family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For nonnegative integer n, return the sum of primes in the inclusive interval from 1 through n.",
+      "contract_changes_or_limitations": "Endpoint inclusivity and nonnegative domain explicit; reference bounds and display not validated.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 90,
+      "task_id": 883,
+      "source_hashes": {
+        "assertion_sha256": [
+          "2524eb77923b957929abed89118ddd4bac1c2a425cb28c5b127c48ac34ba3458",
+          "b0987df0c7efb0e211fa688be6a7cd5df72b0239182b61428f0b2204734a2908",
+          "ba9b75116926463f8e316061fd85e04622592f797af68051334e41ee22d1da7f"
+        ],
+        "description_sha256": "520fe056ce2d79afb951af42cebaf2222a714ba822aded4713d2ca794d63b10a",
+        "reference_sha256": "665344c3ac8d87388d40ee3996b016d8cca11d4b31411c4a1d9f29c80117d3ea"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "divisibility_filter",
+      "manual_related_uids": [
+        "mbpp/75"
+      ],
+      "family_reason": "Prior75 filters tuples by divisibility; this filters scalar entries by two moduli. Shared predicate/filter pattern, distinct argument and conjunction structure.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Preserve in order every integer list entry divisible by each of two nonzero integer divisors; preserve duplicates.",
+      "contract_changes_or_limitations": "Declare nonzero divisors and order; lambda usage is not established by output grading.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 92,
+      "task_id": 711,
+      "source_hashes": {
+        "assertion_sha256": [
+          "f64f7845649cfc07f3df32ed117e01d777781f5d6e659cd6d88cec9b6e21b322",
+          "169f53306efa88825be1b1a931676605000e13ae8a835b1b49b43999a9833fea",
+          "e3350e84a8091a48d127339f6160e23a654cc9fdafcba10d24c197b7b5823a74"
+        ],
+        "description_sha256": "6a536ab9fbeef131a5f687079e064f33fcd4aba8b891b6225cae73cce6f75b9b",
+        "reference_sha256": "b973438f1bf74f2aa50c6458ebb70c7cbdc25dc7c2ba16ef3c887d9e5ffeb359"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "digit_product_partition",
+      "manual_related_uids": [
+        "humaneval/131"
+      ],
+      "family_reason": "Prior131 multiplies digits selected by digit value parity; here products are partitioned by position parity. Related product kernel, different selection rule.",
+      "contract_axis": "specification_hold",
+      "proposed_public_contract_not_adopted": "Compare the products at alternating decimal digit positions of a nonnegative integer.",
+      "contract_changes_or_limitations": "Source forces every single-digit value false, whereas an empty-position product convention can disagree. Specify domain and empty product rather than infer it from code.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 94,
+      "task_id": 340,
+      "source_hashes": {
+        "assertion_sha256": [
+          "9e72ac6737c9f031984bf33f71d844c5ddecb12e94cba7acd4b8bde74b8d9324",
+          "f7b641640a2066628235b30ebaf72b0c98976b3748014fa461abebe32a8b78a1",
+          "84d796b8b62a476264f2b79acf9a09995ee46aa1a9a0dc93a77741b86be7336e"
+        ],
+        "description_sha256": "bce8c6bd43bbf807b7c47c45465d3d816840ec108e0352825d5b9fc76b8861af",
+        "reference_sha256": "07a459e7482d3dd1e21219cd8cac8f8d2541446aeba1190ee95a90fea96db599"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks81_100_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "smallest_positive_order_statistics_sum",
+      "manual_related_uids": [
+        "mbpp/4",
+        "mbpp/755",
+        "humaneval/136"
+      ],
+      "family_reason": "Positive filtering, order statistics and summation combine prior operations, but no exact prior target is demonstrated.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Sum up to the three smallest strictly positive entries of an integer list, counting repeated positions separately; sum all if fewer than three.",
+      "contract_changes_or_limitations": "The up-to-three convention extends prose that says three; retain as an explicit adapted proposal rather than already established semantics.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 101,
+      "task_id": 613,
+      "source_hashes": {
+        "assertion_sha256": [
+          "67d4b3af2e90382feb6e8d0ce55f03d9c1afcdd5415844815f0b4cdd11666e3a",
+          "ce4e25bdc9c7c147b4563a720dc448166265070ecac2fa92cbc4dd2612504010",
+          "6c884bab2ab43184aee6d90a1c873708272318d4669d206b572957afcf0f311e"
+        ],
+        "description_sha256": "89d4c8a1ec197afc7dd9d07ef29f6e3d85594ff0dbe1321c26b33abd7f3a23c6",
+        "reference_sha256": "d9b6e3294aa2d04a62f53de09966325c81816a7a95d630512be58202e9287ae7"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks101_120_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "mapped_maximum",
+      "manual_related_uids": [
+        "humaneval/35",
+        "mbpp/294"
+      ],
+      "family_reason": "Apply an exposed maximum-list operation independently to each labeled record; wrapping the input/output does not establish a new maximum family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a list of key/nonempty-integer-list pairs, return key/maximum pairs preserving record order.",
+      "contract_changes_or_limitations": "Declare record shape and nonempty lists; keys and nested values must satisfy display limits.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 103,
+      "task_id": 548,
+      "source_hashes": {
+        "assertion_sha256": [
+          "a8d33bdc7849fe068d0ee9d8c392b9bfffb74aebb3192a4b3208b63179b2724a",
+          "3896b026ed52ab2a293faf465057174201496da32c8c02cc707b72f3267de825",
+          "d1402fbfed9a6acd8b1aba76e7062c0c5fd38d0761036e991b4187a850d1e084"
+        ],
+        "description_sha256": "bdf43fe80034c9f75f573d0bcb02224a15c3bdbb3a6dff493418c30051cf9d1a",
+        "reference_sha256": "728f240a07184cfb417c2af68798afa9a679112e11dfaca1f064b2c656ac6b1b"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks101_120_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "increasing_subsequence_dynamic_program",
+      "manual_related_uids": [
+        "mbpp/306",
+        "mbpp/524"
+      ],
+      "family_reason": "Same increasing-subsequence state/transitions as exposed maximum-sum recurrence, with unit length reward instead of value reward. This is a family/template judgment, not equality of objectives.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return the maximum length of a strictly increasing subsequence preserving index order, with empty-list result zero.",
+      "contract_changes_or_limitations": "State strictness and empty behavior; original endpoint validation remains pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 108,
+      "task_id": 506,
+      "source_hashes": {
+        "assertion_sha256": [
+          "af1a8faf3154249c2e8cb2e0e65a51ac41cd73ee686167acbd9a9c6ae88e00d8",
+          "279c1e1123cf81f29b1989053978842fbc393822101d1a8e27304058aecab0dc",
+          "8e7d878ae7c03db20ec23a96ab130ca08dd205f3094cdd3b362c7d63f6e5bc21"
+        ],
+        "description_sha256": "4653c73b83579c2eb023d1bcdee02be0ac4474f4df241bc121296c22b7337da3",
+        "reference_sha256": "1bf368d85b99cbff27b46f516ae6994aaad03fbe57a71b869d5bff295061abf9"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks101_120_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "ordered_selection_count",
+      "manual_related_uids": [
+        "mbpp/402"
+      ],
+      "family_reason": "Permutation count equals binomial count times k factorial on its domain; prior402 is modular binomial counting. Modulus and ordered/unordered distinction prevent exact source equivalence.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For integers 0 <= k <= n, return the number of ordered selections of k distinct positions from n positions.",
+      "contract_changes_or_limitations": "Declare combinatorial interpretation and domain; large output/display and runtime bounds pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 117,
+      "task_id": 654,
+      "source_hashes": {
+        "assertion_sha256": [
+          "b78258a53b87c92ee3521ba3e4810858285dce317c771bb180a566920b9d15a2",
+          "0804dc79a9973e87267a5234d53a890cc0dc54e5092953fa51fb4cc97e89aee1",
+          "e383a203d799aa9caead2aa74a1bfa8d6d29b27a9d8342726c1c0792f37f4b9c"
+        ],
+        "description_sha256": "a5debe5a1cdfb2702b4e002ab2d6c5be59ba93af4acab9f6de59d466bae32ef5",
+        "reference_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks101_120_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "rectangle_perimeter",
+      "manual_related_uids": [
+        "mbpp/458",
+        "mbpp/176"
+      ],
+      "family_reason": "Area and triangle perimeter share a topic but different computational maps. No definite prior perimeter family demonstrated.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Given nonnegative integer length and width, return twice their sum.",
+      "contract_changes_or_limitations": "Specifies parameter roles and integer domain as an adapted proposal, not a completed endpoint.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 120,
+      "task_id": 710,
+      "source_hashes": {
+        "assertion_sha256": [
+          "efa845e84f21e68fb9b12269faccf27eadd12059b96d422708ff5eb0cd039a2e",
+          "e455a0f5b0b40fd26d0554ed0308b4eb92eadafe2c747f94b448a0a25d77814a",
+          "06d70bb961327edabe8242f628540f9209eca0f29e6c6047f1d7738802ef6405"
+        ],
+        "description_sha256": "6c0d6095bbdb2db02232ab0fef8b77fbd9c4ad8f111b72834428bdb5444c1888",
+        "reference_sha256": "1ff76e28016ed0bf0ece40516a5bfdf3b2c8826cd37128e0354fff7c81f880fe"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks101_120_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "indexed_sequence_selection",
+      "manual_related_uids": [
+        "mbpp/825",
+        "mbpp/591"
+      ],
+      "family_reason": "E12 root825 selects supplied valid indices; choosing [0,-1] and converting its output to a tuple gives this target for nonempty inputs. Prior swap task591 is only a secondary relation.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a nonempty tuple, return a pair containing its first and last elements.",
+      "contract_changes_or_limitations": "Declare nonempty domain and duplicated result for length one; nested output support pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 124,
+      "task_id": 955,
+      "source_hashes": {
+        "assertion_sha256": [
+          "f1f3de25de0f52a1756a3dc1020ac15d3b760f53b323b32f7ed047c8738d75d1",
+          "5ebb9b53b834fb57e1b30ef0d42d57b6bb02a1642bcca76b74535ca4250429ef",
+          "0b6d87598768e7324f30b21134800aec8c8b4e5e2adc0c5eebe2524dc4a18d3a"
+        ],
+        "description_sha256": "b762b4945776f5b9cd7cc4e040103b442c592808bf1f19954b5de4ce7c161bdc",
+        "reference_sha256": "08252f15ba479adc5396685f333f7f784d8f18142aefac04a6331aaaf83cfe34"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks121_140_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "proper_divisor_sum",
+      "manual_related_uids": [
+        "mbpp/295",
+        "mbpp/164"
+      ],
+      "family_reason": "Abundance compares proper-divisor sum with n. Prior295 reference computes that sum for n>1 despite its broader prose; record that source mismatch instead of claiming exact all-domain identity.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a positive integer n, return whether the sum of its positive proper divisors exceeds n.",
+      "contract_changes_or_limitations": "Clarifies proper divisors and n=1; naive reference runtime remains unvalidated.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 125,
+      "task_id": 298,
+      "source_hashes": {
+        "assertion_sha256": [
+          "00190a4b23b61b13a5316886918bc9f4b710c51e382b8cdf304013b6aa60fcb3",
+          "d31e26db25544facc3a210b33408903b0c7284b9861572ad929e730fc208a680",
+          "5f334e2afff79f6e9a6fa4e68c2554abd8f47e157d7a220fe1f07e94a7d9f33f"
+        ],
+        "description_sha256": "2dcd4295f10f4e58782b3f407273f53445378db664ea81929e323e46c9e39820",
+        "reference_sha256": "e21a108c89f8bc11c5666532e62240738f0e1c202251e750ee898b9e197a510e"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks121_140_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "mapped_membership_intersection",
+      "manual_related_uids": [
+        "mbpp/249"
+      ],
+      "family_reason": "Prior249 filters the second list by membership in the first while preserving duplicates/order. Applying it independently to each nested row gives this target exactly.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For each row of the second argument, retain entries present in the first list, preserving rows, order and repetitions.",
+      "contract_changes_or_limitations": "Clarify argument direction and duplicate handling; nested display and full endpoint remain pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 132,
+      "task_id": 827,
+      "source_hashes": {
+        "assertion_sha256": [
+          "d303a7b2753d7d8deed6a46135b79bba65a67f554d2582875d7ba629c7bf0bcf",
+          "329924dbb34991b16d1ec114bf48e836f4f8a842f5296e980c5e02b1b8c0123c",
+          "65229536120f367aeb595c43520b2b9f181c0413ab5ece94ba054d606bd6bf24"
+        ],
+        "description_sha256": "a602cd7f2751bbfc99553900d06c5ea71eb36eb779b8358817945a0e0495e083",
+        "reference_sha256": "c815640e16e7a3ad49feac91d004a9064277d7960fc640c5871a51bf87bb470f"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks121_140_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "column_selection_aggregation",
+      "manual_related_uids": [
+        "mbpp/154"
+      ],
+      "family_reason": "Sum the column vector returned by exposed E12 root154; aggregation does not create an untouched column-selection family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Sum the values at valid zero-based column C over all rows, with empty outer list sum zero.",
+      "contract_changes_or_limitations": "Declare valid indexing and numeric domain; no silent case replacement.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 134,
+      "task_id": 547,
+      "source_hashes": {
+        "assertion_sha256": [
+          "95e5f5156071d2c962a5ca23784dc45fe00308f2eb79dcb2e9c9793dffa117f3",
+          "a02edec3c7d731a2690e4604c8802db858aaf1ae46ff6ba6dedd1e96e709cd87",
+          "eef26eb519c9d570242093de07bffb79bd0e2a204e7089ae469a66258b15c261"
+        ],
+        "description_sha256": "8a08e60bfea43f038d236062176a938abf515a6094b8ad11b3f6327a52ab65d5",
+        "reference_sha256": "cb92722ed2f6fe36d339f27f5160afc440731a466c814217246e20d6216d1417"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks121_140_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "successive_integer_hamming_total",
+      "manual_related_uids": [
+        "mbpp/6",
+        "mbpp/224"
+      ],
+      "family_reason": "Bitwise disagreement and bit counts are prior primitives, but this aggregate over successive integers is not an exact prior target found here.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For nonnegative n, sum the bitwise Hamming distances between k-1 and k for k from 1 through n, using leading zeros as needed.",
+      "contract_changes_or_limitations": "Clarify consecutive pairs and width. Identity sum_j floor(n/2^j) requires independent mathematical/endpoint verification, not just agreement with reference text.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 136,
+      "task_id": 828,
+      "source_hashes": {
+        "assertion_sha256": [
+          "17fb57318362d0f75c7f7241b831cb3f30b5c808e343eb117519865221c5e253",
+          "1100086dab3334af34b06886c64713cf7f10e0b5b72a8898300547a306113b8b",
+          "3ae640e85f411fa35274c778da8ed438eddba7480193adbf240300d667be15c1"
+        ],
+        "description_sha256": "a8f58c6d415dc5030830e59418d61e7e866b62389e3d1fe75d91b4570957da32",
+        "reference_sha256": "160ac0ea1cb66615175b19123e2c6449ce1b898e0bd0aa5c8801edf9e8d8f1ac"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks121_140_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "character_class_counts",
+      "manual_related_uids": [
+        "mbpp/764",
+        "mbpp/192",
+        "mbpp/667"
+      ],
+      "family_reason": "Prior764 counts ASCII digits, while this counts Python alphabetic/digit/other classes. Shared classification counting core; Unicode and three-output semantics differ. Candidate192 is a Boolean postprocessing of the first two counts.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return counts of Python isalpha characters, remaining isdigit characters, and all remaining characters, in that order.",
+      "contract_changes_or_limitations": "Explicitly specifies Unicode-aware tests and precedence; original prose does not fix that convention.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 155,
+      "task_id": 192,
+      "source_hashes": {
+        "assertion_sha256": [
+          "a97048a39f0ced2b16010ff9934cb2ca6791a4b933429d5b2d84aa44461234af",
+          "ddd2a2b3a3b0cd0297832d3bc93355a3a02ed64ca9bfa2d5aaa3b50d0e864907",
+          "4626515530abbafa4de94326c3e59faf047698dab0ce802227f9302d66915339"
+        ],
+        "description_sha256": "871631681429e3c9f98d2983969c31b95dd1cb48231b9558079d0ab75c44807a",
+        "reference_sha256": "6f0308a1193081869535c0ffe34ed56883d1af6d8359fd2549aedef31a120b2b"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks141_160_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "character_class_counts",
+      "manual_related_uids": [
+        "mbpp/828",
+        "mbpp/764"
+      ],
+      "family_reason": "Direct Boolean threshold of candidate828's alphabetic/digit counts on ordinary characters; prior digit counting supplies part of the same classification family. Keep828 and192 together pending Unicode details.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return whether a string contains at least one Python isalpha character and at least one Python isdigit character.",
+      "contract_changes_or_limitations": "Specify character classification rather than silently equating all numeric characters with decimal digits.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 158,
+      "task_id": 703,
+      "source_hashes": {
+        "assertion_sha256": [
+          "f13e365c172c50ec057179ef3afdaf64884ffdb49857f01525a33a9ce2ae75e5",
+          "4490f1778a4bcd775958c1bc31d6dd7eb814fc4c2e329650e0a23ed5f42051a9",
+          "6dab3f31f70e8d6b8b159d0bbeb5aecad665132053cf94b581a4fc579f8c2462"
+        ],
+        "description_sha256": "527ef440f3c5283ce578604450fd7022892ad3aa3845b0b31a65a9f888fd208e",
+        "reference_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks141_160_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "dictionary_key_membership",
+      "manual_related_uids": [
+        "mbpp/582",
+        "mbpp/833",
+        "mbpp/679"
+      ],
+      "family_reason": "Dictionary emptiness and key enumeration/indexing are distinct outputs; generic use of a dictionary is not sufficient for a definite family merge.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return whether the supplied hashable key is present in the dictionary.",
+      "contract_changes_or_limitations": "Declare key membership rather than value membership; domain follows dictionary key semantics.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 160,
+      "task_id": 700,
+      "source_hashes": {
+        "assertion_sha256": [
+          "f1b9e0cb647eb07d79c8caed04569970e18d6a6d945efb37c2b54c4df48c04a5",
+          "79754ed008eec966d3733cee41aa97ea096f3b5e363101b0111552ecc86c9e43",
+          "ea64c9407dc83186ffda1ecc74db3180630387f70563ed95e9c126219274aff5"
+        ],
+        "description_sha256": "bd7556e5e4f85745e104d72b47c43949473f245fc28e4807bd61775c1ea14c0a",
+        "reference_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks141_160_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "closed_value_range_count",
+      "manual_related_uids": [
+        "mbpp/170",
+        "humaneval/146"
+      ],
+      "family_reason": "Index-range summation and a different compound filter count are not the same closed value-range count merely because they traverse lists.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Count entries of the integer list between the supplied inclusive lower and upper bounds, counting repeated entries separately.",
+      "contract_changes_or_limitations": "Inclusive bounds and repeated-position count explicit; reversed bounds naturally yield zero under the predicate.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 172,
+      "task_id": 811,
+      "source_hashes": {
+        "assertion_sha256": [
+          "8d5cf1c4fb434bee93208fa85a0cc5dd35bcd71a6d2610b695cf03cfb70e3842",
+          "c6da88b0eeb60e6b2c591b3addd61f0951b66da76010fd7bf321520c36c89df3",
+          "86aac9f8f2a98b50aabe0d62cb0cb5f9cb5a794921c42028d215a74af30a1625"
+        ],
+        "description_sha256": "7ce4ec5b7b00643009db9bfbf3b026c83871b9d0b569d0307f974ee0593a94e8",
+        "reference_sha256": "ad16e437152584359a312b496ab6cb69e6cedb76f64bd08acc517800de29bebb"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "ordered_sequence_equality",
+      "manual_related_uids": [
+        "mbpp/650",
+        "mbpp/142"
+      ],
+      "family_reason": "Prior142 compares aligned positions across three lists; frame650 concerns sorted multiset comparison and is held. Ordered equality is related but not interchangeable with either task.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return whether the two lists of tuples have equal lengths and corresponding tuples/elements are equal in order.",
+      "contract_changes_or_limitations": "States ordered structural equality; source fixtures have limited negative coverage.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 173,
+      "task_id": 961,
+      "source_hashes": {
+        "assertion_sha256": [
+          "84548aee4ed05bff2bf0f237261441d363371544080a3d698ad53251df694b3d",
+          "38c1233f47b11b52504e724dd7e00dca4b75401a185b19fb45120080c1836e04",
+          "410db3a9ed406e5b3ad6c39932a7c0de96df41296f3d380f5ef9d377d456984a"
+        ],
+        "description_sha256": "945a35f4abb79710feaef8ac03af8c83ceda5da0b0218e83f52bcc34a17a124a",
+        "reference_sha256": "32b46233e4a6be383546f285a19847de3b99ec038b660d5838f34fd19d53e24b"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "roman_numeral_conversion",
+      "manual_related_uids": [
+        "humaneval/156"
+      ],
+      "family_reason": "Inverse direction of prior integer-to-Roman conversion shares a representation family but is not direct function reuse.",
+      "contract_axis": "specification_hold",
+      "proposed_public_contract_not_adopted": "Convert a valid Roman numeral to its integer value.",
+      "contract_changes_or_limitations": "Valid numeral grammar/range needs an external or explicit versioned definition; original MMMM case exceeds many conventional restricted forms. Do not silently reject it or invent a grammar from three cases.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 174,
+      "task_id": 833,
+      "source_hashes": {
+        "assertion_sha256": [
+          "ca3ccbfc2cea0ed6e988e05b5db721dee5f7bf184174a7f2e67761bef1048f89",
+          "9fcb3906966514ffc8b8a952fa27276a4f761b81b7006cb22edf7d3357b997a1",
+          "747ed66510b5cc91537079b44e7146c72b8b20e8d999853612b7d77b0b5fcd25"
+        ],
+        "description_sha256": "2d121af19adffd061f6316945eea262bdfb635ce09b7372430cce36e0c20ba39",
+        "reference_sha256": "b325749001c2a0c7ada2903406ae75d188390c5cfd072adb2b7dfd49926ac073"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "within_candidate_family",
+      "provisional_computational_family": "ordered_dictionary_keys",
+      "manual_related_uids": [
+        "mbpp/679"
+      ],
+      "family_reason": "Candidate679 indexes this key-enumeration output. Keep them together; no definite prior enumeration target located by targeted checks.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "Return dictionary keys as a list in insertion order.",
+      "contract_changes_or_limitations": "Declare Python ordering and output representation; dictionary input itself is not a dictionary output/display failure.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 177,
+      "task_id": 903,
+      "source_hashes": {
+        "assertion_sha256": [
+          "19b0847511796dbdf106d572c55f5ae164969d588337518b628be696f7f38164",
+          "49414abffc9c134d50b034a3eee3affb35078fba193ec56d006dc4d5a36070ef",
+          "7eeea7fe952689fa79c021372b736830a0d5648c8eab660ef1806b55bac1c236"
+        ],
+        "description_sha256": "761e92da7fdd464f3196d443cec79ba89a074f9b1105cb72b6ceca1f8460e326",
+        "reference_sha256": "adf03409704a4f01989bdad40f3e12b8e54845bb14fa3adea48e6baa628085e3"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "definite_prior_family",
+      "provisional_computational_family": "binary_bit_count_aggregation",
+      "manual_related_uids": [
+        "mbpp/224"
+      ],
+      "family_reason": "For each positive k, zero-bit count is bit length minus exposed set-bit count; summing through n retains that binary counting family.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For nonnegative n, count zeros in minimal binary representations of all integers from 1 through n, excluding leading zeros.",
+      "contract_changes_or_limitations": "Declare minimal width and inclusive range; runtime bound pending.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 184,
+      "task_id": 656,
+      "source_hashes": {
+        "assertion_sha256": [
+          "49d96be37919cb7fe8f975b03ee958aefecf08af1420bb6b9811e1fb694b0a43",
+          "9cd023d68868fc83410475ff766734f575cb32c7aa318a1395e838104ad5aba3",
+          "ab797649f4a9902d668726100e7f539c69861459a04aba2ce15e6833f0bb104b"
+        ],
+        "description_sha256": "cb1ebf421b3fb3d73639a00f4a9268716081ca01be7e9bd154c3d5b1275e58aa",
+        "reference_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "absolute_bipartite_matching_cost",
+      "manual_related_uids": [
+        "mbpp/63"
+      ],
+      "family_reason": "Pairwise maximum-difference prior63 is not a minimum total one-to-one matching target; no direct prior mapping demonstrated.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For two equal-length integer arrays and their length n, return the smallest sum of absolute paired differences over bijective pairings.",
+      "contract_changes_or_limitations": "Publishes permission to reorder/pair; source sorts inputs in place, so mutation semantics must be resolved in a versioned contract.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 191,
+      "task_id": 36,
+      "source_hashes": {
+        "assertion_sha256": [
+          "a1a34a62ffc695162decf025380bb43aa122b7deabae657d12356284d9caadf9",
+          "87140060cb012272dc43457fb8185f154e94c561bfd9489bcbab555e8ce0fa0f",
+          "974b07c5b30665e0d2864c2fb782c3a349c7b8ccdcb952f2586b2cdcb70db07d"
+        ],
+        "description_sha256": "a105648f0b42ebc283e29e2c2c3fa66d7e14e5f8275c495e216c550c2dbcf29c",
+        "reference_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "no_direct_prior_relation_found",
+      "provisional_computational_family": "fraction_decimal_digit",
+      "manual_related_uids": [
+        "humaneval/2"
+      ],
+      "family_reason": "Extracting a floating fractional part differs from exact rational long division at a specified decimal position.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For integers 0 <= p < q and q>0, return the Nth digit after the decimal point of p/q for positive one-based N, using trailing zeros for terminating fractions.",
+      "contract_changes_or_limitations": "Makes base,indexing and proper-fraction convention explicit; no source defect found within this proposed domain.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    },
+    {
+      "rank": 198,
+      "task_id": 921,
+      "source_hashes": {
+        "assertion_sha256": [
+          "0e0a9ceb8dcead8fd54206225862562bc35b6a053542140d7e406abe68cad34c",
+          "2550143fdde439447d94847208169b3e016d9b3a5b377d5a4bf78d6020510889",
+          "94b56323cdc17a9d1ccefbbb8d0b1361633d85cd460fe69b042ddc559ad8cdd2"
+        ],
+        "description_sha256": "226e9542b10015b7df0c46590e83ff66c55fd0e207ce4b68e0d6c85288b142e8",
+        "reference_sha256": "28f0bed4ba6c58ff26ee6aa2791ab1227b2a3d261383a9cc2849d314702de1a9"
+      },
+      "historical_record": {
+        "current_overlay": "none",
+        "historical_class": "candidate",
+        "source_disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+        "source_record": "results/policy_frame_review_ranks161_198_20260926.json",
+        "source_review_basis": "single-lead inert source review with lexical retrieval and manual related IDs"
+      },
+      "exposure_tags": {
+        "e11_dev_root": false,
+        "in_canonical_prior_pool": false,
+        "measurement_development": null,
+        "note": "false means none recorded in these sources, not certified unexposed or absent from model training",
+        "prior_receiver_development": false,
+        "provenance": "results/policy_full_frame_reconciliation_20260926.json records[] and pinned inputs"
+      },
+      "family_axis": "plausible_shared_family",
+      "provisional_computational_family": "contiguous_sequence_chunking",
+      "manual_related_uids": [
+        "mbpp/265"
+      ],
+      "family_reason": "Prior265 splits by residue/stride, while this slices contiguous intervals. Shared slicing family is plausible but index sets and output order differ.",
+      "contract_axis": "clarification_required",
+      "proposed_public_contract_not_adopted": "For a tuple and positive chunk size N, return a list of consecutive tuple slices of at most N elements; retain a shorter final chunk.",
+      "contract_changes_or_limitations": "Clarifies final remainder and positive size, consistent with original examples.",
+      "public_expected_literal_display": "literal",
+      "public_actual_display_axis": "runtime_unvalidated",
+      "measurement_evidence": "not_executed_for_this_contract",
+      "retrieval_record": "results/policy_candidate_audit_inputs_20260926.json",
+      "approved_evaluation_roster": false
+    }
+  ],
+  "replacement_roots": 0,
+  "candidate_reference_assertion_model_executions": 0,
+  "approved_evaluation_roster": false,
+  "review_limits": [
+    "Single-lead source adjudication; no blinded second reviewer and no exhaustive semantic-equivalence decision procedure.",
+    "Top-six neighbors and targeted prompt searches supplied retrieval evidence; cited comparator references were read where needed to justify concrete transformations.",
+    "Definite family is a conservative operational template grouping, not a claim of equal tasks, a causal sufficiency result, or stochastic dependence.",
+    "No direct relation found means limited reviewed evidence, not a certificate of novelty or absent model-training exposure.",
+    "Explicit proposed contracts are not adopted; changing domains/endpoints requires prospective versioning.",
+    "Expected-value literal compatibility does not validate actual reference/candidate results or full diagnostic byte bounds."
+  ]
+}

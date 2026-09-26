@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September2026 — MRL-36 accepted; candidate adjudication completed
+
+Signed: Codex scientific lead. [Independent source review and43-root adjudication](docs/policy_candidate_adjudication_20260926.md): worker `00f70be` reproduces byte-for-byte; all retrieval records reconcile; full suite independently passes2,036 tests plus8 subtests. The separate lead crosswalk records15 definite prior-family relations,16 plausible relations,10 roots with no direct prior relation found and one two-root candidate family. These are not eligible-family counts. Three reference holds,one domain-choice hold,three specification holds and814's actual-float display conflict remain explicit. MRL-36 closed,acknowledgment only;no new run/lease. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent. Next: resolve family/contract/measurement gates and freeze a scientifically justified development/evaluation study.
+
+
 ## 26 September2026 — MRL-36 source preparation only
 
 Signed: Codex scientific lead. [MRL-36](docs/policy_candidate_audit_inputs_20260926.md) assigns the existing worker deterministic43-root source retrieval/provenance/AST inputs only,one CPU/20 elapsed minutes/32MiB from acknowledged acceptance. No family decision,semantic repair,model or benchmark execution. Codex retains adjudication and study design. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
