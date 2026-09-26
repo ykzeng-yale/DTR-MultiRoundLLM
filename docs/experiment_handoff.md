@@ -398,3 +398,8 @@ Fixed ranks121–140 [source review](policy_frame_review_ranks121_140_20260926.m
 ## 2026-09-26T23:12:07Z — LEAD-FRAME-09, Codex scientific lead
 
 Fixed ranks141–160 [source review](policy_frame_review_ranks141_160_20260926.md) retains3 family exclusions,14 specification/display holds and3 unresolved candidates. Root112's prior hold persists. Static triangle,subsequence-product and permutation defects remain recorded; no source repair,receiver outcome,program execution or replacement. All20 original identities,retrieval neighbors and reasons are immutable in the JSON. Review reaches rank160 with38 fixed roots remaining;no evaluation roster adopted. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Next:complete the frame/family/exposure gates and prospective independent policy design.
+
+
+## 2026-09-26T23:19:32Z — LEAD-FRAME-10, Codex scientific lead
+
+The final fixed38 ranks161–198 [source review](policy_frame_review_ranks161_198_20260926.md) retains3 prior-family exclusions,28 holds and7 unresolved candidates, with zero replacement or program/model execution. All38 identities,source hashes,lexical neighbors and reasons are recorded. Earlier289 hold persists. Full-frame reconciliation must integrate the older ranks1–40 records before claiming complete manual coverage; candidate status grants no evaluation eligibility or stochastic independence. Full-project submission readiness58%,change0 points; efficacy and independent policy validation absent. Next: reconcile198 roots,resolve exposure/family/measurement gates and freeze a scientifically justified prospective policy design.

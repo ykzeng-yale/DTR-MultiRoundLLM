@@ -1,0 +1,1493 @@
+{
+  "review_id": "LEAD-FRAME-10",
+  "plan_commit": "e0fe158",
+  "started_at": "2026-09-26T23:13:16.665122+00:00",
+  "completed_at": "2026-09-26T23:19:32.014088+00:00",
+  "inputs": {
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/frame_review_mrl15_20260922T021718Z/manifest.json": "4ffc10f060ae9860c0f8a2a259c7091ec1eb60e7e7bcd178bd65dd9f7df550cc",
+    "work/data/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce"
+  },
+  "retrieval_helper_sha256": "9882fb0c507fb1f2da930f46bdea36eae13e681561985695cf7ddd2890f9a720",
+  "records": [
+    {
+      "rank": 161,
+      "task_id": 481,
+      "public_description": "Write a function to determine if there is a subset of the given set with sum equal to the given sum.",
+      "reference_sha256": "020fc5c88f6715207cda1d5b60f6e7edf1569660b8d6e628293f39a5180a5d45",
+      "test_list_canonical_json_sha256": "e71f821eb0639907353144bf606836fae7c9bfe3e5fc3724dd57d7eaf386d05c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/685",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4286,
+          "description": "Write a python function to find sum of prime numbers between 1 to n."
+        },
+        {
+          "uid": "mbpp/916",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4286,
+          "description": "Write a function to find if there is a triplet in the array whose sum is equal to a given value."
+        },
+        {
+          "uid": "mbpp/138",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to check whether the given number can be represented as sum of non-zero powers of 2 or not."
+        },
+        {
+          "uid": "mbpp/600",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to check whether the given number is even or not."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "subset_sum",
+      "reason": "Reference prunes a last value above the target without a nonnegative-input restriction. Static witness [-2,3], target 1 loses the valid pair; no execution performed.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 162,
+      "task_id": 289,
+      "public_description": "Write a python function to calculate the number of odd days in a given year.",
+      "reference_sha256": "59c684fe2ce83bb1903f674fa5b101dc97ce444f8fc9969e9c59f4ed8c3f0a79",
+      "test_list_canonical_json_sha256": "5db59cc9dcb7d415c61cdf1b9e374b4d5765d192a4f0fe7aad080d13393e0d1d",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/406",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find whether the parity of a given number is odd."
+        },
+        {
+          "uid": "mbpp/169",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a function to calculate the nth pell number."
+        },
+        {
+          "uid": "mbpp/343",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to calculate the number of digits and letters in a string."
+        },
+        {
+          "uid": "mbpp/344",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a python function to find number of elements with odd factors in a given range."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "calendar_odd_days",
+      "reason": "Preserve existing calendar interval hold: code accumulates years through N; prose does not fix the calendar interval or boundary convention.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 163,
+      "task_id": 971,
+      "public_description": "Write a function to find the maximum number of segments of lengths a, b and c that can be formed from n.",
+      "reference_sha256": "ba3c5df78ceba866a55bbf3a7726322b478bd831f8961c3e86224c6c2bf256c2",
+      "test_list_canonical_json_sha256": "991d1dcf8420ee54a8742a489c429b03d259c81f50ba6b74d27a41d1610409ed",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/609",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.375,
+          "description": "Write a python function to find minimum possible value for the given periodic function."
+        },
+        {
+          "uid": "mbpp/169",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to calculate the nth pell number."
+        },
+        {
+          "uid": "mbpp/176",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find the perimeter of a triangle."
+        },
+        {
+          "uid": "mbpp/227",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find minimum of three numbers."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "exact_length_segmentation",
+      "reason": "Reference requires exact filling and returns -1 if impossible; prose does not settle leftover length, impossible-case output, or positive length domain.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 164,
+      "task_id": 46,
+      "public_description": "Write a python function to determine whether all the numbers are different from each other are not.",
+      "reference_sha256": "d3977032f810cad3fa982da47524d0dff80998493391cf0c583c90fb27b00e34",
+      "test_list_canonical_json_sha256": "0363908f886ce302570a3e95bab9c45533b2c171dbb40b365dce56e1e8481dd4",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/138",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to check whether the given number can be represented as sum of non-zero powers of 2 or not."
+        },
+        {
+          "uid": "mbpp/600",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to check whether the given number is even or not."
+        },
+        {
+          "uid": "mbpp/803",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to check whether the given number is a perfect square or not. https://www.geeksforgeeks.org/check-if-given-number-is-perfect-square-in-cpp/"
+        },
+        {
+          "uid": "mbpp/92",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to check whether the given number is undulating or not."
+        }
+      ],
+      "disposition": "exclude_prior_family",
+      "provisional_family": "list_uniqueness",
+      "reason": "Same list-uniqueness predicate as prior root 281; set-based implementation does not create a new family.",
+      "manual_related_uids": [
+        "mbpp/281"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 165,
+      "task_id": 929,
+      "public_description": "Write a function to count repeated items of a tuple.",
+      "reference_sha256": "c7b818809700dff923b34a96c2b3f0f9ee885f46406b086b22b03ebefb480ecf",
+      "test_list_canonical_json_sha256": "ca8ca243f3f8e2bfbe473b7df8bb732abfc639fefdf5decb45b0ed32ca33e73c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/250",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a python function to count the occcurences of an element in a tuple."
+        },
+        {
+          "uid": "mbpp/438",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to count bidirectional tuple pairs."
+        },
+        {
+          "uid": "mbpp/278",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a function to find the element count that occurs before the record in the given tuple."
+        },
+        {
+          "uid": "mbpp/446",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to count the occurence of all elements of list in a tuple."
+        }
+      ],
+      "disposition": "exclude_prior_family",
+      "provisional_family": "tuple_occurrence_count",
+      "reason": "Same tuple element occurrence count as prior root 250.",
+      "manual_related_uids": [
+        "mbpp/250"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 166,
+      "task_id": 368,
+      "public_description": "Write a function to repeat the given tuple n times.",
+      "reference_sha256": "d1804953568c269189b34c431fbc5cfa1ba17877cd49e1ded3b5fb77301b4856",
+      "test_list_canonical_json_sha256": "d859d47935c2e1a300a77e1fd668d053a32442784cbc34cba9137b942a033b90",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/193",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to remove the duplicates from the given tuple."
+        },
+        {
+          "uid": "mbpp/710",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to access the initial and last data of the given tuple record."
+        },
+        {
+          "uid": "mbpp/106",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to append the given list to the given tuples."
+        },
+        {
+          "uid": "mbpp/470",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to find the pairwise addition of the neighboring elements of the given tuple."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "tuple_repetition",
+      "reason": "Reference returns nested copies of the entire tuple; prose repeat N times does not distinguish nested copies from concatenated repetition.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 167,
+      "task_id": 951,
+      "public_description": "Write a function to find the maximum of similar indices in two lists of tuples.",
+      "reference_sha256": "f025f0b948226b4edb96720b19eac505fc08c98dddd09c6b58dbbff21c6cbb52",
+      "test_list_canonical_json_sha256": "854b14f8b0207b3e56e78d8c291f94b5ba80ecea97ee72751d710cb38c5792f5",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/2",
+          "scope": "original_public_variant",
+          "score": 0.375,
+          "description": "Write a function to find the similar elements from the given two tuple lists."
+        },
+        {
+          "uid": "mbpp/259",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to maximize the given two tuples."
+        },
+        {
+          "uid": "mbpp/309",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the maximum of two numbers."
+        },
+        {
+          "uid": "mbpp/696",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a function to zip two given lists of lists."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "coordinatewise_tuple_maximum",
+      "reason": "Reference assumes pairs, drops later coordinates and truncates unequal lists. All original expected outputs equal the second input. Closely related prior 259 also prevents treating this as a certified new family.",
+      "manual_related_uids": [
+        "mbpp/259"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 168,
+      "task_id": 889,
+      "public_description": "Write a function to reverse each list in a given list of lists.",
+      "reference_sha256": "98029285a049c11450f99925c8424d771c0b3ee4f40ae7e13614b8e3b6047959",
+      "test_list_canonical_json_sha256": "8fe02e1c57f5ad419d48271f079aab54b7a44dd0711164cf4382d7377adf2296",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/456",
+          "scope": "canonical_prior",
+          "score": 0.5,
+          "description": "Write a function to reverse each string in a given list of string values."
+        },
+        {
+          "uid": "mbpp/104",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a function to sort each sublist of strings in a given list of lists."
+        },
+        {
+          "uid": "mbpp/569",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a function to sort each sublist of strings in a given list of lists."
+        },
+        {
+          "uid": "mbpp/290",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find the list of maximum length in a list of lists."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "nested_list_reversal",
+      "reason": "Prose requests reversal; reference sorts descending. Originally sorted examples fail to distinguish them. Static [2,1,3] distinguishes reversal from sorting.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 169,
+      "task_id": 660,
+      "public_description": "Write a python function to choose points from two ranges such that no point lies in both the ranges.",
+      "reference_sha256": "880bff765f1c0794355c37ff2a68fc22fd9dc4ba6aec332d6081c8e4bd3230c2",
+      "test_list_canonical_json_sha256": "2d57a2a7b240af307fec26dd1324d403edd5666e22008311bea15660f20a23ec",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/391",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to convert more than one list to nested dictionary."
+        },
+        {
+          "uid": "mbpp/187",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2,
+          "description": "Write a function to find the longest common subsequence for the given two sequences."
+        },
+        {
+          "uid": "mbpp/298",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2,
+          "description": "Write a function to find the nested list elements which are present in another list."
+        },
+        {
+          "uid": "mbpp/923",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2,
+          "description": "Write a function to find the length of the shortest string that has both str1 and str2 as subsequences."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "range_exclusive_witness",
+      "reason": "Prose does not fix a canonical witness or impossible-case convention. Reference extrema need not provide one exclusive point in each interval when ranges nest.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 170,
+      "task_id": 523,
+      "public_description": "Write a function to check whether a given string has a capital letter, a lower case letter, a number and specified length using lambda function.",
+      "reference_sha256": "1448e17b799659137f2a69cd623131eb0be81ef397464d16ba35b21a9a9dc0c7",
+      "test_list_canonical_json_sha256": "ae890c462e75c61e314f3a0bfe8245d537b22c2f2d81228a5afdfa270c97244a",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/192",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to check whether a string has atleast one letter and one number."
+        },
+        {
+          "uid": "mbpp/477",
+          "scope": "canonical_prior",
+          "score": 0.2727,
+          "description": "Write a python function to convert the given string to lower case."
+        },
+        {
+          "uid": "mbpp/923",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.1875,
+          "description": "Write a function to find the length of the shortest string that has both str1 and str2 as subsequences."
+        },
+        {
+          "uid": "mbpp/393",
+          "scope": "original_public_variant",
+          "score": 0.1667,
+          "description": "Write a function to find the list with maximum length using lambda function."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "password_constraints",
+      "reason": "Specified length is absent from prose/arguments; source tests length at least 7 while emitted message says at least 8. Exact message-list output also requires a contract.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 171,
+      "task_id": 483,
+      "public_description": "Write a python function to find the first natural number whose factorial is divisible by x.",
+      "reference_sha256": "4716fcd4ff2102e8e25448e213c9869f81f32f96faf2ccce9bd3ccfdcf64b25a",
+      "test_list_canonical_json_sha256": "0e424ef26073813beea927b2b042e3f163e05ae171502e6f896de1f6a5bb14fa",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/479",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find the first digit of a given number."
+        },
+        {
+          "uid": "mbpp/77",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find whether a number is divisible by 11."
+        },
+        {
+          "uid": "mbpp/577",
+          "scope": "canonical_prior",
+          "score": 0.2222,
+          "description": "Write a python function to find the last digit in factorial of a given number."
+        },
+        {
+          "uid": "mbpp/807",
+          "scope": "canonical_prior",
+          "score": 0.2,
+          "description": "Write a python function to find the first odd number in a given list of numbers."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "factorial_divisibility",
+      "reason": "Source and original assertion return 4 for x=5 although 4 factorial is 24 and is not divisible by 5. Static arithmetic defect; no execution.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 172,
+      "task_id": 811,
+      "public_description": "Write a function to check if two lists of tuples are identical or not.",
+      "reference_sha256": "ad16e437152584359a312b496ab6cb69e6cedb76f64bd08acc517800de29bebb",
+      "test_list_canonical_json_sha256": "4e75ef42eb09e01de3e910d3132df7a101cae7baf011522bf880c24af5fe0fa4",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/508",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4167,
+          "description": "Write a function to check if the common elements between two given lists are in the same order or not."
+        },
+        {
+          "uid": "mbpp/484",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4,
+          "description": "Write a function to remove the matching tuples from the given two tuples."
+        },
+        {
+          "uid": "mbpp/473",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find the tuple intersection of elements in the given tuple list irrespective of their order."
+        },
+        {
+          "uid": "mbpp/650",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to check whether the given two arrays are equal or not."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "ordered_nested_sequence_equality",
+      "reason": "Ordered list-of-tuples equality appears coherent. Prior 650 sorts arrays and is held, so it is not an exact ordered-equality match; broad equality-family relation and endpoints remain unresolved.",
+      "manual_related_uids": [
+        "mbpp/650",
+        "mbpp/508"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 173,
+      "task_id": 961,
+      "public_description": "Write a function to convert a roman numeral to an integer.",
+      "reference_sha256": "32b46233e4a6be383546f285a19847de3b99ec038b660d5838f34fd19d53e24b",
+      "test_list_canonical_json_sha256": "b9795b0d2b6e95ab86d127faf40cf7c1fa3fb960c9f8f7ed393b81a03d48d5d5",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/785",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to convert tuple string to integer tuple."
+        },
+        {
+          "uid": "mbpp/116",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a function to convert a given tuple of positive integers into an integer."
+        },
+        {
+          "uid": "mbpp/343",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2222,
+          "description": "Write a function to calculate the number of digits and letters in a string."
+        },
+        {
+          "uid": "mbpp/439",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to convert a list of multiple integers into a single integer."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "roman_numeral_conversion",
+      "reason": "Roman parsing appears coherent on original examples including MMMM. Valid numeral/domain conventions and relationship to inverse Roman conversion require adjudication.",
+      "manual_related_uids": [
+        "HumanEval/156"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 174,
+      "task_id": 833,
+      "public_description": "Write a function to get dictionary keys as a list.",
+      "reference_sha256": "b325749001c2a0c7ada2903406ae75d188390c5cfd072adb2b7dfd49926ac073",
+      "test_list_canonical_json_sha256": "7b842178c1b0fa8ce70766f02932170ae211df2ec37c664a66e8ba7207c20d90",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/88",
+          "scope": "canonical_prior",
+          "score": 0.4444,
+          "description": "Write a function to get the frequency of all the elements in a list, returned as a dictionary."
+        },
+        {
+          "uid": "mbpp/662",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to sort a list in a dictionary."
+        },
+        {
+          "uid": "mbpp/561",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to assign with each element, its pair elements from other similar pairs in the given tuple."
+        },
+        {
+          "uid": "mbpp/391",
+          "scope": "canonical_prior",
+          "score": 0.2,
+          "description": "Write a function to convert more than one list to nested dictionary."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "dictionary_key_enumeration",
+      "reason": "Returns keys as a list. Insertion-order semantics, key display support, and relation to key lookup/membership remain open; no roster approval.",
+      "manual_related_uids": [
+        "mbpp/679",
+        "mbpp/703"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 175,
+      "task_id": 969,
+      "public_description": "Write a function to join the tuples if they have similar initial elements.",
+      "reference_sha256": "8daa0c597cead0feb3da9385d887741a7f578fb01a74b1b0992642e5b7b6a0c6",
+      "test_list_canonical_json_sha256": "c0d121f87257bededfd21394cdf46dad20baf445dfdb144887bb7c0bc0e70f1e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/444",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to trim each tuple by k in the given tuple list."
+        },
+        {
+          "uid": "mbpp/75",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find tuples which have all elements divisible by k from the given list of tuples."
+        },
+        {
+          "uid": "mbpp/652",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3,
+          "description": "Write a function to flatten the given tuple matrix into the tuple list with each tuple representing each column."
+        },
+        {
+          "uid": "mbpp/140",
+          "scope": "canonical_prior",
+          "score": 0.2727,
+          "description": "Write a function to flatten the list of lists into a single set of numbers."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "group_tuples_by_initial_element",
+      "reason": "Reference joins adjacent equal-initial runs only; prose does not restrict equal keys to contiguous groups.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 176,
+      "task_id": 321,
+      "public_description": "Write a function to find the demlo number for the given number.",
+      "reference_sha256": "1cdbe4d5302de19d510cb95bf14dd6975d3046c6a073582adaab6c519ddc7ccc",
+      "test_list_canonical_json_sha256": "d1dcd5a6402cb619d475f17957a7564df1b893f71144cf63e0a577e49228b93e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/406",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a python function to find the parity of a given number."
+        },
+        {
+          "uid": "mbpp/69",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to check whether a list contains the given sublist or not."
+        },
+        {
+          "uid": "mbpp/135",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to find the nth hexagonal number."
+        },
+        {
+          "uid": "mbpp/168",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a python function to find the frequency of a number in a given array."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "demlo_string_construction",
+      "reason": "Reference ignores all input content except string length and concatenates integers, including multidigit integers. Prose does not define this length-based interpretation.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 177,
+      "task_id": 903,
+      "public_description": "Write a python function to count the total unset bits from 1 to n.",
+      "reference_sha256": "adf03409704a4f01989bdad40f3e12b8e54845bb14fa3adea48e6baa628085e3",
+      "test_list_canonical_json_sha256": "d6cba41b589c4f2708d2915f0f8686b051bdd86e68c5315dac203954b2b21bd8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/224",
+          "scope": "canonical_prior",
+          "score": 0.2727,
+          "description": "Write a python function to count the number of set bits (binary digits with value 1) in a given number."
+        },
+        {
+          "uid": "mbpp/242",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a function to count total characters in a string."
+        },
+        {
+          "uid": "mbpp/248",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to calculate the harmonic sum of n-1."
+        },
+        {
+          "uid": "mbpp/738",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to calculate the geometric sum of n-1."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "cumulative_unset_bit_count",
+      "reason": "Counts unset bits in minimal binary representations from 1 through n. Width/domain and related bit-count families require explicit review.",
+      "manual_related_uids": [
+        "mbpp/224",
+        "mbpp/228"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 178,
+      "task_id": 110,
+      "public_description": "Write a function to extract the ranges that are missing from the given list with the given start range and end range values.",
+      "reference_sha256": "6f87d29aeb7acedcacc2c203bd1ecf654188337fb5cbed78787b352053d47970",
+      "test_list_canonical_json_sha256": "c641b8f476006a68c2afbdb0d4b06922ca467f8e6de3e25067d71b1dee24c264",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/363",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a function to add the k elements to each element in the tuple."
+        },
+        {
+          "uid": "mbpp/400",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to extract the number of unique tuples in the given list."
+        },
+        {
+          "uid": "mbpp/444",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to trim each tuple by k in the given tuple list."
+        },
+        {
+          "uid": "mbpp/611",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function which given a matrix represented as a list of lists returns the max of the n'th column."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "interval_complement",
+      "reason": "Reference appends a remainder inside every loop and original outputs contain intervals crossing later occupied ranges or reversed endpoints. Missing-range specification is not faithfully established.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 179,
+      "task_id": 241,
+      "public_description": "Write a function to generate a 3d array having each element as '*'.",
+      "reference_sha256": "0be6565ad8908c2d26b1cbccebaa7a9de758aca5f802ee8ec2cd868e92a4dce8",
+      "test_list_canonical_json_sha256": "cb201aac8da44b75398bb1f05d98c8664f06d7dc473dc3351db6b5d16390dedd",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/101",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a function to find the kth element in the given array."
+        },
+        {
+          "uid": "mbpp/380",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to generate a two-dimensional array."
+        },
+        {
+          "uid": "mbpp/423",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to solve gold mine problem."
+        },
+        {
+          "uid": "mbpp/223",
+          "scope": "original_public_variant",
+          "score": 0.2222,
+          "description": "Write a function to check for majority element in the given sorted array."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "three_dimensional_array",
+      "reason": "First public expected array has 72 scalar entries before counting containers, beyond the frozen display's 64 total contained-element limit. Dimension order is also unstated.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 180,
+      "task_id": 687,
+      "public_description": "Write a function to find the greatest common divisor (gcd) of two integers by using recursion.",
+      "reference_sha256": "d02876b05f4312bba6aeae64289fa886ce00b93db5c10c163a1f08524e7511f2",
+      "test_list_canonical_json_sha256": "064fa0b3f1c1e6853bcbd998afaab93ff4d5128cc9b1b5570313b7e2fd282a60",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/617",
+          "scope": "original_public_variant",
+          "score": 0.4,
+          "description": "Write a function to check for the number of jumps required of given length to reach a point of form (d, 0) from origin in a 2d plane."
+        },
+        {
+          "uid": "mbpp/126",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a python function to find the sum of common divisors of two given numbers."
+        },
+        {
+          "uid": "mbpp/609",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.375,
+          "description": "Write a python function to find minimum possible value for the given periodic function."
+        },
+        {
+          "uid": "mbpp/366",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3,
+          "description": "Write a python function to find the largest product of the pair of adjacent elements from a given list of integers."
+        }
+      ],
+      "disposition": "exclude_prior_family",
+      "provisional_family": "greatest_common_divisor",
+      "reason": "Same greatest-common-divisor family as prior HumanEval/13. Negative/zero argument behavior additionally needs a domain contract.",
+      "manual_related_uids": [
+        "HumanEval/13"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 181,
+      "task_id": 350,
+      "public_description": "Write a python function to minimize the length of the string by removing occurrence of only one character.",
+      "reference_sha256": "a80bc8971c7f1592600664e26b44878a698200641582332161b11508df8ae064",
+      "test_list_canonical_json_sha256": "1ba950e097d290540178e66de147926eb28ba1b3e32e2d145049d6bd049cf7a8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/666",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to count occurrence of a character in a string."
+        },
+        {
+          "uid": "mbpp/11",
+          "scope": "canonical_prior",
+          "score": 0.2727,
+          "description": "Write a python function to remove first and last occurrence of a given character from the string."
+        },
+        {
+          "uid": "mbpp/760",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to check whether a list of numbers contains only one distinct element or not."
+        },
+        {
+          "uid": "mbpp/83",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find the character made by adding the ASCII value of all the characters of the given string modulo 26."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "remove_most_frequent_character",
+      "reason": "Reference indexes a 26-entry lowercase array without a stated lowercase-only domain and removes all copies of selected characters; operation and tie conventions need definition.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 182,
+      "task_id": 515,
+      "public_description": "Write a function to check if there is a subset with sum divisible by m.",
+      "reference_sha256": "52bcbbf3ee4daeaf4c8865b1f8fd3dbb46c9cc6b1472e9fefb148de647bc05ac",
+      "test_list_canonical_json_sha256": "0490e8406edf12144e2a02e36a2fcca971b8b65b3d8fb4280f733ec07d8a7c62",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/804",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to check whether the product of numbers in a list is even or not."
+        },
+        {
+          "uid": "mbpp/283",
+          "scope": "canonical_prior",
+          "score": 0.3,
+          "description": "Write a python function takes in an integer and check whether the frequency of each digit in the integer is less than or equal to the digit itself."
+        },
+        {
+          "uid": "mbpp/576",
+          "scope": "canonical_prior",
+          "score": 0.3,
+          "description": "Write a python function to check whether a list is sublist of another or not."
+        },
+        {
+          "uid": "mbpp/874",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3,
+          "description": "Write a python function to check if the string is a concatenation of another string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "subset_sum_modulo",
+      "reason": "Reference tests nonempty subsets under positive modulus, while prose does not exclude the empty subset, which would make divisibility trivially true. Related subset-sum root also remains held.",
+      "manual_related_uids": [
+        "mbpp/481"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 183,
+      "task_id": 500,
+      "public_description": "Write a function to concatenate all elements of the given list into a string.",
+      "reference_sha256": "472580134cbe6efa9e3b8eeabe9dc0000b6acb33bfda1d036e87f7f8711344c9",
+      "test_list_canonical_json_sha256": "6e390375c7d7f4a662d42f334c994d2f6c48c82cc6e1e7ac57321fa0b007c6df",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/390",
+          "scope": "canonical_prior",
+          "score": 0.5,
+          "description": "Write a function to apply a given format string to all of the elements in a list."
+        },
+        {
+          "uid": "mbpp/462",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to find all possible combinations of the elements of a given list."
+        },
+        {
+          "uid": "mbpp/161",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to remove all elements from a given list present in another list."
+        },
+        {
+          "uid": "mbpp/284",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to check whether all items of a list are equal to a given string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "string_list_concatenation",
+      "reason": "Reference starts with a space and adds a space before every item, producing two leading spaces. Prose does not declare this required exact formatting.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 184,
+      "task_id": 656,
+      "public_description": "Write a python function to find the minimum sum of absolute differences of two arrays.",
+      "reference_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+      "test_list_canonical_json_sha256": "35e9fab0b2b1759f46a6f07bb4ae363fc245cecdced08ad8c16194966d142e2c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/126",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a python function to find the sum of common divisors of two given numbers."
+        },
+        {
+          "uid": "mbpp/63",
+          "scope": "canonical_prior",
+          "score": 0.3,
+          "description": "Write a function to find the maximum difference between available pairs in the given tuple list."
+        },
+        {
+          "uid": "mbpp/249",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to find the intersection of two arrays."
+        },
+        {
+          "uid": "mbpp/309",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the maximum of two numbers."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "minimum_absolute_matching_cost",
+      "reason": "Sorted matching is a plausible minimum absolute-difference target. Permitted permutations, equal lengths, n consistency and cross-frame family relations still need a contract and endpoint audit.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 185,
+      "task_id": 915,
+      "public_description": "Write a function to rearrange positive and negative numbers in a given array using lambda function.",
+      "reference_sha256": "61ffbcd807cc4f4362b9c5a148a81a4b75ffb3f04ad5818fe6e06155764504fe",
+      "test_list_canonical_json_sha256": "66de909de4d3c80993c89f9b32516a6efb45eec9279e36dda840b575f03db36e",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/442",
+          "scope": "canonical_prior",
+          "score": 0.375,
+          "description": "Write a function to find the ration of positive numbers in an array of integers."
+        },
+        {
+          "uid": "mbpp/104",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to sort each sublist of strings in a given list of lists."
+        },
+        {
+          "uid": "mbpp/133",
+          "scope": "original_public_variant",
+          "score": 0.3333,
+          "description": "Write a function to calculate the sum of the negative numbers of a given list of numbers using lambda function."
+        },
+        {
+          "uid": "mbpp/753",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find minimum k records from tuple list. https://www.geeksforgeeks.org/python-find-minimum-k-records-from-tuple-list/ - in this case a verbatim copy of test cases"
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "signed_number_reordering",
+      "reason": "Reference imposes positive ascending values, zeros, then negative ascending values using reciprocal keys. Prose specifies no such ordering or zero convention.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 186,
+      "task_id": 134,
+      "public_description": "Write a python function to check whether the last element of given array is even or odd after performing an operation p times.",
+      "reference_sha256": "647a2aef22f8ecf05f6fee602f51a84ddebf820ea16434216132ecd2fa25337c",
+      "test_list_canonical_json_sha256": "50d88dbe8e096a639ad1e02df7cc9b46ea481235cf82ea09ebe9139c7fe18f27",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/844",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4286,
+          "description": "Write a python function to find the kth element in an array containing odd elements first and then even elements."
+        },
+        {
+          "uid": "mbpp/798",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the sum of an array."
+        },
+        {
+          "uid": "mbpp/867",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a python function to add a minimum number such that the sum of array becomes even."
+        },
+        {
+          "uid": "mbpp/288",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to count array elements having modular inverse under given prime number p equal to itself."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "unspecified_array_operation",
+      "reason": "Argument p represents operations whose meaning is not defined in prose; parity-based last-element rule cannot identify the intended operation.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 187,
+      "task_id": 53,
+      "public_description": "Write a python function to check whether the first and last characters of a given string are equal or not.",
+      "reference_sha256": "aa30e1d20b3eb06a893f75ed4240615d3963960eb0705748e29d20b7f86ea513",
+      "test_list_canonical_json_sha256": "784b4a338f1b421c1f7f0b343e46c8d63c94aaca25687fcc243b87cfef44d40a",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/18",
+          "scope": "canonical_prior",
+          "score": 0.3636,
+          "description": "Write a function to remove characters from the first string which are present in the second string."
+        },
+        {
+          "uid": "mbpp/650",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to check whether the given two arrays are equal or not."
+        },
+        {
+          "uid": "mbpp/741",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to check whether all the characters are same or not."
+        },
+        {
+          "uid": "mbpp/11",
+          "scope": "canonical_prior",
+          "score": 0.3,
+          "description": "Write a python function to remove first and last occurrence of a given character from the string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "first_last_character_equality",
+      "reason": "Exact Equal/Not Equal strings and empty-input behavior are unspecified for the prose predicate. Reference indexes empty strings without a declared domain.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 188,
+      "task_id": 621,
+      "public_description": "Write a function to increment the numeric values in the given strings by k.",
+      "reference_sha256": "fcb2d63f2de72ad25db0e8b05d16e4dfaedf07e8ad00e8058239c5e798f06b26",
+      "test_list_canonical_json_sha256": "14901084b9f794efad6137cf606af9240c51340ebe71432c5288648365748943",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/444",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to trim each tuple by k in the given tuple list."
+        },
+        {
+          "uid": "mbpp/619",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to move all the numbers to the end of the given string."
+        },
+        {
+          "uid": "mbpp/75",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to find tuples which have all elements divisible by k from the given list of tuples."
+        },
+        {
+          "uid": "mbpp/764",
+          "scope": "original_public_variant",
+          "score": 0.2857,
+          "description": "Write a python function to count numeric values in a given string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "numeric_string_increment",
+      "reason": "Numeric elements are selected by isdigit then parsed with int; signed decimal strings and some Unicode digit characters expose undefined numeric-domain conventions.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 189,
+      "task_id": 387,
+      "public_description": "Write a python function to check whether the hexadecimal number is even or odd.",
+      "reference_sha256": "614297b669ffdc9c450cb4454a72d1f6adb5f88a476d6b307d49fc944b036f49",
+      "test_list_canonical_json_sha256": "8b2a42d14129e238dee3f73a24fed44c86f78a10b95ebc1264e2011dfa515a44",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/594",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a function to find the difference of the first even and first odd number of a given list."
+        },
+        {
+          "uid": "mbpp/784",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a function to find the product of first even and odd number of a given list."
+        },
+        {
+          "uid": "mbpp/406",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to find whether the parity of a given number is odd."
+        },
+        {
+          "uid": "mbpp/600",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a python function to check whether the given number is even or not."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "hexadecimal_parity",
+      "reason": "Reference recognizes uppercase A/C/E only among even terminal letters; lowercase hexadecimal inputs are not excluded in prose. Exact label/case conventions need clarification.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 190,
+      "task_id": 480,
+      "public_description": "Write a python function to find the maximum occurring character in a given string.",
+      "reference_sha256": "1594ec777c083486baa37fabd9efe83fe0020ab19db2f709ddb3406038d6cc47",
+      "test_list_canonical_json_sha256": "d47cf61e9c9306175fb3f69e04fab215257530148027b5c3e8f72b03883d20f8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/602",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to find the first repeated character in a given string."
+        },
+        {
+          "uid": "mbpp/666",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to count occurrence of a character in a string."
+        },
+        {
+          "uid": "mbpp/395",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the first non-repeated character in a given string."
+        },
+        {
+          "uid": "mbpp/806",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to find maximum run of uppercase characters in the given string."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "most_frequent_character",
+      "reason": "Reference uses a 256-entry ordinal array and first-occurrence ties without a restricted character domain or tie rule. Related histogram family is not resolved.",
+      "manual_related_uids": [
+        "HumanEval/111"
+      ],
+      "approved": false
+    },
+    {
+      "rank": 191,
+      "task_id": 36,
+      "public_description": "Write a python function to find the nth digit in the proper fraction of two given numbers.",
+      "reference_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+      "test_list_canonical_json_sha256": "30f4ed54e0f750968ed8ec3ac39a6f7fbb3e669cdfd37276599f1f25dd576ebd",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/814",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to find the area of a rombus."
+        },
+        {
+          "uid": "mbpp/257",
+          "scope": "original_public_variant",
+          "score": 0.2857,
+          "description": "Write a function to swap two numbers."
+        },
+        {
+          "uid": "mbpp/292",
+          "scope": "original_public_variant",
+          "score": 0.2857,
+          "description": "Write a python function to find quotient of two numbers."
+        },
+        {
+          "uid": "mbpp/309",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the maximum of two numbers."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "decimal_fraction_digit",
+      "reason": "Long division appears coherent for positive proper fractions and positive digit positions. Precise domain/base conventions and endpoint/family gates remain open.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 192,
+      "task_id": 908,
+      "public_description": "Write a function to find the fixed point in the given array.",
+      "reference_sha256": "45895fab95f8fc9c3625aa7573a3957d4ef50436d3013f537de60ebfad6e9428",
+      "test_list_canonical_json_sha256": "e84579ab04ec1f3a7e85367d0fcb2d3d14b0e80bd450186ca5e269e100d271f8",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/101",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a function to find the kth element in the given array using 1-based indexing."
+        },
+        {
+          "uid": "mbpp/802",
+          "scope": "canonical_prior",
+          "score": 0.3333,
+          "description": "Write a python function to count the number of rotations required to generate a sorted array. https://www.geeksforgeeks.org/count-of-rotations-required-to-generate-a-sorted-array/"
+        },
+        {
+          "uid": "mbpp/119",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a python function to find the element that appears only once in a sorted array."
+        },
+        {
+          "uid": "mbpp/229",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function that takes in an array and an integer n, and re-arranges the first n elements of the given array so that all negative elements appear before positive ones, and where the relative order among negative and positive elements is preserved."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "array_fixed_point",
+      "reason": "Reference tests arr[i] is i, object identity rather than numeric equality. This depends on representation/interning and does not implement the stated numeric fixed point generally.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 193,
+      "task_id": 869,
+      "public_description": "Write a function to remove sublists from a given list of lists, which are outside a given range.",
+      "reference_sha256": "08fd97db3c76d4d9b32b7629bdaa3a165fb3cfea61b02791b98f41934eb8196e",
+      "test_list_canonical_json_sha256": "13e1cb8ba771f3e6b7713b4c78e4f01c35a602de4364d2a4903f9191caf35ceb",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/700",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3077,
+          "description": "Write a function to count the number of elements in a list which are within a specific range."
+        },
+        {
+          "uid": "mbpp/443",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the largest negative number from the given list."
+        },
+        {
+          "uid": "mbpp/90",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the length of the longest word."
+        },
+        {
+          "uid": "mbpp/290",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to find the list of maximum length in a list of lists."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "filter_sublists_by_value_range",
+      "reason": "Reference calls min/max on each sublist without a nonempty-sublist restriction. Empty-sublist inclusion and boundary conventions need a contract.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 194,
+      "task_id": 177,
+      "public_description": "Write a python function to find two distinct numbers such that their lcm lies within the given range.",
+      "reference_sha256": "bb2c2122e869cf4d777d4f26065032e795d2b543ae5d1ee04e082747a4b80f2a",
+      "test_list_canonical_json_sha256": "fd9f5371c244ebba888879a547908466d07de808a532be32d054b043577db2f6",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/575",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to find nth number in a sequence which is not a multiple of a given number."
+        },
+        {
+          "uid": "mbpp/170",
+          "scope": "canonical_prior",
+          "score": 0.3077,
+          "description": "Write a function to find the sum of numbers in a list within a range specified by two indices."
+        },
+        {
+          "uid": "mbpp/797",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a python function to find the sum of all odd natural numbers within the range l and r."
+        },
+        {
+          "uid": "mbpp/107",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a python function to count hexadecimal numbers for a given range."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "lcm_range_witness",
+      "reason": "Prose and exact tests do not establish restrictions on the two numbers, unique witness selection, or impossible-case output. Returning (L,2L) is one rule, not a complete specification.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 195,
+      "task_id": 205,
+      "public_description": "Write a function to find the inversions of tuple elements in the given tuple list.",
+      "reference_sha256": "502e9b607cb2e0ac9f8d430e59d97cd803c68c6a1a6f376b57e7f40e65f33473",
+      "test_list_canonical_json_sha256": "46add2abd1cc4d5b0fe1f74b331317cf08a0e2256597d7cdbb07bd7f013a6ae9",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/140",
+          "scope": "original_public_variant",
+          "score": 0.4286,
+          "description": "Write a function to extract elements that occur singly in the given tuple list."
+        },
+        {
+          "uid": "mbpp/446",
+          "scope": "canonical_prior",
+          "score": 0.4286,
+          "description": "Write a python function to count the occurence of all elements of list in a tuple."
+        },
+        {
+          "uid": "mbpp/141",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to sort a list of elements."
+        },
+        {
+          "uid": "mbpp/587",
+          "scope": "canonical_prior",
+          "score": 0.4,
+          "description": "Write a function to convert a list to a tuple."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "tuple_element_inversion",
+      "reason": "Prose inversion does not specify bitwise complement rather than sign inversion or order reversal; reference applies Python integer complement.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 196,
+      "task_id": 698,
+      "public_description": "Write a function to sort dictionary items by tuple product of keys for the given dictionary with tuple keys.",
+      "reference_sha256": "2b1fbdca3d6201bb002d2567f6631bc49e2dbc8346c71c6fbe9be19cba479742",
+      "test_list_canonical_json_sha256": "e96d9c69cc6f63cca424dffe2fd9bd42d285ab34c180d8f1ca71d002cdf618c3",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/694",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to extract unique values from the given dictionary values."
+        },
+        {
+          "uid": "mbpp/475",
+          "scope": "canonical_prior",
+          "score": 0.2857,
+          "description": "Write a function to sort a dictionary by value."
+        },
+        {
+          "uid": "mbpp/662",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.2857,
+          "description": "Write a function to sort a list in a dictionary."
+        },
+        {
+          "uid": "mbpp/720",
+          "scope": "original_public_variant",
+          "score": 0.2857,
+          "description": "Write a function to add a dictionary to the tuple."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "dictionary_tuple_product_order",
+      "reason": "Original assertions compare dictionaries by equality, which ignores insertion order and cannot test requested sorting. Dictionary output is also unsupported by the frozen display.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 197,
+      "task_id": 525,
+      "public_description": "Write a python function to check whether two given lines are parallel or not.",
+      "reference_sha256": "21d4551240392d9261cad8d040e39cf56d53dcdaa4bf2bf9908342887396606c",
+      "test_list_canonical_json_sha256": "67788c23a0ef0ba256c75599c8ca1be9082a61905502980e80fcb2773ceb8827",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/650",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.4286,
+          "description": "Write a python function to check whether the given two arrays are equal or not."
+        },
+        {
+          "uid": "mbpp/885",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a python function to check whether the two given strings are isomorphic to each other or not."
+        },
+        {
+          "uid": "mbpp/164",
+          "scope": "original_public_variant",
+          "score": 0.25,
+          "description": "Write a python function to check whether the sum of divisors are same or not."
+        },
+        {
+          "uid": "mbpp/508",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.25,
+          "description": "Write a function to check if the common elements between two given lists are in the same order or not."
+        }
+      ],
+      "disposition": "specification_hold",
+      "provisional_family": "parallel_line_predicate",
+      "reason": "Coefficient representation is undeclared and division by the second coefficient fails for zero denominators. Floating ratio equality also needs a numeric contract.",
+      "manual_related_uids": [],
+      "approved": false
+    },
+    {
+      "rank": 198,
+      "task_id": 921,
+      "public_description": "Write a function to perform chunking of tuples each of size n.",
+      "reference_sha256": "28f0bed4ba6c58ff26ee6aa2791ab1227b2a3d261383a9cc2849d314702de1a9",
+      "test_list_canonical_json_sha256": "1c7450a7c1d3b6d6ec18dc90d5cd86a43b12c3823ec3cbc64fb4aad711599f3c",
+      "top4_lexical_neighbors": [
+        {
+          "uid": "mbpp/193",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to remove the duplicates from the given tuple."
+        },
+        {
+          "uid": "mbpp/710",
+          "scope": "earlier_source_slice_or_E11",
+          "score": 0.3333,
+          "description": "Write a function to access the initial and last data of the given tuple record."
+        },
+        {
+          "uid": "mbpp/106",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to append the given list to the given tuples."
+        },
+        {
+          "uid": "mbpp/470",
+          "scope": "canonical_prior",
+          "score": 0.25,
+          "description": "Write a function to find the pairwise addition of the neighboring elements of the given tuple."
+        }
+      ],
+      "disposition": "candidate_pending_endpoint_and_crossframe_family_review",
+      "provisional_family": "contiguous_tuple_chunking",
+      "reason": "Contiguous chunks with a final short chunk are shown in examples. Prior 265 performs strided list splitting, so relation is not exact; positive size, endpoints and family adjudication remain open.",
+      "manual_related_uids": [
+        "mbpp/265"
+      ],
+      "approved": false
+    }
+  ],
+  "counts": {
+    "exclude_prior_family": 3,
+    "specification_hold": 28,
+    "candidate_pending_endpoint_and_crossframe_family_review": 7
+  },
+  "source_review_only": true,
+  "actual_program_model_executions": 0,
+  "replacement_roots": 0,
+  "approved_evaluation_roster": false,
+  "limitation": "Single-lead source curation; no blinded adjudication, semantic independence certificate, endpoint execution or treatment effect evidence. Conditional sampling/execution independence and population transport remain separate unresolved gates."
+}
