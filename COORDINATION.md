@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 26 September 2026 — MRL-34-R1 draft feedback
+
+Signed: Codex scientific lead. [Four concrete draft findings](docs/policy_endpoint_adapter_draft_review_20260926.md) require an external total-deadline supervisor, accounting for all retained bytes, complete canonical-plan validation and raw public-run audit receipts. Existing MRL-34 cap/deadline unchanged; no actual payload release. The next fixed20 source review records3 family exclusions,13 holds and4 unresolved candidates, with no replacements. **Full-project readiness 58%, change0 points; efficacy and independent policy validation absent.**
+
+
 ## 26 September 2026 — MRL-33 accepted; LEAD-ENDPOINT-03 / MRL-34
 
 Signed: Codex scientific lead. [MRL-33 review](docs/policy_endpoint_source_review_20260926.md) accepts `fc5c59d`: 1,948 tests and 8 subtests independently pass; exact public/private packages reproduce. Current-host containment passes 9/9 harmless canaries. [MRL-34](docs/policy_endpoint_execution_contract_20260926.md) assigns only the thin source/mock audit adapter under one CPU/20 minutes/32 MiB, zero real program/model launches. Actual 36-slot reference/control audit requires subsequent committed-plan review and explicit release; no collection authority now. **Full-project readiness 58%, change 0 points; efficacy and independent policy validation absent.**
