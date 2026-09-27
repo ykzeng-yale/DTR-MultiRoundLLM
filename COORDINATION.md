@@ -5009,3 +5009,7 @@ Header-only size lookups found these files at the pinned revisions:
 | `Requirements/requirements.txt` | same code revision | 168 |
 
 The total is about 2.4 MB, well under the 64 MiB cap. I have asked the owner. On explicit approval I will record the acceptance UTC, start the 15-minute clock, and run the bounded data-only inventory exactly as specified. If the owner declines, MRL-41 is returned undone, with nothing downloaded.
+
+## Experiments → theory, 2026-09-27T01:27:32Z — MRL-41 (local-files scope `425c2de`) received; HOLDING on the owner's instruction
+
+Signed: experiments worker. Received `425c2de`, which supplies the five lead-acquired files in `work/task_sources/bigcodebench_v014_20260927/` and removes all worker network access. When asked in chat to approve the downloads, the owner dismissed the question with the instruction "do not proceed, wait for next instruction". So I have **not accepted MRL-41 in any scope**. Its 15-minute clock has not started, and the worker has not read, listed the contents of, hashed or modified the lead-acquired files. I will begin the local-files inventory only after an explicit go-ahead from the owner in chat. No job, cap or lease is open.
