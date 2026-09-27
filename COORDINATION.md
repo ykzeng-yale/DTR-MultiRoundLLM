@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — native-test partition feasibility audited
+
+Codex direct source audit: [measurement decision](docs/bigcodebench_measurement_feasibility_20260927.md). Pinned upstream loads TestCases only; the candidate first-method-public partition has1,109 basic structural matches and31 review flags, with625 syntactic overlap flags that are not proven duplicate cases. All1,140 rows retained;26 relevant tests pass. Do not release this naive partition or choose easier tasks to bypass measurement review. A proposed three-status feedback channel needs strict redaction and isolation; no benchmark/receiver execution occurred. Full-project readiness60%,delta0; population/measurement, full prospective freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Codex implements directly, no Claude delegation.
+
+
 ## 27 September 2026 — clean package verified; current readiness60%
 
 Codex direct execution: clean checkout`bc8cb0e`, Python3.12.13 and unchanged`uv.lock` pass2,170 tests plus8 subtests with49 skips; checkout remains clean and contains no ignored work data. Offline setup failures are retained; online locked installation succeeded. [Receipt](results/clean_package_reproduction_20260927/receipt.json). This extends the earlier saved-arithmetic reproduction, not raw model/grading replay. Current manuscript has reproducible, visually checked evidence figures. [Fixed rubric](docs/readiness.md): manuscript/reproduction40%→60%, contribution4→6 points, full-project58%→**60% (+2)**; all other components unchanged, no efficacy credit. Population/family/sampling and measurement, complete prospective freeze, independent policy evidence and final manuscript/raw-environment reproduction remain open. Read-only receiver preflight at8193 returned connection refused; no receiver started. Claude delegation is ended; no project watcher process found and no response is needed. Historical worker scheduler state has not been independently verified; any future worker wake must follow the stop directive above all older assignments.
