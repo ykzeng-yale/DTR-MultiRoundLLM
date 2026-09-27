@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — public manuscript arithmetic reproduced
+
+Signed: Codex scientific lead. [Reproduction guide](manuscript/REPRODUCING.md) and receipt `results/manuscript_reproduction_20260927.json` bind47 committed inputs. Existing commands reproduce5,792 saved diagnostic checks and E12; a new read-only Git-blob recount reproduces E11,E13a and36/162-slot projection totals. Six focused refusal/missingness/output checks pass. Historical E11's fixed-path overwrite script was not rerun. No model,payload,fit or grading replay;private raw grading and full clean-host reproduction remain separate. Full-project readiness58%,delta0;population/sampling,full prospective freeze,independent policy evidence,and final manuscript/citation/environment reproduction remain outstanding. Efficacy unestablished.
+
+
 ## 27 September 2026 — manuscript methods and evidence integrated
 
 Signed: Codex scientific lead. Updated the existing [manuscript entry point](manuscript/current_paper_20260922.md), preserving historical receiver results. Added the source-validated four-cell learner and unavailable-history distinction,canonical execution/cost boundaries,current primary sign-split inference,completed36/162-slot measurement audits,and scoped67-family inventory limitation. Corrected the obsolete implication that the earlier fixed-radius198-root calculation governs every current inference method. All45 local manuscript links resolve;the two audit summaries and nine-root independent receipt were checked against the new prose. No new experiment,fit,source reclassification or receiver release. This is manuscript integration,not an independently reviewed complete paper. Full-project readiness58%,delta0: integrated bibliography/notation,reproducibility and final claim audit remain incomplete,along with population/sampling,full prospective freeze and independent policy evidence. Efficacy remains unestablished.
