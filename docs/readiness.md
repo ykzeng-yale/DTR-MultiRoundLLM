@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September 2026 — productive recurrence
+
+[Blocker diagnosis and execution queue](autonomous_execution_plan_20260927.md) replaces passive MRL-41 monitoring. Fresh runtime checks are not experiment results. Full-project readiness **60%, delta0**; no credit for scheduling changes. Population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
 ## 27 September 2026 — consolidated review register
 
 Codex [reproducible register](bigcodebench_review_register_20260927.md) retains all1,140 tasks:57 source-reviewed,1,083 pending,zero admitted. Ten provenance-bearing co-split/duplicate constraints and task628 measurement exposure are explicit; no final family count or untouched status is inferred. Fourteen focused tests pass; source/evidence bindings and all row dispositions reconciled separately by lead. No new benchmark/model calls. Full-project readiness **60%, delta0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.

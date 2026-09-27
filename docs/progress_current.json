@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-27T22:04:48.459433+00:00",
+  "checkpoint_utc": "2026-09-27T22:23:59.133192+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 60,
   "prior_check_reconstructed_percent": 60,
-  "prior_checked_head": "2adff48",
+  "prior_checked_head": "f6100ab",
   "baseline_note": "Fixed weights unchanged; prior manuscript/reproduction credit retained. This checkpoint earns no additional credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Consolidated source register validates57 reviewed IDs across1140 retained tasks,10 constraint records, known628 measurement exposure.14 focused tests; zero admitted tasks, no final family count, no new benchmark/model calls. No readiness credit. Full suite2315 tests plus8 subtests passes in35.84seconds.",
+  "latest_evidence": "Blocker diagnosis revalidated: measurement/population design is primary; aux Docker ping timed out3.001s, lead receiver unavailable, mini model service empty. No demonstrated RAM shortage; no experiment running. Productive recurring work replaces obsolete MRL-41 checks.",
   "latest_worker_review": {
     "last_seen_worker_revision": "7f441f3",
     "delivery_type": "Source/mock adapter reviewed; repair required before execution",
@@ -597,6 +597,6 @@
       "independent policy evaluation",
       "full manuscript claim/novelty audit and raw-environment reproduction"
     ],
-    "goal_record": "Owner requests pause; no experiment running, heartbeat remains paused. Resume on owner instruction."
+    "goal_record": "Continuous goal paused; owner authorizes active three-hour bounded work heartbeat under docs/autonomous_execution_plan_20260927.md."
   }
 }

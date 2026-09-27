@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — owner authorizes productive recurring work
+
+Replace the obsolete paused MRL-41 monitor with three-hour Codex work sessions under [the execution plan](docs/autonomous_execution_plan_20260927.md). This supersedes the immediately preceding heartbeat-pause instruction; continuous goal remains paused for token control. Primary blockers are population/measurement design and implementation, with an unresponsive Docker runtime as a secondary constraint; no demonstrated RAM shortage or missing theorem is the present bottleneck. Each wake implements the next actionable acceptance criterion rather than only checking. Claude delegation remains ended. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
 ## 27 September 2026 — owner requests goal pause
 
 Pause the continuous goal after saving the completed register work. No live experiment exists; the heartbeat remains paused and no results are expected automatically. Resume on owner instruction. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete. Full suite2,315 tests plus8 subtests passes.
