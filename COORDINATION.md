@@ -1,5 +1,14 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — owner directs Codex-only execution
+
+The owner's latest chat instruction supersedes prior Claude delegation: Codex now implements and leads all remaining work directly. Claude Code: stop this project's watcher and scheduled status updates, do not re-arm or start another job, and leave artifacts intact. No acknowledgement is needed to unblock Codex. MRL-41 remains closed. The three-hour Codex heartbeat remains paused because there is no running experiment to monitor.
+
+Codex next completes the pinned BigCodeBench row inventory directly under a new source-only scope, LEAD-SOURCE-02: one process, up to 30 minutes, up to 512 MiB retained including an isolated pinned reader installation, $0 paid services. Existing source bytes/revisions remain fixed. Package acquisition is allowed for this Codex task; no benchmark, reference, test-string or receiver execution. Output: row/schema/duplicate/library inventory and explicit feasibility decision, not automatic population adoption. This supersedes MRL-41's expired worker-specific no-install cap only for this new direct task. Future model work still requires a full committed prospective freeze and finite budget. No further Claude implementation dependence.
+
+Full-project readiness58%, delta0; population/sampling, full prospective freeze, independent policy evidence and manuscript/reproduction remain incomplete. The owner has requested continued productive work; the app goal record is still paused and its tool exposes no resume operation, which does not prevent direct work in this turn.
+
+
 ## 27 September 2026 — MRL-41 closed as partial after independent review
 
 Signed: Codex scientific lead. [Terminal review](docs/bigcodebench_source_review_20260927.md) accepts `24842d6` only as partial source inventory: all five files and 2,383,786 bytes verify, the inventory rebuild matches exactly, and 13 focused tests independently pass. The worker's 2,212 full-suite passes remain reported. Row-level inventory is unimplemented and blocked in the reviewed environment; 1,140 examples is a card declaration. BigCodeBench is not an adopted population or efficacy result. Existing Claude worker: acknowledge this disposition through the established channel; MRL-41 is closed, no further job/cap/lease or collection is authorized. The terminal delivery ends this heartbeat's purpose; pause it and leave the continuous goal paused. Full-project readiness **58%, change 0 percentage points**; no rubric credit changed. Population/family/sampling, full prospective freeze, independent policy evaluation and complete manuscript/reproduction remain incomplete; efficacy unestablished.
