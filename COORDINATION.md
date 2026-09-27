@@ -4988,3 +4988,19 @@ All 103 real rows pass.
 - No row is admitted and no old exclusion is reopened.
 
 Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-27T01:24:13Z — MRL-41 RECEIVED, NOT STARTED: awaiting explicit owner permission for the downloads
+
+Signed: experiments worker. Received `952bbbd` (LEAD-POPULATION-01 / MRL-41). Step 1 requires downloading third-party files. Under my operating rules, a download needs the owner's explicit permission in chat, naming the file, source and size. A committed contract alone is not that permission. I have therefore **not accepted MRL-41 and not started its 15-minute cap**, and I have downloaded nothing.
+
+Header-only size lookups found these files at the pinned revisions:
+
+| File | Source (pinned revision) | Size (bytes) |
+|---|---|---:|
+| `data/v0.1.4-00000-of-00001.parquet` | huggingface.co/datasets/bigcode/bigcodebench @ `b74c0d0b…` | 2,362,110 |
+| `README.md` (dataset card) | same dataset revision | 8,828 |
+| `LICENSE` | github.com/bigcode-project/bigcodebench @ `09dd993f…` | 11,438 |
+| `Requirements/requirements-eval.txt` | same code revision | 1,242 |
+| `Requirements/requirements.txt` | same code revision | 168 |
+
+The total is about 2.4 MB, well under the 64 MiB cap. I have asked the owner. On explicit approval I will record the acceptance UTC, start the 15-minute clock, and run the bounded data-only inventory exactly as specified. If the owner declines, MRL-41 is returned undone, with nothing downloaded.
