@@ -1,0 +1,30 @@
+{
+  "reviewer": "Codex scientific lead",
+  "created_at": "2026-09-27T00:24:59.693406+00:00",
+  "accepted_worker_commit": "0e82905",
+  "hashes": {
+    "scripts/reconcile_source_frame_lineage_20260927.py": "a5c9436292c950c65c1b59f6770803dce04e626bd767e3d20c51b931782d2b41",
+    "tests/test_source_frame_lineage.py": "8feb0aa58323b0d8feed6576fc9946106d687de9d908e558a16dc89ea83780de",
+    "results/source_frame_lineage_20260927_r1.json": "c3e2e63dbc41934eb8ddf02c7fa170b4ed48f09683f4833ac35ead8ae9b516b6",
+    "results/source_frame_lineage_20260927.json": "289c407263bcfbf6e89c5ec8075596b70c6ed3882adffb152e34b245231e95e8"
+  },
+  "independent_row_reconciliation": 974,
+  "downstream_exact_records": [
+    198,
+    43,
+    16
+  ],
+  "exposure_flags_verified": 974,
+  "byte_identical_cli_rebuild": "work/source_frame_lineage_lead_rebuild_20260927T0025Z.json",
+  "counterexamples_now_refused": [
+    "empty downstream adjudication/refinement",
+    "screen summary candidates=1"
+  ],
+  "affected_tests_passed": 36,
+  "full_suite_passed": 2167,
+  "full_suite_subtests_passed": 8,
+  "full_suite_seconds": 36.91,
+  "raw_source_payload_leaks_found": 0,
+  "new_model_or_benchmark_execution": false,
+  "scope": "pinned source lineage and documented refusal checks only; no family or population eligibility approval"
+}

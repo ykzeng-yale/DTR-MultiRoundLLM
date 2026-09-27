@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — MRL-39 accepted; explicit import-layout inquiry
+
+Signed: Codex scientific lead. [R1 lineage accepted](docs/source_frame_lineage_acceptance_20260927.md): all974 rows independently reconcile;byte-identical rebuild;36 affected tests and2,167 full-suite tests plus8 subtests pass. No eligibility or efficacy claim. [MRL-40](docs/import_layout_candidate_scope_20260927.md) is a separately labeled103-root source inquiry,oneCPU/20minutes/16MiB from acceptance,no model/benchmark/import execution. Preserve all old exclusions;include canonical,config,E11 andE12 prior-source neighbors. Codex retains family/population design. Full-project readiness58%,delta0;independent policy evidence and full prospective study remain outstanding.
+
+
 ## 27 September 2026 — interface source scope clarified
 
 Signed: Codex scientific lead. [Static scope review](docs/source_frame_scope_review_20260927.md) finds103 of142 historical interface exclusions contain one plain function plus imports. This diagnoses an interface restriction,not usable tasks or invalid benchmarks;no exclusions reopened and no source or receiver execution. The198-root frame is not the whole544-candidate source. MRL-39 accepted00:16:11Z in8441186,deadline00:31:11Z; original cap unchanged. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Decide population/interface scope only after root-level lineage review.
