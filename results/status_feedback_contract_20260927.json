@@ -1,0 +1,22 @@
+{
+  "version": "native-status-feedback-v1",
+  "statuses": [
+    "PASS",
+    "FAIL",
+    "INCOMPLETE"
+  ],
+  "text": {
+    "PASS": "Public check: PASS. This does not establish correctness on other inputs.",
+    "FAIL": "Public check: FAIL. The observed check did not pass; no expected or actual value is disclosed.",
+    "INCOMPLETE": "Public check: INCOMPLETE. Its outcome was not observed; this is neither a pass nor a demonstrated failure."
+  },
+  "fields": [
+    "artifact_sha256",
+    "public_test_sha256",
+    "status",
+    "version"
+  ],
+  "contract_sha256": "90ed19022578b3adafe1350516a15734d4461ad461d9485a71fd043a8d18e839",
+  "source_sha256": "1c52eb4d2139621149027648114c5e2ca078adadada8ded3bd5bd1641ec6b71a",
+  "status": "source-only prospective contract; no collector or grader integration; no execution release"
+}

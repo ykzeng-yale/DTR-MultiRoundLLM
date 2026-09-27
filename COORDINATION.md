@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — status-only feedback boundary implemented
+
+Codex direct implementation: [native feedback contract](docs/native_status_feedback_contract_20260927.md), pure serializer and hash-bound three-string alphabet. Twenty-six focused tests pass, including extra-field leakage refusal and artifact/test binding checks. No grader/collector integration or benchmark/model execution; truth of status and sandbox noninterference are not established by serializer tests. Historical literal diagnostics unchanged; first-method-public split and efficacy collection remain unreleased. Full-project readiness60%,delta0; population/measurement, full prospective freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, no Claude delegation.
+
+
 ## 27 September2026 — test-binding and overlap flags adjudicated
 
 Codex direct source review: [adjudication](docs/bigcodebench_partition_adjudication_20260927.md). Six shadowed definitions leave6,419 distinct direct test names; eight rows retain full-method AST public/private matches. Task628 has no private method with structure distinct from the candidate public method. Decorators/signatures explain the earlier604/773 body matches; stochastic inputs preclude equating identical method text with identical realized cases. Task719 uses pyfakefs inheritance. Nine focused tests pass; no benchmark execution or collection. First-method-public split remains unreleased, no task exclusions or population switch. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
