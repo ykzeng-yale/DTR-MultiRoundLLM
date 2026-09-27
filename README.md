@@ -34,6 +34,8 @@ The [complete fixed-frame reconciliation](docs/policy_full_frame_reconciliation_
 
 The [nine-root information ceiling](docs/policy_nine_root_information_limit_20260927.md) prevents promoting the completed measurement panel into an inadequately informative policy trial. Under the proposed fixed inference procedure, seven evaluation families cannot certify a five-point benefit even at the most favorable possible data; at eight or nine, one zero family also precludes that declaration. This internally reviewed planning result neither excludes benefit in a larger study nor establishes eligible independent families.
 
+The [27 September population decision](docs/reviewed_population_decision_20260927.md) closes automatic endpoint expansion from the two completed source inquiries. Their146 disjoint roots leave at most67 prospective families under retained prior-family exclusions, before other holds or grouping. This is neither an evaluation roster nor a ceiling on all MBPP. Even the optimistic67-family all-zero scenario remains too imprecise for the fixed five-point futility declaration; other outcomes can still be informative. No receiver trial is released and population/sampling design remains unresolved.
+
 Overall milestone completion is **58%, change 0 percentage points** under the [fixed rubric](docs/progress_current.json). Prompt efficacy is unestablished, independent policy validation is absent, and the full project is not submission-ready. The next milestone is a frozen supported same-prefix selector and fair comparators on untouched independent families, with endpoint, inference and complete finite resource cap.
 
 ## Historical continuation — 23 September 2026

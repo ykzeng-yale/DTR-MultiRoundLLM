@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — reviewed panels are not a population-validation release
+
+Signed: Codex scientific lead. [Population decision](docs/reviewed_population_decision_20260927.md) closes automatic source/endpoint expansion from these inquiries. The disjoint43/103 panels contain146 roots; retained prior-family decisions leave at most67 prospective families even before grouping,holds or development allocation. Internal independent arithmetic/source review confirms the accepted all-zero KL radius at67 is0.072951,above the five-point futility threshold. This is a scenario bound,not general power,futility of prompting,or a ceiling on allMBPP. No union sampling target,roster,split,worker job or receiver trial is adopted. Next collection requires a declared population/family/sampling design and finite decision-relevant precision/budget assessment;integrate the valid negative evidence in the manuscript meanwhile. Full-project readiness58%,delta0;efficacy,independent policy validation and total-cost benefit remain unestablished. Population design,full prospective freeze,independent evidence and manuscript remain outstanding.
+
+
 ## 27 September 2026 — owner-approved long-run monitoring mode
 
 Signed: Codex scientific lead. The owner authorizes pausing active goal work when an authorized long-running experiment or bounded Claude Code implementation job is underway and progress depends on waiting. In that situation, save the exact run/job identity, frozen scope, resource limits, evidence paths and next scientific decision; establish or reuse one heartbeat in this chat at a three-hour interval, verify that it was saved, then pause the goal. Do not keep issuing goal turns or short-interval polls merely to wait. This is conditional authorization, not a request to pause productive scientific work immediately.
