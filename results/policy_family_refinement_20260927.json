@@ -1,0 +1,445 @@
+{
+  "reviewer": "Codex scientific lead",
+  "created_at": "2026-09-27T00:11:04.219615+00:00",
+  "type": "source_only_family_refinement_not_experiment",
+  "inputs": {
+    "results/policy_candidate_adjudication_20260926.json": "3458d582969c9a04922a71ce2818ede91a45ca9c3925e8d78fd5f44307a0b4b4",
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "work/data/tasks.json": "23727895971fa4a040198d8770173a4f0c3263a63a9cb1479abc4203bb01c2ce"
+  },
+  "records": [
+    {
+      "task_id": 911,
+      "rank": 21,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "dfe9c42f0bd288b45331ba384bedb3584649fcaccec181a41fe6ebd743659aa2",
+          "ec58483f46d82da258efb5c7f9052c6cdf436f034e43107100ed1016c93f3072",
+          "abd684a9e6f2190f0b789ddbb5292204dc4fe640bdd07c869dd6af34bc171dcb"
+        ],
+        "description_sha256": "0ff5527b3f1e6cae2c7952da75baaa537db7fa4659fbf835e3e773f2ba59a0cb",
+        "reference_sha256": "f46eee08f1386056b64c8bcf74d45317349e9eeaf35042b9dd85b51b5e347283"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/4"
+      ],
+      "witness": "For at least three integers, obtain three largest values and two smallest via top-k on the original and negated inputs. Maximum triple product is max(product of top three, largest times bottom two).",
+      "limits": "Two source-level order-statistic calls and scalar arithmetic; distinct output and negative-value handling remain.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/4",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "7c089f1d58a6a94c59885f3dc9b6d3c9a293b044b3356d85833f49b42d227afc",
+          "description_sha256": "3524b578b91bb2cf2d751abe313051ad9fb7be2e9b639660371cbed37ed8835c"
+        }
+      ]
+    },
+    {
+      "task_id": 667,
+      "rank": 25,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "f20e7998ee65b2119ac09fcbf369f15e2d293eafde43f89a2c96f0f43d3ee40b",
+          "aa13b38f82774efbf7f0c9accdad548d5ef305e1c76ba45b19fe00b15f4aca9a",
+          "b7a38390065b5689196effccc28d251ba784f37512d9cc737d6c78b3796ce91d"
+        ],
+        "description_sha256": "dc7ee3e920953fcbacb508f83210242c1241f2807b530b319f6c5924fb81175f",
+        "reference_sha256": "4c911c77d78eb4a5a41e381f705b90f4db1a60baaa5fdd993ee9a897ac34f9d9"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "humaneval/64",
+        "mbpp/828",
+        "mbpp/192"
+      ],
+      "reason_hold_retained": "Prior vowel count has a terminal-y convention; this task adds a supplied character set. Shared counting core is plausible, not exact equality."
+    },
+    {
+      "task_id": 194,
+      "rank": 34,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "reference_hold",
+      "source_hashes": {
+        "assertion_sha256": [
+          "5ee707d9a7622dae571644b67a50624b6dec74ed14b438fc1e0453e9df6b59cf",
+          "c24c7f86e3cb67a3814d75a90fdcded8543aba641df4f30ab46756a768898b1d",
+          "6fd4114f0d6e802f84314dd3376f1feff8b688445b2849ae932311ecf43ad998"
+        ],
+        "description_sha256": "41a0694b6ffa1a9452ccbbd698f9034f6b245dab4b8e7e4cbc005515f5a14cf9",
+        "reference_sha256": "29982fa9fb533c5847c3e187358d8cfc292a956aa8505e1313c6347557bd183c"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "mbpp/99",
+        "humaneval/79"
+      ],
+      "reason_hold_retained": "Prior decimal-to-binary conversion changes base and direction. Shared positional-conversion schema needs an explicit family decision."
+    },
+    {
+      "task_id": 366,
+      "rank": 36,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "3dc92631192918f3c78b3d685ba335673f741b4d8e2ace9d2e913a7d5e5be13f",
+          "fc1859b454ac66a87f77e632726d056eea029f50fb929327b341eeb7bfad4990",
+          "96dc9755669fa561acb6ec95b987765c7aaaf798a9b23ed57bb540ac0a546128"
+        ],
+        "description_sha256": "a5bd3ec55b8d9a9043320454cd076ee86a5187248e8d8017b2ab7fffe34a4389",
+        "reference_sha256": "7db1293f563250835309d4103260ccce6d6c5f5b649844e71ee421d9e0c6eabf"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/766"
+      ],
+      "witness": "For length at least two, take the maximum product over the ordered adjacent pairs returned by the prior task.",
+      "limits": "Pair generation is exactly reused; maximum-product subarray root463 is not needed and is not asserted equivalent.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/766",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "78ffb5f0dddd1b46fe605cb35e01ed0bab4203547624ddb3e2e48d37a7916f36",
+          "description_sha256": "6f9d70d7ca499ea66e4385e897c2775d5a723745c452d74392dcd0e2acd101c0"
+        }
+      ]
+    },
+    {
+      "task_id": 345,
+      "rank": 56,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "c08474c9010d01f807e5dc8583e82fc48c5c06a446be0d93f85f98b4bb00268b",
+          "74351d019afc273394e2d60f456376fe2483d84ddf73d24a1679adfb9f93906f",
+          "d57814e9734ac0652f97abf43d3b725ecc15460973213dde0efbddcc353f73c9"
+        ],
+        "description_sha256": "cbf0e9e214fe1c5c6ba1547e9d76c41093c8138d68d2be9775c03c64a02c3915",
+        "reference_sha256": "bb61aa52406b2b73495090e3cbd215297218c4c1f3b3952f5f3d2bb233756825"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/766"
+      ],
+      "witness": "Map (a,b) to b-a over the ordered adjacent pairs returned by the prior task, including empty output for length below two.",
+      "limits": "The task-specific adjacency output is exactly reused; measurement-audit validity is unaffected.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/766",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "78ffb5f0dddd1b46fe605cb35e01ed0bab4203547624ddb3e2e48d37a7916f36",
+          "description_sha256": "6f9d70d7ca499ea66e4385e897c2775d5a723745c452d74392dcd0e2acd101c0"
+        }
+      ]
+    },
+    {
+      "task_id": 200,
+      "rank": 87,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "c819914f5290e4a95ad8ef9cce1560413fe6bb43cc4f7b533e5bc6c826d91553",
+          "01080d394cff1b6fbc0aeb766e45bc18e132874bff054f37ad5cef4d9309692a",
+          "dbe212fddd58f03a7301daf7ca44b9c7bfcd2fc18d3a281c269c4c85ff3b21a6"
+        ],
+        "description_sha256": "7d1606ae38adc786dbfbbf1a9fe1cd33d1d3742bfcff897b86f62e8bd0dcdb3d",
+        "reference_sha256": "76d9910db6312571ec440c753c85ffb4d5d7353a3af968b4ad54169ab97cad25"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "humaneval/35"
+      ],
+      "witness": "For nonempty integer input, obtain its maximum from the prior task and return all positions equal to it.",
+      "limits": "Tie enumeration and output type differ; use is conservative grouping of the exposed maximum problem, not exact duplicate classification.",
+      "prior_sources": [
+        {
+          "uid": "humaneval/35",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "dc01eef1e04c3495d2c434900b9928d085f09da6790226e543cff8bcd722205f",
+          "description_sha256": "75ceb54ce0c4ea472f0613ef75a8b6bc8d5b530e6749df89eff0779faa70a96b"
+        }
+      ]
+    },
+    {
+      "task_id": 883,
+      "rank": 90,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "2524eb77923b957929abed89118ddd4bac1c2a425cb28c5b127c48ac34ba3458",
+          "b0987df0c7efb0e211fa688be6a7cd5df72b0239182b61428f0b2204734a2908",
+          "ba9b75116926463f8e316061fd85e04622592f797af68051334e41ee22d1da7f"
+        ],
+        "description_sha256": "520fe056ce2d79afb951af42cebaf2222a714ba822aded4713d2ca794d63b10a",
+        "reference_sha256": "665344c3ac8d87388d40ee3996b016d8cca11d4b31411c4a1d9f29c80117d3ea"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/75"
+      ],
+      "witness": "Wrap each integer as a singleton tuple; apply the prior all-elements-divisible filter with m, then with n, then unwrap.",
+      "limits": "Nonzero integer divisors; sequential filtering preserves order and multiplicity. No least-common-multiple routine is required.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/75",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "545b8d057080aadb2bb87908af252774cc1d7752976797d200b4ea0a05373a79",
+          "description_sha256": "5f9ec8c0c6c7066e73b4eabc85199bd46eb99fdb73c16a9ea2c3dc787a04705c"
+        }
+      ]
+    },
+    {
+      "task_id": 711,
+      "rank": 92,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "specification_hold",
+      "source_hashes": {
+        "assertion_sha256": [
+          "f64f7845649cfc07f3df32ed117e01d777781f5d6e659cd6d88cec9b6e21b322",
+          "169f53306efa88825be1b1a931676605000e13ae8a835b1b49b43999a9833fea",
+          "e3350e84a8091a48d127339f6160e23a654cc9fdafcba10d24c197b7b5823a74"
+        ],
+        "description_sha256": "6a536ab9fbeef131a5f687079e064f33fcd4aba8b891b6225cae73cce6f75b9b",
+        "reference_sha256": "b973438f1bf74f2aa50c6458ebb70c7cbdc25dc7c2ba16ef3c887d9e5ffeb359"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "humaneval/131"
+      ],
+      "reason_hold_retained": "Prior131 multiplies digits selected by digit value parity; here products are partitioned by position parity. Related product kernel, different selection rule."
+    },
+    {
+      "task_id": 340,
+      "rank": 94,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "9e72ac6737c9f031984bf33f71d844c5ddecb12e94cba7acd4b8bde74b8d9324",
+          "f7b641640a2066628235b30ebaf72b0c98976b3748014fa461abebe32a8b78a1",
+          "84d796b8b62a476264f2b79acf9a09995ee46aa1a9a0dc93a77741b86be7336e"
+        ],
+        "description_sha256": "bce8c6bd43bbf807b7c47c45465d3d816840ec108e0352825d5b9fc76b8861af",
+        "reference_sha256": "07a459e7482d3dd1e21219cd8cac8f8d2541446aeba1190ee95a90fea96db599"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/4"
+      ],
+      "witness": "Negate the strictly positive entries, take up to three largest using the prior top-k function, and negate their sum.",
+      "limits": "Multiplicity preserved. The candidate up-to-three interpretation remains a proposed adaptation, not silently adopted.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/4",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "7c089f1d58a6a94c59885f3dc9b6d3c9a293b044b3356d85833f49b42d227afc",
+          "description_sha256": "3524b578b91bb2cf2d751abe313051ad9fb7be2e9b639660371cbed37ed8835c"
+        }
+      ]
+    },
+    {
+      "task_id": 506,
+      "rank": 108,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "af1a8faf3154249c2e8cb2e0e65a51ac41cd73ee686167acbd9a9c6ae88e00d8",
+          "279c1e1123cf81f29b1989053978842fbc393822101d1a8e27304058aecab0dc",
+          "8e7d878ae7c03db20ec23a96ab130ca08dd205f3094cdd3b362c7d63f6e5bc21"
+        ],
+        "description_sha256": "4653c73b83579c2eb023d1bcdee02be0ac4474f4df241bc121296c22b7337da3",
+        "reference_sha256": "1bf368d85b99cbff27b46f516ae6994aaad03fbe57a71b869d5bff295061abf9"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/402"
+      ],
+      "witness": "For integers 0<=k<=n, choose p=2**n+1. The prior modular binomial value is exact because choose(n,k)<=2**n<p. Multiply by k factorial to obtain the ordered-selection count.",
+      "limits": "E11 root402 exposure, not canonical-pool membership. This is an exact mathematical relationship, not an efficient bounded-resource implementation claim.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/402",
+          "exposure_source": "E11 development root402",
+          "reference_sha256": "d82fd7d5ba1f8d00063729e60f949c0505de1c2b91f65519fc10b7ab6ac2d41c",
+          "description_sha256": "855e373e328b28fede8e68c6ad20f10b18ce5f8114aff02e79a9724e5ff60291"
+        }
+      ]
+    },
+    {
+      "task_id": 547,
+      "rank": 134,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "95e5f5156071d2c962a5ca23784dc45fe00308f2eb79dcb2e9c9793dffa117f3",
+          "a02edec3c7d731a2690e4604c8802db858aaf1ae46ff6ba6dedd1e96e709cd87",
+          "eef26eb519c9d570242093de07bffb79bd0e2a204e7089ae469a66258b15c261"
+        ],
+        "description_sha256": "8a08e60bfea43f038d236062176a938abf515a6094b8ad11b3f6327a52ab65d5",
+        "reference_sha256": "cb92722ed2f6fe36d339f27f5160afc440731a466c814217246e20d6216d1417"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/224"
+      ],
+      "witness": "For nonnegative n, sum prior popcount((k-1) XOR k) for k=1 through n.",
+      "limits": "Exact aggregate of an exposed bit-count kernel. The faster floor-sum identity remains useful but does not erase this relationship.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/224",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "97774429e4cf4a07eb83e97ae30f0c80ea9cabc5657e85f9821344cde7f1a3c9",
+          "description_sha256": "e66e99c3b9eab49846541f828123edefa899a94d3d65eaf85f3ee07ad939d0f2"
+        }
+      ]
+    },
+    {
+      "task_id": 828,
+      "rank": 136,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "17fb57318362d0f75c7f7241b831cb3f30b5c808e343eb117519865221c5e253",
+          "1100086dab3334af34b06886c64713cf7f10e0b5b72a8898300547a306113b8b",
+          "3ae640e85f411fa35274c778da8ed438eddba7480193adbf240300d667be15c1"
+        ],
+        "description_sha256": "a8f58c6d415dc5030830e59418d61e7e866b62389e3d1fe75d91b4570957da32",
+        "reference_sha256": "160ac0ea1cb66615175b19123e2c6449ce1b898e0bd0aa5c8801edf9e8d8f1ac"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "mbpp/764",
+        "mbpp/192",
+        "mbpp/667"
+      ],
+      "reason_hold_retained": "Prior764 counts ASCII digits, while this counts Python alphabetic/digit/other classes. Shared classification counting core; Unicode and three-output semantics differ. Candidate192 is a Boolean postprocessing of the first two counts."
+    },
+    {
+      "task_id": 192,
+      "rank": 155,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "a97048a39f0ced2b16010ff9934cb2ca6791a4b933429d5b2d84aa44461234af",
+          "ddd2a2b3a3b0cd0297832d3bc93355a3a02ed64ca9bfa2d5aaa3b50d0e864907",
+          "4626515530abbafa4de94326c3e59faf047698dab0ce802227f9302d66915339"
+        ],
+        "description_sha256": "871631681429e3c9f98d2983969c31b95dd1cb48231b9558079d0ab75c44807a",
+        "reference_sha256": "6f0308a1193081869535c0ffe34ed56883d1af6d8359fd2549aedef31a120b2b"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "mbpp/828",
+        "mbpp/764"
+      ],
+      "reason_hold_retained": "Direct Boolean threshold of candidate828's alphabetic/digit counts on ordinary characters; prior digit counting supplies part of the same classification family. Keep828 and192 together pending Unicode details."
+    },
+    {
+      "task_id": 811,
+      "rank": 172,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "8d5cf1c4fb434bee93208fa85a0cc5dd35bcd71a6d2610b695cf03cfb70e3842",
+          "c6da88b0eeb60e6b2c591b3addd61f0951b66da76010fd7bf321520c36c89df3",
+          "86aac9f8f2a98b50aabe0d62cb0cb5f9cb5a794921c42028d215a74af30a1625"
+        ],
+        "description_sha256": "7ce4ec5b7b00643009db9bfbf3b026c83871b9d0b569d0307f974ee0593a94e8",
+        "reference_sha256": "ad16e437152584359a312b496ab6cb69e6cedb76f64bd08acc517800de29bebb"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "definite_prior_family",
+      "related_uids": [
+        "mbpp/142"
+      ],
+      "witness": "For finite lists A,B of tuples of ordinary literal scalars, require equal lengths, then count_samepair(A,B,B)==len(A).",
+      "limits": "Length check prevents zip truncation; ordinary structural equality assumed, not custom equality objects or nonreflexive values.",
+      "prior_sources": [
+        {
+          "uid": "mbpp/142",
+          "exposure_source": "canonical_pool",
+          "reference_sha256": "6c170a8d3caf878d2be02271add36ae3b14b67fd82f143232e1b1062739f38d9",
+          "description_sha256": "a502c468a53082b5fcab9d0e5df3e26291b33fc073f6bdb8c31873f0148f42b4"
+        }
+      ]
+    },
+    {
+      "task_id": 961,
+      "rank": 173,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "specification_hold",
+      "source_hashes": {
+        "assertion_sha256": [
+          "84548aee4ed05bff2bf0f237261441d363371544080a3d698ad53251df694b3d",
+          "38c1233f47b11b52504e724dd7e00dca4b75401a185b19fb45120080c1836e04",
+          "410db3a9ed406e5b3ad6c39932a7c0de96df41296f3d380f5ef9d377d456984a"
+        ],
+        "description_sha256": "945a35f4abb79710feaef8ac03af8c83ceda5da0b0218e83f52bcc34a17a124a",
+        "reference_sha256": "32b46233e4a6be383546f285a19847de3b99ec038b660d5838f34fd19d53e24b"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "humaneval/156"
+      ],
+      "reason_hold_retained": "Inverse direction of prior integer-to-Roman conversion shares a representation family but is not direct function reuse."
+    },
+    {
+      "task_id": 921,
+      "rank": 198,
+      "prior_family_axis": "plausible_shared_family",
+      "contract_axis_unchanged": "clarification_required",
+      "source_hashes": {
+        "assertion_sha256": [
+          "0e0a9ceb8dcead8fd54206225862562bc35b6a053542140d7e406abe68cad34c",
+          "2550143fdde439447d94847208169b3e016d9b3a5b377d5a4bf78d6020510889",
+          "94b56323cdc17a9d1ccefbbb8d0b1361633d85cd460fe69b042ddc559ad8cdd2"
+        ],
+        "description_sha256": "226e9542b10015b7df0c46590e83ff66c55fd0e207ce4b68e0d6c85288b142e8",
+        "reference_sha256": "28f0bed4ba6c58ff26ee6aa2791ab1227b2a3d261383a9cc2849d314702de1a9"
+      },
+      "approved_evaluation_roster": false,
+      "family_axis": "plausible_shared_family",
+      "related_uids": [
+        "mbpp/265"
+      ],
+      "reason_hold_retained": "Prior265 splits by residue/stride, while this slices contiguous intervals. Shared slicing family is plausible but index sets and output order differ."
+    }
+  ],
+  "updated_43_root_family_axis_counts": {
+    "definite_prior_family": 24,
+    "plausible_shared_family": 7,
+    "no_direct_prior_relation_found": 10,
+    "within_candidate_family": 2
+  },
+  "all_contract_holds_preserved": true,
+  "no_new_eligible_family_claim": true,
+  "benchmark_model_executions": 0,
+  "inference_method_changed": false
+}

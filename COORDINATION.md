@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — nine additional prior-family relations established
+
+Signed: Codex scientific lead. [Source refinement](docs/policy_family_refinement_20260927.md) supplies concrete domain-qualified reuse witnesses for9 of16 plausible relationships. The43-root overlay is now24 definite prior-family relations,7 plausible holds,10 roots with no direct prior relation found,and2 related candidate roots. All contract holds and historical records remain;zero new eligible evaluation families. Canonical source variants are distinguished from original MBPP,including75's list versus string return. No benchmark/model execution or worker job. Full-project readiness58%,delta0; family/population/sampling design,full prospective freeze,independent policy evidence and manuscript remain.
+
+
 ## 27 September 2026 — information limit before policy enrollment
 
 Signed: Codex scientific lead. [Internally reviewed analytic ceiling](docs/policy_nine_root_information_limit_20260927.md): under the accepted two-contrast KL procedure, at most7 evaluation families cannot certify lower>.05 even with all+1 contrasts; at8/9 one verified zero family also precludes that declaration. Nine measurement-audited roots are not nine admitted independent families. No split,policy trial or method change is authorized; resolve the family/population design before enrollment. This is planning mathematics,not power or prompt futility. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Prior negatives and MRL-38 closure stand.
