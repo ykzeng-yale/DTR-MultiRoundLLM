@@ -32,6 +32,14 @@ The new recount validates unique/exact assigned grade keys,retains explicit miss
 
 Do not rerun `scripts/reconcile_e11_20260922.py` in place merely to reproduce this table: it writes directly to the historical receipt path. Its original source is preserved for provenance; use the new recount's separate output instead. The new tool does not rerun that script's static candidate-compilation checks.
 
+## Clean-checkout verification
+
+The three commands were also run from a clean managed checkout at `b7456e2`, using Python 3.9.6 with `-I` and a child environment containing only `PATH=/usr/bin:/bin`. Neither `work/` nor a project virtual environment existed in that checkout. No dependency installation was needed. Each command had a 60-second process timeout and wrote to a separate temporary output directory; all three returned zero, and the checkout remained clean.
+
+The [new receipt](../results/manuscript_clean_checkout_20260927/receipt.json) records the interpreter, platform, source hashes, process times and output hashes. Its three adjacent JSON files retain the complete new outputs. All 47 input hashes match the earlier receipt. Diagnostic counts and all repair/selection/estimator summaries match exactly; the complete E12 reconciliation matches except its timestamp and runtime; the complete development/projection recount matches exactly. The reproduced diagnostic count is 5,792, and E12 verifies 33 saved files. No model, benchmark, fitting or simulation execution occurred.
+
+For this verified variant, add `-I` after `python3` in each command above and use the scripts/working-tree inputs from `b7456e2`; retain the explicit older input revision in the Git-blob recount. Ordinary non-shallow Git history must contain that revision. This is a same-host clean-checkout check using the existing Git object store, not a fresh remote clone or independent-host reproduction. It establishes that these arithmetic commands do not require the primary checkout's ignored data; it does not establish reproducibility of the full experimental environment.
+
 ## What is still required for full reproduction
 
 Git contains the cited projections and saved development outcomes. Private source/reference/control payloads and some raw sandbox evidence intentionally remain in ignored `work/` storage under their original manifests. Their availability and hashes must be checked separately before a grader replay. A successful public-record count does not substitute for that evidence,an external-source licence/acquisition check,a compatible verified sandbox,or pinned receiver/server/decoder state.

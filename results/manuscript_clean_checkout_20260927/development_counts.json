@@ -1,0 +1,82 @@
+{
+  "commit": "77fa58eff797433d6080d1875f3be96bd40c8db2",
+  "input_sha256": {
+    "results/e11_dev_v2_20260922T010959Z/D/grades.jsonl": "d5e96fb698d7d75ea8036e5c0e6ebafadab1989b24761f6c3aa5a2f0c6ea2e4e",
+    "results/e13a_request_plan_20260922.json": "f16d9c1086b30273975421c6b6b805082a77dcb2083570c547e758e23e3398f7",
+    "results/e13a_two_arm_20260923T061500Z/grade/grades.jsonl": "08f3c851fd37446cf0f10cfc4660a23384942df49c3c434d68b4de6c380fd921",
+    "results/policy_endpoint_audit_projection_20260926T2303Z.json": "319e818dd2c2066d0dc2dc91dd5a58e27ac87070ed8972af37c39bf13d684783",
+    "results/nine_root_endpoint_projection_20260926T2359Z.json": "3b04b90d3a38aa6c4115482bce9f81f23b47f64e7e961239cc62807c0f78c0e7"
+  },
+  "E11": {
+    "arm_counts": {
+      "STOP": {
+        "1": 6,
+        "0": 1
+      },
+      "N0": {
+        "1": 12,
+        "0": 2
+      },
+      "S0": {
+        "1": 10,
+        "None": 2,
+        "0": 2
+      },
+      "N1": {
+        "1": 12,
+        "0": 2
+      },
+      "S1": {
+        "1": 12,
+        "0": 2
+      },
+      "R1": {
+        "1": 10,
+        "0": 4
+      }
+    },
+    "primary_root_differences": {
+      "mbpp/52": "0",
+      "mbpp/357": "0",
+      "mbpp/373": "0",
+      "mbpp/378": "0",
+      "mbpp/402": "0",
+      "mbpp/489": "0",
+      "mbpp/509": "0"
+    },
+    "context_removal_mean": "-1/7"
+  },
+  "E13a": {
+    "arm_counts": {
+      "R1": {
+        "passes": 9,
+        "assigned": 30
+      },
+      "FRESH": {
+        "passes": 12,
+        "assigned": 30
+      }
+    },
+    "equal_root_mean_difference": "-1/10"
+  },
+  "endpoint_projection_counts": {
+    "results/policy_endpoint_audit_projection_20260926T2303Z.json": {
+      "public:1": 9,
+      "original_private:1": 4,
+      "supplement_v1:1": 2,
+      "public:0": 3,
+      "original_private:0": 8,
+      "supplement_v1:0": 10
+    },
+    "results/nine_root_endpoint_projection_20260926T2359Z.json": {
+      "public:1": 34,
+      "original_private:1": 21,
+      "supplement_v1:1": 9,
+      "public:0": 20,
+      "original_private:0": 33,
+      "supplement_v1:0": 45
+    }
+  },
+  "scope": "Git-blob arithmetic only; no execution, regrading, simulation, fit, raw-private-log replay, independence or policy-efficacy validation.",
+  "executed_script_sha256": "21c248e1d135440b3bd4ca7cbd156561ae1e9e8ca1cbf0255eb6d9224060a2e6"
+}

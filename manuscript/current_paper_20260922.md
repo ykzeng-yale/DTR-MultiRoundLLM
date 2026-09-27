@@ -178,7 +178,7 @@ The earlier [variance-sensitive paired-family interval option](../docs/paired_fa
 
 ## Reproduction status
 
-The [saved-record reproduction guide](REPRODUCING.md) provides three commands and a hash-bound receipt for47 committed inputs. The arithmetic reproduces the historical diagnostic summaries,E11/E12/E13a contrasts and both endpoint projection totals without new generation,grading or fits. Public projections permit count reproduction;private sandbox payloads/logs and full receiver/environment reproduction remain separate requirements. This is an auditable evidence layer,not a clean-host end-to-end reproduction or independent policy-validation result.
+The [saved-record reproduction guide](REPRODUCING.md) provides three commands and a hash-bound receipt for47 committed inputs. The arithmetic reproduces the historical diagnostic summaries,E11/E12/E13a contrasts and both endpoint projection totals without new generation,grading or fits. Public projections permit count reproduction;private sandbox payloads/logs and full receiver/environment reproduction remain separate requirements. A subsequent clean-checkout execution with isolated Python reproduces this layer without ignored data or a project virtual environment; all47 input hashes match and the scientific summaries are unchanged. The [execution receipt](../results/manuscript_clean_checkout_20260927/receipt.json) records its scope. This is a same-host saved-record reproduction, not a clean-host end-to-end experiment replay or independent policy-validation result.
 
 
 ## References for the integrated methods and related work

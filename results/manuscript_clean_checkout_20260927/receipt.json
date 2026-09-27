@@ -1,0 +1,61 @@
+{
+  "reviewer": "Codex scientific lead",
+  "checked_utc": "2026-09-27T01:18:52.242525+00:00",
+  "checkout_commit": "b7456e2b161ab2c36687d5ba783899d6b0d38861",
+  "checkout_initial_status": "clean",
+  "checkout_final_status": "clean",
+  "work_directory_present": false,
+  "project_venv_present": false,
+  "python_version": "3.9.6 (default, May 22 2026, 11:13:45) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "python_executable": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "isolation": "python -I; child environment contains only PATH=/usr/bin:/bin",
+  "git_version": "git version 2.50.1 (Apple Git-155)",
+  "source_input_receipt": "results/manuscript_reproduction_20260927.json",
+  "input_files_verified_against_prior_receipt": 47,
+  "comparison": {
+    "saved_diagnostics": "checks count and all repair/selection/estimator summaries exactly equal prior reproduction receipt",
+    "E12": "entire prior E12 reconciliation equal except timestamp and runtime",
+    "development_counts": "entire output exactly equal prior reproduction receipt"
+  },
+  "runs": [
+    {
+      "script": "scripts/reconcile_manuscript_evidence.py",
+      "script_sha256": "5188ca409f1c92cbd6bee199c5e1b175385a3e8c38f5b631f95dabefb98cdb70",
+      "returncode": 0,
+      "wall_seconds": 0.13584633299999999,
+      "timeout_seconds": 60,
+      "stderr": ""
+    },
+    {
+      "script": "scripts/reconcile_e12_20260923.py",
+      "script_sha256": "709d8629053e366863aeaae48e362da80a1626c4908e2f1d1cbc4c9ad63d0855",
+      "returncode": 0,
+      "wall_seconds": 0.080263416,
+      "timeout_seconds": 60,
+      "stderr": ""
+    },
+    {
+      "script": "scripts/reproduce_development_counts.py",
+      "script_sha256": "21c248e1d135440b3bd4ca7cbd156561ae1e9e8ca1cbf0255eb6d9224060a2e6",
+      "returncode": 0,
+      "wall_seconds": 0.130013875,
+      "timeout_seconds": 60,
+      "stderr": ""
+    }
+  ],
+  "output_sha256": {
+    "saved_diagnostics.json": "86182717f3aface8a0f430f5d90e64fd50c380caed949e11da0a9e650bbaedec",
+    "e12.json": "c828e1860feded42ebd1b97b30dd7678ac73cc42a8c0da3c0bdc577ac7bfdab3",
+    "development_counts.json": "6b96d3e9e2f6e4849c77ad88234739065e46b5c82f4c22c8566a07ec21ef7830"
+  },
+  "new_model_calls": 0,
+  "new_benchmark_executions": 0,
+  "new_fits_or_simulations": 0,
+  "paid_experimental_service_dollars": 0,
+  "limits": [
+    "Same host and Git object store; not an independent-host or fresh remote-clone reproduction.",
+    "Public saved-record arithmetic only; no private grading, original raw-corpus extraction, receiver replay, or synthetic fit replay.",
+    "Does not establish policy efficacy, family independence, licence clearance, or full submission readiness."
+  ]
+}

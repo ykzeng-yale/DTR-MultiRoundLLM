@@ -502,3 +502,10 @@ Next work remains the final integrated claim/notation/reproducibility audit and 
 Main-paper section `Completed evidence: outcomes and their interpretation` now separates reused-data diagnostics, finite development receiver studies and synthetic estimator evidence. Existing internal experiment reviewer checked the new section against the detailed results and saved receipts; the comparator, pilot grading-version and routing-weight qualifications it requested are applied. No historical grades or analysis are changed, and no new experiment is reported. Local file links57/57 resolve; prose diff checks pass.
 
 Next: finish the integrated manuscript/reproducibility audit and resolve the scientifically justified population/sampling design before any prospective collection. Keep the original full-history/multiround/STOP target distinct from the proposed four-cell landmark test. No new worker job or monitoring lease. Full-project submission readiness58%,delta0; independent policy efficacy and total-cost benefit remain unestablished.
+
+
+## 27 September 2026 — Codex clean-checkout arithmetic reproduction
+
+`results/manuscript_clean_checkout_20260927/` retains three full outputs and a receipt from clean commit `b7456e2`. Python3.9.6 `-I`, minimal environment, no `work/`/venv, three60-second process ceilings; all commands returned0 and checkout stayed clean. All47 input hashes match. Diagnostic summaries, E12 excluding time fields and full development/projection recount match prior evidence. No new model/benchmark/fit/simulation execution. Same host/object store limits remain explicit in the updated guide; private grading and original generation/environment reproduction remain outstanding.
+
+The attached managed checkout `manuscript-reproduction` is free and clean for later verification; no live process or experiment awaits a monitoring check. Full-project readiness58%,delta0; efficacy and independent policy validation remain absent. Population/family/sampling and the complete prospective freeze are still required before collection.
