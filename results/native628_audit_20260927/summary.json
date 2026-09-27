@@ -1,0 +1,63 @@
+{
+  "freeze": "3b92df4",
+  "config_sha256": "5fbe37d45bb284be8a8e230e9dd5eb01f2b0f2a32a16d7dbfc583b7b4aa3197d",
+  "scope": "Finite measurement development with known nonadversarial controls; marker/exception parsing not valid as general untrusted grader",
+  "slots": [
+    {
+      "artifact": "reference",
+      "battery": "public",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "reference",
+      "battery": "private",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "reference",
+      "battery": "supplement",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "public",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "private",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "supplement",
+      "grade": 0,
+      "disposition": "process_error"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "public",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "private",
+      "grade": 1,
+      "disposition": "completed_ungraded"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "supplement",
+      "grade": 0,
+      "disposition": "process_error"
+    }
+  ],
+  "seconds": 8.678647165186703,
+  "model_calls": 0
+}

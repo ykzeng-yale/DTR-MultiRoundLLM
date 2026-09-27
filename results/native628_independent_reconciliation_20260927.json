@@ -1,0 +1,63 @@
+{
+  "scope": "Independent saved-process receipt reconciliation, no rerun; finite nonadversarial measurement audit",
+  "config_sha256": "5fbe37d45bb284be8a8e230e9dd5eb01f2b0f2a32a16d7dbfc583b7b4aa3197d",
+  "checks": [
+    {
+      "artifact": "reference",
+      "battery": "public",
+      "verified_grade": 1,
+      "receipt_sha256": "c74ff135271508bffec4b41206e977bd09ab8c055406633a32fc599000614496"
+    },
+    {
+      "artifact": "reference",
+      "battery": "private",
+      "verified_grade": 1,
+      "receipt_sha256": "938406f81568d95b2c2577cb79ff2838ac4b8c0e4578b731cfc7d0cb32ed3a2a"
+    },
+    {
+      "artifact": "reference",
+      "battery": "supplement",
+      "verified_grade": 1,
+      "receipt_sha256": "0641d98745504f661502331bfeae9119c7afe1f2c15468cf9b66edc8d126d516"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "public",
+      "verified_grade": 1,
+      "receipt_sha256": "716b42db48d433238bb46b814e2471f764875e4ad6e7dbd8ab16fe9e09a4c38e"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "private",
+      "verified_grade": 1,
+      "receipt_sha256": "0646d57e563a99bdb55476aedd4b25d9c3c1d173cd8e23768e375930d2b20acf"
+    },
+    {
+      "artifact": "empty_axes",
+      "battery": "supplement",
+      "verified_grade": 0,
+      "receipt_sha256": "31d1bcf2cc3de3f417a92db22f55fa66a6cbbacffcd6dac15c17576e8553bbf1"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "public",
+      "verified_grade": 1,
+      "receipt_sha256": "e2bd0e007a6fd707020b3097de11f1b7b9ccf76cb2635835b103105ee4e1385e"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "private",
+      "verified_grade": 1,
+      "receipt_sha256": "85df2c42dc8ecd461c740a09630bcfbe570164b2f34df359dd5cfa9ad9ba8384"
+    },
+    {
+      "artifact": "constant_line",
+      "battery": "supplement",
+      "verified_grade": 0,
+      "receipt_sha256": "b7cffd1aa2ea10ce295ef66c19b49b912ec7ad73eaa0dee947ce32e8f3dd3df4"
+    }
+  ],
+  "all_predictions_observed": true,
+  "missing_slots": 0,
+  "new_model_calls": 0
+}

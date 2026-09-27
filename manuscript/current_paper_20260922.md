@@ -129,6 +129,8 @@ Under the fixed sign-split procedure and its assumptions, the all-zero observed-
 
 A subsequent source-only inventory of pinned BigCodeBench v0.1.4 verifies1,140 rows but identifies one exact duplicate task pair across both prompt variants, reference and tests. Its unittest suites and library-mediated outputs do not fit the existing literal-case diagnostic without a new measurement contract. This is neither an adopted evaluation population nor a new receiver result; no library-based independence or admissibility claim is made. [Source inventory and decision](../docs/bigcodebench_rows_decision_20260927.md).
 
+A separately frozen nine-slot measurement audit of deliberately selected BigCodeBench task628 confirms a native-suite weakness: both empty labelled axes and a constant-zero line pass the original public and private tests, while the reference also passes. A prespecified supplemental necessary-property check rejects both controls and retains the reference. This is one source-inspected task under a recorded numerical environment, not a benchmark-wide defect estimate or policy result; the supplement was constructed with the controls in view and does not validate every sine-wave requirement. [Protocol and executed audit](../docs/native628_audit_results_20260927.md).
+
 ## Saved-evidence figure
 
 ![Audited historical gains and synthetic estimator RMSE](figures_20260927/audited_evidence.png)

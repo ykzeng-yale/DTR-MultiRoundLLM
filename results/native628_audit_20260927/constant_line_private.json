@@ -1,0 +1,34 @@
+{
+  "artifact": "constant_line",
+  "battery": "private",
+  "source_sha256": "bebc10b8eb1f49451eb6248064a6f1c0bc8d45b639fd8bb83fa129fa2627c271",
+  "grade": 1,
+  "result": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "sandbox_kind": "seatbelt",
+      "executed": true,
+      "stdout": "AUDIT_RESULT {\"passed\": true, \"checks\": 4}\n",
+      "stderr": "Could not save font_manager cache [Errno 27] File too large\n",
+      "returncode": 0,
+      "timed_out": false,
+      "pid": 54031,
+      "seconds": 0.7554460000246763,
+      "rendered_profile_sha256": "5b8752f286dcb73b4b3282c8475d482f97af0f4a062dca705a76620740b5c6b1"
+    },
+    "dependency_tree_sha256": "cf6526cb5d51da93c9181f7fbeeaf438b0f9815db5abb2aa0bbe56df0a5ece85",
+    "dependency_bytes": 74177316,
+    "bundle_unchanged_after": true,
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12"
+  },
+  "freeze": "3b92df4",
+  "config_sha256": "5fbe37d45bb284be8a8e230e9dd5eb01f2b0f2a32a16d7dbfc583b7b4aa3197d"
+}

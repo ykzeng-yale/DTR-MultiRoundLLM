@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — task628 frozen measurement audit completed
+
+Codex direct execution: [results](docs/native628_audit_results_20260927.md), freeze3b92df4. All9 slots complete in8.679s, no missing/retry/model calls. Reference passes all3 batteries; empty labelled axes and constant-line controls pass original public/private methods and fail the separately frozen supplement. Independent saved-process reconciliation confirms exact assertions and receipts. This is one deliberately selected measurement-development task, not a benchmark defect-rate or policy result. Close the audit without expansion; BigCodeBench remains unadopted and naive test split unreleased. Full-project readiness60%,delta0; population/measurement, full trial freeze, independent policy evidence and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.
+
+
 ## 27 September2026 — numerical dependency sandbox qualified within scope
 
 Codex direct implementation: [dependency qualification](docs/native_dependency_qualification_20260927.md). Hash-bound74.18MB bundle imports NumPy/Matplotlib inside a separate read-only allowance under strict Seatbelt; repository reads, bundle writes and system subprocess denied. Initial socket-creation expectation failed and remains recorded; corrected actual loopback connection is denied. Three harmless starts, zero benchmark/model calls. Full2,281 tests plus8 subtests pass;53 focused tests pass. Existing runners untouched; this new dependency version does not reproduce the publisher environment or establish grading integrity. Next freeze a bounded task628 reference/control measurement audit before execution. Full-project readiness60%,delta0; population/measurement, full trial freeze, independent policy evidence and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
