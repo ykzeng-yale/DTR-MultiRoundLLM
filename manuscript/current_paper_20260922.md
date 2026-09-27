@@ -16,6 +16,14 @@ The methodological contribution is the specification and audit of these distinct
 
 The empirical contribution currently consists of corrected reused-data diagnostics and fresh, finite development executions. The seven-root E11 result is retained as a negative finding for its frozen strategies and scoring contract. The independently reconciled 14-root E12 batch supplies another negative development result for its primary strategy contrast. Its adapted tasks, public information and thin private suites differ from E11, so it is a separate development study. Neither a passing instrument check nor a negative small-sample contrast substitutes for independent policy validation.
 
+## Relation to established methods and prior prompting work
+
+Dynamic treatment regimes formalize sequential decisions adapted to observed history (Murphy, 2003). Longitudinal doubly robust estimation and sequential off-policy evaluation have established foundations (Bang and Robins, 2005; Jiang and Li, 2016). Our use of these tools does not establish a new identification principle, universal efficiency, or a finite-sample advantage over fitted regression. The proposed paired-family interval likewise specializes classical bounded-mean concentration (Hoeffding, 1963). The design-specific question is whether supported user-side interventions yield predictable conditional rankings and useful independently evaluated policies under a fixed receiver and explicit information, measurement and cost contracts.
+
+There are close predecessors in the language setting. CausalCollab studies longitudinal human–LM refinement and identifies an incremental stylistic effect under stated conditions (Zhang et al., 2024). Zhang et al. (2025) explicitly formulate natural-language action learning through dynamic treatment regimes and Q-learning. Kiyohara et al. (2025) study contextual prompt optimization from logged bandit feedback. Fresh and Shin (2026) distinguish assignment to a conversational policy from effects of realized messages. C3 studies counterfactual action continuation in replayable cooperative-agent settings (Chen et al., 2026). Accordingly, neither causal analysis of conversations, language-valued DTR learning, contextual prompt personalization nor restored-history branching is claimed as an original concept here. Our target specifies an automated user's next instruction to a fixed receiver, its supported slate, the future continuation and the population law; this specification is a scoped research contribution to assess, not an established priority claim. Preprint citations refer to the versions listed below, without inferring peer review or independently replicating their experiments.
+
+Iterative prompting also has established implementations. Self-Refine uses model-generated feedback to revise an output (Madaan et al., 2023); Reflexion uses verbal feedback and episodic memory to guide later attempts (Shinn et al., 2023). These motivate comparisons with feedback and resampling, but a named algorithm is not a single intervention independent of its evidence access, stopping rule and budget. Our completed E11–E13a executions test their own frozen recipes; they are not reproductions or head-to-head evaluations of those methods. A future baseline adapted from them must declare its actual diagnostic access, final-artifact selection and full cost. The proposed PATCH/RETHINK learner also remains a restricted landmark test rather than a validated general prompting optimizer. The [version-specific literature audit](../docs/literature_recheck_20260920.md) and [design/code review](../docs/literature_guided_design_20260921.md) retain the detailed comparisons and unresolved novelty questions.
+
 ## Estimand, assumptions and identification
 
 Let $Z=(H,C)$ contain the public pre-selection history and the complete ordered slate generated before assignment. Let $\mu$ be the joint landmark law of $(H,C)$ induced by the prefix law and frozen candidate generator. Fix the receiver and decoding law, evaluator, and future continuation policy $\nu$. For data-trained policies, interpret the following expectations conditional on the frozen development information and require the declared evaluation law to remain valid under that conditioning. For a supported index $a$, define
@@ -44,7 +52,7 @@ $$
 V_\mu^\nu(d)=E\left[\frac{d(A\mid Z)}{e(A\mid Z)}Y\right].
 $$
 
-This is standard inverse-probability identification,not a new result. Under complete intervention execution with prespecified positive branch counts and action-specific conditional means matching deployment, a frozen comparison instead uses
+This is standard inverse-probability identification, not a new result (Bang and Robins, 2005). Under complete intervention execution with prespecified positive branch counts and action-specific conditional means matching deployment, a frozen comparison instead uses
 
 $$
 D_i=\sum_a\{d(a\mid Z_i)-\beta(a\mid Z_i)\}\bar Y_{ia}.
@@ -136,3 +144,20 @@ The earlier [variance-sensitive paired-family interval option](../docs/paired_fa
 ## Reproduction status
 
 The [saved-record reproduction guide](REPRODUCING.md) provides three commands and a hash-bound receipt for47 committed inputs. The arithmetic reproduces the historical diagnostic summaries,E11/E12/E13a contrasts and both endpoint projection totals without new generation,grading or fits. Public projections permit count reproduction;private sandbox payloads/logs and full receiver/environment reproduction remain separate requirements. This is an auditable evidence layer,not a clean-host end-to-end reproduction or independent policy-validation result.
+
+
+## References for the integrated methods and related work
+
+This is the verified core bibliography for the sections above, not yet the complete bibliography for all linked historical supplements. Primary records were checked on 27 September 2026; version-specific technical comparisons also use the dated source audits linked above. Publisher retrieval for Hoeffding's DOI failed in this check; the primary-paper copy was accessible. These checks verify attribution and scope, not the cited studies' empirical results.
+
+- Bang, H., and Robins, J. M. (2005). [Doubly Robust Estimation in Missing Data and Causal Inference Models](https://doi.org/10.1111/j.1541-0420.2005.00377.x). *Biometrics*, 61, 962–973.
+- Chen, Y., et al. (2026). [Exact Is Easier: Credit Assignment for Cooperative LLM Agents](https://arxiv.org/abs/2603.06859v2). arXiv:2603.06859v2; preprint, inspected version 2.
+- Fresh, A., and Shin, A. (2026). [What is the Causal Effect of a Conversation? Estimands and Inference in AI Mediated Conversations](https://arxiv.org/abs/2607.03597v1). arXiv:2607.03597v1; preprint.
+- Hoeffding, W. (1963). [Probability Inequalities for Sums of Bounded Random Variables](https://doi.org/10.1080/01621459.1963.10500830). *Journal of the American Statistical Association*, 58, 13–30. [Primary-paper copy](https://www.cs.rpi.edu/academics/courses/spring06/random/hoefding.pdf).
+- Jiang, N., and Li, L. (2016). [Doubly Robust Off-policy Value Evaluation for Reinforcement Learning](https://proceedings.mlr.press/v48/jiang16.html). *Proceedings of Machine Learning Research*, 48, 652–661.
+- Kiyohara, H., Cao, D. Y., Saito, Y., and Joachims, T. (2025). [Prompt Optimization with Logged Bandit Data](https://arxiv.org/abs/2504.02646v1). arXiv:2504.02646v1; preprint.
+- Madaan, A., et al. (2023). [Self-Refine: Iterative Refinement with Self-Feedback](https://arxiv.org/abs/2303.17651v2). arXiv:2303.17651v2; version used in the repository's design review.
+- Murphy, S. A. (2003). [Optimal Dynamic Treatment Regimes](https://doi.org/10.1111/1467-9868.00389). *Journal of the Royal Statistical Society, Series B*, 65, 331–355.
+- Shinn, N., et al. (2023). [Reflexion: Language Agents with Verbal Reinforcement Learning](https://arxiv.org/abs/2303.11366v4). arXiv:2303.11366v4; version used in the repository's design review.
+- Zhang, B., Wang, Y., and Dhillon, P. (2024). [Causal Inference for Human-Language Model Collaboration](https://aclanthology.org/2024.naacl-long.91/). *NAACL 2024, Volume 1: Long Papers*, 1630–1647.
+- Zhang, B., Wang, Y., and Dhillon, P. S. (2025). [Policy Learning with a Natural Language Action Space: A Causal Approach](https://arxiv.org/abs/2502.17538v1). arXiv:2502.17538v1; preprint.
