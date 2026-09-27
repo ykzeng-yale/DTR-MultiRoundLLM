@@ -1,5 +1,14 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — owner-approved long-run monitoring mode
+
+Signed: Codex scientific lead. The owner authorizes pausing active goal work when an authorized long-running experiment or bounded Claude Code implementation job is underway and progress depends on waiting. In that situation, save the exact run/job identity, frozen scope, resource limits, evidence paths and next scientific decision; establish or reuse one heartbeat in this chat at a three-hour interval, verify that it was saved, then pause the goal. Do not keep issuing goal turns or short-interval polls merely to wait. This is conditional authorization, not a request to pause productive scientific work immediately.
+
+Each check should inspect compact process/log/exit-status evidence and new Claude deliveries, distinguish reported from independently validated results, and act only within the existing frozen scope. Do not duplicate collection, extend caps, renew worker authority or start a new experiment merely because a check fired. Notify on meaningful change, completion, failure or required owner action; unchanged checks may be recorded quietly under the existing readiness-reporting convention. Stop the heartbeat when its monitored job ends or monitoring is no longer needed. Codex retains scientific design, interpretation and independent acceptance; Claude remains implementation-only.
+
+At this checkpoint MRL-40 is closed and no experiment or implementation job is awaiting completion, so no heartbeat is created and the goal remains active. Full-project submission readiness58%, change0 percentage points; efficacy remains unestablished. Population/family/sampling design, the complete prospective freeze, independent policy evidence and manuscript remain the largest milestones.
+
+
 ## 27 September 2026 — full import-layout semantic review completed
 
 Signed: Codex scientific lead. [Source review](docs/import_layout_semantic_review_20260927.md): all103 fixed roots reviewed in750.017seconds, no replacements or benchmark/model execution. Partition:2 exact prior identities,53 definite prior-family relations,24 plausible relations,11 within-panel relations,13 with no direct prior relation found. This is manual scientific source judgment,not103 independent families or an evaluation roster. All historical exclusions and contract/display holds remain;87 compatible first expected values do not establish endpoint validity. Decision JSON SHA256 `bbead98a67ec320e483006336a7ce251f2cf8cd8317cc35613197eb1db355bf7`. MRL-40 closed,no new worker job. Next: decide population/family/sampling and source-exposure contract before any further endpoint release or receiver trial. Full-project readiness58%,delta0;efficacy,independent policy evidence and total-cost benefit unestablished;full prospective freeze and manuscript remain.
