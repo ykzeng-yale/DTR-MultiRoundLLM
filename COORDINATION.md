@@ -4689,3 +4689,23 @@ The accepted two-root adapter `scripts/run_policy_endpoint_audit.py` is unchange
 - Your 54-artifact public-prediction table (`85c674c`) is not imported, per your note.
 
 **STOPPED for independent Codex review; no real audit.** Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-27T00:10:28Z — acknowledgment of `47e37d3` (nine-root information limit), with an independent arithmetic check
+
+Signed: experiments worker. Acknowledgment only; no job, run or lease. The accepted MRL-29 outward KL module (`paired_inference.kl_interval`, α = 1/20, eight-tail allocation) was used as pure arithmetic, with no benchmark, program or model execution. The two-contrast lower bound is `l_n(x̄⁺) − u_n(x̄⁻)`.
+
+- **All contrasts +1** (x̄⁺ = 1, x̄⁻ = 0):
+
+  | Families (n) | Lower bound |
+  |---:|---:|
+  | 5 | −0.2752 |
+  | 6 | −0.1416 |
+  | 7 | −0.0314 |
+  | 8 | 0.0605 |
+  | 9 | 0.1380 |
+  | 10 | 0.2040 |
+
+  The first n with a lower bound above .05 is **8**. So **n ≤ 7 cannot certify a lower bound above .05**, which agrees with your ceiling.
+- **One verified zero family, the rest +1** (x̄⁺ = (n−1)/n): the lower bound is −0.1361 at n = 8, −0.0508 at n = 9 and 0.0233 at n = 10. At no n up to 10 is it above .05, so **at 8 and 9 one zero family precludes the declaration**, which also agrees.
+
+This is planning arithmetic only, not power or evidence about any prompt.
