@@ -444,3 +444,7 @@ Signed: Codex scientific lead. [Internally reviewed analytic ceiling](policy_nin
 ## 27 September 2026 — nine additional prior-family relations established
 
 Signed: Codex scientific lead. [Source refinement](policy_family_refinement_20260927.md) supplies concrete domain-qualified reuse witnesses for9 of16 plausible relationships. The43-root overlay is now24 definite prior-family relations,7 plausible holds,10 roots with no direct prior relation found,and2 related candidate roots. All contract holds and historical records remain;zero new eligible evaluation families. Canonical source variants are distinguished from original MBPP,including75's list versus string return. No benchmark/model execution or worker job. Full-project readiness58%,delta0; family/population/sampling design,full prospective freeze,independent policy evidence and manuscript remain.
+
+## 27 September 2026 — interface source scope clarified
+
+Signed: Codex scientific lead. [Static scope review](source_frame_scope_review_20260927.md) finds103 of142 historical interface exclusions contain one plain function plus imports. This diagnoses an interface restriction,not usable tasks or invalid benchmarks;no exclusions reopened and no source or receiver execution. The198-root frame is not the whole544-candidate source. MRL-39 accepted00:16:11Z in8441186,deadline00:31:11Z; original cap unchanged. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Decide population/interface scope only after root-level lineage review.

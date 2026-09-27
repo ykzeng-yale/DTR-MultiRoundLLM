@@ -1,0 +1,1901 @@
+{
+  "type": "exploratory_static_source_inventory_not_execution_or_eligibility",
+  "reviewer": "Codex scientific lead",
+  "created_at": "2026-09-27T00:17:00.954490+00:00",
+  "inputs": {
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/pool_screen_20260921T131231Z/per_candidate.json": "8c7d9ea628035e1f869a45517f86769c4f3911ac002ec7962b057de4c3d9c9c9",
+    "scripts/screen_landmark_pool.py": "a2f44e31368c9eddfac159bfa1dfa3be29f697c02c74381f003b7b727fbb20b0"
+  },
+  "n_interface_exclusions": 142,
+  "one_function_imports_only": 103,
+  "one_function_imports_only_and_plain": 103,
+  "shape_counts": [
+    {
+      "functions": 1,
+      "other_node_types": [
+        "Assign"
+      ],
+      "n": 3
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "Assign",
+        "Import"
+      ],
+      "n": 3
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "ClassDef"
+      ],
+      "n": 2
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "ClassDef",
+        "ImportFrom"
+      ],
+      "n": 1
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "n": 75
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "Import",
+        "ImportFrom"
+      ],
+      "n": 2
+    },
+    {
+      "functions": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "n": 26
+    },
+    {
+      "functions": 2,
+      "other_node_types": [],
+      "n": 23
+    },
+    {
+      "functions": 2,
+      "other_node_types": [
+        "ClassDef"
+      ],
+      "n": 1
+    },
+    {
+      "functions": 2,
+      "other_node_types": [
+        "Import"
+      ],
+      "n": 3
+    },
+    {
+      "functions": 3,
+      "other_node_types": [],
+      "n": 3
+    }
+  ],
+  "records": [
+    {
+      "task_id": 1,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "132a1a365f315c71305664e54c7b932cf9cc83b430f7c87a69f2f77afd550b20",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 10,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "ed158e8bd3c091f1e935a2dcb1d50f45b9f50a906806c225997e9dfb34de70d6",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 13,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0923f880026981486a1ec954ea2cde79de7e238a3cd0113521f9bf8604986aa5",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 15,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "047e9aa3fb25ec722fecaa92decc3652a8f872624909f07c234867fb431409d2",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 27,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "36a974403c5b3b2a740f4613cdf003da97d5d5dafe52074d53d10f30bc7dc73c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 30,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a2feb307ccbe67d5968b2bb476d30bdba487a4a42bf82696491e92bc3cf636d0",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 32,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "1a8e8ef681ef84f9383a5599c2eaa103a84c1fb2073c61c75bfaac64e0eb834e",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 39,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "5a2b442cc74d08c85d1f45d7dbed1b5a828a0b29971dccd2a75f322617634bab",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import",
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 40,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "31e72b0f4c31ed9a34cc737741c5eee0e26ebf17b674cb565a936845276c8ae1",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 43,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "de0bc81be06796b456d4d3b489531f8a2ffa59ca75ca02d207e11daa56592899",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 44,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9fd3ad6401034aadb6dea137da57045d676544633b2f24f1e83c2a201b967920",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 45,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "23c180a059d89f08ee92b597493260ceef1e206948bff57dcadc3536f822f703",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 55,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "79b06d9a16ffa840fb36a983e0c8a28e04a095f04be7f87086a0aa97dd0e3637",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 73,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "5f1230c0f9b30bbfb534726613a6791f911392d9be11cc07b24d19073fb21e46",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 114,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "492473c299655e2b92561033c29b91895d4e51804c1da140808f2ea060627b8c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 122,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "cf46d3656f66354d5011fbcab8f528b66d0a4b5afb8e9ce0ef2a7cf5ea24f3cf",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 148,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0bc61603be4d5e19be17f7be39f01003a9f99190f5479b8d36b17b2477fdbe4f",
+      "top_level_function_count": 3,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 151,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "1022c9153aa31ba43ca3c7e4d5f96e32f4d40dda8037d6b35cfd423f4e55e4eb",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 152,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "aec570b06e6da7fdcaae4b4d6ab334d4f7f36dd5f67c34ed457afacbfe642bfc",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 157,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "bc59389919dd5ec6078be8513df9a417c13f927dfb3e9adb800f2d907461455f",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 173,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "6793b85852d2f4bb0abbc29031def26cce558ab519a6ddc94173c108ba2b5572",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 178,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "513b152eef4c6a6a6928a7d365c8c4ff12d1b45808205065d73a3e1f1a8a4013",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 180,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "555694e84cd678cd61c301a564c043f6fc3c4167e9d5324e9abd4d8bc17d8374",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 181,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "ee879dc0f9002932f0b85fa93dd57e2823f77005719308652842cf04281983fc",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 182,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "cea52eddf939e9ae6e40529c0c9d159be02943b750c0bd2361ad09d5eec38765",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 186,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "6bf7b74d85903f16175d9c62d8ad3c37f7728f68c5b7de76c010e6a4cfd30ea7",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 198,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "474f1a8e846043cff525d3ca0c5b57aee479d987374411e8a71f0171a77ddacd",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 208,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "3f1047ae9bd97b7ea7c8298fbd79fc7c8dbf269981883d92a63cb53deb186cc5",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 209,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "54525211ecc636da32b491b12868c5a0df25f5d23d0b97984eb5abb71db2b9f7",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 210,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7d7d9d32b79a8b630097f5fa24fcf0e69d4d1b4adb3a5a47e301293cb579caf6",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 212,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0d1cbdcb90a66ee00bbeb1a91b1b7f4c3921077b4e3788592195542ebeb6dae3",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 214,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "009d5ac5c0850a15c68526d1b23f6792d0b43fa3dd84ec703fdb3723378c60e2",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 218,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "94b2f3f69a9a0aafea1050b98406b2150fc4a4b33e83402dc089bea76d3c74df",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 220,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "1aa723a663d88980bf6fe3a984482092d924d1bb567ef2a9250935ded06bfeb6",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 254,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "267036e8d8a7cce1e3a8fe9f8747e9b87b82290f216ba897503bffeebdb2db0b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 275,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "629650a2bbd7eaa5aec10a7ad10c3325861b9df00975ab23d941db622f84b83d",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 303,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "75e19e9c7da69fc276121bbfc4d5cba5129309fd46076f3c60a4e56de6dd1a58",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 317,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a00a292b69d58bb73ecee94e595e2bbf5b425016c832744364b7ef12e41a7eb3",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 319,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "844f4b785a0fd2374fb38d807e35b9478bd3200d5c58413af0a186890cfa60a0",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 323,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a3358f0a9541748217f7ef16bd96a47616d2791fe7f95139f899ec751c8af1da",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 326,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a5e72faefca8933b9074e341bb8e431609de951484a8ec3edd895a8e7e27c550",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 330,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "b2d9f4194f72d4aca4716b872dbbbdeafd2e081d2374def170410e235b63298a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 337,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "655936b7ed1390396609dcc9cddeddd552d024a56181ca35ec443fa3c3f3b14c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 338,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "5b6f35cff267843b597772bc947d3d7c7adeecf6da10c401c75ee8408303876a",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 342,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a54548dd7b9755ed40a342d8a789e8a3c20925b19cb8380c2e57ce8ba728ba2a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ClassDef",
+        "ImportFrom"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 348,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "01966b06842b55940ec6164d3e840d2d6ad9c471ebabd154c71962fc94d92843",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 364,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "e74858c4fc5ec7f9bbc5f19774143083c3dfd0753331447721eaa626c8f71356",
+      "top_level_function_count": 3,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 367,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a8c26d1efe412c9b1f99d694808bd42d179daa47f3d64970c0692d0b001e7312",
+      "top_level_function_count": 2,
+      "other_node_types": [
+        "ClassDef"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 372,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "2ee6c073031701a1e27a110301b5b1c68c79f278fa759a5b2befa125dd8b831f",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 381,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "6a7ceaf9425a9dec1a7aad81a5a2e7e6441b364b4ba605718ee7c1ca9248b471",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 403,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "55ff30072ea81384bcbb7925cdd29b7ee7ffdc96208f3833fdc933d982336945",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 416,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0bec90f9197316fba720f31f436ac32544002734283863882280c2f168b798c1",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 466,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "2ffc8e2e8b7eca07f0eafa0eb324ab71205ce438268e6c287b1de50da6020e27",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 482,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9cdf4be27f5c035aeebd5db87660b2fadf0b9dc97a09c5ea34eca7dc8c10b11a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 485,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "02d7e90cb67e5550cd928d1333dbb960f54ba946f15720ee245543dfa5185157",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 486,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9ede7c590ce62973586fc10682de19181094f20c15cbb045e630b094632e7d11",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 488,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "410ab6e9aca83d48b2a506c8a25fdadfa214e62fc20de9565a386b27cd3f3907",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 491,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "404d232d659ecd286cf4124cc4fbb13a057cfa8c1d874d4e28f2c8a1766290c2",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 493,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "598d3344585cd375866db1a2acd75b94ebd51fd72acaa4ef1c538104238f177f",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 495,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "011462f28ad5cb480baf3b23b178d6e3a5a7c4ec29bfd7e8e55e37690ab54492",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 496,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a05d867124c2c618974555688a2b63223da50e99cfd5765464ae28b3d7e06190",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 497,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "273acfd6b15fc9d20f36f1b37cac2536bb48f12915d4e470590c69fafea87bf9",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 501,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "b1283dab9ae9440b7b0a84083b7271583655014b727dd528e79c679ae4514c32",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 512,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "49aa21f638c52bd18f1aab1d0aeb988adf75d673f8fd945d0fe43763aafa0d07",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 518,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7ee5ba6a3d91c2a1682eebba3c9a88f563c509015b22fad2e181bc79da324300",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 519,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "c1139d8164282316d4d1b865779d67e765c8a6aaf1928400a90cc96e5c29c93b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 520,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0379fadae2d442047a6fa6e0f7f4d80df8f1d2d930c9c38918b9f000fced2bd7",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 530,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "904cee882606a0f22cb33b6218546acb83c4b503e744c4b058bc8228c6eba31b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 531,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "97dd772df25259e9d4ee67ba3df888c0e6abaa7c5a795d6e5da046d3cd116080",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 534,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "117709013c5b67e2c5afd967f5ef20bd109e0e1dbad191eb8f2aeb66377626e7",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 541,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "f6a29cd7ae443bb0cee5126ef2f59d9bd6de79b52e25c909c3947dbdc9d76af5",
+      "top_level_function_count": 2,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 542,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9316fd0be6907719f69e15ece9af15ce75851f26552fee4d31c5ad5544cdff9a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 545,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "64dae38d08a31aea689b625f8672a7046107bdfbc6a8edd75ac33c28a4268121",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 601,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "8abf27f9088b3dfebb5eea630d0942f8fbbd478f00eddc85da0c72c53c6b5c9b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ClassDef"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 645,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "107537b2d9867f08e50ab128566585fa8f93a56fcd1c811ca41b49e40aacf91b",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 647,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "8e8784f0a8759f807dcd508fa156b4b1d8cf6e8f61a064c8f7602be839870fad",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 648,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "831894f816fecd3ec89e86fa59ef396565203cb5714c0b9b2f510434c6a86bf7",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 653,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "caf49132726b8a1ba3844fa9f897d9e37fd44d667fde082413d4afcd251e41fc",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 657,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "0d8b01c0db22b077f3b67dbcd67f1e66dee9b41d4bb7f8980c9fd6d63f80f3fc",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 663,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "47cd620e7e60a0ed6f5dd3c899969d8a0a3b99c66b16d3775fdb0a7bebb92028",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 668,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "2d95bf1aa30a5a1354ba49ff027bdc418ad35a2f67535a1b236ecc84cb8eb158",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 669,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "61a819a6b09a7031f028073c74eb7513742190e2eec813ab405d81f0516b1606",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign",
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 671,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "f3e42c5c755474415f89bf18b879e5d3198cc5409ce843e95f2aed04434905e8",
+      "top_level_function_count": 2,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 674,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "6f726a30a090af0f0c98c20ad678464bd00c8817c576ab74d477854b4d9761e8",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 676,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "f26730cdd81dbed0f9aa3b7d0a7b9a7069accd1c550434d9bd24b074815b4fbc",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 686,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "52ce65b9dd3ecf9b47a12e144e44780271c25314d6b82bbb762d7a39e0877463",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 688,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "4432fcca4667e9cee5b4e0d961607e28be787d862a60f471385726c13555c5a5",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 691,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "8af0b4d6b3b85952aa8d67f1dd937840d9af7522400b757a526c689f1903daa6",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 693,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "c18de5b6b6bdb85267458fb2c27bafd96fdc310f9b93b90955460c80b3c7fe7b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 702,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "c99a50902d7df67a20cd7cb49b8da42117a85938bb6ab81bdc34a5a9c4c63fd5",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 709,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "e2748af078bb613589f1b601ee2fe1d9a7a244c39148b3b921014b557b3c6bb8",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 712,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "f1a8608010c08b3e74b887fb51989cc97cdefbee784a2b04af219f5809ae4b4a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 717,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "d8f79460609712fc1ebed6b5cc210b39acbf2d08afdf1164acbf935959a25af4",
+      "top_level_function_count": 2,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 719,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "d82f50edc28597b37f73ef3d99a894d6f33627ab96cf1f82c78a632314146911",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 727,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "3de337d020efa29327fc7f9650eca6728a6ac2489fa5ccfb66e4fc493b547a08",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 774,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "b129ac005feddb5f4cf19994b4d82436633f38e68e5de150ac1f55c4dbc7b777",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign",
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 789,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "fd01087992ed8b97660bfdde5316eb7e86267bf1c652fe816d8e4587643375a9",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 795,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "953a72ac8e3ca65f0e83ed1207c15cfc3b4bc7f6d12f3ad3a6f54d83d7207886",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 810,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "218ccc61b0c57a7f9aa5ae99c17fff15db57208f6690a6a2aa91c890302579fc",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 812,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7cf9d191ff5263d7f77083ee758bfa7e1a006d149575a240561596e7dc8a5a4b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 821,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "ac157347e3f586b43c7f1fcf2ef90a5e4f7e6bf286fae8d48dfe54edf65c2541",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 822,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "95a868079595248d6c2901ee599ef5f3af0be700ff389a39ff9b03360a6f5852",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 823,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "aaa073a34a495d911b117488971daf6035e69c223b0dc908ab6b2fe44e266bbd",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 829,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "3deafd96a2c71d8bb070c0455cf6feb21f5aaa15764ff1176faf4d3f0feac541",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 830,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9d8b79ef4fd0a2318193fd530f15773c0afe6f9cad48c14dcf56d08b6f865870",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 832,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "52024e2af7fc2b6efff0f4abfb173b345dee57892c89b70e67951dab2696efab",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 836,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "4d8aff24cf451f3d0308de51d9a94c0872c2548805d2c44a9cf7c1db9d7ff0c3",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 843,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "755d5675461ea2061fde46a22d1d869347ba34a886b901e4a34ccfde5f0cb991",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 845,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "ed1002ea24c5893accaa741d5bf42491886be6d5ffe695aac27d1740a95faa8c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 853,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7ada3f44933b927c8082cd47269e55c01283c8f4ef3ac96145f33194b9455cac",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 854,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "9885bba15c471324096a6368a7c144a5ff0c5681976b9e8b11aadde5d3920c2d",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 859,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "8c4001f9f4780873e216288d26eef836116f6ea38725898c7d4ea09345429dc3",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 860,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a23b16a7e48b260e159946c84ee2690eda9afbe8998d67d2077d31d99b8d0e7a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Assign",
+        "Import"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 861,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "ce4e7c1dec652da87e4b553853a29e1465821c2c17fab05e4d2f17a36a349b0a",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 862,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a13d5f68bac8ecdc634f2383651ec02d366e5935232602ef0ed0e87a5522eade",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import",
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 879,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "78b170ec8753102a4c4a52f1645243555dd7ed05eb8abe04b4e85340f9d3b6ea",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 892,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "dba4b2c56c66f413bb795f1a8a9960704849e4d78d79e948ea48b9aab01755e4",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 896,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "d9fb477ce89d36da5de6ac078e0ef0d019bcbde22a1d2f0fd03828f22a1abcf9",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 898,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7b8c3224471f78d9aa6b961b9295799a765a0a6237bc3208ce64d4c731a8c0fc",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 900,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "cdb8ae773af0c07ba88e1947cdebaeebe5d2270d946f9131013e92065b4fe04c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 902,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "d01e29c926f26bc689bc6983d0c981c4bcd9fa99259c918e3519dab60c71f33b",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 905,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "118a80fc2f3f11eca7e20bd85941555fd0a7d5ade497a98a4db379a332a1fb6e",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 906,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "5297ee51a82826f7e403eab17f7f4f9f187ffa776a8d6d79bc98dc49760f3c16",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 910,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7ebf662b04e92129d5e54270d4a63fb49510a968771edcba7170b5eb96c71820",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 912,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "35e09eae2eedc598f6c44412e4251cbb5a7627bff07595d9601ed1c1413fe500",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 913,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "fc242d8dc61997b826328926af4c64ebf3dba27db263b93e9c081034274c8fe4",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 917,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "a26fecee713f14618958f1dcdff69e980974219833cefe7a13d20c334da00f31",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 926,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "726234693245963f378aa416ef0c8fd5908324a314eb77a3ed1521156d7122fc",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 927,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "835756b17fcf98ab1628aab9e152235f508986f12be03b77ba97571e7969b946",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ClassDef"
+      ],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 930,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "92028a7f656317bf9d05610e0ada94b2e0df7051c15f1554cb0ab7d15bde99ce",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 931,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "d170b193d538cd7d7822a64a7978a4441b30e758c4814f7d5af9851a836f002c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 933,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "10c5971c80fcdc4e0eb7d02f8e66f81f9b6eb0ec5569911244c2e064fca710e3",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 937,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "c0e380c06f190b54268e2f4da92104d2701360b9074ea17ce914e7dcce6ba586",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 938,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "e95d95a62fc2ed4564149fb6e0cda69736c62b8aa8dccb5210d363e4b8296708",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 940,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "c0bbce279c717bbc3c69d0e8be15113154c95284f694969ff7015a0412582363",
+      "top_level_function_count": 3,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 943,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "f679167621bdecfa073146798e90e227ff53eb6cddb053d2e145349b0aead3ff",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 944,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "1263a449391a98c6dfbbb9af5772d98f46cc826e4ba292a2847aa7b9a0f65c36",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 946,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "5807276df183822b7fbcc24ee5487aadc34802a355536b73175065edf6baa0e0",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "ImportFrom"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 949,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "b185f71e34952e3cc4e0a7af410061693f5756d7daa68e678fbf71d65c935a26",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 956,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "7b442b2d233ba6a8d601b3718ddd0f07fdeedc77a3e99c8fc93abed43ed9856e",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 957,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "53012f41c49d92f85fce5ae793bf7a8d2606ef974c385b9a6c8c9dcd1e9fa28c",
+      "top_level_function_count": 1,
+      "other_node_types": [
+        "Import"
+      ],
+      "one_function_imports_only": true,
+      "plain_signature_under_old_rule": true,
+      "approved_for_evaluation": false
+    },
+    {
+      "task_id": 962,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "reference_sha256": "14c6fe25efde240e48452f6c8051f3496f0a781529b54856643c81457bf15b53",
+      "top_level_function_count": 2,
+      "other_node_types": [],
+      "one_function_imports_only": false,
+      "plain_signature_under_old_rule": false,
+      "approved_for_evaluation": false
+    }
+  ],
+  "executed_payloads": 0,
+  "model_calls": 0,
+  "limits": [
+    "Syntax inventory only; no import executed.",
+    "Imports can have side effects or be unavailable; this does not grant runtime compatibility.",
+    "Family/exposure/contract/measurement and later gates not re-adjudicated.",
+    "Any expanded interface/population requires an explicit prospective version; old exclusions retained."
+  ]
+}

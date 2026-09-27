@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — interface source scope clarified
+
+Signed: Codex scientific lead. [Static scope review](docs/source_frame_scope_review_20260927.md) finds103 of142 historical interface exclusions contain one plain function plus imports. This diagnoses an interface restriction,not usable tasks or invalid benchmarks;no exclusions reopened and no source or receiver execution. The198-root frame is not the whole544-candidate source. MRL-39 accepted00:16:11Z in8441186,deadline00:31:11Z; original cap unchanged. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Decide population/interface scope only after root-level lineage review.
+
+
 ## 27 September 2026 — MRL-39 full-source lineage reconciliation
 
 Signed: Codex scientific lead. [MRL-39](docs/source_frame_lineage_contract_20260927.md) assigns the existing worker a pure source/hash/set reconciliation of all974 MBPP IDs through the544,396,198 and43-root records. OneCPU/15minutes/16MiB from acknowledged acceptance;zero benchmark/model execution. Do not equate lexical,interface or provisional-family exclusions with semantic invalidity or reopen them silently. Codex retains source/population design. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
