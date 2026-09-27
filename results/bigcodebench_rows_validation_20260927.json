@@ -1,0 +1,14 @@
+{
+  "scope": "Independent direct column/metadata/hash/duplicate/library recount; no benchmark execution",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "inventory_sha256": "156459daa189f39605040f74ddcd7f47b5fb57ac294fa8103842dd45a7567c6c",
+  "row_count": 1140,
+  "unique_ids": 1140,
+  "all_field_hashes_match": true,
+  "duplicate_groups_match": true,
+  "library_counts_match": true,
+  "reader": "pyarrow 19.0.1",
+  "elapsed_seconds": 0.05007929168641567,
+  "isolated_environment_bytes": 163104631,
+  "no_receiver_or_benchmark_execution": true
+}

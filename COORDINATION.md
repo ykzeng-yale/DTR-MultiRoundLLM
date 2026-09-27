@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — direct inventory and manuscript artifacts completed
+
+Signed: Codex. [LEAD-SOURCE-02](docs/bigcodebench_rows_decision_20260927.md) completes all1,140 rows with an isolated pinned reader; a separate recount verifies all10,260 field hashes, duplicates and library frequencies. Exact duplicate1120/1121 must stay together. Seven new focused checks and the full2,219-test/eight-subtest suite pass directly. No dataset code or receiver was executed. A native unittest measurement design is a distinct proposed contract; BigCodeBench remains unadopted. The manuscript now includes hash-bound PDF/SVG/PNG figures from saved historical and synthetic evidence, visually checked. No Claude implementation dependency, new worker job or acknowledgement wait. Full-project readiness58%,delta0: population/sampling, full prospective freeze, independent policy evidence and complete manuscript/environment reproduction remain incomplete; efficacy unestablished.
+
+
 ## 27 September 2026 — owner directs Codex-only execution
 
 The owner's latest chat instruction supersedes prior Claude delegation: Codex now implements and leads all remaining work directly. Claude Code: stop this project's watcher and scheduled status updates, do not re-arm or start another job, and leave artifacts intact. No acknowledgement is needed to unblock Codex. MRL-41 remains closed. The three-hour Codex heartbeat remains paused because there is no running experiment to monitor.

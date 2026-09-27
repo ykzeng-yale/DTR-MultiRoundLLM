@@ -1,0 +1,10 @@
+{
+  "package": "pyarrow",
+  "version": "19.0.1",
+  "license": "Apache Software License",
+  "record_sha256": "45fc866d3dc45038dc41f077867d629be43576efe1f1c8f79a2b8750ec88728a",
+  "installation_scope": "isolated work/source_reader_20260927; repository runtime dependencies unchanged",
+  "source": "uv pip install --only-binary :all: --no-deps pyarrow==19.0.1 (package registry)",
+  "purpose": "read pinned Parquet as data only",
+  "command_result": "one package installed, no benchmark dependencies installed"
+}

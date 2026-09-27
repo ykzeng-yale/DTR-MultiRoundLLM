@@ -45,3 +45,13 @@ For this verified variant, add `-I` after `python3` in each command above and us
 Git contains the cited projections and saved development outcomes. Private source/reference/control payloads and some raw sandbox evidence intentionally remain in ignored `work/` storage under their original manifests. Their availability and hashes must be checked separately before a grader replay. A successful public-record count does not substitute for that evidence,an external-source licence/acquisition check,a compatible verified sandbox,or pinned receiver/server/decoder state.
 
 Historical synthetic studies have distinct freezes and missing/capped slots; rerunning their fits would be a new controlled reproduction rather than these arithmetic commands. No new sampling,task repair,endpoint change or policy training is authorized by this guide. Full environment/source availability and the integrated bibliography/claim audit remain incomplete. Independent evaluation of a frozen policy on a defensible untouched-family population is still absent; neither reproducible arithmetic nor a green test suite supplies it.
+
+## Rendering the saved-evidence figure
+
+From the repository root, with the declared project matplotlib/numpy dependencies:
+
+```sh
+.venv/bin/python scripts/render_manuscript_figures_20260927.py --out-dir /tmp/dtr_figures_new
+```
+
+The output directory must not exist. The renderer uses the committed clean-checkout diagnostic receipt and writes PDF, SVG, PNG and source/output hashes. It performs no model call, benchmark execution, statistical refit or new inference. The saved PNG was visually inspected for labels, clipping and separation of evidence layers. Library versions are recorded in the figure receipt; PDF timestamps may differ on rerendering, so output hashes identify an artifact rather than promise cross-run binary identity.
