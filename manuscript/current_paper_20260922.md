@@ -131,6 +131,8 @@ A subsequent source-only inventory of pinned BigCodeBench v0.1.4 verifies1,140 r
 
 A separately frozen nine-slot measurement audit of deliberately selected BigCodeBench task628 confirms a native-suite weakness: both empty labelled axes and a constant-zero line pass the original public and private tests, while the reference also passes. A prespecified supplemental necessary-property check rejects both controls and retains the reference. This is one source-inspected task under a recorded numerical environment, not a benchmark-wide defect estimate or policy result; the supplement was constructed with the controls in view and does not validate every sine-wave requirement. [Protocol and executed audit](../docs/native628_audit_results_20260927.md).
 
+Benchmark-grade benefit and semantic-quality benefit are distinct targets. If u_a and v_a are the target-weighted joint false-positive and false-negative grading masses for policy a under the same execution/weighting law, then theta_Y=theta_Z−u_d+v_d+u_b−v_b. Valid upper bounds propagate into a wider semantic contrast interval; handpicked wrong controls do not estimate those masses. Without justified grading-error bounds, the measurement audits cannot transport a benchmark-pass contrast into a general semantic-correctness claim. This is classical sensitivity arithmetic, not a new identification theorem. [Assumptions, confidence accounting and exact checks](../docs/measurement_sensitivity_contract_20260927.md).
+
 ## Saved-evidence figure
 
 ![Audited historical gains and synthetic estimator RMSE](figures_20260927/audited_evidence.png)

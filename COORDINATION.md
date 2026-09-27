@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — measurement uncertainty linked to policy claims
+
+Codex direct theory/source integration: [measurement sensitivity](docs/measurement_sensitivity_contract_20260927.md). Existing internal inference review accepts classical directional-error contrast bounds under common-target and coverage assumptions. Exact helper passes7 tests including136 exhaustive two-observation configurations. Handpicked wrong controls supply no target-weighted grading-error bound; hypothetical scenarios are not receiver results. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
+
+
 ## 27 September2026 — task628 frozen measurement audit completed
 
 Codex direct execution: [results](docs/native628_audit_results_20260927.md), freeze3b92df4. All9 slots complete in8.679s, no missing/retry/model calls. Reference passes all3 batteries; empty labelled axes and constant-line controls pass original public/private methods and fail the separately frozen supplement. Independent saved-process reconciliation confirms exact assertions and receipts. This is one deliberately selected measurement-development task, not a benchmark defect-rate or policy result. Close the audit without expansion; BigCodeBench remains unadopted and naive test split unreleased. Full-project readiness60%,delta0; population/measurement, full trial freeze, independent policy evidence and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.

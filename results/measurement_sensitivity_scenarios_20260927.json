@@ -1,0 +1,47 @@
+{
+  "scope": "Hypothetical arithmetic sensitivity scenarios; not observed policy intervals or estimated grading errors",
+  "hypothetical_grade_interval": [
+    "2/25",
+    "3/25"
+  ],
+  "rows": [
+    {
+      "assumed_false_positive_mass_each_policy": "0",
+      "assumed_false_negative_mass_each_policy": "0",
+      "semantic_interval": [
+        "2/25",
+        "3/25"
+      ],
+      "decision": "benefit"
+    },
+    {
+      "assumed_false_positive_mass_each_policy": "1/100",
+      "assumed_false_negative_mass_each_policy": "1/100",
+      "semantic_interval": [
+        "3/50",
+        "7/50"
+      ],
+      "decision": "benefit"
+    },
+    {
+      "assumed_false_positive_mass_each_policy": "1/50",
+      "assumed_false_negative_mass_each_policy": "1/100",
+      "semantic_interval": [
+        "1/20",
+        "3/20"
+      ],
+      "decision": "inconclusive"
+    },
+    {
+      "assumed_false_positive_mass_each_policy": "1/20",
+      "assumed_false_negative_mass_each_policy": "1/20",
+      "semantic_interval": [
+        "-1/50",
+        "11/50"
+      ],
+      "decision": "inconclusive"
+    }
+  ],
+  "source_sha256": "7a4acc2ecbeae67afd996744b2a7730e34842cd35005ce67f9ed858791b6167a",
+  "checks": "136 unordered empirical distributions on two binary outcome/grade tuples; exact identity and interval inclusion; 7 tests passed"
+}
