@@ -1,6 +1,6 @@
 # DTR-MultiRoundLLM
 
-> **27 September direct execution:** The owner has ended Claude Code delegation. Codex now handles implementation and scientific decisions directly. The [complete BigCodeBench row inventory](docs/bigcodebench_rows_decision_20260927.md) resolves the reader blocker and finds an exact duplicate pair; it does not adopt an evaluation population. The [current manuscript](manuscript/current_paper_20260922.md) includes reproducible evidence figures. No independent policy result exists; full-project readiness remains58% (change0 points). This notice supersedes older delegation and active-goal status text below.
+> **27 September direct execution:** The owner has ended Claude Code delegation. Codex now handles implementation and scientific decisions directly. The [complete BigCodeBench row inventory](docs/bigcodebench_rows_decision_20260927.md) resolves the reader blocker and finds an exact duplicate pair; it does not adopt an evaluation population. The [current manuscript](manuscript/current_paper_20260922.md) includes reproducible evidence figures. No independent policy result exists; full-project readiness is60% (+2 points for manuscript/reproducibility integration; no efficacy credit). This notice supersedes older delegation and active-goal status text below.
 
 > **26 September lead resumption:** [Codex scientific leadership, independently reviewed Claude Code setup, and next scientific milestones](docs/lead_resumption_review_20260926.md). Active research goal; source implementation accepted, full collection remains held.
 

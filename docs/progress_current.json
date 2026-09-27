@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-26T22:32:53.182889+00:00",
+  "checkpoint_utc": "2026-09-27T20:55:26.721058+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -48,18 +48,18 @@
     {
       "name": "manuscript_and_reproducibility",
       "weight_percent": 10,
-      "completion_fraction": 0.4,
-      "contribution_points": 4.0
+      "completion_fraction": 0.6,
+      "contribution_points": 6
     }
   ],
-  "overall_percent": 58,
+  "overall_percent": 60,
   "prior_check_reconstructed_percent": 58,
-  "prior_checked_head": "7db6e36",
-  "baseline_note": "Fixed 58-point rubric unchanged: scientific resumption, new source/mock setup and classical inference specialization add no empirical or independent-policy milestone.",
-  "delta_percentage_points": 0,
+  "prior_checked_head": "bc8cb0e",
+  "baseline_note": "Fixed weights unchanged. Manuscript/reproducibility component rises from 40% to 60% (4 to 6 weighted points): integrated current evidence, hash-bound figures and clean locked-package verification. No empirical efficacy credit.",
+  "delta_percentage_points": 2,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Fixed ranks61-80 source audit: 3 family exclusions,13 specification holds,4 unresolved candidates. MRL-34 first delivery not accepted: independent mocked probes found incomplete plan checks and output-cap accounting. R1 correction requested within original deadline; no actual reference/control/model execution.",
+  "latest_evidence": "Codex-only execution; full pinned BigCodeBench inventory, duplicate1120/1121, 2219 local tests plus8 subtests; integrated saved-evidence figures; clean locked checkout2170 pass49 skip plus8 subtests. No receiver outcomes.",
   "latest_worker_review": {
     "last_seen_worker_revision": "7f441f3",
     "delivery_type": "Source/mock adapter reviewed; repair required before execution",
@@ -583,5 +583,20 @@
     "verified_by_current_grader": true,
     "reference_control_execution_released": false,
     "model_collection_released": false
+  },
+  "direct_execution_20260927": {
+    "scientific_lead": "Codex",
+    "implementation": "Codex",
+    "claude_delegation": "ended by owner; stop directive committed e6e4f6d; no active project poll_origin.sh process found",
+    "source_review": "docs/bigcodebench_rows_decision_20260927.md",
+    "package_reproduction": "results/clean_package_reproduction_20260927/receipt.json",
+    "receiver_status": "read-only /health and /props requests to localhost:8193 both connection refused; no server started",
+    "remaining": [
+      "population/family/sampling and measurement contract",
+      "complete prospective numerical freeze",
+      "independent policy evaluation",
+      "full manuscript claim/novelty audit and raw-environment reproduction"
+    ],
+    "goal_record": "paused; direct work in this turn authorized by owner; no resume tool exposed"
   }
 }

@@ -1,0 +1,39 @@
+{
+  "checkpoint_utc": "2026-09-27T20:55:26.721058+00:00",
+  "revision": "bc8cb0ec4c920f11be1946d3f9a1edc47435c1f1",
+  "checkout": "/Users/yukangzengcmac/.codex/worktrees/manuscript-reproduction/DTR-MultiRoundLLM",
+  "same_host_shared_git_store": true,
+  "python": "3.12.13",
+  "lock_sha256": "3d3ad1def798d85d516be237fcfcd81d98545a5f3e7661a071e621d25cd43ede",
+  "commands": [
+    "uv sync --frozen --extra dev --python /Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python",
+    ".venv/bin/python -m pytest -q"
+  ],
+  "failed_setup_attempts": [
+    {
+      "command": "uv sync --offline --frozen --extra dev",
+      "python": "3.13.13",
+      "reason": "locked scipy wheel absent from local cache"
+    },
+    {
+      "command": "uv sync --offline --frozen --extra dev --python /Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python",
+      "python": "3.12.13",
+      "reason": "locked scipy wheel absent from local cache"
+    }
+  ],
+  "result": {
+    "passed": 2170,
+    "skipped": 49,
+    "subtests_passed": 8,
+    "failed": 0,
+    "seconds": 52.59
+  },
+  "checkout_clean_after": true,
+  "ignored_work_present": true,
+  "environment_bytes": 296491205,
+  "scope": "Clean checkout and locked dependencies on same host; no raw-grading/model/fit replay. Skips are not validations. Exact skip reasons not retained by this pytest command.",
+  "logs": {
+    "pytest.log": "a517e65d9dbd38b4c471884493e68a1b489508885fe2270e0769d7e2352e492f",
+    "sync.log": "6f49d2043e1a16b3477803d7f11f04f939ac1781a1421a1f5ab6e76f72ea2cbe"
+  }
+}

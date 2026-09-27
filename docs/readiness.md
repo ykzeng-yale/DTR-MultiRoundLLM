@@ -1,5 +1,12 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September 2026 — direct execution and reproducible manuscript integration
+
+**60%, change +2 percentage points.** Under the same eight weights, manuscript/reproducibility increases from40% to60% completion (4→6 weighted points); every other component remains unchanged. The current manuscript now integrates theory, corrected empirical evidence and measurement limits; hash-bound PDF/SVG/PNG figures render the saved records; a clean same-host checkout with freshly installed locked dependencies passes2,170 tests and8 subtests with49 skips. The prior same-host public-arithmetic reproduction remains valid. These jointly complete additional integration/reproduction work, rather than awarding credit for repeated tests or extra documentation. Full raw generation/grading reproduction, final claim/bibliography audit and submission assembly remain incomplete.
+
+The direct1,140-row inventory resolves the reader blocker and identifies duplicate1120/1121, but earns **no efficacy or independent-policy credit**. No live receiver at the old8193 endpoint was available during read-only preflight. Population/family/sampling and measurement, full prospective freeze and untouched-family policy evaluation remain the largest scientific milestones. Full project is not submission-ready; efficacy remains unestablished. Evidence: `results/clean_package_reproduction_20260927/receipt.json`, `manuscript/figures_20260927/receipt.json`, and `docs/bigcodebench_rows_decision_20260927.md`. Claude delegation has ended; Codex implements directly.
+
+
 ## 26 September2026 — complete fixed-frame reconciliation
 
 Signed: Codex scientific lead. [All198 fixed roots are reconciled](policy_full_frame_reconciliation_20260926.md):26 historical family exclusions,114 holds,58 candidates under heterogeneous source-review scopes. Fourteen candidates have prior receiver development; one additional display hold leaves43 unresolved roots,not eligible independent families. No new executions or roster release. Next: consistent contract/exposure/family adjudication before a full prospective study freeze. MRL-35 closed; no new worker run. Full-project submission readiness58%,delta0; efficacy and independent policy validation absent.
@@ -314,8 +321,8 @@ most half credit until independently checked. Lost validity can decrease credit.
 | Known-truth statistical validation | 10% | 60% | 6 points | Corrected fitted-estimator diagnostics and prespecified personalization simulation; adequate-history matched baselines, final MC precision and consolidated validation remain open. |
 | Fresh supported-prompt experiment | 15% | 40% | 6 points | E11 seven-root, E12 fourteen-root and E13a five-checkpoint development collections independently reconciled; null/negative contrasts retained. Untouched-family policy validation, population precision and useful-gain decision remain open. |
 | Independent policy validation | 10% | 0% | 0 points | No frozen public-history rule/comparator evaluated on untouched root/family information. Fixed-bank exploratory selection earns no completion credit here. |
-| Manuscript and reproducibility integration | 10% | 40% | 4 points | Theory draft, methods supplement and reproducible audit scripts exist; integrated current manuscript, empirical figures, final reproduction and claim audit remain open. |
-| **Total** | **100%** | | **58 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
+| Manuscript and reproducibility integration | 10% | 60% | 6 points | Current integrated manuscript, hash-bound empirical/synthetic figures, public arithmetic and clean locked-package validation; final claim/bibliography audit, raw-environment reproduction and submission assembly remain open. |
+| **Total** | **100%** | | **60 points** | **Not submission-ready; personalized-prompt efficacy unestablished.** |
 
 The last five columns of evidence are judgments, not automatically generated
 scores. Keep these eight weights and component meanings fixed for subsequent

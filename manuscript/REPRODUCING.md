@@ -55,3 +55,7 @@ From the repository root, with the declared project matplotlib/numpy dependencie
 ```
 
 The output directory must not exist. The renderer uses the committed clean-checkout diagnostic receipt and writes PDF, SVG, PNG and source/output hashes. It performs no model call, benchmark execution, statistical refit or new inference. The saved PNG was visually inspected for labels, clipping and separation of evidence layers. Library versions are recorded in the figure receipt; PDF timestamps may differ on rerendering, so output hashes identify an artifact rather than promise cross-run binary identity.
+
+## Clean locked-package check (27 September, direct Codex execution)
+
+The reusable clean worktree was advanced to`bc8cb0e`. Offline synchronization first failed because the locked SciPy wheel was absent from the cache (both the automatically selected Python3.13 and explicit3.12 attempts are retained in the receipt). Online `uv sync --frozen --extra dev` with Python3.12.13 then installed the unchanged lockfile. The full suite passed **2,170 tests plus8 subtests, with49 skips**, in52.59seconds. There was no ignored`work/` directory, and Git remained clean. This is a same-host clean-checkout package check, not a new-host reproduction, raw benchmark replay or validation of skipped checks. The ordinary pytest output did not retain individual skip reasons. [Receipt and complete logs](../results/clean_package_reproduction_20260927/receipt.json).
