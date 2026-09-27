@@ -39,10 +39,11 @@ def extract(raw):
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--freeze',required=True);parser.add_argument('--raw-out',type=Path,required=True);parser.add_argument('--summary-out',type=Path,required=True);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--plan',type=Path,default=PLAN);parser.add_argument('--freeze',required=True);parser.add_argument('--raw-out',type=Path,required=True);parser.add_argument('--summary-out',type=Path,required=True);args=parser.parse_args()
     freeze=subprocess.check_output(['git','rev-parse',args.freeze],text=True).strip()
-    plan=json.loads(PLAN.read_bytes())
-    for path in [str(PLAN),*plan['committed_sources']]:
+    plan_path=args.plan
+    plan=json.loads(plan_path.read_bytes())
+    for path in [str(plan_path),*plan['committed_sources']]:
         if subprocess.check_output(['git','show',freeze+':'+path])!=Path(path).read_bytes():raise ValueError('freeze mismatch')
     for path,h in plan['input_sha256'].items():
         if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=h:raise ValueError('input hash mismatch')
@@ -50,7 +51,7 @@ def main():
     if [r['task_id'] for r in rows]!=plan['task_ids']:raise ValueError('sample order mismatch')
     if args.raw_out.exists() or args.summary_out.exists():raise ValueError('refuse reused output')
     args.raw_out.mkdir(parents=True);start=time.monotonic()
-    summary={'classification':'random source-ID reference feasibility under current contained environment; not semantic correctness, family eligibility or efficacy','freeze':freeze,'config_sha256':hashlib.sha256(PLAN.read_bytes()).hexdigest(),'task_slots_planned':len(rows),'task_slots_attempted':0,'rows':[],'error':None,'receiver_calls':0,'paid_usd':0}
+    summary={'classification':'random source-ID reference feasibility under current contained environment; not semantic correctness, family eligibility or efficacy','freeze':freeze,'config_sha256':hashlib.sha256(plan_path.read_bytes()).hexdigest(),'task_slots_planned':len(rows),'task_slots_attempted':0,'rows':[],'error':None,'receiver_calls':0,'paid_usd':0}
     def execute(source):return run(source,bundle=plan['bundle'],tree_sha256=plan['tree_sha256'],timeout_s=10,cpu_seconds=5,output_cap=65536,mem_bytes=1<<30)
     try:
         smoke=execute('import numpy,pandas,scipy,sklearn\nprint("IMPORT_SMOKE_OK")\n')

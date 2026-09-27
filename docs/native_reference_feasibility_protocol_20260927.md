@@ -13,3 +13,9 @@ Use the existing default-deny dependency Seatbelt runner, unchanged deny-network
 Freeze plan, renderer and runner before dispatch. Execute with `--freeze <immutable commit> --raw-out <new work directory> --summary-out <new results JSON>`. The analysis is the full24-row table: absent native report, native report with failures/errors/skips, or native reported all-success; all categories retain environment and integrity limitations. Review failure classes to choose the next engineering change, preserving old results and using a new protocol if rerun becomes justified. Do not present a version change as reproducing the old environment.
 
 Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. This prospective feasibility audit can advance setup, not establish supported prompt benefit.
+
+## Dependency closure correction before reference execution
+
+The b6346f9 smoke stopped with missing `narwhals`, transitively required by the installed sklearn. **Zero of24 reference slots ran**; failed smoke and all unattempted assignments are retained. Joblib also reported the expected serial fallback under denied multiprocessing, not a reason to permit forks.
+
+V2 adds the already installed narwhals package and its license metadata to a new hash-bound bundle, retaining the original bundle and source sample. No download, task replacement, assertion or limit change. Unchanged files are hardlinked only as a storage optimization; sandbox denies writes and before/after tree verification remains required. Re-freeze corrected dependency closure and the runner's explicit `--plan` selection before one v2 audit in a new directory. This restores the declared core dependency availability; it does not reproduce publisher package versions or waive remaining missing libraries.

@@ -1,0 +1,14 @@
+{
+  "classification": "offline dependency-closure correction; original bundle retained, no benchmark outcomes yet",
+  "parent_tree_sha256": "790fa368abba431faf23d60516de5223a8dcb181be8a33b731a531249f357957",
+  "tree_sha256": "3bf6aa034de0a08238dce4a5a57e4bda638a187af3738325e3cb82b9b53b3f86",
+  "total_bytes": 217395531,
+  "files": 6454,
+  "added_package": {
+    "name": "narwhals",
+    "version": "2.26.0",
+    "license": "MIT"
+  },
+  "storage": "unchanged parent files hardlinked; no parent bytes modified; added package copied",
+  "network_download_bytes": 0
+}
