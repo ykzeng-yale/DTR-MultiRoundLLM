@@ -495,3 +495,10 @@ Signed: Codex scientific lead. The [manuscript](../manuscript/current_paper_2026
 The existing manuscript now directly situates its target against eleven primary sources and states that E11–E13a do not reproduce Self-Refine/Reflexion. Source scope uses `docs/literature_recheck_20260920.md` and `docs/literature_guided_design_20260921.md`, with primary records re-opened and explicit arXiv versions checked. Internal theory review accepts this prose/bibliography only, without verifying other manuscript sections or reproducing external results. All54 local links and eight display-math delimiters check; no estimator, outcome, protocol or execution authority changes.
 
 Next work remains the final integrated claim/notation/reproducibility audit and a justified population/family/sampling decision before prospective collection. Do not treat bibliography integration as novelty proof, independent policy evidence, or renewed worker authority. Full-project submission readiness58%,delta0; efficacy unestablished. No live long-run job is awaiting a three-hour monitor.
+
+
+## 27 September 2026 — Codex completed-evidence integration
+
+Main-paper section `Completed evidence: outcomes and their interpretation` now separates reused-data diagnostics, finite development receiver studies and synthetic estimator evidence. Existing internal experiment reviewer checked the new section against the detailed results and saved receipts; the comparator, pilot grading-version and routing-weight qualifications it requested are applied. No historical grades or analysis are changed, and no new experiment is reported. Local file links57/57 resolve; prose diff checks pass.
+
+Next: finish the integrated manuscript/reproducibility audit and resolve the scientifically justified population/sampling design before any prospective collection. Keep the original full-history/multiround/STOP target distinct from the proposed four-cell landmark test. No new worker job or monitoring lease. Full-project submission readiness58%,delta0; independent policy efficacy and total-cost benefit remain unestablished.

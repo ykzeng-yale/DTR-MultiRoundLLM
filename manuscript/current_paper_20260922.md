@@ -72,6 +72,41 @@ This elementary conditional-expectation identity concerns an oracle,not the fitt
 
 Finally, applying a learned action rule repeatedly changes later history distributions. Transporting a landmark contrast requires both supported history-distribution change and invariance of the relevant conditional outcome law; a history density ratio alone cannot repair a changed latent checkpoint mixture or continuation. The proposed one-decision experiment therefore tests a restricted empirical part of the original multi-round program. It cannot certify the full adaptive generator/selector/STOP system. [Landmark transport scope](../docs/landmark_prompt_theory.md#7-landmark-distribution-is-not-global-policy-occupancy).
 
+## Completed evidence: outcomes and their interpretation
+
+The evidence layers below answer different questions and are not pooled. Historical corpus analyses reuse outcomes; the receiver studies are finite development executions; the estimator comparisons are synthetic. None is confirmatory evaluation of a learned next-prompt/STOP policy on untouched task families. Arithmetic and saved-record provenance have been independently reconciled within the scopes of the linked reviews; this is distinct from independently repeating the receiver executions.
+
+### Reused trajectories and candidate selection
+
+In the historical corpus of 4,488 episodes from 561 coding roots, the corrected paired-change analysis uses the known routing probabilities across all 561 roots to evaluate the policy that retains the initial receiver on subsequent eligible repair calls, and compares it with an adaptive three-draw resampling rule using public checking. Repair improves on the initial answer but trails that resampling rule. The two policies are not exactly matched on total cost. A separate selector chooses among four already generated answers using public features; its decision occurs after bank generation and therefore does not test next-prompt choice.
+
+| Reused-data diagnostic | 3B receiver | 7B receiver |
+|---|---:|---:|
+| Repair gain over initial answer, percentage points | +2.85 | +1.60 |
+| Resampling gain over initial answer, percentage points | +7.78 | +3.31 |
+| Repair minus resampling, percentage points | −4.93 | −1.71 |
+| Four-candidate selector minus public-check selector on original split, percentage points | −0.07 | +2.85 |
+| Median selector-minus-public-check gain across ten overlapping splits, percentage points | −0.76 | +0.83 |
+
+The 7B original selector split is the most favorable of those ten diagnostics. Overlapping splits do not supply independent replications, and neither comparison establishes prompt-policy improvement. The [detailed results](evidence_results_20260921.md#repair-improves-initial-answers-but-trails-the-resampling-comparator) retain exploratory root-level intervals and separate call accounting; unresolved families limit population interpretation.
+
+### Finite receiver development studies
+
+Each continuation mean averages draws within a root and then weights the listed roots equally. All arms were executed at each checkpoint; randomized execution order is scheduling, not a single-action propensity. N1 denotes neutral continuation with the shared public diagnostic; S1 denotes the diagnostic-directed whole recipe. R1 changes both retained context and instruction while preserving diagnostic information; FRESH is task-only resampling. These labels are version-specific, and E11/E12 use different task and measurement contracts.
+
+| Study and scope | Recorded primary comparison | STOP and missingness | Interpretation |
+|---|---|---|---|
+| Initial pilot (final v1c grades): 7 inspected roots, 2 draws per continuation arm | Syntactic cue 9/14 versus generic repair 9/14; task-only restart 9/14 | STOP 5/7; the three engineering collections repeat the same 49 outputs | No observed cue advantage; no executed public diagnostic in the cue |
+| E11: same 7 development roots, 77 calls | S1 12/14 versus N1 12/14; difference 0 on every root | STOP 6/7; two missing S0 grades retained in a secondary arm | Null descriptive contrast for the frozen information-matched recipes |
+| E12: 14 adapted development roots, 154 calls | S1 19/28 versus N1 20/28; difference −1/28 (−3.57 percentage points) | STOP 10/14; no missing assigned grades | Negative descriptive contrast; no fixed continuation arm improves on STOP |
+| E13a: 5 reused E12 checkpoints, 60 calls, 6 draws per arm | R1 9/30 versus FRESH 12/30; difference −.100 | No new initial draw or STOP comparison; no missing assigned grades | Negative restart-package contrast on development-selected histories |
+
+The initial pilot's table uses the final v1c grading contract; earlier grading variants, including v1b missing grades, remain in their historical records and are not overwritten by this summary. Its three repeated collections incurred 147 calls without producing three independent studies. E11's R1–N1 mean is −1/7; it cannot isolate context removal from its instruction change. E12's two-assertion private suites provide limited semantic coverage: one initial answer passed privately despite failing a valid public duplicate-value check. E13a's R1 arm has 13/30 extraction-or-syntax failures versus 0/30 for FRESH; this descriptive partition does not identify mediation or justify repairing scores after the fact. Frozen extraction failures and all assigned outcomes remain in the reported endpoints. The [full development results](evidence_results_20260921.md#subsequent-public-diagnostic-development-run) preserve root contrasts, costs, missingness and archive limits. These findings do not establish equivalence, population futility, or absence of predictable conditional effects.
+
+### Synthetic estimation diagnostics
+
+The matched estimator diagnostic uses the same fitted Q functions, folds and target for plug-in and DR estimation, with 80 paired replications in each of five conditions. Seventy-nine base seeds reuse earlier data. In weak overlap, plug-in RMSE is .07296 and DR RMSE is .09872, while DR's recorded interval coverage is 81.25%. The corresponding paired mean squared-error excess is .00442 with an approximate Monte Carlo interval [.00106, .00778]. The other four paired difference intervals include zero, which does not establish equivalence. This is evidence about these finite synthetic procedures, not a failure of the population DR identity or a real prompt-policy result. The [matched diagnostic](evidence_results_20260921.md#matched-estimator-diagnostics-show-no-general-dr-advantage) and later full-history/STOP diagnostics below retain their distinct datasets and limitations. No empirical result here warrants selecting DR by default or excluding a fitted-regression comparator.
+
 ## Current prospective method and evidence boundary
 
 The next proposed landmark experiment compares two fixed whole feedback recipes, PATCH and RETHINK, at a common saved initial history. The same public diagnostic and retained prefix are available to both; the intervention is the whole instruction, not an independently identified linguistic mechanism. Both actions remain available when public checks pass, fail, or are incomplete. An observed incomplete check is a public state, whereas an absent initial history is missing information. Private evaluation outcomes are never policy inputs. This treatment class is a new prospective design, not a relabeling of the earlier N1/S1 results.
