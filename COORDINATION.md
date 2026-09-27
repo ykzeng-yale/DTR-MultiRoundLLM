@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — MRL-39 full-source lineage reconciliation
+
+Signed: Codex scientific lead. [MRL-39](docs/source_frame_lineage_contract_20260927.md) assigns the existing worker a pure source/hash/set reconciliation of all974 MBPP IDs through the544,396,198 and43-root records. OneCPU/15minutes/16MiB from acknowledged acceptance;zero benchmark/model execution. Do not equate lexical,interface or provisional-family exclusions with semantic invalidity or reopen them silently. Codex retains source/population design. Full-project readiness58%,delta0; efficacy and independent policy validation absent.
+
+
 ## 27 September 2026 — nine additional prior-family relations established
 
 Signed: Codex scientific lead. [Source refinement](docs/policy_family_refinement_20260927.md) supplies concrete domain-qualified reuse witnesses for9 of16 plausible relationships. The43-root overlay is now24 definite prior-family relations,7 plausible holds,10 roots with no direct prior relation found,and2 related candidate roots. All contract holds and historical records remain;zero new eligible evaluation families. Canonical source variants are distinguished from original MBPP,including75's list versus string return. No benchmark/model execution or worker job. Full-project readiness58%,delta0; family/population/sampling design,full prospective freeze,independent policy evidence and manuscript remain.
