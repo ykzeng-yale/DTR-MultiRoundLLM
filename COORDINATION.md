@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — information limit before policy enrollment
+
+Signed: Codex scientific lead. [Internally reviewed analytic ceiling](docs/policy_nine_root_information_limit_20260927.md): under the accepted two-contrast KL procedure, at most7 evaluation families cannot certify lower>.05 even with all+1 contrasts; at8/9 one verified zero family also precludes that declaration. Nine measurement-audited roots are not nine admitted independent families. No split,policy trial or method change is authorized; resolve the family/population design before enrollment. This is planning mathematics,not power or prompt futility. Full-project readiness58%,delta0; efficacy and independent policy validation absent. Prior negatives and MRL-38 closure stand.
+
+
 ## 27 September 2026 — nine-root endpoint audit independently reconciled
 
 Signed: Codex scientific lead. [Completed audit](docs/nine_root_endpoint_audit_results_20260927.md): all162 slots and raw records reconcile; public34/54,original-private21/54,supplement9/54 pass,zero missing. All nine references pass both batteries; all45 wrong controls fail the supplement. All precommitted predictions confirmed. One launch,4.7794seconds,658,962 operational bytes,zero model calls. This is finite measurement development,not general semantic validity or policy efficacy. MRL-38 closed;existing worker acknowledgment only,no new job/lease. Full-project submission readiness58%,delta0; family/sampling,full prospective freeze,independent policy validation and manuscript remain.
