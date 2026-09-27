@@ -16,6 +16,54 @@ The methodological contribution is the specification and audit of these distinct
 
 The empirical contribution currently consists of corrected reused-data diagnostics and fresh, finite development executions. The seven-root E11 result is retained as a negative finding for its frozen strategies and scoring contract. The independently reconciled 14-root E12 batch supplies another negative development result for its primary strategy contrast. Its adapted tasks, public information and thin private suites differ from E11, so it is a separate development study. Neither a passing instrument check nor a negative small-sample contrast substitutes for independent policy validation.
 
+## Estimand, assumptions and identification
+
+Let $Z=(H,C)$ contain the public pre-selection history and the complete ordered slate generated before assignment. Let $\mu$ be the joint landmark law of $(H,C)$ induced by the prefix law and frozen candidate generator. Fix the receiver and decoding law, evaluator, and future continuation policy $\nu$. For data-trained policies, interpret the following expectations conditional on the frozen development information and require the declared evaluation law to remain valid under that conditioning. For a supported index $a$, define
+
+$$
+Q_a^\nu(z)=E[Y^{a,\nu}\mid Z=z],\qquad
+V_\mu^\nu(d)=E_\mu\sum_a d(a\mid Z)Q_a^\nu(Z).
+$$
+
+The distribution $\mu$ must follow the declared family/root weighting and prefix law; no particular population is adopted by these equations. Here $Y\in[0,1]$ is the declared quality endpoint and $d$ is a policy frozen before evaluation outcomes. Costs are separate outcomes until a utility conversion and range are fixed. The local contrast $Q_a^\nu(z)-Q_b^\nu(z)$ changes the next intervention while holding the named future policy fixed. It is not a realized individual effect and is not automatically the value of repeatedly deploying a new selector. An index denotes its complete rendering/context rule; changing a generator, evaluator or continuation changes the target.
+
+The following distinctions govern the identification argument. “By construction” describes a requirement of a correctly implemented prospective design, not a verified property of an unreleased experiment.
+
+| Condition | What design can fix | What remains assumed or must be audited |
+|---|---|---|
+| Treatment consistency | Exact recipe,slate order,receiver/decoder versions and continuation are frozen | Requests execute that law; no hidden renderer or environment changes |
+| Assignment exchangeability | Draw the action using recorded probabilities and random input independent of latent checkpoint/outcome variables conditional on $Z$ | The implementation actually uses that randomization and logs the correct probabilities |
+| Supported intervention | Give every queried action positive probability,or prespecify execution of every supported branch | Useful finite-sample overlap; support for a different string,generator or future history is not supplied |
+| Branch stability and observation | Reset rules,scoring identity,failure semantics and all-assigned accounting are fixed | Restoration,no cross-branch interference,conditional deployment-law agreement and valid measurement |
+| Population and inference | Declare family membership,weights,split and sampling/seed laws before outcomes | Those laws align with the claimed population and provide the required conditional independence; task labels alone do not |
+| Policy information | Restrict serving inputs and freeze the policy before evaluation | No test-root branch labels or private scores influence policy choices; source-development exposure is disclosed separately |
+
+Under consistency,valid conditional randomization,positive support and the declared observed-outcome law, a randomized landmark slot with probability $e(a\mid Z)$ and observed $Y$ following the assigned intervention and declared continuation $\nu$ identifies
+
+$$
+V_\mu^\nu(d)=E\left[\frac{d(A\mid Z)}{e(A\mid Z)}Y\right].
+$$
+
+This is standard inverse-probability identification,not a new result. Under complete intervention execution with prespecified positive branch counts and action-specific conditional means matching deployment, a frozen comparison instead uses
+
+$$
+D_i=\sum_a\{d(a\mid Z_i)-\beta(a\mid Z_i)\}\bar Y_{ia}.
+$$
+
+Its expectation identifies the policy difference under the declared landmark law and weights; complete branch inclusion needs no action-assignment weight. Independence among branches is unnecessary for this mean identity,but variance/inference needs its own family-level conditions. Related roots are aggregated with the frozen within-family weights before equal-family evaluation. The formulas assume observed scores; missing outcomes use the separately specified valid bounds and retain all assigned units. Choosing $d$ using these same evaluation branch outcomes invalidates the frozen-policy interpretation. [Landmark assumptions and proof,L1](../docs/landmark_prompt_theory.md#2-identification-by-branch-execution-with-its-actual-assumptions).
+
+For a longitudinal target with the same frozen generator as logging, the conditional generator factor cancels from each action ratio,leaving the selector ratio $\pi_t(J_t\mid H_t,C_t)/b_t(J_t\mid H_t,C_t)$. This requires the same actual ordered-slate law after filtering and rendering,and supported target histories. A changed generator requires its own valid joint-slate density ratio or new execution; selected-index propensities do not supply it. Full-history sequential regression and doubly robust augmentation address the same identified target under their respective conditions. The DR identity does not establish smaller finite-sample error,better ranking or policy improvement. [Core identification and estimation](../docs/theory.md); [proof-audit boundaries](../docs/theory_proof_audit.md). These are applications of established longitudinal causal inference and off-policy evaluation,with sources collected in [the theory bibliography](../docs/theory.md#12-source-grounding).
+
+For two supported recipes available at every record,write $\Delta(Z)=Q_1^\nu(Z)-Q_0^\nu(Z)$. The public-information oracle's gain over the best fixed recipe is
+
+$$
+\mathcal H=\frac{E|\Delta(Z)|-|E\Delta(Z)|}{2}.
+$$
+
+This elementary conditional-expectation identity concerns an oracle,not the fitted learner. Thus a zero marginal contrast does not rule out useful personalization,and a positive marginal contrast does not establish it. With a restricted feature map $X=\phi(Z)$,the relevant oracle uses $E[Q_a^\nu(Z)\mid X]$; it may discard useful history. Repeated seeds at one latent checkpoint estimate that checkpoint's response mean,not automatically the public-record conditional mean or a new-family population value. Fresh evaluation seeds also do not undo policy adaptation to branch labels from the same test root. [Personalization and oracle distinctions,L2–L3](../docs/landmark_prompt_theory.md#3-zero-average-arm-effects-do-not-exclude-useful-personalization).
+
+Finally, applying a learned action rule repeatedly changes later history distributions. Transporting a landmark contrast requires both supported history-distribution change and invariance of the relevant conditional outcome law; a history density ratio alone cannot repair a changed latent checkpoint mixture or continuation. The proposed one-decision experiment therefore tests a restricted empirical part of the original multi-round program. It cannot certify the full adaptive generator/selector/STOP system. [Landmark transport scope](../docs/landmark_prompt_theory.md#7-landmark-distribution-is-not-global-policy-occupancy).
+
 ## Current prospective method and evidence boundary
 
 The next proposed landmark experiment compares two fixed whole feedback recipes, PATCH and RETHINK, at a common saved initial history. The same public diagnostic and retained prefix are available to both; the intervention is the whole instruction, not an independently identified linguistic mechanism. Both actions remain available when public checks pass, fail, or are incomplete. An observed incomplete check is a public state, whereas an absent initial history is missing information. Private evaluation outcomes are never policy inputs. This treatment class is a new prospective design, not a relabeling of the earlier N1/S1 results.
@@ -24,7 +72,7 @@ The source-validated learner uses only two public flags, whether any payload fai
 
 The prospective execution design uses one initial draw and one continuation per action per root. A learned policy and the fixed comparator reuse the same canonical execution when they choose the same action. The independent-sampling comparator returns the initial answer when every case in the frozen nonempty public list passes, and otherwise makes one independently seeded bare-task redraw. Correct restoration and the action/scoring law conditional on the saved history and frozen development information are required to match deployment; labels or distinct seeds alone do not establish this condition. Verified shared executions permit pathwise cancellation, including shared missing grades. Missing histories and distinct executions do not automatically cancel. Research acquisition uses at most four receiver calls per root; end-to-end deployment uses at most two, with public checking and other costs accounted for separately. The complete receiver, seed, failure and resource contract is still unfrozen. STOP is an explicit comparator decision, not service loss, and the proposed four-cell learner is not a learned stopping policy. [Canonical execution contract](../docs/policy_shared_execution_contract_20260926.md).
 
-For the new study, the proposed primary uncertainty procedure is the accepted sign-split KL interval for two paired family contrasts, replacing the earlier default fixed-radius option prospectively. It specializes classical bounded-mean concentration; it is not a new theorem or an outcome-selected interval. Its simultaneous guarantee assumes independent complete family contrast vectors conditional on frozen development information, bounded scores, fixed family weights and a sampling law that aligns their average expectation with the stated target. Valid pathwise bounds retain every assigned family when outcomes are missing; they do not repair an undefined endpoint or corrupt provenance. The five-point useful-gain criterion is unchanged: a strict lower bound above.05 supports benefit and a strict upper bound below.05 supports useful-gain futility for the specified contrast. Equality is inconclusive. There is no valid family-level population inference merely because task IDs differ. [Inference contract and classical source](../docs/paired_kl_inference_contract_20260926.md); [independent numerical review](../docs/paired_kl_numerical_review_20260926.md).
+For the new study, the proposed primary uncertainty procedure is the accepted sign-split KL interval for two paired family contrasts, replacing the earlier default fixed-radius option prospectively. It specializes classical bounded-mean concentration; it is not a new theorem or an outcome-selected interval. Its simultaneous guarantee assumes independent complete family contrast vectors conditional on frozen development information, bounded scores, equal family weights and fixed within-family aggregation, and a sampling law that aligns their average expectation with the stated target. Valid pathwise bounds retain every assigned family when outcomes are missing; they do not repair an undefined endpoint or corrupt provenance. The five-point useful-gain criterion is unchanged: a strict lower bound above.05 supports benefit and a strict upper bound below.05 supports useful-gain futility for the specified contrast. Equality is inconclusive. There is no valid family-level population inference merely because task IDs differ. [Inference contract and classical source](../docs/paired_kl_inference_contract_20260926.md); [independent numerical review](../docs/paired_kl_numerical_review_20260926.md).
 
 ## Measurement development and source feasibility
 

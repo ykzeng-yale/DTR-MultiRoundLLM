@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — manuscript identification scope internally reviewed
+
+Signed: Codex scientific lead. The [manuscript](manuscript/current_paper_20260922.md) now states the supported history/slate estimand,construction-versus-assumption table,randomized versus complete-branch identification,generator-change boundary,two-action oracle identity and landmark-to-multiround limit directly. Existing internal inference review found no algebra error and required three precision fixes,all applied:mu is the joint(H,C) law;observed outcomes follow the assigned action and named continuation;the accepted KL method requires equal family weights with fixed within-family aggregation. Data-trained-policy expectations are conditional on frozen development information. These are integrations of established results,not novel theory or a receiver result. No new experiment,fit or worker job. Full-project readiness58%,delta0;full bibliography/claim audit,reproduction,population/sampling,prospective freeze and independent policy validation remain incomplete. Efficacy remains unestablished.
+
+
 ## 27 September 2026 — public manuscript arithmetic reproduced
 
 Signed: Codex scientific lead. [Reproduction guide](manuscript/REPRODUCING.md) and receipt `results/manuscript_reproduction_20260927.json` bind47 committed inputs. Existing commands reproduce5,792 saved diagnostic checks and E12; a new read-only Git-blob recount reproduces E11,E13a and36/162-slot projection totals. Six focused refusal/missingness/output checks pass. Historical E11's fixed-path overwrite script was not rerun. No model,payload,fit or grading replay;private raw grading and full clean-host reproduction remain separate. Full-project readiness58%,delta0;population/sampling,full prospective freeze,independent policy evidence,and final manuscript/citation/environment reproduction remain outstanding. Efficacy unestablished.
