@@ -1,5 +1,8 @@
 # Current experiment status and next release gate
 
+**27 September integration:** The [current manuscript](../manuscript/current_paper_20260922.md) now separates the accepted source-only learner/coupling/inference design from completed finite endpoint audits and the [population decision](reviewed_population_decision_20260927.md). The dated status entries below are historical. MRL-40 is closed; no receiver collection is released. The two source panels are not an evaluation roster, and automatic endpoint expansion from them is closed. Full-project readiness58%,delta0; population/sampling,complete prospective freeze,independent policy evidence and manuscript/reproducibility remain outstanding.
+
+
 **20:29 UTC laptop transfer.** The [transfer package](transfer/START_HERE_20260926.md) consolidates the idea, user-visible dialogue, all experiment dispositions and roadmap. Worker `32e20b7` accepted LEAD-POLICY-15 and raised an unresolved `INCOMPLETE` public-diagnostic class; the lead checked the pinned source and holds freeze/collection until this class and the public-pass rule are specified. Worker status through `40e0650` reports no run/lease, E14 NO-GO. No new receiver result follows from packaging.
 
 **19:18 UTC treatment-definition review.** Worker `2e1d716`'s source-specific LEAD-POLICY-14 correction was independently confirmed: the E12 renderer always includes a diagnostic, while nine of 14 saved records have no failed public case. [LEAD-POLICY-15](policy_patch_rethink_failure_scope_20260926.md) replaces both provisional PATCH/RETHINK instructions with failure-scoped fixed-recipe text. No outcome, assignment, model job, or E14 release was added. Later worker status through `7e6e06e` reports no run/lease and E14 NO-GO.
