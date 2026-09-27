@@ -1,0 +1,11 @@
+{
+  "classification": "bounded no-model startup inspection",
+  "pid": 95592,
+  "returncode": 0,
+  "elapsed_seconds": 17.358216292224824,
+  "state": "95592 95584 Ss   00:03  38032 -      work/bin/llama-server\n",
+  "stdout": "",
+  "stderr": "version: 0.4.1-dev (build 1, commit 4fea119)\nbuilt with AppleClang 21.0.0.21000101 for Darwin arm64\n",
+  "sample_retained_in_ignored_work": true,
+  "model_calls": 0
+}

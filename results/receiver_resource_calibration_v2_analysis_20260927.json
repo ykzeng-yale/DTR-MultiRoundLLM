@@ -1,0 +1,73 @@
+{
+  "classification": "descriptive synthetic calibration; no benchmark efficacy, power or reliable multi-slot capacity estimate",
+  "planned": 9,
+  "assigned": 9,
+  "unassigned": 0,
+  "groups": {
+    "short": {
+      "assigned": 3,
+      "returned": 3,
+      "failed": 0,
+      "seconds": {
+        "min": 3.86576462443918,
+        "median": 3.9971577497199178,
+        "max": 4.016180999577045
+      },
+      "prompt_tokens": {
+        "min": 133,
+        "median": 133,
+        "max": 133
+      },
+      "completion_tokens": {
+        "min": 91,
+        "median": 91,
+        "max": 91
+      }
+    },
+    "medium": {
+      "assigned": 3,
+      "returned": 3,
+      "failed": 0,
+      "seconds": {
+        "min": 4.322066750377417,
+        "median": 4.41188779193908,
+        "max": 4.603298458270729
+      },
+      "prompt_tokens": {
+        "min": 693,
+        "median": 693,
+        "max": 693
+      },
+      "completion_tokens": {
+        "min": 91,
+        "median": 91,
+        "max": 91
+      }
+    },
+    "long": {
+      "assigned": 3,
+      "returned": 3,
+      "failed": 0,
+      "seconds": {
+        "min": 6.419252624735236,
+        "median": 6.519190042279661,
+        "max": 6.7721765004098415
+      },
+      "prompt_tokens": {
+        "min": 2613,
+        "median": 2613,
+        "max": 2613
+      },
+      "completion_tokens": {
+        "min": 91,
+        "median": 91,
+        "max": 91
+      }
+    }
+  },
+  "guard_failure": [],
+  "error": null,
+  "receiver_exit_observed": true,
+  "energy_measured": false,
+  "paid_usd": 0
+}

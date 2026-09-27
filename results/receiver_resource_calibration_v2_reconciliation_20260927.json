@@ -1,0 +1,31 @@
+{
+  "classification": "lead saved-record reconciliation; no rerun or independent reviewer claim",
+  "recorded_freeze_argument": "HEAD",
+  "resolved_freeze_commit": "34d6b16d957050fe7c35984ec7cc00aaaf1b7c1c",
+  "resolution_basis": "All plan/committed source bytes equal34d6b16; current chat shows launch immediately following that commit and no commit until completion. Original HEAD string retained, not silently rewritten.",
+  "nine_calls_verified": true,
+  "completion_tokens": 819,
+  "all_finish_reasons": [
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop",
+    "stop"
+  ],
+  "receiver_exit_observed": true,
+  "state_unchanged": true,
+  "max_sampled_receiver_rss_bytes": 3573252096,
+  "min_pressure_free_percent": 39,
+  "swap_growth_mib": 0.0,
+  "limitations": [
+    "Only91 output tokens per call;512-token sustained output not measured",
+    "Three synthetic calls per context length; no throughput, efficacy or tail guarantee",
+    "Warm Metal compilation possible;not cold-start measure",
+    "No generation output executed"
+  ],
+  "summary_sha256": "54a7c9abcf09248e2cf12e50e2ff9aaa0ee690daaedd04921d8a5fee902a09ad"
+}

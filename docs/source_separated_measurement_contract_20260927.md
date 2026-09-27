@@ -21,3 +21,7 @@ Freeze the plan, observation module, runner and source dependencies in Git befor
 ACT-01 now has an explicit specification and outcome decision; broad native measurement remains unresolved rather than hidden behind code tests. ACT-02 proceeds with the frozen qualification and the independently needed pinned-receiver resource calibration. Population/family and grading-validity work remains necessary before an efficacy trial.
 
 Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. No efficacy claim follows.
+
+## Executed qualification outcome
+
+Freeze5e44768 completed all8 slots in1.285seconds; all predicted statuses matched. Correct observation passed, wrong observation failed, forged verdict and exit0-without-observation remained INCOMPLETE. Stack and parent-private-file controls returned the wrong fallback, not the hidden expected value. Saturated output was incomplete; the infinite loop ended on SIGXCPU(-24), so it is a CPU-limit observation rather than a wall-time timeout. The saved raw records were reconciled by the lead without a rerun; this is not an independent reviewer claim.64 focused affected tests pass. No receiver calls or benchmark tasks in this qualification, and no claim that all possible attacks are covered.

@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September2026 — receiver and observation path exercised
+
+Eight synthetic observation controls and9 pinned-receiver resource calls completed; failures retained. Engineering evidence resolves local generation availability for the measured workload, not the full measurement/population gap. Full-project readiness **60%,delta0**; no independent-policy credit. Population/measurement, full prospective freeze, independent evaluation and final manuscript/raw reproduction remain incomplete.
+
+
 ## 27 September 2026 — productive recurrence
 
 [Blocker diagnosis and execution queue](autonomous_execution_plan_20260927.md) replaces passive MRL-41 monitoring. Fresh runtime checks are not experiment results. Full-project readiness **60%, delta0**; no credit for scheduling changes. Population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

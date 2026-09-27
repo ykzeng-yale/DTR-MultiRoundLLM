@@ -1,0 +1,610 @@
+{
+  "classification": "synthetic receiver resource calibration; no task correctness, policy effect or benchmark inference",
+  "freeze": "HEAD",
+  "config_sha256": "d99a6d2ad942554b368c17aa7b2f7e1aad8b0b4d1f72084b3d062e40eb6e0461",
+  "started_utc": "2026-09-27T22:37:00.542348+00:00",
+  "baseline": {
+    "memory_pressure_free_percent": 52,
+    "swap_used_mib": 7539.5,
+    "rss_bytes": null,
+    "disk_available_bytes": 47521689600
+  },
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "verified_build_files": 26,
+  "planned_calls": 9,
+  "calls": [
+    {
+      "slot": 0,
+      "length_label": "short",
+      "status": "returned",
+      "payload_sha256": "b60658c1a020c13a2589f804c497b7ffc7c79f6a923b5404f73fd9a9631d9148",
+      "seconds": 4.016180999577045,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548625,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "total_tokens": 224,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-Gk9k7n7rULjTDqpXWtAmdCXqFXf533ZU",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 133,
+          "prompt_ms": 249.382,
+          "prompt_per_token_ms": 1.8750526315789473,
+          "prompt_per_second": 533.3183629933195,
+          "predicted_n": 91,
+          "predicted_ms": 3760.224,
+          "predicted_per_token_ms": 41.78026666666667,
+          "predicted_per_second": 23.93474431310475
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 133
+    },
+    {
+      "slot": 1,
+      "length_label": "medium",
+      "status": "returned",
+      "payload_sha256": "8d9e197ecf6c3e54774a02c4ddeb085c914d7baae516be6ab5792cbc8105cf3a",
+      "seconds": 4.603298458270729,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548630,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "total_tokens": 784,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-WaQEeEun7TjRD7vThFDRSsgPoZuzUkeU",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 693,
+          "prompt_ms": 724.428,
+          "prompt_per_token_ms": 1.0453506493506493,
+          "prompt_per_second": 956.6168066391691,
+          "predicted_n": 91,
+          "predicted_ms": 3871.747,
+          "predicted_per_token_ms": 43.01941111111111,
+          "predicted_per_second": 23.24532052326766
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 693
+    },
+    {
+      "slot": 2,
+      "length_label": "long",
+      "status": "returned",
+      "payload_sha256": "a7f726636be6207b6280e67f238a6b2b5b01063ab5dc966599145f8b731b326a",
+      "seconds": 6.7721765004098415,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1: ready\n2: ready\n3: ready\n4: ready\n5: ready\n6: ready\n7: ready\n8: ready\n9: ready\n10: ready\n11: ready\n12: ready\n13: ready\n14: ready\n15: ready\n16: ready\n17: ready\n18: ready\n19: ready\n20: ready"
+            }
+          }
+        ],
+        "created": 1790548636,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "total_tokens": 2704,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-6nSd8EhYA7AvRLFh0MH5VB7iSyqT6AbS",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 2613,
+          "prompt_ms": 2759.289,
+          "prompt_per_token_ms": 1.0559850746268657,
+          "prompt_per_second": 946.9830815112153,
+          "predicted_n": 91,
+          "predicted_ms": 4003.9,
+          "predicted_per_token_ms": 44.48777777777778,
+          "predicted_per_second": 22.478083868228477
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 2613
+    },
+    {
+      "slot": 3,
+      "length_label": "short",
+      "status": "returned",
+      "payload_sha256": "7d4a97d3e6a786e28bfadfc7ff08377529825f177a274fcfcfb59505b87cb562",
+      "seconds": 3.9971577497199178,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548640,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "total_tokens": 224,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-B4GOb7faMXdazBnzg7fp9xTLg0oAvoM8",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 133,
+          "prompt_ms": 194.966,
+          "prompt_per_token_ms": 1.4659097744360903,
+          "prompt_per_second": 682.1702245519732,
+          "predicted_n": 91,
+          "predicted_ms": 3783.97,
+          "predicted_per_token_ms": 42.04411111111111,
+          "predicted_per_second": 23.784543746382766
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 133
+    },
+    {
+      "slot": 4,
+      "length_label": "medium",
+      "status": "returned",
+      "payload_sha256": "c77476a0b358439b7fdc9c30abec7a69caa10bdf28849693c74898ad9d1327e6",
+      "seconds": 4.322066750377417,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548645,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "total_tokens": 784,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-R8aE3mIIcD25shpWzqWhR6lxcBG9kOWa",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 693,
+          "prompt_ms": 666.517,
+          "prompt_per_token_ms": 0.9617849927849929,
+          "prompt_per_second": 1039.7334201528242,
+          "predicted_n": 91,
+          "predicted_ms": 3648.183,
+          "predicted_per_token_ms": 40.53536666666667,
+          "predicted_per_second": 24.669815083289407
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 693
+    },
+    {
+      "slot": 5,
+      "length_label": "long",
+      "status": "returned",
+      "payload_sha256": "18f7393243a603f8046f9e89160fe238701da4e911a8964e54053d1b989fdaa9",
+      "seconds": 6.419252624735236,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1: ready\n2: ready\n3: ready\n4: ready\n5: ready\n6: ready\n7: ready\n8: ready\n9: ready\n10: ready\n11: ready\n12: ready\n13: ready\n14: ready\n15: ready\n16: ready\n17: ready\n18: ready\n19: ready\n20: ready"
+            }
+          }
+        ],
+        "created": 1790548651,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "total_tokens": 2704,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-bBoaSTQCb2KFBoRxHn8VvsZFaJbyvvVx",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 2613,
+          "prompt_ms": 2611.511,
+          "prompt_per_token_ms": 0.9994301569077688,
+          "prompt_per_second": 1000.5701679985266,
+          "predicted_n": 91,
+          "predicted_ms": 3798.578,
+          "predicted_per_token_ms": 42.20642222222222,
+          "predicted_per_second": 23.693076725027105
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 2613
+    },
+    {
+      "slot": 6,
+      "length_label": "short",
+      "status": "returned",
+      "payload_sha256": "bef1717cbfdf143ab786a2969dd434d43f1f9f39be41c2362b26f9e4d6ac92c7",
+      "seconds": 3.86576462443918,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548655,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "total_tokens": 224,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-sLwrNaeEQiA89ktHu7rzqLKn9B4sNoqk",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 133,
+          "prompt_ms": 183.491,
+          "prompt_per_token_ms": 1.3796315789473685,
+          "prompt_per_second": 724.8311906306031,
+          "predicted_n": 91,
+          "predicted_ms": 3674.406,
+          "predicted_per_token_ms": 40.82673333333333,
+          "predicted_per_second": 24.493754908956713
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 133
+    },
+    {
+      "slot": 7,
+      "length_label": "medium",
+      "status": "returned",
+      "payload_sha256": "0df2bb2bbe6ff2f90920679223ac019b233df0eb8a9efc83a882efde49197a6c",
+      "seconds": 4.41188779193908,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+            }
+          }
+        ],
+        "created": 1790548660,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "total_tokens": 784,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-6Bq96L3oQfkQKxY84NtLM5xDKrutjyjq",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 693,
+          "prompt_ms": 667.326,
+          "prompt_per_token_ms": 0.962952380952381,
+          "prompt_per_second": 1038.4729502522007,
+          "predicted_n": 91,
+          "predicted_ms": 3738.709,
+          "predicted_per_token_ms": 41.54121111111111,
+          "predicted_per_second": 24.07248063435801
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 693
+    },
+    {
+      "slot": 8,
+      "length_label": "long",
+      "status": "returned",
+      "payload_sha256": "509f5100a9050acb839b642ab9dab7beaf177017d4290fd29072ac2e71b81482",
+      "seconds": 6.519190042279661,
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "stop",
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "1: ready\n2: ready\n3: ready\n4: ready\n5: ready\n6: ready\n7: ready\n8: ready\n9: ready\n10: ready\n11: ready\n12: ready\n13: ready\n14: ready\n15: ready\n16: ready\n17: ready\n18: ready\n19: ready\n20: ready"
+            }
+          }
+        ],
+        "created": 1790548666,
+        "model": "qwen2.5-3b-instruct",
+        "system_fingerprint": "b1-4fea119",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "total_tokens": 2704,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "id": "chatcmpl-QpgkCiuXaAumzRUD85sWn7A4cJ7WNpIV",
+        "timings": {
+          "cache_n": 0,
+          "prompt_n": 2613,
+          "prompt_ms": 2703.572,
+          "prompt_per_token_ms": 1.034662074244164,
+          "prompt_per_second": 966.4991352181485,
+          "predicted_n": 91,
+          "predicted_ms": 3808.728,
+          "predicted_per_token_ms": 42.3192,
+          "predicted_per_second": 23.62993629369175
+        }
+      },
+      "completion_tokens": 91,
+      "prompt_tokens": 2613
+    }
+  ],
+  "resource_samples": [
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3458727936,
+      "disk_available_bytes": 47521128448,
+      "seconds": 2.0237873746082187
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3458727936,
+      "disk_available_bytes": 47514705920,
+      "seconds": 4.038065332919359
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3467870208,
+      "disk_available_bytes": 47510573056,
+      "seconds": 6.058050625026226
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3467870208,
+      "disk_available_bytes": 47495593984,
+      "seconds": 8.075947916135192
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3469344768,
+      "disk_available_bytes": 47490945024,
+      "seconds": 10.094081041403115
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3473080320,
+      "disk_available_bytes": 47490699264,
+      "seconds": 12.108346125110984
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3473227776,
+      "disk_available_bytes": 47489597440,
+      "seconds": 14.124555583111942
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3473227776,
+      "disk_available_bytes": 47485874176,
+      "seconds": 16.140174291096628
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3572989952,
+      "disk_available_bytes": 47482773504,
+      "seconds": 18.155805375427008
+    },
+    {
+      "memory_pressure_free_percent": 41,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3572989952,
+      "disk_available_bytes": 47482429440,
+      "seconds": 20.16956404130906
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573006336,
+      "disk_available_bytes": 47475343360,
+      "seconds": 22.183348458260298
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573006336,
+      "disk_available_bytes": 47475257344,
+      "seconds": 24.197448832914233
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573071872,
+      "disk_available_bytes": 47475183616,
+      "seconds": 26.209996833465993
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573071872,
+      "disk_available_bytes": 47475351552,
+      "seconds": 28.22212716564536
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573071872,
+      "disk_available_bytes": 47474987008,
+      "seconds": 30.23478512465954
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573121024,
+      "disk_available_bytes": 47475138560,
+      "seconds": 32.2480193329975
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573121024,
+      "disk_available_bytes": 47475048448,
+      "seconds": 34.26063620764762
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573137408,
+      "disk_available_bytes": 47474987008,
+      "seconds": 36.27015100046992
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573137408,
+      "disk_available_bytes": 47475195904,
+      "seconds": 38.2797632496804
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573252096,
+      "disk_available_bytes": 47474999296,
+      "seconds": 40.2904460830614
+    },
+    {
+      "memory_pressure_free_percent": 40,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573252096,
+      "disk_available_bytes": 47474864128,
+      "seconds": 42.304485250264406
+    },
+    {
+      "memory_pressure_free_percent": 39,
+      "swap_used_mib": 7539.5,
+      "rss_bytes": 3573252096,
+      "disk_available_bytes": 47474839552,
+      "seconds": 44.318530458025634
+    }
+  ],
+  "guard_failure": [],
+  "error": null,
+  "pid": 98916,
+  "process_identity": "Sun Sep 27 18:37:00 2026 /Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server -m /Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf --alias qwen2.5-3b-instruct --port 8193 -ngl 99 -np 4 -c 32768 --jinja --host 127.0.0.1",
+  "command": [
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server",
+    "-m",
+    "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+    "--alias",
+    "qwen2.5-3b-instruct",
+    "--port",
+    "8193",
+    "-ngl",
+    "99",
+    "-np",
+    "4",
+    "-c",
+    "32768",
+    "--jinja",
+    "--host",
+    "127.0.0.1"
+  ],
+  "ready_seconds": 1.04986787494272,
+  "state_unchanged": true,
+  "receiver_exit_code": 0,
+  "receiver_exit_observed": true,
+  "elapsed_seconds": 46.070146000012755,
+  "calls_assigned": 9,
+  "calls_returned": 9,
+  "completion_tokens": 819,
+  "paid_usd": 0,
+  "energy_measured": false
+}

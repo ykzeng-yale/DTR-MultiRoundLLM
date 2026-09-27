@@ -1,0 +1,44 @@
+{
+  "version": "external-json-observation-v1",
+  "artifact_sha256": "8c8445581ef449ffee8073167edceec5073971ff8e049d8b754c652b1ccc272c",
+  "invocation_sha256": "90e04a2366a76d2b079279e96afa931c50b4c248e2ce1f08722c0477ff9c7eff",
+  "expected_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+  "status": "INCOMPLETE",
+  "outcome": null,
+  "reason": "process_error",
+  "process": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "process_error",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "passed": false,
+      "returncode": -24,
+      "stdout": "",
+      "stderr": "",
+      "stdout_tail": "",
+      "timed_out": false,
+      "seconds": 1.0523051675409079,
+      "executed": true,
+      "pid": 91405,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "4c4ebd3231ae7d40a4154c42f198e357b10d1bff900794be3822b2ac375d0050",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  "case": "timeout",
+  "predicted_status": "INCOMPLETE",
+  "freeze": "5e44768",
+  "config_sha256": "d185bc6a0ccce90324d7404cbaf804aa36c06e7a10d8c0cadd84e68b7930cc53"
+}

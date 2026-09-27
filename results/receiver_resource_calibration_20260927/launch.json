@@ -1,0 +1,39 @@
+{
+  "classification": "synthetic receiver resource calibration; no task correctness, policy effect or benchmark inference",
+  "freeze": "3cb10f8",
+  "config_sha256": "8253975c7930442c197fe95590be7acec8e82b740356abd9425ed23901cd5d93",
+  "started_utc": "2026-09-27T22:33:09.178895+00:00",
+  "baseline": {
+    "memory_pressure_free_percent": 49,
+    "swap_used_mib": 7547.5,
+    "rss_bytes": null,
+    "disk_available_bytes": 48440508416
+  },
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "verified_build_files": 26,
+  "planned_calls": 9,
+  "calls": [],
+  "resource_samples": [],
+  "guard_failure": [],
+  "error": null,
+  "pid": 93780,
+  "process_identity": "Sun Sep 27 18:33:09 2026 /Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server -m /Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf --alias qwen2.5-3b-instruct --port 8193 -ngl 99 -np 4 -c 32768 --jinja --host 127.0.0.1",
+  "command": [
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/work/bin/llama-server",
+    "-m",
+    "/Users/yukangzengcmac/.cache/huggingface/hub/models--Qwen--Qwen2.5-3B-Instruct-GGUF/snapshots/7dabda4d13d513e3e842b20f0d435c732f172cbe/qwen2.5-3b-instruct-q4_k_m.gguf",
+    "--alias",
+    "qwen2.5-3b-instruct",
+    "--port",
+    "8193",
+    "-ngl",
+    "99",
+    "-np",
+    "4",
+    "-c",
+    "32768",
+    "--jinja",
+    "--host",
+    "127.0.0.1"
+  ]
+}

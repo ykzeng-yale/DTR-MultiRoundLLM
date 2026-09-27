@@ -1,0 +1,60 @@
+{
+  "classification": "synthetic operational qualification; not benchmark or receiver efficacy",
+  "slots_planned": 8,
+  "slots_completed": 8,
+  "all_predictions_matched": true,
+  "rows": [
+    {
+      "case": "correct",
+      "status": "PASS",
+      "reason": "external_comparison",
+      "seconds": 0.03774070832878351
+    },
+    {
+      "case": "wrong",
+      "status": "FAIL",
+      "reason": "external_comparison",
+      "seconds": 0.02071341685950756
+    },
+    {
+      "case": "forged_verdict",
+      "status": "INCOMPLETE",
+      "reason": "invalid_observation",
+      "seconds": 0.019128874875605106
+    },
+    {
+      "case": "early_exit",
+      "status": "INCOMPLETE",
+      "reason": "invalid_observation",
+      "seconds": 0.020856625400483608
+    },
+    {
+      "case": "inspect_expected",
+      "status": "FAIL",
+      "reason": "external_comparison",
+      "seconds": 0.04408391658216715
+    },
+    {
+      "case": "private_file",
+      "status": "FAIL",
+      "reason": "external_comparison",
+      "seconds": 0.021527708508074284
+    },
+    {
+      "case": "output_saturation",
+      "status": "INCOMPLETE",
+      "reason": "output_limit",
+      "seconds": 0.04543037433177233
+    },
+    {
+      "case": "timeout",
+      "status": "INCOMPLETE",
+      "reason": "process_error",
+      "seconds": 1.0523051675409079
+    }
+  ],
+  "elapsed_seconds": 1.284901125356555,
+  "freeze": "5e44768",
+  "receiver_calls": 0,
+  "benchmark_calls": 0
+}

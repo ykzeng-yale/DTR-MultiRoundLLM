@@ -1,0 +1,45 @@
+{
+  "slot": 0,
+  "length_label": "short",
+  "status": "returned",
+  "payload_sha256": "b60658c1a020c13a2589f804c497b7ffc7c79f6a923b5404f73fd9a9631d9148",
+  "seconds": 4.016180999577045,
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "1. ready\n2. ready\n3. ready\n4. ready\n5. ready\n6. ready\n7. ready\n8. ready\n9. ready\n10. ready\n11. ready\n12. ready\n13. ready\n14. ready\n15. ready\n16. ready\n17. ready\n18. ready\n19. ready\n20. ready"
+        }
+      }
+    ],
+    "created": 1790548625,
+    "model": "qwen2.5-3b-instruct",
+    "system_fingerprint": "b1-4fea119",
+    "object": "chat.completion",
+    "usage": {
+      "completion_tokens": 91,
+      "prompt_tokens": 133,
+      "total_tokens": 224,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "id": "chatcmpl-Gk9k7n7rULjTDqpXWtAmdCXqFXf533ZU",
+    "timings": {
+      "cache_n": 0,
+      "prompt_n": 133,
+      "prompt_ms": 249.382,
+      "prompt_per_token_ms": 1.8750526315789473,
+      "prompt_per_second": 533.3183629933195,
+      "predicted_n": 91,
+      "predicted_ms": 3760.224,
+      "predicted_per_token_ms": 41.78026666666667,
+      "predicted_per_second": 23.93474431310475
+    }
+  },
+  "completion_tokens": 91,
+  "prompt_tokens": 133
+}

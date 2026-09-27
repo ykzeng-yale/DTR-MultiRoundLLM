@@ -1,0 +1,21 @@
+{
+  "classification": "bounded version-command infrastructure diagnosis; no models loaded",
+  "rows": [
+    {
+      "file_cap": null,
+      "timeout": true,
+      "seconds": 5.006101832725108
+    },
+    {
+      "file_cap": 8388608,
+      "timeout": true,
+      "seconds": 5.006200125440955
+    },
+    {
+      "file_cap": 67108864,
+      "timeout": true,
+      "seconds": 5.004719791933894
+    }
+  ],
+  "model_calls": 0
+}

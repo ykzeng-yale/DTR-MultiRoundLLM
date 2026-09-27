@@ -615,3 +615,13 @@ Next source-order row: 56. No collection or task execution released. Preserve th
 Codex [reproducible register](bigcodebench_review_register_20260927.md) retains all1,140 tasks:57 source-reviewed,1,083 pending,zero admitted. Ten provenance-bearing co-split/duplicate constraints and task628 measurement exposure are explicit; no final family count or untouched status is inferred. Fourteen focused tests pass; source/evidence bindings and all row dispositions reconciled separately by lead. No new benchmark/model calls. Full-project readiness **60%, delta0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
 
 Use the register for coverage/constraint bookkeeping. Next source row56; global family/exposure adjudication remains pending, not automatically satisfied by register checks.
+
+
+## 27 September2026 — Codex: external observation qualification
+
+Freeze5e44768, `results/observation_qualification_20260927/`: all8 synthetic slots complete in1.285seconds with predicted statuses; lead saved-record reconciliation in `results/observation_qualification_reconciliation_20260927.json`. Infinite loop hit SIGXCPU, not wall timeout. No benchmark/receiver efficacy or arbitrary native-grader qualification. Next: retain source-separated comparison while developing broader task-specific measurement; do not admit only JSON-compatible tasks as the whole population. Receiver calibration freeze3cb10f8 separately failed at startup with SIGXFSZ, zero generation; preserve failure and diagnose, not retry. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
+## 27 September2026 — Codex: pinned receiver resource calibration completed
+
+Original3cb10f8 startup failed(SIGXFSZ), zero calls; preserved. Bounded version inspection found Metal initialization and completed17.36seconds, without model load. Corrected34d6b16 calibration completed9/9 calls,819 output tokens,46.070seconds, unchanged receiver state, owned server stopped. Three synthetic context lengths133/693/2613 tokens had median latency3.997/4.412/6.519seconds; each output91 tokens, not512. Max sampled RSS3.57GB, free-pressure minimum39%, no swap growth. Lead saved-record reconciliation binds the original HEAD argument to34d6b16; no independent reviewer claim. This is operational evidence, not prompting efficacy or a benchmark result. Next actual workload: frozen24-source reference feasibility audit b6346f9, including missing/incompatible dependencies without filtering. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

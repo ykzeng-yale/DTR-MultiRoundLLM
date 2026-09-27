@@ -1,0 +1,65 @@
+{
+  "classification": "lead saved-record reconciliation, no rerun, no independent reviewer claim",
+  "freeze": "5e44768",
+  "rows": [
+    {
+      "case": "correct",
+      "receipt_sha256": "d6d35f7d01b2f0925f7d454a9073a1c63dd21b383726890df3bbdc2a5ffe8dda",
+      "status": "PASS",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "wrong",
+      "receipt_sha256": "ec307ed200030f81d31ef6abb4961fef477346eae8017c057bf5fe03c42c637e",
+      "status": "FAIL",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "forged_verdict",
+      "receipt_sha256": "44106b4442ebafea01bf277d93ac00b0eb7b861a1ef6bb9f46da6f3a7f4777e8",
+      "status": "INCOMPLETE",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "early_exit",
+      "receipt_sha256": "298bb11d201a99c3669db13f5f7ce886da4c1fa801badf2f0742808773fa94ef",
+      "status": "INCOMPLETE",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "inspect_expected",
+      "receipt_sha256": "978189ee25b3305756d935d8ca944526456418fb981fceb2203573c8597b3e98",
+      "status": "FAIL",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "private_file",
+      "receipt_sha256": "a2932186a9de40b34b4ce23779a7af6a7d220d99ab82dd47a6b95424cccc0200",
+      "status": "FAIL",
+      "returncode": 0,
+      "stderr_present": false
+    },
+    {
+      "case": "output_saturation",
+      "receipt_sha256": "2e98529445744885b2975f593701c85a1cae0e17c4d398c07df4656ca201ed47",
+      "status": "INCOMPLETE",
+      "returncode": 120,
+      "stderr_present": true
+    },
+    {
+      "case": "timeout",
+      "receipt_sha256": "eded938278663ea3d2b408512a420bb34955202e02989a72938d067c97574836",
+      "status": "INCOMPLETE",
+      "returncode": -24,
+      "stderr_present": false
+    }
+  ],
+  "all_eight_predictions_match": true,
+  "scope": "Synthetic controls only; JSON observation boundary, not arbitrary object/native-grade certification. CPU loop ended by process error rather than wall timeout.",
+  "new_receiver_calls": 0
+}

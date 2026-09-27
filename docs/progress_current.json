@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-27T22:23:59.133192+00:00",
+  "checkpoint_utc": "2026-09-27T22:47:24.902310+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 60,
   "prior_check_reconstructed_percent": 60,
-  "prior_checked_head": "f6100ab",
+  "prior_checked_head": "2b2b674",
   "baseline_note": "Fixed weights unchanged; prior manuscript/reproduction credit retained. This checkpoint earns no additional credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Blocker diagnosis revalidated: measurement/population design is primary; aux Docker ping timed out3.001s, lead receiver unavailable, mini model service empty. No demonstrated RAM shortage; no experiment running. Productive recurring work replaces obsolete MRL-41 checks.",
+  "latest_evidence": "8/8 synthetic observation qualification controls match;9/9 pinned receiver calibration calls complete46.070s,819 output tokens,state unchanged,owned server exited. Startup/import-smoke failures retained.24-source feasibility audit pending; no efficacy evidence.",
   "latest_worker_review": {
     "last_seen_worker_revision": "7f441f3",
     "delivery_type": "Source/mock adapter reviewed; repair required before execution",
@@ -590,13 +590,13 @@
     "claude_delegation": "ended by owner; stop directive committed e6e4f6d; no active project poll_origin.sh process found",
     "source_review": "docs/bigcodebench_rows_decision_20260927.md",
     "package_reproduction": "results/clean_package_reproduction_20260927/receipt.json",
-    "receiver_status": "read-only /health and /props requests to localhost:8193 both connection refused; no server started",
+    "receiver_status": "Local pinned receiver was launched,9 calibration calls completed and owned server stopped; measured max RSS3.57GB, no swap growth; no live efficacy job.",
     "remaining": [
       "population/family/sampling and measurement contract",
       "complete prospective numerical freeze",
       "independent policy evaluation",
       "full manuscript claim/novelty audit and raw-environment reproduction"
     ],
-    "goal_record": "Continuous goal paused; owner authorizes active three-hour bounded work heartbeat under docs/autonomous_execution_plan_20260927.md."
+    "goal_record": "Owner requires continuous substantive work; app goal record paused with no resume operation, direct execution ongoing; recurrence is recovery/wait trigger, not45minute stopping rule."
   }
 }

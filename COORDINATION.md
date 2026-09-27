@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — concrete runtime progress, work continues
+
+Eight frozen source-separated observation controls matched predictions; this is restricted JSON-boundary qualification, not arbitrary native grading. Pinned local receiver calibration completed9/9 synthetic calls in46.070seconds,819 output tokens, state unchanged and owned server stopped. Max sampled RSS3.57GB/no swap growth; the measured workload is not RAM-blocked. Prior startup and import-smoke failures are preserved. The fixed24-source reference feasibility audit is proceeding under versioned freezes after dependency/readiness corrections, without task replacement. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete. Continue substantive work rather than stop at this checkpoint.
+
+
 ## 27 September2026 — owner requires continuous substantive execution
 
 Continue actionable work within the conversation; a report or commit alone is not a stopping point. End for a genuinely running experiment that requires waiting, verified completion, or an unavoidable external blocker after independent work is exhausted. This supersedes the earlier routine45-minute stopping preference. The app goal record currently remains paused and exposes no resume operation; direct work continues. [Measurement contract and eight-slot qualification](docs/source_separated_measurement_contract_20260927.md) freeze before execution; no population adoption. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

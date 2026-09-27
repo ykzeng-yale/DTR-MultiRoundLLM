@@ -1,0 +1,44 @@
+{
+  "version": "external-json-observation-v1",
+  "artifact_sha256": "36e35ebfe3edc7e28f48bf9c992a1734db43f6c624214597bdcdea616b99651d",
+  "invocation_sha256": "90e04a2366a76d2b079279e96afa931c50b4c248e2ce1f08722c0477ff9c7eff",
+  "expected_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+  "status": "FAIL",
+  "outcome": 0,
+  "reason": "external_comparison",
+  "process": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\"observation_version\":\"external-json-observation-v1\",\"value\":-999}\n",
+      "stderr": "",
+      "stdout_tail": "{\"observation_version\":\"external-json-observation-v1\",\"value\":-999}\n",
+      "timed_out": false,
+      "seconds": 0.021527708508074284,
+      "executed": true,
+      "pid": 91403,
+      "sandbox_kind": "seatbelt",
+      "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+      "rendered_profile_sha256": "bb7351d1153f1bb1073a3a1bf15972977bc51a2795946c08d3ce9981d77c0c50",
+      "limits_applied": {
+        "cpu_seconds": 1,
+        "nproc": 1,
+        "file_bytes": 65536,
+        "memory": "best_effort"
+      }
+    }
+  },
+  "case": "private_file",
+  "predicted_status": "FAIL",
+  "freeze": "5e44768",
+  "config_sha256": "d185bc6a0ccce90324d7404cbaf804aa36c06e7a10d8c0cadd84e68b7930cc53"
+}

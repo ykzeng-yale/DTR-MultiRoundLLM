@@ -1,0 +1,14 @@
+{
+  "classification": "random source-ID reference feasibility under current contained environment; not semantic correctness, family eligibility or efficacy",
+  "freeze": "db70b57636bf47f426cfa1a44fdeba5f78fd2dfd",
+  "config_sha256": "fc697a3bb4849b0856e0d411d7c016fe398eacc19d2aadf815e4e35e97b3a891",
+  "task_slots_planned": 24,
+  "task_slots_attempted": 0,
+  "rows": [],
+  "error": "RuntimeError: dependency smoke failed; no benchmark start",
+  "receiver_calls": 0,
+  "paid_usd": 0,
+  "smoke_completed": false,
+  "elapsed_seconds": 10.811204917728901,
+  "task_slots_unattempted": 24
+}
