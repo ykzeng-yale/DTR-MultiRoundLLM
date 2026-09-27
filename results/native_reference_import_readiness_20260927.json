@@ -1,0 +1,10 @@
+{
+  "classification": "one bounded import-stage diagnostic, no benchmark or receiver calls",
+  "raw_sha256": "e22dea5b80e83bc0a8f4713b0d3ea941b5c0dbbbe8d7882d40e056cdec24d083",
+  "disposition": "completed_ungraded",
+  "seconds": 3.006015249527991,
+  "stdout": "BEFORE numpy\nAFTER numpy\nBEFORE pandas\nAFTER pandas\nBEFORE scipy\nAFTER scipy\nBEFORE sklearn\nAFTER sklearn\n",
+  "joblib_serial_fallback_warning": true,
+  "interpretation": "All four imports completed in this diagnostic under unchanged10s/5CPU bounds. Earlier timeout retained; transient/warm-cache explanation possible but not established.",
+  "bundle_sha256": "3bf6aa034de0a08238dce4a5a57e4bda638a187af3738325e3cb82b9b53b3f86"
+}
