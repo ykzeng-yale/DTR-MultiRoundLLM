@@ -24,3 +24,12 @@ def test_analysis_keeps_failed_and_unassigned_calls():
     r=summarize({'planned_calls':9,'calls':[{'length_label':'short','status':'failed'}], 'guard_failure':['wall'],'error':'timeout'})
     assert r['assigned']==1 and r['unassigned']==8
     assert r['groups']['short']['failed']==1 and r['groups']['short']['seconds'] is None
+
+
+def test_log_capture_bounds_retention_and_signals_only_excess():
+    import io
+    from scripts.calibrate_receiver_resources_20260927 import capture_log
+    for data,hit in [(b'abcd',False),(b'abcde',True),(b'x'*100000,True)]:
+        out=io.BytesIO();trips=[]
+        count=capture_log(io.BytesIO(data),out,4,lambda:trips.append(True))
+        assert count==4 and out.getvalue()==data[:4] and bool(trips)==hit

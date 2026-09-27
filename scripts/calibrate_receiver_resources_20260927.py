@@ -7,7 +7,6 @@ import json
 import os
 from pathlib import Path
 import re
-import resource
 import socket
 import subprocess
 import sys
@@ -18,7 +17,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from experiments.landmark.collect import receiver_state, digest, SYSTEM, NoRedirect
 from scripts.launch_own_receiver_v31 import process_identity, terminate_owned_child
 
-PLAN=Path('experiments/prompt_choice/receiver_calibration_plan_20260927.json')
+PLAN=Path('experiments/prompt_choice/receiver_calibration_plan_v2_20260927.json')
 
 
 def sha_file(path):
@@ -64,6 +63,19 @@ def http(path,payload=None,timeout=5):
     return json.loads(raw)
 
 
+def capture_log(stream, output, cap, on_limit):
+    """Retain at most cap bytes; never buffer the complete server stream."""
+    total=0
+    read=getattr(stream, 'read1', stream.read)
+    while True:
+        block=read(min(4096, cap-total+1))
+        if not block:return total
+        remaining=cap-total
+        output.write(block[:remaining]);output.flush();total+=min(len(block),remaining)
+        if len(block)>remaining:
+            on_limit();return total
+
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--freeze',required=True);parser.add_argument('--out',type=Path,required=True);args=parser.parse_args()
     plan=json.loads(PLAN.read_bytes())
@@ -104,9 +116,16 @@ def main():
     try:
         cmd=[str(Path('work/bin/llama-server').resolve()),'-m',model,'--alias','qwen2.5-3b-instruct','--port','8193','-ngl','99','-np','4','-c','32768','--jinja','--host','127.0.0.1']
         env=dict(os.environ,LLAMA_MEDIA_MARKER=snap['media_marker'])
-        def limits():resource.setrlimit(resource.RLIMIT_FSIZE,(plan['log_cap_bytes'],plan['log_cap_bytes']))
-        with (args.out/'server.log').open('xb') as log:
-            proc=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT,env=env,start_new_session=True,preexec_fn=limits)
+        proc=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,env=env,start_new_session=True)
+        def log_limit():
+            guard_failure.append('log_cap');terminate_owned_child(proc)
+        def logger():
+            try:
+                with (args.out/'server.log').open('xb') as log:
+                    capture_log(proc.stdout,log,plan['log_cap_bytes'],log_limit)
+            except Exception as exc:
+                guard_failure.append('log_capture_error:'+type(exc).__name__);terminate_owned_child(proc)
+        log_thread=threading.Thread(target=logger,daemon=True);log_thread.start()
         record.update(pid=proc.pid,process_identity=process_identity(proc.pid),command=cmd)
         (args.out/'launch.json').write_text(json.dumps(record,indent=2)+'\n')
         monitor=threading.Thread(target=guard,daemon=True);monitor.start()
@@ -151,6 +170,10 @@ def main():
         if 'monitor' in locals():monitor.join(timeout=10)
         if proc is not None:
             terminate_owned_child(proc);record['receiver_exit_code']=proc.returncode;record['receiver_exit_observed']=proc.poll() is not None
+            if 'log_thread' in locals():
+                log_thread.join(timeout=5)
+                if log_thread.is_alive():record['log_capture_incomplete']=True
+            if proc.stdout is not None:proc.stdout.close()
         record['elapsed_seconds']=time.monotonic()-start
         record['calls_assigned']=len(calls);record['calls_returned']=sum(c['status']=='returned' for c in calls)
         record['completion_tokens']=sum(c.get('completion_tokens',0) for c in calls)
