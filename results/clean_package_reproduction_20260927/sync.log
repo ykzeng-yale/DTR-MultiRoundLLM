@@ -1,0 +1,48 @@
+   Building dtr-multiround-llm @ file:///Users/yukangzengcmac/.codex/worktrees/manuscript-reproduction/DTR-MultiRoundLLM
+Downloading pygments (1.2MiB)
+Downloading pandas (9.6MiB)
+Downloading pillow (4.6MiB)
+Downloading scikit-learn (7.9MiB)
+Downloading fonttools (3.0MiB)
+Downloading scipy (19.5MiB)
+Downloading numpy (5.2MiB)
+Downloading matplotlib (8.9MiB)
+      Built dtr-multiround-llm @ file:///Users/yukangzengcmac/.codex/worktrees/manuscript-reproduction/DTR-MultiRoundLLM
+ Downloaded pygments
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded numpy
+ Downloaded scikit-learn
+ Downloaded matplotlib
+ Downloaded pandas
+ Downloaded scipy
+Prepared 23 packages in 3.76s
+Installed 28 packages in 84ms
+ + certifi==2026.7.22
+ + charset-normalizer==3.5.1
+ + cloudpickle==3.1.2
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + dtr-multiround-llm==0.1.0 (from file:///Users/yukangzengcmac/.codex/worktrees/manuscript-reproduction/DTR-MultiRoundLLM)
+ + fonttools==4.65.0
+ + idna==3.20
+ + iniconfig==2.3.0
+ + joblib==1.6.0
+ + kiwisolver==1.5.1
+ + matplotlib==3.11.2
+ + narwhals==2.26.0
+ + numpy==2.5.3
+ + packaging==26.3
+ + pandas==3.0.6
+ + pillow==12.3.0
+ + pluggy==1.6.0
+ + pygments==2.21.0
+ + pyparsing==3.3.2
+ + pytest==9.1.1
+ + python-dateutil==2.9.0.post0
+ + requests==2.34.2
+ + scikit-learn==1.9.1
+ + scipy==1.18.1
+ + six==1.17.0
+ + threadpoolctl==3.7.0
+ + urllib3==2.8.0
