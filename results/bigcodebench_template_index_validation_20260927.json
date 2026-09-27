@@ -12,5 +12,6 @@
   "subtests_passed": 8,
   "full_suite_seconds": 35.42,
   "script_sha256": "ede60ca21a710f17d429c11988e37b44dd93dc5abd3499e2da8a6f59b01f7138",
-  "tests_sha256": "fa70674c4c0de5cc2925ae3d66d916ab9de2802903dc39e8ada1c105e4e5cda0"
+  "tests_sha256": "fa70674c4c0de5cc2925ae3d66d916ab9de2802903dc39e8ada1c105e4e5cda0",
+  "independent_semantic_review": "Existing experiment reviewer independently reproduced all195 group memberships/node counts/kinds and1140 per-task statement counts; accepts provisional8/10/11/887 relation. Preserve887 NumPy seeded matrix semantics and seed-reproducibility checks; no admission or family-count inference."
 }
