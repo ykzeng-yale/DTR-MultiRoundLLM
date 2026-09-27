@@ -5020,3 +5020,61 @@ The total is about 2.4 MB, well under the 64 MiB cap. I have asked the owner. On
 ## Experiments → theory, 2026-09-27T01:27:32Z — MRL-41 (local-files scope `425c2de`) received; HOLDING on the owner's instruction
 
 Signed: experiments worker. Received `425c2de`, which supplies the five lead-acquired files in `work/task_sources/bigcodebench_v014_20260927/` and removes all worker network access. When asked in chat to approve the downloads, the owner dismissed the question with the instruction "do not proceed, wait for next instruction". So I have **not accepted MRL-41 in any scope**. Its 15-minute clock has not started, and the worker has not read, listed the contents of, hashed or modified the lead-acquired files. I will begin the local-files inventory only after an explicit go-ahead from the owner in chat. No job, cap or lease is open.
+
+## Experiments → theory, 2026-09-27T01:31:12Z — MRL-41 DELIVERED, PARTIAL (row-level inventory blocked: no installed Parquet reader), for Codex review
+
+Signed: experiments worker. Processed `952bbbd` and the local-files scope `425c2de`. The owner relayed the go-ahead in chat, after the earlier hold. **Accepted 2026-09-27T01:27:58Z; deadline 01:42:58Z; completed 2026-09-27T01:31:12Z** (about 3 minutes; one CPU).
+
+**What was not done:**
+- No network, download or installation.
+- No dataset-code import; no benchmark, reference or test execution; no model calls.
+- The five lead-supplied files were read only.
+
+**Byte accounting:** 2,383,786 lead-supplied bytes plus about 25 KB of new worker files, against the 64 MiB ceiling.
+
+**Files:**
+- `scripts/inventory_bigcodebench_source_20260927.py`: `1e32169d4dcc21de0f22d0524fd5ed95140862b6d9c8b030f5e0e6ccb8ae2ce6` (standard library only)
+- `tests/test_bigcodebench_source_inventory.py`: `d2224151a79ef941b7e1f6e1ee5890e40a1ac19e9e8cb91f11e4ea544ba409fe`
+- `results/bigcodebench_source_inventory_20260927.json`: `a4ef12fc420f9af0897e64b793f6fb6559b86aec09b7844b2400bcd31ecf2d24` (public metadata summary and manifest; no task text, solutions or tests)
+
+**Manifest verified:**
+- The local `acquisition.json` is byte-identical to the committed `results/bigcodebench_source_acquisition_20260927.json`.
+- All five files match the manifest's sizes and SHA256s at the pinned revisions, with dataset `b74c0d0b…` and code `09dd993f…`:
+  - `v0.1.4.parquet`: 2,362,110 bytes, `d9a49658…8267`
+  - `dataset_README.md`: 8,828 bytes, `ecf83775…e932`
+  - `code_LICENSE`: 11,438 bytes, `a858540b…c28c`
+  - `requirements-eval.txt`: 1,242 bytes, `a4d01fb1…e39f`
+  - `requirements.txt`: 168 bytes, `ac7c40cd…f807`
+
+**Produced from static text:**
+- **Dataset card:** licence field `apache-2.0`; nine declared string features (task_id, complete_prompt, instruct_prompt, canonical_solution, code_prompt, test, entry_point, doc_struct, libs); and the v0.1.4 split, declared as **1,140 examples** and 6,577,494 bytes. These are publisher declarations, not verified row counts.
+- **Code LICENSE:** Apache License, Version 2.0. It is recorded separately, and no dependency clearance is inferred.
+- **Requirements:** `requirements.txt` has 10 entries. `requirements-eval.txt` has **74 entries and 71 distinct names**; `requests`/`Requests`, `statsmodels` and `xlrd` are repeated.
+- **Parquet container:** `PAR1` at both ends, with a declared footer of 26,997 bytes. No page or Thrift decoding was done.
+
+**Blocked, not produced:** `pyarrow` and `fastparquet` are not installed in the project `.venv`, the uv project environment, system Python or the uv-managed CPython 3.12/3.13 interpreters. `pandas` 3.0.6 is present but has no Parquet engine, and no YAML, snappy or zstd library is installed either. Per the contract I did **not** install anything or hand-write a decoder. So the file-verified row count, schema and types, unique and duplicate task IDs, duplicate Complete/Instruct prompt hashes, entry-point counts, library-set frequencies and missing fields are **not produced**. Options for the lead: authorize an isolated installation of a Parquet reader, or supply a lead-converted export.
+
+**Compatibility questions (from static text only; no eligibility decision):**
+1. The tests are unittest source, while the current public diagnostic takes one assert-style literal public case.
+2. The 74 pinned eval dependencies (tensorflow, keras, selenium, django, flask, requests, pandas 2.0.3, numpy 1.21.2 and others) are absent from the strict sandbox. numpy 1.21.2 predates Python 3.12, and installability is unknown.
+3. Some dependencies imply network, browser or file-system use (requests, selenium, wikipedia, sendgrid, dnspython, requests_mock, pyfakefs), against the sandbox's no-network, restricted-write policy.
+4. Library return types (DataFrames, plots, arrays) can't be judged against the bounded-literal display policy without reading the rows, and those rows must not be executed.
+5. The Complete/Instruct prompt variant and the permitted public information are an open estimand decision.
+
+**Tests (13 pass):**
+- a synthetic inventory with the blocked status reported;
+- five manifest refusals: hash, size, unpinned revision, incomplete status, missing entry;
+- committed-receipt mismatch and missing-file refusals;
+- two Parquet container refusals;
+- a card without front matter;
+- no overwrite;
+- a standard-library-only, no-execution AST check;
+- a skip-if-absent real check (2,383,786 bytes; 1,140 declared; 9 features).
+
+**Fail-then-pass:**
+- Byte and hash check disabled: 2 failures.
+- Revision pin disabled: 1 failure.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,212 passed, 0 failed, plus 8 subtests (33.6 s).**
+
+**Stopped after this setup delivery.** No endpoint builder, eligibility or family decision. Readiness 58%, change 0 points.
