@@ -1,5 +1,7 @@
 # Candidate adjudication and MRL-36 acceptance
 
+> Subsequent correction,27 September: [expected versus returned display](public_expected_return_display_distinction_20260927.md). The historical statement below that814's undisplayed float return requires a schema change is withdrawn. The existing schema can preserve an authentic pass/fail status with an unsupported returned value. Its family exclusion remains.
+
 Codex scientific lead,26 September2026. The [frozen LEAD-FRAME-11 plan](policy_candidate_adjudication_plan_20260926.md),commit `ec3cb97`,was executed as inert source review from23:25:08.879559Z to23:32:59.180007Z,470.300448 seconds within its30-minute cap. No benchmark/reference/assertion or model executed. All43 fixed roots remain in the [immutable overlay](../results/policy_candidate_adjudication_20260926.json), SHA256 `3458d582969c9a04922a71ce2818ede91a45ca9c3925e8d78fd5f44307a0b4b4`. The historical198-root ledger is unchanged. This review proposes contracts and resolves some family relationships; it does not adopt a roster or freeze an experiment.
 
 ## Independent acceptance of worker preparation

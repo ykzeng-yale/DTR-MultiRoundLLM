@@ -1,0 +1,61 @@
+{
+  "type": "synthetic_source_validation_fixture_not_receiver_or_benchmark_execution",
+  "created_at": "2026-09-27T00:29:08.897178+00:00",
+  "reviewer": "Codex scientific lead",
+  "source_sha256": {
+    "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2",
+    "experiments/prompt_choice/patch_rethink_v2.py": "d5d931047eb724a58a51e8d202fcdc64e887ba75b0c870b138ee84ee234a58de"
+  },
+  "records": [
+    {
+      "expected_literal": "16",
+      "status": "pass",
+      "value_kind": "unsupported",
+      "returned": null,
+      "accepted": true,
+      "support": "PASS",
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ]
+    },
+    {
+      "expected_literal": "16",
+      "status": "wrong_value",
+      "value_kind": "unsupported",
+      "returned": null,
+      "accepted": true,
+      "support": "PAYLOAD_FAILURE",
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ]
+    },
+    {
+      "expected_literal": "16",
+      "status": "pass",
+      "value_kind": "none",
+      "returned": null,
+      "accepted": false,
+      "reason": "v2 displays an observed None return as value_kind literal 'None', never none"
+    },
+    {
+      "expected_literal": "16",
+      "status": "pass",
+      "value_kind": "literal",
+      "returned": "16.0",
+      "accepted": false,
+      "reason": "returned value does not match its bounded value_kind"
+    },
+    {
+      "expected_literal": "16.0",
+      "status": "pass",
+      "value_kind": "unsupported",
+      "returned": null,
+      "accepted": false,
+      "reason": "public expected value outside the bounded display policy"
+    }
+  ],
+  "payload_model_calls": 0,
+  "limits": "Supplied synthetic statuses test schema/rendering, not actual sandbox outcomes or reference correctness."
+}

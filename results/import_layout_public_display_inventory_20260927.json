@@ -1,0 +1,951 @@
+{
+  "reviewer": "Codex scientific lead",
+  "created_at": "2026-09-27T00:27:40.485105+00:00",
+  "type": "exploratory_static_first_assertion_display_inventory",
+  "inputs": {
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "results/interface_exclusion_shape_audit_20260927.json": "52ce58aaf96431a24a55770e9391a5b83e0f1d24c8e0d81b50c078e1e9ed70e8",
+    "experiments/landmark/diagnostic.py": "2a98bccf20cf3fa068790b488be8df4347387ae5ffb1bd7b1bd8b9d49d3a72b2"
+  },
+  "n_roots": 103,
+  "status_counts": {
+    "expected_literal_display_compatible": 87,
+    "unsupported_expected_display": 16
+  },
+  "records": [
+    {
+      "task_id": 10,
+      "first_assertion_sha256": "72c256f2b49288ce4350fd7ad83f82dc6221574aec8d689d3f71f058982c5061",
+      "reference_sha256": "ed158e8bd3c091f1e935a2dcb1d50f45b9f50a906806c225997e9dfb34de70d6",
+      "entry_point": "small_nnum",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 13,
+      "first_assertion_sha256": "7a159b90383aae9d2202a117e36c13e6cf0fe49a39a22816b163daa7de3c4f2d",
+      "reference_sha256": "0923f880026981486a1ec954ea2cde79de7e238a3cd0113521f9bf8604986aa5",
+      "entry_point": "count_common",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 15,
+      "first_assertion_sha256": "643bd47c8cd53617f36a8b9d1f6651ad7ae171c8aa57bde9ec1e4a872e276910",
+      "reference_sha256": "047e9aa3fb25ec722fecaa92decc3652a8f872624909f07c234867fb431409d2",
+      "entry_point": "split_lowerstring",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 27,
+      "first_assertion_sha256": "b7834d369772b3d368d12119c0aacc3fe20f4e1e47bc4937235abae59382043d",
+      "reference_sha256": "36a974403c5b3b2a740f4613cdf003da97d5d5dafe52074d53d10f30bc7dc73c",
+      "entry_point": "remove",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 32,
+      "first_assertion_sha256": "f370cc5c8e09c2b878aca0f2fee14551ae944bdd30636ec1f7240852cecb4932",
+      "reference_sha256": "1a8e8ef681ef84f9383a5599c2eaa103a84c1fb2073c61c75bfaac64e0eb834e",
+      "entry_point": "max_Prime_Factors",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 39,
+      "first_assertion_sha256": "1c81b7f7b86e0dff09413bac0b1e0412452b9961ae7cb6dad5c9619c68b6b027",
+      "reference_sha256": "5a2b442cc74d08c85d1f45d7dbed1b5a828a0b29971dccd2a75f322617634bab",
+      "entry_point": "rearange_string",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 40,
+      "first_assertion_sha256": "870640ecabd0bbdbbbeeb8e2758ad4877bcc7395574b69d11579666af6b94c69",
+      "reference_sha256": "31e72b0f4c31ed9a34cc737741c5eee0e26ebf17b674cb565a936845276c8ae1",
+      "entry_point": "freq_element",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "dict"
+    },
+    {
+      "task_id": 43,
+      "first_assertion_sha256": "1d398c367be930f25f98b77d869605728d7f1d87a70fb267f4ca323703d57eea",
+      "reference_sha256": "de0bc81be06796b456d4d3b489531f8a2ffa59ca75ca02d207e11daa56592899",
+      "entry_point": "text_match",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 44,
+      "first_assertion_sha256": "05e78750d95abea3511d130e5dec58304e50e8e6601e7c4ddb4d0e596f67cca0",
+      "reference_sha256": "9fd3ad6401034aadb6dea137da57045d676544633b2f24f1e83c2a201b967920",
+      "entry_point": "text_match_string",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 55,
+      "first_assertion_sha256": "941cec8a836e18e2a73202650c2678ecfd226dce5ba58895edaa66f5b90e5865",
+      "reference_sha256": "79b06d9a16ffa840fb36a983e0c8a28e04a095f04be7f87086a0aa97dd0e3637",
+      "entry_point": "tn_gp",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 73,
+      "first_assertion_sha256": "af1e753756d9905d1af2f2b32f1f7f4893194ccae582e6873e2eef12fb7d89b2",
+      "reference_sha256": "5f1230c0f9b30bbfb534726613a6791f911392d9be11cc07b24d19073fb21e46",
+      "entry_point": "multiple_split",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 114,
+      "first_assertion_sha256": "799bb88901f50861a99944535340a13156ac8cd60b67804cdb00fc7d055eee9d",
+      "reference_sha256": "492473c299655e2b92561033c29b91895d4e51804c1da140808f2ea060627b8c",
+      "entry_point": "assign_freq",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 157,
+      "first_assertion_sha256": "4b8b09facf1eabf24566bb6da1fe3ad65d272e1c6decda490dac6480c163ded1",
+      "reference_sha256": "bc59389919dd5ec6078be8513df9a417c13f927dfb3e9adb800f2d907461455f",
+      "entry_point": "encode_list",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 173,
+      "first_assertion_sha256": "bbc8a4e6978e31fcf56852f8a7278c21a1f4564aa911b8681e7866258bcd5e37",
+      "reference_sha256": "6793b85852d2f4bb0abbc29031def26cce558ab519a6ddc94173c108ba2b5572",
+      "entry_point": "remove_splchar",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 178,
+      "first_assertion_sha256": "2d78b51abd824d5d6ad30b7a425de5199ea21b44a1c535814e082b61bfac0141",
+      "reference_sha256": "513b152eef4c6a6a6928a7d365c8c4ff12d1b45808205065d73a3e1f1a8a4013",
+      "entry_point": "string_literals",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 180,
+      "first_assertion_sha256": "bd6b510ee38f823007f48fa5e024221ad1dd23f2af39f09f0a798e7db7394e34",
+      "reference_sha256": "555694e84cd678cd61c301a564c043f6fc3c4167e9d5324e9abd4d8bc17d8374",
+      "entry_point": "distance_lat_long",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 182,
+      "first_assertion_sha256": "e43ecec63c47be76f7a144562cca173bbaa3cd8eeb51bd744b5b068425b06550",
+      "reference_sha256": "cea52eddf939e9ae6e40529c0c9d159be02943b750c0bd2361ad09d5eec38765",
+      "entry_point": "find_character",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "tuple"
+    },
+    {
+      "task_id": 186,
+      "first_assertion_sha256": "73c4b21980c21e3ad82fa4187c58844f642e51fdeaa7ca01e9ff1d278eaab62b",
+      "reference_sha256": "6bf7b74d85903f16175d9c62d8ad3c37f7728f68c5b7de76c010e6a4cfd30ea7",
+      "entry_point": "check_literals",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 198,
+      "first_assertion_sha256": "83e480caa5b96107ec8ffb0a4990bee2e2e3820f980aba7cef551a46c53fc7f1",
+      "reference_sha256": "474f1a8e846043cff525d3ca0c5b57aee479d987374411e8a71f0171a77ddacd",
+      "entry_point": "largest_triangle",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 208,
+      "first_assertion_sha256": "d6bebb241efe2b25dbdaae87c268fcaf345b44ae064034fe2b3a5ee5ccc2c5b5",
+      "reference_sha256": "3f1047ae9bd97b7ea7c8298fbd79fc7c8dbf269981883d92a63cb53deb186cc5",
+      "entry_point": "is_decimal",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 209,
+      "first_assertion_sha256": "1752d5ba7fd1799429bc9bceab439617b9aa80fe9bd40302390f88e1f6bbc2d2",
+      "reference_sha256": "54525211ecc636da32b491b12868c5a0df25f5d23d0b97984eb5abb71db2b9f7",
+      "entry_point": "heap_replace",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 210,
+      "first_assertion_sha256": "d6523b9dbbefa383c56c7291b3cc42872b17abeaa2fe80cb060cd7a5bb6550e0",
+      "reference_sha256": "7d7d9d32b79a8b630097f5fa24fcf0e69d4d1b4adb3a5a47e301293cb579caf6",
+      "entry_point": "is_allowed_specific_char",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 212,
+      "first_assertion_sha256": "1baa7bf851c61aa3996f7341c828800e38e503c7a195c03835cabd5530928865",
+      "reference_sha256": "0d1cbdcb90a66ee00bbeb1a91b1b7f4c3921077b4e3788592195542ebeb6dae3",
+      "entry_point": "fourth_Power_Sum",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 214,
+      "first_assertion_sha256": "ea06ce3f63fcd4cd342a8a1ee73117a0c849340d1afbfab1f611096e3ea48dfc",
+      "reference_sha256": "009d5ac5c0850a15c68526d1b23f6792d0b43fa3dd84ec703fdb3723378c60e2",
+      "entry_point": "degree_radian",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 218,
+      "first_assertion_sha256": "1fd0a463a782dcb136099f4da102dab4f7eec5014493adba34ee21d9e9124160",
+      "reference_sha256": "94b2f3f69a9a0aafea1050b98406b2150fc4a4b33e83402dc089bea76d3c74df",
+      "entry_point": "min_Operations",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 220,
+      "first_assertion_sha256": "e030939aaede73de46b9fe6ae3d899655d2fa06f35717094d403db7f07ac8cf3",
+      "reference_sha256": "1aa723a663d88980bf6fe3a984482092d924d1bb567ef2a9250935ded06bfeb6",
+      "entry_point": "replace_max_specialchar",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 254,
+      "first_assertion_sha256": "7bf7b07669fdba5132f198b57a856cea558f04e916579abbabf6ba5d1c11e4d0",
+      "reference_sha256": "267036e8d8a7cce1e3a8fe9f8747e9b87b82290f216ba897503bffeebdb2db0b",
+      "entry_point": "words_ae",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 275,
+      "first_assertion_sha256": "5500398f684948269795548d98da08e1726a21ec71d738b2e82c6aed0563454c",
+      "reference_sha256": "629650a2bbd7eaa5aec10a7ad10c3325861b9df00975ab23d941db622f84b83d",
+      "entry_point": "get_Position",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 303,
+      "first_assertion_sha256": "6162936341d01a1ad47d2c9e202b12fc846bcecd94ba110ca7877f0ef83c51a5",
+      "reference_sha256": "75e19e9c7da69fc276121bbfc4d5cba5129309fd46076f3c60a4e56de6dd1a58",
+      "entry_point": "solve",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 317,
+      "first_assertion_sha256": "6f1ca8636b71f3df99cf39dd5cde57f98159492eede7b43150db975296cf4e9c",
+      "reference_sha256": "a00a292b69d58bb73ecee94e595e2bbf5b425016c832744364b7ef12e41a7eb3",
+      "entry_point": "modified_encode",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 319,
+      "first_assertion_sha256": "c000768bca681d1261fc5c219bd6d8334533d4908abde4abf28233a5ad2c9074",
+      "reference_sha256": "844f4b785a0fd2374fb38d807e35b9478bd3200d5c58413af0a186890cfa60a0",
+      "entry_point": "find_long_word",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 326,
+      "first_assertion_sha256": "282603a025d73745595ac5cd21f4576262fa7397888579f03c0e73f7acfa8dee",
+      "reference_sha256": "a5e72faefca8933b9074e341bb8e431609de951484a8ec3edd895a8e7e27c550",
+      "entry_point": "most_occurrences",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 330,
+      "first_assertion_sha256": "d1c9d079b9b37add4db3d1fe76fe510670e1befb56ea0d3e2de62d1327fdb105",
+      "reference_sha256": "b2d9f4194f72d4aca4716b872dbbbdeafd2e081d2374def170410e235b63298a",
+      "entry_point": "find_char",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 337,
+      "first_assertion_sha256": "ec5d3727edbe28ae47e34fc0f52b80a803963fcc7edf948bbd9e0710d1093936",
+      "reference_sha256": "655936b7ed1390396609dcc9cddeddd552d024a56181ca35ec443fa3c3f3b14c",
+      "entry_point": "text_match_word",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 372,
+      "first_assertion_sha256": "e9fea7dd013d3f2ff8d52361bf1a30fb554c4bf3b2487115bdfc7ab5deb3957c",
+      "reference_sha256": "2ee6c073031701a1e27a110301b5b1c68c79f278fa759a5b2befa125dd8b831f",
+      "entry_point": "heap_assending",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 381,
+      "first_assertion_sha256": "34259a394d36e039fdc8af5ee1a0aa5d1ac6ef8fbc4e19f0f9e9a2011121243b",
+      "reference_sha256": "6a7ceaf9425a9dec1a7aad81a5a2e7e6441b364b4ba605718ee7c1ca9248b471",
+      "entry_point": "index_on_inner_list",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 403,
+      "first_assertion_sha256": "25f269ae6f747f950919bb84ff8d83f9d7164b02cf61bf4a891047f34c2356c6",
+      "reference_sha256": "55ff30072ea81384bcbb7925cdd29b7ee7ffdc96208f3833fdc933d982336945",
+      "entry_point": "is_valid_URL",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 482,
+      "first_assertion_sha256": "f8acb770ad7e88eeb9de6821db5076169349408bdfa19dfb43fc0aaa9a690f3f",
+      "reference_sha256": "9cdf4be27f5c035aeebd5db87660b2fadf0b9dc97a09c5ea34eca7dc8c10b11a",
+      "entry_point": "match",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 488,
+      "first_assertion_sha256": "0707eba019f3669b48955ae7a85d0df8985f87418682aefbffcbd5ae9eb5723c",
+      "reference_sha256": "410ab6e9aca83d48b2a506c8a25fdadfa214e62fc20de9565a386b27cd3f3907",
+      "entry_point": "area_pentagon",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 491,
+      "first_assertion_sha256": "8df8b629c53842d2e43aff5bf75a87d7662ec2d0c710420242918a6a676d910f",
+      "reference_sha256": "404d232d659ecd286cf4124cc4fbb13a057cfa8c1d874d4e28f2c8a1766290c2",
+      "entry_point": "sum_gp",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 493,
+      "first_assertion_sha256": "d9c2fa7b0c6b14d3ccfe56f12945aaf0297fabd786eb8828450a044a7aaf608b",
+      "reference_sha256": "598d3344585cd375866db1a2acd75b94ebd51fd72acaa4ef1c538104238f177f",
+      "entry_point": "calculate_polygons",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 495,
+      "first_assertion_sha256": "b045ec139f038e1bb58424f10377b1667b32501eecf0dccd508f5be292fb9c2e",
+      "reference_sha256": "011462f28ad5cb480baf3b23b178d6e3a5a7c4ec29bfd7e8e55e37690ab54492",
+      "entry_point": "remove_lowercase",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 496,
+      "first_assertion_sha256": "04dddd6c91fd9133e0382e5d5462c43dd6d90fafbbc93ca854cf3cd167359dd5",
+      "reference_sha256": "a05d867124c2c618974555688a2b63223da50e99cfd5765464ae28b3d7e06190",
+      "entry_point": "heap_queue_smallest",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 497,
+      "first_assertion_sha256": "df681676eb6bd5c64b73b03cf643bf65be88167dbb81f4323e37acccdd2dfff1",
+      "reference_sha256": "273acfd6b15fc9d20f36f1b37cac2536bb48f12915d4e470590c69fafea87bf9",
+      "entry_point": "surfacearea_cone",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 518,
+      "first_assertion_sha256": "62d606a55e438c69034f357df42a5faf0cc232b9fe4de39c7451c982191a8729",
+      "reference_sha256": "7ee5ba6a3d91c2a1682eebba3c9a88f563c509015b22fad2e181bc79da324300",
+      "entry_point": "sqrt_root",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 519,
+      "first_assertion_sha256": "2b205ed4f50cc99fb9f0036061851fd24125fc46076904f92a49feef5f270350",
+      "reference_sha256": "c1139d8164282316d4d1b865779d67e765c8a6aaf1928400a90cc96e5c29c93b",
+      "entry_point": "volume_tetrahedron",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 530,
+      "first_assertion_sha256": "80d09fe19966b60e241bbc2ed22fb5f4f7c753e3625b3296c1536e3860d9d066",
+      "reference_sha256": "904cee882606a0f22cb33b6218546acb83c4b503e744c4b058bc8228c6eba31b",
+      "entry_point": "negative_count",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 531,
+      "first_assertion_sha256": "7f97dcd1864d1112b80c32da895224079a214d37115a40b1ddce2b322885cc1c",
+      "reference_sha256": "97dd772df25259e9d4ee67ba3df888c0e6abaa7c5a795d6e5da046d3cd116080",
+      "entry_point": "min_coins",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 534,
+      "first_assertion_sha256": "f48c9d1372e99a10a051bcd95c30d7c1eaea9b83e8fcd0e0113b4749667efacb",
+      "reference_sha256": "117709013c5b67e2c5afd967f5ef20bd109e0e1dbad191eb8f2aeb66377626e7",
+      "entry_point": "search_literal",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "tuple"
+    },
+    {
+      "task_id": 542,
+      "first_assertion_sha256": "6302d2e4915d064f2efe85683ca5c7026d3caa999134b897d3888c4ec7595f31",
+      "reference_sha256": "9316fd0be6907719f69e15ece9af15ce75851f26552fee4d31c5ad5544cdff9a",
+      "entry_point": "fill_spaces",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 647,
+      "first_assertion_sha256": "9574359fb0ae717446f0c19ab2d3196695156ccc0d37c4e68976bb8f68c13b46",
+      "reference_sha256": "8e8784f0a8759f807dcd508fa156b4b1d8cf6e8f61a064c8f7602be839870fad",
+      "entry_point": "split_upperstring",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 648,
+      "first_assertion_sha256": "5541a2dea4bd5b68468a8aaf372dd1b853dc924b481aa3066621ea3837e80936",
+      "reference_sha256": "831894f816fecd3ec89e86fa59ef396565203cb5714c0b9b2f510434c6a86bf7",
+      "entry_point": "exchange_elements",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 653,
+      "first_assertion_sha256": "49f80105a054f4f732c9a9d81ed7261c9650cd8661554daa3c369a72018a977f",
+      "reference_sha256": "caf49132726b8a1ba3844fa9f897d9e37fd44d667fde082413d4afcd251e41fc",
+      "entry_point": "grouping_dictionary",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "dict"
+    },
+    {
+      "task_id": 657,
+      "first_assertion_sha256": "333f65c7e676a1323797adc9d12334816d9e3397312a626c754609d72f1dafc5",
+      "reference_sha256": "0d8b01c0db22b077f3b67dbcd67f1e66dee9b41d4bb7f8980c9fd6d63f80f3fc",
+      "entry_point": "first_Digit",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 663,
+      "first_assertion_sha256": "8adf97f5f3346c90ee8b905416e2aabd28d0d11818d326407bf644cd6a18fc22",
+      "reference_sha256": "47cd620e7e60a0ed6f5dd3c899969d8a0a3b99c66b16d3775fdb0a7bebb92028",
+      "entry_point": "find_max_val",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 668,
+      "first_assertion_sha256": "98221162d1c7508ee810e5164494aa66aa3a40f7ee744b4402fff0d56c39e44b",
+      "reference_sha256": "2d95bf1aa30a5a1354ba49ff027bdc418ad35a2f67535a1b236ecc84cb8eb158",
+      "entry_point": "replace",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 674,
+      "first_assertion_sha256": "8fbd28ba55e880917e26ce9786312463a934e368a0b6f50553b639659753ab32",
+      "reference_sha256": "6f726a30a090af0f0c98c20ad678464bd00c8817c576ab74d477854b4d9761e8",
+      "entry_point": "remove_duplicate",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 676,
+      "first_assertion_sha256": "11a5d27f686d19c272d915b4d8a769dffaba29a2ff1902b04b6e7e58bd1e1181",
+      "reference_sha256": "f26730cdd81dbed0f9aa3b7d0a7b9a7069accd1c550434d9bd24b074815b4fbc",
+      "entry_point": "remove_extra_char",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 686,
+      "first_assertion_sha256": "55ffc9392eb39b71381709133d46c82e0b2673ce4efabd12861c8d00a417da97",
+      "reference_sha256": "52ce65b9dd3ecf9b47a12e144e44780271c25314d6b82bbb762d7a39e0877463",
+      "entry_point": "freq_element",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 688,
+      "first_assertion_sha256": "c31ff04382ae2e7954f0d078a8175c9bacfee896ee672afff0823237a5a15a89",
+      "reference_sha256": "4432fcca4667e9cee5b4e0d961607e28be787d862a60f471385726c13555c5a5",
+      "entry_point": "len_complex",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "float"
+    },
+    {
+      "task_id": 691,
+      "first_assertion_sha256": "1e47741eb46f446ca882af5a405b034fd58820799f66906525a2b23208a48f76",
+      "reference_sha256": "8af0b4d6b3b85952aa8d67f1dd937840d9af7522400b757a526c689f1903daa6",
+      "entry_point": "group_element",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "dict"
+    },
+    {
+      "task_id": 693,
+      "first_assertion_sha256": "f93e31574afecad7909c6429dc91651947a7b0240f7c5c0e638d87c5cf03afb6",
+      "reference_sha256": "c18de5b6b6bdb85267458fb2c27bafd96fdc310f9b93b90955460c80b3c7fe7b",
+      "entry_point": "remove_multiple_spaces",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 709,
+      "first_assertion_sha256": "06e9850f7bd76b8ffb5c78817236b8a6b482f744f32bca227c72908575666ce3",
+      "reference_sha256": "e2748af078bb613589f1b601ee2fe1d9a7a244c39148b3b921014b557b3c6bb8",
+      "entry_point": "get_unique",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 712,
+      "first_assertion_sha256": "4ff0f20449496c8faae556c66be5a3ab057901b982e26de67eaac039b388feeb",
+      "reference_sha256": "f1a8608010c08b3e74b887fb51989cc97cdefbee784a2b04af219f5809ae4b4a",
+      "entry_point": "remove_duplicate",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 719,
+      "first_assertion_sha256": "ea791430e3b01c312c689b4a53dac912160d1740494f06fcf91b9f6d50e965a4",
+      "reference_sha256": "d82f50edc28597b37f73ef3d99a894d6f33627ab96cf1f82c78a632314146911",
+      "entry_point": "text_match",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 727,
+      "first_assertion_sha256": "540cd997d9b91d65635073e19dfa2e1e329e29ae843b1097e37475fa065678e7",
+      "reference_sha256": "3de337d020efa29327fc7f9650eca6728a6ac2489fa5ccfb66e4fc493b547a08",
+      "entry_point": "remove_char",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 789,
+      "first_assertion_sha256": "c9c71e2e8e533291e0f3d10af6803d798604f5f40911618dd8f7899af2fb812a",
+      "reference_sha256": "fd01087992ed8b97660bfdde5316eb7e86267bf1c652fe816d8e4587643375a9",
+      "entry_point": "perimeter_polygon",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 795,
+      "first_assertion_sha256": "3e11be1a2051c75741f1ad51c9d6fd98cdbde1b72a3c9d35597947b99d306d69",
+      "reference_sha256": "953a72ac8e3ca65f0e83ed1207c15cfc3b4bc7f6d12f3ad3a6f54d83d7207886",
+      "entry_point": "cheap_items",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 810,
+      "first_assertion_sha256": "26a963a3fa96ad0c69b3d92e46676261ddfbf0662956532b15fa05791f4fa224",
+      "reference_sha256": "218ccc61b0c57a7f9aa5ae99c17fff15db57208f6690a6a2aa91c890302579fc",
+      "entry_point": "count_variable",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 812,
+      "first_assertion_sha256": "33e00620f366df4d9efb50fe9d86dbca2bfbc40602fbf6d23c78ab551070a021",
+      "reference_sha256": "7cf9d191ff5263d7f77083ee758bfa7e1a006d149575a240561596e7dc8a5a4b",
+      "entry_point": "road_rd",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 821,
+      "first_assertion_sha256": "a0d78b6fbf07a740d183c05e5f512ab15ca5e243a0422d090d205ef86559f186",
+      "reference_sha256": "ac157347e3f586b43c7f1fcf2ef90a5e4f7e6bf286fae8d48dfe54edf65c2541",
+      "entry_point": "merge_dictionaries",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "dict"
+    },
+    {
+      "task_id": 822,
+      "first_assertion_sha256": "ce2378c5511898323fb23529ea55cc0849db4083cc3169363c2e87d65c393001",
+      "reference_sha256": "95a868079595248d6c2901ee599ef5f3af0be700ff389a39ff9b03360a6f5852",
+      "entry_point": "pass_validity",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 823,
+      "first_assertion_sha256": "ea59462619e36af39dad2cff1c728ba82aeda6d60fe1719d4d607f63d1f4f634",
+      "reference_sha256": "aaa073a34a495d911b117488971daf6035e69c223b0dc908ab6b2fe44e266bbd",
+      "entry_point": "check_substring",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 829,
+      "first_assertion_sha256": "ce3b46cd925caf0b1845679a4e70b154a0caf47c90cdb97bb89e6c30142d5e89",
+      "reference_sha256": "3deafd96a2c71d8bb070c0455cf6feb21f5aaa15764ff1176faf4d3f0feac541",
+      "entry_point": "second_frequent",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 830,
+      "first_assertion_sha256": "c79d267228979b73c67a6184d10b3d4f1df32a4c90f4fd2c5003f8709bd94d7a",
+      "reference_sha256": "9d8b79ef4fd0a2318193fd530f15773c0afe6f9cad48c14dcf56d08b6f865870",
+      "entry_point": "round_up",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 832,
+      "first_assertion_sha256": "cd88ecacc354f8b62511752e7ee4d7c93bbb2a34aab9382ec7dbe3dbd8cc9e61",
+      "reference_sha256": "52024e2af7fc2b6efff0f4abfb173b345dee57892c89b70e67951dab2696efab",
+      "entry_point": "extract_max",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 836,
+      "first_assertion_sha256": "0f1eb869f7d357a0beefe5d81fd0ba7a85402da56f7e10a9e31831c4670aba35",
+      "reference_sha256": "4d8aff24cf451f3d0308de51d9a94c0872c2548805d2c44a9cf7c1db9d7ff0c3",
+      "entry_point": "max_sub_array_sum",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 843,
+      "first_assertion_sha256": "d343fca19825e68e443c1d0dae2a9bb79a582ff5a910df277bac9df756a86873",
+      "reference_sha256": "755d5675461ea2061fde46a22d1d869347ba34a886b901e4a34ccfde5f0cb991",
+      "entry_point": "nth_super_ugly_number",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 845,
+      "first_assertion_sha256": "4ec3acaf77e2064503a19ae3b8f1616e86f34fd2940322e55eed8a001aba9524",
+      "reference_sha256": "ed1002ea24c5893accaa741d5bf42491886be6d5ffe695aac27d1740a95faa8c",
+      "entry_point": "find_Digits",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 853,
+      "first_assertion_sha256": "fbb22546e080c26f09e2aac231e11c874083ff03fc6d79fce3666229bb02dfcb",
+      "reference_sha256": "7ada3f44933b927c8082cd47269e55c01283c8f4ef3ac96145f33194b9455cac",
+      "entry_point": "sum_of_odd_Factors",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 854,
+      "first_assertion_sha256": "7bd819991010c7e28f60149f0659a255eb2b04165a7552c4e781b14aab7c37d7",
+      "reference_sha256": "9885bba15c471324096a6368a7c144a5ff0c5681976b9e8b11aadde5d3920c2d",
+      "entry_point": "raw_heap",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 859,
+      "first_assertion_sha256": "48ead46a3a679f48c9d3966e791685c8dacb5c310037d3699dae448fbad8eaee",
+      "reference_sha256": "8c4001f9f4780873e216288d26eef836116f6ea38725898c7d4ea09345429dc3",
+      "entry_point": "sub_lists",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 861,
+      "first_assertion_sha256": "9dcbc2ba8f8b560dc6402675a4eda8568958984f2b33ee01f358bb0ce32e6b47",
+      "reference_sha256": "ce4e7c1dec652da87e4b553853a29e1465821c2c17fab05e4d2f17a36a349b0a",
+      "entry_point": "anagram_lambda",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 862,
+      "first_assertion_sha256": "bb9062044c796064e0335c22c4cbb98c6adbeda964721dba9af6f637e6f0692f",
+      "reference_sha256": "a13d5f68bac8ecdc634f2383651ec02d366e5935232602ef0ed0e87a5522eade",
+      "entry_point": "n_common_words",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 879,
+      "first_assertion_sha256": "1e9b504afa839a999d1096cdb08b75b0d85dd4ea34b99db1c381e8d0d87cea63",
+      "reference_sha256": "78b170ec8753102a4c4a52f1645243555dd7ed05eb8abe04b4e85340f9d3b6ea",
+      "entry_point": "text_match",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 892,
+      "first_assertion_sha256": "f6c205040b687cb7951f8249bceca89cd7fe874eb5aeb8b13bfae81a7ea51ac0",
+      "reference_sha256": "dba4b2c56c66f413bb795f1a8a9960704849e4d78d79e948ea48b9aab01755e4",
+      "entry_point": "remove_spaces",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 898,
+      "first_assertion_sha256": "20e8ce896026c6e84b6ea8dbcd42a6e9aed48eb10c72ca3b3dc17da183e7aab8",
+      "reference_sha256": "7b8c3224471f78d9aa6b961b9295799a765a0a6237bc3208ce64d4c731a8c0fc",
+      "entry_point": "extract_elements",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 900,
+      "first_assertion_sha256": "eb2ee513a7cf7f577ba03b203dace2e43c58fb3cd3be56b33b8b17e692b45f77",
+      "reference_sha256": "cdb8ae773af0c07ba88e1947cdebaeebe5d2270d946f9131013e92065b4fe04c",
+      "entry_point": "match_num",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 902,
+      "first_assertion_sha256": "101edfaf8a407b117b3f2f6901f60eb7ef1ff0945c72839142cc8e44b3418e08",
+      "reference_sha256": "d01e29c926f26bc689bc6983d0c981c4bcd9fa99259c918e3519dab60c71f33b",
+      "entry_point": "add_dict",
+      "approved_for_evaluation": false,
+      "status": "unsupported_expected_display",
+      "expected_type": "dict"
+    },
+    {
+      "task_id": 906,
+      "first_assertion_sha256": "f4f34a261acfc471ebf78df2e39bc662fc838b087947ebc1fa84e531e7427d23",
+      "reference_sha256": "5297ee51a82826f7e403eab17f7f4f9f187ffa776a8d6d79bc98dc49760f3c16",
+      "entry_point": "extract_date",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 910,
+      "first_assertion_sha256": "673d26e1d52de82aea17ba18a40b62067626b0b6a160277a3345d8462e48e1b9",
+      "reference_sha256": "7ebf662b04e92129d5e54270d4a63fb49510a968771edcba7170b5eb96c71820",
+      "entry_point": "check_date",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 913,
+      "first_assertion_sha256": "df55cd4223fa0072e1c8800e9ea68d1b6b81d9200cc8517dabe9a01139e5157e",
+      "reference_sha256": "fc242d8dc61997b826328926af4c64ebf3dba27db263b93e9c081034274c8fe4",
+      "entry_point": "end_num",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "bool"
+    },
+    {
+      "task_id": 917,
+      "first_assertion_sha256": "c93d616e6f0fb370020cf7e3a412a1a260411ad88579ca6280d3f0f1044f7615",
+      "reference_sha256": "a26fecee713f14618958f1dcdff69e980974219833cefe7a13d20c334da00f31",
+      "entry_point": "text_uppercase_lowercase",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 930,
+      "first_assertion_sha256": "092415a22ea90da793ed2f8dd7dcebc391ac91a6c53e073eb6c08fe74ab2c005",
+      "reference_sha256": "92028a7f656317bf9d05610e0ada94b2e0df7051c15f1554cb0ab7d15bde99ce",
+      "entry_point": "text_match",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 931,
+      "first_assertion_sha256": "d6c397f1949f20ba4f05c969c75fa43696a2128458edb4bd7381045e5e414ddb",
+      "reference_sha256": "d170b193d538cd7d7822a64a7978a4441b30e758c4814f7d5af9851a836f002c",
+      "entry_point": "sum_series",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 933,
+      "first_assertion_sha256": "ffdcc8cfeb4e4cbacf70612a82d255e602032c1781ef1c78be0d00b13cb2fb21",
+      "reference_sha256": "10c5971c80fcdc4e0eb7d02f8e66f81f9b6eb0ec5569911244c2e064fca710e3",
+      "entry_point": "camel_to_snake",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 937,
+      "first_assertion_sha256": "2dc8aee8264d134fc3010ebb02f230333659d1fced9dd04aefa752a2f5839a04",
+      "reference_sha256": "c0e380c06f190b54268e2f4da92104d2701360b9074ea17ce914e7dcce6ba586",
+      "entry_point": "max_char",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "str"
+    },
+    {
+      "task_id": 938,
+      "first_assertion_sha256": "54c4dad9154151055c0ea3384d9bcdd375921345f8fd984439b9027803e50e55",
+      "reference_sha256": "e95d95a62fc2ed4564149fb6e0cda69736c62b8aa8dccb5210d363e4b8296708",
+      "entry_point": "find_closet",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "tuple"
+    },
+    {
+      "task_id": 943,
+      "first_assertion_sha256": "b6758c24220ecfa60ca781237576a6016c59722aeb31fcb76ce5e9beafa5a6d4",
+      "reference_sha256": "f679167621bdecfa073146798e90e227ff53eb6cddb053d2e145349b0aead3ff",
+      "entry_point": "combine_lists",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 944,
+      "first_assertion_sha256": "b5841311f6ad6b9e08d2b13a53308ed53fa841e41b76551cf50f82735c8b9af0",
+      "reference_sha256": "1263a449391a98c6dfbbb9af5772d98f46cc826e4ba292a2847aa7b9a0f65c36",
+      "entry_point": "num_position",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    },
+    {
+      "task_id": 946,
+      "first_assertion_sha256": "86ddf69e78aaac98e312ae2385f8f8b9c34aceef7cd12d8a7feca63b7f031d5d",
+      "reference_sha256": "5807276df183822b7fbcc24ee5487aadc34802a355536b73175065edf6baa0e0",
+      "entry_point": "most_common_elem",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 956,
+      "first_assertion_sha256": "7a46420d55ea11d2f963368bee3eea867967ac224f944e93287681261f932c0d",
+      "reference_sha256": "7b442b2d233ba6a8d601b3718ddd0f07fdeedc77a3e99c8fc93abed43ed9856e",
+      "entry_point": "split_list",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "list"
+    },
+    {
+      "task_id": 957,
+      "first_assertion_sha256": "af5a591e4590610af4e3ddf4ecc768a5fd96704b7c0b2be04e9d418859fda341",
+      "reference_sha256": "53012f41c49d92f85fce5ae793bf7a8d2606ef974c385b9a6c8c9dcd1e9fa28c",
+      "entry_point": "get_First_Set_Bit_Pos",
+      "approved_for_evaluation": false,
+      "status": "expected_literal_display_compatible",
+      "expected_type": "int"
+    }
+  ],
+  "model_reference_assertion_executions": 0,
+  "limits": [
+    "Expected-literal syntax only; does not establish actual reference return type.",
+    "No reference, import, assertion or model executed.",
+    "No semantic, family, full public-input or endpoint eligibility decision.",
+    "Current display/schema and all historical exclusions unchanged."
+  ]
+}

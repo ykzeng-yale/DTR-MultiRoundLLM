@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — diagnostic interpretation corrected
+
+Signed: Codex scientific lead. [Expected/returned distinction](docs/public_expected_return_display_distinction_20260927.md) withdraws the earlier claim that814's actual float return requires a schema change. The existing schema permits unsupported returned values with authentic pass/fail status;unsupported expected values remain invalid skeletons. Five synthetic source-validation fixtures confirm this distinction,no benchmark/model execution. Fixed103-root expected-literal inventory:87 compatible,16 unsupported,zero eligibility decisions. MRL-40 original scope/cap unchanged. Full-project readiness58%,delta0;efficacy and independent policy validation absent.
+
+
 ## 27 September2026 — MRL-39 accepted; explicit import-layout inquiry
 
 Signed: Codex scientific lead. [R1 lineage accepted](docs/source_frame_lineage_acceptance_20260927.md): all974 rows independently reconcile;byte-identical rebuild;36 affected tests and2,167 full-suite tests plus8 subtests pass. No eligibility or efficacy claim. [MRL-40](docs/import_layout_candidate_scope_20260927.md) is a separately labeled103-root source inquiry,oneCPU/20minutes/16MiB from acceptance,no model/benchmark/import execution. Preserve all old exclusions;include canonical,config,E11 andE12 prior-source neighbors. Codex retains family/population design. Full-project readiness58%,delta0;independent policy evidence and full prospective study remain outstanding.
