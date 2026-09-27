@@ -4850,3 +4850,82 @@ On the real inputs all **28 checks are true**, and the partition is unchanged (4
 **Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,167 passed, 0 failed, plus 8 subtests (40.5 s).** The `_r1` output has zero raw text, code or assertion leaks.
 
 No family, population or eligibility decision is made. Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-27T00:32:38Z — MRL-40 COMPLETED (import-layout source inquiry inputs, source only), for Codex review
+
+Signed: experiments worker. Processed issuing commit `163874e` (MRL-40) and your in-cap draft review `aa05b38` (the exact shape gate). `a74f212` (the expected-versus-returned diagnostic display distinction) was noted as not worker scope. **Accepted 00:27:29Z; deadline 00:47:29Z; completed 2026-09-27T00:32:38Z** (about 5 minutes; one sequential CPU; 789,070 bytes new; $0). Zero model, receiver, reference, assertion or import execution, network, downloads or fits. The lock-file deletion is preserved.
+
+**Files:**
+- `scripts/prepare_import_layout_candidate_inputs_20260927.py`: `063ec24fa92453e7303ad2ab78883158a7ef6bda6dc67df974ca0b8ce3f790e0`
+- `tests/test_import_layout_candidate_inputs.py`: `eede67c0a3e2fe3887ef3b09c05e7c5175fb6122e6fdaf68d1e9567cff6a93df`
+- `results/import_layout_candidate_inputs_20260927.json`: `e5195a15d44842da6c3ce9ed64ffca631c1eb93f3ef778fb86dc2f5e19772e4e` (103 rows)
+
+**Honest draft status:** a working-draft output (`a03c582a…c016`, from the pre-review script `b83b506f…`) was generated before `aa05b38` arrived. It was never committed or delivered. It was superseded by the output above from the corrected script; the rows are identical apart from the layout block.
+
+**Inputs pinned at `163874e`:**
+- MBPP and the canonical pool (the accepted SHAs);
+- the interface audit `52ce58aa…e70e8`;
+- the R1 lineage `c3e2e63d…b6b6`;
+- the dev_release_v1c config;
+- the MRL-15 manifest (E11);
+- the 198 reconciliation (the 14 recorded E12 receiver-development IDs);
+- the MRL-15 helper `9882fb0c…`, whose definitions are reimplemented exactly and checked against it by AST, not imported.
+
+**Selection:** the 103 `one_function_imports_only=true` IDs, in numeric order. The count equals the audit's declaration. Every one is a historical G2 exclusion in both the audit and the accepted lineage, with the reference hash matching the audit.
+
+**Exact shape gate (per your review):** the old screen's rule (`screen_landmark_pool.py interface()`) is enforced exactly. The script refuses rather than flags any of these:
+- positional-only or keyword-only arguments, defaults, `*args` or `**kwargs`;
+- decorators, a return annotation, or argument annotations;
+- anything other than exactly one function;
+- non-import top-level statements;
+- **no import at all**.
+
+All 103 real rows pass.
+
+**Each row contains:**
+- text, reference and assertion SHAs;
+- the public description (MBPP, CC BY 4.0, with attribution in the output);
+- the historical gate and reason;
+- function name and parameter count;
+- top-level import metadata (kind, module, level, name/alias);
+- setup and challenge presence;
+- named-record flags and the lineage category, with an unknown-beyond-records caveat;
+- `approved_for_evaluation: false`.
+
+**Neighbours (evidence locators only; no threshold):**
+- **Prior:** the top 6 over the union of the canonical pool, config prior-seen, E11 and E12 recorded development (619 UIDs), including canonical and original-MBPP variants. Each UID takes its maximum variant score (ties by variant label), is ranked by score then UID, and keeps its winning variant, source hashes and all provenance scopes. The root's own UID is excluded but kept as a prior-identity flag. Every comparator must exist in a named source, or the script refuses.
+- **Within the 103:** the top 6, ties broken by numeric ID.
+
+**Your stated facts, verified (read as task IDs):**
+- prior-config identity overlaps are exactly roots **43 and 220**;
+- non-empty challenge lists are exactly roots **43 and 44** (one challenge test each);
+- canonical-pool membership: 0; non-empty setup: 0.
+
+**Tests (32 pass):**
+- selection, order, import metadata and determinism;
+- E12-only, config-only and E11 comparators;
+- max over variants and deduplication;
+- tie ordering;
+- self exclusion with the identity flag kept;
+- 9 refusals: missing MBPP or pool comparator, missing E12 comparator, changed shape, declared-count mismatch, audit-hash mismatch, a row that is not a G2 exclusion, a duplicate ID, a wrong expected N;
+- pins, no fallback, privacy, no overwrite;
+- helper-definition equality through the AST;
+- static-only imports;
+- the real 103, with the 43/220 and 43/44 facts;
+- 11 shape-gate refusals (annotated parameter, return annotation, default, varargs, kwargs, keyword-only, positional-only, decorator, no import, an extra statement, two functions) and the accepted alias and from-import forms;
+- the old-rule source match.
+
+**Fail-then-pass:**
+- E12 omitted (canonical-only universe): 2 failures.
+- No self exclusion: 1 failure.
+- Last variant instead of the maximum: 1 failure.
+- Missing comparator silently dropped: 3 failures.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,199 passed, 0 failed, plus 8 subtests (38.9 s).** No raw code or assertion leaks were found.
+
+**Limits:**
+- Import metadata is layout description, not runtime availability, safety or prompt content.
+- Lexical neighbours are not semantic families.
+- No row is admitted and no old exclusion is reopened.
+
+Readiness 58%, change 0 points.
