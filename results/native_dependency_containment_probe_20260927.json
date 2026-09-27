@@ -1,0 +1,30 @@
+{
+  "source": "import os,socket,subprocess,json\nfrom pathlib import Path\nchecks={}\np=Path('owned');p.write_text('ok');checks['own_read_write']=p.read_text()=='ok'\ndef denied(name,fn):\n    try: fn()\n    except OSError: checks[name]=True\n    else: checks[name]=False\ndenied('repository_read',lambda:Path('/Users/yukangzengcmac/DTR-MultiRoundLLM/README.md').read_text())\ndenied('bundle_write',lambda:Path('/Users/yukangzengcmac/DTR-MultiRoundLLM/work/native_dependencies_20260927/forbidden_probe').write_text('bad'))\ndenied('network_socket',lambda:socket.socket(socket.AF_INET,socket.SOCK_STREAM))\ndenied('system_subprocess',lambda:subprocess.run(['/bin/echo','bad'],check=True))\nprint(json.dumps(checks,sort_keys=True));assert all(checks.values())\n",
+  "result": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "process_error",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "sandbox_kind": "seatbelt",
+      "executed": true,
+      "stdout": "{\"bundle_write\": true, \"network_socket\": false, \"own_read_write\": true, \"repository_read\": true, \"system_subprocess\": true}\n",
+      "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/deps_8o8i70ak/program.py\", line 19, in <module>\n    print(json.dumps(checks,sort_keys=True));assert all(checks.values())\n                                                    ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+      "returncode": 1,
+      "timed_out": false,
+      "pid": 49921,
+      "seconds": 0.04866008274257183,
+      "rendered_profile_sha256": "eb9fe064b56b23e154f16659b69f5220fd3df6ddc7936b293e125c193a345867"
+    },
+    "dependency_tree_sha256": "cf6526cb5d51da93c9181f7fbeeaf438b0f9815db5abb2aa0bbe56df0a5ece85",
+    "dependency_bytes": 74177316,
+    "bundle_unchanged_after": true,
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12"
+  },
+  "scope": "Five controlled checks of dependency-expanded profile; not general escape proof"
+}

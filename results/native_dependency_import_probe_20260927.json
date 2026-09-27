@@ -1,0 +1,30 @@
+{
+  "source": "import numpy as np\nimport matplotlib\nimport matplotlib.pyplot as plt\na=np.array([1,2,3]);assert int(a.sum())==6\nfig,ax=plt.subplots();ax.set_title('probe');assert ax.get_title()=='probe'\nprint('IMPORT_AND_OBJECT_OK',np.__version__,matplotlib.__version__)\n",
+  "result": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "sandbox_kind": "seatbelt",
+      "executed": true,
+      "stdout": "IMPORT_AND_OBJECT_OK 2.5.3 3.11.2\n",
+      "stderr": "Could not save font_manager cache [Errno 27] File too large\n",
+      "returncode": 0,
+      "timed_out": false,
+      "pid": 49781,
+      "seconds": 2.7969325417652726,
+      "rendered_profile_sha256": "bd5a05b29e7e5dc6d1890cfacfaed7196917109ddb1a8a9d89a4b7d63bc5cb4c"
+    },
+    "dependency_tree_sha256": "cf6526cb5d51da93c9181f7fbeeaf438b0f9815db5abb2aa0bbe56df0a5ece85",
+    "dependency_bytes": 74177316,
+    "bundle_unchanged_after": true,
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12"
+  },
+  "scope": "Harmless library import/object probe; no benchmark execution"
+}

@@ -1,0 +1,30 @@
+{
+  "source": "import socket\ns=socket.socket();s.settimeout(0.3)\ntry:\n s.connect(('127.0.0.1',60717))\nexcept PermissionError:\n print('NETWORK_CONNECT_DENIED')\nelse:\n raise RuntimeError('network connect unexpectedly allowed')\n",
+  "result": {
+    "execution": {
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    "raw_process": {
+      "sandbox_kind": "seatbelt",
+      "executed": true,
+      "stdout": "NETWORK_CONNECT_DENIED\n",
+      "stderr": "",
+      "returncode": 0,
+      "timed_out": false,
+      "pid": 50032,
+      "seconds": 0.02350291609764099,
+      "rendered_profile_sha256": "d9fed3ef095fa0b8c91fd2fb96f38dd2eedd604a8ed79c240ffc240de098e787"
+    },
+    "dependency_tree_sha256": "cf6526cb5d51da93c9181f7fbeeaf438b0f9815db5abb2aa0bbe56df0a5ece85",
+    "dependency_bytes": 74177316,
+    "bundle_unchanged_after": true,
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12"
+  },
+  "scope": "Controlled actual loopback connection to listening socket; prior socket-creation failure retained"
+}

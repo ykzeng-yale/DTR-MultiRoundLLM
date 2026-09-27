@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — numerical dependency sandbox qualified within scope
+
+Codex direct implementation: [dependency qualification](docs/native_dependency_qualification_20260927.md). Hash-bound74.18MB bundle imports NumPy/Matplotlib inside a separate read-only allowance under strict Seatbelt; repository reads, bundle writes and system subprocess denied. Initial socket-creation expectation failed and remains recorded; corrected actual loopback connection is denied. Three harmless starts, zero benchmark/model calls. Full2,281 tests plus8 subtests pass;53 focused tests pass. Existing runners untouched; this new dependency version does not reproduce the publisher environment or establish grading integrity. Next freeze a bounded task628 reference/control measurement audit before execution. Full-project readiness60%,delta0; population/measurement, full trial freeze, independent policy evidence and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
+
+
 ## 27 September2026 — strict execution reused and output saturation classified
 
 Codex direct implementation: [execution boundary](docs/native_execution_boundary_20260927.md). Existing strict runner passes9/9 current-host containment probes. Four harmless output probes show saturated writes can exit0; new bounded adapter labels either-stream saturation output_limit and all clean completions ungraded, never a test pass. Forty-five affected tests pass;13 synthetic sandbox starts, zero benchmark/model calls. No dependency access expansion. Remaining native step: pinned dependency environment, trusted result/source isolation and frozen reference/control audit. Full-project readiness60%,delta0; measurement/population, full freeze, independent policy evaluation and final manuscript/raw reproduction remain open. Goal active; Codex-only execution.
