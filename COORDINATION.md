@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — first full semantic source batch recorded
+
+Codex direct review: [rows0–15](docs/bigcodebench_semantic_review_0000_0015_20260927.md),64 prompt/reference/test hashes rechecked. Provisional must-link groups2/3/5 and8/10/11; task9 plot-cardinality gap, task11 bound conflict, and task14/15 native subprocess paths recorded (source-only; row runs not attempted). Every row remains unresolved/not admitted. Native tests cannot all run unchanged under the current deny-subprocess profile; qualify a compatible contained runtime before executable admission. No benchmark or receiver execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Codex-only execution.
+
+
 ## 27 September 2026 — finite-source sampling argument reviewed
 
 Codex lead: [sampling contract](docs/finite_source_sampling_contract_20260927.md) supplies a uniform-without-replacement argument for the unchanged sign-split interval under independent complete family vectors and outcome-independent sampling. Coverage is over subset selection and execution for the full eligible finite-frame mean; no broader transport or conditional-on-subset guarantee is claimed. Existing internal inference review accepts the argument. Four new exact finite-law checks and46 existing inference tests pass. The integrated population/measurement proposal remains unadopted; no model calls, sampler release or task admission. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Codex-only implementation, goal active.

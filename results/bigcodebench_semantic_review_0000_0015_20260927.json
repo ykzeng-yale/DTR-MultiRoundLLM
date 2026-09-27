@@ -1,0 +1,446 @@
+{
+  "version": "bbc-source-review-0000-0015-v1",
+  "reviewer": "Codex scientific lead",
+  "classification": "manual source review; no benchmark execution or receiver result",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "scope": "source rows0..15 inclusive; both prompt variants, reference and complete native test strings",
+  "selection": "contiguous source-order work batch; not a random sample and not an evaluation roster",
+  "raw_source_committed": false,
+  "same_family_provisional_groups": [
+    [
+      2,
+      3,
+      5
+    ],
+    [
+      8,
+      10,
+      11
+    ]
+  ],
+  "family_scope": "must keep these template relatives together in any later split; groups can merge with unseen rows, not final families",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/0",
+      "source_row": 0,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "a92ca87b5ec7504d1505072523ebac3e399797b13e0bd1ea79d2899726a78c01",
+        "instruct_prompt": "83813e5096561a3a13b4bfab737cefced910b982154d346fd835fa67fb46c673",
+        "canonical_solution": "dc186b511d5e993b3bd5ea1a0101bbe3ccaf8478b2885654809bfbe3190ffd59",
+        "test": "7099d4747202367143bbd3c3636dbb2ae801aa2aae9ff57680c19fad67560b73"
+      },
+      "provisional_semantic_label": "shuffled_permutation_difference",
+      "source_judgment": "Signature default is [1,2] but both prompt variants describe 1..10. Reference materializes all permutations; large-list test uses ten elements. Patching random.shuffle does not replace the directly imported shuffle binding.",
+      "flags": [
+        "specification_conflict",
+        "resource_qualification",
+        "mock_binding"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/1",
+      "source_row": 1,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "bc9b40757fbcbcabdc72c62715b7c2d7c35c973cd2af3f073676025ae749a29d",
+        "instruct_prompt": "7432e27a4c03c19c1be344321f93ff8a5b7f338415baa9dcd68c9dff837d9486",
+        "canonical_solution": "6f7d4ef5fca40440e2cbbb7a23e36bcbbf2e51df2a90b392881e95d94e3af78a",
+        "test": "ad7d2ab423ffe4b7f7e437bac641480459098d35bbe3f75237ab3b35db0b1f3f"
+      },
+      "provisional_semantic_label": "random_character_counts",
+      "source_judgment": "Tests assert count total and allowed alphabet, but do not distinguish a deterministic single-character count from random generation. Source concern, no control run.",
+      "flags": [
+        "weak_randomness_measurement"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/2",
+      "source_row": 2,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "8cbe1ae14415d31822f40fa684db887b5d8040aa8257a8129634c3d353f230f9",
+        "instruct_prompt": "550851fcbc6ca59d7c61e8037eeddc6e9a0c7a1853db951ad0044df8a365cdd0",
+        "canonical_solution": "fa838c0db6b7d83e33071863e5b05d02eb6f46d6b1b492b30d6041895d1497bd",
+        "test": "9226d39194edaace5a0ba59ba6367c342287699fab8cad4b9ed7335a750c4f88"
+      },
+      "provisional_semantic_label": "letter_random_lists_summary",
+      "source_judgment": "Same random_dict generation expression as3/5; returns lists sorted by mean. Tests cover keys, types and ordering but not generation distribution.",
+      "flags": [
+        "template_family",
+        "weak_randomness_measurement"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/3",
+      "source_row": 3,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "a8ebf88fadcc3a9380e26bcf53ee4e25559b1ceff2b8047deaed61de2988fece",
+        "instruct_prompt": "56fecf3e0828b4acb7acbcc5627772460ca14bc7c19c33ac739b44e9381182aa",
+        "canonical_solution": "722c0e5cccf1a3612b8194bdbe359ddbe0da2255fc2d023b667e4bcd33ebaa14",
+        "test": "c560631e474d0249d70bfd71e23256d366caf046faf646fc4f5e67a6bd74db75"
+      },
+      "provisional_semantic_label": "letter_random_lists_summary",
+      "source_judgment": "Same random_dict generation expression as2/5; returns per-key means. Tests check keys, float type and range only; constant per-key values are not excluded by these assertions.",
+      "flags": [
+        "template_family",
+        "weak_statistic_measurement"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/4",
+      "source_row": 4,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "4e46bac35d3fb13e9b03af64da69a893ae010b783c78c41e64029976acc78f9e",
+        "instruct_prompt": "9ca9eef500ffda24eef9cd976ba63f9b69847ffe2b717871eadc6649a5f64cc9",
+        "canonical_solution": "135375620d92c94722960718db475e5a6b0bfa3acae83cc2519f5b9656e9d3ea",
+        "test": "248bd0da35f8af52c25d65c902c4b99ac08d873aa8fc6ac82acf34d921602cde"
+      },
+      "provisional_semantic_label": "flatten_dictionary_counts",
+      "source_judgment": "Several exact count examples. Tests also impose behavior on noninteger values/nonstring keys outside the described domain; this is a domain extension, not proof the reference is wrong.",
+      "flags": [
+        "test_domain_extension"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/5",
+      "source_row": 5,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "8386d3d2df0810dce38fce52b490651a26f162e020bb06c46498cad68755677c",
+        "instruct_prompt": "9328dcf75d4807777bf7dc0115798bf02adfd179d72d84d7b2f913a1d6b2aaa2",
+        "canonical_solution": "ffaebe9ccd5b0d6529c8e8a750991d47bec8b49144e4c1f89e49109c1f28a9f8",
+        "test": "102edce120aeeb9e0f2d2a2e54c15e044bbb8f20882900dd0d48dd1204e6faaa"
+      },
+      "provisional_semantic_label": "letter_random_lists_summary",
+      "source_judgment": "Same random_dict generation expression as2/3; computes population SD. Known-value tests patch random.randint with a specific sequence of size/value calls, constraining implementation/RNG interface.",
+      "flags": [
+        "template_family",
+        "mock_implementation_dependence"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/6",
+      "source_row": 6,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "e2f5b94217dbf2dc7226ae760f7ddd00aac79abe46285c16f6fc1560f6c6b8ea",
+        "instruct_prompt": "3176c266628e85ec71806093a9d47c624b6eee8e736dfdd0426fa551138ece8f",
+        "canonical_solution": "d2b90e452e8dc04b5b4eaa6b10f86ea680c370a52fb55b531824d694c56098d8",
+        "test": "7da426c7ed23325e5a1598f075dafb8c9752fddb794334c06d2e69abe745c2a3"
+      },
+      "provisional_semantic_label": "regex_latest_file",
+      "source_judgment": "Mocks listdir/getmtime, checks latest matching path. Needs declared treatment of directories, timestamp ties and regex semantics; no real filesystem behavior measured by these mocks.",
+      "flags": [
+        "mock_environment",
+        "specification_edges"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/7",
+      "source_row": 7,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "84b5ca938b5d27e20704f5bf9cc38be4b3212f1fed2c59699eb93938523de52a",
+        "instruct_prompt": "3f3d3f3156f464edce283f67b186db372cd0d71bfd1fbc15562a05baed429820",
+        "canonical_solution": "c03c272f496162a7d7d10176f943c1eacb85cf6c29f8ec2662668beb9e4360e1",
+        "test": "43141466323a660adcc88af0c16558ea715f6670a710fbd2a50e1fc561738147"
+      },
+      "provisional_semantic_label": "csv_product_aggregation",
+      "source_judgment": "Tests do not include repeated product rows despite cumulative-sales requirement. Header-only and malformed quantities impose exceptions beyond explicitly described normal domain.",
+      "flags": [
+        "aggregation_measurement_gap",
+        "test_domain_extension"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/8",
+      "source_row": 8,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "cb2d520035542059bdedc4e2b1dc43a75ef4448e2d1b6cdb15b3764357529a83",
+        "instruct_prompt": "a9bdca928136fe96dc672d501b7daf332b4dc657c09af9d5673d5a7a388c00d7",
+        "canonical_solution": "69c2d05717aee771d17806f4c95c611a87ad94ac8b81bb0122a06be9ffd36a19",
+        "test": "db9601fcec7b8593f2edb5de1c02146fddb4afacace255a72b027a7bb45be5d3"
+      },
+      "provisional_semantic_label": "nested_tuple_random_population_summary",
+      "source_judgment": "Shares nested conversion/flatten/sum/random-sample template with10/11. Tests cover total counts and range, not actual randomness.",
+      "flags": [
+        "template_family",
+        "weak_randomness_measurement"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/9",
+      "source_row": 9,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "d4f32b71687abf5c2447c84832f40af261e7b8d9f976055496567431be655111",
+        "instruct_prompt": "58427a409ed5818ebf7a7a08245c049420bc619c73959b5ef1a5fb4caf5ab8a9",
+        "canonical_solution": "6cf870090bfd0f44944ee0bf1ce378dd0498ccb4455087db7858292e52e946c7",
+        "test": "1b1a3c511b62e70b5cd5842bdb72888966d88add6f19b4b247817f1b6dd03d60"
+      },
+      "provisional_semantic_label": "categorical_dataframe_barplot",
+      "source_judgment": "is_bar zips actual bars/ticks with expected arrays without asserting equal lengths; missing elements can bypass these loops. Only test_case_1 calls is_bar; others check dataframe/title. Duplicate-category plotting behavior also needs a contract.",
+      "flags": [
+        "plot_cardinality_gap",
+        "specification_edges"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/10",
+      "source_row": 10,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "35a19c5ee33b57acabed9cef6adcc8611d85f4295d2fd0062fc3710690e7e54b",
+        "instruct_prompt": "515c0a2a769882df60b560f6c866102f7c1132dcbba7a835e0171ef811e75859",
+        "canonical_solution": "69b79bc17ed6cb2349ea3922eaf368f791b6b719cb0140a25695b7cf086c29ca",
+        "test": "17ce1ce669b2d202e0bbb96bca10f4a0ba4e5dd6461176e495f654b3c1189ac8"
+      },
+      "provisional_semantic_label": "nested_tuple_random_population_summary",
+      "source_judgment": "Shares generation template with8/11. Every nonempty test patches randint to a constant; these cases do not distinguish mean, median and mode computation on heterogeneous data.",
+      "flags": [
+        "template_family",
+        "degenerate_statistic_tests"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/11",
+      "source_row": 11,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "22b660b2d8a85de51469dd711aca8bed91bf03129b5e728815abaeb9c36b61c1",
+        "instruct_prompt": "7c75cf2409eef93d8e2c387fdeab754fa963104d485e4d4315b2b36904e6c982",
+        "canonical_solution": "642d3a03f7fc8f6755de6f03297401405b5ba16a5ab5dae15fd8580d4045ebd5",
+        "test": "81dbcacadf9a7885fc90e805306ea0ad186af194aaf3fe6ceb51d704bea634d3"
+      },
+      "provisional_semantic_label": "nested_tuple_random_population_summary",
+      "source_judgment": "Complete prompt says exclusive max_value but reference uses inclusive randint. Instruct prompt omits this parameter detail. Every test uses constant mocked values, leaving heterogeneous percentile behavior untested.",
+      "flags": [
+        "template_family",
+        "specification_conflict",
+        "degenerate_statistic_tests"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/12",
+      "source_row": 12,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "cfdf0fb89e064ee40a6f02d36c05ca948f96c9b4f43a0914c08d49729315d562",
+        "instruct_prompt": "3273ef258462502938125b0c2568effab6190ac7425637b869329931365db8af",
+        "canonical_solution": "603e750194d3bab12978caef9819ed46692d0c3bed86f4298aafa9515056af83",
+        "test": "73363511a4110decbcb3bf67db76f1541d7269ab6bd48f14aa32178d1a0349a4"
+      },
+      "provisional_semantic_label": "shell_script_execution_log",
+      "source_judgment": "Native tests mock subprocess and filesystem operations. These test a mock interaction, not actual script execution or persisted JSON contents; source allows deterministic timestamps meeting superficial format checks.",
+      "flags": [
+        "mock_environment",
+        "log_measurement_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/13",
+      "source_row": 13,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "3b02d91e71cf17cb0612759618816a94b1e10326c2cb773dfff799fab23a032d",
+        "instruct_prompt": "cac7afe7562bd55d08c012db644cf02a166130b99cb3154858ff06922c19a597",
+        "canonical_solution": "7c5b65a8d2c4e2d9bafa5df86e88acb7036d5e42716d66916ea0e3ca281065d3",
+        "test": "5ccbf36460661abcb7db98f7a79774f6df278994ce28b2e33f176d5e0ae4c01b"
+      },
+      "provisional_semantic_label": "ftp_download_subprocess",
+      "source_judgment": "FTP and subprocess are mocked in success test; returned names checked, but subprocess call arguments/count and file contents not asserted. Actual task requires network/process capabilities denied by current profile. No credentials or raw prompt copied into ledger.",
+      "flags": [
+        "mock_environment",
+        "operation_measurement_gap",
+        "runtime_contract_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/14",
+      "source_row": 14,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "d0fc3ac5d9327377ec0fdd9c9c09ba2a3c585ab4c6ad95d48e3abdb937963a7f",
+        "instruct_prompt": "eaec6bd72232a3cd837b5efc0983a72aaff0c69aef097c90f3593bb637a65885",
+        "canonical_solution": "806ad5cadc6448f8c6bd7dce19bcac1f4c3d507b4bed313cd03d5b44464b80ad",
+        "test": "fc318e59e7ae5e882783fd4e8361fe5def601a1069e827bcf84c8a4238dbadbe"
+      },
+      "provisional_semantic_label": "config_directory_zip",
+      "source_judgment": "Prompt promises FileNotFoundError for missing config; reference reads config then accesses a section without an explicit existence check. Native archive-content test invokes os.popen(unzip), expected incompatible with the current strict profile based on prior qualification, not a row14 run. Signature misspells archive parameter relative to prose.",
+      "flags": [
+        "specification_conflict",
+        "native_test_subprocess"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/15",
+      "source_row": 15,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "be0ea7447ec3244e01063792cebe9df96927abc9745aab80122dbaee01c57fa6",
+        "instruct_prompt": "956b8e694c61bb0d841cc63f78e9d85b96b4e3a719f7a34b9215df7c0c2c1944",
+        "canonical_solution": "7508f57823d626b9d17c88f2900b2a3b8fefa9d5123e250f2928265e8d0e584d",
+        "test": "a682808668a318fe5166b8b4b30de348acc4844b6c455a82ffa824cf67a83ec7"
+      },
+      "provisional_semantic_label": "csv_shell_commands_to_files",
+      "source_judgment": "Task requests shell execution; reference invokes subprocess.call(shell=True), and native tests do not mock it. Tests inspect resulting text, including host-specific not-found wording, without asserting process-call occurrence. Expected incompatibility with the current deny-subprocess profile follows from prior qualification, not an executed row15 run.",
+      "flags": [
+        "native_test_subprocess",
+        "runtime_contract_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    }
+  ],
+  "source_rows_reviewed_this_batch": 16,
+  "source_total_rows": 1140,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "paid_experimental_cost_usd": 0
+}

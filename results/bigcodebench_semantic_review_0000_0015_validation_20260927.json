@@ -1,0 +1,19 @@
+{
+  "classification": "data/hash and AST cross-check, not independent semantic adjudication or execution",
+  "review_sha256": "599ea75a8a54e3fa3d5be4be90ad92969ad10d1ea9b58622fa1f38a7e41da821",
+  "rows": 16,
+  "field_hashes_verified": 64,
+  "same_random_dict_ast": [
+    2,
+    3,
+    5
+  ],
+  "task9_helper_zip_calls": 2,
+  "task9_helper_len_calls": 0,
+  "task11_exclusive_prose_inclusive_reference_found": true,
+  "task14_test_popen_found": true,
+  "task15_reference_subprocess_and_no_test_patch_found": true,
+  "benchmark_executions": 0,
+  "receiver_calls": 0,
+  "independent_semantic_review": "Existing experiment reviewer checked all16 IDs/64 source hashes, both template groups and highlighted claims; requested task15 behavioral-enforcement and runtime-not-run qualifications, applied. No benchmark execution."
+}

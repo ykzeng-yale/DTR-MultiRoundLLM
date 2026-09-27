@@ -571,3 +571,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September 2026 — Codex finite-source sampling design
 
 [Contract](finite_source_sampling_contract_20260927.md): internally reviewed classical sampling argument, not receiver evidence or collection release. Two heterogeneous finite laws enumerate52 sample/outcome configurations across all subset sizes; rational moment checks cover both signs and finite t values. Fifty focused tests pass. Next implement population/measurement commitments and validated sampler before full freeze; do not treat benchmark IDs as eligible families. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete.
+
+
+## 27 September 2026 — Codex source batch0–15
+
+[Ledger and decision](bigcodebench_semantic_review_0000_0015_20260927.md). No task admission or experimental run. Before whole-source executable admission, qualify a runtime capable of preserving native subprocess tests; do not alter tests or silently discard rows. Provisional template groups need cross-batch/prior-exposure review. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evidence and final reproduction remain incomplete.
