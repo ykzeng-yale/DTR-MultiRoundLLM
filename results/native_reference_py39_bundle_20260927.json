@@ -1,0 +1,191 @@
+{
+  "classification": "isolated compatibility environment; SciPy1.7.3 differs from publisher1.7.2",
+  "tree_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "total_bytes": 376048145,
+  "files": 8546,
+  "bundle": "work/native_reference_py39_bundle_20260927",
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+  "python_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+  "packages": [
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0",
+      "license": "Dual License"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "license": "Apache-2.0 OR BSD-2-Clause"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.4",
+      "license": "Apache-2.0"
+    },
+    {
+      "name": "pillow",
+      "version": "10.3.0",
+      "license": "HPND"
+    },
+    {
+      "name": "seaborn",
+      "version": "0.13.2",
+      "license": "see bundled license files"
+    },
+    {
+      "name": "nltk",
+      "version": "3.8",
+      "license": "Apache License, Version 2.0"
+    },
+    {
+      "name": "scipy",
+      "version": "1.7.3",
+      "license": "BSD"
+    },
+    {
+      "name": "et_xmlfile",
+      "version": "2.0.0",
+      "license": "MIT"
+    },
+    {
+      "name": "openpyxl",
+      "version": "3.1.2",
+      "license": "MIT"
+    },
+    {
+      "name": "pytz",
+      "version": "2023.3.post1",
+      "license": "MIT"
+    },
+    {
+      "name": "cffi",
+      "version": "2.0.0",
+      "license": "MIT"
+    },
+    {
+      "name": "click",
+      "version": "8.1.8",
+      "license": "see bundled license files"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.7.0",
+      "license": "PSF"
+    },
+    {
+      "name": "Faker",
+      "version": "20.1.0",
+      "license": "MIT License"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.3.1",
+      "license": "new BSD"
+    },
+    {
+      "name": "cryptography",
+      "version": "38.0.0",
+      "license": "BSD-3-Clause OR Apache-2.0"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.2.1",
+      "license": "BSD 3-Clause License\n\nCopyright (c) 2021-2024, ContourPy Developers.\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n1. Redistributions of source code must retain the above copyright notice, this\n   list of conditions and the following disclaimer.\n\n2. Redistributions in binary form must reproduce the above copyright notice,\n   this list of conditions and the following disclaimer in the documentation\n   and/or other materials provided with the distribution.\n\n3. Neither the name of the copyright holder nor the names of its\n   contributors may be used to endorse or promote products derived from\n   this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.4.7",
+      "license": "=========================\n The Kiwi licensing terms\n=========================\nKiwi is licensed under the terms of the Modified BSD License (also known as\nNew or Revised BSD), as follows:\n\nCopyright (c) 2013-2024, Nucleic Development Team\n\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or\nother materials provided with the distribution.\n\nNeither the name of the Nucleic Development Team nor the names of its\ncontributors may be used to endorse or promote products derived from this\nsoftware without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\nAbout Kiwi\n----------\nChris Colbert began the Kiwi project in December 2013 in an effort to\ncreate a blisteringly fast UI constraint solver. Chris is still the\nproject lead.\n\nThe Nucleic Development Team is the set of all contributors to the Nucleic\nproject and its subprojects.\n\nThe core team that coordinates development on GitHub can be found here:\nhttp://github.com/nucleic. The current team consists of:\n\n* Chris Colbert\n\nOur Copyright Policy\n--------------------\nNucleic uses a shared copyright model. Each contributor maintains copyright\nover their contributions to Nucleic. But, it is important to note that these\ncontributions are typically only changes to the repositories. Thus, the Nucleic\nsource code, in its entirety is not the copyright of any single person or\ninstitution. Instead, it is the collective copyright of the entire Nucleic\nDevelopment Team. If individual contributors want to maintain a record of what\nchanges/contributions they have specific copyright on, they should indicate\ntheir copyright in the commit message of the change, when they commit the\nchange to one of the Nucleic repositories.\n\nWith this in mind, the following banner should be used in any source code file\nto indicate the copyright and license terms:\n\n#------------------------------------------------------------------------------\n# Copyright (c) 2013-2024, Nucleic Development Team.\n#\n# Distributed under the terms of the Modified BSD License.\n#\n# The full license is in the file LICENSE, distributed with this software.\n#------------------------------------------------------------------------------\n"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "license": "MPL-2.0 AND MIT"
+    },
+    {
+      "name": "regex",
+      "version": "2026.1.15",
+      "license": "Apache-2.0 AND CNRI-Python"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.60.2",
+      "license": "MIT"
+    },
+    {
+      "name": "zipp",
+      "version": "3.23.1",
+      "license": "MIT"
+    },
+    {
+      "name": "joblib",
+      "version": "1.5.3",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "license": "Copyright (c) 2015, matplotlib project\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of the matplotlib project nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    },
+    {
+      "name": "psutil",
+      "version": "5.9.5",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.7.0",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "numpy",
+      "version": "1.21.2",
+      "license": "BSD"
+    },
+    {
+      "name": "pandas",
+      "version": "2.0.3",
+      "license": "BSD 3-Clause License\n\nCopyright (c) 2008-2011, AQR Capital Management, LLC, Lambda Foundry, Inc. and PyData Development Team\nAll rights reserved.\n\nCopyright (c) 2011-2023, Open source contributors.\n\nRedistribution and use in source and binary forms, with or without\nmodification, are permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n\n* Redistributions in binary form must reproduce the above copyright notice,\n  this list of conditions and the following disclaimer in the documentation\n  and/or other materials provided with the distribution.\n\n* Neither the name of the copyright holder nor the names of its\n  contributors may be used to endorse or promote products derived from\n  this software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\nAND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\nIMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE\nFOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\nDAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\nSERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\nCAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\nOR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\nOF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n"
+    },
+    {
+      "name": "opencv-python-headless",
+      "version": "4.9.0.80",
+      "license": "Apache 2.0"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "license": "MIT"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "license": "MIT"
+    },
+    {
+      "name": "pycparser",
+      "version": "2.23",
+      "license": "BSD-3-Clause"
+    },
+    {
+      "name": "importlib_resources",
+      "version": "6.5.2",
+      "license": "see bundled license files"
+    }
+  ],
+  "omitted_paths": [
+    "bin/f2py",
+    "bin/f2py3",
+    "bin/f2py3.9",
+    "bin/faker",
+    "bin/fonttools",
+    "bin/nltk",
+    "bin/pyftmerge",
+    "bin/pyftsubset",
+    "bin/tqdm",
+    "bin/ttx",
+    "matplotlib-3.7.0-py3.9-nspkg.pth"
+  ],
+  "site_hooks_executed": false,
+  "metadata_note": "Wheel distribution RECORD retained as provenance, not asserted to enumerate the pruned runtime tree; tree hash is authoritative."
+}

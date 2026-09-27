@@ -1,6 +1,7 @@
 """Versioned strict sandbox with one hash-bound read-only dependency tree.
 
-No benchmark release; runtime qualification only. Does not process .pth hooks.
+No benchmark release; runtime qualification only. Optional interpreter must be
+explicitly pinned and separately qualified by the caller before benchmark use. Does not process .pth hooks.
 Parent-controlled bundle storage must not be concurrently mutated. Pre/post checks
 are detection, not an OS guarantee against other same-user parent processes.
 """
@@ -22,13 +23,13 @@ def profile(python,run_dir,bundle):
     return strict.profile(python,run_dir)+'\n(allow file-read* (subpath '+json.dumps(str(Path(bundle).resolve()))+'))\n'
 
 
-def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30):
+def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30,python=None):
     if type(source) is not str or len(source.encode())>1048576:raise ValueError('source cap')
     if type(timeout_s) not in (int,float) or not 0<timeout_s<=10:raise ValueError('wall cap')
     if type(cpu_seconds) is not int or not 1<=cpu_seconds<=5:raise ValueError('CPU cap')
     if type(output_cap) is not int or not 1024<=output_cap<=262144:raise ValueError('output cap')
     if type(mem_bytes) is not int or not 1<=mem_bytes<=2<<30:raise ValueError('memory cap')
-    info=strict.sandbox_info()
+    info=strict.sandbox_info(python)
     if info['kind']!='seatbelt':raise RuntimeError('Seatbelt required')
     before=verify(bundle,tree_sha256)
     bundle=Path(bundle).resolve()

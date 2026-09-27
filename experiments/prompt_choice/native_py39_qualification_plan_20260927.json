@@ -1,0 +1,28 @@
+{
+  "bundle": "work/native_reference_py39_bundle_20260927",
+  "tree_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+  "python_sha256": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb",
+  "committed_sources": [
+    "scripts/qualify_native_py39_20260927.py",
+    "experiments/prompt_choice/dependency_sandbox_v1.py",
+    "experiments/prompt_choice/dependency_bundle_v1.py",
+    "experiments/prompt_choice/native_execution_v1.py",
+    "experiments/landmark/sandbox.py",
+    "results/native_reference_py39_bundle_20260927.json"
+  ],
+  "input_sha256": {
+    "scripts/qualify_native_py39_20260927.py": "c6a626e4e19657cec5936c0e0df77a537803c6683ea14d586fa776b05081e8ce",
+    "experiments/prompt_choice/dependency_sandbox_v1.py": "65ff560a0503f34f5e2e733ded040feeaec2f34a6cafb7229b7e42dff9f82f03",
+    "experiments/prompt_choice/dependency_bundle_v1.py": "33dfbc2e1aad6e011fb7aecbd7fdc4b4d51de35bea6f743114d4736bf3593084",
+    "experiments/prompt_choice/native_execution_v1.py": "2d825d40c7f2b79dde32894d1ac178ce527ddb8216dda5de22f7a72c38179282",
+    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "results/native_reference_py39_bundle_20260927.json": "1a9abcadbbbf1571ddee031945a0d060e51b59b338ca5f0c53a2a450c077af0b",
+    "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9": "271143990bc83af0fb2404a255038f5faafb96df1584ed7f085e5018c0f33ffb"
+  },
+  "total_wall_seconds": 120,
+  "slots": 7,
+  "receiver_calls": 0,
+  "benchmark_calls": 0,
+  "paid_usd": 0
+}

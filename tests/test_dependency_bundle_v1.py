@@ -33,3 +33,13 @@ def test_profile_only_adds_bundle_read_permission(tmp_path):
 @pytest.mark.parametrize('kw',[{'timeout_s':float('nan')},{'cpu_seconds':True},{'output_cap':0},{'mem_bytes':3<<30}])
 def test_limits_before_bundle_read(kw):
     with pytest.raises(ValueError):s.run('pass',bundle='/absent',tree_sha256='0'*64,**kw)
+
+
+def test_explicit_interpreter_is_forwarded_and_no_bare_fallback(monkeypatch):
+    seen=[]
+    def info(python):
+        seen.append(python);return {'kind':'none'}
+    monkeypatch.setattr(s.strict,'sandbox_info',info)
+    with pytest.raises(RuntimeError,match='Seatbelt'):
+        s.run('pass',bundle='/unused',tree_sha256='0'*64,python='/pinned/python3.9')
+    assert seen==['/pinned/python3.9']
