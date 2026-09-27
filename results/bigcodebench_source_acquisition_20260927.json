@@ -1,0 +1,45 @@
+{
+  "lead": "Codex",
+  "request": "MRL-41",
+  "checked_utc": "2026-09-27T01:25:14.167917+00:00",
+  "scope": "Lead public data acquisition only; no imports or execution. Worker download authority unchanged.",
+  "elapsed_seconds": 1.494529375,
+  "downloaded_bytes": 2383786,
+  "files": [
+    {
+      "name": "dataset_README.md",
+      "url": "https://huggingface.co/datasets/bigcode/bigcodebench/resolve/b74c0d0bf70d2c0bc459be537895cca163007f1a/README.md",
+      "bytes": 8828,
+      "sha256": "ecf83775f5b479deb66704ddc7ea53df59a61468077d52037f21eee6450be932",
+      "status": "complete"
+    },
+    {
+      "name": "v0.1.4.parquet",
+      "url": "https://huggingface.co/datasets/bigcode/bigcodebench/resolve/b74c0d0bf70d2c0bc459be537895cca163007f1a/data/v0.1.4-00000-of-00001.parquet",
+      "bytes": 2362110,
+      "sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+      "status": "complete"
+    },
+    {
+      "name": "code_LICENSE",
+      "url": "https://raw.githubusercontent.com/bigcode-project/bigcodebench/09dd993f46c3fbf3a799465bb96d524edcb0b199/LICENSE",
+      "bytes": 11438,
+      "sha256": "a858540b8dfd0c74db6953edaae85bde0b671643a7e2fb04a065f4dfd25fc28c",
+      "status": "complete"
+    },
+    {
+      "name": "requirements-eval.txt",
+      "url": "https://raw.githubusercontent.com/bigcode-project/bigcodebench/09dd993f46c3fbf3a799465bb96d524edcb0b199/Requirements/requirements-eval.txt",
+      "bytes": 1242,
+      "sha256": "a4d01fb12cbce5223b51f982265cb7975bea770b758cd85cc91b803d3293e39f",
+      "status": "complete"
+    },
+    {
+      "name": "requirements.txt",
+      "url": "https://raw.githubusercontent.com/bigcode-project/bigcodebench/09dd993f46c3fbf3a799465bb96d524edcb0b199/Requirements/requirements.txt",
+      "bytes": 168,
+      "sha256": "ac7c40cd926e1e949ebe241e4ba2f4ed1928f634d2dce32ac363e14c04cef807",
+      "status": "complete"
+    }
+  ]
+}

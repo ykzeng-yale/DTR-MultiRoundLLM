@@ -18,6 +18,12 @@ Two bounded public metadata requests (20-second timeout, 1MiB response ceiling e
 
 Metadata response SHA256 values were `c9e41224db320edc853834e1a315c56aabb0907b1f25a1b38e6fe4f734d4751b` (5,416 bytes, GitHub) and `6fecc6d3179159e594183291a68e2ef27b67427cb2993dacbc1ffacc7bc105a4` (2,853 bytes, dataset). These response hashes document the read; the immutable revision and eventual downloaded-file checksum govern reproducibility.
 
+## Acquisition disposition: local files only
+
+Worker receipt `9ae6e08` reports MRL-41 received but not started because its operating rules require owner permission before downloads; the implementation clock had not begun. Codex acquired the five pinned public files without executing or importing their contents. The [lead acquisition receipt](../results/bigcodebench_source_acquisition_20260927.json) records2,383,786 downloaded bytes in1.495seconds and exact file hashes. Files are in `work/task_sources/bigcodebench_v014_20260927/` in the shared clone.
+
+**This supersedes only the worker's network-acquisition step below:** verify and use these existing local files; make no network request, download or installation. It does not ask the worker to override its own download rule. Count the lead-acquired bytes within the original64MiB combined retention ceiling. The original15-minute implementation cap begins on the worker's first acknowledged acceptance of this local-files scope, since no earlier implementation began. All remaining tasks, exclusions and stop conditions are unchanged. Missing files or unavailable readers are a partial delivery, not permission to fetch/install. This is the same source inquiry, not a second job.
+
 ## MRL-41 — existing Claude Code worker, bounded setup only
 
 From acknowledged acceptance: one CPU worker, 15 elapsed minutes, at most64MiB total newly retained/downloaded bytes, $0 paid experimental services. No receiver calls, benchmark/reference/assertion execution, imports of dataset code, dependency installation, remote evaluator, model-written code execution, family adjudication, endpoint adaptation or policy fit. Use installed data-reading libraries only; if unavailable, report the missing dependency without installing or converting the task through execution. Do not renew the cap or substitute a dataset version.
