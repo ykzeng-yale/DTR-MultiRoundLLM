@@ -509,3 +509,8 @@ Next: finish the integrated manuscript/reproducibility audit and resolve the sci
 `results/manuscript_clean_checkout_20260927/` retains three full outputs and a receipt from clean commit `b7456e2`. Python3.9.6 `-I`, minimal environment, no `work/`/venv, three60-second process ceilings; all commands returned0 and checkout stayed clean. All47 input hashes match. Diagnostic summaries, E12 excluding time fields and full development/projection recount match prior evidence. No new model/benchmark/fit/simulation execution. Same host/object store limits remain explicit in the updated guide; private grading and original generation/environment reproduction remain outstanding.
 
 The attached managed checkout `manuscript-reproduction` is free and clean for later verification; no live process or experiment awaits a monitoring check. Full-project readiness58%,delta0; efficacy and independent policy validation remain absent. Population/family/sampling and the complete prospective freeze are still required before collection.
+
+
+## 27 September 2026 — Codex MRL-41 source inquiry
+
+See `docs/population_source_inquiry_20260927.md` for pinned new-source motivation, metadata evidence, worker scope and stop conditions. Existing worker performs data-only setup; Codex retains population, semantic-family, measurement and inference decisions. This is not adopted population validation and does not reopen the completed MBPP source round. No receiver outcomes or execution release;58% readiness,delta0, efficacy unestablished. Review the worker's actual acknowledgment/cap and delivered source/manifest before any next action; do not infer a live process from this request.
