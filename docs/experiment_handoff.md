@@ -576,3 +576,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September 2026 — Codex source batch0–15
 
 [Ledger and decision](bigcodebench_semantic_review_0000_0015_20260927.md). No task admission or experimental run. Before whole-source executable admission, qualify a runtime capable of preserving native subprocess tests; do not alter tests or silently discard rows. Provisional template groups need cross-batch/prior-exposure review. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evidence and final reproduction remain incomplete.
+
+
+## 27 September2026 — native runtime availability
+
+[Read-only check](native_container_feasibility_20260927.md): aux Docker installed, engine response unavailable. No native job or container started; no automatic restart or repeated wait. Continue scientific source/family work while runtime qualification remains open. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September 2026 — existing container runtime checked
+
+Codex read-only [runtime check](native_container_feasibility_20260927.md): aux Docker client/backend exist, but engine-info did not return and a separate socket-connected HTTP ping timed out at3seconds. Installed is not qualified/ready. Only owned probe processes stopped; no daemon/VM restart, installs or containers. Lead/mini known Docker paths absent, not exhaustive absence proofs. Native collection remains unreleased; source/family work can continue. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; no experimental job to monitor.
+
+
 ## 27 September 2026 — first full semantic source batch recorded
 
 Codex direct review: [rows0–15](bigcodebench_semantic_review_0000_0015_20260927.md),64 prompt/reference/test hashes rechecked. Provisional must-link groups2/3/5 and8/10/11; task9 plot-cardinality gap, task11 bound conflict, and task14/15 native subprocess paths recorded (source-only; row runs not attempted). Every row remains unresolved/not admitted. Native tests cannot all run unchanged under the current deny-subprocess profile; qualify a compatible contained runtime before executable admission. No benchmark or receiver execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Codex-only execution.

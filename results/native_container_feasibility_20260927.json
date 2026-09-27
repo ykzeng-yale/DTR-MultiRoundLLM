@@ -1,0 +1,44 @@
+{
+  "checked_utc": "2026-09-27T21:37:24.050858+00:00",
+  "classification": "read-only runtime feasibility, not containment qualification or experiment",
+  "lead": {
+    "docker_on_path": false,
+    "known_docker_orbstack_utm_app_paths_found": false,
+    "known_homebrew_podman_colima_paths_found": false
+  },
+  "mini": {
+    "known_docker_paths_found": false,
+    "power": "AC",
+    "reported_disk_available_gib": 15
+  },
+  "aux": {
+    "docker_app_present": true,
+    "docker_cli_absolute_path_present": true,
+    "client_version": "Docker version 28.0.4, build b8034c0",
+    "backend_processes_observed": true,
+    "engine_info_probe": "no usable response; own probe shell/client terminated after identity inspection",
+    "engine_info_partial_output_not_valid": "empty version, zero cpus/memory and null security after aborted request; not engine capacity",
+    "unix_socket_exists": true,
+    "unix_socket_connect_succeeded": true,
+    "http_ping_timeout_seconds": 3,
+    "http_ping_elapsed_seconds": 3.002,
+    "http_ping_result": "timeout",
+    "reported_disk_available_gib": 23,
+    "memory_pressure_system_free_percent": 46,
+    "swap_used_mib": 9432.12,
+    "power": "AC",
+    "battery_percent": 80
+  },
+  "scope_limits": [
+    "PATH and known app paths are not exhaustive installation inventories",
+    "live backend processes do not prove a responsive engine",
+    "socket timeout is not proof engine permanently stopped",
+    "no usable engine/image/container inventory obtained",
+    "no daemon/VM restart, download, installation, peer termination or remote artifact transfer"
+  ],
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "containers_started": 0,
+  "qualified_runtime": false,
+  "paid_experimental_cost_usd": 0
+}
