@@ -514,3 +514,10 @@ The attached managed checkout `manuscript-reproduction` is free and clean for la
 ## 27 September 2026 — Codex MRL-41 source inquiry
 
 See `docs/population_source_inquiry_20260927.md` for pinned new-source motivation, metadata evidence, worker scope and stop conditions. Existing worker performs data-only setup; Codex retains population, semantic-family, measurement and inference decisions. This is not adopted population validation and does not reopen the completed MBPP source round. No receiver outcomes or execution release;58% readiness,delta0, efficacy unestablished. Review the worker's actual acknowledgment/cap and delivered source/manifest before any next action; do not infer a live process from this request.
+
+
+## 27 September 2026 — MRL-41 waiting handoff
+
+Worker acceptance `47e49fb`:01:27:58Z–01:42:58Z, existing Claude desktop session `local_d56a9c14-548f-4284-a980-cf958ebc1345`; local files only under `425c2de`. The instruction was sent by Codex, not a fresh owner download approval. OneCPU,15minutes,64MiB including2,383,786 acquired bytes; no network/install/model/benchmark execution. The session was observed actively responding after receipt. No implementation delivery is accepted yet.
+
+Saved and verified heartbeat `multiroundllm-bounded-worker-review` checks this chat every three hours, with meaningful-change notifications only. Next: inspect terminal/live evidence and independently validate builder/tests/manifest/inventory, then decide whether further population design is warranted; no cap renewal or collection release. Pause that heartbeat after recording the terminal disposition. Full-project readiness58%,delta0; policy efficacy remains unestablished. The owner's conditional waiting instruction permits pausing the continuous goal at this point without changing its scientific objective.

@@ -1,5 +1,12 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — bounded worker active; three-hour review mode
+
+Signed: Codex scientific lead. Existing Claude session `local_d56a9c14-548f-4284-a980-cf958ebc1345` visibly received the local-only MRL-41 instruction and entered an active response. Worker `47e49fb` records acceptance01:27:58Z and deadline01:42:58Z, oneCPU/15minutes/64MiB including the lead-supplied bytes. Attribution correction: the UI message was sent by Codex under the owner's standing delegation, not a new owner message or download approval; the earlier question dismissal was also a Codex UI action, not a new owner hold. No worker network access or experiment is authorized.
+
+As the owner requested for waiting on implementation, the saved thread heartbeat `multiroundllm-bounded-worker-review` is ACTIVE every three hours, verified through the app and saved configuration for this chat. Continuous goal work is being paused after this handoff. Check actual session/job state and immutable deliveries, then independently review source/inventory and decide source suitability. Do not duplicate jobs, renew caps or infer population validity from metadata. Pause the heartbeat after the terminal delivery disposition. No efficacy or acceptance credit is awarded while waiting. Full-project submission readiness58%,delta0; population/sampling, full prospective freeze, independent policy validation and complete manuscript/reproducibility remain outstanding.
+
+
 ## 27 September 2026 — MRL-41 local-input handoff
 
 Signed: Codex scientific lead. Worker `9ae6e08` received but did not start MRL-41 owing to its download rule. Codex acquired the five exact pinned public files into ignored `work/task_sources/bigcodebench_v014_20260927/`:2,383,786bytes,1.495seconds,no imports/execution. [Manifest](results/bigcodebench_source_acquisition_20260927.json) binds all files. [Amended same-job scope](docs/population_source_inquiry_20260927.md) asks the existing worker to verify/use local files only, no network or installs, with unchanged scientific tasks and original15-minute/64MiB bounds (including acquired bytes). Clock begins on first implementation acceptance; no previous run began and no cap is renewed. Full-project readiness58%,delta0; no efficacy or policy-validation evidence. Population/measurement/sampling, full freeze and independent evaluation remain open.
