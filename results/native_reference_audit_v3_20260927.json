@@ -1,0 +1,399 @@
+{
+  "classification": "random source-ID reference feasibility under current contained environment; not semantic correctness, family eligibility or efficacy",
+  "freeze": "da2ae26754cd5480d5e5be55eb7eef418c46b608",
+  "config_sha256": "1794884bf5cea26ee6f85e335cc43fa7d3bdfaf0a9e3a446cb217ad30594775a",
+  "task_slots_planned": 24,
+  "task_slots_attempted": 24,
+  "rows": [
+    {
+      "task_id": "BigCodeBench/17",
+      "source_sha256": "0bfa27ef15b0398115346419cae353728faa9feb10f00e40279c394ea3c6555d",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/17.json",
+      "raw_sha256": "69278b1a21ab449acbccb7547086f8eb45c43bcbe72825a43e7f4c6fed70a724",
+      "seconds": 0.12669737543910742,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/26",
+      "source_sha256": "94a5e7b2c00482bf7e59306ad2874dfae6206d1ebc83762c69f46ddd243f23d3",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/26.json",
+      "raw_sha256": "af6a31f72753beaa2bf7204d920505d50833a6c75f87edafd530c6b5197ccfb0",
+      "seconds": 0.12881899997591972,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/39",
+      "source_sha256": "bbb4eecf2297eb85392ad3615a18ef8b0ee5c0c738b606a6205143f4d1d85e86",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 5,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": false
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/39.json",
+      "raw_sha256": "31dd166ecaee8f9f84ffba5f8f05b3939824fb8043b3fc7f2d60991790907374",
+      "seconds": 3.318030707538128,
+      "stderr_exception_classes": [
+        "ValueError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/68",
+      "source_sha256": "60773e5c2cb29138ff067d79f76361996b5275f97910a371bd025856cd98f965",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/68.json",
+      "raw_sha256": "9bb9eb379279a3b1213d9f97407dcf677b01413f53c5653d1286531a2d108ffe",
+      "seconds": 0.6203556256368756,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/88",
+      "source_sha256": "9dbb90bad37996838511af48e1fc2023ff5ef7eba31785832342641248daccf6",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/88.json",
+      "raw_sha256": "07d8e7b34170d2618bac85be8359cb12612a993c657da309b9260385401a9d49",
+      "seconds": 1.3843721663579345,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/199",
+      "source_sha256": "e16be7cae0331d77ba2df1101e0252eddd13ace6947e7382b05f5398c7a5f783",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/199.json",
+      "raw_sha256": "68dd9b9adc68a7a12b1dd8dbc9ef24877292666efd5e8a7083e8ce8974dc680c",
+      "seconds": 0.6249222084879875,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/213",
+      "source_sha256": "90290ab6acc0f970eb95cfdb15972e222f7de0d44456ba0a6fafe448c584ec2b",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/213.json",
+      "raw_sha256": "fa882e6a439686c595f631218d714742055c0fbebcebae550c2a9c4bc06ce53d",
+      "seconds": 1.5890767080709338,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/308",
+      "source_sha256": "280de82701baa6712be2afa63829b6a30f05ee80c3aec0bdb8e76d5e2a78758a",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/308.json",
+      "raw_sha256": "e46d494454e0dc46fc6abdcc7ad65a705dca6b99809a643883f569b0b5e94f83",
+      "seconds": 0.6643739994615316,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/334",
+      "source_sha256": "8233fc9d55bb74ff6e3e6f57eee3a89150614b8c74ab9a15f75e527ff87b2cdf",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/334.json",
+      "raw_sha256": "ddbc92301a2d5af0e73a9d2fc960fe075414d5a362f14cde1462a6acb1071a7f",
+      "seconds": 0.12745429202914238,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/336",
+      "source_sha256": "3f9210b0c34655f7edd41787a1cd6d496744efedcca69f03b12229050ce3d58e",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/336.json",
+      "raw_sha256": "4aef8c5eff1b75c2d61aa5ff11849f3f96606bd66b6b786cb025b90af55166bc",
+      "seconds": 0.13122108299285173,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/360",
+      "source_sha256": "4610e82fa22b05c55f80ae3661573c81d2c21f9fb2671d2a166b8783bddb783c",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 6,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": false
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/360.json",
+      "raw_sha256": "e64db5dbc89195ea88b0de5b35bd621f47adb8123af165c8d4b47b427896ba9e",
+      "seconds": 1.265869583003223,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/393",
+      "source_sha256": "ea4928287d48199eaf7cc69af6750a8a92711c0a852b41dbaba666168832a06b",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/393.json",
+      "raw_sha256": "9d7b495b1da04e2fb83b8793d8ee6b8efb18563394be515e906deeb07fd73fc0",
+      "seconds": 1.6912349173799157,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/404",
+      "source_sha256": "ab161ea94f1fd0a5f11cebeb58835505079441b97a0abce74d4f697a68642bcb",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/404.json",
+      "raw_sha256": "3c4bdb3418b5400790dfba712f53fc87887651a2fc5c77e0797edffccfda0fec",
+      "seconds": 0.13324058428406715,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/408",
+      "source_sha256": "4313b4eb265b5b013948f4aa966f65c98cb4f6b40c686265136cae62dc1b5a2b",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/408.json",
+      "raw_sha256": "8d48e6f28a5a01138f312d7c57ba0f5dcb96db1cf261939f9295ce36b5048c82",
+      "seconds": 0.6756800832226872,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/409",
+      "source_sha256": "ed1004f64ca3d250a65fd2d5316e5a2e0ee0f0b246a132ef6b06255f4808bd94",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 5,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": false
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/409.json",
+      "raw_sha256": "0cec03c628ebc760001b342a14d3317c052b547ca05c2100c0337a845d18d503",
+      "seconds": 0.6757349576801062,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/420",
+      "source_sha256": "7bd7807369dccef51f0d8b630df2825559f84d352b9f2d309cab72865b875076",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 7,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/420.json",
+      "raw_sha256": "b8d6d2f91ed0eb9c34308081cd5282a121220b0d40c8d0ee90ce7a3815dd942b",
+      "seconds": 2.0851732082664967,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/539",
+      "source_sha256": "8e5ba8a6871de513cc27f922809ab3cfe05c4d3f23702ed86bc2712e6935f8eb",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/539.json",
+      "raw_sha256": "fa9080ddbfa5f753bb869490a09d31ee0c5564a1e385be255ed592500a76822c",
+      "seconds": 0.1834351671859622,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/631",
+      "source_sha256": "e8f827447e836bd86b17292b2db50f8e4babb5e93139587e0bbe2d88b8d3d024",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/631.json",
+      "raw_sha256": "a0190a65d7323da947c7bdfa12a074dc80e7c7620def291e4c3690b771b690b2",
+      "seconds": 0.6776865422725677,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/676",
+      "source_sha256": "73b79cacc5ba9892f2d0092f71634af4cb6e9533ca4792d9d23ccdc5926289b2",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/676.json",
+      "raw_sha256": "9e1a048d63df37be87c3ac153452967f74cb6ad3bb5bdca4084ef63505e690e5",
+      "seconds": 0.674664250575006,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/704",
+      "source_sha256": "17f21e442dd2310f2de837d22bbd3c3e7dd7e2ae4491e400b749c4e48ab65d4f",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/704.json",
+      "raw_sha256": "38b8a687ef77144d5153f4bbe64f56bea6800b9c424033860bf7a621f831741b",
+      "seconds": 0.6760601671412587,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/861",
+      "source_sha256": "1205b1c0d868aba3158e6de363b556d3395334881afed18e4d998723f5dc9876",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/861.json",
+      "raw_sha256": "89f956fafde45d481007eb4f4a9f42f3a339acecce3b0835f99f0964f89a54bc",
+      "seconds": 0.13316537532955408,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/885",
+      "source_sha256": "e145c43a52ccadeff75bc26be64d62ec7ceb96f24b60fda0387b1aaaf5ada4c5",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 8,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_v3_20260927/885.json",
+      "raw_sha256": "a0e24d32e07174dafd1452831716ed405ea6436c76b0696c6fc0aaf4aae26754",
+      "seconds": 5.237284874543548,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/986",
+      "source_sha256": "5669704e7726177790aac8eb0d7fa9846c630bc355f1e09c434970ce5971a253",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/986.json",
+      "raw_sha256": "57dce42728e7ecb5b759d3c7f2f36417bd55c46e9d79744a2e84a0aaa45f80f2",
+      "seconds": 0.8237145002931356,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/1077",
+      "source_sha256": "5734c244b1b58493cbba42dcc364dbbd6a3603b4cbbfb5e06059fe7fb5d0364e",
+      "status": "process_error",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_v3_20260927/1077.json",
+      "raw_sha256": "8528594b57baac43f45f9908f5267580061c3dd03431420dbc7eb5c7eb5627ea",
+      "seconds": 0.12795154191553593,
+      "stderr_exception_classes": [
+        "ModuleNotFoundError"
+      ]
+    }
+  ],
+  "error": null,
+  "receiver_calls": 0,
+  "paid_usd": 0,
+  "smoke_completed": true,
+  "elapsed_seconds": 44.50646174978465,
+  "task_slots_unattempted": 0
+}

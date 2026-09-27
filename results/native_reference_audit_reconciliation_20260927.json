@@ -1,0 +1,40 @@
+{
+  "classification": "lead raw-receipt reconciliation,not independent semantic validation",
+  "freeze": "da2ae26754cd5480d5e5be55eb7eef418c46b608",
+  "all24_source_ids_and_raw_hashes_verified": true,
+  "groups": {
+    "native_reported_all_success": [
+      "BigCodeBench/88",
+      "BigCodeBench/213",
+      "BigCodeBench/308",
+      "BigCodeBench/336",
+      "BigCodeBench/393",
+      "BigCodeBench/420",
+      "BigCodeBench/539",
+      "BigCodeBench/631",
+      "BigCodeBench/676",
+      "BigCodeBench/704",
+      "BigCodeBench/861",
+      "BigCodeBench/885"
+    ],
+    "native_reported_errors": [
+      "BigCodeBench/39",
+      "BigCodeBench/360",
+      "BigCodeBench/409"
+    ],
+    "no_native_report": [
+      "BigCodeBench/17",
+      "BigCodeBench/26",
+      "BigCodeBench/68",
+      "BigCodeBench/199",
+      "BigCodeBench/334",
+      "BigCodeBench/404",
+      "BigCodeBench/408",
+      "BigCodeBench/986",
+      "BigCodeBench/1077"
+    ]
+  },
+  "error_tasks_are_not_semantic_failures": true,
+  "elapsed_seconds": 44.50646174978465,
+  "receiver_calls": 0
+}
