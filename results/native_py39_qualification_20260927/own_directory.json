@@ -1,0 +1,26 @@
+{
+  "execution": {
+    "version": "native-execution-v1",
+    "disposition": "process_error",
+    "output_saturated": false,
+    "timed_out": false,
+    "test_outcome": null,
+    "feedback_status": null,
+    "note": "No test outcome or public feedback inferred from process exit or candidate output."
+  },
+  "raw_process": {
+    "sandbox_kind": "seatbelt",
+    "executed": true,
+    "stdout": "",
+    "stderr": "python3.9: posix_spawn: /Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python: Undefined error: 0\n",
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 35288,
+    "seconds": 0.010990832932293415,
+    "rendered_profile_sha256": "8b6324c6f09126b72f04dda548128202928947a662bc6644d64fc2f820583f0d"
+  },
+  "dependency_tree_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "dependency_bytes": 376048145,
+  "bundle_unchanged_after": true,
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9"
+}

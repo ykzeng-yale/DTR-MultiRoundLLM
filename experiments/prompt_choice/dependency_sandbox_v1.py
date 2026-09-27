@@ -1,7 +1,9 @@
 """Versioned strict sandbox with one hash-bound read-only dependency tree.
 
 No benchmark release; runtime qualification only. Optional interpreter must be
-explicitly pinned and separately qualified by the caller before benchmark use. Does not process .pth hooks.
+explicitly pinned and separately qualified by the caller before benchmark use.
+An optional framework read root is trusted configuration, not candidate input; its
+exact scope must be included in qualification and the execution manifest. Does not process .pth hooks.
 Parent-controlled bundle storage must not be concurrently mutated. Pre/post checks
 are detection, not an OS guarantee against other same-user parent processes.
 """
@@ -19,11 +21,17 @@ from experiments.prompt_choice.dependency_bundle_v1 import verify
 from experiments.prompt_choice.native_execution_v1 import classify
 
 
-def profile(python,run_dir,bundle):
-    return strict.profile(python,run_dir)+'\n(allow file-read* (subpath '+json.dumps(str(Path(bundle).resolve()))+'))\n'
+def profile(python,run_dir,bundle,runtime_read_root=None):
+    rendered=strict.profile(python,run_dir)+'\n(allow file-read* (subpath '+json.dumps(str(Path(bundle).resolve()))+'))\n'
+    if runtime_read_root is not None:
+        root=Path(runtime_read_root).resolve()
+        if root==Path('/') or not Path(python).resolve().is_relative_to(root):
+            raise ValueError('runtime root must contain the pinned interpreter')
+        rendered+='\n(allow file-read* (subpath '+json.dumps(str(root))+'))\n'
+    return rendered
 
 
-def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30,python=None):
+def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30,python=None,runtime_read_root=None):
     if type(source) is not str or len(source.encode())>1048576:raise ValueError('source cap')
     if type(timeout_s) not in (int,float) or not 0<timeout_s<=10:raise ValueError('wall cap')
     if type(cpu_seconds) is not int or not 1<=cpu_seconds<=5:raise ValueError('CPU cap')
@@ -35,7 +43,7 @@ def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,
     bundle=Path(bundle).resolve()
     run_dir=Path(tempfile.mkdtemp(prefix='deps_',dir=info['base_dir']))
     proc=None;timed_out=False;start=time.monotonic()
-    rendered=profile(info['python'],str(run_dir),bundle)
+    rendered=profile(info['python'],str(run_dir),bundle,runtime_read_root)
     bootstrap=('import sys,os\n'
                'sys.dont_write_bytecode=True\n'
                f'sys.path.insert(0,{str(bundle)!r})\n'

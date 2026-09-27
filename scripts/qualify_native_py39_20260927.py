@@ -27,9 +27,9 @@ def sources(bundle):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--freeze',required=True);p.add_argument('--out',type=Path,required=True);args=p.parse_args()
-    freeze=subprocess.check_output(['git','rev-parse',args.freeze],text=True).strip();plan=json.loads(PLAN.read_bytes())
-    for path in [str(PLAN),*plan['committed_sources']]:
+    p=argparse.ArgumentParser();p.add_argument('--plan',type=Path,default=PLAN);p.add_argument('--freeze',required=True);p.add_argument('--out',type=Path,required=True);args=p.parse_args()
+    freeze=subprocess.check_output(['git','rev-parse',args.freeze],text=True).strip();plan_path=args.plan;plan=json.loads(plan_path.read_bytes())
+    for path in [str(plan_path),*plan['committed_sources']]:
         if subprocess.check_output(['git','show',freeze+':'+path])!=Path(path).read_bytes():raise ValueError('freeze mismatch')
     for path,h in plan['input_sha256'].items():
         if hashlib.sha256(Path(path).read_bytes()).hexdigest()!=h:raise ValueError('pin mismatch')
@@ -39,7 +39,7 @@ def main():
     try:
         for name,source in sources(plan['bundle']):
             if time.monotonic()-start>plan['total_wall_seconds']-12:raise RuntimeError('total cap')
-            rec=run(source,bundle=plan['bundle'],tree_sha256=plan['tree_sha256'],python=plan['python'],timeout_s=10,cpu_seconds=5,output_cap=65536,mem_bytes=1<<30)
+            rec=run(source,bundle=plan['bundle'],tree_sha256=plan['tree_sha256'],python=plan['python'],runtime_read_root=plan.get('runtime_read_root'),timeout_s=10,cpu_seconds=5,output_cap=65536,mem_bytes=1<<30)
             path=args.out/(name+'.json');path.write_text(json.dumps(rec,indent=2)+'\n')
             passed=rec['execution']['disposition']=='completed_ungraded' and rec['raw_process']['stdout'].splitlines()==['QUALIFIED']
             rows.append({'name':name,'passed':passed,'receipt_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'seconds':rec['raw_process']['seconds']})

@@ -43,3 +43,12 @@ def test_explicit_interpreter_is_forwarded_and_no_bare_fallback(monkeypatch):
     with pytest.raises(RuntimeError,match='Seatbelt'):
         s.run('pass',bundle='/unused',tree_sha256='0'*64,python='/pinned/python3.9')
     assert seen==['/pinned/python3.9']
+
+
+def test_framework_root_is_read_only_and_contains_interpreter(tmp_path):
+    text=s.profile('/runtime/framework/bin/python','/tmp/run',tmp_path,'/runtime/framework')
+    assert '(allow file-read* (subpath "/runtime/framework"))' in text
+    assert '(deny process-fork)' in text and '(deny network*)' in text
+    assert '(allow file-write* (subpath "/runtime/framework"))' not in text
+    for invalid in ['/', '/unrelated']:
+        with pytest.raises(ValueError):s.profile('/runtime/framework/bin/python','/tmp/run',tmp_path,invalid)
