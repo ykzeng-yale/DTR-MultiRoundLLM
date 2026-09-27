@@ -31,7 +31,7 @@ def profile(python,run_dir,bundle,runtime_read_root=None):
     return rendered
 
 
-def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30,python=None,runtime_read_root=None):
+def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,mem_bytes=1<<30,python=None,runtime_read_root=None,builtin_mime_types=False):
     if type(source) is not str or len(source.encode())>1048576:raise ValueError('source cap')
     if type(timeout_s) not in (int,float) or not 0<timeout_s<=10:raise ValueError('wall cap')
     if type(cpu_seconds) is not int or not 1<=cpu_seconds<=5:raise ValueError('CPU cap')
@@ -50,6 +50,8 @@ def run(source,*,bundle,tree_sha256,timeout_s=10,cpu_seconds=5,output_cap=16384,
                'os.environ["MPLBACKEND"]="Agg"\n'
                'os.environ["MPLCONFIGDIR"]=os.getcwd()\n'
                'os.environ["HOME"]=os.getcwd()\n')
+    if builtin_mime_types:
+        bootstrap+='import mimetypes\nmimetypes.knownfiles=[]\nmimetypes.init(files=[])\n'
     try:
         (run_dir/'program.py').write_text(bootstrap+source)
         with (run_dir/'stdout').open('w+b') as out,(run_dir/'stderr').open('w+b') as err:

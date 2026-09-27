@@ -38,7 +38,7 @@ def main():
     try:
         for name,source in sources(plan['bundle']):
             if time.monotonic()-start>plan['total_wall_seconds']-12:raise RuntimeError('total cap')
-            rec=run(source,bundle=plan['bundle'],tree_sha256=plan['tree_sha256'],python=plan['python'],runtime_read_root=plan.get('runtime_read_root'),timeout_s=10,cpu_seconds=5,output_cap=65536,mem_bytes=1<<30)
+            rec=run(source,bundle=plan['bundle'],tree_sha256=plan['tree_sha256'],python=plan['python'],runtime_read_root=plan.get('runtime_read_root'),builtin_mime_types=plan.get('builtin_mime_types',False),timeout_s=10,cpu_seconds=5,output_cap=65536,mem_bytes=1<<30)
             path=args.out/(name+'.json');path.write_text(json.dumps(rec,indent=2)+'\n')
             passed=rec['execution']['disposition']=='completed_ungraded' and rec['raw_process']['stdout'].splitlines()==['QUALIFIED']
             rows.append({'name':name,'passed':passed,'receipt_sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'seconds':rec['raw_process']['seconds']})
