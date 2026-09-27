@@ -1,0 +1,15 @@
+{
+  "classification": "lead independent-of-builder structural reconciliation; not independent semantic validation",
+  "register_sha256": "76dfd4de22e9a75dafb099143c6a3629a64e472e9eb75bd1b3e115060c020e2f",
+  "input_artifacts_verified": 8,
+  "rows_verified": 1140,
+  "reviewed_ids_verified": 57,
+  "known_measurement_exposure": "BigCodeBench/628",
+  "exact_duplicate_pair": [
+    "BigCodeBench/1120",
+    "BigCodeBench/1121"
+  ],
+  "constraint_records": 10,
+  "new_benchmark_calls": 0,
+  "new_receiver_calls": 0
+}

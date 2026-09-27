@@ -1,0 +1,18 @@
+[
+  {
+    "task_id": "BigCodeBench/628",
+    "kind": "measurement_development",
+    "field_sha256": {
+      "complete_prompt": "f85dd20665458f60e39fc0f17d5d491b3d084c370cd43aba0109af8a9d547750",
+      "instruct_prompt": "b6385e682b722319bc24975eb1077479dc35ddfa4f2a386d154581e03ce1e6d3",
+      "canonical_solution": "fe84ba6f5d254245a47dc7dba5292b8c69af4c6d303139b63d9c1fa4ed1c1e4d",
+      "test": "bafe500956ab32b821b1549f63fba437d42ffba74e230b962c589bb3f991b2ae"
+    },
+    "evidence_sha256": {
+      "docs/native628_audit_results_20260927.md": "562ae051354e7c777cadf7d4147a963f46a6520aab73f64ed0d4186f34dc10a9",
+      "results/native628_audit_20260927/summary.json": "e2b4227dd442cee998f96c8d4fcd6dcbfe1be1badea5ebe72d9d638c7b3c4b49",
+      "results/native628_independent_reconciliation_20260927.json": "8454f4db38fcb513b0222078b34552d0d82fc5af5df17660cc025c6ed2771325"
+    },
+    "scope": "Known task628 reference/control audit. Its semantic family also requires development-exposure exclusion once adjudicated; this is not an exhaustive prior-exposure crosswalk."
+  }
+]

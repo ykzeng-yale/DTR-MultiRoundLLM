@@ -608,3 +608,10 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 Codex [16-task source batch](bigcodebench_semantic_review_0040_0055_20260927.md) verifies 64 field hashes. Positive fixed numerical and pre-call-copy checks are preserved alongside prompt/return/timezone/randomness conflicts. Provisional groups 42/45, 29/38/47 and 54/55 await the global family/exposure review. Semantic judgments are lead-reviewed, not independently validated; no task/model execution or admission. Full-project readiness **60%, delta 0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation; Docker question pending.
 
 Next source-order row: 56. No collection or task execution released. Preserve the original study target and all negative findings.
+
+
+## 27 September 2026 — consolidated review register
+
+Codex [reproducible register](bigcodebench_review_register_20260927.md) retains all1,140 tasks:57 source-reviewed,1,083 pending,zero admitted. Ten provenance-bearing co-split/duplicate constraints and task628 measurement exposure are explicit; no final family count or untouched status is inferred. Fourteen focused tests pass; source/evidence bindings and all row dispositions reconciled separately by lead. No new benchmark/model calls. Full-project readiness **60%, delta0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
+
+Use the register for coverage/constraint bookkeeping. Next source row56; global family/exposure adjudication remains pending, not automatically satisfied by register checks.
