@@ -437,3 +437,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September 2026 — Codex policy precision planning
 
 [Decision and reproduction](policy_precision_decision_20260927.md): 50 hypothetical observed-count scenarios, not power or receiver results; 47 focused checks pass. Preserve the five-point threshold and accepted inference method. Next integrate population/measurement and sampling before development or evaluation release; no automatic source expansion, task628 extension or Claude assignment. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evidence and final manuscript/raw reproduction remain open.
+
+
+## 27 September 2026 — Codex finite-source sampling design
+
+[Contract](finite_source_sampling_contract_20260927.md): internally reviewed classical sampling argument, not receiver evidence or collection release. Two heterogeneous finite laws enumerate52 sample/outcome configurations across all subset sizes; rational moment checks cover both signs and finite t values. Fifty focused tests pass. Next implement population/measurement commitments and validated sampler before full freeze; do not treat benchmark IDs as eligible families. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete.

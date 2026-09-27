@@ -1,0 +1,21 @@
+{
+  "classification": "mathematical design and exact synthetic-law source checks; no receiver results",
+  "base_commit": "416a9c6",
+  "sha256": {
+    "tests/test_finite_source_sampling.py": "dc4d2fd8a60322d80567edc8e0d7f823016eb2c7b29a4ea9ce564eef8a4dde9b",
+    "experiments/prompt_choice/paired_inference.py": "fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79",
+    "docs/finite_source_sampling_contract_20260927.md": "47573ca6815e6a493cb3b742c6143fca5525fdde4dd30a38c9712b13de67db2f"
+  },
+  "finite_laws": 2,
+  "sample_outcome_configurations": 52,
+  "rational_moment_checks": 96,
+  "focused_tests": 50,
+  "full_tests": 2295,
+  "subtests": 8,
+  "full_seconds": 39.07,
+  "receiver_calls": 0,
+  "benchmark_executions": 0,
+  "sampler_implemented": false,
+  "population_adopted": false,
+  "independent_internal_review": "inference reviewer accepts conditional joint-over-selection-and-execution argument and stated scope; no inference implementation changes"
+}

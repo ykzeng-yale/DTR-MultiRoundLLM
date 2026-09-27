@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — finite-source sampling argument reviewed
+
+Codex lead: [sampling contract](docs/finite_source_sampling_contract_20260927.md) supplies a uniform-without-replacement argument for the unchanged sign-split interval under independent complete family vectors and outcome-independent sampling. Coverage is over subset selection and execution for the full eligible finite-frame mean; no broader transport or conditional-on-subset guarantee is claimed. Existing internal inference review accepts the argument. Four new exact finite-law checks and46 existing inference tests pass. The integrated population/measurement proposal remains unadopted; no model calls, sampler release or task admission. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Codex-only implementation, goal active.
+
+
 ## 27 September 2026 — policy precision beyond the all-zero scenario
 
 Codex direct calculation: [precision decision](docs/policy_precision_decision_20260927.md), 50 hypothetical realizable paired-count scenarios, zero receiver calls. At 1,000 families and .30 disagreement, an observed ten-point gain still has interval [.02890,.16976], inconclusive against the unchanged strict five-point useful-gain threshold. This is not power or population adoption. Forty-seven focused checks pass, including independent scalar inversion. No new source expansion or collection release. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Claude delegation ended.
