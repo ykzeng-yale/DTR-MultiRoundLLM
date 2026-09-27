@@ -596,3 +596,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September2026 — source rows24–31
 
 [Review](bigcodebench_semantic_review_0024_0031_20260927.md): retain positive roundtrip/recomputation/payload evidence and specification/measurement concerns. Task9/31 helper equality is not task-family equivalence. Next source-order row32; no admission or execution. Docker question pending; no restart/approval inferred. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
+## 27 September2026 — source rows32–39
+
+[Review](bigcodebench_semantic_review_0032_0039_20260927.md):39 source statistic is self-centered under stated exact-arithmetic assumptions; no alternate statistical task substituted. Preserve provisional35/36 and29/38 relationships, keep retrieved-but-unread neighbors unresolved. Next row40. No admission/execution; full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

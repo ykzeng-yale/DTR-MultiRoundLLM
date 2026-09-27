@@ -1,0 +1,261 @@
+{
+  "version": "bbc-source-review-0032-0039-v1",
+  "reviewer": "Codex scientific lead",
+  "classification": "manual source review; no benchmark execution or receiver result",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "selection": "contiguous source rows32..39; not random sample or evaluation roster",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/32",
+      "source_row": 32,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "b9d79f61e9a7f0c733c5fb2925f85baab1ad71c41c79087d1793655a2ef5df3c",
+        "instruct_prompt": "0d10a029bca22db837906c76e8c5ce76283413b6cdef09d51622765042938dce",
+        "canonical_solution": "bb8084c172e734fc2bdb21cf7c51b2c376384bcef54f7248e09497b669df4d21",
+        "test": "e6b2fbb64f208507591ed80edc5e769671620890e1e8677de27a0ec9c530e94a"
+      },
+      "provisional_semantic_label": "first_html_tag_text",
+      "source_judgment": "Tests check positive text, first occurrence, absence, empty tag and malformed HTML under mocked GET. Reference uses tag.string; generic text-content wording does not define behavior for multiple nested text nodes. Invalid-URL test is unmocked and demands RequestException; no network request was executed in review.",
+      "flags": [
+        "positive_text_cases",
+        "nested_text_contract",
+        "mock_environment"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/33",
+      "source_row": 33,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "8c0969ddad21168ee1a83833adbff2c9794d45632de45de4cc78b987fb411c1e",
+        "instruct_prompt": "c1f2b7fc648577091e9d96820800bf225b7b59607cf600b22c32c0b0c3f411d3",
+        "canonical_solution": "efbd4026c4a375841825353fcda8c5189a8e5723f931417c7afaf1d82c6a1c45",
+        "test": "b4e427a42c75678b9a33982fdd5883d37b6d20e57701cc7b00bedbdafbd9eab6"
+      },
+      "provisional_semantic_label": "pair_second_value_product",
+      "source_judgment": "Five tests compare numerical arrays for signed/zero/singleton products using fixed expected values. np.array_equal does not itself enforce returned ndarray type; empty-input and noninteger behavior remain untested.",
+      "flags": [
+        "positive_numeric_cases",
+        "return_type_gap",
+        "domain_edges"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/34",
+      "source_row": 34,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "1439e182efc245ebd16da492639dd543d67cd3d227c91ec4b0cbe42a3ddeda0a",
+        "instruct_prompt": "4fce6027538b136d9399e5b99d067790beebb50f50fb24f918a625cdbd6be441",
+        "canonical_solution": "cfcfe3bd074eb3f780dead82bfc949d92e173d6d487d5250a325d4574542cb2f",
+        "test": "aafd593cc9e5e8e24c85e54b8bd2cb5ce1ca1e84babb31faf6e2fa31880a8f6f"
+      },
+      "provisional_semantic_label": "url_removal_wordcloud",
+      "source_judgment": "Tests check WordCloud type and absence of full URL strings from words_, plus exact error text on URL-only input. This does not rule out residual URL fragments or establish non-URL word content/frequencies or plotted image.",
+      "flags": [
+        "url_measurement_gap",
+        "plot_content_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/35",
+      "source_row": 35,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "15606e5c1120e789d7113157ec2bec85704fe68b8b0ca89d28ad7c5fa3df585a",
+        "instruct_prompt": "2487942665a1df58cff6dbf3c6738d65beb990203c88bfdf9e84d4dcb9bb6416",
+        "canonical_solution": "137a82b99e93564de03bc21dcd05ff882ca33fcf76068fc9acc008fe35c20df0",
+        "test": "5b414f8dc429eb93576e37bc1e5242edd89a51a41ec9f160efc6860441a41d65"
+      },
+      "provisional_semantic_label": "filtered_dataframe_density",
+      "source_judgment": "Return section promises Axes but reference, example and tests use (DataFrame,Axes). Tests check value membership/zero cases and line counts but not all unchanged allowed values for mixed inputs or density coordinates. All-allowed case compares output to mutable post-call input. Shared filtering/density design with36 warrants provisional co-splitting.",
+      "flags": [
+        "return_contract_conflict",
+        "density_measurement_gap",
+        "mutable_expected_data",
+        "template_family"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/36",
+      "source_row": 36,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "69e2c0396b633c521a67d8ebd3c943b50083bb9bd497ab6e194d10e29a4dabb2",
+        "instruct_prompt": "7a875a97eac91d935ddd9e97614d43d924dd8edd8d7c77e75e6e244271b043f8",
+        "canonical_solution": "0febd396534167d99e4100e5519df3008a0b57fc97672e9c118159fd2c686ee8",
+        "test": "be8e7c4022efc3f24629b1e49d38fab551736fd3e277c17f1d0afb50238ae984"
+      },
+      "provisional_semantic_label": "filtered_dataframe_boxcox_density",
+      "source_judgment": "Shares filtering-to-allowed-values/zero and density plots with35, adds Box-Cox on nonconstant columns. Tests check shapes, constant-input equality, line counts and invalid inputs, not nonconstant transformed values. Reference uses pd without importing it in Complete prefix; native test imports supply pd in a shared namespace.",
+      "flags": [
+        "template_family",
+        "transform_measurement_gap",
+        "test_namespace_dependency",
+        "mutable_expected_data"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/37",
+      "source_row": 37,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "e83513dc52ca6536ff218bcaf95e89c2f55ec644ee9d44581c6a5b976cbaa852",
+        "instruct_prompt": "00ace45ef89a79191bf2294b8d9c7b563f790ca22a56b6639d6141e8393abc9b",
+        "canonical_solution": "9a635aaa27f02f6c6780b593bf61113a2a087aee5e1543e36459f49d587dfee2",
+        "test": "96710713c36331d11ff616659d9555999bbdc3448d4ccff340efa4dc0baa568c"
+      },
+      "provisional_semantic_label": "forest_feature_importance_plot",
+      "source_judgment": "Tests compare full sorted returned-model importance list with bar widths and check types/labels/title, stronger than zip checks. They do not compare feature labels or establish model trained on supplied X/y; both model and plot are candidate-produced.",
+      "flags": [
+        "positive_full_width_check",
+        "model_input_binding_gap",
+        "feature_label_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/38",
+      "source_row": 38,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "596c75802fb2338e04aa381a7ca0821c7f77a239850fe2232c2dcfe667c83e60",
+        "instruct_prompt": "49f9398d0d11158c05f9d707f28e2770eaed9a765862eea32ed69d4c61ba1855",
+        "canonical_solution": "8b5577a652fc17df872cda3dcb1e42e0121e70d724927d3ea94a50749f0da7a6",
+        "test": "b9b85fefbfc0b4a34b6d737bc19f63bae8161d932855d63eabd893bc92d9114f"
+      },
+      "provisional_semantic_label": "standardized_row_mean_histogram",
+      "source_judgment": "Tests check example means and exact feature columns; two cases recompute StandardScaler output from input after candidate call. Finite numerical checks are meaningful but mutable input can weaken those expected values. ax.patches is-not-None does not require nonempty histogram bars. Related standardization pipeline to29, provisionally co-split despite different output packaging.",
+      "flags": [
+        "positive_numeric_cases",
+        "mutable_expected_data",
+        "histogram_measurement_gap",
+        "template_family"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/39",
+      "source_row": 39,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "2fbdb89de499aa14b252544c19e1bd4c9632cbd1b8a71bc3047a50e86cdbaa28",
+        "instruct_prompt": "cc086cfb44e5bbf72f633867de15c25ed2473f6fbbca8e565327ba300a42cb96",
+        "canonical_solution": "4319ae34ecddf1fabdabc494ce1917a1026f94357988f93f7bb1b40351fa4638",
+        "test": "a591fb0d608f24fddd43937a65f0ff2a7c9f6245834f9fd1c18153d71463bafb"
+      },
+      "provisional_semantic_label": "row_mean_significance_plot",
+      "source_judgment": "Reference applies one aggregate t-test to row means against the same rectangular matrix global mean, not one test per row. These two means coincide in exact arithmetic; nondegenerate conventional t is0, while floating-point/degenerate behavior remains unexecuted. Tests inspect list type and3line colors/labels, not indices, coordinates or t-test validity.",
+      "flags": [
+        "self_centered_statistic",
+        "statistical_target_ambiguity",
+        "plot_statistic_measurement_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    }
+  ],
+  "same_family_provisional_groups": [
+    [
+      35,
+      36
+    ],
+    [
+      29,
+      38
+    ]
+  ],
+  "family_scope": "conservative shared computational-task judgments; not semantic equivalence or final global partition",
+  "unreviewed_retrieval_neighbors": {
+    "34": [
+      1097,
+      1098,
+      1099
+    ],
+    "37": [
+      746,
+      1017
+    ],
+    "38": [
+      40,
+      42
+    ],
+    "39": [
+      915
+    ]
+  },
+  "source_rows_reviewed_this_batch": 8,
+  "source_total_rows": 1140,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "paid_experimental_cost_usd": 0
+}

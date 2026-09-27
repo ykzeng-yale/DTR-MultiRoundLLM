@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September2026 — source rows32–39 reviewed
+
+Codex [source batch](bigcodebench_semantic_review_0032_0039_20260927.md) checks32 field hashes and records return/namespace/mutable-expected-data issues alongside positive numeric/importance checks. Independent inference review confirms39's structural exact-arithmetic self-centering, not executed behavior. Lead provisional groups35/36 and29/38 remain unadopted; all rows unresolved. No model/task execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Docker question pending without assumed approval.
+
+
 ## 27 September2026 — source rows24–31 reviewed
 
 Codex [source batch](bigcodebench_semantic_review_0024_0031_20260927.md) records positive derivation/roundtrip/payload checks alongside unstated iteration count, mutable expected data, absolute fixture path and shared9/31 plot-helper gaps.32 field hashes checked; no new family group, admission or execution. Owner asked to restore Docker responsiveness; no response or engine change assumed, source work continues. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.

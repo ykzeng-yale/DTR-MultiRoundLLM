@@ -1,0 +1,9 @@
+{
+  "classification": "lead source/hash check plus independent mathematical interpretation; no task execution",
+  "review_sha256": "8a298da63140a8fff7fe9f19f374b04f2b22cdd16e48500d1e310717566eebb1",
+  "rows": 8,
+  "field_hashes_verified": 32,
+  "independent_review_scope": "inference reviewer confirms39 rectangular-matrix mean identity and nondegenerate exact t=0/p=1, with degeneracy/numerical qualifications; other semantic row judgments are lead-only this turn",
+  "benchmark_calls": 0,
+  "receiver_calls": 0
+}

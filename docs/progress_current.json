@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-27T21:49:04.467850+00:00",
+  "checkpoint_utc": "2026-09-27T21:53:21.009749+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 60,
   "prior_check_reconstructed_percent": 60,
-  "prior_checked_head": "a2cc004",
+  "prior_checked_head": "c6d9de7",
   "baseline_note": "Fixed weights unchanged; prior manuscript/reproduction credit retained. This checkpoint earns no additional credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "Source rows24..31 reviewed;32 field hashes verified; positive roundtrip/payload checks and specification/measurement gaps retained. No task admission/model calls. Docker restoration requested, no reply assumed.",
+  "latest_evidence": "Source32..39 lead-reviewed,32 field hashes verified.39 self-centering interpretation independently mathematically reviewed; other row judgments lead-only. Provisional35/36 and29/38 groups, no admission or calls.",
   "latest_worker_review": {
     "last_seen_worker_revision": "7f441f3",
     "delivery_type": "Source/mock adapter reviewed; repair required before execution",
