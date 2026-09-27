@@ -1,0 +1,10 @@
+{
+  "classification": "manual source/hash verification, not execution",
+  "review_sha256": "165051bf07f74e744db92955210b2594920a6ad78ced802cc14ce7d7fd4a9bd1",
+  "rows": 8,
+  "field_hashes_verified": 32,
+  "task9_31_helper_ast_equal": true,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "independent_review": "Existing experiment reviewer verifies32 source/field hashes, substantive claims and9/31 helper AST identity. Required25 mutable-post-call-data qualification applied; accepted source-only scope. No execution/admission."
+}

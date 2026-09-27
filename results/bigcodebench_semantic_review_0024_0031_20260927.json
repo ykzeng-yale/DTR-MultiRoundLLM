@@ -1,0 +1,239 @@
+{
+  "version": "bbc-source-review-0024-0031-v1",
+  "reviewer": "Codex scientific lead",
+  "classification": "manual source review; no benchmark execution or receiver result",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "selection": "contiguous source rows24..31; not random sample or evaluation roster",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/24",
+      "source_row": 24,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "b75ee6201b9430342ade7c5bb16bf8f62d2a6c12754e18656170f7b99df48d85",
+        "instruct_prompt": "6c9996a51d2639af7bf25ce90b35fcec29ccfc31307b7853eadbcd7affbd81f6",
+        "canonical_solution": "b93be3ca846017d7b79a356debd6aed047fbdb7ab170ef40d958beffff2a6017",
+        "test": "f425e9c97d285e83d4ff000d5f6224c898ce3312038204694df4ad8f1eb805c9"
+      },
+      "provisional_semantic_label": "salted_password_derivation",
+      "source_judgment": "Tests decode and independently recompute the derivation for5 passwords, a substantive output relation. They fix100000 iterations, which neither prompt variant states. Salt length/randomness and custom SALT_LENGTH are not checked; invalid-input test uses None only, not empty string.",
+      "flags": [
+        "positive_recomputation_check",
+        "unspecified_iteration_count",
+        "salt_measurement_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/25",
+      "source_row": 25,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "e21eee15267e4a80658da288a670e80b8059822f9a9a55683163839a6d400023",
+        "instruct_prompt": "b917c12242d9bf39b840f05cab7d9b0a9123b1b73610ecaf056fdbb443e6af45",
+        "canonical_solution": "c71c30fc32a6e81fc76b4286427e5c6742c5c4d2df8cbaf2408472eb523022f4",
+        "test": "17f1a868fc91026ed5826eb009870c7d5f561b8ae84135595fdfaabe896cf666"
+      },
+      "provisional_semantic_label": "json_zlib_base64_roundtrip",
+      "source_judgment": "All5 cases decode/decompress/parse and compare with the post-call input dictionary, including nested values and empty dict. This is a finite roundtrip relation, but expected data are mutable: no pre-call copy establishes preservation of original input. General JSON-serializable dictionaries can have key/type normalization; source domain needs explicit interpretation.",
+      "flags": [
+        "positive_roundtrip_check",
+        "serialization_domain",
+        "mutable_expected_data"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/26",
+      "source_row": 26,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "26def63408e48e9e0f9f47b22cb021c6a27ed26016c1449d1f7e8d664bd73bf5",
+        "instruct_prompt": "a06ebc099a1735479ae0f4ec68634713ef8997cfff2aed197afcddb2731a3f5b",
+        "canonical_solution": "92b66557d1bb3a3eaab00118eaaf071866c262ad00ed130982fb2832aace1f25",
+        "test": "be858770ce295285dd350fce6de6998401b92d729b4e74e2fef61fcc5a833537"
+      },
+      "provisional_semantic_label": "fernet_message_encoding",
+      "source_judgment": "Normal-case tests require a string unequal to input; none decrypt/compare plaintext. Two invalid-length key cases require errors. Complete prompt key encoding wording needs interpretation, while Instruct omits key details. No cryptographic adequacy inference from these tests.",
+      "flags": [
+        "encryption_measurement_gap",
+        "prompt_variant_difference"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/27",
+      "source_row": 27,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "4574188b67b08da8a1dc1c9ace56c9b7bd3d2084aba14037cc1ca5626faa8fbd",
+        "instruct_prompt": "7d77dc776779035839ae95c7fad0bb7d6d4bd53fe2e6e7afe98635e96c6d68c1",
+        "canonical_solution": "1ae0bdee2ec03b00b0885773051176136c72d6bfbfcfda99dced88335a78feba",
+        "test": "1999ac6be9648f6ed58fdd096ac035a6e4e537f23f6646312daa413dd8168c35"
+      },
+      "provisional_semantic_label": "timestamp_json_base64",
+      "source_judgment": "Tests decode and compare selected values and parse timestamp format, but do not compare with current time. Several expected values are read from mutable input after the candidate call. Complete documents in-place mutation/no existing timestamp; Instruct omits these constraints.",
+      "flags": [
+        "time_truth_gap",
+        "mutable_expected_data",
+        "prompt_variant_difference"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/28",
+      "source_row": 28,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "d60d1a4fcfffd134df0170bd9acb168dd7633bf627b9eca3cd938e977ed90c2b",
+        "instruct_prompt": "56c1f5772d3010af55448ffcf40a594c01a95ec9cdaad14af890e960aa8e5dd4",
+        "canonical_solution": "5b7b00c61f82d0d718e4277117d072810bd6218d65032c96292668c2382f6dde",
+        "test": "8dea7f5e21f70a5d25c8f701af8e00e15f087a8e6a775f3523504c2ec30f212c"
+      },
+      "provisional_semantic_label": "json_base64_post_payload",
+      "source_judgment": "First5 tests check mocked status/text; final test explicitly asserts one POST call with expected URL/encoded payload, accepting data or json keyword. Thus there is meaningful finite payload checking, but transport formats are different contracts and no network behavior is executed.",
+      "flags": [
+        "positive_payload_call_check",
+        "mock_environment",
+        "transport_contract"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/29",
+      "source_row": 29,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "f1ccb38405004cc2cb4b52406b00066cf4baa67999d1b49a39123227f0da3d13",
+        "instruct_prompt": "8b4b3793af12a9d0774f64904e579ec585f5514371b1b3f21cc1338243549311",
+        "canonical_solution": "a4742c31f72df4b127c0aee7b32c48b6775fdbbc937bdce76627f64298615eaf",
+        "test": "5e436635ca34ef89c3fa762f3fae9fb240700dc6c25793ee68b196ce37d1d350"
+      },
+      "provisional_semantic_label": "standardized_array_base64",
+      "source_judgment": "Unmocked cases check string/bracket structure rather than numerical standardized values. Mocked case asserts fit_transform called once and checks the mocked output encoding, not the exact input passed. Numerical formatting depends on pinned library versions.",
+      "flags": [
+        "numeric_measurement_gap",
+        "mock_implementation_dependence",
+        "format_versioning"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/30",
+      "source_row": 30,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "aaee68a432bf7b836f3676d1015ff605246515049a28a65330b288e8e8db49c5",
+        "instruct_prompt": "4d556d21e4d1e894730c76e2cbf1bd93dc5d961c3bb08ff263e0db158533b5de",
+        "canonical_solution": "2997e2bb9c4d4e11c053018e850cb80fff8a4ce5e54d18a125f9d5721093f054",
+        "test": "077e9795f9cc311711fd4b632322b1aeb79f05ea6f38e3cda33a578714fe7ed8"
+      },
+      "provisional_semantic_label": "json_schema_attribute",
+      "source_judgment": "Tests exercise valid retrieval, missing field, invalid email and nonexistent path. They use absolute /tmp/test_data.json outside the current own-run write allowance; expected incompatibility, not observed failure. Test module rebinds EMAIL_REGEX but that does not replace the function default captured earlier. Type-mismatch/custom-schema cases are absent.",
+      "flags": [
+        "positive_validation_cases",
+        "absolute_fixture_path",
+        "default_binding",
+        "coverage_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/31",
+      "source_row": 31,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "ed37b8fcf36d2ae455ed25bf9df07ef66692eacb9b57ee6fc91424833582eb63",
+        "instruct_prompt": "0ea217e0c1457235e92d2066d56d3a9f539d48448667859f2f96c0571a208d59",
+        "canonical_solution": "7d505d041bb5fda8a032848a19efa204c54c1b49e4443bdae349f636d36633df",
+        "test": "28bab73467eab7094707a807ffe9cf55831c34f03ef131798d65d7da32b52f75"
+      },
+      "provisional_semantic_label": "dollar_word_frequency_plot",
+      "source_judgment": "is_bar helper is AST-identical to task9 including two zip comparisons and no length check. Three plot cases invoke it; two cases check None for absent/invalid words. This shares a measurement weakness, not enough for task-family grouping.",
+      "flags": [
+        "plot_cardinality_gap",
+        "shared_grader_helper"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    }
+  ],
+  "same_family_provisional_groups": [],
+  "measurement_helper_relation": {
+    "tasks": [
+      9,
+      31
+    ],
+    "helper": "is_bar",
+    "ast_sha256": "45c2664efda7b7d092cf8e47658105849c9835e7f3ae71cb9c42e9954173d45b",
+    "meaning": "shared grading helper, not a task-family merge"
+  },
+  "source_rows_reviewed_this_batch": 8,
+  "source_total_rows": 1140,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "paid_experimental_cost_usd": 0
+}

@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September2026 — source rows24–31 reviewed
+
+Codex [source batch](bigcodebench_semantic_review_0024_0031_20260927.md) records positive derivation/roundtrip/payload checks alongside unstated iteration count, mutable expected data, absolute fixture path and shared9/31 plot-helper gaps.32 field hashes checked; no new family group, admission or execution. Owner asked to restore Docker responsiveness; no response or engine change assumed, source work continues. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.
+
+
 ## 27 September2026 — source rows16–23 reviewed
 
 Codex [source batch](bigcodebench_semantic_review_0016_0023_20260927.md): task17 reference requests15seconds of unmocked sleep across its native battery;18's whole-file/first-chunk inequality does not establish shuffling;19 checks actual archived content. Provisional22/23 co-splitting retained,16/19 generic guard not automatically merged. All eight rows remain unresolved/not admitted;32 field hashes checked. Prior full index reproduced byte-identically on CPython3.12.13. No task/model execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only work.
