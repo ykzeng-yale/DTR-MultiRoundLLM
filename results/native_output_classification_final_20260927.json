@@ -1,0 +1,46 @@
+{
+  "scope": "Final adapter hash and reclassification of unchanged saved records; no payload rerun",
+  "adapter_sha256": "2d825d40c7f2b79dde32894d1ac178ce527ddb8216dda5de22f7a72c38179282",
+  "checks": [
+    {
+      "name": "stdout_flood",
+      "version": "native-execution-v1",
+      "disposition": "output_limit",
+      "output_saturated": true,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    {
+      "name": "stderr_flood",
+      "version": "native-execution-v1",
+      "disposition": "output_limit",
+      "output_saturated": true,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    {
+      "name": "dual_output",
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    },
+    {
+      "name": "small_success",
+      "version": "native-execution-v1",
+      "disposition": "completed_ungraded",
+      "output_saturated": false,
+      "timed_out": false,
+      "test_outcome": null,
+      "feedback_status": null,
+      "note": "No test outcome or public feedback inferred from process exit or candidate output."
+    }
+  ]
+}
