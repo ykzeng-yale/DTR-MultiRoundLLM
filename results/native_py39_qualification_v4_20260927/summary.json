@@ -1,0 +1,126 @@
+{
+  "classification": "known harmless containment/import qualification; no benchmark/model calls",
+  "freeze": "2966288f4d23a56f8657793959b3d90a48632bca",
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python",
+  "python_sha256": "057446db49d0bb2e41903364c55c7bfee7ac04d17f60c20cea044f59d0b84e00",
+  "bundle_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "rows": [
+    {
+      "name": "import_numpy",
+      "passed": true,
+      "receipt_sha256": "7da6992dbcf6db1c6073598cc20a0644ce3f9320a022a476f3f4e95181638c55",
+      "seconds": 0.24145004153251648
+    },
+    {
+      "name": "import_pandas",
+      "passed": true,
+      "receipt_sha256": "d6186e62e4b3c2d2ccb6adda2392ee04c5b2ca339c3dc9b7f84e6ff2054db5df",
+      "seconds": 0.7790433745831251
+    },
+    {
+      "name": "import_scipy",
+      "passed": true,
+      "receipt_sha256": "b96db736d01edb419caba07a43bfbb9d1aa67c43f4c7900ec5c3b98a80cc8a68",
+      "seconds": 0.2391125001013279
+    },
+    {
+      "name": "import_sklearn",
+      "passed": true,
+      "receipt_sha256": "0346d5ff75a017aa18d658f1b20abad8e4879f713b51947c7adc943c6e3cd714",
+      "seconds": 0.8873944170773029
+    },
+    {
+      "name": "import_matplotlib",
+      "passed": true,
+      "receipt_sha256": "54e53f5cc85d391db54acf61d7f94e1b66c64eac82f52e357816ee5a5da69310",
+      "seconds": 0.45888491719961166
+    },
+    {
+      "name": "import_psutil",
+      "passed": true,
+      "receipt_sha256": "63a871698fbf699e58042e84203e75fb4c69252ae9c580a95cb0017ba6434a72",
+      "seconds": 0.12868233397603035
+    },
+    {
+      "name": "import_cryptography",
+      "passed": true,
+      "receipt_sha256": "9eb7d02dd79efbcf5c52a11d87ad0267a9a925685956fc5f71b4f9acf0245190",
+      "seconds": 0.12725612428039312
+    },
+    {
+      "name": "import_seaborn",
+      "passed": true,
+      "receipt_sha256": "53d03ce6d4b0e73806d1e44e082949d08b336db808751c4446b511c85f2b47c6",
+      "seconds": 2.1325864158570766
+    },
+    {
+      "name": "import_pytz",
+      "passed": true,
+      "receipt_sha256": "55960821c5a5d0d96ec71cf208f5a47ae89a4901d455f173577b4251ce862f80",
+      "seconds": 0.0764535404741764
+    },
+    {
+      "name": "import_nltk",
+      "passed": true,
+      "receipt_sha256": "34dcf3b04f47bd6b00c5e6682f42357b6123dc87055ecfa1760b50cc655790ff",
+      "seconds": 1.4821837497875094
+    },
+    {
+      "name": "import_openpyxl",
+      "passed": true,
+      "receipt_sha256": "fb629e884c2376f97f170ae8521d8768eb9f7c695c1721cf9cd2857341289ebb",
+      "seconds": 0.45990000013262033
+    },
+    {
+      "name": "import_cv2",
+      "passed": true,
+      "receipt_sha256": "09fd797e2e984ab2ed8c11a206f780a292455012a1d4b26636afaacf61765401",
+      "seconds": 0.2955403747037053
+    },
+    {
+      "name": "import_faker",
+      "passed": true,
+      "receipt_sha256": "71294055112a22b02153e82964b2d6f103cdecd4919ec07dbc41dcf2becea382",
+      "seconds": 0.29206749983131886
+    },
+    {
+      "name": "own_directory",
+      "passed": true,
+      "receipt_sha256": "33f19d171ff84494a299344ee2127f3afa51f278350e2fc049618067f36fa0d2",
+      "seconds": 0.0740700839087367
+    },
+    {
+      "name": "repository_read",
+      "passed": true,
+      "receipt_sha256": "2dc860f58d5b4a954e7bdf4371671aa39c71f1da77a47a5557f7978362481347",
+      "seconds": 0.07859274931252003
+    },
+    {
+      "name": "bundle_write",
+      "passed": true,
+      "receipt_sha256": "c41317a2457c4c36b31edce5f8ca3fffcb134f8411f7a159aba0e2c766866925",
+      "seconds": 0.07876037526875734
+    },
+    {
+      "name": "network_connect",
+      "passed": true,
+      "receipt_sha256": "858bd3fcd7039bac3ad2f106a11cf4833cc7db20d90697cbf41d606bebdb3768",
+      "seconds": 0.07591308280825615
+    },
+    {
+      "name": "fork",
+      "passed": true,
+      "receipt_sha256": "9de4e4cd9a37d03f15008ce581ac0967f764ef52c3eb18bff499d9c1982a7575",
+      "seconds": 0.0789053337648511
+    },
+    {
+      "name": "system_exec",
+      "passed": true,
+      "receipt_sha256": "023927742eb4aaaa91426f25c648210e61c159a5a69ddca630c6f0030aee10c7",
+      "seconds": 0.07487612497061491
+    }
+  ],
+  "error": null,
+  "elapsed_seconds": 30.7148714158684,
+  "passed": true
+}

@@ -1,0 +1,26 @@
+{
+  "execution": {
+    "version": "native-execution-v1",
+    "disposition": "completed_ungraded",
+    "output_saturated": false,
+    "timed_out": false,
+    "test_outcome": null,
+    "feedback_status": null,
+    "note": "No test outcome or public feedback inferred from process exit or candidate output."
+  },
+  "raw_process": {
+    "sandbox_kind": "seatbelt",
+    "executed": true,
+    "stdout": "QUALIFIED\n",
+    "stderr": "",
+    "returncode": 0,
+    "timed_out": false,
+    "pid": 52609,
+    "seconds": 0.12725612428039312,
+    "rendered_profile_sha256": "a4350fe0afeb9ee5890caaba76c7ede3eb170ae6680589f27adc06c2089ea378"
+  },
+  "dependency_tree_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "dependency_bytes": 376048145,
+  "bundle_unchanged_after": true,
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+}
