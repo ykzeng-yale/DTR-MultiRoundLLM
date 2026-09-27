@@ -19,36 +19,51 @@ SYN_COUNTS = {"canonical": 2, "prior_literal_duplicate": 1, "mechanical_interfac
 SECRET = "def secret_reference_body():"
 
 
+def _dig(row):
+    h = lambda x: hashlib.sha256(x.encode()).hexdigest()
+    return {"description_sha256": h(row["text"]), "reference_sha256": h(row["code"]), "assertion_sha256": [h(a) for a in row["test_list"]]}
+
+
 def synthetic():
     mbpp = [{"task_id": t, "text": f"SYNTHETIC task {t}", "code": f"{SECRET} return {t}",
              "test_list": [f"assert secret_call({t}) == {t}"]} for t in range(1, 13)]
+    frame = [9, 11, 10, 12]
+    recon = [{"rank": i, "task_id": t, "historical_class": "candidate" if t != 10 else "hold", "source_disposition": "syn",
+              "current_overlay": "none", "prior_receiver_development": t == 9, "measurement_development": False,
+              "source_record": "docs/e12_contract_review_20260922.md" if t == 9 else "syn"} for i, t in enumerate(frame, 1)]
+    rank = {r["task_id"]: r["rank"] for r in recon}
+    hist = lambda t: {k: next(r for r in recon if r["task_id"] == t)[k] for k in ("historical_class", "source_disposition", "current_overlay", "source_record")}
     return {
         "mbpp": mbpp,
         "canonical_pool": [{"uid": "mbpp/1", "benchmark": "mbpp", "source_task_id": "1"},
                            {"uid": "mbpp/2", "benchmark": "mbpp", "source_task_id": "2"},
                            {"uid": "humaneval/0", "benchmark": "humaneval", "source_task_id": "0"}],
-        "acquisition": {"full_task_count": 12, "candidate_ids": list(range(3, 13)),
-                        "after_prior_prompt_duplicate_exclusion_ids": list(range(4, 13)),
+        "acquisition": {"full_task_count": 12, "canonical_mbpp_count": 2, "candidate_count": 10, "candidate_ids": list(range(3, 13)),
+                        "after_prior_prompt_duplicate_exclusions": 9, "after_prior_prompt_duplicate_exclusion_ids": list(range(4, 13)),
                         "exact_normalized_prior_prompt_duplicates": [{"candidate_id": 3, "prior_root_ids": ["mbpp/1"]}]},
-        "screen_summary": {},
+        "screen_summary": {"candidates": 9, "usable_upper_bound": 7, "first_failing_gate": {"G2_interface": 1, "G3_setup": 1, "USABLE": 7},
+                           "reasons": {"G2_interface:not_single_function": 1, "G3_setup:setup_or_challenge_tests_present": 1}},
         "screen_per_candidate": [{"task_id": 4, "gate": "G2_interface", "reason": "not_single_function"},
                                  {"task_id": 5, "gate": "G3_setup", "reason": "setup_or_challenge_tests_present"}]
                                 + [{"task_id": t, "gate": "USABLE", "reason": None} for t in range(6, 13)],
         "screen_usable": list(range(6, 13)),
-        "mrl15_manifest": {"eligible_ordered_ids": [9, 11, 10, 12],
+        "mrl15_manifest": {"eligible_ordered_ids": frame,
+                           "counts": {"start_frame": 7, "after_i_prior_seen": 6, "after_ii_prior_seen_near_duplicate": 5,
+                                      "after_ii_within_frame_family": 4},
                            "excluded": {"6": {"step": "i_prior_seen", "reason": "prior seen"},
                                         "7": {"step": "ii_near_duplicate_of_prior_seen", "reason": "score 0.6 vs prior-seen mbpp/1"},
                                         "8": {"step": "ii_within_frame_family", "reason": "family member of 9"}},
                            "source": {"e11_dev_roots": [7]}},
-        "reconciliation_198": {"records": [
-            {"rank": i, "task_id": t, "historical_class": "candidate" if t != 10 else "hold", "source_disposition": "syn",
-             "current_overlay": "none", "prior_receiver_development": t == 9, "measurement_development": False,
-             "source_record": "docs/e12_contract_review_20260922.md" if t == 9 else "syn"} for i, t in enumerate([9, 11, 10, 12], 1)]},
-        "adjudication_43": {"records": [{"task_id": t, "family_axis": "no_direct_prior_relation_found", "contract_axis": "ok",
-                                         "family_reason": "PRIVATE-ISH NARRATIVE", "approved_evaluation_roster": False} for t in (11, 12)]},
-        "refinement_16": {"records": [{"task_id": 12, "prior_family_axis": "plausible_shared_family",
-                                       "family_axis": "definite_prior_family", "contract_axis_unchanged": "ok",
-                                       "witness": "WITNESS TEXT", "approved_evaluation_roster": False}]},
+        "reconciliation_198": {"records": recon, "counts": {"candidate": 3, "hold": 1}, "known_receiver_development_candidates": 1,
+                               "candidates_without_recorded_receiver_development_in_these_sources": 2,
+                               "remaining_candidate_roots_after_known_receiver_exposure_and_display_hold": 2},
+        "adjudication_43": {"records": [{"task_id": t, "rank": rank[t], "source_hashes": _dig(mbpp[t - 1]), "historical_record": hist(t),
+                                         "family_axis": "plausible_shared_family" if t == 12 else "no_direct_prior_relation_found",
+                                         "contract_axis": "ok", "family_reason": "PRIVATE-ISH NARRATIVE",
+                                         "approved_evaluation_roster": False} for t in (11, 12)]},
+        "refinement_16": {"records": [{"task_id": 12, "rank": rank[12], "source_hashes": _dig(mbpp[11]),
+                                       "prior_family_axis": "plausible_shared_family", "family_axis": "definite_prior_family",
+                                       "contract_axis_unchanged": "ok", "witness": "WITNESS TEXT", "approved_evaluation_roster": False}]},
         "prior_seen_config": {"prior_seen_root_ids": ["mbpp/1", "humaneval/0", "mbpp/6"]},
     }
 
@@ -62,7 +77,7 @@ def test_synthetic_partition_rows_flags_and_order():
                    10: "reviewed_frame", 11: "reviewed_frame", 12: "reviewed_frame"}
     rows = {r["task_id"]: r for r in doc["rows"]}
     assert rows[11]["frame_rank"] == 2 and rows[9]["frame_rank"] == 1 and rows[3]["frame_rank"] is None
-    assert rows[9]["flags_from_named_records"]["e12_contract_review_record"] and rows[9]["flags_from_named_records"]["prior_receiver_development_recorded"]
+    assert rows[9]["flags_from_named_records"]["in_e12_contract_review_record"] and rows[9]["flags_from_named_records"]["prior_receiver_development_recorded"]
     assert rows[7]["flags_from_named_records"]["e11_dev_root"] and rows[6]["flags_from_named_records"]["prior_seen_dev_release_v1c"]
     assert rows[12]["refinement_16"]["family_axis"] == "definite_prior_family" and rows[11]["refinement_16"] is None
     assert rows[1]["canonical_uid"] == "mbpp/1" and rows[3]["category_evidence"] == {"prior_root_ids": ["mbpp/1"]}
@@ -131,7 +146,7 @@ def test_script_is_pure_data_processing():
     tree = ast.parse((ROOT / "scripts/reconcile_source_frame_lineage_20260927.py").read_text())
     mods = {n.module for n in ast.walk(tree) if isinstance(n, ast.ImportFrom)} | \
            {a.name for n in ast.walk(tree) if isinstance(n, ast.Import) for a in n.names}
-    assert mods == {"__future__", "argparse", "hashlib", "json", "pathlib"}
+    assert mods == {"__future__", "argparse", "collections", "hashlib", "json", "pathlib"}
     called = {n.func.id if isinstance(n.func, ast.Name) else n.func.attr for n in ast.walk(tree)
               if isinstance(n, ast.Call) and isinstance(n.func, (ast.Name, ast.Attribute))}
     assert not called & {"eval", "exec", "compile", "__import__", "run", "Popen", "system", "urlopen", "literal_eval", "parse"}
@@ -147,3 +162,39 @@ def test_real_inputs_verify_the_expected_partition():
     assert sum(r["in_reviewed_frame_198"] for r in doc["rows"]) == 198
     assert sum(r["adjudication_43"] is not None for r in doc["rows"]) == 43 and sum(r["refinement_16"] is not None for r in doc["rows"]) == 16
     assert all(r["approved_for_evaluation"] is False for r in doc["rows"])
+
+
+# ---------------------------------------------------------------- MRL-39-R1 regressions
+def _del_downstream(d):
+    d["adjudication_43"]["records"].clear()
+    d["refinement_16"]["records"].clear()
+
+
+@pytest.mark.parametrize("fn", [
+    _del_downstream,                                                                               # the lead's counterexample 1
+    lambda d: d["screen_summary"].update(candidates=1),                                            # the lead's counterexample 2
+    lambda d: d["adjudication_43"]["records"].pop(),                                               # removed adjudication row
+    lambda d: d["refinement_16"]["records"].clear(),                                               # removed refinement row
+    lambda d: d["adjudication_43"]["records"][0].update(rank=99),                                  # changed rank
+    lambda d: d["refinement_16"]["records"][0].update(rank=1),
+    lambda d: d["adjudication_43"]["records"][0]["source_hashes"].update(reference_sha256="0" * 64),   # changed source identity
+    lambda d: d["refinement_16"]["records"][0]["source_hashes"].update(description_sha256="0" * 64),
+    lambda d: d["refinement_16"]["records"][0].update(contract_axis_unchanged="changed"),          # changed contract axis
+    lambda d: d["adjudication_43"]["records"][0]["historical_record"].update(source_disposition="other"),
+    lambda d: d["screen_summary"]["first_failing_gate"].update(USABLE=6),
+    lambda d: d["screen_summary"]["reasons"].update({"G2_interface:not_single_function": 2}),
+    lambda d: d["acquisition"].update(candidate_count=11),
+    lambda d: d["mrl15_manifest"]["counts"].update(after_i_prior_seen=5),
+    lambda d: d["reconciliation_198"].update(counts={"candidate": 4}),
+    lambda d: d["reconciliation_198"].update(remaining_candidate_roots_after_known_receiver_exposure_and_display_hold=3),
+])
+def test_r1_exact_downstream_sets_identity_and_summary_counts_are_enforced(fn):
+    with pytest.raises(lin.LineageRefused):
+        lin.reconcile(mutate(fn), SYN_COUNTS)
+
+
+def test_r1_e12_review_membership_is_not_receiver_execution():
+    rows = {r["task_id"]: r for r in lin.reconcile(synthetic(), SYN_COUNTS)["rows"]}
+    flags = rows[9]["flags_from_named_records"]
+    assert "in_e12_contract_review_record" in flags and "e12_contract_review_record" not in flags
+    assert "absent from that named record only" in rows[1]["exposure"]

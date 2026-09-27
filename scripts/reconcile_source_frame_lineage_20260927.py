@@ -14,7 +14,7 @@ import hashlib
 import json
 from pathlib import Path
 
-VERSION = "source-frame-lineage-v1"
+VERSION = "source-frame-lineage-v1-r1"  # R1: exact downstream sets, identity and summary reconciliation
 ISSUING_COMMIT = "0580cb9"
 INPUTS = {  # name -> (path, sha256 of the raw bytes, pinned at the issuing commit)
     "mbpp": ("work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl", "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"),
@@ -122,6 +122,63 @@ def reconcile(d: dict, expected_counts=EXPECTED_COUNTS) -> dict:
                                              and len({r["task_id"] for r in ref}) == len(ref),
         "screen_gates_known": {g for g, _ in gate.values()} <= {"USABLE", "G2_interface", "G3_setup"},
     }
+    # R1: exact downstream sets (not subsets), with consistent ranks, source identities and contract axes.
+    recon_rank = {r["task_id"]: r["rank"] for r in recon}
+    by_recon = {r["task_id"]: r for r in recon}
+    expected43 = {r["task_id"] for r in recon if r["historical_class"] == "candidate" and r["prior_receiver_development"] is False
+                  and r["current_overlay"] == "none"}
+    adj_ids = [r["task_id"] for r in adj]
+    expected16 = {r["task_id"] for r in adj if r.get("family_axis") == "plausible_shared_family"}
+    ref_ids = [r["task_id"] for r in ref]
+
+    def digests(t):
+        src = mbpp[t]
+        return {"description_sha256": sha256_text(src["text"]), "reference_sha256": sha256_text(src["code"]),
+                "assertion_sha256": [sha256_text(a) for a in src["test_list"]]}
+    adj_by_id = {r["task_id"]: r for r in adj}
+    rd = d["reconciliation_198"]
+    checks.update({
+        "adjudication_equals_expected_remaining_candidates":
+            set(adj_ids) == expected43 and len(adj_ids) == len(set(adj_ids)) == rd.get("remaining_candidate_roots_after_known_receiver_exposure_and_display_hold"),
+        "adjudication_ranks_match_frame": all(r.get("rank") == recon_rank.get(r["task_id"]) for r in adj),
+        "adjudication_source_hashes_match_mbpp": all(r["task_id"] in mbpp and r.get("source_hashes") == digests(r["task_id"]) for r in adj),
+        "adjudication_historical_record_matches_reconciliation": all(
+            r.get("historical_record") == {k: by_recon[r["task_id"]][k] for k in r.get("historical_record", {})}
+            and bool(r.get("historical_record")) for r in adj if r["task_id"] in by_recon),
+        "refinement_equals_plausible_family_rows":
+            set(ref_ids) == expected16 and len(ref_ids) == len(set(ref_ids)) and len(expected16) > 0,
+        "refinement_ranks_match_frame": all(r.get("rank") == recon_rank.get(r["task_id"]) for r in ref),
+        "refinement_source_hashes_match_mbpp": all(r["task_id"] in mbpp and r.get("source_hashes") == digests(r["task_id"]) for r in ref),
+        "refinement_contract_axis_unchanged_matches_adjudication": all(
+            r["task_id"] in adj_by_id and r.get("contract_axis_unchanged") == adj_by_id[r["task_id"]].get("contract_axis")
+            and r.get("prior_family_axis") == adj_by_id[r["task_id"]].get("family_axis") for r in ref),
+    })
+    # R1: declared summary counts reconciled against the actual sets and counters.
+    from collections import Counter
+    summ = d["screen_summary"]
+    gate_counts = Counter(g for g, _ in gate.values())
+    reason_counts = Counter(f"{g}:{reason}" for g, reason in gate.values() if g != "USABLE")
+    mc = m.get("counts", {})
+    n_i = sum(v["step"] == "i_prior_seen" for v in excluded.values())
+    n_ii = sum(v["step"] == "ii_near_duplicate_of_prior_seen" for v in excluded.values())
+    classes = Counter(r["historical_class"] for r in recon)
+    checks.update({
+        "screen_summary_candidates": summ.get("candidates") == len(screened),
+        "screen_summary_usable": summ.get("usable_upper_bound") == len(usable),
+        "screen_summary_first_failing_gate": summ.get("first_failing_gate") == dict(gate_counts),
+        "screen_summary_reasons": summ.get("reasons") == dict(reason_counts),
+        "acquisition_declared_counts": (acq.get("full_task_count") == len(full) and acq.get("canonical_mbpp_count") == len(canonical)
+                                        and acq.get("candidate_count") == len(candidates)
+                                        and acq.get("after_prior_prompt_duplicate_exclusions") == len(after_dup)),
+        "mrl15_declared_counts": (mc.get("start_frame") == len(usable) and mc.get("after_i_prior_seen") == len(usable) - n_i
+                                  and mc.get("after_ii_prior_seen_near_duplicate") == len(usable) - n_i - n_ii
+                                  and mc.get("after_ii_within_frame_family") == len(frame)),
+        "reconciliation_declared_class_counts": rd.get("counts") == dict(classes),
+        "reconciliation_declared_receiver_counts": (
+            rd.get("known_receiver_development_candidates") == sum(r["historical_class"] == "candidate" and r["prior_receiver_development"] for r in recon)
+            and rd.get("candidates_without_recorded_receiver_development_in_these_sources")
+            == sum(r["historical_class"] == "candidate" and not r["prior_receiver_development"] for r in recon)),
+    })
     failed = [k for k, ok in checks.items() if not ok]
     if failed:
         raise LineageRefused(f"stage set checks failed: {failed}")
@@ -173,10 +230,10 @@ def reconcile(d: dict, expected_counts=EXPECTED_COUNTS) -> dict:
             "flags_from_named_records": {
                 "prior_seen_dev_release_v1c": t in prior_seen,
                 "e11_dev_root": t in e11,
-                "e12_contract_review_record": bool(r and r["source_record"] == "docs/e12_contract_review_20260922.md"),
+                "in_e12_contract_review_record": bool(r and r["source_record"] == "docs/e12_contract_review_20260922.md"),  # review membership, not receiver execution
                 "prior_receiver_development_recorded": bool(r and r["prior_receiver_development"]),
             },
-            "exposure": "unknown beyond the named records (no claim about model pretraining or cross-workspace use)",
+            "exposure": "unknown beyond the named records (no claim about model pretraining or cross-workspace use); a false flag means absent from that named record only",
             "approved_for_evaluation": False,
         })
     return {"version": VERSION, "issuing_commit": ISSUING_COMMIT, "record_type": "source_lineage_reconciliation_not_a_decision",

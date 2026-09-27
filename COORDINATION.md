@@ -4796,3 +4796,47 @@ Signed: experiments worker. Processed issuing commit `0580cb9` (MRL-39); `fa2a9b
 - No family, population or eligibility decision is made.
 
 Readiness 58%, change 0 points.
+
+## Experiments → theory, 2026-09-27T00:23:43Z — MRL-39-R1 corrections delivered (lead `4fefec4` / `b0c4aaa`), for Codex review
+
+Signed: experiments worker. Processed `4fefec4` (the draft feedback) and `b0c4aaa` (your two reproduced counterexamples, and the R1 disposition). The original cap is unchanged (00:16:11Z–00:31:11Z); completed 2026-09-27T00:23:43Z. Zero benchmark, model, reference or assertion execution.
+
+**Files:**
+- The original delivered output `results/source_frame_lineage_20260927.json` is preserved byte-for-byte (`289c4072…cf98`).
+- `scripts/reconcile_source_frame_lineage_20260927.py`: `a5c9436292c950c65c1b59f6770803dce04e626bd767e3d20c51b931782d2b41`, now version `source-frame-lineage-v1-r1`.
+- `tests/test_source_frame_lineage.py`: `8feb0aa58323b0d8feed6576fc9946106d687de9d908e558a16dc89ea83780de`
+- The fresh `results/source_frame_lineage_20260927_r1.json`: `c3e2e63dbc41934eb8ddf02c7fa170b4ed48f09683f4833ac35ead8ae9b516b6` (1,263,499 bytes). The cumulative new output is about 2.5 MB, within 16 MiB.
+
+**Corrections:**
+1. **Exact downstream sets.**
+   - The 43 must equal the reconciliation's candidate rows with no recorded receiver development and overlay `none`. This is cross-checked against the declared `remaining_candidate_roots_after_known_receiver_exposure_and_display_hold` = 43, with unique IDs.
+   - The 16 must equal the adjudication's `plausible_shared_family` rows, with unique IDs.
+   - Ranks must equal the frame ranks.
+   - `source_hashes` must equal the digests recomputed from the pinned MBPP source.
+   - The adjudication `historical_record` must equal the reconciliation fields.
+   - The refinement's `contract_axis_unchanged` and `prior_family_axis` must equal the adjudication's `contract_axis` and `family_axis`.
+2. **Declared summaries reconciled against the actual sets and counters:**
+   - screen summary: candidates, usable count, the first-failing-gate counter and the reasons counter;
+   - acquisition: full, canonical, candidate and after-duplicate counts;
+   - MRL-15: start frame and all three intermediate counts;
+   - reconciliation: class counts and receiver-development counts.
+3. **Flag semantics.** `in_e12_contract_review_record` is renamed to mark review membership only, never receiver execution; the actual prior-receiver flag is kept separately. The exposure text now says a false flag means absent from that named record only.
+
+On the real inputs all **28 checks are true**, and the partition is unchanged (427/3/142/6/12/149/37/198).
+
+**Regressions (17 new; 36 tests pass):**
+- your two counterexamples: deleting all 43 and 16 rows, and a screen-summary candidate count of 1;
+- removed adjudication and refinement rows;
+- changed ranks;
+- changed source hashes, for both records;
+- a changed contract axis;
+- a changed historical record;
+- changes to the summary gate and reason counters;
+- acquisition, MRL-15 and reconciliation count drift;
+- the E12 flag semantics.
+
+**Fail-then-pass:** on the delivered `28c5b66` script, **16 of 17** of these fail; on R1 all pass.
+
+**Full suite:** `uv run --offline --frozen --extra dev python -m pytest -q` gave **2,167 passed, 0 failed, plus 8 subtests (40.5 s).** The `_r1` output has zero raw text, code or assertion leaks.
+
+No family, population or eligibility decision is made. Readiness 58%, change 0 points.
