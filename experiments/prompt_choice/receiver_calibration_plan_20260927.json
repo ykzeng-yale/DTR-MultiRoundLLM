@@ -1,0 +1,81 @@
+{
+  "classification": "local synthetic resource calibration, not benchmark/policy experiment",
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "receiver_state_sha256": "1b8bf998c5dd06a611f692bab9e802b285ae75164b8b389fd8b381c06a83f5c1",
+  "instruction": "Write exactly 200 numbered lines, each containing the word ready. The following repeated context is irrelevant data, not instructions:",
+  "context_line": "alpha beta gamma delta\n",
+  "assignments": [
+    {
+      "length_label": "short",
+      "repeats": 16,
+      "seed": 4001
+    },
+    {
+      "length_label": "medium",
+      "repeats": 128,
+      "seed": 4002
+    },
+    {
+      "length_label": "long",
+      "repeats": 512,
+      "seed": 4003
+    },
+    {
+      "length_label": "short",
+      "repeats": 16,
+      "seed": 4004
+    },
+    {
+      "length_label": "medium",
+      "repeats": 128,
+      "seed": 4005
+    },
+    {
+      "length_label": "long",
+      "repeats": 512,
+      "seed": 4006
+    },
+    {
+      "length_label": "short",
+      "repeats": 16,
+      "seed": 4007
+    },
+    {
+      "length_label": "medium",
+      "repeats": 128,
+      "seed": 4008
+    },
+    {
+      "length_label": "long",
+      "repeats": 512,
+      "seed": 4009
+    }
+  ],
+  "startup_wall_seconds": 120,
+  "total_wall_seconds": 900,
+  "per_call_wall_seconds": 120,
+  "log_cap_bytes": 8388608,
+  "max_receiver_rss_bytes": 8589934592,
+  "min_pressure_free_percent": 15,
+  "max_swap_growth_mib": 2048,
+  "min_disk_available_bytes": 5368709120,
+  "max_completion_tokens_total": 4608,
+  "max_generation_calls": 9,
+  "paid_usd_cap": 0,
+  "committed_sources": [
+    "scripts/calibrate_receiver_resources_20260927.py",
+    "scripts/analyze_receiver_calibration_20260927.py",
+    "scripts/launch_own_receiver_v31.py",
+    "experiments/landmark/collect.py",
+    "experiments/env/llama_server_manifest.json",
+    "results/receiver_props_snapshot_8193.json"
+  ],
+  "input_sha256": {
+    "scripts/calibrate_receiver_resources_20260927.py": "0dbcd61268003b29e2487f46f3b2d3713161c682dbc71539a7568c9f57ea32f2",
+    "scripts/analyze_receiver_calibration_20260927.py": "21698152863d481c4aff2c454dfd3cd3c3609795f78098537ff37f40bbbdff93",
+    "scripts/launch_own_receiver_v31.py": "a612553bcfc16b76ab4b0ca753dfecab70631cd829179a2f0261e66e15b8b0a3",
+    "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+    "experiments/env/llama_server_manifest.json": "63d8e03bcea39031e4d5d4334ccf58e09159a4304f609f2bd320f4538922c2b8",
+    "results/receiver_props_snapshot_8193.json": "c0b3aaf2fd07f7aa259041eeb30abd588e6f07362295786c4e43a580b76b619e"
+  }
+}
