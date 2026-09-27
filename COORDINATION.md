@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — source rows 40–55 reviewed
+
+Codex [16-task source batch](docs/bigcodebench_semantic_review_0040_0055_20260927.md) verifies 64 field hashes. Positive fixed numerical and pre-call-copy checks are preserved alongside prompt/return/timezone/randomness conflicts. Provisional groups 42/45, 29/38/47 and 54/55 await the global family/exposure review. Semantic judgments are lead-reviewed, not independently validated; no task/model execution or admission. Full-project readiness **60%, delta 0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation; Docker question pending.
+
+
 ## 27 September2026 — source rows32–39 reviewed
 
 Codex [source batch](docs/bigcodebench_semantic_review_0032_0039_20260927.md) checks32 field hashes and records return/namespace/mutable-expected-data issues alongside positive numeric/importance checks. Independent inference review confirms39's structural exact-arithmetic self-centering, not executed behavior. Lead provisional groups35/36 and29/38 remain unadopted; all rows unresolved. No model/task execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Docker question pending without assumed approval.

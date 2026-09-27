@@ -1,0 +1,8 @@
+{
+  "classification": "lead source/hash check; no independent semantic review claimed; no task execution",
+  "review_sha256": "5dcf056b067563830cad525a9c01eb7303158065fc61143a6b0f59ff479b3f31",
+  "rows": 16,
+  "field_hashes_verified": 64,
+  "benchmark_calls": 0,
+  "receiver_calls": 0
+}

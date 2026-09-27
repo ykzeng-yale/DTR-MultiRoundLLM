@@ -1,0 +1,395 @@
+{
+  "version": "bbc-source-review-0040-0055-v1",
+  "reviewer": "Codex scientific lead",
+  "classification": "manual source review; no benchmark execution or receiver result",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "selection": "contiguous source rows40..55; not random sample or evaluation roster",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/40",
+      "source_row": 40,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "eeef85068b7810578452930b3519c8f096b46502a1d0119a46217e513f0a3b5c",
+        "instruct_prompt": "5b3ea5e89fb5fa629f9e388bb563956ef1acd6745dd714bcc859001e5daaab10",
+        "canonical_solution": "480c20947ab1f653f31d465d1b49b3dc046f8a40e18927e9220d628920750515",
+        "test": "ab5ce2939c4f7e0311b9a272e67fe3d107416550bc4807298a918524787394a8"
+      },
+      "provisional_semantic_label": "row_zscore_correlation",
+      "source_judgment": "Feature columns are compared with rowwise scipy zscore calculated after candidate execution, so mutable expected input remains a concern. Mean values and plotted correlations are not checked. Single-column/constant cases need a pinned numerical convention. Rowwise transformation is not the columnwise29/38/47 contract.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/41",
+      "source_row": 41,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "a586abb5b74dfee9635b8bc17afe162b23750eac51279d3d2a353b39a438b012",
+        "instruct_prompt": "b71b8e14f1e0628f881c51e817af18be1697a7ac80db65b30d99b85eea52d9be",
+        "canonical_solution": "b8334d9eb7a01b65d716575a55bda0ce906e9a3a022b979d83b54fc433accd8b",
+        "test": "adfd5ef82df08ae5c0e287a76aa37ba1fb824c297400a6f083cef79e5115bb8a"
+      },
+      "provisional_semantic_label": "row_skew_distribution",
+      "source_judgment": "Four cases compare row skewness to scipy values after candidate execution; constant-row case checks structure only. Histogram content is unchecked. Test setup creates a directory without a matching teardown. Numerical and filesystem behavior remain unexecuted.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/42",
+      "source_row": 42,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "856953d543eacde0d8708b117914995ccc185fa082cf654842b43a2cd9de264b",
+        "instruct_prompt": "dcc1e390113bd84b0db572f437e13230f73e07cf93bef861c2c0d65b387a92e0",
+        "canonical_solution": "85ac0142c6c8bc0879c4d2470427324ad46f556aa3e826dcc9049245ab13f03b",
+        "test": "ab2e60c0fdc80bf8b2c6f9d7835bff30dc218c37a4b3c9a40a2f32641133f627"
+      },
+      "provisional_semantic_label": "pca_mean_variance",
+      "source_judgment": "Tests check shape, Mean presence and axis labels, not component coordinates, row means or cumulative explained variance. Two cases repeat data/checks. Complete prefix lacks numpy although reference uses np.cumsum and native tests supply np. PCA relationship with45 is provisional.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/43",
+      "source_row": 43,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "f8c5b9854ff6174f52396eaf0063371cb3a104998638a71993e4a01d6f28a929",
+        "instruct_prompt": "b7d0bed51457a31afe3ce54197ed78c2a32e73315e25f7627fc467729fae967a",
+        "canonical_solution": "8b192562c046fe00caa2ec4e1eaa3df25ef3f457832b1f1cffc0d979bbb58734",
+        "test": "1f1e92b1b5534bd8d2ddc93eddc0957470b5e22a6cc09face200eec95957f666"
+      },
+      "provisional_semantic_label": "mean_impute_describe",
+      "source_judgment": "Tests check missingness, columns and plot count; one case checks fixed mean, standard deviation, quartiles and maximum. Preserve these positive numerical checks. Distribution/bin contents and mixed/all-missing domains remain unresolved.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/44",
+      "source_row": 44,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "83d7c3b4dd8bd66405ab11f0f485e85b299606154bc57d1d4a7ca3f15e92fe44",
+        "instruct_prompt": "c4af6ca9937fe6042f35404b97b5e72d79d53582d3f109843031442cfdcf638b",
+        "canonical_solution": "b0ea5a0714caa803882d10cd79e546afa4fd7b4dd6397b52b82c6674d337d92d",
+        "test": "461b93e5e42fcfacacaec022fca02d4b4ffe141e1b49d6006ec952750971da4d"
+      },
+      "provisional_semantic_label": "mean_impute_minmax_boxplot",
+      "source_judgment": "Three cases compare fixed normalized arrays; others check ranges. Plot checks do not establish boxplot content. Prompt refers to numeric columns while reference transforms all columns and tests use numeric data. Constant/all-missing/mixed domains require adjudication.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/45",
+      "source_row": 45,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "226b99c1fac5ecdd6aff6351da7532f3f8f1cd57cf2473bd2cac6fb549bc5b01",
+        "instruct_prompt": "9f994365741005ff7a4a6b21c6c08317f76bbf5ed2deb612b945c34596ab111f",
+        "canonical_solution": "8f4c74c35682745b2c6549eec3b9278f5473d16281615ad1ab724b0922bcf552",
+        "test": "5b52bda74f0b0dc00390b2e367bda0deacd644dc4bfce6c8a16616c56d1d536f"
+      },
+      "provisional_semantic_label": "numeric_impute_pca_scatter",
+      "source_judgment": "Opening/example use Component1/2 but return text uses principal component names; reference/tests use Component1/2. Tests inspect shape, column names and labels, not PCA coordinates/scatter offsets. Shared PCA projection warrants provisional42/45 co-splitting despite different preprocessing/output.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/46",
+      "source_row": 46,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "aa778ea117f62687db30a8a82eb3e37cf5811951e5269df8369e7e163d8a6f3b",
+        "instruct_prompt": "bc5eab6be91f5c9101840580e652a86f965967d3d7208ad15d498e39a05598af",
+        "canonical_solution": "6bc6fb8869f587ce45f648cd0d8fef7fa6960948cef68e6aa74210833382306d",
+        "test": "ab0a280481208dfb63af14ee66d20631e54e4d5928b754e394fcd947fc922616"
+      },
+      "provisional_semantic_label": "mean_impute_zscore_hist",
+      "source_judgment": "One test copies input and constructs the expected transformed frame before candidate execution, a meaningful numerical check; other cases include aggregate centering and all-missing behavior. Prompt describes a list of axes, reference returns a nested axes array and tests index plots[0]. Histogram contents are unchecked; scipy constant-column conventions must be preserved.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/47",
+      "source_row": 47,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "c223264369e708e15ffa7ae764d230477d7329fd146c8b2effc4be90600d33b0",
+        "instruct_prompt": "e1fe08e2acd77c612fa02ab3bdf48899b9fc192a7010a672ad61baf9b97573ed",
+        "canonical_solution": "6a7d8bc23c5c629962c69f4578f7b9562e7bcb244aca0bb8c527238f4d7ed78d",
+        "test": "4300e8d6443956f79435ef9a6d24f98ecab1dc819f739058f921961b3545ab96"
+      },
+      "provisional_semantic_label": "mean_impute_standardscale_heatmap",
+      "source_judgment": "One test constructs a full expected frame from a copy before candidate execution. Other cases largely check shape/type; heatmap correlations are unchecked. Columnwise StandardScaler relates to29/38, extended provisionally to47; imputation differences retained.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/48",
+      "source_row": 48,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "39e705821e9f5c27ce3a71d61ac91dcf113eb8e6c946b3a78d45829b0971dfbf",
+        "instruct_prompt": "844068caec8e22107e1a393667d877146d34d8e3ae1f827dd4ff555ff66a6015",
+        "canonical_solution": "d6539c467373b69354e241bb4e5436941f610f8063d327243091ebb615565d9f",
+        "test": "10c48ebb776246e47d6157290a6a23e961210b12b42fbbf2843c2827db751f8e"
+      },
+      "provisional_semantic_label": "random_unix_datetime_hist",
+      "source_judgment": "Tests check length/format/file existence/empty case and uniqueness of50 samples. Reference samples with replacement, so uniqueness is not guaranteed by the declared generator. Clock and shared RNG state affect behavior; no observed failure probability or runtime result. File existence does not verify histogram content.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/49",
+      "source_row": 49,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "6c016642f9c5f79cc80401fa360d9b390a117b915d21f020a390b958c34d9786",
+        "instruct_prompt": "bc1aac52393ac02b5f313fa55d52518c1ffbab21d86896a783f3addb9d0cfd00",
+        "canonical_solution": "6f9ae31181b4fd6ff42f8e12de06db21e7367b8316701d0b243857c1f6ac7069",
+        "test": "333d8c06e98f50344641b915db47853f2ca5d19a36bf3f1c73cb02fa0d9528ab"
+      },
+      "provisional_semantic_label": "unix_list_dataframe_hist",
+      "source_judgment": "Prompt promises an Axes object but reference returns the plt.hist tuple and tests index its first element. Reference uses host-local datetime.fromtimestamp, while a fixed full-frame expected example assumes UTC wall time. Fix timezone contract before execution; no observed failure. Timestamp-list comparison uses post-call mutable input; fixed full-frame case supplies positive evidence.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/50",
+      "source_row": 50,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "8ac992b9ae4331eb0f6f1e32186a3d56004ffd488a741f1ba18f1de9dc51c268",
+        "instruct_prompt": "9ec62b28581536de91eb1b6a2df422d5bc35641df0a0c40a618981b6bb4f022d",
+        "canonical_solution": "e9fd1cc83a7ea9d0dfedb285de4c02dd7e9a79224dc55e71bc1d30eb4edd11f4",
+        "test": "87e55087238d9cf12e3457a403d3f34e8e350a6460d56a8b22219646521956da"
+      },
+      "provisional_semantic_label": "timezone_datetime_bar",
+      "source_judgment": "Tests check shape, timezone order, datetime64 dtype, labels/title and one fixed full expected conversion frame. Reference formats zoned datetimes then parses naive wall-clock strings. Pin timezone database and plotting versions; bar heights are not verified. No plotting incompatibility is asserted without execution.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/51",
+      "source_row": 51,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "907263eb2308d2cf195457032d595fc82312cf7f3acc575f2e6d5f3e543ef9ac",
+        "instruct_prompt": "5430e0e58a26b50984cfed98873439ab5fdbf92929fd79fed7f77bf2ab65c45f",
+        "canonical_solution": "4a857cb87edd96a4f5c0a9cbd4db005b1b6e3949a1c81074608d086253fcc8d3",
+        "test": "e2452ad476890411e07805ef4033f162eeb31c839a13dd018fc3678791c2af06"
+      },
+      "provisional_semantic_label": "age_height_filter_kmeans",
+      "source_judgment": "Prompt describes a fewer-than-three-columns fallback, but reference/tests use fewer than three rows. Complete states filter inequalities; Instruct omits parameter explanations. KMeans is unseeded with unspecified library defaults. Tests check fallback/counts/label bounds and plot labels, not fitted cluster agreement. Preserve the contract conflict rather than silently repairing.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/52",
+      "source_row": 52,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "ab0e2f0d450c1184777a006b1c69354ea2289471f656aeae4c16873baf43197d",
+        "instruct_prompt": "8e9a64b1ff19615ab1d68a23dce5c6ca68b38225c1b6870d3cf2c10f5150bc0c",
+        "canonical_solution": "34e58632c62ff2e033cfbd055adc88ac2e01e9cb0bf66824f80fc819bd5f74f4",
+        "test": "200f86638c71bc51278cd2f8f37f802add549f848c4184a9d0dafc60a1dacc58"
+      },
+      "provisional_semantic_label": "stopword_word_frequency",
+      "source_judgment": "Five tests compare full expected count dictionaries, including repetition and only-stopword cases. Conversion to_dict does not strictly enforce Series dtype/order. Lowercasing and regex token boundaries require a clear domain contract; immutable strings avoid the mutable-input issue.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/53",
+      "source_row": 53,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "945a20c5e6105d17ab633b2e9e045a09de91efbc20c3d3e5e48d591964905139",
+        "instruct_prompt": "887e26ff07230d3ca9415a81b7b7e3888e94760562fe8f2f707dca184dedf0dd",
+        "canonical_solution": "1ccc5725da83c7f77facdd4d4769263d780b57bb17159524b024ba3cedabd4a2",
+        "test": "7de34528001f972eccaf51c902707ad53cbbb702550685ace4445324d3e97c83"
+      },
+      "provisional_semantic_label": "regex_record_dataframe",
+      "source_judgment": "Prompts specify the extraction regex. Tests compare exact rows/columns/shape including empty input; two cases duplicate their data/checks. Age histogram content is unchecked. Fixed expected records are positive measurement evidence, not merely shape checks.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/54",
+      "source_row": 54,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "5eeba85813887716eb1c285777c661ba16cbc073ba989a5b9b5edeef3a0f5c47",
+        "instruct_prompt": "a4401a785f15cdda61dc8f5cb8e2b09ab405315a9381258a9cbfe89eb5504595",
+        "canonical_solution": "f227e294f08118ba5e789f232ec578c24782258889382a81ee0fd72c39b7feb2",
+        "test": "c726688f14c42087398f78c01b8a775125cd07bcad8ca9c641f2319626f09fd8"
+      },
+      "provisional_semantic_label": "sentence_countvectorizer",
+      "source_judgment": "Tests check shapes and selected term counts, including repeated words; most cases do not verify the whole matrix/vocabulary. Empty/only-single-character vocabulary behavior is unresolved. Shared sentence segmentation with55 warrants provisional co-splitting, not identity of outcomes.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/55",
+      "source_row": 55,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "65e06334c0a22c6f97cc62fd105c789e21e285e32463a8d8a36a4f6edf570e48",
+        "instruct_prompt": "e4ae6e5152bd1b79668d1ec49ca19a77381ff644e60fa5af234ade77a3d9765a",
+        "canonical_solution": "86e24468f8a2fa3dbc00e086a8346a2506d6d51901bde4f239e005fa973246e7",
+        "test": "ea08c1b2fcb38db609d185da3b99346732d273406449e43724ad6836b289e0de"
+      },
+      "provisional_semantic_label": "sentence_stopword_counts",
+      "source_judgment": "Tests compare full expected Series on five cases. Reference lowercases text but STOPWORDS contains capitalized Those, so that entry will not match lowercase those; tests do not exercise it. Unstripped whitespace splitting can count empty tokens. These are source boundary findings, not executed failures. Sentence segmentation relates to54.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    }
+  ],
+  "same_family_provisional_groups": [
+    [
+      42,
+      45
+    ],
+    [
+      29,
+      38,
+      47
+    ],
+    [
+      54,
+      55
+    ]
+  ],
+  "family_scope": "conservative co-split judgments, not semantic equivalence or final global partition",
+  "unreviewed_retrieval_neighbors": {
+    "53": [
+      56,
+      155,
+      160
+    ]
+  },
+  "unmerged_relations": [
+    "38/40/42 shared Mean assignment does not merge column scaling, row scaling and PCA",
+    "43/44/46/47 shared imputation alone does not merge different transformations",
+    "46 scipy zscore relation to StandardScaler requires degenerate-domain adjudication",
+    "48/49/50 time conversion relationship requires broader family review"
+  ],
+  "source_rows_reviewed_this_batch": 16,
+  "source_total_rows": 1140,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "paid_experimental_cost_usd": 0
+}

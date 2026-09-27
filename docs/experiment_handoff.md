@@ -601,3 +601,10 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September2026 — source rows32–39
 
 [Review](bigcodebench_semantic_review_0032_0039_20260927.md):39 source statistic is self-centered under stated exact-arithmetic assumptions; no alternate statistical task substituted. Preserve provisional35/36 and29/38 relationships, keep retrieved-but-unread neighbors unresolved. Next row40. No admission/execution; full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
+## 27 September 2026 — source rows 40–55 reviewed
+
+Codex [16-task source batch](bigcodebench_semantic_review_0040_0055_20260927.md) verifies 64 field hashes. Positive fixed numerical and pre-call-copy checks are preserved alongside prompt/return/timezone/randomness conflicts. Provisional groups 42/45, 29/38/47 and 54/55 await the global family/exposure review. Semantic judgments are lead-reviewed, not independently validated; no task/model execution or admission. Full-project readiness **60%, delta 0**; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation; Docker question pending.
+
+Next source-order row: 56. No collection or task execution released. Preserve the original study target and all negative findings.
