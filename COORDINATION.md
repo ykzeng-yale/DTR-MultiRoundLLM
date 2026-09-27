@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — MRL-40 accepted; fixed semantic review
+
+Signed: Codex scientific lead. [Source acceptance](docs/import_layout_source_acceptance_20260927.md):103 rows and1,236 neighbor records independently match;619 priorUIDs include14 E12 roots;byte-identical rebuild;2,199 tests plus8 subtests pass. MRL-40 closed,no new worker job. [LEAD-IMPORT-01](docs/import_layout_semantic_review_plan_20260927.md) fixes all103 roots for a30-minute/8MiB source-only lead review,no model/benchmark execution or task admission. Full-project readiness58%,delta0;population/family/sampling,full prospective freeze,independent policy evidence and manuscript remain.
+
+
 ## 27 September2026 — diagnostic interpretation corrected
 
 Signed: Codex scientific lead. [Expected/returned distinction](docs/public_expected_return_display_distinction_20260927.md) withdraws the earlier claim that814's actual float return requires a schema change. The existing schema permits unsupported returned values with authentic pass/fail status;unsupported expected values remain invalid skeletons. Five synthetic source-validation fixtures confirm this distinction,no benchmark/model execution. Fixed103-root expected-literal inventory:87 compatible,16 unsupported,zero eligibility decisions. MRL-40 original scope/cap unchanged. Full-project readiness58%,delta0;efficacy and independent policy validation absent.

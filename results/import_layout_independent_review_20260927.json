@@ -1,0 +1,24 @@
+{
+  "reviewer": "Codex scientific lead",
+  "created_at": "2026-09-27T00:35:00.116657+00:00",
+  "accepted_worker_commit": "093ae1e",
+  "hashes": {
+    "scripts/prepare_import_layout_candidate_inputs_20260927.py": "063ec24fa92453e7303ad2ab78883158a7ef6bda6dc67df974ca0b8ce3f790e0",
+    "tests/test_import_layout_candidate_inputs.py": "eede67c0a3e2fe3887ef3b09c05e7c5175fb6122e6fdaf68d1e9567cff6a93df",
+    "results/import_layout_candidate_inputs_20260927.json": "e5195a15d44842da6c3ce9ed64ffca631c1eb93f3ef778fb86dc2f5e19772e4e"
+  },
+  "byte_identical_rebuild": "work/import_layout_lead_rebuild_20260927T0033Z.json",
+  "independently_verified_source_rows": 103,
+  "independently_recomputed_prior_neighbors": 618,
+  "independently_recomputed_within_frame_neighbors": 618,
+  "prior_uid_universe": 619,
+  "e12_prior_uids_included": 14,
+  "layouts_imports_and_lineage_flags_verified": 103,
+  "complete_raw_reference_or_assertion_strings_found": 0,
+  "full_suite_passed": 2199,
+  "full_suite_subtests_passed": 8,
+  "full_suite_seconds": 39.33,
+  "model_benchmark_execution": false,
+  "approved_evaluation_roster": false,
+  "limits": "Static source preparation only. Similarity is retrieval evidence, not a family decision, runtime validation, or population sampling argument."
+}
