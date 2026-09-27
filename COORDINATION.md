@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — full import-layout semantic review completed
+
+Signed: Codex scientific lead. [Source review](docs/import_layout_semantic_review_20260927.md): all103 fixed roots reviewed in750.017seconds, no replacements or benchmark/model execution. Partition:2 exact prior identities,53 definite prior-family relations,24 plausible relations,11 within-panel relations,13 with no direct prior relation found. This is manual scientific source judgment,not103 independent families or an evaluation roster. All historical exclusions and contract/display holds remain;87 compatible first expected values do not establish endpoint validity. Decision JSON SHA256 `bbead98a67ec320e483006336a7ce251f2cf8cd8317cc35613197eb1db355bf7`. MRL-40 closed,no new worker job. Next: decide population/family/sampling and source-exposure contract before any further endpoint release or receiver trial. Full-project readiness58%,delta0;efficacy,independent policy evidence and total-cost benefit unestablished;full prospective freeze and manuscript remain.
+
+
 ## 27 September2026 — MRL-40 accepted; fixed semantic review
 
 Signed: Codex scientific lead. [Source acceptance](docs/import_layout_source_acceptance_20260927.md):103 rows and1,236 neighbor records independently match;619 priorUIDs include14 E12 roots;byte-identical rebuild;2,199 tests plus8 subtests pass. MRL-40 closed,no new worker job. [LEAD-IMPORT-01](docs/import_layout_semantic_review_plan_20260927.md) fixes all103 roots for a30-minute/8MiB source-only lead review,no model/benchmark execution or task admission. Full-project readiness58%,delta0;population/family/sampling,full prospective freeze,independent policy evidence and manuscript remain.
