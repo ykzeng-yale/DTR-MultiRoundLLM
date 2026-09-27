@@ -1,0 +1,19 @@
+# Nine-root measurement audit: completed finite result
+
+Signed: Codex scientific lead, 27 September 2026. One audit ran under release `e7307c0c85872205d5ab5b26d77a67bb005b5110`, starting at approximately 00:04:12Z. MRL-38 implementation `c7a4f4b` had independently passed 2,131 tests plus 8 subtests before release. The existing worker acknowledged acceptance in `2742b0e`; it did not run this audit.
+
+All 162 planned sandbox slots completed, with 162 launch intents, 162 normal returns and 162 binary outcomes. Independent reconciliation checked every slot identity/order/code hash, raw sandbox output against the saved outcome, prediction, all retained file hashes and inventory, and absence of all 162 reported payload PIDs at review. The [independent receipt](../results/nine_root_endpoint_independent_review_20260927.json), [public projection](../results/nine_root_endpoint_projection_20260926T2359Z.json) and [external observer](../results/nine_root_endpoint_observer_20260926T2359Z.json) retain the evidence. The verification script is `scripts/verify_nine_root_endpoint_audit_20260927.py`; its fixed output refuses overwrite. Raw private evidence remains under the plan's ignored work paths.
+
+| Check | Pass | Fail | Missing |
+|---|---:|---:|---:|
+| Public | 34 | 20 | 0 |
+| Original private | 21 | 33 | 0 |
+| Supplemental | 9 | 45 | 0 |
+
+Every precommitted prediction was confirmed. All nine references pass both private batteries; all 45 designated wrong controls fail the supplement. Nine original-example lookup controls pass the original private battery. Three ordinary wrong rules also pass that battery: 885 equal-distinct-character counts, 901 returning n, and 700 distinct-element range count. Only the 885 ordinary shortcut also passes its public case; the other two fail public. These results demonstrate specific finite-suite weaknesses, not receiver memorization prevalence. The supplement was designed with these controls in view; rejecting them does not establish general discrimination against unseen errors or full semantic correctness.
+
+The adapter exited zero; external final wall time was 4.779389750212431 seconds. All operational evidence, including observer receipt and projection copy, occupied 658,962 bytes, below 8 MiB. Adapter slot-loop elapsed was 4.544905 seconds. There were zero model calls, downloads or paid experimental-service costs. Later review documents/scripts are analysis artifacts, separate from the audited operational inventory. OS responsiveness and unchanged sandbox bindings were operational assumptions; finite canaries and observed PID absence are not a universal containment guarantee.
+
+The first read-only lead gate invocation normalized the source path to an absolute path and correctly refused a canonical-plan mismatch. Repeating the read-only check with the exact frozen relative path passed, before the sole launch; no plan or source changed and no payload was launched by either check. The independent checker initially used the label `fail` for public failures; the actual recorded label is `wrong_value`. Correcting that analysis assertion permitted raw reconciliation; no outcomes or experimental code were changed.
+
+This is measurement development for the explicitly adapted nine-root target. It is neither a receiver pilot nor confirmatory policy evidence, and it does not approve an evaluation roster. Prior negatives and E14 NO-GO stand. MRL-38 is closed, acknowledgment only, with no new worker job or lease. Full-project submission readiness remains **58%, change 0 percentage points**. No rubric credit is added for this local measurement check. Remaining major gates are family/population and sampling decisions, a complete prospective policy study freeze and resource agreement, independent policy validation, and the integrated manuscript. Efficacy remains unestablished.

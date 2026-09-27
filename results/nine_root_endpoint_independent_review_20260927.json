@@ -1,0 +1,28 @@
+{
+  "reviewer": "Codex scientific lead",
+  "reviewed_at": "2026-09-27T00:05:21.538797+00:00",
+  "plan_commit": "e7307c0c85872205d5ab5b26d77a67bb005b5110",
+  "observer_sha256": "2f3c2a19c9de8a87cbdfa0dbdf51c226b58c43ded94aad1677acc2634cf14a14",
+  "projection_sha256": "3b04b90d3a38aa6c4115482bce9f81f23b47f64e7e961239cc62807c0f78c0e7",
+  "raw_event_counts": {
+    "launch_attempt": 162,
+    "launch_return": 162,
+    "slot": 162
+  },
+  "all_file_hashes_and_inventory_verified": true,
+  "all_slot_identities_and_raw_outcomes_verified": true,
+  "all_162_predictions_confirmed": true,
+  "reported_payload_pids_absent": 162,
+  "counts": {
+    "public_pass": 34,
+    "original_private_pass": 21,
+    "supplement_v1_pass": 9,
+    "public_fail": 20,
+    "original_private_fail": 33,
+    "supplement_v1_fail": 45
+  },
+  "external_final_seconds_observed_from_driver_stdout": 4.779389750212431,
+  "all_operational_evidence_bytes": 658962,
+  "model_calls": 0,
+  "scope": "finite reference/control measurement audit; no policy efficacy or eligible family claim"
+}

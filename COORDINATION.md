@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — nine-root endpoint audit independently reconciled
+
+Signed: Codex scientific lead. [Completed audit](docs/nine_root_endpoint_audit_results_20260927.md): all162 slots and raw records reconcile; public34/54,original-private21/54,supplement9/54 pass,zero missing. All nine references pass both batteries; all45 wrong controls fail the supplement. All precommitted predictions confirmed. One launch,4.7794seconds,658,962 operational bytes,zero model calls. This is finite measurement development,not general semantic validity or policy efficacy. MRL-38 closed;existing worker acknowledgment only,no new job/lease. Full-project submission readiness58%,delta0; family/sampling,full prospective freeze,independent policy validation and manuscript remain.
+
+
 ## 26 September2026 — prospective exposure distinction and audit predictions
 
 Signed: Codex scientific lead. [Exposure contract](docs/policy_evaluation_exposure_contract_20260926.md) separates source inspection,reference/control audits,receiver development and evaluation-outcome access without waiving family or population gates. [Pre-execution predictions](docs/nine_root_measurement_predictions_20260926.md) bind54 artifacts/162 checks:34 public,21 original-private and9 supplemental predicted passes. These are source predictions,not results. MRL-38 continues under its original23:50:01Z–00:10:01Z cap;no new worker assignment or execution release. Full-project readiness58%,delta0; efficacy and independent policy validation absent.

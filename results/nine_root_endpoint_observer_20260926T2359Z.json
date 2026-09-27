@@ -1,0 +1,69 @@
+{
+  "kind": "external_observer_not_policy_evidence",
+  "plan_commit": "e7307c0c85872205d5ab5b26d77a67bb005b5110",
+  "plan_sha256": "2f1c2611c58f7f296d4bece2d213443524b19238b6c01eff42389b35b0259777",
+  "predictions_sha256": "28f8ea355fb65c09b1b9368a03308703db9092d4070d067208ae0ced22805a7b",
+  "observer_source_sha256": "89c9dd29fd9386ebe1d8f64db08f4110fbe806adf13501d48fb33ceaf521892c",
+  "command": [
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python3",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/run_nine_root_endpoint_audit.py",
+    "execute",
+    "--source",
+    "work/task_sources/mbpp_full_20260920_4700efb9/mbpp.jsonl",
+    "--plan",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/results/nine_root_endpoint_plan_20260926T2359Z.json",
+    "--plan-commit",
+    "e7307c0c85872205d5ab5b26d77a67bb005b5110"
+  ],
+  "adapter_pid": 66050,
+  "adapter_exit_code": 0,
+  "observer_timeout": false,
+  "external_elapsed_seconds_before_receipt": 4.777746167033911,
+  "new_supervisor_directories": [
+    "work/nine_root_supervisor_runs/20260927T000412024950Z_c2cbf7390b4f"
+  ],
+  "files": {
+    "results/nine_root_endpoint_projection_20260926T2359Z.json": {
+      "bytes": 95212,
+      "sha256": "3b04b90d3a38aa6c4115482bce9f81f23b47f64e7e961239cc62807c0f78c0e7"
+    },
+    "work/nine_root_endpoint_audit_20260926T2359Z/public_projection.json": {
+      "bytes": 95212,
+      "sha256": "3b04b90d3a38aa6c4115482bce9f81f23b47f64e7e961239cc62807c0f78c0e7"
+    },
+    "work/nine_root_endpoint_audit_20260926T2359Z/receipt_private.json": {
+      "bytes": 103521,
+      "sha256": "69ed6c08abd44a5c7af141406f91604caba75c7433e518866c28a91d5f6f8868"
+    },
+    "work/nine_root_endpoint_audit_20260926T2359Z/slots_private.jsonl": {
+      "bytes": 309362,
+      "sha256": "814b6233d0e2d5f105aa8b18e773d7a80fe83ad74a367ee76a8ca9251460d216"
+    },
+    "work/nine_root_endpoint_audit_20260926T2359Z/start_manifest.json": {
+      "bytes": 49369,
+      "sha256": "90d3980d6c34af957348098e6bde918c0fefdacd899ab5bdedf6f60158d16187"
+    },
+    "work/nine_root_endpoint_observer_20260926T2359Z/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "work/nine_root_endpoint_observer_20260926T2359Z/stdout.txt": {
+      "bytes": 1698,
+      "sha256": "cae4a4d81b0f641a44e415d54314da764749ff9e1374aee037e53da88faeecae"
+    },
+    "work/nine_root_supervisor_runs/20260927T000412024950Z_c2cbf7390b4f/retained_totals.json": {
+      "bytes": 699,
+      "sha256": "f1720a0e7f678e9e95ef8c9518a5e3dbce359e0b2ab3409d4e8578bc35f06869"
+    },
+    "work/nine_root_supervisor_runs/20260927T000412024950Z_c2cbf7390b4f/supervisor.json": {
+      "bytes": 598,
+      "sha256": "7378af7b8786d35968974b245eee03b60fd6b650a874b62855cfaa73c98aa8ec"
+    }
+  },
+  "model_calls": 0,
+  "retained_cap_bytes": 8388608,
+  "limits_note": "600-second adapter plus at most5 seconds observer bookkeeping; final verdict is printed after receipt write. Timeout cleanup may exceed this and is reported as a violation,never success.",
+  "cleanup_note": "Independent payload PID absence and raw-slot reconciliation still required; this observer alone does not certify detached cleanup.",
+  "observer_receipt_bytes": 3291,
+  "all_operational_evidence_bytes": 658962
+}
