@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September 2026 — policy precision beyond the all-zero scenario
+
+Codex direct calculation: [precision decision](policy_precision_decision_20260927.md), 50 hypothetical realizable paired-count scenarios, zero receiver calls. At 1,000 families and .30 disagreement, an observed ten-point gain still has interval [.02890,.16976], inconclusive against the unchanged strict five-point useful-gain threshold. This is not power or population adoption. Forty-seven focused checks pass, including independent scalar inversion. No new source expansion or collection release. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Claude delegation ended.
+
+
 ## 27 September 2026 — direct execution and reproducible manuscript integration
 
 **60%, change +2 percentage points.** Under the same eight weights, manuscript/reproducibility increases from40% to60% completion (4→6 weighted points); every other component remains unchanged. The current manuscript now integrates theory, corrected empirical evidence and measurement limits; hash-bound PDF/SVG/PNG figures render the saved records; a clean same-host checkout with freshly installed locked dependencies passes2,170 tests and8 subtests with49 skips. The prior same-host public-arithmetic reproduction remains valid. These jointly complete additional integration/reproduction work, rather than awarding credit for repeated tests or extra documentation. Full raw generation/grading reproduction, final claim/bibliography audit and submission assembly remain incomplete.

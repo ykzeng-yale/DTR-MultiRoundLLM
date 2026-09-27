@@ -1,0 +1,1418 @@
+{
+  "assumptions": [
+    "complete binary paired outcomes, one root per family",
+    "independent family vectors conditional on frozen development",
+    "equal family weights and target-aligned sampling law",
+    "accepted two-contrast eight-tail allocation alpha=0.05"
+  ],
+  "classification": "hypothetical observed-count arithmetic; not power, simulation, or receiver results",
+  "inference_source_sha256": "fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79",
+  "limitations": [
+    "one contrast at a time; no joint success probability",
+    "no missingness or measurement-error inflation",
+    "four calls/root excludes development and operational qualification",
+    "n is hypothetical, not an eligible-family inventory"
+  ],
+  "scenarios": [
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.1420645273708335,
+        0.1420645273708335
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -10482511913449085651
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 5,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 5,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 10482511913449085651
+      },
+      "zero_count": 90
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.018535956278670173,
+        0.22115025376233283
+      ],
+      "lower": {
+        "den": 5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "num": -92679781393350864371651481853845748765638520054469610690798494687111768484792972154290561289467437
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 0,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 10,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 40795021329896767561
+      },
+      "zero_count": 90
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.2243043964298119,
+        0.2243043964298119
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -82753715910972606771
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 15,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 15,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 82753715910972606771
+      },
+      "zero_count": 70
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.12657612625922088,
+        0.31376352119461287
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": -23349174069453948501
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 10,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 20,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 57879153751429666763
+      },
+      "zero_count": 70
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.27007911242667604,
+        0.27007911242667604
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -19928321066358087953
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 25,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 25,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 19928321066358087953
+      },
+      "zero_count": 50
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.17427574919797417,
+        0.36122392172805395
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": -32148201437090223327
+      },
+      "maximum_research_receiver_calls": 400,
+      "n_families": 100,
+      "negative_count": 20,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 30,
+      "upper": {
+        "den": 2305843009213693952,
+        "num": 832925654677387769
+      },
+      "zero_count": 50
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.09932220718548349,
+        0.09932220718548349
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": -9160856683932849003
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 10,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 10,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 9160856683932849003
+      },
+      "zero_count": 180
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.0474634251359597,
+        0.14460394671813073
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -3502182625378886263
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 5,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 15,
+      "upper": {
+        "den": 5764607523034234880,
+        "num": 833584999111778047
+      },
+      "zero_count": 180
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.020809647383054485,
+        0.1806865496543457
+      ],
+      "lower": {
+        "den": 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "num": 208096473830544855060727019929770258985829387011635230620842924166607266696584231881830154101556993
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 0,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 20,
+      "upper": {
+        "den": 2882303761517117440,
+        "num": 520793521724270023
+      },
+      "zero_count": 180
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.15972961348016348,
+        0.15972961348016348
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -11785965203444492807
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 30,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 30,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 11785965203444492807
+      },
+      "zero_count": 140
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.11063024138887241,
+        0.2073343783579881
+      ],
+      "lower": {
+        "den": 737869762948382064640,
+        "num": -81630709988529573007
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 25,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 35,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 76492884305029418009
+      },
+      "zero_count": 140
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.059967204541734896,
+        0.2533833951379074
+      ],
+      "lower": {
+        "den": 2882303761517117440,
+        "num": -172843699218308859
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 20,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 40,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 46740986426365993879
+      },
+      "zero_count": 140
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.007506204959510768,
+        0.2976560408443013
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": -1384650418529045043
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 15,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 45,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 21963139229793853365
+      },
+      "zero_count": 140
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.19301416514480016,
+        0.19301416514480016
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -14241931628107355635
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 50,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 50,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 14241931628107355635
+      },
+      "zero_count": 100
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.14425396910648722,
+        0.2409309077049532
+      ],
+      "lower": {
+        "den": 737869762948382064640,
+        "num": -106440641988966944203
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 45,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 55,
+      "upper": {
+        "den": 737869762948382064640,
+        "num": 177775631755192337619
+      },
+      "zero_count": 100
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.09463863169808358,
+        0.28799346284507693
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": -17457746184206041509
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 40,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 60,
+      "upper": {
+        "den": 23058430092136939520,
+        "num": 6640677130005642997
+      },
+      "zero_count": 100
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.04413219254777606,
+        0.3341670299565413
+      ],
+      "lower": {
+        "den": 737869762948382064640,
+        "num": -32563810453619875353
+      },
+      "maximum_research_receiver_calls": 800,
+      "n_families": 200,
+      "negative_count": 35,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 65,
+      "upper": {
+        "den": 147573952589676412928,
+        "num": 49314349435839599349
+      },
+      "zero_count": 100
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.0698324660380517,
+        0.0698324660380517
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": -6440908145199768749
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 20,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 20,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 6440908145199768749
+      },
+      "zero_count": 360
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.018143311357216127,
+        0.11658650052608961
+      ],
+      "lower": {
+        "den": 147573952589676412928,
+        "num": -2677480170049550465
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 10,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 30,
+      "upper": {
+        "den": 737869762948382064640,
+        "num": 86025653506167159357
+      },
+      "zero_count": 360
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.04636758655894448,
+        0.15442899577718425
+      ],
+      "lower": {
+        "den": 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "num": 46367586558944485466275685600209666822181269273828192259334043373593977930186340202461377830716531
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 0,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 40,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 14243560813308453731
+      },
+      "zero_count": 360
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.11335090845828998,
+        0.11335090845828998
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": -10454775994262772071
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 60,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 60,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 10454775994262772071
+      },
+      "zero_count": 280
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.06364621952935151,
+        0.16197654579335286
+      ],
+      "lower": {
+        "den": 147573952589676412928,
+        "num": -9392524183336655937
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 50,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 70,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 14939699430967377247
+      },
+      "zero_count": 280
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.012813317231290818,
+        0.20947598305977166
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": -1181819918504371781
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 40,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 80,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 38641498490923255807
+      },
+      "zero_count": 280
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        0.03931849419701404,
+        0.25568201613426633
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": 14505963996319041363
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 30,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 90,
+      "upper": {
+        "den": 147573952589676412928,
+        "num": 37732005727031097401
+      },
+      "zero_count": 280
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.13721477837388107,
+        0.13721477837388107
+      ],
+      "lower": {
+        "den": 36893488147419103232,
+        "num": -5062331799587520583
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 100,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 100,
+      "upper": {
+        "den": 36893488147419103232,
+        "num": 5062331799587520583
+      },
+      "zero_count": 200
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.08775034056371467,
+        0.18607378916779
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -32374161495193966173
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 90,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 110,
+      "upper": {
+        "den": 147573952589676412928,
+        "num": 27459644540828883999
+      },
+      "zero_count": 200
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.03767219907927408,
+        0.23431933742797015
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": -6949294151092055311
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 80,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 120,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 43224288490549569561
+      },
+      "zero_count": 200
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        0.013045550559018099,
+        0.2819258120600616
+      ],
+      "lower": {
+        "den": 147573952589676412928,
+        "num": 1925183459702763409
+      },
+      "maximum_research_receiver_calls": 1600,
+      "n_families": 400,
+      "negative_count": 70,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 130,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 104012266056893900367
+      },
+      "zero_count": 200
+    },
+    {
+      "decision": "useful_gain_futility",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.04923866504764358,
+        0.04923866504764358
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -18165861053299774827
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 40,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 40,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 18165861053299774827
+      },
+      "zero_count": 720
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.00215033621316118,
+        0.09703798349424286
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": 793334035932280729
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 20,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 60,
+      "upper": {
+        "den": 737869762948382064640,
+        "num": 71601393877885989903
+      },
+      "zero_count": 720
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.06327343048536643,
+        0.1371371313765164
+      ],
+      "lower": {
+        "den": 5000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "num": 316367152426832163649718337388015505228758013680513018185625562422582182000971661037578681161189761
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 0,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 80,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 12648667827526410239
+      },
+      "zero_count": 720
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.08029587946657862,
+        0.08029587946657862
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -29623950773868114537
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 120,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 120,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 29623950773868114537
+      },
+      "zero_count": 560
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.030330606661547698,
+        0.1294902762299942
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -11190018773718409217
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 100,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 140,
+      "upper": {
+        "den": 147573952589676412928,
+        "num": 19109391885189267835
+      },
+      "zero_count": 560
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        0.02044059435011169,
+        0.17787925224174156
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": 1885312063455118643
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 80,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 160,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 32812930421262323487
+      },
+      "zero_count": 560
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        0.07214048346782269,
+        0.22534092922616258
+      ],
+      "lower": {
+        "den": 737869762948382064640,
+        "num": 53230281435384004329
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 60,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 180,
+      "upper": {
+        "den": 147573952589676412928,
+        "num": 33254451606135343703
+      },
+      "zero_count": 560
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.09728688575396914,
+        0.09728688575396914
+      ],
+      "lower": {
+        "den": 73786976294838206464,
+        "num": -7178505132926753603
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 200,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 200,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 7178505132926753603
+      },
+      "zero_count": 400
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.04749226228414443,
+        0.1466502028338206
+      ],
+      "lower": {
+        "den": 737869762948382064640,
+        "num": -35043104313484037947
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 180,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 220,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 54104375200661675019
+      },
+      "zero_count": 400
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        0.002739546072460658,
+        0.19557639563920481
+      ],
+      "lower": {
+        "den": 11529215046068469760,
+        "num": 31584815798011201
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 160,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 240,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 36077477172149759873
+      },
+      "zero_count": 400
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        0.0534270515307353,
+        0.2440470257251774
+      ],
+      "lower": {
+        "den": 184467440737095516160,
+        "num": 9855551462003662383
+      },
+      "maximum_research_receiver_calls": 3200,
+      "n_families": 800,
+      "negative_count": 140,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 260,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 45018730255023584759
+      },
+      "zero_count": 400
+    },
+    {
+      "decision": "useful_gain_futility",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        -0.044015359878167834,
+        0.044015359878167834
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -16238801579695713421
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 50,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 50,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 16238801579695713421
+      },
+      "zero_count": 900
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.0072715145301367025,
+        0.09207372810094193
+      ],
+      "lower": {
+        "den": 92233720368547758080,
+        "num": 670678837828460533
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 25,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 75,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 8492302490951975647
+      },
+      "zero_count": 900
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 10,
+        "num": 1
+      },
+      "display_interval": [
+        0.06742536425814233,
+        0.13290505803188635
+      ],
+      "lower": {
+        "den": 2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
+        "num": 134850728516284643422665571956278098044262629088111979639575738748154079336281611338282486265241499
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 0,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 100,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 12258327958078616621
+      },
+      "zero_count": 900
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.07184480768944151,
+        0.07184480768944151
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": -26506055609440155233
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 150,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 150,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 26506055609440155233
+      },
+      "zero_count": 700
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        -0.021835930277440865,
+        0.12116278327729973
+      ],
+      "lower": {
+        "den": 147573952589676412928,
+        "num": -3222414539514537971
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 125,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 175,
+      "upper": {
+        "den": 73786976294838206464,
+        "num": 8940235417498734261
+      },
+      "zero_count": 700
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        0.02889526970005275,
+        0.16975876159219735
+      ],
+      "lower": {
+        "den": 23058430092136939520,
+        "num": 666279556372109079
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 100,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 200,
+      "upper": {
+        "den": 36893488147419103232,
+        "num": 6262992858722278103
+      },
+      "zero_count": 700
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 10,
+        "num": 3
+      },
+      "display_interval": [
+        0.0804589893477336,
+        0.21752311086289322
+      ],
+      "lower": {
+        "den": 368934881474191032320,
+        "num": 29684127698539292983
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 75,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 225,
+      "upper": {
+        "den": 368934881474191032320,
+        "num": 80251863124098830231
+      },
+      "zero_count": 700
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.08706295088363891,
+        0.08706295088363891
+      ],
+      "lower": {
+        "den": 36893488147419103232,
+        "num": -3212055946504863581
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 250,
+      "observed_difference": {
+        "den": 1,
+        "num": 0
+      },
+      "positive_count": 250,
+      "upper": {
+        "den": 36893488147419103232,
+        "num": 3212055946504863581
+      },
+      "zero_count": 500
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        -0.03720690493277553,
+        0.13653265013945579
+      ],
+      "lower": {
+        "den": 9223372036854775808,
+        "num": -343173126534875849
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 225,
+      "observed_difference": {
+        "den": 20,
+        "num": 1
+      },
+      "positive_count": 275,
+      "upper": {
+        "den": 92233720368547758080,
+        "num": 12592914274139327147
+      },
+      "zero_count": 500
+    },
+    {
+      "decision": "inconclusive",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        0.01304075239718456,
+        0.1856107768497019
+      ],
+      "lower": {
+        "den": 36893488147419103232,
+        "num": 481118843998955839
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 200,
+      "observed_difference": {
+        "den": 10,
+        "num": 1
+      },
+      "positive_count": 300,
+      "upper": {
+        "den": 18446744073709551616,
+        "num": 3423914497868864705
+      },
+      "zero_count": 500
+    },
+    {
+      "decision": "useful_benefit",
+      "discordance": {
+        "den": 2,
+        "num": 1
+      },
+      "display_interval": [
+        0.06369661641689041,
+        0.23428078297035643
+      ],
+      "lower": {
+        "den": 23058430092136939520,
+        "num": 1468743976754529737
+      },
+      "maximum_research_receiver_calls": 4000,
+      "n_families": 1000,
+      "negative_count": 175,
+      "observed_difference": {
+        "den": 20,
+        "num": 3
+      },
+      "positive_count": 325,
+      "upper": {
+        "den": 184467440737095516160,
+        "num": 43217176448424561267
+      },
+      "zero_count": 500
+    }
+  ]
+}

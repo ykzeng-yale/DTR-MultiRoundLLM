@@ -1,0 +1,18 @@
+{
+  "classification": "deterministic hypothetical-count planning and source verification",
+  "base_commit": "f2fd878",
+  "sha256": {
+    "scripts/plan_policy_precision_20260927.py": "63548e501ad75a2bc49e7bca093b9ea03a5d79bfc0f238ac34d5ce4afb8f9ef7",
+    "tests/test_policy_precision_plan_20260927.py": "527afb815252cc3f1a8617089e553e48d77cc93a3b474f13dc5199f1cf699d16",
+    "results/policy_precision_scenarios_20260927.json": "64425cfaec2187a17d4a21feadb868c0a60d11c20c372c74ffaacc4561b94426",
+    "experiments/prompt_choice/paired_inference.py": "fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79"
+  },
+  "focused_tests": 47,
+  "full_tests": 2291,
+  "subtests": 8,
+  "full_seconds": 39.16,
+  "receiver_calls": 0,
+  "benchmark_executions": 0,
+  "paid_experimental_cost_usd": 0,
+  "internal_review": "Existing inference reviewer independently checked 50 scenarios and 90-digit inversion of highlighted cases; accepted scope, not power."
+}

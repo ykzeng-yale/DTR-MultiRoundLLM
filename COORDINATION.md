@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — policy precision beyond the all-zero scenario
+
+Codex direct calculation: [precision decision](docs/policy_precision_decision_20260927.md), 50 hypothetical realizable paired-count scenarios, zero receiver calls. At 1,000 families and .30 disagreement, an observed ten-point gain still has interval [.02890,.16976], inconclusive against the unchanged strict five-point useful-gain threshold. This is not power or population adoption. Forty-seven focused checks pass, including independent scalar inversion. No new source expansion or collection release. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active; Claude delegation ended.
+
+
 ## 27 September2026 — measurement uncertainty linked to policy claims
 
 Codex direct theory/source integration: [measurement sensitivity](docs/measurement_sensitivity_contract_20260927.md). Existing internal inference review accepts classical directional-error contrast bounds under common-target and coverage assumptions. Exact helper passes7 tests including136 exhaustive two-observation configurations. Handpicked wrong controls supply no target-weighted grading-error bound; hypothetical scenarios are not receiver results. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only implementation.
