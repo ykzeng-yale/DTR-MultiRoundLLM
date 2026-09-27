@@ -1,0 +1,26 @@
+{
+  "execution": {
+    "version": "native-execution-v1",
+    "disposition": "process_error",
+    "output_saturated": false,
+    "timed_out": false,
+    "test_outcome": null,
+    "feedback_status": null,
+    "note": "No test outcome or public feedback inferred from process exit or candidate output."
+  },
+  "raw_process": {
+    "sandbox_kind": "seatbelt",
+    "executed": true,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtr_landmark_strict/deps_hu56gvve/program.py\", line 9, in <module>\n    pid=os.fork()\nBlockingIOError: [Errno 35] Resource temporarily unavailable\n",
+    "returncode": 1,
+    "timed_out": false,
+    "pid": 39338,
+    "seconds": 0.0237145833671093,
+    "rendered_profile_sha256": "3fe124d33890416898b9ff22110d0344b5d193913f860b57c9b3a7d80ca28397"
+  },
+  "dependency_tree_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "dependency_bytes": 376048145,
+  "bundle_unchanged_after": true,
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python"
+}

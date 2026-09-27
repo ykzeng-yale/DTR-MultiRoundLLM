@@ -15,14 +15,13 @@ PLAN=Path('experiments/prompt_choice/native_py39_qualification_plan_20260927.jso
 
 def sources(bundle):
     repo=str(Path('COORDINATION.md').resolve());b=str(Path(bundle).resolve()/'__qualification_write__')
-    return [
-        ('imports','import numpy,pandas,scipy,sklearn,matplotlib,psutil,cryptography,seaborn,pytz,nltk,openpyxl,cv2,faker\nprint("QUALIFIED")\n'),
+    return [(f'import_{name}',f'import {name}\nprint("QUALIFIED")\n') for name in ('numpy','pandas','scipy','sklearn','matplotlib','psutil','cryptography','seaborn','pytz','nltk','openpyxl','cv2','faker')] + [
         ('own_directory','open("own.txt","w").write("ok")\nassert open("own.txt").read()=="ok"\nprint("QUALIFIED")\n'),
         ('repository_read',f'try:\n    open({repo!r}).read()\nexcept PermissionError:\n    print("QUALIFIED")\n'),
         ('bundle_write',f'try:\n    open({b!r},"x").write("probe")\nexcept PermissionError:\n    print("QUALIFIED")\n'),
         ('network_connect','import socket\ns=socket.socket()\ns.settimeout(1)\ntry:\n    s.connect(("127.0.0.1",9))\nexcept PermissionError:\n    print("QUALIFIED")\nfinally:\n    s.close()\n'),
-        ('fork','import os\ntry:\n    pid=os.fork()\nexcept PermissionError:\n    print("QUALIFIED")\nelse:\n    if pid==0: os._exit(0)\n    os.waitpid(pid,0)\n'),
-        ('system_exec','import subprocess\ntry:\n    subprocess.run(["/usr/bin/true"],timeout=1)\nexcept PermissionError:\n    print("QUALIFIED")\n'),
+        ('fork','import os,errno\ntry:\n    pid=os.fork()\nexcept OSError as exc:\n    assert exc.errno in (errno.EPERM,errno.EAGAIN)\n    print("QUALIFIED")\nelse:\n    if pid==0: os._exit(0)\n    os.waitpid(pid,0)\n'),
+        ('system_exec','import subprocess,errno\ntry:\n    subprocess.run(["/usr/bin/true"],timeout=1)\nexcept OSError as exc:\n    assert exc.errno in (errno.EPERM,errno.EAGAIN)\n    print("QUALIFIED")\n'),
     ]
 
 
@@ -46,7 +45,7 @@ def main():
     except BaseException as exc:
         summary['error']=type(exc).__name__+': '+str(exc);raise
     finally:
-        summary['elapsed_seconds']=time.monotonic()-start;summary['passed']=len(rows)==7 and all(r['passed'] for r in rows)
+        summary['elapsed_seconds']=time.monotonic()-start;summary['passed']=len(rows)==plan['slots'] and all(r['passed'] for r in rows)
         (args.out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(json.dumps(summary))
 

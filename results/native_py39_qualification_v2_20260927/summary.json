@@ -1,0 +1,54 @@
+{
+  "classification": "known harmless containment/import qualification; no benchmark/model calls",
+  "freeze": "fca827bc58f5432ce01cbd21b0fb531a2913fede",
+  "python": "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/Resources/Python.app/Contents/MacOS/Python",
+  "python_sha256": "057446db49d0bb2e41903364c55c7bfee7ac04d17f60c20cea044f59d0b84e00",
+  "bundle_sha256": "4ea48bb623393452f3c2c5459870de8ba22acd98b8ca93cb68552481d0d75695",
+  "rows": [
+    {
+      "name": "imports",
+      "passed": false,
+      "receipt_sha256": "9b5d5417403d1b742c601a59c8081710ea36ef46a38e485962e72485b3a98140",
+      "seconds": 10.013408833183348
+    },
+    {
+      "name": "own_directory",
+      "passed": true,
+      "receipt_sha256": "00722730cabec99e1b91a2a47ab18a85619f5ea9303a01a421448d49bec5adf1",
+      "seconds": 0.02436425071209669
+    },
+    {
+      "name": "repository_read",
+      "passed": true,
+      "receipt_sha256": "69f8992a13b034b0f7098be94c06a9d530a2a755bf4f76dde887207082f3cb5e",
+      "seconds": 0.038929625414311886
+    },
+    {
+      "name": "bundle_write",
+      "passed": true,
+      "receipt_sha256": "7ee84724495b140d844b7279262ca84b24bb6a7372adcd34dfd8d24485e33b2e",
+      "seconds": 0.02474525012075901
+    },
+    {
+      "name": "network_connect",
+      "passed": true,
+      "receipt_sha256": "da0291dcd8c6a768e6f257692e5487f8d77efaef46b2307039532ebb36000fac",
+      "seconds": 0.04366041719913483
+    },
+    {
+      "name": "fork",
+      "passed": false,
+      "receipt_sha256": "66f8892e8c445dadefd9ec9f037fd91361d17bf98c051e5f24d51519ad66d6d4",
+      "seconds": 0.0237145833671093
+    },
+    {
+      "name": "system_exec",
+      "passed": false,
+      "receipt_sha256": "c8be1417871d1d11cf447ef7bf65ea05c946558219829711d42d7f2b146f4dd2",
+      "seconds": 0.08284208364784718
+    }
+  ],
+  "error": null,
+  "elapsed_seconds": 17.569183750078082,
+  "passed": false
+}
