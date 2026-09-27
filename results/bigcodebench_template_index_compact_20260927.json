@@ -1,0 +1,3223 @@
+{
+  "classification": "exact top-level statement retrieval; not semantic families or eligibility",
+  "limitations": [
+    "renamed/reordered/rewritten relatives may be missed",
+    "identical statement may mean different things under different imports or surrounding state",
+    "large common boilerplate can match; semantic review remains required",
+    "no prior-development crosswalk, runtime or endpoint validation"
+  ],
+  "pair_storage": "all candidate pairs recoverable as unions of within-group pairs; not expanded",
+  "rule": {
+    "ignores_source_locations": true,
+    "minimum_ast_nodes": 12,
+    "names_and_constants_preserved": true,
+    "transitive_clustering": false
+  },
+  "script_sha256": "ede60ca21a710f17d429c11988e37b44dd93dc5abd3499e2da8a6f59b01f7138",
+  "shared_statements": [
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "00e2e7439e2127346a9815090da6e0d96e805dd28d02a76a6148c88d1930fbd9",
+      "task_ids": [
+        "BigCodeBench/379",
+        "BigCodeBench/386",
+        "BigCodeBench/488",
+        "BigCodeBench/506",
+        "BigCodeBench/511",
+        "BigCodeBench/512",
+        "BigCodeBench/513",
+        "BigCodeBench/636",
+        "BigCodeBench/64",
+        "BigCodeBench/65",
+        "BigCodeBench/66",
+        "BigCodeBench/85"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "0184477fd2723c8f017db2ecbc6de3439fe7d5c8adc550d0dd1013072242a383",
+      "task_ids": [
+        "BigCodeBench/742",
+        "BigCodeBench/9"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "01b07d33e20cb99717c3210b1e0d04b0c729f812b97913d5eaed08ce71eeba90",
+      "task_ids": [
+        "BigCodeBench/217",
+        "BigCodeBench/58"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "054357575c8e29ca073902009948f4be232c086249e7230fc182318e3e62dc90",
+      "task_ids": [
+        "BigCodeBench/284",
+        "BigCodeBench/285"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "If",
+      "statement_sha256": "07e05d3d068d8c9cf6ae3015269707736a020922042346540808327639dc4e7c",
+      "task_ids": [
+        "BigCodeBench/105",
+        "BigCodeBench/107"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "083916ad1ee21baa4c14eaf21ba984aa8dd941e95406eb0dabc0050166610fe2",
+      "task_ids": [
+        "BigCodeBench/1017",
+        "BigCodeBench/37",
+        "BigCodeBench/746"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Expr",
+      "statement_sha256": "090c8f916d870995a5a29aba51761cb871a519a4d085b3c9cfbde14b70b33d16",
+      "task_ids": [
+        "BigCodeBench/155",
+        "BigCodeBench/156"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "0914209257a33d01edcf9d454e01b8dc8f9082296fe101fb3607a82b16941cb9",
+      "task_ids": [
+        "BigCodeBench/119",
+        "BigCodeBench/143"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "0a7c0fd53bdccde9c099514e8629976fa67402aba1b7ecb95af622503c2f1711",
+      "task_ids": [
+        "BigCodeBench/630",
+        "BigCodeBench/631"
+      ]
+    },
+    {
+      "ast_node_count": 30,
+      "statement_kind": "While",
+      "statement_sha256": "0a7f4c35c26338d4097a4f0713809ac1a354df043d2e0c1f9a089b20da74422c",
+      "task_ids": [
+        "BigCodeBench/533",
+        "BigCodeBench/534"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "With",
+      "statement_sha256": "0ab48e81f51dd241169ebc2325ca507b411a9dc4623f4611749d5bb28e909855",
+      "task_ids": [
+        "BigCodeBench/412",
+        "BigCodeBench/711"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "0b82759c6200d6f411a1c7099bb8cd21459fc0e1a1730411d2a2e5466baa54bf",
+      "task_ids": [
+        "BigCodeBench/301",
+        "BigCodeBench/303",
+        "BigCodeBench/626"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Assign",
+      "statement_sha256": "109b23e9d8e7cdb8cc7fa6d480b51d377043f536dfe0bb32a76deebef08dd7cf",
+      "task_ids": [
+        "BigCodeBench/106",
+        "BigCodeBench/107"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "11658217ac4cf084f2692347eb548fb21b7420e416f4cc7da7529dc682d2215e",
+      "task_ids": [
+        "BigCodeBench/352",
+        "BigCodeBench/354"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "1392995312000b0993301b7f0b1274f241ed3e637de4040eee54fe2ad872ea4e",
+      "task_ids": [
+        "BigCodeBench/1135",
+        "BigCodeBench/402"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "17bf3b9f2d99138b7f324e5d688caa19cb2d60c234479915042bad59da31fa83",
+      "task_ids": [
+        "BigCodeBench/1136",
+        "BigCodeBench/211"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "18e2f11da52b6c861c3068e72dfdf9dd23df8117746928a5a9f7230d8d2acb26",
+      "task_ids": [
+        "BigCodeBench/622",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "1a7f3b5389afc0c159889243b8237f55f3d5835b07655549916668a3c2b9a88a",
+      "task_ids": [
+        "BigCodeBench/130",
+        "BigCodeBench/131"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "1b7bba1663cd56394e5bde36ef6848f83ec191b831198d4d0e7b8dc513cf5753",
+      "task_ids": [
+        "BigCodeBench/104",
+        "BigCodeBench/560",
+        "BigCodeBench/944"
+      ]
+    },
+    {
+      "ast_node_count": 53,
+      "statement_kind": "For",
+      "statement_sha256": "1e4ba87b01e613fee51d2c912ec39357429ec1d9978fa22f217ebdb70b11e7bb",
+      "task_ids": [
+        "BigCodeBench/814",
+        "BigCodeBench/826"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "2038ee4a039160d5e4ee65becc5c5864164e45ce647d604d046b30e50955314a",
+      "task_ids": [
+        "BigCodeBench/369",
+        "BigCodeBench/582"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "221cd94ab5a7920925f20f0d35e73a2d268e62642cf7ae7a6d6ce4b995031eb2",
+      "task_ids": [
+        "BigCodeBench/621",
+        "BigCodeBench/622",
+        "BigCodeBench/623"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "2368a3bbb5fe0951a451c4224fa3fbd87f2818917c3ebfb93435463814377d6a",
+      "task_ids": [
+        "BigCodeBench/598",
+        "BigCodeBench/599",
+        "BigCodeBench/600",
+        "BigCodeBench/601"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "263efadf3c88a5fb6f14642880ea8532bf076950d9153b101fd66935c86186e3",
+      "task_ids": [
+        "BigCodeBench/1001",
+        "BigCodeBench/1002",
+        "BigCodeBench/1016",
+        "BigCodeBench/1035",
+        "BigCodeBench/1037",
+        "BigCodeBench/1043",
+        "BigCodeBench/1047",
+        "BigCodeBench/1048",
+        "BigCodeBench/1051",
+        "BigCodeBench/1060",
+        "BigCodeBench/1061",
+        "BigCodeBench/1063",
+        "BigCodeBench/1065",
+        "BigCodeBench/1066",
+        "BigCodeBench/1078",
+        "BigCodeBench/1083",
+        "BigCodeBench/1085",
+        "BigCodeBench/224",
+        "BigCodeBench/226",
+        "BigCodeBench/244",
+        "BigCodeBench/246",
+        "BigCodeBench/264",
+        "BigCodeBench/338",
+        "BigCodeBench/405",
+        "BigCodeBench/430",
+        "BigCodeBench/470",
+        "BigCodeBench/993"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "263f19cc4b484cac5c49ba06d2ebe2e5577180bab314d8228523b7615324cdef",
+      "task_ids": [
+        "BigCodeBench/540",
+        "BigCodeBench/769"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "275a06b5e313a0554df03cc05e3635c53efd004f10f07e41360d3a18c4855419",
+      "task_ids": [
+        "BigCodeBench/752",
+        "BigCodeBench/877"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "27bea3ea05eecf669e9c4943c13779584e0a4eeb7970255c67498231593208d3",
+      "task_ids": [
+        "BigCodeBench/633",
+        "BigCodeBench/635"
+      ]
+    },
+    {
+      "ast_node_count": 25,
+      "statement_kind": "Expr",
+      "statement_sha256": "27dd6355a086223472e76b079ceedd8070f91de0273f3de4c14069e518cf9640",
+      "task_ids": [
+        "BigCodeBench/446",
+        "BigCodeBench/450"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "With",
+      "statement_sha256": "299d1a4c6c5094bd73cff577bdb130bdbfd5e197fc81edc4f14f6b5a73b1236b",
+      "task_ids": [
+        "BigCodeBench/525",
+        "BigCodeBench/526",
+        "BigCodeBench/527",
+        "BigCodeBench/763"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "29e1701635150a53137d52c2795d3fc9a6156eb730ebbd59c110caaa4c235eb5",
+      "task_ids": [
+        "BigCodeBench/39",
+        "BigCodeBench/915"
+      ]
+    },
+    {
+      "ast_node_count": 31,
+      "statement_kind": "If",
+      "statement_sha256": "2b1646901ec38b962b29a34d524bb17dcd6f6c68504ec0c2ab69923e8afe862e",
+      "task_ids": [
+        "BigCodeBench/341",
+        "BigCodeBench/343"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "2bff8f9ffc45bc9dd3f38101df1bbd149722fe25dd68dc65524a81f5632e49e8",
+      "task_ids": [
+        "BigCodeBench/148",
+        "BigCodeBench/927"
+      ]
+    },
+    {
+      "ast_node_count": 31,
+      "statement_kind": "Assign",
+      "statement_sha256": "2c2647eb8eb5143bf9495cbb3a9cd23dd3ec9299feb8e7f97eeefe21d78c2802",
+      "task_ids": [
+        "BigCodeBench/64",
+        "BigCodeBench/65",
+        "BigCodeBench/66"
+      ]
+    },
+    {
+      "ast_node_count": 23,
+      "statement_kind": "If",
+      "statement_sha256": "2c506477529f50584479d9801f0aaafbfa838ccd239a2d62b3cbfc98986866c0",
+      "task_ids": [
+        "BigCodeBench/134",
+        "BigCodeBench/139"
+      ]
+    },
+    {
+      "ast_node_count": 24,
+      "statement_kind": "Assign",
+      "statement_sha256": "2db434a2019aecbd47ab917d817b559249a793839cc6d79f6c4aea1872b78eb0",
+      "task_ids": [
+        "BigCodeBench/236",
+        "BigCodeBench/752",
+        "BigCodeBench/891"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "2def4bbf2b2c91a0b43ad7c10e5b8aa7926d4103e008c65e7b1ea32184b89d9e",
+      "task_ids": [
+        "BigCodeBench/117",
+        "BigCodeBench/141",
+        "BigCodeBench/150",
+        "BigCodeBench/706",
+        "BigCodeBench/875",
+        "BigCodeBench/975"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "2df761eef7a8a5d8ad8fee869632de32a32973856d5389f13dbf678edc0af41d",
+      "task_ids": [
+        "BigCodeBench/27",
+        "BigCodeBench/28"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Expr",
+      "statement_sha256": "2e00a989426e636cb35e961adb0eee308003fe9ec7ebfc1afb90591eb79accd8",
+      "task_ids": [
+        "BigCodeBench/418",
+        "BigCodeBench/419"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "2ef238d979dc90f4f5102fddc7ec8fd9acfe8b7360ea96dce8da471a49e7e518",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "2f512b6552bd0fc5f2e7b064de1e6ae491141b0ce469ba280dbe8eed848abd51",
+      "task_ids": [
+        "BigCodeBench/427",
+        "BigCodeBench/429",
+        "BigCodeBench/430",
+        "BigCodeBench/432"
+      ]
+    },
+    {
+      "ast_node_count": 30,
+      "statement_kind": "Assign",
+      "statement_sha256": "301dac1755d29e5a7b3d3b7c3fd3af0fd8421761ed04dfbbba8de89ac8d6e835",
+      "task_ids": [
+        "BigCodeBench/835",
+        "BigCodeBench/837"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "If",
+      "statement_sha256": "303149f0f21c899c9d8326d16f9e267a984557a4d72b056b7884e059272673a3",
+      "task_ids": [
+        "BigCodeBench/615",
+        "BigCodeBench/616",
+        "BigCodeBench/617",
+        "BigCodeBench/619",
+        "BigCodeBench/868"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "30caeccf93f9cefa637043218260ac7e5f21eea3500239e65955b72a4d26587f",
+      "task_ids": [
+        "BigCodeBench/38",
+        "BigCodeBench/40",
+        "BigCodeBench/42"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Expr",
+      "statement_sha256": "362b7ed5283676332da8ce284f9a3b3b6b2005dd612dc2dfdccdc61f91f2fe55",
+      "task_ids": [
+        "BigCodeBench/418",
+        "BigCodeBench/419"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "3669feb6505c5f98d0e53872c72b59ba66f087f1ce35e7df187208837bdb8a0f",
+      "task_ids": [
+        "BigCodeBench/106",
+        "BigCodeBench/107",
+        "BigCodeBench/1071",
+        "BigCodeBench/112",
+        "BigCodeBench/124",
+        "BigCodeBench/128",
+        "BigCodeBench/132",
+        "BigCodeBench/133",
+        "BigCodeBench/134",
+        "BigCodeBench/135",
+        "BigCodeBench/136",
+        "BigCodeBench/143",
+        "BigCodeBench/155",
+        "BigCodeBench/156",
+        "BigCodeBench/162",
+        "BigCodeBench/164",
+        "BigCodeBench/165",
+        "BigCodeBench/167",
+        "BigCodeBench/168",
+        "BigCodeBench/179",
+        "BigCodeBench/197",
+        "BigCodeBench/209",
+        "BigCodeBench/212",
+        "BigCodeBench/213",
+        "BigCodeBench/214",
+        "BigCodeBench/217",
+        "BigCodeBench/231",
+        "BigCodeBench/233",
+        "BigCodeBench/235",
+        "BigCodeBench/237",
+        "BigCodeBench/239",
+        "BigCodeBench/241",
+        "BigCodeBench/248",
+        "BigCodeBench/251",
+        "BigCodeBench/252",
+        "BigCodeBench/269",
+        "BigCodeBench/276",
+        "BigCodeBench/304",
+        "BigCodeBench/318",
+        "BigCodeBench/356",
+        "BigCodeBench/359",
+        "BigCodeBench/36",
+        "BigCodeBench/360",
+        "BigCodeBench/366",
+        "BigCodeBench/367",
+        "BigCodeBench/369",
+        "BigCodeBench/381",
+        "BigCodeBench/382",
+        "BigCodeBench/392",
+        "BigCodeBench/396",
+        "BigCodeBench/399",
+        "BigCodeBench/417",
+        "BigCodeBench/418",
+        "BigCodeBench/419",
+        "BigCodeBench/42",
+        "BigCodeBench/427",
+        "BigCodeBench/436",
+        "BigCodeBench/442",
+        "BigCodeBench/443",
+        "BigCodeBench/445",
+        "BigCodeBench/446",
+        "BigCodeBench/447",
+        "BigCodeBench/448",
+        "BigCodeBench/450",
+        "BigCodeBench/467",
+        "BigCodeBench/472",
+        "BigCodeBench/473",
+        "BigCodeBench/476",
+        "BigCodeBench/477",
+        "BigCodeBench/485",
+        "BigCodeBench/491",
+        "BigCodeBench/493",
+        "BigCodeBench/496",
+        "BigCodeBench/511",
+        "BigCodeBench/514",
+        "BigCodeBench/521",
+        "BigCodeBench/522",
+        "BigCodeBench/531",
+        "BigCodeBench/532",
+        "BigCodeBench/540",
+        "BigCodeBench/552",
+        "BigCodeBench/559",
+        "BigCodeBench/572",
+        "BigCodeBench/574",
+        "BigCodeBench/58",
+        "BigCodeBench/581",
+        "BigCodeBench/582",
+        "BigCodeBench/605",
+        "BigCodeBench/621",
+        "BigCodeBench/622",
+        "BigCodeBench/623",
+        "BigCodeBench/624",
+        "BigCodeBench/628",
+        "BigCodeBench/635",
+        "BigCodeBench/637",
+        "BigCodeBench/65",
+        "BigCodeBench/659",
+        "BigCodeBench/660",
+        "BigCodeBench/662",
+        "BigCodeBench/663",
+        "BigCodeBench/664",
+        "BigCodeBench/894",
+        "BigCodeBench/895",
+        "BigCodeBench/897",
+        "BigCodeBench/904",
+        "BigCodeBench/91",
+        "BigCodeBench/910",
+        "BigCodeBench/914",
+        "BigCodeBench/917",
+        "BigCodeBench/92",
+        "BigCodeBench/93",
+        "BigCodeBench/936",
+        "BigCodeBench/94",
+        "BigCodeBench/941",
+        "BigCodeBench/955",
+        "BigCodeBench/966",
+        "BigCodeBench/967",
+        "BigCodeBench/970",
+        "BigCodeBench/977",
+        "BigCodeBench/980",
+        "BigCodeBench/982",
+        "BigCodeBench/984",
+        "BigCodeBench/987"
+      ]
+    },
+    {
+      "ast_node_count": 29,
+      "statement_kind": "Assign",
+      "statement_sha256": "384caab85f01e5829f499c7ebbdaad5b78109b1e10fd4ae30af7a1ec124e326b",
+      "task_ids": [
+        "BigCodeBench/298",
+        "BigCodeBench/300",
+        "BigCodeBench/302",
+        "BigCodeBench/304"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "If",
+      "statement_sha256": "3ae30053fb3ba6ee94550afcb1e9bbe766fcc679cf417387060fab34c9e5155a",
+      "task_ids": [
+        "BigCodeBench/16",
+        "BigCodeBench/19"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "3d7f69c42f493d580278fd0e8be23a74bf773c033d5b1d89cc57aa489922a084",
+      "task_ids": [
+        "BigCodeBench/443",
+        "BigCodeBench/531"
+      ]
+    },
+    {
+      "ast_node_count": 35,
+      "statement_kind": "Assign",
+      "statement_sha256": "3db239d587f08731bc4565936da63d3ce821ea0bdd7f7d7dafd3096e063ac33e",
+      "task_ids": [
+        "BigCodeBench/525",
+        "BigCodeBench/763"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Expr",
+      "statement_sha256": "3dfe0bed5e0d62991bdf73cb657fc94bcf455719bd464fe227a09f33e829060c",
+      "task_ids": [
+        "BigCodeBench/244",
+        "BigCodeBench/246"
+      ]
+    },
+    {
+      "ast_node_count": 34,
+      "statement_kind": "If",
+      "statement_sha256": "41b3e1a66c3b04db87f367066a4b7013a374767cf731eeadbdb88a2122f8e668",
+      "task_ids": [
+        "BigCodeBench/105",
+        "BigCodeBench/107"
+      ]
+    },
+    {
+      "ast_node_count": 21,
+      "statement_kind": "Assign",
+      "statement_sha256": "43cac093770c47d40e9c2650ed37fb834fc7314e88ff4ac3b886a711e15c59f3",
+      "task_ids": [
+        "BigCodeBench/1110",
+        "BigCodeBench/1111"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Expr",
+      "statement_sha256": "44a29c909fa22c435812d600505dd143da5e7b70280eef1c5fdd3b4d86947c5f",
+      "task_ids": [
+        "BigCodeBench/442",
+        "BigCodeBench/624"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "462b5dc4ba92ef431c45ec067593020387755e5db06ff225669f49e8598320cc",
+      "task_ids": [
+        "BigCodeBench/615",
+        "BigCodeBench/617"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "4634649ec50f627dc1aa83f7881300e01fed34a05b15c5479d489a6bb0094563",
+      "task_ids": [
+        "BigCodeBench/43",
+        "BigCodeBench/44",
+        "BigCodeBench/46",
+        "BigCodeBench/47"
+      ]
+    },
+    {
+      "ast_node_count": 34,
+      "statement_kind": "If",
+      "statement_sha256": "46e5efb74ab5c4637cce2155f07042ee50e6a875db868fa567bc34a4ea5d2382",
+      "task_ids": [
+        "BigCodeBench/877",
+        "BigCodeBench/880"
+      ]
+    },
+    {
+      "ast_node_count": 32,
+      "statement_kind": "Assign",
+      "statement_sha256": "48974b0c0c1850347d0d2ab1361792cc00b3886d0f325145ce5faf07a2a60921",
+      "task_ids": [
+        "BigCodeBench/2",
+        "BigCodeBench/3",
+        "BigCodeBench/5"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "4969e72ea6ba23623c565020d0a4a1605af524563194556d68d213449f4a5ba4",
+      "task_ids": [
+        "BigCodeBench/369",
+        "BigCodeBench/622"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "Assign",
+      "statement_sha256": "4b802b5f8a71265401c514c7d802a88a1d8b37524d5698cbb1acace97fc3496b",
+      "task_ids": [
+        "BigCodeBench/418",
+        "BigCodeBench/419"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "4e72f619a7677983c24be12507c515ff78f43ac7c2cbdf4b5d3ba3784a706a7f",
+      "task_ids": [
+        "BigCodeBench/155",
+        "BigCodeBench/156",
+        "BigCodeBench/157",
+        "BigCodeBench/160"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "5065b63d1c59c9a12b8e993183d3415f595212a6e7f56b40d1dd59a0993fbe64",
+      "task_ids": [
+        "BigCodeBench/473",
+        "BigCodeBench/485"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "51caeadc3ac9d7d85307694aedf686678b20887ef68856229b5020e3e896b16d",
+      "task_ids": [
+        "BigCodeBench/293",
+        "BigCodeBench/295",
+        "BigCodeBench/297"
+      ]
+    },
+    {
+      "ast_node_count": 28,
+      "statement_kind": "If",
+      "statement_sha256": "56f4758886f1b990c8712289d44983618aa7fd1653f9e8770db806694c324130",
+      "task_ids": [
+        "BigCodeBench/439",
+        "BigCodeBench/441",
+        "BigCodeBench/442"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "57c3fb27941f2be411b6d3823fe5c6d4350dc29ae41631937159061931e1951c",
+      "task_ids": [
+        "BigCodeBench/1054",
+        "BigCodeBench/455"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Assign",
+      "statement_sha256": "586e5e984e873f1c8b65df09f29b8583ec56a6aeb75bd9cbf03a5b8a83aabb4e",
+      "task_ids": [
+        "BigCodeBench/609",
+        "BigCodeBench/610"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "58a4f29328efd9f68e87b8ea7cc466a3b6b29841dd7611c68cd168cba8a725f3",
+      "task_ids": [
+        "BigCodeBench/1097",
+        "BigCodeBench/1098",
+        "BigCodeBench/1099",
+        "BigCodeBench/34"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "If",
+      "statement_sha256": "593f706533c7a19d81f5286840d4ab719b0ccd95df1347c3e60171b2ee69b2f9",
+      "task_ids": [
+        "BigCodeBench/1134",
+        "BigCodeBench/765",
+        "BigCodeBench/814",
+        "BigCodeBench/826"
+      ]
+    },
+    {
+      "ast_node_count": 41,
+      "statement_kind": "If",
+      "statement_sha256": "595e053f76927793454271532f7125451bea24d443e4be48afd8ee98b903f9c7",
+      "task_ids": [
+        "BigCodeBench/104",
+        "BigCodeBench/106"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "5ac9f2f2cf1261394b2808265eaac4647e8b9bc02df951d7aad46acf6829d4c0",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "5b595c1387544aa6608f88426b3eff37e721ee8426c3599f899164f5dcc72f02",
+      "task_ids": [
+        "BigCodeBench/616",
+        "BigCodeBench/618",
+        "BigCodeBench/619"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "5c63b49e52381acda8f3502c44913f88985a84b89ae1b9c89f510677050199c8",
+      "task_ids": [
+        "BigCodeBench/479",
+        "BigCodeBench/480",
+        "BigCodeBench/481",
+        "BigCodeBench/482"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "5cb3b91a4e91ee788614df50ba1c34601e370d1d30a67177f07f29430843d05d",
+      "task_ids": [
+        "BigCodeBench/489",
+        "BigCodeBench/493"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "With",
+      "statement_sha256": "5e7ae2cb0e2b127508b4f53175521abc889dbf37a6e9e62f1e226be50aa6afa8",
+      "task_ids": [
+        "BigCodeBench/1128",
+        "BigCodeBench/30"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "5ec7292571d7a5361fb7067289d1e54ee0c7a681172c2059401d64e2d51003a8",
+      "task_ids": [
+        "BigCodeBench/1011",
+        "BigCodeBench/1036"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "If",
+      "statement_sha256": "60bdf95b4baa936b213e375be6244c7c2b66b537f57e0416d0b127d8e0c43326",
+      "task_ids": [
+        "BigCodeBench/963",
+        "BigCodeBench/964"
+      ]
+    },
+    {
+      "ast_node_count": 23,
+      "statement_kind": "If",
+      "statement_sha256": "616729d57a822f2fe62505751622d2578c7d9f55a70249f8b91caa645f5cc3b6",
+      "task_ids": [
+        "BigCodeBench/135",
+        "BigCodeBench/137"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "63b148c0fd3d89cd5496fbc6a57edcd6a2414b5f39b3e62f1eb4db109df12ef4",
+      "task_ids": [
+        "BigCodeBench/700",
+        "BigCodeBench/703",
+        "BigCodeBench/704"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "6426d966798def086e12728680029757f4e8f1c330c887abf17c3cd867150041",
+      "task_ids": [
+        "BigCodeBench/185",
+        "BigCodeBench/187"
+      ]
+    },
+    {
+      "ast_node_count": 19,
+      "statement_kind": "Assign",
+      "statement_sha256": "648a9f25bcb21419bbd27590b3857fac72a4b9426533e0936a2328ea3af3df3a",
+      "task_ids": [
+        "BigCodeBench/61",
+        "BigCodeBench/62"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "655723e98c2ae692c0df9f57a141f9dac6265b2c6da2d6313df9c12ca55bba78",
+      "task_ids": [
+        "BigCodeBench/621",
+        "BigCodeBench/623"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "If",
+      "statement_sha256": "65bea45cf8d47368a58eadf8dc9809b2e5d2a53d508d9f453ddbe1cc0b89b4af",
+      "task_ids": [
+        "BigCodeBench/344",
+        "BigCodeBench/350"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "If",
+      "statement_sha256": "695a8434fae092849c070d5f39b5838a3e4ae2c49cf3865a7fe7494efea470d4",
+      "task_ids": [
+        "BigCodeBench/962",
+        "BigCodeBench/965"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Expr",
+      "statement_sha256": "69e92a4e5a0357672f42b75154f00566a1cba4d25c705f31c9c3260d945abc50",
+      "task_ids": [
+        "BigCodeBench/393",
+        "BigCodeBench/455"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "Assign",
+      "statement_sha256": "6a5782de1becbd4b343aabd92f19625b14b53d928c405b76a55e4847f134c0fc",
+      "task_ids": [
+        "BigCodeBench/635",
+        "BigCodeBench/655"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "6dfe772358065c179288d129ad4eec8120a3e2e1228134c74a89c6a0dccc34a0",
+      "task_ids": [
+        "BigCodeBench/407",
+        "BigCodeBench/409"
+      ]
+    },
+    {
+      "ast_node_count": 46,
+      "statement_kind": "For",
+      "statement_sha256": "6fd218406b6ff1c73010cace0e17571687df07fce990073a602308d8c2535bf6",
+      "task_ids": [
+        "BigCodeBench/618",
+        "BigCodeBench/619"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "If",
+      "statement_sha256": "6feee3686ab03f9daacb864b7fe0ade22d3d413550435eb6ad2bdc203528268e",
+      "task_ids": [
+        "BigCodeBench/592",
+        "BigCodeBench/593",
+        "BigCodeBench/629",
+        "BigCodeBench/630",
+        "BigCodeBench/631"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "70133daefce65968069a452d4f1c2137d6d6202b33c77f6ae5df858aa4f3ee22",
+      "task_ids": [
+        "BigCodeBench/71",
+        "BigCodeBench/72"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "70cecd6243a91706f59eb989f6917b96788fceb3200cf9c80a448e02308522d9",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "7109bc2536839a8af1434766030631abb194fde34eb44f21c7294e907c69b4b6",
+      "task_ids": [
+        "BigCodeBench/599",
+        "BigCodeBench/601"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "If",
+      "statement_sha256": "71a97b8fc42c6c0322af24af625242e9e71fec0f08691ffd860acd9b6a53069f",
+      "task_ids": [
+        "BigCodeBench/121",
+        "BigCodeBench/124"
+      ]
+    },
+    {
+      "ast_node_count": 39,
+      "statement_kind": "Assign",
+      "statement_sha256": "742a0842968f795ab5d43fb9711f058b3e5f90462b94d3627ee5134a19bb61e2",
+      "task_ids": [
+        "BigCodeBench/197",
+        "BigCodeBench/788",
+        "BigCodeBench/790"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "756956684ab114f75ac167707f8bb4520c34e590ecee933abb5463678126a39c",
+      "task_ids": [
+        "BigCodeBench/708",
+        "BigCodeBench/709"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "758cb9c4b3956a14374deac2ca5db075f0f54b0d5d1c125416f67a68f8035899",
+      "task_ids": [
+        "BigCodeBench/432",
+        "BigCodeBench/879"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "76207df7c655231af0f5c9622a699904cd4821493b65ee52a2591215eec7680b",
+      "task_ids": [
+        "BigCodeBench/192",
+        "BigCodeBench/203"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "Assign",
+      "statement_sha256": "771967c69425fe6b6463fe48574750b729bec1017389c70c256c34f6026aacd4",
+      "task_ids": [
+        "BigCodeBench/655",
+        "BigCodeBench/657",
+        "BigCodeBench/658"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "78b5645f64fae6e81929f0cc66252bc4976c4b38c38fd7a11d2918900aae8e16",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "78b77942bc7ea873ecc8d2cbcbd82a2f4ec24ef738b9d412f52045c7c5fef4a1",
+      "task_ids": [
+        "BigCodeBench/217",
+        "BigCodeBench/239",
+        "BigCodeBench/582",
+        "BigCodeBench/94"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "794f3b1796fb333441b0c81b5f6d67243bd7b06c75a014c3f08c4da4910e9838",
+      "task_ids": [
+        "BigCodeBench/110",
+        "BigCodeBench/111",
+        "BigCodeBench/298",
+        "BigCodeBench/300",
+        "BigCodeBench/302",
+        "BigCodeBench/304"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "7b264cabab9c86f9bea938b4ff5d41b57c68e7e4b0be58a11974ecfb8cc9e5b7",
+      "task_ids": [
+        "BigCodeBench/198",
+        "BigCodeBench/201"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Expr",
+      "statement_sha256": "7be2bacdd238c83d1cf06e4008c1e5417db2770d657f7c1a46c077f9c71fbede",
+      "task_ids": [
+        "BigCodeBench/1054",
+        "BigCodeBench/455"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Expr",
+      "statement_sha256": "7c01f4c821a384d0a56d2bebefcf0fe37bcbbcc09ae183698cefb28c17766fc9",
+      "task_ids": [
+        "BigCodeBench/58",
+        "BigCodeBench/94"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "7e7af56eed5a540b1d56543201206bedd9b58185b903ebc554f59180bf40555b",
+      "task_ids": [
+        "BigCodeBench/155",
+        "BigCodeBench/160",
+        "BigCodeBench/53"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "80f5b871b449e4e507eb8f5051b26277ec7933e8bc336907e5e7f7cbf7bde5cc",
+      "task_ids": [
+        "BigCodeBench/224",
+        "BigCodeBench/226"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "81b08e9bb1f5a75504c992bf161f9160d75e64bb6d7c16651d54ec54a9ce704a",
+      "task_ids": [
+        "BigCodeBench/170",
+        "BigCodeBench/390"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "84095b3911e165dfbffeb31ca85f6e725236aaea44c5f108271eaab7ef069ace",
+      "task_ids": [
+        "BigCodeBench/948",
+        "BigCodeBench/949",
+        "BigCodeBench/950"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "867bc8ad0c543288fd5a52721462bcb6f8e42daea93ca0fcee65d4d586fe4d23",
+      "task_ids": [
+        "BigCodeBench/942",
+        "BigCodeBench/943",
+        "BigCodeBench/944"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "87934a99648688ddd5b7c4dbfa5ecbecd561e4924bda22ddae88096664c8cf39",
+      "task_ids": [
+        "BigCodeBench/962",
+        "BigCodeBench/964"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "If",
+      "statement_sha256": "8c3bfba8bdb938d66330392e89ec270852d2d92edd97871f3f109fd95dedfc6e",
+      "task_ids": [
+        "BigCodeBench/121",
+        "BigCodeBench/75",
+        "BigCodeBench/856",
+        "BigCodeBench/944",
+        "BigCodeBench/949",
+        "BigCodeBench/953",
+        "BigCodeBench/977",
+        "BigCodeBench/978",
+        "BigCodeBench/979",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Expr",
+      "statement_sha256": "8c519bb5d9c99de6f0d90d5c0f72fadbb98a3334ce022ce3bfa2239fc2dc48da",
+      "task_ids": [
+        "BigCodeBench/1038",
+        "BigCodeBench/1042"
+      ]
+    },
+    {
+      "ast_node_count": 21,
+      "statement_kind": "Assign",
+      "statement_sha256": "8c651373a37f46017211d5500b2ae6fea3754d739b7aa21219cb75403c1a068a",
+      "task_ids": [
+        "BigCodeBench/598",
+        "BigCodeBench/600"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "If",
+      "statement_sha256": "8e15ed75114cc99d115673e4b5d9acd557988dc976b6cc3b97cde752b1a59a77",
+      "task_ids": [
+        "BigCodeBench/799",
+        "BigCodeBench/811"
+      ]
+    },
+    {
+      "ast_node_count": 21,
+      "statement_kind": "If",
+      "statement_sha256": "9233d835bea53cb8752dbac9f58395be3bcd02801c423d090014658b248c6aae",
+      "task_ids": [
+        "BigCodeBench/423",
+        "BigCodeBench/424",
+        "BigCodeBench/425",
+        "BigCodeBench/426"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "938dcf401f11ae234d0e4bfaee0bd7d3db41be5b372423352bfc835ee65f00c0",
+      "task_ids": [
+        "BigCodeBench/814",
+        "BigCodeBench/826"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "If",
+      "statement_sha256": "953d88e3c25227228ea350e41496a9004c47bdfb0ceecb637c88c52a8d4fc5f3",
+      "task_ids": [
+        "BigCodeBench/229",
+        "BigCodeBench/478",
+        "BigCodeBench/480",
+        "BigCodeBench/491",
+        "BigCodeBench/850",
+        "BigCodeBench/852",
+        "BigCodeBench/858",
+        "BigCodeBench/860",
+        "BigCodeBench/875",
+        "BigCodeBench/897",
+        "BigCodeBench/947",
+        "BigCodeBench/952",
+        "BigCodeBench/956",
+        "BigCodeBench/958",
+        "BigCodeBench/959",
+        "BigCodeBench/960",
+        "BigCodeBench/981",
+        "BigCodeBench/989"
+      ]
+    },
+    {
+      "ast_node_count": 52,
+      "statement_kind": "For",
+      "statement_sha256": "95693a2affb5ef86e82a80a7ca69c538bbbe69712c9599774fd042185bc9070b",
+      "task_ids": [
+        "BigCodeBench/1120",
+        "BigCodeBench/1121"
+      ]
+    },
+    {
+      "ast_node_count": 25,
+      "statement_kind": "If",
+      "statement_sha256": "95d1b2fce7380872654e3a6035271494c0ad855b050798c8c6e24698233240d7",
+      "task_ids": [
+        "BigCodeBench/192",
+        "BigCodeBench/203"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "970d0567aa169f154eb3aef1bcd2c4d126bb0be37125a275858bbd9404ca42e0",
+      "task_ids": [
+        "BigCodeBench/243",
+        "BigCodeBench/245",
+        "BigCodeBench/247",
+        "BigCodeBench/249"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "99e28cf60893e51701e08a36d47ed0ab602f0da62c43acf1547f81b965571f53",
+      "task_ids": [
+        "BigCodeBench/622",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 46,
+      "statement_kind": "Return",
+      "statement_sha256": "99e3c06227e90b71c389ce07ed9be0199d1610ad12110595cd10f6c2f60dee75",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "99f605d323e6d6f63a01ffaf4d09e21494262a574cd84e0d07071d0479efd21b",
+      "task_ids": [
+        "BigCodeBench/486",
+        "BigCodeBench/488"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "9a70d3040e8beae45552f44bf469e7f9021e35bda7979df60eb7a3bc9d1842bc",
+      "task_ids": [
+        "BigCodeBench/418",
+        "BigCodeBench/419"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "Assign",
+      "statement_sha256": "9d31f62dec07acc7a73c6180abdffd55bcd3f6424f648058e826359dfb36b343",
+      "task_ids": [
+        "BigCodeBench/239",
+        "BigCodeBench/241"
+      ]
+    },
+    {
+      "ast_node_count": 14,
+      "statement_kind": "Assign",
+      "statement_sha256": "9e1fcda4f13f12e0cb87aa04322f17433485276c632b2ff5c38aa588186cb3f0",
+      "task_ids": [
+        "BigCodeBench/423",
+        "BigCodeBench/425",
+        "BigCodeBench/426"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "9e321f43b550b5a03f8d319d1a615e8d03a47ab468553f9175d7b37f30dcd184",
+      "task_ids": [
+        "BigCodeBench/1048",
+        "BigCodeBench/253",
+        "BigCodeBench/255"
+      ]
+    },
+    {
+      "ast_node_count": 30,
+      "statement_kind": "With",
+      "statement_sha256": "9e3ab0d21faab7d84ceda6738b2cdcfab83643d31f120e48ca911b510938c17f",
+      "task_ids": [
+        "BigCodeBench/592",
+        "BigCodeBench/594"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "If",
+      "statement_sha256": "9e8746361d60d087910018406a3be59944d6e0560630f740bcd37be630c39969",
+      "task_ids": [
+        "BigCodeBench/770",
+        "BigCodeBench/772",
+        "BigCodeBench/976"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "9ead12b65af3da1a9f451e16858932f4b07f0be4dd21d11325b2423ad9a16762",
+      "task_ids": [
+        "BigCodeBench/198",
+        "BigCodeBench/201"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "9ed1610f5dbca54995bd42692501d7fe0afdd687265652fa954e24eeb39b6e6e",
+      "task_ids": [
+        "BigCodeBench/177",
+        "BigCodeBench/389"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "a08e48e7e09a44a623b1219d7e26e9811231528556b9fff37e778ec8dd6d8e96",
+      "task_ids": [
+        "BigCodeBench/135",
+        "BigCodeBench/137"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "a2fb80af0c2d0a2c75e666d134b702cfcc4ca5257344671ab49cb276fa45fbd6",
+      "task_ids": [
+        "BigCodeBench/635",
+        "BigCodeBench/808"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "a32ffa5bffc09b6eab084a105604a54f8f3120efaabca3534fe8bc57d7ec0607",
+      "task_ids": [
+        "BigCodeBench/1054",
+        "BigCodeBench/231",
+        "BigCodeBench/276",
+        "BigCodeBench/369",
+        "BigCodeBench/455",
+        "BigCodeBench/58",
+        "BigCodeBench/622",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "a48a61e998f3230dd6a2b821320dac887468cf2b9e45d3a14713d489094c1bb4",
+      "task_ids": [
+        "BigCodeBench/233",
+        "BigCodeBench/846",
+        "BigCodeBench/848"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "a5b6b61d19a7cccd7f9d5ff3276f59e454f857d4953bf9cdfcd0a01a0dbdadc1",
+      "task_ids": [
+        "BigCodeBench/223",
+        "BigCodeBench/225",
+        "BigCodeBench/228",
+        "BigCodeBench/232",
+        "BigCodeBench/234",
+        "BigCodeBench/236",
+        "BigCodeBench/296",
+        "BigCodeBench/364"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "a5feae86e291c3253fe3e48fcff13cd8b4c49df2d1e63d795c5301ca4f49acfa",
+      "task_ids": [
+        "BigCodeBench/71",
+        "BigCodeBench/72",
+        "BigCodeBench/73"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Expr",
+      "statement_sha256": "a80029076d21276d4448b1f705ed1bc5da684aed51fd540e17dcb3397030ee1e",
+      "task_ids": [
+        "BigCodeBench/491",
+        "BigCodeBench/493"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "a9effce69b2124e0f053738cde4734c07c59c7dfcfec6859752be805d9fc49db",
+      "task_ids": [
+        "BigCodeBench/70",
+        "BigCodeBench/73"
+      ]
+    },
+    {
+      "ast_node_count": 26,
+      "statement_kind": "If",
+      "statement_sha256": "ab6ae18e333e89b6ed9aad16f565168d66d311698e938241b54eedfc0bcd2063",
+      "task_ids": [
+        "BigCodeBench/423",
+        "BigCodeBench/426"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "ac0675e04254f1b4a13fb3072941a5c2b57ac38fedfae435af56b41916d9a72c",
+      "task_ids": [
+        "BigCodeBench/583",
+        "BigCodeBench/585",
+        "BigCodeBench/586",
+        "BigCodeBench/587"
+      ]
+    },
+    {
+      "ast_node_count": 42,
+      "statement_kind": "If",
+      "statement_sha256": "ac48824cf94a3193599adb25f4e4bd96826f648919686441a469c6c5dae26ef0",
+      "task_ids": [
+        "BigCodeBench/185",
+        "BigCodeBench/187"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "ac8ab6c8b5ecb6ad99225aee35e223542e0b19047bad38d788775fe6c3bbdb4e",
+      "task_ids": [
+        "BigCodeBench/401",
+        "BigCodeBench/413"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "acd1d1c26a9891dff2072d81cd63a253b82dbf25ba47f66a65bca4b068a5dd25",
+      "task_ids": [
+        "BigCodeBench/806",
+        "BigCodeBench/843"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "ad742112309ad33cc01aabc5df6ebe980afe9df9adcea2b2ef2d1a29490a0426",
+      "task_ids": [
+        "BigCodeBench/514",
+        "BigCodeBench/515",
+        "BigCodeBench/516"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "With",
+      "statement_sha256": "b1dedf13cc091231a72502601560e4873c0fe29d7f7b3e70191686277d0fb16c",
+      "task_ids": [
+        "BigCodeBench/1118",
+        "BigCodeBench/265"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Expr",
+      "statement_sha256": "b5e273650d5de10cb6f3fd00c6195823d59af5ef21d35ec9f065863e4782bf2e",
+      "task_ids": [
+        "BigCodeBench/164",
+        "BigCodeBench/165",
+        "BigCodeBench/168"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "b68aa60dc76b983ecd107fb759f33ce60ffbd1050a287e4367362af795bd9cc8",
+      "task_ids": [
+        "BigCodeBench/175",
+        "BigCodeBench/179",
+        "BigCodeBench/182"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Assign",
+      "statement_sha256": "b8bc147c4bfa085675f203c259baab072f5d041d5c2706c21aa93a1ec2530e57",
+      "task_ids": [
+        "BigCodeBench/442",
+        "BigCodeBench/443"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "b8be65b0cd17f60a2fd8fd92717224647ac267e8dc9849e007b180cc0155a13a",
+      "task_ids": [
+        "BigCodeBench/440",
+        "BigCodeBench/442"
+      ]
+    },
+    {
+      "ast_node_count": 29,
+      "statement_kind": "For",
+      "statement_sha256": "bc8626cc0a2790c48768e53972bd9657b4826b6ba2cd093b257e1a13c0871852",
+      "task_ids": [
+        "BigCodeBench/524",
+        "BigCodeBench/525",
+        "BigCodeBench/527",
+        "BigCodeBench/763"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "bccae7fd6ce78750d1cd91a29a84f21c17b890ae4a6f756fcb06339726f44f7d",
+      "task_ids": [
+        "BigCodeBench/133",
+        "BigCodeBench/134"
+      ]
+    },
+    {
+      "ast_node_count": 30,
+      "statement_kind": "Assign",
+      "statement_sha256": "bd9b9b107dbeb88fc40e44a1bcb3c987a43cff5403831c0804c61e1a6e631290",
+      "task_ids": [
+        "BigCodeBench/655",
+        "BigCodeBench/658"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "Assign",
+      "statement_sha256": "bdbc7a33d1c4a083bb4cf9f2b0d6434e3d761f291a0ba54d3b69f2e2caf95e3b",
+      "task_ids": [
+        "BigCodeBench/70",
+        "BigCodeBench/71",
+        "BigCodeBench/72",
+        "BigCodeBench/73"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Expr",
+      "statement_sha256": "bdd18806e6811a5052fe70c69c5ad5eeb612e685443aa533c86dae980eac27e0",
+      "task_ids": [
+        "BigCodeBench/231",
+        "BigCodeBench/276",
+        "BigCodeBench/369",
+        "BigCodeBench/58",
+        "BigCodeBench/582",
+        "BigCodeBench/622",
+        "BigCodeBench/94",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 26,
+      "statement_kind": "Assign",
+      "statement_sha256": "be82e134ea1a9175d3d49115264429f25386872b846230757f8d5fec62973cd0",
+      "task_ids": [
+        "BigCodeBench/22",
+        "BigCodeBench/23"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "c0b9a2cd5fef12b303ad8a6503830047d619ecad7d38d20750dfaa0e28c31f27",
+      "task_ids": [
+        "BigCodeBench/1037",
+        "BigCodeBench/472"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Return",
+      "statement_sha256": "c173851d4c7ccea2d7604731c04779282e16c514d240bd9e72e3d0975a13c90e",
+      "task_ids": [
+        "BigCodeBench/130",
+        "BigCodeBench/131"
+      ]
+    },
+    {
+      "ast_node_count": 19,
+      "statement_kind": "Assign",
+      "statement_sha256": "c3403c9d008a073ef9c8486cd5dcaec0b7959e44665b701c4db0a27827efd2ca",
+      "task_ids": [
+        "BigCodeBench/545",
+        "BigCodeBench/739"
+      ]
+    },
+    {
+      "ast_node_count": 36,
+      "statement_kind": "Assign",
+      "statement_sha256": "c38fa1c0503bc03b8bf6954dd4943a4a5a638e685a6e0fc861e5887db48ca301",
+      "task_ids": [
+        "BigCodeBench/512",
+        "BigCodeBench/513"
+      ]
+    },
+    {
+      "ast_node_count": 23,
+      "statement_kind": "Assign",
+      "statement_sha256": "c5670bae3d1e6d473f327de5f88296d5a9e12b568f6b07907a9f31525bb97d6d",
+      "task_ids": [
+        "BigCodeBench/652",
+        "BigCodeBench/654"
+      ]
+    },
+    {
+      "ast_node_count": 28,
+      "statement_kind": "Assign",
+      "statement_sha256": "c62f4d7ae617004b1488c2ef298ff9f88bd660773199c7455701349c2ba44ad9",
+      "task_ids": [
+        "BigCodeBench/177",
+        "BigCodeBench/179",
+        "BigCodeBench/182"
+      ]
+    },
+    {
+      "ast_node_count": 19,
+      "statement_kind": "Assign",
+      "statement_sha256": "cb10c4475b231905c450db9969194cf082696f4e4c614a4b66ab56c8f854835b",
+      "task_ids": [
+        "BigCodeBench/10",
+        "BigCodeBench/11",
+        "BigCodeBench/8",
+        "BigCodeBench/887"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "If",
+      "statement_sha256": "cbbd9e912c5ba54380b1a6414f9ea52cb15c3d19effc3f64f771bbfa4498cebf",
+      "task_ids": [
+        "BigCodeBench/671",
+        "BigCodeBench/673",
+        "BigCodeBench/675"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "cc56d0f87b5da7f03aa7f0860931979cbdfee7f01bfb853aa43c97c4309aa7d3",
+      "task_ids": [
+        "BigCodeBench/349",
+        "BigCodeBench/351"
+      ]
+    },
+    {
+      "ast_node_count": 19,
+      "statement_kind": "Assign",
+      "statement_sha256": "cd27be150dddd96bdc980b14edab14df286c4421d7d68de5bbc3c6d30a79c72e",
+      "task_ids": [
+        "BigCodeBench/599",
+        "BigCodeBench/601"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Assign",
+      "statement_sha256": "cda9c5737706df9f6c7a8e5b83e56754b1ebb91dce2b60ddc9d1ca2c992827b4",
+      "task_ids": [
+        "BigCodeBench/1139",
+        "BigCodeBench/364",
+        "BigCodeBench/706"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "d00687dbf047d6389c2196505081a35b5022bc3546634258f66938b2b2ca4b1c",
+      "task_ids": [
+        "BigCodeBench/235",
+        "BigCodeBench/393",
+        "BigCodeBench/58"
+      ]
+    },
+    {
+      "ast_node_count": 22,
+      "statement_kind": "Assign",
+      "statement_sha256": "d1a9ef29139a80e03600d9b0cae8d154ae36e32c834c690908d05dc54490716a",
+      "task_ids": [
+        "BigCodeBench/44",
+        "BigCodeBench/47"
+      ]
+    },
+    {
+      "ast_node_count": 21,
+      "statement_kind": "If",
+      "statement_sha256": "d52dfb96e75fc93885cf97dd148a0ff0a6d95688eeac50b411de627d47cf3052",
+      "task_ids": [
+        "BigCodeBench/180",
+        "BigCodeBench/403",
+        "BigCodeBench/404",
+        "BigCodeBench/406"
+      ]
+    },
+    {
+      "ast_node_count": 21,
+      "statement_kind": "Assign",
+      "statement_sha256": "d531276f59ee1f10130793c8d5630f26679f161ceaa5d02eeac364b99b4538df",
+      "task_ids": [
+        "BigCodeBench/331",
+        "BigCodeBench/333"
+      ]
+    },
+    {
+      "ast_node_count": 25,
+      "statement_kind": "Assign",
+      "statement_sha256": "d603bcce0e0a575dccf4e2fd4808ba0b33fed728ee041d92b08053e82523c8f5",
+      "task_ids": [
+        "BigCodeBench/245",
+        "BigCodeBench/247",
+        "BigCodeBench/249"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "d6fa8c75425e6df87a58bf0ea44415c886c0183b842be2a3c167256401f1a08e",
+      "task_ids": [
+        "BigCodeBench/550",
+        "BigCodeBench/551"
+      ]
+    },
+    {
+      "ast_node_count": 16,
+      "statement_kind": "Assign",
+      "statement_sha256": "d79a73cc142f5448d20ceb4d269dcc6911a3ab14bf85178f74de72721a8cb526",
+      "task_ids": [
+        "BigCodeBench/217",
+        "BigCodeBench/396"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "d87f07ad43c7f683ef52de29179f106f7068631924b2a59c823bcd5379e051b0",
+      "task_ids": [
+        "BigCodeBench/293",
+        "BigCodeBench/295",
+        "BigCodeBench/297",
+        "BigCodeBench/299"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "dab6595dce32e841d50025fdce1622c0194a91c82d262ed53fd205d7099a9f46",
+      "task_ids": [
+        "BigCodeBench/533",
+        "BigCodeBench/534"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "daca3e567ce4518406e55a97f4ffd6c88c01baabfdda4397884469bd3eda7698",
+      "task_ids": [
+        "BigCodeBench/185",
+        "BigCodeBench/187"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "If",
+      "statement_sha256": "dfbae88185618a6164a08de2176e79bb5cd01e0e108c22da64649991b7bd218f",
+      "task_ids": [
+        "BigCodeBench/414",
+        "BigCodeBench/416"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "e13d41ecaa7c6504410de0aeb387bf672dc078b9c8e01f44a1a7f9b0f6217d07",
+      "task_ids": [
+        "BigCodeBench/597",
+        "BigCodeBench/598",
+        "BigCodeBench/599",
+        "BigCodeBench/601",
+        "BigCodeBench/629",
+        "BigCodeBench/632",
+        "BigCodeBench/651"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "e47e90a07c2b89feb77cd78b12e46a8d094190381f6fd7056653a2076f4c7090",
+      "task_ids": [
+        "BigCodeBench/516",
+        "BigCodeBench/750"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "e4fe91b724ed387ddc833dcd653288a6932bc5ee8fca84ae5be381805e353fcc",
+      "task_ids": [
+        "BigCodeBench/179",
+        "BigCodeBench/182"
+      ]
+    },
+    {
+      "ast_node_count": 33,
+      "statement_kind": "If",
+      "statement_sha256": "e5d3e291600a0aa45af1531875c678576916fa61fbf25e987471d4e348dc5859",
+      "task_ids": [
+        "BigCodeBench/788",
+        "BigCodeBench/790"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "e5fd6ce4861a4c8863db5c1d3ba91e6b7a3f2bff580cc1c3a1867a9bf4f3f537",
+      "task_ids": [
+        "BigCodeBench/1020",
+        "BigCodeBench/996"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "If",
+      "statement_sha256": "e96d3e51ce44e47ce456d141cf29dc1dedfeea079dfcfd100d31e27941038c27",
+      "task_ids": [
+        "BigCodeBench/174",
+        "BigCodeBench/92"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "ea6c80eee02625465877141cccbbede15dd05314d6db42e3763d7a23527e48ce",
+      "task_ids": [
+        "BigCodeBench/1030",
+        "BigCodeBench/1033"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "ea841d1c3d89eb7b3df9ca9e7d3b3f21e81d79687b07ab8a3773d8c9bbc52012",
+      "task_ids": [
+        "BigCodeBench/619",
+        "BigCodeBench/690",
+        "BigCodeBench/697",
+        "BigCodeBench/746",
+        "BigCodeBench/903"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "ecee18801a30e7c8a8981a505433319833b745eb38b66cc6e8afd75e71558336",
+      "task_ids": [
+        "BigCodeBench/10",
+        "BigCodeBench/11",
+        "BigCodeBench/8",
+        "BigCodeBench/887"
+      ]
+    },
+    {
+      "ast_node_count": 17,
+      "statement_kind": "Assign",
+      "statement_sha256": "f017d2a8748484996462667de2bf70b218631f1c08353b67ab82c4829ec455b0",
+      "task_ids": [
+        "BigCodeBench/943",
+        "BigCodeBench/945"
+      ]
+    },
+    {
+      "ast_node_count": 15,
+      "statement_kind": "Assign",
+      "statement_sha256": "f27a595d1df841f888c828d1f683a434e84716afcb131fd883227499df1d568a",
+      "task_ids": [
+        "BigCodeBench/555",
+        "BigCodeBench/559"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "f3c3819854a5f816da59b31bb8c5d9cb8f37160916fd4420117069a44b95613a",
+      "task_ids": [
+        "BigCodeBench/53",
+        "BigCodeBench/56"
+      ]
+    },
+    {
+      "ast_node_count": 12,
+      "statement_kind": "Assign",
+      "statement_sha256": "f6e1d329abf83bbb1453f7f1064e48bfdbe4bfde31c534ef16d55d12280a6434",
+      "task_ids": [
+        "BigCodeBench/198",
+        "BigCodeBench/201"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "f8a3f594d02f52d6a0ca89929219bcb91239489c851f79d2f0c6013998d2548b",
+      "task_ids": [
+        "BigCodeBench/130",
+        "BigCodeBench/131"
+      ]
+    },
+    {
+      "ast_node_count": 20,
+      "statement_kind": "Assign",
+      "statement_sha256": "faed7ab26cf06c2c84df41ac900de2b38a0f1a8283ac4da37261ab4c792021a7",
+      "task_ids": [
+        "BigCodeBench/248",
+        "BigCodeBench/250",
+        "BigCodeBench/870",
+        "BigCodeBench/871",
+        "BigCodeBench/872"
+      ]
+    },
+    {
+      "ast_node_count": 19,
+      "statement_kind": "If",
+      "statement_sha256": "faf9fda8907c8e256e17c3483214fe3a44fbb24c4ae1cdf79012bbca20c99d42",
+      "task_ids": [
+        "BigCodeBench/255",
+        "BigCodeBench/259"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "fc869f4f9a3e397b158e0ab914363adb62110dc99f8c9ff2e2733a2d35de5033",
+      "task_ids": [
+        "BigCodeBench/1054",
+        "BigCodeBench/217",
+        "BigCodeBench/231",
+        "BigCodeBench/239",
+        "BigCodeBench/276",
+        "BigCodeBench/369",
+        "BigCodeBench/455",
+        "BigCodeBench/58",
+        "BigCodeBench/622",
+        "BigCodeBench/94",
+        "BigCodeBench/982"
+      ]
+    },
+    {
+      "ast_node_count": 13,
+      "statement_kind": "Assign",
+      "statement_sha256": "fd0fb54c93ca0cbdb190072f4ea4af645f80d6a8ba777f7600e4ebd088cf3ddb",
+      "task_ids": [
+        "BigCodeBench/1024",
+        "BigCodeBench/1025"
+      ]
+    },
+    {
+      "ast_node_count": 18,
+      "statement_kind": "With",
+      "statement_sha256": "fd65da5dc87759de03f6ac95f14c7d119e751da2434ea2341d2db71a9962f6d6",
+      "task_ids": [
+        "BigCodeBench/586",
+        "BigCodeBench/587"
+      ]
+    }
+  ],
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "summary": {
+    "candidate_pairs": 8478,
+    "rows": 1140,
+    "rows_with_candidates": 437,
+    "shared_statement_groups": 195
+  },
+  "task_statement_counts": {
+    "BigCodeBench/0": 3,
+    "BigCodeBench/1": 1,
+    "BigCodeBench/10": 4,
+    "BigCodeBench/100": 1,
+    "BigCodeBench/1000": 2,
+    "BigCodeBench/1001": 5,
+    "BigCodeBench/1002": 4,
+    "BigCodeBench/1003": 3,
+    "BigCodeBench/1004": 1,
+    "BigCodeBench/1005": 1,
+    "BigCodeBench/1006": 2,
+    "BigCodeBench/1007": 1,
+    "BigCodeBench/1008": 4,
+    "BigCodeBench/1009": 1,
+    "BigCodeBench/101": 1,
+    "BigCodeBench/1010": 1,
+    "BigCodeBench/1011": 4,
+    "BigCodeBench/1012": 1,
+    "BigCodeBench/1013": 2,
+    "BigCodeBench/1014": 3,
+    "BigCodeBench/1015": 1,
+    "BigCodeBench/1016": 4,
+    "BigCodeBench/1017": 4,
+    "BigCodeBench/1018": 1,
+    "BigCodeBench/1019": 1,
+    "BigCodeBench/102": 1,
+    "BigCodeBench/1020": 3,
+    "BigCodeBench/1021": 5,
+    "BigCodeBench/1022": 5,
+    "BigCodeBench/1023": 9,
+    "BigCodeBench/1024": 6,
+    "BigCodeBench/1025": 3,
+    "BigCodeBench/1026": 15,
+    "BigCodeBench/1027": 1,
+    "BigCodeBench/1028": 2,
+    "BigCodeBench/1029": 3,
+    "BigCodeBench/103": 1,
+    "BigCodeBench/1030": 2,
+    "BigCodeBench/1031": 3,
+    "BigCodeBench/1032": 5,
+    "BigCodeBench/1033": 3,
+    "BigCodeBench/1034": 4,
+    "BigCodeBench/1035": 6,
+    "BigCodeBench/1036": 8,
+    "BigCodeBench/1037": 7,
+    "BigCodeBench/1038": 3,
+    "BigCodeBench/1039": 3,
+    "BigCodeBench/104": 3,
+    "BigCodeBench/1040": 5,
+    "BigCodeBench/1041": 1,
+    "BigCodeBench/1042": 5,
+    "BigCodeBench/1043": 5,
+    "BigCodeBench/1044": 4,
+    "BigCodeBench/1045": 2,
+    "BigCodeBench/1046": 2,
+    "BigCodeBench/1047": 2,
+    "BigCodeBench/1048": 4,
+    "BigCodeBench/1049": 4,
+    "BigCodeBench/105": 3,
+    "BigCodeBench/1050": 2,
+    "BigCodeBench/1051": 6,
+    "BigCodeBench/1052": 8,
+    "BigCodeBench/1053": 1,
+    "BigCodeBench/1054": 8,
+    "BigCodeBench/1055": 3,
+    "BigCodeBench/1056": 5,
+    "BigCodeBench/1057": 6,
+    "BigCodeBench/1058": 3,
+    "BigCodeBench/1059": 3,
+    "BigCodeBench/106": 5,
+    "BigCodeBench/1060": 6,
+    "BigCodeBench/1061": 5,
+    "BigCodeBench/1062": 3,
+    "BigCodeBench/1063": 3,
+    "BigCodeBench/1064": 1,
+    "BigCodeBench/1065": 2,
+    "BigCodeBench/1066": 5,
+    "BigCodeBench/1067": 1,
+    "BigCodeBench/1068": 1,
+    "BigCodeBench/1069": 1,
+    "BigCodeBench/107": 6,
+    "BigCodeBench/1070": 1,
+    "BigCodeBench/1071": 2,
+    "BigCodeBench/1072": 1,
+    "BigCodeBench/1073": 1,
+    "BigCodeBench/1074": 0,
+    "BigCodeBench/1075": 2,
+    "BigCodeBench/1076": 2,
+    "BigCodeBench/1077": 3,
+    "BigCodeBench/1078": 5,
+    "BigCodeBench/1079": 6,
+    "BigCodeBench/108": 7,
+    "BigCodeBench/1080": 3,
+    "BigCodeBench/1081": 4,
+    "BigCodeBench/1082": 4,
+    "BigCodeBench/1083": 6,
+    "BigCodeBench/1084": 3,
+    "BigCodeBench/1085": 3,
+    "BigCodeBench/1086": 1,
+    "BigCodeBench/1087": 3,
+    "BigCodeBench/1088": 2,
+    "BigCodeBench/1089": 2,
+    "BigCodeBench/109": 5,
+    "BigCodeBench/1090": 1,
+    "BigCodeBench/1091": 2,
+    "BigCodeBench/1092": 2,
+    "BigCodeBench/1093": 2,
+    "BigCodeBench/1094": 1,
+    "BigCodeBench/1095": 2,
+    "BigCodeBench/1096": 2,
+    "BigCodeBench/1097": 3,
+    "BigCodeBench/1098": 1,
+    "BigCodeBench/1099": 2,
+    "BigCodeBench/11": 3,
+    "BigCodeBench/110": 4,
+    "BigCodeBench/1100": 4,
+    "BigCodeBench/1101": 2,
+    "BigCodeBench/1102": 3,
+    "BigCodeBench/1103": 1,
+    "BigCodeBench/1104": 2,
+    "BigCodeBench/1105": 2,
+    "BigCodeBench/1106": 3,
+    "BigCodeBench/1107": 2,
+    "BigCodeBench/1108": 3,
+    "BigCodeBench/1109": 2,
+    "BigCodeBench/111": 5,
+    "BigCodeBench/1110": 2,
+    "BigCodeBench/1111": 3,
+    "BigCodeBench/1112": 1,
+    "BigCodeBench/1113": 1,
+    "BigCodeBench/1114": 1,
+    "BigCodeBench/1115": 1,
+    "BigCodeBench/1116": 2,
+    "BigCodeBench/1117": 1,
+    "BigCodeBench/1118": 3,
+    "BigCodeBench/1119": 5,
+    "BigCodeBench/112": 3,
+    "BigCodeBench/1120": 1,
+    "BigCodeBench/1121": 1,
+    "BigCodeBench/1122": 1,
+    "BigCodeBench/1123": 1,
+    "BigCodeBench/1124": 1,
+    "BigCodeBench/1125": 2,
+    "BigCodeBench/1126": 2,
+    "BigCodeBench/1127": 2,
+    "BigCodeBench/1128": 7,
+    "BigCodeBench/1129": 5,
+    "BigCodeBench/113": 4,
+    "BigCodeBench/1130": 2,
+    "BigCodeBench/1131": 2,
+    "BigCodeBench/1132": 2,
+    "BigCodeBench/1133": 3,
+    "BigCodeBench/1134": 3,
+    "BigCodeBench/1135": 4,
+    "BigCodeBench/1136": 4,
+    "BigCodeBench/1137": 3,
+    "BigCodeBench/1138": 2,
+    "BigCodeBench/1139": 2,
+    "BigCodeBench/114": 3,
+    "BigCodeBench/115": 4,
+    "BigCodeBench/116": 2,
+    "BigCodeBench/117": 3,
+    "BigCodeBench/118": 2,
+    "BigCodeBench/119": 1,
+    "BigCodeBench/12": 5,
+    "BigCodeBench/120": 3,
+    "BigCodeBench/121": 5,
+    "BigCodeBench/122": 1,
+    "BigCodeBench/123": 5,
+    "BigCodeBench/124": 5,
+    "BigCodeBench/125": 4,
+    "BigCodeBench/126": 3,
+    "BigCodeBench/127": 1,
+    "BigCodeBench/128": 2,
+    "BigCodeBench/129": 2,
+    "BigCodeBench/13": 5,
+    "BigCodeBench/130": 3,
+    "BigCodeBench/131": 3,
+    "BigCodeBench/132": 5,
+    "BigCodeBench/133": 6,
+    "BigCodeBench/134": 4,
+    "BigCodeBench/135": 6,
+    "BigCodeBench/136": 4,
+    "BigCodeBench/137": 3,
+    "BigCodeBench/138": 2,
+    "BigCodeBench/139": 4,
+    "BigCodeBench/14": 4,
+    "BigCodeBench/140": 4,
+    "BigCodeBench/141": 4,
+    "BigCodeBench/142": 4,
+    "BigCodeBench/143": 5,
+    "BigCodeBench/144": 2,
+    "BigCodeBench/145": 1,
+    "BigCodeBench/146": 1,
+    "BigCodeBench/147": 2,
+    "BigCodeBench/148": 1,
+    "BigCodeBench/149": 3,
+    "BigCodeBench/15": 4,
+    "BigCodeBench/150": 3,
+    "BigCodeBench/151": 2,
+    "BigCodeBench/152": 3,
+    "BigCodeBench/153": 1,
+    "BigCodeBench/154": 1,
+    "BigCodeBench/155": 4,
+    "BigCodeBench/156": 5,
+    "BigCodeBench/157": 3,
+    "BigCodeBench/158": 2,
+    "BigCodeBench/159": 1,
+    "BigCodeBench/16": 6,
+    "BigCodeBench/160": 5,
+    "BigCodeBench/161": 2,
+    "BigCodeBench/162": 4,
+    "BigCodeBench/163": 3,
+    "BigCodeBench/164": 4,
+    "BigCodeBench/165": 3,
+    "BigCodeBench/166": 4,
+    "BigCodeBench/167": 4,
+    "BigCodeBench/168": 4,
+    "BigCodeBench/169": 4,
+    "BigCodeBench/17": 2,
+    "BigCodeBench/170": 1,
+    "BigCodeBench/171": 4,
+    "BigCodeBench/172": 1,
+    "BigCodeBench/173": 2,
+    "BigCodeBench/174": 2,
+    "BigCodeBench/175": 7,
+    "BigCodeBench/176": 1,
+    "BigCodeBench/177": 4,
+    "BigCodeBench/178": 1,
+    "BigCodeBench/179": 7,
+    "BigCodeBench/18": 3,
+    "BigCodeBench/180": 2,
+    "BigCodeBench/181": 1,
+    "BigCodeBench/182": 4,
+    "BigCodeBench/183": 0,
+    "BigCodeBench/184": 4,
+    "BigCodeBench/185": 7,
+    "BigCodeBench/186": 3,
+    "BigCodeBench/187": 5,
+    "BigCodeBench/188": 3,
+    "BigCodeBench/189": 1,
+    "BigCodeBench/19": 4,
+    "BigCodeBench/190": 4,
+    "BigCodeBench/191": 3,
+    "BigCodeBench/192": 4,
+    "BigCodeBench/193": 1,
+    "BigCodeBench/194": 3,
+    "BigCodeBench/195": 3,
+    "BigCodeBench/196": 2,
+    "BigCodeBench/197": 3,
+    "BigCodeBench/198": 4,
+    "BigCodeBench/199": 3,
+    "BigCodeBench/2": 2,
+    "BigCodeBench/20": 3,
+    "BigCodeBench/200": 5,
+    "BigCodeBench/201": 6,
+    "BigCodeBench/202": 3,
+    "BigCodeBench/203": 5,
+    "BigCodeBench/204": 2,
+    "BigCodeBench/205": 1,
+    "BigCodeBench/206": 4,
+    "BigCodeBench/207": 1,
+    "BigCodeBench/208": 3,
+    "BigCodeBench/209": 4,
+    "BigCodeBench/21": 2,
+    "BigCodeBench/210": 5,
+    "BigCodeBench/211": 6,
+    "BigCodeBench/212": 4,
+    "BigCodeBench/213": 2,
+    "BigCodeBench/214": 5,
+    "BigCodeBench/215": 1,
+    "BigCodeBench/216": 1,
+    "BigCodeBench/217": 9,
+    "BigCodeBench/218": 5,
+    "BigCodeBench/219": 6,
+    "BigCodeBench/22": 1,
+    "BigCodeBench/220": 1,
+    "BigCodeBench/221": 1,
+    "BigCodeBench/222": 2,
+    "BigCodeBench/223": 4,
+    "BigCodeBench/224": 7,
+    "BigCodeBench/225": 2,
+    "BigCodeBench/226": 4,
+    "BigCodeBench/227": 7,
+    "BigCodeBench/228": 3,
+    "BigCodeBench/229": 3,
+    "BigCodeBench/23": 2,
+    "BigCodeBench/230": 2,
+    "BigCodeBench/231": 8,
+    "BigCodeBench/232": 2,
+    "BigCodeBench/233": 3,
+    "BigCodeBench/234": 6,
+    "BigCodeBench/235": 7,
+    "BigCodeBench/236": 2,
+    "BigCodeBench/237": 5,
+    "BigCodeBench/238": 2,
+    "BigCodeBench/239": 8,
+    "BigCodeBench/24": 2,
+    "BigCodeBench/240": 2,
+    "BigCodeBench/241": 3,
+    "BigCodeBench/242": 8,
+    "BigCodeBench/243": 3,
+    "BigCodeBench/244": 4,
+    "BigCodeBench/245": 3,
+    "BigCodeBench/246": 5,
+    "BigCodeBench/247": 4,
+    "BigCodeBench/248": 4,
+    "BigCodeBench/249": 3,
+    "BigCodeBench/25": 1,
+    "BigCodeBench/250": 4,
+    "BigCodeBench/251": 4,
+    "BigCodeBench/252": 2,
+    "BigCodeBench/253": 4,
+    "BigCodeBench/254": 2,
+    "BigCodeBench/255": 3,
+    "BigCodeBench/256": 4,
+    "BigCodeBench/257": 1,
+    "BigCodeBench/258": 0,
+    "BigCodeBench/259": 3,
+    "BigCodeBench/26": 2,
+    "BigCodeBench/260": 2,
+    "BigCodeBench/261": 3,
+    "BigCodeBench/262": 2,
+    "BigCodeBench/263": 2,
+    "BigCodeBench/264": 4,
+    "BigCodeBench/265": 4,
+    "BigCodeBench/266": 3,
+    "BigCodeBench/267": 5,
+    "BigCodeBench/268": 3,
+    "BigCodeBench/269": 7,
+    "BigCodeBench/27": 2,
+    "BigCodeBench/270": 0,
+    "BigCodeBench/271": 2,
+    "BigCodeBench/272": 1,
+    "BigCodeBench/273": 1,
+    "BigCodeBench/274": 1,
+    "BigCodeBench/275": 2,
+    "BigCodeBench/276": 7,
+    "BigCodeBench/277": 2,
+    "BigCodeBench/278": 5,
+    "BigCodeBench/279": 1,
+    "BigCodeBench/28": 2,
+    "BigCodeBench/280": 3,
+    "BigCodeBench/281": 1,
+    "BigCodeBench/282": 2,
+    "BigCodeBench/283": 1,
+    "BigCodeBench/284": 2,
+    "BigCodeBench/285": 3,
+    "BigCodeBench/286": 1,
+    "BigCodeBench/287": 3,
+    "BigCodeBench/288": 1,
+    "BigCodeBench/289": 1,
+    "BigCodeBench/29": 1,
+    "BigCodeBench/290": 1,
+    "BigCodeBench/291": 3,
+    "BigCodeBench/292": 2,
+    "BigCodeBench/293": 4,
+    "BigCodeBench/294": 1,
+    "BigCodeBench/295": 3,
+    "BigCodeBench/296": 2,
+    "BigCodeBench/297": 2,
+    "BigCodeBench/298": 4,
+    "BigCodeBench/299": 4,
+    "BigCodeBench/3": 2,
+    "BigCodeBench/30": 4,
+    "BigCodeBench/300": 4,
+    "BigCodeBench/301": 4,
+    "BigCodeBench/302": 5,
+    "BigCodeBench/303": 4,
+    "BigCodeBench/304": 5,
+    "BigCodeBench/305": 2,
+    "BigCodeBench/306": 3,
+    "BigCodeBench/307": 1,
+    "BigCodeBench/308": 4,
+    "BigCodeBench/309": 1,
+    "BigCodeBench/31": 2,
+    "BigCodeBench/310": 2,
+    "BigCodeBench/311": 2,
+    "BigCodeBench/312": 2,
+    "BigCodeBench/313": 1,
+    "BigCodeBench/314": 1,
+    "BigCodeBench/315": 3,
+    "BigCodeBench/316": 2,
+    "BigCodeBench/317": 3,
+    "BigCodeBench/318": 3,
+    "BigCodeBench/319": 4,
+    "BigCodeBench/32": 0,
+    "BigCodeBench/320": 2,
+    "BigCodeBench/321": 5,
+    "BigCodeBench/322": 4,
+    "BigCodeBench/323": 3,
+    "BigCodeBench/324": 2,
+    "BigCodeBench/325": 2,
+    "BigCodeBench/326": 2,
+    "BigCodeBench/327": 1,
+    "BigCodeBench/328": 4,
+    "BigCodeBench/329": 2,
+    "BigCodeBench/33": 3,
+    "BigCodeBench/330": 2,
+    "BigCodeBench/331": 1,
+    "BigCodeBench/332": 1,
+    "BigCodeBench/333": 2,
+    "BigCodeBench/334": 1,
+    "BigCodeBench/335": 3,
+    "BigCodeBench/336": 1,
+    "BigCodeBench/337": 5,
+    "BigCodeBench/338": 4,
+    "BigCodeBench/339": 3,
+    "BigCodeBench/34": 2,
+    "BigCodeBench/340": 2,
+    "BigCodeBench/341": 4,
+    "BigCodeBench/342": 2,
+    "BigCodeBench/343": 3,
+    "BigCodeBench/344": 3,
+    "BigCodeBench/345": 2,
+    "BigCodeBench/346": 4,
+    "BigCodeBench/347": 3,
+    "BigCodeBench/348": 2,
+    "BigCodeBench/349": 2,
+    "BigCodeBench/35": 2,
+    "BigCodeBench/350": 6,
+    "BigCodeBench/351": 2,
+    "BigCodeBench/352": 3,
+    "BigCodeBench/353": 2,
+    "BigCodeBench/354": 3,
+    "BigCodeBench/355": 4,
+    "BigCodeBench/356": 8,
+    "BigCodeBench/357": 6,
+    "BigCodeBench/358": 1,
+    "BigCodeBench/359": 4,
+    "BigCodeBench/36": 4,
+    "BigCodeBench/360": 4,
+    "BigCodeBench/361": 1,
+    "BigCodeBench/362": 2,
+    "BigCodeBench/363": 2,
+    "BigCodeBench/364": 2,
+    "BigCodeBench/365": 2,
+    "BigCodeBench/366": 2,
+    "BigCodeBench/367": 5,
+    "BigCodeBench/368": 3,
+    "BigCodeBench/369": 8,
+    "BigCodeBench/37": 4,
+    "BigCodeBench/370": 3,
+    "BigCodeBench/371": 2,
+    "BigCodeBench/372": 2,
+    "BigCodeBench/373": 4,
+    "BigCodeBench/374": 3,
+    "BigCodeBench/375": 2,
+    "BigCodeBench/376": 2,
+    "BigCodeBench/377": 2,
+    "BigCodeBench/378": 5,
+    "BigCodeBench/379": 2,
+    "BigCodeBench/38": 3,
+    "BigCodeBench/380": 1,
+    "BigCodeBench/381": 5,
+    "BigCodeBench/382": 4,
+    "BigCodeBench/383": 3,
+    "BigCodeBench/384": 3,
+    "BigCodeBench/385": 3,
+    "BigCodeBench/386": 3,
+    "BigCodeBench/387": 2,
+    "BigCodeBench/388": 2,
+    "BigCodeBench/389": 4,
+    "BigCodeBench/39": 6,
+    "BigCodeBench/390": 3,
+    "BigCodeBench/391": 4,
+    "BigCodeBench/392": 5,
+    "BigCodeBench/393": 4,
+    "BigCodeBench/394": 1,
+    "BigCodeBench/395": 5,
+    "BigCodeBench/396": 4,
+    "BigCodeBench/397": 1,
+    "BigCodeBench/398": 3,
+    "BigCodeBench/399": 6,
+    "BigCodeBench/4": 1,
+    "BigCodeBench/40": 4,
+    "BigCodeBench/400": 2,
+    "BigCodeBench/401": 6,
+    "BigCodeBench/402": 3,
+    "BigCodeBench/403": 4,
+    "BigCodeBench/404": 4,
+    "BigCodeBench/405": 2,
+    "BigCodeBench/406": 2,
+    "BigCodeBench/407": 6,
+    "BigCodeBench/408": 1,
+    "BigCodeBench/409": 6,
+    "BigCodeBench/41": 2,
+    "BigCodeBench/410": 6,
+    "BigCodeBench/411": 2,
+    "BigCodeBench/412": 2,
+    "BigCodeBench/413": 6,
+    "BigCodeBench/414": 2,
+    "BigCodeBench/415": 3,
+    "BigCodeBench/416": 2,
+    "BigCodeBench/417": 8,
+    "BigCodeBench/418": 9,
+    "BigCodeBench/419": 8,
+    "BigCodeBench/42": 4,
+    "BigCodeBench/420": 1,
+    "BigCodeBench/421": 1,
+    "BigCodeBench/422": 2,
+    "BigCodeBench/423": 5,
+    "BigCodeBench/424": 9,
+    "BigCodeBench/425": 4,
+    "BigCodeBench/426": 5,
+    "BigCodeBench/427": 4,
+    "BigCodeBench/428": 5,
+    "BigCodeBench/429": 4,
+    "BigCodeBench/43": 2,
+    "BigCodeBench/430": 4,
+    "BigCodeBench/431": 3,
+    "BigCodeBench/432": 3,
+    "BigCodeBench/433": 3,
+    "BigCodeBench/434": 5,
+    "BigCodeBench/435": 3,
+    "BigCodeBench/436": 4,
+    "BigCodeBench/437": 2,
+    "BigCodeBench/438": 3,
+    "BigCodeBench/439": 3,
+    "BigCodeBench/44": 3,
+    "BigCodeBench/440": 6,
+    "BigCodeBench/441": 3,
+    "BigCodeBench/442": 6,
+    "BigCodeBench/443": 6,
+    "BigCodeBench/444": 2,
+    "BigCodeBench/445": 5,
+    "BigCodeBench/446": 3,
+    "BigCodeBench/447": 3,
+    "BigCodeBench/448": 3,
+    "BigCodeBench/449": 2,
+    "BigCodeBench/45": 4,
+    "BigCodeBench/450": 5,
+    "BigCodeBench/451": 5,
+    "BigCodeBench/452": 3,
+    "BigCodeBench/453": 1,
+    "BigCodeBench/454": 4,
+    "BigCodeBench/455": 7,
+    "BigCodeBench/456": 2,
+    "BigCodeBench/457": 4,
+    "BigCodeBench/458": 3,
+    "BigCodeBench/459": 1,
+    "BigCodeBench/46": 2,
+    "BigCodeBench/460": 4,
+    "BigCodeBench/461": 3,
+    "BigCodeBench/462": 2,
+    "BigCodeBench/463": 4,
+    "BigCodeBench/464": 1,
+    "BigCodeBench/465": 1,
+    "BigCodeBench/466": 1,
+    "BigCodeBench/467": 4,
+    "BigCodeBench/468": 3,
+    "BigCodeBench/469": 5,
+    "BigCodeBench/47": 3,
+    "BigCodeBench/470": 2,
+    "BigCodeBench/471": 2,
+    "BigCodeBench/472": 5,
+    "BigCodeBench/473": 4,
+    "BigCodeBench/474": 4,
+    "BigCodeBench/475": 4,
+    "BigCodeBench/476": 4,
+    "BigCodeBench/477": 4,
+    "BigCodeBench/478": 3,
+    "BigCodeBench/479": 2,
+    "BigCodeBench/48": 3,
+    "BigCodeBench/480": 3,
+    "BigCodeBench/481": 2,
+    "BigCodeBench/482": 2,
+    "BigCodeBench/483": 2,
+    "BigCodeBench/484": 3,
+    "BigCodeBench/485": 5,
+    "BigCodeBench/486": 6,
+    "BigCodeBench/487": 4,
+    "BigCodeBench/488": 6,
+    "BigCodeBench/489": 4,
+    "BigCodeBench/49": 3,
+    "BigCodeBench/490": 1,
+    "BigCodeBench/491": 7,
+    "BigCodeBench/492": 6,
+    "BigCodeBench/493": 7,
+    "BigCodeBench/494": 3,
+    "BigCodeBench/495": 3,
+    "BigCodeBench/496": 3,
+    "BigCodeBench/497": 2,
+    "BigCodeBench/498": 2,
+    "BigCodeBench/499": 2,
+    "BigCodeBench/5": 2,
+    "BigCodeBench/50": 4,
+    "BigCodeBench/500": 2,
+    "BigCodeBench/501": 2,
+    "BigCodeBench/502": 3,
+    "BigCodeBench/503": 5,
+    "BigCodeBench/504": 5,
+    "BigCodeBench/505": 1,
+    "BigCodeBench/506": 3,
+    "BigCodeBench/507": 4,
+    "BigCodeBench/508": 2,
+    "BigCodeBench/509": 2,
+    "BigCodeBench/51": 2,
+    "BigCodeBench/510": 1,
+    "BigCodeBench/511": 4,
+    "BigCodeBench/512": 4,
+    "BigCodeBench/513": 5,
+    "BigCodeBench/514": 2,
+    "BigCodeBench/515": 3,
+    "BigCodeBench/516": 4,
+    "BigCodeBench/517": 0,
+    "BigCodeBench/518": 7,
+    "BigCodeBench/519": 1,
+    "BigCodeBench/52": 3,
+    "BigCodeBench/520": 9,
+    "BigCodeBench/521": 2,
+    "BigCodeBench/522": 6,
+    "BigCodeBench/523": 1,
+    "BigCodeBench/524": 5,
+    "BigCodeBench/525": 4,
+    "BigCodeBench/526": 5,
+    "BigCodeBench/527": 5,
+    "BigCodeBench/528": 4,
+    "BigCodeBench/529": 2,
+    "BigCodeBench/53": 4,
+    "BigCodeBench/530": 5,
+    "BigCodeBench/531": 8,
+    "BigCodeBench/532": 5,
+    "BigCodeBench/533": 3,
+    "BigCodeBench/534": 3,
+    "BigCodeBench/535": 2,
+    "BigCodeBench/536": 1,
+    "BigCodeBench/537": 3,
+    "BigCodeBench/538": 5,
+    "BigCodeBench/539": 2,
+    "BigCodeBench/54": 2,
+    "BigCodeBench/540": 5,
+    "BigCodeBench/541": 2,
+    "BigCodeBench/542": 2,
+    "BigCodeBench/543": 0,
+    "BigCodeBench/544": 1,
+    "BigCodeBench/545": 2,
+    "BigCodeBench/546": 2,
+    "BigCodeBench/547": 1,
+    "BigCodeBench/548": 2,
+    "BigCodeBench/549": 0,
+    "BigCodeBench/55": 1,
+    "BigCodeBench/550": 2,
+    "BigCodeBench/551": 6,
+    "BigCodeBench/552": 4,
+    "BigCodeBench/553": 3,
+    "BigCodeBench/554": 3,
+    "BigCodeBench/555": 4,
+    "BigCodeBench/556": 3,
+    "BigCodeBench/557": 3,
+    "BigCodeBench/558": 3,
+    "BigCodeBench/559": 5,
+    "BigCodeBench/56": 4,
+    "BigCodeBench/560": 10,
+    "BigCodeBench/561": 1,
+    "BigCodeBench/562": 3,
+    "BigCodeBench/563": 3,
+    "BigCodeBench/564": 2,
+    "BigCodeBench/565": 5,
+    "BigCodeBench/566": 1,
+    "BigCodeBench/567": 4,
+    "BigCodeBench/568": 2,
+    "BigCodeBench/569": 2,
+    "BigCodeBench/57": 2,
+    "BigCodeBench/570": 2,
+    "BigCodeBench/571": 5,
+    "BigCodeBench/572": 4,
+    "BigCodeBench/573": 4,
+    "BigCodeBench/574": 7,
+    "BigCodeBench/575": 2,
+    "BigCodeBench/576": 2,
+    "BigCodeBench/577": 1,
+    "BigCodeBench/578": 3,
+    "BigCodeBench/579": 1,
+    "BigCodeBench/58": 7,
+    "BigCodeBench/580": 4,
+    "BigCodeBench/581": 2,
+    "BigCodeBench/582": 9,
+    "BigCodeBench/583": 6,
+    "BigCodeBench/584": 1,
+    "BigCodeBench/585": 2,
+    "BigCodeBench/586": 5,
+    "BigCodeBench/587": 6,
+    "BigCodeBench/588": 2,
+    "BigCodeBench/589": 3,
+    "BigCodeBench/59": 1,
+    "BigCodeBench/590": 4,
+    "BigCodeBench/591": 3,
+    "BigCodeBench/592": 5,
+    "BigCodeBench/593": 6,
+    "BigCodeBench/594": 5,
+    "BigCodeBench/595": 2,
+    "BigCodeBench/596": 2,
+    "BigCodeBench/597": 2,
+    "BigCodeBench/598": 3,
+    "BigCodeBench/599": 6,
+    "BigCodeBench/6": 3,
+    "BigCodeBench/60": 1,
+    "BigCodeBench/600": 3,
+    "BigCodeBench/601": 7,
+    "BigCodeBench/602": 3,
+    "BigCodeBench/603": 1,
+    "BigCodeBench/604": 1,
+    "BigCodeBench/605": 2,
+    "BigCodeBench/606": 1,
+    "BigCodeBench/607": 2,
+    "BigCodeBench/608": 2,
+    "BigCodeBench/609": 3,
+    "BigCodeBench/61": 3,
+    "BigCodeBench/610": 2,
+    "BigCodeBench/611": 2,
+    "BigCodeBench/612": 1,
+    "BigCodeBench/613": 5,
+    "BigCodeBench/614": 3,
+    "BigCodeBench/615": 3,
+    "BigCodeBench/616": 4,
+    "BigCodeBench/617": 4,
+    "BigCodeBench/618": 4,
+    "BigCodeBench/619": 4,
+    "BigCodeBench/62": 1,
+    "BigCodeBench/620": 2,
+    "BigCodeBench/621": 3,
+    "BigCodeBench/622": 9,
+    "BigCodeBench/623": 5,
+    "BigCodeBench/624": 2,
+    "BigCodeBench/625": 2,
+    "BigCodeBench/626": 3,
+    "BigCodeBench/627": 2,
+    "BigCodeBench/628": 3,
+    "BigCodeBench/629": 4,
+    "BigCodeBench/63": 2,
+    "BigCodeBench/630": 4,
+    "BigCodeBench/631": 3,
+    "BigCodeBench/632": 4,
+    "BigCodeBench/633": 4,
+    "BigCodeBench/634": 1,
+    "BigCodeBench/635": 14,
+    "BigCodeBench/636": 4,
+    "BigCodeBench/637": 7,
+    "BigCodeBench/638": 4,
+    "BigCodeBench/639": 5,
+    "BigCodeBench/64": 4,
+    "BigCodeBench/640": 3,
+    "BigCodeBench/641": 2,
+    "BigCodeBench/642": 1,
+    "BigCodeBench/643": 1,
+    "BigCodeBench/644": 6,
+    "BigCodeBench/645": 3,
+    "BigCodeBench/646": 3,
+    "BigCodeBench/647": 1,
+    "BigCodeBench/648": 1,
+    "BigCodeBench/649": 4,
+    "BigCodeBench/65": 6,
+    "BigCodeBench/650": 2,
+    "BigCodeBench/651": 3,
+    "BigCodeBench/652": 2,
+    "BigCodeBench/653": 2,
+    "BigCodeBench/654": 9,
+    "BigCodeBench/655": 7,
+    "BigCodeBench/656": 2,
+    "BigCodeBench/657": 4,
+    "BigCodeBench/658": 3,
+    "BigCodeBench/659": 2,
+    "BigCodeBench/66": 3,
+    "BigCodeBench/660": 2,
+    "BigCodeBench/661": 3,
+    "BigCodeBench/662": 2,
+    "BigCodeBench/663": 4,
+    "BigCodeBench/664": 2,
+    "BigCodeBench/665": 2,
+    "BigCodeBench/666": 1,
+    "BigCodeBench/667": 1,
+    "BigCodeBench/668": 1,
+    "BigCodeBench/669": 2,
+    "BigCodeBench/67": 2,
+    "BigCodeBench/670": 1,
+    "BigCodeBench/671": 2,
+    "BigCodeBench/672": 1,
+    "BigCodeBench/673": 2,
+    "BigCodeBench/674": 4,
+    "BigCodeBench/675": 2,
+    "BigCodeBench/676": 2,
+    "BigCodeBench/677": 3,
+    "BigCodeBench/678": 3,
+    "BigCodeBench/679": 1,
+    "BigCodeBench/68": 2,
+    "BigCodeBench/680": 2,
+    "BigCodeBench/681": 3,
+    "BigCodeBench/682": 2,
+    "BigCodeBench/683": 3,
+    "BigCodeBench/684": 2,
+    "BigCodeBench/685": 1,
+    "BigCodeBench/686": 1,
+    "BigCodeBench/687": 2,
+    "BigCodeBench/688": 1,
+    "BigCodeBench/689": 1,
+    "BigCodeBench/69": 2,
+    "BigCodeBench/690": 3,
+    "BigCodeBench/691": 3,
+    "BigCodeBench/692": 1,
+    "BigCodeBench/693": 2,
+    "BigCodeBench/694": 1,
+    "BigCodeBench/695": 0,
+    "BigCodeBench/696": 1,
+    "BigCodeBench/697": 4,
+    "BigCodeBench/698": 3,
+    "BigCodeBench/699": 2,
+    "BigCodeBench/7": 2,
+    "BigCodeBench/70": 6,
+    "BigCodeBench/700": 2,
+    "BigCodeBench/701": 2,
+    "BigCodeBench/702": 1,
+    "BigCodeBench/703": 2,
+    "BigCodeBench/704": 3,
+    "BigCodeBench/705": 4,
+    "BigCodeBench/706": 3,
+    "BigCodeBench/707": 2,
+    "BigCodeBench/708": 3,
+    "BigCodeBench/709": 3,
+    "BigCodeBench/71": 5,
+    "BigCodeBench/710": 1,
+    "BigCodeBench/711": 2,
+    "BigCodeBench/712": 2,
+    "BigCodeBench/713": 2,
+    "BigCodeBench/714": 1,
+    "BigCodeBench/715": 1,
+    "BigCodeBench/716": 1,
+    "BigCodeBench/717": 4,
+    "BigCodeBench/718": 4,
+    "BigCodeBench/719": 2,
+    "BigCodeBench/72": 8,
+    "BigCodeBench/720": 3,
+    "BigCodeBench/721": 3,
+    "BigCodeBench/722": 3,
+    "BigCodeBench/723": 5,
+    "BigCodeBench/724": 2,
+    "BigCodeBench/725": 1,
+    "BigCodeBench/726": 3,
+    "BigCodeBench/727": 2,
+    "BigCodeBench/728": 6,
+    "BigCodeBench/729": 3,
+    "BigCodeBench/73": 5,
+    "BigCodeBench/730": 2,
+    "BigCodeBench/731": 2,
+    "BigCodeBench/732": 3,
+    "BigCodeBench/733": 4,
+    "BigCodeBench/734": 2,
+    "BigCodeBench/735": 1,
+    "BigCodeBench/736": 1,
+    "BigCodeBench/737": 2,
+    "BigCodeBench/738": 1,
+    "BigCodeBench/739": 2,
+    "BigCodeBench/74": 1,
+    "BigCodeBench/740": 1,
+    "BigCodeBench/741": 2,
+    "BigCodeBench/742": 4,
+    "BigCodeBench/743": 2,
+    "BigCodeBench/744": 3,
+    "BigCodeBench/745": 1,
+    "BigCodeBench/746": 6,
+    "BigCodeBench/747": 1,
+    "BigCodeBench/748": 2,
+    "BigCodeBench/749": 1,
+    "BigCodeBench/75": 11,
+    "BigCodeBench/750": 4,
+    "BigCodeBench/751": 1,
+    "BigCodeBench/752": 8,
+    "BigCodeBench/753": 2,
+    "BigCodeBench/754": 2,
+    "BigCodeBench/755": 1,
+    "BigCodeBench/756": 3,
+    "BigCodeBench/757": 1,
+    "BigCodeBench/758": 6,
+    "BigCodeBench/759": 1,
+    "BigCodeBench/76": 5,
+    "BigCodeBench/760": 4,
+    "BigCodeBench/761": 1,
+    "BigCodeBench/762": 2,
+    "BigCodeBench/763": 4,
+    "BigCodeBench/764": 5,
+    "BigCodeBench/765": 2,
+    "BigCodeBench/766": 4,
+    "BigCodeBench/767": 1,
+    "BigCodeBench/768": 3,
+    "BigCodeBench/769": 2,
+    "BigCodeBench/77": 3,
+    "BigCodeBench/770": 6,
+    "BigCodeBench/771": 1,
+    "BigCodeBench/772": 2,
+    "BigCodeBench/773": 1,
+    "BigCodeBench/774": 6,
+    "BigCodeBench/775": 3,
+    "BigCodeBench/776": 1,
+    "BigCodeBench/777": 1,
+    "BigCodeBench/778": 3,
+    "BigCodeBench/779": 3,
+    "BigCodeBench/78": 1,
+    "BigCodeBench/780": 7,
+    "BigCodeBench/781": 1,
+    "BigCodeBench/782": 1,
+    "BigCodeBench/783": 1,
+    "BigCodeBench/784": 2,
+    "BigCodeBench/785": 5,
+    "BigCodeBench/786": 2,
+    "BigCodeBench/787": 2,
+    "BigCodeBench/788": 4,
+    "BigCodeBench/789": 1,
+    "BigCodeBench/79": 2,
+    "BigCodeBench/790": 3,
+    "BigCodeBench/791": 2,
+    "BigCodeBench/792": 4,
+    "BigCodeBench/793": 2,
+    "BigCodeBench/794": 1,
+    "BigCodeBench/795": 2,
+    "BigCodeBench/796": 1,
+    "BigCodeBench/797": 2,
+    "BigCodeBench/798": 6,
+    "BigCodeBench/799": 6,
+    "BigCodeBench/8": 3,
+    "BigCodeBench/80": 1,
+    "BigCodeBench/800": 3,
+    "BigCodeBench/801": 3,
+    "BigCodeBench/802": 2,
+    "BigCodeBench/803": 3,
+    "BigCodeBench/804": 3,
+    "BigCodeBench/805": 2,
+    "BigCodeBench/806": 4,
+    "BigCodeBench/807": 5,
+    "BigCodeBench/808": 2,
+    "BigCodeBench/809": 2,
+    "BigCodeBench/81": 1,
+    "BigCodeBench/810": 1,
+    "BigCodeBench/811": 3,
+    "BigCodeBench/812": 1,
+    "BigCodeBench/813": 3,
+    "BigCodeBench/814": 3,
+    "BigCodeBench/815": 3,
+    "BigCodeBench/816": 2,
+    "BigCodeBench/817": 5,
+    "BigCodeBench/818": 1,
+    "BigCodeBench/819": 4,
+    "BigCodeBench/82": 5,
+    "BigCodeBench/820": 2,
+    "BigCodeBench/821": 2,
+    "BigCodeBench/822": 3,
+    "BigCodeBench/823": 1,
+    "BigCodeBench/824": 2,
+    "BigCodeBench/825": 2,
+    "BigCodeBench/826": 3,
+    "BigCodeBench/827": 2,
+    "BigCodeBench/828": 3,
+    "BigCodeBench/829": 2,
+    "BigCodeBench/83": 1,
+    "BigCodeBench/830": 1,
+    "BigCodeBench/831": 2,
+    "BigCodeBench/832": 1,
+    "BigCodeBench/833": 2,
+    "BigCodeBench/834": 1,
+    "BigCodeBench/835": 2,
+    "BigCodeBench/836": 1,
+    "BigCodeBench/837": 2,
+    "BigCodeBench/838": 1,
+    "BigCodeBench/839": 1,
+    "BigCodeBench/84": 8,
+    "BigCodeBench/840": 1,
+    "BigCodeBench/841": 4,
+    "BigCodeBench/842": 1,
+    "BigCodeBench/843": 4,
+    "BigCodeBench/844": 2,
+    "BigCodeBench/845": 8,
+    "BigCodeBench/846": 4,
+    "BigCodeBench/847": 1,
+    "BigCodeBench/848": 3,
+    "BigCodeBench/849": 1,
+    "BigCodeBench/85": 4,
+    "BigCodeBench/850": 3,
+    "BigCodeBench/851": 2,
+    "BigCodeBench/852": 2,
+    "BigCodeBench/853": 1,
+    "BigCodeBench/854": 5,
+    "BigCodeBench/855": 2,
+    "BigCodeBench/856": 5,
+    "BigCodeBench/857": 1,
+    "BigCodeBench/858": 2,
+    "BigCodeBench/859": 3,
+    "BigCodeBench/86": 3,
+    "BigCodeBench/860": 3,
+    "BigCodeBench/861": 1,
+    "BigCodeBench/862": 1,
+    "BigCodeBench/863": 1,
+    "BigCodeBench/864": 6,
+    "BigCodeBench/865": 3,
+    "BigCodeBench/866": 3,
+    "BigCodeBench/867": 1,
+    "BigCodeBench/868": 2,
+    "BigCodeBench/869": 3,
+    "BigCodeBench/87": 2,
+    "BigCodeBench/870": 3,
+    "BigCodeBench/871": 3,
+    "BigCodeBench/872": 2,
+    "BigCodeBench/873": 1,
+    "BigCodeBench/874": 1,
+    "BigCodeBench/875": 3,
+    "BigCodeBench/876": 3,
+    "BigCodeBench/877": 3,
+    "BigCodeBench/878": 2,
+    "BigCodeBench/879": 6,
+    "BigCodeBench/88": 3,
+    "BigCodeBench/880": 2,
+    "BigCodeBench/881": 2,
+    "BigCodeBench/882": 3,
+    "BigCodeBench/883": 3,
+    "BigCodeBench/884": 6,
+    "BigCodeBench/885": 4,
+    "BigCodeBench/886": 4,
+    "BigCodeBench/887": 4,
+    "BigCodeBench/888": 1,
+    "BigCodeBench/889": 3,
+    "BigCodeBench/89": 7,
+    "BigCodeBench/890": 4,
+    "BigCodeBench/891": 2,
+    "BigCodeBench/892": 2,
+    "BigCodeBench/893": 2,
+    "BigCodeBench/894": 5,
+    "BigCodeBench/895": 2,
+    "BigCodeBench/896": 2,
+    "BigCodeBench/897": 5,
+    "BigCodeBench/898": 1,
+    "BigCodeBench/899": 2,
+    "BigCodeBench/9": 2,
+    "BigCodeBench/90": 5,
+    "BigCodeBench/900": 4,
+    "BigCodeBench/901": 2,
+    "BigCodeBench/902": 1,
+    "BigCodeBench/903": 2,
+    "BigCodeBench/904": 2,
+    "BigCodeBench/905": 1,
+    "BigCodeBench/906": 2,
+    "BigCodeBench/907": 1,
+    "BigCodeBench/908": 1,
+    "BigCodeBench/909": 3,
+    "BigCodeBench/91": 6,
+    "BigCodeBench/910": 3,
+    "BigCodeBench/911": 3,
+    "BigCodeBench/912": 1,
+    "BigCodeBench/913": 4,
+    "BigCodeBench/914": 7,
+    "BigCodeBench/915": 5,
+    "BigCodeBench/916": 3,
+    "BigCodeBench/917": 5,
+    "BigCodeBench/918": 2,
+    "BigCodeBench/919": 3,
+    "BigCodeBench/92": 5,
+    "BigCodeBench/920": 1,
+    "BigCodeBench/921": 1,
+    "BigCodeBench/922": 1,
+    "BigCodeBench/923": 4,
+    "BigCodeBench/924": 2,
+    "BigCodeBench/925": 2,
+    "BigCodeBench/926": 1,
+    "BigCodeBench/927": 2,
+    "BigCodeBench/928": 4,
+    "BigCodeBench/929": 2,
+    "BigCodeBench/93": 4,
+    "BigCodeBench/930": 4,
+    "BigCodeBench/931": 3,
+    "BigCodeBench/932": 3,
+    "BigCodeBench/933": 2,
+    "BigCodeBench/934": 2,
+    "BigCodeBench/935": 3,
+    "BigCodeBench/936": 4,
+    "BigCodeBench/937": 1,
+    "BigCodeBench/938": 1,
+    "BigCodeBench/939": 1,
+    "BigCodeBench/94": 8,
+    "BigCodeBench/940": 1,
+    "BigCodeBench/941": 5,
+    "BigCodeBench/942": 5,
+    "BigCodeBench/943": 5,
+    "BigCodeBench/944": 5,
+    "BigCodeBench/945": 5,
+    "BigCodeBench/946": 1,
+    "BigCodeBench/947": 4,
+    "BigCodeBench/948": 1,
+    "BigCodeBench/949": 2,
+    "BigCodeBench/95": 6,
+    "BigCodeBench/950": 2,
+    "BigCodeBench/951": 2,
+    "BigCodeBench/952": 3,
+    "BigCodeBench/953": 3,
+    "BigCodeBench/954": 1,
+    "BigCodeBench/955": 4,
+    "BigCodeBench/956": 4,
+    "BigCodeBench/957": 2,
+    "BigCodeBench/958": 3,
+    "BigCodeBench/959": 3,
+    "BigCodeBench/96": 2,
+    "BigCodeBench/960": 2,
+    "BigCodeBench/961": 2,
+    "BigCodeBench/962": 3,
+    "BigCodeBench/963": 4,
+    "BigCodeBench/964": 3,
+    "BigCodeBench/965": 3,
+    "BigCodeBench/966": 1,
+    "BigCodeBench/967": 5,
+    "BigCodeBench/968": 1,
+    "BigCodeBench/969": 3,
+    "BigCodeBench/97": 1,
+    "BigCodeBench/970": 5,
+    "BigCodeBench/971": 2,
+    "BigCodeBench/972": 2,
+    "BigCodeBench/973": 5,
+    "BigCodeBench/974": 4,
+    "BigCodeBench/975": 3,
+    "BigCodeBench/976": 5,
+    "BigCodeBench/977": 6,
+    "BigCodeBench/978": 7,
+    "BigCodeBench/979": 4,
+    "BigCodeBench/98": 1,
+    "BigCodeBench/980": 3,
+    "BigCodeBench/981": 5,
+    "BigCodeBench/982": 8,
+    "BigCodeBench/983": 1,
+    "BigCodeBench/984": 4,
+    "BigCodeBench/985": 6,
+    "BigCodeBench/986": 1,
+    "BigCodeBench/987": 4,
+    "BigCodeBench/988": 4,
+    "BigCodeBench/989": 6,
+    "BigCodeBench/99": 2,
+    "BigCodeBench/990": 9,
+    "BigCodeBench/991": 2,
+    "BigCodeBench/992": 0,
+    "BigCodeBench/993": 3,
+    "BigCodeBench/994": 3,
+    "BigCodeBench/995": 5,
+    "BigCodeBench/996": 3,
+    "BigCodeBench/997": 3,
+    "BigCodeBench/998": 4,
+    "BigCodeBench/999": 2
+  }
+}

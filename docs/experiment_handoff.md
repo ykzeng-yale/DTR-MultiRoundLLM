@@ -581,3 +581,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September2026 — native runtime availability
 
 [Read-only check](native_container_feasibility_20260927.md): aux Docker installed, engine response unavailable. No native job or container started; no automatic restart or repeated wait. Continue scientific source/family work while runtime qualification remains open. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
+## 27 September2026 — full-source retrieval
+
+[Template index and887 relation](bigcodebench_template_review_20260927.md) support cross-batch review. Preserve provisional8/10/11/887 grouping; do not merge plotting-boilerplate matches or certify unmatched tasks. No native/model run released. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

@@ -1,0 +1,32 @@
+{
+  "reviewer": "Codex scientific lead",
+  "classification": "retrieval-guided source judgment, not random audit or task admission",
+  "task_id": "BigCodeBench/887",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "field_sha256": {
+    "complete_prompt": "10c9a64ed14c7992981aeedc29d1900557f1f8fff28a5709ba21e75a0d6e9691",
+    "instruct_prompt": "8c72a5133b1769ee6ea98500c5c57f06516ec8d04215e8ef4c6e3e9d5a3fb901",
+    "canonical_solution": "c7c4bcab9ff1720562152ee834deeb8b2bb01193b8a69c562ff9203fdda3aaf4",
+    "test": "111df438b52592719a7679f08f4ea955a52b096454c7643d5c654b2de0e5d01d"
+  },
+  "prior_group": [
+    8,
+    10,
+    11
+  ],
+  "provisional_extended_group": [
+    8,
+    10,
+    11,
+    887
+  ],
+  "reason": "Same nested numeric-string conversion and flatten/sum template determines random output size. Task887 returns a NumPy-generated matrix/DataFrame, others Python-random one-dimensional sample summaries; grouping is conservative shared-template judgment, not identical outcomes.",
+  "measurement_notes": [
+    "tests verify type/shape, equal seeds and unequal selected seeds, not full random law",
+    "test_rng uses a flat tuple of numeric strings rather than declared nested tuple input",
+    "Complete examples include a mixed string/tuple outer structure; prompt variants and input domain need adjudication"
+  ],
+  "admission": "unresolved_not_admitted",
+  "prior_development_crosswalk": "not_completed",
+  "runtime_validation": "not_run"
+}

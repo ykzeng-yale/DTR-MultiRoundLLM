@@ -1,0 +1,23 @@
+# Full-source template retrieval and a distant family relation
+
+Codex direct source work,27 September2026. The [compact index](../results/bigcodebench_template_index_compact_20260927.json) covers all1,140 pinned rows and identifies195 repeated computational-statement hashes, implying8,478 candidate pairs involving437 tasks. The remaining703 tasks have no match under this exact rule, not certified novelty or independence. The89,190-byte index retains group membership without storing the redundant pair expansion or raw source.
+
+The [script](../scripts/index_bigcodebench_templates_20260927.py) parses each entry function and hashes its direct statements with at least12 AST nodes, excluding imports and string-expression docstrings. Source locations are omitted; names, constants and structure are preserved. This is a declared retrieval heuristic, not an eligibility threshold, semantic equivalence test, probabilistic family detector or evidence-based cutoff for outcomes. Changed names, equivalent code, smaller shared operations and reordered logic may be missed; identical statements may have different meanings under surrounding state/imports. Source errors or ambiguous entry points fail rather than silently deleting a row.
+
+Most candidate edges are not individually informative. The largest group is123 tasks sharing only a common plotting setup statement, contributing7,503 within-group pairs by itself. Those tasks are **not** declared one family. No transitive clustering or automatic exclusion/admission is performed. This illustrates why an AST match is a review aid rather than a causal independence claim. The12-node setting was an engineering retrieval choice, not optimized on receiver outcomes.
+
+## Task887 relation reviewed
+
+The index connects task887 to8/10/11 through the exact nested-string conversion and flattening statements. The lead then read887's Complete and Instruct prompts, reference and full tests. Like the earlier group, it sums converted nested numeric strings to determine the size of a generated random object. It returns a seeded NumPy-generated DataFrame rather than Python-random scalar summaries, so the tasks are not identical and do not have the same scoring law.
+
+Extend the provisional conservative co-splitting group to **8/10/11/887**. This is a source-template judgment that prevents a plausible close relative from crossing a future development/evaluation split. It may merge with further relatives, remains subject to prior-development crosswalk, and is not evidence of statistical dependence or an adopted population. The earlier2/3/5 group is unchanged. [Hash-bound task887 judgment](../results/bigcodebench_source_relation_887_20260927.json).
+
+Task887's tests cover dimensions/type and reproducibility or difference for selected seeds. They do not validate its entire distributional contract. One test uses a flat tuple of strings rather than the declared nested tuple input, and prompt examples include a mixed outer structure. These are source-domain/measurement questions, not executed failures or automatic exclusions. Task887 is retrieval-selected: do not combine it with the source-ordered16-row batch to estimate a defect frequency.
+
+## Verification and next use
+
+Six focused tests check preserved names/constants, nonexecution of source, refusal of duplicate/ambiguous entries, omission of tiny boilerplate, and absence of automatic transitive grouping. A separate implementation recounts all1,140 rows, all195 groups,8,478 pairs and437 matched tasks using the same AST/parser and Parquet decoder; shared parser dependence is disclosed. [Receipt](../results/bigcodebench_template_index_validation_20260927.json). The full local suite passes2,301 tests and8 subtests in35.42seconds. No task, reference, test string, model or container was executed by the indexing/recount commands; source parsing is not grading.
+
+Use the groups to locate cross-batch relatives while continuing full semantic review. Do not count703 unmatched tasks as untouched families or filter the source to those tasks. The native runtime mismatch and unresponsive Docker-engine observation remain open; this source tool neither retries that engine nor releases collection. Raw source remains in ignored work storage. Previous expanded development output is retained there; the committed index is compact.
+
+Full-project submission readiness **60%, change0 percentage points**. No component credit for retrieval alone. Population/family/exposure and measurement, full prospective freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Codex-only execution; goal active.

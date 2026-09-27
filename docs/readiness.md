@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September2026 — whole-source template retrieval and distant relative
+
+Codex [template index](bigcodebench_template_review_20260927.md) covers1,140 rows:195 repeated-statement groups,8,478 candidate pairs across437 tasks; a123-task plotting boilerplate group shows why matches are not families. Independent implementation recount agrees. Full source review of retrieved887 extends provisional co-split group8/10/11 to8/10/11/887; no admission or statistical-independence claim. Six focused tests pass; no benchmark/model execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.
+
+
 ## 27 September 2026 — existing container runtime checked
 
 Codex read-only [runtime check](native_container_feasibility_20260927.md): aux Docker client/backend exist, but engine-info did not return and a separate socket-connected HTTP ping timed out at3seconds. Installed is not qualified/ready. Only owned probe processes stopped; no daemon/VM restart, installs or containers. Lead/mini known Docker paths absent, not exhaustive absence proofs. Native collection remains unreleased; source/family work can continue. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active; no experimental job to monitor.

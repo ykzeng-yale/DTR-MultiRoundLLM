@@ -1,0 +1,16 @@
+{
+  "classification": "independent implementation recount using same AST/parser decoder; not semantic validity",
+  "index_sha256": "b05d936b8afd0031344acc977044db8feee87bb0a058b5cb1d9e0e3a54175194",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "rows_recounted": 1140,
+  "shared_groups_recounted": 195,
+  "candidate_pairs_recounted": 8478,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "focused_tests_passed": 6,
+  "full_tests_passed": 2301,
+  "subtests_passed": 8,
+  "full_suite_seconds": 35.42,
+  "script_sha256": "ede60ca21a710f17d429c11988e37b44dd93dc5abd3499e2da8a6f59b01f7138",
+  "tests_sha256": "fa70674c4c0de5cc2925ae3d66d916ab9de2802903dc39e8ada1c105e4e5cda0"
+}
