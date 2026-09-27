@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — owner requires continuous substantive execution
+
+Continue actionable work within the conversation; a report or commit alone is not a stopping point. End for a genuinely running experiment that requires waiting, verified completion, or an unavoidable external blocker after independent work is exhausted. This supersedes the earlier routine45-minute stopping preference. The app goal record currently remains paused and exposes no resume operation; direct work continues. [Measurement contract and eight-slot qualification](docs/source_separated_measurement_contract_20260927.md) freeze before execution; no population adoption. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
 ## 27 September 2026 — owner authorizes productive recurring work
 
 Replace the obsolete paused MRL-41 monitor with three-hour Codex work sessions under [the execution plan](docs/autonomous_execution_plan_20260927.md). This supersedes the immediately preceding heartbeat-pause instruction; continuous goal remains paused for token control. Primary blockers are population/measurement design and implementation, with an unresponsive Docker runtime as a secondary constraint; no demonstrated RAM shortage or missing theorem is the present bottleneck. Each wake implements the next actionable acceptance criterion rather than only checking. Claude delegation remains ended. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

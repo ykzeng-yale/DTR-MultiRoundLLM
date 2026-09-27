@@ -1,0 +1,23 @@
+{
+  "classification": "synthetic qualification, not benchmark/receiver experiment",
+  "slots": 8,
+  "total_wall_seconds": 30,
+  "per_slot_wall_seconds": 2,
+  "per_slot_cpu_seconds": 1,
+  "output_cap_per_stream": 65536,
+  "requested_memory_bytes": 268435456,
+  "committed_sources": [
+    "scripts/qualify_observation_boundary_20260927.py",
+    "experiments/prompt_choice/observation_boundary_v1.py",
+    "experiments/prompt_choice/native_execution_v1.py",
+    "experiments/landmark/sandbox.py"
+  ],
+  "input_sha256": {
+    "scripts/qualify_observation_boundary_20260927.py": "99039ca5a9b5b60ea3412ee4506127d9aa2753715971be34ec3971583730896c",
+    "experiments/prompt_choice/observation_boundary_v1.py": "3ad00ea10f4d743842f41012cf924c2fbdbbccf07573ea3b028b6f280c34758e",
+    "experiments/prompt_choice/native_execution_v1.py": "2d825d40c7f2b79dde32894d1ac178ce527ddb8216dda5de22f7a72c38179282",
+    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c"
+  },
+  "receiver_calls": 0,
+  "paid_usd_cap": 0
+}
