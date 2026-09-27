@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September2026 — native runtime limitation verified
+
+Codex direct operational check: [runtime feasibility](docs/native_runtime_feasibility_20260927.md). Harmless bounded Seatbelt discovery succeeds; unittest is present but numpy/pandas/matplotlib are absent under the existing base-interpreter `-I -S` path. No benchmark or receiver execution. Verified SSH read-only mini/aux inspection; mini Ollama idle, only theorem-prover model listed, not adopted as the frozen receiver. Native measurement needs a qualified dependency environment and bounded capture; existing communicate-then-truncate is not a capture-memory bound. Next implement/reuse qualified execution rather than repeat source scans. Full-project readiness60%,delta0; measurement/population, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.
+
+
 ## 27 September2026 — status-only feedback boundary implemented
 
 Codex direct implementation: [native feedback contract](docs/native_status_feedback_contract_20260927.md), pure serializer and hash-bound three-string alphabet. Twenty-six focused tests pass, including extra-field leakage refusal and artifact/test binding checks. No grader/collector integration or benchmark/model execution; truth of status and sandbox noninterference are not established by serializer tests. Historical literal diagnostics unchanged; first-method-public split and efficacy collection remain unreleased. Full-project readiness60%,delta0; population/measurement, full prospective freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete. Goal active, no Claude delegation.

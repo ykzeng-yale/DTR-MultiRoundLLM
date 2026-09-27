@@ -1,0 +1,44 @@
+{
+  "scope": "Harmless standard-library dependency discovery in existing sandbox; no benchmark/model code",
+  "utc": "2026-09-27T21:06:51.019479+00:00",
+  "source_sha256": "4fd38948e759054d7483e63355156b299f32badbf0d12685ddcc6707c428f009",
+  "source": "import importlib.util,json\nprint(json.dumps({n:importlib.util.find_spec(n) is not None for n in ['unittest','numpy','pandas','matplotlib']}))\n",
+  "limits": {
+    "wall_seconds": 5,
+    "cpu_seconds": 2,
+    "requested_memory_bytes": 268435456,
+    "output_bytes": 2048
+  },
+  "result": {
+    "passed": true,
+    "returncode": 0,
+    "stdout": "{\"unittest\": true, \"numpy\": false, \"pandas\": false, \"matplotlib\": false}\n",
+    "stderr": "",
+    "stdout_tail": "{\"unittest\": true, \"numpy\": false, \"pandas\": false, \"matplotlib\": false}\n",
+    "timed_out": false,
+    "seconds": 0.024182958528399467,
+    "executed": true,
+    "flags": [
+      "dynamic_import"
+    ],
+    "limits_applied": "RLIMIT_CPU=2,RLIMIT_NPROC=64",
+    "sandbox_kind": "seatbelt",
+    "profile_sha256": "6a60de2e5a47f95c0de7e4d50ae64dad11f0966a2f645a3f38ec17decec7b444"
+  },
+  "sandbox": {
+    "kind": "seatbelt",
+    "python": "/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/bin/python3.12",
+    "base_dir": "/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtrmr_sbx",
+    "profile": "(version 1)\n(allow default)\n(deny network*)\n(deny file-read* (subpath \"/Users/yukangzengcmac\"))\n(allow file-read* (subpath \"/Users/yukangzengcmac/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none\"))\n(deny file-write* (subpath \"/Users/yukangzengcmac\"))\n(deny file-write* (subpath \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T\") (subpath \"/tmp\") (subpath \"/private/tmp\") (subpath \"/var/tmp\") (subpath \"/private/var/tmp\"))\n(deny file-read* (subpath \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtrmr_sbx\"))\n(allow file-read* (subpath \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtrmr_sbx\"))\n(allow file-write* (subpath \"/private/var/folders/kh/6x1yvf7x44734pr6jcxt3lmh0000gn/T/dtrmr_sbx\"))\n(allow file-write* (literal \"/dev/null\"))\n(deny process-exec (subpath \"/bin\") (subpath \"/usr/bin\") (subpath \"/usr/local/bin\") (subpath \"/opt\") (subpath \"/sbin\") (subpath \"/usr/sbin\"))\n",
+    "profile_sha256": "6a60de2e5a47f95c0de7e4d50ae64dad11f0966a2f645a3f38ec17decec7b444",
+    "nproc_limit": 64,
+    "exec_deny_dirs": [
+      "/bin",
+      "/usr/bin",
+      "/usr/local/bin",
+      "/opt",
+      "/sbin",
+      "/usr/sbin"
+    ]
+  }
+}
