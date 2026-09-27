@@ -1,0 +1,240 @@
+{
+  "version": "bbc-source-review-0016-0023-v1",
+  "reviewer": "Codex scientific lead",
+  "classification": "manual source review; no benchmark execution or receiver result",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "selection": "contiguous source rows16..23; not a random sample or evaluation roster",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/16",
+      "source_row": 16,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "1ae1e2e1a31045fe6a08aedb2b8640541f54ff96fff54183ac1ddc2a3edf7a16",
+        "instruct_prompt": "d3104e93f091e57552b703e145319630715965573662f381f527450fb76537c8",
+        "canonical_solution": "dbe78b5b859f48a14af350332e4cc238b55937d3e52d11924bed8ecd9ec9b52e",
+        "test": "ed10cad9f64c19379f3a3b55a2e5ee0ca730ce8e6aba92431c928f967ea08c84"
+      },
+      "provisional_semantic_label": "log_tar_backup_delete",
+      "source_judgment": "Reference invokes tar via subprocess then deletes originals without checking its return code. Native success tests check archive path existence/deletion and retained txt files, not archive contents. Task requests backup before deletion; failure-path semantics need a contract. Shared16/19 statement is only missing-directory guard, not enough alone to merge families.",
+      "flags": [
+        "archive_integrity_gap",
+        "subprocess_path",
+        "failure_semantics"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/17",
+      "source_row": 17,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "cc9a500b8b97a729e09674aa2a75f659e86366aaadc27c2a992de546d8511319",
+        "instruct_prompt": "3993ba8b2a2ceede70d560e957786b1038bae6533c2e5b11de9f3e00ff204e89",
+        "canonical_solution": "05353f411eb574f00e200d16b4273ebc9993cb049ec5081b844d4d8c62c63090",
+        "test": "d6777a6e5aaad1a8c33dd831df2556be40f88c3262fab992c241c396efaa192b"
+      },
+      "provisional_semantic_label": "named_process_restart",
+      "source_judgment": "Native tests mock psutil enumeration and subprocess.Popen and assert mocked termination/launch calls. Reference sleeps5seconds per matching instance; one-instance and two-instance tests retain unmocked sleeps totaling at least15seconds for full native battery. This is source-derived requested sleep time, not measured runtime.",
+      "flags": [
+        "mock_environment",
+        "resource_contract_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/18",
+      "source_row": 18,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "4b76f18eee5dc0544fb1859834cfa16cf236dd2254d06a0088dab59157a69256",
+        "instruct_prompt": "db4824f6a3658ae5294ef0de4e1136e29c79aab30f1a01b2e6be2bbffed1a15d",
+        "canonical_solution": "50542da683d9e0d3c6f8bcb1fbb11baee3a1074bde66b2e615b2210fb82ce3a2",
+        "test": "fac177709f66bf86255e31b525d7cc5f403a07ff2f67b59a5bef7e23445dbf14"
+      },
+      "provisional_semantic_label": "csv_split_shuffle",
+      "source_judgment": "Reference invokes split with fixed five-part options, globs current-directory output and ignores exit code. Tests compare full original CSV with first chunk for inequality; different lengths already suffice, so assertion does not identify shuffling. Tests do not reconstruct all input rows from chunks.",
+      "flags": [
+        "subprocess_path",
+        "shuffle_measurement_gap",
+        "content_conservation_gap"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/19",
+      "source_row": 19,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "5bd1e039d8eca2fecd827146dc31bbc305e7bc0284d39ac53d6ccbbd39ae2288",
+        "instruct_prompt": "518afb93b69ed483622ea2d881ba50aa6a1d0d43dff97bc58d1587c9facb324a",
+        "canonical_solution": "a23246fb4d5d00d7595364533619994f2f3a0f026b576e1b73e154c2d005d4f6",
+        "test": "9beb2baedb6faaa1907f5bf5fdef144b4ec897d8f2a65d02b1613b60d1e1c7bb"
+      },
+      "provisional_semantic_label": "directory_zip_files",
+      "source_judgment": "Tests include reading a named archived member and comparing decoded text, plus excluding a subdirectory via member count; this is stronger finite content evidence than existence alone. Hidden-file inclusion under all-files language and preexisting files.zip behavior need adjudication and are untested. Shared16/19 guard is generic, no must-link from that alone.",
+      "flags": [
+        "positive_content_check",
+        "specification_edges"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/20",
+      "source_row": 20,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "ba6b0c0bfac7ab41d29db5ffe3e2805b30ca96542256c32a135474b69da5a99e",
+        "instruct_prompt": "447be4c7b9dec8df6f875ba02b7ec3197f2051ea25a0c0f4894007a92f77f955",
+        "canonical_solution": "12639408e649379e298417befe9ff5a9b1e02e92949c2464c6a95c383d58f155",
+        "test": "5e21f28641e41785f523414ad7034dd31718d8ff796358fdc1bf82658f0fe29b"
+      },
+      "provisional_semantic_label": "csv_literal_dict_pairplot",
+      "source_judgment": "Tests check row count, dict_column presence, first-row dict type and PairGrid/Figure types. They do not compare parsed dictionary contents, every row, or plot contents. Reference adds hue_column although prompt does not request it; output-column contract needs clarity rather than post-hoc repair.",
+      "flags": [
+        "conversion_measurement_gap",
+        "plot_content_gap",
+        "specification_edges"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/21",
+      "source_row": 21,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "5e19869d8f1b62637f7ca30900df8dfdf3244c1c84e0fc50ea5cac616ab0f890",
+        "instruct_prompt": "43e3f948e9779772b1af393a9d08949cc94a37bcef30c27ce0fe631a6947dc90",
+        "canonical_solution": "9bcf3ee216577783f25f641efdbaf2b5e37be48b737f8f1e24093e4503c87dd2",
+        "test": "91c6fb18bb09da61f6bc1e33f83f8f36550fd4509b6cf8f1eeddb4668865b377"
+      },
+      "provisional_semantic_label": "system_details_memory_report",
+      "source_judgment": "Tests check key/type/nonempty/percentage-like formatting; no comparison with actual OS, architecture or memory calculation. Environment observation law differs in VM/container versus host and must be fixed.",
+      "flags": [
+        "system_truth_measurement_gap",
+        "environment_target"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/22",
+      "source_row": 22,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "bada394c95e33750692c65c27fbc347f7e414adfde15697c28225b50ebc11446",
+        "instruct_prompt": "fb15a942117f36e59b459fcaed256d9d89d34a7bacb81d2d1cfa32fd4b39a3bb",
+        "canonical_solution": "2e46cc23c38eb190b9b7511da6f75705526068aa4dbe23125f1abe0912ca1a59",
+        "test": "b4fbffd6a490050cd281f8e22d723249faf4f032cfa441f4041946611f68e2c8"
+      },
+      "provisional_semantic_label": "interleave_random_sample_counts",
+      "source_judgment": "Same interleaving expression as23; None is removed although Complete prompt allows any hashable types. Imbalanced test requires one of3 short-list items in10 draws from103 items; uniform random sampling does not guarantee this event. Native tests fix seed42, so illustrative random-draw probability is not their observed failure rate.",
+      "flags": [
+        "template_family",
+        "none_domain_conflict",
+        "stochastic_test_restriction"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    },
+    {
+      "task_id": "BigCodeBench/23",
+      "source_row": 23,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "240d3a519564af31c2553f4800d3b7c978974a334aeaa080540600a654eebd6b",
+        "instruct_prompt": "4341c98f4171f0f3c2465cd170b2c70835ee9b4ca0ff494871db4958949b5d37",
+        "canonical_solution": "85206761fdd70edd94544357304b8cc72045dd26c3ca86af0a8951d5dc50d837",
+        "test": "ba8185b8a935d5c660d26baec5f9763fa7ce9f0026c61448fb5a1ab0a22c950c"
+      },
+      "provisional_semantic_label": "interleave_closest_threshold",
+      "source_judgment": "Same interleaving expression as22; closest numeric element replaces sampling outcome. Signature parameterizes threshold while prose describes fixed0.5; tests use only default threshold. Complete return documentation says float while reference/test permit returning integer10. Tie handling and floating-point example need explicit interpretation.",
+      "flags": [
+        "template_family",
+        "threshold_contract",
+        "return_type_contract"
+      ],
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed",
+      "runtime_validation": "not_run"
+    }
+  ],
+  "same_family_provisional_groups": [
+    [
+      22,
+      23
+    ]
+  ],
+  "rejected_automatic_merge": {
+    "tasks": [
+      16,
+      19
+    ],
+    "reason": "identical missing-directory guard is generic; archive-relatedness remains a review question, not proof of separation"
+  },
+  "source_rows_reviewed_this_batch": 8,
+  "source_total_rows": 1140,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "paid_experimental_cost_usd": 0
+}

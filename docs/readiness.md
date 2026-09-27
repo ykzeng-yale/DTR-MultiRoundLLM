@@ -1,5 +1,10 @@
 # Research-completion rubric and historical checkpoints
 
+## 27 September2026 — source rows16–23 reviewed
+
+Codex [source batch](bigcodebench_semantic_review_0016_0023_20260927.md): task17 reference requests15seconds of unmocked sleep across its native battery;18's whole-file/first-chunk inequality does not establish shuffling;19 checks actual archived content. Provisional22/23 co-splitting retained,16/19 generic guard not automatically merged. All eight rows remain unresolved/not admitted;32 field hashes checked. Prior full index reproduced byte-identically on CPython3.12.13. No task/model execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only work.
+
+
 ## 27 September2026 — whole-source template retrieval and distant relative
 
 Codex [template index](bigcodebench_template_review_20260927.md) covers1,140 rows:195 repeated-statement groups,8,478 candidate pairs across437 tasks; a123-task plotting boilerplate group shows why matches are not families. Independent implementation recount agrees. Full source review of retrieved887 extends provisional co-split group8/10/11 to8/10/11/887; no admission or statistical-independence claim. Six focused tests pass; no benchmark/model execution. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final manuscript/raw reproduction remain incomplete. Goal active, Codex-only execution.

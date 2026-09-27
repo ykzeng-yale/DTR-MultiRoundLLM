@@ -586,3 +586,8 @@ Codex direct execution: [results](native628_audit_results_20260927.md), freeze3b
 ## 27 September2026 — full-source retrieval
 
 [Template index and887 relation](bigcodebench_template_review_20260927.md) support cross-batch review. Preserve provisional8/10/11/887 grouping; do not merge plotting-boilerplate matches or certify unmatched tasks. No native/model run released. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.
+
+
+## 27 September2026 — source rows16–23
+
+[Review](bigcodebench_semantic_review_0016_0023_20260927.md) retains22/23 provisional group;17 native reference sleeps require explicit time contract;18 chunk inequality is not shuffling evidence. No task admission or execution. Next source-order batch starts24; keep retrieval-selected887 separate. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete.

@@ -1,0 +1,14 @@
+{
+  "classification": "source/hash verification and parser-version reproduction; not task execution",
+  "review_sha256": "7e6c098ef6da01b5a0c9eeb10427e938ef05d7715c5e56a6f2998de6d121573d",
+  "reviewed_rows": 8,
+  "field_hashes_checked": 32,
+  "python_implementation": "CPython",
+  "python_version": "3.12.13",
+  "pyarrow_version": "19.0.1",
+  "template_index_sha256": "b05d936b8afd0031344acc977044db8feee87bb0a058b5cb1d9e0e3a54175194",
+  "template_index_reproduced_byte_identically": true,
+  "benchmark_calls": 0,
+  "receiver_calls": 0,
+  "independent_review": "Existing experiment reviewer verified32 field hashes and substantive claims; decoded-text, return-documentation and hidden-file wording corrections applied. No execution."
+}

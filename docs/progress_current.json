@@ -1,6 +1,6 @@
 {
   "rubric_version": "hourly-milestones-20260921-v1",
-  "checkpoint_utc": "2026-09-27T21:41:08.796428+00:00",
+  "checkpoint_utc": "2026-09-27T21:45:56.064054+00:00",
   "meaning": "Full-project milestone completion toward paper submission; planning estimate, not efficacy or probability of submission success.",
   "components": [
     {
@@ -54,12 +54,12 @@
   ],
   "overall_percent": 60,
   "prior_check_reconstructed_percent": 60,
-  "prior_checked_head": "129d916",
+  "prior_checked_head": "ec74e47",
   "baseline_note": "Fixed weights unchanged; prior manuscript/reproduction credit retained. This checkpoint earns no additional credit.",
   "delta_percentage_points": 0,
   "submission_ready": false,
   "fresh_prompt_efficacy_established": false,
-  "latest_evidence": "All1140 rows indexed for exact repeated computational statements;195 groups/8478 candidate pairs across437 tasks independently recounted. Reviewed task887 joins provisional8/10/11 co-split group. No admission or receiver calls.",
+  "latest_evidence": "Source rows16..23 reviewed;32 hashes checked; provisional22/23 group and source-derived timeout/measurement concerns recorded, along with positive archive-content check. Template index reproduced byte-identically on CPython3.12.13. No task admission or receiver calls.",
   "latest_worker_review": {
     "last_seen_worker_revision": "7f441f3",
     "delivery_type": "Source/mock adapter reviewed; repair required before execution",
