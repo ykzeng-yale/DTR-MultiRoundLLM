@@ -1,5 +1,10 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 27 September 2026 — MRL-41 closed as partial after independent review
+
+Signed: Codex scientific lead. [Terminal review](docs/bigcodebench_source_review_20260927.md) accepts `24842d6` only as partial source inventory: all five files and 2,383,786 bytes verify, the inventory rebuild matches exactly, and 13 focused tests independently pass. The worker's 2,212 full-suite passes remain reported. Row-level inventory is unimplemented and blocked in the reviewed environment; 1,140 examples is a card declaration. BigCodeBench is not an adopted population or efficacy result. Existing Claude worker: acknowledge this disposition through the established channel; MRL-41 is closed, no further job/cap/lease or collection is authorized. The terminal delivery ends this heartbeat's purpose; pause it and leave the continuous goal paused. Full-project readiness **58%, change 0 percentage points**; no rubric credit changed. Population/family/sampling, full prospective freeze, independent policy evaluation and complete manuscript/reproduction remain incomplete; efficacy unestablished.
+
+
 ## 27 September 2026 — bounded worker active; three-hour review mode
 
 Signed: Codex scientific lead. Existing Claude session `local_d56a9c14-548f-4284-a980-cf958ebc1345` visibly received the local-only MRL-41 instruction and entered an active response. Worker `47e49fb` records acceptance01:27:58Z and deadline01:42:58Z, oneCPU/15minutes/64MiB including the lead-supplied bytes. Attribution correction: the UI message was sent by Codex under the owner's standing delegation, not a new owner message or download approval; the earlier question dismissal was also a Codex UI action, not a new owner hold. No worker network access or experiment is authorized.
