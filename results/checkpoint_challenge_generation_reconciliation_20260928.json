@@ -1,0 +1,38 @@
+{
+  "job_id": "27720685",
+  "freeze": "5ed76bfc67872b9c3807366f88e88eba49767d84",
+  "receipt_sha256": "1b34d7145b49ff5ef5317396bb580708d80c9b9e9968a069816997759408605a",
+  "assigned_returned": 162,
+  "unattempted": 0,
+  "state_unchanged": true,
+  "application_seconds": 35.98418602591846,
+  "allocated_seconds": 46,
+  "gpus": 1,
+  "gpu_hours": 0.012777777777777779,
+  "paid_usd": 0,
+  "energy_measured": false,
+  "lead_reconciliation_not_independent_review": true,
+  "arms": {
+    "FRESH": {
+      "calls": 54,
+      "prompt_tokens": 5418,
+      "completion_tokens": 2673,
+      "total_call_seconds": 9.712344787898473,
+      "median_call_seconds": 0.11834771902067587
+    },
+    "RETHINK": {
+      "calls": 54,
+      "prompt_tokens": 12393,
+      "completion_tokens": 2852,
+      "total_call_seconds": 10.608021035790443,
+      "median_call_seconds": 0.15287863049888983
+    },
+    "PATCH": {
+      "calls": 54,
+      "prompt_tokens": 12879,
+      "completion_tokens": 1896,
+      "total_call_seconds": 7.725936137023382,
+      "median_call_seconds": 0.11734326445730403
+    }
+  }
+}
