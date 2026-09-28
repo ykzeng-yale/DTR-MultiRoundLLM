@@ -693,3 +693,12 @@ Next actual job27724993 is a frozen ten-new-seed replication,1620calls, all54che
 On completion retrieve replication/summary.json, logs, GPU samples and Slurm accounting; run `scripts/grade_checkpoint_replication_20260928.py --plan experiments/bouchet/checkpoint_replication_plan_v1.json --receipt <retrieved replication/summary.json> --out work/checkpoint_replication_grading_20260928` using project Python. <=13140 local sandbox cases,3600seconds,256MiB retained, no code execution on Bouchet. Report all10replicate panels, full-denominator missing bounds and artifact strata; do not treat replicates as new roots or fit a policy on them. Twelve focused tests pass; request comparison verifies all1620 payloads differ from discovery only in seed, ten per combination.
 
 Full-project readiness60%,delta0. Broader population/measurement, full independent study freeze/evaluation and manuscript/raw reproduction remain incomplete. Scientific next-step decision depends on replication stability; do not rerun completed discovery or hardware qualification.
+
+
+## 28 September 2026, 00:01 ET — replication running; discovery manuscript integrated
+
+Codex checked actual job 27724993 once: sacct RUNNING, start 27 September 23:58:27 ET, elapsed 2m33s; receiver summary had 609 assigned calls and no recorded error. This supersedes the provisional queue estimate, not terminal validation. No duplicate job or new collection was launched. Retrieve and grade the terminal receipt using the preceding frozen replication instructions.
+
+While generation runs, the manuscript now reports the full discovery table, negative PATCH contrasts, incomplete observations, information differences and cost distinctions. A separate standard-library saved-row reconciliation checks all 162 identities and exact rational equal-root bounds against three hash-recorded inputs. Isolated Python execution reproduces the committed receipt. This is lead arithmetic validation, not independent scientific review or raw replay. Replication outcomes remain pending in the manuscript.
+
+Full-project submission readiness 60%, change 0 percentage points: this integrates evidence without closing a new fixed-rubric milestone. Broader population/measurement, complete independent study freeze, independent policy evaluation and manuscript/raw reproduction remain incomplete. Efficacy is unestablished; seed replication does not add independent roots.

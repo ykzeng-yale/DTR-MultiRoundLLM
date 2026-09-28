@@ -1,6 +1,6 @@
 # Evaluating history-dependent prompt choice in multi-round language-model interaction
 
-Working title and manuscript entry point, created 22 September 2026; current synthesis updated 27 September 2026. This is an editable synthesis of the current evidence, not a submission-ready paper. It supersedes the empirical framing of the dated PDFs without replacing their historical records. Updated 25 September: E12 outcome delivery `1f65447` is independently reconciled, with its negative result and measurement limitations retained. E13a adds a finite five-checkpoint restart-package follow-up with saved outcomes and the completed additive archive independently checked. The studies remain separate. The 27 September integration adds completed finite measurement audits, the current prospective learner/coupling/inference choices, and the reviewed-source population limitation. It adds no receiver outcomes or independent policy validation.
+Working title and manuscript entry point, created 22 September 2026; current synthesis updated 28 September 2026. This is an editable synthesis of the current evidence, not a submission-ready paper. It supersedes the empirical framing of the dated PDFs without replacing their historical records. Updated 25 September: E12 outcome delivery `1f65447` is independently reconciled, with its negative result and measurement limitations retained. E13a adds a finite five-checkpoint restart-package follow-up with saved outcomes and the completed additive archive independently checked. The studies remain separate. The 27 September integration adds completed finite measurement audits, the current prospective learner/coupling/inference choices, and the reviewed-source population limitation. That integration added no receiver outcomes or independent policy validation. The 28 September addition reports a separately frozen CUDA constructed-checkpoint development experiment; it does not supply independent policy validation.
 
 ## Abstract
 
@@ -190,10 +190,31 @@ The restart-package development comparison has now run. The additive archive has
 
 The earlier [variance-sensitive paired-family interval option](../docs/paired_family_inference_option_20260926.md) remains a documented prospective sensitivity option under its assumptions. The sign-split KL procedure described above is now the proposed primary method, chosen before new PATCH/RETHINK outcomes. No published interval is replaced retrospectively, and the narrowest interval may not be selected after observing outcomes. The complete development/evaluation design and independent policy validation remain unfinished.
 
+## Constructed-checkpoint prompt interventions: development evidence
+
+A subsequent prospective development experiment used the same nine adapted measurement tasks, with each reference and its five deliberately wrong controls as fixed initial answers: 54 constructed checkpoints. All states were retained before generation. PATCH and RETHINK received the identical original-task/initial-answer prefix and a fixed status-only public-check message. FRESH received the adapted task without the constructed answer or status, so its comparison includes an explicit information difference. The receiver used the same Qwen2.5-3B Q4_K_M weight digest in a separately qualified Linux/CUDA runtime; it is not pooled with the earlier Metal experiments or claimed stochastically equivalent.
+
+The [frozen protocol](../docs/checkpoint_challenge_protocol_20260928.md) and [seeded assignment table](../results/checkpoint_challenge_assignments_20260928.json) specify 162 calls, one per checkpoint/arm, with equal 1,024-token ceilings. Expected values and comparison code remained outside the candidate process. A preceding 438-case source-separated audit confirmed the predeclared scores of all 54 known artifacts. All 162 generation calls returned; the frozen local grader executed 1,314 cases. This finite qualification does not establish general adversarial robustness or full task semantics.
+
+| Action | Supplemental passes | Failures | Incomplete | Equal-root mean bounds |
+|---|---:|---:|---:|---:|
+| STOP | 9/54 | 45/54 | 0/54 | 16.67% |
+| PATCH | 37/54 | 17/54 | 0/54 | 68.52% |
+| RETHINK | 39/54 | 10/54 | 5/54 | 72.22–81.48% |
+| FRESH | 44/54 | 9/54 | 1/54 | 81.48–83.33% |
+
+The intervals bound missing outcomes; they are not confidence intervals. PATCH minus FRESH is between −14.81 and −12.96 percentage points, and PATCH minus RETHINK between −12.96 and −3.70 points. Thus this panel does not demonstrate overall repair superiority. STOP's low rate is imposed by the five-wrong/one-correct construction and does not estimate deployment accuracy. PATCH preserves all nine reference artifacts; RETHINK preserves six, demonstrably damages one and leaves two incomplete. Conversely, RETHINK repairs all nine constant-public-answer controls versus four for PATCH. These exploratory contrasts suggest conditional tradeoffs but do not justify choosing a policy using private control labels.
+
+The unavailable outcomes include malformed source, missing imports and output/interface violations; they retain the prospective INCOMPLETE category rather than being reclassified after seeing results. Original-example-lookup controls contain original example answers by construction, making original-private scores descriptive rather than unseen. Supplemental expectations were not sent to the receiver. The nine roots are reused development tasks, and their constructed artifacts are not independent tasks.
+
+Generation occupied one H100 for 46 seconds (0.01278 GPU-hours). PATCH, RETHINK and FRESH used 1,896, 2,852 and 2,673 completion tokens respectively, but their prompt-token totals were 12,879, 12,393 and 5,418; equal output ceilings do not establish equal total cost. Standard-tier monetary charge was $0 and energy was not measured. A fixed ten-new-seed replication of the complete panel was prospectively frozen after discovery; its outcomes are pending in this manuscript version and will be reported separately. More seed replicates do not create additional independent task families. [Results and decision](../docs/checkpoint_challenge_results_20260928.md).
+
 ## Reproduction status
 
 The [saved-record reproduction guide](REPRODUCING.md) provides three commands and a hash-bound receipt for47 committed inputs. The arithmetic reproduces the historical diagnostic summaries,E11/E12/E13a contrasts and both endpoint projection totals without new generation,grading or fits. Public projections permit count reproduction;private sandbox payloads/logs and full receiver/environment reproduction remain separate requirements. A subsequent clean-checkout execution with isolated Python reproduces this layer without ignored data or a project virtual environment; all47 input hashes match and the scientific summaries are unchanged. The [execution receipt](../results/manuscript_clean_checkout_20260927/receipt.json) records its scope. This is a same-host saved-record reproduction, not a clean-host end-to-end experiment replay or independent policy-validation result.
 
+
+The added checkpoint table has a separate standard-library reproduction command, `python3 scripts/reconcile_checkpoint_manuscript_20260928.py`. It checks all 162 row identities and computes exact rational mean/contrast bounds from three committed inputs. Its [receipt](../results/checkpoint_manuscript_reconciliation_20260928.json) reproduces arithmetic only; ignored raw candidate payloads, isolation and end-to-end receiver replay remain separate requirements. The historical 47-input reproduction layer is unchanged.
 
 ## References for the integrated methods and related work
 

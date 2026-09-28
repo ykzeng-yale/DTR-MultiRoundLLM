@@ -1,0 +1,64 @@
+{
+  "scope": "saved-row arithmetic reproduction, no payload execution or independent scientific review",
+  "inputs_sha256": {
+    "results/checkpoint_challenge_grading_20260928.json": "3ce893b42547f6e21e2c2be8682a906611afab6830f6af199b90b3a4fe040ae2",
+    "results/literal_panel_baseline_20260928.json": "1446b6040ca4dc45bb16b3b77e8c5df32682c68230b732e25acd19b9b63800fe",
+    "results/checkpoint_challenge_generation_reconciliation_20260928.json": "8a1ca5d50e5808fdc70365634134e1604de6ad61f209bbace474fc504baa3ece"
+  },
+  "counts": {
+    "STOP": {
+      "PASS": 9,
+      "FAIL": 45,
+      "INCOMPLETE": 0
+    },
+    "PATCH": {
+      "PASS": 37,
+      "FAIL": 17,
+      "INCOMPLETE": 0
+    },
+    "RETHINK": {
+      "PASS": 39,
+      "FAIL": 10,
+      "INCOMPLETE": 5
+    },
+    "FRESH": {
+      "PASS": 44,
+      "FAIL": 9,
+      "INCOMPLETE": 1
+    }
+  },
+  "equal_root_mean_bounds_exact": {
+    "STOP": [
+      "1/6",
+      "1/6"
+    ],
+    "PATCH": [
+      "37/54",
+      "37/54"
+    ],
+    "RETHINK": [
+      "13/18",
+      "22/27"
+    ],
+    "FRESH": [
+      "22/27",
+      "5/6"
+    ]
+  },
+  "contrast_bounds_exact": {
+    "PATCH-RETHINK": [
+      "-7/54",
+      "-1/27"
+    ],
+    "PATCH-FRESH": [
+      "-4/27",
+      "-7/54"
+    ],
+    "RETHINK-FRESH": [
+      "-1/9",
+      "0"
+    ]
+  },
+  "allocated_gpu_seconds": 46,
+  "discovery_only": true
+}
