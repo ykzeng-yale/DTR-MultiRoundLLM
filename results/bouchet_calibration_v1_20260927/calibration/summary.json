@@ -1,0 +1,33 @@
+{
+  "classification": "synthetic CUDA runtime qualification, no efficacy claim",
+  "job_id": "27714349",
+  "config_sha256": "351d6d0e4f5932d8f231bd2b1dcedb8b3442038e14722e78d5e4985bfd71113b",
+  "build_manifest_sha256": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+  "freeze": "1da4ca9324bb353bb88b7c45356edf26871f1c78",
+  "calls": [],
+  "error": "ValueError('declared receiver properties differ')",
+  "command": [
+    "build/bin/llama-server",
+    "-m",
+    "model.gguf",
+    "--alias",
+    "qwen2.5-3b-instruct",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18193",
+    "-ngl",
+    "99",
+    "-np",
+    "4",
+    "-c",
+    "32768",
+    "--jinja"
+  ],
+  "server_returncode": 0,
+  "elapsed_seconds": 3.284410970052704,
+  "unattempted": 9,
+  "guard_failures": [],
+  "paid_usd": 0,
+  "energy_measured": false
+}

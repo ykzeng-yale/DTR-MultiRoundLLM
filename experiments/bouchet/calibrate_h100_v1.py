@@ -1,5 +1,5 @@
 """Synthetic CUDA migration pilot; outputs never executed or graded."""
-import hashlib,json,os,signal,socket,subprocess,sys,threading,time,urllib.request
+import argparse,hashlib,json,os,signal,socket,subprocess,sys,threading,time,urllib.request
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[2]))
 from experiments.landmark.collect import receiver_state,digest,NoRedirect
@@ -10,8 +10,8 @@ def sha(path):
         for b in iter(lambda:f.read(1048576),b''):h.update(b)
     return h.hexdigest()
 
-def main():
-    plan_path=Path('experiments/bouchet/calibration_plan_v1.json');plan=json.loads(plan_path.read_bytes())
+def main(plan_path=Path('experiments/bouchet/calibration_plan_v1.json')):
+    plan=json.loads(plan_path.read_bytes())
     for p,h in plan['files'].items():
         if sha(p)!=h:raise ValueError('input mismatch: '+p)
     if sha('model.gguf')!=plan['model_sha256']:raise ValueError('model mismatch')
@@ -87,4 +87,5 @@ def main():
         rec.update(elapsed_seconds=time.monotonic()-start,unattempted=9-len(rec['calls']),guard_failures=failure,paid_usd=0,energy_measured=False)
         save()
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--plan',type=Path,default=Path('experiments/bouchet/calibration_plan_v1.json'));args=parser.parse_args();main(args.plan)

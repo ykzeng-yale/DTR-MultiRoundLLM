@@ -1,0 +1,9 @@
+0dcef05d78886aaeed098183551e6b04733c3856aac22453236ff16d2fcffd8a  build/bin/libggml-base.so.0.24.0
+477a52db06c197d25b18c51a64cabcd5ad8cc71bb25e7465e123d35a8737f3c1  build/bin/libggml-cpu.so.0.24.0
+0a67e8e3d0260213223665afac8a1f4682faa2466b14b3ea9ac09659aa8dbc06  build/bin/libggml-cuda.so.0.24.0
+6fc293fbd168c3e1f2b811159ebf4f12445ab2281a8acb0080b9782ba960b0f9  build/bin/libggml.so.0.24.0
+cfa0be557ce40753f537a994af1cc5212852f048e2076964f84f15f796ff7351  build/bin/libllama-common.so.0.4.1
+e32aa3235356e239212e34dbf8087630d28a00ef35f1db4458a38d5b6d56b5f2  build/bin/libllama-server-impl.so
+d7ee4c590e5eaf63d8b0ceb2b742946472be03166543006b4bf0e8ce8cb81f6c  build/bin/libllama.so.0.4.1
+a1a87c3da2f95840ed7f0119cdf627b189895ba5cee4211609ecbac1477d0b62  build/bin/libmtmd.so.0.4.1
+170c4be5c2d9c3ce919f3d718bf1bb7d682c8b856f530f45dc1ab9d69591b60b  build/bin/llama-server

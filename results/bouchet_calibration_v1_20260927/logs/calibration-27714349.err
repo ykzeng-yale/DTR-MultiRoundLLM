@@ -1,0 +1,12 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) StdEnv
+Traceback (most recent call last):
+  File "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/cuda-pilot-20260927-v1/experiments/bouchet/calibrate_h100_v1.py", line 90, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/cuda-pilot-20260927-v1/experiments/bouchet/calibrate_h100_v1.py", line 62, in main
+    if digest(receiver_state(props))!=plan['receiver_state_sha256']:raise ValueError('declared receiver properties differ')
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: declared receiver properties differ
