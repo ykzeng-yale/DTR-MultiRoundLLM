@@ -1,0 +1,11 @@
+{
+  "classification": "trusted containment capability check, no candidate execution",
+  "cpu": 1,
+  "memory_gib": 1,
+  "wall_seconds": 60,
+  "files": {
+    "experiments/containment/bouchet_probe_v1.py": "bf33a9e3f32dddf2c4fa115b2638c0c3b98911b8423a448704318dcd0ef89ff6",
+    "experiments/containment/bouchet_probe_v1.sbatch": "dbabc4b550c1d0846f6e31a2e7593272b7426aae6484fbcaa0343e1e93e4a467",
+    "docs/bouchet_isolation_probe_20260928.md": "4de7a4d761456146161648b90839b7fb98413d3fbdc31fdf3c66a3274e2abc60"
+  }
+}
