@@ -1,0 +1,10 @@
+{
+  "classification": "data-only acquisition; actual Python3.9 marker repair",
+  "files": {
+    "experiments/native_runtime/core_requirements_v1.txt": "8db56b9b05a0c17f309bbf4288c146c34755221814d1a84ce9fd8b7b31e75d14",
+    "experiments/native_runtime/publisher_constraints_v1.txt": "a4d01fb12cbce5223b51f982265cb7975bea770b758cd85cc91b803d3293e39f",
+    "experiments/native_runtime/acquire_wheels_v2.py": "efa0275064deeb95d3b1e58ee32359e43aa9e6bf3a274624724c74b9e6bc4670",
+    "experiments/native_runtime/acquire_wheels_v2.sbatch": "37b73c48709faa0c02b046ea9f7e87c51d2e9c68343081951a0467c690f0f94e",
+    "docs/native_wheel_acquisition_v2_20260928.md": "f238f8df8a263a4ef80eab1c1523cd3c66830c2dffdafce15933011042e80ef0"
+  }
+}

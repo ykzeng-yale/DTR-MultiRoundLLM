@@ -1,0 +1,5 @@
+# Native wheel acquisition v2 — environment-marker repair
+
+Version 1 job 27777881 ended in 11 allocated seconds with scheduler exit 0 but downloader exit 1, zero wheels. The pip log shows Python >=3.11 numpy requirements evaluated under the Python 3.12 host despite a cp39 wheel target. This is an acquisition failure, not an incompatible reference task or scientific result. Preserve all raw artifacts at work/native_core_wheels_20260928_v1.
+
+Version 2 runs the existing pure-Python site pip 24.0 under actual /usr/bin/python3 3.9.21, verified with pip --version. It refuses any other interpreter. Requirements and constraints remain byte-identical. A downloader failure now propagates a nonzero scheduler exit after writing the receipt. Same binary-only/no-install policy, 600-second supervised download, 512MiB supervised total storage, 8MiB log, one CPU/2GiB/12minutes, zero GPUs/$0. Fresh remote directory native-core-wheels-20260928-v2. No benchmark, reference or generated candidate code is executed; no package imports from downloads. No eligibility/population change. After two failures of the same cause stop; do not silently relax constraints.

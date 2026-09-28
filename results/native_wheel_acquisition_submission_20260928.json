@@ -1,0 +1,26 @@
+{
+  "job_id": "27777881",
+  "classification": "data-only wheel acquisition; no candidate execution",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "resources": {
+    "cpus": 1,
+    "memory_gib": 2,
+    "wall_minutes": 12,
+    "gpus": 0,
+    "paid_usd": 0
+  },
+  "freeze": "9fd0d46fbc217cab788b0c32545c2e7e08dcd186",
+  "submitted_utc": "2026-09-28T22:19:16.153184+00:00",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-core-wheels-20260928-v1",
+  "plan_sha256": "f390281abceabe4ff3ecd11b68ded66d41c2ab3e1c34c52f51c786a6d08f105f",
+  "expected_artifacts": [
+    "acquisition/summary.json",
+    "acquisition/pip.log",
+    "acquisition/wheels",
+    "logs/wheels-27777881.out",
+    "logs/wheels-27777881.err"
+  ],
+  "duplicate_check": "No same-name job before submission",
+  "test_only_estimate": "2026-09-28T18:18:59 America/New_York; provisional"
+}

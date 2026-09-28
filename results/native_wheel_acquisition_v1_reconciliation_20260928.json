@@ -1,0 +1,18 @@
+{
+  "job_id": "27777881",
+  "scheduler_state": "COMPLETED",
+  "scheduler_exit": "0:0",
+  "allocated_seconds": 11,
+  "downloader_returncode": 1,
+  "scientific_success": false,
+  "wheels": 0,
+  "diagnosis": "Python3.12 host environment markers used despite cp39 target; versioned actual3.9 repair",
+  "raw_sha256": {
+    "freeze.txt": "ba7e6a9222f6c20aa4373ab45c59e56f64bbfe3a121de242b7275f9dc009b769",
+    "acquisition-plan.json": "f390281abceabe4ff3ecd11b68ded66d41c2ab3e1c34c52f51c786a6d08f105f",
+    "acquisition/summary.json": "3ec70290bec85baef078cd1c7dccd11bf31bd7175b7f5f78969b3c14c8ff797a",
+    "acquisition/pip.log": "32f9b97114b237e494a74f37ede06cf5327b5ff3cc9b00636538a6d6921fec2e",
+    "logs/wheels-27777881.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/wheels-27777881.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e"
+  }
+}
