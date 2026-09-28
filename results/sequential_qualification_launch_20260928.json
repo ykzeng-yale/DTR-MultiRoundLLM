@@ -1,0 +1,20 @@
+{
+  "classification": "running synthetic qualification; not LLM efficacy",
+  "pid": 96112,
+  "freeze": "593fd769b8ef7c13490302569e8dbe328b5d659b",
+  "plan_sha256": "ad25909743451e085b3b19598d0a7abdb9a5cd98a168770f56b374f1ca014762",
+  "planned": 2700,
+  "completed": 0,
+  "error": null,
+  "oracle": {
+    "null": 0.55,
+    "mode_specific": 0.908884,
+    "noisy_public": 0.862393
+  },
+  "exec_session": 36531,
+  "wall_seconds": 1200,
+  "retained_bytes": 67108864,
+  "paid_usd": 0,
+  "tests": "2391 passed and 8 subtests in45.45s",
+  "launch_sha256": "7d90f4474f1ec9932d36ded4f8176b1eb4a76213b5e2568185cb72f7e70fd0a3"
+}
