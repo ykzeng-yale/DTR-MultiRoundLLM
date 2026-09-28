@@ -1,0 +1,15 @@
+{
+  "classification": "trusted containment capability check, no candidate execution",
+  "cpu": 1,
+  "memory_gib": 1,
+  "wall_seconds": 60,
+  "files": {
+    "experiments/containment/bouchet_probe_v3.py": "c36651a3d7bfd6a05d16bcb6d0462560b1a0f6c6fa67f9cc982fbb812b7d0372",
+    "experiments/containment/bouchet_probe_v3.sbatch": "97e98e6d317c1851c11bcffebed5318b43877a492269cad989ad7e908a1bdefa",
+    "docs/bouchet_isolation_probe_20260928.md": "4de7a4d761456146161648b90839b7fb98413d3fbdc31fdf3c66a3274e2abc60"
+  },
+  "partition": "devel",
+  "account": "pi_fl426",
+  "route_change": "Before any actual submission: fl/day estimate2026-09-29T10:27:33,gt/day03:21:51,fl/devel2026-09-28T16:17:08; choose appropriate short development partition, same1CPU1GiB5min and unchanged probe. Original day plan never executed.",
+  "repair": "27771283 probe failed before child startup: bwrap0.4.1 does not support --clearenv. Use existing /usr/bin/env -i before trusted Python and a minimal launcher environment. No weakening of child environment boundary. Prior raw failure preserved. One versioned compatibility repair, not blind retry."
+}

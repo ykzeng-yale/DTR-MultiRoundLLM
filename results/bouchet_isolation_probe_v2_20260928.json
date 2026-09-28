@@ -1,0 +1,41 @@
+{
+  "job_id": "27771283",
+  "freeze": "5d3c25a7ccc9c615d91ab115a302f01ac857eab4",
+  "plan_sha256": "a2dd2603fb06145513e0985a89b28b9a16721a0366f13d48d2b9e682231e6206",
+  "classification": "trusted namespace capability probe only; no candidate execution authorized",
+  "platform": "Linux-5.14.0-570.140.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "versions": {
+    "bwrap": {
+      "returncode": 0,
+      "stdout": "bubblewrap 0.4.1\n",
+      "stderr": ""
+    },
+    "apptainer": {
+      "returncode": 0,
+      "stdout": "apptainer version 1.5.3-1.el9\n",
+      "stderr": ""
+    },
+    "unshare": {
+      "returncode": 0,
+      "stdout": "unshare from util-linux 2.37.4\n",
+      "stderr": ""
+    }
+  },
+  "namespace_probe": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "bwrap: Unknown option --clearenv\n"
+  },
+  "parsed": null,
+  "host_canary_unchanged": true,
+  "seconds": 0.36494828411377966,
+  "candidate_execution_released": false,
+  "disposition": "failed before isolation child startup; one separately frozen option compatibility repair",
+  "sha256": {
+    "work/bouchet_isolation_probe_20260928/freeze.txt": "5c80fdaba9ca63aebbd06f1a752a06bd90994948f8cb7554df8e35d8ffebf66f",
+    "work/bouchet_isolation_probe_20260928/probe-plan.json": "a2dd2603fb06145513e0985a89b28b9a16721a0366f13d48d2b9e682231e6206",
+    "work/bouchet_isolation_probe_20260928/logs/probe-27771283.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/bouchet_isolation_probe_20260928/logs/probe-27771283.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/bouchet_isolation_probe_20260928/probe-results/summary.json": "7c0ec197a63e40e6b2a1a1c7b0100efab212a23ae14b925e9324f7658bd04d34"
+  }
+}
