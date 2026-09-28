@@ -1,6 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
 
+## 27 September2026 — H100 pilot submitted
+
+Build27714026 completed0:0 at21:33:35ET in10m19s; all9 binary hashes verified. Freeze1da4ca9324bb353bb88b7c45356edf26871f1c78 binds successful build and prospective nine-call analysis. Actual H100 pilot job27714349 submitted21:34:23ET, pi_fl426,1H100/4CPU/16GiB/15minutes. PENDING at21:34:28; actual start unknown, prior test-only estimated23:11:17ET (~97minutes), not guaranteed. Use results/bouchet_calibration_submission_20260927.json and actual job27714349 going forward; do not resubmit. Retrieve calibration/summary.json, GPU samples and Slurm accounting on completion, run frozen analysis and reconcile failures. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete. No CUDA efficacy or Metal-equivalence claim.
+
+
 ## 27 September2026 — Codex: local run reconciled; Bouchet build running
 
 Lead reconciliation verifies all24 raw/source hashes for Python3.9 freeze21ef1e7:22 native all-success reports,17 timeout,334 five missing-punkt LookupErrors;62.277seconds,0unattempted,0receiver calls. This improves runtime compatibility only; not semantic validation or an independent review. Previous12-success modern-environment result remains intact. Same25 known exposed IDs, no new population admission.

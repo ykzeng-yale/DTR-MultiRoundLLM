@@ -1,0 +1,17 @@
+{
+  "job_id": "27714349",
+  "state_observed": "PENDING",
+  "observed_et": "2026-09-27T21:34:28-04:00",
+  "account": "pi_fl426",
+  "partition": "gpu_h100",
+  "gpus": 1,
+  "cpus": 4,
+  "memory_gib": 16,
+  "wall_minutes": 15,
+  "freeze": "1da4ca9324bb353bb88b7c45356edf26871f1c78",
+  "config_sha256": "351d6d0e4f5932d8f231bd2b1dcedb8b3442038e14722e78d5e4985bfd71113b",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/cuda-pilot-20260927-v1",
+  "actual_job_start_estimate": null,
+  "prior_test_only_start_estimate_et": "2026-09-27T23:11:17-04:00",
+  "note": "Test-only estimate not a reservation or actual job start guarantee. Build27714026 completed0:0 in10m19s; all9 produced binary hashes verified. No generation observed yet."
+}
