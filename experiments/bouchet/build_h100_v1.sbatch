@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=dtr-cuda-build-v1
 #SBATCH --account=pi_fl426
-#SBATCH --partition=day
+#SBATCH --partition=devel
 #SBATCH --qos=normal
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
