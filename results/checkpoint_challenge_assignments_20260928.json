@@ -1,0 +1,1622 @@
+[
+  {
+    "slot": 0,
+    "root": "mbpp/654",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+    "public_status": "PASS",
+    "seed": 2026092890,
+    "payload_sha256": "3646ce2517d1c199ddfa155844b7df520cfab74ff2598fc609561065f5fe35cf"
+  },
+  {
+    "slot": 1,
+    "root": "mbpp/354",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+    "public_status": "PASS",
+    "seed": 2026092853,
+    "payload_sha256": "6a52cd104728347182d540788fbf9c7f0f29b0215766667d18bd1314d3b1aad9"
+  },
+  {
+    "slot": 2,
+    "root": "mbpp/700",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+    "public_status": "PASS",
+    "seed": 2026092909,
+    "payload_sha256": "da8ac985e1cb3f4c7b37e5a57d48b30e7aca05630aa36cae628e2119a27424ce"
+  },
+  {
+    "slot": 3,
+    "root": "mbpp/36",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+    "public_status": "PASS",
+    "seed": 2026092947,
+    "payload_sha256": "d7e3929f71ea374d9389828dfcfb7a7db91029a49c6fde5660a304b0da61a4eb"
+  },
+  {
+    "slot": 4,
+    "root": "mbpp/885",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+    "public_status": "PASS",
+    "seed": 2026092820,
+    "payload_sha256": "2afe473c52fefadc1b590e75094ff1a10b6b7fa48c7cde10fc07e55b309fe7eb"
+  },
+  {
+    "slot": 5,
+    "root": "mbpp/656",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+    "public_status": "PASS",
+    "seed": 2026092940,
+    "payload_sha256": "1a0d11b005e56dafc362712233a6611a9ced49b121d08a403e0cb89278f65960"
+  },
+  {
+    "slot": 6,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+    "public_status": "FAIL",
+    "seed": 2026092844,
+    "payload_sha256": "cdb4e682adcf715e9c083fde1c906b20d858a582a848f972b0d7523d334bc22d"
+  },
+  {
+    "slot": 7,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+    "public_status": "FAIL",
+    "seed": 2026092920,
+    "payload_sha256": "91691aad85879a0d3b42c73b2582d07cbb68d856fe4ef0a367d8dc3b70f9aec2"
+  },
+  {
+    "slot": 8,
+    "root": "mbpp/354",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+    "public_status": "PASS",
+    "seed": 2026092837,
+    "payload_sha256": "ee9c08e2835a46bcf18cd83fb7958c4121e0e34c48ef9f1ae6fa802614c39e74"
+  },
+  {
+    "slot": 9,
+    "root": "mbpp/703",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+    "public_status": "PASS",
+    "seed": 2026092893,
+    "payload_sha256": "4dd3a2ca2cc8ff9f905de9c11d40611dabc31fa4ee21763f9149bfdb85b58f50"
+  },
+  {
+    "slot": 10,
+    "root": "mbpp/654",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+    "public_status": "PASS",
+    "seed": 2026092873,
+    "payload_sha256": "ffaef43fbb43afc0dcf6cd228ec1a75a0e7efda4e95f25f6bc926f1a7f6a28bd"
+  },
+  {
+    "slot": 11,
+    "root": "mbpp/656",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+    "public_status": "PASS",
+    "seed": 2026092944,
+    "payload_sha256": "1eafd3c0b35d5be7e18114f7d994dd650a9d7af01424afece8f9986cb9fc5356"
+  },
+  {
+    "slot": 12,
+    "root": "mbpp/354",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+    "public_status": "PASS",
+    "seed": 2026092838,
+    "payload_sha256": "417f8d42847e4ed09b6ef48ca75599e320e5758d6d73fff674382ac8a47898d6"
+  },
+  {
+    "slot": 13,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+    "public_status": "FAIL",
+    "seed": 2026092880,
+    "payload_sha256": "a08eab013de467f0ad5fa7cba11d8197f8eae659d874cc425bdceb4a3fce1209"
+  },
+  {
+    "slot": 14,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+    "public_status": "FAIL",
+    "seed": 2026092916,
+    "payload_sha256": "bdcf470f979daae35bb5158b46d4134d8b44c4691b5468328714a420f07c18a3"
+  },
+  {
+    "slot": 15,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+    "public_status": "PASS",
+    "seed": 2026092899,
+    "payload_sha256": "c4fd1b9c44fea3e553d404a408238a48d3a8d70d09869f4575f9f60dfd6a8cf6"
+  },
+  {
+    "slot": 16,
+    "root": "mbpp/36",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+    "public_status": "PASS",
+    "seed": 2026092962,
+    "payload_sha256": "1c74e14ebc5ef5149d265e3a9d95883cd00d64ab3cae3c0ef0f0699909edb408"
+  },
+  {
+    "slot": 17,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+    "public_status": "FAIL",
+    "seed": 2026092845,
+    "payload_sha256": "02e183673168c7d5be78dcc8113281adfd3bccc090e0f59c55619d1a3b29a078"
+  },
+  {
+    "slot": 18,
+    "root": "mbpp/700",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+    "public_status": "PASS",
+    "seed": 2026092911,
+    "payload_sha256": "d5d3fea7922b08ced925c0e38a6219ee71bf5602595d97aa896829a0af0e2e1b"
+  },
+  {
+    "slot": 19,
+    "root": "mbpp/885",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+    "public_status": "PASS",
+    "seed": 2026092821,
+    "payload_sha256": "483b97e79c70e24d82c9a80fae735dccb85e4c44419b1b0f07fe64f60193fea3"
+  },
+  {
+    "slot": 20,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+    "public_status": "FAIL",
+    "seed": 2026092862,
+    "payload_sha256": "63bf47fc6af098e5918886b27373731bcccc99205803b0d8a6ff873dc8cdf271"
+  },
+  {
+    "slot": 21,
+    "root": "mbpp/36",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+    "public_status": "PASS",
+    "seed": 2026092946,
+    "payload_sha256": "7ac6e40624360c1757dbc8372f1f628ad4e414e7eb98b3fdac5a1efff4ed095c"
+  },
+  {
+    "slot": 22,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+    "public_status": "FAIL",
+    "seed": 2026092884,
+    "payload_sha256": "75a7c4b9f9205eca035511e13490d32b4818f27e5243b058f0f46a11ec41c5c3"
+  },
+  {
+    "slot": 23,
+    "root": "mbpp/703",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+    "public_status": "PASS",
+    "seed": 2026092906,
+    "payload_sha256": "1bff91b94981cbcd6e63d56e2a093b388119d9c06b521fa1f20eac11cd8a2b10"
+  },
+  {
+    "slot": 24,
+    "root": "mbpp/356",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+    "public_status": "PASS",
+    "seed": 2026092802,
+    "payload_sha256": "7066497d6868ea0a4f5622e51f31ac8d38b8597d166503412817082a08f7d4d6"
+  },
+  {
+    "slot": 25,
+    "root": "mbpp/703",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+    "public_status": "PASS",
+    "seed": 2026092907,
+    "payload_sha256": "3011babb4604f4d4199d395759aaf636ad294f71fa6c9d8d923224a627811e4f"
+  },
+  {
+    "slot": 26,
+    "root": "mbpp/36",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+    "public_status": "PASS",
+    "seed": 2026092957,
+    "payload_sha256": "05f6f15b61ded5c20f0aa46840c8448a5c59273fafb00f38d744c0d08a8322c2"
+  },
+  {
+    "slot": 27,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+    "public_status": "FAIL",
+    "seed": 2026092913,
+    "payload_sha256": "8645e08309cc4f1b5881c890bd45a1e61c379dc7b3d2cbb050d430504f0983f1"
+  },
+  {
+    "slot": 28,
+    "root": "mbpp/356",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+    "public_status": "PASS",
+    "seed": 2026092818,
+    "payload_sha256": "69731919f292302708561083ca47b46bbb59a46666a7e9665f5df11da5f8d92f"
+  },
+  {
+    "slot": 29,
+    "root": "mbpp/703",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "17cc6248a821ca293a641ded68ae4e680e08bad665ba2cc044295f479abd5614",
+    "public_status": "PASS",
+    "seed": 2026092908,
+    "payload_sha256": "1a742ee81d1f48238f20e172de5b4e46a202719301760b0ea99e212049530f98"
+  },
+  {
+    "slot": 30,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+    "public_status": "FAIL",
+    "seed": 2026092883,
+    "payload_sha256": "5cf124bae8821bbb5afc21c6048e9cc3d741cc7ea6a8f3004e95e8d8b9cafa53"
+  },
+  {
+    "slot": 31,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "ec69c2804783e6c5effcc86aede8ed86213a90400a8747b76c0d0bf8474dbf73",
+    "public_status": "FAIL",
+    "seed": 2026092843,
+    "payload_sha256": "6719196dae58b57639eeec3f542b7410ccefa0015491c647fa30806bf3165c3f"
+  },
+  {
+    "slot": 32,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+    "public_status": "FAIL",
+    "seed": 2026092894,
+    "payload_sha256": "54c70986e19f070c3f96c91b69cfca9a0884787c46a5f06d9e81766bc7ff6976"
+  },
+  {
+    "slot": 33,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+    "public_status": "FAIL",
+    "seed": 2026092808,
+    "payload_sha256": "f2dfe9cbf1f73bedc5a1362787076cf7647fd6a35788f96a56517f7fb529754f"
+  },
+  {
+    "slot": 34,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+    "public_status": "FAIL",
+    "seed": 2026092896,
+    "payload_sha256": "9b234831e990eb513c6482548f0b2493ea2b4b1738ac8c954c00376ebf4784c7"
+  },
+  {
+    "slot": 35,
+    "root": "mbpp/356",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+    "public_status": "PASS",
+    "seed": 2026092816,
+    "payload_sha256": "baebe248794647782962870fb042a6ed131acd3f4c5377d7dd7cc6175b029947"
+  },
+  {
+    "slot": 36,
+    "root": "mbpp/36",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+    "public_status": "PASS",
+    "seed": 2026092961,
+    "payload_sha256": "4e3b12b75e9f9f1ef1bbb19e25737fbd26be95f6e2bdd727d7926b967e4b1887"
+  },
+  {
+    "slot": 37,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+    "public_status": "FAIL",
+    "seed": 2026092912,
+    "payload_sha256": "974da957669dab7260248caa27ef5405b29a3425cb7267b49b38d820422fbe06"
+  },
+  {
+    "slot": 38,
+    "root": "mbpp/356",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "8749b324a297d81f17062645f56cbc0eeda674a5cea9fd0345d97912ec7d25d7",
+    "public_status": "PASS",
+    "seed": 2026092817,
+    "payload_sha256": "da67aa66c52342398172ce9949e4908f9c2bcc37e14815341d4c9e16633b2c93"
+  },
+  {
+    "slot": 39,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+    "public_status": "FAIL",
+    "seed": 2026092858,
+    "payload_sha256": "d169df727817aa267a6d1d0a925639d5eca9544737230cbd40dc5d582f0cc3fe"
+  },
+  {
+    "slot": 40,
+    "root": "mbpp/656",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+    "public_status": "PASS",
+    "seed": 2026092928,
+    "payload_sha256": "be051828feec3a9e9ac62ecd01c054b812b3b97f61e45943f4a3180dc1506e71"
+  },
+  {
+    "slot": 41,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+    "public_status": "PASS",
+    "seed": 2026092829,
+    "payload_sha256": "4d9725106bc6bd41969abc5d08ead3f9fa8f5b8184daf3ced33dc3df82e985c5"
+  },
+  {
+    "slot": 42,
+    "root": "mbpp/356",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+    "public_status": "PASS",
+    "seed": 2026092813,
+    "payload_sha256": "4fc2eababa2c6b36ba86e5c3b0237a3496249f539986fce46829d290311bcca9"
+  },
+  {
+    "slot": 43,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+    "public_status": "PASS",
+    "seed": 2026092897,
+    "payload_sha256": "53d76550a1799d5c08f6634e95c040a238010c48cb23fa97603dfd1a53c23f04"
+  },
+  {
+    "slot": 44,
+    "root": "mbpp/656",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+    "public_status": "PASS",
+    "seed": 2026092927,
+    "payload_sha256": "c0a732c4599636535a2a1d5cee1c3585898032455bd1f7f66b7996277796bc5b"
+  },
+  {
+    "slot": 45,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+    "public_status": "FAIL",
+    "seed": 2026092915,
+    "payload_sha256": "5e0dc6d682b771ee6ac6f5e37f0fa04f441e8589458a4ddcbd3ed46ee5e1cfe9"
+  },
+  {
+    "slot": 46,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+    "public_status": "FAIL",
+    "seed": 2026092864,
+    "payload_sha256": "0f248aec5d1b928641618d178fa20f0022646f36dd1087a7b3d8968e758289d9"
+  },
+  {
+    "slot": 47,
+    "root": "mbpp/656",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+    "public_status": "PASS",
+    "seed": 2026092941,
+    "payload_sha256": "ab032f8fd18119c1053deea74748aa6fc1f3d2cc105aa722c4bebdb29405a1f8"
+  },
+  {
+    "slot": 48,
+    "root": "mbpp/700",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+    "public_status": "PASS",
+    "seed": 2026092924,
+    "payload_sha256": "8b0791bce5e72c5aa579b7212641590fe0fac02bdd90ee4f554754a0c84492a5"
+  },
+  {
+    "slot": 49,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+    "public_status": "PASS",
+    "seed": 2026092935,
+    "payload_sha256": "1783ceeaac8575b84b0664a3adc4838f5260c6d8ffe37d98fdcdf2c3a5b6ae3a"
+  },
+  {
+    "slot": 50,
+    "root": "mbpp/703",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+    "public_status": "PASS",
+    "seed": 2026092891,
+    "payload_sha256": "162008ba4869723679f94eaa899acc16826da00cbcf0036a24cc6d033f288604"
+  },
+  {
+    "slot": 51,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+    "public_status": "FAIL",
+    "seed": 2026092859,
+    "payload_sha256": "b0952387c5a012c3a80020cd2da77b2ca54bf4f3c8bc46b3711abd3272730f33"
+  },
+  {
+    "slot": 52,
+    "root": "mbpp/356",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+    "public_status": "PASS",
+    "seed": 2026092801,
+    "payload_sha256": "11b42f686fa96ecbc82a5af3f6be45f4eaf5d136537380b114f764ba20025723"
+  },
+  {
+    "slot": 53,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+    "public_status": "PASS",
+    "seed": 2026092828,
+    "payload_sha256": "ff6c60e50386eae57991982868d83182fa2da0f7ceb177a93208e62d5e7f8de2"
+  },
+  {
+    "slot": 54,
+    "root": "mbpp/885",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+    "public_status": "PASS",
+    "seed": 2026092836,
+    "payload_sha256": "39967c64dcd0ed8209f59fb4f129695efd660a90a61719df359e6f090086e8d8"
+  },
+  {
+    "slot": 55,
+    "root": "mbpp/354",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+    "public_status": "PASS",
+    "seed": 2026092851,
+    "payload_sha256": "b8225d7a6bf26f910660fdd83e731820648868a13e46690888f9a2b4281b0172"
+  },
+  {
+    "slot": 56,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+    "public_status": "FAIL",
+    "seed": 2026092931,
+    "payload_sha256": "0cf46e99f44930462fb909caee65af1302eb98776c09663ff76982755b67388a"
+  },
+  {
+    "slot": 57,
+    "root": "mbpp/36",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "f0dbe44983963ec096eb993ea6a5802513e91077fcddcbaa24b6704035bf9fae",
+    "public_status": "PASS",
+    "seed": 2026092945,
+    "payload_sha256": "a19056633f45a31334450402af6d5ec4648ad4e0b84d33e0ff1522bf3d3c9514"
+  },
+  {
+    "slot": 58,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+    "public_status": "FAIL",
+    "seed": 2026092810,
+    "payload_sha256": "b4d995582bf15a7cf679a75ca21721a409830503a75ba1c42830630f7faec794"
+  },
+  {
+    "slot": 59,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+    "public_status": "PASS",
+    "seed": 2026092824,
+    "payload_sha256": "c16bea49ad557d406ab27b601b868420ba4cf44f80ddb989189a2f4fb386ea3a"
+  },
+  {
+    "slot": 60,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "7150126c5cc66ecd154bab7da4147ff167236fb48998c2c1496fee812eb8ad7c",
+    "public_status": "PASS",
+    "seed": 2026092830,
+    "payload_sha256": "eefd43c7e4a7887359b57a4e57a271a93f25b635cbaca49f2cfd3d3ec66507f0"
+  },
+  {
+    "slot": 61,
+    "root": "mbpp/885",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+    "public_status": "PASS",
+    "seed": 2026092832,
+    "payload_sha256": "1cfc081df89db812de850739d36b44dbdb52dc6daf81a87be5b588b917717e98"
+  },
+  {
+    "slot": 62,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "f92a1e94d46a081417aeedd6786f9f1ae12d755d083dbd1e92bc0d37272a079e",
+    "public_status": "FAIL",
+    "seed": 2026092860,
+    "payload_sha256": "d4a8f105f59de39fee0caa22cae0bfb2084cd0420d498c25d98b305f3fa7283d"
+  },
+  {
+    "slot": 63,
+    "root": "mbpp/656",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "610907f9937d89a9cb067972f5b1e7fcbe413c2357577527031b1cc01a6062a4",
+    "public_status": "PASS",
+    "seed": 2026092929,
+    "payload_sha256": "b84e52f7df3514ebfe816e9a3fe585ce41777f46ff19dd55c570f5ca2f258abb"
+  },
+  {
+    "slot": 64,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+    "public_status": "FAIL",
+    "seed": 2026092951,
+    "payload_sha256": "b27d401705e0c23f95738f9ea3832d509ad1638ccb08c96a887a5576e67ed699"
+  },
+  {
+    "slot": 65,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+    "public_status": "FAIL",
+    "seed": 2026092848,
+    "payload_sha256": "9d575155c85ee125cc6de9b22b1bd7d2a55d6776c4a34e880d3bf10211a0056a"
+  },
+  {
+    "slot": 66,
+    "root": "mbpp/654",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+    "public_status": "PASS",
+    "seed": 2026092874,
+    "payload_sha256": "d30f6398f96dff97074bc050c59a47bda9f718d013b5cf24161230564ee5fad2"
+  },
+  {
+    "slot": 67,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+    "public_status": "PASS",
+    "seed": 2026092949,
+    "payload_sha256": "70777eb4c71452bf4162b51fd8e915d39611b7e06955f178304265ab0c2f45f0"
+  },
+  {
+    "slot": 68,
+    "root": "mbpp/654",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+    "public_status": "PASS",
+    "seed": 2026092888,
+    "payload_sha256": "bb3e3af1608b89f2befa7b6d92a634b639f1c1385415cb50bd18c1a1bcd2bb7f"
+  },
+  {
+    "slot": 69,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+    "public_status": "PASS",
+    "seed": 2026092950,
+    "payload_sha256": "728e37dd2bbb4a601263e3b3d4a5a6edf6a3da146ec635e6a9e82c78f9fd7901"
+  },
+  {
+    "slot": 70,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+    "public_status": "FAIL",
+    "seed": 2026092811,
+    "payload_sha256": "3c51d92207b40f59f2c07ebec1a4a7d0c610b18c361677f4791dac8a39232031"
+  },
+  {
+    "slot": 71,
+    "root": "mbpp/354",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+    "public_status": "PASS",
+    "seed": 2026092854,
+    "payload_sha256": "547648fec6f59911ba33988eaa888a05c3b4cce1341e1008a7d30f847a5830b5"
+  },
+  {
+    "slot": 72,
+    "root": "mbpp/700",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+    "public_status": "PASS",
+    "seed": 2026092926,
+    "payload_sha256": "4bf1741e47f6817731a1b834944fad8d8e2b6698c64bf2a622ad840354419337"
+  },
+  {
+    "slot": 73,
+    "root": "mbpp/36",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+    "public_status": "PASS",
+    "seed": 2026092958,
+    "payload_sha256": "5f7609fb94f1b6c30a98462bd1276866ec18fe982ad156813d29bd35bdd550d0"
+  },
+  {
+    "slot": 74,
+    "root": "mbpp/700",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+    "public_status": "PASS",
+    "seed": 2026092921,
+    "payload_sha256": "5d3fa86547770bf7d64f5b358e6e9c9b1ce1d3a30fbbbad7e23f3597a98cbbd3"
+  },
+  {
+    "slot": 75,
+    "root": "mbpp/700",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "6bc32dd8300d92f733979ca610f0088c514739ab3a11afeca061626e0bb5ba62",
+    "public_status": "PASS",
+    "seed": 2026092925,
+    "payload_sha256": "ffdc5339b01ccdfc05b7bc95df81ac86a3f43352486cd5c0c47deb145681e316"
+  },
+  {
+    "slot": 76,
+    "root": "mbpp/703",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+    "public_status": "PASS",
+    "seed": 2026092904,
+    "payload_sha256": "9378c5a54b848cf2c759fc0ea1b92d4fd610391204581fa60cccd920df5e576a"
+  },
+  {
+    "slot": 77,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+    "public_status": "FAIL",
+    "seed": 2026092841,
+    "payload_sha256": "d94165e968dd9d9b20f701c576925511936b18ff94ce37488e40390afc9a2b9c"
+  },
+  {
+    "slot": 78,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+    "public_status": "FAIL",
+    "seed": 2026092881,
+    "payload_sha256": "cbce00f0a411bf2184db78b71c0cdee33fe0bd3c8feec82ee3814e0164ba0e6b"
+  },
+  {
+    "slot": 79,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+    "public_status": "PASS",
+    "seed": 2026092954,
+    "payload_sha256": "834fda7cac777dcc2acba23b57bca7a62f6b7d2517af93b73101dc7f82621e2e"
+  },
+  {
+    "slot": 80,
+    "root": "mbpp/901",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+    "public_status": "PASS",
+    "seed": 2026092856,
+    "payload_sha256": "3f74e62d7984f205af67a52ce7f1196afafedb5cabcea1c4524bde1965ac38bc"
+  },
+  {
+    "slot": 81,
+    "root": "mbpp/901",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+    "public_status": "PASS",
+    "seed": 2026092869,
+    "payload_sha256": "fc8663486a1ce4022fc435889e28def492eff3936bbc8a7b0d3ef34ac371bb46"
+  },
+  {
+    "slot": 82,
+    "root": "mbpp/901",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+    "public_status": "PASS",
+    "seed": 2026092857,
+    "payload_sha256": "2f190caf19be6f1acd859efa9a5400858d665c85d976fa4e32b8759f3f614df5"
+  },
+  {
+    "slot": 83,
+    "root": "mbpp/885",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+    "public_status": "PASS",
+    "seed": 2026092833,
+    "payload_sha256": "79a4c440521e317d5eba48e6304e21aa0ca6624d2caa8519feb34573766b61fd"
+  },
+  {
+    "slot": 84,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+    "public_status": "FAIL",
+    "seed": 2026092806,
+    "payload_sha256": "34b99dc27019c3b71b88f72e128be07c3f82f4f1f746845200b22c0b9a186cef"
+  },
+  {
+    "slot": 85,
+    "root": "mbpp/885",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+    "public_status": "PASS",
+    "seed": 2026092835,
+    "payload_sha256": "ab3dd21080cacdc80033575a81742b9c6253cdca48b59f425f6d07631da50d5f"
+  },
+  {
+    "slot": 86,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+    "public_status": "FAIL",
+    "seed": 2026092863,
+    "payload_sha256": "1a2468e37d9b4f14bcfb895f25bffe999120ba83a5bb71115ea3d7ee040b0dc4"
+  },
+  {
+    "slot": 87,
+    "root": "mbpp/354",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "0281ae642efdcd2da61a8ce9a7e884959c27ec9f8a750595be7d2cfd8bc225fc",
+    "public_status": "PASS",
+    "seed": 2026092839,
+    "payload_sha256": "cd6551af9b76223d40e0cd66869e1960bfc3daf2d33fb87c98cb2a2462633f61"
+  },
+  {
+    "slot": 88,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "3bba0f32015a27b8a8da16f30d388e19c56dce2dc4daf718f30f4c92d4dbff6d",
+    "public_status": "FAIL",
+    "seed": 2026092882,
+    "payload_sha256": "5076044419ffc5e5bd51f2928ff9bc746ec088b497f466488a193fb9334f1809"
+  },
+  {
+    "slot": 89,
+    "root": "mbpp/656",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "61a38209e0c2069c7064d61aa14073c7cf6daef306bfd56334db80ed122fb405",
+    "public_status": "PASS",
+    "seed": 2026092939,
+    "payload_sha256": "fdc2933057cd5fd08115b61143beb9c247fb0c02253cce64ecb9b2a740fe3106"
+  },
+  {
+    "slot": 90,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+    "public_status": "FAIL",
+    "seed": 2026092842,
+    "payload_sha256": "4def10d9cd6da882d0456790d82ec3754218cf99fc0324375e72746f691fb082"
+  },
+  {
+    "slot": 91,
+    "root": "mbpp/901",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+    "public_status": "PASS",
+    "seed": 2026092867,
+    "payload_sha256": "a3af67ca569a59fc0a54d16b6cfbcf089039891f617d186b7c4111cfc408e97b"
+  },
+  {
+    "slot": 92,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "186f576111020ef20874ef8763960f7c9364c34ca5bf65b0becdb4127c559099",
+    "public_status": "FAIL",
+    "seed": 2026092917,
+    "payload_sha256": "da34be0f7674d1184e2daffab6d737bd7c2bf0ba37ee371424466df4ba5827e2"
+  },
+  {
+    "slot": 93,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+    "public_status": "FAIL",
+    "seed": 2026092918,
+    "payload_sha256": "109aa36ca3f98d9e41fe46620d663bcf91967b035c32d8c26eed1498f87b85cf"
+  },
+  {
+    "slot": 94,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "d1dbd83b9372f973b2933fce3d0aa8813ea347a4e7f25355bdb7da9e30184384",
+    "public_status": "FAIL",
+    "seed": 2026092840,
+    "payload_sha256": "be6df2509c2769f62082df624038a451529fa793a51b6241901b65cb43df69aa"
+  },
+  {
+    "slot": 95,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+    "public_status": "FAIL",
+    "seed": 2026092937,
+    "payload_sha256": "e298d99409973a7de8770da99c740dede416fd4e436bbd01399d802b2d6335da"
+  },
+  {
+    "slot": 96,
+    "root": "mbpp/354",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+    "public_status": "PASS",
+    "seed": 2026092850,
+    "payload_sha256": "cf816bacc22035bc70b045d54bd9ef851826ad59992360a89739572814be33ff"
+  },
+  {
+    "slot": 97,
+    "root": "mbpp/654",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "70f622e3b356986390f0b77a699ab4cfb2964ecf29247f13623dd4223bf8b0e5",
+    "public_status": "PASS",
+    "seed": 2026092889,
+    "payload_sha256": "2460534885f99ed0d49b97d52009d6368a7943f2c8cdc6c4c50cf6a27c2da042"
+  },
+  {
+    "slot": 98,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "de6c05793d66c3c8e1dff9134b9149955d66d7b7064fca6892081ca75182db5d",
+    "public_status": "FAIL",
+    "seed": 2026092861,
+    "payload_sha256": "dd36ac190d9a771ff6cb13c105b88e85d28a2ec7d1a01d7b93c91db9ea65cc81"
+  },
+  {
+    "slot": 99,
+    "root": "mbpp/356",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+    "public_status": "PASS",
+    "seed": 2026092814,
+    "payload_sha256": "ca1b5cc25d9d42026368c92568ff8d70b240f92edadeb3f4fc72eb377d79d4e7"
+  },
+  {
+    "slot": 100,
+    "root": "mbpp/901",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "0fde5e58c0065db94f36d9ee62f488f51a0099d1599dbb22e87a8a1c90c0bf1f",
+    "public_status": "PASS",
+    "seed": 2026092855,
+    "payload_sha256": "83df1d889cf5c7b4b730684405349791bd1bb76efc9136622ac82946aff90cb1"
+  },
+  {
+    "slot": 101,
+    "root": "mbpp/901",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+    "public_status": "PASS",
+    "seed": 2026092870,
+    "payload_sha256": "eca3a3922bea658ca3ab6877d147dcab15618f787cdc16d9bb4e143324436784"
+  },
+  {
+    "slot": 102,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+    "public_status": "PASS",
+    "seed": 2026092822,
+    "payload_sha256": "2019e17f0782e393cd786f44d043bd28c9178c330b9135e55b29f3993e56860e"
+  },
+  {
+    "slot": 103,
+    "root": "mbpp/700",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+    "public_status": "PASS",
+    "seed": 2026092922,
+    "payload_sha256": "819e61a38b87bd853d065495297cc630f6e3bf382a43f2fa5481cc1bb8115a5b"
+  },
+  {
+    "slot": 104,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+    "public_status": "FAIL",
+    "seed": 2026092865,
+    "payload_sha256": "dc5dad7ca7a69d1464d1768791035a68e6f1156fddb74753a88554a51987b566"
+  },
+  {
+    "slot": 105,
+    "root": "mbpp/36",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "ed20da8191df14bc4afbb40d9e18c119b3a24abd0740b65fb722e1b256eb193a",
+    "public_status": "PASS",
+    "seed": 2026092959,
+    "payload_sha256": "17d7336ed1796b1e5039e863b3fe3f0a8a2ff483ddce80f1b92b1879b65ac002"
+  },
+  {
+    "slot": 106,
+    "root": "mbpp/703",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "4c24d7e8c767ae3c1c42d7f644fed92b8f4519eecb4d8153187f30e7712e0369",
+    "public_status": "PASS",
+    "seed": 2026092892,
+    "payload_sha256": "0b71ca7dea828a4e46abd3600a312e7038e14334bb86c4cd6ffecf31a2b5f5e2"
+  },
+  {
+    "slot": 107,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+    "public_status": "FAIL",
+    "seed": 2026092878,
+    "payload_sha256": "dbace80020d948c38e354ccc1130634e1fb20a59fa210202fb0da6de5dfd31d9"
+  },
+  {
+    "slot": 108,
+    "root": "mbpp/654",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+    "public_status": "PASS",
+    "seed": 2026092886,
+    "payload_sha256": "22d2c212efa6bee66f7312d35c97d0adf813915a5dc14ce296380963b2fe6a6e"
+  },
+  {
+    "slot": 109,
+    "root": "mbpp/885",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "1c170e13a72121b8cefda9be23bcbc4dcf7260d284b386e0ca16a789358f50da",
+    "public_status": "PASS",
+    "seed": 2026092831,
+    "payload_sha256": "e824a64a2c7ca043a4db90840310c6e99ca4adab669244ea3a1dc8bff22660e4"
+  },
+  {
+    "slot": 110,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+    "public_status": "FAIL",
+    "seed": 2026092938,
+    "payload_sha256": "039c201badb8caaf33ff4edac60836cd77584bd192e62efa6f08795088c4f38c"
+  },
+  {
+    "slot": 111,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+    "public_status": "FAIL",
+    "seed": 2026092807,
+    "payload_sha256": "4a375b8c4f9579bf3ddb3a02ef7e4a4eacdccec30f21c3c63ca58ef98b24e24b"
+  },
+  {
+    "slot": 112,
+    "root": "mbpp/354",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "7b9aa3f10db1d6fa240ac9b7d1d7186535efef654fbdb77e63fca2f14610f748",
+    "public_status": "PASS",
+    "seed": 2026092852,
+    "payload_sha256": "187dad6193d09d4d0291e80924f1b67d3b7d249174971ef69eb4a2f3f36b9522"
+  },
+  {
+    "slot": 113,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+    "public_status": "PASS",
+    "seed": 2026092826,
+    "payload_sha256": "0ac74a6c825f99e69e89ae62db34c23b9153e860b3680a0261d6cd1885266081"
+  },
+  {
+    "slot": 114,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+    "public_status": "FAIL",
+    "seed": 2026092804,
+    "payload_sha256": "5e92d918ac9a3139de639dbabc069a898c4fac28147ab43c496091ff7c9c7ff5"
+  },
+  {
+    "slot": 115,
+    "root": "mbpp/654",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+    "public_status": "PASS",
+    "seed": 2026092885,
+    "payload_sha256": "265bb863b32ab743a184eb92ac1b4f386e8b1ba5fbe06a246c74056f5ecefe25"
+  },
+  {
+    "slot": 116,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+    "public_status": "FAIL",
+    "seed": 2026092952,
+    "payload_sha256": "313bb60720cae303ca1776ff04a485b0749ba22d104378b29d747aa4aead2df4"
+  },
+  {
+    "slot": 117,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+    "public_status": "PASS",
+    "seed": 2026092827,
+    "payload_sha256": "d428f2d9bfff899d63f2c47e487f2793a26338be4ec8ddd00cb8c5cf45d64aba"
+  },
+  {
+    "slot": 118,
+    "root": "mbpp/654",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "a1a2403e436f5cf60eca00d6874d0fa70c16ff92fc89cc1a63ad359d48dca365",
+    "public_status": "PASS",
+    "seed": 2026092887,
+    "payload_sha256": "09d1f724c5fc2832b46f31c3481a6edd08d31cade2e2fcf63a17e24828c20aa0"
+  },
+  {
+    "slot": 119,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "186adf1ebaf2f9185a78f5047fc8ed725b25aba90f0841cf37a96c23962b8ded",
+    "public_status": "PASS",
+    "seed": 2026092823,
+    "payload_sha256": "0d0e9292329a29a0b67a0a4b64d5eea6fa8177d8826666f970e0744720e02f02"
+  },
+  {
+    "slot": 120,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+    "public_status": "FAIL",
+    "seed": 2026092901,
+    "payload_sha256": "91218f403b64c7d6865d29be27f5415d6b8874e245fadc5479b01778db331b43"
+  },
+  {
+    "slot": 121,
+    "root": "mbpp/356",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "b066f3fb36c40f86a7251457d3849c19980cf8ea332cf1aa08f315414f412ab4",
+    "public_status": "PASS",
+    "seed": 2026092803,
+    "payload_sha256": "0d24b66256bd6a31096ffd6ec6d20e69d46648d7c2693af4c4a8c71d29431611"
+  },
+  {
+    "slot": 122,
+    "root": "mbpp/901",
+    "artifact": "lookup_original_examples",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+    "public_status": "PASS",
+    "seed": 2026092872,
+    "payload_sha256": "160417751cc56cba7d00d9395f40ebc9fbad1c2b26021e9872124126e47a235a"
+  },
+  {
+    "slot": 123,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "d543abfe9f817ede33ad4ea88d1a6d30bae9f3cea0765fc4b05f1124ff74825f",
+    "public_status": "FAIL",
+    "seed": 2026092936,
+    "payload_sha256": "7c95d220520331788f593eea585caaef7cb6842e8dc8935abba91f42bd78138b"
+  },
+  {
+    "slot": 124,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "5241defe3fc125521107c8fbeae277feb31ffbe76014169a71b6cb9bf4d60319",
+    "public_status": "FAIL",
+    "seed": 2026092805,
+    "payload_sha256": "a32ef4b1a19ff9cdeeeeb7c94a138d78d13eab6c0b37f30d8998e154285761b6"
+  },
+  {
+    "slot": 125,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "dc6143d3214e234ec6e6b26705f3c34dd6ee3879a44b8ffd98882a0e3b67efa0",
+    "public_status": "PASS",
+    "seed": 2026092898,
+    "payload_sha256": "81ebbc343ddaed35d8545a28765782b7daf6bbad2315ec4de9a38312266f4724"
+  },
+  {
+    "slot": 126,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+    "public_status": "PASS",
+    "seed": 2026092956,
+    "payload_sha256": "a629eaafa189806f2f01a0e5c271b27b4b3b0e81c9fea7455a716a786b78abd6"
+  },
+  {
+    "slot": 127,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+    "public_status": "FAIL",
+    "seed": 2026092847,
+    "payload_sha256": "de0fce3c0304f691500c70b6b87633cba9f54b3ee8c8e7cdcb602aad7d8026e0"
+  },
+  {
+    "slot": 128,
+    "root": "mbpp/356",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "cce59edee79f23db3bbfc951b49ad0d4a3681ff272dfb88a39b3229fb58168a8",
+    "public_status": "PASS",
+    "seed": 2026092815,
+    "payload_sha256": "8bf48a71f4f37e3dd570365b7c91f5f474cd589f28ea2bca56a910a2cd26dc22"
+  },
+  {
+    "slot": 129,
+    "root": "mbpp/885",
+    "artifact": "reference",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "30a6e283f9c8b33a6535819578ed900b805cad2683aca162655074797aa4a62e",
+    "public_status": "PASS",
+    "seed": 2026092819,
+    "payload_sha256": "89ad593a2fdc6800d00e839f4007a1b8cf62db79e0fcb4131e58c933aac66b73"
+  },
+  {
+    "slot": 130,
+    "root": "mbpp/656",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+    "public_status": "PASS",
+    "seed": 2026092943,
+    "payload_sha256": "ae0362c2b64c351b86127f518be12f6819500dd303dd1f7b3a940ec0519a8ec5"
+  },
+  {
+    "slot": 131,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_2",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+    "public_status": "PASS",
+    "seed": 2026092934,
+    "payload_sha256": "984e4a9092330bffa1f6b1568719e67c032b93eb35958c8ae0b74a633b1f9ff3"
+  },
+  {
+    "slot": 132,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+    "public_status": "FAIL",
+    "seed": 2026092900,
+    "payload_sha256": "e43eef162f7f77cbe76028cb172709deb90a0b291c822732bfe3f216aaa3449b"
+  },
+  {
+    "slot": 133,
+    "root": "mbpp/36",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "34925fd1d64368a6b037f0b98bbf8040524040179386711ce3c2118a964c472e",
+    "public_status": "PASS",
+    "seed": 2026092960,
+    "payload_sha256": "d30daf6516089133fe49b25d3041d30d663be62a601a808de1971ee049efe9fc"
+  },
+  {
+    "slot": 134,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "5ec51b00c089f702f78ea8094c8c3527bfd2e0b55e42f6a650619107053a19ea",
+    "public_status": "FAIL",
+    "seed": 2026092895,
+    "payload_sha256": "58a51afd678baca24cfe38285dcdc6802c621ca21ac9ddbf55a269423382af54"
+  },
+  {
+    "slot": 135,
+    "root": "mbpp/354",
+    "artifact": "wrong_rule_3",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "3199a1f2dbf9967637fcd6671ff324808473a845db1042374004df8b03ac8400",
+    "public_status": "FAIL",
+    "seed": 2026092846,
+    "payload_sha256": "ed6995f9cc9ba7257e0379cce56aa34ab8c04e39710432ecbf628d85b8350144"
+  },
+  {
+    "slot": 136,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "19869d79294ba29029347e31408465b1f3efe801e9f17e4853a4575a502d6d77",
+    "public_status": "PASS",
+    "seed": 2026092955,
+    "payload_sha256": "513e51e95946e4383689f7c7fe43839183fe864477e5085ff38828ec5e5ac6d9"
+  },
+  {
+    "slot": 137,
+    "root": "mbpp/901",
+    "artifact": "lookup_original_examples",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "6f51741bd13b46b1393fd7ee7d81b4d8e6b235d74e4051b59814cda1b8cc1023",
+    "public_status": "PASS",
+    "seed": 2026092871,
+    "payload_sha256": "5d50200157473e5bf921cc71a552088f9cb5f654d9459b8d5b2e1b9f3b0791a3"
+  },
+  {
+    "slot": 138,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "66254f8092144d58201f890bc3f7bc7f4e641bd50658907ee9899405579d630e",
+    "public_status": "PASS",
+    "seed": 2026092948,
+    "payload_sha256": "71819c6fe9e7621a98dc35dfad1e8d45c5e97160de05ec0774705b2799dd0254"
+  },
+  {
+    "slot": 139,
+    "root": "mbpp/703",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+    "public_status": "PASS",
+    "seed": 2026092905,
+    "payload_sha256": "acb6e562cd4fcacb3e5c1f4f2324b0d1ed1992df588a07ede94e469b30391954"
+  },
+  {
+    "slot": 140,
+    "root": "mbpp/700",
+    "artifact": "reference",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "d5dcbaa7e69d566355e120335a96f3e131c9a38b698548db5c4cd2e4b099d1f0",
+    "public_status": "PASS",
+    "seed": 2026092910,
+    "payload_sha256": "cf3d0d729724a9d8e68409caa8ce7921e29800de14508429f8668f562ea399da"
+  },
+  {
+    "slot": 141,
+    "root": "mbpp/656",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "b881e6ee7428433c3e06dfb667744aedd910b59a3789a16e4cc668e20c601618",
+    "public_status": "PASS",
+    "seed": 2026092942,
+    "payload_sha256": "fc5a492ca16f4ccac61eb3589a45a1fbd66b09ebef8dc176ba516af6d4ebd7a8"
+  },
+  {
+    "slot": 142,
+    "root": "mbpp/654",
+    "artifact": "reference",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "4ad6ed03f34b44f891652e7128c54161c8693c35595d1841feb7a24ae62564cb",
+    "public_status": "PASS",
+    "seed": 2026092875,
+    "payload_sha256": "51201c8071292f0171c4f5f20304817b50679482d7074c9d8f4c7c2cb34e2003"
+  },
+  {
+    "slot": 143,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+    "public_status": "FAIL",
+    "seed": 2026092930,
+    "payload_sha256": "46086d9ab1fd574f1a73a2cae2af92a04ad1a5fe1c4f4c1212cc1d93a6eaa247"
+  },
+  {
+    "slot": 144,
+    "root": "mbpp/885",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "18ef0101b4ebe6cef5428d6879a84fd685a7277edb78895f2bad55b6d7b9f8e7",
+    "public_status": "PASS",
+    "seed": 2026092825,
+    "payload_sha256": "3647e9a9e7fbf06cf507f04c3f1f65837cb95db338b16fa201e5b42788f5d2d6"
+  },
+  {
+    "slot": 145,
+    "root": "mbpp/354",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "f4d6163d7f08bf5370eed84e0ae77bfb85b99507863c4e67da7c4ff43ecc5562",
+    "public_status": "PASS",
+    "seed": 2026092849,
+    "payload_sha256": "73bc43ebe312de4c328bf21f23a579a5ba04c0ff1dd2d0b73a1c1442b8176298"
+  },
+  {
+    "slot": 146,
+    "root": "mbpp/36",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "0300760f15fd3362a1d724969d2c56a64c95725d3a8f2262224fd7e62a4bf7b7",
+    "public_status": "FAIL",
+    "seed": 2026092953,
+    "payload_sha256": "b3898c9ea5789ced61792b6c4402899e7d89870d3df7d609818491b89476d716"
+  },
+  {
+    "slot": 147,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "cfa2c57896cd7ba058f73aa196ad3b2f0fa21b1a8dcd1f9eb367faea99d79c1d",
+    "public_status": "FAIL",
+    "seed": 2026092932,
+    "payload_sha256": "4b92e7d4dc4501a8171e7422f29a5e1376b532c5d65d71499a7c279543dbf2e5"
+  },
+  {
+    "slot": 148,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "d7ad9969515354e4015e9bad1fd8e25f9b25a0eb4124ff298cde2797de827dc2",
+    "public_status": "FAIL",
+    "seed": 2026092879,
+    "payload_sha256": "2315121fc86234fe214b1cbb0bc2a70dd61948207739041a5bfc36535f2172e0"
+  },
+  {
+    "slot": 149,
+    "root": "mbpp/703",
+    "artifact": "constant_public_expected",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "05bb01539acc246a68086183304c1fae0dc24d143230e9ee6510862362ce3b77",
+    "public_status": "PASS",
+    "seed": 2026092903,
+    "payload_sha256": "ed7aa445fb31c9ecff55d298072a14c8f650cd63d63f89f477c7007910d0b215"
+  },
+  {
+    "slot": 150,
+    "root": "mbpp/901",
+    "artifact": "constant_public_expected",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "a4d64690ac1b428191c989330616b4094ab2605b71a3a80a0ce04f5726e63e4c",
+    "public_status": "PASS",
+    "seed": 2026092868,
+    "payload_sha256": "2fe51c72c24d1395a1d485116471dee39daa0de8cf51474bdd7a5346e366e31f"
+  },
+  {
+    "slot": 151,
+    "root": "mbpp/656",
+    "artifact": "wrong_rule_2",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "eeb38dbf10d3f7e4e7d855018d4d82d9fe7d605f87a5aef4ec8924d965fa9cd3",
+    "public_status": "PASS",
+    "seed": 2026092933,
+    "payload_sha256": "e71163aa35dab8d70a9ad10eb1717c34926fc625922c719d6bc89d1c36868764"
+  },
+  {
+    "slot": 152,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_1",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+    "public_status": "FAIL",
+    "seed": 2026092877,
+    "payload_sha256": "4974da17feae8453a8b5daa3a9a4d992f3c22277b12e8c3fb3359d799e71c5ba"
+  },
+  {
+    "slot": 153,
+    "root": "mbpp/901",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "a1eab71b3a742a65f97a5772963b6ee54d598c05009f480b00cc6740af8e59da",
+    "public_status": "FAIL",
+    "seed": 2026092866,
+    "payload_sha256": "f1964418c3fbf9fef7998d84d6bee01f131ccc5f82e6c0ad3362c8aefeb09b09"
+  },
+  {
+    "slot": 154,
+    "root": "mbpp/885",
+    "artifact": "lookup_original_examples",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "85f27a6006a33af399536c2ebcd2b0d8f94a9002fb03b55bee2a99c0e5edcabb",
+    "public_status": "PASS",
+    "seed": 2026092834,
+    "payload_sha256": "663491962dac63a602d1804a2772111cd97287ef2f67fe618ab51c07998e24ab"
+  },
+  {
+    "slot": 155,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_2",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "34287d3c25e02ce826ec8512c43ff021fdaae4365dea5b7511ebb2bb5898814a",
+    "public_status": "FAIL",
+    "seed": 2026092809,
+    "payload_sha256": "bcf29682575a5d3e3130874c1c6f5ad85402dc9df900f792da5deb1143eac958"
+  },
+  {
+    "slot": 156,
+    "root": "mbpp/703",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "45d6eb9383fd1f3c33daec0ca911f7f2b68cc668b8b412a213db74f954c5e461",
+    "public_status": "FAIL",
+    "seed": 2026092902,
+    "payload_sha256": "fb6cdf24e50f9d13d20f2af409b2e134d75777bf8ec27fa72cba41e95776d17c"
+  },
+  {
+    "slot": 157,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_1",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "9db363f8bdd73a058c09ed8dfe0484bf9a5d8834bc1ac26a4d380fc0ff4ee6ae",
+    "public_status": "FAIL",
+    "seed": 2026092914,
+    "payload_sha256": "14791130d67fcc699f15e8052535be2751cd4bf5ad21e7e59d755a34fd9bafc6"
+  },
+  {
+    "slot": 158,
+    "root": "mbpp/356",
+    "artifact": "wrong_rule_3",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "e499c4bc1def1540d52b0064aa1e58209d846c97a9d3126dec0f5fe32099d5f0",
+    "public_status": "FAIL",
+    "seed": 2026092812,
+    "payload_sha256": "f2004aa7dae7690f9ce72691c4936c068c05522635c004bf91073c375dbc3f11"
+  },
+  {
+    "slot": 159,
+    "root": "mbpp/654",
+    "artifact": "wrong_rule_1",
+    "arm": "PATCH",
+    "initial_artifact_sha256": "3e5a70f327a596342a7961d0cc9505bed9bb52e23619098e29ab2a56dd64a24c",
+    "public_status": "FAIL",
+    "seed": 2026092876,
+    "payload_sha256": "068edea322356f6d50ff717bf3fb226c7075167437c4bd228c8792dd0d48724e"
+  },
+  {
+    "slot": 160,
+    "root": "mbpp/700",
+    "artifact": "wrong_rule_3",
+    "arm": "RETHINK",
+    "initial_artifact_sha256": "f3d0811940d5a5f253df4b7f9a62950a1ee41eb72c01117c8733c0f60d090fd9",
+    "public_status": "FAIL",
+    "seed": 2026092919,
+    "payload_sha256": "522a67de2634893b7e69982cd1e2668a9fce49f4d2678bf49c61bf8f2473c953"
+  },
+  {
+    "slot": 161,
+    "root": "mbpp/700",
+    "artifact": "constant_public_expected",
+    "arm": "FRESH",
+    "initial_artifact_sha256": "8f0f026a65bd19a6c1424bbf49276e162d02ae4ccf2e05c5ad0ae12336ccfc39",
+    "public_status": "PASS",
+    "seed": 2026092923,
+    "payload_sha256": "5ab962dc76cce04ce611c7d4a74143c329ece0347750d7b2c012e03b0ebc0be8"
+  }
+]
