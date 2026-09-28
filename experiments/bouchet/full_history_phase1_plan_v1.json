@@ -1,0 +1,21 @@
+{
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "receiver_state_sha256": "411ebaa409af6e3968161cfba76ddb1e52a04f43a1692d8f3499384d48f36795",
+  "media_marker": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>",
+  "build_manifest_sha256": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+  "runtime": "GCC13.3 CUDA12.8 llama.cpp4fea119 Linux H100 sm90",
+  "paid_usd": 0,
+  "classification": "phase1 first full-history continuations; operational pilot",
+  "files": {
+    "experiments/bouchet/run_full_history_stage_v1.py": "150fed690a3480453cbf3c7566f167a03e4fead5701d83b62e698e18883736c5",
+    "experiments/bouchet/full_history_stage_v1.sbatch": "5266e74fd3442fd8d8dce7d5bbb526bc1ab3cf5d921e27dc4b73e98aab209749",
+    "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+    "work/full_history_phase1_20260928/requests.json": "4754d74eb44fe8f9fd731722c6d31e5f57f184447dd95a568b00a02ac9565ed5"
+  },
+  "requests_path": "work/full_history_phase1_20260928/requests.json",
+  "max_calls": 13,
+  "max_completion_tokens": 13312,
+  "wall_seconds": 850,
+  "state_sha256": "953abf82de37fed28c045695f36bf04de4291376e5f04570022d832a859b73f6",
+  "contract_sha256": "b8b28c771177338bb3aa2da658e6c9d8f1d61ef29d547ba09994eb0c4d39230d"
+}

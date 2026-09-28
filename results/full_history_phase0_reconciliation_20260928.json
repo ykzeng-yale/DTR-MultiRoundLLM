@@ -1,0 +1,46 @@
+{
+  "job_id": "27729098",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "allocated_seconds": 16,
+  "start_et": "2026-09-28T01:20:17",
+  "end_et": "2026-09-28T01:20:33",
+  "batch_max_rss": "2519816K",
+  "assigned_returned": 18,
+  "unattempted": 0,
+  "error": null,
+  "state_unchanged": true,
+  "build_manifest_verified": true,
+  "files_verified": true,
+  "public_statuses": {
+    "PASS": 14,
+    "FAIL": 3,
+    "INCOMPLETE": 1
+  },
+  "stopped": 5,
+  "continuations_prepared": 13,
+  "preparation": {
+    "phase": 1,
+    "public_case_starts": 18,
+    "elapsed_seconds": 0.7234080825001001,
+    "contract_sha256": "b8b28c771177338bb3aa2da658e6c9d8f1d61ef29d547ba09994eb0c4d39230d",
+    "prior_receipt_sha256": "ba88cfc073a616e1a7c28cbfe3036d0a8c71560b59e85a0d9f93f3528a5b3cb4",
+    "requests": 13,
+    "private_files_opened": false
+  },
+  "lead_validation_not_independent_review": true,
+  "artifact_sha256": {
+    "artifacts.tar.gz": "f505bf16398a3aac94583656497a278aaa91833a17f5d149864bfe7d2f5de845",
+    "generation/build-sha256.txt": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+    "generation/props_before.json": "0932377c13b4f43b9b2174ded835504c8b7906cbab6119f9a0dc8a357d32eccf",
+    "generation/server.log": "4685db34350dba712317e3d0d9e5cf9e3e233dd71ccf8b040a7e5e75eb8ab81b",
+    "generation/summary.json": "ba88cfc073a616e1a7c28cbfe3036d0a8c71560b59e85a0d9f93f3528a5b3cb4",
+    "gpu-after.txt": "d7b5eba6c74f9fbd5e9b03ecf5b4cd551da132ba073e20527e54bdda43b1a348",
+    "gpu-before.txt": "3d2468f079ebe594df4811811f8b11d43dc6cceabb09a527ef6c334d22d209ac",
+    "gpu-samples.csv": "c4f53e679318b68fd52e6380870042e586d1b436dd180727aec275ac9afb264a",
+    "logs/history-27729098.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e",
+    "logs/history-27729098.out": "6515b6b1956d11ba3983a09ca77f9c0f0613189d2af13935144477dfaecddbe2"
+  },
+  "prompt_tokens": 1806,
+  "completion_tokens": 1092
+}
