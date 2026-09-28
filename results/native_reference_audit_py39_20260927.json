@@ -1,0 +1,441 @@
+{
+  "classification": "random source-ID reference feasibility under current contained environment; not semantic correctness, family eligibility or efficacy",
+  "freeze": "21ef1e7b327f33eec559f00227105540b084fdff",
+  "config_sha256": "a161643ebab03140fbef451d8a7e00a8f4ae22d6e0d1174d9fe8bf00cd604792",
+  "task_slots_planned": 24,
+  "task_slots_attempted": 24,
+  "rows": [
+    {
+      "task_id": "BigCodeBench/17",
+      "source_sha256": "0bfa27ef15b0398115346419cae353728faa9feb10f00e40279c394ea3c6555d",
+      "status": "timeout",
+      "native_report": null,
+      "raw_path": "work/native_reference_audit_py39_20260927/17.json",
+      "raw_sha256": "3b1cd4282527c00b8a7c976b5ec7c914006fb3c0ea50750a348a067d11aff453",
+      "seconds": 10.010056708008051,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/26",
+      "source_sha256": "94a5e7b2c00482bf7e59306ad2874dfae6206d1ebc83762c69f46ddd243f23d3",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/26.json",
+      "raw_sha256": "7aec82c795e5e95fb3e621dfceb424a73364205cef316e59fb01c49df6da7437",
+      "seconds": 1.004611917771399,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/39",
+      "source_sha256": "bbb4eecf2297eb85392ad3615a18ef8b0ee5c0c738b606a6205143f4d1d85e86",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/39.json",
+      "raw_sha256": "fc8ebbef31bd5f6f603884bb1c75a1b573a9b13811a10f5608cc83fb39a5dd42",
+      "seconds": 1.4880206249654293,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/68",
+      "source_sha256": "60773e5c2cb29138ff067d79f76361996b5275f97910a371bd025856cd98f965",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/68.json",
+      "raw_sha256": "81c19d053d16d249f99e2391cb1c59b743dc552efd6f7b9cfef9639814284d7e",
+      "seconds": 1.8712552497163415,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/88",
+      "source_sha256": "9dbb90bad37996838511af48e1fc2023ff5ef7eba31785832342641248daccf6",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/88.json",
+      "raw_sha256": "ca60bd8a487f1488bb29d726fb52c5e8b74be1bba98e6f3bdd887d18aa3a6256",
+      "seconds": 1.3297422071918845,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/199",
+      "source_sha256": "e16be7cae0331d77ba2df1101e0252eddd13ace6947e7382b05f5398c7a5f783",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/199.json",
+      "raw_sha256": "1e7f966fd0dc0f51a56d2e79eb7525b89325321c6484bb52935b9bb5591d5746",
+      "seconds": 0.7721572499722242,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/213",
+      "source_sha256": "90290ab6acc0f970eb95cfdb15972e222f7de0d44456ba0a6fafe448c584ec2b",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/213.json",
+      "raw_sha256": "c670fdcb305cba0bbda69a4893c2b705db7ad1735d5d5110094a3e45b2ade630",
+      "seconds": 1.2697352077811956,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/308",
+      "source_sha256": "280de82701baa6712be2afa63829b6a30f05ee80c3aec0bdb8e76d5e2a78758a",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/308.json",
+      "raw_sha256": "87e3d91d020f062722a4b21f93ef9fb505f466c5e9df33332ac2eb1d4dc14122",
+      "seconds": 0.7847154168412089,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/334",
+      "source_sha256": "8233fc9d55bb74ff6e3e6f57eee3a89150614b8c74ab9a15f75e527ff87b2cdf",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 5,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": false
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/334.json",
+      "raw_sha256": "0e9a1d5ed6cc2efeb4e45931a019c506e5da042f96228dd254d60b8f41b5e2ba",
+      "seconds": 1.7999009154736996,
+      "stderr_exception_classes": [
+        "LookupError"
+      ]
+    },
+    {
+      "task_id": "BigCodeBench/336",
+      "source_sha256": "3f9210b0c34655f7edd41787a1cd6d496744efedcca69f03b12229050ce3d58e",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/336.json",
+      "raw_sha256": "d60d710b4a9841fc3ab0b3b7d62f9261faf42efc9b8aa7a6a13d73bc349486c3",
+      "seconds": 0.2949287500232458,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/360",
+      "source_sha256": "4610e82fa22b05c55f80ae3661573c81d2c21f9fb2671d2a166b8783bddb783c",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/360.json",
+      "raw_sha256": "369b2ad0658fe1cfb2e5f6f6d0ad7b8caeeb30d18ef3fc1727828af6356ef19c",
+      "seconds": 1.445980291813612,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/393",
+      "source_sha256": "ea4928287d48199eaf7cc69af6750a8a92711c0a852b41dbaba666168832a06b",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/393.json",
+      "raw_sha256": "15520f6c838483bd075f79b27f3827931b8bfe985ca77b7871c589def4bec054",
+      "seconds": 1.2836414584890008,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/404",
+      "source_sha256": "ab161ea94f1fd0a5f11cebeb58835505079441b97a0abce74d4f697a68642bcb",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/404.json",
+      "raw_sha256": "68f259fac79b7ea9d92ad299bf2272b21e5ca4d5e116c23d7a3c2da7759dec97",
+      "seconds": 0.4638380007818341,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/408",
+      "source_sha256": "4313b4eb265b5b013948f4aa966f65c98cb4f6b40c686265136cae62dc1b5a2b",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/408.json",
+      "raw_sha256": "0180d533d52b57bf5f247bffdcefe6a205dd9594839c47a090b8df3c300bf84c",
+      "seconds": 0.9560878332704306,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/409",
+      "source_sha256": "ed1004f64ca3d250a65fd2d5316e5a2e0ee0f0b246a132ef6b06255f4808bd94",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/409.json",
+      "raw_sha256": "fb27226956b1fe938aff399bebe20fdcbec89288a75d0ea5df7de0b3967d35b2",
+      "seconds": 0.897922458127141,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/420",
+      "source_sha256": "7bd7807369dccef51f0d8b630df2825559f84d352b9f2d309cab72865b875076",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 7,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/420.json",
+      "raw_sha256": "1ddf5dab81a26ad6c937b05df2e29c86a03c35c0a5a3d4bf9308690887a6b75e",
+      "seconds": 1.2891305424273014,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/539",
+      "source_sha256": "8e5ba8a6871de513cc27f922809ab3cfe05c4d3f23702ed86bc2712e6935f8eb",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/539.json",
+      "raw_sha256": "3b04142aeb0c5f82450a5e5cbfc1b3dfaf177282a04d574794bbc72b6ae715ad",
+      "seconds": 0.2964412495493889,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/631",
+      "source_sha256": "e8f827447e836bd86b17292b2db50f8e4babb5e93139587e0bbe2d88b8d3d024",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/631.json",
+      "raw_sha256": "e83053ee5ea50603555e74d2fbb0831067d45d9f91dc20f320ba8b3757315526",
+      "seconds": 0.7824937095865607,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/676",
+      "source_sha256": "73b79cacc5ba9892f2d0092f71634af4cb6e9533ca4792d9d23ccdc5926289b2",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/676.json",
+      "raw_sha256": "2773943b8005f9c11484b01986265f3c5cb47e1d543f1b9d2c2f4b038c21399c",
+      "seconds": 0.7799424575641751,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/704",
+      "source_sha256": "17f21e442dd2310f2de837d22bbd3c3e7dd7e2ae4491e400b749c4e48ab65d4f",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/704.json",
+      "raw_sha256": "0474f99c8ad5e6e6bfedd9b2496d798b15c7af721cd7c9583337922a98ae4f7b",
+      "seconds": 0.7839764999225736,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/861",
+      "source_sha256": "1205b1c0d868aba3158e6de363b556d3395334881afed18e4d998723f5dc9876",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/861.json",
+      "raw_sha256": "f2b3d7c05c9c4ff0eb6c8f08969c9e276c3ee59afcbe1a68dfd5056c3f539fae",
+      "seconds": 0.2438325835391879,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/885",
+      "source_sha256": "e145c43a52ccadeff75bc26be64d62ec7ceb96f24b60fda0387b1aaaf5ada4c5",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 8,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/885.json",
+      "raw_sha256": "c09f191bff37766e1da7a49d72e8889fb87830280e9048cc5c0f263e5715fe35",
+      "seconds": 1.451771667227149,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/986",
+      "source_sha256": "5669704e7726177790aac8eb0d7fa9846c630bc355f1e09c434970ce5971a253",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/986.json",
+      "raw_sha256": "0d355d3d136869a1671525d3af359732733a5f3844e6c6699317f10086712cae",
+      "seconds": 1.948496832512319,
+      "stderr_exception_classes": []
+    },
+    {
+      "task_id": "BigCodeBench/1077",
+      "source_sha256": "5734c244b1b58493cbba42dcc364dbbd6a3603b4cbbfb5e06059fe7fb5d0364e",
+      "status": "completed_ungraded",
+      "native_report": {
+        "tests_run": 6,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "expected_failures": 0,
+        "unexpected_successes": 0,
+        "was_successful": true
+      },
+      "raw_path": "work/native_reference_audit_py39_20260927/1077.json",
+      "raw_sha256": "9074baddba47c0e91ef2d13589ddf57f17a53a25a77b8893cee23c54933525fa",
+      "seconds": 0.29895845893770456,
+      "stderr_exception_classes": []
+    }
+  ],
+  "error": null,
+  "receiver_calls": 0,
+  "paid_usd": 0,
+  "smoke_completed": true,
+  "elapsed_seconds": 62.27734729181975,
+  "task_slots_unattempted": 0
+}

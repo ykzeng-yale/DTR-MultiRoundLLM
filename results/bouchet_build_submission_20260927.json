@@ -1,0 +1,18 @@
+{
+  "classification": "actual submitted CPU CUDA-build job; GPU inference not submitted",
+  "job_id": "27714026",
+  "state_observed": "RUNNING",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "cpus": 4,
+  "memory_gib": 32,
+  "wall_minutes": 30,
+  "gpus": 0,
+  "freeze": "c4de14f",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/cuda-pilot-20260927-v1",
+  "model_sha256_verified": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "source_archive_sha256": "3b83853db981c2aa0dcff7e4711cfb1640b694465407fe668675154f0fe67bdb",
+  "paid_usd": 0,
+  "receiver_calls": 0,
+  "next": "Reconcile build and pin produced binary manifest into committed calibration plan before submitting one H100 pilot. Do not duplicate job."
+}

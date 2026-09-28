@@ -1,0 +1,14 @@
+{
+  "classification": "Codex lead saved-record reconciliation, not independent review or semantic correctness",
+  "freeze": "21ef1e7b327f33eec559f00227105540b084fdff",
+  "summary_sha256": "eabe3f0551db48f585f136d9ad1e57db8f6f94bfdb6b094ea4462aed17242368",
+  "all24_source_and_raw_hashes_verified": true,
+  "native_all_success": 22,
+  "elapsed_seconds": 62.27734729181975,
+  "unattempted": 0,
+  "remaining": [
+    "17 timeout",
+    "334 native errors"
+  ],
+  "receiver_calls": 0
+}
