@@ -233,5 +233,5 @@
   "runtime": "GCC13.3 CUDA12.8 llama.cpp4fea119 Linux H100 sm90",
   "build_pinning": "freeze successful CPU build-sha256.txt into submission receipt before any generation; verify all binaries before load",
   "paid_usd": 0,
-  "build_manifest_sha256": null
+  "build_manifest_sha256": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811"
 }
