@@ -1,0 +1,90 @@
+{
+  "classification": "synthetic operational calibration; no receiver-law equivalence, sustained-output throughput or policy efficacy established",
+  "assigned": 9,
+  "returned": 9,
+  "unattempted": 0,
+  "completion_tokens": 819,
+  "exact_instruction_compliance": 0,
+  "all_nine_returned_without_recorded_error": true,
+  "groups": {
+    "short": {
+      "count": 3,
+      "median_seconds": 0.3218277199193835,
+      "rows": [
+        {
+          "seconds": 0.3218277199193835,
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.3260203750105575,
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.29835307807661593,
+          "completion_tokens": 91,
+          "prompt_tokens": 133,
+          "exact_200_numbered_ready_lines": false
+        }
+      ]
+    },
+    "medium": {
+      "count": 3,
+      "median_seconds": 0.3367106160148978,
+      "rows": [
+        {
+          "seconds": 0.33870104094967246,
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.33546663797460496,
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.3367106160148978,
+          "completion_tokens": 91,
+          "prompt_tokens": 693,
+          "exact_200_numbered_ready_lines": false
+        }
+      ]
+    },
+    "long": {
+      "count": 3,
+      "median_seconds": 0.4666220409562811,
+      "rows": [
+        {
+          "seconds": 0.47923001798335463,
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.4666220409562811,
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "exact_200_numbered_ready_lines": false
+        },
+        {
+          "seconds": 0.46631094301119447,
+          "completion_tokens": 91,
+          "prompt_tokens": 2613,
+          "exact_200_numbered_ready_lines": false
+        }
+      ]
+    }
+  },
+  "error": null,
+  "elapsed_seconds": 6.26731705700513,
+  "gpu_hours_upper_from_job_limit": 0.25,
+  "actual_gpu_hours": "requires reconciled Slurm allocated elapsed time",
+  "money_usd": 0,
+  "energy": "not estimated from token counts",
+  "receipt_sha256": "0acba618f0e89e084067a8a7e8da73f9cc4f0211d0767900f0d163de0599ab4e"
+}

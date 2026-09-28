@@ -1,0 +1,15 @@
+{
+  "job_id": "27719622",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "start_et": "2026-09-27T22:36:13-04:00",
+  "end_et": "2026-09-27T22:36:27-04:00",
+  "allocated_elapsed_seconds": 14,
+  "allocated_gpus": 1,
+  "gpu_hours": 0.0038888888888888888,
+  "calls_returned": 9,
+  "completion_tokens": 819,
+  "lead_frozen_analysis_passed": true,
+  "independent_reviewer": false,
+  "qualification_only": true
+}
