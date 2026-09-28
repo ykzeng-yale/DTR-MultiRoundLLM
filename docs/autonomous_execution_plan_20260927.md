@@ -1,6 +1,6 @@
 # Active scientific work at two-hour intervals
 
-Owner28September update: recur every two hours. Full-history pilot and native audits are terminal; matched complete-strategy phase0job27757218 is terminal/reconciled; final phase1job27760747 and terminal grading are reconciled; bounded synthetic non-oracle learner qualification PID96112 is running. See comparator_design_audit_20260928.md for the corrected scientific sequence. Older runtime snapshots below are historical.
+Owner28September update: recur every two hours. Full-history pilot and native audits are terminal; matched complete-strategy phase0job27757218 is terminal/reconciled; final phase1job27760747 and terminal grading are reconciled; tabular qualification PID96112 is terminal/reconciled and versioned pooled qualification PID97055 is running. See comparator_design_audit_20260928.md for the corrected scientific sequence. Older runtime snapshots below are historical.
 
 Owner directive, 27 September 2026: replace passive checks with aggressive, bounded Codex work. This supersedes the closed MRL-41 worker-monitor instructions and the instruction to keep that heartbeat paused. Claude delegation stays ended. The owner subsequently required continuous substantive execution: do not end after a report, commit or arbitrary work interval. The owner subsequently changed the recurrence to30minutes; it is a recovery/wait trigger, not a reason to interrupt productive work. The app goal record exposes no resume operation to the agent; direct execution continues regardless.
 
