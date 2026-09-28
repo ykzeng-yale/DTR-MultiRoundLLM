@@ -1,0 +1,776 @@
+{
+  "classification": "synthetic; all assigned failures retained, conditional summaries explicitly labeled",
+  "freeze": "593fd769b8ef7c13490302569e8dbe328b5d659b",
+  "seconds": 73.50004229228944,
+  "planned_and_reconciled": 2700,
+  "oracle": {
+    "null": 0.55,
+    "mode_specific": 0.908884,
+    "noisy_public": 0.862393
+  },
+  "cells": [
+    {
+      "regime": "null",
+      "n": 256,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {
+            "no next-stage STOP support; increase frozen development data or report failed fit": 185
+          },
+          "score_failures": {
+            "evaluation Q support gap": 97
+          },
+          "value_conditional_on_fit": {
+            "n": 115,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 115,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.21083333333333334,
+            0.8275
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 115,
+            "mean": 0.048652173913043474,
+            "mc_se": 0.005549624178674167
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 18,
+              "mean": -0.005485026041666711,
+              "mc_se": 0.012852208932342754
+            },
+            "dr": {
+              "n": 18,
+              "mean": -0.003622499730504183,
+              "mc_se": 0.010221976866265444
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.55,
+            0.55
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.004345703125000044,
+              "mc_se": 0.0021145574159171093
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0009423022206970172,
+              "mc_se": 0.0015104828767944442
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 115,
+        "mean": 0.0,
+        "mc_se": 0.0
+      }
+    },
+    {
+      "regime": "null",
+      "n": 1024,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {
+            "no next-stage STOP support; increase frozen development data or report failed fit": 1
+          },
+          "score_failures": {
+            "evaluation Q support gap": 2
+          },
+          "value_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.5481666666666667,
+            0.5515000000000001
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.0002675585284280936,
+            "mc_se": 0.0002675585284280936
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 297,
+              "mean": -0.0012063999368687312,
+              "mc_se": 0.002915046837609477
+            },
+            "dr": {
+              "n": 297,
+              "mean": -0.0017748545444061935,
+              "mc_se": 0.0015100660185034278
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.55,
+            0.55
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.0003027343750000444,
+              "mc_se": 0.0018501045136151688
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0018703019856910297,
+              "mc_se": 0.001386071442033853
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 299,
+        "mean": 0.0,
+        "mc_se": 0.0
+      }
+    },
+    {
+      "regime": "null",
+      "n": 4096,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.55,
+            0.55
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.0013623046875000445,
+              "mc_se": 0.0026266954520457126
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.0004261669490221037,
+              "mc_se": 0.001437128247576807
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.55,
+            "mc_se": 0.0
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "all_assigned_value_bounds": [
+            0.55,
+            0.55
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": 0.0023437499999999557,
+              "mc_se": 0.0017806269119888267
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.00035921358660233625,
+              "mc_se": 0.001359404640244615
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 300,
+        "mean": 0.0,
+        "mc_se": 0.0
+      }
+    },
+    {
+      "regime": "mode_specific",
+      "n": 256,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {
+            "no next-stage STOP support; increase frozen development data or report failed fit": 162
+          },
+          "score_failures": {
+            "evaluation Q support gap": 104,
+            "next evaluation Q support gap": 1
+          },
+          "value_conditional_on_fit": {
+            "n": 138,
+            "mean": 0.8127986130434783,
+            "mc_se": 0.0031660049926382585
+          },
+          "regret_conditional_on_fit": {
+            "n": 138,
+            "mean": 0.09608538695652172,
+            "mc_se": 0.0031660049926382585
+          },
+          "all_assigned_value_bounds": [
+            0.373887362,
+            0.913887362
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 138,
+            "mean": 0.04355072463768116,
+            "mc_se": 0.005415527843540118
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 33,
+              "mean": 0.02145981704545449,
+              "mc_se": 0.012187851409363555
+            },
+            "dr": {
+              "n": 33,
+              "mean": -0.008963551141291467,
+              "mc_se": 0.004246531701836461
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.818145309,
+            "mc_se": 0.0023634074993524453
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.09073869099999998,
+            "mc_se": 0.0023634074993524453
+          },
+          "all_assigned_value_bounds": [
+            0.818145309,
+            0.8181453089999998
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": 0.006273636312499958,
+              "mc_se": 0.0029043754910318726
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.00045923701219663344,
+              "mc_se": 0.0013073788971526396
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 138,
+        "mean": 0.0008705804347826077,
+        "mc_se": 0.004496600941914229
+      }
+    },
+    {
+      "regime": "mode_specific",
+      "n": 1024,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {
+            "no next-stage STOP support; increase frozen development data or report failed fit": 1
+          },
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.8746472595317727,
+            "mc_se": 0.0013742488468966555
+          },
+          "regret_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.03423674046822739,
+            "mc_se": 0.0013742488468966555
+          },
+          "all_assigned_value_bounds": [
+            0.8717317686666667,
+            0.8750651020000002
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 299,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 299,
+              "mean": -0.002026609970735847,
+              "mc_se": 0.0037418098725256537
+            },
+            "dr": {
+              "n": 299,
+              "mean": 0.001264939243357683,
+              "mc_se": 0.0012392418103196977
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.8373778310000001,
+            "mc_se": 0.000749312066958817
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.07150616899999997,
+            "mc_se": 0.000749312066958817
+          },
+          "all_assigned_value_bounds": [
+            0.837377831,
+            0.837377831
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.0014061513125000575,
+              "mc_se": 0.0030752950159186215
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0002760982612744141,
+              "mc_se": 0.0011359299542891622
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 299,
+        "mean": 0.03732867993311037,
+        "mc_se": 0.0015534173827425174
+      }
+    },
+    {
+      "regime": "mode_specific",
+      "n": 4096,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.902993359,
+            "mc_se": 0.0005345429033324383
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.005890640999999984,
+            "mc_se": 0.0005345429033324383
+          },
+          "all_assigned_value_bounds": [
+            0.902993359,
+            0.902993359
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.0011769527500000412,
+              "mc_se": 0.0033923557234137296
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.0006795183680538264,
+              "mc_se": 0.0010598583285566885
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.8328697260000001,
+            "mc_se": 0.0004120408925761239
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.07601427399999995,
+            "mc_se": 0.0004120408925761239
+          },
+          "all_assigned_value_bounds": [
+            0.8328697260000001,
+            0.8328697260000001
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": 0.005182031812499925,
+              "mc_se": 0.002603640332614027
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.0021370980250132337,
+              "mc_se": 0.00104726302015891
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 300,
+        "mean": 0.07012363299999996,
+        "mc_se": 0.0006664021453450133
+      }
+    },
+    {
+      "regime": "noisy_public",
+      "n": 256,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {
+            "no next-stage STOP support; increase frozen development data or report failed fit": 118
+          },
+          "score_failures": {
+            "evaluation Q support gap": 117
+          },
+          "value_conditional_on_fit": {
+            "n": 182,
+            "mean": 0.7826635543956044,
+            "mc_se": 0.003476235049725606
+          },
+          "regret_conditional_on_fit": {
+            "n": 182,
+            "mean": 0.07972944560439552,
+            "mc_se": 0.003476235049725606
+          },
+          "all_assigned_value_bounds": [
+            0.4748158896666667,
+            0.868149223
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 182,
+            "mean": 0.03835467032967033,
+            "mc_se": 0.004953594616794337
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 65,
+              "mean": -0.0064807126923077645,
+              "mc_se": 0.0065914292690893925
+            },
+            "dr": {
+              "n": 65,
+              "mean": 0.0028074501247700116,
+              "mc_se": 0.003394973705020109
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.6956529330000001,
+            "mc_se": 0.0030751699490310196
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.16674006699999994,
+            "mc_se": 0.0030751699490310196
+          },
+          "all_assigned_value_bounds": [
+            0.6956529330000001,
+            0.6956529330000001
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.003050393937500042,
+              "mc_se": 0.002838316842017384
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0027664331574685976,
+              "mc_se": 0.001648350178811207
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 182,
+        "mean": 0.08701730439560441,
+        "mc_se": 0.005452306231938346
+      }
+    },
+    {
+      "regime": "noisy_public",
+      "n": 1024,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.835962096,
+            "mc_se": 0.0011068357998387233
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.026430903999999946,
+            "mc_se": 0.0011068357998387233
+          },
+          "all_assigned_value_bounds": [
+            0.835962096,
+            0.8359620959999999
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.003374205375000021,
+              "mc_se": 0.0032962023173562774
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0013426245462030177,
+              "mc_se": 0.0014743695112780478
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.723668486,
+            "mc_se": 0.0029017327398566284
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.13872451399999994,
+            "mc_se": 0.0029017327398566284
+          },
+          "all_assigned_value_bounds": [
+            0.7236684860000001,
+            0.7236684859999999
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": 0.0016977249374999666,
+              "mc_se": 0.003020831511907465
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.0013836789262614095,
+              "mc_se": 0.0017232673451885315
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 300,
+        "mean": 0.11229360999999999,
+        "mc_se": 0.003012276658137861
+      }
+    },
+    {
+      "regime": "noisy_public",
+      "n": 4096,
+      "assigned": 300,
+      "variants": {
+        "history": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.852263605,
+            "mc_se": 0.0005200040092985218
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.01012939499999996,
+            "mc_se": 0.0005200040092985218
+          },
+          "all_assigned_value_bounds": [
+            0.852263605,
+            0.8522636049999998
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.004031183125000007,
+              "mc_se": 0.0033510682324935023
+            },
+            "dr": {
+              "n": 300,
+              "mean": -0.0009888567945856937,
+              "mc_se": 0.0012756701828686595
+            }
+          }
+        },
+        "last": {
+          "fit_failures": {},
+          "score_failures": {},
+          "value_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.77703055,
+            "mc_se": 0.002060094241613578
+          },
+          "regret_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.08536244999999996,
+            "mc_se": 0.002060094241613578
+          },
+          "all_assigned_value_bounds": [
+            0.77703055,
+            0.7770305499999999
+          ],
+          "fallback_decisions_conditional_on_fit": {
+            "n": 300,
+            "mean": 0.0,
+            "mc_se": 0.0
+          },
+          "holdout_error_conditional_on_score": {
+            "ipw": {
+              "n": 300,
+              "mean": -0.0019768390625000028,
+              "mc_se": 0.003296240505872084
+            },
+            "dr": {
+              "n": 300,
+              "mean": 0.0005514241529975594,
+              "mc_se": 0.0016479826975535857
+            }
+          }
+        }
+      },
+      "paired_difference_conditional_on_both_fit": {
+        "n": 300,
+        "mean": 0.07523305500000001,
+        "mc_se": 0.00205749104694084
+      }
+    }
+  ],
+  "artifact_sha256": {
+    "experiments/sequential/qualification_plan_20260928.json": "ad25909743451e085b3b19598d0a7abdb9a5cd98a168770f56b374f1ca014762",
+    "work/sequential_qualification_20260928/summary.json": "7ce6085a0c43d4da1cad6fe31d12e713442aa842db954a6d0f3660abeea542bd",
+    "work/sequential_qualification_20260928/journal.jsonl": "38d0bc63852b9f1625f7d12f18252851cb9b719c08ee30dac09689448ba28cb4",
+    "work/sequential_qualification_20260928/launch.json": "7d90f4474f1ec9932d36ded4f8176b1eb4a76213b5e2568185cb72f7e70fd0a3"
+  }
+}
