@@ -1,0 +1,16 @@
+{
+  "job_id": "27771658",
+  "state_verified": "RUNNING",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "cpus": 1,
+  "memory_gib": 1,
+  "wall_minutes": 10,
+  "freeze": "43e1af8dbb43a3bfaeab6e527a18bc0d2c43eeef",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/isolation-stress-20260928-v1",
+  "plan_sha256": "3f071498d85b1f611491c09f05b9184966ce96573902a94b74704f07e2b3e60e",
+  "assigned_fixtures": 160,
+  "observed_rows_at12seconds": 30,
+  "paid_usd": 0,
+  "candidate_execution_released": false
+}

@@ -1,5 +1,18 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, 16:10 wake — pooled results closed; containment stress running
+
+Pooled qualification97055 completed all2700assignments in263.550seconds; all source/seed/plan hashes and original tabular counterpart identities reconciled. Both representations fit/score all assignments, null exact value.55 retained; complete values/regrets/MCSE, unseen-history mass, stage counts and IPW/DR errors in results/pooled_qualification_reconciliation_20260928.json. Read docs/pooled_qualification_results_20260928.md. No more synthetic seed/penalty/law repeats. Original failed tabular fits remain; neither component is a practical text critic or DR-trained policy.
+
+Implemented strict public-history text/slate API with source-version bindings, ordered messages/public observation chronology, STOP/budget validation and actual conditional selection probabilities; private/outcome/family/future fields refused. It does not detect semantic leaks inside arbitrary text or train a policy.2401tests+8subtests pass. No training on the nine-root strategy outcomes.
+
+ACT-02: trusted Bouchet probe27771283 failed on unsupported --clearenv before child startup. Versioned repair27771378 uses env-i and passed all9namespace/canary checks; failures preserved. This is prerequisite capability evidence, not candidate release. Proper short-workload devel partition chosen before actual submission; original day route only tested, never queued. Both probes terminal.
+
+Current actual job27771658 RUNNING at12seconds with30journal rows,pi_fl426/devel,1CPU/1GiB/10minutes,freeze43e1af8dbb43a3bfaeab6e527a18bc0d2c43eeef, remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/isolation-stress-20260928-v1. Receipt results/bouchet_containment_stress_submission_20260928.json.160trusted fixed fixtures test syscall/resource boundaries and cleanup, no candidate/benchmark/model code, no downloads/network calls/$0.560global seconds,child2.5wall/1soft2hardCPU/256MiBAS/64KiBoutput; stop failed preflight or two unexpected failures. Do not duplicate/restart. Retrieve summary/journal/logs/plan/freeze/accounting into fresh work/bouchet_containment_stress_20260928, verify every assigned/partial row and limits. All-pass still does not authorize candidate execution; descriptor/descendant/kernel threat review, pinned dependencies and trusted observation transport remain.
+
+Two-hour heartbeat points to27771658. Full-project60%,delta0: population/measurement, practical trained full-history/DR policy, independent freeze/evaluation and final manuscript/raw reproduction incomplete. Lead checks are not independent review or LLM efficacy. Waiting now for the actual finite containment qualification job.
+
+
 ## 28 September 2026 — same-wake continuation: actual sparse-history failure addressed
 
 The previous non-oracle tabular qualification PID96112 completed2700/2700assignments in73.500seconds before turn completion; lead reconciled all assignments, hashes, exact null/oracle bounds and preserved fit/score failures. See docs/sequential_qualification_results_20260928.md. AtN256full-history fits failed185/162/118times across three regimes (300each). Conditional-on-success values must not conceal these failures. All-assigned score-completion envelopes do not define a deployed policy where fitting produced none. No original job or seed was retried.
