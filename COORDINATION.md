@@ -1,5 +1,15 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, 02:00 ET wake — phase1 reconciled, final phase2 submitted
+
+Phase1job27729568 COMPLETED0:0,01:33:25–01:33:45ET,20allocated seconds,13/13returned,0unattempted,no error/state drift. Lead verified input/build hashes, full transcript prefixes and unchanged prior STOP states against retrieved raw artifacts. Frozen public preparation executed13cases in0.540seconds:9PASS,3FAIL,1INCOMPLETE. Two more stops yield7absorbing STOP trajectories and11remaining continuations. Private outcomes remain unopened; public passes do not establish final correctness. Evidence results/full_history_phase1_reconciliation_20260928.json.
+
+Final phase2 frozenef66bda and submitted as actual job27731396,pi_fl426/gpu_h100,1H100/4CPU/16GiB/15minutes,11calls,$0. Remote `/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/full-history-20260928-phase2-v1`. PENDING at check, live startN/A; earlier test-only10:41:47ET is provisional. Transfer hashes match; no duplicate project job. Receipt results/full_history_phase2_submission_20260928.json. Completed phases0/1and prior replication must not be restarted.
+
+On terminal phase2 retrieve generation/summary.json, logs/history-27731396.out/.err,GPU records and Slurm accounting; verify hashes. Run frozen stage script with contract, state work/full_history_phase2_20260928/state.json, phase2plan, retrieved receipt and fresh out work/full_history_phase3_20260928. Verify zero requests,7stopped/11horizon,18assigned trajectories and42calls overall if complete. No phase3GPU job is authorized. Then execute frozen grade_full_history_pilot_20260928.py with contract, terminal phase3state and fresh out work/full_history_terminal_grading_20260928 (<=500private cases/1100seconds/256MiB). Reconcile all raw batteries/assignments and costs, preserve incomplete outcomes; no policy fit, efficacy claim or additional seeds. After operational acceptance return to population/family and broader measurement work. The30-minute trigger now tracks27731396.
+
+Full-project readiness60%,delta0. Lead finite-transition validation is not independent review. Population/measurement, full independent freeze/evaluation and final manuscript/raw reproduction remain incomplete. Waiting is for the actual final-stage queued job. No source changes or redundant test reruns this wake.
+
 ## 28 September 2026, 01:30 ET wake — phase0 reconciled, phase1 submitted
 
 Codex lead: phase0job27729098 COMPLETED0:0,01:20:17–01:20:33ET,16allocated GPU seconds,18/18returned,0unattempted,no recorded error/state drift. Retrieved immutable logs/GPU records; build/config/request hashes verified. Frozen local public preparation executed18fresh isolated cases in0.723seconds:14PASS,3FAIL,1INCOMPLETE(process error at trajectory5/root36). No private outcomes opened. Every18transcript prefix matched its exact receiver response; all5STOP trajectories have no subsequent call and13continuations retain full history. Lead reconciliation, not independent review; public PASS is not terminal task correctness.
