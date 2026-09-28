@@ -1,0 +1,43 @@
+# Matched multi-round strategy development comparison
+
+Codex scientific lead,28September2026. Owner requested a substantive audit of incomplete comparisons and continued execution. This is a new prospectively frozen comparison of complete strategies, not more seeds of the closed constructed-checkpoint panel or a claim that its negatives were invalid. All18natural starts of the completed operational pilot are retained, with two per each of nine reused roots. No favorable start/task selection, new model, endpoint or useful-gain threshold. Starts/outcomes have been seen during development; this experiment is unambiguously development, not held-out confirmation.
+
+## What was missing and what this tests
+
+The162/1620call constructed-checkpoint studies randomized recipe outcomes at artificial reference/wrong answers and explicitly varied the information available to FRESH. They did not establish whole-policy value from natural starts. The42call operational pilot qualified exact history and STOP but had no complete-strategy comparator and too few branches to learn a useful DTR policy. No compute shortage or missing identification theorem explained that gap. Source/measurement checks alone cannot replace a strategy comparison.
+
+The new object is finite-panel terminal performance and measured cost of nine fully specified strategies from the same18initial answers. Every branch shares exact task, initial answer, initial public check and receiver runtime. Each policy has at most two additional receiver calls,1024completion tokens each. Initial generation counts toward every policy's logical deployment cost even though the artifact is physically reused. This is equal call/output-ceiling opportunity, not equal realized prompt tokens, latency, energy or dollars. Never label it exactly equal total cost. Report those dimensions separately, including public-check counts and critique calls.
+
+|Strategy|Two-call rule|Output selection|
+|---|---|---|
+|STOP|No further generation|Initial answer|
+|PATCH2|Two fixed PATCH updates, retaining complete history/status|Last answer|
+|RETHINK2|Two fixed RETHINK updates, retaining complete history/status|Last answer|
+|GATED_PATCH|Stop on public PASS; otherwise PATCH, at most twice|Last reached answer|
+|GATED_RETHINK|Stop on public PASS; otherwise RETHINK, at most twice|Last reached answer|
+|PUBLIC_SWITCH|Stop on PASS; PATCH on INCOMPLETE; RETHINK on FAIL|Last reached answer|
+|RESAMPLE_SELECT|Two task-only independent request contexts, public check on each|Best public status among initial and two redraws: PASS>FAIL>INCOMPLETE, earliest wins ties|
+|SELF_REFINE_ADAPT|One explicit self-feedback call, then one revision using full original/feedback history and original public status|Revised answer|
+|REFLEXION_ADAPT|One explicit reflection call on original trajectory/status, then task-only restart augmented with that memory|New answer|
+
+PUBLIC_SWITCH is an explicitly handwritten diagnostic rule, not fitted DTR, Q-learning, a causal critic or a contribution claim. It follows a declared mechanism (uncertain execution warrants conservative repair; observed failure permits re-derivation) and is not optimized on these outcomes. All9policies and every start remain in reports. No best-policy selection or training on this comparison is authorized.
+
+Self-Refine iterates explicit feedback and refinement (https://arxiv.org/abs/2303.17651); Reflexion uses feedback-conditioned verbal memory (https://arxiv.org/abs/2303.11366). These budget-limited adaptations use this receiver/public-check contract and one critique/revision cycle. They are not reproductions of the original papers' benchmark results or full long-memory agents. Critique costs a call and1024token ceiling; it is never mistaken for executable final code. Critique/feedback can transfer receiver-generated content but never private answers. Reflection restart intentionally changes context; compare whole strategies, not a pure isolated effect of wording. Self-consistency is not claimed: code-string majority is not a valid semantic vote, and no private best-of-K oracle is included.
+
+## Execution and measurement freeze
+
+All initial answers come from the original phase0receipt, not later revised trajectories. All initial public statuses come from the saved first public checks. An allowlisted initial projection excludes later actions/outcomes/private metadata. Its bytes, all9public/private task packages, full policy implementation, seeds, analysis and receiver are frozen before new calls. There are162assigned policy branches. Worst-case288additional calls,294912completion tokens across two stages; gated initial PASS reduces first stage to102actual planned calls. No extra initial generations. Seeds come from random.Random(2026092820) in fixed trajectory/policy order; requests shuffled by phase seed2026092821+phase. Distinct seeds do not prove independent draws. No treatment propensities are used: all fixed policies are directly executed from every start; deterministic rules are not a randomized logging policy.
+
+The receiver is unchanged Qwen2.5-3B-Instruct Q4_K_M, CUDA llama.cpp4fea119, pinned weight/build/state digests. Temperature.7,top_p.95,top_k40,min_p.05,no cache,1024completion cap,8192context ceiling. Do not truncate history or substitute model. Persist exact requests/response identities and all assigned failures. Failed generation makes that branch unavailable; it is not STOP and does not silently inherit a successful initial artifact. STOP absorbs. A failed or drifted server stage requires reconciliation before continuation, not automatic retry.
+
+Only qualified local isolation evaluates generated code. Public cases run at most144perstage,2wall/1CPU seconds each,350seconds total perpreparation; expected values/comparison stay outside candidate process. Private grading starts only after both generation stages and never feeds back. Fixed endpoint: original-private diagnostic and supplemental typed literal-input/JSON-observation battery; malformed/extraction/process observations retain INCOMPLETE. Supplemental expectations are never model inputs. No arbitrary native-object/general semantic claim. Each observation retains best-effort256MiB memory and64KiBstream limits.
+
+Per GPU stage:1H100,4CPU,16GiB,30minutes,1750second app timeout,normal tier,$0. At most2GPU stages/60allocated minutes;128MiBnew data perstage excluding hardlinked model/build,8MiBserver log. Public receipts≤256MiB. Terminal grader≤1500case starts,3500seconds,256MiB retained, fresh output directories. No candidate execution on Bouchet, no downloads/installs/network within sandbox, no peer-process manipulation. Stage1exact requests/state derive from frozen rules and are separately committed before dispatch; changing their hash is not permission to change policy.
+
+## Analysis and interpretation
+
+Report all162branches,18starts and9roots, including service/extraction/grading missingness. For each strategy report equal-root terminal supplemental missing-outcome bounds, all root/start outcomes, public-check/STOP behavior, original-private diagnostic, calls/prompt/completion tokens and latency. Root means average its two starts; each root weight1/9. Report every prespecified policy-minus-RESAMPLE_SELECT descriptive bound (lowerA−upperB, upperA−lowerB). These conservative missingness bounds are not confidence intervals. No p-values, independent-family efficacy or five-point usefulness claims from nine reused roots. Report shared initial cost perlogical deployment and physically incurred experiment cost separately. A policy with less realized compute is a different point on the quality-cost comparison, not automatically more efficient without a stated valuation.
+
+This comparison does not estimate literal individual counterfactual effects or train a supported history-conditional mean predictor. Randomization/branch execution identifies only the declared finite strategy comparison under stable receiver and isolated state assumptions; it does not establish task-family transport. A genuinely learned DTR strategy still needs supported development branches, family-separated fitting/tuning and independent frozen evaluation against these baselines. Existing two-action four-cell learner is a source-verified landmark component, not a complete trained STOP/full-history controller. That gap must remain explicit.
+
+After completion use discrepancies to correct implementation/fairness before larger experiments, never to select favorable splits/endpoints or relabel development as confirmation. Preserve previous negative evidence. Broader population/family/measurement and full independent design remain required; larger compute alone does not remove them.

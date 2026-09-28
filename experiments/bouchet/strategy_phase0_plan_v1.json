@@ -1,0 +1,21 @@
+{
+  "model_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+  "receiver_state_sha256": "411ebaa409af6e3968161cfba76ddb1e52a04f43a1692d8f3499384d48f36795",
+  "media_marker": "<__media_MwEXzIZYyinMRRleRK3cVDNOIk1ZEsWS__>",
+  "build_manifest_sha256": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+  "runtime": "GCC13.3 CUDA12.8 llama.cpp4fea119 Linux H100 sm90",
+  "paid_usd": 0,
+  "classification": "matched strategies phase0; reused development starts",
+  "files": {
+    "experiments/bouchet/run_strategy_stage_v1.py": "796320a9e682ffaa08a7f2454987cc050c50dd5d1d7b64c4d0721fbf4b2d9bb9",
+    "experiments/bouchet/strategy_stage_v1.sbatch": "7b1a75cd6559f16a89e4525158730e1795589c3e758338e088ca9c99345f9c06",
+    "experiments/landmark/collect.py": "49c94c45f856115925cf20560f0c43ba14348a859a041bc14ad9fd1431e7a83f",
+    "work/strategy_phase0_20260928/requests.json": "c78ebebd676e6a4a90efebb4bbbd24ad260fc0716cd60d0d4d25eb218e32d8f0"
+  },
+  "requests_path": "work/strategy_phase0_20260928/requests.json",
+  "max_calls": 102,
+  "max_completion_tokens": 104448,
+  "wall_seconds": 1750,
+  "state_sha256": "7fcf94fb810d21db000908ba879eb2ba327a6ad03462ead0348b48a6b028abd0",
+  "contract_sha256": "ce5bee9556a149f54dfaa175634dfea6548108d2d20b3d2aa2ffb937cd5088e5"
+}

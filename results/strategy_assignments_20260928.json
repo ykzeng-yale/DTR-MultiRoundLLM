@@ -1,0 +1,1460 @@
+[
+  {
+    "slot": 0,
+    "trajectory": 0,
+    "policy": "STOP",
+    "seeds": [
+      2467525569,
+      2913521170
+    ]
+  },
+  {
+    "slot": 1,
+    "trajectory": 0,
+    "policy": "PATCH2",
+    "seeds": [
+      1225175947,
+      3059130213
+    ]
+  },
+  {
+    "slot": 2,
+    "trajectory": 0,
+    "policy": "RETHINK2",
+    "seeds": [
+      22663132,
+      1440699286
+    ]
+  },
+  {
+    "slot": 3,
+    "trajectory": 0,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      3929429396,
+      1365303027
+    ]
+  },
+  {
+    "slot": 4,
+    "trajectory": 0,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      2349745678,
+      2654161724
+    ]
+  },
+  {
+    "slot": 5,
+    "trajectory": 0,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2819238484,
+      588292142
+    ]
+  },
+  {
+    "slot": 6,
+    "trajectory": 0,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2034190421,
+      1421861701
+    ]
+  },
+  {
+    "slot": 7,
+    "trajectory": 0,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2384876940,
+      3250204286
+    ]
+  },
+  {
+    "slot": 8,
+    "trajectory": 0,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1726436120,
+      4242473728
+    ]
+  },
+  {
+    "slot": 9,
+    "trajectory": 1,
+    "policy": "STOP",
+    "seeds": [
+      1783578400,
+      2617854850
+    ]
+  },
+  {
+    "slot": 10,
+    "trajectory": 1,
+    "policy": "PATCH2",
+    "seeds": [
+      1648661144,
+      1312000260
+    ]
+  },
+  {
+    "slot": 11,
+    "trajectory": 1,
+    "policy": "RETHINK2",
+    "seeds": [
+      2983953334,
+      663218296
+    ]
+  },
+  {
+    "slot": 12,
+    "trajectory": 1,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      430140221,
+      3773058299
+    ]
+  },
+  {
+    "slot": 13,
+    "trajectory": 1,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1811274303,
+      3267623579
+    ]
+  },
+  {
+    "slot": 14,
+    "trajectory": 1,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      3753945418,
+      4000230174
+    ]
+  },
+  {
+    "slot": 15,
+    "trajectory": 1,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2703636480,
+      1439474654
+    ]
+  },
+  {
+    "slot": 16,
+    "trajectory": 1,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      4230189276,
+      1259730951
+    ]
+  },
+  {
+    "slot": 17,
+    "trajectory": 1,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1349910734,
+      1354783567
+    ]
+  },
+  {
+    "slot": 18,
+    "trajectory": 2,
+    "policy": "STOP",
+    "seeds": [
+      2152716075,
+      154064359
+    ]
+  },
+  {
+    "slot": 19,
+    "trajectory": 2,
+    "policy": "PATCH2",
+    "seeds": [
+      3944287728,
+      1263035749
+    ]
+  },
+  {
+    "slot": 20,
+    "trajectory": 2,
+    "policy": "RETHINK2",
+    "seeds": [
+      1311055147,
+      4271627736
+    ]
+  },
+  {
+    "slot": 21,
+    "trajectory": 2,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      559755572,
+      37574399
+    ]
+  },
+  {
+    "slot": 22,
+    "trajectory": 2,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      2062710750,
+      3736339485
+    ]
+  },
+  {
+    "slot": 23,
+    "trajectory": 2,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2892620378,
+      1839086878
+    ]
+  },
+  {
+    "slot": 24,
+    "trajectory": 2,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      182322113,
+      478618975
+    ]
+  },
+  {
+    "slot": 25,
+    "trajectory": 2,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2150611798,
+      1905973860
+    ]
+  },
+  {
+    "slot": 26,
+    "trajectory": 2,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1498443547,
+      1617724334
+    ]
+  },
+  {
+    "slot": 27,
+    "trajectory": 3,
+    "policy": "STOP",
+    "seeds": [
+      1782625659,
+      2356484929
+    ]
+  },
+  {
+    "slot": 28,
+    "trajectory": 3,
+    "policy": "PATCH2",
+    "seeds": [
+      2175147299,
+      3610427697
+    ]
+  },
+  {
+    "slot": 29,
+    "trajectory": 3,
+    "policy": "RETHINK2",
+    "seeds": [
+      2946755277,
+      1484427229
+    ]
+  },
+  {
+    "slot": 30,
+    "trajectory": 3,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      2133883413,
+      1757894073
+    ]
+  },
+  {
+    "slot": 31,
+    "trajectory": 3,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      4244994419,
+      2449551113
+    ]
+  },
+  {
+    "slot": 32,
+    "trajectory": 3,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2531030208,
+      2883146814
+    ]
+  },
+  {
+    "slot": 33,
+    "trajectory": 3,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3388550756,
+      2625673262
+    ]
+  },
+  {
+    "slot": 34,
+    "trajectory": 3,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      479571846,
+      1442466859
+    ]
+  },
+  {
+    "slot": 35,
+    "trajectory": 3,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      3339921975,
+      624909098
+    ]
+  },
+  {
+    "slot": 36,
+    "trajectory": 4,
+    "policy": "STOP",
+    "seeds": [
+      3107779974,
+      1621130489
+    ]
+  },
+  {
+    "slot": 37,
+    "trajectory": 4,
+    "policy": "PATCH2",
+    "seeds": [
+      2716174345,
+      1749343191
+    ]
+  },
+  {
+    "slot": 38,
+    "trajectory": 4,
+    "policy": "RETHINK2",
+    "seeds": [
+      1033664121,
+      3434721727
+    ]
+  },
+  {
+    "slot": 39,
+    "trajectory": 4,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      994463452,
+      3310037
+    ]
+  },
+  {
+    "slot": 40,
+    "trajectory": 4,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1474292022,
+      3447580897
+    ]
+  },
+  {
+    "slot": 41,
+    "trajectory": 4,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      3562582816,
+      1058356935
+    ]
+  },
+  {
+    "slot": 42,
+    "trajectory": 4,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2877044413,
+      2102483196
+    ]
+  },
+  {
+    "slot": 43,
+    "trajectory": 4,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      1025315631,
+      2515415655
+    ]
+  },
+  {
+    "slot": 44,
+    "trajectory": 4,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1273496036,
+      434926251
+    ]
+  },
+  {
+    "slot": 45,
+    "trajectory": 5,
+    "policy": "STOP",
+    "seeds": [
+      2179504558,
+      924053120
+    ]
+  },
+  {
+    "slot": 46,
+    "trajectory": 5,
+    "policy": "PATCH2",
+    "seeds": [
+      2391561811,
+      2285158558
+    ]
+  },
+  {
+    "slot": 47,
+    "trajectory": 5,
+    "policy": "RETHINK2",
+    "seeds": [
+      2732264339,
+      711348907
+    ]
+  },
+  {
+    "slot": 48,
+    "trajectory": 5,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      4108143758,
+      953048222
+    ]
+  },
+  {
+    "slot": 49,
+    "trajectory": 5,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1509658956,
+      1428251597
+    ]
+  },
+  {
+    "slot": 50,
+    "trajectory": 5,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      302505240,
+      2686418004
+    ]
+  },
+  {
+    "slot": 51,
+    "trajectory": 5,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      4061631041,
+      4097239599
+    ]
+  },
+  {
+    "slot": 52,
+    "trajectory": 5,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      3160505777,
+      2590467019
+    ]
+  },
+  {
+    "slot": 53,
+    "trajectory": 5,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      3617168829,
+      319970906
+    ]
+  },
+  {
+    "slot": 54,
+    "trajectory": 6,
+    "policy": "STOP",
+    "seeds": [
+      710442789,
+      3008232074
+    ]
+  },
+  {
+    "slot": 55,
+    "trajectory": 6,
+    "policy": "PATCH2",
+    "seeds": [
+      969102900,
+      2235820345
+    ]
+  },
+  {
+    "slot": 56,
+    "trajectory": 6,
+    "policy": "RETHINK2",
+    "seeds": [
+      3756760173,
+      3881522480
+    ]
+  },
+  {
+    "slot": 57,
+    "trajectory": 6,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      2031366497,
+      320575222
+    ]
+  },
+  {
+    "slot": 58,
+    "trajectory": 6,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1480757088,
+      3286160462
+    ]
+  },
+  {
+    "slot": 59,
+    "trajectory": 6,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      596036245,
+      3916205300
+    ]
+  },
+  {
+    "slot": 60,
+    "trajectory": 6,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      4169016049,
+      828987688
+    ]
+  },
+  {
+    "slot": 61,
+    "trajectory": 6,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      1885384586,
+      2132534757
+    ]
+  },
+  {
+    "slot": 62,
+    "trajectory": 6,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      3831440746,
+      4194321457
+    ]
+  },
+  {
+    "slot": 63,
+    "trajectory": 7,
+    "policy": "STOP",
+    "seeds": [
+      2276312752,
+      3926152339
+    ]
+  },
+  {
+    "slot": 64,
+    "trajectory": 7,
+    "policy": "PATCH2",
+    "seeds": [
+      1553245056,
+      3021025107
+    ]
+  },
+  {
+    "slot": 65,
+    "trajectory": 7,
+    "policy": "RETHINK2",
+    "seeds": [
+      221492947,
+      3950234278
+    ]
+  },
+  {
+    "slot": 66,
+    "trajectory": 7,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      1470288025,
+      3978352128
+    ]
+  },
+  {
+    "slot": 67,
+    "trajectory": 7,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1135854890,
+      2833657318
+    ]
+  },
+  {
+    "slot": 68,
+    "trajectory": 7,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2254037588,
+      3504233124
+    ]
+  },
+  {
+    "slot": 69,
+    "trajectory": 7,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3078147495,
+      3967824807
+    ]
+  },
+  {
+    "slot": 70,
+    "trajectory": 7,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2530220302,
+      843492359
+    ]
+  },
+  {
+    "slot": 71,
+    "trajectory": 7,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      2394402118,
+      2157065339
+    ]
+  },
+  {
+    "slot": 72,
+    "trajectory": 8,
+    "policy": "STOP",
+    "seeds": [
+      2899596826,
+      727750551
+    ]
+  },
+  {
+    "slot": 73,
+    "trajectory": 8,
+    "policy": "PATCH2",
+    "seeds": [
+      2013966578,
+      1461158699
+    ]
+  },
+  {
+    "slot": 74,
+    "trajectory": 8,
+    "policy": "RETHINK2",
+    "seeds": [
+      530937735,
+      1633855688
+    ]
+  },
+  {
+    "slot": 75,
+    "trajectory": 8,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      10279385,
+      3962462111
+    ]
+  },
+  {
+    "slot": 76,
+    "trajectory": 8,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      4287811116,
+      2332829289
+    ]
+  },
+  {
+    "slot": 77,
+    "trajectory": 8,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      137761160,
+      4287393169
+    ]
+  },
+  {
+    "slot": 78,
+    "trajectory": 8,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      636074436,
+      3727639987
+    ]
+  },
+  {
+    "slot": 79,
+    "trajectory": 8,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      1948670988,
+      3438150925
+    ]
+  },
+  {
+    "slot": 80,
+    "trajectory": 8,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      488960226,
+      3777446102
+    ]
+  },
+  {
+    "slot": 81,
+    "trajectory": 9,
+    "policy": "STOP",
+    "seeds": [
+      3005576208,
+      1905850798
+    ]
+  },
+  {
+    "slot": 82,
+    "trajectory": 9,
+    "policy": "PATCH2",
+    "seeds": [
+      2489999593,
+      2215603827
+    ]
+  },
+  {
+    "slot": 83,
+    "trajectory": 9,
+    "policy": "RETHINK2",
+    "seeds": [
+      1147300446,
+      1450774902
+    ]
+  },
+  {
+    "slot": 84,
+    "trajectory": 9,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      3305585599,
+      3857858308
+    ]
+  },
+  {
+    "slot": 85,
+    "trajectory": 9,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1014769873,
+      2981677245
+    ]
+  },
+  {
+    "slot": 86,
+    "trajectory": 9,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      1968842951,
+      440403055
+    ]
+  },
+  {
+    "slot": 87,
+    "trajectory": 9,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3994515481,
+      612936535
+    ]
+  },
+  {
+    "slot": 88,
+    "trajectory": 9,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      3477001719,
+      4290366663
+    ]
+  },
+  {
+    "slot": 89,
+    "trajectory": 9,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      4081349320,
+      3225931436
+    ]
+  },
+  {
+    "slot": 90,
+    "trajectory": 10,
+    "policy": "STOP",
+    "seeds": [
+      802029135,
+      2510479378
+    ]
+  },
+  {
+    "slot": 91,
+    "trajectory": 10,
+    "policy": "PATCH2",
+    "seeds": [
+      1057390725,
+      2025678902
+    ]
+  },
+  {
+    "slot": 92,
+    "trajectory": 10,
+    "policy": "RETHINK2",
+    "seeds": [
+      1723686724,
+      2598486100
+    ]
+  },
+  {
+    "slot": 93,
+    "trajectory": 10,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      385846165,
+      3090496010
+    ]
+  },
+  {
+    "slot": 94,
+    "trajectory": 10,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      4016767545,
+      827028256
+    ]
+  },
+  {
+    "slot": 95,
+    "trajectory": 10,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      1799324937,
+      3028985832
+    ]
+  },
+  {
+    "slot": 96,
+    "trajectory": 10,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3455307608,
+      820957989
+    ]
+  },
+  {
+    "slot": 97,
+    "trajectory": 10,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2670086054,
+      4063947835
+    ]
+  },
+  {
+    "slot": 98,
+    "trajectory": 10,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      3952521317,
+      2634203798
+    ]
+  },
+  {
+    "slot": 99,
+    "trajectory": 11,
+    "policy": "STOP",
+    "seeds": [
+      2628481900,
+      145750818
+    ]
+  },
+  {
+    "slot": 100,
+    "trajectory": 11,
+    "policy": "PATCH2",
+    "seeds": [
+      953047587,
+      2794025641
+    ]
+  },
+  {
+    "slot": 101,
+    "trajectory": 11,
+    "policy": "RETHINK2",
+    "seeds": [
+      699764443,
+      1145760679
+    ]
+  },
+  {
+    "slot": 102,
+    "trajectory": 11,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      3409201494,
+      663868207
+    ]
+  },
+  {
+    "slot": 103,
+    "trajectory": 11,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      2388402864,
+      337361899
+    ]
+  },
+  {
+    "slot": 104,
+    "trajectory": 11,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2790423080,
+      442699201
+    ]
+  },
+  {
+    "slot": 105,
+    "trajectory": 11,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2273948044,
+      122097078
+    ]
+  },
+  {
+    "slot": 106,
+    "trajectory": 11,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2282463219,
+      467114938
+    ]
+  },
+  {
+    "slot": 107,
+    "trajectory": 11,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      489626675,
+      2496891017
+    ]
+  },
+  {
+    "slot": 108,
+    "trajectory": 12,
+    "policy": "STOP",
+    "seeds": [
+      4253050130,
+      2401095285
+    ]
+  },
+  {
+    "slot": 109,
+    "trajectory": 12,
+    "policy": "PATCH2",
+    "seeds": [
+      184464466,
+      956055516
+    ]
+  },
+  {
+    "slot": 110,
+    "trajectory": 12,
+    "policy": "RETHINK2",
+    "seeds": [
+      2603056090,
+      293066860
+    ]
+  },
+  {
+    "slot": 111,
+    "trajectory": 12,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      3578162901,
+      1124162081
+    ]
+  },
+  {
+    "slot": 112,
+    "trajectory": 12,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1926630880,
+      952678144
+    ]
+  },
+  {
+    "slot": 113,
+    "trajectory": 12,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      3507702539,
+      3189259204
+    ]
+  },
+  {
+    "slot": 114,
+    "trajectory": 12,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3937922495,
+      3472922783
+    ]
+  },
+  {
+    "slot": 115,
+    "trajectory": 12,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      1048242134,
+      1367453114
+    ]
+  },
+  {
+    "slot": 116,
+    "trajectory": 12,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      3729830600,
+      3849723121
+    ]
+  },
+  {
+    "slot": 117,
+    "trajectory": 13,
+    "policy": "STOP",
+    "seeds": [
+      2977564985,
+      2484282462
+    ]
+  },
+  {
+    "slot": 118,
+    "trajectory": 13,
+    "policy": "PATCH2",
+    "seeds": [
+      2594892874,
+      3224406114
+    ]
+  },
+  {
+    "slot": 119,
+    "trajectory": 13,
+    "policy": "RETHINK2",
+    "seeds": [
+      3254011317,
+      116019846
+    ]
+  },
+  {
+    "slot": 120,
+    "trajectory": 13,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      499768190,
+      766430022
+    ]
+  },
+  {
+    "slot": 121,
+    "trajectory": 13,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      3579693360,
+      2202427012
+    ]
+  },
+  {
+    "slot": 122,
+    "trajectory": 13,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      2382580825,
+      4182505845
+    ]
+  },
+  {
+    "slot": 123,
+    "trajectory": 13,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      4009890794,
+      1633263523
+    ]
+  },
+  {
+    "slot": 124,
+    "trajectory": 13,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      1601660856,
+      2001756308
+    ]
+  },
+  {
+    "slot": 125,
+    "trajectory": 13,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      458709458,
+      1805370426
+    ]
+  },
+  {
+    "slot": 126,
+    "trajectory": 14,
+    "policy": "STOP",
+    "seeds": [
+      432758899,
+      1280571098
+    ]
+  },
+  {
+    "slot": 127,
+    "trajectory": 14,
+    "policy": "PATCH2",
+    "seeds": [
+      523718784,
+      906826763
+    ]
+  },
+  {
+    "slot": 128,
+    "trajectory": 14,
+    "policy": "RETHINK2",
+    "seeds": [
+      2242468123,
+      3562311821
+    ]
+  },
+  {
+    "slot": 129,
+    "trajectory": 14,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      1974519254,
+      728592400
+    ]
+  },
+  {
+    "slot": 130,
+    "trajectory": 14,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      1102751133,
+      3178873350
+    ]
+  },
+  {
+    "slot": 131,
+    "trajectory": 14,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      1975696285,
+      1457308517
+    ]
+  },
+  {
+    "slot": 132,
+    "trajectory": 14,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2148452591,
+      189719155
+    ]
+  },
+  {
+    "slot": 133,
+    "trajectory": 14,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      3112796936,
+      2472037446
+    ]
+  },
+  {
+    "slot": 134,
+    "trajectory": 14,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      2431462319,
+      4121814792
+    ]
+  },
+  {
+    "slot": 135,
+    "trajectory": 15,
+    "policy": "STOP",
+    "seeds": [
+      2990028985,
+      2892533277
+    ]
+  },
+  {
+    "slot": 136,
+    "trajectory": 15,
+    "policy": "PATCH2",
+    "seeds": [
+      3370124909,
+      3095658140
+    ]
+  },
+  {
+    "slot": 137,
+    "trajectory": 15,
+    "policy": "RETHINK2",
+    "seeds": [
+      2096900833,
+      1167649980
+    ]
+  },
+  {
+    "slot": 138,
+    "trajectory": 15,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      126173896,
+      2543322485
+    ]
+  },
+  {
+    "slot": 139,
+    "trajectory": 15,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      430061884,
+      3021623887
+    ]
+  },
+  {
+    "slot": 140,
+    "trajectory": 15,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      218803551,
+      4008715612
+    ]
+  },
+  {
+    "slot": 141,
+    "trajectory": 15,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      1599327297,
+      43827582
+    ]
+  },
+  {
+    "slot": 142,
+    "trajectory": 15,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2528021241,
+      1157931288
+    ]
+  },
+  {
+    "slot": 143,
+    "trajectory": 15,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      2665048204,
+      1042967630
+    ]
+  },
+  {
+    "slot": 144,
+    "trajectory": 16,
+    "policy": "STOP",
+    "seeds": [
+      2260103515,
+      3953945409
+    ]
+  },
+  {
+    "slot": 145,
+    "trajectory": 16,
+    "policy": "PATCH2",
+    "seeds": [
+      2095941907,
+      1035450559
+    ]
+  },
+  {
+    "slot": 146,
+    "trajectory": 16,
+    "policy": "RETHINK2",
+    "seeds": [
+      3284919041,
+      1620432367
+    ]
+  },
+  {
+    "slot": 147,
+    "trajectory": 16,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      1797486801,
+      609713943
+    ]
+  },
+  {
+    "slot": 148,
+    "trajectory": 16,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      4058707079,
+      3708117071
+    ]
+  },
+  {
+    "slot": 149,
+    "trajectory": 16,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      936523232,
+      3556619520
+    ]
+  },
+  {
+    "slot": 150,
+    "trajectory": 16,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      2280465716,
+      685602110
+    ]
+  },
+  {
+    "slot": 151,
+    "trajectory": 16,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      722583299,
+      2950164884
+    ]
+  },
+  {
+    "slot": 152,
+    "trajectory": 16,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1477971578,
+      3471132756
+    ]
+  },
+  {
+    "slot": 153,
+    "trajectory": 17,
+    "policy": "STOP",
+    "seeds": [
+      3449933133,
+      2436142266
+    ]
+  },
+  {
+    "slot": 154,
+    "trajectory": 17,
+    "policy": "PATCH2",
+    "seeds": [
+      744187407,
+      922109336
+    ]
+  },
+  {
+    "slot": 155,
+    "trajectory": 17,
+    "policy": "RETHINK2",
+    "seeds": [
+      302224341,
+      554337990
+    ]
+  },
+  {
+    "slot": 156,
+    "trajectory": 17,
+    "policy": "GATED_PATCH",
+    "seeds": [
+      3837202203,
+      20779793
+    ]
+  },
+  {
+    "slot": 157,
+    "trajectory": 17,
+    "policy": "GATED_RETHINK",
+    "seeds": [
+      3826231289,
+      3222939044
+    ]
+  },
+  {
+    "slot": 158,
+    "trajectory": 17,
+    "policy": "PUBLIC_SWITCH",
+    "seeds": [
+      3854825862,
+      193557852
+    ]
+  },
+  {
+    "slot": 159,
+    "trajectory": 17,
+    "policy": "RESAMPLE_SELECT",
+    "seeds": [
+      3540558744,
+      3405807918
+    ]
+  },
+  {
+    "slot": 160,
+    "trajectory": 17,
+    "policy": "SELF_REFINE_ADAPT",
+    "seeds": [
+      2587610031,
+      1597425055
+    ]
+  },
+  {
+    "slot": 161,
+    "trajectory": 17,
+    "policy": "REFLEXION_ADAPT",
+    "seeds": [
+      1101426190,
+      3920997191
+    ]
+  }
+]
