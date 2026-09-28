@@ -1,0 +1,17 @@
+{
+  "job_id": "27719622",
+  "state_at_submission": "PENDING",
+  "account": "pi_fl426",
+  "partition": "gpu_h100",
+  "gpus": 1,
+  "cpus": 4,
+  "memory_gib": 16,
+  "wall_minutes": 15,
+  "freeze": "6944d061f9df7d2195da508e7c378c0188f72cea",
+  "plan": "experiments/bouchet/calibration_plan_v2.json",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/cuda-pilot-20260927-v2",
+  "predecessor": "27714349",
+  "reason": "Only recorded properties difference was model_path; full CUDA-state hash now pinned. Original failed before all9 calls. All9 binary files verified unchanged.",
+  "test_only_start_estimate_et": "2026-09-27T23:58:17-04:00",
+  "paid_usd": 0
+}
