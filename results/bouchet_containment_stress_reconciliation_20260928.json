@@ -1,0 +1,24 @@
+{
+  "job_id": "27771658",
+  "completed": 160,
+  "lead_recomputed_fixture_results": {
+    "arithmetic": 20,
+    "socket_denied": 20,
+    "fork_denied": 20,
+    "exec_denied": 20,
+    "memory_capped": 20,
+    "cpu_capped": 20,
+    "wall_capped": 20,
+    "output_capped": 20
+  },
+  "seconds": 75.31532603502274,
+  "candidate_execution_released": false,
+  "sha256": {
+    "work/bouchet_containment_stress_20260928/freeze.txt": "5bf243c94b1c11d01cf9b4260eb19c684d2a782fe98fb19b29186c4b56e47205",
+    "work/bouchet_containment_stress_20260928/stress-plan.json": "3f071498d85b1f611491c09f05b9184966ce96573902a94b74704f07e2b3e60e",
+    "work/bouchet_containment_stress_20260928/stress-results/summary.json": "7529895d18945d4322769bbe43e24d1fc805b4685815cdd3f8f895f806dbcef4",
+    "work/bouchet_containment_stress_20260928/stress-results/journal.jsonl": "916f7dd6c0766af797ddae5e8df0a7c1c06dbd38f2b9376b838ceac9b55e20a1",
+    "work/bouchet_containment_stress_20260928/logs/stress-27771658.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/bouchet_containment_stress_20260928/logs/stress-27771658.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

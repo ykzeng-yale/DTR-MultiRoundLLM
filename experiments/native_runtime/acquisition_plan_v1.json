@@ -1,0 +1,10 @@
+{
+  "classification": "data-only binary wheel acquisition, no runtime release",
+  "files": {
+    "experiments/native_runtime/core_requirements_v1.txt": "8db56b9b05a0c17f309bbf4288c146c34755221814d1a84ce9fd8b7b31e75d14",
+    "experiments/native_runtime/publisher_constraints_v1.txt": "a4d01fb12cbce5223b51f982265cb7975bea770b758cd85cc91b803d3293e39f",
+    "experiments/native_runtime/acquire_wheels_v1.py": "a2609e6b3f6d34bb9603ae2668aea97c5bab64121737b3857d1b8c94308f9831",
+    "experiments/native_runtime/acquire_wheels_v1.sbatch": "400682774bf1311b7b76658fd610372dfd7dbdee9b69f1b7959e4f03d61cd44d",
+    "docs/native_wheel_acquisition_20260928.md": "7b17b0df73e44ca3700881bb872794e0dfd11736f124d0545517f9a701c93aad"
+  }
+}
