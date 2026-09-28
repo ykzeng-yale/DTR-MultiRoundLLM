@@ -1,0 +1,37 @@
+{
+  "job_id": "27760747",
+  "returned_calls": 101,
+  "total_calls": 203,
+  "assigned_branches": 162,
+  "dispositions": {
+    "stopped": 61,
+    "horizon": 101
+  },
+  "allocated_seconds": 40,
+  "private_outcomes_opened": false,
+  "config_build_identity_verified": true,
+  "no_post_stop_changes": true,
+  "terminal_requests": 0,
+  "public_preparation": {
+    "phase": 2,
+    "public_case_starts": 101,
+    "seconds": 4.646608041599393,
+    "requests": 0,
+    "contract_sha256": "ce5bee9556a149f54dfaa175634dfea6548108d2d20b3d2aa2ffb937cd5088e5",
+    "private_files_opened": false
+  },
+  "sha256": {
+    "work/strategy_phase1_results_20260928/accounting.txt": "893097a2cb07bca83d305de35fefe29afb66fd51eb97801bbb4e66becc4981ba",
+    "work/strategy_phase1_results_20260928/freeze.txt": "42bb18c4b14b690d508616bbaeb0e4a3493c1aeff284e0f9d31715cac70a8a73",
+    "work/strategy_phase1_results_20260928/gpu-after.txt": "dd7b529174fde789f7df334a0112c2e8df07a7257465772d5c2c359f48df70a3",
+    "work/strategy_phase1_results_20260928/gpu-before.txt": "5a42ce7de5fbb6a8eb68b4838e10904c857838467f97b887391cb8feb066d31e",
+    "work/strategy_phase1_results_20260928/stage-plan.json": "38ce1d67a54c2d33530e694883eb15827f538630f7e3e0d3299409ecbad85c52",
+    "work/strategy_phase1_results_20260928/gpu-samples.csv": "caab1dca8efae9e90ca0640e3b087bd7ed3ed735ca3b50443fdd152b52267431",
+    "work/strategy_phase1_results_20260928/logs/strategy-27760747.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e",
+    "work/strategy_phase1_results_20260928/logs/strategy-27760747.out": "6515b6b1956d11ba3983a09ca77f9c0f0613189d2af13935144477dfaecddbe2",
+    "work/strategy_phase1_results_20260928/generation/summary.json": "a857a97d1886e7f29e4a5642043a85a14252dbec132a570dcf1d2dca4f8b4774",
+    "work/strategy_phase1_results_20260928/generation/build-sha256.txt": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+    "work/strategy_phase1_results_20260928/generation/props_before.json": "0932377c13b4f43b9b2174ded835504c8b7906cbab6119f9a0dc8a357d32eccf",
+    "work/strategy_phase1_results_20260928/generation/server.log": "3257686913c388a8b4b02e497fc51777dd3ea5584b87c5dfb5224326c9bf6fdf"
+  }
+}
