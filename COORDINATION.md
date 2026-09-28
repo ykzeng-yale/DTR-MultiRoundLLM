@@ -1,5 +1,16 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, 18:11 ET wake — containment reconciled; native dependency acquisition running
+
+Codex lead reconciled all160/160 fixed containment fixtures for27771658: zero failures/unattempted,75allocated seconds,75.315elapsed qualification seconds,14960K MaxRSS. Source/plan/assignment/raw hashes and actual stdout or limit/exit criteria checked, not only reported pass flags. results/bouchet_containment_stress_reconciliation_20260928.json preserves evidence. This is trusted-fixture capability evidence, not independent security review or candidate execution release. No further stress repetition.
+
+Data-only native wheel acquisition27777881 ended11allocated seconds with pip return1 despite scheduler0; zero wheels. Python3.12 host evaluated incompatible environment markers despite cp39 target. Raw failure retained at work/native_core_wheels_20260928_v1 and reconciliation JSON. No reference tasks were rerun. Version2 freezes actualPython3.9.21 running existing site pip24.0, unchanged original six core pins and full publisher constraints; downloader errors now propagate scheduler failure. No installation/package import/benchmark/candidate execution.
+
+Actual job27778040 observed RUNNING at15seconds on a1130u05n02, pi_fl426/devel,1CPU/2GiB/12minutes,noGPU,$0, freeze3df8bb6. Remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-core-wheels-20260928-v2. Receipt results/native_wheel_acquisition_v2_submission_20260928.json.600supervised seconds,512MiB supervised total,8MiB log. Retrieve acquisition summary/log/wheels, plan/freeze and scheduler accounting into fresh work/native_core_wheels_20260928_v2. Verify requirements/constraints/plan/source/wheel hashes and metadata; exit0 alone insufficient. No duplicate/retry from stale logs. Next runtime installation/import needs separate exact-wheel frozen bounded protocol; no automatic candidate release.
+
+Full-project readiness60%,delta0. Population/measurement, practical text-controller/DR-training, independent freeze/evaluation and manuscript/raw reproduction remain incomplete. Existing pooled qualification and allGPU panels terminal; negatives retained, no repeats. Acquisition repairs improve reproducibility but earn no efficacy or independent-evaluation credit. Two-hour recovery trigger follows this actual job; next substantive priorities remain source-separated native observations and actual public-history learner integration.
+
+
 ## 28 September 2026, 16:10 wake — pooled results closed; containment stress running
 
 Pooled qualification97055 completed all2700assignments in263.550seconds; all source/seed/plan hashes and original tabular counterpart identities reconciled. Both representations fit/score all assignments, null exact value.55 retained; complete values/regrets/MCSE, unseen-history mass, stage counts and IPW/DR errors in results/pooled_qualification_reconciliation_20260928.json. Read docs/pooled_qualification_results_20260928.md. No more synthetic seed/penalty/law repeats. Original failed tabular fits remain; neither component is a practical text critic or DR-trained policy.
