@@ -1,6 +1,13 @@
 # Coordination — DTR for multi-round LLM interaction
 
 
+## 27 September2026 — public/private measurement routing executed
+
+Codex direct: frozenab3cfc5 four-pair/eight-process synthetic qualification completed0.268seconds. Correct PASS/PASS; public-only constant PASS/FAIL; wrong FAIL/FAIL; forged verdict INCOMPLETE/INCOMPLETE. All fixed feedback predictions matched; saved receipt hashes/statuses reconciled by lead, not independent reviewer. Twenty-six focused tests pass. This closes the restricted observation-to-status producer connection, not arbitrary native grading or full collector integration. No receiver calls or additional benchmark exposure. Results: results/public_observation_qualification_20260927/.
+
+H100 pilot27714349 remains pending; latest actual scheduler estimate22:54:17ET, provisional. Do not duplicate it. Next use its terminal outputs to validate CUDA runtime and then integrate the qualified public-status path with a separately frozen collector; broader task-specific measurement/family decisions still gate real policy evaluation. Full-project readiness60%,delta0; population/measurement, full freeze, independent policy evaluation and final manuscript/raw reproduction remain incomplete.
+
+
 ## 27 September2026 — H100 pilot submitted
 
 Build27714026 completed0:0 at21:33:35ET in10m19s; all9 binary hashes verified. Freeze1da4ca9324bb353bb88b7c45356edf26871f1c78 binds successful build and prospective nine-call analysis. Actual H100 pilot job27714349 submitted21:34:23ET, pi_fl426,1H100/4CPU/16GiB/15minutes. PENDING at21:34:28; actual start unknown, prior test-only estimated23:11:17ET (~97minutes), not guaranteed. Use results/bouchet_calibration_submission_20260927.json and actual job27714349 going forward; do not resubmit. Retrieve calibration/summary.json, GPU samples and Slurm accounting on completion, run frozen analysis and reconcile failures. Full-project readiness60%,delta0; population/measurement, full freeze, independent evaluation and final reproduction remain incomplete. No CUDA efficacy or Metal-equivalence claim.

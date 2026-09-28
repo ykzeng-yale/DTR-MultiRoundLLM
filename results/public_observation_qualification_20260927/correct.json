@@ -1,0 +1,98 @@
+{
+  "name": "correct",
+  "public": {
+    "feedback_text": "Public check: PASS. This does not establish correctness on other inputs.",
+    "audit": {
+      "case_sha256": "caa56daddeb21bff50d5d5bbb6a952b782b860f4b3de3a33377714191d002e98",
+      "receipt": {
+        "version": "external-json-observation-v1",
+        "artifact_sha256": "691b971ba73bbf381936671c0ef83619b4779ba1b644e048a466a2c10b0ffadf",
+        "invocation_sha256": "90e04a2366a76d2b079279e96afa931c50b4c248e2ce1f08722c0477ff9c7eff",
+        "expected_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+        "status": "PASS",
+        "outcome": 1,
+        "reason": "external_comparison",
+        "process": {
+          "execution": {
+            "version": "native-execution-v1",
+            "disposition": "completed_ungraded",
+            "output_saturated": false,
+            "timed_out": false,
+            "test_outcome": null,
+            "feedback_status": null,
+            "note": "No test outcome or public feedback inferred from process exit or candidate output."
+          },
+          "raw_process": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "{\"observation_version\":\"external-json-observation-v1\",\"value\":8}\n",
+            "stderr": "",
+            "stdout_tail": "{\"observation_version\":\"external-json-observation-v1\",\"value\":8}\n",
+            "timed_out": false,
+            "seconds": 0.03970499988645315,
+            "executed": true,
+            "pid": 5138,
+            "sandbox_kind": "seatbelt",
+            "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+            "rendered_profile_sha256": "ec8069fed188458e3089b1b93f83f4de06f4da0a283374fa0bad3fd48351daf7",
+            "limits_applied": {
+              "cpu_seconds": 1,
+              "nproc": 1,
+              "file_bytes": 65536,
+              "memory": "best_effort"
+            }
+          }
+        }
+      },
+      "feedback_record": {
+        "version": "native-status-feedback-v1",
+        "artifact_sha256": "691b971ba73bbf381936671c0ef83619b4779ba1b644e048a466a2c10b0ffadf",
+        "public_test_sha256": "caa56daddeb21bff50d5d5bbb6a952b782b860f4b3de3a33377714191d002e98",
+        "status": "PASS"
+      }
+    }
+  },
+  "private": {
+    "case_sha256": "e76ceccd491cacec9a2ef906c6f04d5781fac502d103d404ce3424d0841d2413",
+    "receipt": {
+      "version": "external-json-observation-v1",
+      "artifact_sha256": "691b971ba73bbf381936671c0ef83619b4779ba1b644e048a466a2c10b0ffadf",
+      "invocation_sha256": "e2d22a0d3300320ce4b93cfb0830823af8ceec932fefae71bf751800377d0ec2",
+      "expected_sha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+      "status": "PASS",
+      "outcome": 1,
+      "reason": "external_comparison",
+      "process": {
+        "execution": {
+          "version": "native-execution-v1",
+          "disposition": "completed_ungraded",
+          "output_saturated": false,
+          "timed_out": false,
+          "test_outcome": null,
+          "feedback_status": null,
+          "note": "No test outcome or public feedback inferred from process exit or candidate output."
+        },
+        "raw_process": {
+          "passed": true,
+          "returncode": 0,
+          "stdout": "{\"observation_version\":\"external-json-observation-v1\",\"value\":10}\n",
+          "stderr": "",
+          "stdout_tail": "{\"observation_version\":\"external-json-observation-v1\",\"value\":10}\n",
+          "timed_out": false,
+          "seconds": 0.04067733325064182,
+          "executed": true,
+          "pid": 5139,
+          "sandbox_kind": "seatbelt",
+          "profile_sha256": "6dba9929416db1f62897dd09a41a80922c289c74e0c1bd334d2bdb802c1571d0",
+          "rendered_profile_sha256": "a4a5483558433748f1c5c3257dee1c262bf9edf0ecc54c169a1f1d17ed42cc39",
+          "limits_applied": {
+            "cpu_seconds": 1,
+            "nproc": 1,
+            "file_bytes": 65536,
+            "memory": "best_effort"
+          }
+        }
+      }
+    }
+  }
+}

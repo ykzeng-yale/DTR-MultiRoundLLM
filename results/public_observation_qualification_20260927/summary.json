@@ -1,0 +1,43 @@
+{
+  "classification": "synthetic public/private routing qualification; no benchmark or receiver calls",
+  "freeze": "ab3cfc5efe605713e149cd02eba5aab4e60428b9",
+  "config_sha256": "043bf1e46dd921aa1a0c558d662c6766e0c764cb37cc612d0051de017708fd0e",
+  "rows": [
+    {
+      "name": "correct",
+      "public_status": "PASS",
+      "private_status": "PASS",
+      "feedback_matches": true,
+      "predictions_match": true,
+      "receipt_sha256": "5cb2874b9bbad3c083b25b385abca5e7aa699e7abd10d06d6c08b4c9427a7741"
+    },
+    {
+      "name": "public_only",
+      "public_status": "PASS",
+      "private_status": "FAIL",
+      "feedback_matches": true,
+      "predictions_match": true,
+      "receipt_sha256": "3072f257b26ca980c0fc590917c883074aa1aa382890807d33ee3a2e2a736f8a"
+    },
+    {
+      "name": "wrong",
+      "public_status": "FAIL",
+      "private_status": "FAIL",
+      "feedback_matches": true,
+      "predictions_match": true,
+      "receipt_sha256": "58d73f5acaa7c626e2d7c0f11b8f3a8c87ef48995a277436041a3b18383a656d"
+    },
+    {
+      "name": "forged",
+      "public_status": "INCOMPLETE",
+      "private_status": "INCOMPLETE",
+      "feedback_matches": true,
+      "predictions_match": true,
+      "receipt_sha256": "9fd0c04f3739ca2a15be536829b59ea99dd010012f3582e12c8c6ea9e328543e"
+    }
+  ],
+  "error": null,
+  "elapsed_seconds": 0.2680199583992362,
+  "completed_pairs": 4,
+  "passed": true
+}
