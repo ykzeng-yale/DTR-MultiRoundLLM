@@ -25,3 +25,9 @@ Full-project readiness60%,delta0; population/measurement, full freeze, independe
 ## Executed qualification outcome
 
 Freeze5e44768 completed all8 slots in1.285seconds; all predicted statuses matched. Correct observation passed, wrong observation failed, forged verdict and exit0-without-observation remained INCOMPLETE. Stack and parent-private-file controls returned the wrong fallback, not the hidden expected value. Saturated output was incomplete; the infinite loop ended on SIGXCPU(-24), so it is a CPU-limit observation rather than a wall-time timeout. The saved raw records were reconciled by the lead without a rerun; this is not an independent reviewer claim.64 focused affected tests pass. No receiver calls or benchmark tasks in this qualification, and no claim that all possible attacks are covered.
+
+## Public/private producer integration
+
+The new `public_observation_v1` connects the isolated observation comparator to the fixed status-only serializer. Public API accepts only an explicitly public case; private evaluation has a separate API returning no feedback text. The complete scoped case and artifact are hash-bound in trusted audit storage. The receiver-visible field is only the existing three-string alphabet; raw receipts must not be inserted into prompts. This prevents accidental private-case routing at this API, not a malicious trusted collector, side channels or arbitrary native-object grading. Full collector integration remains unreleased.
+
+A frozen synthetic four-pair/eight-process qualification contrasts correct, public-only constant, wrong and forged-verdict candidates. Each public/private call uses a fresh sandbox; the public-only candidate must retain PASS feedback while failing the private case. Original2second/1CPU/256MiB-best-effort/64KiB limits,30seconds total,$0, no model/benchmark calls. Preserve any failure. Twenty-six focused tests pass before execution; no efficacy or population credit.
