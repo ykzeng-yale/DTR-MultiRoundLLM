@@ -1,0 +1,20 @@
+{
+  "job_id": "27724993",
+  "state_at_submission": "PENDING",
+  "account": "pi_fl426",
+  "partition": "gpu_h100",
+  "gpus": 1,
+  "cpus": 4,
+  "memory_gib": 16,
+  "wall_minutes": 30,
+  "freeze": "e7f423af27599fe28be1235e4c784479d50bfea3",
+  "config_sha256": "4bc3fba63363c6430101ff498ca574f1dbfbbbe13c090ff20282aef49d0ad3f1",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/checkpoint-replication-20260928-v1",
+  "calls_planned": 1620,
+  "replicates": 10,
+  "root_count": 9,
+  "max_completion_tokens": 1658880,
+  "test_only_estimate_et": "2026-09-28T08:16:28-04:00",
+  "paid_usd": 0,
+  "classification": "fixed-panel development replication, no independent policy evidence"
+}

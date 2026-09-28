@@ -1,6 +1,17 @@
 # Coordination — DTR for multi-round LLM interaction
 
 
+## 28 SeptemberUTC — discovery analyzed; ten-seed replication submitted
+
+Job27720685 completed162/162 calls,46allocated seconds; local1314case grades complete40.780seconds, all162 outcomes accounted. Supplement: PATCH37PASS/17FAIL; RETHINK39PASS/10FAIL/5INCOMPLETE; FRESH44PASS/9FAIL/1INCOMPLETE. PATCH–FRESH missing-outcome bound[-.1481,-.1296]; preserve the negative result. PATCH retains9/9 correct references; RETHINK6PASS/1FAIL/2INCOMPLETE. These are reused constructed-panel descriptive bounds, not confidence intervals or population efficacy. Exact outcomes/costs and unchanged failure taxonomy in docs/checkpoint_challenge_results_20260928.md; raw/hash inventory retained.
+
+Next actual job27724993 is a frozen ten-new-seed replication,1620calls, all54checkpoints/all3arms retained, discovery excluded. Freeze e7f423af27599fe28be1235e4c784479d50bfea3; pi_fl426/gpu_h100,1GPU/4CPU/16GiB/30minutes,max1658880tokens,$0. Remote `/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/checkpoint-replication-20260928-v1`. Pending, test-only estimate08:16:28ET September28, provisional; no duplicate or account/receiver switching for queue priority.
+
+On completion retrieve replication/summary.json, logs, GPU samples and Slurm accounting; run `scripts/grade_checkpoint_replication_20260928.py --plan experiments/bouchet/checkpoint_replication_plan_v1.json --receipt <retrieved replication/summary.json> --out work/checkpoint_replication_grading_20260928` using project Python. <=13140 local sandbox cases,3600seconds,256MiB retained, no code execution on Bouchet. Report all10replicate panels, full-denominator missing bounds and artifact strata; do not treat replicates as new roots or fit a policy on them. Twelve focused tests pass; request comparison verifies all1620 payloads differ from discovery only in seed, ten per combination.
+
+Full-project readiness60%,delta0. Broader population/measurement, full independent study freeze/evaluation and manuscript/raw reproduction remain incomplete. Scientific next-step decision depends on replication stability; do not rerun completed discovery or hardware qualification.
+
+
 ## 27 September2026 — owner changes lead cadence to30minutes
 
 The owner explicitly replaces the three-hour recurrence with a30-minute active scientific execution heartbeat. Review new job outcomes and frozen analyses, implement justified next experiments, and advance independent work while jobs queue/run. Preserve scientific gates, negative findings, exact job/evidence identity and no-duplicate discipline. Notify meaningful progress only. This supersedes older three-hour timing in repository history. Current active experiment27720685 and its frozen checkpoint-challenge handoff remain governing. Full-project readiness60%,delta0; population/measurement, independent study freeze/evaluation and final manuscript/reproduction remain incomplete.
