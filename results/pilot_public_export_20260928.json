@@ -1,0 +1,20 @@
+{
+  "classification": "public-history adapter validation, no learning/efficacy",
+  "decisions": 31,
+  "trajectories": 18,
+  "stops": 7,
+  "state_sha256": "fecd0fcb0b10a35b3bc8c5701b9ed54169faf3cfbe59c9df05bd6911388abd43",
+  "ledger_sha256": "786d9d8b5dc2ff325a94e53d7075cc9de9613b77d05d8c1386b987a6932fa02c",
+  "export_sha256": "5db4ca625f6e3b12c0353df41af1ba69da828f1ccb669215c33086269afd28af",
+  "source_sha256": {
+    "experiments/bouchet/full_history_pilot_v1.py": "cea6f3b2c012f34bebb04ed677539faa86ebbcd9de01d8e23a9d5a34f043e27c",
+    "experiments/bouchet/checkpoint_requests_v1.py": "542e72a17d1bb1255c697bf43379933d0c5a64f16a5fd6e2615223b7dcfbfbc2",
+    "experiments/prompt_choice/status_feedback_v1.py": "1c52eb4d2139621149027648114c5e2ca078adadada8ded3bd5bd1641ec6b71a",
+    "experiments/prompt_choice/literal_observation_v1.py": "c21f1f72a6f566d91901bd245ecfaf9757a147081615fddf62c0dcf740f217ca",
+    "experiments/sequential/pilot_public_export.py": "cb6d9862556f660b07c1f3b1bd6100731db3156ee9d91cf77a5547f4007b37ff",
+    "experiments/sequential/public_history.py": "6d810cd699968435c1533ac58c0a185943175455481d04e652e0e7802f65e973",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/export_pilot_public_history_20260928.py": "54ac1d0bd30854108930761345a6c00b3c81159ce187b507ae69711025684b50"
+  },
+  "private_labels_read": false,
+  "policy_fitted": false
+}
