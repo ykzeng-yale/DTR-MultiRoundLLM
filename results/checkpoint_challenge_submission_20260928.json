@@ -1,0 +1,26 @@
+{
+  "job_id": "27720685",
+  "classification": "actual162-call constructed-checkpoint development intervention experiment",
+  "state_at_submission": "PENDING",
+  "account": "pi_fl426",
+  "partition": "gpu_h100",
+  "gpus": 1,
+  "cpus": 4,
+  "memory_gib": 16,
+  "wall_minutes": 30,
+  "freeze": "5ed76bfc67872b9c3807366f88e88eba49767d84",
+  "config_sha256": "d32feb470cf14ce5f37c0826be479166603069e1d66da1f6d28287b119e3ddf7",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/checkpoint-challenge-20260928-v1",
+  "calls_planned": 162,
+  "roots": 9,
+  "constructed_checkpoints": 54,
+  "arms": [
+    "PATCH",
+    "RETHINK",
+    "FRESH"
+  ],
+  "max_completion_tokens": 165888,
+  "test_only_start_estimate_et": "2026-09-28T00:59:13-04:00",
+  "paid_usd": 0,
+  "no_independent_efficacy_claim": true
+}
