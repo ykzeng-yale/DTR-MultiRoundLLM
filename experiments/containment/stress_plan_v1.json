@@ -163,7 +163,7 @@
     "output_capped"
   ],
   "files": {
-    "experiments/containment/stress_v1.py": "5ebb03e6fb5e018393b6c026aa7a466062e0eb1e92a34ad70b0676512f939bdb",
+    "experiments/containment/stress_v1.py": "17d9c643b1f4b4127bbf8f15702e3d69d045c9d7da62b5c28902e02768084a86",
     "experiments/containment/stress_v1.sbatch": "ab3be64fccecd99c2924ec30386e3978b2cfcd1c5428b4a2f497f6e2aedf4ee4",
     "experiments/containment/bouchet_probe_v3.py": "c36651a3d7bfd6a05d16bcb6d0462560b1a0f6c6fa67f9cc982fbb812b7d0372",
     "docs/bouchet_containment_stress_20260928.md": "af89ec0a28240c4798aadd619e807acf8ab313a58f713261b211072b9e9758ec"

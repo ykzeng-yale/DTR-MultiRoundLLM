@@ -50,12 +50,15 @@ def run_one(name):
     if total>65536:reason='output';break
    if reason:break
  finally:
+  if reason is None and p.poll() is None:
+   try:p.wait(timeout=.1)
+   except subprocess.TimeoutExpired:pass
   if p.poll() is None:
    try:os.killpg(p.pid,signal.SIGKILL)
    except ProcessLookupError:pass
   p.wait(timeout=5);sel.close();p.stdout.close();p.stderr.close()
  out={k:bytes(v).decode(errors='replace') for k,v in data.items()}
- passed=(p.returncode==0 and out['stdout'].strip()==text) if kind=='text' else (reason==kind if kind in ('wall','output') else p.returncode in (-signal.SIGXCPU,-signal.SIGKILL) and reason is None)
+ passed=(p.returncode==0 and out['stdout'].strip()==text) if kind=='text' else (reason==kind if kind in ('wall','output') else p.returncode in (-signal.SIGXCPU,-signal.SIGKILL,128+signal.SIGXCPU,128+signal.SIGKILL) and reason is None)
  return {'fixture':name,'passed':passed,'returncode':p.returncode,'limit_reason':reason,'seconds':time.monotonic()-start,'stdout':out['stdout'],'stderr':out['stderr']}
 
 
