@@ -1,0 +1,34 @@
+{
+  "bundle": "work/native_dependencies_20260927",
+  "tree_sha256": "cf6526cb5d51da93c9181f7fbeeaf438b0f9815db5abb2aa0bbe56df0a5ece85",
+  "committed_sources": [
+    "experiments/prompt_choice/dependency_sandbox_v1.py",
+    "experiments/prompt_choice/dependency_bundle_v1.py",
+    "experiments/prompt_choice/native_execution_v1.py",
+    "experiments/landmark/sandbox.py",
+    "scripts/audit_native_measurement_controls_20260928.py"
+  ],
+  "input_sha256": {
+    "experiments/prompt_choice/dependency_sandbox_v1.py": "680c4cc4796f8598bfbaf34b1009e9101e81d6b6e2816e47c276c3a071504db7",
+    "experiments/prompt_choice/dependency_bundle_v1.py": "33dfbc2e1aad6e011fb7aecbd7fdc4b4d51de35bea6f743114d4736bf3593084",
+    "experiments/prompt_choice/native_execution_v1.py": "2d825d40c7f2b79dde32894d1ac178ce527ddb8216dda5de22f7a72c38179282",
+    "experiments/landmark/sandbox.py": "ea7eed9426a2c2615ccd726df5c2f25b677f29fc323d9483e6c8eaf450359e4c",
+    "scripts/audit_native_measurement_controls_20260928.py": "8398d40995ba508ad8ab018f909e2761ce3687e7e926160fea47529974f19265",
+    "work/native_measurement_controls_20260928/58.json": "945ead6fac33c4f0e4bc84c25eed7e27ac8af747fcc1f0b7b22fec8c2f650519",
+    "work/native_measurement_controls_20260928/59.json": "1962ecfb47608b1615bb80b3eb9c33bf225ce7085e21591bcc7b2ccfb4257451"
+  },
+  "slots": 2,
+  "total_wall_cap_seconds": 40,
+  "per_slot_wall_seconds": 15,
+  "cpu_seconds": 5,
+  "memory_bytes_best_effort": 1073741824,
+  "stream_cap_bytes": 16384,
+  "receiver_calls": 0,
+  "network": false,
+  "paid_usd": 0,
+  "predictions": {
+    "58": "wrong constant histogram/zero line may pass all5 structural tests",
+    "59": "always None may pass all6 tests; successful-page cases contain no assertion"
+  },
+  "scope": "source-selected measurement counterexamples, not random prevalence or task admission; native same-process transport for known nonadversarial controls only; failures retained, no retries"
+}

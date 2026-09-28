@@ -1,0 +1,332 @@
+{
+  "classification": "reused-nine-root sequential operational pilot; no efficacy or policy-selection inference",
+  "state_sha256": "fecd0fcb0b10a35b3bc8c5701b9ed54169faf3cfbe59c9df05bd6911388abd43",
+  "assigned": 18,
+  "rows": [
+    {
+      "trajectory": 0,
+      "root": "mbpp/354",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "STOP"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 1,
+      "root": "mbpp/354",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "FAIL",
+        "supplement_v1": "FAIL"
+      },
+      "actions": [
+        "RETHINK",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "trajectory": 2,
+      "root": "mbpp/356",
+      "replicate": 0,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 3,
+      "root": "mbpp/356",
+      "replicate": 1,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "STOP"
+      ],
+      "public_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 4,
+      "root": "mbpp/36",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "FAIL",
+        "supplement_v1": "FAIL"
+      },
+      "actions": [
+        "STOP"
+      ],
+      "public_statuses": [
+        "FAIL"
+      ]
+    },
+    {
+      "trajectory": 5,
+      "root": "mbpp/36",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "INCOMPLETE",
+        "supplement_v1": "FAIL"
+      },
+      "actions": [
+        "RETHINK",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "INCOMPLETE",
+        "INCOMPLETE"
+      ]
+    },
+    {
+      "trajectory": 6,
+      "root": "mbpp/654",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "STOP"
+      ],
+      "public_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 7,
+      "root": "mbpp/654",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 8,
+      "root": "mbpp/656",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "FAIL",
+        "supplement_v1": "FAIL"
+      },
+      "actions": [
+        "RETHINK",
+        "STOP"
+      ],
+      "public_statuses": [
+        "FAIL",
+        "FAIL"
+      ]
+    },
+    {
+      "trajectory": 9,
+      "root": "mbpp/656",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "FAIL",
+        "supplement_v1": "FAIL"
+      },
+      "actions": [
+        "RETHINK",
+        "PATCH"
+      ],
+      "public_statuses": [
+        "FAIL",
+        "FAIL"
+      ]
+    },
+    {
+      "trajectory": 10,
+      "root": "mbpp/700",
+      "replicate": 0,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "PATCH"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 11,
+      "root": "mbpp/700",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 12,
+      "root": "mbpp/703",
+      "replicate": 0,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "RETHINK",
+        "PATCH"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 13,
+      "root": "mbpp/703",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "RETHINK",
+        "PATCH"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 14,
+      "root": "mbpp/885",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "STOP"
+      ],
+      "public_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 15,
+      "root": "mbpp/885",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "RETHINK",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 16,
+      "root": "mbpp/901",
+      "replicate": 0,
+      "disposition": "stopped",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "STOP"
+      ],
+      "public_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "trajectory": 17,
+      "root": "mbpp/901",
+      "replicate": 1,
+      "disposition": "horizon",
+      "batteries": {
+        "original_private": "PASS",
+        "supplement_v1": "PASS"
+      },
+      "actions": [
+        "PATCH",
+        "RETHINK"
+      ],
+      "public_statuses": [
+        "PASS",
+        "PASS"
+      ]
+    }
+  ],
+  "case_starts": 128,
+  "error": null,
+  "elapsed_seconds": 5.281660333275795,
+  "supplemental_counts": {
+    "PASS": 13,
+    "FAIL": 5
+  },
+  "descriptive_bounds": [
+    0.7222222222222222,
+    0.7222222222222222
+  ]
+}
