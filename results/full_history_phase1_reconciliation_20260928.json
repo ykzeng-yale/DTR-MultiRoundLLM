@@ -1,0 +1,47 @@
+{
+  "job_id": "27729568",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "allocated_seconds": 20,
+  "start_et": "2026-09-28T01:33:25",
+  "end_et": "2026-09-28T01:33:45",
+  "batch_max_rss": "2599104K",
+  "assigned_returned": 13,
+  "unattempted": 0,
+  "error": null,
+  "state_unchanged": true,
+  "build_manifest_verified": true,
+  "files_verified": true,
+  "prefix_and_absorbing_stop_verified": true,
+  "public_statuses_this_phase": {
+    "PASS": 9,
+    "FAIL": 3,
+    "INCOMPLETE": 1
+  },
+  "stopped_total": 7,
+  "continuations_prepared": 11,
+  "preparation": {
+    "phase": 2,
+    "public_case_starts": 13,
+    "elapsed_seconds": 0.5404468327760696,
+    "contract_sha256": "b8b28c771177338bb3aa2da658e6c9d8f1d61ef29d547ba09994eb0c4d39230d",
+    "prior_receipt_sha256": "904288d4899e8491b1f3a9fb516360271bf18a0a329968a27585b7c56efdf247",
+    "requests": 11,
+    "private_files_opened": false
+  },
+  "lead_validation_not_independent_review": true,
+  "artifact_sha256": {
+    "artifacts.tar.gz": "666c97bf1feb62b5710ba86efade0ef508da4c9d618e993e97833cddb5b8a751",
+    "generation/build-sha256.txt": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+    "generation/props_before.json": "0932377c13b4f43b9b2174ded835504c8b7906cbab6119f9a0dc8a357d32eccf",
+    "generation/server.log": "ec058dedd932afbbf4be03a849cd07a28ee6cca8da4f4b9cc3b30cdbf5aa6435",
+    "generation/summary.json": "904288d4899e8491b1f3a9fb516360271bf18a0a329968a27585b7c56efdf247",
+    "gpu-after.txt": "ff6605367dc92e84a2708afb9699b46cec053737f2c1eb18c2af3e7f3b81763e",
+    "gpu-before.txt": "9d2cba589d3729cb21832a4d9356da9198cc6db9e54a188832df4ef05e824173",
+    "gpu-samples.csv": "8fd702e5fbb2bd0c001893cb5d773961e119fafafe57118441a5a33217e04022",
+    "logs/history-27729568.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e",
+    "logs/history-27729568.out": "6515b6b1956d11ba3983a09ca77f9c0f0613189d2af13935144477dfaecddbe2"
+  },
+  "prompt_tokens": 3367,
+  "completion_tokens": 902
+}
