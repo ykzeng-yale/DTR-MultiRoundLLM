@@ -1,0 +1,14 @@
+{
+  "classification": "trusted containment capability check, no candidate execution",
+  "cpu": 1,
+  "memory_gib": 1,
+  "wall_seconds": 60,
+  "files": {
+    "experiments/containment/bouchet_probe_v1.py": "bf33a9e3f32dddf2c4fa115b2638c0c3b98911b8423a448704318dcd0ef89ff6",
+    "docs/bouchet_isolation_probe_20260928.md": "4de7a4d761456146161648b90839b7fb98413d3fbdc31fdf3c66a3274e2abc60",
+    "experiments/containment/bouchet_probe_v2.sbatch": "b3c36429cc373b0173c2857e16e4fee64a4370946a8b3182faf726ad5f91ab82"
+  },
+  "partition": "devel",
+  "account": "pi_fl426",
+  "route_change": "Before any actual submission: fl/day estimate2026-09-29T10:27:33,gt/day03:21:51,fl/devel2026-09-28T16:17:08; choose appropriate short development partition, same1CPU1GiB5min and unchanged probe. Original day plan never executed."
+}
