@@ -1,5 +1,16 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, owner-requested continuation — actual history adapter and native observation qualification
+
+Codex lead:27778040 terminal COMPLETED0:0,35allocated seconds,24wheels/105796313bytes, all hashes reconciled in results/native_wheel_acquisition_v2_reconciliation_20260928.json. Prior Python-marker failure preserved. No more acquisition job or GPU job active in this pipeline.
+
+Implemented actual pilot-to-controller input adapter: all31decisions/18trajectories/7STOP retained. Exact pre-call payload and answer digests, immutable ledger, full three-action slate/vector, selected renderer and absorbing STOP checked. Private audit internals/outcomes and future transcript suffixes excluded from policy views; family/root stays separate metadata. Six corruption/boundary tests plus full2407tests/8subtests pass. Raw exports remain ignored; manifest results/pilot_public_export_20260928.json. This resolves a concrete input integration gap, not actual fitting, semantic leakage, family validity or policy efficacy. No nine-root policy fitting or new seeds.
+
+Actual new job27780229 RUNNING at7seconds on a1130u05n01,pi_fl426/devel,1CPU/2GiB/10minutes,noGPU,$0,freezeb011562,remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-object-measurement-20260928-v1. Receipt results/native_object_submission_20260928.json. Exactly hash-locked offline wheel install then trusted fixed array/DataFrame/plot observation in namespace/seccomp isolation; host compares separate frozen expectations. No benchmark/reference/generated candidate code.420global seconds,300install,60childwall/30soft35hardCPU/1GiBAS. Do not duplicate/restart. Retrieve native-results,logs,plan/freeze/accounting; verify all expected observation/version fields and hashes. Failure preserved, no automatic repair/repeat; passing permits further measurement design, not candidate release. See docs/native_object_measurement_qualification_20260928.md.
+
+Next substantive steps: trusted native observation boundary with adversarial spoofing/semantic controls for a declared family; practical public-text feature and DR-training implementation with family-separated development and independent evaluation. Avoid serial infrastructure checks without direct measurement criterion. Full-project60%,delta0: population/measurement, practical controller training, independent freeze/evaluation and manuscript/raw reproduction incomplete; lead validation only, no efficacy or independent-review claim. Two-hour recurrence updated to actual job.
+
+
 ## 28 September 2026, 18:11 ET wake — containment reconciled; native dependency acquisition running
 
 Codex lead reconciled all160/160 fixed containment fixtures for27771658: zero failures/unattempted,75allocated seconds,75.315elapsed qualification seconds,14960K MaxRSS. Source/plan/assignment/raw hashes and actual stdout or limit/exit criteria checked, not only reported pass flags. results/bouchet_containment_stress_reconciliation_20260928.json preserves evidence. This is trusted-fixture capability evidence, not independent security review or candidate execution release. No further stress repetition.
