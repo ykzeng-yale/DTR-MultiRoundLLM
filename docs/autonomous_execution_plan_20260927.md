@@ -1,4 +1,6 @@
-# Active scientific work at30-minute intervals
+# Active scientific work at two-hour intervals
+
+Owner28September update: recur every two hours. Full-history GPU pilot is now terminal and lead-reconciled; see latest COORDINATION for active local measurement audit. Older runtime snapshots below are historical.
 
 Owner directive, 27 September 2026: replace passive checks with aggressive, bounded Codex work. This supersedes the closed MRL-41 worker-monitor instructions and the instruction to keep that heartbeat paused. Claude delegation stays ended. The owner subsequently required continuous substantive execution: do not end after a report, commit or arbitrary work interval. The owner subsequently changed the recurrence to30minutes; it is a recovery/wait trigger, not a reason to interrupt productive work. The app goal record exposes no resume operation to the agent; direct execution continues regardless.
 
