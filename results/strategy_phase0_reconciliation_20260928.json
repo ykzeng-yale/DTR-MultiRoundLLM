@@ -1,0 +1,41 @@
+{
+  "job_id": "27757218",
+  "classification": "development stage generation and public preparation; private unopened",
+  "checks": {
+    "all_102_returned": true,
+    "exact_config_and_build": true,
+    "no_receiver_drift": true,
+    "unchanged_prior_stopped_rows": 60,
+    "critique_not_executed_rows": 36,
+    "assigned_branches": 162,
+    "next_requests": 101
+  },
+  "allocated_seconds": 51,
+  "public_preparation": {
+    "phase": 1,
+    "public_case_starts": 66,
+    "seconds": 2.8588796658441424,
+    "requests": 101,
+    "contract_sha256": "ce5bee9556a149f54dfaa175634dfea6548108d2d20b3d2aa2ffb937cd5088e5",
+    "private_files_opened": false
+  },
+  "new_public_statuses": {
+    "PASS": 45,
+    "FAIL": 16,
+    "INCOMPLETE": 5
+  },
+  "artifact_sha256": {
+    "work/strategy_phase0_results_20260928/accounting.txt": "0073589061a290ba4053874f23d9db596e3f29d0f673b34ef585f2dccab2437c",
+    "work/strategy_phase0_results_20260928/freeze.txt": "c1c5ce16c217fc03ffec3f85c59551ce5bd97410e7af315476b229bb933be7d8",
+    "work/strategy_phase0_results_20260928/generation/build-sha256.txt": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+    "work/strategy_phase0_results_20260928/generation/props_before.json": "0932377c13b4f43b9b2174ded835504c8b7906cbab6119f9a0dc8a357d32eccf",
+    "work/strategy_phase0_results_20260928/generation/server.log": "b55b8f0786c33f0eafabb15f86070f1fe9f079986cd1c524259c17ce726b882b",
+    "work/strategy_phase0_results_20260928/generation/summary.json": "9e069c7ffe4aa00d01a405de9eaae4329825285f3c5ed9a650155efc661b4f7a",
+    "work/strategy_phase0_results_20260928/gpu-after.txt": "0b01aef8a88d821507acb844c33d0342c42fdc10499ee430baf7297aceebffe7",
+    "work/strategy_phase0_results_20260928/gpu-before.txt": "8d5102b1728a1f4a70379ee3e17b4c7d42b0699369b76a73fc34fb8ff586826b",
+    "work/strategy_phase0_results_20260928/gpu-samples.csv": "e141504d63534b5f43895ef20d06d21a10ffac4d794c359c1c551fc3d2e383f0",
+    "work/strategy_phase0_results_20260928/logs/strategy-27757218.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e",
+    "work/strategy_phase0_results_20260928/logs/strategy-27757218.out": "6515b6b1956d11ba3983a09ca77f9c0f0613189d2af13935144477dfaecddbe2",
+    "work/strategy_phase0_results_20260928/stage-plan.json": "9b53cb60ed65f32441e63a710a77f5d9bb7ffff96a76a4981d9079949f24eec0"
+  }
+}
