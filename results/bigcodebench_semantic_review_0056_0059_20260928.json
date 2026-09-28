@@ -1,0 +1,92 @@
+{
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "classification": "lead source review, no frame adoption",
+  "selection": "next contiguous56\u201359, no outcome-based admission",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/56",
+      "source_row": 56,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "3365a029513a38830020e253bf083a44df0be9fbff0da5ba95b47b9fb231c4c8",
+        "instruct_prompt": "6aeb438432b9ecf923d59a3b69b7d94202ec1fe8370d15272f3e14cd6601144d",
+        "canonical_solution": "35c177703409c9ec97a775c0322a6a409f9baa4ec272acdbf468e2eac070c704",
+        "test": "1c60929c8db7a24e687009d81920064464e3d488535e24350864885185ee9f2c"
+      },
+      "provisional_semantic_label": "text_score_dataframe",
+      "source_judgment": "Native tests check ordered scalar cells across several strings, but do not establish DataFrame type/dtype identity. Empty case only length; finite input contract and independent observation adapter still required.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/57",
+      "source_row": 57,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "cf3143277c68f591a742d0ee645f9db4f3f4a54d10b88ea9dba2aced7706f548",
+        "instruct_prompt": "6da44df67af47d11b962124d59ab1df8e444682cf26f2704596f3cf554755f65",
+        "canonical_solution": "f2ee6aa795be5f70261d275459254218c54ad20b03f98b06fc48ee00910983e7",
+        "test": "9a9f2017b266f780fb3d7636c54bedd9e371c23135e204497eb1c33b74f6480a"
+      },
+      "provisional_semantic_label": "csv_correlation_heatmap",
+      "source_judgment": "Fixed rounded matrices checked for cases1,2,5; cases3,4only title. Heatmap contents/annotation are unchecked. CSV fixture and native object observation require versioned adaptation; do not infer family independence from libraries.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/58",
+      "source_row": 58,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "5f94c566b7e987da5173c57edd52fbb0778f9abc93a47df32ae93922cf01e567",
+        "instruct_prompt": "2a6a843f480eef96eaff4c7db8100c08597e9546722b3aa1634e426e990b6d77",
+        "canonical_solution": "5e0e26ab00dc191d8a9fac74bbfc2b2be6fe4231a71b807932e68db86abdb9e5",
+        "test": "4a326b9ed566e050204a710f8c1b5caac162ef417652a4a5d049d417fb7eb111"
+      },
+      "provisional_semantic_label": "normal_distribution_plot",
+      "source_judgment": "Native five tests check title and existence of patches/lines, not numerical density, sampling parameters or sample count. Known constant histogram/zero line passed5/5 isolated native tests. Cases3,4,5repeat identical seeded inputs. No admission.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/59",
+      "source_row": 59,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "77849f3098391cc950bd4ba3b0631d53487aacaad66145d53e693f719c6a7df7",
+        "instruct_prompt": "61c240a039cd55f2efc38a88cdd52b243cf85708f297f50e08bf726170e4505c",
+        "canonical_solution": "08ee699f0ac03074007d532774c0af8b55822af9db4f8fa9425bb8b8e3a40b52",
+        "test": "e4d72fb2b714447e78bc0e07dc3b9eb380c7eda96cf2879fcf56733ac0131d2c"
+      },
+      "provisional_semantic_label": "wikipedia_wordcloud",
+      "source_judgment": "Five successful mocked-page methods have no assertions or mock-call verification; sixth requires None. Always-None audit had five errors, not behavioral rejection: diagnostic replay identifies missing wikipedia import during patch resolution. No runtime proof of successful-page vacuity in this environment; source gap remains. No install/network authorized by this audit.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    }
+  ],
+  "same_family_provisional_groups": []
+}

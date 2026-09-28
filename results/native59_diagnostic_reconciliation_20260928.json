@@ -1,0 +1,13 @@
+{
+  "freeze": "072b776cce5dbdc4ea4989e846c6316cfff762af",
+  "checks": 6,
+  "errors": 5,
+  "assertion_failures": 0,
+  "passed": false,
+  "cause": "wikipedia unavailable during mock target import; no behavioral rejection established",
+  "diagnostics_truncated_at_bytes": 8192,
+  "raw_sha256": {
+    "summary.json": "d7c9d35f3cbad22bf60e3424152a044fbe27f6273f4d301019d478806bbb8a23",
+    "59.json": "73eb5a9d7fb170730ff3fc35aac97e9efae562eaaac0e3a6cf246194dc0d4216"
+  }
+}
