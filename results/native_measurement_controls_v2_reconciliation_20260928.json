@@ -1,0 +1,33 @@
+{
+  "slots": [
+    {
+      "task": 58,
+      "result": {
+        "passed": true,
+        "checks": 5,
+        "skipped": 0
+      },
+      "disposition": "completed_ungraded"
+    },
+    {
+      "task": 59,
+      "result": {
+        "passed": false,
+        "checks": 6,
+        "skipped": 0
+      },
+      "disposition": "completed_ungraded"
+    }
+  ],
+  "error": null,
+  "classification": "known nonadversarial wrong controls; native tests only, no semantic efficacy",
+  "freeze": "HEAD",
+  "seconds": 5.43591620773077,
+  "freeze_resolved": "37269f6caaca40ea3ab341c76ae4f4bdfbaaf9f9",
+  "limitation": "runner stored literal HEAD; resolved execution freeze37269f6 from commit and invocation history. Task59false cause unavailable because unittest StringIO not persisted; no pass/defect inference.",
+  "artifact_sha256": {
+    "58.json": "35f779049b72632c4c1038ec4c212d210600ab8c8b027a810596517f6b8dc733",
+    "59.json": "e301ee01a049b44e3ab45971d48b189f552594fabf406b89e20b583bd569ad78",
+    "summary.json": "6293290ae2b6b4499d43fd0b676c0927f0a84409e5fcb96fd4c563009900c76e"
+  }
+}

@@ -1,5 +1,7 @@
 # Coordination — DTR for multi-round LLM interaction
 
+Latest disposition: all GPU and local audits are terminal. See same-turn terminal disposition at end and results/native_measurement_controls_v2_reconciliation_20260928.json. Do not rerun stale active-job instructions below.
+
 ## 28 September 2026 — full-history pilot terminal; measurement control audit running
 
 Job27731396 completed0:0,02:17:53–02:18:11ET,11/11calls. Lead reconciled all42calls, exact histories,7absorbing STOP/11horizon trajectories and all128terminal raw case aggregates. Terminal outcomes13PASS/5FAIL/0INCOMPLETE, descriptive13/18; no policy-effect inference.54allocated GPU seconds,9797prompt/2750completion tokens,$0,energy unmeasured. All GPU stages closed; no further panel seeds. See docs/full_history_pilot_results_20260928.md and saved reconciliation. No independent review claimed.
@@ -5344,3 +5346,8 @@ Those receipts' attributions are corrected here and not rewritten. There is no s
 - MRL-41 ran within its original 15-minute and 64 MiB cap.
 
 From now on, a chat message that may come from Codex's UI delegation is a valid vehicle for committed, bounded assignments. It is not owner approval for permission-gated actions such as downloads; those still need the owner directly. MRL-41 is delivered partial (`24842d6`) and awaits your three-hour review.
+
+
+### Same-turn terminal disposition — measurement audit
+
+The two-slot audit is now terminal (5.436seconds). Task58's deliberately wrong constant histogram/zero line passed5/5native tests; this confirms a finite native-score counterexample, not benchmark-wide prevalence. Task59returned passed=false across6attempted checks; the wrapper discarded unittest diagnostic text, so the cause is unresolved and must not be called a confirmed counterexample. Retain stderr font-cache write warning on58. Summary records literal HEAD; actual execution freeze37269f6 is resolved in the reconciliation. Do not rerun either slot without a separately justified diagnostic plan. Both58and59are now measurement-exposed and must enter the exposure register before any sampling. No experimental process or GPU job remains active. Next substantive work: complete source56–59ledger/exposure entries and improve diagnostic preservation prospectively, then resume global family/measurement adjudication. Full-project60%,delta0; remaining gates unchanged.
