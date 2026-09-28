@@ -1,5 +1,15 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, 01:30 ET wake — phase0 reconciled, phase1 submitted
+
+Codex lead: phase0job27729098 COMPLETED0:0,01:20:17–01:20:33ET,16allocated GPU seconds,18/18returned,0unattempted,no recorded error/state drift. Retrieved immutable logs/GPU records; build/config/request hashes verified. Frozen local public preparation executed18fresh isolated cases in0.723seconds:14PASS,3FAIL,1INCOMPLETE(process error at trajectory5/root36). No private outcomes opened. Every18transcript prefix matched its exact receiver response; all5STOP trajectories have no subsequent call and13continuations retain full history. Lead reconciliation, not independent review; public PASS is not terminal task correctness.
+
+Phase1 freezeff7fb4d pins13exact continuation requests and state. Actual new job27729568 is PENDING, pi_fl426/gpu_h100,1H100/4CPU/16GiB/15minutes,$0, remote `/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/full-history-20260928-phase1-v1`. Live start estimate unavailable(N/A); earlier test-only08:58:25ET is provisional, not a reservation. Exact transfer hashes matched and no duplicate project job existed. See results/full_history_phase0_reconciliation_20260928.json and results/full_history_phase1_submission_20260928.json. No source/estimator changes or redundant test rerun.
+
+On terminal27729568 retrieve generation/summary.json, logs/history-27729568.out/.err, GPU files and Slurm accounting into fresh local storage, verify hashes, then use frozen stage_full_history_pilot script with state work/full_history_phase1_20260928/state.json, phase1plan and fresh out work/full_history_phase2_20260928. Public checks only. Freeze exact prepared phase2requests/state in a new committed plan before the remaining expected11calls. The receiver/action/endpoint contract is unchanged; never restart phase0or completed replication. After phase2receipt, process to terminal phase3state and run frozen private grading for all18trajectories. Full next-stage instructions remain in the preceding handoff and updated30-minute automation.
+
+Full-project readiness60%,delta0. This validates the first finite natural-start/STOP transition, not independent policy efficacy. Population/family and broader measurement, complete independent evaluation freeze/evaluation, and manuscript/raw reproduction remain incomplete. Waiting is for actual queued job27729568.
+
 ## 28 September 2026 — replication reconciled; full-history phase0 submitted
 
 Codex lead reconciled all1,620replication assignments and all13,123raw case aggregates (388.080seconds, no run-level grading error). Supplemental PATCH385PASS/146FAIL/9INCOMPLETE; RETHINK406/96/38; FRESH448/73/19. PATCH−FRESH missing-outcome bounds−15.19 to−10.00pp; negative upper bounds in all10replicates. PATCH damaged2/90reference starts versus16/90RETHINK, both2incomplete. Full strata and all10panels are committed; discovery remains separate. See docs/checkpoint_replication_results_20260928.md. Lead validation, not independent review. Close further seed repetition on this constructed panel; no policy fit or population efficacy claim.
