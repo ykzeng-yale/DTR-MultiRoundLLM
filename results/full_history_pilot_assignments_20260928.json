@@ -1,0 +1,254 @@
+[
+  {
+    "trajectory": 0,
+    "root": "mbpp/354",
+    "replicate": 0,
+    "actions": [
+      "PATCH",
+      "STOP"
+    ],
+    "seeds": [
+      1879008034,
+      2754184452,
+      2066553817
+    ]
+  },
+  {
+    "trajectory": 1,
+    "root": "mbpp/354",
+    "replicate": 1,
+    "actions": [
+      "RETHINK",
+      "RETHINK"
+    ],
+    "seeds": [
+      494328028,
+      2608247940,
+      1039930469
+    ]
+  },
+  {
+    "trajectory": 2,
+    "root": "mbpp/356",
+    "replicate": 0,
+    "actions": [
+      "PATCH",
+      "RETHINK"
+    ],
+    "seeds": [
+      540256310,
+      2739772783,
+      3291746829
+    ]
+  },
+  {
+    "trajectory": 3,
+    "root": "mbpp/356",
+    "replicate": 1,
+    "actions": [
+      "STOP",
+      "PATCH"
+    ],
+    "seeds": [
+      2596535528,
+      370684916,
+      4211764671
+    ]
+  },
+  {
+    "trajectory": 4,
+    "root": "mbpp/36",
+    "replicate": 0,
+    "actions": [
+      "STOP",
+      "PATCH"
+    ],
+    "seeds": [
+      2795311440,
+      3078459109,
+      4270021949
+    ]
+  },
+  {
+    "trajectory": 5,
+    "root": "mbpp/36",
+    "replicate": 1,
+    "actions": [
+      "RETHINK",
+      "RETHINK"
+    ],
+    "seeds": [
+      4031563446,
+      2016804047,
+      563867334
+    ]
+  },
+  {
+    "trajectory": 6,
+    "root": "mbpp/654",
+    "replicate": 0,
+    "actions": [
+      "STOP",
+      "PATCH"
+    ],
+    "seeds": [
+      75464270,
+      2111058754,
+      2882983872
+    ]
+  },
+  {
+    "trajectory": 7,
+    "root": "mbpp/654",
+    "replicate": 1,
+    "actions": [
+      "PATCH",
+      "RETHINK"
+    ],
+    "seeds": [
+      2233181833,
+      1391906981,
+      2478615071
+    ]
+  },
+  {
+    "trajectory": 8,
+    "root": "mbpp/656",
+    "replicate": 0,
+    "actions": [
+      "RETHINK",
+      "STOP"
+    ],
+    "seeds": [
+      291437505,
+      1119873310,
+      2682612706
+    ]
+  },
+  {
+    "trajectory": 9,
+    "root": "mbpp/656",
+    "replicate": 1,
+    "actions": [
+      "RETHINK",
+      "PATCH"
+    ],
+    "seeds": [
+      795881783,
+      2992952798,
+      4223201706
+    ]
+  },
+  {
+    "trajectory": 10,
+    "root": "mbpp/700",
+    "replicate": 0,
+    "actions": [
+      "PATCH",
+      "PATCH"
+    ],
+    "seeds": [
+      2557821092,
+      1625579771,
+      3180170171
+    ]
+  },
+  {
+    "trajectory": 11,
+    "root": "mbpp/700",
+    "replicate": 1,
+    "actions": [
+      "PATCH",
+      "RETHINK"
+    ],
+    "seeds": [
+      2733624047,
+      2196268084,
+      45643194
+    ]
+  },
+  {
+    "trajectory": 12,
+    "root": "mbpp/703",
+    "replicate": 0,
+    "actions": [
+      "RETHINK",
+      "PATCH"
+    ],
+    "seeds": [
+      3367589430,
+      1111180085,
+      2939947704
+    ]
+  },
+  {
+    "trajectory": 13,
+    "root": "mbpp/703",
+    "replicate": 1,
+    "actions": [
+      "RETHINK",
+      "PATCH"
+    ],
+    "seeds": [
+      435166924,
+      120883248,
+      725632662
+    ]
+  },
+  {
+    "trajectory": 14,
+    "root": "mbpp/885",
+    "replicate": 0,
+    "actions": [
+      "STOP",
+      "RETHINK"
+    ],
+    "seeds": [
+      3577753569,
+      955238090,
+      3206363718
+    ]
+  },
+  {
+    "trajectory": 15,
+    "root": "mbpp/885",
+    "replicate": 1,
+    "actions": [
+      "RETHINK",
+      "RETHINK"
+    ],
+    "seeds": [
+      3505638653,
+      3705688479,
+      1898635730
+    ]
+  },
+  {
+    "trajectory": 16,
+    "root": "mbpp/901",
+    "replicate": 0,
+    "actions": [
+      "STOP",
+      "STOP"
+    ],
+    "seeds": [
+      2907219549,
+      383101259,
+      3291680670
+    ]
+  },
+  {
+    "trajectory": 17,
+    "root": "mbpp/901",
+    "replicate": 1,
+    "actions": [
+      "PATCH",
+      "RETHINK"
+    ],
+    "seeds": [
+      3324732718,
+      3742826750,
+      3061879793
+    ]
+  }
+]
