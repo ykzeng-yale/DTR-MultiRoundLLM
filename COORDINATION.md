@@ -1,6 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
 
+## 27 September2026 — owner changes lead cadence to30minutes
+
+The owner explicitly replaces the three-hour recurrence with a30-minute active scientific execution heartbeat. Review new job outcomes and frozen analyses, implement justified next experiments, and advance independent work while jobs queue/run. Preserve scientific gates, negative findings, exact job/evidence identity and no-duplicate discipline. Notify meaningful progress only. This supersedes older three-hour timing in repository history. Current active experiment27720685 and its frozen checkpoint-challenge handoff remain governing. Full-project readiness60%,delta0; population/measurement, independent study freeze/evaluation and final manuscript/reproduction remain incomplete.
+
+
 ## 28 SeptemberUTC — actual162-call intervention challenge submitted
 
 Codex direct progression after CUDA qualification: literal-input endpoint audit b1f9337 completed438 isolated cases on all54 previously exposed constructed artifacts, all9 references/45controls private predictions matched, no omitted artifacts. This preserves integer dictionary keys needed by703 instead of excluding it. Full suite2,366tests+8subtests passed.
