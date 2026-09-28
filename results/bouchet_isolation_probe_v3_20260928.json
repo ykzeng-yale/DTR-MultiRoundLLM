@@ -1,0 +1,53 @@
+{
+  "job_id": "27771378",
+  "freeze": "2c98f2179d56e68f98538cf143202f1c6c7dc201",
+  "plan_sha256": "ce535390dca8586fd1c3e184256866a5717956839d07ce169df78000375dc665",
+  "classification": "trusted namespace capability probe only; no candidate execution authorized",
+  "platform": "Linux-5.14.0-570.140.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "versions": {
+    "bwrap": {
+      "returncode": 0,
+      "stdout": "bubblewrap 0.4.1\n",
+      "stderr": ""
+    },
+    "apptainer": {
+      "returncode": 0,
+      "stdout": "apptainer version 1.5.3-1.el9\n",
+      "stderr": ""
+    },
+    "unshare": {
+      "returncode": 0,
+      "stdout": "unshare from util-linux 2.37.4\n",
+      "stderr": ""
+    }
+  },
+  "namespace_probe": {
+    "returncode": 0,
+    "stdout": "{\"checks\": {\"different_network_namespace\": true, \"different_pid_namespace\": true, \"environment_cleared\": true, \"home_absent\": true, \"host_canary_hidden\": true, \"no_external_ipv4_route\": true, \"project_absent\": true, \"temporary_write_works\": true, \"working_directory_isolated\": true}, \"passed\": true}\n",
+    "stderr": ""
+  },
+  "parsed": {
+    "checks": {
+      "different_network_namespace": true,
+      "different_pid_namespace": true,
+      "environment_cleared": true,
+      "home_absent": true,
+      "host_canary_hidden": true,
+      "no_external_ipv4_route": true,
+      "project_absent": true,
+      "temporary_write_works": true,
+      "working_directory_isolated": true
+    },
+    "passed": true
+  },
+  "host_canary_unchanged": true,
+  "seconds": 0.11485704500228167,
+  "candidate_execution_released": false,
+  "sha256": {
+    "work/bouchet_isolation_probe_v3_20260928/freeze.txt": "e1fa3fcaff46317f3dd5c54c8600a4f976f27cae33720b02fb0b92f4530845c8",
+    "work/bouchet_isolation_probe_v3_20260928/probe-plan.json": "ce535390dca8586fd1c3e184256866a5717956839d07ce169df78000375dc665",
+    "work/bouchet_isolation_probe_v3_20260928/logs/probe-27771378.err": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/bouchet_isolation_probe_v3_20260928/logs/probe-27771378.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/bouchet_isolation_probe_v3_20260928/probe-results/summary.json": "39ab801a7b92ae430e65426eb11e7d71581dd486dbd28c76f02c36eb553ee9d5"
+  }
+}
