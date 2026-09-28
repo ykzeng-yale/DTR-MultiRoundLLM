@@ -515,3 +515,12 @@ Next actual job27724993 is a frozen ten-new-seed replication,1620calls, all54che
 On completion retrieve replication/summary.json, logs, GPU samples and Slurm accounting; run `scripts/grade_checkpoint_replication_20260928.py --plan experiments/bouchet/checkpoint_replication_plan_v1.json --receipt <retrieved replication/summary.json> --out work/checkpoint_replication_grading_20260928` using project Python. <=13140 local sandbox cases,3600seconds,256MiB retained, no code execution on Bouchet. Report all10replicate panels, full-denominator missing bounds and artifact strata; do not treat replicates as new roots or fit a policy on them. Twelve focused tests pass; request comparison verifies all1620 payloads differ from discovery only in seed, ten per combination.
 
 Full-project readiness60%,delta0. Broader population/measurement, full independent study freeze/evaluation and manuscript/raw reproduction remain incomplete. Scientific next-step decision depends on replication stability; do not rerun completed discovery or hardware qualification.
+
+
+## 28 September 2026, 00:32 ET — replication generation reconciled; isolated grading active
+
+Codex queried job27724993: COMPLETED0:0,23:58:27–00:06:43 ET,496allocated seconds,4,167,176K batch MaxRSS. Retrieved immutable receiver logs/summary, GPU samples and build manifest to work/checkpoint_replication_results_20260928. Verified pinned input/build hashes, all1620 returned assignments,0unattempted,no recorded generation error or receiver drift. Lead validation is not independent review or task-success evidence. Committed generation reconciliation records artifact hashes, arm token costs and Slurm accounting.
+
+Frozen isolated grading is already running locally: PID22256, exec session10707, output work/checkpoint_replication_grading_20260928; bounded13140case starts/3600seconds/256MiB. Do not duplicate it. Check process identity and terminal summary on recovery; preserve all missing/failed assignments, report all10replicate panels and artifact strata, then decide the next scientific experiment or justified stop to this panel. No GPU job remains active; do not repeat hardware/discovery/replication generation. The30-minute heartbeat now explicitly tracks this grader.
+
+Full-project readiness60%,delta0. Generation reconciliation closes no new fixed-rubric milestone; population/measurement validity, full independent freeze/evaluation and manuscript/raw reproduction remain incomplete. Efficacy remains unestablished. Waiting is for the actual isolated grading process, not a status watcher.

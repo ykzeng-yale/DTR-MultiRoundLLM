@@ -1,0 +1,52 @@
+{
+  "job_id": "27724993",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "start_et": "2026-09-27T23:58:27",
+  "end_et": "2026-09-28T00:06:43",
+  "allocated_seconds": 496,
+  "batch_max_rss": "4167176K",
+  "account": "pi_fl426",
+  "gpus": 1,
+  "gpu_hours": 0.13777777777777778,
+  "cpus": 4,
+  "memory_gib": 16,
+  "freeze": "e7f423af27599fe28be1235e4c784479d50bfea3",
+  "receipt_sha256": "ea32ab333d5156c92c88bfebedb31429dba1facdec40edfd2e59784844c31cfc",
+  "assigned_returned": 1620,
+  "unattempted": 0,
+  "state_unchanged": true,
+  "application_seconds": 487.4467774920631,
+  "paid_usd": 0,
+  "energy_measured": false,
+  "lead_reconciliation_not_independent_review": true,
+  "arms": {
+    "PATCH": {
+      "calls": 540,
+      "prompt_tokens": 128790,
+      "completion_tokens": 20269
+    },
+    "RETHINK": {
+      "calls": 540,
+      "prompt_tokens": 123930,
+      "completion_tokens": 28314
+    },
+    "FRESH": {
+      "calls": 540,
+      "prompt_tokens": 54180,
+      "completion_tokens": 27336
+    }
+  },
+  "artifact_sha256": {
+    "artifacts.tar.gz": "d3f648e4fe04cf86648623ef271cbb6f106814437173ec14edf4a2f245fd786a",
+    "gpu-after.txt": "5bc2ccad51eb504a08fb00a6a3fb4eb9b2f3ff6a9724de2fd628add5afca4045",
+    "gpu-before.txt": "9165d07290aad3cd2663b80b7f6ab4dc9453ac2303ada991bf2d8595cd3bffb0",
+    "gpu-samples.csv": "cb30c75d23e05b19ef4065ba5a4f0d2663bef7c38af0ca0c4217df7649fdc6fd",
+    "logs/replication-27724993.err": "e14eeefc315acc2ad096b8401f615cda4ac873f767706ad71a71b4bfba25f05e",
+    "logs/replication-27724993.out": "6515b6b1956d11ba3983a09ca77f9c0f0613189d2af13935144477dfaecddbe2",
+    "replication/build-sha256.txt": "f060205176c5ba114a9d00b96c814531237b8166a85981a4f10574f7c0e5b811",
+    "replication/props_before.json": "0932377c13b4f43b9b2174ded835504c8b7906cbab6119f9a0dc8a357d32eccf",
+    "replication/server.log": "8012d5d2043215b99d01ba06ba3862ca2d6c7f70fe6d97ab0b4b44c675a38157",
+    "replication/summary.json": "ea32ab333d5156c92c88bfebedb31429dba1facdec40edfd2e59784844c31cfc"
+  }
+}

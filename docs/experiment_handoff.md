@@ -702,3 +702,12 @@ Codex checked actual job 27724993 once: sacct RUNNING, start 27 September 23:58:
 While generation runs, the manuscript now reports the full discovery table, negative PATCH contrasts, incomplete observations, information differences and cost distinctions. A separate standard-library saved-row reconciliation checks all 162 identities and exact rational equal-root bounds against three hash-recorded inputs. Isolated Python execution reproduces the committed receipt. This is lead arithmetic validation, not independent scientific review or raw replay. Replication outcomes remain pending in the manuscript.
 
 Full-project submission readiness 60%, change 0 percentage points: this integrates evidence without closing a new fixed-rubric milestone. Broader population/measurement, complete independent study freeze, independent policy evaluation and manuscript/raw reproduction remain incomplete. Efficacy is unestablished; seed replication does not add independent roots.
+
+
+## 28 September 2026, 00:32 ET — replication generation reconciled; isolated grading active
+
+Codex queried job27724993: COMPLETED0:0,23:58:27–00:06:43 ET,496allocated seconds,4,167,176K batch MaxRSS. Retrieved immutable receiver logs/summary, GPU samples and build manifest to work/checkpoint_replication_results_20260928. Verified pinned input/build hashes, all1620 returned assignments,0unattempted,no recorded generation error or receiver drift. Lead validation is not independent review or task-success evidence. Committed generation reconciliation records artifact hashes, arm token costs and Slurm accounting.
+
+Frozen isolated grading is already running locally: PID22256, exec session10707, output work/checkpoint_replication_grading_20260928; bounded13140case starts/3600seconds/256MiB. Do not duplicate it. Check process identity and terminal summary on recovery; preserve all missing/failed assignments, report all10replicate panels and artifact strata, then decide the next scientific experiment or justified stop to this panel. No GPU job remains active; do not repeat hardware/discovery/replication generation. The30-minute heartbeat now explicitly tracks this grader.
+
+Full-project readiness60%,delta0. Generation reconciliation closes no new fixed-rubric milestone; population/measurement validity, full independent freeze/evaluation and manuscript/raw reproduction remain incomplete. Efficacy remains unestablished. Waiting is for the actual isolated grading process, not a status watcher.

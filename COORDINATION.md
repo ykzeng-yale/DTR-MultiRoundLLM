@@ -1,5 +1,13 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 28 September 2026, 00:32 ET — replication generation reconciled; isolated grading active
+
+Codex queried job27724993: COMPLETED0:0,23:58:27–00:06:43 ET,496allocated seconds,4,167,176K batch MaxRSS. Retrieved immutable receiver logs/summary, GPU samples and build manifest to work/checkpoint_replication_results_20260928. Verified pinned input/build hashes, all1620 returned assignments,0unattempted,no recorded generation error or receiver drift. Lead validation is not independent review or task-success evidence. Committed generation reconciliation records artifact hashes, arm token costs and Slurm accounting.
+
+Frozen isolated grading is already running locally: PID22256, exec session10707, output work/checkpoint_replication_grading_20260928; bounded13140case starts/3600seconds/256MiB. Do not duplicate it. Check process identity and terminal summary on recovery; preserve all missing/failed assignments, report all10replicate panels and artifact strata, then decide the next scientific experiment or justified stop to this panel. No GPU job remains active; do not repeat hardware/discovery/replication generation. The30-minute heartbeat now explicitly tracks this grader.
+
+Full-project readiness60%,delta0. Generation reconciliation closes no new fixed-rubric milestone; population/measurement validity, full independent freeze/evaluation and manuscript/raw reproduction remain incomplete. Efficacy remains unestablished. Waiting is for the actual isolated grading process, not a status watcher.
+
 ## 28 September 2026, 00:01 ET — replication running; discovery manuscript integrated
 
 Codex checked actual job 27724993 once: sacct RUNNING, start 27 September 23:58:27 ET, elapsed 2m33s; receiver summary had 609 assigned calls and no recorded error. This supersedes the provisional queue estimate, not terminal validation. No duplicate job or new collection was launched. Retrieve and grade the terminal receipt using the preceding frozen replication instructions.
