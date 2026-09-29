@@ -1,0 +1,83 @@
+{
+  "classification": "lead reconciliation of terminal trusted fixed-fixture failure; no candidate, reference, or benchmark execution",
+  "job_id": "27792524",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "state": "FAILED",
+  "exit_code": "1:0",
+  "elapsed_seconds": 25,
+  "total_cpu": "00:05.148",
+  "max_rss": "682512K",
+  "node": "a1130u05n01",
+  "gpus": 0,
+  "paid_usd": 0,
+  "freeze": "7764057f2e6cea7c173b6d1fd60dfee69a9a9be0",
+  "plan_sha256": "d8f8b6ce07191715b4c8377e4f88c440fcf89115c233eae18de9dcf92b2d31b2",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-object-measurement-20260929-v3",
+  "slurm_accounting": "sacct: FAILED 1:0; 00:00:25; 1 CPU; 2G; batch MaxRSS 682512K; node a1130u05n01",
+  "verified_source_hashes": {
+    "experiments/native_runtime/native_object_fixture_v1.py": true,
+    "experiments/native_runtime/wheel-lock.txt": true,
+    "experiments/containment/bouchet_probe_v3.py": true,
+    "experiments/containment/stress_v1.py": true,
+    "docs/native_object_measurement_qualification_20260928.md": true,
+    "experiments/native_runtime/qualify_native_objects_v3.py": true,
+    "experiments/native_runtime/qualify_native_objects_v3.sbatch": true,
+    "docs/native_object_font_cache_decision_20260929.md": true
+  },
+  "raw_file_sha256": {
+    "freeze.txt": "03ec27c0fbc00750133936f6d64207b2beb166528443a4823005c4191282e1cc",
+    "native-plan.json": "d8f8b6ce07191715b4c8377e4f88c440fcf89115c233eae18de9dcf92b2d31b2",
+    "native-results/summary.json": "b34df693383dacc14eb08c235581e8692622a61531d35e0996b60998710c27c0",
+    "native-results/install.log": "5ba2a4a7dda85b9df4a31897b437be3acef6ad966856e60b9b6d00f804e7b1bd",
+    "native-results/font-prep.stdout": "07384138e2db8aa6ce4821e3b972b3295aa7ea85154db4a4b3f6e37abe083800",
+    "native-results/font-prep.stderr": "e7864e01ce1d4df4fc9776e0a26a41fe33e1286a8cd20548869ba3c55ef261fe",
+    "native-results/observation.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-results/observation.stderr": "09aab8b69351d055b59f5c1973dc7b6ed42a5ea4ed6d28d32b9055f1337bebae",
+    "logs/native-27792524.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/native-27792524.err": "6b2e4c8f8698d9304e50c7f5219ec7b36d04f79fc3989c552f220bca81953e2f"
+  },
+  "archive_sha256": "f3a2660eb8194899aed1e0fd3f8cd87c94b429aa7832f6a9fa13d2fd982cb757",
+  "stage_summary": {
+    "job_id": "27792524",
+    "freeze": "7764057f2e6cea7c173b6d1fd60dfee69a9a9be0",
+    "plan_sha256": "d8f8b6ce07191715b4c8377e4f88c440fcf89115c233eae18de9dcf92b2d31b2",
+    "candidate_execution_released": false,
+    "benchmark_executed": false,
+    "paid_usd": 0,
+    "scratch": {
+      "kind": "compute-local /tmp, owned temporary directory",
+      "staged_wheel_bytes": 105796313
+    },
+    "install_returncode": 0,
+    "runtime_bytes": 346652223,
+    "font_prep_returncode": 0,
+    "font_cache": [
+      {
+        "file": "fontlist-v330.json",
+        "bytes": 78582,
+        "sha256": "6a2bbcb6de6db68d2696d33e4da5d08e9799d81cb1ee6e756a2cf9459b976906"
+      }
+    ],
+    "observation_returncode": 1,
+    "observation": null,
+    "checks": {
+      "array_product": false,
+      "group_labels": false,
+      "group_values": false,
+      "line_x": false,
+      "line_y": false,
+      "versions": false
+    },
+    "passed": false,
+    "error": "RuntimeError('trusted native observation qualification failed')",
+    "seconds": 22.210791755001992
+  },
+  "lead_recomputed_disposition": "The 24-wheel offline install returned 0 (346652223 runtime bytes); trusted font preparation returned 0 and produced one 78582-byte cache with the recorded hash. The strict observation mounted that cache read-only; Matplotlib reported the configured cache was not writable, attempted to construct FontManager and threading.Timer.start was denied by the unchanged clone seccomp rule. observation stdout is empty, observation is null, and all six expected-value/version checks are false. This is a failed transport qualification, not a negative or positive semantic outcome.",
+  "design_decision": "Close this Matplotlib repair line after the repeated denied-thread failure. Do not weaken process isolation and do not launch v4. No candidate-code execution is released. Source-wide BigCodeBench admission remains unresolved; choose a population and measurement path with an independently reviewable observer before collecting/fitting policy data.",
+  "limitations": [
+    "Lead recomputation, not independent security review.",
+    "The fixture is trusted fixed code only and makes no claim about candidate execution or semantic correctness.",
+    "No benchmark tasks, candidate code, references, receiver calls, or private outcomes were executed/read."
+  ]
+}
