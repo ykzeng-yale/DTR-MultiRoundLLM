@@ -84,6 +84,8 @@ def validate(episodes):
                 new = v['messages']
                 if new[:len(old)] != old or len(new) != len(old)+2 or new[-2]['role'] != 'user':
                     raise ValueError('continuation prefix mismatch')
+                if v['public_observations'][:-1] != prev['view']['public_observations']:
+                    raise ValueError('public observation history drift')
                 chosen = prev['selection']['chosen_id']
                 prompt = next(a['text'] for a in prev['view']['slate'] if a['id'] == chosen)
                 if chosen == 'STOP' or new[-2]['content'] != prompt:

@@ -1,5 +1,14 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 29 September 2026, 22:13 ET wake — measurement scale exposed; native fixture v2 failed
+
+Native job27784150 FAILED1:0 after33allocated seconds. The same24 pinned wheels installed successfully to local scratch (346652223 runtime bytes). Strict seccomp clone denial then blocked Matplotlib's cache-miss `threading.Timer`, before fixed native observation. All raw outputs, plan/freeze and accounting are lead-reconciled in results/native_object_v2_failure_reconciliation_20260929.json; zero candidate/reference/benchmark executions. This is a measurement runtime limitation, not a prompting outcome. Version3 precomputes exactly one hashed font cache using trusted package code in a separate no-network namespace, then mounts it read-only for the unchanged strict-denial fixture; no general thread/process permission is added. Stop this repair line after another identical thread-denial failure.
+
+The actual operational pilot public-history export and sanitized terminal grade were joined without reading private test inputs/answers: all18assigned trajectories,31decisions,9reused roots,13supplementPASS/5FAIL,zero missing. Real pre-action views/selection vectors satisfy the practical text Q learner schema, but no model is fitted on these exposed families. Source-wide static triage of all1140BigCodeBench rows finds715native-library and341plot-library rows (overlapping);236of341plot rows lack the script's direct plot-value assertion markers, which is a review priority, not proof of missing tests. This evidence makes native-object observation a central prerequisite for the proposed source-wide frame. Results and limitations in docs/sourcewide_measurement_triage_20260929.md and docs/pilot_label_join_decision_20260929.md. BigCodeBench still75source-reviewed/1065pending/27knownexposed/0admitted.
+
+Full-project readiness60%,delta0: valid semantic measurement and family frame, actual trained policy, independent evaluation and manuscript/raw reproduction incomplete. No efficacy, independent family count or independent reviewer validation inferred.
+
+
 ## 29 September 2026 — native failure and source/design work
 
 Bouchet native object job27780229 FAILED1:0 after304allocated seconds. The hash-locked offline installation wrote a "Successfully installed" line but never returned before its300second cap; no trusted object fixture, reference, benchmark or generated candidate executed. Raw logs/plan/freeze and lead checksums are preserved in results/native_object_failure_reconciliation_20260929.json and ignored work/native_object_measurement_20260928_v1. This is a runtime setup failure, not semantic endpoint evidence. Version2 stages identical wheels and installation on compute-local scratch with a separately frozen 10minute CPU cap; no source or expected-value change and no automatic same-cause repeats. Its receipt will supersede this text after submission.

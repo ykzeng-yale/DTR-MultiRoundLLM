@@ -1,0 +1,48 @@
+{
+  "classification": "failed trusted native fixture due to thread-deny; no candidate or benchmark execution",
+  "job_id": 27784150,
+  "slurm_state": "FAILED",
+  "exit_code": "1:0",
+  "elapsed_seconds": 33,
+  "maxrss": "681500K",
+  "summary": {
+    "job_id": "27784150",
+    "freeze": "dcd6b4a05dd31e08a418d7c0ba49e62fbf661858",
+    "plan_sha256": "48eff2d1c25935047419ce5978f738169b3c3e7d4da018f341ddba28fa6936cc",
+    "candidate_execution_released": false,
+    "benchmark_executed": false,
+    "paid_usd": 0,
+    "scratch": {
+      "kind": "compute-local /tmp, owned temporary directory",
+      "staged_wheel_bytes": 105796313
+    },
+    "install_returncode": 0,
+    "runtime_bytes": 346652223,
+    "observation_returncode": 1,
+    "observation": null,
+    "checks": {
+      "array_product": false,
+      "group_labels": false,
+      "group_values": false,
+      "line_x": false,
+      "line_y": false,
+      "versions": false
+    },
+    "passed": false,
+    "error": "RuntimeError('trusted native observation qualification failed')",
+    "seconds": 32.419929513009265
+  },
+  "plan_sha256": "48eff2d1c25935047419ce5978f738169b3c3e7d4da018f341ddba28fa6936cc",
+  "raw_sha256": {
+    "freeze.txt": "c13ba3aafdc7a326af8aec188b31e098285d5999117ae7d62308bca596c78e32",
+    "native-plan.json": "48eff2d1c25935047419ce5978f738169b3c3e7d4da018f341ddba28fa6936cc",
+    "logs/native-27784150.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/native-27784150.err": "dc775802b6a346518c412b19ebf72c8e1879e4e7dfe8a4adc575df8a60e305b1",
+    "native-results/summary.json": "2c62363b1085ca844dafb14aad67d2f000deb609f99b01dbe2276b1274760b4d",
+    "native-results/observation.stderr": "9a7765102750a366c3e80191b0a5fdb8403f3ad948351c34c65a3d0084f0fb5f",
+    "native-results/observation.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-results/install.log": "5ba2a4a7dda85b9df4a31897b437be3acef6ad966856e60b9b6d00f804e7b1bd"
+  },
+  "lead_recomputed_disposition": "Hash-locked local-scratch install succeeded in under33sec; matplotlib font-cache initialization tried threading.Timer and was denied by clone seccomp rule before any fixed expected observation. No semantic result.",
+  "next": "Build frozen font cache in a trusted no-network setup boundary, then run exact same fixture under original deny filter; never relax process isolation merely to pass plotting."
+}

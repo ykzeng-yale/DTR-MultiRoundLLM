@@ -1,0 +1,20 @@
+{
+  "classification": "lead source-wide static triage reconciliation; no admission or independent review",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "triage_sha256": "5a8d6afc0f9e207b436278f8637177bb317c484ac1ec319da0970264d45b30ef",
+  "builder_sha256": "73949e863a86dd1e2ce4029d4363ee87edf61087936fc9ef075f964fd6459758",
+  "rows": 1140,
+  "flag_counts": {
+    "randomness_static": 313,
+    "native_object_library": 715,
+    "reference_file_io_static": 295,
+    "plot_library": 341,
+    "test_plot_values_static": 111,
+    "network_library": 67,
+    "web_framework": 11
+  },
+  "plot_library_rows_without_declared_direct_plot_value_markers": 236,
+  "qualification": "Text markers are incomplete; absence is not a negative proof.",
+  "benchmark_executions": 0,
+  "receiver_calls": 0
+}

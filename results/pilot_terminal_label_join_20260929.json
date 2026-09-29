@@ -1,0 +1,18 @@
+{
+  "classification": "reused nine-root label-join interface check; no fitting or efficacy",
+  "assigned": 18,
+  "decision_count": 31,
+  "missing": [],
+  "complete_labels": 18,
+  "families": 9,
+  "source_sha256": {
+    "public_export": "5db4ca625f6e3b12c0353df41af1ba69da828f1ccb669215c33086269afd28af",
+    "public_export_summary": "4725103657734ea7a71e5bc31a173297825436d6ea6575c4bced4bd04b1b308e",
+    "sanitized_grading": "258ae913261fd4737e6c035b6d79e33f6cd55ece5080c31408cc9ed3be68ccad",
+    "join_source": "b28065f39f165b1e5ade3ea000ab5ebb02aa6efc82bf78055283fcde87dcc65f",
+    "validator_source": "10f0fba0b4e120ec9eca447db7e19f992edaf5d0d05ff2d3a0a6b92db3151865"
+  },
+  "rows_sha256": "3b954615fe14c9db152df4959c56ed22fca25108806567393f18277baddb2302",
+  "policy_fitted": false,
+  "independent_families_claimed": false
+}

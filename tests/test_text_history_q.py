@@ -79,6 +79,12 @@ def test_future_or_private_field_and_post_stop_refused():
     bad[2]['steps'][1]['view']['messages'][2]['content'] = 'different prompt'
     with pytest.raises(ValueError):validate(bad)
     bad = copy.deepcopy(data)
+    bad[2]['steps'][1]['view']['public_observations'][0]['status'] = 'PASS'
+    bad[2]['steps'][1]['selection'] = bind_selection(
+        bad[2]['steps'][1]['view'], [1/3]*3, 'STOP')
+    with pytest.raises(ValueError, match='observation history'):
+        validate(bad)
+    bad = copy.deepcopy(data)
     bad[2]['steps'][0]['selection']['probabilities'] = [.5,.25,.25]
     with pytest.raises(ValueError):validate(bad)
 
