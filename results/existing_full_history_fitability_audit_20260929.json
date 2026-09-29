@@ -1,0 +1,75 @@
+{
+  "classification": "lead structural fitability audit; no policy fit, task execution, or new data collection",
+  "question": "Do existing logged outcomes support an admissible full-history STOP/PATCH/RETHINK policy fit and independent family evaluation?",
+  "full_history_behavior_log": {
+    "assigned_trajectories": 18,
+    "complete_sanitized_labels_reported": 18,
+    "decision_points": 31,
+    "stage0_actions": {
+      "PATCH": 6,
+      "RETHINK": 7,
+      "STOP": 5
+    },
+    "stage1_actions": {
+      "STOP": 2,
+      "RETHINK": 7,
+      "PATCH": 4
+    },
+    "unique_root_families": 9,
+    "two_trajectories_per_root": true,
+    "logged_slate_probabilities_verified": true,
+    "one_receiver_generator_pair": true,
+    "data_disposition": "support/schema pilot only: the same nine roots were reused by other development comparisons; excluded from policy fit and independent evaluation"
+  },
+  "other_saved_data": [
+    {
+      "stream": "matched complete-strategy comparison",
+      "evidence": "162 branches, 18 starts, 9 reused roots; each row is a complete assigned strategy trajectory, not randomized action selection at each public history",
+      "use": "descriptive strategy comparison only"
+    },
+    {
+      "stream": "E12",
+      "evidence": "14 fixed development roots and five fixed prompt arms; single-intervention arm contrast, not two-decision per-history slate randomization",
+      "use": "development mechanism evidence, not full-history Q logger"
+    },
+    {
+      "stream": "E13a",
+      "evidence": "60 assigned draws on five E12 outcome-inspected checkpoints; R1/FRESH complete-package comparison",
+      "use": "conditional development comparison, not an independent policy sample"
+    },
+    {
+      "stream": "original 198-root frame",
+      "evidence": "43 remaining candidates after known receiver-development exposure and display hold; 15 definite prior-family links, 16 plausible links, 10 with no direct link found; no evaluation roster approved",
+      "use": "source candidate roster, not logged trajectories or certified untouched families"
+    }
+  ],
+  "learner_scale": {
+    "fixed_features": 256,
+    "actions": 3,
+    "decision_stages": 2,
+    "action_stage_coefficient_vectors": 6,
+    "nominal_coefficients": 1536,
+    "observed_decisions": 31,
+    "smallest_stage_action_cell": 2
+  },
+  "judgment": "No existing dataset is admissible for the target policy fit plus independent-family evaluation. The only full-history randomized slate log has 9 reused roots and 31 decisions, with action-stage cells 5/6/7 and 2/4/7; ridge makes computation possible but cannot create family-level information or an untouched test set. Other runs lack sequential per-history action randomization or independence. Do not fit or launch another controller comparison from these records.",
+  "next_gate": "Before further model calls, specify and admit a population-specific semantic observer and family/exposure frame. Then collect a separately frozen development cohort under known positive action probabilities at each realized supported history; reserve untouched families for evaluation and log cost/missingness. No population substitution, endpoint repair, or five-point threshold change is authorized by this audit.",
+  "readiness_percent": 60,
+  "readiness_delta_percentage_points": 0,
+  "input_sha256": {
+    "work/pilot_terminal_label_join_20260929/episodes.jsonl": "3b954615fe14c9db152df4959c56ed22fca25108806567393f18277baddb2302",
+    "results/pilot_terminal_label_join_20260929.json": "5be5adc860f7c4cbf570f2f3279adf61f85bba1f20fbaf26edbcc68611105670",
+    "results/full_history_pilot_reconciliation_20260928.json": "93c98d637d3fcbbb6b12a5bb5b9f0e85d5e9c0b635a66561e4edf82f0bfb02bc",
+    "results/strategy_terminal_reconciliation_20260928.json": "d8de702af4c51d06b4189c2c56de1441bd4e6c8e05202c001e922b34119a989a",
+    "work/strategy_terminal_grading_20260928/summary.json": "b6b581397039fa745f0c5f7806887d1ad27deca5a8365fbc4dc8fa51873bcab4",
+    "results/policy_full_frame_reconciliation_20260926.json": "744b0f393ba7b739ed64087d190d406908fe8f8b6063032a6b300cd1f4cbfbff",
+    "results/policy_candidate_adjudication_20260926.json": "3458d582969c9a04922a71ce2818ede91a45ca9c3925e8d78fd5f44307a0b4b4",
+    "docs/e12_results_20260922.md": "77519fae8d3a4fc37aff56e3d934f0f257aa0ba65989acdc30341ae517fb31d1",
+    "docs/e13a_lead_judgment_20260923.md": "1ebdda6f8f80948aab1b9bba606ce9c17361eb010ea8c6318d5bb0ea7c64e1a3",
+    "experiments/sequential/text_history_q.py": "10f0fba0b4e120ec9eca447db7e19f992edaf5d0d05ff2d3a0a6b92db3151865",
+    "scripts/audit_existing_full_history_fitability_20260929.py": "586613f60be69d4c05582ac4b6982b79697297844341207ef1bf9aef3cf6cd44"
+  },
+  "receiver_calls": 0,
+  "benchmark_executions": 0,
+  "policy_fit": false
+}
