@@ -805,3 +805,7 @@ Job27792524's pinned install and isolated trusted font-cache preparation succeed
 ## 29 September2026 — existing full-history data fitability
 
 A reproducible audit of the actual saved streams finds no valid fit-plus-independent-evaluation dataset for the full-history policy. The lone sequential slate logger has18 trajectories,31 decisions and9 reused roots; its smallest stage-action cell has2 rows. The matched strategy, E12, and E13a datasets do not have the required per-history logger plus independent family split. The original MBPP ledger has43 remaining source candidates but no approved evaluation roster. No fit was attempted. See [audit and exact next gate](existing_full_history_fitability_audit_20260929.md). This confirms the present barrier is scientific data design/population/measurement, not compute. BigCodeBench remains unadopted. Full-project readiness **60%, delta0**; no efficacy credit.
+
+## 29 September2026 — original MBPP joint admissibility
+
+The joint source-frame calculation finds zero currently admissible evaluation roots: all43 remaining candidates have unresolved contracts. Excluding15 definite and16 plausible prior-family roots leaves12, with recorded links forming8 provisional co-split components—not certified independent families. Exposure absence is not proof of no exposure, and the evaluation roster remains unapproved. This is a population/measurement gate, not a capacity issue. See [the joint disposition](mbpp_joint_admissibility_20260929.md). Full-project readiness **60%, delta0**; no efficacy credit.

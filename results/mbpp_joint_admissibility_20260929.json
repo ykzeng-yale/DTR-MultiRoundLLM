@@ -1,0 +1,143 @@
+{
+  "classification": "lead source-ledger intersection; no independent admission decision, task execution, or collection",
+  "question": "Does the original MBPP candidate ledger contain any currently contract-clear, plausibly untouched evaluation root?",
+  "candidate_roots": 43,
+  "family_axis_counts": {
+    "plausible_shared_family": 16,
+    "definite_prior_family": 15,
+    "no_direct_prior_relation_found": 10,
+    "within_candidate_family": 2
+  },
+  "contract_axis_counts": {
+    "clarification_required": 36,
+    "reference_hold": 3,
+    "domain_change_pending": 1,
+    "specification_hold": 3
+  },
+  "family_contract_intersection": [
+    {
+      "family_axis": "definite_prior_family",
+      "contract_axis": "clarification_required",
+      "count": 12
+    },
+    {
+      "family_axis": "definite_prior_family",
+      "contract_axis": "domain_change_pending",
+      "count": 1
+    },
+    {
+      "family_axis": "definite_prior_family",
+      "contract_axis": "reference_hold",
+      "count": 2
+    },
+    {
+      "family_axis": "no_direct_prior_relation_found",
+      "contract_axis": "clarification_required",
+      "count": 9
+    },
+    {
+      "family_axis": "no_direct_prior_relation_found",
+      "contract_axis": "specification_hold",
+      "count": 1
+    },
+    {
+      "family_axis": "plausible_shared_family",
+      "contract_axis": "clarification_required",
+      "count": 13
+    },
+    {
+      "family_axis": "plausible_shared_family",
+      "contract_axis": "reference_hold",
+      "count": 1
+    },
+    {
+      "family_axis": "plausible_shared_family",
+      "contract_axis": "specification_hold",
+      "count": 2
+    },
+    {
+      "family_axis": "within_candidate_family",
+      "contract_axis": "clarification_required",
+      "count": 2
+    }
+  ],
+  "strict_prior_family_prescreen": {
+    "screen_rule": "retain only no_direct_prior_relation_found and within_candidate_family; exclude definite_prior_family and hold plausible_shared_family",
+    "remaining_roots": [
+      36,
+      176,
+      354,
+      356,
+      654,
+      656,
+      679,
+      700,
+      703,
+      833,
+      885,
+      901
+    ],
+    "remaining_root_count": 12,
+    "recorded_candidate_link_components": [
+      [
+        36
+      ],
+      [
+        176,
+        356,
+        654
+      ],
+      [
+        354
+      ],
+      [
+        656
+      ],
+      [
+        679,
+        703,
+        833
+      ],
+      [
+        700
+      ],
+      [
+        885
+      ],
+      [
+        901
+      ]
+    ],
+    "component_count": 8,
+    "interpretation": "components preserve only explicit recorded MBPP-to-MBPP co-split links among the retained candidates; they are not final family adjudications, exposure certificates, or independent clusters; unknown links may merge them"
+  },
+  "exposure_crosswalk": {
+    "recorded_prior_receiver_development_false": 43,
+    "recorded_e11_development_false": 43,
+    "measurement_development_roots": [
+      345,
+      877
+    ],
+    "critical_limit": "false means no exposure was recorded in these inputs, not proof of no receiver/pretraining exposure; the two measurement-development roots remain exposed for evaluation"
+  },
+  "joint_admission": {
+    "approved_evaluation_roster": false,
+    "currently_contract_clear_roots": 0,
+    "currently_jointly_admissible_roots": 0,
+    "reason": "all43 candidates have an unresolved contract axis (36 clarification,3 reference,1 domain-change,3 specification holds); family, exposure, observer, sampling and execution-independence gates are also incomplete"
+  },
+  "scientific_decision": "No original-MBPP evaluation roster can be frozen from these dispositions. Even after conservatively setting aside31 definite/plausible prior-family candidates, the12-root remainder has zero adopted contracts and only eight provisional connected components under recorded candidate links. This is a feasibility/admission finding, not proof the original research question is futile or that eight final independent families exist. Do not collect or fit on this ledger as though it were admitted.",
+  "next_gate": "Resolve the original task-contract and semantic-measurement disposition over the full candidate ledger without selecting by expected outcomes; finalize global family/co-split and exposure crosswalk, then test whether any untouched roster and supported sampling law remain. If the resulting roster cannot meet the already accepted precision/usefulness requirements under finite resources, report infeasibility; do not substitute BigCodeBench or relax the target.",
+  "readiness_percent": 60,
+  "readiness_delta_percentage_points": 0,
+  "input_sha256": {
+    "results/policy_candidate_adjudication_20260926.json": "3458d582969c9a04922a71ce2818ede91a45ca9c3925e8d78fd5f44307a0b4b4",
+    "results/policy_full_frame_reconciliation_20260926.json": "744b0f393ba7b739ed64087d190d406908fe8f8b6063032a6b300cd1f4cbfbff",
+    "docs/policy_candidate_adjudication_20260926.md": "2f6bb9ebe9b18b07e929606b0a765fa765ecb6467a1e5628149fb025baa730bb",
+    "docs/policy_precision_decision_20260927.md": "dd9a10cb5b93187eae0074e14aed265bb81dcb7588c34d30d6d3ee4be355fdbb",
+    "scripts/audit_mbpp_joint_admissibility_20260929.py": "7e5585679d9aa6ade68c8030f80b34bf234b1857692d77adfdf7f8e2e8c8aeed"
+  },
+  "receiver_calls": 0,
+  "benchmark_executions": 0,
+  "policy_fit": false
+}
