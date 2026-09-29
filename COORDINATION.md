@@ -1,5 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 29 September 2026, 10:16 ET wake — population was never operationally frozen
+
+Protocol and source-history reconciliation resolves the frame ambiguity: neither the198-root review panel nor the full974-row MBPP source was adopted as the population. The original policy-validation design explicitly says the independent-family evaluation frame is unselected; the target is an equal-family expectation conditional on a yet-to-be-declared population/sampling law. The198 rows are a heterogeneous curation panel;43 is its residual-candidate accounting count;974 is the pinned source universe with multiple staged exclusions, not a family sampler. See `docs/mbpp_population_target_status_20260929.md`. Do not describe the study as targeting any of these frames or silently expand the panel.
+
+The scientific blocker is therefore not just that the current43 rows fail the joint gates: the concrete population estimand is still undefined. The lead recommendation is to preserve the broad task-family objective; a finite MBPP-source target is possible only as an explicitly narrower new target with new protocol/freeze. No collection or fitting is currently valid. This wake updates the paper and handoff; no efficacy claim. Readiness60%,delta0.
+
 ## 29 September 2026, 08:16 ET wake — contract proposals rejected as a batch; precision bound quantified
 
 The source-backed ruling in `docs/mbpp_contract_and_precision_disposition_20260929.md` compared saved proposals to the pinned MBPP prompt and public examples. The36 `clarification_required` rows are not one admissible class: task700's integer-only proposal contradicts its public string-list example; proposed output-only wording drops explicit method clauses on911/883; 340,828,192 and903 make unestablished edge/character/bit-width choices. The three reference holds and one domain plus three specification holds remain. The prior 814 display objection stays withdrawn; its independent family exclusion remains. No row was executed and no contract was adopted. This is lead source review, not blinded independent semantic validation.
