@@ -1,0 +1,155 @@
+{
+  "all_42_cells_kl_narrower_than_hoeffding_on_both_contrasts": true,
+  "assigned_replicates": 840000,
+  "cell_journal_sha256": "e5c8225e4ddfaf5db17e04ea47cf3fccc75c35c230a2185dbaf0f8a67bdc137b",
+  "cells_expected_completed": [
+    42,
+    42
+  ],
+  "conditional_decision_examples": {
+    "gain_005_boundary_all_sizes": [
+      {
+        "n": 8,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 12,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 43,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 67,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 99,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 198,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 8,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 12,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 43,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 67,
+        "probability_KL_L1_gt_005": {
+          "estimate": 5e-05,
+          "mcse": 4.999874998437461e-05
+        }
+      },
+      {
+        "n": 99,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      },
+      {
+        "n": 198,
+        "probability_KL_L1_gt_005": {
+          "estimate": 0.0,
+          "mcse": 0.0
+        }
+      }
+    ],
+    "gain_010_at_n198": {
+      "probability_KL_L1_gt_005": {
+        "estimate": 0.0015,
+        "mcse": 0.00027365580571221215
+      },
+      "truth": {
+        "d_minus_b1": {
+          "den": 10,
+          "num": 1
+        },
+        "d_minus_b2": {
+          "den": 10,
+          "num": 1
+        }
+      }
+    },
+    "loss_005_at_n198": {
+      "probability_KL_U1_lt_005": {
+        "estimate": 0.2431,
+        "mcse": 0.0030331698765482954
+      },
+      "truth": {
+        "d_minus_b1": {
+          "den": 20,
+          "num": -1
+        },
+        "d_minus_b2": {
+          "den": 20,
+          "num": -1
+        }
+      }
+    }
+  },
+  "evidence_class": "lead reconciliation of synthetic Monte Carlo aggregates; not independent review",
+  "inference_sha256": "fe11639fb0dff23ee1182b72ea9b6ff187cee31ec6c6e85b27cf587101801d79",
+  "limits": [
+    "coverage estimates are Monte Carlo checks under the stipulated IID laws, not theorem proof",
+    "no actual task-family law or MBPP population is represented",
+    "do not call decision rates power or use them to select a sample size",
+    "no efficacy or policy comparison was run"
+  ],
+  "maximum_mcse_recalculation_error": 0.0,
+  "plan_sha256": "e53dbc1b5110294dab9c8e0be6e6aa9caa84fdcfbe863f26a91a15dd5bdf5bc2",
+  "reconciled_replicates": 840000,
+  "run_accounting": {
+    "external_spend_usd": 0,
+    "model_calls": 0,
+    "retained_bytes": 37947,
+    "task_or_candidate_executions": 0,
+    "wall_seconds": 29.68995766621083
+  },
+  "runner_sha256": "cd48ae0320e3bfb6a7978be4abc1ef8adc05ddc4ed42c76f92420b3bd35d1094",
+  "simultaneous_coverage": {
+    "hoeffding_minimum": 1.0,
+    "sign_split_kl_minimum": 0.9998,
+    "sign_split_kl_minimum_cell_mcse": 9.998999949994449e-05
+  },
+  "summary_sha256": "0b025df786a75217f4b7f09ffaeb43c3f0d72e5ea510ded2a45c1ae8587f0dac",
+  "unique_scenario_size_cells": 42
+}

@@ -1,0 +1,19 @@
+# Paired-family interval operating characteristics — synthetic result
+
+Codex lead, 29 September 2026. This reports the frozen, target-independent Monte Carlo study in [the protocol](paired_interval_operating_characteristics_protocol_20260929.md). It is conditional design evidence, not an MBPP/task experiment, policy outcome or population power analysis.
+
+## Reconciled execution
+
+The repaired v2 run completed all42scenario-size cells and840,000replicates in29.690seconds, writing110,850bytes. It used one local CPU, with no receiver/model calls, task/benchmark/reference/candidate execution, network, package installation or paid spend. The lead verified the v2 plan, runner and interval-module hashes; parent-plan lineage; exact seed formula and20,000replicates in every cell; unique cell coverage; the JSONL journal against the committed summary; and every Monte Carlo standard error from its implied integer event count. Reconciliation is in `results/interval_operating_characteristics_reconciliation_20260929.json`; all42aggregate rows are in `results/interval_operating_characteristics_20260929.json`. The earlier v1 source defect is preserved separately in `results/interval_operating_characteristics_v1_failure_20260929.json`; it failed before consuming any random assignment.
+
+## Findings under the frozen hypothetical laws
+
+The sign-split KL interval's minimum empirical simultaneous coverage was **0.9998** over the42cells (the worst cells had Monte Carlo SE0.0001); Hoeffding coverage was1.0000 in every cell. These simulation checks are consistent with conservative coverage under these stipulated laws; they do not prove coverage or validate independence for real task families. The KL interval was narrower than the Hoeffding sensitivity interval on both contrasts in42/42cells, a descriptive width comparison, not post-hoc permission to replace the frozen primary method.
+
+The operative warning is width and decision rate away from the zero-disagreement boundary. At the largest illustrative count, `n=198`, mean KL interval widths were .233 for the two low-disagreement ±.05 laws, .339 for the high-disagreement +.05 law, .313 for the +.10 law, and .339/.372 for the opposed-comparator law. When `E[D1]=.10` and both contrasts have the frozen30% disagreement law, `P(L1>.05)` was **.00150** (MCSE .000274); the simultaneous interval covered both means in .99995 of replicates. At the exact `.05` useful-gain boundary, the strict `L1>.05` decision occurred in zero of20,000 replicates for the low-disagreement law and one of20,000 for one high-disagreement cell, as expected for a strict boundary under a conservative interval. When both means were−.05, `P(U1<.05)` was .2431 (MCSE .00303). Under the equal-policy zero-contrast law at `n=99` and198, the procedure always labeled useful-gain futility; this is conditional on the exact zero-difference law.
+
+These operating rates make explicit that the exact zero-disagreement radius is optimistic: even modest sign variation can substantially widen the interval and reduce strict decision frequency. They do **not** show that actual prompting contrasts have these distributions, do not supply power for any MBPP population, and do not choose a sample size. The five-point rule, population target, estimator, and strategy endpoints remain unchanged. The run does not unblock actual policy fitting, semantic measurement or independent-family evaluation.
+
+## Next research action
+
+Do not repeat this simulation or extend its n-grid after seeing the rates. Before any LLM/task run, resolve the owner's pending target-population choice and finish the target-specific measurement, family/exposure, development/evaluation split and full cost/missingness freeze. The current original-MBPP candidate ledger has zero jointly admitted evaluation roots; compute availability cannot cure that design defect. Readiness remains **60%, change0 percentage points**; efficacy remains unestablished.

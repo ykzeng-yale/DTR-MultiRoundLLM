@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 29 September 2026 — interval operating characteristics reconciled
+
+The frozen7-law ×6-size synthetic run completed840,000/840,000 replicates and42/42 cells in29.690s; its aggregate and lead hash/assignment/MCSE reconciliation are committed under `results/interval_operating_characteristics*20260929.json`. Sign-split KL simultaneous empirical coverage ranged .9998–1.0 (worst-cell MCSE .0001), Hoeffding was1.0, and KL intervals were narrower in all42cells. However, under one hypothetical +.10 contrast law with30% disagreement and n=198, the strict useful-gain decision frequency was.00150; this is conditional on synthetic laws, not MBPP power or efficacy. It demonstrates that the exact all-zero radius does not describe nonzero-sign variation. The run does not resolve population, measurement, fitting or evaluation gates; readiness remains **60%, delta0**.
+
 ## 29 September 2026 — natural-start evidence integrated into the manuscript
 
 The editable manuscript now includes the completed 18-trajectory full-history/STOP operational qualification and the 203-call matched comparison of nine complete strategies. It preserves exact PASS/FAIL/INCOMPLETE totals and strategy-specific missingness bounds, identifies all runs as nine-root development evidence, labels Self-Refine/Reflexion as limited adaptations, and does not claim a population ranking or total-cost winner. The evidence strengthens manuscript completeness but does not satisfy the fixed rubric's independent-evaluation or population/measurement criteria; readiness remains **60%, delta 0**. The original target population is still unresolved by the owner, so no new collection or policy fitting is released.
