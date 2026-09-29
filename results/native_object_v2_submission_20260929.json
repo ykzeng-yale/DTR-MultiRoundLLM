@@ -1,0 +1,28 @@
+{
+  "job_id": "27784150",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "cpus": 1,
+  "memory_gib": 2,
+  "wall_minutes": 10,
+  "gpus": 0,
+  "paid_usd": 0,
+  "classification": "versioned compute-local trusted native object observation; no candidate/benchmark execution",
+  "freeze": "dcd6b4a05dd31e08a418d7c0ba49e62fbf661858",
+  "plan_sha256": "48eff2d1c25935047419ce5978f738169b3c3e7d4da018f341ddba28fa6936cc",
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-object-measurement-20260929-v2",
+  "observed_state": "RUNNING at3seconds on a1130u05n01",
+  "recorded_utc": "2026-09-29T00:22:36.741779+00:00",
+  "test_only_estimate": "2026-09-28T20:22:04 America/New_York, provisional",
+  "expected_artifacts": [
+    "native-results/summary.json",
+    "native-results/install.log",
+    "native-results/observation.stdout",
+    "native-results/observation.stderr",
+    "logs/native-27784150.out",
+    "logs/native-27784150.err",
+    "native-plan.json",
+    "freeze.txt"
+  ],
+  "candidate_execution_released": false
+}
