@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 29 September 2026 — MBPP contract/precision ruling
+
+The uniform source check found the 36 “clarification” proposals are not a homogeneous acceptance class: task700's integer-only proposal conflicts with an original public string example, method clauses are omitted for911/883, and several proposals choose untested edge-case or Unicode/bit-width conventions. No candidate contract is adopted. Under the frozen sign-split KL rule, the optimistic all-zero half-width at eight hypothetical independent families is0.469745; the eight recorded components are not verified families. See [the ruling](mbpp_contract_and_precision_disposition_20260929.md). The original frame still has zero jointly admissible roots; this is not a futility or efficacy result. Full-project readiness **60%,delta0**; population/measurement, actual policy fit, untouched evaluation and manuscript/reproduction remain incomplete.
+
 ## 27 September2026 — receiver and observation path exercised
 
 Eight synthetic observation controls and9 pinned-receiver resource calls completed; failures retained. Engineering evidence resolves local generation availability for the measured workload, not the full measurement/population gap. Full-project readiness **60%,delta0**; no independent-policy credit. Population/measurement, full prospective freeze, independent evaluation and final manuscript/raw reproduction remain incomplete.
