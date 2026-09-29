@@ -6,6 +6,9 @@ Native job27784150 FAILED1:0 after33allocated seconds. The same24 pinned wheels 
 
 The actual operational pilot public-history export and sanitized terminal grade were joined without reading private test inputs/answers: all18assigned trajectories,31decisions,9reused roots,13supplementPASS/5FAIL,zero missing. Real pre-action views/selection vectors satisfy the practical text Q learner schema, but no model is fitted on these exposed families. Source-wide static triage of all1140BigCodeBench rows finds715native-library and341plot-library rows (overlapping);236of341plot rows lack the script's direct plot-value assertion markers, which is a review priority, not proof of missing tests. This evidence makes native-object observation a central prerequisite for the proposed source-wide frame. Results and limitations in docs/sourcewide_measurement_triage_20260929.md and docs/pilot_label_join_decision_20260929.md. BigCodeBench still75source-reviewed/1065pending/27knownexposed/0admitted.
 
+
+Actual version3 job27792524 RUNNING at6seconds on a1130u05n01,pi_fl426/devel,1CPU/2GiB/10minutes,noGPU/$0,freeze7764057,remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/native-object-measurement-20260929-v3. Receipt results/native_object_v3_submission_20260929.json. Test-only estimate22:20:01ET provisional. At terminal retrieve fresh immutable summary, install and font-prep/observation logs, plan/freeze and accounting. Verify exact hashes and separate font-prep vs strict-filter fixture, frozen native values/versions; exit0/internal passed flag insufficient. Preserve failures. No third identical thread-denial repair, no candidate release.
+
 Full-project readiness60%,delta0: valid semantic measurement and family frame, actual trained policy, independent evaluation and manuscript/raw reproduction incomplete. No efficacy, independent family count or independent reviewer validation inferred.
 
 
