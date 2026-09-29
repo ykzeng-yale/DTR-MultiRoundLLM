@@ -64,6 +64,19 @@ def build(inventory, reviews, exposures=()):
     for members in fingerprints.values():
         if len(members) > 1:
             constraints.append({'task_ids': members, 'kind': 'exact_four_field_duplicate', 'evidence': 'inventory'})
+    # A shared implementation *and* identical preamble can transfer an answer
+    # across different prompts/tests. This is a co-split constraint, not a claim
+    # that the two specifications or their test outcomes are equivalent.
+    answer_fingerprints = defaultdict(list)
+    for row in source:
+        hashes = row['field_sha256']
+        if 'code_prompt' not in hashes:
+            continue  # Older toy inventories lacked this field.
+        answer_fingerprints[(hashes['code_prompt'], hashes['canonical_solution'])].append(row['task_id'])
+    exact_groups = {tuple(c['task_ids']) for c in constraints if c['kind'] == 'exact_four_field_duplicate'}
+    for members in answer_fingerprints.values():
+        if len(members) > 1 and tuple(members) not in exact_groups:
+            constraints.append({'task_ids': members, 'kind': 'exact_code_and_reference_co_split', 'evidence': 'inventory'})
     return {
         'classification': 'source review register; not admission ledger, final families or sampling frame',
         'source_sha256': PIN,

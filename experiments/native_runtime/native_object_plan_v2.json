@@ -1,0 +1,143 @@
+{
+  "classification": "versioned compute-local trusted native object transport repair; no candidate release",
+  "files": {
+    "experiments/native_runtime/native_object_fixture_v1.py": "e04eb7e848d0e49582d214cccd9aa0fe9805b55ce1fa57049e5cd44e5e1ee9ca",
+    "experiments/native_runtime/wheel-lock.txt": "d46030186140d907632413290c0bc0738f4c8ed0016c04445a3d3a88b1feaf12",
+    "experiments/containment/bouchet_probe_v3.py": "c36651a3d7bfd6a05d16bcb6d0462560b1a0f6c6fa67f9cc982fbb812b7d0372",
+    "experiments/containment/stress_v1.py": "17d9c643b1f4b4127bbf8f15702e3d69d045c9d7da62b5c28902e02768084a86",
+    "docs/native_object_measurement_qualification_20260928.md": "2ab90947f1314f3e4ec06e37a7b0f855123a794be9fa27a24aa75a9ceeeab7bf",
+    "experiments/native_runtime/qualify_native_objects_v2.py": "4c973b4a316ba58997e46185dec388e0f642f0cffdb4a12dc3eb7b54eaf1c35d",
+    "experiments/native_runtime/qualify_native_objects_v2.sbatch": "42caf6b681eef6227a843a3f1a4ecc689e714321ec8d4396ab3370e7310c2edf",
+    "docs/native_object_measurement_repair_20260929.md": "6e415767ae09b26dafe6aaf4f8e27975aa0f6ee5a11e9101795d357264ddf474"
+  },
+  "wheels": [
+    {
+      "file": "click-8.1.8-py3-none-any.whl",
+      "sha256": "63c132bbbed01578a06712a2d1f497bb62d9c1c0d329b7903a866228027263b2"
+    },
+    {
+      "file": "contourpy-1.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "e1d59258c3c67c865435d8fbeb35f8c59b8bef3d6f46c1f29f6123556af28445"
+    },
+    {
+      "file": "cycler-0.12.1-py3-none-any.whl",
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"
+    },
+    {
+      "file": "fonttools-4.60.2-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "38ce703b60a906e421e12d9e3a7f064883f5e61bb23e8961f4be33cfe578500b"
+    },
+    {
+      "file": "importlib_resources-6.5.2-py3-none-any.whl",
+      "sha256": "789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec"
+    },
+    {
+      "file": "joblib-1.5.3-py3-none-any.whl",
+      "sha256": "5fc3c5039fc5ca8c0276333a188bbd59d6b7ab37fe6632daa76bc7f9ec18e713"
+    },
+    {
+      "file": "kiwisolver-1.4.7-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+      "sha256": "dda56c24d869b1193fcc763f1284b9126550eaf84b88bbc7256e15028f19188a"
+    },
+    {
+      "file": "matplotlib-3.7.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "fb0304c1cd802e9a25743414c887e8a7cd51d96c9ec96d388625d2cd1c137ae3"
+    },
+    {
+      "file": "nltk-3.8-py3-none-any.whl",
+      "sha256": "3306502f487aa9fb0566e23443fa287a85a8d8d0821e2ef1655b4e3f0ea4aeee"
+    },
+    {
+      "file": "numpy-1.21.2-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl",
+      "sha256": "5de64950137f3a50b76ce93556db392e8f1f954c2d8207f78a92d1f79aa9f737"
+    },
+    {
+      "file": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "file": "pandas-2.0.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "5ec591c48e29226bcbb316e0c1e9423622bc7a4eaf1ef7c3c9fa1a3981f89641"
+    },
+    {
+      "file": "pillow-10.3.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "3102045a10945173d38336f6e71a8dc71bcaeed55c3123ad4af82c52807b9375"
+    },
+    {
+      "file": "pyparsing-3.3.3-py3-none-any.whl",
+      "sha256": "ece8c00a69cf01b45d0b1dedabb469c90d8caf996d4fda40f147627a122849a4"
+    },
+    {
+      "file": "python_dateutil-2.9.0-py2.py3-none-any.whl",
+      "sha256": "cbf2f1da5e6083ac2fbfd4da39a25f34312230110440f424a14c7558bb85d82e"
+    },
+    {
+      "file": "pytz-2023.3.post1-py2.py3-none-any.whl",
+      "sha256": "ce42d816b81b68506614c11e8937d3aa9e41007ceb50bfdcb0749b921bf646c7"
+    },
+    {
+      "file": "regex-2026.1.15-cp39-cp39-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "008b185f235acd1e53787333e5690082e4f156c44c87d894f880056089e9bc7c"
+    },
+    {
+      "file": "scikit_learn-1.3.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "8d993fb70a1d78c9798b8f2f28705bfbfcd546b661f9e2e67aa85f81052b9c53"
+    },
+    {
+      "file": "scipy-1.7.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "5273d832fb9cd5724ee0d335c16a903b923441107dd973d27fc4293075a9f4e3"
+    },
+    {
+      "file": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    {
+      "file": "threadpoolctl-3.7.0-py3-none-any.whl",
+      "sha256": "cd8b60b5641b45c67bbf73c64c843235fc2d8a480c87389f52f5dbee893b86be"
+    },
+    {
+      "file": "tqdm-4.70.1-py3-none-any.whl",
+      "sha256": "c293e525e6fef9c20e8728fd4612df02a0aa31bb5fe91ecd93e123b1b7bffa73"
+    },
+    {
+      "file": "tzdata-2026.4-py2.py3-none-any.whl",
+      "sha256": "c2169a8b0a7a5e9674da5a135ccdfb2b3e671b333ed9fed17b41f73c34476e81"
+    },
+    {
+      "file": "zipp-3.23.1-py3-none-any.whl",
+      "sha256": "0b3596c50a5c700c9cb40ba8d86d9f2cc4807e9bedb06bcdf7fac85633e444dc"
+    }
+  ],
+  "expected": {
+    "array_product": [
+      4.0,
+      10.0
+    ],
+    "group_labels": [
+      "a",
+      "b"
+    ],
+    "group_values": [
+      3.0,
+      6.0
+    ],
+    "line_x": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "line_y": [
+      1.0,
+      4.0,
+      9.0
+    ],
+    "versions": {
+      "numpy": "1.21.2",
+      "scipy": "1.7.2",
+      "pandas": "2.0.3",
+      "matplotlib": "3.7.0",
+      "nltk": "3.8",
+      "sklearn": "1.3.1"
+    }
+  }
+}

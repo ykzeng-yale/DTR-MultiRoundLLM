@@ -1,5 +1,14 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 29 September 2026 — native failure and source/design work
+
+Bouchet native object job27780229 FAILED1:0 after304allocated seconds. The hash-locked offline installation wrote a "Successfully installed" line but never returned before its300second cap; no trusted object fixture, reference, benchmark or generated candidate executed. Raw logs/plan/freeze and lead checksums are preserved in results/native_object_failure_reconciliation_20260929.json and ignored work/native_object_measurement_20260928_v1. This is a runtime setup failure, not semantic endpoint evidence. Version2 stages identical wheels and installation on compute-local scratch with a separately frozen 10minute CPU cap; no source or expected-value change and no automatic same-cause repeats. Its receipt will supersede this text after submission.
+
+A concrete full-history/STOP text Q controller with fixed public-history features, actionwise ridge fit, version/action/support checks, absorbing STOP and family-disjoint IPW/longitudinal DR **evaluation** is implemented. The existing nine-root panel was not fitted; private training labels and an admitted family frame are still absent. Tests are deterministic contract checks, not outcome evidence. Source review60–73 and global exact-code/reference scan add conservative co-split constraints; register now75reviewed/1065pending/27known-exposed/0admitted. Plotted-value observation gaps and shared email-list tasks are recorded without changing the native endpoint. See docs/text_history_controller_contract_20260929.md and docs/bigcodebench_source_review_0060_0073_20260929.md.
+
+Full-project readiness60%,delta0: semantic population/measurement, actual policy fit, independent frozen evaluation and manuscript/raw reproduction incomplete. No causal efficacy inference or independent reviewer validation is claimed.
+
+
 ## 28 September 2026, owner-requested continuation — actual history adapter and native observation qualification
 
 Codex lead:27778040 terminal COMPLETED0:0,35allocated seconds,24wheels/105796313bytes, all hashes reconciled in results/native_wheel_acquisition_v2_reconciliation_20260928.json. Prior Python-marker failure preserved. No more acquisition job or GPU job active in this pipeline.

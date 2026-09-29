@@ -1,0 +1,320 @@
+{
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "classification": "source-only semantic review, no benchmark execution or admission",
+  "selection": "contiguous source rows60-73; no quality-based task selection",
+  "rows": [
+    {
+      "task_id": "BigCodeBench/60",
+      "source_row": 60,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "2d431280fab58d3652f30660a4bbf6100f652ae77a98118837e87bc5412e8d9f",
+        "instruct_prompt": "5a9f3a175173b3c4c3130e06b12df40ff8b44e74732635b0324a200880e8857d",
+        "canonical_solution": "3f6fcd0f700df905a1ec78c72fbca105c86212f5e872e6f0857d04d16b5430f8",
+        "test": "fa08adde4529e7315c9f8ff88ac9341fc3cf7a03835a213a93fb6ff002bf6095"
+      },
+      "provisional_semantic_label": "csv_json_side_effect",
+      "source_judgment": "Tests inspect JSON roundtrip in all five cases and CSV values in one. File-system side effect and empty-table CSV behavior need isolated native observation.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/61",
+      "source_row": 61,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "b3ae84c8bde7457b102d6b24477428fa6a609dd7b7ae2acb0e31d19649dcd604",
+        "instruct_prompt": "efd4fca1e597247dc7fac448a81a22d51e12da75b9a6647daa5876ff771173c6",
+        "canonical_solution": "e2b962a00bf93ab76d271cfdc9c9ca1673bd3bf6d0dc014947f427d285cd4e9f",
+        "test": "32f5f93528734d7d2f19ffabb96f757f822bd22f52682809fe8d4ea8a0d47bde"
+      },
+      "provisional_semantic_label": "square_root_plot",
+      "source_judgment": "Prompt return prose says square values while task body/tests use square roots. Tests check numeric array and labels, not plotted ordinates; specification precedence and native plot observation remain unresolved.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/62",
+      "source_row": 62,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "b780a0c142c13a7ae25cf4d3514958c0a95778ebe4633f85c46dd1dda2cc92aa",
+        "instruct_prompt": "85659f63c3c0707e0ab3b71a59163ac293dcdfb2e21e2e2df55d98846fb72a81",
+        "canonical_solution": "0944792034b7afec3e7ffc8d2e5ede353e1c8c364ed379236ff401bb2c7ed9f7",
+        "test": "881a999ee0fa83f69d00326824881cdf143fe3caebd29604a3fa24d6bf0afebc"
+      },
+      "provisional_semantic_label": "random_histogram",
+      "source_judgment": "Tests seed random and mock display/color choice, but do not inspect histogram bins or counts; visible pass is weak semantic evidence.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/63",
+      "source_row": 63,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "97db2adec1ec61f4a11d0ae095c30d06c6e1c2f7cce16a311f2eb73af61cd112",
+        "instruct_prompt": "8508f38c1e5af403ba321d52f2d40c5b3bbf132d547688504ce2761195d3adcf",
+        "canonical_solution": "4d5f6adb1fc1bae57f0b2fb3c3b6f02abad36f12134a1c556eea34baf9c46524",
+        "test": "bd9c276984ee9a30f186bb96350434d38e62828b02a53a562a2c2a7aff1a8709"
+      },
+      "provisional_semantic_label": "categorical_bar",
+      "source_judgment": "Tests inspect DataFrame columns/content and several plot labels/categories; native object and bar-count observation still require trusted separation.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/64",
+      "source_row": 64,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "8a3f30e4eba4a0fc361839758514fbf644f4e87366b85a25636dc50d66558e24",
+        "instruct_prompt": "5e43dec80c8c5d673a36f1a2c7459a10fe6afef34806d921b4658bacee30f8c3",
+        "canonical_solution": "399199e92f879d43e4a856e94e3d02ef9b40f6423d35b03a4cf22f0a5db62a16",
+        "test": "0e44bcdf99e2aba348c41da82868038f026d31b9d7ebf9b5035faa4881f7a13a"
+      },
+      "provisional_semantic_label": "grouped_heatmap",
+      "source_judgment": "Tests compare grouped DataFrame but only check Axes type for heatmap; underlying plotted matrix not established.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/65",
+      "source_row": 65,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "648312f25ec043d6cd520e6e1ea255eb638ed8dba9a32e9ec075beade53354c0",
+        "instruct_prompt": "32192e85fb581959e8558c70ab33ce7c38bd99c4bb3be4d48d7c3dc4b786b450",
+        "canonical_solution": "3bb837a569c9fc1eb810cc4d4b8f1c8026e3fcdcadbbde5c45e1df1867954653",
+        "test": "89716bcc325f3af65593e28a81c4dcf146c0a77e45e7d3d582344c1f6193513b"
+      },
+      "provisional_semantic_label": "grouped_line",
+      "source_judgment": "Tests compare grouped DataFrame and line y values/labels; plotted x values and rendering remain separately unverified.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/66",
+      "source_row": 66,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "76c4823d891fc4b4012189ce1ddf7eb2289265a42a3012cb7e413cbf638eed52",
+        "instruct_prompt": "04af49d5b59e77a5738994298a9ba56d76b25a8f433066d4d870ea48f13c5c28",
+        "canonical_solution": "c088f42d3c984e964e8567ebd09b0bd86c43541b5383b36926ec484c14a1d6da",
+        "test": "074d5ed0cce47b1b0bdf45bb4a3214fc984300e61e1d4a69c02d9839c3c4e877"
+      },
+      "provisional_semantic_label": "grouped_density",
+      "source_judgment": "Tests compare grouped DataFrame and plot x label only; density content is not observed. Reference uses seaborn distplot; environment qualification remains open.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/67",
+      "source_row": 67,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "2f88be02220a251eaeff6ca3f90dd0702f835cc8bd2a8d6d8b24f4ddc9d1e586",
+        "instruct_prompt": "7509f5276403eaffa5966d1d70a0dfbb29f3bd19d67a7cb9027eab66d8b7645d",
+        "canonical_solution": "999d43f9b2c8b230d977252bf2eb51e52ba43620072e59d4df81a3bb3ac111f2",
+        "test": "9ac7822112eeb6007176bd19875a9676ec176019050f4ba0223231a1fb43fbd1"
+      },
+      "provisional_semantic_label": "directory_file_sizes",
+      "source_judgment": "Tests create files and compare selected sizes; sandboxed file-system semantics and pattern precedence need exact contract.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/68",
+      "source_row": 68,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "880b2dc464655a77d8f3e155d9edd28cb7401cd062d54068ce08267b32086c22",
+        "instruct_prompt": "2c4870857f7ee351afeab8eb70dcfef13aa524e4f53c6aedd10b77b2e4acbb0c",
+        "canonical_solution": "c988cc24be490fae332738b65d80f430ea76409b5004a3c57c44d98467a15593",
+        "test": "f9947e8da0c6441dcbaf9aeb65a756283b31ab4a5fe7bf57cc5deff063091aa2"
+      },
+      "provisional_semantic_label": "employee_histogram",
+      "source_judgment": "Tests compare filtered DataFrame; plot is checked only as non-None, not histogram distribution.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/69",
+      "source_row": 69,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "fed9eb39ba3a5541c4adb2ff8282f1e0ab5274a945dba337a820cb772e22ab6d",
+        "instruct_prompt": "7d1ca7f5fd244ffc697ab94a4d9cd8171817e5cd0fe8a2c5144ce377b8698800",
+        "canonical_solution": "7584f198eac6d1c6c84749ab61dfedc6fc738eda957e7d137438febf422c60a5",
+        "test": "c7e7a5edeb71541b0b67193c9ae768c3aa49083b519b667c1904cc704a6f6f78"
+      },
+      "provisional_semantic_label": "random_salary_histogram",
+      "source_judgment": "Tests seed random but only check plot title and axis labels; generated salaries/bar counts remain unobserved.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/70",
+      "source_row": 70,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "80edc4368b52009527101273c5842c7e5f8e629c4829776e147ae4644597dfd8",
+        "instruct_prompt": "5ad9bb47c991ac495c245c7d8e4e1a78b73590d4b91ae746dac60e44f08ec4d8",
+        "canonical_solution": "f57f7bb146655012afdcd069cd474bd85db1782abb478b423182a2f5412cb731",
+        "test": "66e8ac5e61977076b9128d6543a77cde1d24517ffb35fe11e34f5403043c6e09"
+      },
+      "provisional_semantic_label": "email_json_statistics",
+      "source_judgment": "Tests check email/sum/mean cells and plot labels/legend, not bar heights; linked email-list variants require co-split.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/71",
+      "source_row": 71,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "a30fbcdfdcd89647848551f69ac9b2e5d47aa15a651be9ab382af27803e8fb13",
+        "instruct_prompt": "3c8b7042678f1820afd4d8ba0eadab5f0453b58ec500c7b59e5748f422a7bf99",
+        "canonical_solution": "db6ba91914bd160b85c007e36d92106b1e8897f3038484b1a19ea7badbbfc341",
+        "test": "70edb1d6dd6b86ff5ec49283e78916305863571df5a9c08411b1f6e2a3b7bd38"
+      },
+      "provisional_semantic_label": "email_csv_statistics",
+      "source_judgment": "Tests check aggregated cells and Axes type; email-list CSV variant shares latent task with 70/72/73.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/72",
+      "source_row": 72,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "48460f8e8250b9b9ae7329b53693c9fea04d908b8d170ab6e9a920ac7154d65b",
+        "instruct_prompt": "2acc25f6e5e07d8d3cec24c118489a3c5e501fd359d099410f1bb6db4ad845ea",
+        "canonical_solution": "466f9f5970fc34dcdeadd1775518688fc60dd96ecab26d9e197c61b67ac0b868",
+        "test": "e7e9baed680b83693009daf2fd1fe84636f4d9c90017f26b773b4c023112f94e"
+      },
+      "provisional_semantic_label": "email_directory_statistics",
+      "source_judgment": "Tests check selected scalar cells and Axes presence; directory-file selection and histogram values need trusted observation.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    },
+    {
+      "task_id": "BigCodeBench/73",
+      "source_row": 73,
+      "fields_reviewed": [
+        "complete_prompt",
+        "instruct_prompt",
+        "canonical_solution",
+        "test"
+      ],
+      "field_sha256": {
+        "complete_prompt": "3ae94eb99f51190379d7e353ab17854cbf2bbaa9da626653367e0b16eb8de454",
+        "instruct_prompt": "004f9bc833e3433c1d5607b734e677c73428b03dd0a9998114fcf36cce9500cb",
+        "canonical_solution": "98c86bef1cdb4f03aa5f02e44b2c6e6d1d0b7f13117579515d86d8db416c479f",
+        "test": "b29714d0a1ebf7ca54a04b0857dcc2d27dbc21c22899f4a7d513be8f4d5444fc"
+      },
+      "provisional_semantic_label": "email_sqlite_statistics",
+      "source_judgment": "Tests inspect DataFrame columns/scalars and plot extracted-values length; SQLite variant shares email-list aggregation with 70/71/72.",
+      "admission": "unresolved_not_admitted",
+      "prior_development_crosswalk": "not_completed",
+      "cross_batch_family_review": "not_completed"
+    }
+  ],
+  "same_family_provisional_groups": [
+    [
+      60,
+      61,
+      62
+    ],
+    [
+      64,
+      65,
+      66
+    ],
+    [
+      70,
+      71,
+      72,
+      73
+    ]
+  ],
+  "groups_scope": "Conservative source-template co-splits, not final independent families; other relations may remain."
+}

@@ -43,6 +43,20 @@ def test_only_full_four_field_duplicate_creates_exact_constraint():
     assert result['constraints'] == [dict(task_ids=['BigCodeBench/2','BigCodeBench/3'],kind='exact_four_field_duplicate',evidence='inventory')]
 
 
+def test_shared_code_and_reference_co_split_without_equating_tests():
+    inv, _ = fixture()
+    for row in inv['rows']:
+        row['field_sha256']['code_prompt'] = str(row['row'])
+    inv['rows'][1]['field_sha256']['code_prompt'] = inv['rows'][0]['field_sha256']['code_prompt']
+    inv['rows'][1]['field_sha256']['canonical_solution'] = inv['rows'][0]['field_sha256']['canonical_solution']
+    # Their task prompts and tests remain different; neither becomes admitted.
+    result = build(inv, [])
+    assert result['constraints'] == [dict(task_ids=['BigCodeBench/0','BigCodeBench/1'],
+                                          kind='exact_code_and_reference_co_split',evidence='inventory')]
+    assert result['summary']['source_reviewed'] == 0
+    assert all(row['admission'] == 'unresolved_not_admitted' for row in result['rows'])
+
+
 def test_repeated_and_single_task_reviews_keep_provenance_without_double_count():
     inv, review = fixture()
     relation = dict(review['rows'][0], source_sha256=PIN, provisional_extended_group=[0,2])

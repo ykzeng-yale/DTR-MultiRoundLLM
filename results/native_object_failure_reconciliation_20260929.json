@@ -1,0 +1,29 @@
+{
+  "classification": "failed native fixture setup; no observation produced",
+  "job_id": 27780229,
+  "slurm_state": "FAILED",
+  "exit_code": "1:0",
+  "elapsed_seconds": 304,
+  "maxrss": "586792K",
+  "summary": {
+    "job_id": "27780229",
+    "freeze": "b0115621679771ded1dce12f97aebe4b4667b5ff",
+    "plan_sha256": "fde9f97b76824183ff1673d62b53efbb6c9e583f2e1e348b3fbd357ade1086c0",
+    "candidate_execution_released": false,
+    "benchmark_executed": false,
+    "paid_usd": 0,
+    "error": "TimeoutExpired(['/usr/bin/python3', '-m', 'pip', '--disable-pip-version-check', 'install', '--no-index', '--no-deps', '--no-compile', '--require-hashes', '--target', 'runtime', '--find-links', 'wheels', '-r', 'wheel-lock.txt'], 299.99984592106193)",
+    "seconds": 302.52715797699057
+  },
+  "plan_sha256": "fde9f97b76824183ff1673d62b53efbb6c9e583f2e1e348b3fbd357ade1086c0",
+  "raw_sha256": {
+    "freeze.txt": "0f14d4281feca0ebb88ff08708006ce381dc1ed3f868e04cd8f854e5d1542ada",
+    "native-plan.json": "fde9f97b76824183ff1673d62b53efbb6c9e583f2e1e348b3fbd357ade1086c0",
+    "logs/native-27780229.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/native-27780229.err": "2b5c91544bf1a50b636eb4bee6e1b5fd7dc78704d14df40bb7a482357bfc8245",
+    "native-results/summary.json": "09ade1540bd1ea59b1f05acca1d062dd94e3bcb840015c23f9c20c7ebbf1c2ba",
+    "native-results/install.log": "5ba2a4a7dda85b9df4a31897b437be3acef6ad966856e60b9b6d00f804e7b1bd"
+  },
+  "interpretation": "Offline hash-locked install logged success but pip process exceeded 300s timeout before return; observation stage never began; no reference/benchmark/candidate code executed",
+  "next": "No same-cause retry. Diagnose storage latency and install finalization under a separately versioned bounded repair if native endpoint remains selected; proceed with family and learner gates independently."
+}

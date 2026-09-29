@@ -1,0 +1,23 @@
+{
+  "classification": "lead source-field and register reconciliation; no independent review or admission",
+  "source_sha256": "d9a4965821c9507ebdfb551c288656b2d5fe553234f5183044333ca8a4018267",
+  "review_sha256": "8746f5572289b9e3f785c57257c452cd20224db8794a8c96dd922124a3ddb40b",
+  "register_sha256": "f60a9a7b768d17a379916596d3f5e3251061d158402e81da118f93e668d6df7d",
+  "builder_sha256": "c11aeb3e2b8754f8f03a800e7834576e6fce5c15586ff75c2a0924a8502f9775",
+  "source_rows_checked": 14,
+  "source_reviewed_total": 75,
+  "known_exposed": 27,
+  "admitted": 0,
+  "exact_code_reference_new_pairs": [
+    [
+      "BigCodeBench/130",
+      "BigCodeBench/131"
+    ],
+    [
+      "BigCodeBench/814",
+      "BigCodeBench/826"
+    ]
+  ],
+  "receiver_calls": 0,
+  "benchmark_executions": 0
+}
