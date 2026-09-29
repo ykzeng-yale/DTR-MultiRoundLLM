@@ -38,3 +38,7 @@ One local CPU process; at most 600 seconds wall and CPU, 32 MiB retained output,
 ## Interpretation limits
 
 The laws are deliberately hypothetical, complete binary family outcomes. They do not model outcome-law uncertainty, related benchmark tasks, weak/absent treatment support, model stochasticity, public/private leakage, endpoint error, missingness, finite-source sampling, within-family trajectory construction, cost or energy. Passing coverage checks cannot certify those assumptions in a real study; simulated decision frequencies are not power guarantees for the unknown target population. The simulation has no efficacy conclusion and releases no real-data fitting or collection.
+
+## Preserved implementation failure and versioned repair
+
+The first frozen runner attempt at `dee975c` failed before the first replicate because Python's `decimal.Context.divide` does not accept a `rounding` keyword. The retained journal is empty; the lead failure receipt is `results/interval_operating_characteristics_v1_failure_20260929.json`. The source-only repair removes that invalid keyword while retaining the context's upward rounding mode, adds a directed-radius check, and changes no law, seed, method or metric. Plan v2 at `experiments/prompt_choice/interval_operating_characteristics_plan_v2_20260929.json` binds the corrected runner hash and parent plan hash. It will use a fresh output directory; no random assignment was consumed by v1.

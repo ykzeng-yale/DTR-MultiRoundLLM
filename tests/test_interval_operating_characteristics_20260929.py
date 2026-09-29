@@ -1,6 +1,7 @@
 from fractions import Fraction
 import importlib.util
 import json
+from decimal import Context, Decimal
 from pathlib import Path
 
 from experiments.prompt_choice.paired_inference import paired_contrasts
@@ -55,3 +56,12 @@ def test_draws_are_deterministic_and_preserve_joint_outcome_mapping():
     p1,q1,p2,q2 = a
     assert p1 == p2 and q1 == q2
     assert p1 + q1 <= 30 and p2 + q2 <= 30
+
+
+def test_hoeffding_radius_is_stable_and_positive():
+    radii = [runner.hoeffding_radius(n) for n in (8,12,43,67,99,198)]
+    assert all(r > 0 for r in radii)
+    assert all(a > b for a,b in zip(radii, radii[1:]))
+    ctx = Context(prec=120)
+    reference = ctx.sqrt(ctx.divide(ctx.multiply(Decimal(2), ctx.ln(Decimal(80))), Decimal(99)))
+    assert radii[-2] >= Fraction(reference)

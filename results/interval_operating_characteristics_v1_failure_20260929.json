@@ -1,0 +1,23 @@
+{
+  "evidence_class": "lead runtime failure reconciliation; no scientific outcome",
+  "attempted_utc": "2026-09-29T15:18:00Z",
+  "plan": "experiments/prompt_choice/interval_operating_characteristics_plan_20260929.json",
+  "plan_sha256": "c876d32e3d491bf36c469a6da5e21bed1847f67bcc60a78498db69cfd1b1f8c9",
+  "freeze_commit": "dee975c9058c61129a3fbd7b71e95aa8a9c2a346",
+  "runner_sha256": "f1db516348d9e362c3513fb062284b100209073ed0314235757b4064a3276cac",
+  "state": "FAILED_BEFORE_FIRST_REPLICATE",
+  "exit_code": 1,
+  "error": "decimal.Context.divide() takes no keyword arguments",
+  "replicate_assignments_started": 0,
+  "completed_cells": 0,
+  "retained_partial_file": "work/interval_operating_characteristics_20260929/cells.jsonl",
+  "retained_partial_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "retained_partial_bytes": 0,
+  "runner_fix": "Removed the unsupported keyword; context already uses ROUND_CEILING. Added high-precision radius test. The exact frozen 840000-seed schedule is carried to a new v2 plan/new output directory because no simulation draw occurred.",
+  "model_calls": 0,
+  "task_or_candidate_executions": 0,
+  "network": false,
+  "external_spend_usd": 0,
+  "lead_validation": true,
+  "independent_review": false
+}

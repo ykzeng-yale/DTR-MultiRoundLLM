@@ -90,7 +90,7 @@ def hoeffding_radius(n):
     """Outward 100-digit Decimal enclosure of sqrt(2*ln(80)/n), returned as an exact Fraction."""
     ctx = Context(prec=100, rounding=ROUND_CEILING)
     ln_hi = ctx.next_plus(ctx.ln(Decimal(80)))
-    v_hi = ctx.divide(ctx.multiply(Decimal(2), ln_hi), Decimal(n), rounding=ROUND_CEILING)
+    v_hi = ctx.divide(ctx.multiply(Decimal(2), ln_hi), Decimal(n))
     root_hi = ctx.next_plus(ctx.sqrt(v_hi))
     return Fraction(root_hi)
 
@@ -180,6 +180,10 @@ def run(plan_path: Path, out: Path):
         if means != stated:
             raise ValueError(f"scenario {scenario['name']} truth does not match support")
     assigned = len(scenarios) * len(plan["family_counts"]) * plan["replicates_per_cell"]
+    if assigned != plan["total_assigned_replicates"]:
+        raise ValueError("frozen total replicate count differs from assignment grid")
+    if plan["internal_wall_cap_seconds"] != 560 or plan["output_cap_bytes"] != 33554432:
+        raise ValueError("wall or output cap differs from frozen envelope")
     cache, rows = {}, []
     journal = out / "cells.jsonl"
     with journal.open("x", encoding="utf-8") as jf:
