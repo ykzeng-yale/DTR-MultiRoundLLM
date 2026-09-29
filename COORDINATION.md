@@ -1,5 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 29 September 2026, 10:29 ET wake — strategy evidence integrated; no efficacy upgrade
+
+Updated `manuscript/current_paper_20260922.md` with the completed natural-start STOP workflow and matched complete-strategy comparison. The former has18trajectories/42returned calls (7absorbing STOP,11horizon;13supplement PASS/5FAIL). The latter compares nine strategies on the same18starts from9reused roots:203/203calls,1,152private cases, 91allocated H100 seconds; full per-arm outcomes and missing-outcome bounds are included. The observed resampling and adapted Reflexion pass counts are not a ranking: missingness, repeated branches within nine roots and absent independent family sampling prevent population inference. Token use varies; no total-cost winner. Self-Refine/Reflexion are limited adaptations, PUBLIC_SWITCH handwritten. All evidence remains development-only and lead-reconciled, not independent review.
+
+This closes a manuscript coverage omission and sharpens the next-comparison requirements; it does not change readiness (**60%, delta0**) or efficacy. Primary prerequisite remains owner decision on the target population: neither198-root review panel nor full974-row MBPP source is frozen, and no currently valid frame permits fitting plus independent evaluation. See `docs/mbpp_population_target_status_20260929.md`; owner response pending. No new calls or task execution. Do not fit on exposed pilot roots, select an arm, or silently switch populations.
+
 ## 29 September 2026, 10:16 ET wake — population was never operationally frozen
 
 Protocol and source-history reconciliation resolves the frame ambiguity: neither the198-root review panel nor the full974-row MBPP source was adopted as the population. The original policy-validation design explicitly says the independent-family evaluation frame is unselected; the target is an equal-family expectation conditional on a yet-to-be-declared population/sampling law. The198 rows are a heterogeneous curation panel;43 is its residual-candidate accounting count;974 is the pinned source universe with multiple staged exclusions, not a family sampler. See `docs/mbpp_population_target_status_20260929.md`. Do not describe the study as targeting any of these frames or silently expand the panel.

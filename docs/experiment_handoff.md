@@ -1,5 +1,9 @@
 # Handoff to the experimental agent
 
+## Lead handoff — 29 September 2026
+
+The manuscript now includes the natural-start operational pilot and the matched nine-strategy comparison in a separate development-evidence section and claim-to-evidence table. Frozen reports: `docs/full_history_pilot_results_20260928.md`, `docs/strategy_comparison_results_20260928.md`; corresponding protocols and raw lead reconciliations are linked from `manuscript/current_paper_20260922.md`. This coverage does not resolve the paper's primary blocker: neither the 198-root review panel nor the full 974-task MBPP source was frozen as the target population, and no valid admitted frame currently supports fitting plus independent evaluation. Owner's choice between preserving the broad target and amending to a finite MBPP-source target remains pending. Do not fit on the exposed nine-root panels or launch model/task collection. Once population direction is supplied, resume source/measurement/family contract adjudication before freezing separate development and untouched evaluation families. Full-project readiness remains60%,delta0; efficacy unestablished.
+
 ## Current handoff — 26 September 2026
 
 The [current experiment status](current_experiment_status_20260926.md) and [coordination channel](../COORDINATION.md) supersede the dated assignments below. LEAD-PORT-02 is completed and accepted within its source/test scope. No worker job, model collection cap or shared-host lease is open; E14 N1/S1 remains NO-GO. The next scientific contract is lead-owned and must be committed before any model call. Do not interpret historical MRL-20 or other allowances below as active.
