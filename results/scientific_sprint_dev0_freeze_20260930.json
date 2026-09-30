@@ -1,0 +1,17 @@
+{
+  "schema": "dtr-exact-stage-freeze-v1",
+  "stage_id": "dev0",
+  "job_id": "27982976",
+  "freeze_commit": "77888455ab24bff4c4eddbb5e754f8e783b93dc8",
+  "stage_plan_path": "work/sprint_preparation_20260930_v1/dev0-stage-plan.json",
+  "stage_plan_file_sha256": "e1069e778c889f5e6ea0dc10f99164f33f9ae2115d6e1201a944e551c2575d1d",
+  "max_calls": 5472,
+  "max_completion_tokens": 5603328,
+  "state_sha256": "b040c8e70ff5946af49b97afdf9fff4f4165363b3bb5cdacefbc884f8bb94368",
+  "requests_file_sha256": "a1f7b677b9c3ac9f5094a6a3fee5610ab349e572ad54e7299044a603977f546d",
+  "study_config_sha256": "a87141c28fefe30d3327596b90b25c2fbe17bcd7db77c1e8b114523db927d259",
+  "runtime_manifest_sha256": "fe1de111e7582cfe19c1950e94b73208232112a2c0ce5214d8c4d810224a07d4",
+  "attestation_file_sha256": "8f76e487675a888d73f8594c67fedb355a9dc01f895359993c30a43e5cf967d8",
+  "worker_plan_sha256": "782353b6e043f7f0d2079669fd0fe6cafad2457d2752a5359f7fe5e10b5f080b",
+  "approved_scope": "exact frozen behavior-randomized development; no evaluation selection"
+}

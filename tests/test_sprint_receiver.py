@@ -149,8 +149,8 @@ class ReceiverTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'state drift'):w.stage_inputs('dev0',release,global_plan)
 
     def test_relative_qualification_recount_uses_absolute_canary_fixture(self):
-        from experiments.measurement_sprint_v3 import execution_v3 as execution
-        from experiments.containment import stdio_sprint_qualification_v3 as qualification
+        from experiments.measurement_sprint_v4 import execution_v4 as execution
+        from experiments.containment import stdio_sprint_qualification_v4 as qualification
         # Pure source/hash recount: no qualifier or fixture payload executes.
         with tempfile.TemporaryDirectory(dir=Path.cwd()) as directory:
             output=Path(directory);relative=output.relative_to(Path.cwd())
