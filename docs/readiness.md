@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 30 September2026 — integrated scoped empirical path, source access verified
+
+[Integrated source/design work](scoped_study_integration_20260930.md) resolves how to combine supported randomized development, equal-family weighted Q, source-separated stdin measurement, direct complete-strategy cost/fallback accounting and fixed-census execution precision. The public source inquiry completed9shards/1055rows with868197bytes/108ranges in184.738seconds; every received range/public hash and private-chunk separation was lead checked. Scope review retains38comparison holds,444outside-interface rows and573unreviewed contracts; zero admitted tasks/families and zero real model/candidate execution. Final2582tests/21subtests pass,1skip;11reader tests separately pass. These are source/data/design checks, not policy fitting or efficacy. **Full-project60%,delta0** under the unchanged rubric: measurement/frame, actual real policy fit, independent benefit and final reproduction remain open. Fixed-roster repetitions cannot establish broad new-family transport. The two-hour recurrence now pursues this integrated release gate; no old source/job repetition.
+
 ## 30 September 2026 — owner-requested investment review
 
 [Internal parallel review](investment_review_20260930.md) preserves negative findings and weak development positives, and corrects the claim that only a real task-arrival stream permits empirical work. A separately frozen, explicitly limited source/domain study is possible; none is adopted or released. Recommend against compute expansion, with at most one bounded redesign before further investment. **Full-project readiness60%,delta0.** This milestone measure is not success probability or remaining effort. Valid measurement/frame, a fitted real controller, independent evaluation and manuscript/raw reproduction remain incomplete; no efficacy credit.

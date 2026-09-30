@@ -1,0 +1,25 @@
+{
+  "candidate_reference_benchmark_executions": 0,
+  "exec_session": 91248,
+  "freeze_commit": "51469706478ee5c0ccab73196f8309797a71f386",
+  "instruction": "check saved identity/summary; never duplicate from stale launch; reconcile all immutable range receipts and public output hashes on terminal",
+  "model_calls": 0,
+  "observed_utc": "2026-09-30T18:36:56.317187+00:00",
+  "output_directory": "work/lcb_public_inquiry_20260930_v1",
+  "pid": 52283,
+  "plan_file_sha256": "4ec1f71aaaa33b569d1028c5df5d9c4e5d688e881650829daeee5f3aa75f639f",
+  "plan_path": "experiments/sources/lcb_public_inquiry_plan_20260930.json",
+  "resource_limits": {
+    "cpu_count": 1,
+    "cpu_seconds": 500,
+    "fetched_bytes": 67108864,
+    "per_request_bytes": 8388608,
+    "usd": 0,
+    "wall_seconds": 500
+  },
+  "schema": "bounded-source-inquiry-launch-v1",
+  "source_adopted": false,
+  "source_sha256": "ee22027b4fafef9db419cddf4e704544c69f056a9c2662a66269e53178f4ba60",
+  "started_shards_at_observation": 2,
+  "status_at_observation": "RUNNING"
+}

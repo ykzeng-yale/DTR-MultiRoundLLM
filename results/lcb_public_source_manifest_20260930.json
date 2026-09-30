@@ -1,0 +1,33 @@
+{
+  "actual_rows": 1055,
+  "admitted_rows": 0,
+  "artifact_kind": "complete-public-inventory-manifest",
+  "complete_inventory_canonical_sha256": "f908140c27e8b3d28560b1bfd9df5f328eb20cb16ee8f57442a2f23c0016c062",
+  "difficulty_counts": {
+    "easy": 322,
+    "hard": 350,
+    "medium": 383
+  },
+  "duplicate_content_hash_groups": [],
+  "duplicate_identities": [],
+  "full_result_bytes": 1655492,
+  "full_result_path": "work/lcb_source_scope_review_20260930_v2/public-source-inventory.json",
+  "full_result_sha256": "53dee9c231340dc556218f0013e4f8572b323bb6b2510b626bc0e288a492762c",
+  "missing_field_counts": {
+    "starter_code": 611
+  },
+  "original_acquisition_inventory_path": "work/lcb_public_inquiry_20260930_v1/sanitized-inventory.json",
+  "platform_counts": {
+    "atcoder": 602,
+    "codeforces": 9,
+    "leetcode": 444
+  },
+  "public_case_format_counts": {
+    "json-list": 1055
+  },
+  "starter_interface_counts": {
+    "empty-stdio-proposal": 611,
+    "unparsed-source": 444
+  },
+  "unique_platform_question_ids": 1055
+}

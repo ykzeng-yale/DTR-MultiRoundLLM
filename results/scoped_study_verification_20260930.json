@@ -1,0 +1,43 @@
+{
+  "candidate_reference_benchmark_executions": 0,
+  "checked_utc": "2026-09-30T19:19:08.185465+00:00",
+  "full_suite": {
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run --offline --frozen --extra dev python -m pytest -q",
+    "passed": 2582,
+    "seconds": 36.83,
+    "skipped": 1,
+    "subtests_passed": 21
+  },
+  "historical_landmark_source_unchanged": true,
+  "limitations": [
+    "code/data verification is not independent efficacy",
+    "source not adopted/no admitted families",
+    "fresh containment/instrument qualification and executable collector still required"
+  ],
+  "model_calls": 0,
+  "new_source_sha256": {
+    "experiments/prompt_choice/census_inference_v1.py": "1a1a7a6e503e1892ad7a4f7aa67f8be4e679b64cabe0539e757eac74ee63dbd9",
+    "experiments/prompt_choice/frozen_observation_v2.py": "50caca7957099a333f5da0bfddc5e10f945aed99f4bf292736f99264cd7f95be",
+    "experiments/prompt_choice/native_execution_v2.py": "789231aa1f9593038483c5ccc45e3492693099986501d683d1184cbe96469e31",
+    "experiments/prompt_choice/stdio_observation_v1.py": "63856cf4e434c7abdf37ae3766d793dc796ed52d60704a7a87831e6d252d6326",
+    "experiments/prompt_choice/strict_sandbox_v2.py": "771c17ce7230bc1d671e7f1d7f18492fc8121f4fa7297a8583ec18884b0ae7ac",
+    "experiments/sequential/development_design.py": "81eb4665947c404278831ef4f928d41011edaffe783a402c1ab058bb6f929a2a",
+    "experiments/sequential/direct_strategy_evaluation.py": "e3e50b8d8017dc20ac7bdcf7df710326fa984eeeb519bd6585c3dc219b4fae00",
+    "experiments/sequential/weighted_text_history_q.py": "a7e837a2184942d06d3de43a3bc98ffd84670e17c86013d209c55be6f3ed802b",
+    "scripts/triage_lcb_stdio_contracts_20260930.py": "7cf981f775885d73b0d2ed5c5fdc12a43b5c2ba49f10cd74e4e2692b93ddce6c"
+  },
+  "reader_tests": {
+    "command": "work/source_reader_20260927/bin/python -m unittest discover -s tests -p test_lcb_public_inquiry.py",
+    "passed": 11,
+    "seconds": 0.033
+  },
+  "readiness_delta_points": 0,
+  "readiness_percent": 60,
+  "real_policy_fit": false,
+  "schema": "integrated-scoped-path-verification-v1",
+  "software_failures_preserved": [
+    "12historical source/manifest test failures from initial lead in-place edit",
+    "5manifest source-glob failures from misplaced new file; restored and versioned"
+  ],
+  "source_query_reconciliation": "results/lcb_public_inquiry_reconciliation_20260930.json"
+}

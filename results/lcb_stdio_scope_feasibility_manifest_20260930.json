@@ -1,0 +1,1129 @@
+{
+  "artifact_kind": "complete-disposition-manifest",
+  "complete_row_ledger_sha256": "14eebe06a92f8853db647aef887cae06b86fabb01f18652cda0ff8107509c869",
+  "counts": {
+    "admitted": 0,
+    "all_source_rows": 1055,
+    "dispositions": {
+      "outside_proposed_stdio_interface": 444,
+      "source_backed_comparator_hold": 38,
+      "unreviewed_contract": 573
+    },
+    "empty_public_case_rows": 1,
+    "empty_starter_candidates": 611,
+    "nonempty_public_stdin_case_rows": 610,
+    "nonempty_starter_outside_scope": 444,
+    "stdio_regex_or_structure_review_candidates": 61,
+    "stdio_review_candidate_flags": {
+      "case_equivalence_language": 5,
+      "constructive_output_language": 18,
+      "empty_public_cases": 1,
+      "interactive_language": 2,
+      "multivalued_output_language": 36,
+      "numeric_tolerance_language": 11
+    },
+    "verified_semantic_families": 0
+  },
+  "execution": {
+    "candidate_reference_task_executions": 0,
+    "network_requests": 0,
+    "private_column_access": false,
+    "raw_task_content_committed": false,
+    "receiver_calls": 0,
+    "source_loader_execution": false
+  },
+  "full_result_bytes": 956452,
+  "full_result_path": "work/lcb_source_scope_review_20260930_v2/disposition.json",
+  "full_result_sha256": "37ddfff7db1b079f8ba7617d9e1f5381222a8a1e0351eda4fa09e3dc5c1b9534",
+  "implementation_sha256": "7cf981f775885d73b0d2ed5c5fdc12a43b5c2ba49f10cd74e4e2692b93ddce6c",
+  "limited_review_records": [
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "codeforces",
+      "question_id": "1873_A",
+      "review_candidate_flags": [
+        "case_equivalence_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_case_equivalence_not_case_sensitive_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 0,
+      "statement_sha256": "d7b21da9fbca95f2c474cc0d69d672325f083b168dffce36ed9d373b106a0e4c"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "codeforces",
+      "question_id": "1883_B",
+      "review_candidate_flags": [
+        "case_equivalence_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_case_equivalence_not_case_sensitive_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 3,
+      "statement_sha256": "1127648180bb6d2ad7cfa1884e95363f1e2725a6185224a7b836a04267cc79b0"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "codeforces",
+      "question_id": "1883_C",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 4,
+      "statement_sha256": "b61bfcb35f48b66cf38f7c45beed14fcce05966b7b9947ea732672e54aecb908"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc303_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 205,
+      "statement_sha256": "e5da7cdf23deafd7c17342785a07d80826dd3dffdcd191beaf106313204f1ff5"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc311_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 246,
+      "statement_sha256": "f8ae0976d72250dde8bdd20d39c653d15d415b0da03e300c83d1844e24e1b39e"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc314_a",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "decimal_places_are_exact_truncation_with_fixed_trailing_digits_not_tolerance"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 258,
+      "statement_sha256": "ece5b572e4f8a48d95f2a9dd509c81825d817dcfb9bf802195775f7f9852e68b"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc314_e",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 262,
+      "statement_sha256": "b3190fc148d287f2d022d183e786c379248cddada157f647528e4c7fbfb3d2a8"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc315_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 268,
+      "statement_sha256": "78e940d727e3f8eb1171719fcb59e313e5e8c6e107175dbaa8b87a268afb0e34"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc315_f",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 269,
+      "statement_sha256": "d3805e28b7146e6c256ce6d2505b16a6244edd68bd5a3566672643a19173b219"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc319_b",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "print_string_language_has_explicitly_determined_characters_not_free_construction"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 275,
+      "statement_sha256": "40e94e36e1eef45f14f8a7586bfbb7e4e195003f610d5c3c05d9861399e1a9ea"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc319_c",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 276,
+      "statement_sha256": "32865ef2179e7537535ce4bf7b2c5c16931b6c9bf55c15ecc5bcca98d42ba016"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc323_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 297,
+      "statement_sha256": "904f1061d0c95c23090b842f013e60a58d938ce047aba475c4f49b787a68b7e1"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc324_f",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 304,
+      "statement_sha256": "d504ed71eb2dd82751d5c91da3a73da5204ac6dc39259c98b41ce591c458b404"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc326_d",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 314,
+      "statement_sha256": "65f0601898b11a7b1c084a85f4dbf34594227038f0b476b4ccf56e8999a88ca7"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc327_b",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "positive_integer_power_a_to_a_is_strictly_increasing_so_answer_is_unique"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 317,
+      "statement_sha256": "0a1c5e669483b4e800a544559764879dc9be45c71435dfd9d8ff8159c4464517"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc327_e",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 320,
+      "statement_sha256": "8f3c399d387e2aeb21f48a2c62669f5ef7cb30b42edec5fd16c6b819fe2a5e8b"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc329_c",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "multiple_ways_phrase_describes_counted_occurrences_not_alternative_output"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 328,
+      "statement_sha256": "520370d118cca91e30941078443222938f31f3db6b78add791740e58e588a384"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc333_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 350,
+      "statement_sha256": "2cfdc578f1268c407b9527515d86efa021301092dbdafc1349dad0f38e208052"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc335_d",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 359,
+      "statement_sha256": "9702cd54eecd3931ee24826f1e9a351a87f10f981f4696bedf3614ad7fb24994"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc337_e",
+      "review_candidate_flags": [
+        "interactive_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "interactive_judge_dialogue_not_fixed_stdin_output"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 368,
+      "statement_sha256": "b96250e25198ba2c370a55959227a52a821b63d2bbf4e9395d2b141eb7abd8cc"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc341_a",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "print_string_language_has_explicitly_determined_characters_not_free_construction"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 384,
+      "statement_sha256": "a698217244be45b735f80d780c5fdeca1e113a5df58964ae2c526fcee24739fc"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc343_a",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 395,
+      "statement_sha256": "12b1a223e4c73f30aa4ca158e8deb7b4133650b72fac9f82a695098a2a3429f9"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc343_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 399,
+      "statement_sha256": "7959d9684d8d95a8086df77054c4187358dd0912140d7dbb35a275e91196ea20"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc348_a",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "print_string_language_has_explicitly_determined_characters_not_free_construction"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 418,
+      "statement_sha256": "a684a5a53d3bf5e43fd6c8c292ec943a9ca1147e1cedce44ba8bdf5d7196816a"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc350_e",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 427,
+      "statement_sha256": "532060d3d1c49529c5f27887d146f8eb5ddcfc5963eb1cba43525ca2f5be5404"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc350_c",
+      "review_candidate_flags": [
+        "empty_public_cases",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence",
+          "public_case_projection_empty_despite_statement_sample_sections"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 429,
+      "statement_sha256": "7f49af92814d9670968210a2b926da7f4f25eb1d6253b43544cfbaf1143206aa"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc355_e",
+      "review_candidate_flags": [
+        "interactive_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "interactive_judge_dialogue_not_fixed_stdin_output"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 452,
+      "statement_sha256": "60f5ea11c93b510f9d9a4298690fa617ce838a8c0a9bce7cdbba93e6cd2ec97c"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc362_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 544,
+      "statement_sha256": "eb6d2acba7dcb5469b54f4605ad255d4b4a929f7d084b7b5bbc6df0ae563866b"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc363_f",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 548,
+      "statement_sha256": "1b4b6dcd106dd2661d910885f8f7301a8293d36d16c81db3246997e552124d2e"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc364_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 554,
+      "statement_sha256": "a4cd360d5bde2b4a25849a1b72c52e95287b8cd6bbd9f1fa3d98ed61990ba720"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc364_c",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 557,
+      "statement_sha256": "0629b9e4c874f169d5cb64ef2d614ebcdf3e5872b46b68c22fb93b6c5d283d19"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc366_g",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 618,
+      "statement_sha256": "d5f8339178937b7c1cc6febe4f256a220aadf8e8bff8204a03715e584d22e2ac"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc369_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 638,
+      "statement_sha256": "fd070404431d72f8131bb6a30afbd578b24b1b717821a5412e9a11d72060306d"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc373_g",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 662,
+      "statement_sha256": "b848cded0221d95bbd3fba31e84a63a23f9da33fd343ab338d6375c19a5aca42"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc181_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 666,
+      "statement_sha256": "a9ef5c32825299b2201e779615ff2a40109308ab065ade13a1c1103a5791a6a7"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc183_d",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 676,
+      "statement_sha256": "efc9e18f1d4d49db4557619e6626672a759a3a73788ac3a8b57624ebcbb155fa"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc374_d",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 716,
+      "statement_sha256": "29c2810b06010f2cfce9750c3315abdbb96eff3421d532290e4a90805f8bd5a4"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc375_b",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 721,
+      "statement_sha256": "28377481be027aa074dac2b0e9503fd0f0a80c9384bf8e6fa46011e285b736f0"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc377_g",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 737,
+      "statement_sha256": "3362d7bba1a89cc3fe1426607ef86b1d8c0229dd12b2fbd0a88d410014493378"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc382_b",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "print_string_language_has_explicitly_determined_characters_not_free_construction"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 769,
+      "statement_sha256": "7c9688cfa0a54233719748585e1b8856d33688b31b2f57fed17353be6585f9d8"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc385_f",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 785,
+      "statement_sha256": "0d97840c4168c321866fda7c169a658259fdff9d7c5e9ad415a0db422b57104d"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc185_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 800,
+      "statement_sha256": "de7fba3a48235b6dd4639c55532a11e2b8db8a566f9ef37449c8e86888ec9ccb"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc188_c",
+      "review_candidate_flags": [
+        "constructive_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 810,
+      "statement_sha256": "e24d4e45ed9e57a7b6e5d3a6f9b89c513825e6ba08e23a68a8e7d855ace72ac5"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "arc188_a",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 813,
+      "statement_sha256": "8bee21c3f2828a61f7f11d25e39e1f90761a17151908f14c19ad327793c7a778"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc392_d",
+      "review_candidate_flags": [
+        "numeric_tolerance_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_numeric_tolerance_not_exact_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 913,
+      "statement_sha256": "8d786c150cfb6b27fc2bf5f8b5d02990316449b6048bdc357ba2d6fad2ef0a3a"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc395_a",
+      "review_candidate_flags": [
+        "case_equivalence_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_case_equivalence_not_case_sensitive_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 931,
+      "statement_sha256": "062fd2d7a7f0935330c7616c479eccbc3b6eadaac23f79662a44fb6a6f846e55"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc396_g",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 933,
+      "statement_sha256": "5b8910651bbd52b6cc6b368099750df0b89840812c3e32957014431814737cd8"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc396_e",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 937,
+      "statement_sha256": "acfa24a438907b62ca4028f6866e30102a1e50a33736176cac1267c53e1dc935"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "abc397_d",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 940,
+      "statement_sha256": "9805ecaeca8f09c77e1d35c537f65761a3be95c8408b9ad2fffad5d28df22df1"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc398_f",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "shortest_palindrome_completion_of_fixed_prefix_is_unique_by_mirror_constraints"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 947,
+      "statement_sha256": "a05731549eb8af672926599c41a80315afe6c69156d00f368fc055796ab9f221"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc399_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 954,
+      "statement_sha256": "96ac6e4e6a7f7cd40b9942d963c18552e87181e0300b072791434082172be079"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "abc400_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 960,
+      "statement_sha256": "41d0ff0b9e750286170ee6e8e00b5662ea67d6606c057583bf41fbfa1b4ff552"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc190_a",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 966,
+      "statement_sha256": "9c4a3de79d885d21651389c5ce4e8fc6f33eb3d37fcf0d3aba5382cf50853e58"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "arc191_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 968,
+      "statement_sha256": "770a45536c350d034fd792189d4fe110f765dfb58b593f9ee0411624de179f71"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc191_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 969,
+      "statement_sha256": "2427e7c9afcfa42ee50b98ad0e6eb13cd15b50ce9789d1b3948c971b4dee357a"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc192_b",
+      "review_candidate_flags": [
+        "case_equivalence_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_case_equivalence_not_case_sensitive_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 972,
+      "statement_sha256": "9a12e3b7554fc1835f5a81801f1fbe5b129f5155742ffa6c806e9b3013e42621"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc192_a",
+      "review_candidate_flags": [
+        "case_equivalence_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "source_case_equivalence_not_case_sensitive_token_equality"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 974,
+      "statement_sha256": "f8bba95db1fde25abc568989547c1e43855be6e7d04cd81f2d71b1f1e3fa9784"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "arc194_e",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 980,
+      "statement_sha256": "e80debdc639b99f1067d5439c693f7567b6c8ce27dc0e4b5202f3305c0a5904e"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "arc195_b",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 984,
+      "statement_sha256": "1e41452198f4c71091aee362f138ba6e3b2571c1584a876f72bc98f8202d0edc"
+    },
+    {
+      "disposition": "source_backed_comparator_hold",
+      "platform": "atcoder",
+      "question_id": "arc195_c",
+      "review_candidate_flags": [
+        "constructive_output_language",
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [],
+        "holds": [
+          "valid_constructions_require_semantic_checker_not_one_expected_token_sequence"
+        ],
+        "independent_semantic_validation": false
+      },
+      "source_row": 985,
+      "statement_sha256": "b89a51c520e0bb1983d1dace20443047596fa19c2680e8383ba446e8b6b6064e"
+    },
+    {
+      "disposition": "unreviewed_contract",
+      "platform": "atcoder",
+      "question_id": "arc195_d",
+      "review_candidate_flags": [
+        "multivalued_output_language"
+      ],
+      "source_backed_limited_review": {
+        "cleared_flags_only": [
+          "order_phrase_describes_allowed_operations_not_output_equivalence"
+        ],
+        "holds": [],
+        "independent_semantic_validation": false
+      },
+      "source_row": 986,
+      "statement_sha256": "0b6b8787fa3391bb41be1f003f96dea220d8bec8e0462667835267ae77c5dffb"
+    }
+  ],
+  "next_release_gates": [
+    "Uniformly review all611 candidate contracts and source errata without receiver outcomes; confirm input/output domain and exact tokenization, case and formatting requirements; retain every hold.",
+    "Private_test_cases is publisher-declared string storage but its converted-snapshot encoding, contents and alignment were not accessed. Freeze separately bounded inert format acquisition; reject pickle or executable loaders; independently qualify private expected values, cases and invalid/wrong controls.",
+    "Qualify stdin byte transport, output cap, tokenizer and exact comparator with independently specified correct/wrong controls in the trusted containment runtime before any task or candidate execution.",
+    "Resolve complete semantic duplicate/variant/transferable-structure and historical-exposure crosswalk; contest IDs and dates are provenance only, not independent families or novelty certificates.",
+    "Establish source-use provenance and a complete admitted roster, then freeze family-disjoint development/tuning/evaluation, root weights, real learner, two primary comparators, failure fallback, actual costs and finite-census precision before calls."
+  ],
+  "scope": "LCB-STDIO-v1 proposed source feasibility only",
+  "scope_decision": {
+    "cleared_uniqueness_reasoning": {
+      "abc327_b": "For positive integers a<b, a^a <= b^a < b^b; thus at most one positive integer satisfies the source equation.",
+      "abc398_f": "A palindrome extending a length-n prefix exists with length at most2n-1. At any such length every appended position mirrors a fixed prefix position, so the minimum-length completion is unique."
+    },
+    "holds_are_not_dropped": true,
+    "negative_findings": [
+      "empty starter and stdin-labelled sample cases do not imply noninteractive or exact-output semantics",
+      "a universal case-sensitive token comparator rejects outputs expressly permitted by some source contracts",
+      "one expected sample output cannot grade allowed constructions or tolerance-valued answers",
+      "construction tasks can lack any-output wording; full output-section review found additional source-backed holds",
+      "empty machine-readable public cases do not prove that the statement has no samples",
+      "any-solution wording does not prove multiple outputs when the declared domain mathematically determines a unique result"
+    ],
+    "regex_counts_are_not_semantic_prevalence_estimates": true,
+    "rule": "deterministic noninteractive stdin tasks with uniquely specified output token sequence and source-faithful comparison; no source semantic rewrite",
+    "status": "plausible_narrow_scope_pending_uniform_contract_and_instrument_review",
+    "unflagged_and_flag_cleared_rows_remain_unreviewed": true
+  },
+  "source": {
+    "canonical_records_sha256": "725c558e1b1bbdb91d7a6550d05d019112a626cd25b982924a6436a619811d8c",
+    "config": "release_v6",
+    "inventory_sha256": "71c2c552c755b4d3e7922c7ebd4ef9f8ef58ae81f8fe9b2ea29fc90db2e228bb",
+    "public_projection_bytes": 2140798,
+    "public_projection_serialization": "UTF-8 canonical JSONL including newline per row",
+    "public_projection_sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db",
+    "repository": "livecodebench/code_generation_lite",
+    "revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2"
+  },
+  "version": "lcb-stdio-source-feasibility-v1"
+}
