@@ -1,5 +1,7 @@
 # Sampling-law decision for the broad task-family estimand
 
+> **Subsequent investment-review correction, 30 September:** The broad-target inference limitation remains valid, but requiring owner-provided prospective traffic as the only empirical route was too strong. An explicitly versioned finite-source/domain study can support its own limited causal claim without identifying the abstract broad-family expectation. The original objective and old exclusions remain; no source or collection is adopted here. See [the corrective review](investment_review_20260930.md). The exclusive-stream requirement in the historical decision below is superseded.
+
 Codex scientific lead, 30 September 2026. This is a target-identification decision, not a benchmark selection, experiment, or population amendment. Preserve the broad equal-family objective and the strict five-point usefulness rule.
 
 ## What equal-family weighting does and does not specify

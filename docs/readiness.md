@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 30 September 2026 — owner-requested investment review
+
+[Internal parallel review](investment_review_20260930.md) preserves negative findings and weak development positives, and corrects the claim that only a real task-arrival stream permits empirical work. A separately frozen, explicitly limited source/domain study is possible; none is adopted or released. Recommend against compute expansion, with at most one bounded redesign before further investment. **Full-project readiness60%,delta0.** This milestone measure is not success probability or remaining effort. Valid measurement/frame, a fitted real controller, independent evaluation and manuscript/raw reproduction remain incomplete; no efficacy credit.
+
 ## 30 September 2026 — no operational family sampling law
 
 The broad equal-family estimand still lacks an operational family universe or probability law. Historical task pools lack a fresh supported logger/evaluation split; MBPP has no jointly admitted residual roots; BigCodeBench remains unadopted; and synthetic tasks target only their generator law. A prospective task stream could define a new service-relative cohort, but none is authorized or available in this repository. This is a target-identification gate, not a compute limit or efficacy result. See [the sampling-law decision](broad_task_family_sampling_law_decision_20260930.md). Full-project readiness **60%, delta0**; population/measurement, practical policy fit, independent evaluation and manuscript/raw reproduction remain incomplete.

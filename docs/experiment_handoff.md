@@ -1,4 +1,10 @@
-# Current lead handoff — broad target sampling/measurement gates (30 September 2026)
+# Current lead handoff — investment review and scoped-design correction (30 September 2026)
+
+Read [investment_review_20260930.md](investment_review_20260930.md) first. The owner asked whether positive signals and design quality justify further investment. Internal review confirms modest development signals, meaningful negative repair findings and no fitted-real-policy validation. Recommendation: no expansion of current compute/infrastructure; one bounded redesign may merit investment if it produces an informative scoped study. No new run, source adoption, exclusion reversal or grade change occurred.
+
+The earlier exclusive requirement for owner-supplied prospective user traffic is superseded. Preserve broad claims as untested, but a separately versioned source/domain-specific evaluation can be valid within its explicit scope. It still needs appropriate held-out controller-evaluation families, qualified measurement, supported behavior probabilities, fair complete-strategy costs and feasible frozen inference. Do not restart closed runs or repeat the old universal-blocker report. Readiness60%,delta0; actual fit and independent benefit remain absent.
+
+## Historical broad-target handoff (exclusive-stream requirement superseded above)
 
 Read [`docs/broad_task_family_sampling_law_decision_20260930.md`](broad_task_family_sampling_law_decision_20260930.md) and [`docs/broad_task_family_measurement_gate_20260930.md`](broad_task_family_measurement_gate_20260930.md). Equal-family weighting does not define the family universe or sampling law. No documented source currently identifies the broad target; do not form an unapproved benchmark mixture or use task IDs as families. Separately keep three measurement states: undefined task contract, defined outcome with unavailable observation (retain assigned family and bound), and observed grade with unbounded semantic error (report `Z`, not semantic `Y`). Do not discard hard-to-grade families or recode infrastructure failure as FAIL/STOP.
 

@@ -1,5 +1,11 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 30 September 2026 — investment review corrects the universal empirical blockade
+
+The owner's investment question prompted three parallel internal audits. [The lead review](docs/investment_review_20260930.md) finds modest development positives but no demonstrated learned full-history policy benefit; reconciled negative repair findings remain. Recommendation: no compute/architecture expansion; at most one bounded, concretely designed empirical reset. No new collection is released.
+
+Correction to the preceding ruling: an undefined broad-family law blocks broad transport, not every internally valid scoped experiment. A separately versioned source/domain study can test the framework with limited claims; prospective user traffic is one option, not the sole route. Do not demand owner-provided traffic as a universal prerequisite or repeat status-only claims that all empiricism is impossible. Preserve the broad objective, old exclusions/failures and five-point rule. No benchmark is adopted here. Next prerequisite is a concrete scoped measurement/family/development/evaluation/cost/precision design before calls. Full-project readiness60%,delta0; actual fit and independent efficacy remain absent.
+
 ## 30 September 2026 — broad-family sampling law is not operationally identified
 
 The equal-family estimand specifies weights only after a family universe/law `G` is defined. The original abstract target left `G` open. A finite benchmark would be a new source-relative target; a synthetic generator is only its own DGP; a prospective task-arrival cohort would be a new service/time-defined population and requires source access, inclusion rules and family clustering. The repository has no currently authorized target-generating stream. See [`docs/broad_task_family_sampling_law_decision_20260930.md`](docs/broad_task_family_sampling_law_decision_20260930.md). Preserve the broad objective; do not silently assemble a benchmark mixture or count task IDs as families. No empirical collection or fit is valid under the current target definition. Exact remaining external gate: provide/authorize a prospective stream that represents the intended domain with a source-independent family crosswalk and sampling mechanism, then apply the measurement gate. Readiness60%,delta0.
