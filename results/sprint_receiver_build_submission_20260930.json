@@ -1,0 +1,32 @@
+{
+  "schema": "bouchet-sprint-receiver-build-submission-v1",
+  "job_id": "27975078",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "resources": {
+    "cpu": 4,
+    "memory_gib": 32,
+    "gpu": 0,
+    "wall_seconds": 3600
+  },
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-receiver-build-20260930-v1",
+  "freeze": "b850ebc",
+  "plan_sha256": "968481e231e87b49adc5c3de3889f1930ef05b0d1c18aec6de8e2fb1eb6e4b45",
+  "submitted_at_utc": "2026-09-30T21:15:45Z",
+  "submission_time_precision": "exact Slurm SubmitTime converted EDT to UTC",
+  "sbatch_returned": "27975078",
+  "last_observed_state": "RUNNING",
+  "expected_artifacts": [
+    "build-summary.json",
+    "build-sha256.txt",
+    "build-complete.txt",
+    "build-sizes.txt",
+    "modules.txt",
+    "logs/build-27975078.out",
+    "logs/build-27975078.err"
+  ],
+  "classification": "required receiver build; no model/candidate execution",
+  "paid_usd": 0,
+  "started_at_utc": "2026-09-30T21:16:15Z",
+  "node": "a1130u05n04"
+}
