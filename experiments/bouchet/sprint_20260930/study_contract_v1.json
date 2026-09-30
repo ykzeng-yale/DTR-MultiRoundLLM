@@ -1,0 +1,168 @@
+{
+  "schema": "dtr-six-hour-operational-study-v1",
+  "classification": "prospective finite-source study; broad original target preserved",
+  "owner_window": [
+    "2026-09-30T20:54:40Z",
+    "2026-10-01T02:54:40Z"
+  ],
+  "protocol": {
+    "path": "docs/scientific_sprint_protocol_20260930.md",
+    "sha256": "bf039a1affb0a24fd179130f2137aea6fccd2fcdec81fbcc29c44a12bcf7601c"
+  },
+  "source": {
+    "manifest": "results/lcb_sprint_bundle_manifest_20260930.json",
+    "sha256": "af05d31c00d9bd481db8ed599c56304a4ac93d1524e493fc17344e4180a36078",
+    "roster_tasks_sha256": "c7a6824b49eb390aba35b1bda7b3864b16c498773dd313a111991fab642881f5",
+    "dataset_revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2",
+    "roots": 567,
+    "operational_components": 549,
+    "split": {
+      "development": {
+        "roots": 342,
+        "components": 329,
+        "repeats": 16
+      },
+      "tuning": {
+        "roots": 111,
+        "components": 110,
+        "repeats": 4
+      },
+      "evaluation": {
+        "roots": 114,
+        "components": 110,
+        "repeats": 32
+      }
+    },
+    "sourceclear_is_not_semantic_family_or_training_unseen_certificate": true,
+    "primary": "AND of all source publisher PRIVATE test cases, retaining public-input overlaps and original duplicates",
+    "diagnostic": "same physical private case outcomes restricted to original-input-disjoint cases",
+    "public": "original statement/examples plus authenticated status-only public battery feedback; no private values"
+  },
+  "measurement": {
+    "version": "stdio-sprint-bwrap-strict-v3",
+    "qualification_plan_sha256": "887fe8978286aec3e0acb2031ac40d37b2610496d07a2b7e6454e7ad6cead9b0",
+    "bootstrap_failure": "unknown",
+    "completed_payload_mismatch_or_declared_resource_failure": "operational zero",
+    "administrative_global_censoring": "intended policy unknown even when fallback artifact has known score",
+    "absorbing_STOP": true,
+    "all_assignments_retained": true,
+    "same_vector_primitive_cache": "unit/root/program/scope/observer only; no cross-repetition caching",
+    "strict_isolation_required_on_actual_worker_node": true,
+    "no_universal_security_or_all_input_semantic_certificate": true
+  },
+  "supported_training": {
+    "actions": [
+      "STOP",
+      "PATCH",
+      "RETHINK"
+    ],
+    "probabilities": [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "two_opportunities": true,
+    "slate_before_selection": true,
+    "independent_action_coins": true,
+    "any_unavailable_terminal_label_aborts_fit": true
+  },
+  "learner": {
+    "method": "standard quality-only backward fitted Q; not DR training",
+    "public_features": 70,
+    "text_hash_features": 64,
+    "covariates": 6,
+    "ridge": 1,
+    "ties": [
+      "STOP",
+      "PATCH",
+      "RETHINK"
+    ],
+    "weight": "equal operational component, equal root within component, equal repetition",
+    "full_compressed_identical_complexity": true,
+    "receiver_full_history_for_both": true
+  },
+  "comparators": {
+    "tuning_B1": [
+      "STOP",
+      "PATCH2",
+      "RETHINK2",
+      "PASS_GATED_PATCH",
+      "PASS_GATED_RETHINK"
+    ],
+    "tuning_selection": "quality-only earliest tie; any administratively censored or unavailable complete policy refuses choice",
+    "evaluation": [
+      "FULL_HISTORY_Q",
+      "COMPRESSED_HISTORY_Q",
+      "B1_LOCKED",
+      "RESAMPLE_SELECT",
+      "STOP",
+      "PATCH2",
+      "RETHINK2",
+      "SELF_REFINE_ADAPT",
+      "REFLEXION_ADAPT"
+    ],
+    "shared_initial": "physically shared within matched vector; logically charged to every policy",
+    "continuation_budget": "2 calls x1024 completion tokens including critique",
+    "resampling": "public status-only earliest tie; no hidden oracle",
+    "adaptations_not_paper_reproductions": true,
+    "cost": "tokens, prompt tokens, model/public/selector wall, allocation and money separately; no unsupported total-cost or energy claim"
+  },
+  "randomization": {
+    "production": "one independent OS CSPRNG128-bit nonce per component-repetition, recorded once before calls; derive receiver seeds within vector",
+    "development": "independent secrets.randbelow(3) supported action coins at each opportunity",
+    "namespace_seed_is_not_draw_source": true,
+    "F_excludes_realized_evaluation_nonce_table_seeds_and_hashes": true,
+    "stable_receiver_no_interference_assumed_not_proven_by_identifiers": true
+  },
+  "analysis": {
+    "target": "conditional expected equal-component grade contrast on frozen operational evaluation census; no broad-family transport",
+    "whole_vectors": 3520,
+    "equal_root_within_component": true,
+    "method": "existing outward sign-split KL simultaneous two-contrast conditional census inference",
+    "alpha": [
+      1,
+      20
+    ],
+    "primary_baselines": [
+      "B1_LOCKED",
+      "RESAMPLE_SELECT"
+    ],
+    "useful_gain": [
+      1,
+      20
+    ],
+    "success": "L1>.05 and L2>0",
+    "scoped_no_go": "U1<.05",
+    "otherwise": "inconclusive",
+    "full_compressed": "secondary descriptive; no arm promotion",
+    "never_optional_stop_by_gain": true
+  },
+  "resources": {
+    "account": "pi_fl426",
+    "partition": "gpu_devel",
+    "qos": "normal",
+    "gpus": 2,
+    "cpus": 12,
+    "memory_gib": 32,
+    "allocation_wall_seconds": 10800,
+    "worker_wall_seconds": 10700,
+    "task_call_ceiling": 82428,
+    "task_completion_token_ceiling": 84406272,
+    "synthetic_receiver_qualification_calls": 18,
+    "synthetic_completion_token_ceiling": 18432,
+    "max_case_starts": 4000000,
+    "grading_cpu_seconds": 42000,
+    "retained_bytes": 107374182400,
+    "paid_usd": 0
+  },
+  "failure_action": "retain all evidence; no automatic renewal/retry, no peer job changes, no unsafe fallback"
+}
