@@ -1,0 +1,46 @@
+{
+  "cpu_count": 1,
+  "cpu_seconds": 500,
+  "dataset": "livecodebench/code_generation_lite",
+  "expected_declared_rows": 1055,
+  "max_fetched_bytes": 67108864,
+  "max_request_bytes": 8388608,
+  "public_columns": [
+    "question_title",
+    "question_content",
+    "platform",
+    "question_id",
+    "contest_id",
+    "contest_date",
+    "starter_code",
+    "difficulty",
+    "public_test_cases"
+  ],
+  "revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2",
+  "runner_sha256": "ee22027b4fafef9db419cddf4e704544c69f056a9c2662a66269e53178f4ba60",
+  "schema": "lcb-public-source-inquiry-v1",
+  "shard_bytes": {
+    "release_v6/test-00000-of-00009.parquet": 75385387,
+    "release_v6/test-00001-of-00009.parquet": 353243448,
+    "release_v6/test-00002-of-00009.parquet": 547148226,
+    "release_v6/test-00003-of-00009.parquet": 879660215,
+    "release_v6/test-00004-of-00009.parquet": 635992480,
+    "release_v6/test-00005-of-00009.parquet": 1159591686,
+    "release_v6/test-00006-of-00009.parquet": 514869763,
+    "release_v6/test-00007-of-00009.parquet": 78448917,
+    "release_v6/test-00008-of-00009.parquet": 90113345
+  },
+  "shards": [
+    "release_v6/test-00000-of-00009.parquet",
+    "release_v6/test-00001-of-00009.parquet",
+    "release_v6/test-00002-of-00009.parquet",
+    "release_v6/test-00003-of-00009.parquet",
+    "release_v6/test-00004-of-00009.parquet",
+    "release_v6/test-00005-of-00009.parquet",
+    "release_v6/test-00006-of-00009.parquet",
+    "release_v6/test-00007-of-00009.parquet",
+    "release_v6/test-00008-of-00009.parquet"
+  ],
+  "url_prefix": "https://huggingface.co/datasets/livecodebench/code_generation_lite/resolve/25d8cb8f0db2efe1b589941eb8c26a219850d4d2/",
+  "wall_seconds": 500
+}
