@@ -1,0 +1,24 @@
+{
+  "classification": "lead-reconciled trusted fixture failure; no candidate or model execution",
+  "job_id": "27976306",
+  "status": "FAILED",
+  "cause": "ELF loader lacked execute permission; Python did not start",
+  "fixtures_assigned": 23,
+  "attempted": 1,
+  "failed": 1,
+  "unattempted": 22,
+  "private_or_task_executions": 0,
+  "model_calls": 0,
+  "local_evidence": "work/sprint_stdio_qualification_results_20260930_v1",
+  "evidence_sha256": {
+    "logs/stdio-qualification-27976306.err": "9473fb6db06b96ba9e94bc5f15cbefc4e3ce46782d184f49d7a35030dc1477d1",
+    "logs/stdio-qualification-27976306.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdio-sprint-results/host-canary": "7c9055246950a2051f6958e74b21f64cf8d0940fcec9058a8cf00a1b3bd8545a",
+    "stdio-sprint-results/journal.jsonl": "0ba43c56d08db35844ca16e6d23e673bf168e38b45ebfb842770cb99c67878c2",
+    "stdio-sprint-results/runtime-manifest.json": "cda51c7e6232a2173ac7177549d6b894991789bf79c527163865bb64bce85196",
+    "stdio-sprint-results/summary.json": "684f07cac2c4cf525d415e2fbe685d1dda5c8a24c82191249e0f07b8b73957f2"
+  },
+  "reported_summary_sha256": "684f07cac2c4cf525d415e2fbe685d1dda5c8a24c82191249e0f07b8b73957f2",
+  "validated_payload_never_started": true,
+  "repair_policy": "distinct source-diagnosed version; unchanged isolation, no automatic retry"
+}

@@ -1,0 +1,26 @@
+{
+  "classification": "lead-reconciled trusted fixture failure; no candidate or model execution",
+  "job_id": "27978860",
+  "status": "FAILED",
+  "cause": "isolated relocated CPython could not resolve its platform stdlib; fatal missing encodings before bootstrap",
+  "fixtures_assigned": 23,
+  "attempted": 1,
+  "failed": 1,
+  "unattempted": 22,
+  "private_or_task_executions": 0,
+  "model_calls": 0,
+  "local_evidence": "work/sprint_stdio_qualification_results_20260930_v2",
+  "evidence_sha256": {
+    "accounting.txt": "d271bb89d3f54d9ba45e33dc2de3bf4fd25c555e396e62a871d48f6ba85512ce",
+    "logs/stdio-qualification-27978860.err": "a61f42385892e7336b3eb0aa5befc90fb017057d4143ad276386731d6f005e6b",
+    "logs/stdio-qualification-27978860.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdio-sprint-results/diagnostics/00-preflight_correct.stderr": "6a58646b2bbc37e9e7de2754a3886c74ac988578794b28d2fcf5d930580ca049",
+    "stdio-sprint-results/host-canary": "7c9055246950a2051f6958e74b21f64cf8d0940fcec9058a8cf00a1b3bd8545a",
+    "stdio-sprint-results/journal.jsonl": "ca8055ea7a891b5ed0018abd46d0e2b59c03720835a069b1cb3d6aa0e63ac14d",
+    "stdio-sprint-results/runtime-manifest.json": "77368f2b134b30c66fccdd95167cd2cff6ff967d9b6bad597481280b89495197",
+    "stdio-sprint-results/summary.json": "d0df2145839ddb59be7246295ee1fe3f8cf7b9f2162571f8551f0fa05bfc515d"
+  },
+  "reported_summary_sha256": "d0df2145839ddb59be7246295ee1fe3f8cf7b9f2162571f8551f0fa05bfc515d",
+  "validated_payload_never_started": true,
+  "repair_policy": "distinct source-diagnosed version; unchanged isolation, no automatic retry"
+}

@@ -1,0 +1,30 @@
+{
+  "classification": "lead-verified receiver prerequisite, no efficacy",
+  "job_id": "27975078",
+  "slurm_state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_seconds": 1338,
+  "total_cpu_seconds": 4463,
+  "max_rss_kib": 2194956,
+  "architectures": [
+    86,
+    89,
+    90
+  ],
+  "source_commit": "4fea119",
+  "source_archive_sha256": "3b83853db981c2aa0dcff7e4711cfb1640b694465407fe668675154f0fe67bdb",
+  "binary_manifest_sha256": "853786d18c514ba642158b658f0d07278426bba8c4ef1c0f4dd38a3b2fbf4513",
+  "remote_binary_hash_checks_passed": 9,
+  "model_calls": 0,
+  "candidate_execution": false,
+  "local_evidence": "work/sprint_receiver_build_results_20260930_v1",
+  "evidence_sha256": {
+    "build-complete.txt": "74bbbd15c760daf24edf845548c367791ba2145fe4b93925856addef6e8434b2",
+    "build-sha256.txt": "853786d18c514ba642158b658f0d07278426bba8c4ef1c0f4dd38a3b2fbf4513",
+    "build-sizes.txt": "924b12c0ef5c194731fb2b07d7184794cc0873792bf2567b326f2cb866ffe7a5",
+    "build-summary.json": "01e725830cda533c38237308194a2046d9f442a000de4a5d36cfc350472b0153",
+    "logs/build-27975078.err": "21768056a73ef99737d25c521de638f1d966c8a1d9e8e06e249008643a82ff5e",
+    "logs/build-27975078.out": "850e672c97636c1a842621db96fee7b031de8094f148d1c488311d1bd2d8104f",
+    "modules.txt": "dade31cb44876c74dc21b913ab434d6a09093fff38bfeca18c504a193d987e1d"
+  }
+}
