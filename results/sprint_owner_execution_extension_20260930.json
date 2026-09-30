@@ -1,0 +1,11 @@
+{
+  "allocation_seconds": 14400,
+  "contract_sha256": "21952da716a442eb95a62c0b0ffc94c4fd1b1c4387528d1bf06c7f7804b6e171",
+  "directive": "autonomous remaining research with six-hour checks",
+  "extended_deadline_iso": "2026-10-02T18:00:00Z",
+  "freeze_commit": "1a02052b76b1aa2019343d31f455b302da0195d3",
+  "lead_recorded_instruction_iso": "2026-09-30T23:08:00Z",
+  "max_gpu_hours": 24,
+  "original_deadline_iso": "2026-10-01T02:54:40Z",
+  "version": "sprint-owner-bounded-deadline-extension-v1"
+}

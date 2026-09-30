@@ -182,6 +182,37 @@ def remaining_stages(resumed):
     return tuple(stage for stage in STAGES if stage not in {s['stage_id'] for s in resumed['stages']})
 
 
+def verify_owner_extension(old,plan):
+    """A changed administrative deadline requires an exact committed receipt.
+
+    The file records the owner's authorization; this function cannot establish
+    authorship. It only checks the prospectively source-pinned bounded change.
+    All scientific/global call, token and retained-budget keys remain checked
+    separately by verify_resume.
+    """
+    if plan['owner_deadline_iso']==old['owner_deadline_iso']:
+        if 'owner_extension_receipt_path' in plan or 'owner_extension_receipt_sha256' in plan:
+            raise ValueError('unexpected owner extension without changed deadline')
+        return None
+    if not all(k in plan for k in ('owner_extension_receipt_path','owner_extension_receipt_sha256')):
+        raise ValueError('changed deadline requires exact owner extension receipt')
+    receipt=bound_json(plan['owner_extension_receipt_path'],plan['owner_extension_receipt_sha256'],64<<10)
+    fixed={'version':'sprint-owner-bounded-deadline-extension-v1',
+        'original_deadline_iso':'2026-10-01T02:54:40Z',
+        'extended_deadline_iso':'2026-10-02T18:00:00Z',
+        'lead_recorded_instruction_iso':'2026-09-30T23:08:00Z',
+        'directive':'autonomous remaining research with six-hour checks',
+        'contract_sha256':plan['contract_sha256'],'allocation_seconds':14400,'max_gpu_hours':24}
+    if (set(receipt)!=set(fixed)|{'freeze_commit'} or any(receipt.get(k)!=v for k,v in fixed.items()) or
+        receipt['original_deadline_iso']!=old['owner_deadline_iso'] or
+        receipt['extended_deadline_iso']!=plan['owner_deadline_iso'] or
+        plan['wall_seconds']!=receipt['allocation_seconds'] or
+        type(receipt['freeze_commit']) is not str or len(receipt['freeze_commit'])!=40 or
+        any(c not in '0123456789abcdef' for c in receipt['freeze_commit'])):
+        raise ValueError('owner deadline extension receipt/scope/commit mismatch')
+    return plan['owner_extension_receipt_sha256']
+
+
 def verify_resume(plan):
     """Only immutable, wholly successful original dev0 can cross allocations.
 
@@ -201,10 +232,10 @@ def verify_resume(plan):
     if type(entry) is not dict or set(entry)!=keys or entry['stage_id']!='dev0':
         raise ValueError('dev0-only exact resume manifest')
     old=bound_json(entry['original_worker_plan_path'],entry['original_worker_plan_sha256'],1<<20)
+    extension_sha=verify_owner_extension(old,plan)
     if old.get('mode')!='finite-stage-spool-v1' or any(old[k]!=plan[k] for k in
             ('contract_sha256','model_sha256','receiver_state_sha256','build_manifest_sha256',
-             'workers','server_count','max_calls','max_completion_tokens','max_retained_bytes',
-             'owner_deadline_iso')) or tuple(old['stage_ids'])!=STAGES:
+             'workers','server_count','max_calls','max_completion_tokens','max_retained_bytes')) or tuple(old['stage_ids'])!=STAGES:
         raise ValueError('original scientific/global budget law changed on resume')
     old['_actual_worker_plan_sha256']=entry['original_worker_plan_sha256']
     stage,requests=stage_inputs('dev0',dict(stage_id='dev0',stage_plan_path=entry['stage_plan_path'],
@@ -283,7 +314,8 @@ def verify_resume(plan):
         'summary_sha256':entry['summary_sha256'],'journal_sha256':entry['journal_sha256'],
         'started_sha256':entry['started_sha256'],'stage_plan_file_sha256':entry['stage_plan_file_sha256'],
         'original_worker_plan_sha256':entry['original_worker_plan_sha256'],
-        'retained_manifest_sha256':sha(retained),'retained_bytes':total,'returned_calls':RESUME_CALLS}
+        'retained_manifest_sha256':sha(retained),'retained_bytes':total,'returned_calls':RESUME_CALLS,
+        'owner_extension_receipt_sha256':extension_sha}
     return {'reserved_calls':RESUME_CALLS,'retained_bytes':total,'receipt':witness,
             'stage_contracts':{'dev':stage['study_config_sha256']},
             'stages':[{'stage_id':'dev0','summary_sha256':entry['summary_sha256'],'returned':RESUME_CALLS,
@@ -305,11 +337,55 @@ def capture_stage_props(directory,all_props,publish):
             'state_unchanged':all(sha(receiver_state(p))==receiver.STATE_SHA256 for p in raw_props)}
 
 
+def audit_grading(plan_path,grade_out,report_path,publish,*,timeout_seconds):
+    """Main-thread, alarm-bounded metadata recount; executes no programs.
+
+    Refusals are retained outside the immutable grade batch before stopping.
+    The caller measures CPU around both execution and this separate recount.
+    """
+    if threading.current_thread() is not threading.main_thread() or not 0<timeout_seconds<=600:
+        raise ValueError('bounded main-thread grading reconciliation required')
+    from scripts.audit_sprint_grading_v1 import audit_batch
+    if signal.getitimer(signal.ITIMER_REAL)!=(0.0,0.0):
+        raise ValueError('cannot replace an existing administrative alarm')
+    previous=signal.getsignal(signal.SIGALRM)
+    def expired(signum,frame):raise TimeoutError('data-only grading reconciliation wall cap')
+    signal.signal(signal.SIGALRM,expired);signal.setitimer(signal.ITIMER_REAL,timeout_seconds)
+    try:
+        result=audit_batch(plan_path,grade_out,root=Path.cwd())
+        if (result.get('safe_to_advance') is not True or result.get('status')!='RECONCILED_COMPLETE' or
+            result.get('plan_file_sha256')!=receiver.file_sha(plan_path) or
+            result.get('summary_file_sha256')!=receiver.file_sha(Path(grade_out)/'summary.json') or
+            result.get('unreconciled_units')!=0 or type(result.get('assigned_units')) is not int or
+            result['assigned_units']<0 or type(result.get('accounted_units')) is not int or
+            result['assigned_units']!=result['accounted_units'] or
+            result.get('model_calls')!=0 or result.get('candidate_executions')!=0 or
+            result.get('private_values_reported') is not False):
+            raise ValueError('grading independent recount refuses advancement')
+    except Exception as exc:
+        result={'status':'RECONCILIATION_REFUSED','safe_to_advance':False,
+            'exception_type':type(exc).__name__,'reason':'metadata evidence reconciliation refused; inspect preserved raw files',
+            'model_calls':0,'candidate_executions':0,'private_values_reported':False}
+    finally:
+        signal.setitimer(signal.ITIMER_REAL,0);signal.signal(signal.SIGALRM,previous)
+    if len(receiver.canonical(result))>1<<20:
+        result={'status':'RECONCILIATION_REFUSED','safe_to_advance':False,'reason':'reconciliation report byte cap'}
+    path=Path(report_path);path.parent.mkdir(parents=True,exist_ok=True)
+    if path.resolve().is_relative_to(Path(grade_out).resolve()):
+        raise ValueError('reconciliation report must be outside immutable grade batch')
+    publish(path,result)
+    if result['safe_to_advance'] is not True:
+        raise RuntimeError('grading independent recount refused; evidence preserved')
+    return result
+
+
 def run(plan_path):
     plan_path=Path(plan_path);plan=json.loads(plan_path.read_bytes())
     plan['_actual_worker_plan_sha256']=receiver.file_sha(plan_path)
     if plan.get('mode')!='finite-stage-spool-v2' or plan.get('server_log_cap_bytes')!=LOG_CAP:
         raise ValueError('versioned explicit administrative log-cap repair')
+    if plan.get('hardware_epoch')!='h100-continuation-v1' or plan.get('grading_reconciliation_seconds')!=600 or 'scripts/audit_sprint_grading_v1.py' not in plan['files']:
+        raise ValueError('explicit H100 epoch and frozen bounded grading auditor required')
     resumed=verify_resume(plan)
     server_count=plan.get('server_count',1)
     if tuple(plan['stage_ids'])!=STAGES or plan['model_sha256']!=receiver.MODEL_SHA256 or plan['receiver_state_sha256']!=receiver.STATE_SHA256 or server_count not in (1,2) or plan['workers']!=4*server_count or plan['paid_usd']!=0:
@@ -347,6 +423,8 @@ def run(plan_path):
              'worker_plan_sha256':receiver.file_sha(plan_path),
              'contract_sha256':plan['contract_sha256'],'stages':resumed['stages'],'error':None,
              'resume':resumed['receipt'],'server_log_cap_bytes':LOG_CAP,
+             'hardware_epoch':plan['hardware_epoch'],
+             'grading_cpu_seconds_measured':0.0,'grading_wall_seconds_measured':0.0,
              'assigned_calls_reserved':0,'completion_tokens_reserved':0,'paid_usd':0,'grading':[]}
     procs=[];threads=[];stopping=threading.Event();log_errors=[];journal_bytes=0;started_bytes=0
     started_lock=threading.Lock();reserved=resumed['reserved_calls'];stage_contracts=resumed['stage_contracts'];eval_lock=None
@@ -396,21 +474,33 @@ def run(plan_path):
             raise ValueError('grading cache outside owned retained envelope')
         used_cases=sum(r['case_starts'] for r in summary['grading'])
         used_cpu=sum(r['cpu_seconds'] for r in summary['grading'])
-        if gp['max_case_starts']>plan['max_case_starts']-used_cases or gp['max_cpu_seconds']>plan['max_grading_cpu_seconds']-used_cpu or gp['max_wall_seconds']>remaining()-30 or gp['max_retained_bytes']>plan['max_retained_bytes']-retained()-receiver.FIXED_RESERVE:
+        audit_allowance=plan['grading_reconciliation_seconds']
+        if gp['max_case_starts']>plan['max_case_starts']-used_cases or gp['max_cpu_seconds']+audit_allowance>plan['max_grading_cpu_seconds']-used_cpu or gp['max_wall_seconds']+audit_allowance>remaining()-30 or gp['max_retained_bytes']>plan['max_retained_bytes']-retained()-receiver.FIXED_RESERVE:
             raise ValueError('global finite grading case/CPU/wall/retained reservation')
         from experiments.sprint_grading.batch_v1 import run_batch
         grade_out=out/'grading'/grading_id
         grade_out.parent.mkdir(exist_ok=True)
         before_cpu=os.times();before=time.monotonic()
-        result=run_batch(release['plan_path'],grade_out,attestation_path=attestation_path)
+        audit_path=out/'grading-reconciliation'/(grading_id+'.json')
+        try:
+            result=run_batch(release['plan_path'],grade_out,attestation_path=attestation_path)
+            audit=audit_grading(release['plan_path'],grade_out,audit_path,publish,
+                timeout_seconds=min(audit_allowance,max(.01,remaining()-30)))
+        finally:
+            after_cpu=os.times();cpu=max(0,after_cpu.user+after_cpu.system+after_cpu.children_user+after_cpu.children_system-before_cpu.user-before_cpu.system-before_cpu.children_user-before_cpu.children_system)
+            summary['grading_cpu_seconds_measured']+=cpu
+            summary['grading_wall_seconds_measured']+=time.monotonic()-before
         retained_ledger.rescan_external()
-        after_cpu=os.times();cpu=max(0,after_cpu.user+after_cpu.system+after_cpu.children_user+after_cpu.children_system-before_cpu.user-before_cpu.system-before_cpu.children_user-before_cpu.children_system)
         starts=result.get('case_starts',result.get('cases_started'))
         if type(starts) is not int or not 0<=starts<=gp['max_case_starts']:
             raise ValueError('graded case accounting required')
+        if cpu+used_cpu>plan['max_grading_cpu_seconds']:
+            raise RuntimeError('graded execution plus independent audit CPU cap; evidence preserved')
         summary['grading'].append({'grading_id':grading_id,'plan_sha256':release['plan_sha256'],
             'case_starts':starts,'cpu_seconds':cpu,'wall_seconds':time.monotonic()-before,
-            'output_dir':str(grade_out),'result_sha256':sha(result)})
+            'output_dir':str(grade_out),'result_sha256':sha(result),
+            'reconciliation_path':str(audit_path),'reconciliation_file_sha256':receiver.file_sha(audit_path),
+            'reconciliation_sha256':sha(audit)})
         publish(out/(grading_id+'.grading-complete.json'),summary['grading'][-1])
     try:
         qp=Path(plan['qualification_plan_path'])
@@ -467,6 +557,9 @@ def run(plan_path):
         gpu=subprocess.run(['nvidia-smi','--query-gpu=uuid,name,memory.total','--format=csv,noheader'],
                            stdout=subprocess.PIPE,stderr=subprocess.PIPE,check=True,timeout=10)
         if len(gpu.stdout)>4096:raise ValueError('GPU identity response cap')
+        gpu_identity=gpu.stdout.decode('utf-8',errors='strict')
+        if len(gpu_identity.splitlines())!=server_count or not all(', NVIDIA H100' in line for line in gpu_identity.splitlines()):
+            raise ValueError('actual GPUs differ from explicit H100 continuation epoch')
         publish(out/'ready.json',{'version':VERSION,'job_id':job,'ports':ports,'server_count':server_count,
                                'routing':'payload seed modulo server_count; preflight and generation same instance',
                                'receiver_state_sha256':receiver.STATE_SHA256,
@@ -475,7 +568,9 @@ def run(plan_path):
                                'attestation_file_sha256':plan['_attestation_file_sha256'],
                                'runtime_manifest_sha256':plan['_runtime_manifest_sha256'],
                                'receiver_qualification_sha256':receiver.file_sha(synthetic_out/'summary.json'),
-                               'node':os.environ.get('SLURMD_NODENAME'),'gpu_identity':gpu.stdout.decode('utf-8',errors='strict')})
+                               'node':os.environ.get('SLURMD_NODENAME'),'gpu_identity':gpu_identity,
+                               'hardware_epoch':plan['hardware_epoch'],
+                               'owner_extension_receipt_sha256':resumed['receipt']['owner_extension_receipt_sha256']})
         for stage in remaining_stages(resumed):
             release_path=spool/(stage+'.ready.json');wait_start=time.monotonic()
             while not stage_released(stage,release_path.exists(),{g['grading_id'] for g in summary['grading']}):

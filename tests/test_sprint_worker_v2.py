@@ -5,6 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+import signal
 
 from experiments.sprint import receiver_v1 as r
 from experiments.sprint import worker_v1 as old_worker
@@ -160,6 +161,53 @@ class WorkerRepairTests(unittest.TestCase):
                 fresh=directory/'next-stage';fresh.mkdir()
                 passed=w.capture_stage_props(fresh,lambda:raw,ledger.publish)
             self.assertTrue(passed['state_unchanged'])
+
+    def test_changed_deadline_requires_exact_committed_bounded_owner_receipt(self):
+        with tempfile.TemporaryDirectory() as d:
+            old={'owner_deadline_iso':'2026-10-01T02:54:40Z'}
+            plan=dict(owner_deadline_iso='2026-10-02T18:00:00Z',contract_sha256='a'*64,wall_seconds=14400)
+            with self.assertRaisesRegex(ValueError,'requires exact'):w.verify_owner_extension(old,plan)
+            receipt=dict(version='sprint-owner-bounded-deadline-extension-v1',original_deadline_iso=old['owner_deadline_iso'],
+                extended_deadline_iso=plan['owner_deadline_iso'],lead_recorded_instruction_iso='2026-09-30T23:08:00Z',
+                directive='autonomous remaining research with six-hour checks',contract_sha256='a'*64,
+                allocation_seconds=14400,max_gpu_hours=24,freeze_commit='b'*40)
+            p=Path(d)/'owner.json';p.write_bytes(r.canonical(receipt))
+            plan.update(owner_extension_receipt_path=str(p),owner_extension_receipt_sha256=r.file_sha(p))
+            self.assertEqual(w.verify_owner_extension(old,plan),r.file_sha(p))
+            plan['owner_deadline_iso']='2026-10-03T18:00:00Z'
+            with self.assertRaisesRegex(ValueError,'mismatch'):w.verify_owner_extension(old,plan)
+            plan['owner_deadline_iso']=receipt['extended_deadline_iso'];plan['wall_seconds']=28800
+            with self.assertRaisesRegex(ValueError,'mismatch'):w.verify_owner_extension(old,plan)
+            plan['wall_seconds']=14400;receipt['max_gpu_hours']=48;p.write_bytes(r.canonical(receipt))
+            plan['owner_extension_receipt_sha256']=r.file_sha(p)
+            with self.assertRaisesRegex(ValueError,'mismatch'):w.verify_owner_extension(old,plan)
+
+    def test_data_only_grade_recount_published_outside_batch_and_refusal_stops(self):
+        from scripts import audit_sprint_grading_v1 as auditor
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);gp=root/'plan.json';gp.write_text('{}')
+            batch=root/'grade';batch.mkdir();summary=batch/'summary.json';summary.write_text('{}')
+            report=root/'grading-reconciliation'/'dev0_public.json'
+            known=dict(status='RECONCILED_COMPLETE',safe_to_advance=True,plan_file_sha256=r.file_sha(gp),
+                summary_file_sha256=r.file_sha(summary),unreconciled_units=0,assigned_units=2,accounted_units=2,
+                model_calls=0,candidate_executions=0,private_values_reported=False)
+            prior=signal.getsignal(signal.SIGALRM)
+            with patch.object(auditor,'audit_batch',return_value=known) as call:
+                self.assertEqual(w.audit_grading(gp,batch,report,w.atomic,timeout_seconds=1),known)
+                call.assert_called_once_with(gp,batch,root=Path.cwd())
+            self.assertEqual(json.loads(report.read_bytes()),known)
+            self.assertEqual(summary.read_text(),'{}')
+            self.assertEqual(signal.getsignal(signal.SIGALRM),prior)
+            self.assertEqual(signal.getitimer(signal.ITIMER_REAL),(0.0,0.0))
+            for error in (ValueError('source metadata mismatch'),TimeoutError('cap')):
+                with self.subTest(error=type(error).__name__),patch.object(auditor,'audit_batch',side_effect=error):
+                    dest=root/('refusal-'+type(error).__name__+'.json')
+                    with self.assertRaisesRegex(RuntimeError,'evidence preserved'):
+                        w.audit_grading(gp,batch,dest,w.atomic,timeout_seconds=1)
+                    self.assertFalse(json.loads(dest.read_bytes())['safe_to_advance'])
+            with patch.object(auditor,'audit_batch',return_value=dict(known,safe_to_advance=False)):
+                with self.assertRaisesRegex(RuntimeError,'refused'):
+                    w.audit_grading(gp,batch,root/'unsafe.json',w.atomic,timeout_seconds=1)
 
 
 if __name__=='__main__':unittest.main()

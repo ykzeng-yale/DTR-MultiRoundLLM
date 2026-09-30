@@ -298,7 +298,12 @@ def main():
     def timeout(signum,frame):raise TimeoutError('independent audit global wall cap')
     signal.signal(signal.SIGALRM,timeout);signal.alarm(MAX_WALL_SECONDS)
     resource.setrlimit(resource.RLIMIT_CPU,(240,245))
-    resource.setrlimit(resource.RLIMIT_AS,(8<<30,8<<30))
+    # Darwin's virtual-address reservation can already exceed this value;
+    # lowering RLIMIT_AS there is unsupported for this data-only supervisor.
+    # Input/line/row/CPU/wall caps remain enforced on both hosts. Never execute
+    # candidate code here; Linux additionally enforces the address-space cap.
+    if sys.platform != 'darwin':
+        resource.setrlimit(resource.RLIMIT_AS,(8<<30,8<<30))
     result=audit_files(stage_plan=args.stage_plan,requests=args.requests,state=args.state,config=args.config,
         summary=args.summary,journal=args.journal,started=args.started,job_id=args.job_id,repo_root=args.repo_root)
     args.out.mkdir(mode=0o700,exist_ok=False)
