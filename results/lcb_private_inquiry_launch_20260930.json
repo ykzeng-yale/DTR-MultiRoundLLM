@@ -1,0 +1,48 @@
+{
+  "admitted_tasks": 0,
+  "assignment_count": 1055,
+  "candidate_reference_task_executions": 0,
+  "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 work/source_reader_20260927/bin/python scripts/inquire_lcb_private_instrument_20260930.py --plan experiments/sources/lcb_private_inquiry_plan_20260930.json --out work/lcb_private_inquiry_20260930_v1",
+  "exec_session": 91389,
+  "expected_artifacts": [
+    "plan.json",
+    "rows.jsonl",
+    "summary.json",
+    "ranges/shard-*/requests.jsonl",
+    "ranges/shard-*/range-*.bin"
+  ],
+  "freeze_commit": "5ad474c06f7b0fdf1c5cd1c180c05db561cf6d9e",
+  "initial_validated_progress": {
+    "ranges": 25,
+    "received_body_bytes": 125650002,
+    "rows": 118
+  },
+  "launched_utc": "2026-09-30T20:12:18Z",
+  "limitations": [
+    "data format/alignment/size only; not semantic validity or efficacy",
+    "no unsafe unpickler; raw private inputs/answers excluded from policy/reports",
+    "interrupted transfer receipts and prefix must be reconciled; never automatically duplicate"
+  ],
+  "model_calls": 0,
+  "out": "work/lcb_private_inquiry_20260930_v1",
+  "pid": 61708,
+  "plan_file_sha256": "724019782229db49d67da3e5d666e45a1468678a9f969f665a95809078e6c968",
+  "plan_path": "experiments/sources/lcb_private_inquiry_plan_20260930.json",
+  "process_start_local": "Wed Sep30 16:12:18EDT2026",
+  "readiness_delta": 0,
+  "readiness_percent": 60,
+  "resources": {
+    "best_effort_as_bytes": 17179869184,
+    "cpu_count": 1,
+    "cpu_hard_seconds": 3601,
+    "cpu_soft_seconds": 3600,
+    "gpu_count": 0,
+    "hard_os_rss_certified": false,
+    "max_fetched_bytes": 5368709120,
+    "max_retained_bytes": 6442450944,
+    "paid_cost": 0,
+    "wall_seconds": 7200
+  },
+  "schema": "lcb-private-instrument-launch-v1",
+  "state": "RUNNING-VERIFIED"
+}

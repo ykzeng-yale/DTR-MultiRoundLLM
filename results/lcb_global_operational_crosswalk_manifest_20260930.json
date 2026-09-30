@@ -1,0 +1,40 @@
+{
+  "accepted_proposed_cosplit_edges": 24,
+  "admitted_tasks": 0,
+  "all_source_nodes": 1055,
+  "artifact_hashes": {
+    "adjudicate.py": "1468edff9c581b40488a80cc5d7c5cb1fbb2316e7a81712aaa7987dfea9c699a",
+    "components.jsonl": "9072ecf421f2bf3ee149e95ac0a1831036980a813aca117ae8d0fe958b275455",
+    "edges.jsonl": "a1c6745316f05b5461d9d414d07dd49d4a0494bf622b04669e5ad58fefaad16d",
+    "external_reference_rulings.jsonl": "bebf39c4ebb7ea225a27977050197a05562bfef924eefce99ba4d1b9b64d573c",
+    "external_references.jsonl": "062476a4591c74ac5b7ddfb178d7539a0c470c521de9ab01ce1a7824c1c7bbe9",
+    "nodes.jsonl": "33c74ac3e73fa0910cb95420de29dd34604597217b620a950ec60487ee9c7c9f",
+    "nodes_with_components.jsonl": "8a40c4285d890d878646782687e6726b0039c56ece2ea91a071132e53dba6cbc",
+    "nominate.py": "19eecaf58d12b84e1e99836b9f67a714a87b9fd34e233ba483e845a25a583d7e",
+    "nomination_manifest.json": "7966c819f9c849bcf96ed5a74fe1a53d555ea691da4a86330ec0d1ba7f26ff22",
+    "nominations.jsonl": "25c3e447ec11b59c75c3dc4eed7e655e2c76bfd12cdaea60470bd2203581d0bf",
+    "nominations_all.jsonl": "2155c86128de627acb8b198eea68e060d17fa1d19a76d91c679afe492b5f6711",
+    "protocol.json": "a979ba09f854130d1e90abf5d91ce63b756dd9aac161acfb50d5de70637900d6",
+    "rulings.jsonl": "a4ed192dfa74acfc94ab661d37021944551f050ce8704aeda4dc60bd47f5a077"
+  },
+  "lead_recomputed": [
+    "every artifact SHA256",
+    "all node/source row identities and public/statement hashes",
+    "component sizes/counts"
+  ],
+  "limitations": "Conditional execution-vector independence is a receiver/process assumption, not a consequence of semantic singleton labels. Connected components are explicit proposed operational source clusters. 1034 component keys do not mean 1034 independent broad semantic families; singletons are not novelty or independence certificates. No source has been adopted, no split frozen and no task admitted.",
+  "linked_nodes": 39,
+  "multinode_components": 18,
+  "operational_components": 1034,
+  "raw_directory": "work/lcb_global_family_crosswalk_20260930_v1",
+  "readiness_delta": 0,
+  "readiness_percent": 60,
+  "rejected_nominations": 10,
+  "schema": "lcb-global-operational-crosswalk-manifest-v1",
+  "singleton_component_proposals": 1016,
+  "source_projection_sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db",
+  "splits_frozen": false,
+  "summary_sha256": "4b8843cb58f4adad3ff3a4ae881bab1b2eddd6bffc77be7efe67a79347fc34a2",
+  "unresolved_external_versions": 3,
+  "verified_semantic_families": 0
+}

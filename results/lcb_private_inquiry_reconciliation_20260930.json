@@ -1,0 +1,346 @@
+{
+  "admitted_tasks": 0,
+  "aggregate_hash_bound_journal_metadata": {
+    "all": {
+      "case_types": {
+        "functional": 11671,
+        "stdin": 13821
+      },
+      "max_input_bytes": 12000007,
+      "max_output_bytes": 10924038,
+      "rows": 1055,
+      "rows_with_positive_count": {
+        "case_count": 1055,
+        "cases_exceeding_64k_stdin": 424,
+        "cases_saturating_64k_stdout": 119,
+        "empty_inputs": 0,
+        "empty_outputs": 3,
+        "exact_public_case_duplicates": 63,
+        "overlapping_inputs_with_different_public_private_expectations": 57,
+        "private_cases_with_public_input": 120,
+        "private_inputs_with_different_expected_outputs": 1,
+        "unique_case_count": 1055
+      },
+      "sum_per_row_counts": {
+        "case_count": 25492,
+        "cases_exceeding_64k_stdin": 4555,
+        "cases_saturating_64k_stdout": 1294,
+        "empty_inputs": 0,
+        "empty_outputs": 5,
+        "exact_public_case_duplicates": 90,
+        "overlapping_inputs_with_different_public_private_expectations": 103,
+        "private_cases_with_public_input": 246,
+        "private_inputs_with_different_expected_outputs": 13,
+        "unique_case_count": 24950
+      }
+    },
+    "empty_starter_stdio": {
+      "case_types": {
+        "stdin": 13821
+      },
+      "max_input_bytes": 12000007,
+      "max_output_bytes": 10924038,
+      "rows": 611,
+      "rows_with_positive_count": {
+        "case_count": 611,
+        "cases_exceeding_64k_stdin": 238,
+        "cases_saturating_64k_stdout": 90,
+        "empty_inputs": 0,
+        "empty_outputs": 3,
+        "exact_public_case_duplicates": 23,
+        "overlapping_inputs_with_different_public_private_expectations": 57,
+        "private_cases_with_public_input": 80,
+        "private_inputs_with_different_expected_outputs": 0,
+        "unique_case_count": 611
+      },
+      "sum_per_row_counts": {
+        "case_count": 13821,
+        "cases_exceeding_64k_stdin": 3124,
+        "cases_saturating_64k_stdout": 1116,
+        "empty_inputs": 0,
+        "empty_outputs": 5,
+        "exact_public_case_duplicates": 28,
+        "overlapping_inputs_with_different_public_private_expectations": 103,
+        "private_cases_with_public_input": 184,
+        "private_inputs_with_different_expected_outputs": 0,
+        "unique_case_count": 13523
+      }
+    },
+    "supplied_interface_functional": {
+      "case_types": {
+        "functional": 11671
+      },
+      "max_input_bytes": 5092400,
+      "max_output_bytes": 2116401,
+      "rows": 444,
+      "rows_with_positive_count": {
+        "case_count": 444,
+        "cases_exceeding_64k_stdin": 186,
+        "cases_saturating_64k_stdout": 29,
+        "empty_inputs": 0,
+        "empty_outputs": 0,
+        "exact_public_case_duplicates": 40,
+        "overlapping_inputs_with_different_public_private_expectations": 0,
+        "private_cases_with_public_input": 40,
+        "private_inputs_with_different_expected_outputs": 1,
+        "unique_case_count": 444
+      },
+      "sum_per_row_counts": {
+        "case_count": 11671,
+        "cases_exceeding_64k_stdin": 1431,
+        "cases_saturating_64k_stdout": 178,
+        "empty_inputs": 0,
+        "empty_outputs": 0,
+        "exact_public_case_duplicates": 62,
+        "overlapping_inputs_with_different_public_private_expectations": 0,
+        "private_cases_with_public_input": 62,
+        "private_inputs_with_different_expected_outputs": 13,
+        "unique_case_count": 11427
+      }
+    }
+  },
+  "artifact_kind": "sanitized-compact-metadata-manifest",
+  "artifacts": {
+    "experiments/sources/lcb_private_inquiry_plan_20260930.json": {
+      "bytes": 5195,
+      "sha256": "724019782229db49d67da3e5d666e45a1468678a9f969f665a95809078e6c968"
+    },
+    "results/lcb_private_inquiry_launch_20260930.json": {
+      "bytes": 1785,
+      "sha256": "4cc46c3f09da3c99ab8793de3b1c7d18c41df0e0143253058fdd9b6674901dfe"
+    },
+    "scripts/inquire_lcb_private_instrument_20260930.py": {
+      "bytes": 24860,
+      "sha256": "2b74b957f520d99d3fb635bdc09c94829884c79a90b2f0d3e9761c85a3a3e438"
+    },
+    "scripts/inquire_lcb_public_frame_20260930.py": {
+      "bytes": 25529,
+      "sha256": "ee22027b4fafef9db419cddf4e704544c69f056a9c2662a66269e53178f4ba60"
+    },
+    "work/lcb_private_inquiry_20260930_v1/plan.json": {
+      "bytes": 4350,
+      "sha256": "d52c36dcd7b7ac55cbf0506f4674dc9db27ca62f7c409e1db3d1aa669c1ed37b"
+    },
+    "work/lcb_private_inquiry_20260930_v1/rows.jsonl": {
+      "bytes": 947548,
+      "sha256": "818bfbeeb3c64b22306de45c75448b9a8a3141ca0fb6a78fcea0bc112a511c77"
+    },
+    "work/lcb_private_inquiry_20260930_v1/summary.json": {
+      "bytes": 4444,
+      "sha256": "e0dec34c14c7a3d3cba27172da9bcf6537e7653d573269875771689fda5f4043"
+    },
+    "work/lcb_public_inquiry_20260930_v1/public-rows.jsonl": {
+      "bytes": 2140798,
+      "sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db"
+    }
+  },
+  "assigned_rows": 1055,
+  "audit_elapsed_seconds": 2.0599992079660296,
+  "canonical_plan_sha256": "48e543acda6bbacda7607a7feeefcb54776cd45e3c9983c544c5f66fda72c346",
+  "checks": {
+    "failed": 0,
+    "failed_check_names": [],
+    "passed": 56,
+    "row_schema_error_count": 0,
+    "total": 56
+  },
+  "dataset": "livecodebench/code_generation_lite",
+  "encoding_counts_reported_from_hash_bound_journal": {
+    "base64-zlib-inert-single-string-pickle-json": 1055
+  },
+  "fetched_bytes": 4333654196,
+  "freeze_commit": "5ad474c06f7b0fdf1c5cd1c180c05db561cf6d9e",
+  "full_inventory_location": "All per-row metadata and per-range audit details remain in the ignored full record and referenced raw receipt journals; no inventory is duplicated in this manifest.",
+  "full_record": {
+    "bytes": 1059270,
+    "path": "work/lcb_private_inquiry_reconciliation_20260930_v1/full-reconciliation.json",
+    "schema": "lcb-private-instrument-reconciliation-v1",
+    "sha256": "24ae00ee5d61526cc1089211026f1ada518a05020bef4c8b54e693748b645fae"
+  },
+  "hard_os_rss_enforcement_certified": false,
+  "independent_semantic_families_certified": 0,
+  "journal_sha256": "818bfbeeb3c64b22306de45c75448b9a8a3141ca0fb6a78fcea0bc112a511c77",
+  "journal_status_counts": {
+    "DECODED_SCHEMA_ONLY": 1055
+  },
+  "limitations": [
+    "range receipt VERIFIED records retain no independent HTTP header transcript; immutable upstream whole-shard LFS hashes not verified because excluded columns were not acquired",
+    "saved parser-output metadata and inert opcode path are hash-bound reported results, not independently repeated private case parsing",
+    "raw expected-output-set differences may be whitespace, formatting, or permitted multiple outputs; they do not prove semantic inconsistency",
+    "exact public/private duplicates and input overlap require a prospectively frozen endpoint decision; absence of exact overlap does not prove an unseen or semantically independent instrument",
+    "current 64KiB observer limits are incompatible with many whole private batteries; do not drop large cases, treat cap mismatch as model failure, or silently enlarge the existing endpoint",
+    "safe parsing does not certify private expectation correctness, adversarial execution containment, task admission, operational family independence, receiver pretraining novelty or policy efficacy",
+    "hard memory enforcement and stable runtime are not established by self-reported resource usage"
+  ],
+  "model_calls_during_reconciliation": 0,
+  "network_requests_during_reconciliation": 0,
+  "next_gates": [
+    "source-backed comparison-semantic adjudication and public/private instrument overlap/expected-output consistency review without revealing private cases to policies",
+    "versioned whole-instrument resource/observer qualification for source-native sizes with independent references/known wrong controls and adversarial transport/containment checks",
+    "complete historical-controller exposure and operational co-split roster before dev/tune/eval freeze; contest IDs are not semantic families"
+  ],
+  "public_projection_sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db",
+  "range_manifest_canonical_sha256": "b4d9037fbe2661ec8a58fb68c0e647f96a53525f9b63464f02cb1ebef45d9722",
+  "readiness_delta": 0,
+  "readiness_percent": 60,
+  "reconciled_rows": 1055,
+  "reported_cpu_system_seconds": 17.741014,
+  "reported_cpu_user_seconds": 58.182505,
+  "reported_elapsed_seconds": 1557.963578833267,
+  "reported_peak_rss_bytes": 5259100160,
+  "reported_terminal_exit": 0,
+  "requests": 566,
+  "resource_caps": {
+    "cpu_count": 1,
+    "cpu_seconds": 3600,
+    "max_cases_per_row": 100000,
+    "max_encoded_field_bytes": 134217728,
+    "max_fetched_bytes": 5368709120,
+    "max_footer_bytes": 16384,
+    "max_inflated_bytes": 268435456,
+    "max_journal_bytes": 20971520,
+    "max_metadata_file_bytes": 1048576,
+    "max_receipt_bytes": 2048,
+    "max_request_bytes": 8388608,
+    "max_request_count": 1024,
+    "max_retained_bytes": 6442450944,
+    "max_rss_bytes": 17179869184,
+    "wall_seconds": 7200
+  },
+  "retained_bytes": 4334858711,
+  "revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2",
+  "sanitized_row_manifest_canonical_sha256": "944e35cdfd2ac0798bdcd0792e24614736efc887a759f49fffd9a4d72bffbf8e",
+  "schema": "lcb-private-instrument-reconciliation-manifest-v1",
+  "shard_summary": [
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 75306245,
+      "footer_bytes": 7267,
+      "footer_sha256": "36affcf1a9d089701224960374caf9c163ebddd76bb5f5d9544904141e957537",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "fab01e60f0541f303f736159bf2ed0b10dbe919018f5a67b4a70df9f640df76a",
+      "requests": 14,
+      "rows": 118,
+      "shard": "release_v6/test-00000-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 353152837,
+      "footer_bytes": 11323,
+      "footer_sha256": "a58b36564b0821878cbb108a5246209b57d72a43fe7fee3a390c0cf1927497da",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "7a4636b1168699f02d19dc49e819ef7fd94c420eb63f06f6823b8d8e95753128",
+      "requests": 48,
+      "rows": 118,
+      "shard": "release_v6/test-00001-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 547049993,
+      "footer_bytes": 6297,
+      "footer_sha256": "3915610efea54bc5dfa2ab9b781b1db84009fd93c89b2f62961ccf04996063f4",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "760e6bbfe8ddd980d40d4b7876203c0e40f24f7c12cd19fdd4258515f56d75ae",
+      "requests": 71,
+      "rows": 117,
+      "shard": "release_v6/test-00002-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 879568441,
+      "footer_bytes": 7447,
+      "footer_sha256": "b9fd7b616f7451f8792c9183db257bc68021230a64d9117c4d38610943428918",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "fd4a0d2a0606528b010d2e5b9d5e10707efd69dc56572564c03198c0b9498ed4",
+      "requests": 110,
+      "rows": 117,
+      "shard": "release_v6/test-00003-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 635916476,
+      "footer_bytes": 6313,
+      "footer_sha256": "ad2cca1cf65411d62bb2ae9e0135fc8af33a93291f71f22e8142c9dd28a2f103",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "2d549d40f13f62b44f461c01369c106f79e3a72623d7af7edc62b18fbd952a11",
+      "requests": 81,
+      "rows": 117,
+      "shard": "release_v6/test-00004-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 1159498168,
+      "footer_bytes": 8482,
+      "footer_sha256": "f60d30f3a89f34485fc8a470fb0ab779a1659b15dff473e25bfaa8c9ceecbdc3",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "56733f1f77e8b6b7b08dd9ec01938c83d82d38368abc2e6de3a6a2b1a47598f8",
+      "requests": 144,
+      "rows": 117,
+      "shard": "release_v6/test-00005-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 514770951,
+      "footer_bytes": 8736,
+      "footer_sha256": "96437f14affcdef2dd8583aebd3d6ff9349a06635e46ff679a976ff95ab7ffa8",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "86fbc0d75831794ce5d2be6818e8ca1fa8d0e5ee06327b3cdb4d26c875adc252",
+      "requests": 67,
+      "rows": 117,
+      "shard": "release_v6/test-00006-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 78367108,
+      "footer_bytes": 7122,
+      "footer_sha256": "861c254d4fcf1b24f45f35f3aedc9a818f0c09b3025029b4e4d882a3785a23be",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "775984d21413a79aae385459afec16847c1d3714addb12eb303d16b477aa4b57",
+      "requests": 15,
+      "rows": 117,
+      "shard": "release_v6/test-00007-of-00009.parquet"
+    },
+    {
+      "all_payload_hashes_valid": true,
+      "fetched_bytes": 90023977,
+      "footer_bytes": 7031,
+      "footer_sha256": "763f7d28815c439f4e9d68e08df2c17cdc7b1963eb2fef5c7123bf54b58ef33d",
+      "no_duplicate_or_overlapping_ranges": true,
+      "no_excluded_column_data_fetched": true,
+      "projection_complete": true,
+      "receipt_ledger_sha256": "7865b83fd4d08dec963eaa643c832369001bf20b3066a76676d0c329c5211c68",
+      "requests": 16,
+      "rows": 117,
+      "shard": "release_v6/test-00008-of-00009.parquet"
+    }
+  ],
+  "source_adopted": false,
+  "status": "METADATA_AND_RAW_RANGE_RECONCILED",
+  "task_candidate_reference_executions_during_reconciliation": 0,
+  "terminal_exit_evidence": "parent lead supplied completed exec session exit 0; PID absence and saved COMPLETED summary independently checked",
+  "terminal_process_pid_absent_verified": true,
+  "unattempted_rows": 0,
+  "unsafe_unpickler_executions_during_reconciliation": 0,
+  "verification_scope": [
+    "independently streamed and verified every retained range payload hash/size; exact receipt schemas/HTTP206-derived VERIFIED metadata/order/URLs/server-size caps",
+    "independently parsed saved pinned Parquet footers through metadata-only virtual files; recomputed projected/excluded column boundaries and exact projection coverage without reading private test values",
+    "independently checked all 1055 journal identities/order/public canonical row hashes, schemas/types/count consistency and recorded resource caps",
+    "case counts, private-field and case-ledger hashes, duplicate/overlap counts are recomputed aggregates of the immutable runner journal; this reconciliation does not independently re-decode every private field or rederive per-case metadata from retained Parquet pages"
+  ]
+}

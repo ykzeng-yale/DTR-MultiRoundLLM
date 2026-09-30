@@ -1,0 +1,130 @@
+{
+  "admitted_tasks": 0,
+  "all_source_rows": 1055,
+  "assigned": 573,
+  "batches": [
+    {
+      "batch": "a",
+      "counts": {
+        "clear": 189,
+        "unresolved": 2
+      },
+      "raw_bytes": 292094,
+      "raw_path": "work/lcb_contract_review_batch_a_20260930/rows.jsonl",
+      "raw_sha256": "f3ed857056547510b3fb8b53ff0a5e7f1d22c65f505e107697b5db076e1de291",
+      "rows": 191
+    },
+    {
+      "batch": "b",
+      "counts": {
+        "clear": 188,
+        "hold": 3
+      },
+      "raw_bytes": 483082,
+      "raw_path": "work/lcb_contract_review_batch_b_20260930_v2/rows.jsonl",
+      "raw_sha256": "504288c3c4959744b912d0f6075332be12073b33c389a60089094ec1421ba938",
+      "rows": 191
+    },
+    {
+      "batch": "c",
+      "counts": {
+        "clear": 190,
+        "unresolved": 1
+      },
+      "raw_bytes": 302639,
+      "raw_path": "work/lcb_contract_review_batch_c_20260930/rows.jsonl",
+      "raw_sha256": "af33f3038538fecb19bc8b0f8fd296811ab35b8f60569cd6f89db1f62fac8561",
+      "rows": 191
+    }
+  ],
+  "candidate_reference_task_executions": 0,
+  "counts": {
+    "clear": 567,
+    "hold": 3,
+    "unresolved": 3
+  },
+  "coverage_correction": {
+    "cause": "one-based-versus-zero-based team assignment convention",
+    "lead_verified_complete_573": true,
+    "newly_reviewed": "abc378_c",
+    "original_batch_b_path": "work/lcb_contract_review_batch_b_20260930/rows.jsonl",
+    "original_batch_b_sha256": "fbbdb60cd81402c531362dc2a0979a36dd4ef68044ed90a6abb1104ba0b5fba3",
+    "original_preserved": true,
+    "removed_overlap": "abc342_b"
+  },
+  "full_ledger_bytes": 633302,
+  "full_ledger_path": "work/lcb_complete_contract_review_20260930_v1/rows.jsonl",
+  "full_ledger_sha256": "4f4aa6aa162c626b19771ce7da5751573a4e8582a6de454ca386fe497f5b9bde",
+  "limitations": [
+    "source-only first-pass internal review; no task/measurement validity or efficacy",
+    "task IDs/contest names/dates are not independent-family/novelty certificates",
+    "full artifact does not adjudicate all possible input/output spellings"
+  ],
+  "model_calls": 0,
+  "prior_scope_disposition_sha256": "37ddfff7db1b079f8ba7617d9e1f5381222a8a1e0351eda4fa09e3dc5c1b9534",
+  "qualification_pending": [
+    "source-separated private instrument/reference/wrong controls",
+    "fresh containment",
+    "global operational-family and historical-exposure crosswalk",
+    "prospective operational endpoint/failure map",
+    "train/tune/evaluation and actual policy/comparator freeze"
+  ],
+  "readiness_delta": 0,
+  "readiness_percent": 60,
+  "reviewed": 573,
+  "schema": "lcb-complete-source-contract-first-pass-v1",
+  "source_projection_sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db",
+  "special_or_unresolved": [
+    {
+      "proposed_comparison": "hold",
+      "question_id": "abc309_a",
+      "ruling": "unresolved",
+      "source_reason": "The task refers to a pictured numbered 3x3 board, but its layout is absent from the pinned text; samples do not specify every square.",
+      "source_row": 233,
+      "statement_sha256": "00bf745bffc06001102c23c83c77aa3f9f358598b7630c084b91412ec78ef140"
+    },
+    {
+      "proposed_comparison": "hold",
+      "question_id": "abc333_b",
+      "ruling": "unresolved",
+      "source_reason": "The regular pentagon vertex labels are provided only by a missing diagram; text does not state cyclic vertex order. Samples constrain some distances but not full label placement.",
+      "source_row": 347,
+      "statement_sha256": "3f50dbcbc52ed78b8e9b946dc65b89199236fe31e518bf51e7ac24d92e8f2d73"
+    },
+    {
+      "proposed_comparison": "hold",
+      "question_id": "abc343_b",
+      "ruling": "hold",
+      "source_reason": "Adjacency lists are individually sorted but variable length, including empty lines. Flattened whitespace tokens lose required vertex-row boundaries.",
+      "source_row": 396,
+      "statement_sha256": "30d9c55dfa91028306dcc6016008f41b57afc3e957a367da021cd249c1e6651f"
+    },
+    {
+      "proposed_comparison": "hold",
+      "question_id": "abc366_b",
+      "ruling": "hold",
+      "source_reason": "The listed conditions constrain columns 1 through N and prohibit trailing *, but do not explicitly bound each T_j length by N. Additional lowercase suffixes beyond N satisfy the literal listed conditions, so canonical vertical writing is intended but token-unique output is not fully secured by the formal contract.",
+      "source_row": 613,
+      "statement_sha256": "86b331782a45dc5aaa4cba63a67cbad8c570e90a27366ec39fab90d228f3f101"
+    },
+    {
+      "proposed_comparison": "hold",
+      "question_id": "abc367_b",
+      "ruling": "hold",
+      "source_reason": "The real-value rendering removes trailing fractional zeros and an unnecessary point, but does not fully pin other lexical representations such as a leading plus or leading integer zeros. A canonical decimal-output interpretation needs explicit adjudication rather than inferred numeric tolerance.",
+      "source_row": 623,
+      "statement_sha256": "445d1f3d5b25843145e124f0bb1e3dd7f6be05755819909c27fe95c72e56087c"
+    },
+    {
+      "proposed_comparison": "hold",
+      "question_id": "arc184_c",
+      "ruling": "unresolved",
+      "source_reason": "The requested maximum mountain-fold count is numerical, but the projected source refers to an omitted fold-orientation figure and does not explicitly state the initial paper face orientation.",
+      "source_row": 798,
+      "statement_sha256": "a3b176a531afd1834327eb5e273c5c190fa4323fbb66712e9a43fcb5a8e33296"
+    }
+  ],
+  "unchanged_outside_interface": 444,
+  "unchanged_prior_comparison_holds": 38,
+  "verified_semantic_families": 0
+}

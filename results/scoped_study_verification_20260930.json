@@ -39,5 +39,20 @@
     "12historical source/manifest test failures from initial lead in-place edit",
     "5manifest source-glob failures from misplaced new file; restored and versioned"
   ],
-  "source_query_reconciliation": "results/lcb_public_inquiry_reconciliation_20260930.json"
+  "source_query_reconciliation": "results/lcb_public_inquiry_reconciliation_20260930.json",
+  "subsequent_private_inquiry_verification": {
+    "freeze_commit": "5ad474c06f7b0fdf1c5cd1c180c05db561cf6d9e",
+    "full_suite": {
+      "passed": 2596,
+      "seconds": 37.05,
+      "skipped": 2,
+      "subtests_passed": 38
+    },
+    "meaning": "software and trusted-data parsing verification only",
+    "real_parser_reader_tests": {
+      "passed": 15,
+      "seconds": 0.022
+    },
+    "task_model_reference_executions": 0
+  }
 }
