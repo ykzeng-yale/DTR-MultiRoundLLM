@@ -1,0 +1,28 @@
+{
+  "schema": "scientific-sprint-third-party-provenance-v1",
+  "receiver_weights": {
+    "model": "Qwen2.5-3B-Instruct",
+    "license": "Qwen RESEARCH LICENSE AGREEMENT",
+    "license_url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/45780f2/LICENSE",
+    "license_snapshot_path": "work/sprint_license_records_20260930/Qwen3B_LICENSE.txt",
+    "license_snapshot_sha256": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9",
+    "scope": "non-commercial research/evaluation",
+    "model_weights_sha256": "626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d",
+    "attribution": "Built with Qwen; Qwen is licensed under the Qwen RESEARCH LICENSE AGREEMENT, Copyright (c) Alibaba Cloud. All Rights Reserved."
+  },
+  "runtime": {
+    "llama_cpp": "MIT, pinned source4fea119",
+    "CPython": "Python Software Foundation licence, existing3.9.21 stdlib runtime; files pinned in each attestation",
+    "bubblewrap": "LGPL-2.0-or-later; installed system binary hash-bound",
+    "libseccomp": "LGPL-2.1; installed trusted dependency hash-bound"
+  },
+  "dataset": {
+    "source_metadata_manifest": "results/lcb_source_metadata_20260930.json",
+    "dataset_card_license_literal": "cc",
+    "code_loader": "MIT",
+    "content_license_specificity": "dataset card generic cc is not blanket redistribution permission; task provenance remains recorded",
+    "raw_private_and_third_party_artifacts": "ignored owned local/cluster work only; no raw redistribution inGit"
+  },
+  "recorded_on": "2026-09-30",
+  "not_a_legal_clearance_certificate": true
+}

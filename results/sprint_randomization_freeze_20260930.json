@@ -1,0 +1,28 @@
+{
+  "schema": "one-time-independent-vector-draws-v1",
+  "nonrandom_protocol_freeze": "00db374d109c705bd54c9ef4dac7bc4ec8145cda",
+  "conditioning": "realized evaluation draws/table/seeds/hashes are provenance outside F",
+  "tables": {
+    "development": {
+      "path": "experiments/bouchet/sprint_20260930/development_randomization_v1.json",
+      "sha256": "64d5d82ffd946d106deb6550ea1097303b7b69c8758dcb9982aeb6c6fe7b3f46",
+      "canonical_sha256": "11cf4865278377f5af9851f13ddbd6747554714d051e6ac0f44ece40f06b0670",
+      "vector_nonces": 5264,
+      "action_pairs": 5472
+    },
+    "tuning": {
+      "path": "experiments/bouchet/sprint_20260930/tuning_randomization_v1.json",
+      "sha256": "b271737d6bf8ee4b14a3df28a90421215f3c4dfda011b93de6768dfbc9c6c09d",
+      "canonical_sha256": "c20df1ea50d798fd76f003fdb48e5d607a069420f0a2482c3987d97440341c74",
+      "vector_nonces": 440,
+      "action_pairs": 0
+    },
+    "evaluation": {
+      "path": "experiments/bouchet/sprint_20260930/evaluation_randomization_v1.json",
+      "sha256": "c3ac16977ead83df555c259142ff0ddfe65d01c6e5bc19062d303373d7bf0a30",
+      "canonical_sha256": "9c55548169e8df0c85906b7c8b4f6082f97524295df5941bce86d1bb709b80ef",
+      "vector_nonces": 3520,
+      "action_pairs": 0
+    }
+  }
+}

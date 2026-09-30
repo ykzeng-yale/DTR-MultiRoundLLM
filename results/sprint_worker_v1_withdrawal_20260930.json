@@ -1,0 +1,10 @@
+{
+  "status": "planned-only, never submitted or task-released",
+  "reason": "independent pre-execution review found V3 writable root/transport; replaced by V4 correction and explicit pre-call four-hour cap amendment",
+  "old_plan_path": "experiments/bouchet/sprint_20260930/study_worker_plan_v1.json",
+  "old_plan_sha256": "49c555b9521b3c6750af3f0767764a77063e130a0015f9a13dc7a32bfbddcea6",
+  "old_contract_sha256": "9be69332b40b9ef9d4ee6eade5429933c7ef5c21d5b43bc9ec72708ef19ab056",
+  "rng_tables_retained_without_resampling": true,
+  "task_calls": 0,
+  "candidate_executions": 0
+}
