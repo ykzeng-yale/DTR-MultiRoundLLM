@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 30 September 2026 — no operational family sampling law
+
+The broad equal-family estimand still lacks an operational family universe or probability law. Historical task pools lack a fresh supported logger/evaluation split; MBPP has no jointly admitted residual roots; BigCodeBench remains unadopted; and synthetic tasks target only their generator law. A prospective task stream could define a new service-relative cohort, but none is authorized or available in this repository. This is a target-identification gate, not a compute limit or efficacy result. See [the sampling-law decision](broad_task_family_sampling_law_decision_20260930.md). Full-project readiness **60%, delta0**; population/measurement, practical policy fit, independent evaluation and manuscript/raw reproduction remain incomplete.
+
 ## 30 September 2026 — broad-target measurement decision
 
 The lead separated undefined task outcomes from unavailable observations and from observed grades with unbounded semantic error; these require different treatment. Families with defined but unavailable outcomes remain assigned and receive pathwise bounds. An undefined contract cannot be repaired by missingness adjustment. A benchmark grade is not semantic quality without justified simultaneous measurement-error bounds. This is a prospective design decision, not an experiment or efficacy result; it does not alter the broad equal-family target or five-point rule. See [the measurement gate](broad_task_family_measurement_gate_20260930.md). No current observer and frame jointly clear the broad-target gate. **Full-project readiness60%, delta0**; population/measurement, practical policy fit, independent evaluation and manuscript/raw reproduction remain incomplete.
