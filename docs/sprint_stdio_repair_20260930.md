@@ -1,0 +1,7 @@
+# Versioned stdio bootstrap repair
+
+Qualification27976306 terminated after the first trusted preflight:1failed/22unattempted, payload never started. The54-byte stderr hash exactly reconstructs `bwrap: execvp /runtime/bin/python3: Permission denied\n`; this is pre-bootstrap EACCES, not seccomp or model/task failure. Version1 staged every dynamic dependency0400, including the ELF PT_INTERP loader that needs execute permission. The failure/raw hashes remain immutable; no candidate/reference/model code ran.
+
+Version2 resides in a new namespace, preserving all sevenV1source hashes. It parses the existing ELF PT_INTERP without running it; only the pinned interpreter and its actual ELF loader use0500, other libraries0400. Mode/file/hash/loader mapping are verified in the runtime manifest. It records per-node NOEXEC flags, preferring a dedicated owned node-local runtime and using a dedicated owned result-directory snapshot only when local scratch is NOEXEC; no host mount option or process restriction is changed. Trusted qualification retains a bounded4KiB stderr prefix with full and retained hashes to diagnose failures without another blind replay.
+
+Same23fixtures/resources/caps/filter,1CPU/2GiB/devel/5minutes,$0.31focused checks pass0.06s; no liveV2result yet. Plan experiments/containment/stdio_sprint_plan_v2.json pins lineage and all new source. One new repair submission; another identical bootstrap failure stops for diagnosis. Candidate release remains false pending actual raw review. Full-project60%,delta0.
