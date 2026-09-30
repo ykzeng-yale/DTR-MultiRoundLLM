@@ -1,3 +1,9 @@
+# Current lead handoff — broad-target measurement gate (30 September 2026)
+
+Read [`docs/broad_task_family_measurement_gate_20260930.md`](broad_task_family_measurement_gate_20260930.md). Keep three states separate: undefined task contract (estimand not defined), defined outcome with unavailable observation (retain assigned family and bound), and observed benchmark grade with unbounded semantic error (report `Z`; semantic `Y` requires valid simultaneous error-mass bounds). Do not discard hard-to-grade families, recode infrastructure failure as FAIL/STOP, or call native-test scores semantic correctness.
+
+No model/task experiment is valid yet. Preserve the broad equal-family target and five-point rule. The MBPP residual is no-go; BigCodeBench is unadopted; native observer repair v1–v3 is closed; do not fit the exposed nine-root pilot. Next: establish an outcome-blind target-aligned family sampling mechanism and a source-blind way to define/measure `Y` across that frame. Only then freeze family-disjoint development/tuning/evaluation, behavior probabilities, full-history policy/comparators, costs, missingness, versions and finite resources. Readiness60%,delta0; efficacy unestablished.
+
 # Handoff to the experimental agent
 
 ## Lead handoff — 29 September 2026, interval simulation terminal

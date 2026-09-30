@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 30 September 2026 — broad-target measurement decision
+
+The lead separated undefined task outcomes from unavailable observations and from observed grades with unbounded semantic error; these require different treatment. Families with defined but unavailable outcomes remain assigned and receive pathwise bounds. An undefined contract cannot be repaired by missingness adjustment. A benchmark grade is not semantic quality without justified simultaneous measurement-error bounds. This is a prospective design decision, not an experiment or efficacy result; it does not alter the broad equal-family target or five-point rule. See [the measurement gate](broad_task_family_measurement_gate_20260930.md). No current observer and frame jointly clear the broad-target gate. **Full-project readiness60%, delta0**; population/measurement, practical policy fit, independent evaluation and manuscript/raw reproduction remain incomplete.
+
 ## 30 September 2026 — MBPP endpoint-support audit
 
 The hash-bound audit of all544 MBPP source candidates finds536 with no challenge tests,7 with one and1 with three; the conservatively retained12-root residual has36 source assertions and no challenge partition. All8 challenge-positive candidates remain excluded under the recorded setup/interface gates; no admission or independent-family claim follows. The residual cannot support a semantic efficacy evaluation using the current source instrument. This is a population/measurement no-go, not a resource limitation or a futility finding. No receiver/reference/candidate/benchmark code ran. Three focused audit tests pass. **Full-project readiness60%, change0**; valid population/measurement, practical policy fit, untouched-family evaluation and manuscript/raw reproduction remain incomplete.
