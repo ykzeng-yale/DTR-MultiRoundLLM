@@ -1,0 +1,5 @@
+# Receiver build prerequisite
+
+Prospective bounded build, zero model/task execution. The already acquired36MiB llama.cpp archive SHA3b83853db981c2aa0dcff7e4711cfb1640b694465407fe668675154f0fe67bdb/source4fea119 is built for CUDA86/89/90 with the same pinned GCC13.3/CMake3.31.8/CUDA12.8 modules. The existing H100-only binary cannot execute on the currently eligible A40/Ada hardware. No new receiver weights, source downloads or scientific outcome are introduced. Model weights remain SHA626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d; the new binary manifest and hardware law must be pinned and qualified before collection, distinct from old H100 results.
+
+Plan experiments/bouchet/sprint_20260930/build_plan_v1.json;4CPU/32GiB/devel/60minutes,3500second execution timeout,5GiB source+build cap,$0,noGPU/network/candidate execution. Failure retains logs; no automatic same-version retry. Bash syntax checks pass. This supports the named real-policy study gate rather than another generic hardware pilot. Full-project60%,delta0.

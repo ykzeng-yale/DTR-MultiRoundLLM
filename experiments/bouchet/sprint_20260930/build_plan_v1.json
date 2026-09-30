@@ -1,0 +1,36 @@
+{
+  "schema": "dtr-six-hour-build-v1",
+  "scientific_prerequisite": "same-weight CUDA receiver on available sm86/sm89 hardware before qualified model collection",
+  "source_archive_sha256": "3b83853db981c2aa0dcff7e4711cfb1640b694465407fe668675154f0fe67bdb",
+  "source_commit": "4fea119",
+  "architectures": [
+    86,
+    89,
+    90
+  ],
+  "modules": [
+    "GCC/13.3.0",
+    "CMake/3.31.8-GCCcore-13.3.0",
+    "CUDA/12.8.0"
+  ],
+  "files": {
+    "experiments/bouchet/sprint_20260930/build_receiver_v1.sbatch": "b6eaa1fe38c3a3cf7d053880b8a7c1a2bb5f7c7c3b2d5e212ea81fcf435366a8",
+    "experiments/bouchet/sprint_20260930/build_receiver_v1.sh": "4810abef9d062ce25fa6d723a14c3ccb8aa0ade7fdec705286a7cf94acc9340e"
+  },
+  "resources": {
+    "account": "pi_fl426",
+    "partition": "devel",
+    "cpu": 4,
+    "memory_gib": 32,
+    "wall_seconds": 3600,
+    "execution_wall_seconds": 3500,
+    "artifact_bytes": 5368709120,
+    "gpu": 0,
+    "paid_usd": 0
+  },
+  "model_calls": 0,
+  "candidate_execution": false,
+  "network": false,
+  "immutable_output": true,
+  "failure_action": "retain logs, diagnose before separately versioned repair; no automatic retry"
+}
