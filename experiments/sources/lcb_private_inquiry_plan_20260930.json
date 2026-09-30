@@ -1,0 +1,139 @@
+{
+  "columns": [
+    "platform",
+    "question_id",
+    "private_test_cases"
+  ],
+  "cpu_count": 1,
+  "cpu_seconds": 3600,
+  "dataset": "livecodebench/code_generation_lite",
+  "footer_pins": [
+    {
+      "footer_bytes": 7267,
+      "footer_sha256": "36affcf1a9d089701224960374caf9c163ebddd76bb5f5d9544904141e957537",
+      "private_compressed_bytes": 75298155,
+      "private_uncompressed_bytes": 75854306,
+      "row_groups": 1,
+      "rows": 118,
+      "shard": "release_v6/test-00000-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 11323,
+      "footer_sha256": "a58b36564b0821878cbb108a5246209b57d72a43fe7fee3a390c0cf1927497da",
+      "private_compressed_bytes": 353140728,
+      "private_uncompressed_bytes": 366885424,
+      "row_groups": 1,
+      "rows": 118,
+      "shard": "release_v6/test-00001-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 6297,
+      "footer_sha256": "3915610efea54bc5dfa2ab9b781b1db84009fd93c89b2f62961ccf04996063f4",
+      "private_compressed_bytes": 547042935,
+      "private_uncompressed_bytes": 563753289,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00002-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 7447,
+      "footer_sha256": "b9fd7b616f7451f8792c9183db257bc68021230a64d9117c4d38610943428918",
+      "private_compressed_bytes": 879560215,
+      "private_uncompressed_bytes": 914966629,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00003-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 6313,
+      "footer_sha256": "ad2cca1cf65411d62bb2ae9e0135fc8af33a93291f71f22e8142c9dd28a2f103",
+      "private_compressed_bytes": 635909375,
+      "private_uncompressed_bytes": 644060477,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00004-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 8482,
+      "footer_sha256": "f60d30f3a89f34485fc8a470fb0ab779a1659b15dff473e25bfaa8c9ceecbdc3",
+      "private_compressed_bytes": 1159488891,
+      "private_uncompressed_bytes": 1214069265,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00005-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 8736,
+      "footer_sha256": "96437f14affcdef2dd8583aebd3d6ff9349a06635e46ff679a976ff95ab7ffa8",
+      "private_compressed_bytes": 514761449,
+      "private_uncompressed_bytes": 522537053,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00006-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 7122,
+      "footer_sha256": "861c254d4fcf1b24f45f35f3aedc9a818f0c09b3025029b4e4d882a3785a23be",
+      "private_compressed_bytes": 78359194,
+      "private_uncompressed_bytes": 84265771,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00007-of-00009.parquet"
+    },
+    {
+      "footer_bytes": 7031,
+      "footer_sha256": "763f7d28815c439f4e9d68e08df2c17cdc7b1963eb2fef5c7123bf54b58ef33d",
+      "private_compressed_bytes": 90016158,
+      "private_uncompressed_bytes": 97393390,
+      "row_groups": 1,
+      "rows": 117,
+      "shard": "release_v6/test-00008-of-00009.parquet"
+    }
+  ],
+  "max_cases_per_row": 100000,
+  "max_encoded_field_bytes": 134217728,
+  "max_fetched_bytes": 5368709120,
+  "max_footer_bytes": 16384,
+  "max_inflated_bytes": 268435456,
+  "max_journal_bytes": 20971520,
+  "max_metadata_file_bytes": 1048576,
+  "max_receipt_bytes": 2048,
+  "max_request_bytes": 8388608,
+  "max_request_count": 1024,
+  "max_retained_bytes": 6442450944,
+  "max_rss_bytes": 17179869184,
+  "minimum_free_bytes": 10737418240,
+  "public_rows_path": "work/lcb_public_inquiry_20260930_v1/public-rows.jsonl",
+  "public_rows_sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db",
+  "pyarrow_version": "19.0.1",
+  "python_version": "3.12.13",
+  "range_source_sha256": "ee22027b4fafef9db419cddf4e704544c69f056a9c2662a66269e53178f4ba60",
+  "revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2",
+  "rows": 1055,
+  "runner_sha256": "2b74b957f520d99d3fb635bdc09c94829884c79a90b2f0d3e9761c85a3a3e438",
+  "schema": "lcb-private-instrument-feasibility-v1",
+  "shard_bytes": {
+    "release_v6/test-00000-of-00009.parquet": 75385387,
+    "release_v6/test-00001-of-00009.parquet": 353243448,
+    "release_v6/test-00002-of-00009.parquet": 547148226,
+    "release_v6/test-00003-of-00009.parquet": 879660215,
+    "release_v6/test-00004-of-00009.parquet": 635992480,
+    "release_v6/test-00005-of-00009.parquet": 1159591686,
+    "release_v6/test-00006-of-00009.parquet": 514869763,
+    "release_v6/test-00007-of-00009.parquet": 78448917,
+    "release_v6/test-00008-of-00009.parquet": 90113345
+  },
+  "shards": [
+    "release_v6/test-00000-of-00009.parquet",
+    "release_v6/test-00001-of-00009.parquet",
+    "release_v6/test-00002-of-00009.parquet",
+    "release_v6/test-00003-of-00009.parquet",
+    "release_v6/test-00004-of-00009.parquet",
+    "release_v6/test-00005-of-00009.parquet",
+    "release_v6/test-00006-of-00009.parquet",
+    "release_v6/test-00007-of-00009.parquet",
+    "release_v6/test-00008-of-00009.parquet"
+  ],
+  "url_prefix": "https://huggingface.co/datasets/livecodebench/code_generation_lite/resolve/25d8cb8f0db2efe1b589941eb8c26a219850d4d2/",
+  "wall_seconds": 7200
+}
