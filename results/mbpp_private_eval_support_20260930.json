@@ -1,0 +1,155 @@
+{
+  "broad_candidate_root_count": 544,
+  "challenge_positive_source_roots": [
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 23
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 25
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 26
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 28
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 42
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "prior_seen_dev_release_v1c": true,
+      "task_id": 43
+    },
+    {
+      "challenge_test_count": 1,
+      "historical_gate": "G2_interface",
+      "historical_reason": "not_single_function",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 44
+    },
+    {
+      "challenge_test_count": 3,
+      "historical_gate": "G3_setup",
+      "historical_reason": "setup_or_challenge_tests_present",
+      "prior_seen_dev_release_v1c": false,
+      "task_id": 47
+    }
+  ],
+  "challenge_test_count_distribution": {
+    "0": 536,
+    "1": 7,
+    "3": 1
+  },
+  "challenge_test_count_total": 10,
+  "execution_counts": {
+    "benchmark": 0,
+    "candidate": 0,
+    "receiver": 0,
+    "reference": 0
+  },
+  "input_sha256": {
+    "candidate_index": "87aa26bd6cc7153b2e2db1ec426424b9dcab9b6202428800291a680f93e610e4",
+    "joint_ledger": "97d29d9baf79c4fea2c73406656881bed82b9df5071f8001c0641dcd624a3081",
+    "source": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f",
+    "source_lineage": "c3e2e63dbc41934eb8ddf02c7fa170b4ed48f09683f4833ac35ead8ae9b516b6"
+  },
+  "interpretation": "The pinned source contains no challenge-test partition for these roots. The remaining public assertions are not an independent hidden endpoint or evidence of semantic validity; a new outcome instrument requires a separate specification and validation contract.",
+  "public_test_count_distribution": {
+    "3": 544
+  },
+  "public_test_count_total": 1632,
+  "record_type": "read_only_source_measurement_inventory",
+  "residual_challenge_test_count_distribution": {
+    "0": 12
+  },
+  "residual_challenge_test_count_total": 0,
+  "residual_public_test_count_total": 36,
+  "residual_records": [
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 36
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 176
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 354
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 356
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 654
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 656
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 679
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 700
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 703
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 833
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 885
+    },
+    {
+      "challenge_test_count": 0,
+      "public_test_count": 3,
+      "task_id": 901
+    }
+  ],
+  "residual_root_count": 12,
+  "residual_roots_with_challenge_tests": 0,
+  "roots_with_challenge_tests": 8
+}

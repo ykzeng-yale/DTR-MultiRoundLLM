@@ -1,5 +1,9 @@
 # Research-completion rubric and historical checkpoints
 
+## 30 September 2026 — MBPP endpoint-support audit
+
+The hash-bound audit of all544 MBPP source candidates finds536 with no challenge tests,7 with one and1 with three; the conservatively retained12-root residual has36 source assertions and no challenge partition. All8 challenge-positive candidates remain excluded under the recorded setup/interface gates; no admission or independent-family claim follows. The residual cannot support a semantic efficacy evaluation using the current source instrument. This is a population/measurement no-go, not a resource limitation or a futility finding. No receiver/reference/candidate/benchmark code ran. Three focused audit tests pass. **Full-project readiness60%, change0**; valid population/measurement, practical policy fit, untouched-family evaluation and manuscript/raw reproduction remain incomplete.
+
 ## 29 September 2026 — interval operating characteristics reconciled
 
 The frozen7-law ×6-size synthetic run completed840,000/840,000 replicates and42/42 cells in29.690s; its aggregate and lead hash/assignment/MCSE reconciliation are committed under `results/interval_operating_characteristics*20260929.json`. Sign-split KL simultaneous empirical coverage ranged .9998–1.0 (worst-cell MCSE .0001), Hoeffding was1.0, and KL intervals were narrower in all42cells. However, under one hypothetical +.10 contrast law with30% disagreement and n=198, the strict useful-gain decision frequency was.00150; this is conditional on synthetic laws, not MBPP power or efficacy. It demonstrates that the exact all-zero radius does not describe nonzero-sign variation. The run does not resolve population, measurement, fitting or evaluation gates; readiness remains **60%, delta0**.

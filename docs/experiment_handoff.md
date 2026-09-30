@@ -902,3 +902,9 @@ Read `docs/mbpp_contract_and_precision_disposition_20260929.md`. Source comparis
 ## 29 September 2026 — target-population status resolved
 
 The frozen design did not select either the 198-root review panel or the full974-row MBPP source as the study population. The 198 is a heterogeneous source-curation panel; the43 are residual candidates with zero jointly admissible roots;974 is the pinned source universe with a curation funnel, not a family sampling law. The original estimand is equal-family but leaves its concrete family population/source open. See `docs/mbpp_population_target_status_20260929.md`. Do not enlarge the candidate roster silently or count source rows as families. Recommend preserving the broad research objective and treating any finite-MBPP study as a separately approved narrower target with a new freeze. No experiments or fitting are currently scientifically released. Readiness60%,delta0.
+
+## 30 September 2026 — MBPP source measurement gate resolved
+
+The source-only audit in `docs/mbpp_private_evaluation_feasibility_20260930.md` closes the question of whether the current MBPP residual already has a challenge-test endpoint: it does not. Across the544 literal-deduplicated source candidates,536 have no challenge tests,7 have one and1 has three; the current12-root conservative remainder has no challenge tests. The eight challenge-positive roots retain their prior source gates and are not reopened. No model or task code ran. Do not fit or collect on this frame.
+
+Next: preserve the broad equal-family research objective. Establish a new, independently validated outcome instrument and target-aligned family/exposure frame, then freeze separate development and untouched evaluation families under the existing five-point rule before any model calls. Compute is available but does not resolve this measurement/admission gate. Readiness60%,delta0; no efficacy or independent-review credit.
