@@ -1,0 +1,29 @@
+{
+  "schema": "bouchet-stdio-sprint-qualification-submission-v1",
+  "job_id": "27976306",
+  "account": "pi_fl426",
+  "partition": "devel",
+  "resources": {
+    "cpu": 1,
+    "memory_gib": 2,
+    "gpu": 0,
+    "wall_seconds": 300
+  },
+  "remote_directory": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-stdio-qualification-20260930-v1",
+  "freeze": "5057f1c1e3dd0ec8b553658b9e899da4d7180a29",
+  "freeze_full": "5057f1c1e3dd0ec8b553658b9e899da4d7180a29",
+  "plan_sha256": "efb8caf9eea1fd304ba6d002702dd50b36b6f1240d93b349b0c40fc4e6574724",
+  "sbatch_returned": "27976306",
+  "last_observed_state": "PENDING",
+  "last_observed_reason": "QOSMaxCpuPerUserLimit",
+  "expected_artifacts": [
+    "stdio-sprint-results/summary.json",
+    "stdio-sprint-results/journal.jsonl",
+    "stdio-sprint-results/attestation.json",
+    "stdio-sprint-results/runtime-manifest.json",
+    "logs/stdio-qualification-27976306.out",
+    "logs/stdio-qualification-27976306.err"
+  ],
+  "classification": "23 trusted fixtures only, no candidate/model/reference execution",
+  "paid_usd": 0
+}

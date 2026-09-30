@@ -1,0 +1,220 @@
+{
+  "admitted_tasks": 0,
+  "artifacts": {
+    "all_source_dispositions": {
+      "bytes": 1305561,
+      "path": "work/lcb_sprint_bundle_20260930_v2/all-source-dispositions.json",
+      "sha256": "ecd9b8b27c5b19d96ea1dd8ef160c6ca64d33afd09567db2e5c692099f45b68b"
+    },
+    "bundle_plan": {
+      "bytes": 5965,
+      "path": "experiments/sources/lcb_sprint_bundle_plan_v2_20260930.json",
+      "sha256": "fe8c830f93561f449f7a75466d8262ac178e00748501a3e21d9d8aceec34c3fb"
+    },
+    "bundle_runner": {
+      "bytes": 28238,
+      "path": "scripts/build_lcb_sprint_bundle_20260930.py",
+      "sha256": "88d013f3c1e08d01ff3e7fac61b86c5e1f94be726427b685803a5f8ceb58fa10"
+    },
+    "bundle_summary": {
+      "bytes": 3037,
+      "path": "work/lcb_sprint_bundle_20260930_v2/summary.json",
+      "sha256": "07c5105d63d8d5739f2fcb48fad12f88426a971c34ad1b6f548430860f5bd5ac"
+    },
+    "canonical_flags": {
+      "bytes": 3,
+      "path": "work/lcb_sprint_bundle_20260930_v2/canonical-comparison-flags.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "historical_refresh_inventory": {
+      "bytes": 177789,
+      "path": "work/lcb_sprint_exposure_refresh_20260930_v2/exposure-inventory.json",
+      "sha256": "c0ebc778febc9bc126506b392e3a1de8fa320b2b691d600fcecb8c88b95ae9f5"
+    },
+    "historical_refresh_plan": {
+      "bytes": 765,
+      "path": "experiments/sources/lcb_sprint_exposure_plan_v2_20260930.json",
+      "sha256": "9ade105303b11da4cef483e3cbe3eae813df32a19690b275bab5b37d9b3b37f3"
+    },
+    "historical_refresh_runner": {
+      "bytes": 5949,
+      "path": "scripts/build_lcb_sprint_exposure_20260930.py",
+      "sha256": "288b33327d573b32d074792931ee7c56cd4b34580bbdf88d36ff65261c6de187"
+    },
+    "historical_refresh_summary": {
+      "bytes": 778,
+      "path": "work/lcb_sprint_exposure_refresh_20260930_v2/summary.json",
+      "sha256": "fc4649d5e795a1d7d98ef0b7219a54a64128f62a03c62c5aa3dad4636e495c7d"
+    },
+    "initial_failure_receipt": {
+      "bytes": 534,
+      "path": "work/lcb_sprint_bundle_20260930_v1/summary.json",
+      "sha256": "3739ad4d392bf2a7126ede5e734ad8fbf8037ec88f4e50a8f83f7cba737bd775"
+    },
+    "instruments": {
+      "bytes": 977420,
+      "path": "work/lcb_sprint_bundle_20260930_v2/instruments.json",
+      "sha256": "106e0d0761b3f03548d8c4652b2e8465b781d287b84c9caf805cc4d974c8a569"
+    },
+    "private_case_journal": {
+      "bytes": 947548,
+      "path": "work/lcb_private_inquiry_20260930_v1/rows.jsonl",
+      "sha256": "818bfbeeb3c64b22306de45c75448b9a8a3141ca0fb6a78fcea0bc112a511c77"
+    },
+    "source_public": {
+      "bytes": 2140798,
+      "path": "work/lcb_public_inquiry_20260930_v1/public-rows.jsonl",
+      "sha256": "7c68dc8d401c25acbbfcf57e83de4f540107c9623535a515cfc236586c0df1db"
+    },
+    "tasks": {
+      "bytes": 1383166,
+      "path": "work/lcb_sprint_bundle_20260930_v2/tasks.json",
+      "sha256": "c7a6824b49eb390aba35b1bda7b3864b16c498773dd313a111991fab642881f5"
+    }
+  },
+  "bundle": {
+    "maximum_sealed_root_plain_bytes": 198723688,
+    "path": "work/lcb_sprint_bundle_20260930_v2",
+    "retained_bytes": 3216987388,
+    "storage": "deterministic gzip per-root case payloads, on-demand bounded materialization"
+  },
+  "dataset": {
+    "full_source_file_lfs_hashes_verified": false,
+    "name": "livecodebench/code_generation_lite",
+    "revision": "25d8cb8f0db2efe1b589941eb8c26a219850d4d2",
+    "rows": 1055,
+    "split": "release_v6"
+  },
+  "execution": {
+    "cpu_system_seconds": 8.816904,
+    "cpu_user_seconds": 135.908999,
+    "elapsed_seconds": 147.3911302499473,
+    "maximum_rss_platform_units": 5985910784,
+    "model_calls": 0,
+    "network_calls": 0,
+    "reference_executions": 0,
+    "rows_redecoded": 1055,
+    "rss_units": "bytes-on-macos-kib-on-linux",
+    "task_code_executions": 0,
+    "unattempted_rows": 0,
+    "unpickler_executions": 0
+  },
+  "historical_exposure": {
+    "all_historical_files_identity_metadata_scanned": true,
+    "exact_prior_project_identity_or_public_source_hash_links": 0,
+    "global_unseen_or_pretraining_novelty_certificate": false,
+    "inventory_files": 954,
+    "inventory_source_bytes": 60038398,
+    "malformed_identity_fields": 0,
+    "nonfinite_numerical_scalar_tokens_inertly_ignored": 1,
+    "only_initially_unparseable_file": "results/e0/20260919T234422Z/FAIL_positivity/metrics.json",
+    "roster_changed_by_nonfinite_score": false,
+    "valid_scalar_identity_fields": 40914
+  },
+  "limitations": [
+    "Source comparison clearance is provisional, not all-input semantic truth.",
+    "Operational co-split components are not verified broad semantic families.",
+    "Historical inventory covers frozen repository identity metadata, not global pretraining or external logs.",
+    "Full publisher private battery retains public-input overlaps; disjoint diagnostic is separate.",
+    "Canonical expected-set flags require source-backed disposition, no generated outcomes were read.",
+    "No runtime/control qualification, policy fit, task admission or efficacy is implied.",
+    "This converted source snapshot is separately pinned; equivalence to another original JSON revision and full LFS file digests are not claimed."
+  ],
+  "measurement": {
+    "all_case_strings_and_order_retained": true,
+    "canonical_expected_conflict_roots": 0,
+    "comparison_rules": {
+      "ascii_whitespace_tokens_v1": 566,
+      "single_line_exact_optional_final_newline_v1": 1
+    },
+    "counts": {
+      "canonical_expected_set_difference_roots": 0,
+      "private_cases": 12891,
+      "private_input_bytes": 6460287202,
+      "private_input_disjoint_cases": 12723,
+      "private_output_bytes": 1213318947,
+      "public_cases": 1553,
+      "public_input_overlap_cases": 168,
+      "raw_expected_set_difference_roots": 51
+    },
+    "diagnostic": "same retained private cases restricted to raw input UTF8 hash absent from public cases; separately labeled",
+    "diagnostic_disjointness_definition": "raw stdin UTF8 bytes only; not a semantic-new-input or pretraining novelty certificate",
+    "empty_diagnostic_batteries": 0,
+    "empty_primary_batteries": 0,
+    "exact_public_private_duplicate_cases": 23,
+    "maximum_expected_stdout_bytes": 10924038,
+    "maximum_stdin_bytes": 12000007,
+    "primary": "all ordered complete publisher private cases, including public-input and exact case overlaps",
+    "private_repeated_exact_cases_retained": 289,
+    "raw_expected_set_flags_resolved_only_by_prospectively_declared_source_comparators": true,
+    "roots_with_exact_public_private_duplicate_cases": 19,
+    "semantic_truth_or_runtime_qualification": false
+  },
+  "observer_resource_contract": {
+    "address_space_bytes": 1073741824,
+    "cpu_hard_seconds": 5,
+    "cpu_soft_seconds": 4,
+    "program_bytes": 1048576,
+    "stderr_bytes": 262144,
+    "stdin_bytes": 16777216,
+    "stdout_bytes": 16777216,
+    "wall_seconds": 8
+  },
+  "prompt": {
+    "maximum_serialized_public_cases_utf8_bytes": 1401,
+    "maximum_statement_plus_public_case_json_utf8_bytes": 4935,
+    "maximum_statement_utf8_bytes": 3879,
+    "no_truncation": true,
+    "tokenizer_full_history_context_qualification": "separate gate",
+    "verbatim_source_statement": true
+  },
+  "release_gates": [
+    "Lead freezes source-specific outcome/cost/failure/runtime protocol and adopts proposed roster before calls.",
+    "Qualified expected-answer-separated observer and trusted finite controls at actual source caps.",
+    "Exact receiver/tokenizer/context/collector behavior and all assignments frozen.",
+    "No broad semantic-family transport, hidden all-input correctness or trained-policy efficacy claim from this bundle."
+  ],
+  "schema": "lcb-stdio-sprint-bundle-manifest-v1",
+  "source_disposition_counts": {
+    "clear": 567,
+    "hold": 3,
+    "outside_proposed_stdio_interface": 444,
+    "source_backed_comparator_hold": 38,
+    "unresolved": 3
+  },
+  "source_specific_conditional_census_only": true,
+  "split": {
+    "active_operational_components": 549,
+    "all_links_same_component_verified": true,
+    "component_counts": {
+      "development": 329,
+      "evaluation": 110,
+      "tuning": 110
+    },
+    "proposed_crosswalk_links": 24,
+    "replicates": {
+      "development": 16,
+      "evaluation": 32,
+      "tuning": 4
+    },
+    "root_counts": {
+      "development": 342,
+      "evaluation": 114,
+      "tuning": 111
+    },
+    "rule": "eligible-containing operational components hash-ordered; floor60 and floor80 boundaries; every linked node keeps its component",
+    "seed": "lcb-stdio-sprint-split-v1:20260930",
+    "semantic_families_verified": false,
+    "total_operational_components": 1034,
+    "weights": "exact rational equal operational component, equal eligible root within component, equal R repetitions; split sums each1"
+  },
+  "status": "COMPLETE_SOURCE_BOUND_PROPOSAL",
+  "validation": {
+    "adapter_public_schema_checks": 2,
+    "all_1055_source_private_field_hashes_and_original_case_ledger_hashes_independently_recomputed": true,
+    "focused_pure_tests": 12,
+    "full_project_readiness_percent": 60,
+    "range_payload_hash_size_footer_pins_verified": true,
+    "readiness_change_points": 0
+  }
+}

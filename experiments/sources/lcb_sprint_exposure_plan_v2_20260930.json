@@ -1,0 +1,17 @@
+{
+  "cpu_count": 1,
+  "cpu_seconds": 30,
+  "model_calls": 0,
+  "network_calls": 0,
+  "parent_plan_sha256": "3cffa2cf766b43692200a3b04927ba1bc1127bb888d644cef036448b467aafbe",
+  "private_decodes": 0,
+  "retained_bytes": 1048576,
+  "rss_bytes": 536870912,
+  "runner_sha256": "288b33327d573b32d074792931ee7c56cd4b34580bbdf88d36ff65261c6de187",
+  "schema": "lcb-sprint-historical-identity-refresh-plan-v2",
+  "scope": "Identity/public-source hashes only; numerical score fields excluded. Nonfinite old scalar tokens do not affect roster.",
+  "source_plan_path": "experiments/sources/lcb_sprint_bundle_plan_v2_20260930.json",
+  "source_plan_sha256": "fe8c830f93561f449f7a75466d8262ac178e00748501a3e21d9d8aceec34c3fb",
+  "task_code_executions": 0,
+  "wall_seconds": 60
+}
