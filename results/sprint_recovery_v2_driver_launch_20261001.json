@@ -1,0 +1,18 @@
+{
+  "pid": 48929,
+  "launched_at": "2026-10-01T23:34:07.528229+00:00",
+  "argv": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python3",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/drive_sprint_study_v3.py",
+    "--plan",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/bouchet/sprint_20260930/lead_driver_plan_v3.json"
+  ],
+  "process_identity": "48929 Thu Oct  1 19:34:05 2026     /Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python3 /Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/drive_sprint_study_v3.py --plan /Users/yukangzengcmac/DTR-MultiRoundLLM/experiments/bouchet/sprint_20260930/lead_driver_plan_v3.json",
+  "job_id": "28066929",
+  "plan_sha256": "e12eb9caa1bac8462bb38b70957bc9d83b621ada6c675509f80e62853723a20c",
+  "driver_source_sha256": "dc6d8a941686398af1f8b8ea8fb75dd547b7b07175d59fc00ff0bc4a570b0b75",
+  "freeze_commit": "24c73adbac1505ac7300d632f35202917e920553",
+  "classification": "mechanical frozen continuation; not efficacy"
+}

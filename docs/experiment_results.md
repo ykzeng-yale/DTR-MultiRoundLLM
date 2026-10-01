@@ -1,5 +1,15 @@
 # Experiment results ledger
 
+## 1 October 2026, 19:34 EDT — preserved-input repair; remaining evaluation submitted
+
+Job28048309 and driver45407 are terminal. The driver refused to rewrite an immutable configuration outside its new output subtree; the worker exhausted its finite wait before eval1. No task generation or grading was added. All19,081returned calls, six completed grades, exact fitted policies and tuning-only PASS_GATED_RETHINK lock remain unchanged. Raw failure evidence is in work/sprint_recovery_failure_20261001_v2; see docs/sprint_recovery_boundary_repair_20261001.md. Three-epoch preflight independently validated49,806files/314,898,117bytes and the complete successful prefix; all source pins matched.
+
+Actual new owned job **28066929** is PENDING under pi_gt353/gpu_h100,2H100/12CPU/64GiB/four hours/$0, remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20261001-v4. Receipt results/sprint_evaluation_recovery_v2_submission_20261001.json; source freezeb4dd857, worker plan v5. Only eval1/eval2 generation and evaluation public/terminal private grading remain. No completed-call replay, refit, reselection, seed redraw or endpoint change. Fresh26isolation+18receiver checks mandatory; old caches are retained and charged, not reused across allocations.
+
+Actual driver **PID48929**, launched2026-10-01T23:34:05Z, exact command/start/exclusive claim and saved pending job verified, empty stderr. Driver v3 uses read-only exact-hash verification for preserved inputs and confines writes to its own subtree/spool. Plan lead_driver_plan_v3.json canonicalSHAe12eb9caa1bac8462bb38b70957bc9d83b621ada6c675509f80e62853723a20c; launch results/sprint_recovery_v2_driver_launch_20261001.json; fresh work/sprint_protocol_driver_20261001_v3. Direct authenticated Bouchet route restored; do not restart old jobs/drivers. Avoid concurrent source/Git mutations during releases.
+
+Full suite2,842passed/2skipped/44subtests; eleven focused repair tests passed. Prior allocations10.534GPU-hours; new maximum8 keeps total below24. All other global ceilings/deadline2026-10-02T18:00Z unchanged. Full-project readiness **60%,delta0**; held-out quality/cost, broad semantic/family transport and manuscript/raw reproduction incomplete. No validated positive finding/email. Six-hour recovery advances this exact experiment.
+
 ## Current results boundary — 26 September 2026
 
 Read the [current experiment status](current_experiment_status_20260926.md) before the dated entries below. E11, E12 and E13a have completed development results, including preserved null/negative contrasts; E14 has source/mock evidence only and zero real calls. No independent policy-validation result exists. The historical entries below retain their original execution context and are not new collection authority.

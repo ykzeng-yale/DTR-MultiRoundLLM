@@ -1,0 +1,17 @@
+{
+  "job_id": "28048309",
+  "terminal_state": "FAILED",
+  "exit_code": "1:0",
+  "allocated_seconds": 3980,
+  "driver_pid": 45407,
+  "cause": "preserved configuration upload crossed confined write boundary; worker finite wait before eval1",
+  "new_task_calls": 0,
+  "new_grades": 0,
+  "preserved_calls": 19081,
+  "new_diagnostic_files": 39,
+  "new_diagnostic_bytes": 292339,
+  "raw_archive_sha256": "67c98b800af7960b7a9cee2f8549395fef4acc501f97c4f657af7e55a0e6d13a",
+  "replacement_job_id": "28066929",
+  "rerandomization_refit_or_completed_replay": false,
+  "classification": "administrative failure; no efficacy/futility result"
+}
