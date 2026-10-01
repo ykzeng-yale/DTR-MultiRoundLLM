@@ -1,0 +1,31 @@
+{
+  "wrapper_pid": 5052,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python3",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/drive_sprint_study_v1.py",
+    "--plan",
+    "experiments/bouchet/sprint_20260930/lead_driver_plan_v1.json"
+  ],
+  "launched_at": "2026-10-01T00:20:07.806193+00:00",
+  "job_id": "27989272",
+  "plan_path": "experiments/bouchet/sprint_20260930/lead_driver_plan_v1.json",
+  "plan_file_sha256": "848c1e9fc214cedc9e34fe205de64f55b47ee3cfb270cf61c2fe98c684ffe41e",
+  "driver_source_sha256": "b28e001e65341b9c214be99b37a306dace7399276d07358115d162efa47fb5a3",
+  "freeze_commit": "548a1a39c1518bf739e3ee57c856799adc7e2049",
+  "output_dir": "work/sprint_protocol_driver_20260930_v1",
+  "wall_seconds": 259200,
+  "cpu_seconds": 7200,
+  "paid_usd": 0,
+  "child_pid": 5053,
+  "no_candidate_host_execution": true,
+  "previous_wrapper_pid": 5036,
+  "previous_disposition": "terminal before driver import/claim or any release: lexical venv path repair; original error retained",
+  "stdout": "driver_v2.stdout",
+  "stderr": "driver_v2.stderr",
+  "driver_pid": 5052,
+  "live_identity_verified_at": "2026-10-01T00:20:28.984645+00:00",
+  "driver_checkpoint": "exclusive claim plan hash7559fe59..., journal driver_started and saved job PENDING at00:20:09Z",
+  "initial_launcher_failure": "5036 selected resolved base Python; import failed before claim/release; repaired lexical venv path, not experiment rerun"
+}
