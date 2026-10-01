@@ -1,0 +1,22 @@
+{
+  "pid": 45407,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/.venv/bin/python3",
+    "/Users/yukangzengcmac/DTR-MultiRoundLLM/scripts/drive_sprint_study_v2.py",
+    "--plan",
+    "experiments/bouchet/sprint_20260930/lead_driver_plan_v2.json"
+  ],
+  "launched_at": "2026-10-01T17:39:39.482089+00:00",
+  "job_id": "28048309",
+  "plan_path": "experiments/bouchet/sprint_20260930/lead_driver_plan_v2.json",
+  "plan_file_sha256": "368596c54cc69fabe48512b8b7fb5c03c9e6b611abcaa67675ba65aca8528737",
+  "driver_source_sha256": "f710cd81b535f2d6e01746be8185850d3836f52f15798f3590e964c4dfd15edc",
+  "freeze_commit": "b2c4300b49c87f19fc63c752ca951190d6fff153",
+  "output_dir": "work/sprint_protocol_driver_20261001_v2",
+  "wall_seconds": 259200,
+  "cpu_seconds": 7200,
+  "paid_usd": 0,
+  "no_candidate_host_execution": true
+}

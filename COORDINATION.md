@@ -1,5 +1,17 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 1 October 2026, 13:39 EDT — immutable held-out recovery submitted; live driver
+
+Actual owned recovery job **28048309** is PENDING, pi_gt353/gpu_h100,2H100/12CPU/64GiB/four hours,$0, at `/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20261001-v3`. Receipt results/sprint_evaluation_recovery_submission_20261001.json; worker source freezeeb213b6d87dcd8ed7df65c5a92ddfea878e34206, actual driver/job bindingb2c4300b49c87f19fc63c752ca951190d6fff153. Both accounts passed identical eligibility probes; gt353 had the earlier provisional start16:40:45ET, not a reservation. No peer jobs changed and no duplicate exists.
+
+Lead preflight independently validated the entire successful prefix and49,767immutable files/314,605,778bytes, all19,081previous returned calls, six completed grade batches and unchanged dev/tune/eval configuration hashes. All44final source pins matched. Worker v3 preserves the exact prior prefix/global budgets and releases only eval1/eval2 after fresh26isolation+18receiver controls. Old caches remain immutable and charged, never reused across allocations; evaluation starts a fresh attested cache. No fit/reselection, seed redraw, endpoint change, completed call/grade replay or private-label policy input.
+
+Actual driver **PID45407** is process/command/start/claim verified, launched2026-10-01T17:39:39Z, no stderr, saved jobPENDING. Plan experiments/bouchet/sprint_20260930/lead_driver_plan_v2.json, canonicalSHAdf74a02d9c354f69f782d548568c4979663275ce8ef7501b290c5478ae018f43; launch results/sprint_recovery_driver_launch_20261001.json. Its fresh checkpoint retains every completed step and pins37input artifacts, dropping only old qualification. Never restart old driver5052/job27989272. Read docs/sprint_evaluation_recovery_20261001.md and exact current receipts before action. Avoid simultaneous source/Git mutations during releases.
+
+Single-stat inventory is bounded300seconds/360transport within existing1200transport cap; allocation time is refreshed after scans. Full suite2,837pass/2skip/44subtests before final timing repair; eight focused recovery/inventory tests pass after it. Two data-only staging/hash-interpretation preflight failures remain preserved and corrected before submission. These are supporting correctness checks, not efficacy.
+
+Six-hour recovery remains ACTIVE; current prompt supersedes historical live-job statements. No positive validated finding/email yet. Actual full/compressed Q artifacts and tuning-only PASS_GATED_RETHINK lock reproduce exactly, but held-out quality/cost judgment is pending. Full-project readiness60%,delta0; broad semantic/family transport, independent held-out benefit and manuscript/raw reproduction remain incomplete.
+
 ## 30 September 2026, 20:20 EDT — six-hour recovery; H100 continuation and mechanical driver live
 
 The owner now authorizes autonomous remaining research with recovery every six hours beyond the original sprint stopping window. Automation `dtr-scientific-lead-and-validated-findings` is ACTIVE at that cadence; the old recurrence remains deleted. The continuous scientific objective remains incomplete. The latest bounded execution extension is in results/sprint_owner_execution_extension_20260930.json: one four-hour continuation allocation, queue window through2026-10-02T18:00Z, unchanged scientific/global limits. No unlimited renewal or scientific target change.
