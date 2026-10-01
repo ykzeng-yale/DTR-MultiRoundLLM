@@ -43,7 +43,7 @@
     "scripts/run_sprint_pipeline.py": "ff6ec1a8c57415c15e3a8ea27c0681272b7a308426f303822475803ad5fc9704",
     "experiments/sprint/recovery_v1.py": "b65fe3424abb64bc9b7b762de87a3b71efaf2df2130d82b7ef5eac3a29e167ab",
     "experiments/sprint/worker_v3.py": "bf4d10a596bd35923d67bca1a24275a68be425e6b0ae12d56d2be9d27cc9224b",
-    "scripts/drive_sprint_study_v2.py": "5358b903b79e210931da008425731467cab491b5bb507dfc72e09c472386b985",
+    "scripts/drive_sprint_study_v2.py": "0c72406bf1111c818f7ef693b5b36595100c1f78e71af243ec18c6172470e128",
     "scripts/sprint_metadata_inventory_v2.py": "d41fb27c1531634a4ed4dfcf2c42ced71eced82ba48813bad4a3517e88f3ec9f",
     "experiments/bouchet/sprint_20260930/study_worker_v5.sbatch": "a4d5b53141aa5f0b758cb27c66f2bfb8448480c6af2774825e47a1f64abc2ffc"
   },

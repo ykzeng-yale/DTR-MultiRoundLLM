@@ -169,6 +169,15 @@ def make_plan(spec,repo):
     require(len(worker['resume_completed_stages'])==1 and worker['resume_completed_stages'][0]['stage_id']=='dev0','only terminal original dev0 can resume')
     inputs={name:{'path':spec[name],'sha256':digest(repo/spec[name])} for name in
         ('recovery_checkpoint','worker_plan','tasks','source_manifest','development_config','development0_state','development0_requests','tuning_config','tuning0_state','evaluation_randomization')}
+    checkpoint=read(repo/spec['recovery_checkpoint'])
+    require(checkpoint['job_id']=='27989272','exact preserved checkpoint job')
+    def artifact_paths(value):
+        if isinstance(value,str) and value.startswith('work/') and (repo/value).is_file():return [value]
+        if isinstance(value,dict):return [p for v in value.values() for p in artifact_paths(v)]
+        if isinstance(value,list):return [p for v in value for p in artifact_paths(v)]
+        return []
+    for i,path in enumerate(sorted(set(artifact_paths(checkpoint['done'])))):
+        inputs['recovery_artifact_'+str(i)]={'path':path,'sha256':digest(repo/path)}
     pins=dict(worker['files'])
     for module in (sys.modules[__name__],release,helpers,generation_audit,grading_audit,inference):
         p=Path(module.__file__).resolve();pins[str(p.relative_to(repo))]=digest(p)
