@@ -153,7 +153,7 @@ def make_plan(spec,repo):
     keys={'job_id','remote_dir','job_name','account','partition','user','ssh_route',
           'worker_plan','tasks','source_manifest','bundle_dir','development_config',
           'development0_state','development0_requests','tuning_config','tuning0_state',
-          'evaluation_randomization','evaluation_namespace_seed','output_dir','manifest_prefix'}
+          'evaluation_randomization','evaluation_namespace_seed','output_dir','manifest_prefix','recovery_checkpoint'}
     require(set(spec)==keys,'exact driver specification fields')
     require(re.fullmatch(r'[0-9]+',spec['job_id']) and spec['job_id']!='27982976','one new saved job, never old collector')
     require(type(spec['remote_dir']) is str and spec['remote_dir'].startswith('/nfs/') and '..' not in PurePosixPath(spec['remote_dir']).parts,'owned Bouchet directory')
@@ -164,11 +164,11 @@ def make_plan(spec,repo):
     for name in keys-{'job_id','remote_dir','job_name','account','partition','user','ssh_route','evaluation_namespace_seed'}:
         relative(spec[name])
     require(spec['output_dir'].startswith('work/') and spec['manifest_prefix'].startswith('results/'),'ignored raw/public hash manifest separation')
-    worker=read(repo/spec['worker_plan']);require(worker['mode']=='finite-stage-spool-v2' and tuple(worker['stage_ids'])==STAGES and tuple(worker['grading_ids'])==GRADES,'unchanged full nine-stage worker')
+    worker=read(repo/spec['worker_plan']);require(worker['mode']=='finite-stage-spool-v3' and tuple(worker['stage_ids'])==STAGES and tuple(worker['grading_ids'])==GRADES,'unchanged full nine-stage worker')
     require(worker['resources']['account']==spec['account'] and worker['resources']['partition']==spec['partition'] and worker['paid_usd']==0,'exact saved resource association')
     require(len(worker['resume_completed_stages'])==1 and worker['resume_completed_stages'][0]['stage_id']=='dev0','only terminal original dev0 can resume')
     inputs={name:{'path':spec[name],'sha256':digest(repo/spec[name])} for name in
-        ('worker_plan','tasks','source_manifest','development_config','development0_state','development0_requests','tuning_config','tuning0_state','evaluation_randomization')}
+        ('recovery_checkpoint','worker_plan','tasks','source_manifest','development_config','development0_state','development0_requests','tuning_config','tuning0_state','evaluation_randomization')}
     pins=dict(worker['files'])
     for module in (sys.modules[__name__],release,helpers,generation_audit,grading_audit,inference):
         p=Path(module.__file__).resolve();pins[str(p.relative_to(repo))]=digest(p)
@@ -439,6 +439,19 @@ def audit_qualification(directory,worker,ready,remote_output,job_id):
             'candidate_execution_here':False}
 
 
+def rebind_checkpoint(old,plan):
+    """Only exact terminal-prefix recovery; never discard completed steps."""
+    require(old['job_id']=='27989272' and plan['spec']['job_id']!=old['job_id'],'new owned allocation for terminal old job')
+    done=dict(old['done'])
+    require(all(k in done for k in ('development_join','fit','tuning_join','select_b1','evaluation_freeze','eval0_generation')) and
+            not any(k in done for k in ('eval0_public','eval0_advance','eval1_generation','final_analysis')),
+            'exact interrupted pre-eval0-public checkpoint')
+    require(len(old['grading'])==6,'all completed grading records retained')
+    done.pop('qualified',None)
+    return {'version':VERSION,'plan_sha256':plan['plan_sha256'],'job_id':plan['spec']['job_id'],
+            'done':done,'grading':old['grading'],'recovered_checkpoint_sha256':sha(old),'prior_job_id':old['job_id']}
+
+
 class Driver:
     def __init__(self,plan,repo,transport=None,git=None):
         self.plan=plan;self.spec=plan['spec'];self.repo=Path(repo).resolve();self.out=self.repo/self.spec['output_dir']
@@ -447,11 +460,12 @@ class Driver:
         self.transport=transport or Transport(plan);self.transport.worker=self.worker;self.transport.local_output=self.out
         self.started=time.monotonic();self.job=None;self.job_check_at=0;self.ready=None
         self.checkpoint=self.out/'checkpoint.json';self.journal=self.out/'driver-journal.jsonl'
-        self.state=read(self.checkpoint) if self.checkpoint.exists() else {'version':VERSION,'plan_sha256':plan['plan_sha256'],'job_id':self.spec['job_id'],'done':{},'grading':[]}
+        self.state=read(self.checkpoint) if self.checkpoint.exists() else rebind_checkpoint(read(self.repo/self.spec['recovery_checkpoint']),plan)
+        if not self.checkpoint.exists():write(self.checkpoint,self.state)
         require(self.state['plan_sha256']==plan['plan_sha256'] and self.state['job_id']==self.spec['job_id'],'same saved driver recovery only')
         self.git=git or GitFreeze(self.repo,plan,self.verify)
         self.public=helpers.tasks(self.repo/self.spec['tasks']);self.lock_handle=None
-        self.prior_bytes=sum(r['bytes'] for r in self.worker['resume_completed_stages'][0]['retained_files'])
+        self.prior_bytes=self.worker['prior_artifact_bytes']
     def verify(self):
         require(sha({k:v for k,v in self.plan.items() if k!='plan_sha256'})==self.plan['plan_sha256'],'driver plan drift')
         for path,pin in self.plan['files'].items():require(digest(self.repo/path)==pin,'frozen local source drift: '+path)
