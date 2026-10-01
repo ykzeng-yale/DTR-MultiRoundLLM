@@ -80,7 +80,10 @@ def verify(plan, original):
         report=json.loads(rp.read_bytes())
         require(receiver.file_sha(rp)==record['reconciliation_file_sha256'] and receiver.sha(report)==record['reconciliation_sha256'],'prior grade reconciliation hash')
         require(report['safe_to_advance'] and report['status']=='RECONCILED_COMPLETE','prior grading refused')
-        require(receiver.sha(json.loads((root/'grading'/record['grading_id']/'observations.json').read_bytes()))==record['result_sha256'],'prior observations hash')
+        batch=root/'grading'/record['grading_id']
+        result=json.loads((batch/'summary.json').read_bytes())
+        require(receiver.sha(result)==record['result_sha256'],'prior batch summary canonical hash')
+        require(receiver.file_sha(batch/'observations.json')==result['observations_file_sha256'] and receiver.sha(json.loads((batch/'observations.json').read_bytes()))==result['observations_sha256'],'prior observations raw/canonical hashes')
     require(prior_bytes+2*(128<<20)+(32<<20)<plan['max_retained_bytes'],'prior+new retained envelope')
     witness={'version':'sprint-successful-prefix-recovery-v1','prior_job_id':recovery['prior_job_id'],'manifest_sha256':recovery['manifest_sha256'],'retained_bytes':prior_bytes,'returned_calls':calls,'owner_extension_receipt_sha256':original['receipt']['owner_extension_receipt_sha256']}
     return {'reserved_calls':calls,'retained_bytes':prior_bytes,'receipt':witness,'stage_contracts':contracts,'stages':summary['stages'],'grading':summary['grading'],'eval_lock':lock,'cache_dir':str(Path(recovery['prior_output_dir'])/'grading-cache')}

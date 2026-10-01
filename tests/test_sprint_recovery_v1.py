@@ -42,3 +42,11 @@ def test_checkpoint_rebinding_retains_policy_and_eval_generation_and_requalifies
     assert new['done']['fit']==old['done']['fit'] and new['grading']==old['grading']
     old['done']['eval1_generation']={}
     with pytest.raises(ValueError):rebind_checkpoint(old,plan)
+
+def test_saved_batch_result_pin_is_summary_not_observation_array():
+    from experiments.sprint import receiver_v1 as r
+    observations=[{'grade':0}]
+    summary={'observations_sha256':r.sha(observations),'accounted_units':1}
+    record={'result_sha256':r.sha(summary)}
+    assert record['result_sha256']==r.sha(summary)
+    assert record['result_sha256']!=r.sha(observations)
