@@ -1,0 +1,17 @@
+{
+  "job_id": "27982976",
+  "terminal_state": "CANCELLED by owner scientific lead after complete dev0 for capacity defect",
+  "main_exit": "0:0",
+  "batch_exit": "0:15",
+  "allocated_seconds": 2126,
+  "total_cpu_seconds": 2571.399,
+  "max_rss_kib": 20471252,
+  "global_worker_summary": "missing after cancellation; failure preserved",
+  "generation_disposition": "5472/5472 dev0 independently hash-reconciled, never replay",
+  "artifact_sha256s": {
+    "logs.tar": "0e097e9283ed7e160355ca5fa79664b94ef98b5133618a02f354f7b1c9e12b39",
+    "sacct.txt": "95eee91360eb94e9e56ff2d7e39dd52225fd874b4ae058e520c7c48d67290d9b"
+  },
+  "candidate_outcome_grading": "not yet performed",
+  "paid_usd": 0
+}

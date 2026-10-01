@@ -1,0 +1,29 @@
+{
+  "job_id": "27989272",
+  "submitted_at_lead_recorded_iso": "2026-09-30T23:56:49.817938+00:00",
+  "remote_dir": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20260930-v2",
+  "freeze_commit": "be020ade53d1c4f45edff22b5cb6d74a42e59883",
+  "worker_plan_path": "experiments/bouchet/sprint_20260930/study_worker_plan_v3.json",
+  "worker_plan_sha256": "d1dba6f4f4042029407f95357640e0caf1c960995892f4b8c1bc45f581a1d937",
+  "account": "pi_gt353",
+  "partition": "gpu_h100",
+  "qos": "normal",
+  "gpus": 2,
+  "gpu_type": "h100",
+  "cpus": 12,
+  "memory_gib": 64,
+  "wall_seconds": 14400,
+  "paid_usd": 0,
+  "resume_only_completed_stage": "dev0",
+  "original_job_id": "27982976",
+  "original_returned_calls": 5472,
+  "do_not_duplicate_or_replay": true,
+  "expected_artifacts": [
+    "worker-results/ready.json",
+    "worker-results/summary.json",
+    "worker-results/grading-reconciliation",
+    "worker-results/{dev1,dev2,tune0,tune1,tune2,eval0,eval1,eval2}",
+    "logs/sprint-h100-27989272.out",
+    "logs/sprint-h100-27989272.err"
+  ]
+}
