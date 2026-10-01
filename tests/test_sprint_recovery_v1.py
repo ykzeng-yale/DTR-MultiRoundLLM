@@ -50,3 +50,16 @@ def test_saved_batch_result_pin_is_summary_not_observation_array():
     record={'result_sha256':r.sha(summary)}
     assert record['result_sha256']==r.sha(summary)
     assert record['result_sha256']!=r.sha(observations)
+
+def test_grading_time_is_measured_after_bounded_inventory():
+    from scripts.drive_sprint_study_v2 import Driver
+    d=object.__new__(Driver);events=[]
+    class T:
+        def rpc(self,*a,**k):events.append('inventory');return {'bytes':10}
+    d.transport=T();d.worker={'output_dir':'owned','max_seconds':14400,'owner_deadline_iso':'2099-01-01T00:00:00Z','grading_reconciliation_seconds':600,'server_log_cap_bytes':128<<20,'max_case_starts':4000000,'max_grading_cpu_seconds':57000,'max_retained_bytes':100<<30}
+    d.state={'grading':[]};d.prior_bytes=0;d.plan={'caps':{'batch_cpu_seconds':14000,'batch_wall_seconds':3600,'batch_retained_bytes':20<<30}}
+    import time
+    def job(force):events.append('fresh_scheduler');return {'state':'RUNNING','elapsed_seconds':100,'observed_unix':time.time()}
+    d.owned_job=job
+    assert d.remaining()['max_wall_seconds']==3600
+    assert events==['inventory','fresh_scheduler']

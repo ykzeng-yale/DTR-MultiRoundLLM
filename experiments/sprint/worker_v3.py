@@ -79,7 +79,7 @@ class RetainedLedger:
     def rescan_external(self):
         with self.lock:
             from scripts.sprint_metadata_inventory_v2 import inventory
-            actual=inventory(self.directory,seconds=60,max_bytes=self.cap)['bytes']
+            actual=inventory(self.directory,seconds=300,max_bytes=self.cap)['bytes']
             self.scans+=1;self.charged=max(self.charged,actual+self.fixed_reserve)
             if self.charged>self.cap:raise RuntimeError('external owned retained envelope exceeded')
             return actual

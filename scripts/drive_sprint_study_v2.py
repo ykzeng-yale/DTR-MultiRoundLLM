@@ -246,7 +246,7 @@ elif op=='stats':
                  else:raise ValueError('nonregular evidence entry refused')
      return {'complete':True,'files':files,'entries':entries,'bytes':total}
 
- print(json.dumps(inventory(path(x['path']),seconds=60)))
+ print(json.dumps(inventory(path(x['path']),seconds=300)))
 elif op=='job':
  jid=x['job_id'];assert jid.isdigit()
  def run(a):
@@ -266,7 +266,7 @@ class Transport:
         payload=dict(root=self.spec['remote_dir'],op=op,**fields)
         command='/usr/bin/python3 -c '+shlex.quote(REMOTE_HELPER)
         result=subprocess.run(self.command(command),input=canonical(payload),stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,timeout=min(120,self.plan['caps']['transport_seconds']),check=True)
+            stderr=subprocess.PIPE,timeout=min(360 if op=='stats' else 120,self.plan['caps']['transport_seconds']),check=True)
         require(len(result.stdout)<=1<<20 and len(result.stderr)<=65536,'bounded SSH metadata response')
         self.calls+=1;return generation_audit.strict_json(result.stdout)
     def exists(self,path):return self.rpc('exists',path=relative(path))['exists']
@@ -571,10 +571,10 @@ class Driver:
         p=self.data(stage+'-generation-recount',report);self.metadata_freeze(stage+'_reconciled',[p],{'returned':report['returned'],'failed':report['failed'],'unattempted':report['unattempted']})
         generation_go(report);return str((d/'summary.json').relative_to(self.repo))
     def remaining(self):
+        actual=self.transport.rpc('stats',path=self.worker['output_dir'])['bytes']
         job=self.owned_job(force=True);require(job['state']=='RUNNING','grading requires actual running owned allocation')
         elapsed=job['elapsed_seconds']+max(0,time.time()-job['observed_unix'])
         wall=min(self.worker['max_seconds']-elapsed,datetime.fromisoformat(self.worker['owner_deadline_iso'].replace('Z','+00:00')).timestamp()-time.time())
-        actual=self.transport.rpc('stats',path=self.worker['output_dir'])['bytes']
         return grade_caps(self.worker,self.state['grading'],wall,actual,self.prior_bytes,self.plan['caps'])
     def grade(self,gid,config_path,state_path,assignments):
         assignment_path=self.data(gid+'-assignments',assignments)
