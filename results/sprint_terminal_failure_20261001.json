@@ -1,0 +1,77 @@
+{
+  "version": "sprint-terminal-disposition-v1",
+  "job_id": "27989272",
+  "scheduler_state": "FAILED",
+  "exit_code": "1:0",
+  "elapsed": "03:34:15",
+  "driver_terminal": true,
+  "driver_failure": "TimeoutExpired in read-only recursive remote stats before eval0_public grading-plan release",
+  "worker_error": "RuntimeError('finite wait expired before eval1')",
+  "stages": [
+    {
+      "error": null,
+      "failed": 0,
+      "original_job_id": "27982976",
+      "resumed": true,
+      "returned": 5472,
+      "stage_id": "dev0",
+      "summary_sha256": "3352cc81f769fe3af643d910201b878e0354ef3539890a01a91dd2baba46ff3e",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 3668,
+      "stage_id": "dev1",
+      "summary_sha256": "b307faf841d1b0ea5d8c246d72acdb3eeda6ec820a0e2839f4c3744b74f7adf5",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 2478,
+      "stage_id": "dev2",
+      "summary_sha256": "b3f3f5ecd884cf3eb5324df25a8a16c92394675dcb5dfc4cbc7a77887c5e3ed6",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 444,
+      "stage_id": "tune0",
+      "summary_sha256": "7790431b83318762b07c3195e4974274106d05c71d1ce0b1453e22d6027919e0",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 1692,
+      "stage_id": "tune1",
+      "summary_sha256": "5de50a1829baee9e53bbf8a799c9414b2e11de8530934f53c0c72a20778664e1",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 1679,
+      "stage_id": "tune2",
+      "summary_sha256": "90560656b3fe9cf6be1e9b2d54f0501a4c0536009973d865ae0a9b23f76bdc6b",
+      "unattempted": 0
+    },
+    {
+      "error": null,
+      "failed": 0,
+      "returned": 3648,
+      "stage_id": "eval0",
+      "summary_sha256": "f9a345530ede899c60770a3a60e57c7b0b6bd871e8dd98b1db5dbe306fd64710",
+      "unattempted": 0
+    }
+  ],
+  "completed_grade_batches": 6,
+  "heldout_evaluation_complete": false,
+  "efficacy_established": false,
+  "automatic_restart_authorized": false,
+  "raw_archive_sha256": "2ce30fe6a88c2c198fa02ba97de76fdf187db47f4ce1887d48568f10938679be",
+  "readiness_percent": 60,
+  "readiness_delta": 0
+}
