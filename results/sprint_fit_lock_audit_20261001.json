@@ -1,0 +1,12 @@
+{
+  "fit_exact_match": true,
+  "choice_exact_match": true,
+  "development_assigned": 5472,
+  "tuning_assigned": 2220,
+  "model_sha256s": {
+    "FULL_HISTORY_Q": "e9db47d9f904ceee8bd054429a82aba938e9b82ad1133c65075e6fb7e3178f9d",
+    "COMPRESSED_HISTORY_Q": "677bc94fb3b6300165ed9fd361766dd13af4fa82000e536673b3c9141f46d716"
+  },
+  "selected_b1": "PASS_GATED_RETHINK",
+  "scope": "lead deterministic refit/recount; no new model calls, no evaluation labels or selection, not independent scientific replication"
+}

@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "files": 49727,
+  "entries": 65848,
+  "bytes": 286044926,
+  "elapsed_seconds": 23.931948743993416,
+  "scope": "lead read-only metadata benchmark; no candidate execution/model calls",
+  "raw_sha256": "9e04a5618df9828de0bbdc6593c62cbf7d7560117b40fbadb39890d3cee9fbd2",
+  "original_failure": "120-second recursive Path.rglob/stat SSH timeout",
+  "interpretation": "single-stat scandir completed actual terminal tree; does not certify future latency",
+  "continuation_submitted": false
+}
