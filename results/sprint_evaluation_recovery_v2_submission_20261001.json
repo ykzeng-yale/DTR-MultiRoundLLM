@@ -1,0 +1,27 @@
+{
+  "job_id": "28066929",
+  "submitted_at": "2026-10-01T23:33:55.290935+00:00",
+  "account": "pi_gt353",
+  "partition": "gpu_h100",
+  "resources": {
+    "gpus": 2,
+    "cpus": 12,
+    "memory_gib": 64,
+    "wall_seconds": 14400,
+    "paid_usd": 0
+  },
+  "remote_dir": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20261001-v4",
+  "freeze_commit": "b4dd85707fd048295d27488f570a8e4116317ea4",
+  "worker_plan": "experiments/bouchet/sprint_20260930/study_worker_plan_v5.json",
+  "worker_plan_sha256": "999cc23f458f16cae1d4772190b7d814ef616fe1ecebdf9a594251b967987006",
+  "successful_prefix_reused_calls": 19081,
+  "remaining_generation_stages": [
+    "eval1",
+    "eval2"
+  ],
+  "rerandomization_or_refit": false,
+  "preflight_receipt_sha256": "e72911b0ab6dc5aa2e402247922bcf08be9e492677ec7c10fbfbe8a5e2f2da24",
+  "prior_allocated_gpu_hours": 10.533888888888889,
+  "global_gpu_hours_cap": 24,
+  "classification": "remaining finite-source heldout operational study; no efficacy yet"
+}
