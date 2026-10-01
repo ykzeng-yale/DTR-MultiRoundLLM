@@ -1,0 +1,42 @@
+{
+  "version": "sprint-recovery-frozen-design-v1",
+  "prior_jobs": [
+    "27982976",
+    "27989272"
+  ],
+  "preserved_returned_calls": 19081,
+  "replay_permitted": false,
+  "prior_artifact_files": 49767,
+  "prior_artifact_bytes": 314605778,
+  "manifest_sha256": "2b2ab681d15bbccd622ee54be7eb1963adf333a9a51a9bffa0c53891de46e5db",
+  "completed_grading_case_starts": 31850,
+  "completed_grading_cpu_seconds": 3238.96,
+  "remaining_case_start_ceiling": 3968150,
+  "remaining_grading_cpu_seconds": 53761.04,
+  "remaining_task_call_ceiling": 63347,
+  "new_allocated_gpu_hours_max": 8,
+  "prior_allocated_gpu_hours": 8.322777777777778,
+  "total_gpu_hour_ceiling": 24,
+  "fresh_qualification_required": true,
+  "cross_allocation_cache_reuse": false,
+  "remaining_generation_stages": [
+    "eval1",
+    "eval2"
+  ],
+  "remaining_grades": [
+    "eval0_public",
+    "eval1_public",
+    "eval2_public",
+    "eval2_private"
+  ],
+  "policy_fit_or_b1_reselection_permitted": false,
+  "endpoint_or_seed_change_permitted": false,
+  "worker_plan_sha256": "1acd8069c67e07c790b4912b351724f3a8a0c4b4ef55f86c5a7dd60e6d59400d",
+  "readiness_percent": 60,
+  "readiness_delta": 0,
+  "prior_generation_and_cache_hash_manifest_scope": "all49767 regular files across both immutable owned output roots; no cross-allocation cache reuse",
+  "preflight_failures_preserved": [
+    "source staging ordering refusal before imports",
+    "batch-summary versus observation hash interpretation; fixed before any job submission"
+  ]
+}
