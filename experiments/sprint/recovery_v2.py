@@ -71,6 +71,14 @@ def verify(plan, original):
         require(prefix not in contracts or contracts[prefix]==stage['study_config_sha256'],'no within-study config mutation')
         contracts[prefix]=stage['study_config_sha256']
         if prefix=='eval':lock=stage['model_lock']
+    auxiliary=plan['extra_failed_allocation']
+    ap=Path(auxiliary['summary_path'])
+    require(receiver.file_sha(ap)==auxiliary['summary_sha256'],'latest failed allocation summary hash')
+    extra=json.loads(ap.read_bytes())
+    require(extra['job_id']==auxiliary['job_id']=='28048309' and extra['error']==summary['error'] and
+            extra['stages']==summary['stages'] and extra['grading']==summary['grading'] and
+            extra['assigned_calls_reserved']==summary['assigned_calls_reserved'] and
+            extra['unentered_stage_ids']==['eval1','eval2'],'latest allocation generated/graded no new task assignments')
     calls=validate_prefix(summary,reports,old,plan)
     # Prior grading is not rerun. Reconciliation and primitive cache bytes are
     # bound by complete inventory, and fresh attestation is separately required.

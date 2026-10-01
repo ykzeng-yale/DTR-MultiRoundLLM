@@ -46,7 +46,7 @@
     "scripts/drive_sprint_study_v2.py": "f710cd81b535f2d6e01746be8185850d3836f52f15798f3590e964c4dfd15edc",
     "scripts/sprint_metadata_inventory_v2.py": "d41fb27c1531634a4ed4dfcf2c42ced71eced82ba48813bad4a3517e88f3ec9f",
     "experiments/bouchet/sprint_20260930/study_worker_v5.sbatch": "a4d5b53141aa5f0b758cb27c66f2bfb8448480c6af2774825e47a1f64abc2ffc",
-    "experiments/sprint/recovery_v2.py": "d5678ba99de6fe590badbbede9a33a05b582001ce9b1e2b0c02c988132632f90",
+    "experiments/sprint/recovery_v2.py": "e2f2bd0e8d57ebd76f0bd8cc18c8a11947ed6ff6e69794f1d044964211f74880",
     "experiments/sprint/worker_v4.py": "d3301256ead3c1fae4ff6f8dc8844413d145d8000e22c56e95c86323ab40610b",
     "scripts/drive_sprint_study_v3.py": "dc6d8a941686398af1f8b8ea8fb75dd547b7b07175d59fc00ff0bc4a570b0b75",
     "experiments/bouchet/sprint_20260930/study_worker_v6.sbatch": "ec090fe0525ed3898c0f899b85fa90377bb3bdd9b6007ac0921e4240b4afe498"
@@ -436,5 +436,10 @@
         "summary": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20260930-v2/worker-results/eval0/summary.json"
       }
     ]
+  },
+  "extra_failed_allocation": {
+    "job_id": "28048309",
+    "summary_path": "/nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20261001-v3/worker-results/summary.json",
+    "summary_sha256": "eef8694999ee8cf98544aeb6f0c44dbc5f831376df25b8c095026a87aa946132"
   }
 }
