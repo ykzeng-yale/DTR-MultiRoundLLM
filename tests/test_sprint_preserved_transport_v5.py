@@ -40,3 +40,13 @@ def test_only_transport255_is_retried_once(monkeypatch):
     assert t.rpc('verify',path='work/old')['verified'] and len(calls)==2
     calls.clear();monkeypatch.setattr(subprocess,'run',lambda *a,**k:subprocess.CompletedProcess(a[0],1,b'',b'refused'))
     with pytest.raises(subprocess.CalledProcessError):t.rpc('verify',path='work/old')
+
+def test_streamed_write_exact_and_immutable(tmp_path):
+    import hashlib
+    raw=b'a'*(2<<20);payload={'root':str(tmp_path),'path':'work/new/state','prefix':'work/new','spool':'spool','sha256':hashlib.sha256(raw).hexdigest(),'cap':3<<20}
+    cmd=[sys.executable,'-c',d.STREAM_WRITE_HELPER,json.dumps(payload)]
+    r=subprocess.run(cmd,input=raw,capture_output=True);assert r.returncode==0
+    assert (tmp_path/'work/new/state').read_bytes()==raw
+    r=subprocess.run(cmd,input=raw,capture_output=True);assert r.returncode==0
+    r=subprocess.run(cmd,input=b'changed',capture_output=True);assert r.returncode!=0
+    assert (tmp_path/'work/new/state').read_bytes()==raw

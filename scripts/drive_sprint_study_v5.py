@@ -263,6 +263,31 @@ else:raise ValueError('fixed metadata operation')
 '''
 
 
+STREAM_WRITE_HELPER=r'''
+import sys,json,pathlib,hashlib,os
+x=json.loads(sys.argv[1]);root=pathlib.Path(x['root']).resolve();name=x['path']
+p=pathlib.PurePosixPath(name);assert not p.is_absolute() and '..' not in p.parts
+assert name.startswith(x['prefix']+'/') or name.startswith(x['spool']+'/')
+q=root/name;assert q.resolve().is_relative_to(root) and not q.is_symlink()
+q.parent.mkdir(parents=True,exist_ok=True);tmp=q.with_name(q.name+'.stream-'+str(os.getpid()))
+h=hashlib.sha256();n=0
+with tmp.open('xb') as f:
+ while True:
+  chunk=sys.stdin.buffer.read(1<<20)
+  if not chunk:break
+  n+=len(chunk);assert n<=x['cap'];h.update(chunk);f.write(chunk)
+ f.flush();os.fsync(f.fileno())
+assert h.hexdigest()==x['sha256']
+if q.exists():
+ hh=hashlib.sha256()
+ with q.open('rb') as f:
+  for chunk in iter(lambda:f.read(1<<20),b''):hh.update(chunk)
+ assert hh.hexdigest()==x['sha256']
+else:os.link(tmp,q)
+tmp.unlink();print(json.dumps({'sha256':h.hexdigest(),'bytes':n}))
+'''
+
+
 class Transport:
     def __init__(self,plan):self.plan=plan;self.spec=plan['spec'];self.calls=0
     def command(self,command):return ssh_command(self.spec['ssh_route'],command)
@@ -282,7 +307,27 @@ class Transport:
         require(len(result.stdout)<=1<<20 and len(result.stderr)<=65536,'bounded SSH metadata response')
         self.calls+=1;return generation_audit.strict_json(result.stdout)
     def exists(self,path):return self.rpc('exists',path=relative(path))['exists']
+    def stream_upload(self,path,local,*,prefix=None):
+        local=Path(local);require(not local.is_symlink() and local.stat().st_size<=self.plan['caps']['file_bytes'],'bounded stream source')
+        payload={'root':self.spec['remote_dir'],'path':relative(path),'prefix':prefix or self.spec['output_dir'],
+            'spool':self.worker['spool_dir'],'sha256':digest(local),'cap':self.plan['caps']['file_bytes']}
+        command='/usr/bin/python3 -c '+shlex.quote(STREAM_WRITE_HELPER)+' '+shlex.quote(json.dumps(payload))
+        for attempt in range(2):
+            with local.open('rb') as source:
+                result=subprocess.run(self.command(command),stdin=source,stdout=subprocess.PIPE,stderr=subprocess.PIPE,
+                    timeout=self.plan['caps']['transport_seconds'],check=False)
+            if result.returncode==0:break
+            if result.returncode!=255 or attempt==1:
+                raise subprocess.CalledProcessError(result.returncode,self.command(command),output=result.stdout,stderr=result.stderr)
+            time.sleep(2)
+        require(len(result.stdout)<=65536 and len(result.stderr)<=65536,'bounded streaming receipt')
+        receipt=generation_audit.strict_json(result.stdout)
+        require(receipt['sha256']==payload['sha256'] and receipt['bytes']==local.stat().st_size,'exact streamed source')
+        return receipt
+
     def upload(self,path,local):
+        if Path(local).stat().st_size>16<<20 and relative(path).startswith(self.spec['output_dir']+'/'):
+            return self.stream_upload(path,local)
         raw=Path(local).read_bytes();require(len(raw)<=self.plan['caps']['file_bytes'],'bounded exact upload')
         name=relative(path)
         if not (name.startswith(self.spec['output_dir']+'/') or name.startswith(self.worker['spool_dir']+'/')):
