@@ -1,5 +1,9 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 2 October 2026, 19:18 EDT — expired execution deadline; scientific claim disposition
+
+Deadline18:00Z expired without extension; no GPU/driver active and no new calls authorized. The source-grounded claim map in docs/sprint_claim_disposition_20261002.md distinguishes fitted-policy feasibility and audited generation from unresolved quality/history/cost claims. All46,599completed calls and negative findings remain preserved. No partial outcome substitution or efficacy/futility inference. Deadline extension remains pending; independent manuscript/reproduction work is permitted. Full-project readiness60%,delta0; held-out benefit, broad transport and final reproduction incomplete. No finding email.
+
 ## 2 October 2026, 13:20 EDT — eval1 generation audited; execution deadline gate
 
 Job28116566 FAILED1:0 after9,997allocated seconds; driver97810 terminal. Eval1 completed27,518/27,518assigned outputs,0failed/unattempted. Lead data-only audit verifies exact frozen requests/state/config, raw journal/start/receipt identities and complete generation integrity: results/sprint_eval1_generation_reconciliation_20261002.json. Raw artifacts retained in work/sprint_terminal_20261002_v6; no candidate code executed during audit. Total46,599task calls preserved, no replay/refit/reselection/randomization changes.
