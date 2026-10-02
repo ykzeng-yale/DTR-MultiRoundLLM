@@ -1,5 +1,17 @@
 # Experiment results ledger
 
+## 2 October 2026, 01:21 EDT — full freeze staging corrected; remaining evaluation queued
+
+Job28066929 FAILED1:0 after447allocated seconds; driver48929 is terminal. Lead staging supplied a seven-character freeze SHA where qualification requires40characters. Qualification refused before any new controls/model calls/task grading. This was a lead staging error, not scientific futility. The prior19,081returned calls/seven stages/six grades and fitted full/compressed policies/tuning-only B1 are unchanged. Raw evidence: work/sprint_recovery_failure_20261002_v3. All failures remain preserved.
+
+An explicit full-commit staging check now rejects abbreviated hashes; its rejection test passes. Recovery preflight recounts all49,808prior artifact files/314,904,639bytes across four epochs, exact completed generation/grading and failure summaries; every source pin and actual40-character freeze is verified. Full suite2,846pass/2skip/44subtests,11focused recovery/transport tests pass. No original scientific config, RNG, fit, lock, comparator, endpoint or missingness rule changed.
+
+Actual owned job **28091783** PENDING:pi_gt353/gpu_h100,2H100/12CPU/64GiB/four hours/$0; remote /nfs/roberts/project/pi_fl426/yz2324/DTR-MultiRoundLLM/sprint-study-20261002-v5. Source freeze9eee4c220619520f998b3aa2fef227b7aff861e7; worker plan v6; receipt results/sprint_evaluation_recovery_v3_submission_20261002.json. Actual driver **PID46094**, start2026-10-02T05:21:14Z, exact command/start/claim verified, empty stderr. Driver v4/plan lead_driver_plan_v4.json canonicalSHA2eed657382b805b5f65b83f17df5294d1bc3a8f538ecd407eb6290837278ad71; launch results/sprint_recovery_v3_driver_launch_20261002.json; output work/sprint_protocol_driver_20261002_v4. Do not restart old jobs/drivers or mutate pinned sources during releases.
+
+Only frozen eval1/eval2 generation and evaluation public/terminal private grading remain. Fresh26isolation+18receiver controls required. No completed generation/grade replay, cross-allocation cache reuse, refit or reselection. Prior allocations10.782GPU-hours; nextmax8 remains under24global. Deadline2026-10-02T18:00Z and all other global caps unchanged. Six-hour recovery prompt uses exact new identities.
+
+Full-project readiness **60%,delta0**; held-out quality/cost, broad semantic/family transport and manuscript/raw reproduction remain incomplete. No positive-finding email; no efficacy result yet.
+
 ## 1 October 2026, 19:34 EDT — preserved-input repair; remaining evaluation submitted
 
 Job28048309 and driver45407 are terminal. The driver refused to rewrite an immutable configuration outside its new output subtree; the worker exhausted its finite wait before eval1. No task generation or grading was added. All19,081returned calls, six completed grades, exact fitted policies and tuning-only PASS_GATED_RETHINK lock remain unchanged. Raw failure evidence is in work/sprint_recovery_failure_20261001_v2; see docs/sprint_recovery_boundary_repair_20261001.md. Three-epoch preflight independently validated49,806files/314,898,117bytes and the complete successful prefix; all source pins matched.

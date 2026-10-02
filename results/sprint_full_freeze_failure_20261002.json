@@ -1,0 +1,16 @@
+{
+  "job_id": "28066929",
+  "state": "FAILED",
+  "exit_code": "1:0",
+  "allocated_seconds": 447,
+  "driver_pid": 48929,
+  "cause": "lead staged abbreviated freeze commit; qualification requires full40hex",
+  "task_calls_added": 0,
+  "grades_added": 0,
+  "controls_completed": 0,
+  "preserved_calls": 19081,
+  "archive_sha256": "ff4386560bc463ca42bf6c3e1f4fec81027e6b6c6da3e179d83f607f30b3ebf7",
+  "replacement_job_id": "28091783",
+  "endpoint_fit_randomization_changed": false,
+  "classification": "administrative staging failure; not efficacy/futility"
+}
