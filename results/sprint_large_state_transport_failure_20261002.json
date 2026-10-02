@@ -1,0 +1,17 @@
+{
+  "job_id": "28091783",
+  "state": "FAILED",
+  "exit_code": "1:0",
+  "allocated_seconds": 3998,
+  "driver_pid": 46094,
+  "transport_exit": 255,
+  "eval1_state_bytes": 687901400,
+  "new_task_calls": 0,
+  "new_grade": "eval0_public",
+  "case_starts": 4717,
+  "grading_cpu_seconds": 135.63,
+  "preserved_calls": 19081,
+  "archive_sha256": "f1704442e260af7614bd132547b606cfbfc438532685e94340850d698f965ac7",
+  "replacement_job_id": "28116566",
+  "classification": "administrative transport failure; not efficacy/futility"
+}
