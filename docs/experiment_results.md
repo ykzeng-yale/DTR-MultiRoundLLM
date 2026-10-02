@@ -1,5 +1,13 @@
 # Experiment results ledger
 
+## 2 October 2026, 13:20 EDT — eval1 generation audited; execution deadline gate
+
+Job28116566 FAILED1:0 after9,997allocated seconds; driver97810 terminal. Eval1 completed27,518/27,518assigned outputs,0failed/unattempted. Lead data-only audit verifies exact frozen requests/state/config, raw journal/start/receipt identities and complete generation integrity: results/sprint_eval1_generation_reconciliation_20261002.json. Raw artifacts retained in work/sprint_terminal_20261002_v6; no candidate code executed during audit. Total46,599task calls preserved, no replay/refit/reselection/randomization changes.
+
+Driver's3,600-second active receipt wait expired while eval1 took5,994.576seconds; worker later exhausted finite wait before eval2. This is supervisor timing failure, not efficacy or futility. Seven grades remain completed, eval1 public/eval2/terminal private remain incomplete. No GPU/driver is active. Prior allocations18.613GPU-hours leave5.387under24global; deadline18:00Z is less than42minutes away, insufficient for fresh qualification and remaining collection/grading. No automatic deadline/cap renewal. Owner asked for deadline-only extension with all scientific/global caps unchanged; response pending. Do not restart from old checkpoint or regenerate eval1.
+
+A future authorized continuation must preserve the whole audited eight-stage prefix/seven grades and exact eval1 receipt; general checkpoint recovery and active generation wait must be prospectively rebound to the actual remaining allocation/deadline, without exceeding global caps. Frozen population/endpoint/comparators/assignments/models/B1/inference remain unchanged. No positive finding/email. Full-project readiness60%,delta0; held-out quality/cost, broad semantic/family transport and manuscript/raw reproduction incomplete.
+
 ## 2 October 2026, 07:28 EDT — eval0 public complete; large-state transport repaired
 
 Job28091783 FAILED1:0 after3,998allocated seconds and driver46094 is terminal. Fresh qualification passed and eval0 public grading completed/reconciled:4,717cases,135.63CPU seconds,267.632wall seconds. The resulting eval1 state is687,901,400bytes. The driver then encountered SSH exit255 while uploading; worker exhausted its finite wait before eval1. No new generation was released. All19,081returned calls/seven generation stages are retained; seven grade batches now complete (36,567cases/3,374.59CPU seconds). Exact fitted models, tuning-only B1, public histories and assignments remain fixed. Raw failure evidence: work/sprint_transport_failure_20261002_v4.
