@@ -1,5 +1,9 @@
 # Coordination — DTR for multi-round LLM interaction
 
+## 3 October 2026 — owner-directed recurrence deletion
+
+Deleted automation dtr-scientific-lead-and-validated-findings at owner request because the expired execution deadline prevents further collection. No GPU job is queued/running; no driver active. This is not a capacity/queue blocker. Local Macs support data-only audits/analysis/fitting; the unfinished frozen receiver requires CUDA and candidate grading requires the qualified Linux isolation runtime. A Metal/macOS substitution cannot be pooled silently. All46,599completed calls and pending deadline-only extension remain preserved. Full-project readiness60%,delta0; held-out benefit, broad transport and final reproduction incomplete.
+
 ## 3 October 2026, 01:21 EDT — manuscript claim correction
 
 Manuscript and reproduction guide now distinguish actual reproduced full/compressed fitted-Q artifacts from unfinished held-out evaluation. Integrated46,599preserved calls, audited27,518eval1 outputs and the administrative receipt-wait failure without efficacy/futility or cost claims. Source-scope and automated-user limits remain explicit; prior negatives unchanged. No execution deadline extension received, no GPU/driver active, no new calls/grading. Full-project readiness60%,delta0; held-out benefit, broad transport and final reproduction remain incomplete. No positive finding/email. Pending exact owner action: authorize deadline-only continuation under unchanged global caps.
