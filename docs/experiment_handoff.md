@@ -1,5 +1,9 @@
 # Current lead handoff — fresh scientific audit and terminal instrument inquiry (30September2026)
 
+## 3 October 2026, 01:21 EDT — manuscript claim correction
+
+Manuscript and reproduction guide now distinguish actual reproduced full/compressed fitted-Q artifacts from unfinished held-out evaluation. Integrated46,599preserved calls, audited27,518eval1 outputs and the administrative receipt-wait failure without efficacy/futility or cost claims. Source-scope and automated-user limits remain explicit; prior negatives unchanged. No execution deadline extension received, no GPU/driver active, no new calls/grading. Full-project readiness60%,delta0; held-out benefit, broad transport and final reproduction remain incomplete. No positive finding/email. Pending exact owner action: authorize deadline-only continuation under unchanged global caps.
+
 ## 2 October 2026, 19:18 EDT — expired execution deadline; scientific claim disposition
 
 Deadline18:00Z expired without extension; no GPU/driver active and no new calls authorized. The source-grounded claim map in docs/sprint_claim_disposition_20261002.md distinguishes fitted-policy feasibility and audited generation from unresolved quality/history/cost claims. All46,599completed calls and negative findings remain preserved. No partial outcome substitution or efficacy/futility inference. Deadline extension remains pending; independent manuscript/reproduction work is permitted. Full-project readiness60%,delta0; held-out benefit, broad transport and final reproduction incomplete. No finding email.
